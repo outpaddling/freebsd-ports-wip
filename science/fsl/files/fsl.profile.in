@@ -1,0 +1,4 @@
+
+FSLDIR=%%DATADIR%%
+export FSLDIR
+. $FSLDIR/etc/fslconf/fsl.sh

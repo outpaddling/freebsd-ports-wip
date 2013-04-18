@@ -1,0 +1,39 @@
+#  Make.conf for flair
+
+INV = -DCPP_INVERSION
+SOC = -DCPP_SOC
+FLAIRFLAGS=  # $(INV) # $(SOC)
+
+###############################################################################
+# FreeBSD gfortran compiler 
+###############################################################################
+
+# the following options are a guide only.
+#OPT       = -O3 -ffast-math
+#   options suggested by Steve Kargel, a long-time gfortran developer
+OPT = -O2 -funroll-loops -ftree-vectorize -march=native
+
+# lapack/blas library from system (often atlas, etc.)
+LAPACK_SYS = -llapack -lblas
+
+# loader option: put path of libraries in executable when not in
+# standard places
+# LOPTIONS     = -Wl,-rpath $(GFCDIR)/lib64
+
+OPTFLAGS     = $(OPT)
+FOPTIONS     = -ffree-form -DCPP_DOUBLE # -Wall
+STATIC       = #-static -i-static
+LAPACK       = $(LAPACK_SYS) # system/atlas version
+SCALAPACK    = 
+
+# Override PARFLAGS to build serial version, e.g.
+#	make PARFLAGS=""
+
+PARFLAGS     ?= -DCPP_MPI -DCPP_MEIG
+PARLIBS       =
+
+# FC should be set in the environment, e.g.
+#	make FC=gfortran95
+
+FFLAGS      = $(OPTFLAGS) $(FOPTIONS) $(FLAIRFLAGS) $(PARFLAGS) 
+LDFLAGS     = $(LOPTIONS) $(LAPACK) $(SCALAPACK) $(PARLIBS)

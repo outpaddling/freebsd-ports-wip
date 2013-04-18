@@ -1,0 +1,18 @@
+--- config/common/buildproj.orig	Fri Aug 17 11:43:39 2007
++++ config/common/buildproj	Fri Aug 17 11:44:33 2007
+@@ -81,6 +81,7 @@
+ 	    if [ $installok = false ]  ; then
+ 	      echo " "
+ 	      echo "ERROR::Could not install $projname successfully" ;
++              exit 1
+ 	    fi
+ 	  else
+ 	    echo " "
+@@ -89,6 +90,7 @@
+ 	    echo " "
+ 	    echo " "
+ 	    errorprojs="$errorprojs $projname" ; export errorprojs ;
++            exit 1
+ 	  fi
+     fi
+ done

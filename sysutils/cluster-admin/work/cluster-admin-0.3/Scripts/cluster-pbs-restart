@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ `whoami` != root ]; then
+    printf "$0 must be run as root.\n"
+    exit 1
+fi
+
+/usr/local/etc/rc.d/pbs_server restart
+/usr/local/etc/rc.d/pbs_sched restart
+sleep 5
+cluster-run '/usr/local/etc/rc.d/pbs_mom restart'
+sleep 5
+qnodes
+

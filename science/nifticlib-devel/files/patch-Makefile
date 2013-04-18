@@ -1,0 +1,49 @@
+--- Makefile.orig	2010-07-20 12:18:58.000000000 -0500
++++ Makefile	2012-04-17 22:23:45.000000000 -0500
+@@ -17,21 +17,21 @@
+ 
+ 
+ ## Compiler  defines
+-cc		=	gcc
+-CC		=	gcc
+-AR		=	ar
+-RANLIB  = ranlib
+-DEPENDFLAGS	=	-MM
+-GNU_ANSI_FLAGS	= 	-Wall -ansi -pedantic
+-ANSI_FLAGS	= 	${GNU_ANSI_FLAGS}
+-CFLAGS		=	$(ANSI_FLAGS)
++cc		?=	gcc
++CC		?=	gcc
++AR		?=	ar
++RANLIB  	?=	ranlib
++DEPENDFLAGS	?=	-MM
++GNU_ANSI_FLAGS	?= 	-Wall -ansi -pedantic
++ANSI_FLAGS	+= 	${GNU_ANSI_FLAGS}
++CFLAGS		+=	$(ANSI_FLAGS)
+ 
+ ## Command defines
+ ## gmake does not work on MacOSX or some versions of linux MAKE  = gmake 
+-RM		=	rm
+-MV		=	mv
+-CP		=	cp
+-TAR		=	tar
++RM		?=	rm
++MV		?=	mv
++CP		?=	cp
++TAR		?=	tar
+ 
+ 
+ ## Installation
+@@ -41,9 +41,9 @@
+ 
+ 
+ ## Zlib defines
+-ZLIB_INC	=	-I/usr/include
+-ZLIB_PATH	=	-L/usr/lib
+-ZLIB_LIBS 	= 	$(ZLIB_PATH) -lm -lz 
++ZLIB_INC	?=	-I/usr/include
++ZLIB_PATH	?=	-L/usr/lib
++ZLIB_LIBS 	?= 	$(ZLIB_PATH) -lm -lz 
+ 
+ ##############################################################
+ # platform specific redefines (to use, set ARCH appropriately)

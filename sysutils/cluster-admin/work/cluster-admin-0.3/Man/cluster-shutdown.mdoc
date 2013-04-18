@@ -1,0 +1,49 @@
+.\" MDOC man page template
+.\" Use MDOC only for system-specific man pages where groff is the
+.\" default nroff command.  For portable software meant to run on
+.\" all *nix platforms, use the older MAN format.  ( *.man in APE )
+.Dd 2011-11-03  
+.Dt CLUSTER-SHUTDOWN 1
+.Os
+.\"----------------------------------------------------------------------
+.Sh NAME
+.Nm cluster-shutdown
+.Nd shut down the cluster in a rational order
+.\"----------------------------------------------------------------------
+.Sh SYNOPSIS
+.\" Form 1
+.Nm
+.\"----------------------------------------------------------------------
+.Sh DESCRIPTION
+The
+.Nm
+command shuts down all compute nodes, confirms that they are down,
+and then optionally shuts down the head node.
+.Pp
+The user is prompted for the grace period and other options.
+.\"----------------------------------------------------------------------
+.Sh EXIT STATUS
+.Ex -std
+.\"----------------------------------------------------------------------
+.Sh SEE ALSO
+.Xr cluster-adduser
+.Xr cluster-admin
+.Xr cluster-cp
+.Xr cluster-update-ssh_config
+.Xr cluster-pkg_add
+.Xr cluster-port_add
+.Xr cluster-rmuser
+.Xr cluster-run
+.Xr cluster-setup
+.\"----------------------------------------------------------------------
+.Sh HISTORY
+The
+.Nm
+command first appeared as part of the cluster-admin port in FreeBSD 8.2.
+.At v7 .
+.\"----------------------------------------------------------------------
+.Sh AUTHORS
+.An Jason Bacon                             
+.\"----------------------------------------------------------------------
+.Sh BUGS
+Yes.

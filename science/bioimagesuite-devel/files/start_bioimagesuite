@@ -1,0 +1,7 @@
+#!/bin/csh
+
+setenv BASE /usr/local/bioimagesuite
+setenv LD_LIBRARY_PATH /usr/local/bioimagesuite/lib
+source ${BASE}/setpaths.csh
+pxmenu.tcl
+

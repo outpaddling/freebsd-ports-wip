@@ -1,0 +1,7 @@
+#!/bin/sh -ex
+
+cluster-update-ssh_config
+for node in `cluster-compute-nodes`; do
+    ssh $node cluster-update-ssh_config
+done
+

@@ -1,0 +1,39 @@
+#!/bin/sh
+
+if [ $# != 1 ]; then
+    printf "Usage: $0 package-name\n"
+    exit 1
+fi
+
+if [ `whoami` != root ]; then
+    printf "$0 must be run as root.\n"
+    exit 1
+fi
+
+pkg="$1"
+export PKGDIR=`cluster-pkgdir`
+auto-install-packages "$pkg"
+exit
+
+# Deprecated
+# This logic has been moved to auto-install-packages
+if ! auto-package-installed $pkg; then
+    if [ -e $PKGDIR/$pkg.tbz ]; then
+	printf "Installing $pkg.tbz from $PKGDIR...\n"
+	pkg_add $PKGDIR/$pkg.tbz
+    elif [ -e $PKGDIR/$pkg-[0-9]*.tbz ]; then
+	printf "Installing $pkg-[0-9]*.tbz from $PKGDIR...\n"
+	pkg_add $PKGDIR/$pkg-[0-9]*.tbz
+    else
+	printf "Downloading $pkg...\n"
+	if ! pkg_add -r -K $pkg; then
+	    # pkg_add leaves an empty file in $PKGDIR if the pkg does not exist
+	    printf "Failed: Removing $PKGDIR/$pkg.tbz\n"
+	    rm $PKGDIR/$pkg.tbz
+	    exit 1
+	fi
+    fi
+else
+    printf "$pkg is already installed.\n"
+fi
+

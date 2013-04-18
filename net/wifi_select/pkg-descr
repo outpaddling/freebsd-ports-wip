@@ -1,0 +1,6 @@
+Wifi_select is a command-line tool and service for connecting to
+available 802.11 stations.  It allows the user to easily select an
+available station manually, and save the configuration to allow
+automatically reconnecting later.
+
+WWW:    http://personalpages.tds.net/~jwbacon

@@ -1,0 +1,13 @@
+--- src/avwutils/Makefile.orig	2008-11-17 18:52:26.000000000 -0600
++++ src/avwutils/Makefile	2008-11-17 18:47:49.000000000 -0600
+@@ -3,8 +3,8 @@
+ 
+ PROJNAME = avwutils
+ 
+-USRINCFLAGS = -I${INC_NEWMAT} -I${INC_ZLIB}
+-USRLDFLAGS = -L${LIB_NEWMAT} -L${LIB_ZLIB}
++USRINCFLAGS = -I${INC_NEWMAT} -I${INC_ZLIB} -I${FSLEXTINC}
++USRLDFLAGS = -L${LIB_NEWMAT} -L${LIB_ZLIB} -L${FSLEXTLIB}
+ 
+ LIBS = -lnewimage -lmiscmaths -lprob -lfslio -lnewmat -lutils -lniftiio -lznz -lm -lz
+ 

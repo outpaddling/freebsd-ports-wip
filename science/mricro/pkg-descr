@@ -1,0 +1,7 @@
+MRIcro allows Windows and Linux computers view medical images. It is a 
+standalone program, but includes tools to complement SPM (software that 
+allows neuroimagers to analyse MRI, fMRI and PET images). MRIcro allows 
+efficient viewing and exporting of brain images. In addition, it allows 
+neuropsychologists to identify regions of interest (ROIs, e.g. lesions). 
+MRIcro can create Analyze format headers for exporting brain images to 
+other platforms.

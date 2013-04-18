@@ -1,0 +1,133 @@
+.TH XML-FORMAT 1
+.SH NAME    \" Section header
+.PP
+ 
+XML-FORMAT \- XML beautifier
+
+\" Convention:
+\" Underline anything that is typed verbatim - commands, etc.
+.SH SYNOPSIS
+.PP
+.nf 
+.na 
+xml-format filename
+.ad
+.fi
+
+\" Optional sections
+.SH "DESCRIPTION"
+
+.B xml-format
+is an XML beautifier that indents and formats XML files for consistent
+line length.
+
+As with all file beautifiers, its primary purpose is to take a document
+created by someone with a perplexing lack of self-discipline and aesthetic
+sensibility and make it readable.
+
+The XML file is modified in place, and the original document is saved
+to filename.bak, in case you don't like the results.
+
+Since XML is a class of markup languages, not a markup language, the type
+of each tag encountered is determined from the type of XML file (DocBook,
+XHTML, etc.), which, in turn, is inferred from the filename extension (".dbk"
+for DocBook, ".xhtml" for XHTML, etc.)
+
+There are four types of tags:
+
+.B Block tags
+denote blocks of content that should be visually separated from others
+in the XML source, and often require multiple lines, such as
+paragraphs, captions, and programlistings.
+Blocks are separated from other content by a blank line.  Content within
+a block is indented the same as the block tags.
+
+.nf
+.na
+    <para>
+    The large forest planet Oglaroon is home to the Oglaroonians,
+    an "intelligent" species who maintain an entire civilisation,
+    including some extremely small wars, in one small nut tree,
+    believing it to be the entire universe, and other trees to be
+    merely Oglanut-induced illusions.
+    </para>
+.ad
+.fi
+
+.B Line tags
+denote small but important content items that should be highlighted, but
+not necessarily use multiple lines, such as titles and index terms.
+.B xml-format
+attempts to keep line tag items to a single, separate line line.
+
+.nf
+.na
+    <title>So Long, and Thanks for all the Fish</title>
+.ad
+.fi
+
+.B Sectioning tags
+denote structural components of a document, such as chapters, sections,
+figures, and lists.
+Opening and closing sectioning tags are placed alone on separate lines.
+Content between sectioning tags is indented one more level beyond the tags
+themselves.
+
+.nf
+.na
+<chapter>
+    <title>Construction of Earth</title>
+    
+    <para>
+    For a time in the distant past, fjords were fashionable...
+    </para>
+</chapter>
+.ad
+.fi
+
+All other tags that do not fall into the first three categories are
+considered in-line, and are treated essentially as text.
+
+.nf
+.na
+    People were described as daring <emphasis>to boldly split
+    infinitives that no man had split before</emphasis>. However,
+.ad
+.fi
+
+The type of each tag is determined from simple text files containing
+lists of each tag name, on per line, in 
+DATADIR/Config/language/<type>-tags.txt.
+
+For example, the tags for DocBook XML are found in:
+
+.nf
+.na
+DATADIR/Config/dbk/block-tags.txt
+DATADIR/Config/dbk/line-tags.txt
+DATADIR/Config/dbk/sectioning-tags.txt
+.ad
+.fi
+
+DATADIR defaults to /usr/local/share/xml-format, but may be altered by
+the installation environment.  ( See Makefile for details. )
+
+.SH FILES
+.nf
+.na
+DATADIR/Config/*/*.txt
+.ad
+.fi
+
+.SH "SEE ALSO"
+dblatex, xmlto
+
+.SH BUGS
+Please report bugs to the author and send patches in unified diff format.
+(Run man diff for more information.)
+
+.SH AUTHOR
+.nf
+.na
+Jason W. Bacon
+

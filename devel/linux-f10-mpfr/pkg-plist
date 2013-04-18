@@ -1,0 +1,7 @@
+usr/lib/libmpfr.so.1
+usr/lib/libmpfr.so.1.1.2
+usr/%%DOCSDIR%%-2.3.2/COPYING
+usr/%%DOCSDIR%%-2.3.2/COPYING.LIB
+usr/%%DOCSDIR%%-2.3.2/NEWS
+usr/%%DOCSDIR%%-2.3.2/README
+@dirrm usr/%%DOCSDIR%%-2.3.2

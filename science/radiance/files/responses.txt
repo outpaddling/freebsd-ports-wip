@@ -1,0 +1,7 @@
+%%WRKSRC%%/install/bin
+y
+4
+%%WRKSRC%%/install/lib/ray
+y
+n
+

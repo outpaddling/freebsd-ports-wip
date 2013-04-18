@@ -1,0 +1,43 @@
+.TH MRITOOLS 1
+.SH NAME    \" Section header
+.PP
+ 
+MRITOOLS - Metaport for MRI research tools
+.SH "DESCRIPTION"
+
+The
+.B mritools
+port is a metaport for installing a
+collection of MRI research tools, including, for the current installation
+on this system %%DEPENDS%%.
+
+The 
+.B mritools
+metaport itself installs nothing other than this man page.  It consists
+mainly of a list of dependencies for installing other ports useful for
+MRI research.  The 
+.B mritools
+metaport may be safely removed without affecting any of the
+dependent ports.  In fact, attempts to remove any of the dependents will
+fail if 
+.B mritools
+is currently installed.  You can force removal of the dependent
+port using "pkg_delete -f", or remove
+.B mritools
+first.
+
+The default list of dependencies is fairly large, and the user may wish to
+trim it down to the software they need, using "make config" or by editing the Makefile, before installing
+.B mritools.
+
+If
+.B mritools
+is already installed, and you want to change the set of installed programs,
+run "make deinstall clean config reinstall".
+
+.SH AUTHOR
+.nf
+.na
+Jason W. Bacon
+Medical College of Wisconsin
+

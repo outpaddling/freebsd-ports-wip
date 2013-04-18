@@ -1,0 +1,23 @@
+lib/cpp
+usr/bin/cpp
+usr/libexec/gcc/i386-redhat-linux/4.3.2/cc1
+usr/share/info/cpp.info.gz
+usr/share/info/cppinternals.info.gz
+usr/share/locale/be/LC_MESSAGES/cpplib.mo
+usr/share/locale/ca/LC_MESSAGES/cpplib.mo
+usr/share/locale/da/LC_MESSAGES/cpplib.mo
+usr/share/locale/de/LC_MESSAGES/cpplib.mo
+usr/share/locale/el/LC_MESSAGES/cpplib.mo
+usr/share/locale/es/LC_MESSAGES/cpplib.mo
+usr/share/locale/fr/LC_MESSAGES/cpplib.mo
+usr/share/locale/ja/LC_MESSAGES/cpplib.mo
+usr/share/locale/nl/LC_MESSAGES/cpplib.mo
+usr/share/locale/sv/LC_MESSAGES/cpplib.mo
+usr/share/locale/tr/LC_MESSAGES/cpplib.mo
+usr/share/locale/uk/LC_MESSAGES/cpplib.mo
+usr/share/locale/vi/LC_MESSAGES/cpplib.mo
+usr/share/locale/zh_CN/LC_MESSAGES/cpplib.mo
+usr/share/locale/zh_TW/LC_MESSAGES/cpplib.mo
+usr/share/man/man1/cpp.1.gz
+@dirrm usr/libexec/gcc/i386-redhat-linux/4.3.2
+

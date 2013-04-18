@@ -1,0 +1,27 @@
+--- Makefile.orig	2003-12-09 13:13:54.000000000 -0600
++++ Makefile	2012-12-14 09:05:09.000000000 -0600
+@@ -6,7 +6,7 @@
+ #CFLAGS    = -w1 -O3 -march=pentiumiii -mcpu=pentiumpro -DAVOID_NAN_TEST
+ #MACHINE   = INTEL
+ MAKE      = /usr/bin/make
+-SYSLIB    = -export-dynamic -ldl -L/usr/X11R6/lib
++SYSLIB    = -export-dynamic -ldl -L${LOCALBASE}/lib
+ 
+ # Windows 95/98/NT using Cygwin:
+ ifeq ($(HOSTTYPE),i686)
+@@ -16,6 +16,15 @@
+   EXT       = .exe
+   SYSLIB    =
+ endif
++# FreeBSD
++ifeq ($(HOSTTYPE),FreeBSD)
++  MACHINE   = FREEBSD
++  MAKE      = gmake
++  CC        = cc
++  CFLAGS    = -pipe -O -DAVOID_NAN_TEST -DHAVE_LIMITS_H -DHAVE_UNISTD_H
++  EXT       = 
++  SYSLIB    =
++endif
+ # Macintosh X:
+ ifeq ($(HOSTTYPE),macintosh)
+   MACHINE   = MACINTOSH

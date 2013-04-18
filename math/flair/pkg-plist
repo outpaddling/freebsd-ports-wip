@@ -1,0 +1,8 @@
+bin/flair_inv
+bin/flair_complex
+bin/flair_soc_inv
+bin/flair_soc_complex
+bin/flair_inv_mpi
+bin/flair_complex_mpi
+bin/flair_soc_inv_mpi
+bin/flair_soc_complex_mpi

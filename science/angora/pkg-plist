@@ -1,0 +1,11 @@
+bin/angora
+info/angora.info
+info/dir
+%%DATADIR%%/angora_fieldvalue.m
+%%DATADIR%%/angora_line.m
+%%DATADIR%%/angora_movie.m
+%%DATADIR%%/config_all.cfg
+%%DATADIR%%/hdf5_exists.m
+%%DATADIR%%/hdf5_read.m
+%%DATADIR%%/mod_gaussian_wf.m
+@dirrm %%DATADIR%%

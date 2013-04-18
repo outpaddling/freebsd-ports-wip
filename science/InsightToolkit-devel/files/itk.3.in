@@ -1,0 +1,50 @@
+.TH Insight\ Toolkit 3
+.SH NAME    \" Section header
+.PP
+ 
+ITK \- Insight Segmentation and Registration Toolkit
+
+.SH SYNOPSIS
+.PP
+.nf 
+.na 
+c++ -I%%PREFIX%%/include/InsightToolkit file.cc \\
+    -L%%PREFIX%%/lib/InsightToolkit -lITK*
+.ad
+.fi
+
+.SH "DESCRIPTION"
+
+ITK is an open-source software system to support the Visible Human
+Project. Currently under active development, ITK employs leading-edge
+segmentation and registration algorithms in two, three, and more
+dimensions. 
+
+The Insight Toolkit was developed by six principal organizations, three
+commercial (Kitware, GE Corporate R&D, and Insightful) and three academic
+(UNC Chapel Hill, University of Utah, and University of Pennsylvania).
+Additional team members include Harvard Brigham & Women's Hospital,
+University of Pittsburgh, and Columbia University. The funding for the
+project is from the National Library of Medicine at the National
+Institutes of Health. NLM in turn was supported by member institutions of
+NIH (see sponsors). 
+ 
+The goals for the project include the following: 
+
+.nf
+.na
+  Support the Visible Human Project.
+  Establish a foundation for future research.
+  Create a repository of fundamental algorithms.
+  Develop a platform for advanced product development.
+  Support commercial application of the technology.
+  Create conventions for future work.
+  Grow a self-sustaining community of software users and developers.
+.ad
+.fi
+
+For full documentation, please visit http://www.itk.org/.
+
+.SH "SEE ALSO"
+vtk(3), minc(3), afni(1), caret(1), dtiquery(1)
+

@@ -1,0 +1,18 @@
+=============================================================================
+
+Before running FSL, you must set the environment variable FSLDIR to
+%%DATADIR%%, and run
+
+source $FSLDIR/etc/fslconf/fsl.csh
+
+or
+
+. $FSLDIR/etc/fslconf/fsl.sh
+
+=============================================================================
+
+EACH USER of FSL must read and agree to the licensing terms at
+http://www.fmrib.ox.ac.uk/fsldownloads/ before using the software.
+
+=============================================================================
+

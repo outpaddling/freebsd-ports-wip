@@ -1,0 +1,13 @@
+mpi/openmpi/include/fftw_f77_mpi.h
+mpi/openmpi/include/fftw_mpi.h
+mpi/openmpi/include/rfftw_mpi.h
+mpi/openmpi/lib/libfftw_mpi.a
+mpi/openmpi/lib/libfftw_mpi.la
+mpi/openmpi/lib/libfftw_mpi.lai
+mpi/openmpi/lib/libfftw_mpi.so
+mpi/openmpi/lib/libfftw_mpi.so.2
+mpi/openmpi/lib/librfftw_mpi.a
+mpi/openmpi/lib/librfftw_mpi.la
+mpi/openmpi/lib/librfftw_mpi.lai
+mpi/openmpi/lib/librfftw_mpi.so
+mpi/openmpi/lib/librfftw_mpi.so.2

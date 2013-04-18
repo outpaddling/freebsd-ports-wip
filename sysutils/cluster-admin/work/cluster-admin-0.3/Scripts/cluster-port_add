@@ -1,0 +1,41 @@
+#!/bin/sh -e
+
+##########################################################################
+#   Script description:
+#       
+#   Arguments:
+#       
+#   Returns:
+#       
+#   History:
+#   Date        Name        Modification
+#   2011-07-28  Jason Bacon Begin
+##########################################################################
+
+##########################################################################
+#   Main
+##########################################################################
+
+if [ $# -lt 1 ]; then
+    printf "Usage: $0 [-p portsdir] category/port\n"
+    exit 1
+fi
+
+if [ `whoami` != root ]; then
+    printf "$0 must be run as root.\n"
+    exit 1
+fi
+
+cluster-run "cluster-local-port_add $*"
+
+if [ $1 = '-p' ]; then
+    ports_dir="$2"
+    shift
+    shift
+else
+    ports_dir='/usr/ports'
+fi
+
+port=$1
+auto-append-line $ports_dir/$port $ports_dir/$port /usr/local/cluster/ports.txt nocomment
+

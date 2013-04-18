@@ -1,0 +1,49 @@
+.\" MDOC man page template
+.\" Use MDOC only for system-specific man pages where groff is the
+.\" default nroff command.  For portable software meant to run on
+.\" all *nix platforms, use the older MAN format.  ( *.man in APE )
+.Dd 2011-11-03  
+.Dt CLUSTER-RMUSER 1
+.Os
+.\"----------------------------------------------------------------------
+.Sh NAME
+.Nm cluster-rmuser
+.Nd remove a user account from the cluster
+.\"----------------------------------------------------------------------
+.Sh SYNOPSIS
+.\" Form 1
+.Nm
+.Ar username
+.\"----------------------------------------------------------------------
+.Sh DESCRIPTION
+The
+.Nm
+command removes a user account from all nodes on the cluster, and
+optionally removes the user's files.
+.Pp
+.\"----------------------------------------------------------------------
+.Sh EXIT STATUS
+.Ex -std
+.\"----------------------------------------------------------------------
+.Sh SEE ALSO
+.Xr cluster-adduser
+.Xr cluster-admin
+.Xr cluster-cp
+.Xr cluster-update-ssh_config
+.Xr cluster-pkg_add
+.Xr cluster-port_add
+.Xr cluster-run
+.Xr cluster-setup
+.Xr cluster-shutdown
+.\"----------------------------------------------------------------------
+.\"----------------------------------------------------------------------
+.Sh HISTORY
+The
+.Nm
+command first appeared as part of the cluster-admin port in FreeBSD 8.2.
+.\"----------------------------------------------------------------------
+.Sh AUTHORS
+.An Jason Bacon                             
+.\"----------------------------------------------------------------------
+.Sh BUGS
+Yes.

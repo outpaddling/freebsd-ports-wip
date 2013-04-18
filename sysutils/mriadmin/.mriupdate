@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "Running update script..."
+
+# Fetch latest port snapshots
+update_jb_ports
+

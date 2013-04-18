@@ -1,0 +1,8 @@
+--- src/fdt/bedpostx.orig	Mon Aug 27 22:45:30 2007
++++ src/fdt/bedpostx	Mon Aug 27 22:45:39 2007
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/local/bin/bash
+ 
+ #   Copyright (C) 2004 University of Oxford
+ #

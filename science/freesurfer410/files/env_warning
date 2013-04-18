@@ -1,0 +1,17 @@
+
+==========================================================================
+
+				*** WARNING ***
+
+This shell is now using altered environment settings which may affect
+other programs.
+
+This shell should only be used to run freesurfer programs from this
+point on.  Programs started from this shell before freesurfer_env are not
+affected by the environment changes.
+
+If you need to run commands that are not part of freesurfer, you should
+do so from a different shell window.
+
+==========================================================================
+

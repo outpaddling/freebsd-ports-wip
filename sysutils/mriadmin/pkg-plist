@@ -1,0 +1,10 @@
+bin/mri_install_desktop_icons
+bin/mri_install_startup_scripts
+bin/mri_upgrade_port
+bin/mriadmin
+lib/libmriadmin.a
+%%DATADIR%%/csh.cshrc
+%%DATADIR%%/dotcshrc
+%%DATADIR%%/dotprofile
+%%DATADIR%%/profile
+@dirrm %%DATADIR%%

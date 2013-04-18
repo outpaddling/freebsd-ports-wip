@@ -1,0 +1,70 @@
+#!/bin/sh
+
+# Get files from a specified compute node
+
+if [ `whoami` != root ]; then
+    printf "$0 must be run as root.\n"
+    exit 1
+fi
+
+if [ $# != 2 ]; then
+    cat << EOM
+
+Usage: $0 host path
+
+$0 is used to save a copy of a system file that was
+edited and tested on one of the compute nodes.  It is added to a
+collection of system files to be distributed to all compute nodes
+using cluster-sync-files.
+
+EOM
+    exit 1
+fi
+
+host=$1
+path=$2
+repo=/usr/local/cluster/sync-files
+
+mkdir -p $repo
+chown root:wheel $repo
+chmod 700 $repo
+
+# Make sure path has a leading /
+if [ `echo $path | cut -c 1,1` != '/' ]; then
+    printf 'Please use a full pathname.\n'
+    exit 1
+fi
+
+# Make sure path is a file, not a directory
+if ! ssh $host test -f $path; then
+    printf "${host}:$path is not a regular file.\n"
+    exit 1
+fi
+
+# Warn users of the consequences
+cat << EOM
+
+${host}:$path will be distributed to all compute nodes by
+all future cluster-sync-files commands.
+
+Are you sure you want to proceed? (y/n)
+EOM
+
+read resp
+if [ 0$resp != 0y ]; then
+    exit 0
+fi
+
+# Guard against overwriting master copies!
+if [ -e $repo$path ]; then
+    printf "$path is already saved.  Overwrite? (y/n) "
+    read resp
+    if [ 0$resp != 0y ]; then
+	printf "File not overwritten.\n"
+	exit 0
+    fi
+fi
+
+# Copy file
+rsync -aR ${host}:$path $repo
+

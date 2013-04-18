@@ -1,0 +1,140 @@
+# Created by:	Jason Bacon
+# $FreeBSD$
+
+PORTNAME=	lammps
+PORTVERSION=	2013.04.04
+CATEGORIES=	science
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
+		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
+
+MAINTAINER=	jwbacon@tds.net
+COMMENT=	Large-scale Atomic/Molecular Massively Parallel Simulator
+
+LICENSE=	GPLv1
+
+LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3 \
+		jpeg:${PORTSDIR}/graphics/jpeg
+BUILD_DEPENDS+=	${LOCALBASE}/lib/liblapack.a:${PORTSDIR}/math/lapack \
+		${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas \
+		${LOCALBASE}/lib/libkim.a:${PORTSDIR}/science/openkim \
+		${LOCALBASE}/lib/libvoro++.a:${PORTSDIR}/science/voro++
+
+WRKSRC=		${WRKDIR}/lammps-3Apr13
+BUILD_WRKSRC=	${WRKSRC}/src
+
+# Allow MPI slave ports to override
+# MPI-dependent ports install to ${PREFIX}/mpi/<mpi-implementation>
+# so that they don't conflict with serial versions of the same port
+# or versions built for other MPI implementations, and all ports using
+# the same MPI implementation share a common PATH, LDFLAGS, etc.  This
+# is critical on clusters and grids with multiple users who use different
+# MPI implementations.
+INSTALL_PREFIX?=${PREFIX}
+
+# Selects a system-specific Makefile.  Allow MPI slave ports to override.
+ALL_TARGET?=	FreeBSD-serial
+
+USE_GMAKE=	yes
+USE_FORTRAN=	yes
+
+# Prevent slave ports from including master plist
+PLIST=	${.CURDIR}/pkg-plist
+
+.include <bsd.port.pre.mk>
+
+pre-patch:
+	${CP} ${FILESDIR}/Makefile.${ALL_TARGET} ${BUILD_WRKSRC}/MAKE
+
+post-patch:
+	${REINPLACE_CMD} \
+		-e "s|g++|${CXX}|g" \
+		-e "s|LOCALBASE|${LOCALBASE}|g" \
+		-e "s|_GCC_BUILD_DEPENDS|${_GCC_BUILD_DEPENDS}|g" \
+		${BUILD_WRKSRC}/MAKE/Makefile.${ALL_TARGET}
+	${REINPLACE_CMD} \
+		-e "s|/bin/bash|/bin/sh|g" \
+		${BUILD_WRKSRC}/Makefile
+	${REINPLACE_CMD} \
+		-e "s|gcc|${CC}|g" \
+		-e "s|g++|${CXX}|g" \
+		-e "s|gfortran|${FC}|g" \
+		-e "s|ifort|${FC}|g" \
+		-e "s|-march=native -mpc64||g" \
+		${WRKSRC}/tools/Makefile \
+		${BUILD_WRKSRC}/STUBS/Makefile \
+		${WRKSRC}/lib/*/Makefile.serial \
+		${WRKSRC}/lib/*/Makefile.g++ \
+		${WRKSRC}/lib/*/Makefile.gfortran
+	${REINPLACE_CMD} \
+		-e "s|-I\$${KIM_DIR}/KIM_API|-I${LOCALBASE}/include/KIM_API|g" \
+		-e "s|-L\$${KIM_DIR}/KIM_API|-L${LOCALBASE}/lib|g" \
+		${BUILD_WRKSRC}/KIM/Makefile.lammps
+
+.if ${ALL_TARGET} == FreeBSD-openmpi
+	${REINPLACE_CMD} -e "s|mpic++|${LOCALBASE}/mpi/openmpi/bin/mpic++|g" \
+		${WRKSRC}/lib/awpmd/Makefile.openmpi \
+		${BUILD_WRKSRC}/MAKE/Makefile.${ALL_TARGET}
+.endif
+
+# Enable all possible standard packages
+# Not included:
+#   gpu: requires CUDA
+do-build:
+.for package in asphere body class2 colloid dipole fld granular kim kspace \
+		manybody mc meam molecule opt peri poems replica \
+		rigid shock srd voronoi xtc
+	(cd ${BUILD_WRKSRC} && ${GMAKE} yes-${package})
+.endfor
+# reax package causes i386 lmp to abort immediately on startup
+# It's unlikely that anyone will run LAMMPS on a 32-bit system anyway
+.if ${ARCH} != "i386"
+	(cd ${BUILD_WRKSRC} && ${GMAKE} yes-reax)
+.endif
+	(cd ${BUILD_WRKSRC} && ${GMAKE} package-status)
+.if ${ALL_TARGET} == "FreeBSD-serial"
+	(cd ${BUILD_WRKSRC} && ${GMAKE} stubs)
+	(cd ${WRKSRC}/tools && ${GMAKE})
+.endif
+# Additional libs: Build before LAMMPS
+.if ${ALL_TARGET} == "FreeBSD-openmpi"
+	(cd ${WRKSRC}/lib/awpmd && ${GMAKE} -f Makefile.openmpi)
+.endif
+	(cd ${WRKSRC}/lib/atc && ${GMAKE} -f Makefile.serial)
+	(cd ${WRKSRC}/lib/colvars && ${GMAKE} -f Makefile.g++)
+	(cd ${WRKSRC}/lib/linalg && ${GMAKE} -f Makefile.gfortran)
+	(cd ${WRKSRC}/lib/meam && ${GMAKE} -f Makefile.gfortran && \
+		${CP} Makefile.lammps.gfortran Makefile.lammps)
+	(cd ${WRKSRC}/lib/poems && ${GMAKE} -f Makefile.g++)
+	(cd ${WRKSRC}/lib/reax && ${GMAKE} -f Makefile.gfortran && \
+		${CP} Makefile.lammps.gfortran Makefile.lammps)
+# Build LAMMPS
+	(cd ${BUILD_WRKSRC} && ${GMAKE} ${MAKE_ARGS} ${ALL_TARGET})
+
+do-install:
+	${MKDIR} ${INSTALL_PREFIX}/bin
+	${INSTALL_PROGRAM} \
+		${BUILD_WRKSRC}/lmp_${ALL_TARGET} \
+		${INSTALL_PREFIX}/bin/lmp${PKGNAMESUFFIX}
+.if ${ALL_TARGET} == "FreeBSD-serial"
+	${MKDIR} ${DATADIR} ${EXAMPLESDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/binary2txt ${INSTALL_REFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/chain ${INSTALL_REFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/data2xmovie ${INSTALL_REFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/micelle2d ${INSTALL_REFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/restart2data ${INSTALL_REFIX}/bin
+.ifndef(NOPORTDOCS)
+	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
+.endif
+.ifndef(NOPORTEXAMPLES)
+	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/bench ${EXAMPLESDIR}
+	${CP} ${FILESDIR}/run-all-examples ${EXAMPLESDIR}
+.endif
+	${CP} -R ${WRKSRC}/potentials ${DATADIR}
+.endif
+
+# FIXME: make package in slave ports grabs the master pkg-message
+post-install:
+	@${CAT} pkg-message
+
+.include <bsd.port.post.mk>

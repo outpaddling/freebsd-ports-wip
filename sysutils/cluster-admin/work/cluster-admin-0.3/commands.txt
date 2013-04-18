@@ -1,0 +1,10 @@
+.Xr cluster-adduser
+.Xr cluster-admin
+.Xr cluster-cp
+.Xr cluster-update-ssh_config
+.Xr cluster-pkg_add
+.Xr cluster-port_add
+.Xr cluster-rmuser
+.Xr cluster-run
+.Xr cluster-setup
+.Xr cluster-shutdown

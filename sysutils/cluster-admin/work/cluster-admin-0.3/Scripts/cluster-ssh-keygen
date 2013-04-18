@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ $# != 2 ]; then
+    printf "Usage: $0 username group{name|id}\n"
+    exit 1
+fi
+
+username=$1
+groupname=$2
+
+mkdir -p -m 0700 /home/$username/.ssh
+chown -Rh ${username}:$groupname /home/$username/.ssh
+if [ ! -e /home/$username/.ssh/id_dsa ] || \
+    [ ! -e /home/$username/.ssh/id_dsa.pub ]; then
+    sudo -u $username ssh-keygen -t dsa -f /home/$username/.ssh/id_dsa -N ''
+fi
+cp -f /home/$username/.ssh/id_dsa.pub /home/$username/.ssh/authorized_keys2
+

@@ -1,0 +1,55 @@
+#!/bin/sh -e
+
+usage()
+{
+    printf "Usage: $0 username primary_group [options]\n"
+    printf 'All arguments are passed to "pw useradd"\n'
+    exit 1
+}
+
+if [ `whoami` != root ]; then
+    printf "$0 must be run as root.\n"
+    exit 1
+fi
+
+if [ $# -lt 2 ] || [ `echo $1 | cut -c 1,1` = '-' ]; then
+    usage
+fi
+
+username=$1
+primary_group=$2
+shift
+shift
+
+useradd_cmd='pw useradd $username -g $primary_group'
+for arg in "$@"; do
+    # Quote all non-option arguments so that those containing spaces
+    # are not separated
+    if [ `echo $arg | cut -c 1,1` != '-' ]; then
+	useradd_cmd="$useradd_cmd '$arg'"
+    else
+	useradd_cmd="$useradd_cmd $arg"
+    fi
+done
+
+# Eval here to expand before running
+eval $useradd_cmd
+
+# Record new account info in /usr/local/cluster
+pw_entry=`awk -F : '$1 == "'$username'" { print $0 }' /etc/passwd`
+auto-append-line $username "$pw_entry" /usr/local/cluster/users.txt nocomment
+
+printf "Generating ssh keys for $username on head...\n"
+cluster-ssh-keygen $username $primary_group
+
+# Directory to contain stdout and stderr for running jobs
+mkdir -m 0700 /home/$username/.pbs_spool
+chown -Rh ${username}:$primary_group /home/$username/.pbs_spool
+
+# Do not assume home directories are shared!
+for node in `cluster-compute-nodes`; do
+    printf "Syncing $username account on $node...\n"
+
+    ssh $node cluster-local-sync-user $username
+done
+

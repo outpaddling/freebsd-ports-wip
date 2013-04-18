@@ -1,0 +1,38 @@
+--- Src/Makefile.orig	2003-12-09 13:13:53.000000000 -0600
++++ Src/Makefile	2012-12-14 09:06:02.000000000 -0600
+@@ -9,22 +9,31 @@
+   TCLDIR= ../TclTk
+   BINDIR= $(TOP)/Bin
+   INCL=   -I$(TCLDIR)/include
+-  LIBS=   -L$(TCLDIR)/lib -ltk83 -ltcl83 -lm $(SYSLIB)
++  LIBS=   -L$(TCLDIR)/lib -ltk8.3 -ltcl8.3 -lm $(SYSLIB)
+ else
++ifeq ($(MACHINE),FREEBSD)
+   O=      ../Obj/$(HOSTTYPE)
+-  TCLVER= 8.3.4
++  TCLVER= ${TCL_VER}
++  TCLDIR= ${LOCALBASE}/include
++  BINDIR= $(TOP)/Bin/$(HOSTTYPE)
++  INCL=   -I$(TCLDIR)/tcl$(TCLVER)/generic -I$(TCLDIR)/tk$(TCLVER)/generic -I$(TCLDIR)/tk$(TCLVER)/unix -I${LOCALBASE}/include
++  LIBS=   -L$(BINDIR) -L${LOCALBASE}/lib -L${LOCALBASE}/lib -ltk${USE_TCL} -ltcl${USE_TCL} -lm -lX11 $(SYSLIB)
++else
++  O=      ../Obj/$(HOSTTYPE)
++  TCLVER= ${TCL_VER}
+   TCLDIR= ../TclTk
+   BINDIR= $(TOP)/Bin/$(HOSTTYPE)
+   ifeq ($(MACHINE),MACINTOSH)
+     INCL=   -I$(TCLDIR)/tcl$(TCLVER)/generic -I$(TCLDIR)/tk$(TCLVER)/generic \
+-	-I/usr/X11R6/include
+-    LIBS=   -L/usr/X11R6/lib -lX11 $(BINDIR)/libtk8.3.a $(BINDIR)/libtcl8.3.a \
++	-I{X11BASE}/include
++    LIBS=   -L{X11BASE}/lib -lX11 $(BINDIR)/libtk8.3.a $(BINDIR)/libtcl8.3.a \
+ 	$(SYSLIB)
+   else
+     INCL=   -I$(TCLDIR)/tcl$(TCLVER)/generic -I$(TCLDIR)/tk$(TCLVER)/generic
+     LIBS=   -L$(BINDIR) -ltk8.3 -ltcl8.3 -lm -lX11 $(SYSLIB)
+   endif
+ endif
++endif
+ EXEC_OBJS= $(O)/main.o $(patsubst %,$(O)/%.o,$(SRCS))
+ LIB_OBJS= $(O)/library.o $(patsubst %,$(O)/%.o,$(SRCS))
+ OBJS= $(O)/main.o $(O)/library.o $(patsubst %,$(O)/%.o,$(SRCS))

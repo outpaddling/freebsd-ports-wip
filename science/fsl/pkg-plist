@@ -1,0 +1,1185 @@
+bin/ApplyXFM
+bin/Bet
+bin/ConcatXFM
+bin/Fast
+bin/Fdt
+bin/Feat
+bin/Featquery
+bin/Flirt
+bin/Glm
+bin/InvertXFM
+bin/Make_flobs
+bin/Melodic
+bin/Nudge
+bin/Possum
+bin/Renderhighres
+bin/Renderstats
+bin/Runtcl
+bin/Susan
+bin/applywarp
+bin/applyxfm4D
+bin/avscale
+bin/avw2fsl
+bin/b0calc
+bin/bedpost
+bin/bedpostx
+bin/bedpostx_datacheck
+bin/bedpostx_postproc.sh
+bin/bedpostx_preproc.sh
+bin/bedpostx_single_slice.sh
+bin/bet
+bin/bet2
+bin/betsurf
+bin/ccops
+bin/cluster
+bin/cluster2html
+bin/concat_bvars
+bin/connectedcomp
+bin/contrast_mgr
+bin/convert_xfm
+bin/convertwarp
+bin/create_lut
+bin/design_ttest2
+bin/distancemap
+bin/dof2warp
+bin/drawmesh
+bin/dtifit
+bin/easythresh
+bin/eddy_correct
+bin/eqn2gif
+bin/estnoise
+bin/extractfidparams
+bin/extracttxt
+bin/fabber
+bin/fabber_var
+bin/fast
+bin/fdr
+bin/feat
+bin/feat_gm_prepare
+bin/feat_model
+bin/featquery
+bin/featregapply
+bin/film_gls
+bin/filmbabe
+bin/filmbabescript
+bin/find_the_biggest
+bin/first
+bin/first_flirt
+bin/first_roi_slicesdir
+bin/first_utils
+bin/flameo
+bin/flirt
+bin/flirt_average
+bin/fnirt
+bin/fnirtfileutils
+bin/fsl
+bin/fsl2ascii
+bin/fsl_boxplot
+bin/fsl_glm
+bin/fsl_gui
+bin/fsl_histogram
+bin/fsl_motion_outliers
+bin/fsl_reg
+bin/fsl_regfilt
+bin/fsl_sub
+bin/fsl_tsplot
+bin/fslanimate
+bin/fslcc
+bin/fslchfiletype
+bin/fslchfiletype_exe
+bin/fslchpixdim
+bin/fslcomplex
+bin/fslcorrecthd
+bin/fslcpgeom
+bin/fslcreatehd
+bin/fsledithd
+bin/fslerrorreport
+bin/fslfft
+bin/fslhd
+bin/fslinfo
+bin/fslinterleave
+bin/fslmaths
+bin/fslmeants
+bin/fslmerge
+bin/fslnvols
+bin/fslorient
+bin/fslpres
+bin/fslpspec
+bin/fslroi
+bin/fslsize
+bin/fslslice
+bin/fslsplit
+bin/fslstats
+bin/fslswapdim
+bin/fslswapdim_exe
+bin/fslval
+bin/fslvbm_1_bet
+bin/fslvbm_2_template
+bin/fslvbm_3_proc
+bin/ftoz
+bin/fugue
+bin/generate_b0
+bin/generate_brain
+bin/halfcosbasis
+bin/hist2prob
+bin/imcp
+bin/img2imgcoord
+bin/img2stdcoord
+bin/imglob
+bin/imln
+bin/immv
+bin/imrm
+bin/imtest
+bin/invfeatreg
+bin/invwarp
+bin/make_dyadic_vectors
+bin/makehtmeqns
+bin/makerot
+bin/maskdyads
+bin/match_smoothing
+bin/mccutup
+bin/mcflirt
+bin/mean
+bin/medianfilter
+bin/melodic
+bin/midtrans
+bin/mm
+bin/morph_kernel
+bin/mvntool
+bin/old_betall
+bin/overlay
+bin/pairreg
+bin/perfusion_subtract
+bin/pngappend
+bin/pointflirt
+bin/possum
+bin/possumX
+bin/possumX_postproc.sh
+bin/possum_sum
+bin/prelude
+bin/prewhiten
+bin/probtrack
+bin/probtrackx
+bin/proj_thresh
+bin/ptoz
+bin/pulse
+bin/randomise
+bin/randomise_parallel
+bin/remove_ext
+bin/renderhighres
+bin/rmsdiff
+bin/run_first
+bin/run_first_all
+bin/selfintersection
+bin/siena
+bin/siena_cal
+bin/siena_diff
+bin/siena_flirt
+bin/siena_flow2std
+bin/sienax
+bin/sigloss
+bin/signal2image
+bin/sliceanimate
+bin/slicer
+bin/slices
+bin/slicesdir
+bin/slicesmask
+bin/slicetimer
+bin/smoothest
+bin/spharm_rm
+bin/standard_space_roi
+bin/std2imgcoord
+bin/susan
+bin/systemnoise
+bin/tbss_1_preproc
+bin/tbss_2_reg
+bin/tbss_3_postreg
+bin/tbss_4_prestats
+bin/tbss_deproject
+bin/tbss_fill
+bin/tbss_non_FA
+bin/tbss_skeleton
+bin/tmpnam
+bin/tsplot
+bin/ttologp
+bin/ttoz
+bin/unconfound
+bin/updatefeatreg
+bin/vecreg
+bin/wpng
+bin/xfibres
+bin/zeropad
+bin/ztop
+etc/mri/fsl.cshrc
+etc/mri/fsl.profile
+%%PORTDOCS%%%%DOCSDIR%%/doc/avwutils/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/bet2/bet2_eg.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/bet2/bet2_eg_small.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/bet2/bet2_eg_vsmall.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/bet2/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/data/FMRIB58_FA.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/data/FMRIB58snapshot.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/data/atlas-descriptions.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/data/atlas-hocort.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/data/atlas-hosub.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/data/atlas-jhuwm.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/data/atlas-juelich.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/data/atlas-mni.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/data/atlas-reference.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/data/atlas-tal.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/data/atlas-thalamic.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fabber/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fast4/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_bedpostx.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_biggest.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_display.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_dtifit.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_eddy.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/eddy.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/eddy.tif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/eddy2.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_bedpost.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_bedpost.tiff
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_bedpostx.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_fa.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_fa_big.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_gui.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_gui.tiff
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_l1.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_lines.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_lines_subs.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_probtrackx.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_rgb.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_rgb_subs.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_seeds2targets_quant_eg.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_seeds2targets_thal.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_simple_tract3.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_spherical_polars.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_twomasks_tracts.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_vecreg.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_vectors.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_vectorsx.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_xfibres_axial.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fdt_xfibres_coronal.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fsl-bg.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fsl-logo.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fslview_dti.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/fslview_x.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/gui_intro.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_images/gui_intro.tif
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_pipeline.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_probtrackx.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_reg.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_thresh.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_top.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/fdt_vecreg.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fdt/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/DO
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/ORIGtop.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/basics.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/before.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/cr1.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/detail.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/dm.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/dm1.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/dm2.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg1.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg1_con.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg1_dm.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg1_evs.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg2.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg2_con.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg2_dm.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg2_evs.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg3.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg3_con.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg3_dm.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg3_evs.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg3b.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg3b_con.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg3b_dm.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg3b_evs.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg4a.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg4a_con.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg4a_dm.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg4a_evs.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg4b.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg4b_con.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg4b_dm.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg4b_evs.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg5.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg5_con.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg5_dm.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg5_evs.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg6.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg6_con.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg6_dm.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg6_evs.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg7.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg7_con.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg7_dm.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg7_evs.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg7b.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg7b_con.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg7b_dm.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg7b_evs.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg8.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg8_anova.fig
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg8_anova.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg8_anova_small.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg8_con.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg8_dm.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg8_evs.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg9.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg9_con.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg9_dm.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/eg9_evs.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/egdotfile.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/feat.tcl
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/feat5.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/featdirs1.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/featdirs2.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/featgui1.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/featquery.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/glm.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/old_eg4a.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/old_eg4a_con.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/old_eg4a_dm.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/old_eg4a_evs.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/output.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/perfmodel.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/perfusion.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/programs.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/shape_vars.fig
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/shape_vars.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/top.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/feat5/tsplot1.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/filmbabe/gui.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/filmbabe/gui_small.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/filmbabe/hrfbasisfns.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/filmbabe/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/first/cma_subcortical_label.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/first/egseg.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/first/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/flirt/examples.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/flirt/gui.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/flirt/gui.xml
+%%PORTDOCS%%%%DOCSDIR%%/doc/flirt/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/flirt/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/flirt/overview.xml
+%%PORTDOCS%%%%DOCSDIR%%/doc/flirt/schedule.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/flirt/schedule.old.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/flirt/schedule.xml
+%%PORTDOCS%%%%DOCSDIR%%/doc/flirt/xfmhelp.fig
+%%PORTDOCS%%%%DOCSDIR%%/doc/flirt/xfmhelp.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/flirt/ztrans.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/bias_field.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/combination_of_displacements.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/cost_function_with_bias.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/cost_function_with_regularisation.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/flirted_bias.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/flirted_subj1.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/flirted_subj2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/fnirted_subj1.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/fnirted_subj2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/fnirted_subj2_less_reg.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/gauss_newton_step.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/gl_obj_bias.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/linear_transformation.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/non_linear_transformation.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/obj_bias.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/sharp_warps.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/simple_cost_function.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/smooth_warps.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/sum_of_displacements.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/template.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/warp_utils.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fnirt/warped.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl.css
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/compiling.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/contributors.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/downloading.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/feeds.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/formats.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/fsl_installer.sh
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/glossary.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/images/browseforfoldertoshare.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/images/changemem.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/images/enablesambafw.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/images/extract_all_files_vista.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/images/firewallconfig.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/images/install_step_1.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/images/install_step_2.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/images/install_step_3.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/images/install_step_4.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/images/install_step_5.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/images/install_step_6.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/images/linux_keyboard.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/images/sharingpane.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/images/vmplayer_tsmenu.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/images/vmx_file.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/images/winxp_memory.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/images/winxp_properties.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/install.css
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/licence.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/linux.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/list.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/macosx.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/other.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/support.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/top.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/whatsnew.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fsl/windows.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fslpres/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fslvbm/flowchart.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fslvbm/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fslvbm/results.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fslvbm/template.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/fugue/complex_abs.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fugue/complex_phase.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fugue/feat_fieldmap.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fugue/fmap.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/fugue/howto.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fugue/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/fugue/unwrapped_phase.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/images/3.1r.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/images/3.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/images/flirt-bg.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/images/fsl-bg
+%%PORTDOCS%%%%DOCSDIR%%/doc/images/fsl-bg.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/images/fsl-logo-big.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/images/fsl-logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/images/fsl-logo.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/images/fsl-logo.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/images/fsl-macos-snapshot.tiff
+%%PORTDOCS%%%%DOCSDIR%%/doc/images/fslstart.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/images/fslstart.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/images/fugue-bg.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/images/tick.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/images/vert2.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/mcflirt/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/melodic/anim_gui.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/melodic/concat_diag.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/melodic/gui.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/melodic/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/melodic/mel1.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/melodic/mel2.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/melodic/mel3.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/melodic/pica_diag.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/melodic/tica_diag.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/meshclass/Example.ps
+%%PORTDOCS%%%%DOCSDIR%%/doc/meshclass/Mesh.ps
+%%PORTDOCS%%%%DOCSDIR%%/doc/meshclass/Mpoint.ps
+%%PORTDOCS%%%%DOCSDIR%%/doc/meshclass/PI.jpg
+%%PORTDOCS%%%%DOCSDIR%%/doc/meshclass/Pt.ps
+%%PORTDOCS%%%%DOCSDIR%%/doc/meshclass/Triangle.ps
+%%PORTDOCS%%%%DOCSDIR%%/doc/meshclass/Vec.ps
+%%PORTDOCS%%%%DOCSDIR%%/doc/meshclass/examples.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/meshclass/examplesprofile.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/meshclass/examplesprofile1.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/meshclass/examplesprofile2.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/meshclass/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/meshclass/mesh.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/meshclass/mpoint.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/meshclass/profile.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/meshclass/profile.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/meshclass/pt.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/meshclass/triangle.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/meshclass/vec.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/miscvis/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/mm/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/mm/mmfit.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/possum/MRpar.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/possum/activation.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/possum/b0z_dz.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/possum/gui.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/possum/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/possum/input.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/possum/motion.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/possum/noise.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/possum/object.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/possum/output.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/possum/programs.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/possum/pulse.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/possum/readme
+%%PORTDOCS%%%%DOCSDIR%%/doc/possum/run.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/possum/slcprof.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/possum/top.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/randomise/design.con
+%%PORTDOCS%%%%DOCSDIR%%/doc/randomise/design.mat
+%%PORTDOCS%%%%DOCSDIR%%/doc/randomise/fdr.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/randomise/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/siena/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/slicetimer/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/susan/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/tbss/eg_skel_all_FA.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/tbss/flowchart.eps
+%%PORTDOCS%%%%DOCSDIR%%/doc/tbss/flowchart.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/tbss/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/tbss/stats_eg.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/tbss/stats_eg2.png
+%%PORTDOCS%%%%DOCSDIR%%/refdoc/libhfunc/libhfunc.html
+%%PORTDOCS%%%%DOCSDIR%%/refdoc/misc_tcl/FSLFileEntry.html
+%%PORTDOCS%%%%DOCSDIR%%/refdoc/misc_tcl/FSLFileEntry.xml
+%%PORTDOCS%%%%DOCSDIR%%/refdoc/newimage/Doxyfile
+%%PORTDOCS%%%%DOCSDIR%%/refdoc/newimage/fslhtml.xml
+%%PORTDOCS%%%%DOCSDIR%%/refdoc/newimage/fslxml.xml
+%%PORTDOCS%%%%DOCSDIR%%/refdoc/newimage/newimage.html
+%%PORTDOCS%%%%DOCSDIR%%/refdoc/newimage/newimage.xml
+%%PORTDOCS%%%%DOCSDIR%%/refdoc/newimage/quickref.html
+%%PORTDOCS%%%%DOCSDIR%%/refdoc/newimage/quickref.xml
+%%PORTDOCS%%%%DOCSDIR%%/refdoc/utils/ObjectManual.def
+%%DATADIR%%/bin
+%%DATADIR%%/data/atlases/HarvardOxford-Cortical.xml
+%%DATADIR%%/data/atlases/HarvardOxford-Subcortical.xml
+%%DATADIR%%/data/atlases/HarvardOxford/HarvardOxford-cort-maxprob-thr0-1mm.nii.gz
+%%DATADIR%%/data/atlases/HarvardOxford/HarvardOxford-cort-maxprob-thr0-2mm.nii.gz
+%%DATADIR%%/data/atlases/HarvardOxford/HarvardOxford-cort-maxprob-thr25-1mm.nii.gz
+%%DATADIR%%/data/atlases/HarvardOxford/HarvardOxford-cort-maxprob-thr25-2mm.nii.gz
+%%DATADIR%%/data/atlases/HarvardOxford/HarvardOxford-cort-maxprob-thr50-1mm.nii.gz
+%%DATADIR%%/data/atlases/HarvardOxford/HarvardOxford-cort-maxprob-thr50-2mm.nii.gz
+%%DATADIR%%/data/atlases/HarvardOxford/HarvardOxford-cort-prob-1mm.nii.gz
+%%DATADIR%%/data/atlases/HarvardOxford/HarvardOxford-cort-prob-2mm.nii.gz
+%%DATADIR%%/data/atlases/HarvardOxford/HarvardOxford-sub-maxprob-thr0-1mm.nii.gz
+%%DATADIR%%/data/atlases/HarvardOxford/HarvardOxford-sub-maxprob-thr0-2mm.nii.gz
+%%DATADIR%%/data/atlases/HarvardOxford/HarvardOxford-sub-maxprob-thr25-1mm.nii.gz
+%%DATADIR%%/data/atlases/HarvardOxford/HarvardOxford-sub-maxprob-thr25-2mm.nii.gz
+%%DATADIR%%/data/atlases/HarvardOxford/HarvardOxford-sub-maxprob-thr50-1mm.nii.gz
+%%DATADIR%%/data/atlases/HarvardOxford/HarvardOxford-sub-maxprob-thr50-2mm.nii.gz
+%%DATADIR%%/data/atlases/HarvardOxford/HarvardOxford-sub-prob-1mm.nii.gz
+%%DATADIR%%/data/atlases/HarvardOxford/HarvardOxford-sub-prob-2mm.nii.gz
+%%DATADIR%%/data/atlases/HarvardOxford/labels
+%%DATADIR%%/data/atlases/HarvardOxford/relabel
+%%DATADIR%%/data/atlases/JHU-labels.xml
+%%DATADIR%%/data/atlases/JHU-tracts.xml
+%%DATADIR%%/data/atlases/JHU/JHU-ICBM-DWI-1mm.nii.gz
+%%DATADIR%%/data/atlases/JHU/JHU-ICBM-DWI-2mm.nii.gz
+%%DATADIR%%/data/atlases/JHU/JHU-ICBM-FA-1mm.nii.gz
+%%DATADIR%%/data/atlases/JHU/JHU-ICBM-FA-2mm.nii.gz
+%%DATADIR%%/data/atlases/JHU/JHU-ICBM-T2-1mm.nii.gz
+%%DATADIR%%/data/atlases/JHU/JHU-ICBM-T2-2mm.nii.gz
+%%DATADIR%%/data/atlases/JHU/JHU-ICBM-WhiteMatter-labels-2mm.nii.gz
+%%DATADIR%%/data/atlases/JHU/JHU-ICBM-tracts-maxprob-thr0-1mm.nii.gz
+%%DATADIR%%/data/atlases/JHU/JHU-ICBM-tracts-maxprob-thr0-2mm.nii.gz
+%%DATADIR%%/data/atlases/JHU/JHU-ICBM-tracts-maxprob-thr25-1mm.nii.gz
+%%DATADIR%%/data/atlases/JHU/JHU-ICBM-tracts-maxprob-thr25-2mm.nii.gz
+%%DATADIR%%/data/atlases/JHU/JHU-ICBM-tracts-maxprob-thr50-1mm.nii.gz
+%%DATADIR%%/data/atlases/JHU/JHU-ICBM-tracts-maxprob-thr50-2mm.nii.gz
+%%DATADIR%%/data/atlases/JHU/JHU-ICBM-tracts-prob-1mm.nii.gz
+%%DATADIR%%/data/atlases/JHU/JHU-ICBM-tracts-prob-2mm.nii.gz
+%%DATADIR%%/data/atlases/JHU/JHU-WhiteMatter-labels-1mm.nii.gz
+%%DATADIR%%/data/atlases/JHU/JHU-WhiteMatter-labels-2mm.nii.gz
+%%DATADIR%%/data/atlases/Juelich.xml
+%%DATADIR%%/data/atlases/Juelich/Juelich-maxprob-thr0-1mm.nii.gz
+%%DATADIR%%/data/atlases/Juelich/Juelich-maxprob-thr0-2mm.nii.gz
+%%DATADIR%%/data/atlases/Juelich/Juelich-maxprob-thr25-1mm.nii.gz
+%%DATADIR%%/data/atlases/Juelich/Juelich-maxprob-thr25-2mm.nii.gz
+%%DATADIR%%/data/atlases/Juelich/Juelich-maxprob-thr50-1mm.nii.gz
+%%DATADIR%%/data/atlases/Juelich/Juelich-maxprob-thr50-2mm.nii.gz
+%%DATADIR%%/data/atlases/Juelich/Juelich-prob-1mm.nii.gz
+%%DATADIR%%/data/atlases/Juelich/Juelich-prob-2mm.nii.gz
+%%DATADIR%%/data/atlases/MNI.xml
+%%DATADIR%%/data/atlases/MNI/DO
+%%DATADIR%%/data/atlases/MNI/MNI-maxprob-thr0-1mm.nii.gz
+%%DATADIR%%/data/atlases/MNI/MNI-maxprob-thr0-2mm.nii.gz
+%%DATADIR%%/data/atlases/MNI/MNI-maxprob-thr25-1mm.nii.gz
+%%DATADIR%%/data/atlases/MNI/MNI-maxprob-thr25-2mm.nii.gz
+%%DATADIR%%/data/atlases/MNI/MNI-maxprob-thr50-1mm.nii.gz
+%%DATADIR%%/data/atlases/MNI/MNI-maxprob-thr50-2mm.nii.gz
+%%DATADIR%%/data/atlases/MNI/MNI-prob-1mm.nii.gz
+%%DATADIR%%/data/atlases/MNI/MNI-prob-2mm.nii.gz
+%%DATADIR%%/data/atlases/Talairach.xml
+%%DATADIR%%/data/atlases/Talairach/Talairach-labels-1mm.nii.gz
+%%DATADIR%%/data/atlases/Talairach/Talairach-labels-2mm.nii.gz
+%%DATADIR%%/data/atlases/Thalamus.xml
+%%DATADIR%%/data/atlases/Thalamus/Thalamus-maxprob-thr0-1mm.nii.gz
+%%DATADIR%%/data/atlases/Thalamus/Thalamus-maxprob-thr0-2mm.nii.gz
+%%DATADIR%%/data/atlases/Thalamus/Thalamus-maxprob-thr25-1mm.nii.gz
+%%DATADIR%%/data/atlases/Thalamus/Thalamus-maxprob-thr25-2mm.nii.gz
+%%DATADIR%%/data/atlases/Thalamus/Thalamus-maxprob-thr50-1mm.nii.gz
+%%DATADIR%%/data/atlases/Thalamus/Thalamus-maxprob-thr50-2mm.nii.gz
+%%DATADIR%%/data/atlases/Thalamus/Thalamus-prob-1mm.nii.gz
+%%DATADIR%%/data/atlases/Thalamus/Thalamus-prob-2mm.nii.gz
+%%DATADIR%%/data/atlases/bin/addlut
+%%DATADIR%%/data/atlases/bin/eye.mat
+%%DATADIR%%/data/atlases/bin/locate-centres
+%%DATADIR%%/data/atlases/bin/locate-label-centres
+%%DATADIR%%/data/atlases/bin/threshold
+%%DATADIR%%/data/first/models_317_bin/BrStem_bin.bmv
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Accu_Given_L_Caud.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Accu_Given_L_Puta.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Amyg_Given_L_Hipp.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Amyg_Given_L_Puta.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Caud_Given_L_Accu.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Caud_Given_L_Late.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Caud_Given_L_Puta.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Caud_Given_L_Thal.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Hipp_Given_L_Amyg.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Hipp_Given_L_Late.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Hipp_Given_L_Puta.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Hipp_Given_L_Thal.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Late_Given_L_Caud.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Late_Given_L_Hipp.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Late_Given_L_Thal.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Pall_Given_L_Puta.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Pall_Given_L_Thal.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Thal_Given_L_Caud.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Thal_Given_L_Hipp.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Thal_Given_L_Late.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Thal_Given_L_Pall.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/L_Thal_Given_R_Thal.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Accu_Given_R_Caud.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Accu_Given_R_Puta.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Amyg_Given_R_Hipp.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Amyg_Given_R_Puta.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Caud_Given_R_Accu.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Caud_Given_R_Late.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Caud_Given_R_Puta.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Caud_Given_R_Thal.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Hipp_Given_R_Amyg.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Hipp_Given_R_Late.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Hipp_Given_R_Puta.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Hipp_Given_R_Thal.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Late_Given_R_Caud.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Late_Given_R_Hipp.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Late_Given_R_Thal.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Pall_Given_R_Puta.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Pall_Given_R_Thal.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Thal_Given_L_Thal.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Thal_Given_R_Caud.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Thal_Given_R_Hipp.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Thal_Given_R_Late.bmap
+%%DATADIR%%/data/first/models_317_bin/condMaps/R_Thal_Given_R_Pall.bmap
+%%DATADIR%%/data/first/models_317_bin/intref_thal/L_Late_bin.bmv
+%%DATADIR%%/data/first/models_317_bin/intref_thal/R_Late_bin.bmv
+%%DATADIR%%/data/first/models_336_bin/05mm/L_Cereb_05mm.bmv
+%%DATADIR%%/data/first/models_336_bin/05mm/L_Pall_05mm.bmv
+%%DATADIR%%/data/first/models_336_bin/05mm/L_Puta_05mm.bmv
+%%DATADIR%%/data/first/models_336_bin/05mm/L_Thal_05mm.bmv
+%%DATADIR%%/data/first/models_336_bin/05mm/R_Cereb_05mm.bmv
+%%DATADIR%%/data/first/models_336_bin/05mm/R_Pall_05mm.bmv
+%%DATADIR%%/data/first/models_336_bin/05mm/R_Puta_05mm.bmv
+%%DATADIR%%/data/first/models_336_bin/05mm/R_Thal_05mm.bmv
+%%DATADIR%%/data/first/models_336_bin/L_Accu_bin.bmv
+%%DATADIR%%/data/first/models_336_bin/L_Amyg_bin.bmv
+%%DATADIR%%/data/first/models_336_bin/L_Caud_bin.bmv
+%%DATADIR%%/data/first/models_336_bin/L_Hipp_bin.bmv
+%%DATADIR%%/data/first/models_336_bin/L_Late_bin.bmv
+%%DATADIR%%/data/first/models_336_bin/R_Accu_bin.bmv
+%%DATADIR%%/data/first/models_336_bin/R_Amyg_bin.bmv
+%%DATADIR%%/data/first/models_336_bin/R_Caud_bin.bmv
+%%DATADIR%%/data/first/models_336_bin/R_Hipp_bin.bmv
+%%DATADIR%%/data/first/models_336_bin/R_Late_bin.bmv
+%%DATADIR%%/data/first/models_336_bin/intref_thal/L_Amyg.bmv
+%%DATADIR%%/data/first/models_336_bin/intref_thal/L_Caud.bmv
+%%DATADIR%%/data/first/models_336_bin/intref_thal/L_Hipp.bmv
+%%DATADIR%%/data/first/models_336_bin/intref_thal/R_Amyg.bmv
+%%DATADIR%%/data/first/models_336_bin/intref_thal/R_Caud.bmv
+%%DATADIR%%/data/first/models_336_bin/intref_thal/R_Hipp.bmv
+%%DATADIR%%/data/possum/MRpar_1.5T
+%%DATADIR%%/data/possum/MRpar_3T
+%%DATADIR%%/data/possum/activation3D.nii.gz
+%%DATADIR%%/data/possum/activation3Dtimecourse
+%%DATADIR%%/data/possum/b0_ppm.nii.gz
+%%DATADIR%%/data/possum/b0extra.nii.gz
+%%DATADIR%%/data/possum/b0timecourse
+%%DATADIR%%/data/possum/brain.nii.gz
+%%DATADIR%%/data/possum/motionAllLarge_0.12s
+%%DATADIR%%/data/possum/motionAllLarge_60s
+%%DATADIR%%/data/possum/motionInPlaneLarge_12s
+%%DATADIR%%/data/possum/motionRzLarge_0.12s
+%%DATADIR%%/data/possum/motionRzMed_60s
+%%DATADIR%%/data/possum/slcprof
+%%DATADIR%%/data/possum/zeromotion
+%%DATADIR%%/data/standard/FMRIB58_FA-skeleton_1mm.nii.gz
+%%DATADIR%%/data/standard/FMRIB58_FA_1mm.nii.gz
+%%DATADIR%%/data/standard/LowerCingulum_1mm.nii.gz
+%%DATADIR%%/data/standard/MNI152_T1_0.5mm.nii.gz
+%%DATADIR%%/data/standard/MNI152_T1_1mm.nii.gz
+%%DATADIR%%/data/standard/MNI152_T1_1mm_brain.nii.gz
+%%DATADIR%%/data/standard/MNI152_T1_1mm_brain_mask.nii.gz
+%%DATADIR%%/data/standard/MNI152_T1_1mm_first_brain_mask.nii.gz
+%%DATADIR%%/data/standard/MNI152_T1_2mm.nii.gz
+%%DATADIR%%/data/standard/MNI152_T1_2mm_LR-masked.nii.gz
+%%DATADIR%%/data/standard/MNI152_T1_2mm_b0.nii.gz
+%%DATADIR%%/data/standard/MNI152_T1_2mm_brain.nii.gz
+%%DATADIR%%/data/standard/MNI152_T1_2mm_brain_mask.nii.gz
+%%DATADIR%%/data/standard/MNI152_T1_2mm_brain_mask_deweight_eyes.nii.gz
+%%DATADIR%%/data/standard/MNI152_T1_2mm_brain_mask_dil.nii.gz
+%%DATADIR%%/data/standard/MNI152_T1_2mm_edges.nii.gz
+%%DATADIR%%/data/standard/MNI152_T1_2mm_eye_mask.nii.gz
+%%DATADIR%%/data/standard/MNI152_T1_2mm_skull.nii.gz
+%%DATADIR%%/data/standard/MNI152_T1_2mm_strucseg.nii.gz
+%%DATADIR%%/data/standard/MNI152_T1_2mm_strucseg_periph.nii.gz
+%%DATADIR%%/data/standard/MNI152lin_T1_1mm.nii.gz
+%%DATADIR%%/data/standard/MNI152lin_T1_1mm_brain.nii.gz
+%%DATADIR%%/data/standard/MNI152lin_T1_1mm_subbr_mask.nii.gz
+%%DATADIR%%/data/standard/MNI152lin_T1_2mm.nii.gz
+%%DATADIR%%/data/standard/MNI152lin_T1_2mm_brain.nii.gz
+%%DATADIR%%/data/standard/MNI152lin_T1_2mm_brain_mask.nii.gz
+%%DATADIR%%/data/standard/avg152T1.nii.gz
+%%DATADIR%%/data/standard/avg152T1_brain.nii.gz
+%%DATADIR%%/data/standard/tissuepriors/avg152T1_brain.hdr
+%%DATADIR%%/data/standard/tissuepriors/avg152T1_brain.img
+%%DATADIR%%/data/standard/tissuepriors/avg152T1_csf.hdr
+%%DATADIR%%/data/standard/tissuepriors/avg152T1_csf.img
+%%DATADIR%%/data/standard/tissuepriors/avg152T1_gray.hdr
+%%DATADIR%%/data/standard/tissuepriors/avg152T1_gray.img
+%%DATADIR%%/data/standard/tissuepriors/avg152T1_white.hdr
+%%DATADIR%%/data/standard/tissuepriors/avg152T1_white.img
+%%DATADIR%%/doc
+%%DATADIR%%/etc/default_flobs.flobs/eigenvalues.png
+%%DATADIR%%/etc/default_flobs.flobs/hrfbasisfns.png
+%%DATADIR%%/etc/default_flobs.flobs/hrfbasisfns.txt
+%%DATADIR%%/etc/default_flobs.flobs/hrfsamps.png
+%%DATADIR%%/etc/default_flobs.flobs/hrfsamps.txt
+%%DATADIR%%/etc/default_flobs.flobs/logfile
+%%DATADIR%%/etc/default_flobs.flobs/params.txt
+%%DATADIR%%/etc/default_flobs.flobs/priorcovars.mat
+%%DATADIR%%/etc/default_flobs.flobs/priormeans.mat
+%%DATADIR%%/etc/default_flobs.flobs/report.html
+%%DATADIR%%/etc/flirtsch/FA_2_FMRIB58_1mm.cnf
+%%DATADIR%%/etc/flirtsch/GM_2_MNI152GM_2mm.cnf
+%%DATADIR%%/etc/flirtsch/T1_2_MNI152_2mm.cnf
+%%DATADIR%%/etc/flirtsch/ident.mat
+%%DATADIR%%/etc/flirtsch/pairreg1.sch
+%%DATADIR%%/etc/flirtsch/pairreg2.sch
+%%DATADIR%%/etc/flirtsch/pairreg3.sch
+%%DATADIR%%/etc/flirtsch/sch2D_3dof
+%%DATADIR%%/etc/flirtsch/sch2D_5dof
+%%DATADIR%%/etc/flirtsch/sch2D_6dof
+%%DATADIR%%/etc/flirtsch/sch3Dtrans_3dof
+%%DATADIR%%/etc/flirtsch/simple3D.sch
+%%DATADIR%%/etc/flirtsch/xyztrans.sch
+%%DATADIR%%/etc/flirtsch/ytransonly.sch
+%%DATADIR%%/etc/flirtsch/ztransonly.sch
+%%DATADIR%%/%%ETCDIR%%conf/feat.tcl
+%%DATADIR%%/%%ETCDIR%%conf/fsl.csh
+%%DATADIR%%/%%ETCDIR%%conf/fsl.csh.orig
+%%DATADIR%%/%%ETCDIR%%conf/fsl.sh
+%%DATADIR%%/%%ETCDIR%%conf/fsl.sh.orig
+%%DATADIR%%/%%ETCDIR%%conf/fslmachtype.sh
+%%DATADIR%%/%%ETCDIR%%conf/fslmachtype.sh.orig
+%%DATADIR%%/%%ETCDIR%%pres/.latex2html-init
+%%DATADIR%%/%%ETCDIR%%pres/1024x768.gif
+%%DATADIR%%/%%ETCDIR%%pres/DO
+%%DATADIR%%/%%ETCDIR%%pres/bludown.gif
+%%DATADIR%%/%%ETCDIR%%pres/blufirs.gif
+%%DATADIR%%/%%ETCDIR%%pres/blulast.gif
+%%DATADIR%%/%%ETCDIR%%pres/blunav.gif
+%%DATADIR%%/%%ETCDIR%%pres/blunext.gif
+%%DATADIR%%/%%ETCDIR%%pres/bluprac.gif
+%%DATADIR%%/%%ETCDIR%%pres/bluprev.gif
+%%DATADIR%%/%%ETCDIR%%pres/blutext.gif
+%%DATADIR%%/%%ETCDIR%%pres/bluup.gif
+%%DATADIR%%/%%ETCDIR%%pres/eqn.tex1
+%%DATADIR%%/%%ETCDIR%%pres/eqn.tex2
+%%DATADIR%%/%%ETCDIR%%pres/fmrib_logo.gif
+%%DATADIR%%/%%ETCDIR%%pres/fsl-bg-darkblue.jpg
+%%DATADIR%%/%%ETCDIR%%pres/fsl-bg-darkgreen.jpg
+%%DATADIR%%/%%ETCDIR%%pres/fsl_freesurfer.gif
+%%DATADIR%%/%%ETCDIR%%pres/fsl_logo.gif
+%%DATADIR%%/%%ETCDIR%%pres/fslpres.css
+%%DATADIR%%/%%ETCDIR%%pres/fslpres_book.css
+%%DATADIR%%/%%ETCDIR%%pres/grnprac.gif
+%%DATADIR%%/%%ETCDIR%%version
+%%DATADIR%%/etc/luts/ramp.gif
+%%DATADIR%%/etc/luts/ramp2.gif
+%%DATADIR%%/etc/luts/render1.lut
+%%DATADIR%%/etc/luts/render1.map
+%%DATADIR%%/etc/luts/render1t.lut
+%%DATADIR%%/etc/luts/render1t.map
+%%DATADIR%%/etc/luts/render2.lut
+%%DATADIR%%/etc/luts/render2.map
+%%DATADIR%%/etc/luts/render2t.lut
+%%DATADIR%%/etc/luts/render2t.map
+%%DATADIR%%/etc/luts/render3.lut
+%%DATADIR%%/etc/luts/render3.map
+%%DATADIR%%/etc/luts/render3t.lut
+%%DATADIR%%/etc/luts/render3t.map
+%%DATADIR%%/etc/luts/renderhot.lut
+%%DATADIR%%/etc/luts/renderhsv.lut
+%%DATADIR%%/etc/luts/renderjet.lut
+%%DATADIR%%/etc/luts/rendersea.lut
+%%DATADIR%%/etc/matlab/read_avw.m
+%%DATADIR%%/etc/matlab/read_avw_complex.m
+%%DATADIR%%/etc/matlab/read_avw_hdr.m
+%%DATADIR%%/etc/matlab/read_avw_img.m
+%%DATADIR%%/etc/matlab/read_pulse.m
+%%DATADIR%%/etc/matlab/save_avw.m
+%%DATADIR%%/etc/matlab/save_avw_complex.m
+%%DATADIR%%/etc/matlab/save_avw_hdr.m
+%%DATADIR%%/etc/matlab/save_avw_img.m
+%%DATADIR%%/etc/matlab/write_pulse.m
+%%DATADIR%%/lib/libbasisfield.a
+%%DATADIR%%/lib/libbint.a
+%%DATADIR%%/lib/libfslio.a
+%%DATADIR%%/lib/libfslvtkio.a
+%%DATADIR%%/lib/libggmix.a
+%%DATADIR%%/lib/libhfunc.a
+%%DATADIR%%/lib/libmeshclass.a
+%%DATADIR%%/lib/libmiscmaths.a
+%%DATADIR%%/lib/libmiscpic.a
+%%DATADIR%%/lib/libmiscplot.a
+%%DATADIR%%/lib/libmm.a
+%%DATADIR%%/lib/libnewimage.a
+%%DATADIR%%/lib/libniftiio.a
+%%DATADIR%%/lib/libshapeModel.a
+%%DATADIR%%/lib/libutils.a
+%%DATADIR%%/lib/libwarpfns.a
+%%DATADIR%%/lib/libznz.a
+%%DATADIR%%/refdoc
+%%DATADIR%%/tcl/BWidget/BWExtras-1.0.0/fileentry.tcl
+%%DATADIR%%/tcl/BWidget/BWExtras-1.0.0/labelcombobox.tcl
+%%DATADIR%%/tcl/BWidget/BWExtras-1.0.0/labelspinbox.tcl
+%%DATADIR%%/tcl/BWidget/BWMan/ArrowButton.html
+%%DATADIR%%/tcl/BWidget/BWMan/BWidget.html
+%%DATADIR%%/tcl/BWidget/BWMan/Button.html
+%%DATADIR%%/tcl/BWidget/BWMan/ButtonBox.html
+%%DATADIR%%/tcl/BWidget/BWMan/ComboBox.html
+%%DATADIR%%/tcl/BWidget/BWMan/Dialog.html
+%%DATADIR%%/tcl/BWidget/BWMan/DragSite.html
+%%DATADIR%%/tcl/BWidget/BWMan/DropSite.html
+%%DATADIR%%/tcl/BWidget/BWMan/DynamicHelp.html
+%%DATADIR%%/tcl/BWidget/BWMan/Entry.html
+%%DATADIR%%/tcl/BWidget/BWMan/Label.html
+%%DATADIR%%/tcl/BWidget/BWMan/LabelEntry.html
+%%DATADIR%%/tcl/BWidget/BWMan/LabelFrame.html
+%%DATADIR%%/tcl/BWidget/BWMan/ListBox.html
+%%DATADIR%%/tcl/BWidget/BWMan/MainFrame.html
+%%DATADIR%%/tcl/BWidget/BWMan/MessageDlg.html
+%%DATADIR%%/tcl/BWidget/BWMan/NoteBook.html
+%%DATADIR%%/tcl/BWidget/BWMan/PagesManager.html
+%%DATADIR%%/tcl/BWidget/BWMan/PanedWindow.html
+%%DATADIR%%/tcl/BWidget/BWMan/PanelFrame.html
+%%DATADIR%%/tcl/BWidget/BWMan/PasswdDlg.html
+%%DATADIR%%/tcl/BWidget/BWMan/ProgressBar.html
+%%DATADIR%%/tcl/BWidget/BWMan/ProgressDlg.html
+%%DATADIR%%/tcl/BWidget/BWMan/ScrollView.html
+%%DATADIR%%/tcl/BWidget/BWMan/ScrollableFrame.html
+%%DATADIR%%/tcl/BWidget/BWMan/ScrolledWindow.html
+%%DATADIR%%/tcl/BWidget/BWMan/SelectColor.html
+%%DATADIR%%/tcl/BWidget/BWMan/SelectFont.html
+%%DATADIR%%/tcl/BWidget/BWMan/Separator.html
+%%DATADIR%%/tcl/BWidget/BWMan/SpinBox.html
+%%DATADIR%%/tcl/BWidget/BWMan/StatusBar.html
+%%DATADIR%%/tcl/BWidget/BWMan/TitleFrame.html
+%%DATADIR%%/tcl/BWidget/BWMan/Tree.html
+%%DATADIR%%/tcl/BWidget/BWMan/Widget.html
+%%DATADIR%%/tcl/BWidget/BWMan/contents.html
+%%DATADIR%%/tcl/BWidget/BWMan/index.html
+%%DATADIR%%/tcl/BWidget/BWMan/navtree.html
+%%DATADIR%%/tcl/BWidget/BWMan/options.htm
+%%DATADIR%%/tcl/BWidget/CHANGES.txt
+%%DATADIR%%/tcl/BWidget/LICENSE.txt
+%%DATADIR%%/tcl/BWidget/README.txt
+%%DATADIR%%/tcl/BWidget/arrow.tcl
+%%DATADIR%%/tcl/BWidget/bitmap.tcl
+%%DATADIR%%/tcl/BWidget/button.tcl
+%%DATADIR%%/tcl/BWidget/buttonbox.tcl
+%%DATADIR%%/tcl/BWidget/color.tcl
+%%DATADIR%%/tcl/BWidget/combobox.tcl
+%%DATADIR%%/tcl/BWidget/dialog.tcl
+%%DATADIR%%/tcl/BWidget/dragsite.tcl
+%%DATADIR%%/tcl/BWidget/dropsite.tcl
+%%DATADIR%%/tcl/BWidget/dynhelp.tcl
+%%DATADIR%%/tcl/BWidget/entry.tcl
+%%DATADIR%%/tcl/BWidget/font.tcl
+%%DATADIR%%/tcl/BWidget/images/bold.gif
+%%DATADIR%%/tcl/BWidget/images/copy.gif
+%%DATADIR%%/tcl/BWidget/images/cut.gif
+%%DATADIR%%/tcl/BWidget/images/dragfile.gif
+%%DATADIR%%/tcl/BWidget/images/dragicon.gif
+%%DATADIR%%/tcl/BWidget/images/error.gif
+%%DATADIR%%/tcl/BWidget/images/file.gif
+%%DATADIR%%/tcl/BWidget/images/folder.gif
+%%DATADIR%%/tcl/BWidget/images/hourglass.gif
+%%DATADIR%%/tcl/BWidget/images/info.gif
+%%DATADIR%%/tcl/BWidget/images/italic.gif
+%%DATADIR%%/tcl/BWidget/images/minus.xbm
+%%DATADIR%%/tcl/BWidget/images/new.gif
+%%DATADIR%%/tcl/BWidget/images/opcopy.xbm
+%%DATADIR%%/tcl/BWidget/images/open.gif
+%%DATADIR%%/tcl/BWidget/images/openfold.gif
+%%DATADIR%%/tcl/BWidget/images/oplink.xbm
+%%DATADIR%%/tcl/BWidget/images/opmove.xbm
+%%DATADIR%%/tcl/BWidget/images/overstrike.gif
+%%DATADIR%%/tcl/BWidget/images/palette.gif
+%%DATADIR%%/tcl/BWidget/images/passwd.gif
+%%DATADIR%%/tcl/BWidget/images/paste.gif
+%%DATADIR%%/tcl/BWidget/images/plus.xbm
+%%DATADIR%%/tcl/BWidget/images/print.gif
+%%DATADIR%%/tcl/BWidget/images/question.gif
+%%DATADIR%%/tcl/BWidget/images/redo.gif
+%%DATADIR%%/tcl/BWidget/images/save.gif
+%%DATADIR%%/tcl/BWidget/images/target.xbm
+%%DATADIR%%/tcl/BWidget/images/underline.gif
+%%DATADIR%%/tcl/BWidget/images/undo.gif
+%%DATADIR%%/tcl/BWidget/images/warning.gif
+%%DATADIR%%/tcl/BWidget/init.tcl
+%%DATADIR%%/tcl/BWidget/label.tcl
+%%DATADIR%%/tcl/BWidget/labelentry.tcl
+%%DATADIR%%/tcl/BWidget/labelframe.tcl
+%%DATADIR%%/tcl/BWidget/lang/de.rc
+%%DATADIR%%/tcl/BWidget/lang/en.rc
+%%DATADIR%%/tcl/BWidget/lang/es.rc
+%%DATADIR%%/tcl/BWidget/lang/fr.rc
+%%DATADIR%%/tcl/BWidget/listbox.tcl
+%%DATADIR%%/tcl/BWidget/mainframe.tcl
+%%DATADIR%%/tcl/BWidget/messagedlg.tcl
+%%DATADIR%%/tcl/BWidget/notebook.tcl
+%%DATADIR%%/tcl/BWidget/pagesmgr.tcl
+%%DATADIR%%/tcl/BWidget/panedw.tcl
+%%DATADIR%%/tcl/BWidget/panelframe.tcl
+%%DATADIR%%/tcl/BWidget/passwddlg.tcl
+%%DATADIR%%/tcl/BWidget/pkgIndex.tcl
+%%DATADIR%%/tcl/BWidget/progressbar.tcl
+%%DATADIR%%/tcl/BWidget/progressdlg.tcl
+%%DATADIR%%/tcl/BWidget/scrollframe.tcl
+%%DATADIR%%/tcl/BWidget/scrollview.tcl
+%%DATADIR%%/tcl/BWidget/scrollw.tcl
+%%DATADIR%%/tcl/BWidget/separator.tcl
+%%DATADIR%%/tcl/BWidget/spinbox.tcl
+%%DATADIR%%/tcl/BWidget/statusbar.tcl
+%%DATADIR%%/tcl/BWidget/titleframe.tcl
+%%DATADIR%%/tcl/BWidget/tree.tcl
+%%DATADIR%%/tcl/BWidget/utils.tcl
+%%DATADIR%%/tcl/BWidget/widget.tcl
+%%DATADIR%%/tcl/BWidget/wizard.tcl
+%%DATADIR%%/tcl/BWidget/xpm2image.tcl
+%%DATADIR%%/tcl/TkWidgets.tcl
+%%DATADIR%%/tcl/applyxfm.tcl
+%%DATADIR%%/tcl/arrow.xbm
+%%DATADIR%%/tcl/balloon.tcl
+%%DATADIR%%/tcl/bet.tcl
+%%DATADIR%%/tcl/bet_proc.tcl
+%%DATADIR%%/tcl/collapsible.tcl
+%%DATADIR%%/tcl/concatxfm.tcl
+%%DATADIR%%/tcl/display.tcl
+%%DATADIR%%/tcl/fast.tcl
+%%DATADIR%%/tcl/fdt.tcl
+%%DATADIR%%/tcl/feat.tcl
+%%DATADIR%%/tcl/featlib.tcl
+%%DATADIR%%/tcl/featquery.tcl
+%%DATADIR%%/tcl/file.xbm
+%%DATADIR%%/tcl/filltriangled.xbm
+%%DATADIR%%/tcl/fix_cygwin_filename.tcl
+%%DATADIR%%/tcl/flirt.tcl
+%%DATADIR%%/tcl/flirt_proc.tcl
+%%DATADIR%%/tcl/fmrib.xbm
+%%DATADIR%%/tcl/fsl-logo-tiny.ico
+%%DATADIR%%/tcl/fsl-logo-tiny.ppm
+%%DATADIR%%/tcl/fsl.tcl
+%%DATADIR%%/tcl/fsl_exec.tcl
+%%DATADIR%%/tcl/fsl_file.tcl
+%%DATADIR%%/tcl/fsl_filelv.tcl
+%%DATADIR%%/tcl/fslio.tcl
+%%DATADIR%%/tcl/fslstart.tcl
+%%DATADIR%%/tcl/glm.tcl
+%%DATADIR%%/tcl/halfcoshrfparams.ppm
+%%DATADIR%%/tcl/invertxfm.tcl
+%%DATADIR%%/tcl/make_flobs.tcl
+%%DATADIR%%/tcl/melodic.tcl
+%%DATADIR%%/tcl/misc_func.tcl
+%%DATADIR%%/tcl/new_filename.tcl
+%%DATADIR%%/tcl/nudge.tcl
+%%DATADIR%%/tcl/possum.tcl
+%%DATADIR%%/tcl/ppm2gif.tcl
+%%DATADIR%%/tcl/renderhighres.tcl
+%%DATADIR%%/tcl/renderstats.tcl
+%%DATADIR%%/tcl/susan.tcl
+%%DATADIR%%/tcl/susan_proc.tcl
+%%DATADIR%%/tcl/tclIndex
+%%DATADIR%%/tcl/triangled.xbm
+%%DATADIR%%/tcl/triangler.xbm
+%%DATADIR%%/tcl/webhelp.tcl
+@dirrm %%DATADIR%%/tcl/BWidget/lang
+@dirrm %%DATADIR%%/tcl/BWidget/images
+@dirrm %%DATADIR%%/tcl/BWidget/BWMan
+@dirrm %%DATADIR%%/tcl/BWidget/BWExtras-1.0.0
+@dirrm %%DATADIR%%/tcl/BWidget
+@dirrm %%DATADIR%%/tcl
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/etc/matlab
+@dirrm %%DATADIR%%/etc/luts
+@dirrm %%DATADIR%%/%%ETCDIR%%pres
+@dirrm %%DATADIR%%/%%ETCDIR%%conf
+@dirrm %%DATADIR%%/etc/flirtsch
+@dirrm %%DATADIR%%/etc/default_flobs.flobs
+@dirrm %%DATADIR%%/etc
+@dirrm %%DATADIR%%/data/standard/tissuepriors
+@dirrm %%DATADIR%%/data/standard
+@dirrm %%DATADIR%%/data/possum
+@dirrm %%DATADIR%%/data/first/models_336_bin/intref_thal
+@dirrm %%DATADIR%%/data/first/models_336_bin/05mm
+@dirrm %%DATADIR%%/data/first/models_336_bin
+@dirrm %%DATADIR%%/data/first/models_317_bin/intref_thal
+@dirrm %%DATADIR%%/data/first/models_317_bin/condMaps
+@dirrm %%DATADIR%%/data/first/models_317_bin
+@dirrm %%DATADIR%%/data/first
+@dirrm %%DATADIR%%/data/atlases/bin
+@dirrm %%DATADIR%%/data/atlases/Thalamus
+@dirrm %%DATADIR%%/data/atlases/Talairach
+@dirrm %%DATADIR%%/data/atlases/MNI
+@dirrm %%DATADIR%%/data/atlases/Juelich
+@dirrm %%DATADIR%%/data/atlases/JHU
+@dirrm %%DATADIR%%/data/atlases/HarvardOxford
+@dirrm %%DATADIR%%/data/atlases
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/znzlib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/warpfns
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/utils
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/tbss
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/susan
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/slicetimer
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/siena
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/shapeModel
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/sgeutils
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/randomise
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/possum
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/niftiio
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/newimage
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/mm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/miscvis
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/miscmaths
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/misc_tcl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/misc_c
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/meshclass
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/melodic
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/mcflirt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/libvis
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/libhfunc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/fugue
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/fslvtkio
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/fslvbm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/fslpres
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/fslio
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/fnirt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/flirt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/flame
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/first
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/filmbabe
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/film
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/feat5
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/fdt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/fast4
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/fabber
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/cluster
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/bint
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/bet2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/basisfield
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc/avwutils
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/refdoc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/znzlib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/warpfns
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/utils
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/tbss
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/susan
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/slicetimer
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/siena
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/shapeModel
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/sgeutils
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/randomise
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/possum
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/niftiio
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/newimage
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/mm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/miscvis
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/miscmaths
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/misc_tcl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/misc_c
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/meshclass
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/melodic
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/mcflirt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/libvis
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/libhfunc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/fugue
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/fslvtkio
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/fslvbm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/fslpres
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/fslio
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/fsl/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/fsl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/fnirt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/flirt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/flame
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/first
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/filmbabe
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/film
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/feat5
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/fdt/fdt_images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/fdt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/fast4
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/fabber
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/data
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/cluster
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/bint
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/bet2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/basisfield
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/avwutils
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry etc/mri
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/znzlib
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/warpfns
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/tbss
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/susan
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/slicetimer
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/siena
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/shapeModel
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/sgeutils
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/randomise
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/possum
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/niftiio
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/mm
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/miscvis
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/miscmaths
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/misc_c
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/meshclass
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/melodic
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/mcflirt
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/libvis
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/fugue
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/fslvtkio
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/fslvbm
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/fslpres
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/fslio
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/fnirt
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/flirt
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/flame
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/first
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/filmbabe
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/film
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/feat5
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/fdt
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/fast4
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/fabber
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/cluster
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/bint
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/bet2
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/basisfield
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/refdoc/avwutils
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/doc/znzlib
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/doc/warpfns
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/doc/utils
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/doc/shapeModel
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/doc/sgeutils
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/doc/niftiio
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/doc/newimage
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/doc/miscmaths
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/doc/misc_tcl
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/doc/misc_c
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/doc/libvis
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/doc/libhfunc
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/doc/fslvtkio
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/doc/fslio
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/doc/flame
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/doc/film
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/doc/cluster
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/doc/bint
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/doc/basisfield

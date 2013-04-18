@@ -1,0 +1,4 @@
+mpi/openmpi/bin/mpb-mpi
+mpi/openmpi/share/libctl/specs/mpb.scm
+@dirrmtry mpi/openmpi/share/libctl/specs
+@dirrmtry mpi/openmpi/share/libctl

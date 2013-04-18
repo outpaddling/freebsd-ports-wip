@@ -1,0 +1,22 @@
+mpi/mpich/include/fftw.h
+mpi/mpich/include/fftw_mpi.h
+mpi/mpich/include/rfftw.h
+mpi/mpich/include/rfftw_mpi.h
+mpi/mpich/lib/libfftw.a
+mpi/mpich/lib/libfftw.la
+mpi/mpich/lib/libfftw.so
+mpi/mpich/lib/libfftw.so.2
+mpi/mpich/lib/libfftw_mpi.a
+mpi/mpich/lib/libfftw_mpi.la
+mpi/mpich/lib/libfftw_mpi.so
+mpi/mpich/lib/libfftw_mpi.so.2
+mpi/mpich/lib/librfftw.a
+mpi/mpich/lib/librfftw.la
+mpi/mpich/lib/librfftw.so
+mpi/mpich/lib/librfftw.so.2
+mpi/mpich/lib/librfftw_mpi.a
+mpi/mpich/lib/librfftw_mpi.la
+mpi/mpich/lib/librfftw_mpi.so
+mpi/mpich/lib/librfftw_mpi.so.2
+mpi/mpich/share/doc/fftw/fftw.ps
+@dirrm mpi/mpich/share/doc/fftw

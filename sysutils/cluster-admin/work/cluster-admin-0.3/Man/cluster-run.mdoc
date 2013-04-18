@@ -1,0 +1,64 @@
+.\" MDOC man page template
+.\" Use MDOC only for system-specific man pages where groff is the
+.\" default nroff command.  For portable software meant to run on
+.\" all *nix platforms, use the older MAN format.  ( *.man in APE )
+.Dd 2011-11-03  
+.Dt CLUSTER-RUN 1
+.Os
+.\"----------------------------------------------------------------------
+.Sh NAME
+.Nm cluster-run
+.Nd run a command on all cluster nodes
+.\"----------------------------------------------------------------------
+.Sh SYNOPSIS
+.Nm
+.Op --parallel
+.Ar 'command'
+.\"----------------------------------------------------------------------
+.Sh DESCRIPTION
+The
+.Nm
+command runs the same command on all compute nodes, but not the head node.
+.Pp
+The command must be enclosed in single (hard) quotes to avoid expansion
+before being passed to each compute node.
+.Pp
+.Nm
+is primarily called by other cluster tools such as cluster-pkg_add, but is
+documented for cases where more flexibility is needed.  It should be used
+with extreme caution.
+.Pp
+The following options are available:
+.\" ~~~~~~~~~~~~~~~~ Begin list
+.Bl -tag -width indent
+.It Fl --parallel
+Run the command on all hosts at once, saving standard output and standard
+error to files corresponding to the hostname of each node.
+.El                     
+.\" ~~~~~~~~~~~~~~~~ End list
+.\"----------------------------------------------------------------------
+.Sh EXIT STATUS
+.Ex -std
+.\"----------------------------------------------------------------------
+.Sh SEE ALSO
+.Xr cluster-adduser
+.Xr cluster-admin
+.Xr cluster-cp
+.Xr cluster-update-ssh_config
+.Xr cluster-pkg_add
+.Xr cluster-port_add
+.Xr cluster-rmuser
+.Xr cluster-setup
+.Xr cluster-shutdown
+.\"----------------------------------------------------------------------
+.Sh HISTORY
+The
+.Nm
+command first appeared as part of the cluster-admin port in FreeBSD 8.2.
+.At v7 .
+.\"----------------------------------------------------------------------
+.Sh AUTHORS
+.An Jason Bacon                             
+.\"----------------------------------------------------------------------
+.Sh BUGS
+Yes.

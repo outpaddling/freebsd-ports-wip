@@ -1,0 +1,35 @@
+===============================================================================
+FreeSurfer is FREE, but you must register and obtain
+a license key to enable the software.  Please go to
+http://surfer.nmr.mgh.harvard.edu to register, and place
+the license file in:
+
+%%PREFIX%%/freesurfer/.license
+
+===========
+
+Linux FreeSurfer requires Linux OpenGL libraries.  It is not practical for
+this port to install these libraries as a dependency, since they may be 
+installed by a number of different sources, including the linux_dri port and
+the nvidia-driver port.  Please install them manually from whichever source
+you prefer.
+
+===========
+
+The environment variable FREESURFER_HOME must be set to
+
+%%PREFIX%%/freesurfer
+
+for each user.  Other environment setup
+is done by the FreeSurfer environment setup scripts
+which should be run from csh-compatible shells as follows:
+
+    source %%PREFIX%%/FreeSurferEnv.csh
+    
+or from sh-compatible shells as follows:
+
+    . %%PREFIX%%/FreeSurferEnv.sh
+
+WARNING: These scripts alter LD_LIBRARY_PATH, which may prevent other
+programs from running properly.
+===============================================================================

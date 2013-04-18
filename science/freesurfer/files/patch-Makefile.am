@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2012-05-07 08:32:21.000000000 -0500
++++ Makefile.am	2012-05-07 08:31:23.000000000 -0500
+@@ -2,6 +2,8 @@
+ ## Makefile.am
+ ##
+ 
++ACLOCAL_AMFLAGS=-I m4
++
+ foodir=$(prefix)
+ foo_DATA=LICENSE NOTICE README AUTHORS INSTALL COPYING
+ 

@@ -1,0 +1,5759 @@
+<!-- Frequently remind users to try things for themselves! -->
+<!-- Learn by experimenting -->
+
+<chapter xml:id="unix">
+    <title>Introduction to Unix</title>
+
+    <note>
+	<title>Before You Begin</title>
+    
+	<para>
+	This chapter is designed as a tutorial for users with little
+	or no Unix experience.  Those who have never touched a Unix
+	system before should read this chapter from the beginning to
+	the end, taking time to practice along the way.
+	</para>
+	
+	<para>
+	If you already have some Unix experience, you may prefer to skim
+	over this chapter and focus on the material that's new to you.
+	</para>
+	
+	<para>
+	It is assumed that the reader has some minimal experience using
+	a computer, and is familiar with terms such as PC, operating
+	system, and software.
+	</para>
+    </note>
+
+    <section xml:id="whats_unix">
+	<title>What is Unix?</title>
+	
+	<section>
+	    <title>The Unix Standard</title>
+
+	    <para>
+	    Unix is not a specific operating system, but a standard
+	    to which many operating systems conform.  
+	    </para>
+	    
+	    <para>
+	    In a nutshell, Unix is every operating system you're likely to use
+	    except Microsoft Windows.  A small sample of the many Unix-compatible
+	    operating systems:
+	    </para>
+	    
+	    <itemizedlist>
+		<listitem>
+		IBM AIX
+		</listitem>
+		
+		<listitem>
+		BSD (FreeBSD, NetBSD, OpenBSD, Dragonfly BSD, ...)
+		</listitem>
+		
+		<listitem>
+		Linux (CentOS, Debian, Red Hat, Ubuntu, Gentoo, ...)
+		</listitem>
+		
+		<listitem>
+		Apple Mac OS X (Derived from FreeBSD and Mach)
+		</listitem>
+		
+		<listitem>
+		Sun/Oracle Solaris
+		</listitem>
+	    </itemizedlist>
+    
+	    <para>
+	    Mac OS X has many proprietary extensions, but is almost fully
+	    Unix-compatible and can be used much like any other Unix system
+	    by simply choosing not to use the Apple extensions.
+	    </para>
+	    
+	    <para>
+	    Unix is historically connected
+	    with other standards such as X/Open XPG and POSIX (Portable
+	    Operating System Interface based on Unix).  The Unix-related
+	    standards are fact the
+	    <emphasis>only</emphasis> open standards in existence for operating
+	    systems.<footnote>
+	    Unix was once a trade name for an operating system from AT&amp;T,
+	    but the trade name was given up after coming into common
+	    [mis]use like many other names such as Band-Aid, Crescent wrench,
+	    and Kleenex.
+	    </footnote>
+	    For the official definition of Unix and associated standards,
+	    see the Open Group website:
+	    <ulink url="http://www.unix.org/what_is_unix.html">
+	    http://www.unix.org/what_is_unix.html</ulink>.
+	    Many Unix systems are
+	    completely free of charge, and can run many thousands of high
+	    quality free software packages.
+	    </para>
+	</section>
+	
+	<section>
+	    <title>The Unix Standard API (Application Programming Interface)</title>
+
+	    <para>
+	    Unix systems follow an application program interface (API) standard,
+	    which means that programs written for one Unix-based system can
+	    be run on any other Unix system with little or no modification,
+	    even if it runs on completely
+	    different hardware.  For example, most programs written for
+	    an Intel/AMD processor based Linux system will also run a PowerPC
+	    based Mac, a Solaris system running on a Sparc processor,
+	    FreeBSD on an ARM processor, etc.
+	    </para>
+	    
+	    <para>
+	    To clarify a little further, the API defines a set of function
+	    calls used to request services from the operating system, such
+	    as opening a file, allocating memory, running another program, etc.
+	    These function calls are all the same on FreeBSD, Linux, Mac OS X,
+	    Solaris, etc. but some of them are different on Windows.  For
+	    example, to start up another process, all Unix programs would
+	    call fork() followed by exec() or some similar function.  Windows
+	    programs would typically call spawn(), which is not standard
+	    and exists only on Windows.
+	    </para>
+	    
+	    <para>
+	    Writing software to the Unix standard will ensure that
+	    it can be run anywhere and for all time.  Writing for non-Unix
+	    platforms will ensure that the software will only run on that
+	    platform, and will probably become obsolete eventually.
+	    </para>
+	</section>
+
+	<section>
+	    <title>The Unix Standard UI (User Interface)</title>
+	    
+	    <para>
+	    All Unix systems also support the same basic set of commands,
+	    which (mostly) conform to standards so that they behave the same
+	    way everywhere.  If you learn to use FreeBSD, most of that knowledge
+	    will directly apply to Linux, Mac OS X, Solaris, etc.
+	    </para>
+	    
+	    <para>
+	    Part of the original Unix design philosophy was to do everything
+	    in the simplest way possible.  As you learn Unix, you will likely
+	    find some of its features counterintuitive.  However, upon closer
+	    examination, you will often come to appreciate the elegance of the
+	    Unix solution to a difficult problem.  For example, it is not
+	    always obvious to a beginner how to manage the security of shared
+	    files using Unix file permissions and groups, but using these very
+	    simple tools, it is possible to set up virtually any imaginable
+	    arrangement.
+	    </para>
+	    
+	    <para>
+	    You will also gradually recognize a great deal of consistency between
+	    various Unix commands and functions.  For example, many Unix commands
+	    support a <option>-v</option> flag to indicate more verbose output,
+	    as well as a <option>-q</option> flag to indicate no unnecessary
+	    output.  The documentation in the "man pages" follows a consistent
+	    format, which users quickly get used to, making it easier to
+	    learn new things about commands on any Unix system.
+	    </para>
+	    
+	    <para>
+	    The consistency provided by Unix standards minimizes the amount
+	    of knowledge Unix users need in order to effectively utilize the
+	    numerous Unix systems available.
+	    </para>
+	    
+	    <para>
+	    In a nutshell, the time and effort you spend learning any Unix
+	    system will make it easy to use any other in the future.  You need
+	    only learn Unix once, and you'll be proficient with many different
+	    implementations such as FreeBSD, Linux, and Mac OS X.
+	    </para>
+	</section>
+	
+	<section>
+	    <title>Freedom</title>
+	    
+	    <para>
+	    The Unix standards are designed to give the user as much
+	    freedom as possible.  Unix users can run their programs on
+	    virtually any type or brand of hardware, and switch at will
+	    when a better or cheaper option appears.
+	    They can program in virtually any programming language and
+	    choose from a variety of user interfaces.
+	    </para>
+	    
+	    <para>
+	    One of the main design goals is to simply stay out of the users'
+	    way, rather than trying to prevent the user from doing things
+	    they shouldn't.
+	    </para>
+	    
+	    <para>
+	    With freedom comes responsibility.  A common quip about Unix
+	    is that it gives us the freedom to shoot ourselves in the foot.
+	    Unix does a lot to protect users from each other, but very little
+	    to protect users from themselves.  This usually leads to some
+	    mistakes by new users, but most users learn quickly and come
+	    to prefer the freedom Unix offers over more restrictive systems.
+	    </para>
+	</section>
+	
+	<section>
+	    <title>Self-test</title>
+	    
+	    <orderedlist>
+		<listitem>
+		Is Unix an operating system?  Why or why not?
+		</listitem>
+		
+		<!--answer No.  Unix is a standard to which operating
+		systems conform. -->
+		
+		<listitem>
+		Which mainstream operating systems are Unix compatible and
+		which are not?
+		</listitem>
+		
+		<listitem>
+		What is the advantage of the Unix API over the APIs of
+		non-Unix operating systems?
+		</listitem>
+		
+		<!--answer The Unix API is common to many operating
+		systems, so programs developed for Unix can run on
+		many different operating systems and hardware. -->
+		
+		<listitem>
+		What is the advantage of the Unix UIs over the UIs of
+		non-Unix operating systems?
+		</listitem>
+		
+		<listitem>
+		What is the major design goal of the Unix standard?
+		</listitem>
+	    </orderedlist>
+	</section>
+    </section>
+    
+    <section>
+	<title>Unix User Interfaces</title>
+	
+	<para>
+	A <glossterm>user interface</glossterm>,
+	or <glossterm>UI</glossterm>, refers to the software that allows
+	<indexterm><primary>User interface</primary></indexterm>
+	<indexterm><primary>UI</primary></indexterm>
+	a person to interact with the computer.  The UI provides the
+	look and feel of the system, and determines how easily and
+	efficiently it can be used.  ( Note that ease of use
+	and efficiency are not the same! )
+	</para>
+	
+	<para>
+	The term "Windows" refers to a a specific proprietary operating
+	system, and implies all of the features of that system including
+	the API and the UI.  When people think of Windows, they think
+	of the Start menu, the Control Panel, etc.
+	</para>
+	
+	<para>
+	Likewise, "Macintosh" refers to a specific product and invokes
+	images of the "Dock" and a menu bar at the top of the screen vs.
+	attached to a window.
+	</para>
+	
+	<para>
+	The term "Unix", on the other hand, implies an API, but does not
+	imply a specific UI.  There are many UIs available for Unix systems.
+	In fact, a computer running Unix can have many UIs installed, and
+	each user can choose the one they want when the log in.
+	</para>
+	
+	<section>
+	    <title>Graphical User Interfaces (GUIs)</title>
+	    
+	    <para>
+	    Unlike Microsoft Windows, which has a unique look and feel,
+	    there are many different GUIs (pronounced goo-ey)
+	    available for Unix.  Some of the
+	    more popular ones include KDE, Gnome, XFCE, LXDE, OpenBox, 
+	    CDE, and Java Desktop.
+	    </para>
+
+	    <mediaobject>
+		<alt>Gnome desktop</alt>
+		<imageobject>
+		<imagedata fileref="gnome.png" width="80%"/>
+		</imageobject>
+		
+		<caption>
+		A FreeBSD system running Gnome desktop.
+		</caption>
+	    </mediaobject>
+	    
+	    <mediaobject>
+		<alt>XFCE desktop</alt>
+		<imageobject>
+		<imagedata fileref="xfce.png" width="80%"/>
+		</imageobject>
+		
+		<caption>
+		A FreeBSD system running XFCE desktop.
+		</caption>
+	    </mediaobject>
+	    
+	    <note>
+		<title>Practice Break</title>
+		<para>
+		If you have access to a Unix GUI, log into your Unix system
+		via the GUI interface now.
+		</para>
+	    </note>
+	    
+	    <para>
+	    All Unix GUIs are built on top of the X11 networked graphics API.
+	    As a result, all Unix systems have the inherent ability
+	    to display graphics on other Unix systems.  I.e., you can
+	    remotely log into another Unix computer over a network and
+	    run graphical programs that display output wherever you're
+	    sitting.
+	    </para>
+	    
+	    <note>
+	    This is not the same as a remote desktop system, which
+	    only mirrors the console display on a remote system. Unix
+	    systems allow multiple users in different locations to run
+	    graphical programs independent of each other.  In other words,
+	    Unix supports multiple independent graphical displays on
+	    remote computers.
+	    </note>
+	    
+	    <para>
+	    Most Unix GUIs support multiple
+	    <glossterm>virtual desktops</glossterm>, also known as
+	    <glossterm>workspaces</glossterm>.
+	    
+	    <indexterm><primary>virtual desktop</primary></indexterm>
+	    <indexterm><primary>workspace</primary></indexterm>
+	    
+	    Virtual desktops allow a single monitor to support multiple
+	    separate desktop images.  It's like having multiple monitors
+	    without the expense and clutter.  The user can switch between
+	    virtual desktops by clicking on a panel of thumbnail images,
+	    or in some cases by simply moving the mouse over the edge of
+	    the screen.
+	    </para>
+	</section>
+	
+	<section xml:id="unix_shell">
+	    <title>Command Line Interfaces (CLIs): Unix Shells</title>
+	    
+	    <para>
+	    While modern Unix systems have GUIs,
+	    much work is still done via the command line, or
+	    <glossterm>shell</glossterm>.
+	    </para>
+	    
+	    <para>
+	    GUIs are much easier to use if you're new to the
+	    system or use it infrequently, but can become cumbersome for
+	    everyday use.  If a user needs access to dozens or
+	    hundreds of features, they cannot all be displayed
+	    on the screen as icons at the same time.
+	    Hence, it will
+	    be necessary to navigate through multiple levels of menus
+	    or screens to find the functionality you need.
+	    Even if they could be displayed all at once, it
+	    would be a nightmare to find the one you want among such clutter.
+	    </para>
+	    
+	    <para>
+	    Because of the limitations of GUIs, most GUIs support
+	    <glossterm>hot keys</glossterm>, special key combinations that
+	    can be used to access certain features without navigating the
+	    menus.  Hot keys are often shown in menus alongside the features
+	    they activate.  For example, Command+q can be used on Mac OS X
+	    to terminate most graphical applications.
+	    </para>
+	    
+	    <para>
+	    A command line interface, on the other hand, provides instant
+	    access to an unlimited number of commands.
+	    A command line interface is harder to learn, since it
+	    requires some memorization in order to use it efficiently.
+	    However, you need only learn a few commands
+	    to get started, and once the basics are learned, a command
+	    line interface allows for much greater efficiency and
+	    flexibility than a GUI.
+	    </para>
+	    
+	    <para>
+	    A <glossterm>shell</glossterm> is a program that provides the
+	    command line interface.  It inputs commands from the user,
+	    interprets them, and executes them.
+	    </para>
+	    
+	    <para>
+	    Using a shell, you type a command, press enter, and the command
+	    is immediately executed.
+	    </para>
+	    
+	    <mediaobject>
+		<alt>Command Line Interface</alt>
+		
+		<imageobject>
+		<imagedata fileref="cli.png" width="80%"/>
+		</imageobject>
+	    
+		<caption>
+		Unix Shell
+		</caption>
+	    </mediaobject>
+	    
+	    <para>
+	    The term shell comes from the view
+	    of Unix as three layers of software wrapped around
+	    the hardware:
+	    </para>
+	    
+	    <mediaobject>
+		<alt>Unix layers</alt>
+		<imageobject>
+		<imagedata fileref="layers.png" width="30%"/>
+		</imageobject>
+		<caption>A 3-layer Model of Unix</caption>
+	    </mediaobject>
+	    
+	    <itemizedlist>
+		<listitem>
+		The innermost layer, which handles all hardware
+		interaction for Unix programs, is called the
+		<glossterm>kernel</glossterm>, named after the core of a
+		seed.  The Unix kernel effectively hides the hardware from
+		user programs and provides a standard API.  This is what
+		allows Unix programs to run on different kinds of computers.
+		</listitem>
+		
+		<listitem>
+		The middle layer, the
+		libraries, provide a wealth of standard functionality for
+		Unix programmers to utilize.  The libraries are like a huge
+		box of Legos that can be used to build all kinds of
+		sophisticated programs.
+		</listitem>
+		
+		<listitem>
+		The outermost layer, the CLI, is called a shell.
+		</listitem>
+	    </itemizedlist>
+	</section>
+	
+	<section>
+	    <title>Terminals</title>
+	    
+	    <para>
+	    All that is needed to use a Unix shell is a keyboard and
+	    a screen.  In the olden days, these were provided by a
+	    simple hardware device called a <glossterm>terminal</glossterm>,
+	    which connected a keyboard and screen to the system through
+	    a simple communication cable.  These terminals typically
+	    did not have a mouse or any graphics capabilities.  They
+	    usually had a text-only screen of 80 columns by 24 lines,
+	    and offered limited capabilities such as moving the cursor,
+	    scrolling the screen, and perhaps a limited number
+	    of colors.
+	    </para>
+	    
+	    <mediaobject>
+		<alt>An old hardware terminal</alt>
+		
+		<imageobject>
+		<imagedata fileref="vt320.png" width="50%"/>
+		</imageobject>
+	    </mediaobject>
+	    
+	    <para>
+	    Hardware terminals lost popularity with the advent of
+	    cheap personal computers, which can perform the function of
+	    a terminal, as well as running programs of their own.
+	    Terminals have been largely replaced by
+	    <glossterm>terminal emulators</glossterm>.  A terminal
+	    emulator is a simple program that emulates an old style
+	    terminal within a window on your desktop.
+	    </para>
+	    
+	    <mediaobject>
+		<alt>Terminal emulator</alt>
+		
+		<imageobject>
+		<imagedata fileref="Terminal.png" width="80%"/>
+		</imageobject>
+	    
+		<caption>
+		A Terminal emulator.
+		</caption>
+	    </mediaobject>
+
+	    <para>
+	    All Unix systems come with a terminal emulator program.
+	    There are also free terminal emulators for Windows, which are
+	    discussed in <xref linkend="remote_login"/>.
+	    </para>
+	</section>
+	
+	<section>
+	    <title>Basic Shell Use</title>
+	    
+	    <para>
+	    Once you're logged in and have a shell running in your
+	    terminal window, you're ready to start entering Unix commands.
+	    The shell displays a <glossterm>prompt</glossterm> (such
+	    as "FreeBSD manta bacon ~ 392:" in the image above) to
+	    indicate that it's waiting for you to enter the next
+	    command. The shell prompt can be customized by each user,
+	    so it may be different on each Unix system you use.
+	    </para>
+	    
+	    <note>
+	    <para>
+	    In this text, we follow a convention of including the Unix
+	    system's host name in the prompt.
+	    </para>
+	    
+	    <para>
+	    In particular, many of the example
+	    commands will use the prompt "peregrine: ", which is the host
+	    name of a cluster at UW -- Milwaukee.
+	    </para>
+	    
+	    <para>
+	    Commands that are to
+	    be run on your own laptop or desktop machine will use the
+	    prompt "mypc: ".
+	    </para>
+	    
+	    <para>
+	    Including the hostname in a shell prompt is a common practice
+	    and very helpful for users who are logged into multiple Unix
+	    systems at the same time from the same desktop.  This discourages
+	    users from running a command on the wrong computer!
+	    </para>
+	    </note>
+	    
+	    <para>
+	    The shell prompt in the terminal window above is
+	    "FreeBSD manta bacon ~ 392:".  At the first prompt, the
+	    user entered the command <command>ls</command>, which
+	    lists the files in the current directory.  After
+	    <command>ls</command> finished, the shell printed another prompt.
+	    </para>
+	    
+	    <para>
+	    To enter a Unix command, you type the command on a single
+	    line, edit if necessary (using arrow keys to move around),
+	    and press <keycap>Enter</keycap> or <keycap>Return</keycap>.
+	    </para>
+	    
+	    <note>
+	    <para>
+	    Modern Unix shells allow commands to be extensively edited.
+	    Assuming your terminal type is properly identified by the
+	    Unix system, you can use the left and right arrow keys to move
+	    around, backspace and delete to remove characters (Ctrl+h
+	    serves as a backspace in some cases), and other key combinations
+	    to remove words, the rest of the line, etc.  Learning the
+	    editing capabilities of your shell will make you a much faster Unix
+	    user, so it's a great investment of a small amount of time.
+	    </para>
+	    </note>
+
+	    <note>
+		<title>Practice Break</title>
+		<para>
+		Log into your Unix system, open a terminal if necessary, and
+		run the following commands:
+		</para>
+		
+		<screen>
+		peregrine: ls
+		peregrine: ls /
+		peregrine: ls -al
+		</screen>
+	    </note>
+	</section>
+	
+	<section>
+	    <title>Self-test</title>
+	    
+	    <orderedlist>
+		<listitem>
+		What is a UI?
+		</listitem>
+		
+		<listitem>
+		What is a GUI?
+		</listitem>
+		
+		<listitem>
+		What is the difference between Unix and other operating
+		systems with respect to the GUI?
+		</listitem>
+		
+		<listitem>
+		What is a CLI?
+		</listitem>
+		
+		<listitem>
+		What are the advantages and disadvantages of a CLI vs. a GUI?
+		</listitem>
+		
+		<listitem>
+		What is a shell?
+		</listitem>
+		
+		<listitem>
+		What is a kernel?
+		</listitem>
+		
+		<listitem>
+		What are libraries?
+		</listitem>
+		
+		<listitem>
+		What is a terminal?
+		</listitem>
+		
+		<listitem>
+		Do people still use hardware terminals today?  Explain.
+		</listitem>
+		
+		<listitem>
+		What is a shell prompt?
+		</listitem>
+	    </orderedlist>
+	</section>
+    </section>
+    
+    <section xml:id="remote_login">
+	<title>Logging In Remotely</title>
+	
+	<para>
+	Virtually all Unix systems allow users to log in and run programs over
+	a network from other locations.  This feature is intrinsic to
+	Unix systems, and only disabled on certain proprietary or embedded
+	installations.  It is possible to use both GUIs
+	and CLIs in this fashion, although GUIs may not work well over
+	slow connections such as a typical home Internet service.
+	Different graphical programs have vastly different video speed
+	demands.  Some will work fine over a DSL connection, while
+	others will not work well even over the fastest network.
+	</para>
+	
+	<para>
+	The command line interface, on the other hand, works comfortably
+	on even the slowest network connections.
+	</para>
+	
+	<para>
+	Logging into a Unix CLI from a remote location is usually done using
+	<glossterm>Secure Shell (SSH)</glossterm>.
+	</para>
+
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+	    href="no_rsh.dbk" />
+	
+	<section>
+	    <title>Unix to Unix</title>
+	    <para>
+	    If you want to remotely log in from one Unix system to another,
+	    you can simply use the <command>ssh</command> command from
+	    the command line.
+	    </para>
+	    
+	    <para>
+	    If you plan to run graphical programs on the remote Unix system,
+	    you may need to include the <option>-X</option> (enable X11
+	    forwarding) or <option>-Y</option> (enable trusted X11 forwarding)
+	    flag in your <command>ssh</command> command.
+	    </para>
+	    
+	    <caution>
+	    Use <option>-X</option> or <option>-Y</option> only when
+	    connecting to trusted computers, i.e. those managed by you or
+	    someone you trust.  These options allow the remote system to
+	    access your display, which can pose a security risk.
+	    </caution>
+	    
+	    <screen>
+	    mypc: ssh -Y peregrine.hpc.uwm.edu
+	    password:
+	    </screen>
+	    
+	    <note>
+	    For licensing reasons, <command>ssh</command> may not be included in
+	    basic Linux installations, but it can be very easily added via the
+	    package management system of most Linux distributions.
+	    </note>
+	</section>
+	
+	<section>
+	    <title>Windows to Unix</title>
+	    <para>
+	    If you're connecting to a Unix system from a Windows system,
+	    you will need to install some additional software.
+	    </para>
+	    
+	    <section>
+		<title>Cygwin</title>
+		<para>
+		The <ulink url="http://www.cygwin.com/">Cygwin</ulink>
+		Unix-compatibility system is free, quick and easy
+		to install, and equips a Windows computer with most common
+		Unix commands, including a Unix-style Terminal emulator.
+		Once Cygwin is installed, you can open a Cygwin terminal
+		on your Windows desktop and use the <command>ssh</command> command as shown above.
+		When running the Cygwin setup program, select at least the following
+		three packages in addition to the basic installation:
+		</para>
+		
+		<itemizedlist>
+		    <listitem>
+		    net/openssh
+		    </listitem>
+		    <listitem>
+		    x11/xhost
+		    </listitem>
+		    <listitem>
+		    x11/xinit
+		    </listitem>
+		</itemizedlist>
+		
+		<para>
+		This will install the <command>ssh</command> command as well as
+		an X11 server, which will allow you to run graphical Unix
+		programs on your Windows desktop.  You may not need this capability
+		immediately, but it may come in handy.
+		</para>
+		
+		<para>
+		Cygwin offers a huge collection of Unix software packages which
+		can be easily installed on your Windows system.  You can select as
+		many as you like during the initial Cygwin install.  To add more
+		packages later, just run the Cygwin setup utility again.
+		</para>
+	    </section>
+	    
+	    <section>
+		<title>PuTTY</title>
+
+		<para>
+		A slightly quicker method is to install a stand-alone terminal
+		emulator called PuTTY,
+		<ulink url="http://www.chiark.greenend.org.uk/~sgtatham/putty/">
+		http://www.chiark.greenend.org.uk/~sgtatham/putty/</ulink>.
+		PuTTY has a built-in <command>ssh</command> client, and a graphical
+		dialog box for connecting to a remote machine.  To connect via
+		<command>ssh</command>, simply select the <command>ssh</command> radio button, enter the
+		hostname of the computer you want to connect to, and click
+		the Open button:
+		</para>
+		
+		<mediaobject>
+		    <alt>PuTTY</alt>
+		    <imageobject>
+		    <imagedata fileref="putty_dialog.png" width="50%"/>
+		    </imageobject>
+		    <caption>PuTTY Dialog</caption>
+		</mediaobject>
+	    </section>
+	</section>
+	
+	<section>
+	    <title>Terminal Types</title>
+
+	    <para>
+	    In some cases, you may be asked to specify a terminal type when you
+	    log in:
+	    </para>
+	    
+	    <screen>
+	    TERM=(unknown)
+	    </screen>
+	    
+	    <para>
+	    Terminal features such as cursor movement and color changes are
+	    triggered by sending special codes (characters or character
+	    combinations) to the terminal.  Pressing keys on the terminal
+	    sends codes from the terminal to the computer.
+	    </para>
+	    
+	    <para>
+	    Different types of terminals use different key and screen control
+	    codes. PuTTY and most other terminal emulators emulate an "xterm"
+	    terminal,
+	    so if asked, just type the string "xterm" (without the quotes).
+	    </para>
+	    
+	    <para>
+	    If you fail to set the terminal type, some programs such as text
+	    editors will not function.  They may garble the screen and fail
+	    to recognize special keys such as arrows, page-up, etc.  Programs
+	    such as <command>ls</command> that simple output a line and
+	    then go to the next will generally work fine even if TERM is
+	    not set.
+	    </para>
+	    
+	    <para>
+	    You can set the terminal type after
+	    logging in, but the methods for doing this vary according to which
+	    shell you use, so you may just
+	    want to log out and remember to set the terminal type when you
+	    log back in.
+	    </para>
+	</section>
+	
+	<note>
+	<title>Practice Break</title>
+	    <para>
+	    Remotely log into another Unix system using the <command>ssh</command> command or
+	    PuTTY.  Then try starting the <command>vi</command> editor:
+	    </para>
+	    
+	    <screen>
+	    peregrine: vi
+	    </screen>
+	    
+	    <para>
+	    You should see a column of ~ characters down the left side of
+	    the screen.  If you get an error message about your terminal type,
+	    you probably forgot to set your TERM variable.  In this case,
+	    log out by entering the <command>exit</command> command, and
+	    start over with <command>ssh</command> or PuTTY.
+	    </para>
+	    
+	    <para>
+	    If you successfully started <command>vi</command>, simply type
+	    ':' to get a vi command prompt followed by 'q' to exit.
+	    </para>
+	</note>
+	
+	<section>
+	    <title>Self-test</title>
+	    
+	    <orderedlist>
+		<listitem>
+		What extra software must you install on Unix systems to
+		allow logging into another Unix system over a network?
+		Explain.
+		</listitem>
+		
+		<listitem>
+		What extra software must you install on Unix systems to
+		enable the use of graphical programs over a network?
+		Explain.
+		</listitem>
+		
+		<listitem>
+		What is <command>ssh</command>?  How does it differ from rsh and
+		telnet?
+		</listitem>
+		
+		<listitem>
+		Can Windows users run <command>ssh</command>?  Explain.
+		</listitem>
+		
+		<listitem>
+		Can Windows users run graphical programs on a remote
+		Unix system?  Explain.
+		</listitem>
+		
+		<listitem>
+		What is the purpose of the TERM environment variable?  What
+		will happen if it is not set correctly?
+		</listitem>
+	    </orderedlist>
+	</section>
+    </section>
+    
+    <section xml:id="command_basics">
+	<title>Unix Command Basics</title>
+	
+	<para>
+	A Unix command is built from a command name and optionally one
+	or more command line <glossterm>arguments</glossterm>.  Arguments
+	can be either <glossterm>flags</glossterm> or data.
+	</para>
+	
+	<screen>
+	ls -a -l /etc /var
+	^^ ^^^^^ ^^^^^^^^^
+	|   |    |
+	|   |    Data Arguments
+	|   Flags
+	Command name
+	</screen>
+	
+	<itemizedlist>
+	    <listitem>
+	    The <glossterm>command name</glossterm> identifies the
+	    program to run.  For example, the <command>ls</command>
+	    command names a program that lists the contents of a directory.
+	    </listitem>
+	    
+	    <listitem>
+	    <para>
+	    Most commands have optional <glossterm>flags</glossterm>
+	    (sometimes called <glossterm>options</glossterm>) that control
+	    the general behavior of the command.  By convention, flags
+	    begin with a '-' character, just to help the reader distinguish
+	    between flags and arguments.
+	    </para>
+	    
+	    <note>
+	    Unix systems do not enforce this, but very few commands violate it.
+	    Unlike voluntary taxation, voluntary environmental regulations,
+	    or voluntary speed limits, the voluntary Unix conventions garner
+	    a very high level of conformance.  Unix programmers tend to 
+	    understand the benefits of conventions and don't have to be
+	    forced to follow them.
+	    </note>
+	    
+	    <para>
+	    The flags in the example above have the following meaning:
+	    </para>
+	    
+	    <para>
+	    <option>-a</option>: tells <command>ls</command>
+	    to show "hidden" files
+	    (files whose names begin with '.', which ls would not normally
+	    list).
+	    </para>
+		
+	    <para>
+	    <option>-l</option>: tells <command>ls</command>
+	    to do a "long listing", which is to show lots of information
+	    about each file and directory instead of just the name.
+	    </para>
+	    
+	    <para>
+	    Single-letter flags can usually be combined, e.g. 
+	    <option>-a -l</option> can be abbreviated as <option>-al</option>.
+	    </para>
+	    
+	    <para>
+	    Most newer Unix commands also support long flag names, mainly to
+	    improve readability of commands used in scripts.  For example,
+	    in the Unix <command>zip</command> command, <option>-C</option>
+	    and <option>--preserve-case</option> are synonymous.
+	    </para>
+	    </listitem>
+	    
+	    <listitem>
+	    Many commands also accept one or more data
+	    arguments, which provide input data to the command, or instruct
+	    it where to send output.  Such arguments may be the actual input
+	    or they may be the names of files or directories that contain
+	    input or receive output.  The <filename>/etc</filename> and
+	    <filename>/var</filename> arguments above are directories
+	    to be listed by <command>ls</command>.  If no data arguments are
+	    given to <command>ls</command>, it lists the current
+	    working directory (described in <xref linkend="processes"/>).
+	    </listitem>
+	</itemizedlist>
+	
+	<para>
+	For many Unix commands, the flags must come before the data arguments.
+	A few commands require that certain flags appear in a specific
+	order.  Some commands allow flags and data arguments to appear in any
+	order.  Unix systems do not enforce any rules regarding
+	arguments.  How they behave is entirely up to the creator of
+	the command.  However, the vast majority of commands follow
+	conventions, so there is a great deal of consistency in Unix
+	command syntax.
+	</para>
+	
+	<para>
+	The components of a Unix command are separated by whitespace (space
+	or tab characters).  Hence, if an argument contains any whitespace,
+	it must be enclosed in quotes (single or double) so that it will
+	not be interpreted as multiple separate arguments.
+	</para>
+	
+	<example xml_id="whitespace_in_arg">
+	    <title>Whitespace in an Argument</title>
+	    
+	    <para>
+	    Suppose you have a directory called
+	    <filename>My Programs</filename>, and you want to
+	    see what's in it.  You might try the following:
+	    </para>
+	    
+	    <screen>
+	    peregrine: ls My Programs
+	    </screen>
+	    
+	    <para>
+	    The above command fails, because "My" and "Programs" are interpreted
+	    as two separate arguments.  In fact, the <command>ls</command>
+	    command will look for two separate directories called "My" and
+	    "Programs".  In this case, we must use quotes to
+	    bind the parts of the directory name together into a single
+	    argument.  Either single or double quotes are accepted by all
+	    common Unix shells.  The difference between single and double
+	    quotes is covered in <xref linkend="scripting"/>.
+	    </para>
+	    
+	    <screen>
+	    peregrine: ls 'My Programs'
+	    peregrine: ls "My Programs"
+	    </screen>
+	</example>
+	
+	<note>
+	    <title>Practice Break</title>
+	    
+	    <para>
+	    Try the following commands:
+	    </para>
+	    
+	    <screen>
+	    peregrine: ls
+	    peregrine: ls -al
+	    peregrine: ls /etc
+	    peregrine: ls -al /etc
+	    </screen>
+	</note>
+	
+	<para>
+	If a Unix command is too long for the width of the terminal, you
+	can either simply keep typing and let it wrap to the next line
+	automatically, or you can indicate that it continues on the next
+	line by placing a backslash (\) at the end of the line:
+	</para>
+	
+	<screen>
+	peregrine: echo 'This is a really long command that will require us' \
+			'to use multiple lines.'
+	</screen>
+	
+	<para>
+	This is rarely used in interactive shells, but is popular for use
+	in shell scripts, which are discussed in <xref linkend="scripting"/>.
+	</para>
+	
+	<section>
+	    <title>Self-test</title>
+	    
+	    <orderedlist>
+		<listitem>
+		What are the parts of a Unix command?  What separates them?
+		</listitem>
+		
+		<listitem>
+		What are command line flags?
+		</listitem>
+		
+		<listitem>
+		What are data arguments?
+		</listitem>
+		
+		<listitem>
+		What rules do Unix systems enforce regarding the placement
+		of arguments?
+		</listitem>
+		
+		<listitem>
+		Can a Unix command span multiple lines?  Explain.
+		</listitem>
+		
+		<listitem>
+		How do we specify an argument that contains whitespace?
+		</listitem>
+	    </orderedlist>
+	</section>
+    </section>
+    
+    <section xml:id="processes">
+	<title>Processes</title>
+
+	<note>
+	    <title>Before You Begin</title>
+	    It is assumed the reader knows what Unix is.
+	    If not, please read <xref linkend="whats_unix"/> before proceeding.
+	</note>
+	
+	<para>
+	A running program in Unix is known as a <glossterm>process</glossterm>.
+	</para>
+	
+	<para>
+	Unix is a multitasking system, which means that many programs
+	can be running at any given moment, i.e. there can be many
+	active processes.
+	</para>
+	
+	<para>
+	When you log in, the system creates a new process to run your shell
+	program.
+	</para>
+	
+	<para>
+	When you run a program (a command) from the shell, the shell creates
+	a new process to run the program.  Hence, you now have two processes
+	running: the shell process and the command's process.
+	</para>
+	
+	<para>
+	The process created by the shell to run your command is a
+	<glossterm>child</glossterm> of the shell process.
+	</para>
+	
+	<para>
+	Naturally, the shell process is called the
+	<glossterm>parent</glossterm> of the command process.
+	</para>
+	
+	<para>
+	Each process is uniquely identified by an integer serial number
+	called the <glossterm>process ID</glossterm>, or
+	<glossterm>PID</glossterm>.
+	</para>
+	
+	<para>
+	Unix systems also keep track of each process's status and resource
+	usage, such as memory,
+	CPU time, etc.  Information about your currently running
+	processes can be easily viewed using the <command>ps</command>
+	(process status) command:
+	</para>
+	
+	<screen>
+	peregrine: ps
+	  PID TTY           TIME CMD
+	 7147 ttys000    0:00.14 -tcsh
+	 7438 ttys000    0:01.13 ape notes.dbk unix.dbk
+	 7736 ttys001    0:00.13 -tcsh
+	</screen>
+	
+	<note>
+	    <title>Practice Break</title>
+	    <para>
+	    Run the <command>ps</command> command.  What processes do you have
+	    running?
+	    </para>
+	    
+	    <screen>
+	    peregrine: ps
+	    </screen>
+	</note>
+	
+	<para>
+	Another useful tool is the <command>top</command> command, which
+	monitors all processes in a system and displays system statistics
+	and the top (most active) processes every few seconds.  Note that
+	since <command>top</command> is a full-terminal command, it will
+	not function properly unless the TERM environment variable is
+	set correctly.
+	</para>
+	
+	<note>
+	    <title>Practice Break</title>
+	    <para>
+	    Run the <command>top</command> command.  What processes are using the
+	    most CPU time?  Type 'q' to quit <command>top</command>.
+	    </para>
+	    
+	    <screen>
+	    peregrine: top
+	    </screen>
+	</note>
+	
+	<section>
+	    <title>Self-test</title>
+	    
+	    <orderedlist>
+		<listitem>
+		What is a process?
+		</listitem>
+		
+		<listitem>
+		When are processes created?
+		</listitem>
+		
+		<listitem>
+		How does the Unix system distinguish between all the processes
+		running at a given moment?
+		</listitem>
+		
+		<listitem>
+		What command(s) will show you the processes that are
+		currently running?
+		</listitem>
+	    </orderedlist>
+	</section>
+    </section>
+    
+    <section xml:id="filesystem">
+	<title>The Unix Filesystem</title>
+	
+	<section>
+	    <title>Unix Files</title>
+	    
+	    <para>
+	    A Unix <glossterm>file</glossterm> is simply a sequence of
+	    bytes (8-bit values) stored on a disk and given a unique name.
+	    The bytes in a file may be printable characters such as 
+	    letters, digits, punctuation symbols, invisible
+	    <glossterm>control characters</glossterm> (which cause
+	    a printer or terminal to perform actions such as backspacing
+	    or scrolling), or other non-character data.
+	    </para>
+	    
+	    <section>
+		<title>Text vs Binary Files</title>
+
+		<para>
+		Files are often classified as either <glossterm>text</glossterm>
+		or <glossterm>binary</glossterm> files.  All of the bytes in a
+		text file are interpreted as characters by the programs that
+		read or write the file, while binary files may
+		contain both character and non-character data.
+		</para>
+		
+		<para>
+		Note that the Unix standard makes no
+		distinction between one file and another based on their
+		contents.  Only individual programs care what is inside a file.
+		</para>
+		
+		<note>
+		    <title>Practice Break</title>
+		    <para>
+		    Try the following commands:
+		    </para>
+		    
+		    <screen>
+		    peregrine: cat .profile
+		    </screen>
+		    
+		    <para>
+		    What do you see?  The <filename>.profile</filename> file is
+		    a text file, and <command>cat</command> is used here to echo
+		    it to the screen.
+		    </para>
+		    
+		    <para>
+		    Now try the following:
+		    </para>
+		    
+		    <screen>
+		    peregrine: cat /bin/ls
+		    </screen>
+		    
+		    <para>
+		    What do you see?  The file <filename>/bin/ls</filename> is
+		    not a text file.  It contains binary program code, not characters.
+		    The <command>cat</command> command assumes that the file
+		    is a text file displays each character terminal.  Binary files
+		    show up as a lot of garbage, and may even knock your terminal
+		    out of whack.  If this happens, run the <command>reset</command>
+		    command to restore your terminal to its original state.
+		    In the rare case that <command>reset</command> does not
+		    fix the terminal, you can try running an editor such as
+		    <command>vi</command>, which will attempt to reset the
+		    terminal when starting or exiting, or simply log out
+		    and log back in using a fresh terminal window.
+		    </para>
+		</note>
+	    </section>
+	    
+	    <section xml:id="dos2unix">
+		<title>Unix vs. Windows Text Files</title>
+
+		<para>
+		While it is the programs that interpret the contents of
+		a file, there are some conventions regarding text file format
+		that all Unix programs follow, so that they can all manipulate the
+		same files.  Unfortunately, DOS and Windows
+		programs follow different conventions.
+		Unix programs assume that text files terminate each
+		line with a control character known as
+		a <glossterm>line feed</glossterm> (also known as
+		a <glossterm>newline</glossterm>), which is character 10
+		in the standard character sets.
+		DOS and Windows programs tend to
+		use both a <glossterm>carriage return</glossterm> (character
+		13) and a line feed.
+		</para>
+		
+		<para>
+		To compound the
+		problem, many Unix editors and tools also run on Windows
+		(under Cygwin, for example).  As a result, text files may
+		end up with a mixture of line-terminations after being edited
+		on both Windows and Unix.
+		</para>
+		
+		<para>
+		Some programs are smart enough to properly handle either
+		line termination convention.  However, many others will
+		misbehave if they encounter the "wrong" type of line
+		termination.
+		</para>
+		
+		<para>
+		The <command>dos2unix</command> and <command>unix2dos</command> commands can be used to clean up
+		files that have been transferred between Unix and DOS/Windows.
+		These programs convert text files between
+		the DOS/Windows and Unix standards.  If you've edited a text file on a
+		non-Unix system, and are now using it on a Unix system,
+		you can clean it up by running:
+		</para>
+		
+		<screen>
+		dos2unix filename
+		</screen>
+	
+		<para>
+		The <command>dos2unix</command> and <command>unix2dos</command>
+		commands are not standard with most Unix systems, but they
+		are free programs that can easily be added.
+		</para>
+		<caution>
+		Note that <command>dos2unix</command> and <command>unix2dos</command> should only be used on text
+		files.  They should never be used on binary files, since the
+		contents of a binary file are not meant to be interpreted
+		as characters such as line feeds and carriage returns.
+		</caution>
+	    </section>
+	</section>
+	
+	<section>
+	    <title>Filesystem Organization</title>
+
+	    <section>
+		<title>Basic Concepts</title>
+
+		<para>
+		A Unix filesystem contains <glossterm>files</glossterm>
+		and <glossterm>directories</glossterm>.  A file is like
+		a document, and a directory is like a folder that contains
+		documents and/or other directories.  The terms "directory" and
+		"folder" are interchangeable, but "directory" is the standard
+		term used in Unix.
+		</para>
+		
+		<note>
+		<para>
+		Unix filesystems use case-sensitive file and directory
+		names.  I.e., <filename>Temp</filename> is not the same
+		as <filename>temp</filename>, and both can coexist in the
+		same directory.
+		</para>
+		
+		<para>
+		Mac OS X is the only major Unix system that violates this
+		convention.  The standard OS X filesystem (called HFS)
+		is case-preserving, but not case-sensitive.  This means
+		that if you call a file <filename>Temp</filename>, it will
+		remember that the T is capital, but it can also be referred
+		to as <filename>temp</filename>, <filename>tEmp</filename>,
+		etc.  Only one of these files can exist in a given directory
+		at any one time.
+		</para>
+		</note>
+		
+		<para>
+		A Unix filesystem can be visualized as a tree, with each file
+		and directory contained within another directory.
+		</para>
+		
+		<para>
+		<xref linkend="unix_filesystem_image"/>
+		shows a small portion of a typical
+		Unix filesystem.  On a real Unix system, there are
+		usually thousands of files and directories.  Directories are
+		shown in green and files are in yellow.
+		</para>
+		
+		<figure xml:id="unix_filesystem_image">
+		    <title>Sample of a Unix Filesystem</title>
+		    <imageobject>
+		    <imagedata fileref="unix_filesystem.png" width="80%"/>
+		    </imageobject>
+		</figure>
+		
+		<para>
+		The one directory that is not contained within any other
+		is known as the <glossterm>root directory</glossterm>,
+		whose name under Unix is <filename>/</filename>.  There is
+		exactly one root directory on every Unix system.  Windows
+		systems, on the other hand, have a root directory for
+		each disk partition such as C: and D:.
+		</para>
+		
+		<para>
+		Unix filesystem trees are fairly standardized, but most have some
+		variation.  For instance, all Unix systems have a /bin and a
+		/usr/bin, but not all of them have /home or /usr/local.
+		</para>
+		
+		<para>
+		The root directory is the <glossterm>parent</glossterm>
+		of /bin and /home  and an <glossterm>ancestor</glossterm> of
+		all other files and directories.
+		</para>
+		
+		<para>
+		The /bin and /home
+		directories are <glossterm>subdirectories</glossterm>, or 
+		<glossterm>children</glossterm> of /.  Likewise, /home/joe
+		and /home/sue
+		are subdirectories of /home, and grandchildren of /.
+		</para>
+		
+		<para>
+		All of the files in and under /home comprise a 
+		<glossterm>subtree</glossterm> of /home.
+		</para>
+		
+		<para>
+		The children of a directory, all of its children, and so on,
+		are known as <glossterm>descendents</glossterm> of the
+		directory.
+		All files and directories on a Unix system, except /,
+		are descendents of /.
+		</para>
+	
+		<para>
+		Each user has a <glossterm>home directory</glossterm>, which
+		can be arbitrarily assigned, but is generally a child of
+		/home on many Unix systems.  The home directory can be
+		referred to as <filename>~</filename> or 
+		<filename>~username</filename> in modern Unix shells.
+		</para>
+		
+		<para>
+		In the example above, /home/joe is
+		the home directory for user joe, and /home/sue
+		is the home directory for user sue.  This is the conventional
+		location for home directories on BSD and Linux systems,
+		which are two specific types of Unix.  On a Mac OS X system,
+		which is another brand of Unix, Joe's home directory would be
+		/Users/joe instead of /home/joe.
+		Most of the files owned by ordinary users
+		are either in their home directory or one of its descendents.
+		</para>
+	    </section>
+
+	    <section>
+		<title>Full Pathnames</title>
+		
+		<para>
+		The <glossterm>full pathname</glossterm>, also known
+		as <glossterm>absolute pathname</glossterm>,
+		of a file or directory
+		denotes the complete path from / (the root directory)
+		to the file or directory of interest.  For example,
+		the full pathname of Sue's .cshrc file is /home/sue/.cshrc, and
+		the full pathname of the ape command is /usr/local/bin/ape.
+		</para>
+		
+		<note>
+		A full pathname always begins with '/' or a '~'.
+		</note>
+		
+		<note>
+		    <title>Practice Break</title>
+		    
+		    <para>
+		    Try the following commands:
+		    </para>
+		    
+		    <screen>
+		    peregrine: ls
+		    peregrine: ls /etc
+		    peregrine: cat /etc/motd
+		    </screen>
+		</note>
+	    </section>
+
+	    <section xml:id="cwd">
+		<title>Current Working Directory</title>
+
+		<para>
+		Every Unix process has an attribute called the
+		<glossterm>current working directory</glossterm>,
+		or <glossterm>CWD</glossterm>.  This is the directory that
+		the process is currently "in".
+		When you first log into a Unix
+		system, the shell process's CWD is set to your
+		home directory.
+		</para>
+		
+		<para>
+		The <command>pwd</command> command prints the CWD
+		of the shell process.  The <command>cd</command>
+		command changes the CWD of the shell process.
+		Running <command>cd</command> with no arguments sets the
+		CWD to your home directory.
+		</para>
+		
+		<note>
+		    <title>Practice Break</title>
+		    
+		    <para>
+		    Try the following commands:
+		    </para>
+		    
+		    <screen>
+		    peregrine: pwd
+		    peregrine: cd /
+		    peregrine: pwd
+		    peregrine: cd
+		    peregrine: pwd
+		    </screen>
+		</note>
+		
+		<para>
+		Many commands, such as <command>ls</command> and
+		<command>cd</command> use the
+		CWD as a default if you don't provide a directory name on the
+		command line.  For example, if the CWD is
+		<filename>/home/joe</filename>,
+		then the following commands are the same:
+		</para>
+		
+		<screen>
+		peregrine: ls
+		peregrine: ls /home/joe
+		</screen>
+		
+		<para>
+		The following commands are always the same:
+		</para>
+		
+		<screen>
+		peregrine: cd
+		peregrine: cd ~
+		</screen>
+	    </section>
+	    
+	    <section>
+		<title>Relative Pathnames</title>
+		
+		<para>
+		Whereas a full pathname denotes the path from / to a file
+		or directory, the <glossterm>relative pathname</glossterm>
+		denotes the path from the CWD
+		to a file or directory.
+		</para>
+		
+		<para>
+		Any pathname that does not begin with a '/' or '~'
+		is interpreted
+		as a relative pathname.  The full pathname is then derived
+		by appending the relative pathname to the CWD.  For example,
+		if the CWD is <filename>/etc</filename>, then the relative
+		pathname <filename>motd</filename>
+		refers to the full pathname <filename>/etc/motd</filename>.
+		</para>
+		
+		<mathphrase>
+		full pathname = CWD + "/" + relative pathname
+		</mathphrase>
+		
+		<para>
+		When you run a program from the shell,
+		the new process inherits the CWD
+		from the shell. Hence, you can use relative pathnames
+		as arguments in any Unix command, and they will use the CWD
+		inherited from the shell. For
+		example, the two <command>cat</command> commands below
+		have the same effect.
+		</para>
+		
+		<screen>
+		peregrine: cd /etc          # Set shell's CWD to /etc
+		peregrine: cat motd         # Inherits CWD from shell
+		peregrine: cat /etc/motd
+		</screen>
+
+		<note>
+		In almost all cases, full pathnames and relative pathnames
+		are interchangeable.  You can use either type of pathname
+		as a command line argument, or within a program.
+		</note>
+		
+		<note>
+		<title>Practice Break</title>
+		    <para>
+		    Try the following commands:
+		    </para>
+		    
+		    <screen>
+		    peregrine: cd
+		    peregrine: pwd
+		    peregrine: cd /etc
+		    peregrine: pwd
+		    peregrine: cat motd
+		    peregrine: cat /etc/motd
+		    peregrine: cd
+		    peregrine: pwd
+		    peregrine: cat motd
+		    </screen>
+		    
+		    <para>
+		    Why does the last command result in an error?
+		    </para>
+		</note>
+	    </section>
+	    
+	    <section>
+		<title>Avoid Full Pathnames</title>
+		
+		<para>
+		The relative pathname is potentially much
+		shorter than the full pathname.  Using relative pathnames
+		also provides more flexibility.
+		</para>
+		
+		<para>
+		Suppose you have a project contained in a directory.
+		If you move the whole project directory, then the full
+		pathname of every file and directory in it will change.
+		This can cause major problems if you were using full
+		pathnames with the original location.
+		While the full pathnames change when you move the project
+		directory, the pathnames relative to the project directory
+		remain the same.  For this reason, full pathnames
+		should be avoided unless absolutely necessary.
+		</para>
+	    </section>
+	    
+	    <section>
+		<title>Special Directory Names</title>
+
+		<para>
+		In addition to full pathnames and relative pathnames, there
+		are a few special symbols for directories that are commonly
+		referenced:
+		</para>
+		
+		<table xml:id="special_dirs" frame='all'>
+		    <title>Special Directory Symbols</title>
+		    <tgroup cols='2' align='left' colsep='1' rowsep='1'>
+			<thead>
+			<row>
+			    <entry>Symbol</entry>
+			    <entry>Refers to</entry>
+			</row>
+			</thead>
+			
+			<tbody>
+			<row>
+			    <entry>.</entry>
+			    <entry>The current working directory</entry>
+			</row>
+			<row>
+			    <entry>..</entry>
+			    <entry>The parent of the current working directory</entry>
+			</row>
+			<row>
+			    <entry>~</entry>
+			    <entry>Your home directory</entry>
+			</row>
+			<row>
+			    <entry>~user</entry>
+			    <entry>user's home directory</entry>
+			</row>
+			</tbody>
+		    </tgroup>
+		</table>
+    
+		<note>
+		<title>Practice Break</title>
+		    <para>
+		    Try the following commands:
+		    </para>
+		    
+		    <screen>
+		    peregrine: cd
+		    peregrine: pwd
+		    peregrine: ls
+		    peregrine: ls .
+		    peregrine: ls ~
+		    peregrine: ls /home
+		    peregrine: ls ..
+		    peregrine: cd ..
+		    peregrine: ls
+		    peregrine: ls ~
+		    peregrine: cd
+		    </screen>
+		</note>
+	    </section>
+	</section>
+
+	<section>
+	    <title>Ownership and Permissions</title>
+	    
+	    <section>
+		<title>Overview</title>
+		<para>
+		Every file and directory on a Unix system has inherent
+		access control features based on a simple scheme:
+		</para>
+		
+		<itemizedlist>
+		    <listitem>
+		    <para>
+		    Every file and directory has an individual
+		    owner and group owner.
+		    </para>
+		    </listitem>
+		    
+		    <listitem>
+		    <para>
+		    There are 3 types of permissions which are controlled
+		    separately from each other:
+		    </para>
+		    
+		    <itemizedlist>
+			<listitem>
+			Read
+			</listitem>
+			
+			<listitem>
+			Write (create or modify)
+			</listitem>
+			
+			<listitem>
+			Execute (e.g. run a file if it's a program)
+			</listitem>
+		    </itemizedlist>
+		    </listitem>
+		    
+		    <listitem>
+		    Read, write, and execute permissions can be granted or
+		    denied separately for each of the following:
+		    
+		    <itemizedlist>
+			<listitem>
+			The individual owner
+			</listitem>
+			
+			<listitem>
+			The group owner
+			</listitem>
+			
+			<listitem>
+			All users on the system (a hypothetical group
+			known as "world")
+			</listitem>
+		    </itemizedlist>
+		    </listitem>
+		</itemizedlist>
+		
+		<para>
+		Execute permissions on a file mean that the file can be executed
+		as a script or a program by typing its name.
+		It does not mean that the file actually
+		contains a script or a program: It is up to the owner of the file
+		to set the execute permissions appropriately for each file.
+		</para>
+		
+		<para>
+		Execute permissions on a directory mean that users in the
+		category can <command>cd</command> into it.  Users only need
+		read permissions on a directory to list it or access a file
+		within it, but they need execute permissions to make it the
+		current working directory of their processes.
+		</para>
+		
+		<para>
+		Unix systems provide this access using 9 on/off switches (bits)
+		associated with each file.
+		</para>
+	    </section>
+	    
+	    <section>
+		<title>Viewing Permissions</title>
+
+		<para>
+		If you do a long listing of a file or directory, you will see the
+		ownership and permissions:
+		</para>
+    
+		<screen>
+		peregrine: ls -l
+		drwx------   2 joe    users      512 Aug  7 07:52 Desktop/
+		drwxr-x---  39 joe    users     1536 Aug  9 22:21 Documents/
+		drwxr-xr-x   2 joe    users      512 Aug  9 22:25 Downloads/
+		-rw-r--r--   1 joe    users    82118 Aug  2 09:47 bootcamp.pdf
+		</screen>
+		
+		<para>
+		The leftmost column shows the type of object and the permissions
+		for each user category.
+		</para>
+		
+		<para>
+		A '-' in the leftmost character
+		means a regular file, 'd' means a directory, 'l' means a link.
+		etc.  Running <command>man ls</command> will reveal all the
+		codes.
+		</para>
+		
+		<para>
+		The next three characters are, in order, read, write
+		and execute permissions for the owner.
+		</para>
+		
+		<para>
+		The next three after that are permissions
+		for members of the owning group.
+		</para>
+		
+		<para>
+		The next three are permissions for world.
+		</para>
+		
+		<para>
+		A '-' in a permission bit column means that the permission is
+		denied for that user or set of users and an 'r', 'w', or
+		'x' means that it is enabled.
+		</para>
+		
+		<para>
+		The next two columns show the individual and group ownership
+		of the file or directory.  The other columns show the size,
+		the date and time it was last modified, and name.  In addition
+		to the 'd' in the first column, directory names are followed
+		by a '/'.
+		</para>
+		
+		<para>
+		You can see above that Joe's <filename>Desktop</filename>
+		directory is readable,
+		writable, and executable for Joe, and completely inaccessible
+		to everyone else.
+		</para>
+		
+		<para>
+		Joe's <filename>Documents</filename>
+		directory is readable, writable and executable
+		for Joe, and readable and executable for members of the group
+		"users".
+		Users not in the group "users" cannot access the Documents
+		directory at all.
+		</para>
+		
+		<para>
+		Joe's <filename>Downloads</filename> directory is readable
+		and executable to anyone who can log into the system.
+		</para>
+		
+		<para>
+		The file <filename>bootcamp.pdf</filename> is readable by the world,
+		but only writable by Joe.  It is not executable by anyone, which
+		makes sense because a PDF file is not a program.
+		</para>
+	    </section>
+	    
+	    <section>
+		<title>Setting Permissions</title>
+
+		<para>
+		Users cannot change individual ownership on a file, since this
+		would allow them to subvert disk quotas by placing their files
+		under someone else's name.  Only the
+		<glossterm>superuser</glossterm> can change the
+		individual ownership of a file or directory.
+		</para>
+		
+		<para>
+		Users can change the group ownership
+		of a file to any group that they belong to using the
+		<command>chgrp</command> command:
+		</para>
+		
+		<screen>
+		chgrp group path [path ...]
+		</screen>
+		
+		<para>
+		All sharing of files on Unix systems is done by controlling
+		group ownership and file permissions.
+		</para>
+		
+		<para>
+		File permissions are changed using the <command>chmod</command>
+		command:
+		</para>
+		
+		<screen>
+		chmod permission-specification path [path ...]
+		</screen>
+		
+		<para>
+		The permission specification has a symbolic form, and a raw
+		form, which is an octal number.
+		</para>
+		
+		<para>
+		The basic symbolic form consists of any of the three user categories
+		'u' (user/owner), 'g' (group), and 'o' (other/world) followed
+		by a '+' (enable) or '-' (disable), and finally one of the
+		three permissions 'r', 'w', or 'x'.
+		</para>
+		
+		<para>
+		Add read and execute permissions for group and world on
+		the Documents directory:
+		</para>
+		
+		<screen>
+		peregrine: chmod go+rx Documents
+		</screen>
+		
+		<para>
+		Disable all permissions for world on the Documents directory:
+		</para>
+		
+		<screen>
+		peregrine: chmod o-rwx Documents
+		</screen>
+		
+		<para>
+		Disable write permission for everyone, including the owner,
+		on bootcamp.pdf.  ( This can be used to reduce the chances of
+		accidentally deleting an important file. )
+		</para>
+		
+		<screen>
+		peregrine: chmod ugo-w bootcamp.pdf
+		</screen>
+		
+		<para>
+		Run <command>man chmod</command> for additional information.
+		</para>
+		
+		<para>
+		The raw form for permissions uses a 3-digit octal number to
+		represent the 9 permission bits.  This is a quick and convenient
+		method for computer nerds who can do octal/binary conversions
+		in their head.
+		</para>
+		
+		<screen>
+		peregrine: chmod 644 bootcamp.pdf   # 644 = 110100100 = rw-r--r--
+		peregrine: chmod 750 Documents      # 750 = 111101000 = rwxr-x---
+		</screen>
+		
+		<note>
+		    <title>Practice Break</title>
+		    
+		    <para>
+		    Try the following commands, and try to predict the
+		    output of each <command>ls</command> before you run it.
+		    </para>
+		    
+		    <screen>
+		    touch testfile
+		    ls -l
+		    chmod go-rwx testfile
+		    ls -l
+		    chmod o+rw testfile
+		    ls -l
+		    chmod g+rwx testfile
+		    ls -l
+		    rm testfile
+		    </screen>
+		    
+		    <para>
+		    Now set permissions on testfile so that it is readable,
+		    writable, and executable by you, only readable by the
+		    group, and inaccessible to everyone else.
+		    </para>
+		</note>
+	    </section>
+	</section>
+	
+	<section>
+	    <title>Self-test</title>
+	    
+	    <orderedlist>
+		<listitem>
+		What is a Unix file?
+		</listitem>
+		
+		<listitem>
+		Explain the difference between a text file and a binary
+		file.
+		</listitem>
+		
+		<listitem>
+		Do Unix operating systems distinguish between text
+		files and binary files?  Explain.
+		</listitem>
+		
+		<listitem>
+		Does the Unix standard include a convention on the format
+		of text files?
+		</listitem>
+		
+		<listitem>
+		Are Unix text files the same as Windows (and DOS) text files?
+		Explain.
+		</listitem>
+		
+		<listitem>
+		How can text files be converted between Windows and Unix
+		conventional formats?
+		</listitem>
+		
+		<listitem>
+		What is a directory?  Does it go by any other names?
+		</listitem>
+		
+		<listitem>
+		How are files and directories organized in a Unix filesystem?
+		</listitem>
+		
+		<listitem>
+		What are some of the conventional directories in the Unix
+		filesystem organization?
+		</listitem>
+		
+		<listitem>
+		What is the root directory?
+		</listitem>
+		
+		<listitem>
+		What is a parent directory?
+		</listitem>
+		
+		<listitem>
+		What is a sibling directory?
+		</listitem>
+		
+		<listitem>
+		What is a child directory?
+		</listitem>
+		
+		<listitem>
+		What is a subdirectory?
+		</listitem>
+		
+		<listitem>
+		What is a descendent directory?
+		</listitem>
+		
+		<listitem>
+		What is an ancestor directory?
+		</listitem>
+		
+		<listitem>
+		What is a home directory?
+		</listitem>
+		
+		<listitem>
+		What is a subtree?
+		</listitem>
+		
+		<listitem>
+		What is a full or absolute pathname?
+		</listitem>
+		
+		<listitem>
+		What is the current working directory?  What is a current
+		working directory a property of?
+		</listitem>
+		
+		<listitem>
+		What is a relative pathname?  How can you convert a relative
+		pathname to a full pathname?
+		</listitem>
+		
+		<listitem>
+		Why should full pathnames be avoided?
+		</listitem>
+		
+		<listitem>
+		How can you determine the current working directory of
+		your shell process?
+		</listitem>
+		
+		<listitem>
+		How can you change the current working directory of your shell
+		process to each of the following?
+		
+		<orderedlist>
+		    <listitem>
+		    Your home directory.
+		    </listitem>
+		    
+		    <listitem>
+		    /etc
+		    </listitem>
+		    
+		    <listitem>
+		    The directory <filename>Program1</filename>, which is a
+		    subdirectory of <filename>Programs</filename>, which is
+		    a subdirectory of the current working directory.
+		    </listitem>
+		</orderedlist>
+		</listitem>
+		
+		<listitem>
+		Show the simplest Unix command to view each of
+		the following files?
+		
+		<orderedlist>
+		    <listitem>
+		    <filename>/etc/hosts</filename>
+		    </listitem>
+		    
+		    <listitem>
+		    A file called .cshrc in the current working directory.
+		    </listitem>
+		    
+		    <listitem>
+		    A file called .cshrc in your home directory, regardless
+		    of what the current working directory is.
+		    </listitem>
+		    
+		    <listitem>
+		    A file called .cshrc in the home directory of a user
+		    with user name "bacon".
+		    </listitem>
+		    
+		    <listitem>
+		    A file called <filename>readme.txt</filename> in the
+		    parent directory of the current working directory.
+		    </listitem>
+		</orderedlist>
+		</listitem>
+		
+		<listitem>
+		How can you change the group ownership of the file
+		<filename>.cshrc</filename> in your home directory to the
+		group "smithlab"?
+		</listitem>
+		
+		<listitem>
+		How can you change the individual ownership of the file
+		<filename>.cshrc</filename> in your home directory to your
+		friend with user name Bob?  Explain.
+		</listitem>
+		
+		<listitem>
+		How can you change the permissions on the file
+		<filename>.cshrc</filename>
+		in your home directory so that only you can modify it,
+		members of the group can read and execute it but not
+		modify it, and anyone
+		else can read it but not modify or execute it?
+		</listitem>
+		
+		<listitem>
+		How can you see the ownership and permissions on all the
+		files in /etc?  In the current working directory?
+		</listitem>
+	    </orderedlist>
+	</section>
+    </section>
+    
+    <section xml:id="unix_commands">
+	<title>Unix Commands and the Shell</title>
+	
+	<note>
+	<title>Before You Begin</title>
+	You should have a basic understanding of
+	Unix processes, files, and directories.  These topics are covered
+	in <xref linkend="processes"/> and <xref linkend="filesystem"/>.
+	</note>
+
+	<para>
+	Unix commands fall into one of two categories:
+	</para>
+	
+	<itemizedlist>
+	    <listitem>
+	    <para>
+	    Internal commands are part of the shell.
+	    </para>
+	    
+	    <para>
+	    No new process is created when you execute an internal command.
+	    The shell simply carries out the execution of internal commands
+	    by itself.
+	    </para>
+	    </listitem>
+	    
+	    <listitem>
+	    <para>
+	    External commands are programs separate
+	    from the shell.  The command name of an external command is
+	    actually the name of an <glossterm>executable file</glossterm>,
+	    i.e. a file containing the program or script. For example,
+	    when you run the <command>ls</command> command, you are executing
+	    the program contained in the file <filename>/bin/ls</filename>.
+	    </para>
+	    
+	    <para>
+	    When you run an external command, the shell locates the
+	    program file, loads the program into memory, and creates a new
+	    (child) process to execute the program.  The shell then normally
+	    waits for the child process to end before prompting you for
+	    the next command.
+	    </para>
+	    </listitem>
+	</itemizedlist>
+	
+	<section>
+	    <title>Internal Commands</title>
+
+	    <para>
+	    Commands are implemented
+	    internally only when it is necessary, or when there is a substantial
+	    benefit.  If all commands were part of the shell, the shell
+	    would be enormous and would require too much memory.
+	    </para>
+	    
+	    <para>
+	    An example is the <command>cd</command> command, which changes
+	    the CWD of the shell process.  The <command>cd</command> command
+	    cannot be implemented as an external command, since the CWD is
+	    a property of the process.  If the <command>cd</command>
+	    command were external, it would run as a child process of
+	    the shell.  Altering the CWD of a child process does not affect
+	    the CWD of the parent process.  Each has it's own separate CWD.
+	    </para>
+	    
+	    <para>
+	    Likewise,
+	    any command that alters the state of the shell process must
+	    be implemented as an internal command.
+	    </para>
+	    
+	    <para>
+	    A command might also be implemented
+	    internally simply because it's trivial to do so, and it
+	    saves the overhead of loading and running an external command.
+	    When the work done by a command is very simple, it might take
+	    more resources to load an external program than it does to
+	    actually run it.  In these cases, it makes more sense to implement
+	    it as part of the shell.
+	    </para>
+	</section>
+	
+	<section>
+	    <title>External Commands</title>
+	    
+	    <para>
+	    The executable files containing external commands are kept
+	    in certain directories, most of which are called <filename>bin</filename> (short
+	    for binary, since most executable files are binary files).
+	    The most essential commands that are common to
+	    most Unix systems are kept in
+	    <filename>/bin</filename> and <filename>/usr/bin</filename>.
+	    The location of optional add-on commands varies, but a typical
+	    location is <filename>/usr/local/bin</filename>.
+	    </para>
+	    
+	    <para>
+	    The list of directories that are searched when looking for
+	    external commands is kept in an 
+	    <glossterm>environment variable</glossterm> called
+	    <varname>PATH</varname>.  The environment is discussed in
+	    more detail in <xref linkend="unix_environment"/>.
+	    </para>
+	    
+	    <note>
+		<title>Practice Break</title>
+		
+		<orderedlist>
+		    <listitem>
+		    Use <command>which</command> to find out whether the
+		    following commands are internal or external.
+		    
+		    <screen>
+		    which cd
+		    which cp
+		    which exit
+		    which ls
+		    which pwd
+		    </screen>
+		    </listitem>
+		    
+		    <listitem>
+		    Find out where your external commands are stored by
+		    running <command>echo $PATH</command>.
+		    </listitem>
+		    
+		    <listitem>
+		    Use <command>ls</command> to find out what commands are
+		    located in <filename>/bin</filename> and
+		    <filename>/usr/bin</filename>.
+		    </listitem>
+		</orderedlist>
+	    </note>
+	</section>
+
+	<section>
+	    <title>Getting Help</title>
+	    
+	    <para>
+	    One of the nice features of Unix is that
+	    all common Unix commands are documented in detail on the Unix
+	    system itself, and the documentation
+	    is accessible via the command line (you do not need a GUI to view
+	    it).  Whenever you want to know more about a particular
+	    Unix command, you can find out by typing <command>man
+	    command-name</command>.  For example, to learn all about
+	    the <command>ls</command> command, type:
+	    </para>
+	    
+	    <screen>
+	    peregrine: man ls
+	    </screen>
+	    
+	    <para>
+	    The <command>man</command> covers virtually every common command,
+	    as well as other topics.  It even covers itself:
+	    </para>
+	    
+	    <screen>
+	    peregrine: man man
+	    </screen>
+    
+	    <para>
+	    The <command>man</command> command displays a nicely formatted
+	    document known as a <glossterm>man page</glossterm>.  It uses a
+	    file viewing program called <command>more</command>, which can be
+	    used to browse through text files very quickly.
+	    <xref linkend="more_keys"/> shows the most common keystrokes used
+	    to navigate a man page.
+	    For complete information on navigation, run:
+	    </para>
+	    
+	    <screen>
+	    peregrine: man more
+	    </screen>
+	    
+	    <table xml:id="more_keys" frame='all'>
+		<title>Common hot keys in <command>more</command></title>
+		<tgroup cols='2' align='left' colsep='1' rowsep='1'>
+		    <colspec colname='c1'/>
+		    <colspec colname='c2'/>
+		    
+		    <thead>
+		    <row>
+			<entry>Key</entry>
+			<entry>Action</entry>
+		    </row>
+		    </thead>
+		    
+		    <tbody>
+		    <row>
+			<entry>h</entry>
+			<entry>Show key commands</entry>
+		    </row>
+		    <row>
+			<entry>Space bar</entry>
+			<entry>Forward one page</entry>
+		    </row>
+		    <row>
+			<entry>Enter/Return</entry>
+			<entry>Forward one line</entry>
+		    </row>
+		    <row>
+			<entry>b</entry>
+			<entry>Back one page</entry>
+		    </row>
+		    <row>
+			<entry>/</entry>
+			<entry>Search</entry>
+		    </row>
+		    </tbody>
+		</tgroup>
+	    </table>
+	    
+	    <para>
+	    Man pages include a number of standard sections, such as
+	    SYNOPSIS, DESCRIPTION, and SEE ALSO,
+	    which helps you identify other commands that might be of use.
+	    </para>
+	    
+	    <para>
+	    Man pages do not always make good tutorials.  Sometimes they contain
+	    too much detail, and they are often not well-written for novice
+	    users.  If you're learning
+	    a new command for the first time, you might want to consult a
+	    Unix book or the WEB.  The man pages will provide the most detailed
+	    and complete reference information on most commands, however.
+	    </para>
+	    
+	    <para>
+	    The <command>apropos</command> command is used to search the
+	    man page headings for a given topic.  It is equivalent to
+	    <command>man -k</command>. For example, to find out
+	    what man pages exist regarding Fortran, we might try the
+	    following:
+	    </para>
+	    
+	    <screen>
+	    peregrine: apropos fortran
+	    </screen>
+	    
+	    <para>
+	    or
+	    </para>
+	    
+	    <screen>
+	    peregrine: man -k fortran
+	    </screen>
+	
+	    <para>
+	    The <command>whatis</command> is similar to <command>apropos</command>
+	    in that it lists short descriptions of commands.  However,
+	    <command>whatis</command> only lists those commands with the
+	    search string in their name or short description, whereas
+	    <command>apropos</command> attempts to list everything related
+	    to the string.
+	    </para>
+	    
+	    <para>
+	    The <command>info</command> command is an alternative to
+	    man that uses a non-graphical hypertext system instead
+	    of flat files.  This allows the user to navigate extensive
+	    documentation more efficiently.  The <command>info</command>
+	    command has a fairly high learning curve, but it is very
+	    powerful, and is often the best option for documentation
+	    on a given topic.  Some open source software ships
+	    documentation in info format and provides a man page
+	    (converted from the info files) that actually has less
+	    information in it.
+	    </para>
+	    
+	    <screen>
+	    peregrine: info gcc
+	    </screen>
+	    
+	    <note>
+		<title>Practice Break</title>
+		
+		<orderedlist>
+		    <listitem>
+		    Find out how to display a '/' after each directory name
+		    and a '*' after each executable file when running
+		    <command>ls</command>.
+		    </listitem>
+		    
+		    <listitem>
+		    Use <command>apropos</command> to find out what
+		    Unix commands to use with bzip files.
+		    </listitem>
+		</orderedlist>
+	    </note>
+	</section>
+
+	<section>
+	    <title>A Basic Set of Unix Commands</title>
+	    
+	    <para>
+	    Most Unix commands have short names which are abbreviations or
+	    acronyms for what they do.  ( pwd = print working directory,
+	    cd = change directory, ls = list, ... )
+	    Unix was originally designed for people with good memories and
+	    poor typing skills.
+	    </para>
+
+	    <para>
+	    Some of the most commonly used Unix commands are described
+	    below.
+	    </para>
+	    
+	    <note>
+	    This section is meant to serve as a
+	    quick reference, and to inform new readers about which commands
+	    they should learn.  There is much more to know about these
+	    commands than we can cover here.  For full details about any
+	    of the commands described here, consult the
+	    <command>man</command> pages, <command>info</command> pages,
+	    or the WEB.
+	    </note>
+	    
+	    <para>
+	    This section uses the same notational conventions as the
+	    Unix man pages:
+	    </para>
+	    
+	    <itemizedlist>
+		<listitem>
+		Optional arguments are shown inside [].
+		</listitem>
+		
+		<listitem>
+		The pipe symbol (|) between two items means one or the other.
+		</listitem>
+		
+		<listitem>
+		An ellipses (...) means optionally more of the same.
+		</listitem>
+		
+		<listitem>
+		"file" means a filename is required and a directory name
+		is not allowed.  "directory" means a directory name is
+		required, and a file name is not allowed.  "path" means
+		either a file name or directory name is acceptable.
+		</listitem>
+	    </itemizedlist>
+	    
+	    <section>
+		<title>File and Directory Management</title>
+		<para>
+		<command>rm</command> removes one or more files.
+		</para>
+
+		<screen>
+		rm file [file ...]
+		</screen>
+		
+		<screen>
+		peregrine: rm temp.txt core a.out
+		</screen>
+	    
+		<caution>
+		Removing files with <command>rm</command> is not like
+		dragging them to the trash.
+		Once files are removed by <command>rm</command>, they
+		cannot be recovered.
+		</caution>
+		
+		<para>
+		<command>cp</command> copies one or more files.
+		</para>
+		
+		<screen>
+		cp source-file destination-file
+		cp source-file [source-file ...] destination-directory
+		</screen>
+		
+		<para>
+		If there is only one source filename, then destination can
+		be either a filename or a directory.  If there are multiple
+		source files, then destination must be a directory.
+		If destination is a
+		filename, and the file exists, it will be overwritten.
+		</para>
+
+		<screen>
+		peregrine: cp file file.bak     # Make a backup copy
+		peregrine: cp file file.bak ~   # Copy files to home directory
+		</screen>
+	    
+		<para>
+		<command>ls</command> lists files in CWD or a specified
+		file or directory.
+		</para>
+		
+		<screen>
+		ls [path ...]
+		</screen>
+		
+		<screen>
+		peregrine: ls           # List CWD
+		peregrine: ls /etc      # List /etc directory
+		</screen>
+	    
+		<para>
+		<command>mv</command> moves or renames files or directories.
+		</para>
+		
+		<screen>
+		mv source destination
+		mv source [source ...] destination-directory
+		</screen>
+		
+		<para>
+		If multiple sources are given, destination must be a
+		directory.
+		</para>
+		
+		<screen>
+		peregrine: mv prog1.c Programs
+		</screen>
+	    
+		<para>
+		<command>ln</command> link files or directories.
+		</para>
+		
+		<screen>
+		ln source-file destination-file
+		ln -s source destination
+		</screen>
+		
+		<para>
+		The <command>ln</command> command creates
+		another pathname for the same file.  Both names
+		refer to the same file, and changes made through one
+		appear in the other.  Without <option>-s</option>,
+		a standard directory entry, known as a
+		<glossterm>hard link</glossterm> is created.  In this case,
+		source and destination must be on the same partition.
+		(The <command>df</command> will list partitions and their
+		location within the directory tree.)  With <option>-s</option>,
+		a <glossterm>symbolic link</glossterm> is created.  A
+		symbolic link is not a standard directory entry, but a pointer
+		to the source pathname.  Only symbolic links can be used
+		for directories, and symbolic links to not have to
+		be on the same partition as the source.
+		</para>
+		
+		<screen>
+		peregrine: ln -s /etc/motd ~    # Make a convenient link to motd
+		</screen>
+	    
+		<para>
+		<command>rm</command> removes one or more files
+		(or directories with the proper flags).
+		</para>
+		
+		<screen>
+		rm file [file ...]
+		rm -r path [path ...]
+		</screen>
+		
+		<screen>
+		peregrine: rm output.txt prog.o
+		</screen>
+	    
+		<para>
+		<command>mkdir</command> creates one or more directories.
+		</para>
+		
+		<screen>
+		mkdir [-p] pathname [pathname ...]
+		</screen>
+		
+		<para>
+		The <option>-p</option> flag indicates that mkdir should
+		attempt to create any parent directories in the path
+		that don't already exist.  If not used, <command>mkdir</command>
+		will fail unless all but the last component of the path
+		exist.
+		</para>
+		
+		<screen>
+		peregrine: mkdir Programs
+		peregrine: mkdir -p Programs/C/MPI
+		</screen>
+	    
+		<para>
+		<command>rmdir</command> removes one or more empty
+		directories.
+		</para>
+		
+		<screen>
+		rmdir directory [directory ...]
+		</screen>
+		
+		<para>
+		<command>rmdir</command> will fail if a directory is not
+		completely empty.  You may also need to check for hidden
+		files using <command>ls -a directory</command>.
+		</para>
+		
+		<screen>
+		peregrine: rmdir Programs/C/MPI
+		</screen>
+	    
+		<para>
+		<command>find</command> locates files within a subtree
+		using a wide variety of possible criteria.
+		</para>
+		
+		<screen>
+		find start-directory criteria [action]
+		</screen>
+		
+		<para>
+		<command>find</command> is a very powerful and complex
+		command that can be used to not only find files, but
+		run commands on the files matching the search criteria.
+		</para>
+		
+		<screen>
+		peregrine: find . -name core                    # List cores
+		peregrine: find . -name core -exec rm '{}' \;   # Remove cores
+		</screen>
+	    
+		<para>
+		<command>df</command> shows the free disk space on all
+		currently mounted partitions.
+		</para>
+		
+		<screen>
+		df
+		</screen>
+	    
+		<para>
+		<command>du</command> reports the disk usage of a directory
+		and everything under it.
+		</para>
+		
+		<screen>
+		du [-s] [-h] path
+		</screen>
+		
+		<para>
+		The <option>-s</option> (summary) flag suppresses output
+		about each file in the subtree, so that only the total
+		disk usage of the directory is shown.
+		</para>
+		
+		<screen>
+		peregrine: du -sh Programs 
+		</screen>
+	    </section>
+	    
+	    <section>
+		<title>Shell Internal Commands</title>
+		
+		<para>
+		As mentioned previously, internal commands are part of the
+		shell, and serve to control the shell itself.  Below are
+		some of the most common internal commands.
+		</para>
+		
+		<para>
+		<command>cd</command> changes the current working directory
+		of the shell process.  It is described in more detail in
+		<xref linkend="cwd"/>.
+		</para>
+		
+		<screen>
+		cd [directory]
+		</screen>
+		
+		<para>
+		The <command>pwd</command> command prints the CWD of the
+		shell process. It is described in detail in
+		<xref linkend="cwd"/><footnote>
+		<command>pwd</command> is actually an external command,
+		but we cover it here since it relates to the CWD of the shell
+		process.
+		(recall that new processes inherit the CWD of the shell
+		process, so
+		<command>pwd</command> need not be internal.)</footnote>.
+		You can use
+		<command>pwd</command> like a Unix filesystem GPS, to get
+		your bearing when you're lost.
+		</para>
+		
+		<screen>
+		pwd
+		</screen>
+		
+		<para>
+		<command>pushd</command> changes CWD and saves the
+		old CWD on a stack so that we can easily return.
+		</para>
+		
+		<screen>
+		pushd directory
+		</screen>
+		
+		<para>
+		Users often encounter the need to temporarily go to another
+		directory, run a few commands, and then come back to the
+		current directory.
+		</para>
+		
+		<para>
+		The <command>pushd</command> command is a very useful alternative
+		to <command>cd</command> that helps in this situation.
+		It performs the same operation
+		as <command>cd</command>, but it records the starting CWD
+		by adding it to the top of a stack of CWDs.  You can then
+		return to where the last <command>pushd</command> command was
+		invoked using <command>popd</command>.  This saves you
+		from having to retype the pathname of the directory you want
+		to return to.  Not all shells support pushd and popd, but
+		the ones you are likely to use for a login session do.
+		</para>
+		
+		<note>
+		    <title>Practice Break</title>
+		    
+		    <para>
+		    Try the following sequence of commands:
+		    </para>
+		    
+		    <screen>
+		    peregrine: pwd          # Check starting point
+		    peregrine: pushd /etc
+		    peregrine: more motd
+		    peregrine: pushd /home
+		    peregrine: ls
+		    peregrine: popd         # Back to /etc
+		    peregrine: pwd
+		    peregrine: more motd
+		    peregrine: popd         # Back to starting point
+		    peregrine: pwd
+		    </screen>
+		</note>
+		
+		<para>
+		<command>exit</command> terminates the shell
+		process.  
+		</para>
+		
+		<screen>
+		exit
+		</screen>
+		
+		<para>
+		This is the most reliable way to exit a shell.
+		In some situations you could also type <command>logout</command>
+		or simply press Ctrl+d, but these alternatives will not work
+		for every shell process.
+		</para>
+	    </section>
+    
+	    <section>
+		<title>Text File Processing</title>
+		
+		<para>
+		<command>cat</command> echoes the contents of one or
+		more text files.
+		</para>
+		
+		<screen>
+		cat file [file ...]
+		</screen>
+		
+		<screen>
+		cat /etc/motd
+		</screen>
+	    
+		<para>
+		<command>more</command> shows the contents of one or more
+		text files interactively.
+		</para>
+		
+		<screen>
+		more file [file ...]
+		</screen>
+		
+		<screen>
+		peregrine: more prog1.c
+		</screen>
+	    
+		<para>
+		<command>head</command> shows the top N lines of one or more
+		text files.
+		</para>
+		
+		<screen>
+		head -# file [file ...]
+		</screen>
+		
+		<para>
+		If a flag consisting of a - followed by an integer number N
+		is given, the top N lines are shown instead of the default
+		of 10.
+		</para>
+		
+		<screen>
+		peregrine: head -5 prog1.c
+		</screen>
+	    
+		<para>
+		<command>tail</command> shows the bottom N lines of one or
+		more text files.
+		</para>
+		
+		<screen>
+		tail -# file [file ...]
+		</screen>
+		
+		<para>
+		Tail is especially useful for viewing the end of a large
+		file that would be cumbersome to view with
+		<command>more</command>.
+		</para>
+		
+		<para>
+		If a flag consisting of a - followed by an integer number N
+		is given, the bottom N lines are shown instead of the default
+		of 10.
+		</para>
+		
+		<screen>
+		peregrine: tail -5 output.txt
+		</screen>
+	    
+		<para>
+		<command>grep</command> shows lines in one or more text files
+		that
+		match a given <glossterm>regular expression</glossterm>.
+		</para>
+		
+		<screen>
+		grep regular-expression file [file ...]
+		</screen>
+		
+		<para>
+		The regular expression is most often a simple string, but can
+		represent patterns as described by
+		<command>man re_format</command>.
+		</para>
+		
+		<screen>
+		peregrine: grep printf prog1.c
+		</screen>
+	    </section>
+	    
+	    <section xml:id="unix_editors">
+		<title>Text Editors</title>
+		
+		<para>
+		There are more text editors available for Unix systems
+		than any one person is aware of.  Some are terminal-based,
+		some are graphical, and some have both types of interfaces.
+		</para>
+		
+		<para>
+		All Unix systems support running graphical programs from
+		remote locations, but most graphical programs require
+		a fast connection (10 megabits/sec) or more to function
+		tolerably.
+		</para>
+		
+		<para>
+		Knowing how to use a terminal-based text editor is therefore
+		a very good idea, so that you're prepared to work over a
+		slow connection if necessary.  Some of the more common
+		terminal-based editors are described below.
+		</para>
+		
+		<para>
+		<command>vi</command> (visual editor) is the standard
+		text editor for all Unix systems.  Most users either love
+		or hate the vi interface, but it's a good editor to know
+		since it is standard on every Unix system.
+		</para>
+		
+		<para>
+		<command>nano</command> is an extremely simplistic text
+		editor that is ideal for beginners.  It is a rewrite of
+		the <command>pico</command> editor, which is known to
+		have many bugs and security issues.  Neither editor is
+		standard on Unix systems, but both are free and easy to
+		install.  These editors entail little or no learning
+		curve, but are not sophisticated enough for extensive
+		programming or scripting.
+		</para>
+		
+		<para>
+		<command>emacs</command> (Edit MACroS)
+		is a more sophisticated editor
+		used by many programmers.  It is known for being hard to
+		learn, but very powerful.  It is not standard on most Unix
+		systems, but is free and easy to install.
+		</para>
+		
+		<para>
+		<command>ape</command> is a menu-driven, user-friendly
+		IDE (integrated development environment), i.e. programmer's
+		editor.  It has an interface similar to PC and Mac programs,
+		but works on a standard Unix terminal.  It is not standard
+		on most Unix systems, but is free and easy to install.
+		<command>ape</command> has a small learning curve, and
+		advanced features to make programming much faster.
+		</para>
+	    </section>
+	    
+	    <section>
+		<title>Networking</title>
+	    
+		<para>
+		<command>hostname</command> prints the network name of
+		the machine.
+		</para>
+		
+		<screen>
+		hostname
+		</screen>
+		
+		<para>
+		This is often useful when you are working on multiple Unix
+		machines at the same time (e.g. via <command>ssh</command>), and forgot which
+		window applies to each machine.
+		</para>
+		
+		<para>
+		<command>ssh</command> is used to remotely log into another
+		machine on the network and start a shell.
+		</para>
+		
+		<screen>
+		ssh [name@]hostname
+		</screen>
+		
+		<screen>
+		mypc: ssh joe@peregrine.hpc.uwm.edu
+		</screen>
+	    
+		<para>
+		<command>sftp</command> is used to remotely log into another
+		machine on the network and transfer files to or from it.
+		</para>
+		
+		<screen>
+		sftp [name@]host
+		</screen>
+		
+		<screen>
+		peregrine: sftp joe@peregrine.hpc.uwm.edu
+		</screen>
+	    
+		<para>
+		<command>rsync</command> is used to synchronize two
+		directories either on the same machine or on different
+		machines.
+		</para>
+		
+		<screen>
+		rsync [flags] [[name@]host:]path [[name@]host:]path
+		</screen>
+		
+		<para>
+		<command>rsync</command> compares the contents of the
+		two source and destination directories and transfers
+		only the differences.  Hence, it can save an enormous
+		amount of time when you make small changes to a large
+		project and need to synchronize another copy of the project.
+		</para>
+		
+		<screen>
+		peregrine: rsync -av Project joe@peregrine.hpc.uwm.edu:
+		</screen>
+	    </section>
+
+	    <section>
+		<title>Identity and Access Management</title>
+	    
+		<para>
+		<command>passwd</command> changes your password.  It asks
+		for your old password once, and the new one twice (to ensure
+		that you don't accidentally set your password to something
+		you don't know because your finger slipped).  Unlike many
+		graphical password programs, <command>passwd</command>
+		does not echo anything for each character typed. (Even
+		showing the length of your password is a bad idea from
+		a security standpoint.)
+		</para>
+		
+		<screen>
+		passwd
+		</screen>
+	    </section>
+
+	    <section>
+		<title>Terminal Control</title>
+	    
+		<para>
+		<command>clear</command> clears your terminal screen
+		(assuming the TERM variable is properly set).
+		</para>
+		
+		<screen>
+		clear
+		</screen>
+	    
+		<para>
+		<command>reset</command> resets your terminal to an initial
+		state.  This is useful when your terminal has been corrupted
+		by bad output, such as when attempting to view a binary
+		file.
+		</para>
+		
+		<para>
+		Terminals are controlled by <glossterm>magic
+		sequences</glossterm>, sequences of invisible control
+		characters sent from the host computer to the terminal
+		amidst the normal output.  Magic sequences move the cursor,
+		change the color, change the international character set,
+		etc.  Binary files contain random data that sometimes by
+		chance contain magic sequences that could alter the mode
+		of your terminal.  If this happens, running <command>reset
+		</command> will usually correct the problem.  If not,
+		you will need to log out and log back in.
+		</para>
+		
+		<screen>
+		reset
+		</screen>
+	    </section>
+	</section>
+
+	<section>
+	    <title>Self-test</title>
+	    
+	    <orderedlist>
+		<listitem>
+		What is an internal command?
+		</listitem>
+		
+		<listitem>
+		What is an external command?
+		</listitem>
+		
+		<listitem>
+		What kinds of commands must be implemented as internal
+		commands?
+		</listitem>
+		
+		<listitem>
+		How can you quickly view detailed information on a Unix
+		command?
+		</listitem>
+		
+		<listitem>
+		How can you identify Unix commands related to a topic?
+		(Describe two methods.)
+		</listitem>
+		
+		<listitem>
+		Show the simplest Unix command to
+		accomplish each of the following in order:
+		
+		<orderedlist>
+		    <listitem>
+		    List the files in <filename>/usr/local/share</filename>.
+		    </listitem>
+		    
+		    <listitem>
+		    Make your home directoty the CWD.
+		    </listitem>
+		    
+		    <listitem>
+		    Copy the file <filename>/etc/hosts</filename> to your
+		    home directory.
+		    </listitem>
+		    
+		    <listitem>
+		    Rename the file <filename>~/hosts</filename> to
+		    <filename>~/hosts.bak</filename>.
+		    </listitem>
+		    
+		    <listitem>
+		    Create a subdirectory called <filename>~/Temp</filename>.
+		    </listitem>
+		    
+		    <listitem>
+		    Make <filename>~/Temp</filename> the CWD.
+		    </listitem>
+		    
+		    <listitem>
+		    Copy the file <filename>~/hosts.bak</filename>
+		    to <filename>~/Temp</filename>.
+		    </listitem>
+		    
+		    <listitem>
+		    Create a hard link to the file
+		    <filename>~/Temp/hosts.bak</filename>
+		    called <filename>~/hosts.bak.temp</filename>.
+		    </listitem>
+		    
+		    <listitem>
+		    Create a link to the directory
+		    <filename>/usr/local/share</filename>
+		    in your home directory.
+		    </listitem>
+		    
+		    <listitem>
+		    Make your home directory the CWD.
+		    </listitem>
+		    
+		    <listitem>
+		    Remove the entire subtree in <filename>~/Temp</filename>
+		    and the files <filename>~/hosts.bak</filename> and
+		    <filename>~/hosts.bak.temp</filename>.
+		    </listitem>
+		    
+		    <listitem>
+		    Show how much space is used by the directory
+		    <filename>/etc</filename>.
+		    </listitem>
+		</orderedlist>
+		</listitem>
+		
+		<listitem>
+		Show the simplest Unix command to
+		accomplish each of the following:
+		    
+		<orderedlist>
+		    <listitem>
+		    Change the current working directory of your shell process
+		    to /etc, remembering the previous current working
+		    directory on the directory stack.
+		    </listitem>
+		    
+		    <listitem>
+		    Return to the previous current working directory
+		    on the directory stack.
+		    </listitem>
+		    
+		    <listitem>
+		    Terminate the shell.
+		    </listitem>
+		</orderedlist>
+		</listitem>
+		
+		<listitem>
+		Show the simplest Unix command to
+		accomplish each of the following:
+		
+		    
+		<orderedlist>
+		    <listitem>
+		    Show the contents of the text file
+		    <filename>/etc/motd</filename> a page
+		    at a time.
+		    </listitem>
+		    
+		    <listitem>
+		    Show the first 5 lines of <filename>/etc/motd</filename>.
+		    </listitem>
+		    
+		    <listitem>
+		    Show the last 8 lines of <filename>/etc/motd</filename>.
+		    </listitem>
+		    
+		    <listitem>
+		    Show lines in <filename>/etc/group</filename> and
+		    <filename>/etc/passwd</filename> containing
+		    your username.
+		    </listitem>
+		    
+		    <listitem>
+		    Edit the text file <filename>./prog1.c</filename>.
+		    </listitem>
+		</orderedlist>
+		</listitem>
+		
+		<listitem>
+		Show the simplest Unix command to
+		accomplish each of the following:
+		
+		<orderedlist>
+		    <listitem>
+		    Show the network name (host name) of the computer
+		    running the shell.
+		    </listitem>
+		    
+		    <listitem>
+		    Remotely log into "login.peregrine.hpc.uwm.edu" and
+		    start a shell.
+		    </listitem>
+		    
+		    <listitem>
+		    Remotely log into "data.peregrine.hpc.uwm.edu" for
+		    the purpose of transferring files.
+		    </listitem>
+		    
+		    <listitem>
+		    Synchronize the folder <filename>~/Programs/Prog1</filename> on
+		    login.peregrine.hpc.uwm.edu to <filename>./Prog1</filename>, transferring
+		    only the differences.
+		    </listitem>
+		    
+		    <listitem>
+		    Clear the terminal screen.
+		    </listitem>
+		    
+		    <listitem>
+		    Restore functionality to a terminal window that's
+		    in a funk.
+		    </listitem>
+		</orderedlist>
+		</listitem>
+	    </orderedlist>
+	</section>
+    </section>
+    
+    <section>
+	<title>Unix Command Quick Reference</title>
+    
+	<para>
+	<xref linkend="unix_command_reference"/> provides a quick
+	reference for looking up common Unix commands.  For details on
+	any of these commands, run <command>man command</command>
+	(or <command>info command</command> on some systems).
+	</para>
+	
+	<table xml:id="unix_command_reference" frame='all'>
+	    <title>Unix Commands</title>
+	    <tgroup cols='2' align='left' colsep='1' rowsep='1'>
+		<thead>
+		<row>
+		    <entry>Synopsis</entry>
+		    <entry>Description</entry>
+		</row>
+		</thead>
+		
+		<tbody>
+		<row>
+		    <entry>ls [file|directory]</entry>
+		    <entry>List file(s)</entry>
+		</row>
+		<row>
+		    <entry>cp source-file destination-file</entry>
+		    <entry>Copy a file</entry>
+		</row>
+		<row>
+		    <entry>cp source-file [source-file ...] directory</entry>
+		    <entry>Copy multiple files to a directory</entry>
+		</row>
+		<row>
+		    <entry>mv source-file destination-file</entry>
+		    <entry>Rename a file</entry>
+		</row>
+		<row>
+		    <entry>mv source-file [source-file ...] directory</entry>
+		    <entry>Move multiple files to a directory</entry>
+		</row>
+		<row>
+		    <entry>ln source-file destination-file</entry>
+		    <entry>Create another name for the same file.
+		    (source and destination must be in the same
+		    filesystem)</entry>
+		</row>
+		<row>
+		    <entry>ln -s source destination</entry>
+		    <entry>Create a symbolic link to a file or
+		    directory</entry>
+		</row>
+		<row>
+		    <entry>rm file [file ...]</entry>
+		    <entry>Remove one or more files</entry>
+		</row>
+		<row>
+		    <entry>rm -r directory</entry>
+		    <entry>Recursively remove a directory and all of
+		    its contents</entry>
+		</row>
+		<row>
+		    <entry>mkdir directory</entry>
+		    <entry>Create a directory</entry>
+		</row>
+		<row>
+		    <entry>rmdir directory</entry>
+		    <entry>Remove a directory (the directory must be
+		    empty)</entry>
+		</row>
+		<row>
+		    <entry>find start-directory criteria</entry>
+		    <entry>Find files/directories based on flexible criteria</entry>
+		</row>
+		<row>
+		    <entry>make</entry>
+		    <entry>Rebuild a file based on one or more other files</entry>
+		</row>
+		<row>
+		    <entry>od/hexdump</entry>
+		    <entry>Show the contents of a file in octal/hexadecimal</entry>
+		</row>
+		<row>
+		    <entry>awk</entry>
+		    <entry>Process tabular data from a text file</entry>
+		</row>
+		<row>
+		    <entry>sed</entry>
+		    <entry>Stream editor.  Echo files, making changes to contents.</entry>
+		</row>
+		<row>
+		    <entry>sort</entry>
+		    <entry>Sort text files based on flexible criteria</entry>
+		</row>
+		<row>
+		    <entry>uniq</entry>
+		    <entry>Echo files, eliminating adjacent duplicate lines.</entry>
+		</row>
+		<row>
+		    <entry>diff</entry>
+		    <entry>Show differences between text files.</entry>
+		</row>
+		<row>
+		    <entry>cmp</entry>
+		    <entry>Detect differences between binary files.</entry>
+		</row>
+		<row>
+		    <entry>cdiff</entry>
+		    <entry>Show differences between C programs.</entry>
+		</row>
+		<row>
+		    <entry>cut</entry>
+		    <entry>Extract substrings from text.</entry>
+		</row>
+		<row>
+		    <entry>m4</entry>
+		    <entry>Process text files containing m4 mark-up.</entry>
+		</row>
+		<row>
+		    <entry>chfn</entry>
+		    <entry>Change finger info (personal identity).</entry>
+		</row>
+		<row>
+		    <entry>chsh</entry>
+		    <entry>Change login shell.</entry>
+		</row>
+		<row>
+		    <entry>su</entry>
+		    <entry>Substitute user.</entry>
+		</row>
+		<row>
+		    <entry>cc/gcc/icc</entry>
+		    <entry>Compile C programs.</entry>
+		</row>
+		<row>
+		    <entry>f77/f90/gfortran/ifort</entry>
+		    <entry>Compile Fortran programs.</entry>
+		</row>
+		<row>
+		    <entry>ar</entry>
+		    <entry>Create static object libraries.</entry>
+		</row>
+		<row>
+		    <entry>indent</entry>
+		    <entry>Beautify C programs.</entry>
+		</row>
+		<row>
+		    <entry>astyle</entry>
+		    <entry>Beautify C, C++, C#, and Java programs.</entry>
+		</row>
+		<row>
+		    <entry>tar</entry>
+		    <entry>Pack a directory tree into a single file.</entry>
+		</row>
+		<row>
+		    <entry>gzip</entry>
+		    <entry>Compress files.</entry>
+		</row>
+		<row>
+		    <entry>gunzip</entry>
+		    <entry>Uncompress gzipped files.</entry>
+		</row>
+		<row>
+		    <entry>bzip2</entry>
+		    <entry>Compress files better (and slower).</entry>
+		</row>
+		<row>
+		    <entry>bunzip2</entry>
+		    <entry>Uncompress bzipped files.</entry>
+		</row>
+		<row>
+		    <entry>zcat/zmore/zgrep/bzcat/bzmore/bzgrep</entry>
+		    <entry>Process compressed files.</entry>
+		</row>
+		<row>
+		    <entry>exec command</entry>
+		    <entry>Replace shell process with command.</entry>
+		</row>
+		<row>
+		    <entry>date</entry>
+		    <entry>Show the current date and time.</entry>
+		</row>
+		<row>
+		    <entry>cal</entry>
+		    <entry>Print a calendar for any month of any year.</entry>
+		</row>
+		<row>
+		    <entry>bc</entry>
+		    <entry>Unlimited precision calculator.</entry>
+		</row>
+		<row>
+		    <entry>printenv</entry>
+		    <entry>Print environment variables.</entry>
+		</row>
+		</tbody>
+	    </tgroup>
+	</table>
+    </section>
+    
+    <section xml:id="unix_environment">
+	<title>Environment Variables</title>
+	
+	<para>
+	Every Unix process maintains a list of character string
+	variables called the <glossterm>environment</glossterm>.
+	When a new process is created, it inherits the environment
+	from the process that created it (its parent process).
+	</para>
+	
+	<para>
+	Since the shell creates a new process whenever you run an external
+	command, the shell's environment can be used to pass
+	information down to any command that you run.  For example, text
+	editors and other programs that manipulate the full terminal screen
+	need to know what type of terminal you are using.  Different types
+	of terminals use different magic sequences to move the cursor, clear
+	the screen, scroll, etc.
+	To provide this
+	information, we set the shell's environment variable TERM to the
+	terminal type (usually "xterm").  When you run a command from
+	the shell, it inherits the shell's TERM variable, and therefore knows
+	the correct magic sequences for your terminal.
+	</para>
+	
+	<para>
+	The <command>printenv</command> shows all of the environment
+	variables currently set in your shell process.
+	</para>
+	
+	<screen>
+	peregrine: printenv
+	</screen>
+	
+	<para>
+	Setting environment variables requires a different syntax depending
+	on which shell you are using.
+	</para>
+	
+	<para>
+	For Bourne shell derivatives (Bourne shell, Korn shell, Bourne again
+	shell), we use the <command>export</command> command:
+	</para>
+	
+	<screen>
+	peregrine: TERM=xterm
+	peregrine: export TERM
+	</screen>
+	
+	<para>
+	For C-shell derivatives (C-shell and T-shell), we use
+	<command>setenv</command>:
+	</para>
+	
+	<screen>
+	peregrine: setenv TERM xterm
+	</screen>
+
+	<para>
+	The <varname>PATH</varname> variable specifies a list of
+	directories containing external Unix commands. When you type
+	a command at the shell prompt, the shell checks the directories
+	listed in <varname>PATH</varname> in order to find the command
+	you typed.  For example, when you type the <command>ls</command>
+	command, the shell utilizes <varname>PATH</varname> to
+	locate the program in <filename>/bin/ls</filename>.
+	</para>
+	
+	<para>
+	The directory
+	names within in PATH are separated by colons.  A simple
+	value for <varname>PATH</varname>
+	might be <filename>/bin:/usr/bin:/usr/local/bin</filename>.  When you type
+	<command>ls</command>, the shell first checks for the existence
+	of <filename>/bin/ls</filename>.  If it does not exist, the
+	shell then checks for <filename>/usr/bin/ls</filename>,
+	and so on, until it either finds the program or has checked all
+	directories in <varname>PATH</varname>.  If the program is
+	not found, the shell issues an error message such as
+	"ls: Command not found".
+	</para>
+	
+	<para>
+	Environment variables can be set from the shell prompt using
+	the <command>export</command> command in Bourne shell and
+	its derivatives (sh, bash, ksh):
+	</para>
+	
+	<screen>
+	peregrine: export PATH='/bin:/usr/bin:/usr/local/bin'
+	</screen>
+
+	<para>
+	or using <command>setenv</command>
+	in C-shell and its derivatives (csh, tcsh):
+	</para>
+
+	<screen>
+	peregrine: setenv PATH '/bin:/usr/bin:/usr/local/bin'
+	</screen>
+	
+	<para>
+	Directories can be added to the current path by including
+	a reference to PATH in the command.  If using quotes around
+	the string, they must be double quotes.  Anything inside
+	single quotes is taken literally, so the reference to
+	PATH would not be expanded.
+	</para>
+	
+	<screen>
+	peregrine: export PATH="${PATH}:/opt/bin"
+	</screen>
+	
+	<para>
+	Many environment variables are set automatically when a user
+	logs in or starts up a new shell.  This topic is covered in
+	<xref linkend="startup_scripts"/>.
+	</para>
+	
+	<section>
+	    <title>Self-test</title>
+	    
+	    <orderedlist>
+		<listitem>
+		What are environment variables?
+		</listitem>
+		
+		<listitem>
+		Does a Unix process have ay environment variables when
+		it starts?  If so, where do they come from?
+		</listitem>
+		
+		<listitem>
+		How can environment variables be used to communicate
+		information to child processes?
+		</listitem>
+		
+		<listitem>
+		Describe one common environment variable that it typically
+		set by the shell and used by processes running under the
+		shell.
+		</listitem>
+		
+		<listitem>
+		Show how to set the environment variable TERM to
+		the value "xterm" in
+		
+		<orderedlist>
+		    <listitem>
+		    Bourne shell (sh)
+		    </listitem>
+		    
+		    <listitem>
+		    Korn shell (ksh)
+		    </listitem>
+		    
+		    <listitem>
+		    Bourne again shell (bash)
+		    </listitem>
+		    
+		    <listitem>
+		    C-shell (csh)
+		    </listitem>
+		    
+		    <listitem>
+		    T-shell (tcsh)
+		    </listitem>
+		</orderedlist>
+		</listitem>
+	    </orderedlist>
+	</section>
+    </section>
+    
+    <section>
+	<title>Shell Variables</title>
+
+	<para>
+	In addition to the environment, shells maintain a similar set
+	of variables for their own use.  These variables are not passed
+	down to child processes, and are only used by the shell.
+	</para>
+	
+	<para>
+	Shell variables can be arbitrary, but each shell also treats certain
+	variable names specially.
+	One common example is the shell variable that stores the shell
+	prompt.
+	</para>
+	
+	<para>
+	In Bourne-shell derivatives, this variable is called PS1.
+	To set a shell variable in Bourne-shell derivatives, we use
+	a simple assignment.  ( The export command above actually sets a
+	shell variable called TERM and then exports it to the environment. )
+	</para>
+	
+	<screen>
+	peregrine: PS1="peregrine: "
+	</screen>
+	
+	<para>
+	In C-shell derivatives, the variable is called
+	<varname>prompt</varname>, and is set using the <command>set</command>
+	command:
+	</para>
+	
+	<screen>
+	peregrine: set prompt="peregrine: "
+	</screen>
+	
+	<note>
+	The syntax for <command>set</command> is slightly different than
+	for <command>setenv</command>.  <command>Set</command> uses
+	an '=' while <command>setenv</command> uses a space.
+	</note>
+	
+	<para>
+	Shell prompt variables may contain certain special symbols that
+	represent dynamic information they you might want to include in
+	your shell prompt, such as the host name, command counter,
+	current working directory, etc.  Consult the documentation for
+	your shell for details.
+	</para>
+	
+	<para>
+	In all shells, you can view the current shell variables by typing
+	<command>set</command> with no arguments:
+	</para>
+	
+	<screen>
+	peregrine: set
+	</screen>
+
+	<section>
+	    <title>Self-test</title>
+	    
+	    <orderedlist>
+		<listitem>
+		Show how to set the shell prompt to "Peregrine: " in:
+		
+		<orderedlist>
+		    <listitem>
+		    Bourne shell
+		    </listitem>
+		    
+		    <listitem>
+		    C-shell
+		    </listitem>
+		</orderedlist>
+		</listitem>
+		
+		<listitem>
+		How can you view a list of all current shell variables and
+		their values?
+		</listitem>
+	    </orderedlist>
+	</section>
+    </section>
+
+    <section xml_id="file_transfer">
+	<title>File Transfer</title>
+	
+	<para>
+	Many users will need to transfer data between other computers and
+	a remote Unix system.  For example, users of a shared research
+	computer running Unix will need to transfer input data from their
+	computer to the Unix machine, run the research programs,
+	and finally transfer results back to their computer.
+	There are many software tools available to accomplish this.  Some of
+	the more convenient tools are described below.
+	</para>
+	    
+	<section xml:id="unix_file_transfer">
+	    <title>File Transfers from Unix</title>
+	    
+	    <para>
+	    For Unix (including Mac and Cygwin) users, the recommended
+	    method for transferring files is the 
+	    <command>rsync</command> command. The rsync command is a
+	    
+	    <indexterm><primary>rsync</primary></indexterm>
+	    
+	    simple but intelligent tool that makes it easy to synchronize two
+	    directories on the same machine or on different machines
+	    across a network. Rsync
+	    is free software and part of the base installation of 
+	    many Unix systems including
+	    Mac OS X. On Cygwin, you can easily add the rsync package using
+	    the Cygwin Setup utility.
+	    </para>
+	    
+	    <para>
+	    Rsync has two major advantages over other file transfer programs:
+	    </para>
+	    
+	    <itemizedlist>
+	    <listitem>
+	    If you have transferred the directory before, and only want to
+	    update it, rsync will automatically determine the differences
+	    between the two copies and only transfer what is necessary.
+	    When conducting research that generates large amounts of data,
+	    this can save an enormous amount of time.
+	    </listitem>
+	    
+	    <listitem>
+	    If a transfer fails for any reason (which is more likely for
+	    large transfers), rsync's inherent ability to determine the
+	    differences
+	    between two copies allows it to resume from where it left off.
+	    Simply run the exact same rsync command again, and the transfer
+	    will resume.
+	    </listitem>
+	    </itemizedlist>
+	    
+	    <para>
+	    The rsync command can either push (send) files from the
+	    local machine to a remote machine, or pull (retrieve) files
+	    from a remote machine to the local machine.  The command
+	    syntax is basically the same in both cases.  It's just a
+	    matter of how you specify the source and destination for
+	    the transfer.
+	    </para>
+	    
+	    <para>
+	    The rsync command has many options, but the most typical usage
+	    is to create an exact copy of a directory on a remote system. The
+	    general rsync command to push files to another host would be:
+	    </para>
+	    
+	    <screen>
+	    mypc: rsync -av --delete source-path [username@]hostname:[destination-path]
+	    </screen>
+	    
+	    <example xml:id="rsync_push">
+		<title>Pushing data with rsync</title>
+		
+		<para>
+		The following command synchronizes the directory
+		<filename>Project</filename> from the local machine
+		to ~joeuser/Data/Project on Peregrine:
+		</para>
+		
+		<screen>
+		mypc: rsync -av --delete Project joeuser@peregrine.hpc.uwm.edu/Data
+		</screen>
+	    </example>
+	    
+	    <para>
+	    The general syntax for pulling files from another host is:
+	    </para>
+	    
+	    <screen>
+	    mypc: rsync -av --delete [username@]hostname:[source-path] destination-path
+	    </screen>
+	    
+	    <example xml:id="rsync_pull">
+		<title>Pulling data with rsync</title>
+		
+		<para>
+		The following command synchronizes the directory
+		~joeuser/Data/Project on Peregrine to ./Project on the local
+		machine:
+		</para>
+		
+		<screen>
+		mypc: rsync -av --delete joeuser@peregrine.hpc.uwm.edu/Data/project .
+		</screen>
+	    </example>
+	    
+	    <para>
+	    If you omit "username@" from the source or destination,
+	    rsync will try
+	    to log into the remote system with your username on the
+	    local system.
+	    </para>
+	    
+	    <para>
+	    If you omit destination-path from a push command or 
+	    source-path from a pull command, rsync will use your home directory 
+	    on the remote host.
+	    </para>
+	    
+	    <para>
+	    The command-line flags used above have the following meanings:
+	    </para>
+	
+	    <variablelist>
+	    
+	    <varlistentry>
+	    <term>-a</term>
+	    <listitem>
+	    Use <emphasis>archive</emphasis> mode.
+	    Archive mode copies all subdirectories
+	    recursively and preserves as many file attributes as possible,
+	    such as ownership, permissions, etc.
+	    </listitem>
+	    </varlistentry>
+	    
+	    <varlistentry>
+	    <term>-v</term>
+	    <listitem>
+	    Verbose copy: Display names of files and directories as they are
+	    copied.
+	    </listitem>
+	    </varlistentry>
+	    
+	    <varlistentry>
+	    <term>--delete</term>
+	    <listitem>
+	    Delete files and directories from the destination if they do not
+	    exists in the source.  Without --delete, rsync will add and replace
+	    files in the destination, but never remove anything.
+	    </listitem>
+	    </varlistentry>
+	    </variablelist>
+	    
+	    <caution>
+	    <para>
+	    Note that a trailing <quote>/</quote> on source-path affects
+	    where rsync stores the files on the destination system. Without a trailing
+	    <quote>/</quote>, rsync will create a directory called <quote>source-path</quote>
+	    under <quote>destination-path</quote> on the destination host.
+	    </para>
+	    
+	    <para>
+	    With a trailing <quote>/</quote> on source-path,
+	    destination-path is assumed to be the directory that will replace
+	    source-path on the destination host. This feature is a somewhat
+	    cryptic method of allowing you to change the name of the directory
+	    during the transfer.  However, it is compatible with the
+	    basic Unix <command>cp</command> command.
+	    </para>
+	    
+	    <para>
+	    Note also that the trailing <quote>/</quote> only affects the
+	    command when applied to source-path. A trailing <quote>/</quote>
+	    on destination-path has no effect.
+	    </para>
+	    </caution>
+    
+	    <para>
+	    The command below creates an identical copy of the directory 
+	    Data/Model in Model (/home/bacon_a/Data/Model to be precise)
+	    on peregrine.hpc.uwm.edu.  The resulting directory
+	    is the same regardless of whether the destination directory
+	    existed before the command or not.
+	    </para>
+    
+	    <screen>
+	    mypc: rsync -av --delete Model bacon_a@peregrine.hpc.uwm.edu:Data
+	    </screen>
+	    
+	    <para>
+	    The command below dumps the <emphasis>contents</emphasis> of 
+	    Model directly into Data,
+	    and deletes everything else in the Data directory!  In other
+	    words, it
+	    makes the destination directory Data identical to the source
+	    directory Model.
+	    </para>
+	
+	    <screen>
+	    mypc: rsync -av --delete Model/ bacon_a@peregrine.hpc.uwm.edu:Data
+	    </screen>
+    
+	    <para>
+	    To achieve the same effect as the command with no
+	    <quote>/</quote>, you would need to fully
+	    specify the destination path:
+	    </para>
+    
+	    <screen>
+	    mypc: rsync -av --delete Model/ bacon_a@peregrine.hpc.uwm.edu:Data/Model
+	    </screen>
+    
+	    <para>
+	    For full details on the rsync command, type
+	    </para>
+	    
+	    <screen>
+	    mypc: man rsync
+	    </screen>
+	</section>
+
+	<section>
+	    <title>File Transfer from Windows without Cygwin</title>
+	    
+	    <para>
+	    If you're using Cygwin from Windows, you can utilize the rsync
+	    command as discussed in <xref linkend="unix_file_transfer"/>,
+	    provided you've installed the Cygwin rsync package.  Otherwise,
+	    <productname>WinSCP</productname>
+	    provides a simple way to transfer files to and from your
+	    Windows PC.  WinSCP is a free program that can be downloaded
+	    and installed in a few minutes from 
+	    <ulink url="http://winscp.net">http://winscp.net</ulink>.
+	    </para>
+	    
+	    <para>
+	    After installing WinSCP, simply launch the program, and the
+	    following dialog appears:
+	    </para>
+	    
+	    <para>
+	    <imageobject>
+	    <imagedata fileref="Images/winscp_dialog.png" scale="50"/>
+	    </imageobject>
+	    </para>
+	    
+	    <para>
+	    WinSCP uses the secure shell protocol to connect to a remote
+	    system. Like the Unix <command>ssh</command> command, if this is the first time
+	    connecting from this computer, you will be asked if you want
+	    to add the host key and continue:
+	    </para>
+	    
+	    <para>
+	    <imageobject>
+	    <imagedata fileref="Images/winscp_logged_in.png" scale="50"/>
+	    </imageobject>
+	    </para>
+	    
+	    <para>
+	    Once you've successfully logged in, you can simply drag files or
+	    directories from one system to the other.  If you're updating a
+	    large
+	    directory that already exists on the destination machine, you may
+	    want to check the <quote>New and updated file(s) only</quote> box.  This
+	    will cause WinSCP to transfer only the files that are different
+	    on each end.  This feature is a crude approximation to the
+	    functionality of <command>rsync</command>.
+	    </para>
+    
+	    <para>
+	    <imageobject>
+	    <imagedata fileref="Images/winscp_copy.png" scale="50"/>
+	    </imageobject>
+	    </para>
+	</section>
+	
+	<section>
+	    <title>Self-test</title>
+	    
+	    <orderedlist>
+		<listitem>
+		Show the simplest Unix command to accomplish each of the
+		following:
+		
+		<orderedlist>
+		    <listitem>
+		    Copy or synchronize the directory
+		    <filename>./PCB-Study</filename> to
+		    <filename>~/PCB-Study</filename> under the user
+		    "joeuser" on the host peregrine.hpc.uwm.edu.
+		    </listitem>
+
+		    <listitem>
+		    Copy or synchronize the directory
+		    <filename>~/PCB-Study</filename> under the user
+		    "joeuser" on the host peregrine.hpc.uwm.edu to
+		    <filename>./PCB-Study</filename>.
+		    </listitem>
+		</orderedlist>
+		</listitem>
+	    </orderedlist>
+	</section>
+    </section>
+    
+    <section>
+	<title>Shell Tools</title>
+	
+	<section>
+	    <title>Command History</title>
+	    
+	    <para>
+	    Most shells remember a configurable number of recent commands.
+	    This command history is saved to disk, so that you can still
+	    recall this session's commands next time you log in.
+	    </para>
+	    
+	    <para>
+	    The exact mechanisms for recalling those commands varies
+	    from shell to shell, but some of the features common to
+	    all shells are described below.
+	    </para>
+	    
+	    <para>
+	    Most modern shells support scrolling through recent commands
+	    by using the up-arrow and down-arrow keys.  Among the popular
+	    shells, only the original
+	    Bourne shell (sh) and C-shell (csh) lack this ability.
+	    </para>
+	    
+	    <note>
+	    This feature may not work if your TERM variable is not set
+	    properly, since the arrow keys send magic sequences
+	    that may differ among terminal types.
+	    </note>
+	    
+	    <para>
+	    The <command>history</command> command lists the commands
+	    that the shell currently has in memory.
+	    </para>
+	    
+	    <screen>
+	    peregrine: history
+	    </screen>
+	    
+	    <para>
+	    A command consisting of an exclamation point (!) followed by
+	    any character string causes the shell to search for the most
+	    recently executed command that began with that string.  This
+	    is particularly useful when you want to repeat a complicated
+	    command.
+	    </para>
+	    
+	    <screen>
+	    peregrine: find Programs -name '*.o' -exec rm -i '{}' \;
+	    peregrine: !find
+	    </screen>
+	</section>
+	
+	<section>
+	    <title>Globbing</title>
+	    
+	    <para>
+	    There is often a need to specify a large number of
+	    files as command line arguments.  Typing all of them
+	    would be tedious, so Unix shells provide a mechanism
+	    called <glossterm>globbing</glossterm> that allows
+	    short, simple patterns to match many filenames.
+	    </para>
+	    
+	    <para>
+	    These patterns are build from literal text and/or
+	    the special symbols called <glossterm>wildcards</glossterm>
+	    in <xref linkend="glob_symbols"/>.
+	    </para>
+	    
+	    <table xml:id="glob_symbols" frame='all'>
+		<title>Globbing Symbols</title>
+		<tgroup cols='2' align='left' colsep='1' rowsep='1'>
+		    
+		    <thead>
+		    <row>
+			<entry>Symbol</entry>
+			<entry>Matches</entry>
+		    </row>
+		    </thead>
+		    
+		    <tbody>
+		    <row>
+			<entry>*</entry>
+			<entry>Any sequence of characters (including none)
+			    except a '.' in the first character of the
+			    filename.
+			</entry>
+		    </row>
+		    <row>
+			<entry>?</entry>
+			<entry>Any single character, except a '.' in
+			    the first character of the filename.
+			</entry>
+		    </row>
+		    <row>
+			<entry>[string]</entry>
+			<entry>Any character in string</entry>
+		    </row>
+		    <row>
+			<entry>[c1-c2]</entry>
+			<entry>Any character from c1 to c2, inclusive</entry>
+		    </row>
+		    </tbody>
+		</tgroup>
+	    </table>
+	    
+	    <important>
+	    <para>
+	    Normally, the shell expands these patterns to a list of all
+	    matching pathnames <emphasis>before</emphasis> the command is
+	    executed.
+	    </para>
+	    
+	    <para>
+	    If you want a pattern to be sent to a command in its raw form,
+	    it must be enclose in single quotes.  Patterns enclosed in
+	    double quotes are expanded!  Certain commands, such as
+	    <command>find</command> need to receive the pattern as
+	    an argument and attempt to do the matching themselves
+	    rather than have it done for them by the shell.
+	    </para>
+	    </important>
+	    
+	    <para>
+	    The exemption for a leading
+	    '.' prevents accidental matching of hidden files.
+	    </para>
+	    
+	    <screen>
+	    peregrine: ls *.txt     # Lists all files ending in ".txt"
+	    peregrine: ls "*.txt"   # Lists all files ending in ".txt"
+	    peregrine: ls '*.txt'   # Fails, unless there is a file called '*.txt'
+	    peregrine: ls .*.txt    # Lists hidden files ending in ".txt"
+	    peregrine: ls [A-Za-z]* # Lists all files and directories
+				    # whose name begins with a letter
+	    peregrine: find . -name "*.txt"     # Fails
+	    peregrine: find . -name '*.txt'
+	    </screen>
+	</section>
+	
+	<section xml:id="redirection">
+	    <title>Redirection and Pipes</title>
+	    
+	    <section>
+		<title>Device Independence</title>
+		<para>
+		Unix systems employ the concept of
+		<glossterm>device independence</glossterm>.  Unix device
+		independence works by treating virtually every input and
+		output device as a file.  All input and output, whether to/from
+		a file on a disk, a keyboard, a mouse, a scanner, or a printer,
+		is simply a stream of bytes to be input or output
+		by a program.
+		</para>
+		
+		<para>
+		Each device driver is actually accessible as a 
+		<glossterm>device file</glossterm> in
+		<filename>/dev</filename>.  For example, the primary CD-ROM
+		might be <filename>/dev/cd0</filename>, and the main disk
+		might be <filename>/dev/ad0</filename>.
+		</para>
+		
+		<para>
+		Data is often recovered from corrupted filesystems or
+		accidentally deleted files by
+		reading the raw disk partition as a file!
+		</para>
+		
+		<screen>
+		peregrine: grep string /dev/ad0s1f
+		</screen>
+		
+		<para>
+		To see the raw input from a mouse as it is being moved,
+		one could use the following command:
+		</para>
+		
+		<screen>
+		peregrine: hexdump /dev/mouse
+		</screen>
+		
+		<para>
+		<command>cat /dev/mouse</command> would also work, but the binary
+		data stream would appear as garbage on the terminal screen.
+		</para>
+	    </section>
+	    
+	    <section>
+		<title>Redirection</title>
+		<para>
+		Since I/O devices and files are so interchangeable, Unix
+		shells provide a facility called
+		<glossterm>redirection</glossterm> to easily interchange them for
+		any command without the command even knowing it.
+		</para>
+		
+		<para>
+		Redirection depends on the notion of a
+		<glossterm>file stream</glossterm>.  You can think of a file
+		stream as a hose connecting a program to a particular file
+		or device.  Redirection simply disconnects the hose from the
+		default
+		file or device and connects it to another one chosen by the
+		shell user.
+		</para>
+		
+		<para>
+		Every Unix process has three standard streams that are
+		open from the moment the process is born.  The
+		standard streams are normally connected to the terminal,
+		as shown in <xref linkend="standard_streams"/>.
+		</para>
+		
+		<table xml:id="standard_streams" frame='all'>
+		    <title>Standard Streams</title>
+		    <tgroup cols='3' align='left' colsep='1' rowsep='1'>
+			<thead>
+			<row>
+			    <entry>Stream</entry>
+			    <entry>Purpose</entry>
+			    <entry>Default Connection</entry>
+			</row>
+			</thead>
+			
+			<tbody>
+			<row>
+			    <entry>Standard Input</entry>
+			    <entry>User input</entry>
+			    <entry>Terminal keyboard</entry>
+			</row>
+			<row>
+			    <entry>Standard Output</entry>
+			    <entry>Normal output</entry>
+			    <entry>Terminal screen</entry>
+			</row>
+			<row>
+			    <entry>Standard Error</entry>
+			    <entry>Errors and warnings</entry>
+			    <entry>Terminal Screen</entry>
+			</row>
+			</tbody>
+		    </tgroup>
+		</table>
+		
+		<para>
+		Redirection in the shell allows any or all of the three
+		standard streams to be disconnected from the terminal and
+		connected to a file or other I/O device.
+		It uses operators within the commands to indicate
+		which stream(s) to redirect and where.
+		The basic redirection operators shells are shown in
+		<xref linkend="redirection_table"/>.
+		</para>
+		
+		<table xml:id="redirection_table" frame='all'>
+		    <title>Redirection Operators</title>
+		    <tgroup cols='3' align='left' colsep='1' rowsep='1'>
+			<thead>
+			<row>
+			    <entry>Operator</entry>
+			    <entry>Shells</entry>
+			    <entry>Redirection type</entry>
+			</row>
+			</thead>
+			
+			<tbody>
+			<row>
+			    <entry>&lt;</entry>
+			    <entry>All</entry>
+			    <entry>Standard Input</entry>
+			</row>
+			<row>
+			    <entry>></entry>
+			    <entry>All</entry>
+			    <entry>Standard Output (overwrite)</entry>
+			</row>
+			<row>
+			    <entry>>></entry>
+			    <entry>All</entry>
+			    <entry>Standard Output (append)</entry>
+			</row>
+			<row>
+			    <entry>2></entry>
+			    <entry>Bourne-based</entry>
+			    <entry>Standard Error (overwrite)</entry>
+			</row>
+			<row>
+			    <entry>2>></entry>
+			    <entry>Bourne-based</entry>
+			    <entry>Standard Error (append)</entry>
+			</row>
+			<row>
+			    <entry>>&amp;</entry>
+			    <entry>C-shell-based</entry>
+			    <entry>Standard Output and Standard Error (overwrite)</entry>
+			</row>
+			<row>
+			    <entry>>>&amp;</entry>
+			    <entry>C-shell-based</entry>
+			    <entry>Standard Output and Standard Error (append)</entry>
+			</row>
+			</tbody>
+		    </tgroup>
+		</table>
+		
+		<caution>
+		<para>
+		Using output redirection (>, 2>, or >&amp;) in a command will
+		normally overwrite (clobber) the file that you're redirecting
+		to, even if the command itself fails.
+		</para>
+		
+		<para>
+		Be very careful not to use output redirection accidentally.
+		This most commonly occurs when a careless user meant to
+		use input redirection, but pressed the wrong key.
+		</para>
+		</caution>
+		
+		<para>
+		If <varname>noclobber</varname> is set for the shell,
+		output redirection to a file that already exists will
+		result in an error.  The <varname>noclobber</varname>
+		option can be overridden by appending a ! to the
+		redirection operator in C-shell derivatives or a |
+		in Bourne shell derivatives.  For example, >! can
+		be used to force overwriting a file in csh or tcsh, and >|
+		can be used in sh, ksh, or bash.
+		</para>
+		
+		<screen>
+		peregrine: ls > listing.txt         # Overwrite with listing of .
+		peregrine: ls /etc >> listing.txt   # Append listing of /etc
+		</screen>
+		
+		<para>
+		Note that redirection is performed by the shell, not
+		the program.  In the examples above, the <command>ls</command>
+		command sends its output to the standard output.  It is
+		unaware that the standard output has been redirected to
+		the file <filename>listing.txt</filename>.
+		</para>
+		
+		<para>
+		Put another way, <filename>listing.txt</filename> is
+		<emphasis>not</emphasis> an argument to the
+		<command>ls</command> command.  The redirection is
+		handled by the shell, and <command>ls</command> runs as
+		if it had been typed as simple:
+		</para>
+		
+		<screen>
+		peregrine: ls
+		</screen>
+		
+		<para>
+		More often than not, we want to redirect both normal
+		output and error messages to the same place.  This is
+		why C-shell and its derivatives use a combined operator
+		that redirects both at once.  The same effect can be
+		achieved with Bourne-shell derivatives using another
+		operator that redirects one stream to another stream.
+		In particular, we redirect the standard output (stream 1)
+		to a file (or device) and at the same time redirect the
+		standard error (stream 2) to stream 1.
+		</para>
+		
+		<screen>
+		peregrine: find / -name '*.c' > list.txt 2>&amp;1
+		</screen>
+	    </section>
+	    
+	    <section>
+		<title>Pipes</title>
+		
+		<para>
+		Quite often, we may want to use the output of one program
+		as input to another.  Such a thing could be done using
+		redirection, as shown below:
+		</para>
+		
+		<screen>
+		peregrine: sort names.txt > sorted-names.txt
+		peregrine: uniq &lt; sorted-names.txt > unique-names.txt
+		</screen>
+		
+		<para>
+		The same task can be accomplished in one command
+		using a <glossterm>pipe</glossterm>.  A pipe redirects
+		one of the standard streams, just as redirection does,
+		but to another process instead of to a file or device.
+		In other words, we can use a pipe to send the standard
+		output and/or standard error of one process directly
+		to the standard input of another process.
+		</para>
+		
+		<example>
+		    <title>Simple Pipe</title>
+		    
+		    <para>
+		    The command below uses a pipe to redirect the 
+		    standard output of the <command>sort</command>
+		    command directly to the
+		    standard input of the <command>uniq</command>.
+		    </para>
+
+		    <screen>
+		    peregrine: sort names.txt | uniq > uniq-names.txt
+		    </screen>
+		</example>
+		
+		<para>
+		For piping stderr, the notation is similar to
+		that used for redirection:
+		</para>
+
+		<table xml:id="pipe_table" frame='all'>
+		    <title>Pipe Operators</title>
+		    <tgroup cols='3' align='left' colsep='1' rowsep='1'>
+			<thead>
+			<row>
+			    <entry>Operator</entry>
+			    <entry>Shells</entry>
+			    <entry>Pipe stream(s)</entry>
+			</row>
+			</thead>
+			
+			<tbody>
+			<row>
+			    <entry>|</entry>
+			    <entry>All</entry>
+			    <entry>Standard Output to Standard Input</entry>
+			</row>
+			<row>
+			    <entry>|&amp;</entry>
+			    <entry>C-shell family</entry>
+			    <entry>Standard Output and Standard Error to Standard Input</entry>
+			</row>
+			<row>
+			    <entry>2|</entry>
+			    <entry>Bourne shell family</entry>
+			    <entry>Standard Error to Standard Input</entry>
+			</row>
+			</tbody>
+		    </tgroup>
+		</table>
+		
+		<para>
+		The entire chain of commands connected by pipes is
+		known as a <glossterm>pipeline</glossterm>.
+		</para>
+		
+		<para>
+		This is such a common practice that Unix has defined
+		the term <glossterm>filter</glossterm> to apply to
+		programs that can be used in this way.  A filter is
+		any command that can receive input from the standard
+		input and send output to the standard output.  Many
+		Unix commands are designed to accept a filenames as
+		an arguments, but also to use the standard input and/or
+		standard output if no filename arguments are provided.
+		</para>
+		
+		<example>
+		    <title>Filters</title>
+		    
+		    <para>
+		    The <command>more</command> command is commonly used
+		    as a filter.  It can read a file whose name is provided
+		    as an argument, but will use the standard input if
+		    no argument is provided.  Hence, the following two
+		    commands have the same effect:
+		    </para>
+		    
+		    <screen>
+		    peregrine: more names.txt
+		    peregrine: more &lt; names.txt
+		    </screen>
+		    
+		    <para>
+		    The only difference between these two commands is that
+		    in the first, the <command>more</command> receives
+		    <filename>names.txt</filename> as a command line
+		    argument, opens the file itself (creating a new file
+		    stream), and reads from the new stream (not
+		    the standard input stream).  In the second
+		    instance, the shell opens the file and connects the
+		    standard input stream of the <command>more</command>
+		    command to it.
+		    </para>
+		    
+		    <para>
+		    Using the filtering capability of more, we can
+		    paginate the output of any command:
+		    </para>
+		    
+		    <screen>
+		    peregrine: ls | more
+		    peregrine: find . -name '*.c' | more
+		    peregrine: sort names.txt | more
+		    </screen>
+		</example>
+		
+		<para>
+		We can string any number of commands together using pipes:
+		</para>
+		
+		<screen>
+		peregrine: ls | sort | uniq | more
+		</screen>
+		
+		<para>
+		One more useful too worth mentioning is the
+		<command>tee</command> command.  The <command>tee</command>
+		is a simple program that reads from its standard input
+		and writes to both the standard output and to one or more
+		files whose names are provided on the command line.  This
+		allows you to view the output of a program on the screen
+		and redirect it to a file at the same time.
+		</para>
+		
+		<screen>
+		peregrine: ls | tee listing.txt
+		</screen>
+		
+		<para>
+		Recall that Bourne-shell derivatives do not have combined
+		operators for redirecting standard output and standard
+		error at the same time.  Instead, we redirect the 
+		standard output to a file or device, and redirect the
+		standard error to the standard output using 
+		<option>2>&amp;1</option>.
+		</para>
+		
+		<para>
+		We can use the same technique with a pipe, but there is one
+		more condition: For technical reasons, the
+		<option>2>&amp;1</option> must come before the pipe.
+		</para>
+		
+		<screen>
+		peregrine: ls | tee listing.txt 2>&amp;1    # Won't work
+		peregrine: ls 2>&amp;1 | tee listing.txt    # Will work
+		</screen>
+	    </section>
+	</section>
+	
+	<section>
+	    <title>Output Capture</title>
+	    
+	    <para>
+	    Output from a command can be captured and used like a variable
+	    in shell scripts by enclosing the command in back-quotes (``)
+	    or $().
+	    </para>
+	    
+	    <screen language="sh">
+	    printf "Today is %s.\n" `date`
+	    printf "Today is %s.\n" $(date)
+	    today=`date`
+	    </screen>
+	</section>
+
+	<section>
+	    <title>Self-test</title>
+	    
+	    <orderedlist>
+		<listitem>
+		Which shells support modern interactive features such
+		as scrolling through previous commands and command-line
+		editing?
+		</listitem>
+		
+		<listitem>
+		Show the simplest command to accomplish each of the
+		following:
+		
+		<orderedlist>
+		    <listitem>
+		    Show a list of recently executed commands.
+		    </listitem>
+		    
+		    <listitem>
+		    Re-execute the most recent command that began with
+		    "ls".
+		    </listitem>
+		</orderedlist>
+		</listitem>
+		
+		<listitem>
+		Show the simplest command to accomplish each of the
+		following:
+		
+		<orderedlist>
+		    <listitem>
+		    Move all the files whose names in with ".c" from
+		    the current directory to the directory <filename>./Prog1</filename>.
+		    </listitem>
+		    
+		    <listitem>
+		    Remove all the files whose names end with ".o".
+		    </listitem>
+		    
+		    <listitem>
+		    List the contents of all files/directories whose names
+		    begin with a '.' followed by a capital letter or
+		    lower case letter, and end with a digit.
+		    </listitem>
+		</orderedlist>
+		</listitem>
+		
+		<listitem>
+		What does device independence mean?
+		</listitem>
+		
+		<listitem>
+		Show a Unix command that could be used to view the data
+		stream sent by a mouse represented as
+		<filename>/dev/mse0</filename>.
+		</listitem>
+		
+		<listitem>
+		Name and describe the three standard streams available
+		to all Unix processes.
+		</listitem>
+		
+		<listitem>
+		Show the simplest Unix command to accomplish each of
+		the following:
+		
+		<orderedlist>
+		    <listitem>
+		    Save a list of all files in /etc to the file
+		    <filename>list.txt</filename>.
+		    </listitem>
+		    
+		    <listitem>
+		    Compile <filename>prog.c</filename> under
+		    <command>bash</command> using
+		    <command>gcc</command>, saving error messages to
+		    <filename>errors.txt</filename> and normal screen output
+		    to <filename>output.txt</filename>.
+		    </listitem>
+
+		    <listitem>
+		    Compile <filename>prog.c</filename> under
+		    <command>tcsh</command> using
+		    <command>gcc</command>, saving both error messages and
+		    normal screen output to <filename>output.txt</filename>.
+		    </listitem>
+		    
+		    <listitem>
+		    Compile <filename>prog.c</filename> under
+		    <command>tcsh</command> using
+		    <command>gcc</command>, saving both error messages and
+		    normal screen output to <filename>output.txt</filename>.
+		    Overwrite
+		    <filename>output.txt</filename> even if
+		    <varname>noclobber</varname> is set.
+		    </listitem>
+		    
+		    <listitem>
+		    Run the program <command>./prog1</command>, causing
+		    it to use the file <filename>input.txt</filename>
+		    as the standard input instead of the keyboard.
+		    </listitem>
+		    
+		    <listitem>
+		    Compile <filename>prog.c</filename> under
+		    <command>tcsh</command> using
+		    <command>gcc</command>, saving both error messages and
+		    normal screen output to <filename>output.txt</filename>
+		    and sending them to the screen at the same time.
+		    </listitem>
+		</orderedlist>
+		</listitem>
+		
+		<listitem>
+		Which program in a pipeline runs as the foreground
+		process?
+		</listitem>
+		
+		<listitem>
+		How many programs can be included in a single pipeline?
+		</listitem>
+		
+		<listitem>
+		What is a filter program?
+		</listitem>
+	    </orderedlist>
+	</section>
+    </section>
+    
+    <section>
+	<title>Advanced: Process Control</title>
+	
+	<para>
+	Unix systems provide many tools for managing and monitoring
+	processes that are already running.
+	</para>
+	
+	<para>
+	Note that these tools apply to local Unix processes only.
+	On distributed systems such as clusters and grids, job management
+	is done using networked schedulers such as Condor, Grid Engine,
+	or PBS.
+	</para>
+	
+	<para>
+	It is possible to have multiple processes running under the
+	same shell session.  Such processes are considered either
+	<glossterm>foreground processes</glossterm> or
+	<glossterm>background processes</glossterm>.  The foreground process
+	is simply the process that receives the keyboard input.  There can be
+	no more than one foreground process under a given shell session,
+	for obvious reasons.
+	</para>
+	
+	<para>
+	Note that all processes, both foreground and background, can send
+	output to the terminal at the same time, however.  It is up to the
+	user to ensure that output is managed properly and not intermixed.
+	</para>
+	
+	<para>
+	There are three types of tools for process management, described
+	in the following subsections.
+	</para>
+	
+	<section>
+	    <title>External Commands</title>
+	    
+	    <para>
+	    Unix systems provide a variety of external commands that
+	    monitor or manipulate processes based on their process ID
+	    (PID).  A few of the most common commands are described below.
+	    </para>
+	    
+	    <para>
+	    <command>ps</command> lists the currently running processes.
+	    </para>
+	    
+	    <screen>
+	    ps [-a]     # BSD
+	    ps [-e]     # SYSV
+	    </screen>
+	    
+	    <para>
+	    <command>ps</command> is one of the rare commands whose options
+	    vary across different Unix systems.  There are only two standards
+	    to which it may conform, however.  The BSD version uses
+	    <option>-a</option> to indicate that all processes (not just your
+	    own) should be shown.  System 5 (SYSV) <command>ps</command>
+	    uses <option>-e</option> for the same purpose.  Run
+	    <command>man ps</command> on your system to determine which
+	    flags should be used.
+	    </para>
+	    
+	    <para>
+	    <command>kill</command> sends a signal to a process (which
+	    may kill the process, but could serve other purposes).
+	    </para>
+	    
+	    <screen>
+	    kill [-#] pid
+	    </screen>
+	    
+	    <para>
+	    The pid (process ID) is determined from the output of
+	    <command>ps</command>.
+	    </para>
+	    
+	    <para>
+	    The signal number is an integer
+	    value following a -, such as <option>-9</option>.  If not provided, the default
+	    signal sent is the TERM (terminate) signal.
+	    </para>
+	    
+	    <para>
+	    Some processes ignore the TERM signal.  Such processes can be
+	    force killed using the KILL (9) signal.
+	    </para>
+	    
+	    <screen>
+	    kill -9 2342
+	    </screen>
+	    
+	    <para>
+	    Run <command>man signal</command> to learn about all the
+	    signals that can be issued with <command>kill</command>.
+	    </para>
+	    
+	    <screen>
+	    peregrine: ps
+	      PID  TT  STAT      TIME COMMAND
+	     41167   0  Is     0:00.25 tcsh
+	     78555   0  S+     0:01.98 ape unix.dbk
+	    peregrine: kill 78555
+	    </screen>
+	    
+	    <para>
+	    The <command>killall</command> command will kill all processes
+	    running the program named as the argument.  This eliminates the
+	    need to find the PID first, and is more convenient for killing
+	    multiple processes running the same program.
+	    </para>
+	    
+	    <screen>
+	    peregrine: killall fdtd
+	    </screen>
+	</section>
+	
+	<section>
+	    <title>Special Key Combinations</title>
+
+	    <para>
+	    <keycombo action='simul'>
+	    <keycap>Ctrl</keycap><keycap>c</keycap>
+	    </keycombo> sends a terminate signal to the current foreground
+	    process.  This usually kills the process immediately, although
+	    it is possible that some processes will ignore the signal.
+	    </para>
+
+	    <para>
+	    <keycombo action='simul'>
+	    <keycap>Ctrl</keycap><keycap>z</keycap>
+	    </keycombo> sends a suspend signal to the current foreground
+	    process.  The
+	    process remains in memory, but does not execute further until
+	    it receives a resume signal (usually sent by running
+	    <command>fg</command>).
+	    </para>
+
+	    <para>
+	    <keycombo action='simul'>
+	    <keycap>Ctrl</keycap><keycap>s</keycap>
+	    </keycombo> suspends output to the terminal.  This does not
+	    technically control the process directly, but has the effect
+	    of blocking any processes that are sending output, since they
+	    will stop running until the terminal begins accepting output
+	    again.
+	    </para>
+
+	    <para>
+	    <keycombo action='simul'>
+	    <keycap>Ctrl</keycap><keycap>q</keycap>
+	    </keycombo> resumes output to the terminal if it has been
+	    suspended.
+	    </para>
+	</section>
+	
+	<section>
+	    <title>Internal Shell Commands and Symbols</title>
+	    
+	    <para>
+	    <command>jobs</command> lists the processes running under
+	    the current shell, but using the shell's job IDs instead of
+	    the system's process IDs.
+	    </para>
+	    
+	    <caution>
+	    Shell jobs are ordinary processes running on the local system
+	    and should not be confused with cluster and grid jobs, which
+	    are managed by networked schedulers.
+	    </caution>
+	    
+	    <screen>
+	    jobs
+	    </screen>
+	    
+	    <para>
+	    <command>fg</command> brings a background job into the
+	    foreground.
+	    </para>
+	    
+	    <screen>
+	    fg [job-id]
+	    </screen>
+	    
+	    <para>
+	    There cannot be another job already running in the foreground.
+	    If no job ID is provided, and multiple background jobs are
+	    running, the shell will choose which background job to bring
+	    to the foreground.  A job ID should always be provided if
+	    more than one background job is running.
+	    </para>
+	    
+	    <para>
+	    <command>bg</command> resumes a job suspended by Ctrl+z
+	    in the background.
+	    </para>
+	    
+	    <screen>
+	    peregrine: prog
+	    Ctrl+z
+	    peregrine: bg
+	    peregrine:
+	    </screen>
+	    
+	    <para>
+	    An &amp; at the end of any command causes the command to
+	    be immediately placed in the background.  It can be brought to
+	    the foreground using <command>fg</command> at any time.
+	    </para>
+
+	    <screen>
+	    peregrine: command &amp;
+	    </screen>
+	    
+	    <para>
+	    <command>nice</command> runs a process at a lower than normal
+	    priority.
+	    </para>
+	    
+	    <screen>
+	    nice command
+	    </screen>
+	    
+	    <para>
+	    If (and only if) other processes in the system are
+	    competing for CPU time, they will get a bigger share than
+	    processes run under <command>nice</command>.
+	    </para>
+	    
+	    <para>
+	    <command>time</command> runs a command under the scrutiny of the
+	    time command, which keeps track of the process's resource
+	    usage.
+	    </para>
+	    
+	    <screen>
+	    time command
+	    </screen>
+	    
+	    <para>
+	    There are both internal and external implementations of
+	    the time command.  Run <command>which time</command> to
+	    determine which one your shell is configured to use.
+	    </para>
+	</section>
+	
+	<section>
+	    <title>Self-test</title>
+	    
+	    <orderedlist>
+		<listitem>
+		What is a process?
+		</listitem>
+		
+		<listitem>
+		What is the difference between a foreground process and
+		a background process?
+		</listitem>
+		
+		<listitem>
+		How many foreground processes can be running at once under
+		a single shell process?  Why?
+		</listitem>
+		
+		<listitem>
+		How many background processes can be running at once under
+		a single shell process?  Why?
+		</listitem>
+		
+		<listitem>
+		Show the simplest Unix command that will
+		accomplish each of the following:
+		
+		<orderedlist>
+		    <listitem>
+		    List all processes currently running.
+		    </listitem>
+		    
+		    <listitem>
+		    List processes owned by you.
+		    </listitem>
+		    
+		    <listitem>
+		    Kill the process with ID 7243.
+		    </listitem>
+		    
+		    <listitem>
+		    Kill all processes running the program <command>netsim</command>.
+		    </listitem>
+		    
+		    <listitem>
+		    Kill the process with ID 7243 after the first attempt
+		    failed.
+		    </listitem>
+		</orderedlist>
+		</listitem>
+		
+		<listitem>
+		How do you perform each of the following tasks?
+		
+		<orderedlist>
+		    <listitem>
+		    Kill the current foreground process.
+		    </listitem>
+		    
+		    <listitem>
+		    Suspend the current foreground process.
+		    </listitem>
+		    
+		    <listitem>
+		    Resume a suspended process in the foreground.
+		    </listitem>
+		    
+		    <listitem>
+		    Resume a suspended process in the background.
+		    </listitem>
+		    
+		    <listitem>
+		    Start a new process, placing it in the background
+		    immediately.
+		    </listitem>
+		    
+		    <listitem>
+		    Suspend terminal output for a process without suspending
+		    the process itself.
+		    </listitem>
+		    
+		    <listitem>
+		    Resume suspended terminal output.
+		    </listitem>
+		    
+		    <listitem>
+		    List the currently running jobs as seen by the shell.
+		    </listitem>
+		    
+		    <listitem>
+		    Return job #2 to the foreground.
+		    </listitem>
+		    
+		    <listitem>
+		    Run the program <command>netsim</command> at a reduced
+		    priority so that
+		    other processes will respond faster.
+		    </listitem>
+		    
+		    <listitem>
+		    Run the program <command>netsim</command> and report the CPU time used
+		    when it finishes.
+		    </listitem>
+		</orderedlist>
+		</listitem>
+	    </orderedlist>
+	</section>
+    </section>
+    
+    <section xml:id="graphical_programs">
+	<title>Advanced: Enabling Graphical Programs</title>
+	
+	<para>
+	Most users will not need to run graphical applications on a remote
+	Unix system..
+	If you know that you will need to use a graphical user interface with
+	your research software, or if you want to use a graphical editor
+	such as gedit or emacs on over the network, read on.  Otherwise,
+	you can skip this section for now.
+	</para>
+	
+	<para>
+	Unix uses a networked graphics interface called the X Window system.
+	It is also sometimes called simply X11 for short.
+	( X11 is the latest major version of the system. )
+	X11 allows programs running on a Unix system to display
+	graphics on the local screen or the screen of another Unix system
+	on the network.  The programs are called
+	<glossterm>clients</glossterm>,
+	and they display graphical output by sending commands to the
+	<glossterm>X11 server</glossterm> on the machine where the output
+	is to be displayed.  Hence, your local computer must be running an
+	X11 server in order to display Unix graphics, regardless of whether
+	the client programs are running on your machine or another.
+	</para>
+    
+	<section xml:id="unix_graphics">
+	    <title>Configuration Steps Common to all Operating Systems</title>
+	    
+	    <para>
+	    Modern Unix systems such as BSD, Linux, and Mac OS X have
+	    most of the necessary tools and configuration in place
+	    for running remote graphical applications.
+	    </para>
+	    
+	    <para>
+	    However, some additional configuration may be necessary on your
+	    computer
+	    to allow remote systems to access your display.  These steps
+	    apply to <emphasis>all</emphasis> computers running an X11 server,
+	    regardless of operating system.  Some additional steps that may be
+	    necessary for Cygwin systems are discussed in
+	    <xref linkend="cygwin_x"/>.
+	    </para>
+	    
+	    <procedure>
+	    
+	    <step>
+	    <para>
+	    Make sure your <filename>ssh_config</filename> (usually found
+	    in /etc or /etc/ssh) file contains the following line:
+	    
+	    <indexterm><primary>ssh_config</primary></indexterm>
+	    </para>
+	
+	    <screen>
+	    ForwardX11 yes
+	    </screen>
+	    
+	    <para>
+	    This causes the <command>ssh</command> command to inform the remote system that
+	    X11 graphical output should be sent to your local display
+	    through the <command>ssh</command> connection.  ( This is called SSH tunneling. )
+	    </para>
+	    
+	    <note>
+	    <para>
+	    Some X11 programs require additional protocol features that
+	    can pose a security risk to the client system.  If you get
+	    an error message containing "Invalid MIT-MAGIC-COOKIE" when
+	    trying to run a graphical application over an <command>ssh</command> connection,
+	    try using the <option>-Y</option> flag with <command>ssh</command>
+	    to open a <emphasis>trusted</emphasis> connection.
+	    </para>
+	    
+	    <screen>
+	    mypc: ssh -Y peregrine.hpc.uwm.edu
+	    </screen>
+	    
+	    <para>
+	    You can establish trusted connections to <emphasis>all</emphasis>
+	    hosts by adding
+	    </para>
+
+	    <screen>
+	    ForwardX11Trusted yes
+	    </screen>
+	    
+	    <para>
+	    To your <filename>ssh_config</filename> file, but this is
+	    generally considered a bad idea, since it states that every
+	    host connected to from this computer to should be trusted.
+	    Since you don't know in advance what hosts people will connect
+	    to in the future, this is a huge leap of faith.
+	    </para>
+	    </note>
+	    </step>
+	
+	    <step>
+	    Make sure the hostname of the remote Unix system
+	    is in the list of hosts allowed to
+	    access your display. Other Unix machines must be explicitly
+	    given permission to write to your display for obvious security
+	    reasons. (A common hacker trick is to display a phony login
+	    screen on a remote computer to collect passwords.)
+	    It can be added for the duration of
+	    your current login session running the following Unix command:
+	    
+	    <screen>
+	    mypc: xhost +peregrine.hpc.uwm.edu
+	    </screen>
+	    </step>
+	    </procedure>
+	    
+	    <para>
+	    Unix hosts can be configured permanently by adding the host names,
+	    one per line, to /etc/X0.hosts:
+	    </para>
+	    
+	    <screen>
+	    peregrine.hpc.uwm.edu
+	    </screen>
+	    
+	    <caution>
+	    Note that updating X0.hosts will not enable the new host to
+	    access your display until the X
+	    server on your computer is restarted.  The steps required to
+	    restart an X server depend on the exact operating system in use.
+	    If you don't know how to restart your X server, it can be
+	    always accomplished by rebooting your computer.
+	    It's not a bad idea to skip the xhost command, and just update 
+	    X0.hosts and restart the X server. Then you'll know that your
+	    configuration will still work after the next reboot, and won't
+	    get caught by surprise at an inopportune time in the future.
+	    </caution>
+	</section>
+    
+	<section xml:id="cygwin_x">
+	    <title>Graphical Programs on Windows with Cygwin</title>
+	    
+	    <para>
+	    It is possible for Unix graphical applications on the remote
+	    Unix machine to 
+	    display on a Windows machine, but this will require installing
+	    additional Cygwin packages and performing a few configuration
+	    steps on your computer in addition to those discussed in
+	    <xref linkend="unix_graphics"/>.
+	    </para>
+	    
+	    <section>
+		<title>Installation</title>
+	    
+		<para>
+		You will need to install the x11/xinit and x11/xhost
+		packages using the Cygwin setup utility.  This will install
+		an X11 server on your Windows machine.
+		</para>
+	    </section>
+	    
+	    <section>
+		<title>Configuration</title>
+		
+		<para>
+		After installing the Cygwin X packages, there are additional
+		configuration steps:
+		</para>
+		
+		<procedure>
+		<step>
+		Create a working <filename>ssh_config</filename> file by running the following
+		command from a Cygwin shell window:
+		
+		<screen>
+		peregrine: cp /etc/defaults/etc/ssh_config /etc
+		</screen>
+		</step>
+		
+		<step>
+		Then, using your favorite text editor, update
+		the new <filename>/etc/ssh_config</filename> as described in
+		<xref linkend="unix_graphics"/>.
+		</step>
+	    
+		<step>
+		Add the following line to .bash_profile (in your home
+		directory):
+		
+		<screen>
+		export DISPLAY=":0.0"
+		</screen>
+	    
+		This is not necessary when running commands from an xterm
+		window (which is launched from Cygwin-X), but
+		<emphasis>is</emphasis> necessary if
+		you want to launch X11 applications from a Cygwin bash
+		terminal which is part of the base Cygwin installation,
+		and not X11-aware.
+		</step>
+		</procedure>
+	    </section>
+	    
+	    <section>
+		<title>Startup</title>
+		
+		<para>
+		To enable X11 applications to display on your Windows machine, you
+		need to to start the X11 server on Windows by clicking
+		
+		<menuchoice>
+		<guimenu>
+		    Start
+		</guimenu>
+		<guimenuitem>
+		    All Programs
+		</guimenuitem>
+		<guimenuitem>
+		    Cygwin-X
+		</guimenuitem>
+		<guimenuitem>
+		    XWin Server.
+		</guimenuitem>
+		</menuchoice>
+		
+		The X server icon will appear in your Windows system tray
+		to indicate that X11 is running. You can launch an xterm
+		terminal emulator from the system tray icon, or use the
+		Cygwin bash terminal, assuming that you have set your
+		DISPLAY variable.
+		</para>
+	    </section>
+	</section>
+    </section>
+
+    <section>
+	<title>Advanced: Running a Desktop Unix System</title>
+    
+	<para>
+	Most mainstream operating systems today are Unix compatible.
+	Microsoft Windows
+	is the only mainstream operating system that is not Unix compatible,
+	but there are free compatibility systems available for Windows to
+	provide some degree of compatibility and interoperability with Unix.
+	</para>
+	
+	<para>
+	The de facto standard of Unix compatibility for Windows is Cygwin,
+	<ulink url="http://cygwin.com">http://cygwin.com</ulink>,
+	which is free and installs in about 10 minutes.  There are
+	alternatives to Cygwin, but Cygwin is the easiest to use
+	and offers by far the most features and software packages.
+	</para>
+	
+	<note>
+	None of the Unix compatibility systems for Windows are nearly
+	as fast as a genuine Unix system on the same hardware, but they
+	are fast enough for most purposes.  If you want to maximize
+	performance,
+	there are many BSD Unix and Linux systems available for free.
+	</note>
+	
+	<para>
+	Another option for running Unix programs on a Windows computer
+	is to use a <glossterm>virtual machine (VM)</glossterm>.
+	This is discussed in <xref linkend="virtual-machines"/>.
+	</para>
+	
+	<para>
+	Lastly, many Windows programs can be run directly under Unix, without
+	a virtual machine running Windows, if the Unix system is running
+	on x86-based hardware.  This is accomplished using WINE, a Windows
+	API emulator.  WINE attempts to emulate the entire Windows system, as
+	opposed to virtual machines, which emulate hardware.  Emulating
+	Windows is more ambitious, but eliminates the need to install
+	and maintain a separate Windows operating system.  Instead, the
+	Windows applications run directly under Unix, with the WINE
+	compatibility layer between them and the Unix system.
+	</para>
+	
+	<para>
+	While it is possible to create a Unix-like environment under
+	Windows using a system such as Cygwin, such systems have
+	some inherent limitations in their capabilities and performance.
+	Installing a Unix-compatible operating system directly has
+	many benefits, especially for those developing their own
+	code to run on the cluster.
+	</para>
+	
+	<para>
+	Many professional quality Unix-based operating systems are available
+	free of charge, and with no strings attached.  These systems run
+	a wide variety of high-quality free software, as well
+	as many commercial applications.  Hence, it is possible
+	for researchers to develop Unix-compatible programs at very low
+	cost that will run both on their personal workstation or laptop,
+	and a cluster or grid.
+	</para>
+    </section>
+
+    <section>
+	<title>Advanced: Software Management</title>
+	
+	<para>
+	Many valuable man-hours are lost to stone-age software
+	management, i.e. manually downloading, unpacking, patching,
+	building, and installing open source software.
+	</para>
+	
+	<para>
+	Free software isn't very free if it takes 20 hours of someone's time
+	to get it running.  An average professional has a total cost to their
+	employer on the order of $50/hour.  Hence, 20 hours of their time
+	= $1,000.
+	If 1,000 professionals around the world spend an average of 20
+	hours installing the same software package, then $1,000,000 worth
+	of highly valuable man-hours have gone to waste.
+	Even worse, many people eventually give up on installing software
+	entirely, so there are no gains to balance this loss.
+	</para>
+	
+	<para>
+	In most cases, the software could have been installed in seconds
+	using a software management system (SMS) and all that time could
+	have been spent doing something productive.
+	</para>
+	
+	<para>
+	When choosing a Unix system to run, a good 
+	<glossterm>ports</glossterm> or <glossterm>packages</glossterm>
+	
+	<indexterm><primary>ports system</primary></indexterm>
+	<indexterm><primary>packages system</primary></indexterm>
+	
+	system is an important consideration.  A ports or packages
+	system automatically downloads and installs software from
+	the Internet.  Such systems also automatically install
+	additional <glossterm>prerequisite</glossterm>
+	ports or packages required by the package you
+	requested.
+	</para>
+	
+	<para>
+	For example, to install Firefox, you would first
+	need to install dozens of libraries and other utilities that
+	Firefox requires in order to run properly.  ( When you install
+	Firefox on Windows or Max OS X, you are actually installing
+	a bundle of all these packages. )
+	</para>
+	
+	<para>
+	The ports or
+	packages system will install all of them automatically when
+	you choose to install Firefox.
+	This allows you install software in seconds or
+	minutes that might otherwise take days or weeks for an
+	inexperienced programmer to manually download, patch, and
+	compile.
+	</para>
+	
+	<para>
+	Three operating systems, Debian Linux (and its derivatives
+	such as Ubuntu), FreeBSD, and Gentoo Linux,
+	are far ahead of the rest in terms of software management.  Each
+	of them offers automated installation of more than 20,000
+	software packages.
+	</para>
+	
+	<para>
+	By comparison, Red Hat Enterprise Linux (RHEL) and its
+	derivatives such as CentOS and Scientific Linux,
+	offer only a few thousand unique packages in the
+	<productname>Yum</productname> repository.  Although a few thousand
+	may sound like a large number, most researchers will find that
+	much of the software they need cannot be installed via
+	<productname>Yum</productname>.  This is not a criticism of
+	Red Hat, but illustrates that it was designed for a different
+	purpose, namely enterprise servers running commercial software.
+	The packages in Yum are intended to remain compatible with
+	commercial applications for 7 years, not to provide the latest
+	open source applications.
+	</para>
+	
+	<para>
+	The Pkgsrc
+	software management system can be used to maintain open source
+	software on enterprise Linux systems separate from the
+	commercial software and support software installed via Yum.
+	Pkgsrc offers over 13,000 packages, most of which are tested
+	on CentOS.
+	</para>
+	
+	<para>
+	Pkgsrc has the additional benefit of being the only cross-platform
+	SMS.  It can currently be used to install most packages on NetBSD,
+	Dragonfly BSD, Linux, Mac OS X, and Interix (a MS Windows Unix
+	layer).
+	</para>
+	
+	<para>
+	Even if you have to manually build and install your own software, you
+	can probably
+	install most of the the prerequisites from an SMS.  Doing so
+	will save you time and avoid conflicting installations of the
+	same package on your system.
+	</para>
+	
+	<para>
+	Better yet, learn how to create packages for an SMS, so that
+	others don't have to duplicate your effort in the future.
+	Each SMS is a prime example of global collaboration, where each
+	user leverages the work of thousands of others.  The best way to
+	support this collaboration is by contributing to it, even if
+	in a very small way.
+	</para>
+	
+	<para>
+	If you need to run commercial Linux applications, then
+	an enterprise Linux system is the right choice.  Many commercial
+	applications are only supported on enterprise Linux systems
+	such as RHEL and SUSE Enterprise.  They often prove difficult
+	to install and run reliably on other distributions.
+	</para>
+	
+	<para>
+	For running
+	mainly open source software, however, Debian, FreeBSD, or 
+	Gentoo will save you a great deal of time and effort.
+	</para>
+	
+	<para>
+	On a FreeBSD system, installing Firefox is a matter of entering
+	the following command:
+	</para>
+	
+	<screen>
+	pkg_add -r firefox
+	</screen>
+	
+	<para>
+	Similarly, on a Debian Linux system, you might use the following:
+	</para>
+	
+	<screen>
+	apt-get install firefox
+	</screen>
+	
+	<para>
+	In either case, you just sit back for a minute or so while the
+	package system downloads and installs everything you need to
+	run Firefox.
+	</para>
+	
+	<para>
+	The free operating systems include several systems based on
+	BSD (Berkeley Systems Distribution).
+	BSD began as a free derivative of the original AT&amp;T Unix
+	licensed
+	for academic use and distributed through the University of California
+	Berkeley.  It has since evolved into a completely open source operating
+	system that is free for any type of use, including commercial
+	use.  It is the basis for
+	FreeBSD (the primary server operating system used
+	by Yahoo!), Mac OS X, NetBSD, OpenBSD, and a few others.
+	FreeBSD is
+	the most popular among the free BSD-based systems.  FreeBSD is
+	known
+	for its speed, ease of setup, and most of all its unparalleled
+	stability.  The FreeBSD ports system makes it trivial to install
+	any of more than 23,000 packages, including most
+	mainstream scientific software.  FreeBSD ports can be installed
+	automatically either from a binary package, or from source code
+	if you desire different build options than the packages provide.
+	</para>
+	
+	<para>
+	Mac OS X is essentially FreeBSD with Apple's proprietary
+	user interface, so OS X users already have
+	a complete Unix system on their Mac.  In order to develop
+	programs under Mac OS, you will need to install a compiler.
+	Apple's development system, called Xcode, is available as
+	a free download.  It is distributed on the system install DVDs,
+	and is also available for download on Apple's website.
+	The free and open source MacPorts system offers the
+	ability to easily install thousands of software packages
+	directly from the Internet.  The MacPorts system is one
+	of the most modern and robust ports systems available
+	for any operating system.
+	</para>
+	
+	<para>
+	There are many free Linux distributions, as well as commercial
+	versions such as Red Hat Enterprise.  The most popular free
+	distributions are currently the Ubuntu line (Ubuntu, Kubuntu, 
+	and Xubuntu), which are based on Debian Linux.  The Ubuntu 
+	systems are known for their ease of installation and 
+	maintenance.  Systems based on Debian Linux support the Debian 
+	packages system, which offers
+	more than 20,000 packages available for easy installation.
+	Ubuntu is very popular due to its ease of use, and this
+	popularity translates to strong support from the user community.
+	</para>
+	
+	<para>
+	Gentoo Linux is a Linux system based heavily on ports.  The
+	Gentoo system installation process is very selective, and
+	results in a compact, efficient system for each user's
+	particular needs.  Gentoo is not as easy to install as
+	other Linux systems, but is a great choice for more experienced
+	Linux users who want to maximize performance and stability.
+	Like FreeBSD and Debian, Gentoo's ports system, known as
+	<productname>portage</productname>, offers automated installation
+	of more than 20,000 software packages.
+	</para>
+
+	<section>
+	    <title>Self-test</title>
+	    
+	    <orderedlist>
+		<listitem>
+		Which of today's mainstream operating systems are Unix
+		compatible and which are not?
+		</listitem>
+		
+		<listitem>
+		Can MS Windows run Unix programs?  If so, how?
+		</listitem>
+		
+		<listitem>
+		Can non-Windows operating systems run Windows programs?
+		If so, how?
+		</listitem>
+	    </orderedlist>
+	</section>
+    </section>
+    
+    <section xml:id="virtual-machines">
+	<title>Advanced: Running Multiple Operating Systems</title>
+	
+	<para>
+	You don't necessarily need to maintain a second computer
+	in order to run Unix in addition to Windows.
+	All mainstream Unix operating systems can be installed on
+	a PC alongside
+	Windows on a separate partition, or installed in a virtual machine
+	(VM), such as <productname>Oracle VirtualBox</productname>,
+	which is also available for free.
+	</para>
+	
+	<para>
+	VMs are software packages that pretend to be computer hardware.
+	You can install an entire operating system plus the software you need 
+	on the VM as if it were a real computer.  The OS
+	running under the VM is called the <glossterm>guest</glossterm>
+	OS, and the OS running the VM on the real hardware is called the
+	<glossterm>host</glossterm>.
+	</para>
+	
+	<para>
+	Computational code runs at the same speed in the guest
+	operating system as it does in the host.  The main limitation
+	imposed on guest operating systems is graphics speed.  If you
+	run applications requiring fast 3D rendering, such as video players,
+	they should be run on the host operating system.
+	</para>
+
+	<para>
+	There are many VMs available for x86-based PC hardware, including
+	VirtualBox,
+	<ulink url="http://www.virtualbox.org/">
+	<productname>http://www.virtualbox.org/</productname></ulink>, which
+	is free and open source, and runs on many different host platforms
+	including FreeBSD, Linux, Mac OS X, Solaris, and Windows.
+	</para>
+	
+	<para>
+	Running a Unix guest in a VM on Windows or Windows as a guest
+	under Unix will provide a cleaner and more complete Unix
+	experience than can be achieved with a compatibility layer
+	like Cygwin.  The main disadvantage of a VM is the additional disk
+	space and memory required for running two operating systems
+	at once.  However, given the low cost of today's hardware,
+	this doesn't usually present a problem on modern PCs.
+	</para>
+	
+	<para>
+	Virtual machines are most often used to run Windows as a guest on
+	a Unix system, to provide access to Windows-only applications to
+	Unix (including Mac) users without maintaining a second computer.
+	This configuration is best supported, and offers the most
+	seamless integration between host and guest.
+	An example is shown in <xref linkend="vbox_windows"/>.
+	</para>
+	
+	<figure xml:id="vbox_windows">
+	<title>Windows as a Guest under VirtualBox on a Mac Host</title>
+	<mediaobject>
+	    <imageobject>
+	    <imagedata fileref="Images/virtualbox.png" scale="40"/>
+	    </imageobject>
+	</mediaobject>
+	</figure>
+	
+	<para>
+	Another issue is that Windows systems
+	need to be rebooted frequently, often several times per week,
+	to activate security updates.  Most Unix systems, on the other hand,
+	can run uninterrupted for months at a time.  (FreeBSD systems will
+	typically run for years, if your power source is that stable.)
+	There are far fewer security updates necessary for Unix systems,
+	and most updates can be installed without rebooting.
+	Rebooting a host OS requires rebooting all guests as well, but
+	rebooting a guest OS does not affect the host.  Hence, it's
+	best to run the most stable system as the host.
+	</para>
+	
+	<para>
+	If necessary, it is possible to run Unix as a guest under Windows.
+	FreeBSD and many Linux distributions are fully supported as 
+	VirtualBox guest operating systems.
+	A VirtualBox disk image containing a FreeBSD installation
+	is available at
+	<ulink url="http://peregrine.hpc.uwm.edu">http://peregrine.hpc.uwm.edu</ulink>.
+	This image is provided in a standard format so that it can be easily
+	imported into virtual machines such as VirtualBox and VMware.
+	</para>
+    </section>
+    
+    <section>
+	<title>Where to Learn More</title>
+	
+	<para>
+	There is a great deal of information available on the web.
+	There are also many length books dedicated to Unix, which can
+	provide more detail than this tutorial.
+	</para>
+	
+	<para>
+	If you simply want to know what commands are available on your
+	system, list the bin directories!
+	</para>
+	
+	<screen>
+	peregrine: ls /bin /usr/bin /usr/local/bin | more
+	</screen>
+    </section>
+</chapter>
+

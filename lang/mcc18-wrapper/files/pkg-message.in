@@ -1,0 +1,3 @@
+
+Before using the MCC18 compiler, each user must run 'setup_mcc18'.
+This will install MCC18 under wine for that user only.

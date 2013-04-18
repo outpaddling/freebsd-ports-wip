@@ -1,0 +1,6 @@
+bin/wifi_select
+libexec/wifi_select_daemon
+%%DATADIR%%/stations.conf.sample
+@dirrm %%DATADIR%%
+@dirrmtry %%ETCDIR%%
+@exec mkdir -p %D/%%ETCDIR%%

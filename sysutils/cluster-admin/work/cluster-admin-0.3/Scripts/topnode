@@ -1,0 +1,6 @@
+#!/bin/sh
+
+node=$1
+shift
+ssh -t compute-$node top $*
+

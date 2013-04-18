@@ -1,0 +1,75 @@
+--- Makefile.orig	2011-11-11 11:32:14.000000000 -0600
++++ Makefile	2011-12-14 18:45:30.000000000 -0600
+@@ -211,6 +211,37 @@
+ 
+ #------------------------------------------------------------------
+ 
++all:	serial mpi
++
++serial:	flair_inv flair_complex flair_soc_inv flair_soc_complex
++	gmake clean	# Rebuild all for MPI
++
++mpi:	flair_inv_mpi flair_complex_mpi flair_soc_inv_mpi flair_soc_complex_mpi
++
++flair_inv:
++	gmake PARFLAGS="" real && mv flair flair_inv
++
++flair_complex:
++	gmake PARFLAGS="" complex && mv flair flair_complex
++
++flair_soc_inv:
++	gmake PARFLAGS="" soc_inv && mv flair flair_soc_inv
++
++flair_soc_complex:
++	gmake PARFLAGS="" soc && mv flair flair_soc_complex
++
++flair_inv_mpi:
++	gmake FC="mpif90" real && mv flair flair_inv_mpi
++
++flair_complex_mpi:
++	gmake FC="mpif90" complex && mv flair flair_complex_mpi
++
++flair_soc_inv_mpi:
++	gmake FC="mpif90" soc_inv && mv flair flair_soc_inv_mpi
++
++flair_soc_complex_mpi:
++	gmake FC="mpif90" soc && mv flair flair_soc_complex_mpi
++
+ flair:  $(OBJMODSYM) $(OBJMOD) $(OBJMODF) \
+         $(OBJ) $(OBJF) $(OBJOLD) $(OBJSYM) 
+ 	@echo "...linking"; \
+@@ -226,13 +257,13 @@
+ 
+ # use recursive makes to generate other targets
+ real:    touchinv
+-	make flair "FLAIRFLAGS=$(INV)"
++	gmake flair "FLAIRFLAGS=$(INV)"
+ complex: touchinv
+-	make flair "FLAIRFLAGS= "
++	gmake flair "FLAIRFLAGS= "
+ soc:     touchsoc touchinv
+-	make flair "FLAIRFLAGS=$(SOC)"
++	gmake flair "FLAIRFLAGS=$(SOC)"
+ soc_inv: touchsoc touchinv
+-	make flair "FLAIRFLAGS=$(INV) $(SOC)"
++	gmake flair "FLAIRFLAGS=$(INV) $(SOC)"
+ 
+ touchinv: 
+ 	rm -f ${SRC_INV:.F=.o}
+@@ -251,14 +282,14 @@
+ 
+ # documentation
+ docs:
+-	(cd ../docs; make html latexpdf)
++	(cd ../docs; gmake html latexpdf)
+ 
+ # tasks
+ clean:
+ 	rm -f core *.o *.mod 
+ 
+ docsclean:
+-	(cd ../docs; make clean)
++	(cd ../docs; gmake clean)
+ 
+ realclean: clean docsclean
+ 

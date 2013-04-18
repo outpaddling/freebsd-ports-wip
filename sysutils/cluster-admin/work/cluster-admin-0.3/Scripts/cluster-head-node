@@ -1,0 +1,9 @@
+#!/bin/sh
+
+common=local/cluster/head_node
+if [ -e /usr/$common ]; then
+    cat /usr/$common
+elif [ -e /head_usr/$common ]; then
+    cat /head_usr/$common
+fi
+

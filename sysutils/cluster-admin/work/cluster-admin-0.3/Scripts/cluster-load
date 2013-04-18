@@ -1,0 +1,16 @@
+#!/bin/sh
+
+lines=`pbsnodes | grep 'jobs =' | wc -l`
+printf 'Nodes in use: %s\n' $lines
+
+words=`pbsnodes | grep 'jobs =' | wc -w`
+cores=`expr $words - $lines \* 2`
+printf 'Cores in use: %s\n' $cores
+
+total_cores=`pbsnodes | awk 'BEGIN   { cores=0 }
+$1 == "np" { cores += $3 }
+END { print cores }'`
+printf 'Total cores:  %s\n' $total_cores
+
+printf 'Load:         %s%%\n' `expr $cores \* 100 / $total_cores`
+

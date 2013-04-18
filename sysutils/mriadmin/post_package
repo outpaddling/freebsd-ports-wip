@@ -1,0 +1,6 @@
+#!/bin/csh
+
+make deinstall clean
+make package
+mv mriadmin*.tbz ~bacon/public_html/Acadix/mriadmin.tbz
+

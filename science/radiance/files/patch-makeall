@@ -1,0 +1,11 @@
+--- makeall.orig	2012-03-02 10:39:42.000000000 -0600
++++ makeall	2012-03-02 10:39:54.000000000 -0600
+@@ -84,7 +84,7 @@
+ 	goto gotrmake
+ endif
+ set newrmake
+-more License.txt
++cat License.txt
+ echo -n "Do you understand and accept the terms of this agreement [n]? "
+ set ans="$<"
+ if ( "$ans" !~ [yY]* ) exit

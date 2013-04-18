@@ -1,0 +1,38 @@
+--- configure.orig	2011-05-30 11:17:52.000000000 -0500
++++ configure	2011-05-30 11:18:48.000000000 -0500
+@@ -3290,7 +3290,7 @@
+   *-*-netware*)
+     noconfigdirs="$noconfigdirs target-newlib target-libiberty target-libgloss ${libgcj} target-libmudflap"
+     ;;
+-  *-*-rtems*)
++  *-*-rtems*|arm-none-eabi)
+     skipdirs="$skipdirs target-libiberty"
+     noconfigdirs="$noconfigdirs target-libgloss ${libgcj}"
+     ;;
+@@ -7905,7 +7905,7 @@
+ # For the build-side libraries, we just need to pretend we're native,
+ # and not use the same cache file.  Multilibs are neither needed nor
+ # desired.
+-build_configargs="--cache-file=../config.cache ${baseargs}"
++build_configargs="${baseargs}"
+ 
+ # For host modules, accept cache file option, or specification as blank.
+ case "${cache_file}" in
+@@ -7955,7 +7955,7 @@
+ # Pass the appropriate --build, --host, --target and --cache-file arguments.
+ # We need to pass --target, as newer autoconf's requires consistency
+ # for target_alias and gcc doesn't manage it consistently.
+-target_configargs="--cache-file=./config.cache ${target_configargs}"
++target_configargs="${target_configargs}"
+ 
+ FLAGS_FOR_TARGET=
+ case " $target_configdirs " in
+@@ -8048,7 +8048,7 @@
+ # being built; programs in there won't even run.
+ if test "${build}" = "${host}" && test -d ${srcdir}/gcc; then
+   # Search for pre-installed headers if nothing else fits.
+-  FLAGS_FOR_TARGET=$FLAGS_FOR_TARGET' -B$(build_tooldir)/bin/ -B$(build_tooldir)/lib/ -isystem $(build_tooldir)/include -isystem $(build_tooldir)/sys-include'
++  FLAGS_FOR_TARGET=$FLAGS_FOR_TARGET' -B$(build_tooldir)/bin/ -B$(build_tooldir)/lib/ -isystem $$r/$(HOST_SUBDIR)/gcc -isystem $(build_tooldir)/include -isystem $(build_tooldir)/sys-include'
+ fi
+ 
+ if test "x${use_gnu_ld}" = x &&

@@ -1,0 +1,28 @@
+# New ports collection makefile for:	pbs-scripts
+# Date created:		2012-01-27
+# Whom:			Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	pbs-scripts
+PORTVERSION=	0.1
+CATEGORIES=	sysutils
+MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
+		http://acadix.biz/Ports/distfiles/
+
+MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
+COMMENT=	Supplemental scripts for PBS scheduler
+
+NO_BUILD=	yes
+
+PLIST_FILES=	bin/qpeek bin/qsub-cmd
+
+MAN1=		qpeek.1
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/Man/qpeek.man ${PREFIX}/man/man1/qpeek.1
+
+.include <bsd.port.pre.mk>
+.include <bsd.port.post.mk>

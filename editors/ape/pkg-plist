@@ -1,0 +1,242 @@
+bin/ape
+bin/ape_ispell
+bin/ascii
+bin/runjava
+bin/search_headers
+bin/search_libs
+bin/xape
+%%DATADIR%%/Languages/AWK/language_opts
+%%DATADIR%%/Languages/AWK/syntax_highlighting
+%%DATADIR%%/Languages/BASH/Macros/macros
+%%DATADIR%%/Languages/BASH/Macros/menu.txt
+%%DATADIR%%/Languages/BASH/language_opts
+%%DATADIR%%/Languages/BASH/syntax_highlighting
+%%DATADIR%%/Languages/BC/language_opts
+%%DATADIR%%/Languages/BC/syntax_highlighting
+%%DATADIR%%/Languages/C++/Macros/macros
+%%DATADIR%%/Languages/C++/Macros/menu.txt
+%%DATADIR%%/Languages/C++/language_opts
+%%DATADIR%%/Languages/C++/syntax_highlighting
+%%DATADIR%%/Languages/C/Macros/macros
+%%DATADIR%%/Languages/C/Macros/menu.txt
+%%DATADIR%%/Languages/C/language_opts
+%%DATADIR%%/Languages/C/syntax_highlighting
+%%DATADIR%%/Languages/CSS/Macros/macros
+%%DATADIR%%/Languages/CSS/Macros/menu.txt
+%%DATADIR%%/Languages/CSS/language_opts
+%%DATADIR%%/Languages/CSS/syntax_highlighting
+%%DATADIR%%/Languages/C_header/Macros/macros
+%%DATADIR%%/Languages/C_header/Macros/menu.txt
+%%DATADIR%%/Languages/C_header/language_opts
+%%DATADIR%%/Languages/C_header/syntax_highlighting
+%%DATADIR%%/Languages/Condor/Macros/macros
+%%DATADIR%%/Languages/Condor/Macros/menu.txt
+%%DATADIR%%/Languages/Condor/language_opts
+%%DATADIR%%/Languages/Condor/syntax_highlighting
+%%DATADIR%%/Languages/Csh/Macros/macros
+%%DATADIR%%/Languages/Csh/Macros/menu.txt
+%%DATADIR%%/Languages/Csh/language_opts
+%%DATADIR%%/Languages/Csh/syntax_highlighting
+%%DATADIR%%/Languages/DocBook/Macros/macros
+%%DATADIR%%/Languages/DocBook/Macros/menu.txt
+%%DATADIR%%/Languages/DocBook/language_opts
+%%DATADIR%%/Languages/DocBook/syntax_highlighting
+%%DATADIR%%/Languages/EPC/Macros/macros
+%%DATADIR%%/Languages/EPC/Macros/menu.txt
+%%DATADIR%%/Languages/EPC/language_opts
+%%DATADIR%%/Languages/EPC/syntax_highlighting
+%%DATADIR%%/Languages/Fortran77/Macros/macros
+%%DATADIR%%/Languages/Fortran77/Macros/menu.txt
+%%DATADIR%%/Languages/Fortran77/language_opts
+%%DATADIR%%/Languages/Fortran77/syntax_highlighting
+%%DATADIR%%/Languages/Fortran90/Macros/macros
+%%DATADIR%%/Languages/Fortran90/Macros/menu.txt
+%%DATADIR%%/Languages/Fortran90/language_opts
+%%DATADIR%%/Languages/Fortran90/syntax_highlighting
+%%DATADIR%%/Languages/GRADES/language_opts
+%%DATADIR%%/Languages/GRADES/syntax_highlighting
+%%DATADIR%%/Languages/HTML/Macros/macros
+%%DATADIR%%/Languages/HTML/Macros/menu.txt
+%%DATADIR%%/Languages/HTML/language_opts
+%%DATADIR%%/Languages/HTML/syntax_highlighting
+%%DATADIR%%/Languages/Java/Macros/macros
+%%DATADIR%%/Languages/Java/Macros/menu.txt
+%%DATADIR%%/Languages/Java/language_opts
+%%DATADIR%%/Languages/Java/syntax_highlighting
+%%DATADIR%%/Languages/Ksh/Macros/macros
+%%DATADIR%%/Languages/Ksh/Macros/menu.txt
+%%DATADIR%%/Languages/Ksh/language_opts
+%%DATADIR%%/Languages/Ksh/syntax_highlighting
+%%DATADIR%%/Languages/LUA/language_opts
+%%DATADIR%%/Languages/LUA/syntax_highlighting
+%%DATADIR%%/Languages/LaTeX/Macros/macros
+%%DATADIR%%/Languages/LaTeX/Macros/menu.txt
+%%DATADIR%%/Languages/LaTeX/language_opts
+%%DATADIR%%/Languages/LaTeX/syntax_highlighting
+%%DATADIR%%/Languages/M4HTML/Macros/macros
+%%DATADIR%%/Languages/M4HTML/Macros/menu.txt
+%%DATADIR%%/Languages/M4HTML/language_opts
+%%DATADIR%%/Languages/M4HTML/syntax_highlighting
+%%DATADIR%%/Languages/MAL/Macros/macros
+%%DATADIR%%/Languages/MAL/Macros/menu.txt
+%%DATADIR%%/Languages/MAL/language_opts
+%%DATADIR%%/Languages/MAL/syntax_highlighting
+%%DATADIR%%/Languages/MAN/Macros/macros
+%%DATADIR%%/Languages/MAN/Macros/menu.txt
+%%DATADIR%%/Languages/MAN/language_opts
+%%DATADIR%%/Languages/MAN/syntax_highlighting
+%%DATADIR%%/Languages/MDOC/Macros/macros
+%%DATADIR%%/Languages/MDOC/Macros/menu.txt
+%%DATADIR%%/Languages/MDOC/language_opts
+%%DATADIR%%/Languages/MDOC/syntax_highlighting
+%%DATADIR%%/Languages/Makefile/Macros/macros
+%%DATADIR%%/Languages/Makefile/Macros/menu.txt
+%%DATADIR%%/Languages/Makefile/language_opts
+%%DATADIR%%/Languages/Makefile/syntax_highlighting
+%%DATADIR%%/Languages/NQC/Macros/macros
+%%DATADIR%%/Languages/NQC/Macros/menu.txt
+%%DATADIR%%/Languages/NQC/language_opts
+%%DATADIR%%/Languages/NQC/syntax_highlighting
+%%DATADIR%%/Languages/NXC/Macros/macros
+%%DATADIR%%/Languages/NXC/Macros/menu.txt
+%%DATADIR%%/Languages/NXC/language_opts
+%%DATADIR%%/Languages/NXC/syntax_highlighting
+%%DATADIR%%/Languages/Nroff/Macros/macros
+%%DATADIR%%/Languages/Nroff/Macros/menu.txt
+%%DATADIR%%/Languages/Nroff/language_opts
+%%DATADIR%%/Languages/Nroff/syntax_highlighting
+%%DATADIR%%/Languages/Octave/Macros/macros
+%%DATADIR%%/Languages/Octave/Macros/menu.txt
+%%DATADIR%%/Languages/Octave/language_opts
+%%DATADIR%%/Languages/Octave/syntax_highlighting
+%%DATADIR%%/Languages/PHP/Macros/macros
+%%DATADIR%%/Languages/PHP/Macros/menu.txt
+%%DATADIR%%/Languages/PHP/language_opts
+%%DATADIR%%/Languages/PHP/syntax_highlighting
+%%DATADIR%%/Languages/PICASM/language_opts
+%%DATADIR%%/Languages/PICASM/syntax_highlighting
+%%DATADIR%%/Languages/Pascal/Macros/macros
+%%DATADIR%%/Languages/Pascal/Macros/menu.txt
+%%DATADIR%%/Languages/Pascal/language_opts
+%%DATADIR%%/Languages/Pascal/syntax_highlighting
+%%DATADIR%%/Languages/Perl/Macros/macros
+%%DATADIR%%/Languages/Perl/Macros/menu.txt
+%%DATADIR%%/Languages/Perl/language_opts
+%%DATADIR%%/Languages/Perl/syntax_highlighting
+%%DATADIR%%/Languages/Python/Macros/macros
+%%DATADIR%%/Languages/Python/Macros/menu.txt
+%%DATADIR%%/Languages/Python/language_opts
+%%DATADIR%%/Languages/Python/syntax_highlighting
+%%DATADIR%%/Languages/SAL/Macros/macros
+%%DATADIR%%/Languages/SAL/Macros/menu.txt
+%%DATADIR%%/Languages/SAL/language_opts
+%%DATADIR%%/Languages/SAL/syntax_highlighting
+%%DATADIR%%/Languages/Sh/Macros/macros
+%%DATADIR%%/Languages/Sh/Macros/menu.txt
+%%DATADIR%%/Languages/Sh/language_opts
+%%DATADIR%%/Languages/Sh/syntax_highlighting
+%%DATADIR%%/Languages/TAL/Macros/macros
+%%DATADIR%%/Languages/TAL/Macros/menu.txt
+%%DATADIR%%/Languages/TAL/language_opts
+%%DATADIR%%/Languages/TAL/syntax_highlighting
+%%DATADIR%%/Languages/TAX/language_opts
+%%DATADIR%%/Languages/TAX/syntax_highlighting
+%%DATADIR%%/Languages/TCL/language_opts
+%%DATADIR%%/Languages/TCL/syntax_highlighting
+%%DATADIR%%/Languages/Tcsh/Macros/macros
+%%DATADIR%%/Languages/Tcsh/Macros/menu.txt
+%%DATADIR%%/Languages/Tcsh/language_opts
+%%DATADIR%%/Languages/Tcsh/syntax_highlighting
+%%DATADIR%%/Languages/X10/Macros/macros
+%%DATADIR%%/Languages/X10/Macros/menu.txt
+%%DATADIR%%/Languages/X10/language_opts
+%%DATADIR%%/Languages/X10/syntax_highlighting
+%%DATADIR%%/Languages/XML/Macros/macros
+%%DATADIR%%/Languages/XML/Macros/menu.txt
+%%DATADIR%%/Languages/XML/language_opts
+%%DATADIR%%/Languages/XML/syntax_highlighting
+%%DATADIR%%/Languages/language_opts
+%%DATADIR%%/Languages/syntax_highlighting
+%%DATADIR%%/custom_menu
+%%DATADIR%%/options.rc
+%%PORTDOCS%%%%DOCSDIR%%/ape.html
+%%PORTDOCS%%%%DOCSDIR%%/apeascii.html
+%%PORTDOCS%%%%DOCSDIR%%/apekeys.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/Languages/XML/Macros
+@dirrm %%DATADIR%%/Languages/XML
+@dirrm %%DATADIR%%/Languages/X10/Macros
+@dirrm %%DATADIR%%/Languages/X10
+@dirrm %%DATADIR%%/Languages/Tcsh/Macros
+@dirrm %%DATADIR%%/Languages/Tcsh
+@dirrm %%DATADIR%%/Languages/TCL
+@dirrm %%DATADIR%%/Languages/TAX
+@dirrm %%DATADIR%%/Languages/TAL/Macros
+@dirrm %%DATADIR%%/Languages/TAL
+@dirrm %%DATADIR%%/Languages/Sh/Macros
+@dirrm %%DATADIR%%/Languages/Sh
+@dirrm %%DATADIR%%/Languages/SAL/Macros
+@dirrm %%DATADIR%%/Languages/SAL
+@dirrm %%DATADIR%%/Languages/Python/Macros
+@dirrm %%DATADIR%%/Languages/Python
+@dirrm %%DATADIR%%/Languages/Perl/Macros
+@dirrm %%DATADIR%%/Languages/Perl
+@dirrm %%DATADIR%%/Languages/Pascal/Macros
+@dirrm %%DATADIR%%/Languages/Pascal
+@dirrm %%DATADIR%%/Languages/PICASM
+@dirrm %%DATADIR%%/Languages/PHP/Macros
+@dirrm %%DATADIR%%/Languages/PHP
+@dirrm %%DATADIR%%/Languages/Octave/Macros
+@dirrm %%DATADIR%%/Languages/Octave
+@dirrm %%DATADIR%%/Languages/Nroff/Macros
+@dirrm %%DATADIR%%/Languages/Nroff
+@dirrm %%DATADIR%%/Languages/NXC/Macros
+@dirrm %%DATADIR%%/Languages/NXC
+@dirrm %%DATADIR%%/Languages/NQC/Macros
+@dirrm %%DATADIR%%/Languages/NQC
+@dirrm %%DATADIR%%/Languages/Makefile/Macros
+@dirrm %%DATADIR%%/Languages/Makefile
+@dirrm %%DATADIR%%/Languages/MDOC/Macros
+@dirrm %%DATADIR%%/Languages/MDOC
+@dirrm %%DATADIR%%/Languages/MAN/Macros
+@dirrm %%DATADIR%%/Languages/MAN
+@dirrm %%DATADIR%%/Languages/MAL/Macros
+@dirrm %%DATADIR%%/Languages/MAL
+@dirrm %%DATADIR%%/Languages/M4HTML/Macros
+@dirrm %%DATADIR%%/Languages/M4HTML
+@dirrm %%DATADIR%%/Languages/LaTeX/Macros
+@dirrm %%DATADIR%%/Languages/LaTeX
+@dirrm %%DATADIR%%/Languages/LUA
+@dirrm %%DATADIR%%/Languages/Ksh/Macros
+@dirrm %%DATADIR%%/Languages/Ksh
+@dirrm %%DATADIR%%/Languages/Java/Macros
+@dirrm %%DATADIR%%/Languages/Java
+@dirrm %%DATADIR%%/Languages/HTML/Macros
+@dirrm %%DATADIR%%/Languages/HTML
+@dirrm %%DATADIR%%/Languages/GRADES
+@dirrm %%DATADIR%%/Languages/Fortran90/Macros
+@dirrm %%DATADIR%%/Languages/Fortran90
+@dirrm %%DATADIR%%/Languages/Fortran77/Macros
+@dirrm %%DATADIR%%/Languages/Fortran77
+@dirrm %%DATADIR%%/Languages/EPC/Macros
+@dirrm %%DATADIR%%/Languages/EPC
+@dirrm %%DATADIR%%/Languages/DocBook/Macros
+@dirrm %%DATADIR%%/Languages/DocBook
+@dirrm %%DATADIR%%/Languages/Csh/Macros
+@dirrm %%DATADIR%%/Languages/Csh
+@dirrm %%DATADIR%%/Languages/Condor/Macros
+@dirrm %%DATADIR%%/Languages/Condor
+@dirrm %%DATADIR%%/Languages/C_header/Macros
+@dirrm %%DATADIR%%/Languages/C_header
+@dirrm %%DATADIR%%/Languages/CSS/Macros
+@dirrm %%DATADIR%%/Languages/CSS
+@dirrm %%DATADIR%%/Languages/C/Macros
+@dirrm %%DATADIR%%/Languages/C++/Macros
+@dirrm %%DATADIR%%/Languages/C++
+@dirrm %%DATADIR%%/Languages/C
+@dirrm %%DATADIR%%/Languages/BC
+@dirrm %%DATADIR%%/Languages/BASH/Macros
+@dirrm %%DATADIR%%/Languages/BASH
+@dirrm %%DATADIR%%/Languages/AWK
+@dirrm %%DATADIR%%/Languages
+@dirrm %%DATADIR%%

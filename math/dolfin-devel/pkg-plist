@@ -1,0 +1,1105 @@
+bin/dolfin-convert
+bin/dolfin-get-demos
+bin/dolfin-order
+bin/dolfin-plot
+bin/dolfin-version
+include/dolfin.h
+include/dolfin/adaptivity/AdaptiveLinearVariationalSolver.h
+include/dolfin/adaptivity/AdaptiveNonlinearVariationalSolver.h
+include/dolfin/adaptivity/ErrorControl.h
+include/dolfin/adaptivity/Extrapolation.h
+include/dolfin/adaptivity/GenericAdaptiveVariationalSolver.h
+include/dolfin/adaptivity/GoalFunctional.h
+include/dolfin/adaptivity/LocalAssembler.h
+include/dolfin/adaptivity/TimeSeries.h
+include/dolfin/adaptivity/adapt.h
+include/dolfin/adaptivity/adaptivesolve.h
+include/dolfin/adaptivity/dolfin_adaptivity.h
+include/dolfin/adaptivity/marking.h
+include/dolfin/ale/ALE.h
+include/dolfin/ale/ALEType.h
+include/dolfin/ale/HarmonicSmoothing.h
+include/dolfin/ale/MeshDisplacement.h
+include/dolfin/ale/Poisson1D.h
+include/dolfin/ale/Poisson2D.h
+include/dolfin/ale/Poisson3D.h
+include/dolfin/ale/dolfin_ale.h
+include/dolfin/common/Array.h
+include/dolfin/common/Hierarchical.h
+include/dolfin/common/IndexSet.h
+include/dolfin/common/MPI.h
+include/dolfin/common/NoDeleter.h
+include/dolfin/common/RangedIndexSet.h
+include/dolfin/common/Set.h
+include/dolfin/common/SubSystemsManager.h
+include/dolfin/common/Timer.h
+include/dolfin/common/UniqueIdGenerator.h
+include/dolfin/common/Variable.h
+include/dolfin/common/constants.h
+include/dolfin/common/defines.h
+include/dolfin/common/dolfin_common.h
+include/dolfin/common/dolfin_doc.h
+include/dolfin/common/init.h
+include/dolfin/common/timing.h
+include/dolfin/common/types.h
+include/dolfin/common/unittest.h
+include/dolfin/common/utils.h
+include/dolfin/fem/Assembler.h
+include/dolfin/fem/AssemblerBase.h
+include/dolfin/fem/BasisFunction.h
+include/dolfin/fem/BoundaryCondition.h
+include/dolfin/fem/DirichletBC.h
+include/dolfin/fem/DofMap.h
+include/dolfin/fem/DofMapBuilder.h
+include/dolfin/fem/DomainAssigner.h
+include/dolfin/fem/Equation.h
+include/dolfin/fem/FiniteElement.h
+include/dolfin/fem/Form.h
+include/dolfin/fem/GenericDofMap.h
+include/dolfin/fem/LinearTimeDependentProblem.h
+include/dolfin/fem/LinearVariationalProblem.h
+include/dolfin/fem/LinearVariationalSolver.h
+include/dolfin/fem/LocalSolver.h
+include/dolfin/fem/NonlinearVariationalProblem.h
+include/dolfin/fem/NonlinearVariationalSolver.h
+include/dolfin/fem/OpenMpAssembler.h
+include/dolfin/fem/PointSource.h
+include/dolfin/fem/SparsityPatternBuilder.h
+include/dolfin/fem/SystemAssembler.h
+include/dolfin/fem/UFC.h
+include/dolfin/fem/UFCCell.h
+include/dolfin/fem/VariationalProblem.h
+include/dolfin/fem/assemble.h
+include/dolfin/fem/dolfin_fem.h
+include/dolfin/fem/solve.h
+include/dolfin/function/CoefficientAssigner.h
+include/dolfin/function/Constant.h
+include/dolfin/function/Expression.h
+include/dolfin/function/Function.h
+include/dolfin/function/FunctionSpace.h
+include/dolfin/function/GenericFunction.h
+include/dolfin/function/SpecialFacetFunction.h
+include/dolfin/function/SpecialFunctions.h
+include/dolfin/function/SubSpace.h
+include/dolfin/function/dolfin_function.h
+include/dolfin/generation/BoxMesh.h
+include/dolfin/generation/CGALMeshBuilder.h
+include/dolfin/generation/CSGCGALMeshGenerator2D.h
+include/dolfin/generation/CSGCGALMeshGenerator3D.h
+include/dolfin/generation/CSGGeometries3D.h
+include/dolfin/generation/CSGGeometry.h
+include/dolfin/generation/CSGMeshGenerator.h
+include/dolfin/generation/CSGOperators.h
+include/dolfin/generation/CSGPrimitive.h
+include/dolfin/generation/CSGPrimitives2D.h
+include/dolfin/generation/CSGPrimitives3D.h
+include/dolfin/generation/GeometryToCGALConverter.h
+include/dolfin/generation/Interval.h
+include/dolfin/generation/IntervalMesh.h
+include/dolfin/generation/PolygonalMeshGenerator.h
+include/dolfin/generation/PolyhedralMeshGenerator.h
+include/dolfin/generation/PolyhedronUtils.h
+include/dolfin/generation/RectangleMesh.h
+include/dolfin/generation/Triangulate.h
+include/dolfin/generation/UnitCircle.h
+include/dolfin/generation/UnitCircleMesh.h
+include/dolfin/generation/UnitCube.h
+include/dolfin/generation/UnitCubeMesh.h
+include/dolfin/generation/UnitInterval.h
+include/dolfin/generation/UnitIntervalMesh.h
+include/dolfin/generation/UnitSquare.h
+include/dolfin/generation/UnitSquareMesh.h
+include/dolfin/generation/UnitTetrahedronMesh.h
+include/dolfin/generation/UnitTriangleMesh.h
+include/dolfin/generation/cgal_csg3d.h
+include/dolfin/generation/compute_normal.h
+include/dolfin/generation/dolfin_generation.h
+include/dolfin/generation/self_intersect.h
+include/dolfin/generation/triangulate_polyhedron.h
+include/dolfin/graph/BoostGraphColoring.h
+include/dolfin/graph/BoostGraphOrdering.h
+include/dolfin/graph/Graph.h
+include/dolfin/graph/GraphBuilder.h
+include/dolfin/graph/GraphColoring.h
+include/dolfin/graph/GraphOrdering.h
+include/dolfin/graph/ParMETIS.h
+include/dolfin/graph/SCOTCH.h
+include/dolfin/graph/ZoltanInterface.h
+include/dolfin/graph/ZoltanPartition.h
+include/dolfin/graph/dolfin_graph.h
+include/dolfin/intersection/IntersectionOperator.h
+include/dolfin/intersection/IntersectionOperatorImplementation.h
+include/dolfin/intersection/MeshPrimitive.h
+include/dolfin/intersection/Point_3_Bbox_3_intersection.h
+include/dolfin/intersection/Point_3_Iso_Cuboid_3_intersection.h
+include/dolfin/intersection/Point_3_Line_3_intersection.h
+include/dolfin/intersection/Point_3_Point_3_intersection.h
+include/dolfin/intersection/Point_3_Ray_3_intersection.h
+include/dolfin/intersection/Point_3_Segment_3_intersection.h
+include/dolfin/intersection/Point_3_Tetrahedron_3_intersection.h
+include/dolfin/intersection/Point_3_Triangle_3_intersection.h
+include/dolfin/intersection/PrimitiveIntersector.h
+include/dolfin/intersection/PrimitiveTraits.h
+include/dolfin/intersection/Segment_3_Segment_3_intersection.h
+include/dolfin/intersection/Segment_3_Tetrahedron_3_intersection.h
+include/dolfin/intersection/Tetrahedron_3_Bbox_3_intersection.h
+include/dolfin/intersection/Tetrahedron_3_Tetrahedron_3_intersection.h
+include/dolfin/intersection/Tree_Traits.h
+include/dolfin/intersection/Triangle_3_Tetrahedron_3_do_intersect_SCK.h
+include/dolfin/intersection/added_intersection_3.h
+include/dolfin/intersection/cgal_includes.h
+include/dolfin/intersection/dolfin_intersection.h
+include/dolfin/intersection/predicates_init.h
+include/dolfin/io/BinaryFile.h
+include/dolfin/io/Encoder.h
+include/dolfin/io/File.h
+include/dolfin/io/GenericFile.h
+include/dolfin/io/HDF5File.h
+include/dolfin/io/HDF5Interface.h
+include/dolfin/io/RAWFile.h
+include/dolfin/io/SAX2AttributeParser.h
+include/dolfin/io/SVGFile.h
+include/dolfin/io/VTKFile.h
+include/dolfin/io/VTKWriter.h
+include/dolfin/io/XDMFFile.h
+include/dolfin/io/XMLArray.h
+include/dolfin/io/XMLFile.h
+include/dolfin/io/XMLFunctionData.h
+include/dolfin/io/XMLLocalMeshSAX.h
+include/dolfin/io/XMLMesh.h
+include/dolfin/io/XMLMeshFunction.h
+include/dolfin/io/XMLMeshValueCollection.h
+include/dolfin/io/XMLParameters.h
+include/dolfin/io/XMLVector.h
+include/dolfin/io/XYZFile.h
+include/dolfin/io/base64.h
+include/dolfin/io/dolfin_io.h
+include/dolfin/io/xmlutils.h
+include/dolfin/la/BlockMatrix.h
+include/dolfin/la/BlockVector.h
+include/dolfin/la/CholmodCholeskySolver.h
+include/dolfin/la/CoordinateMatrix.h
+include/dolfin/la/DefaultFactory.h
+include/dolfin/la/EpetraFactory.h
+include/dolfin/la/EpetraKrylovSolver.h
+include/dolfin/la/EpetraLUSolver.h
+include/dolfin/la/EpetraMatrix.h
+include/dolfin/la/EpetraVector.h
+include/dolfin/la/GenericLUSolver.h
+include/dolfin/la/GenericLinearAlgebraFactory.h
+include/dolfin/la/GenericLinearOperator.h
+include/dolfin/la/GenericLinearSolver.h
+include/dolfin/la/GenericMatrix.h
+include/dolfin/la/GenericPreconditioner.h
+include/dolfin/la/GenericSparsityPattern.h
+include/dolfin/la/GenericTensor.h
+include/dolfin/la/GenericVector.h
+include/dolfin/la/KrylovSolver.h
+include/dolfin/la/LUSolver.h
+include/dolfin/la/LinearAlgebraObject.h
+include/dolfin/la/LinearOperator.h
+include/dolfin/la/LinearSolver.h
+include/dolfin/la/MUMPSLUSolver.h
+include/dolfin/la/Matrix.h
+include/dolfin/la/PETScBaseMatrix.h
+include/dolfin/la/PETScCuspFactory.h
+include/dolfin/la/PETScFactory.h
+include/dolfin/la/PETScKrylovSolver.h
+include/dolfin/la/PETScLUSolver.h
+include/dolfin/la/PETScLinearOperator.h
+include/dolfin/la/PETScMatrix.h
+include/dolfin/la/PETScObject.h
+include/dolfin/la/PETScPreconditioner.h
+include/dolfin/la/PETScUserPreconditioner.h
+include/dolfin/la/PETScVector.h
+include/dolfin/la/PaStiXLUSolver.h
+include/dolfin/la/SLEPcEigenSolver.h
+include/dolfin/la/STLFactory.h
+include/dolfin/la/STLFactoryCSC.h
+include/dolfin/la/STLMatrix.h
+include/dolfin/la/STLVector.h
+include/dolfin/la/Scalar.h
+include/dolfin/la/SparsityPattern.h
+include/dolfin/la/TensorLayout.h
+include/dolfin/la/TensorProductMatrix.h
+include/dolfin/la/TensorProductVector.h
+include/dolfin/la/TrilinosPreconditioner.h
+include/dolfin/la/UmfpackLUSolver.h
+include/dolfin/la/Vector.h
+include/dolfin/la/dolfin_la.h
+include/dolfin/la/solve.h
+include/dolfin/la/uBLASDenseMatrix.h
+include/dolfin/la/uBLASDummyPreconditioner.h
+include/dolfin/la/uBLASFactory.h
+include/dolfin/la/uBLASILUPreconditioner.h
+include/dolfin/la/uBLASKrylovSolver.h
+include/dolfin/la/uBLASLinearOperator.h
+include/dolfin/la/uBLASMatrix.h
+include/dolfin/la/uBLASPreconditioner.h
+include/dolfin/la/uBLASSparseMatrix.h
+include/dolfin/la/uBLASVector.h
+include/dolfin/la/ublas.h
+include/dolfin/log/Event.h
+include/dolfin/log/LogLevel.h
+include/dolfin/log/LogManager.h
+include/dolfin/log/LogStream.h
+include/dolfin/log/Logger.h
+include/dolfin/log/Progress.h
+include/dolfin/log/Table.h
+include/dolfin/log/dolfin_log.h
+include/dolfin/log/log.h
+include/dolfin/math/Lagrange.h
+include/dolfin/math/Legendre.h
+include/dolfin/math/basic.h
+include/dolfin/math/dolfin_math.h
+include/dolfin/mesh/BoundaryComputation.h
+include/dolfin/mesh/BoundaryMesh.h
+include/dolfin/mesh/Cell.h
+include/dolfin/mesh/CellType.h
+include/dolfin/mesh/DistributedMeshTools.h
+include/dolfin/mesh/DomainBoundary.h
+include/dolfin/mesh/DynamicMeshEditor.h
+include/dolfin/mesh/Edge.h
+include/dolfin/mesh/Face.h
+include/dolfin/mesh/Facet.h
+include/dolfin/mesh/FacetCell.h
+include/dolfin/mesh/IntervalCell.h
+include/dolfin/mesh/LocalMeshData.h
+include/dolfin/mesh/LocalMeshValueCollection.h
+include/dolfin/mesh/Mesh.h
+include/dolfin/mesh/MeshColoring.h
+include/dolfin/mesh/MeshConnectivity.h
+include/dolfin/mesh/MeshData.h
+include/dolfin/mesh/MeshDomains.h
+include/dolfin/mesh/MeshEditor.h
+include/dolfin/mesh/MeshEntity.h
+include/dolfin/mesh/MeshEntityIterator.h
+include/dolfin/mesh/MeshEntityIteratorBase.h
+include/dolfin/mesh/MeshFunction.h
+include/dolfin/mesh/MeshGeometry.h
+include/dolfin/mesh/MeshOrdering.h
+include/dolfin/mesh/MeshPartitioning.h
+include/dolfin/mesh/MeshRenumbering.h
+include/dolfin/mesh/MeshSmoothing.h
+include/dolfin/mesh/MeshTopology.h
+include/dolfin/mesh/MeshTransformation.h
+include/dolfin/mesh/MeshValueCollection.h
+include/dolfin/mesh/PeriodicBoundaryComputation.h
+include/dolfin/mesh/Point.h
+include/dolfin/mesh/PointCell.h
+include/dolfin/mesh/Restriction.h
+include/dolfin/mesh/SubDomain.h
+include/dolfin/mesh/SubMesh.h
+include/dolfin/mesh/SubsetIterator.h
+include/dolfin/mesh/TetrahedronCell.h
+include/dolfin/mesh/TopologyComputation.h
+include/dolfin/mesh/TriangleCell.h
+include/dolfin/mesh/Vertex.h
+include/dolfin/mesh/dolfin_mesh.h
+include/dolfin/nls/NewtonSolver.h
+include/dolfin/nls/NonlinearProblem.h
+include/dolfin/nls/PETScSNESSolver.h
+include/dolfin/nls/dolfin_nls.h
+include/dolfin/parameter/GlobalParameters.h
+include/dolfin/parameter/Parameter.h
+include/dolfin/parameter/Parameters.h
+include/dolfin/parameter/dolfin_parameter.h
+include/dolfin/plot/ExpressionWrapper.h
+include/dolfin/plot/GenericVTKPlottable.h
+include/dolfin/plot/VTKPlottableCSGGeometry.h
+include/dolfin/plot/VTKPlottableDirichletBC.h
+include/dolfin/plot/VTKPlottableGenericFunction.h
+include/dolfin/plot/VTKPlottableGenericFunction1D.h
+include/dolfin/plot/VTKPlottableMesh.h
+include/dolfin/plot/VTKPlottableMeshFunction.h
+include/dolfin/plot/VTKPlotter.h
+include/dolfin/plot/VTKWindowOutputStage.h
+include/dolfin/plot/dolfin_plot.h
+include/dolfin/plot/plot.h
+include/dolfin/quadrature/BarycenterQuadrature.h
+include/dolfin/quadrature/dolfin_quadrature.h
+include/dolfin/refinement/BisectionRefinement.h
+include/dolfin/refinement/LocalMeshCoarsening.h
+include/dolfin/refinement/LocalMeshRefinement.h
+include/dolfin/refinement/RegularCutRefinement.h
+include/dolfin/refinement/RivaraRefinement.h
+include/dolfin/refinement/UniformMeshRefinement.h
+include/dolfin/refinement/dolfin_refinement.h
+include/dolfin/refinement/refine.h
+include/dolfin/swig/adaptivity/pre.i
+include/dolfin/swig/ale/pre.i
+include/dolfin/swig/common/pre.i
+include/dolfin/swig/exceptions.i
+include/dolfin/swig/fem/pre.i
+include/dolfin/swig/forwarddeclarations.i
+include/dolfin/swig/function/pre.i
+include/dolfin/swig/globalincludes.i
+include/dolfin/swig/io/pre.i
+include/dolfin/swig/la/pre.i
+include/dolfin/swig/log/pre.i
+include/dolfin/swig/mesh/pre.i
+include/dolfin/swig/nls/pre.i
+include/dolfin/swig/parameter/pre.i
+include/dolfin/swig/shared_ptr_classes.i
+include/dolfin/swig/typemaps/array.i
+include/dolfin/swig/typemaps/includes.i
+include/dolfin/swig/typemaps/numpy.i
+include/dolfin/swig/typemaps/primitives.i
+include/dolfin/swig/typemaps/std_map.i
+include/dolfin/swig/typemaps/std_pair.i
+include/dolfin/swig/typemaps/std_set.i
+include/dolfin/swig/typemaps/std_vector.i
+include/dolfin/swig/version.i
+lib/libdolfin.so
+lib/libdolfin.so.1.2
+lib/libdolfin.so.1.2.0
+%%PYTHON_SITELIBDIR%%/dolfin/__init__.py
+%%PYTHON_SITELIBDIR%%/dolfin/common/__init__.py
+%%PYTHON_SITELIBDIR%%/dolfin/common/constants.py
+%%PYTHON_SITELIBDIR%%/dolfin/common/globalparameters.py
+%%PYTHON_SITELIBDIR%%/dolfin/common/math.py
+%%PYTHON_SITELIBDIR%%/dolfin/common/memory.py
+%%PYTHON_SITELIBDIR%%/dolfin/common/plotting.py
+%%PYTHON_SITELIBDIR%%/dolfin/common/time.py
+%%PYTHON_SITELIBDIR%%/dolfin/compilemodules/__init__.py
+%%PYTHON_SITELIBDIR%%/dolfin/compilemodules/compilemodule.py
+%%PYTHON_SITELIBDIR%%/dolfin/compilemodules/compilemodule.py.bak
+%%PYTHON_SITELIBDIR%%/dolfin/compilemodules/expressions.py
+%%PYTHON_SITELIBDIR%%/dolfin/compilemodules/jit.py
+%%PYTHON_SITELIBDIR%%/dolfin/compilemodules/subdomains.py
+%%PYTHON_SITELIBDIR%%/dolfin/compilemodules/swigimportinfo.py
+%%PYTHON_SITELIBDIR%%/dolfin/cpp/__init__.py
+%%PYTHON_SITELIBDIR%%/dolfin/cpp/_common.so
+%%PYTHON_SITELIBDIR%%/dolfin/cpp/_fem.so
+%%PYTHON_SITELIBDIR%%/dolfin/cpp/_function.so
+%%PYTHON_SITELIBDIR%%/dolfin/cpp/_io.so
+%%PYTHON_SITELIBDIR%%/dolfin/cpp/_la.so
+%%PYTHON_SITELIBDIR%%/dolfin/cpp/_mesh.so
+%%PYTHON_SITELIBDIR%%/dolfin/cpp/common.py
+%%PYTHON_SITELIBDIR%%/dolfin/cpp/fem.py
+%%PYTHON_SITELIBDIR%%/dolfin/cpp/function.py
+%%PYTHON_SITELIBDIR%%/dolfin/cpp/io.py
+%%PYTHON_SITELIBDIR%%/dolfin/cpp/la.py
+%%PYTHON_SITELIBDIR%%/dolfin/cpp/mesh.py
+%%PYTHON_SITELIBDIR%%/dolfin/deprecation.py
+%%PYTHON_SITELIBDIR%%/dolfin/fem/__init__.py
+%%PYTHON_SITELIBDIR%%/dolfin/fem/adaptivesolving.py
+%%PYTHON_SITELIBDIR%%/dolfin/fem/assembling.py
+%%PYTHON_SITELIBDIR%%/dolfin/fem/bcs.py
+%%PYTHON_SITELIBDIR%%/dolfin/fem/errorcontrolgenerator.py
+%%PYTHON_SITELIBDIR%%/dolfin/fem/form.py
+%%PYTHON_SITELIBDIR%%/dolfin/fem/formmanipulations.py
+%%PYTHON_SITELIBDIR%%/dolfin/fem/interpolation.py
+%%PYTHON_SITELIBDIR%%/dolfin/fem/norms.py
+%%PYTHON_SITELIBDIR%%/dolfin/fem/projection.py
+%%PYTHON_SITELIBDIR%%/dolfin/fem/solving.py
+%%PYTHON_SITELIBDIR%%/dolfin/fem/variationalproblem.py
+%%PYTHON_SITELIBDIR%%/dolfin/functions/__init__.py
+%%PYTHON_SITELIBDIR%%/dolfin/functions/constant.py
+%%PYTHON_SITELIBDIR%%/dolfin/functions/expression.py
+%%PYTHON_SITELIBDIR%%/dolfin/functions/function.py
+%%PYTHON_SITELIBDIR%%/dolfin/functions/functionspace.py
+%%PYTHON_SITELIBDIR%%/dolfin/functions/specialfunctions.py
+%%PYTHON_SITELIBDIR%%/dolfin/functions/ufc_functionspace.py
+%%PYTHON_SITELIBDIR%%/dolfin/importhandler/__init__.py
+%%PYTHON_SITELIBDIR%%/dolfin/importhandler/dynamicloadmpi.py
+%%PYTHON_SITELIBDIR%%/dolfin/mesh/__init__.py
+%%PYTHON_SITELIBDIR%%/dolfin/mesh/ale.py
+%%PYTHON_SITELIBDIR%%/dolfin/mesh/boundarysubdomainfinder.py
+%%PYTHON_SITELIBDIR%%/dolfin/mesh/intersect.py
+%%PYTHON_SITELIBDIR%%/dolfin/mesh/meshes.py
+%%PYTHON_SITELIBDIR%%/dolfin/mesh/refinement.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/__init__.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/commands.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/cppparser/CppHeaderParser.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/cppparser/__init__.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/cppparser/utils.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/documentation/__init__.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/documentation/docstringutils.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/documentation/extractdocumentation.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/documentation/generatecpprst.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/documentation/generatepythonrst.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/documentation/indextemplates.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/meshconvert/__init__.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/meshconvert/abaqus.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/meshconvert/meshconvert.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/meshconvert/xml_writer.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/ordereddict.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/pjobs/__init__.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/pjobs/pjobs.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/pjobs/sge.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/pjobs/torque.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/wrappers/__init__.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/wrappers/capsules.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/wrappers/form.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/wrappers/functionspace.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/wrappers/goalfunctional.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/wrappers/includes.py
+%%PYTHON_SITELIBDIR%%/dolfin_utils/wrappers/wrappers.py
+%%DATADIR%%/cmake/DOLFINConfig.cmake
+%%DATADIR%%/cmake/DOLFINConfigVersion.cmake
+%%DATADIR%%/cmake/UseDOLFIN.cmake
+%%DATADIR%%/cmake/dolfin-config-version.cmake
+%%DATADIR%%/cmake/dolfin-config.cmake
+%%DATADIR%%/data/graphs/directed_graph.xml
+%%DATADIR%%/data/graphs/undirected_graph.xml
+%%DATADIR%%/data/meshes/README
+%%DATADIR%%/data/meshes/aneurysm.xml.gz
+%%DATADIR%%/data/meshes/circle.xml.gz
+%%DATADIR%%/data/meshes/cylinder.xml.gz
+%%DATADIR%%/data/meshes/dolfin-1.xml.gz
+%%DATADIR%%/data/meshes/dolfin-2.xml.gz
+%%DATADIR%%/data/meshes/dolfin-inside-1.xml.gz
+%%DATADIR%%/data/meshes/dolfin-inside-2.xml.gz
+%%DATADIR%%/data/meshes/gear.xml.gz
+%%DATADIR%%/data/meshes/lshape.xml.gz
+%%DATADIR%%/data/meshes/meshbc.xml.gz
+%%DATADIR%%/data/meshes/rotator.xml.gz
+%%DATADIR%%/data/meshes/slit.xml.gz
+%%DATADIR%%/data/meshes/snake.xml.gz
+%%DATADIR%%/data/meshes/snake_hole.xml.gz
+%%DATADIR%%/data/meshes/sphere.xml.gz
+%%DATADIR%%/data/meshes/tetmesh-1.xml.gz
+%%DATADIR%%/data/meshes/tetmesh-16.xml.gz
+%%DATADIR%%/data/meshes/tetmesh-4.xml.gz
+%%DATADIR%%/data/meshes/tetmesh-8.xml.gz
+%%DATADIR%%/data/meshes/tetmesh_24_8_8.xml.gz
+%%DATADIR%%/data/meshes/tetmesh_LES_10_2_7.xml.gz
+%%DATADIR%%/data/meshes/tetmesh_backward_facing_step_32_8_8.xml.gz
+%%DATADIR%%/data/meshes/tetmesh_bluff_body_32_8_8.xml.gz
+%%DATADIR%%/data/meshes/tetrahedron.xml.gz
+%%DATADIR%%/data/meshes/torso.xml.gz
+%%DATADIR%%/data/meshes/triangle.xml.gz
+%%DATADIR%%/data/meshes/trimesh-1.xml.gz
+%%DATADIR%%/data/meshes/trimesh-128.xml.gz
+%%DATADIR%%/data/meshes/trimesh-16.xml.gz
+%%DATADIR%%/data/meshes/trimesh-2.xml.gz
+%%DATADIR%%/data/meshes/trimesh-32.xml.gz
+%%DATADIR%%/data/meshes/trimesh-4.xml.gz
+%%DATADIR%%/data/meshes/trimesh-64.xml.gz
+%%DATADIR%%/data/meshes/trimesh-8.xml.gz
+%%DATADIR%%/data/meshes/two_particles.xml.gz
+%%DATADIR%%/data/meshes/unstruct-trimesh-1.xml.gz
+%%DATADIR%%/data/meshes/unstruct-trimesh-2.xml.gz
+%%DATADIR%%/demo/CMakeLists.txt
+%%DATADIR%%/demo/la/eigenvalue/cpp/CMakeLists.txt
+%%DATADIR%%/demo/la/eigenvalue/cpp/StiffnessMatrix.h
+%%DATADIR%%/demo/la/eigenvalue/cpp/StiffnessMatrix.ufl
+%%DATADIR%%/demo/la/eigenvalue/cpp/box_with_dent.xml.gz
+%%DATADIR%%/demo/la/eigenvalue/cpp/main.cpp
+%%DATADIR%%/demo/la/eigenvalue/python/box_with_dent.xml.gz
+%%DATADIR%%/demo/la/eigenvalue/python/demo_eigenvalue.py
+%%DATADIR%%/demo/pde/biharmonic/cpp/Biharmonic.h
+%%DATADIR%%/demo/pde/biharmonic/cpp/Biharmonic.ufl
+%%DATADIR%%/demo/pde/biharmonic/cpp/CMakeLists.txt
+%%DATADIR%%/demo/pde/biharmonic/cpp/main.cpp
+%%DATADIR%%/demo/pde/biharmonic/python/demo_biharmonic.py
+%%DATADIR%%/demo/pde/cahn-hilliard/cpp/CMakeLists.txt
+%%DATADIR%%/demo/pde/cahn-hilliard/cpp/CahnHilliard2D.cpp
+%%DATADIR%%/demo/pde/cahn-hilliard/cpp/CahnHilliard2D.h
+%%DATADIR%%/demo/pde/cahn-hilliard/cpp/CahnHilliard2D.ufl
+%%DATADIR%%/demo/pde/cahn-hilliard/cpp/CahnHilliard3D.cpp
+%%DATADIR%%/demo/pde/cahn-hilliard/cpp/CahnHilliard3D.h
+%%DATADIR%%/demo/pde/cahn-hilliard/cpp/CahnHilliard3D.ufl
+%%DATADIR%%/demo/pde/cahn-hilliard/cpp/main.cpp
+%%DATADIR%%/demo/pde/cahn-hilliard/python/demo_cahn-hilliard.py
+%%DATADIR%%/demo/pde/hyperelasticity/cpp/CMakeLists.txt
+%%DATADIR%%/demo/pde/hyperelasticity/cpp/HyperElasticity.h
+%%DATADIR%%/demo/pde/hyperelasticity/cpp/HyperElasticity.ufl
+%%DATADIR%%/demo/pde/hyperelasticity/cpp/main.cpp
+%%DATADIR%%/demo/pde/hyperelasticity/python/demo_hyperelasticity.py
+%%DATADIR%%/demo/pde/mixed-poisson/cpp/CMakeLists.txt
+%%DATADIR%%/demo/pde/mixed-poisson/cpp/MixedPoisson.h
+%%DATADIR%%/demo/pde/mixed-poisson/cpp/MixedPoisson.ufl
+%%DATADIR%%/demo/pde/mixed-poisson/cpp/main.cpp
+%%DATADIR%%/demo/pde/mixed-poisson/python/demo_mixed-poisson.py
+%%DATADIR%%/demo/pde/navier-stokes/cpp/CMakeLists.txt
+%%DATADIR%%/demo/pde/navier-stokes/cpp/PressureUpdate.h
+%%DATADIR%%/demo/pde/navier-stokes/cpp/PressureUpdate.ufl
+%%DATADIR%%/demo/pde/navier-stokes/cpp/TentativeVelocity.h
+%%DATADIR%%/demo/pde/navier-stokes/cpp/TentativeVelocity.ufl
+%%DATADIR%%/demo/pde/navier-stokes/cpp/VelocityUpdate.h
+%%DATADIR%%/demo/pde/navier-stokes/cpp/VelocityUpdate.ufl
+%%DATADIR%%/demo/pde/navier-stokes/cpp/lshape.xml.gz
+%%DATADIR%%/demo/pde/navier-stokes/cpp/main.cpp
+%%DATADIR%%/demo/pde/navier-stokes/python/demo_navier-stokes.py
+%%DATADIR%%/demo/pde/navier-stokes/python/lshape.xml.gz
+%%DATADIR%%/demo/pde/poisson/cpp/CMakeLists.txt
+%%DATADIR%%/demo/pde/poisson/cpp/Poisson.h
+%%DATADIR%%/demo/pde/poisson/cpp/Poisson.ufl
+%%DATADIR%%/demo/pde/poisson/cpp/main.cpp
+%%DATADIR%%/demo/pde/poisson/python/demo_poisson.py
+%%DATADIR%%/demo/pde/stokes-iterative/cpp/CMakeLists.txt
+%%DATADIR%%/demo/pde/stokes-iterative/cpp/Stokes.h
+%%DATADIR%%/demo/pde/stokes-iterative/cpp/Stokes.ufl
+%%DATADIR%%/demo/pde/stokes-iterative/cpp/StokesPreconditioner.h
+%%DATADIR%%/demo/pde/stokes-iterative/cpp/StokesPreconditioner.ufl
+%%DATADIR%%/demo/pde/stokes-iterative/cpp/main.cpp
+%%DATADIR%%/demo/pde/stokes-iterative/python/demo_stokes-iterative.py
+%%DATADIR%%/demo/pde/subdomains-poisson/python/demo_subdomains-poisson.py
+%%DATADIR%%/demo/undocumented/adaptive-poisson/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/adaptive-poisson/python/demo_adaptive-poisson.py
+%%DATADIR%%/demo/undocumented/advection-diffusion/cpp/AdvectionDiffusion.h
+%%DATADIR%%/demo/undocumented/advection-diffusion/cpp/AdvectionDiffusion.ufl
+%%DATADIR%%/demo/undocumented/advection-diffusion/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/advection-diffusion/cpp/Velocity.h
+%%DATADIR%%/demo/undocumented/advection-diffusion/cpp/Velocity.ufl
+%%DATADIR%%/demo/undocumented/advection-diffusion/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/advection-diffusion/mesh.xml.gz
+%%DATADIR%%/demo/undocumented/advection-diffusion/python/demo_advection-diffusion.py
+%%DATADIR%%/demo/undocumented/advection-diffusion/subdomains.xml.gz
+%%DATADIR%%/demo/undocumented/advection-diffusion/velocity.xml.gz
+%%DATADIR%%/demo/undocumented/ale/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/ale/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/ale/python/demo_ale.py
+%%DATADIR%%/demo/undocumented/auto-adaptive-navier-stokes/cpp/AdaptiveNavierStokes.h
+%%DATADIR%%/demo/undocumented/auto-adaptive-navier-stokes/cpp/AdaptiveNavierStokes.ufl
+%%DATADIR%%/demo/undocumented/auto-adaptive-navier-stokes/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/auto-adaptive-navier-stokes/cpp/channel_with_flap.xml
+%%DATADIR%%/demo/undocumented/auto-adaptive-navier-stokes/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/auto-adaptive-navier-stokes/python/channel_with_flap.xml
+%%DATADIR%%/demo/undocumented/auto-adaptive-navier-stokes/python/demo_auto-adaptive-navier-stokes.py
+%%DATADIR%%/demo/undocumented/auto-adaptive-poisson/cpp/AdaptivePoisson.h
+%%DATADIR%%/demo/undocumented/auto-adaptive-poisson/cpp/AdaptivePoisson.ufl
+%%DATADIR%%/demo/undocumented/auto-adaptive-poisson/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/auto-adaptive-poisson/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/auto-adaptive-poisson/python/demo_auto-adaptive-poisson.py
+%%DATADIR%%/demo/undocumented/bcs/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/bcs/cpp/Poisson.h
+%%DATADIR%%/demo/undocumented/bcs/cpp/Poisson.ufl
+%%DATADIR%%/demo/undocumented/bcs/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/bcs/python/demo_bcs.py
+%%DATADIR%%/demo/undocumented/block-matrix/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/block-matrix/cpp/StiffnessMatrix.h
+%%DATADIR%%/demo/undocumented/block-matrix/cpp/StiffnessMatrix.ufl
+%%DATADIR%%/demo/undocumented/block-matrix/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/block-matrix/python/demo_block-matrix.py
+%%DATADIR%%/demo/undocumented/built-in/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/built-in/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/built-in/python/demo_built-in.py
+%%DATADIR%%/demo/undocumented/coloring/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/coloring/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/coloring/python/demo_coloring.py
+%%DATADIR%%/demo/undocumented/conditional/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/conditional/cpp/Conditional.h
+%%DATADIR%%/demo/undocumented/conditional/cpp/Conditional.ufl
+%%DATADIR%%/demo/undocumented/conditional/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/conditional/python/demo_conditional.py
+%%DATADIR%%/demo/undocumented/csg/2D/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/csg/2D/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/csg/2D/python/demo_csg_2D.py
+%%DATADIR%%/demo/undocumented/csg/3D/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/csg/3D/cpp/failing.cpp
+%%DATADIR%%/demo/undocumented/csg/3D/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/csg/3D/python/demo_csg_3D.py
+%%DATADIR%%/demo/undocumented/curl-curl/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/curl-curl/cpp/CurrentDensity.h
+%%DATADIR%%/demo/undocumented/curl-curl/cpp/CurrentDensity.ufl
+%%DATADIR%%/demo/undocumented/curl-curl/cpp/EddyCurrents.h
+%%DATADIR%%/demo/undocumented/curl-curl/cpp/EddyCurrents.ufl
+%%DATADIR%%/demo/undocumented/curl-curl/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/curl-curl/python/demo_curl-curl.py
+%%DATADIR%%/demo/undocumented/dg-advection-diffusion/cpp/AdvectionDiffusion.h
+%%DATADIR%%/demo/undocumented/dg-advection-diffusion/cpp/AdvectionDiffusion.ufl
+%%DATADIR%%/demo/undocumented/dg-advection-diffusion/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/dg-advection-diffusion/cpp/Projection.h
+%%DATADIR%%/demo/undocumented/dg-advection-diffusion/cpp/Projection.ufl
+%%DATADIR%%/demo/undocumented/dg-advection-diffusion/cpp/Velocity.h
+%%DATADIR%%/demo/undocumented/dg-advection-diffusion/cpp/Velocity.ufl
+%%DATADIR%%/demo/undocumented/dg-advection-diffusion/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/dg-advection-diffusion/mesh.xml.gz
+%%DATADIR%%/demo/undocumented/dg-advection-diffusion/python/demo_dg-advection-diffusion.py
+%%DATADIR%%/demo/undocumented/dg-advection-diffusion/python/functions2D.h
+%%DATADIR%%/demo/undocumented/dg-advection-diffusion/velocity.xml.gz
+%%DATADIR%%/demo/undocumented/dg-poisson/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/dg-poisson/cpp/Poisson.h
+%%DATADIR%%/demo/undocumented/dg-poisson/cpp/Poisson.ufl
+%%DATADIR%%/demo/undocumented/dg-poisson/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/dg-poisson/cpp/plot.py
+%%DATADIR%%/demo/undocumented/dg-poisson/python/demo_dg-poisson.py
+%%DATADIR%%/demo/undocumented/distancequeries/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/distancequeries/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/elasticity/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/elasticity/cpp/Elasticity.h
+%%DATADIR%%/demo/undocumented/elasticity/cpp/Elasticity.ufl
+%%DATADIR%%/demo/undocumented/elasticity/cpp/gear.xml.gz
+%%DATADIR%%/demo/undocumented/elasticity/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/elasticity/cpp/plot.py
+%%DATADIR%%/demo/undocumented/elasticity/python/demo_elasticity.py
+%%DATADIR%%/demo/undocumented/elasticity/python/gear.xml.gz
+%%DATADIR%%/demo/undocumented/elastodynamics/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/elastodynamics/cpp/DG0_eps_xx.h
+%%DATADIR%%/demo/undocumented/elastodynamics/cpp/DG0_eps_xx.ufl
+%%DATADIR%%/demo/undocumented/elastodynamics/cpp/ElastoDynamics.h
+%%DATADIR%%/demo/undocumented/elastodynamics/cpp/ElastoDynamics.ufl
+%%DATADIR%%/demo/undocumented/elastodynamics/cpp/dolfin-2.xml.gz
+%%DATADIR%%/demo/undocumented/elastodynamics/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/elastodynamics/python/demo_elastodynamics.py
+%%DATADIR%%/demo/undocumented/elastodynamics/python/dolfin-2.xml.gz
+%%DATADIR%%/demo/undocumented/elementplot/python/demo_elementplot.py
+%%DATADIR%%/demo/undocumented/entityintersection/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/entityintersection/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/entityintersection/python/demo_entityintersection.py
+%%DATADIR%%/demo/undocumented/eval/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/eval/cpp/Projection.h
+%%DATADIR%%/demo/undocumented/eval/cpp/Projection.ufl
+%%DATADIR%%/demo/undocumented/eval/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/eval/python/demo_eval.py
+%%DATADIR%%/demo/undocumented/extrapolation/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/extrapolation/cpp/P1.h
+%%DATADIR%%/demo/undocumented/extrapolation/cpp/P1.ufl
+%%DATADIR%%/demo/undocumented/extrapolation/cpp/P2.h
+%%DATADIR%%/demo/undocumented/extrapolation/cpp/P2.ufl
+%%DATADIR%%/demo/undocumented/extrapolation/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/extrapolation/python/demo2.py
+%%DATADIR%%/demo/undocumented/extrapolation/python/demo_extrapolation.py
+%%DATADIR%%/demo/undocumented/functional/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/functional/cpp/EnergyNorm.h
+%%DATADIR%%/demo/undocumented/functional/cpp/EnergyNorm.ufl
+%%DATADIR%%/demo/undocumented/functional/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/functional/python/demo_functional.py
+%%DATADIR%%/demo/undocumented/interpolation/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/interpolation/python/demo_interpolation.py
+%%DATADIR%%/demo/undocumented/lift-drag/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/lift-drag/cpp/Functionals.h
+%%DATADIR%%/demo/undocumented/lift-drag/cpp/Functionals.ufl
+%%DATADIR%%/demo/undocumented/lift-drag/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/lift-drag/mesh.xml.gz
+%%DATADIR%%/demo/undocumented/lift-drag/pressure.xml.gz
+%%DATADIR%%/demo/undocumented/lift-drag/python/demo_lift-drag.py
+%%DATADIR%%/demo/undocumented/mesh-generation/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/mesh-generation/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/mesh-generation/cube.off
+%%DATADIR%%/demo/undocumented/mesh-generation/python/demo_mesh_generation.py
+%%DATADIR%%/demo/undocumented/meshfunction-refinement/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/meshfunction-refinement/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/meshfunction/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/meshfunction/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/meshfunction/cpp/plot.py
+%%DATADIR%%/demo/undocumented/meshfunction/mesh2D.xml.gz
+%%DATADIR%%/demo/undocumented/meshfunction/meshfunction.xml
+%%DATADIR%%/demo/undocumented/meshfunction/python/demo_meshfunction.py
+%%DATADIR%%/demo/undocumented/meshintersection/2D/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/meshintersection/2D/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/meshintersection/2D/python/demo_meshintersection_2D.py
+%%DATADIR%%/demo/undocumented/meshintersection/2D/rotator.xml.gz
+%%DATADIR%%/demo/undocumented/meshintersection/3D/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/meshintersection/3D/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/meshintersection/3D/python/demo_meshintersection_3D.py
+%%DATADIR%%/demo/undocumented/mixed-poisson-sphere/python/demo_mixed-poisson-sphere.py
+%%DATADIR%%/demo/undocumented/mixed-poisson-sphere/python/sphere16.xml
+%%DATADIR%%/demo/undocumented/multidomain/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/multidomain/cpp/MultiDomainPoisson.h
+%%DATADIR%%/demo/undocumented/multidomain/cpp/MultiDomainPoisson.ufl
+%%DATADIR%%/demo/undocumented/multidomain/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/neumann-poisson/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/neumann-poisson/cpp/Poisson.h
+%%DATADIR%%/demo/undocumented/neumann-poisson/cpp/Poisson.ufl
+%%DATADIR%%/demo/undocumented/neumann-poisson/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/neumann-poisson/python/demo_neumann-poisson.py
+%%DATADIR%%/demo/undocumented/nonlinear-poisson/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/nonlinear-poisson/cpp/NonlinearPoisson.h
+%%DATADIR%%/demo/undocumented/nonlinear-poisson/cpp/NonlinearPoisson.ufl
+%%DATADIR%%/demo/undocumented/nonlinear-poisson/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/nonlinear-poisson/cpp/plot.py
+%%DATADIR%%/demo/undocumented/nonlinear-poisson/python/demo_nonlinear-poisson.py
+%%DATADIR%%/demo/undocumented/nonmatching-interpolation/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/nonmatching-interpolation/cpp/P1.h
+%%DATADIR%%/demo/undocumented/nonmatching-interpolation/cpp/P1.ufl
+%%DATADIR%%/demo/undocumented/nonmatching-interpolation/cpp/P3.h
+%%DATADIR%%/demo/undocumented/nonmatching-interpolation/cpp/P3.ufl
+%%DATADIR%%/demo/undocumented/nonmatching-interpolation/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/nonmatching-interpolation/python/demo_nonmatching-interpolation.py
+%%DATADIR%%/demo/undocumented/nonmatching-projection/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/nonmatching-projection/cpp/P1_projection.h
+%%DATADIR%%/demo/undocumented/nonmatching-projection/cpp/P1_projection.ufl
+%%DATADIR%%/demo/undocumented/nonmatching-projection/cpp/P3.h
+%%DATADIR%%/demo/undocumented/nonmatching-projection/cpp/P3.ufl
+%%DATADIR%%/demo/undocumented/nonmatching-projection/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/nonmatching-projection/python/demo_nonmatching-projection.py
+%%DATADIR%%/demo/undocumented/optimization/python/demo_optimization.py
+%%DATADIR%%/demo/undocumented/overlapping-regions/python/demo_overlapping-regions.py
+%%DATADIR%%/demo/undocumented/parameters/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/parameters/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/parameters/cpp/parameters.xml
+%%DATADIR%%/demo/undocumented/parameters/python/demo_parameters.py
+%%DATADIR%%/demo/undocumented/parameters/python/parameters.xml
+%%DATADIR%%/demo/undocumented/periodic/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/periodic/cpp/Poisson.h
+%%DATADIR%%/demo/undocumented/periodic/cpp/Poisson.ufl
+%%DATADIR%%/demo/undocumented/periodic/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/periodic/python/demo_periodic.py
+%%DATADIR%%/demo/undocumented/plot-qt/cpp/BoundaryMeshFunction.cpp
+%%DATADIR%%/demo/undocumented/plot-qt/cpp/BoundaryMeshFunction.h
+%%DATADIR%%/demo/undocumented/plot-qt/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/plot-qt/cpp/CoordLabel.cpp
+%%DATADIR%%/demo/undocumented/plot-qt/cpp/CoordLabel.h
+%%DATADIR%%/demo/undocumented/plot-qt/cpp/PlotWidget.cpp
+%%DATADIR%%/demo/undocumented/plot-qt/cpp/PlotWidget.h
+%%DATADIR%%/demo/undocumented/plot-qt/cpp/Plotter.cpp
+%%DATADIR%%/demo/undocumented/plot-qt/cpp/Plotter.h
+%%DATADIR%%/demo/undocumented/plot-qt/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/plot/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/plot/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/plot/dolfin-2.xml.gz
+%%DATADIR%%/demo/undocumented/plot/python/demo_plot.py
+%%DATADIR%%/demo/undocumented/poisson1D-in-2D/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/poisson1D-in-2D/cpp/Poisson.h
+%%DATADIR%%/demo/undocumented/poisson1D-in-2D/cpp/Poisson.ufl
+%%DATADIR%%/demo/undocumented/poisson1D-in-2D/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/poisson1D-in-2D/python/demo_poisson1D-in-2D.py
+%%DATADIR%%/demo/undocumented/poisson1D/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/poisson1D/cpp/Poisson.h
+%%DATADIR%%/demo/undocumented/poisson1D/cpp/Poisson.ufl
+%%DATADIR%%/demo/undocumented/poisson1D/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/poisson1D/python/demo_poisson1D.py
+%%DATADIR%%/demo/undocumented/projection-interpolation/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/projection-interpolation/python/demo_projection-interpolation.py
+%%DATADIR%%/demo/undocumented/refinement/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/refinement/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/refinement/python/demo_refinement.py
+%%DATADIR%%/demo/undocumented/restriction/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/restriction/cpp/Poisson.h
+%%DATADIR%%/demo/undocumented/restriction/cpp/Poisson.ufl
+%%DATADIR%%/demo/undocumented/restriction/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/singular/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/singular/cpp/Poisson.h
+%%DATADIR%%/demo/undocumented/singular/cpp/Poisson.ufl
+%%DATADIR%%/demo/undocumented/singular/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/singular/python/demo_singular.py
+%%DATADIR%%/demo/undocumented/smoothing/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/smoothing/python/demo_smoothing.py
+%%DATADIR%%/demo/undocumented/spatial-coordinates/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/spatial-coordinates/cpp/SpatialCoordinates.h
+%%DATADIR%%/demo/undocumented/spatial-coordinates/cpp/SpatialCoordinates.ufl
+%%DATADIR%%/demo/undocumented/spatial-coordinates/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/spatial-coordinates/python/demo_spatial-coordinates.py
+%%DATADIR%%/demo/undocumented/special-functions/python/demo_special_functions.py
+%%DATADIR%%/demo/undocumented/stokes-mini/python/demo_stokes-mini.py
+%%DATADIR%%/demo/undocumented/stokes-mini/python/dolfin-2.xml.gz
+%%DATADIR%%/demo/undocumented/stokes-mini/subdomains.xml.gz
+%%DATADIR%%/demo/undocumented/stokes-stabilized/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/stokes-stabilized/cpp/Stokes.h
+%%DATADIR%%/demo/undocumented/stokes-stabilized/cpp/Stokes.ufl
+%%DATADIR%%/demo/undocumented/stokes-stabilized/cpp/dolfin-2.xml.gz
+%%DATADIR%%/demo/undocumented/stokes-stabilized/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/stokes-stabilized/cpp/plot.py
+%%DATADIR%%/demo/undocumented/stokes-stabilized/python/demo_stokes-stabilized.py
+%%DATADIR%%/demo/undocumented/stokes-stabilized/python/dolfin-2.xml.gz
+%%DATADIR%%/demo/undocumented/stokes-stabilized/subdomains.xml.gz
+%%DATADIR%%/demo/undocumented/stokes-taylor-hood/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/stokes-taylor-hood/cpp/Stokes.h
+%%DATADIR%%/demo/undocumented/stokes-taylor-hood/cpp/Stokes.ufl
+%%DATADIR%%/demo/undocumented/stokes-taylor-hood/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/stokes-taylor-hood/cpp/plot.py
+%%DATADIR%%/demo/undocumented/stokes-taylor-hood/dolfin-2.xml.gz
+%%DATADIR%%/demo/undocumented/stokes-taylor-hood/python/demo_stokes-taylor-hood.py
+%%DATADIR%%/demo/undocumented/stokes-taylor-hood/python/dolfin-2.xml.gz
+%%DATADIR%%/demo/undocumented/stokes-taylor-hood/subdomains.xml.gz
+%%DATADIR%%/demo/undocumented/subdomains/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/subdomains/cpp/dolfin-2.xml.gz
+%%DATADIR%%/demo/undocumented/subdomains/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/subdomains/python/demo_subdomains.py
+%%DATADIR%%/demo/undocumented/subdomains/python/dolfin-2.xml.gz
+%%DATADIR%%/demo/undocumented/submesh/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/submesh/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/submesh/python/demo_submesh.py
+%%DATADIR%%/demo/undocumented/sym-dirichlet-bc/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/sym-dirichlet-bc/cpp/Poisson.h
+%%DATADIR%%/demo/undocumented/sym-dirichlet-bc/cpp/Poisson.ufl
+%%DATADIR%%/demo/undocumented/sym-dirichlet-bc/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/sym-dirichlet-bc/python/demo_sym-dirichlet-bc.py
+%%DATADIR%%/demo/undocumented/sym-dirichlet-bc/python/dg-demo.py
+%%DATADIR%%/demo/undocumented/sym-dirichlet-bc/python/dg-speed-up-test.py
+%%DATADIR%%/demo/undocumented/sym-dirichlet-bc/python/speed-up-test.py
+%%DATADIR%%/demo/undocumented/tensor-weighted-poisson/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/tensor-weighted-poisson/python/c00.xml.gz
+%%DATADIR%%/demo/undocumented/tensor-weighted-poisson/python/c01.xml.gz
+%%DATADIR%%/demo/undocumented/tensor-weighted-poisson/python/c11.xml.gz
+%%DATADIR%%/demo/undocumented/tensor-weighted-poisson/python/demo_tensor-weighted-poisson.py
+%%DATADIR%%/demo/undocumented/tensor-weighted-poisson/python/generate_data.py
+%%DATADIR%%/demo/undocumented/tensor-weighted-poisson/python/mesh.xml.gz
+%%DATADIR%%/demo/undocumented/time-series/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/time-series/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/time-series/python/demo_time-series.py
+%%DATADIR%%/demo/undocumented/triangulate/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/triangulate/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/triangulate/python/demo_triangulate.py
+%%DATADIR%%/demo/undocumented/trilinos/python/demo_trilinos.py
+%%DATADIR%%/demo/undocumented/waveguide/cpp/CMakeLists.txt
+%%DATADIR%%/demo/undocumented/waveguide/cpp/Forms.h
+%%DATADIR%%/demo/undocumented/waveguide/cpp/Forms.py
+%%DATADIR%%/demo/undocumented/waveguide/cpp/Forms.ufl
+%%DATADIR%%/demo/undocumented/waveguide/cpp/main.cpp
+%%DATADIR%%/demo/undocumented/waveguide/python/demo_waveguide.py
+%%DATADIR%%/dolfin.conf
+@dirrm %%DATADIR%%/demo/undocumented/waveguide/python
+@dirrm %%DATADIR%%/demo/undocumented/waveguide/cpp
+@dirrm %%DATADIR%%/demo/undocumented/waveguide
+@dirrm %%DATADIR%%/demo/undocumented/trilinos/python
+@dirrm %%DATADIR%%/demo/undocumented/trilinos
+@dirrm %%DATADIR%%/demo/undocumented/triangulate/python
+@dirrm %%DATADIR%%/demo/undocumented/triangulate/cpp
+@dirrm %%DATADIR%%/demo/undocumented/triangulate
+@dirrm %%DATADIR%%/demo/undocumented/time-series/python
+@dirrm %%DATADIR%%/demo/undocumented/time-series/cpp
+@dirrm %%DATADIR%%/demo/undocumented/time-series
+@dirrm %%DATADIR%%/demo/undocumented/tensor-weighted-poisson/python
+@dirrm %%DATADIR%%/demo/undocumented/tensor-weighted-poisson/cpp
+@dirrm %%DATADIR%%/demo/undocumented/tensor-weighted-poisson
+@dirrm %%DATADIR%%/demo/undocumented/sym-dirichlet-bc/python
+@dirrm %%DATADIR%%/demo/undocumented/sym-dirichlet-bc/cpp
+@dirrm %%DATADIR%%/demo/undocumented/sym-dirichlet-bc
+@dirrm %%DATADIR%%/demo/undocumented/submesh/python
+@dirrm %%DATADIR%%/demo/undocumented/submesh/cpp
+@dirrm %%DATADIR%%/demo/undocumented/submesh
+@dirrm %%DATADIR%%/demo/undocumented/subdomains/python
+@dirrm %%DATADIR%%/demo/undocumented/subdomains/cpp
+@dirrm %%DATADIR%%/demo/undocumented/subdomains
+@dirrm %%DATADIR%%/demo/undocumented/stokes-taylor-hood/python
+@dirrm %%DATADIR%%/demo/undocumented/stokes-taylor-hood/cpp
+@dirrm %%DATADIR%%/demo/undocumented/stokes-taylor-hood
+@dirrm %%DATADIR%%/demo/undocumented/stokes-stabilized/python
+@dirrm %%DATADIR%%/demo/undocumented/stokes-stabilized/cpp
+@dirrm %%DATADIR%%/demo/undocumented/stokes-stabilized
+@dirrm %%DATADIR%%/demo/undocumented/stokes-mini/python
+@dirrm %%DATADIR%%/demo/undocumented/stokes-mini
+@dirrm %%DATADIR%%/demo/undocumented/special-functions/python
+@dirrm %%DATADIR%%/demo/undocumented/special-functions
+@dirrm %%DATADIR%%/demo/undocumented/spatial-coordinates/python
+@dirrm %%DATADIR%%/demo/undocumented/spatial-coordinates/cpp
+@dirrm %%DATADIR%%/demo/undocumented/spatial-coordinates
+@dirrm %%DATADIR%%/demo/undocumented/smoothing/python
+@dirrm %%DATADIR%%/demo/undocumented/smoothing/cpp
+@dirrm %%DATADIR%%/demo/undocumented/smoothing
+@dirrm %%DATADIR%%/demo/undocumented/singular/python
+@dirrm %%DATADIR%%/demo/undocumented/singular/cpp
+@dirrm %%DATADIR%%/demo/undocumented/singular
+@dirrm %%DATADIR%%/demo/undocumented/restriction/python
+@dirrm %%DATADIR%%/demo/undocumented/restriction/cpp
+@dirrm %%DATADIR%%/demo/undocumented/restriction
+@dirrm %%DATADIR%%/demo/undocumented/refinement/python
+@dirrm %%DATADIR%%/demo/undocumented/refinement/cpp
+@dirrm %%DATADIR%%/demo/undocumented/refinement
+@dirrm %%DATADIR%%/demo/undocumented/projection-interpolation/python
+@dirrm %%DATADIR%%/demo/undocumented/projection-interpolation/cpp
+@dirrm %%DATADIR%%/demo/undocumented/projection-interpolation
+@dirrm %%DATADIR%%/demo/undocumented/poisson1D/python
+@dirrm %%DATADIR%%/demo/undocumented/poisson1D/cpp
+@dirrm %%DATADIR%%/demo/undocumented/poisson1D-in-2D/python
+@dirrm %%DATADIR%%/demo/undocumented/poisson1D-in-2D/cpp
+@dirrm %%DATADIR%%/demo/undocumented/poisson1D-in-2D
+@dirrm %%DATADIR%%/demo/undocumented/poisson1D
+@dirrm %%DATADIR%%/demo/undocumented/plot/python
+@dirrm %%DATADIR%%/demo/undocumented/plot/cpp
+@dirrm %%DATADIR%%/demo/undocumented/plot-qt/cpp
+@dirrm %%DATADIR%%/demo/undocumented/plot-qt
+@dirrm %%DATADIR%%/demo/undocumented/plot
+@dirrm %%DATADIR%%/demo/undocumented/periodic/python
+@dirrm %%DATADIR%%/demo/undocumented/periodic/cpp
+@dirrm %%DATADIR%%/demo/undocumented/periodic
+@dirrm %%DATADIR%%/demo/undocumented/parameters/python
+@dirrm %%DATADIR%%/demo/undocumented/parameters/cpp
+@dirrm %%DATADIR%%/demo/undocumented/parameters
+@dirrm %%DATADIR%%/demo/undocumented/overlapping-regions/python
+@dirrm %%DATADIR%%/demo/undocumented/overlapping-regions/cpp
+@dirrm %%DATADIR%%/demo/undocumented/overlapping-regions
+@dirrm %%DATADIR%%/demo/undocumented/optimization/python
+@dirrm %%DATADIR%%/demo/undocumented/optimization
+@dirrm %%DATADIR%%/demo/undocumented/nonmatching-projection/python
+@dirrm %%DATADIR%%/demo/undocumented/nonmatching-projection/cpp
+@dirrm %%DATADIR%%/demo/undocumented/nonmatching-projection
+@dirrm %%DATADIR%%/demo/undocumented/nonmatching-interpolation/python
+@dirrm %%DATADIR%%/demo/undocumented/nonmatching-interpolation/cpp
+@dirrm %%DATADIR%%/demo/undocumented/nonmatching-interpolation
+@dirrm %%DATADIR%%/demo/undocumented/nonlinear-poisson/python
+@dirrm %%DATADIR%%/demo/undocumented/nonlinear-poisson/cpp
+@dirrm %%DATADIR%%/demo/undocumented/nonlinear-poisson
+@dirrm %%DATADIR%%/demo/undocumented/neumann-poisson/python
+@dirrm %%DATADIR%%/demo/undocumented/neumann-poisson/cpp
+@dirrm %%DATADIR%%/demo/undocumented/neumann-poisson
+@dirrm %%DATADIR%%/demo/undocumented/multidomain/python
+@dirrm %%DATADIR%%/demo/undocumented/multidomain/cpp
+@dirrm %%DATADIR%%/demo/undocumented/multidomain
+@dirrm %%DATADIR%%/demo/undocumented/mixed-poisson-sphere/python
+@dirrm %%DATADIR%%/demo/undocumented/mixed-poisson-sphere
+@dirrm %%DATADIR%%/demo/undocumented/meshintersection/3D/python
+@dirrm %%DATADIR%%/demo/undocumented/meshintersection/3D/cpp
+@dirrm %%DATADIR%%/demo/undocumented/meshintersection/3D
+@dirrm %%DATADIR%%/demo/undocumented/meshintersection/2D/python
+@dirrm %%DATADIR%%/demo/undocumented/meshintersection/2D/cpp
+@dirrm %%DATADIR%%/demo/undocumented/meshintersection/2D
+@dirrm %%DATADIR%%/demo/undocumented/meshintersection
+@dirrm %%DATADIR%%/demo/undocumented/meshfunction/python
+@dirrm %%DATADIR%%/demo/undocumented/meshfunction/cpp
+@dirrm %%DATADIR%%/demo/undocumented/meshfunction-refinement/cpp
+@dirrm %%DATADIR%%/demo/undocumented/meshfunction-refinement
+@dirrm %%DATADIR%%/demo/undocumented/meshfunction
+@dirrm %%DATADIR%%/demo/undocumented/mesh-generation/python
+@dirrm %%DATADIR%%/demo/undocumented/mesh-generation/cpp
+@dirrm %%DATADIR%%/demo/undocumented/mesh-generation
+@dirrm %%DATADIR%%/demo/undocumented/lift-drag/python
+@dirrm %%DATADIR%%/demo/undocumented/lift-drag/cpp
+@dirrm %%DATADIR%%/demo/undocumented/lift-drag
+@dirrm %%DATADIR%%/demo/undocumented/interpolation/python
+@dirrm %%DATADIR%%/demo/undocumented/interpolation/cpp
+@dirrm %%DATADIR%%/demo/undocumented/interpolation
+@dirrm %%DATADIR%%/demo/undocumented/generalized-eigenvalue/python
+@dirrm %%DATADIR%%/demo/undocumented/generalized-eigenvalue
+@dirrm %%DATADIR%%/demo/undocumented/functional/python
+@dirrm %%DATADIR%%/demo/undocumented/functional/cpp
+@dirrm %%DATADIR%%/demo/undocumented/functional
+@dirrm %%DATADIR%%/demo/undocumented/extrapolation/python
+@dirrm %%DATADIR%%/demo/undocumented/extrapolation/cpp
+@dirrm %%DATADIR%%/demo/undocumented/extrapolation
+@dirrm %%DATADIR%%/demo/undocumented/eval/python
+@dirrm %%DATADIR%%/demo/undocumented/eval/cpp
+@dirrm %%DATADIR%%/demo/undocumented/eval
+@dirrm %%DATADIR%%/demo/undocumented/entityintersection/python
+@dirrm %%DATADIR%%/demo/undocumented/entityintersection/cpp
+@dirrm %%DATADIR%%/demo/undocumented/entityintersection
+@dirrm %%DATADIR%%/demo/undocumented/elementplot/python
+@dirrm %%DATADIR%%/demo/undocumented/elementplot
+@dirrm %%DATADIR%%/demo/undocumented/elastodynamics/python
+@dirrm %%DATADIR%%/demo/undocumented/elastodynamics/cpp
+@dirrm %%DATADIR%%/demo/undocumented/elastodynamics
+@dirrm %%DATADIR%%/demo/undocumented/elasticity/python
+@dirrm %%DATADIR%%/demo/undocumented/elasticity/cpp
+@dirrm %%DATADIR%%/demo/undocumented/elasticity
+@dirrm %%DATADIR%%/demo/undocumented/distancequeries/python
+@dirrm %%DATADIR%%/demo/undocumented/distancequeries/cpp
+@dirrm %%DATADIR%%/demo/undocumented/distancequeries
+@dirrm %%DATADIR%%/demo/undocumented/dg-poisson/python
+@dirrm %%DATADIR%%/demo/undocumented/dg-poisson/cpp
+@dirrm %%DATADIR%%/demo/undocumented/dg-poisson
+@dirrm %%DATADIR%%/demo/undocumented/dg-advection-diffusion/python
+@dirrm %%DATADIR%%/demo/undocumented/dg-advection-diffusion/cpp
+@dirrm %%DATADIR%%/demo/undocumented/dg-advection-diffusion
+@dirrm %%DATADIR%%/demo/undocumented/curl-curl/python
+@dirrm %%DATADIR%%/demo/undocumented/curl-curl/cpp
+@dirrm %%DATADIR%%/demo/undocumented/curl-curl
+@dirrm %%DATADIR%%/demo/undocumented/csg/3D/python
+@dirrm %%DATADIR%%/demo/undocumented/csg/3D/cpp
+@dirrm %%DATADIR%%/demo/undocumented/csg/3D
+@dirrm %%DATADIR%%/demo/undocumented/csg/2D/python
+@dirrm %%DATADIR%%/demo/undocumented/csg/2D/cpp
+@dirrm %%DATADIR%%/demo/undocumented/csg/2D
+@dirrm %%DATADIR%%/demo/undocumented/csg
+@dirrm %%DATADIR%%/demo/undocumented/conditional/python
+@dirrm %%DATADIR%%/demo/undocumented/conditional/cpp
+@dirrm %%DATADIR%%/demo/undocumented/conditional
+@dirrm %%DATADIR%%/demo/undocumented/coloring/python
+@dirrm %%DATADIR%%/demo/undocumented/coloring/cpp
+@dirrm %%DATADIR%%/demo/undocumented/coloring
+@dirrm %%DATADIR%%/demo/undocumented/built-in/python
+@dirrm %%DATADIR%%/demo/undocumented/built-in/cpp
+@dirrm %%DATADIR%%/demo/undocumented/built-in
+@dirrm %%DATADIR%%/demo/undocumented/block-matrix/python
+@dirrm %%DATADIR%%/demo/undocumented/block-matrix/cpp
+@dirrm %%DATADIR%%/demo/undocumented/block-matrix
+@dirrm %%DATADIR%%/demo/undocumented/bcs/python
+@dirrm %%DATADIR%%/demo/undocumented/bcs/cpp
+@dirrm %%DATADIR%%/demo/undocumented/bcs
+@dirrm %%DATADIR%%/demo/undocumented/auto-adaptive-poisson/python
+@dirrm %%DATADIR%%/demo/undocumented/auto-adaptive-poisson/cpp
+@dirrm %%DATADIR%%/demo/undocumented/auto-adaptive-poisson
+@dirrm %%DATADIR%%/demo/undocumented/auto-adaptive-navier-stokes/python
+@dirrm %%DATADIR%%/demo/undocumented/auto-adaptive-navier-stokes/cpp
+@dirrm %%DATADIR%%/demo/undocumented/auto-adaptive-navier-stokes
+@dirrm %%DATADIR%%/demo/undocumented/ale/python
+@dirrm %%DATADIR%%/demo/undocumented/ale/cpp
+@dirrm %%DATADIR%%/demo/undocumented/ale
+@dirrm %%DATADIR%%/demo/undocumented/advection-diffusion/python
+@dirrm %%DATADIR%%/demo/undocumented/advection-diffusion/cpp
+@dirrm %%DATADIR%%/demo/undocumented/advection-diffusion
+@dirrm %%DATADIR%%/demo/undocumented/adaptive-poisson/python
+@dirrm %%DATADIR%%/demo/undocumented/adaptive-poisson/cpp
+@dirrm %%DATADIR%%/demo/undocumented/adaptive-poisson
+@dirrm %%DATADIR%%/demo/undocumented
+@dirrm %%DATADIR%%/demo/pde/subdomains-poisson/python
+@dirrm %%DATADIR%%/demo/pde/subdomains-poisson/cpp
+@dirrm %%DATADIR%%/demo/pde/subdomains-poisson
+@dirrm %%DATADIR%%/demo/pde/stokes-iterative/python
+@dirrm %%DATADIR%%/demo/pde/stokes-iterative/cpp
+@dirrm %%DATADIR%%/demo/pde/stokes-iterative
+@dirrm %%DATADIR%%/demo/pde/poisson/python
+@dirrm %%DATADIR%%/demo/pde/poisson/cpp
+@dirrm %%DATADIR%%/demo/pde/poisson
+@dirrm %%DATADIR%%/demo/pde/navier-stokes/python
+@dirrm %%DATADIR%%/demo/pde/navier-stokes/cpp
+@dirrm %%DATADIR%%/demo/pde/navier-stokes
+@dirrm %%DATADIR%%/demo/pde/mixed-poisson/python
+@dirrm %%DATADIR%%/demo/pde/mixed-poisson/cpp
+@dirrm %%DATADIR%%/demo/pde/mixed-poisson
+@dirrm %%DATADIR%%/demo/pde/hyperelasticity/python
+@dirrm %%DATADIR%%/demo/pde/hyperelasticity/cpp
+@dirrm %%DATADIR%%/demo/pde/hyperelasticity
+@dirrm %%DATADIR%%/demo/pde/cahn-hilliard/python
+@dirrm %%DATADIR%%/demo/pde/cahn-hilliard/cpp
+@dirrm %%DATADIR%%/demo/pde/cahn-hilliard
+@dirrm %%DATADIR%%/demo/pde/biharmonic/python
+@dirrm %%DATADIR%%/demo/pde/biharmonic/cpp
+@dirrm %%DATADIR%%/demo/pde/biharmonic
+@dirrm %%DATADIR%%/demo/pde
+@dirrm %%DATADIR%%/demo/la/eigenvalue/python
+@dirrm %%DATADIR%%/demo/la/eigenvalue/cpp
+@dirrm %%DATADIR%%/demo/la/eigenvalue
+@dirrm %%DATADIR%%/demo/la
+@dirrm %%DATADIR%%/demo
+@dirrm %%DATADIR%%/data/meshes
+@dirrm %%DATADIR%%/data/graphs
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/cmake
+@dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/dolfin_utils/wrappers
+@dirrm %%PYTHON_SITELIBDIR%%/dolfin_utils/pjobs
+@dirrm %%PYTHON_SITELIBDIR%%/dolfin_utils/meshconvert
+@dirrm %%PYTHON_SITELIBDIR%%/dolfin_utils/documentation
+@dirrm %%PYTHON_SITELIBDIR%%/dolfin_utils/cppparser
+@dirrm %%PYTHON_SITELIBDIR%%/dolfin_utils
+@dirrm %%PYTHON_SITELIBDIR%%/dolfin/mesh
+@dirrm %%PYTHON_SITELIBDIR%%/dolfin/importhandler
+@dirrm %%PYTHON_SITELIBDIR%%/dolfin/functions
+@dirrm %%PYTHON_SITELIBDIR%%/dolfin/fem
+@dirrm %%PYTHON_SITELIBDIR%%/dolfin/cpp
+@dirrm %%PYTHON_SITELIBDIR%%/dolfin/compilemodules
+@dirrm %%PYTHON_SITELIBDIR%%/dolfin/common
+@dirrm %%PYTHON_SITELIBDIR%%/dolfin
+@dirrm include/dolfin/swig/typemaps
+@dirrm include/dolfin/swig/parameter
+@dirrm include/dolfin/swig/nls
+@dirrm include/dolfin/swig/mesh
+@dirrm include/dolfin/swig/log
+@dirrm include/dolfin/swig/la
+@dirrm include/dolfin/swig/io
+@dirrm include/dolfin/swig/function
+@dirrm include/dolfin/swig/fem
+@dirrm include/dolfin/swig/common
+@dirrm include/dolfin/swig/ale
+@dirrm include/dolfin/swig/adaptivity
+@dirrm include/dolfin/swig
+@dirrm include/dolfin/refinement
+@dirrm include/dolfin/quadrature
+@dirrm include/dolfin/plot
+@dirrm include/dolfin/parameter
+@dirrm include/dolfin/nls
+@dirrm include/dolfin/mesh
+@dirrm include/dolfin/math
+@dirrm include/dolfin/log
+@dirrm include/dolfin/la
+@dirrm include/dolfin/io
+@dirrm include/dolfin/intersection
+@dirrm include/dolfin/graph
+@dirrm include/dolfin/generation
+@dirrm include/dolfin/function
+@dirrm include/dolfin/fem
+@dirrm include/dolfin/common
+@dirrm include/dolfin/ale
+@dirrm include/dolfin/adaptivity
+@dirrm include/dolfin
+@exec mkdir -p %D/%%DATADIR%%/demo/undocumented/restriction/python
+@exec mkdir -p %D/%%DATADIR%%/demo/undocumented/overlapping-regions/cpp
+@exec mkdir -p %D/%%DATADIR%%/demo/undocumented/multidomain/python
+@exec mkdir -p %D/%%DATADIR%%/demo/undocumented/generalized-eigenvalue/python
+@exec mkdir -p %D/%%DATADIR%%/demo/undocumented/distancequeries/python
+@exec mkdir -p %D/%%DATADIR%%/demo/pde/subdomains-poisson/cpp

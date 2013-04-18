@@ -1,0 +1,191 @@
+#!/bin/sh
+
+##########################################################################
+#   Script description:
+#       
+#   Arguments:
+#       
+#   Returns:
+#       
+#   History:
+#   Date        Name        Modification
+#   2011-07-28  Jason Bacon Begin
+##########################################################################
+
+
+pause()
+{
+    printf "Press return to continue..."
+    read junk
+}
+
+
+##########################################################################
+#   Main
+##########################################################################
+
+if [ `whoami` != root ]; then
+    printf "$0 must be run as root.\n"
+    exit 1
+fi
+
+resp=' '
+while [ 0$resp != 0'q' ]; do
+    clear
+    cat << EOM
+    
+			    *******************************
+			    *   Cluster Admin Main Menu   *
+			    *******************************
+    
+1..  Add user
+2..  Remove user
+3..  Add group
+4..  Remove group
+5..  Install binary package on compute nodes
+6..  Install port from source on compute nodes
+7..  Install binary package on the head node
+8..  Install port from source on the head node
+9..  Edit a system file for distribution
+10.. Distribute system files
+11.. Run command on all compute nodes
+12.. Shut down cluster
+13.. Restart the job scheduler
+14.. Restart Ganglia web monitor
+Q..  Quit
+    
+EOM
+
+    printf "Enter your selection: "
+    read resp
+    printf "\n"
+
+    case $resp in
+    1)
+	cluster-adduser
+	;;
+    2)
+	printf "This will remove the user and all their files from the cluster.\n"
+	printf "Are you sure? (yes/no) "
+	read sure
+	if [ 0$sure = 0yes ]; then
+	    printf "Username? "
+	    read username
+	    cluster-rmuser $username
+	fi
+	;;
+    3)
+	printf "Group name? "
+	read groupname
+	printf "pw groupadd flags? "
+	read flags
+	cluster-groupadd $groupname $flags
+	;;
+    4)
+	printf "Groupname? "
+	read groupname
+	printf "pw groupdel flags? "
+	read flags
+	cluster-groupdel $groupname $flags
+	;;
+    5)
+	printf "Package name? "
+	read resp
+	if [ 0$resp != 0 ]; then
+	    cluster-pkg_add $resp
+	fi
+	;;
+    6)
+	printf "Ports directory? [/usr/ports] "
+	read portsdir
+	if [ 0$portsdir = 0 ]; then
+	    portsdir='/usr/ports'
+	fi
+	printf "Category? "
+	read category
+	printf "Port name? "
+	read port
+	cluster-port_add -p $portsdir $category $port
+	;;
+    7)
+	printf "Package name? "
+	read pkg
+	if [ 0$pkg != 0 ]; then
+	    pkg_add -r -K $pkg
+	fi
+	;;
+    8)
+	printf "Ports directory? [/usr/ports] "
+	read portsdir
+	if [ 0$portsdir = 0 ]; then
+	    portsdir='/usr/ports'
+	fi
+	printf "Category? "
+	read category
+	printf "Port name? "
+	read port
+	cluster-local-port_add -p $portsdir $category $port
+	;;
+    9)
+	printf "Full pathname of file? "
+	read pathname
+	if [ 0$pathname != 0 ]; then
+	    if [ $(basename $pathname) = login.conf ]; then
+		cat << EOM
+The Torque scheduler must be restarted to affect the changes made to
+$pathname.
+EOM
+		pause
+	    fi
+	    repo='/usr/local/cluster/sync-files'
+	    if [ ! -e $repo$pathname ]; then
+		cluster-get-sync-file compute-01 $pathname
+	    fi
+	    $EDITOR $repo$pathname
+	    printf "You must run cluster-sync-files to distribute the changes.\n"
+	fi
+	;;
+    10)
+	cluster-sync-files
+	;;
+    11)
+	printf "Command? "
+	read command
+	printf "Enable terminal control (ssh -t)? (y/n) "
+	read tc
+	if [ 0$tc = 0y ]; then
+	    cluster-run -t "'"$command"'"
+	else
+	    cluster-run "'"$command"'"
+	fi
+	;;
+    12)
+	cluster-shutdown
+	;;
+    13)
+	# Torque
+	if [ -e /var/spool/torque ]; then
+	    printf "Currently running jobs:\n"
+	    qstat
+	    printf "Restarting the PBS scheduler will kill jobs.  Continue? (yes/no) "
+	    read continue
+	    if [ 0$continue = 0yes ]; then
+		cluster-pbs-restart
+	    fi
+	fi
+	# SGE
+	;;
+    14)
+	cluster-ganglia-restart
+	;;
+    *)
+	;;
+    esac
+    
+    if [ 0$resp != 0'q' ]; then
+	pause
+    fi
+done
+
+exit 0
+

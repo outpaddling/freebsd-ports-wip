@@ -1,0 +1,3 @@
+
+setenv FSLDIR %%DATADIR%%
+source $FSLDIR/etc/fslconf/fsl.csh

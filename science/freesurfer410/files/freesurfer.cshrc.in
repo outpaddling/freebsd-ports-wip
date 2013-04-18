@@ -1,0 +1,3 @@
+setenv FREESURFER_HOME %%PREFIX%%/freesurfer
+alias freesurfer_env 'source %%PREFIX%%/freesurfer/FreeSurferEnv.csh; cat %%PREFIX%%/freesurfer/env_warning'
+

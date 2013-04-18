@@ -1,0 +1,17 @@
+bin/epc
+%%DATADIR%%/Examples/bench.epc
+%%DATADIR%%/Examples/echo.epc
+%%DATADIR%%/Examples/float.epc
+%%DATADIR%%/Examples/hello.epc
+%%DATADIR%%/Examples/io.epc
+%%DATADIR%%/Examples/junk.epc
+%%DATADIR%%/Examples/loop.epc
+%%DATADIR%%/Examples/macros.epc
+%%DATADIR%%/Examples/puts.epc
+%%DATADIR%%/Examples/test.epc
+%%DATADIR%%/Examples/torture.epc
+%%DATADIR%%/include/io.epc
+%%DATADIR%%/include/macros.epc
+@dirrm %%DATADIR%%/include
+@dirrm %%DATADIR%%/Examples
+@dirrm %%DATADIR%%

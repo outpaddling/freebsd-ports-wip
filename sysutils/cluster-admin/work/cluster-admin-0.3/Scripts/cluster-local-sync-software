@@ -1,0 +1,14 @@
+#!/bin/sh -e
+
+for pkg in `cat /head_usr/local/cluster/packages.txt`; do
+    cluster-local-pkg_add $pkg
+done
+
+for port in `cat /head_usr/local/cluster/ports.txt`; do
+    name=${port##*/}
+    dir=${port%/*}
+    category=${dir##*/}
+    portsdir=${dir%/*}
+    cluster-local-port_add -p $portsdir $category/$name
+done
+

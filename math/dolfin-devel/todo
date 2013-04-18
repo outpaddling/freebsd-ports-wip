@@ -1,0 +1,7 @@
+configure uses atlas if present instead of blas
+causes problems with build due to numpy errors
+see peregrine-dolfin-log
+
+Needs vtk5
+    don't install vtk-python before vtk5
+

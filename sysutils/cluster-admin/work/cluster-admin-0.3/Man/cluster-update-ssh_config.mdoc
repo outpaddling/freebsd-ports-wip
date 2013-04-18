@@ -1,0 +1,48 @@
+.\" MDOC man page template
+.\" Use MDOC only for system-specific man pages where groff is the
+.\" default nroff command.  For portable software meant to run on
+.\" all *nix platforms, use the older MAN format.  ( *.man in APE )
+.Dd 2011-11-03  
+.Dt CLUSTER-UPDATE-SSH_CONFIG 1
+.Os
+.\"----------------------------------------------------------------------
+.Sh NAME
+.Nm cluster-update-ssh_config
+.Nd update the ssh_config file for a cluster
+.\"----------------------------------------------------------------------
+.Sh SYNOPSIS
+.\" Form 2
+.Nm
+.\"----------------------------------------------------------------------
+.Sh DESCRIPTION
+The
+.Nm
+command updates the ssh_config file on the local host to facilitate
+easier communication between the nodes of a cluster.  For example,
+it disables strict host key checking to prevent ssh prompts from
+causing dispatch failures.
+.Sh EXIT STATUS
+.Ex -std
+.\"----------------------------------------------------------------------
+.Sh SEE ALSO
+.Xr cluster-adduser
+.Xr cluster-admin
+.Xr cluster-cp
+.Xr cluster-pkg_add
+.Xr cluster-port_add
+.Xr cluster-rmuser
+.Xr cluster-run
+.Xr cluster-setup
+.Xr cluster-shutdown
+.\"----------------------------------------------------------------------
+.Sh HISTORY
+The
+.Nm
+command first appeared as part of the cluster-admin port in FreeBSD 8.2.
+.At v7 .
+.\"----------------------------------------------------------------------
+.Sh AUTHORS
+.An Jason Bacon                             
+.\"----------------------------------------------------------------------
+.Sh BUGS
+Yes.

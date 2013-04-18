@@ -1,0 +1,1360 @@
+===>  License GPLv2 accepted by the user
+===>  Extracting for fftw-openmpi-2.1.5_6
+=> SHA256 Checksum OK for fftw-2.1.5.tar.gz.
+===>  Patching for fftw-openmpi-2.1.5_6
+===>  Applying FreeBSD patches for fftw-openmpi-2.1.5_6
+===>   fftw-openmpi-2.1.5_6 depends on file: /usr/local/mpi/openmpi/lib/libmpi.so - found
+===>   fftw-openmpi-2.1.5_6 depends on executable: gmake - found
+===>   fftw-openmpi-2.1.5_6 depends on executable: gcc46 - found
+===>   fftw-openmpi-2.1.5_6 depends on file: /usr/local/bin/as - found
+===>   fftw-openmpi-2.1.5_6 depends on file: /usr/local/bin/automake-1.11 - found
+===>   fftw-openmpi-2.1.5_6 depends on file: /usr/local/bin/autoconf-2.68 - found
+===>   fftw-openmpi-2.1.5_6 depends on package: libtool>=2.4 - found
+===>  Configuring for fftw-openmpi-2.1.5_6
+acinclude.m4:1: warning: underquoted definition of ACX_CHECK_CC_FLAGS
+acinclude.m4:1:   run info '(automake)Extending aclocal'
+acinclude.m4:1:   or see http://sources.redhat.com/automake/automake.html#Extending-aclocal
+configure.in:127: warning: AC_CACHE_VAL(ac_qarch_auto, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_align_double, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_fstrict_aliasing, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_cpu_pentium, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_pentium, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_cpu_pentiumpro, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_pentiumpro, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_cpu_ev4, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_cpu_ev56, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_cpu_ev5, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_cpu_ev6, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_m_cpu_60x, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_m_cpu_750, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_m_cpu_powerpc, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_m_powerpc, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_guessed_cflags, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:129: warning: AC_CACHE_VAL(ac_m_pref_stack_boundary_4, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:58: ACX_GCC_ALIGNS_STACK is expanded from...
+configure.in:129: the top level
+configure.in:129: warning: AC_CACHE_VAL(ac_m_psb_2, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:58: ACX_GCC_ALIGNS_STACK is expanded from...
+configure.in:129: the top level
+configure.in:217: warning: AC_CACHE_VAL(ac_fkeep_programmers_inline, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+configure.in:217: the top level
+configure.in:218: warning: AC_CACHE_VAL(ac_vomit_frame_pointer, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+configure.in:218: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_qarch_auto, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_align_double, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_fstrict_aliasing, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_cpu_pentium, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_pentium, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_cpu_pentiumpro, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_pentiumpro, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_cpu_ev4, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_cpu_ev56, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_cpu_ev5, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_cpu_ev6, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_m_cpu_60x, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_m_cpu_750, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_m_cpu_powerpc, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_m_powerpc, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_guessed_cflags, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:129: warning: AC_CACHE_VAL(ac_m_pref_stack_boundary_4, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:58: ACX_GCC_ALIGNS_STACK is expanded from...
+configure.in:129: the top level
+configure.in:129: warning: AC_CACHE_VAL(ac_m_psb_2, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:58: ACX_GCC_ALIGNS_STACK is expanded from...
+configure.in:129: the top level
+configure.in:217: warning: AC_CACHE_VAL(ac_fkeep_programmers_inline, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+configure.in:217: the top level
+configure.in:218: warning: AC_CACHE_VAL(ac_vomit_frame_pointer, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+configure.in:218: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_qarch_auto, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_align_double, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_fstrict_aliasing, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_cpu_pentium, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_pentium, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_cpu_pentiumpro, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_pentiumpro, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_cpu_ev4, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_cpu_ev56, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_cpu_ev5, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_cpu_ev6, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_m_cpu_60x, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_m_cpu_750, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_m_cpu_powerpc, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_m_powerpc, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:127: warning: AC_CACHE_VAL(ac_guessed_cflags, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:93: ACX_PROG_CC_MAXOPT is expanded from...
+configure.in:127: the top level
+configure.in:129: warning: AC_CACHE_VAL(ac_m_pref_stack_boundary_4, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:58: ACX_GCC_ALIGNS_STACK is expanded from...
+configure.in:129: the top level
+configure.in:129: warning: AC_CACHE_VAL(ac_m_psb_2, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+acinclude.m4:58: ACX_GCC_ALIGNS_STACK is expanded from...
+configure.in:129: the top level
+configure.in:217: warning: AC_CACHE_VAL(ac_fkeep_programmers_inline, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+configure.in:217: the top level
+configure.in:218: warning: AC_CACHE_VAL(ac_vomit_frame_pointer, ...): suspicious cache-id, must contain _cv_ to be cached
+../../lib/autoconf/general.m4:2032: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2053: AC_CACHE_CHECK is expanded from...
+acinclude.m4:1: ACX_CHECK_CC_FLAGS is expanded from...
+configure.in:218: the top level
+checking for a BSD-compatible install... /usr/bin/install -c -o root -g wheel
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... ./install-sh -c -d
+checking for gawk... no
+checking for mawk... no
+checking for nawk... nawk
+checking whether gmake sets $(MAKE)... yes
+checking type prefix for installed files... (none)
+checking for vendor's cc to be used instead of gcc... checking for cc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking for style of include used by gmake... GNU
+checking dependency style of cc... gcc3
+checking whether we are using gcc 2.90 or later... yes
+checking whether gmake sets $(MAKE)... (cached) yes
+checking for ranlib... ranlib
+checking whether ln -s works... yes
+checking build system type... amd64-portbld-freebsd8.3
+checking host system type... amd64-portbld-freebsd8.3
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/local/bin/gsed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/local/bin/nm -B
+checking the name lister (/usr/local/bin/nm -B) interface... BSD nm
+checking the maximum length of command line arguments... (cached) 262144
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... no
+checking how to convert amd64-portbld-freebsd8.3 file names to amd64-portbld-freebsd8.3 format... func_convert_file_noop
+checking how to convert amd64-portbld-freebsd8.3 file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... (cached) ranlib
+checking command to parse /usr/local/bin/nm -B output from cc object... ok
+checking for sysroot... no
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... cpp46
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if cc supports -fno-rtti -fno-exceptions... no
+checking for cc option to produce PIC... -fPIC -DPIC
+checking if cc PIC flag -fPIC -DPIC works... yes
+checking if cc static flag -static works... yes
+checking if cc supports -c -o file.o... yes
+checking if cc supports -c -o file.o... (cached) yes
+checking whether the cc linker (/usr/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... freebsd8.3 ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for perl... perl
+checking whether we are using the GNU Fortran 77 compiler... yes
+checking whether gfortran46 accepts -g... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for gfortran46 option to produce PIC... -fPIC
+checking if gfortran46 PIC flag -fPIC works... yes
+checking if gfortran46 static flag -static works... yes
+checking if gfortran46 supports -c -o file.o... yes
+checking if gfortran46 supports -c -o file.o... (cached) yes
+checking whether the gfortran46 linker (/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... freebsd8.3 ld.so
+checking how to hardcode library paths into programs... immediate
+checking how to get verbose linking output from gfortran46... -v
+checking for Fortran 77 libraries of gfortran46...  -L/usr/local/mpi/openmpi/lib -L/usr/local/lib -L/usr/local/lib/gcc46/gcc/x86_64-portbld-freebsd8.1/4.6.4 -L/usr/local/lib/gcc46/gcc/x86_64-portbld-freebsd8.1/4.6.4/../../../../../x86_64-portbld-freebsd8.1/lib -L/usr/local/lib/gcc46/gcc/x86_64-portbld-freebsd8.1/4.6.4/../../.. -lgfortran -lm -lquadmath
+checking for dummy main to link with Fortran 77 libraries... none
+checking for Fortran 77 name-mangling scheme... lower case, underscore, no extra underscore
+checking whether cc accepts -mpreferred-stack-boundary=4... yes
+checking whether the stack is correctly aligned by gcc... no
+checking for sqrt in -lm... yes
+checking for ANSI C header files... (cached) yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for unistd.h... (cached) yes
+checking getopt.h usability... yes
+checking getopt.h presence... yes
+checking for getopt.h... yes
+checking malloc.h usability... no
+checking malloc.h presence... no
+checking for malloc.h... no
+checking for an ANSI C-conforming const... yes
+checking for size_t... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for working alloca.h... no
+checking for alloca... yes
+checking for gettimeofday... yes
+checking for BSDgettimeofday... no
+checking for gethrtime... no
+checking for getopt... yes
+checking for getopt_long... yes
+checking for isnan... yes
+checking for hrtime_t... no
+checking size of int... 4
+checking size of long long... 8
+checking whether cc accepts "-fkeep-programmers-inline"... no
+checking whether cc accepts "-vomit-frame-pointer"... no
+checking for mpicc... mpicc
+checking for MPI_Init... yes
+checking for mpi.h... yes
+checking for MPI_Comm_f2c... yes
+configure: creating ./config.status
+config.status: creating fftw/Makefile
+config.status: creating tests/Makefile
+config.status: creating rfftw/Makefile
+config.status: creating doc/Makefile
+config.status: creating Makefile
+config.status: creating threads/Makefile
+config.status: creating mpi/Makefile
+config.status: creating fftw.spec
+config.status: creating fftw/config.h
+config.status: creating fftw/fftw.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+===>  Building for fftw-openmpi-2.1.5_6
+Making all in fftw
+gmake[1]: Entering directory `/usr/home/bacon/Prog/Ports/ports/math/fftw-openmpi/work/fftw-2.1.5/fftw'
+(CDPATH="${ZSH_VERSION+.}:" && cd .. && echo)
+
+rm -f stamp-h1
+touch config.h.in
+cd .. && /bin/sh ./config.status fftw/config.h
+config.status: creating fftw/config.h
+config.status: fftw/config.h is unchanged
+gmake  all-am
+gmake[2]: Entering directory `/usr/home/bacon/Prog/Ports/ports/math/fftw-openmpi/work/fftw-2.1.5/fftw'
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_1.lo -MD -MP -MF .deps/fn_1.Tpo -c -o fn_1.lo fn_1.c
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_2.lo -MD -MP -MF .deps/fn_2.Tpo -c -o fn_2.lo fn_2.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_1.lo -MD -MP -MF .deps/fn_1.Tpo -c fn_1.c  -fPIC -DPIC -o .libs/fn_1.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_2.lo -MD -MP -MF .deps/fn_2.Tpo -c fn_2.c  -fPIC -DPIC -o .libs/fn_2.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_1.lo -MD -MP -MF .deps/fn_1.Tpo -c fn_1.c -o fn_1.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_2.lo -MD -MP -MF .deps/fn_2.Tpo -c fn_2.c -o fn_2.o >/dev/null 2>&1
+mv -f .deps/fn_1.Tpo .deps/fn_1.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_3.lo -MD -MP -MF .deps/fn_3.Tpo -c -o fn_3.lo fn_3.c
+mv -f .deps/fn_2.Tpo .deps/fn_2.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_4.lo -MD -MP -MF .deps/fn_4.Tpo -c -o fn_4.lo fn_4.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_3.lo -MD -MP -MF .deps/fn_3.Tpo -c fn_3.c  -fPIC -DPIC -o .libs/fn_3.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_4.lo -MD -MP -MF .deps/fn_4.Tpo -c fn_4.c  -fPIC -DPIC -o .libs/fn_4.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_3.lo -MD -MP -MF .deps/fn_3.Tpo -c fn_3.c -o fn_3.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_4.lo -MD -MP -MF .deps/fn_4.Tpo -c fn_4.c -o fn_4.o >/dev/null 2>&1
+mv -f .deps/fn_3.Tpo .deps/fn_3.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_5.lo -MD -MP -MF .deps/fn_5.Tpo -c -o fn_5.lo fn_5.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_5.lo -MD -MP -MF .deps/fn_5.Tpo -c fn_5.c  -fPIC -DPIC -o .libs/fn_5.o
+mv -f .deps/fn_4.Tpo .deps/fn_4.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_6.lo -MD -MP -MF .deps/fn_6.Tpo -c -o fn_6.lo fn_6.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_6.lo -MD -MP -MF .deps/fn_6.Tpo -c fn_6.c  -fPIC -DPIC -o .libs/fn_6.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_5.lo -MD -MP -MF .deps/fn_5.Tpo -c fn_5.c -o fn_5.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_6.lo -MD -MP -MF .deps/fn_6.Tpo -c fn_6.c -o fn_6.o >/dev/null 2>&1
+mv -f .deps/fn_5.Tpo .deps/fn_5.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_7.lo -MD -MP -MF .deps/fn_7.Tpo -c -o fn_7.lo fn_7.c
+mv -f .deps/fn_6.Tpo .deps/fn_6.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_8.lo -MD -MP -MF .deps/fn_8.Tpo -c -o fn_8.lo fn_8.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_7.lo -MD -MP -MF .deps/fn_7.Tpo -c fn_7.c  -fPIC -DPIC -o .libs/fn_7.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_8.lo -MD -MP -MF .deps/fn_8.Tpo -c fn_8.c  -fPIC -DPIC -o .libs/fn_8.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_7.lo -MD -MP -MF .deps/fn_7.Tpo -c fn_7.c -o fn_7.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_8.lo -MD -MP -MF .deps/fn_8.Tpo -c fn_8.c -o fn_8.o >/dev/null 2>&1
+mv -f .deps/fn_7.Tpo .deps/fn_7.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_9.lo -MD -MP -MF .deps/fn_9.Tpo -c -o fn_9.lo fn_9.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_9.lo -MD -MP -MF .deps/fn_9.Tpo -c fn_9.c  -fPIC -DPIC -o .libs/fn_9.o
+mv -f .deps/fn_8.Tpo .deps/fn_8.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_10.lo -MD -MP -MF .deps/fn_10.Tpo -c -o fn_10.lo fn_10.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_10.lo -MD -MP -MF .deps/fn_10.Tpo -c fn_10.c  -fPIC -DPIC -o .libs/fn_10.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_9.lo -MD -MP -MF .deps/fn_9.Tpo -c fn_9.c -o fn_9.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_10.lo -MD -MP -MF .deps/fn_10.Tpo -c fn_10.c -o fn_10.o >/dev/null 2>&1
+mv -f .deps/fn_9.Tpo .deps/fn_9.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_11.lo -MD -MP -MF .deps/fn_11.Tpo -c -o fn_11.lo fn_11.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_11.lo -MD -MP -MF .deps/fn_11.Tpo -c fn_11.c  -fPIC -DPIC -o .libs/fn_11.o
+mv -f .deps/fn_10.Tpo .deps/fn_10.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_12.lo -MD -MP -MF .deps/fn_12.Tpo -c -o fn_12.lo fn_12.c
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_11.lo -MD -MP -MF .deps/fn_11.Tpo -c fn_11.c -o fn_11.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_12.lo -MD -MP -MF .deps/fn_12.Tpo -c fn_12.c  -fPIC -DPIC -o .libs/fn_12.o
+mv -f .deps/fn_11.Tpo .deps/fn_11.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_13.lo -MD -MP -MF .deps/fn_13.Tpo -c -o fn_13.lo fn_13.c
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_12.lo -MD -MP -MF .deps/fn_12.Tpo -c fn_12.c -o fn_12.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_13.lo -MD -MP -MF .deps/fn_13.Tpo -c fn_13.c  -fPIC -DPIC -o .libs/fn_13.o
+mv -f .deps/fn_12.Tpo .deps/fn_12.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_14.lo -MD -MP -MF .deps/fn_14.Tpo -c -o fn_14.lo fn_14.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_14.lo -MD -MP -MF .deps/fn_14.Tpo -c fn_14.c  -fPIC -DPIC -o .libs/fn_14.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_13.lo -MD -MP -MF .deps/fn_13.Tpo -c fn_13.c -o fn_13.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_14.lo -MD -MP -MF .deps/fn_14.Tpo -c fn_14.c -o fn_14.o >/dev/null 2>&1
+mv -f .deps/fn_13.Tpo .deps/fn_13.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_15.lo -MD -MP -MF .deps/fn_15.Tpo -c -o fn_15.lo fn_15.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_15.lo -MD -MP -MF .deps/fn_15.Tpo -c fn_15.c  -fPIC -DPIC -o .libs/fn_15.o
+mv -f .deps/fn_14.Tpo .deps/fn_14.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_16.lo -MD -MP -MF .deps/fn_16.Tpo -c -o fn_16.lo fn_16.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_16.lo -MD -MP -MF .deps/fn_16.Tpo -c fn_16.c  -fPIC -DPIC -o .libs/fn_16.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_15.lo -MD -MP -MF .deps/fn_15.Tpo -c fn_15.c -o fn_15.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_16.lo -MD -MP -MF .deps/fn_16.Tpo -c fn_16.c -o fn_16.o >/dev/null 2>&1
+mv -f .deps/fn_15.Tpo .deps/fn_15.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_32.lo -MD -MP -MF .deps/fn_32.Tpo -c -o fn_32.lo fn_32.c
+mv -f .deps/fn_16.Tpo .deps/fn_16.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_64.lo -MD -MP -MF .deps/fn_64.Tpo -c -o fn_64.lo fn_64.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_32.lo -MD -MP -MF .deps/fn_32.Tpo -c fn_32.c  -fPIC -DPIC -o .libs/fn_32.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_64.lo -MD -MP -MF .deps/fn_64.Tpo -c fn_64.c  -fPIC -DPIC -o .libs/fn_64.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_32.lo -MD -MP -MF .deps/fn_32.Tpo -c fn_32.c -o fn_32.o >/dev/null 2>&1
+mv -f .deps/fn_32.Tpo .deps/fn_32.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_2.lo -MD -MP -MF .deps/ftw_2.Tpo -c -o ftw_2.lo ftw_2.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_2.lo -MD -MP -MF .deps/ftw_2.Tpo -c ftw_2.c  -fPIC -DPIC -o .libs/ftw_2.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_2.lo -MD -MP -MF .deps/ftw_2.Tpo -c ftw_2.c -o ftw_2.o >/dev/null 2>&1
+mv -f .deps/ftw_2.Tpo .deps/ftw_2.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_3.lo -MD -MP -MF .deps/ftw_3.Tpo -c -o ftw_3.lo ftw_3.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_3.lo -MD -MP -MF .deps/ftw_3.Tpo -c ftw_3.c  -fPIC -DPIC -o .libs/ftw_3.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fn_64.lo -MD -MP -MF .deps/fn_64.Tpo -c fn_64.c -o fn_64.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_3.lo -MD -MP -MF .deps/ftw_3.Tpo -c ftw_3.c -o ftw_3.o >/dev/null 2>&1
+mv -f .deps/ftw_3.Tpo .deps/ftw_3.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_4.lo -MD -MP -MF .deps/ftw_4.Tpo -c -o ftw_4.lo ftw_4.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_4.lo -MD -MP -MF .deps/ftw_4.Tpo -c ftw_4.c  -fPIC -DPIC -o .libs/ftw_4.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_4.lo -MD -MP -MF .deps/ftw_4.Tpo -c ftw_4.c -o ftw_4.o >/dev/null 2>&1
+mv -f .deps/ftw_4.Tpo .deps/ftw_4.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_5.lo -MD -MP -MF .deps/ftw_5.Tpo -c -o ftw_5.lo ftw_5.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_5.lo -MD -MP -MF .deps/ftw_5.Tpo -c ftw_5.c  -fPIC -DPIC -o .libs/ftw_5.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_5.lo -MD -MP -MF .deps/ftw_5.Tpo -c ftw_5.c -o ftw_5.o >/dev/null 2>&1
+mv -f .deps/ftw_5.Tpo .deps/ftw_5.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_6.lo -MD -MP -MF .deps/ftw_6.Tpo -c -o ftw_6.lo ftw_6.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_6.lo -MD -MP -MF .deps/ftw_6.Tpo -c ftw_6.c  -fPIC -DPIC -o .libs/ftw_6.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_6.lo -MD -MP -MF .deps/ftw_6.Tpo -c ftw_6.c -o ftw_6.o >/dev/null 2>&1
+mv -f .deps/fn_64.Tpo .deps/fn_64.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_7.lo -MD -MP -MF .deps/ftw_7.Tpo -c -o ftw_7.lo ftw_7.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_7.lo -MD -MP -MF .deps/ftw_7.Tpo -c ftw_7.c  -fPIC -DPIC -o .libs/ftw_7.o
+mv -f .deps/ftw_6.Tpo .deps/ftw_6.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_8.lo -MD -MP -MF .deps/ftw_8.Tpo -c -o ftw_8.lo ftw_8.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_8.lo -MD -MP -MF .deps/ftw_8.Tpo -c ftw_8.c  -fPIC -DPIC -o .libs/ftw_8.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_7.lo -MD -MP -MF .deps/ftw_7.Tpo -c ftw_7.c -o ftw_7.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_8.lo -MD -MP -MF .deps/ftw_8.Tpo -c ftw_8.c -o ftw_8.o >/dev/null 2>&1
+mv -f .deps/ftw_7.Tpo .deps/ftw_7.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_9.lo -MD -MP -MF .deps/ftw_9.Tpo -c -o ftw_9.lo ftw_9.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_9.lo -MD -MP -MF .deps/ftw_9.Tpo -c ftw_9.c  -fPIC -DPIC -o .libs/ftw_9.o
+mv -f .deps/ftw_8.Tpo .deps/ftw_8.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_10.lo -MD -MP -MF .deps/ftw_10.Tpo -c -o ftw_10.lo ftw_10.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_10.lo -MD -MP -MF .deps/ftw_10.Tpo -c ftw_10.c  -fPIC -DPIC -o .libs/ftw_10.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_9.lo -MD -MP -MF .deps/ftw_9.Tpo -c ftw_9.c -o ftw_9.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_10.lo -MD -MP -MF .deps/ftw_10.Tpo -c ftw_10.c -o ftw_10.o >/dev/null 2>&1
+mv -f .deps/ftw_9.Tpo .deps/ftw_9.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_16.lo -MD -MP -MF .deps/ftw_16.Tpo -c -o ftw_16.lo ftw_16.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_16.lo -MD -MP -MF .deps/ftw_16.Tpo -c ftw_16.c  -fPIC -DPIC -o .libs/ftw_16.o
+mv -f .deps/ftw_10.Tpo .deps/ftw_10.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_32.lo -MD -MP -MF .deps/ftw_32.Tpo -c -o ftw_32.lo ftw_32.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_32.lo -MD -MP -MF .deps/ftw_32.Tpo -c ftw_32.c  -fPIC -DPIC -o .libs/ftw_32.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_16.lo -MD -MP -MF .deps/ftw_16.Tpo -c ftw_16.c -o ftw_16.o >/dev/null 2>&1
+mv -f .deps/ftw_16.Tpo .deps/ftw_16.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_64.lo -MD -MP -MF .deps/ftw_64.Tpo -c -o ftw_64.lo ftw_64.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_64.lo -MD -MP -MF .deps/ftw_64.Tpo -c ftw_64.c  -fPIC -DPIC -o .libs/ftw_64.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_32.lo -MD -MP -MF .deps/ftw_32.Tpo -c ftw_32.c -o ftw_32.o >/dev/null 2>&1
+mv -f .deps/ftw_32.Tpo .deps/ftw_32.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_1.lo -MD -MP -MF .deps/fni_1.Tpo -c -o fni_1.lo fni_1.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_1.lo -MD -MP -MF .deps/fni_1.Tpo -c fni_1.c  -fPIC -DPIC -o .libs/fni_1.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_1.lo -MD -MP -MF .deps/fni_1.Tpo -c fni_1.c -o fni_1.o >/dev/null 2>&1
+mv -f .deps/fni_1.Tpo .deps/fni_1.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_2.lo -MD -MP -MF .deps/fni_2.Tpo -c -o fni_2.lo fni_2.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_2.lo -MD -MP -MF .deps/fni_2.Tpo -c fni_2.c  -fPIC -DPIC -o .libs/fni_2.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_2.lo -MD -MP -MF .deps/fni_2.Tpo -c fni_2.c -o fni_2.o >/dev/null 2>&1
+mv -f .deps/fni_2.Tpo .deps/fni_2.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_3.lo -MD -MP -MF .deps/fni_3.Tpo -c -o fni_3.lo fni_3.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_3.lo -MD -MP -MF .deps/fni_3.Tpo -c fni_3.c  -fPIC -DPIC -o .libs/fni_3.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_3.lo -MD -MP -MF .deps/fni_3.Tpo -c fni_3.c -o fni_3.o >/dev/null 2>&1
+mv -f .deps/fni_3.Tpo .deps/fni_3.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_4.lo -MD -MP -MF .deps/fni_4.Tpo -c -o fni_4.lo fni_4.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_4.lo -MD -MP -MF .deps/fni_4.Tpo -c fni_4.c  -fPIC -DPIC -o .libs/fni_4.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_4.lo -MD -MP -MF .deps/fni_4.Tpo -c fni_4.c -o fni_4.o >/dev/null 2>&1
+mv -f .deps/fni_4.Tpo .deps/fni_4.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_5.lo -MD -MP -MF .deps/fni_5.Tpo -c -o fni_5.lo fni_5.c
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_5.lo -MD -MP -MF .deps/fni_5.Tpo -c fni_5.c  -fPIC -DPIC -o .libs/fni_5.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftw_64.lo -MD -MP -MF .deps/ftw_64.Tpo -c ftw_64.c -o ftw_64.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_5.lo -MD -MP -MF .deps/fni_5.Tpo -c fni_5.c -o fni_5.o >/dev/null 2>&1
+mv -f .deps/fni_5.Tpo .deps/fni_5.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_6.lo -MD -MP -MF .deps/fni_6.Tpo -c -o fni_6.lo fni_6.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_6.lo -MD -MP -MF .deps/fni_6.Tpo -c fni_6.c  -fPIC -DPIC -o .libs/fni_6.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_6.lo -MD -MP -MF .deps/fni_6.Tpo -c fni_6.c -o fni_6.o >/dev/null 2>&1
+mv -f .deps/fni_6.Tpo .deps/fni_6.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_7.lo -MD -MP -MF .deps/fni_7.Tpo -c -o fni_7.lo fni_7.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_7.lo -MD -MP -MF .deps/fni_7.Tpo -c fni_7.c  -fPIC -DPIC -o .libs/fni_7.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_7.lo -MD -MP -MF .deps/fni_7.Tpo -c fni_7.c -o fni_7.o >/dev/null 2>&1
+mv -f .deps/fni_7.Tpo .deps/fni_7.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_8.lo -MD -MP -MF .deps/fni_8.Tpo -c -o fni_8.lo fni_8.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_8.lo -MD -MP -MF .deps/fni_8.Tpo -c fni_8.c  -fPIC -DPIC -o .libs/fni_8.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_8.lo -MD -MP -MF .deps/fni_8.Tpo -c fni_8.c -o fni_8.o >/dev/null 2>&1
+mv -f .deps/fni_8.Tpo .deps/fni_8.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_9.lo -MD -MP -MF .deps/fni_9.Tpo -c -o fni_9.lo fni_9.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_9.lo -MD -MP -MF .deps/fni_9.Tpo -c fni_9.c  -fPIC -DPIC -o .libs/fni_9.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_9.lo -MD -MP -MF .deps/fni_9.Tpo -c fni_9.c -o fni_9.o >/dev/null 2>&1
+mv -f .deps/fni_9.Tpo .deps/fni_9.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_10.lo -MD -MP -MF .deps/fni_10.Tpo -c -o fni_10.lo fni_10.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_10.lo -MD -MP -MF .deps/fni_10.Tpo -c fni_10.c  -fPIC -DPIC -o .libs/fni_10.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_10.lo -MD -MP -MF .deps/fni_10.Tpo -c fni_10.c -o fni_10.o >/dev/null 2>&1
+mv -f .deps/ftw_64.Tpo .deps/ftw_64.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_11.lo -MD -MP -MF .deps/fni_11.Tpo -c -o fni_11.lo fni_11.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_11.lo -MD -MP -MF .deps/fni_11.Tpo -c fni_11.c  -fPIC -DPIC -o .libs/fni_11.o
+mv -f .deps/fni_10.Tpo .deps/fni_10.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_12.lo -MD -MP -MF .deps/fni_12.Tpo -c -o fni_12.lo fni_12.c
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_11.lo -MD -MP -MF .deps/fni_11.Tpo -c fni_11.c -o fni_11.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_12.lo -MD -MP -MF .deps/fni_12.Tpo -c fni_12.c  -fPIC -DPIC -o .libs/fni_12.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_12.lo -MD -MP -MF .deps/fni_12.Tpo -c fni_12.c -o fni_12.o >/dev/null 2>&1
+mv -f .deps/fni_11.Tpo .deps/fni_11.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_13.lo -MD -MP -MF .deps/fni_13.Tpo -c -o fni_13.lo fni_13.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_13.lo -MD -MP -MF .deps/fni_13.Tpo -c fni_13.c  -fPIC -DPIC -o .libs/fni_13.o
+mv -f .deps/fni_12.Tpo .deps/fni_12.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_14.lo -MD -MP -MF .deps/fni_14.Tpo -c -o fni_14.lo fni_14.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_14.lo -MD -MP -MF .deps/fni_14.Tpo -c fni_14.c  -fPIC -DPIC -o .libs/fni_14.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_13.lo -MD -MP -MF .deps/fni_13.Tpo -c fni_13.c -o fni_13.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_14.lo -MD -MP -MF .deps/fni_14.Tpo -c fni_14.c -o fni_14.o >/dev/null 2>&1
+mv -f .deps/fni_13.Tpo .deps/fni_13.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_15.lo -MD -MP -MF .deps/fni_15.Tpo -c -o fni_15.lo fni_15.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_15.lo -MD -MP -MF .deps/fni_15.Tpo -c fni_15.c  -fPIC -DPIC -o .libs/fni_15.o
+mv -f .deps/fni_14.Tpo .deps/fni_14.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_16.lo -MD -MP -MF .deps/fni_16.Tpo -c -o fni_16.lo fni_16.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_16.lo -MD -MP -MF .deps/fni_16.Tpo -c fni_16.c  -fPIC -DPIC -o .libs/fni_16.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_15.lo -MD -MP -MF .deps/fni_15.Tpo -c fni_15.c -o fni_15.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_16.lo -MD -MP -MF .deps/fni_16.Tpo -c fni_16.c -o fni_16.o >/dev/null 2>&1
+mv -f .deps/fni_15.Tpo .deps/fni_15.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_32.lo -MD -MP -MF .deps/fni_32.Tpo -c -o fni_32.lo fni_32.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_32.lo -MD -MP -MF .deps/fni_32.Tpo -c fni_32.c  -fPIC -DPIC -o .libs/fni_32.o
+mv -f .deps/fni_16.Tpo .deps/fni_16.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_64.lo -MD -MP -MF .deps/fni_64.Tpo -c -o fni_64.lo fni_64.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_64.lo -MD -MP -MF .deps/fni_64.Tpo -c fni_64.c  -fPIC -DPIC -o .libs/fni_64.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_32.lo -MD -MP -MF .deps/fni_32.Tpo -c fni_32.c -o fni_32.o >/dev/null 2>&1
+mv -f .deps/fni_32.Tpo .deps/fni_32.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_2.lo -MD -MP -MF .deps/ftwi_2.Tpo -c -o ftwi_2.lo ftwi_2.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_2.lo -MD -MP -MF .deps/ftwi_2.Tpo -c ftwi_2.c  -fPIC -DPIC -o .libs/ftwi_2.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_2.lo -MD -MP -MF .deps/ftwi_2.Tpo -c ftwi_2.c -o ftwi_2.o >/dev/null 2>&1
+mv -f .deps/ftwi_2.Tpo .deps/ftwi_2.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_3.lo -MD -MP -MF .deps/ftwi_3.Tpo -c -o ftwi_3.lo ftwi_3.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_3.lo -MD -MP -MF .deps/ftwi_3.Tpo -c ftwi_3.c  -fPIC -DPIC -o .libs/ftwi_3.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fni_64.lo -MD -MP -MF .deps/fni_64.Tpo -c fni_64.c -o fni_64.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_3.lo -MD -MP -MF .deps/ftwi_3.Tpo -c ftwi_3.c -o ftwi_3.o >/dev/null 2>&1
+mv -f .deps/ftwi_3.Tpo .deps/ftwi_3.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_4.lo -MD -MP -MF .deps/ftwi_4.Tpo -c -o ftwi_4.lo ftwi_4.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_4.lo -MD -MP -MF .deps/ftwi_4.Tpo -c ftwi_4.c  -fPIC -DPIC -o .libs/ftwi_4.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_4.lo -MD -MP -MF .deps/ftwi_4.Tpo -c ftwi_4.c -o ftwi_4.o >/dev/null 2>&1
+mv -f .deps/ftwi_4.Tpo .deps/ftwi_4.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_5.lo -MD -MP -MF .deps/ftwi_5.Tpo -c -o ftwi_5.lo ftwi_5.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_5.lo -MD -MP -MF .deps/ftwi_5.Tpo -c ftwi_5.c  -fPIC -DPIC -o .libs/ftwi_5.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_5.lo -MD -MP -MF .deps/ftwi_5.Tpo -c ftwi_5.c -o ftwi_5.o >/dev/null 2>&1
+mv -f .deps/ftwi_5.Tpo .deps/ftwi_5.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_6.lo -MD -MP -MF .deps/ftwi_6.Tpo -c -o ftwi_6.lo ftwi_6.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_6.lo -MD -MP -MF .deps/ftwi_6.Tpo -c ftwi_6.c  -fPIC -DPIC -o .libs/ftwi_6.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_6.lo -MD -MP -MF .deps/ftwi_6.Tpo -c ftwi_6.c -o ftwi_6.o >/dev/null 2>&1
+mv -f .deps/ftwi_6.Tpo .deps/ftwi_6.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_7.lo -MD -MP -MF .deps/ftwi_7.Tpo -c -o ftwi_7.lo ftwi_7.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_7.lo -MD -MP -MF .deps/ftwi_7.Tpo -c ftwi_7.c  -fPIC -DPIC -o .libs/ftwi_7.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_7.lo -MD -MP -MF .deps/ftwi_7.Tpo -c ftwi_7.c -o ftwi_7.o >/dev/null 2>&1
+mv -f .deps/fni_64.Tpo .deps/fni_64.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_8.lo -MD -MP -MF .deps/ftwi_8.Tpo -c -o ftwi_8.lo ftwi_8.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_8.lo -MD -MP -MF .deps/ftwi_8.Tpo -c ftwi_8.c  -fPIC -DPIC -o .libs/ftwi_8.o
+mv -f .deps/ftwi_7.Tpo .deps/ftwi_7.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_9.lo -MD -MP -MF .deps/ftwi_9.Tpo -c -o ftwi_9.lo ftwi_9.c
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_9.lo -MD -MP -MF .deps/ftwi_9.Tpo -c ftwi_9.c  -fPIC -DPIC -o .libs/ftwi_9.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_8.lo -MD -MP -MF .deps/ftwi_8.Tpo -c ftwi_8.c -o ftwi_8.o >/dev/null 2>&1
+mv -f .deps/ftwi_8.Tpo .deps/ftwi_8.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_10.lo -MD -MP -MF .deps/ftwi_10.Tpo -c -o ftwi_10.lo ftwi_10.c
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_9.lo -MD -MP -MF .deps/ftwi_9.Tpo -c ftwi_9.c -o ftwi_9.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_10.lo -MD -MP -MF .deps/ftwi_10.Tpo -c ftwi_10.c  -fPIC -DPIC -o .libs/ftwi_10.o
+mv -f .deps/ftwi_9.Tpo .deps/ftwi_9.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_16.lo -MD -MP -MF .deps/ftwi_16.Tpo -c -o ftwi_16.lo ftwi_16.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_16.lo -MD -MP -MF .deps/ftwi_16.Tpo -c ftwi_16.c  -fPIC -DPIC -o .libs/ftwi_16.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_10.lo -MD -MP -MF .deps/ftwi_10.Tpo -c ftwi_10.c -o ftwi_10.o >/dev/null 2>&1
+mv -f .deps/ftwi_10.Tpo .deps/ftwi_10.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_32.lo -MD -MP -MF .deps/ftwi_32.Tpo -c -o ftwi_32.lo ftwi_32.c
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_16.lo -MD -MP -MF .deps/ftwi_16.Tpo -c ftwi_16.c -o ftwi_16.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_32.lo -MD -MP -MF .deps/ftwi_32.Tpo -c ftwi_32.c  -fPIC -DPIC -o .libs/ftwi_32.o
+mv -f .deps/ftwi_16.Tpo .deps/ftwi_16.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_64.lo -MD -MP -MF .deps/ftwi_64.Tpo -c -o ftwi_64.lo ftwi_64.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_64.lo -MD -MP -MF .deps/ftwi_64.Tpo -c ftwi_64.c  -fPIC -DPIC -o .libs/ftwi_64.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_32.lo -MD -MP -MF .deps/ftwi_32.Tpo -c ftwi_32.c -o ftwi_32.o >/dev/null 2>&1
+mv -f .deps/ftwi_32.Tpo .deps/ftwi_32.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT timer.lo -MD -MP -MF .deps/timer.Tpo -c -o timer.lo timer.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT timer.lo -MD -MP -MF .deps/timer.Tpo -c timer.c  -fPIC -DPIC -o .libs/timer.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT timer.lo -MD -MP -MF .deps/timer.Tpo -c timer.c -o timer.o >/dev/null 2>&1
+mv -f .deps/timer.Tpo .deps/timer.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT config.lo -MD -MP -MF .deps/config.Tpo -c -o config.lo config.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT config.lo -MD -MP -MF .deps/config.Tpo -c config.c  -fPIC -DPIC -o .libs/config.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT config.lo -MD -MP -MF .deps/config.Tpo -c config.c -o config.o >/dev/null 2>&1
+mv -f .deps/config.Tpo .deps/config.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT planner.lo -MD -MP -MF .deps/planner.Tpo -c -o planner.lo planner.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT planner.lo -MD -MP -MF .deps/planner.Tpo -c planner.c  -fPIC -DPIC -o .libs/planner.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT ftwi_64.lo -MD -MP -MF .deps/ftwi_64.Tpo -c ftwi_64.c -o ftwi_64.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT planner.lo -MD -MP -MF .deps/planner.Tpo -c planner.c -o planner.o >/dev/null 2>&1
+mv -f .deps/planner.Tpo .deps/planner.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT twiddle.lo -MD -MP -MF .deps/twiddle.Tpo -c -o twiddle.lo twiddle.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT twiddle.lo -MD -MP -MF .deps/twiddle.Tpo -c twiddle.c  -fPIC -DPIC -o .libs/twiddle.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT twiddle.lo -MD -MP -MF .deps/twiddle.Tpo -c twiddle.c -o twiddle.o >/dev/null 2>&1
+mv -f .deps/twiddle.Tpo .deps/twiddle.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT executor.lo -MD -MP -MF .deps/executor.Tpo -c -o executor.lo executor.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT executor.lo -MD -MP -MF .deps/executor.Tpo -c executor.c  -fPIC -DPIC -o .libs/executor.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT executor.lo -MD -MP -MF .deps/executor.Tpo -c executor.c -o executor.o >/dev/null 2>&1
+mv -f .deps/executor.Tpo .deps/executor.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT generic.lo -MD -MP -MF .deps/generic.Tpo -c -o generic.lo generic.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT generic.lo -MD -MP -MF .deps/generic.Tpo -c generic.c  -fPIC -DPIC -o .libs/generic.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT generic.lo -MD -MP -MF .deps/generic.Tpo -c generic.c -o generic.o >/dev/null 2>&1
+mv -f .deps/ftwi_64.Tpo .deps/ftwi_64.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fftwnd.lo -MD -MP -MF .deps/fftwnd.Tpo -c -o fftwnd.lo fftwnd.c
+mv -f .deps/generic.Tpo .deps/generic.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT malloc.lo -MD -MP -MF .deps/malloc.Tpo -c -o malloc.lo malloc.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fftwnd.lo -MD -MP -MF .deps/fftwnd.Tpo -c fftwnd.c  -fPIC -DPIC -o .libs/fftwnd.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT malloc.lo -MD -MP -MF .deps/malloc.Tpo -c malloc.c  -fPIC -DPIC -o .libs/malloc.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT malloc.lo -MD -MP -MF .deps/malloc.Tpo -c malloc.c -o malloc.o >/dev/null 2>&1
+mv -f .deps/malloc.Tpo .deps/malloc.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT wisdom.lo -MD -MP -MF .deps/wisdom.Tpo -c -o wisdom.lo wisdom.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT wisdom.lo -MD -MP -MF .deps/wisdom.Tpo -c wisdom.c  -fPIC -DPIC -o .libs/wisdom.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT wisdom.lo -MD -MP -MF .deps/wisdom.Tpo -c wisdom.c -o wisdom.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fftwnd.lo -MD -MP -MF .deps/fftwnd.Tpo -c fftwnd.c -o fftwnd.o >/dev/null 2>&1
+mv -f .deps/wisdom.Tpo .deps/wisdom.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT wisdomio.lo -MD -MP -MF .deps/wisdomio.Tpo -c -o wisdomio.lo wisdomio.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT wisdomio.lo -MD -MP -MF .deps/wisdomio.Tpo -c wisdomio.c  -fPIC -DPIC -o .libs/wisdomio.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT wisdomio.lo -MD -MP -MF .deps/wisdomio.Tpo -c wisdomio.c -o wisdomio.o >/dev/null 2>&1
+mv -f .deps/wisdomio.Tpo .deps/wisdomio.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT putils.lo -MD -MP -MF .deps/putils.Tpo -c -o putils.lo putils.c
+mv -f .deps/fftwnd.Tpo .deps/fftwnd.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rader.lo -MD -MP -MF .deps/rader.Tpo -c -o rader.lo rader.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT putils.lo -MD -MP -MF .deps/putils.Tpo -c putils.c  -fPIC -DPIC -o .libs/putils.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rader.lo -MD -MP -MF .deps/rader.Tpo -c rader.c  -fPIC -DPIC -o .libs/rader.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rader.lo -MD -MP -MF .deps/rader.Tpo -c rader.c -o rader.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT putils.lo -MD -MP -MF .deps/putils.Tpo -c putils.c -o putils.o >/dev/null 2>&1
+mv -f .deps/rader.Tpo .deps/rader.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fftwf77.lo -MD -MP -MF .deps/fftwf77.Tpo -c -o fftwf77.lo fftwf77.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fftwf77.lo -MD -MP -MF .deps/fftwf77.Tpo -c fftwf77.c  -fPIC -DPIC -o .libs/fftwf77.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fftwf77.lo -MD -MP -MF .deps/fftwf77.Tpo -c fftwf77.c -o fftwf77.o >/dev/null 2>&1
+mv -f .deps/putils.Tpo .deps/putils.Plo
+mv -f .deps/fftwf77.Tpo .deps/fftwf77.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=link cc  -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -version-info 2:7:0 -L/usr/local/mpi/openmpi/lib -L/usr/local/lib -Wl,-rpath=/usr/local/lib/gcc46 -o libfftw.la -rpath /usr/local/mpi/openmpi/lib fn_1.lo fn_2.lo fn_3.lo fn_4.lo fn_5.lo fn_6.lo fn_7.lo fn_8.lo fn_9.lo fn_10.lo fn_11.lo fn_12.lo fn_13.lo fn_14.lo fn_15.lo fn_16.lo fn_32.lo fn_64.lo ftw_2.lo ftw_3.lo ftw_4.lo ftw_5.lo ftw_6.lo ftw_7.lo ftw_8.lo ftw_9.lo ftw_10.lo ftw_16.lo ftw_32.lo ftw_64.lo fni_1.lo fni_2.lo fni_3.lo fni_4.lo fni_5.lo fni_6.lo fni_7.lo fni_8.lo fni_9.lo fni_10.lo fni_11.lo fni_12.lo fni_13.lo fni_14.lo fni_15.lo fni_16.lo fni_32.lo fni_64.lo ftwi_2.lo ftwi_3.lo ftwi_4.lo ftwi_5.lo ftwi_6.lo ftwi_7.lo ftwi_8.lo ftwi_9.lo ftwi_10.lo ftwi_16.lo ftwi_32.lo ftwi_64.lo timer.lo config.lo planner.lo twiddle.lo executor.lo generic.lo fftwnd.lo malloc.lo wisdom.lo wisdomio.lo putils.lo rader.lo fftwf77.lo  -lm 
+libtool: link: cc -shared  -fPIC -DPIC  .libs/fn_1.o .libs/fn_2.o .libs/fn_3.o .libs/fn_4.o .libs/fn_5.o .libs/fn_6.o .libs/fn_7.o .libs/fn_8.o .libs/fn_9.o .libs/fn_10.o .libs/fn_11.o .libs/fn_12.o .libs/fn_13.o .libs/fn_14.o .libs/fn_15.o .libs/fn_16.o .libs/fn_32.o .libs/fn_64.o .libs/ftw_2.o .libs/ftw_3.o .libs/ftw_4.o .libs/ftw_5.o .libs/ftw_6.o .libs/ftw_7.o .libs/ftw_8.o .libs/ftw_9.o .libs/ftw_10.o .libs/ftw_16.o .libs/ftw_32.o .libs/ftw_64.o .libs/fni_1.o .libs/fni_2.o .libs/fni_3.o .libs/fni_4.o .libs/fni_5.o .libs/fni_6.o .libs/fni_7.o .libs/fni_8.o .libs/fni_9.o .libs/fni_10.o .libs/fni_11.o .libs/fni_12.o .libs/fni_13.o .libs/fni_14.o .libs/fni_15.o .libs/fni_16.o .libs/fni_32.o .libs/fni_64.o .libs/ftwi_2.o .libs/ftwi_3.o .libs/ftwi_4.o .libs/ftwi_5.o .libs/ftwi_6.o .libs/ftwi_7.o .libs/ftwi_8.o .libs/ftwi_9.o .libs/ftwi_10.o .libs/ftwi_16.o .libs/ftwi_32.o .libs/ftwi_64.o .libs/timer.o .libs/config.o .libs/planner.o .libs/twiddle.o .libs/executor.o .libs/generic.o .libs/fftwnd.o .libs/malloc.o .libs/wisdom.o .libs/wisdomio.o .libs/putils.o .libs/rader.o .libs/fftwf77.o   -L/usr/local/mpi/openmpi/lib -L/usr/local/lib -lm  -O2 -Wl,-rpath=/usr/local/lib/gcc46 -Wl,-rpath=/usr/local/lib/gcc46   -Wl,-soname -Wl,libfftw.so.2 -o .libs/libfftw.so.2
+libtool: link: (cd ".libs" && rm -f "libfftw.so" && ln -s "libfftw.so.2" "libfftw.so")
+libtool: link: (cd ".libs" && rm -f "libfftw.so" && ln -s "libfftw.so.2" "libfftw.so")
+libtool: link: ar cru .libs/libfftw.a  fn_1.o fn_2.o fn_3.o fn_4.o fn_5.o fn_6.o fn_7.o fn_8.o fn_9.o fn_10.o fn_11.o fn_12.o fn_13.o fn_14.o fn_15.o fn_16.o fn_32.o fn_64.o ftw_2.o ftw_3.o ftw_4.o ftw_5.o ftw_6.o ftw_7.o ftw_8.o ftw_9.o ftw_10.o ftw_16.o ftw_32.o ftw_64.o fni_1.o fni_2.o fni_3.o fni_4.o fni_5.o fni_6.o fni_7.o fni_8.o fni_9.o fni_10.o fni_11.o fni_12.o fni_13.o fni_14.o fni_15.o fni_16.o fni_32.o fni_64.o ftwi_2.o ftwi_3.o ftwi_4.o ftwi_5.o ftwi_6.o ftwi_7.o ftwi_8.o ftwi_9.o ftwi_10.o ftwi_16.o ftwi_32.o ftwi_64.o timer.o config.o planner.o twiddle.o executor.o generic.o fftwnd.o malloc.o wisdom.o wisdomio.o putils.o rader.o fftwf77.o
+libtool: link: ranlib .libs/libfftw.a
+libtool: link: ( cd ".libs" && rm -f "libfftw.la" && ln -s "../libfftw.la" "libfftw.la" )
+gmake[2]: Leaving directory `/usr/home/bacon/Prog/Ports/ports/math/fftw-openmpi/work/fftw-2.1.5/fftw'
+gmake[1]: Leaving directory `/usr/home/bacon/Prog/Ports/ports/math/fftw-openmpi/work/fftw-2.1.5/fftw'
+Making all in rfftw
+gmake[1]: Entering directory `/usr/home/bacon/Prog/Ports/ports/math/fftw-openmpi/work/fftw-2.1.5/rfftw'
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_1.lo -MD -MP -MF .deps/frc_1.Tpo -c -o frc_1.lo frc_1.c
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_2.lo -MD -MP -MF .deps/frc_2.Tpo -c -o frc_2.lo frc_2.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_1.lo -MD -MP -MF .deps/frc_1.Tpo -c frc_1.c  -fPIC -DPIC -o .libs/frc_1.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_2.lo -MD -MP -MF .deps/frc_2.Tpo -c frc_2.c  -fPIC -DPIC -o .libs/frc_2.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_1.lo -MD -MP -MF .deps/frc_1.Tpo -c frc_1.c -o frc_1.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_2.lo -MD -MP -MF .deps/frc_2.Tpo -c frc_2.c -o frc_2.o >/dev/null 2>&1
+mv -f .deps/frc_1.Tpo .deps/frc_1.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_3.lo -MD -MP -MF .deps/frc_3.Tpo -c -o frc_3.lo frc_3.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_3.lo -MD -MP -MF .deps/frc_3.Tpo -c frc_3.c  -fPIC -DPIC -o .libs/frc_3.o
+mv -f .deps/frc_2.Tpo .deps/frc_2.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_4.lo -MD -MP -MF .deps/frc_4.Tpo -c -o frc_4.lo frc_4.c
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_3.lo -MD -MP -MF .deps/frc_3.Tpo -c frc_3.c -o frc_3.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_4.lo -MD -MP -MF .deps/frc_4.Tpo -c frc_4.c  -fPIC -DPIC -o .libs/frc_4.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_4.lo -MD -MP -MF .deps/frc_4.Tpo -c frc_4.c -o frc_4.o >/dev/null 2>&1
+mv -f .deps/frc_3.Tpo .deps/frc_3.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_5.lo -MD -MP -MF .deps/frc_5.Tpo -c -o frc_5.lo frc_5.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_5.lo -MD -MP -MF .deps/frc_5.Tpo -c frc_5.c  -fPIC -DPIC -o .libs/frc_5.o
+mv -f .deps/frc_4.Tpo .deps/frc_4.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_6.lo -MD -MP -MF .deps/frc_6.Tpo -c -o frc_6.lo frc_6.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_6.lo -MD -MP -MF .deps/frc_6.Tpo -c frc_6.c  -fPIC -DPIC -o .libs/frc_6.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_5.lo -MD -MP -MF .deps/frc_5.Tpo -c frc_5.c -o frc_5.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_6.lo -MD -MP -MF .deps/frc_6.Tpo -c frc_6.c -o frc_6.o >/dev/null 2>&1
+mv -f .deps/frc_5.Tpo .deps/frc_5.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_7.lo -MD -MP -MF .deps/frc_7.Tpo -c -o frc_7.lo frc_7.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_7.lo -MD -MP -MF .deps/frc_7.Tpo -c frc_7.c  -fPIC -DPIC -o .libs/frc_7.o
+mv -f .deps/frc_6.Tpo .deps/frc_6.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_8.lo -MD -MP -MF .deps/frc_8.Tpo -c -o frc_8.lo frc_8.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_8.lo -MD -MP -MF .deps/frc_8.Tpo -c frc_8.c  -fPIC -DPIC -o .libs/frc_8.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_7.lo -MD -MP -MF .deps/frc_7.Tpo -c frc_7.c -o frc_7.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_8.lo -MD -MP -MF .deps/frc_8.Tpo -c frc_8.c -o frc_8.o >/dev/null 2>&1
+mv -f .deps/frc_7.Tpo .deps/frc_7.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_9.lo -MD -MP -MF .deps/frc_9.Tpo -c -o frc_9.lo frc_9.c
+mv -f .deps/frc_8.Tpo .deps/frc_8.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_10.lo -MD -MP -MF .deps/frc_10.Tpo -c -o frc_10.lo frc_10.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_10.lo -MD -MP -MF .deps/frc_10.Tpo -c frc_10.c  -fPIC -DPIC -o .libs/frc_10.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_9.lo -MD -MP -MF .deps/frc_9.Tpo -c frc_9.c  -fPIC -DPIC -o .libs/frc_9.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_10.lo -MD -MP -MF .deps/frc_10.Tpo -c frc_10.c -o frc_10.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_9.lo -MD -MP -MF .deps/frc_9.Tpo -c frc_9.c -o frc_9.o >/dev/null 2>&1
+mv -f .deps/frc_10.Tpo .deps/frc_10.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_11.lo -MD -MP -MF .deps/frc_11.Tpo -c -o frc_11.lo frc_11.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_11.lo -MD -MP -MF .deps/frc_11.Tpo -c frc_11.c  -fPIC -DPIC -o .libs/frc_11.o
+mv -f .deps/frc_9.Tpo .deps/frc_9.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_12.lo -MD -MP -MF .deps/frc_12.Tpo -c -o frc_12.lo frc_12.c
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_11.lo -MD -MP -MF .deps/frc_11.Tpo -c frc_11.c -o frc_11.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_12.lo -MD -MP -MF .deps/frc_12.Tpo -c frc_12.c  -fPIC -DPIC -o .libs/frc_12.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_12.lo -MD -MP -MF .deps/frc_12.Tpo -c frc_12.c -o frc_12.o >/dev/null 2>&1
+mv -f .deps/frc_11.Tpo .deps/frc_11.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_13.lo -MD -MP -MF .deps/frc_13.Tpo -c -o frc_13.lo frc_13.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_13.lo -MD -MP -MF .deps/frc_13.Tpo -c frc_13.c  -fPIC -DPIC -o .libs/frc_13.o
+mv -f .deps/frc_12.Tpo .deps/frc_12.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_14.lo -MD -MP -MF .deps/frc_14.Tpo -c -o frc_14.lo frc_14.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_14.lo -MD -MP -MF .deps/frc_14.Tpo -c frc_14.c  -fPIC -DPIC -o .libs/frc_14.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_13.lo -MD -MP -MF .deps/frc_13.Tpo -c frc_13.c -o frc_13.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_14.lo -MD -MP -MF .deps/frc_14.Tpo -c frc_14.c -o frc_14.o >/dev/null 2>&1
+mv -f .deps/frc_13.Tpo .deps/frc_13.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_15.lo -MD -MP -MF .deps/frc_15.Tpo -c -o frc_15.lo frc_15.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_15.lo -MD -MP -MF .deps/frc_15.Tpo -c frc_15.c  -fPIC -DPIC -o .libs/frc_15.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_15.lo -MD -MP -MF .deps/frc_15.Tpo -c frc_15.c -o frc_15.o >/dev/null 2>&1
+mv -f .deps/frc_14.Tpo .deps/frc_14.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_16.lo -MD -MP -MF .deps/frc_16.Tpo -c -o frc_16.lo frc_16.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_16.lo -MD -MP -MF .deps/frc_16.Tpo -c frc_16.c  -fPIC -DPIC -o .libs/frc_16.o
+mv -f .deps/frc_15.Tpo .deps/frc_15.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_32.lo -MD -MP -MF .deps/frc_32.Tpo -c -o frc_32.lo frc_32.c
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_16.lo -MD -MP -MF .deps/frc_16.Tpo -c frc_16.c -o frc_16.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_32.lo -MD -MP -MF .deps/frc_32.Tpo -c frc_32.c  -fPIC -DPIC -o .libs/frc_32.o
+mv -f .deps/frc_16.Tpo .deps/frc_16.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_64.lo -MD -MP -MF .deps/frc_64.Tpo -c -o frc_64.lo frc_64.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_64.lo -MD -MP -MF .deps/frc_64.Tpo -c frc_64.c  -fPIC -DPIC -o .libs/frc_64.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_32.lo -MD -MP -MF .deps/frc_32.Tpo -c frc_32.c -o frc_32.o >/dev/null 2>&1
+mv -f .deps/frc_32.Tpo .deps/frc_32.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_128.lo -MD -MP -MF .deps/frc_128.Tpo -c -o frc_128.lo frc_128.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_128.lo -MD -MP -MF .deps/frc_128.Tpo -c frc_128.c  -fPIC -DPIC -o .libs/frc_128.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_64.lo -MD -MP -MF .deps/frc_64.Tpo -c frc_64.c -o frc_64.o >/dev/null 2>&1
+mv -f .deps/frc_64.Tpo .deps/frc_64.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_2.lo -MD -MP -MF .deps/fhf_2.Tpo -c -o fhf_2.lo fhf_2.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_2.lo -MD -MP -MF .deps/fhf_2.Tpo -c fhf_2.c  -fPIC -DPIC -o .libs/fhf_2.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_2.lo -MD -MP -MF .deps/fhf_2.Tpo -c fhf_2.c -o fhf_2.o >/dev/null 2>&1
+mv -f .deps/fhf_2.Tpo .deps/fhf_2.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_3.lo -MD -MP -MF .deps/fhf_3.Tpo -c -o fhf_3.lo fhf_3.c
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT frc_128.lo -MD -MP -MF .deps/frc_128.Tpo -c frc_128.c -o frc_128.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_3.lo -MD -MP -MF .deps/fhf_3.Tpo -c fhf_3.c  -fPIC -DPIC -o .libs/fhf_3.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_3.lo -MD -MP -MF .deps/fhf_3.Tpo -c fhf_3.c -o fhf_3.o >/dev/null 2>&1
+mv -f .deps/fhf_3.Tpo .deps/fhf_3.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_4.lo -MD -MP -MF .deps/fhf_4.Tpo -c -o fhf_4.lo fhf_4.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_4.lo -MD -MP -MF .deps/fhf_4.Tpo -c fhf_4.c  -fPIC -DPIC -o .libs/fhf_4.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_4.lo -MD -MP -MF .deps/fhf_4.Tpo -c fhf_4.c -o fhf_4.o >/dev/null 2>&1
+mv -f .deps/fhf_4.Tpo .deps/fhf_4.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_5.lo -MD -MP -MF .deps/fhf_5.Tpo -c -o fhf_5.lo fhf_5.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_5.lo -MD -MP -MF .deps/fhf_5.Tpo -c fhf_5.c  -fPIC -DPIC -o .libs/fhf_5.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_5.lo -MD -MP -MF .deps/fhf_5.Tpo -c fhf_5.c -o fhf_5.o >/dev/null 2>&1
+mv -f .deps/fhf_5.Tpo .deps/fhf_5.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_6.lo -MD -MP -MF .deps/fhf_6.Tpo -c -o fhf_6.lo fhf_6.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_6.lo -MD -MP -MF .deps/fhf_6.Tpo -c fhf_6.c  -fPIC -DPIC -o .libs/fhf_6.o
+mv -f .deps/frc_128.Tpo .deps/frc_128.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_7.lo -MD -MP -MF .deps/fhf_7.Tpo -c -o fhf_7.lo fhf_7.c
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_6.lo -MD -MP -MF .deps/fhf_6.Tpo -c fhf_6.c -o fhf_6.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_7.lo -MD -MP -MF .deps/fhf_7.Tpo -c fhf_7.c  -fPIC -DPIC -o .libs/fhf_7.o
+mv -f .deps/fhf_6.Tpo .deps/fhf_6.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_8.lo -MD -MP -MF .deps/fhf_8.Tpo -c -o fhf_8.lo fhf_8.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_8.lo -MD -MP -MF .deps/fhf_8.Tpo -c fhf_8.c  -fPIC -DPIC -o .libs/fhf_8.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_7.lo -MD -MP -MF .deps/fhf_7.Tpo -c fhf_7.c -o fhf_7.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_8.lo -MD -MP -MF .deps/fhf_8.Tpo -c fhf_8.c -o fhf_8.o >/dev/null 2>&1
+mv -f .deps/fhf_7.Tpo .deps/fhf_7.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_9.lo -MD -MP -MF .deps/fhf_9.Tpo -c -o fhf_9.lo fhf_9.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_9.lo -MD -MP -MF .deps/fhf_9.Tpo -c fhf_9.c  -fPIC -DPIC -o .libs/fhf_9.o
+mv -f .deps/fhf_8.Tpo .deps/fhf_8.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_10.lo -MD -MP -MF .deps/fhf_10.Tpo -c -o fhf_10.lo fhf_10.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_10.lo -MD -MP -MF .deps/fhf_10.Tpo -c fhf_10.c  -fPIC -DPIC -o .libs/fhf_10.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_9.lo -MD -MP -MF .deps/fhf_9.Tpo -c fhf_9.c -o fhf_9.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_10.lo -MD -MP -MF .deps/fhf_10.Tpo -c fhf_10.c -o fhf_10.o >/dev/null 2>&1
+mv -f .deps/fhf_9.Tpo .deps/fhf_9.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_16.lo -MD -MP -MF .deps/fhf_16.Tpo -c -o fhf_16.lo fhf_16.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_16.lo -MD -MP -MF .deps/fhf_16.Tpo -c fhf_16.c  -fPIC -DPIC -o .libs/fhf_16.o
+mv -f .deps/fhf_10.Tpo .deps/fhf_10.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_32.lo -MD -MP -MF .deps/fhf_32.Tpo -c -o fhf_32.lo fhf_32.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_32.lo -MD -MP -MF .deps/fhf_32.Tpo -c fhf_32.c  -fPIC -DPIC -o .libs/fhf_32.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_16.lo -MD -MP -MF .deps/fhf_16.Tpo -c fhf_16.c -o fhf_16.o >/dev/null 2>&1
+mv -f .deps/fhf_16.Tpo .deps/fhf_16.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_1.lo -MD -MP -MF .deps/fcr_1.Tpo -c -o fcr_1.lo fcr_1.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_1.lo -MD -MP -MF .deps/fcr_1.Tpo -c fcr_1.c  -fPIC -DPIC -o .libs/fcr_1.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_1.lo -MD -MP -MF .deps/fcr_1.Tpo -c fcr_1.c -o fcr_1.o >/dev/null 2>&1
+mv -f .deps/fcr_1.Tpo .deps/fcr_1.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_2.lo -MD -MP -MF .deps/fcr_2.Tpo -c -o fcr_2.lo fcr_2.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_2.lo -MD -MP -MF .deps/fcr_2.Tpo -c fcr_2.c  -fPIC -DPIC -o .libs/fcr_2.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_2.lo -MD -MP -MF .deps/fcr_2.Tpo -c fcr_2.c -o fcr_2.o >/dev/null 2>&1
+mv -f .deps/fcr_2.Tpo .deps/fcr_2.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_3.lo -MD -MP -MF .deps/fcr_3.Tpo -c -o fcr_3.lo fcr_3.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_3.lo -MD -MP -MF .deps/fcr_3.Tpo -c fcr_3.c  -fPIC -DPIC -o .libs/fcr_3.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_3.lo -MD -MP -MF .deps/fcr_3.Tpo -c fcr_3.c -o fcr_3.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+mv -f .deps/fcr_3.Tpo .deps/fcr_3.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_4.lo -MD -MP -MF .deps/fcr_4.Tpo -c -o fcr_4.lo fcr_4.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhf_32.lo -MD -MP -MF .deps/fhf_32.Tpo -c fhf_32.c -o fhf_32.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_4.lo -MD -MP -MF .deps/fcr_4.Tpo -c fcr_4.c  -fPIC -DPIC -o .libs/fcr_4.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_4.lo -MD -MP -MF .deps/fcr_4.Tpo -c fcr_4.c -o fcr_4.o >/dev/null 2>&1
+mv -f .deps/fcr_4.Tpo .deps/fcr_4.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_5.lo -MD -MP -MF .deps/fcr_5.Tpo -c -o fcr_5.lo fcr_5.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_5.lo -MD -MP -MF .deps/fcr_5.Tpo -c fcr_5.c  -fPIC -DPIC -o .libs/fcr_5.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_5.lo -MD -MP -MF .deps/fcr_5.Tpo -c fcr_5.c -o fcr_5.o >/dev/null 2>&1
+mv -f .deps/fcr_5.Tpo .deps/fcr_5.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_6.lo -MD -MP -MF .deps/fcr_6.Tpo -c -o fcr_6.lo fcr_6.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_6.lo -MD -MP -MF .deps/fcr_6.Tpo -c fcr_6.c  -fPIC -DPIC -o .libs/fcr_6.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_6.lo -MD -MP -MF .deps/fcr_6.Tpo -c fcr_6.c -o fcr_6.o >/dev/null 2>&1
+mv -f .deps/fcr_6.Tpo .deps/fcr_6.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_7.lo -MD -MP -MF .deps/fcr_7.Tpo -c -o fcr_7.lo fcr_7.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_7.lo -MD -MP -MF .deps/fcr_7.Tpo -c fcr_7.c  -fPIC -DPIC -o .libs/fcr_7.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_7.lo -MD -MP -MF .deps/fcr_7.Tpo -c fcr_7.c -o fcr_7.o >/dev/null 2>&1
+mv -f .deps/fhf_32.Tpo .deps/fhf_32.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_8.lo -MD -MP -MF .deps/fcr_8.Tpo -c -o fcr_8.lo fcr_8.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_8.lo -MD -MP -MF .deps/fcr_8.Tpo -c fcr_8.c  -fPIC -DPIC -o .libs/fcr_8.o
+mv -f .deps/fcr_7.Tpo .deps/fcr_7.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_9.lo -MD -MP -MF .deps/fcr_9.Tpo -c -o fcr_9.lo fcr_9.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_9.lo -MD -MP -MF .deps/fcr_9.Tpo -c fcr_9.c  -fPIC -DPIC -o .libs/fcr_9.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_8.lo -MD -MP -MF .deps/fcr_8.Tpo -c fcr_8.c -o fcr_8.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_9.lo -MD -MP -MF .deps/fcr_9.Tpo -c fcr_9.c -o fcr_9.o >/dev/null 2>&1
+mv -f .deps/fcr_8.Tpo .deps/fcr_8.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_10.lo -MD -MP -MF .deps/fcr_10.Tpo -c -o fcr_10.lo fcr_10.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_10.lo -MD -MP -MF .deps/fcr_10.Tpo -c fcr_10.c  -fPIC -DPIC -o .libs/fcr_10.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_10.lo -MD -MP -MF .deps/fcr_10.Tpo -c fcr_10.c -o fcr_10.o >/dev/null 2>&1
+mv -f .deps/fcr_9.Tpo .deps/fcr_9.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_11.lo -MD -MP -MF .deps/fcr_11.Tpo -c -o fcr_11.lo fcr_11.c
+mv -f .deps/fcr_10.Tpo .deps/fcr_10.Plo
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_11.lo -MD -MP -MF .deps/fcr_11.Tpo -c fcr_11.c  -fPIC -DPIC -o .libs/fcr_11.o
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_12.lo -MD -MP -MF .deps/fcr_12.Tpo -c -o fcr_12.lo fcr_12.c
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_11.lo -MD -MP -MF .deps/fcr_11.Tpo -c fcr_11.c -o fcr_11.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_12.lo -MD -MP -MF .deps/fcr_12.Tpo -c fcr_12.c  -fPIC -DPIC -o .libs/fcr_12.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_12.lo -MD -MP -MF .deps/fcr_12.Tpo -c fcr_12.c -o fcr_12.o >/dev/null 2>&1
+mv -f .deps/fcr_11.Tpo .deps/fcr_11.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_13.lo -MD -MP -MF .deps/fcr_13.Tpo -c -o fcr_13.lo fcr_13.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_13.lo -MD -MP -MF .deps/fcr_13.Tpo -c fcr_13.c  -fPIC -DPIC -o .libs/fcr_13.o
+mv -f .deps/fcr_12.Tpo .deps/fcr_12.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_14.lo -MD -MP -MF .deps/fcr_14.Tpo -c -o fcr_14.lo fcr_14.c
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_13.lo -MD -MP -MF .deps/fcr_13.Tpo -c fcr_13.c -o fcr_13.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_14.lo -MD -MP -MF .deps/fcr_14.Tpo -c fcr_14.c  -fPIC -DPIC -o .libs/fcr_14.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_14.lo -MD -MP -MF .deps/fcr_14.Tpo -c fcr_14.c -o fcr_14.o >/dev/null 2>&1
+mv -f .deps/fcr_13.Tpo .deps/fcr_13.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_15.lo -MD -MP -MF .deps/fcr_15.Tpo -c -o fcr_15.lo fcr_15.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_15.lo -MD -MP -MF .deps/fcr_15.Tpo -c fcr_15.c  -fPIC -DPIC -o .libs/fcr_15.o
+mv -f .deps/fcr_14.Tpo .deps/fcr_14.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_16.lo -MD -MP -MF .deps/fcr_16.Tpo -c -o fcr_16.lo fcr_16.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_16.lo -MD -MP -MF .deps/fcr_16.Tpo -c fcr_16.c  -fPIC -DPIC -o .libs/fcr_16.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_15.lo -MD -MP -MF .deps/fcr_15.Tpo -c fcr_15.c -o fcr_15.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_16.lo -MD -MP -MF .deps/fcr_16.Tpo -c fcr_16.c -o fcr_16.o >/dev/null 2>&1
+mv -f .deps/fcr_16.Tpo .deps/fcr_16.Plo
+mv -f .deps/fcr_15.Tpo .deps/fcr_15.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_32.lo -MD -MP -MF .deps/fcr_32.Tpo -c -o fcr_32.lo fcr_32.c
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_64.lo -MD -MP -MF .deps/fcr_64.Tpo -c -o fcr_64.lo fcr_64.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_64.lo -MD -MP -MF .deps/fcr_64.Tpo -c fcr_64.c  -fPIC -DPIC -o .libs/fcr_64.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_32.lo -MD -MP -MF .deps/fcr_32.Tpo -c fcr_32.c  -fPIC -DPIC -o .libs/fcr_32.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_32.lo -MD -MP -MF .deps/fcr_32.Tpo -c fcr_32.c -o fcr_32.o >/dev/null 2>&1
+mv -f .deps/fcr_32.Tpo .deps/fcr_32.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_128.lo -MD -MP -MF .deps/fcr_128.Tpo -c -o fcr_128.lo fcr_128.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_128.lo -MD -MP -MF .deps/fcr_128.Tpo -c fcr_128.c  -fPIC -DPIC -o .libs/fcr_128.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_64.lo -MD -MP -MF .deps/fcr_64.Tpo -c fcr_64.c -o fcr_64.o >/dev/null 2>&1
+mv -f .deps/fcr_64.Tpo .deps/fcr_64.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_2.lo -MD -MP -MF .deps/fhb_2.Tpo -c -o fhb_2.lo fhb_2.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_2.lo -MD -MP -MF .deps/fhb_2.Tpo -c fhb_2.c  -fPIC -DPIC -o .libs/fhb_2.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_2.lo -MD -MP -MF .deps/fhb_2.Tpo -c fhb_2.c -o fhb_2.o >/dev/null 2>&1
+mv -f .deps/fhb_2.Tpo .deps/fhb_2.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_3.lo -MD -MP -MF .deps/fhb_3.Tpo -c -o fhb_3.lo fhb_3.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_3.lo -MD -MP -MF .deps/fhb_3.Tpo -c fhb_3.c  -fPIC -DPIC -o .libs/fhb_3.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_3.lo -MD -MP -MF .deps/fhb_3.Tpo -c fhb_3.c -o fhb_3.o >/dev/null 2>&1
+mv -f .deps/fhb_3.Tpo .deps/fhb_3.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_4.lo -MD -MP -MF .deps/fhb_4.Tpo -c -o fhb_4.lo fhb_4.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_4.lo -MD -MP -MF .deps/fhb_4.Tpo -c fhb_4.c  -fPIC -DPIC -o .libs/fhb_4.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fcr_128.lo -MD -MP -MF .deps/fcr_128.Tpo -c fcr_128.c -o fcr_128.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_4.lo -MD -MP -MF .deps/fhb_4.Tpo -c fhb_4.c -o fhb_4.o >/dev/null 2>&1
+mv -f .deps/fhb_4.Tpo .deps/fhb_4.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_5.lo -MD -MP -MF .deps/fhb_5.Tpo -c -o fhb_5.lo fhb_5.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_5.lo -MD -MP -MF .deps/fhb_5.Tpo -c fhb_5.c  -fPIC -DPIC -o .libs/fhb_5.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_5.lo -MD -MP -MF .deps/fhb_5.Tpo -c fhb_5.c -o fhb_5.o >/dev/null 2>&1
+mv -f .deps/fhb_5.Tpo .deps/fhb_5.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_6.lo -MD -MP -MF .deps/fhb_6.Tpo -c -o fhb_6.lo fhb_6.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_6.lo -MD -MP -MF .deps/fhb_6.Tpo -c fhb_6.c  -fPIC -DPIC -o .libs/fhb_6.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_6.lo -MD -MP -MF .deps/fhb_6.Tpo -c fhb_6.c -o fhb_6.o >/dev/null 2>&1
+mv -f .deps/fhb_6.Tpo .deps/fhb_6.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_7.lo -MD -MP -MF .deps/fhb_7.Tpo -c -o fhb_7.lo fhb_7.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_7.lo -MD -MP -MF .deps/fhb_7.Tpo -c fhb_7.c  -fPIC -DPIC -o .libs/fhb_7.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_7.lo -MD -MP -MF .deps/fhb_7.Tpo -c fhb_7.c -o fhb_7.o >/dev/null 2>&1
+mv -f .deps/fcr_128.Tpo .deps/fcr_128.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_8.lo -MD -MP -MF .deps/fhb_8.Tpo -c -o fhb_8.lo fhb_8.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_8.lo -MD -MP -MF .deps/fhb_8.Tpo -c fhb_8.c  -fPIC -DPIC -o .libs/fhb_8.o
+mv -f .deps/fhb_7.Tpo .deps/fhb_7.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_9.lo -MD -MP -MF .deps/fhb_9.Tpo -c -o fhb_9.lo fhb_9.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_9.lo -MD -MP -MF .deps/fhb_9.Tpo -c fhb_9.c  -fPIC -DPIC -o .libs/fhb_9.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_8.lo -MD -MP -MF .deps/fhb_8.Tpo -c fhb_8.c -o fhb_8.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_9.lo -MD -MP -MF .deps/fhb_9.Tpo -c fhb_9.c -o fhb_9.o >/dev/null 2>&1
+mv -f .deps/fhb_8.Tpo .deps/fhb_8.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_10.lo -MD -MP -MF .deps/fhb_10.Tpo -c -o fhb_10.lo fhb_10.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_10.lo -MD -MP -MF .deps/fhb_10.Tpo -c fhb_10.c  -fPIC -DPIC -o .libs/fhb_10.o
+mv -f .deps/fhb_9.Tpo .deps/fhb_9.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_16.lo -MD -MP -MF .deps/fhb_16.Tpo -c -o fhb_16.lo fhb_16.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_16.lo -MD -MP -MF .deps/fhb_16.Tpo -c fhb_16.c  -fPIC -DPIC -o .libs/fhb_16.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_10.lo -MD -MP -MF .deps/fhb_10.Tpo -c fhb_10.c -o fhb_10.o >/dev/null 2>&1
+mv -f .deps/fhb_10.Tpo .deps/fhb_10.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_32.lo -MD -MP -MF .deps/fhb_32.Tpo -c -o fhb_32.lo fhb_32.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_32.lo -MD -MP -MF .deps/fhb_32.Tpo -c fhb_32.c  -fPIC -DPIC -o .libs/fhb_32.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_16.lo -MD -MP -MF .deps/fhb_16.Tpo -c fhb_16.c -o fhb_16.o >/dev/null 2>&1
+mv -f .deps/fhb_16.Tpo .deps/fhb_16.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rconfig.lo -MD -MP -MF .deps/rconfig.Tpo -c -o rconfig.lo rconfig.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rconfig.lo -MD -MP -MF .deps/rconfig.Tpo -c rconfig.c  -fPIC -DPIC -o .libs/rconfig.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rconfig.lo -MD -MP -MF .deps/rconfig.Tpo -c rconfig.c -o rconfig.o >/dev/null 2>&1
+mv -f .deps/rconfig.Tpo .deps/rconfig.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rplanner.lo -MD -MP -MF .deps/rplanner.Tpo -c -o rplanner.lo rplanner.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rplanner.lo -MD -MP -MF .deps/rplanner.Tpo -c rplanner.c  -fPIC -DPIC -o .libs/rplanner.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fhb_32.lo -MD -MP -MF .deps/fhb_32.Tpo -c fhb_32.c -o fhb_32.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rplanner.lo -MD -MP -MF .deps/rplanner.Tpo -c rplanner.c -o rplanner.o >/dev/null 2>&1
+mv -f .deps/rplanner.Tpo .deps/rplanner.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rexec.lo -MD -MP -MF .deps/rexec.Tpo -c -o rexec.lo rexec.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rexec.lo -MD -MP -MF .deps/rexec.Tpo -c rexec.c  -fPIC -DPIC -o .libs/rexec.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rexec.lo -MD -MP -MF .deps/rexec.Tpo -c rexec.c -o rexec.o >/dev/null 2>&1
+mv -f .deps/rexec.Tpo .deps/rexec.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rexec2.lo -MD -MP -MF .deps/rexec2.Tpo -c -o rexec2.lo rexec2.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rexec2.lo -MD -MP -MF .deps/rexec2.Tpo -c rexec2.c  -fPIC -DPIC -o .libs/rexec2.o
+mv -f .deps/fhb_32.Tpo .deps/fhb_32.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rfftwnd.lo -MD -MP -MF .deps/rfftwnd.Tpo -c -o rfftwnd.lo rfftwnd.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rfftwnd.lo -MD -MP -MF .deps/rfftwnd.Tpo -c rfftwnd.c  -fPIC -DPIC -o .libs/rfftwnd.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rexec2.lo -MD -MP -MF .deps/rexec2.Tpo -c rexec2.c -o rexec2.o >/dev/null 2>&1
+mv -f .deps/rexec2.Tpo .deps/rexec2.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rgeneric.lo -MD -MP -MF .deps/rgeneric.Tpo -c -o rgeneric.lo rgeneric.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rgeneric.lo -MD -MP -MF .deps/rgeneric.Tpo -c rgeneric.c  -fPIC -DPIC -o .libs/rgeneric.o
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rfftwnd.lo -MD -MP -MF .deps/rfftwnd.Tpo -c rfftwnd.c -o rfftwnd.o >/dev/null 2>&1
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rgeneric.lo -MD -MP -MF .deps/rgeneric.Tpo -c rgeneric.c -o rgeneric.o >/dev/null 2>&1
+mv -f .deps/rgeneric.Tpo .deps/rgeneric.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rfftwf77.lo -MD -MP -MF .deps/rfftwf77.Tpo -c -o rfftwf77.lo rfftwf77.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rfftwf77.lo -MD -MP -MF .deps/rfftwf77.Tpo -c rfftwf77.c  -fPIC -DPIC -o .libs/rfftwf77.o
+mv -f .deps/rfftwnd.Tpo .deps/rfftwnd.Plo
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rfftwf77.lo -MD -MP -MF .deps/rfftwf77.Tpo -c rfftwf77.c -o rfftwf77.o >/dev/null 2>&1
+mv -f .deps/rfftwf77.Tpo .deps/rfftwf77.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=link cc  -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -version-info 2:7:0 -L/usr/local/mpi/openmpi/lib -L/usr/local/lib -Wl,-rpath=/usr/local/lib/gcc46 -o librfftw.la -rpath /usr/local/mpi/openmpi/lib frc_1.lo frc_2.lo frc_3.lo frc_4.lo frc_5.lo frc_6.lo frc_7.lo frc_8.lo frc_9.lo frc_10.lo frc_11.lo frc_12.lo frc_13.lo frc_14.lo frc_15.lo frc_16.lo frc_32.lo frc_64.lo frc_128.lo fhf_2.lo fhf_3.lo fhf_4.lo fhf_5.lo fhf_6.lo fhf_7.lo fhf_8.lo fhf_9.lo fhf_10.lo fhf_16.lo fhf_32.lo fcr_1.lo fcr_2.lo fcr_3.lo fcr_4.lo fcr_5.lo fcr_6.lo fcr_7.lo fcr_8.lo fcr_9.lo fcr_10.lo fcr_11.lo fcr_12.lo fcr_13.lo fcr_14.lo fcr_15.lo fcr_16.lo fcr_32.lo fcr_64.lo fcr_128.lo fhb_2.lo fhb_3.lo fhb_4.lo fhb_5.lo fhb_6.lo fhb_7.lo fhb_8.lo fhb_9.lo fhb_10.lo fhb_16.lo fhb_32.lo rconfig.lo rplanner.lo rexec.lo rexec2.lo rfftwnd.lo rgeneric.lo rfftwf77.lo  -lm 
+libtool: link: cc -shared  -fPIC -DPIC  .libs/frc_1.o .libs/frc_2.o .libs/frc_3.o .libs/frc_4.o .libs/frc_5.o .libs/frc_6.o .libs/frc_7.o .libs/frc_8.o .libs/frc_9.o .libs/frc_10.o .libs/frc_11.o .libs/frc_12.o .libs/frc_13.o .libs/frc_14.o .libs/frc_15.o .libs/frc_16.o .libs/frc_32.o .libs/frc_64.o .libs/frc_128.o .libs/fhf_2.o .libs/fhf_3.o .libs/fhf_4.o .libs/fhf_5.o .libs/fhf_6.o .libs/fhf_7.o .libs/fhf_8.o .libs/fhf_9.o .libs/fhf_10.o .libs/fhf_16.o .libs/fhf_32.o .libs/fcr_1.o .libs/fcr_2.o .libs/fcr_3.o .libs/fcr_4.o .libs/fcr_5.o .libs/fcr_6.o .libs/fcr_7.o .libs/fcr_8.o .libs/fcr_9.o .libs/fcr_10.o .libs/fcr_11.o .libs/fcr_12.o .libs/fcr_13.o .libs/fcr_14.o .libs/fcr_15.o .libs/fcr_16.o .libs/fcr_32.o .libs/fcr_64.o .libs/fcr_128.o .libs/fhb_2.o .libs/fhb_3.o .libs/fhb_4.o .libs/fhb_5.o .libs/fhb_6.o .libs/fhb_7.o .libs/fhb_8.o .libs/fhb_9.o .libs/fhb_10.o .libs/fhb_16.o .libs/fhb_32.o .libs/rconfig.o .libs/rplanner.o .libs/rexec.o .libs/rexec2.o .libs/rfftwnd.o .libs/rgeneric.o .libs/rfftwf77.o   -L/usr/local/mpi/openmpi/lib -L/usr/local/lib -lm  -O2 -Wl,-rpath=/usr/local/lib/gcc46 -Wl,-rpath=/usr/local/lib/gcc46   -Wl,-soname -Wl,librfftw.so.2 -o .libs/librfftw.so.2
+libtool: link: (cd ".libs" && rm -f "librfftw.so" && ln -s "librfftw.so.2" "librfftw.so")
+libtool: link: (cd ".libs" && rm -f "librfftw.so" && ln -s "librfftw.so.2" "librfftw.so")
+libtool: link: ar cru .libs/librfftw.a  frc_1.o frc_2.o frc_3.o frc_4.o frc_5.o frc_6.o frc_7.o frc_8.o frc_9.o frc_10.o frc_11.o frc_12.o frc_13.o frc_14.o frc_15.o frc_16.o frc_32.o frc_64.o frc_128.o fhf_2.o fhf_3.o fhf_4.o fhf_5.o fhf_6.o fhf_7.o fhf_8.o fhf_9.o fhf_10.o fhf_16.o fhf_32.o fcr_1.o fcr_2.o fcr_3.o fcr_4.o fcr_5.o fcr_6.o fcr_7.o fcr_8.o fcr_9.o fcr_10.o fcr_11.o fcr_12.o fcr_13.o fcr_14.o fcr_15.o fcr_16.o fcr_32.o fcr_64.o fcr_128.o fhb_2.o fhb_3.o fhb_4.o fhb_5.o fhb_6.o fhb_7.o fhb_8.o fhb_9.o fhb_10.o fhb_16.o fhb_32.o rconfig.o rplanner.o rexec.o rexec2.o rfftwnd.o rgeneric.o rfftwf77.o
+libtool: link: ranlib .libs/librfftw.a
+libtool: link: ( cd ".libs" && rm -f "librfftw.la" && ln -s "../librfftw.la" "librfftw.la" )
+gmake[1]: Leaving directory `/usr/home/bacon/Prog/Ports/ports/math/fftw-openmpi/work/fftw-2.1.5/rfftw'
+Making all in tests
+gmake[1]: Entering directory `/usr/home/bacon/Prog/Ports/ports/math/fftw-openmpi/work/fftw-2.1.5/tests'
+cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I./../rfftw    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fftw_test.o -MD -MP -MF .deps/fftw_test.Tpo -c -o fftw_test.o fftw_test.c
+cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I./../rfftw    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT test_main.o -MD -MP -MF .deps/test_main.Tpo -c -o test_main.o test_main.c
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+mv -f .deps/test_main.Tpo .deps/test_main.Po
+cc -DHAVE_CONFIG_H -I. -I../fftw -I./../fftw -I./../rfftw    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rfftw_test.o -MD -MP -MF .deps/rfftw_test.Tpo -c -o rfftw_test.o rfftw_test.c
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+mv -f .deps/fftw_test.Tpo .deps/fftw_test.Po
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=link cc  -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing  -L/usr/local/mpi/openmpi/lib -L/usr/local/lib -Wl,-rpath=/usr/local/lib/gcc46 -o fftw_test fftw_test.o test_main.o ../fftw/libfftw.la -lm 
+libtool: link: cc -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -Wl,-rpath=/usr/local/lib/gcc46 -o .libs/fftw_test fftw_test.o test_main.o  -L/usr/local/mpi/openmpi/lib -L/usr/local/lib ../fftw/.libs/libfftw.so -lm -Wl,-rpath -Wl,/usr/local/mpi/openmpi/lib
+cc: -rpath=/usr/local/lib/gcc46: linker input file unused because linking not done
+mv -f .deps/rfftw_test.Tpo .deps/rfftw_test.Po
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=link cc  -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing  -L/usr/local/mpi/openmpi/lib -L/usr/local/lib -Wl,-rpath=/usr/local/lib/gcc46 -o rfftw_test rfftw_test.o test_main.o ../rfftw/librfftw.la ../fftw/libfftw.la -lm 
+libtool: link: cc -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -Wl,-rpath=/usr/local/lib/gcc46 -o .libs/rfftw_test rfftw_test.o test_main.o  -L/usr/local/mpi/openmpi/lib -L/usr/local/lib ../rfftw/.libs/librfftw.so ../fftw/.libs/libfftw.so -lm -Wl,-rpath -Wl,/usr/local/mpi/openmpi/lib
+gmake[1]: Leaving directory `/usr/home/bacon/Prog/Ports/ports/math/fftw-openmpi/work/fftw-2.1.5/tests'
+Making all in threads
+gmake[1]: Entering directory `/usr/home/bacon/Prog/Ports/ports/math/fftw-openmpi/work/fftw-2.1.5/threads'
+gmake[1]: Nothing to be done for `all'.
+gmake[1]: Leaving directory `/usr/home/bacon/Prog/Ports/ports/math/fftw-openmpi/work/fftw-2.1.5/threads'
+Making all in mpi
+gmake[1]: Entering directory `/usr/home/bacon/Prog/Ports/ports/math/fftw-openmpi/work/fftw-2.1.5/mpi'
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT sched.lo -MD -MP -MF .deps/sched.Tpo -c -o sched.lo sched.c
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT TOMS_transpose.lo -MD -MP -MF .deps/TOMS_transpose.Tpo -c -o TOMS_transpose.lo TOMS_transpose.c
+libtool: compile:  mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT sched.lo -MD -MP -MF .deps/sched.Tpo -c sched.c  -fPIC -DPIC -o .libs/sched.o
+libtool: compile:  mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT TOMS_transpose.lo -MD -MP -MF .deps/TOMS_transpose.Tpo -c TOMS_transpose.c  -fPIC -DPIC -o .libs/TOMS_transpose.o
+libtool: compile:  mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT TOMS_transpose.lo -MD -MP -MF .deps/TOMS_transpose.Tpo -c TOMS_transpose.c -o TOMS_transpose.o >/dev/null 2>&1
+libtool: compile:  mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT sched.lo -MD -MP -MF .deps/sched.Tpo -c sched.c -o sched.o >/dev/null 2>&1
+mv -f .deps/TOMS_transpose.Tpo .deps/TOMS_transpose.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT transpose_mpi.lo -MD -MP -MF .deps/transpose_mpi.Tpo -c -o transpose_mpi.lo transpose_mpi.c
+libtool: compile:  mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT transpose_mpi.lo -MD -MP -MF .deps/transpose_mpi.Tpo -c transpose_mpi.c  -fPIC -DPIC -o .libs/transpose_mpi.o
+mv -f .deps/sched.Tpo .deps/sched.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fftwnd_mpi.lo -MD -MP -MF .deps/fftwnd_mpi.Tpo -c -o fftwnd_mpi.lo fftwnd_mpi.c
+libtool: compile:  mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fftwnd_mpi.lo -MD -MP -MF .deps/fftwnd_mpi.Tpo -c fftwnd_mpi.c  -fPIC -DPIC -o .libs/fftwnd_mpi.o
+libtool: compile:  mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fftwnd_mpi.lo -MD -MP -MF .deps/fftwnd_mpi.Tpo -c fftwnd_mpi.c -o fftwnd_mpi.o >/dev/null 2>&1
+libtool: compile:  mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT transpose_mpi.lo -MD -MP -MF .deps/transpose_mpi.Tpo -c transpose_mpi.c -o transpose_mpi.o >/dev/null 2>&1
+mv -f .deps/fftwnd_mpi.Tpo .deps/fftwnd_mpi.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fftw_mpi.lo -MD -MP -MF .deps/fftw_mpi.Tpo -c -o fftw_mpi.lo fftw_mpi.c
+libtool: compile:  mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fftw_mpi.lo -MD -MP -MF .deps/fftw_mpi.Tpo -c fftw_mpi.c  -fPIC -DPIC -o .libs/fftw_mpi.o
+libtool: compile:  mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fftw_mpi.lo -MD -MP -MF .deps/fftw_mpi.Tpo -c fftw_mpi.c -o fftw_mpi.o >/dev/null 2>&1
+mv -f .deps/transpose_mpi.Tpo .deps/transpose_mpi.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fftw_f77_mpi.lo -MD -MP -MF .deps/fftw_f77_mpi.Tpo -c -o fftw_f77_mpi.lo fftw_f77_mpi.c
+libtool: compile:  mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fftw_f77_mpi.lo -MD -MP -MF .deps/fftw_f77_mpi.Tpo -c fftw_f77_mpi.c  -fPIC -DPIC -o .libs/fftw_f77_mpi.o
+fftw_f77_mpi.c: In function 'fftw_f77_mpi_create_plan_':
+fftw_f77_mpi.c:35:6: warning: passing argument 1 of 'MPI_Comm_f2c' makes integer from pointer without a cast [enabled by default]
+/usr/local/mpi/openmpi/include/mpi.h:927:25: note: expected 'int' but argument is of type 'MPI_Comm'
+fftw_f77_mpi.c: In function 'fftwnd_f77_mpi_create_plan_':
+fftw_f77_mpi.c:71:6: warning: passing argument 1 of 'MPI_Comm_f2c' makes integer from pointer without a cast [enabled by default]
+/usr/local/mpi/openmpi/include/mpi.h:927:25: note: expected 'int' but argument is of type 'MPI_Comm'
+fftw_f77_mpi.c: In function 'fftw2d_f77_mpi_create_plan_':
+fftw_f77_mpi.c:81:6: warning: passing argument 1 of 'MPI_Comm_f2c' makes integer from pointer without a cast [enabled by default]
+/usr/local/mpi/openmpi/include/mpi.h:927:25: note: expected 'int' but argument is of type 'MPI_Comm'
+fftw_f77_mpi.c: In function 'fftw3d_f77_mpi_create_plan_':
+fftw_f77_mpi.c:90:6: warning: passing argument 1 of 'MPI_Comm_f2c' makes integer from pointer without a cast [enabled by default]
+/usr/local/mpi/openmpi/include/mpi.h:927:25: note: expected 'int' but argument is of type 'MPI_Comm'
+libtool: compile:  mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fftw_f77_mpi.lo -MD -MP -MF .deps/fftw_f77_mpi.Tpo -c fftw_f77_mpi.c -o fftw_f77_mpi.o >/dev/null 2>&1
+mv -f .deps/fftw_mpi.Tpo .deps/fftw_mpi.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rfftwnd_mpi.lo -MD -MP -MF .deps/rfftwnd_mpi.Tpo -c -o rfftwnd_mpi.lo rfftwnd_mpi.c
+libtool: compile:  mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rfftwnd_mpi.lo -MD -MP -MF .deps/rfftwnd_mpi.Tpo -c rfftwnd_mpi.c  -fPIC -DPIC -o .libs/rfftwnd_mpi.o
+mv -f .deps/fftw_f77_mpi.Tpo .deps/fftw_f77_mpi.Plo
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=compile mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rfftw_f77_mpi.lo -MD -MP -MF .deps/rfftw_f77_mpi.Tpo -c -o rfftw_f77_mpi.lo rfftw_f77_mpi.c
+libtool: compile:  mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rfftw_f77_mpi.lo -MD -MP -MF .deps/rfftw_f77_mpi.Tpo -c rfftw_f77_mpi.c  -fPIC -DPIC -o .libs/rfftw_f77_mpi.o
+libtool: compile:  mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rfftwnd_mpi.lo -MD -MP -MF .deps/rfftwnd_mpi.Tpo -c rfftwnd_mpi.c -o rfftwnd_mpi.o >/dev/null 2>&1
+rfftw_f77_mpi.c: In function 'rfftwnd_f77_mpi_create_plan_':
+rfftw_f77_mpi.c:39:6: warning: passing argument 1 of 'MPI_Comm_f2c' makes integer from pointer without a cast [enabled by default]
+/usr/local/mpi/openmpi/include/mpi.h:927:25: note: expected 'int' but argument is of type 'MPI_Comm'
+rfftw_f77_mpi.c: In function 'rfftw2d_f77_mpi_create_plan_':
+rfftw_f77_mpi.c:49:6: warning: passing argument 1 of 'MPI_Comm_f2c' makes integer from pointer without a cast [enabled by default]
+/usr/local/mpi/openmpi/include/mpi.h:927:25: note: expected 'int' but argument is of type 'MPI_Comm'
+rfftw_f77_mpi.c: In function 'rfftw3d_f77_mpi_create_plan_':
+rfftw_f77_mpi.c:58:6: warning: passing argument 1 of 'MPI_Comm_f2c' makes integer from pointer without a cast [enabled by default]
+/usr/local/mpi/openmpi/include/mpi.h:927:25: note: expected 'int' but argument is of type 'MPI_Comm'
+libtool: compile:  mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I. -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rfftw_f77_mpi.lo -MD -MP -MF .deps/rfftw_f77_mpi.Tpo -c rfftw_f77_mpi.c -o rfftw_f77_mpi.o >/dev/null 2>&1
+mv -f .deps/rfftw_f77_mpi.Tpo .deps/rfftw_f77_mpi.Plo
+mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT test_sched.o -MD -MP -MF .deps/test_sched.Tpo -c -o test_sched.o test_sched.c
+mv -f .deps/rfftwnd_mpi.Tpo .deps/rfftwnd_mpi.Plo
+mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT test_transpose_mpi.o -MD -MP -MF .deps/test_transpose_mpi.Tpo -c -o test_transpose_mpi.o test_transpose_mpi.c
+mv -f .deps/test_sched.Tpo .deps/test_sched.Po
+mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT fftw_mpi_test.o -MD -MP -MF .deps/fftw_mpi_test.Tpo -c -o fftw_mpi_test.o fftw_mpi_test.c
+mv -f .deps/test_transpose_mpi.Tpo .deps/test_transpose_mpi.Po
+mpicc -DHAVE_CONFIG_H -I. -I../fftw -I./../tests -I./../fftw -I./../rfftw -I.    -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -MT rfftw_mpi_test.o -MD -MP -MF .deps/rfftw_mpi_test.Tpo -c -o rfftw_mpi_test.o rfftw_mpi_test.c
+mv -f .deps/fftw_mpi_test.Tpo .deps/fftw_mpi_test.Po
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=link mpicc  -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -version-info 2:7:0 -rpath /usr/local/mpi/openmpi/lib -L/usr/local/mpi/openmpi/lib -L/usr/local/lib -Wl,-rpath=/usr/local/lib/gcc46 -o libfftw_mpi.la  sched.lo TOMS_transpose.lo transpose_mpi.lo fftwnd_mpi.lo fftw_mpi.lo fftw_f77_mpi.lo  -lm 
+libtool: link: cc -shared  -fPIC -DPIC  .libs/sched.o .libs/TOMS_transpose.o .libs/transpose_mpi.o .libs/fftwnd_mpi.o .libs/fftw_mpi.o .libs/fftw_f77_mpi.o   -L/usr/local/mpi/openmpi/lib -L/usr/local/lib -lm  -O2 -Wl,-rpath=/usr/local/lib/gcc46 -Wl,-rpath=/usr/local/lib/gcc46   -Wl,-soname -Wl,libfftw_mpi.so.2 -o .libs/libfftw_mpi.so.2
+libtool: link: (cd ".libs" && rm -f "libfftw_mpi.so" && ln -s "libfftw_mpi.so.2" "libfftw_mpi.so")
+libtool: link: (cd ".libs" && rm -f "libfftw_mpi.so" && ln -s "libfftw_mpi.so.2" "libfftw_mpi.so")
+libtool: link: ar cru .libs/libfftw_mpi.a  sched.o TOMS_transpose.o transpose_mpi.o fftwnd_mpi.o fftw_mpi.o fftw_f77_mpi.o
+libtool: link: ranlib .libs/libfftw_mpi.a
+libtool: link: ( cd ".libs" && rm -f "libfftw_mpi.la" && ln -s "../libfftw_mpi.la" "libfftw_mpi.la" )
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=link mpicc  -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -version-info 2:7:0 -rpath /usr/local/mpi/openmpi/lib -L/usr/local/mpi/openmpi/lib -L/usr/local/lib -Wl,-rpath=/usr/local/lib/gcc46 -o librfftw_mpi.la  rfftwnd_mpi.lo rfftw_f77_mpi.lo  -lm 
+mv -f .deps/rfftw_mpi_test.Tpo .deps/rfftw_mpi_test.Po
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=link mpicc  -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing  -L/usr/local/mpi/openmpi/lib -L/usr/local/lib -Wl,-rpath=/usr/local/lib/gcc46 -o test_sched test_sched.o libfftw_mpi.la ../fftw/libfftw.la   -lm 
+libtool: link: cc -shared  -fPIC -DPIC  .libs/rfftwnd_mpi.o .libs/rfftw_f77_mpi.o   -L/usr/local/mpi/openmpi/lib -L/usr/local/lib -lm  -O2 -Wl,-rpath=/usr/local/lib/gcc46 -Wl,-rpath=/usr/local/lib/gcc46   -Wl,-soname -Wl,librfftw_mpi.so.2 -o .libs/librfftw_mpi.so.2
+libtool: link: (cd ".libs" && rm -f "librfftw_mpi.so" && ln -s "librfftw_mpi.so.2" "librfftw_mpi.so")
+libtool: link: (cd ".libs" && rm -f "librfftw_mpi.so" && ln -s "librfftw_mpi.so.2" "librfftw_mpi.so")
+libtool: link: ar cru .libs/librfftw_mpi.a  rfftwnd_mpi.o rfftw_f77_mpi.o
+libtool: link: ranlib .libs/librfftw_mpi.a
+libtool: link: ( cd ".libs" && rm -f "librfftw_mpi.la" && ln -s "../librfftw_mpi.la" "librfftw_mpi.la" )
+libtool: link: mpicc -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -Wl,-rpath=/usr/local/lib/gcc46 -o .libs/test_sched test_sched.o  -L/usr/local/mpi/openmpi/lib -L/usr/local/lib ./.libs/libfftw_mpi.so ../fftw/.libs/libfftw.so -lm -Wl,-rpath -Wl,/usr/local/mpi/openmpi/lib
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=link mpicc  -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing  -L/usr/local/mpi/openmpi/lib -L/usr/local/lib -Wl,-rpath=/usr/local/lib/gcc46 -o test_transpose_mpi test_transpose_mpi.o libfftw_mpi.la ../fftw/libfftw.la   -lm 
+libtool: link: mpicc -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -Wl,-rpath=/usr/local/lib/gcc46 -o .libs/test_transpose_mpi test_transpose_mpi.o  -L/usr/local/mpi/openmpi/lib -L/usr/local/lib ./.libs/libfftw_mpi.so ../fftw/.libs/libfftw.so -lm -Wl,-rpath -Wl,/usr/local/mpi/openmpi/lib
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=link mpicc  -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing  -L/usr/local/mpi/openmpi/lib -L/usr/local/lib -Wl,-rpath=/usr/local/lib/gcc46 -o fftw_mpi_test fftw_mpi_test.o ../tests/test_main.o libfftw_mpi.la ../fftw/libfftw.la   -lm 
+/bin/sh /usr/local/bin/libtool --tag=CC   --mode=link mpicc  -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing  -L/usr/local/mpi/openmpi/lib -L/usr/local/lib -Wl,-rpath=/usr/local/lib/gcc46 -o rfftw_mpi_test rfftw_mpi_test.o ../tests/test_main.o librfftw_mpi.la libfftw_mpi.la ../rfftw/librfftw.la ../fftw/libfftw.la  -lm 
+libtool: link: mpicc -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -Wl,-rpath=/usr/local/lib/gcc46 -o .libs/fftw_mpi_test fftw_mpi_test.o ../tests/test_main.o  -L/usr/local/mpi/openmpi/lib -L/usr/local/lib ./.libs/libfftw_mpi.so ../fftw/.libs/libfftw.so -lm -Wl,-rpath -Wl,/usr/local/mpi/openmpi/lib
+libtool: link: mpicc -O2 -pipe -I/usr/local/mpi/openmpi/include -Wl,-rpath=/usr/local/lib/gcc46 -fno-strict-aliasing -Wl,-rpath=/usr/local/lib/gcc46 -o .libs/rfftw_mpi_test rfftw_mpi_test.o ../tests/test_main.o  -L/usr/local/mpi/openmpi/lib -L/usr/local/lib ./.libs/librfftw_mpi.so ./.libs/libfftw_mpi.so ../rfftw/.libs/librfftw.so ../fftw/.libs/libfftw.so -lm -Wl,-rpath -Wl,/usr/local/mpi/openmpi/lib
+gmake[1]: Leaving directory `/usr/home/bacon/Prog/Ports/ports/math/fftw-openmpi/work/fftw-2.1.5/mpi'
+gmake[1]: Entering directory `/usr/home/bacon/Prog/Ports/ports/math/fftw-openmpi/work/fftw-2.1.5'
+gmake[1]: Nothing to be done for `all-am'.
+gmake[1]: Leaving directory `/usr/home/bacon/Prog/Ports/ports/math/fftw-openmpi/work/fftw-2.1.5'

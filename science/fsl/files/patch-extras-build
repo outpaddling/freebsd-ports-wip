@@ -1,0 +1,18 @@
+--- extras/build.orig	Thu Aug 16 15:01:49 2007
++++ extras/build	Thu Aug 16 15:01:57 2007
+@@ -41,7 +41,7 @@
+ 
+ errorprojs="" ; export errorprojs ;
+ 
+-PROJECTS="tcl tk zlib libpng libiconv libgd libgdc libprob libcprob newmat cprob newran cephes fftw irtk"
++PROJECTS="libiconv libgdc libprob libcprob newmat cprob newran cephes fftw"
+ 
+ for projname in $PROJECTS; do
+ 
+@@ -107,4 +107,4 @@
+ 
+ if [ "X${errorprojs}X" != XX -o "X${errorinstall}X" != XX ] ; then
+     exit 1
+-fi
+\ No newline at end of file
++fi
