@@ -1,7 +1,7 @@
 # Created by:	Jason Bacon
 # $FreeBSD$
 
-PORTNAME=	matlab-R2012a-installer
+PORTNAME=	matlab-installer
 PORTVERSION=	0.2
 CATEGORIES=	math science java
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
