@@ -19,6 +19,7 @@ COMMENT=	Mathworks(r) Matlab installation tool
 RUN_DEPENDS=	${LINUXBASE}/usr/share/terminfo:../../devel/linux-f10-ncurses-base \
 		${LINUXBASE}/usr/bin/g++:../../lang/linux-f10-gcc-c++ \
 		${LINUXBASE}/usr/bin/gfortran:../../lang/linux-f10-gcc-gfortran \
+		${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/graphics/linux-f10-dri \
 		${LOCALBASE}/sbin/mount_image:../../sysutils/diskimage-tools
 
 USE_LINUX=	yes
