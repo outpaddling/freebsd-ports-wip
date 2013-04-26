@@ -22,6 +22,9 @@ RUN_DEPENDS=	${LINUXBASE}/usr/share/terminfo:../../devel/linux-f10-ncurses-base 
 		${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/graphics/linux-f10-dri \
 		${LOCALBASE}/sbin/mount_image:../../sysutils/diskimage-tools
 
+# Not needed if LD_LIBRARY_PATH is correct in shells started from Matlab
+#		${LINUXBASE}/usr/bin/firefox:${PORTSDIR}/www/linux-firefox
+
 USE_LINUX=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

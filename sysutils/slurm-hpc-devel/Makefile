@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-PORTVERSION=	2.5.4
+PORTVERSION=	2.5.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/archive/ \
 		http://www.schedmd.com/download/latest/ \
@@ -47,6 +47,8 @@ USERS=		slurm
 GROUPS=		${USERS}
 
 USE_RC_SUBR=	slurmctld slurmd
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 MAN1=	\
 	sacct.1 \
