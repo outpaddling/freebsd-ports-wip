@@ -20,7 +20,8 @@ RUN_DEPENDS=	${LINUXBASE}/usr/share/terminfo:../../devel/linux-f10-ncurses-base 
 		${LINUXBASE}/usr/bin/g++:../../lang/linux-f10-gcc-c++ \
 		${LINUXBASE}/usr/bin/gfortran:../../lang/linux-f10-gcc-gfortran \
 		${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/graphics/linux-f10-dri \
-		${LOCALBASE}/sbin/mount_image:../../sysutils/diskimage-tools
+		${LOCALBASE}/sbin/mount_image:../../sysutils/diskimage-tools \
+		webbrowser:../../www/webbrowser
 
 # Not needed if LD_LIBRARY_PATH is correct in shells started from Matlab
 #		${LINUXBASE}/usr/bin/firefox:${PORTSDIR}/www/linux-firefox
@@ -35,11 +36,12 @@ SUB_FILES=	pkg-message
 
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} bin/matlab-browser
 
 do-install:
 	${MKDIR} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/matlab-browser ${PREFIX}/bin
 
 post-install:
 	@${CAT} ${WRKDIR}/pkg-message
