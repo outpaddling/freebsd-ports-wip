@@ -14,7 +14,7 @@ MASTER_SITES=   http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 MAINTAINER=     jwbacon@tds.net
 COMMENT=        Portable Assembler
 
-PLIST_FILES=    bin/asepc bin/asepc.bin
+PLIST_FILES=    bin/asepc bin/asepc.bin include/epc.h
 
 MAN1=           asepc.1
 
