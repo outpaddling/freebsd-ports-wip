@@ -43,7 +43,7 @@
 /usr/local/sbin/cluster-update-ssh_config
 /usr/local/sbin/cluster-useradd
 /usr/local/sbin/cluster-users
-/usr/local/sbin/topnode
+/usr/local/bin/topnode
 /usr/local/share/cluster-admin/WWW/global_styles.css
 /usr/local/share/cluster-admin/WWW/index.php
 /usr/local/share/cluster-admin/WWW/powerlogo.gif

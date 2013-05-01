@@ -10,6 +10,7 @@
 @unexec rm -f %D/man/cat1/cluster-setup.1.gz %D/man/cat1/cluster-setup.1 %D/man/cat1/cluster-setup.1.gz %D/man/cat1/cluster-setup.1.gz.gz %D/man/cat1/cluster-setup.1.gz.bz2
 @unexec rm -f %D/man/cat1/cluster-shutdown.1.gz %D/man/cat1/cluster-shutdown.1 %D/man/cat1/cluster-shutdown.1.gz %D/man/cat1/cluster-shutdown.1.gz.gz %D/man/cat1/cluster-shutdown.1.gz.bz2
 @unexec rm -f %D/man/cat1/cluster-update-ssh_config.1.gz %D/man/cat1/cluster-update-ssh_config.1 %D/man/cat1/cluster-update-ssh_config.1.gz %D/man/cat1/cluster-update-ssh_config.1.gz.gz %D/man/cat1/cluster-update-ssh_config.1.gz.bz2
+bin/topnode
 man/man1/cluster-adduser.1.gz
 man/man1/cluster-admin.1.gz
 man/man1/cluster-cp.1.gz
@@ -55,7 +56,6 @@ sbin/cluster-update-all-ssh_config
 sbin/cluster-update-ssh_config
 sbin/cluster-useradd
 sbin/cluster-users
-sbin/topnode
 share/cluster-admin/WWW/global_styles.css
 share/cluster-admin/WWW/index.php
 share/cluster-admin/WWW/powerlogo.gif

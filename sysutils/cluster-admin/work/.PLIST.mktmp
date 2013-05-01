@@ -53,7 +53,7 @@ sbin/cluster-update-all-ssh_config
 sbin/cluster-update-ssh_config
 sbin/cluster-useradd
 sbin/cluster-users
-sbin/topnode
+bin/topnode
 share/cluster-admin/WWW/global_styles.css
 share/cluster-admin/WWW/index.php
 share/cluster-admin/WWW/powerlogo.gif

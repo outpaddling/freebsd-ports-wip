@@ -32,6 +32,7 @@ NO_BUILD=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${PREFIX}/sbin
+	${MV} ${PREFIX}/sbin/topnode ${PREFIX}/bin
 	(cd ${WRKSRC}/Man && for f in *.mdoc; \
 	do \
 		${INSTALL_MAN} $${f} \
