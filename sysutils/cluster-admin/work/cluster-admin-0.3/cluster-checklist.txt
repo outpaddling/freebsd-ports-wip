@@ -1,5 +1,0 @@
-
-Test UPS
-
-Test redundant power supplies
-
