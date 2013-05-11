@@ -16,4 +16,7 @@ MAN1=		xml-format.1
 
 MAKE_ENV+=	DATADIR=${DATADIR}
 
+post-patch:
+	${REINPLACE_CMD} -e "s|DATADIR|${DATADIR}|g" ${WRKSRC}/${PORTNAME}.1
+
 .include <bsd.port.mk>

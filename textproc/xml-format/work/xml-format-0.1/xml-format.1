@@ -97,25 +97,25 @@ considered in-line, and are treated essentially as text.
 
 The type of each tag is determined from simple text files containing
 lists of each tag name, on per line, in 
-DATADIR/Config/language/<type>-tags.txt.
+/usr/local/share/xml-format/Config/language/<type>-tags.txt.
 
 For example, the tags for DocBook XML are found in:
 
 .nf
 .na
-DATADIR/Config/dbk/block-tags.txt
-DATADIR/Config/dbk/line-tags.txt
-DATADIR/Config/dbk/sectioning-tags.txt
+/usr/local/share/xml-format/Config/dbk/block-tags.txt
+/usr/local/share/xml-format/Config/dbk/line-tags.txt
+/usr/local/share/xml-format/Config/dbk/sectioning-tags.txt
 .ad
 .fi
 
-DATADIR defaults to /usr/local/share/xml-format, but may be altered by
+/usr/local/share/xml-format defaults to /usr/local/share/xml-format, but may be altered by
 the installation environment.  ( See Makefile for details. )
 
 .SH FILES
 .nf
 .na
-DATADIR/Config/*/*.txt
+/usr/local/share/xml-format/Config/*/*.txt
 .ad
 .fi
 
