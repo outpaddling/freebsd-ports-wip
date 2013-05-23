@@ -1,0 +1,2 @@
+
+Change $CPU_MAX in Trinity.pl to match the number of cores on your system.
