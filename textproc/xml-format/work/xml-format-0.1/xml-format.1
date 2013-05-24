@@ -86,7 +86,8 @@ themselves.
 .fi
 
 All other tags that do not fall into the first three categories are
-considered in-line, and are treated essentially as text.
+considered in-line, and are treated essentially as text, except that
+they are nestled against the text they surround.
 
 .nf
 .na
@@ -108,9 +109,6 @@ For example, the tags for DocBook XML are found in:
 /usr/local/share/xml-format/Config/dbk/sectioning-tags.txt
 .ad
 .fi
-
-/usr/local/share/xml-format defaults to /usr/local/share/xml-format, but may be altered by
-the installation environment.  ( See Makefile for details. )
 
 .SH FILES
 .nf

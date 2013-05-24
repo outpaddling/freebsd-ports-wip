@@ -25,15 +25,6 @@
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
 */
 
-
-/**********************************************************************
- * Author: Jason W. Bacon
- * Acadix Software Systems
- * http://www.execpc.com/~acadix
- * acadix@execpc.com
- *
- **********************************************************************/
-
 #include <stdio.h>
 #include <ctype.h>
 
@@ -43,7 +34,7 @@ char    *str;
 {
     while ( *str != '\0' )
     {
-	if ( !isspace((size_t)(*str)) )   /* Not blank? */
+	if ( !isspace(*str) )   /* Not blank? */
 	    return 0;
 	++str;
     }
