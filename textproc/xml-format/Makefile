@@ -1,5 +1,5 @@
-# Created by:	Jason Bacon
-# $FreeBSD$
+# Created by: Jason Bacon <jwbacon@tds.net>
+# $FreeBSD: textproc/xml-format/Makefile 317754 2013-05-09 22:42:49Z jgh $
 
 PORTNAME=	xml-format
 PORTVERSION=	0.1
@@ -15,8 +15,5 @@ LICENSE=	BSD
 MAN1=		xml-format.1
 
 MAKE_ENV+=	DATADIR=${DATADIR}
-
-post-patch:
-	${REINPLACE_CMD} -e "s|DATADIR|${DATADIR}|g" ${WRKSRC}/${PORTNAME}.1
 
 .include <bsd.port.mk>
