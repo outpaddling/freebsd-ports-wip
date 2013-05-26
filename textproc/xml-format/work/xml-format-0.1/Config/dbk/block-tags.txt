@@ -1,6 +1,0 @@
-para
-listitem
-caption
-screen
-programlisting
-
