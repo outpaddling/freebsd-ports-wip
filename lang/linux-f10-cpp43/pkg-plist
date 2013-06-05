@@ -19,5 +19,3 @@ usr/share/locale/vi/LC_MESSAGES/cpplib.mo
 usr/share/locale/zh_CN/LC_MESSAGES/cpplib.mo
 usr/share/locale/zh_TW/LC_MESSAGES/cpplib.mo
 usr/share/man/man1/cpp.1.gz
-@dirrm usr/libexec/gcc/i386-redhat-linux/4.3.2
-
