@@ -1,4 +1,6 @@
+bin/topnode
 sbin/cluster-add-node
+sbin/cluster-add-to-group
 sbin/cluster-adduser
 sbin/cluster-admin
 sbin/cluster-compute-nodes
@@ -33,7 +35,6 @@ sbin/cluster-update-all-ssh_config
 sbin/cluster-update-ssh_config
 sbin/cluster-useradd
 sbin/cluster-users
-bin/topnode
 %%DATADIR%%/WWW/global_styles.css
 %%DATADIR%%/WWW/index.php
 %%DATADIR%%/WWW/powerlogo.gif
