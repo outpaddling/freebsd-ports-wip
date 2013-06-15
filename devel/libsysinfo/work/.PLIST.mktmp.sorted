@@ -1,0 +1,12 @@
+@comment OPTIONS:
+@exec /sbin/ldconfig -m /usr/local/lib
+@unexec /sbin/ldconfig -R
+@unexec rmdir "%D/include/sys" 2>/dev/null || true
+include/sys/sysinfo.h
+lib/libsysinfo.a
+lib/libsysinfo.so
+lib/libsysinfo.so.0
+man/man3/sysinfo.3.gz
+share/licenses/libsysinfo-0.0.2/BSD
+share/licenses/libsysinfo-0.0.2/LICENSE
+share/licenses/libsysinfo-0.0.2/catalog.mk

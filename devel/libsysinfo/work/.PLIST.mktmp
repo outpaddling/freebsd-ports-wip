@@ -1,0 +1,15 @@
+include/sys/sysinfo.h
+lib/libsysinfo.a
+lib/libsysinfo.so
+lib/libsysinfo.so.0
+share/licenses/libsysinfo-0.0.2/catalog.mk
+share/licenses/libsysinfo-0.0.2/LICENSE
+share/licenses/libsysinfo-0.0.2/BSD
+man/man3/sysinfo.3.gz
+@unexec rmdir "%D/include/sys" 2>/dev/null || true
+@exec /sbin/ldconfig -m /usr/local/lib
+@unexec /sbin/ldconfig -R
+@comment OPTIONS:
+@cwd 
+@dirrm share/licenses/libsysinfo-0.0.2
+@unexec rmdir %D/share/licenses 2>/dev/null || true
