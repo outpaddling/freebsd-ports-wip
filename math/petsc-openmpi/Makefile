@@ -148,7 +148,11 @@ CONFIGURE_ARGS+=	\
 
 CONFIGURE_ARGS+=	| ${TR} '\r' '\n'
 
-post-patch:
-	${REINPLACE_CMD} -e "s|self.destLibDir,'pkgconfig'|self.destDir,'libdata','pkgconfig'|g" ${WRKSRC}/config/install.py
+# Hate to hack after installing, but the installer is an ad-hoc Python
+# script that would require extensive hacking to add a libdata install
+# function.
+post-install:
+	${MKDIR} ${MPI_PREFIX}/libdata
+	${MV} ${MPI_PREFIX}/lib/pkgconfig ${MPI_PREFIX}/libdata
 
 .include <bsd.port.mk>
