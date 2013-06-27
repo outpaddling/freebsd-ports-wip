@@ -656,10 +656,8 @@ mpi/openmpi/%%DATADIR%%/datafiles/meshes/squaremotor-30.exo
 @dirrm mpi/openmpi/%%DATADIR%%/datafiles/matrices
 @dirrm mpi/openmpi/%%DATADIR%%/datafiles
 @dirrm mpi/openmpi/%%DATADIR%%
-@dirrm mpi/openmpi/share
-@dirrm mpi/openmpi/libdata/pkgconfig
-@dirrm mpi/openmpi/lib/modules
-@dirrm mpi/openmpi/lib
+@dirrmtry mpi/openmpi/libdata/pkgconfig
+@dirrmtry mpi/openmpi/lib/modules
 @dirrm mpi/openmpi/include/web
 @dirrm mpi/openmpi/include/sieve
 @dirrm mpi/openmpi/include/petsc-private/kernels
@@ -668,8 +666,7 @@ mpi/openmpi/%%DATADIR%%/datafiles/meshes/squaremotor-30.exo
 @dirrm mpi/openmpi/include/finclude/ftn-custom
 @dirrm mpi/openmpi/include/finclude/ftn-auto
 @dirrm mpi/openmpi/include/finclude
-@dirrm mpi/openmpi/include
-@dirrm mpi/openmpi/conf
+@dirrmtry mpi/openmpi/conf
 @dirrm mpi/openmpi/bin/win32fe
 @dirrm mpi/openmpi/bin/pythonscripts
 @dirrm mpi/openmpi/bin/matlab/classes/examples/tutorials
@@ -682,6 +679,3 @@ mpi/openmpi/%%DATADIR%%/datafiles/meshes/squaremotor-30.exo
 @dirrm mpi/openmpi/bin/julia/examples/tutorials
 @dirrm mpi/openmpi/bin/julia/examples
 @dirrm mpi/openmpi/bin/julia
-@dirrm mpi/openmpi/bin
-@dirrm mpi/openmpi
-@dirrm mpi
