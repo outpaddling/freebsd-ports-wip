@@ -24,7 +24,7 @@ CONFIGURE_LOG=	configure.log
 
 CONFIGURE_ENV+=	PETSC_ARCH=${OPSYS:L} \
 		PETSC_DIR=${WRKSRC} \
-		LD_LIBRARY_PATH=${LOCALBASE}/mpi/openmpi/lib:${LOCALBASE}/lib:${LD_LIBRARY_PATH}
+		LD_LIBRARY_PATH=${LOCALBASE}/mpi/openmpi/lib:${LOCALBASE}/lib:/usr/lib:/lib:${LD_LIBRARY_PATH}
 
 # make PETSC_DIR=/usr/wip/math/petsc/work/petsc-3.4.1 PETSC_ARCH=freebsd all
 # Not necessary to set INSTALL_MAKE_ENV, since generated makefile does it
