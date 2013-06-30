@@ -6,6 +6,7 @@ sbin/auto-config-snd-driver
 sbin/auto-db-dir
 sbin/auto-disable-service
 sbin/auto-enable-compat32
+sbin/auto-enable-hal-mount
 sbin/auto-enable-passwdqc
 sbin/auto-enable-procfs
 sbin/auto-enable-service

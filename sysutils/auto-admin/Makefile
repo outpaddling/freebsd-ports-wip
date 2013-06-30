@@ -21,6 +21,7 @@ MAN1=		auto-admin.1 \
 		auto-db-dir.1 \
 		auto-disable-service.1 \
 		auto-enable-compat32.1 \
+		auto-enable-hal-mount.1 \
 		auto-enable-passwdqc.1 \
 		auto-enable-procfs.1 \
 		auto-enable-service.1 \
