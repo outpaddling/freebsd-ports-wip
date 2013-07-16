@@ -1,20 +1,19 @@
-# New ports collection makefile for:	moltemplate
-# Date created:		2013-07-16
-# Whom:			Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
-#
+# Created by:	Jason Bacon
 # $FreeBSD$
-#
 
 PORTNAME=	moltemplate
 PORTVERSION=	2013.7.15
-CATEGORIES=
-MASTER_SITES=	http://www.moltemplate.org/downloads/
+CATEGORIES=	science
+MASTER_SITES=	http://www.moltemplate.org/downloads/ \
+		http://acadix.biz/Ports/distfiles/
 DISTNAME=	${PORTNAME}_2013-7-15
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Text-based molecule builder for LAMMPS
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
+USE_PYTHON=	yes
 
 SUB_FILES+=	pkg-message
 
