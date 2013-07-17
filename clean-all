@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+for dir in */*; do
+    if [ -d $dir/work ]; then
+	cd $dir
+	make clean
+	cd ../..
+    fi
+done
+
