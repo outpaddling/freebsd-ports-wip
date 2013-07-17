@@ -4,6 +4,7 @@ bin/data2xmovie
 bin/lmp
 bin/micelle2d
 bin/restart2data
+bin/msi2lmp
 %%PORTDOCS%%%%DOCSDIR%%/Developer.pdf
 %%PORTDOCS%%%%DOCSDIR%%/Eqs/angle_charmm.jpg
 %%PORTDOCS%%%%DOCSDIR%%/Eqs/angle_charmm.tex

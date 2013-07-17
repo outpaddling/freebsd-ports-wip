@@ -60,7 +60,9 @@ post-patch:
 		-e "s|gfortran|${FC}|g" \
 		-e "s|ifort|${FC}|g" \
 		-e "s|-march=native -mpc64||g" \
+		-e "s|\.exe||g" \
 		${WRKSRC}/tools/Makefile \
+		${WRKSRC}/tools/msi2lmp/src/Makefile \
 		${BUILD_WRKSRC}/STUBS/Makefile \
 		${WRKSRC}/lib/*/Makefile.serial \
 		${WRKSRC}/lib/*/Makefile.g++ \
@@ -109,6 +111,8 @@ do-build:
 		${CP} Makefile.lammps.gfortran Makefile.lammps)
 # Build LAMMPS
 	(cd ${BUILD_WRKSRC} && ${GMAKE} ${MAKE_ARGS} ${ALL_TARGET})
+# Additional tools
+	(cd ${WRKSRC}/tools/msi2lmp/src && ${GMAKE} ${MAKE_ARGS})
 
 do-install:
 	${MKDIR} ${INSTALL_PREFIX}/bin
@@ -117,11 +121,12 @@ do-install:
 		${INSTALL_PREFIX}/bin/lmp${PKGNAMESUFFIX}
 .if ${ALL_TARGET} == "FreeBSD-serial"
 	${MKDIR} ${DATADIR} ${EXAMPLESDIR} ${DOCSDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/binary2txt ${INSTALL_REFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/chain ${INSTALL_REFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/data2xmovie ${INSTALL_REFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/micelle2d ${INSTALL_REFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/restart2data ${INSTALL_REFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/binary2txt ${INSTALL_PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/chain ${INSTALL_PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/data2xmovie ${INSTALL_PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/micelle2d ${INSTALL_PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/restart2data ${INSTALL_PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/msi2lmp/src/msi2lmp ${INSTALL_PREFIX}/bin
 .ifndef(NOPORTDOCS)
 	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
 .endif
