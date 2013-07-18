@@ -1,8 +1,0 @@
-/usr/local/include/sys/sysinfo.h
-/usr/local/lib/libsysinfo.a
-/usr/local/lib/libsysinfo.so
-/usr/local/lib/libsysinfo.so.0
-/usr/local/share/licenses/libsysinfo-0.0.2/catalog.mk
-/usr/local/share/licenses/libsysinfo-0.0.2/LICENSE
-/usr/local/share/licenses/libsysinfo-0.0.2/BSD
-/usr/local/man/man3/sysinfo.3.gz
