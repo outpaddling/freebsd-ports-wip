@@ -2,13 +2,13 @@
 # $FreeBSD: ports/sysutils/condor/Makefile,v 1.15 2013/01/10 20:35:20 svnexp Exp $
 
 PORTNAME=	condor
-PORTVERSION=	7.8.7
+PORTVERSION=	8.0.1
 CATEGORIES=	sysutils net
 MASTER_SITES=	# empty
 DISTNAME=	condor_src-${PORTVERSION}-all-all
 
 MAINTAINER=	jwbacon@tds.net
-COMMENT=	High-throughput distributed batch system
+COMMENT=	High-throughput computing on distributively owned resources
 
 LIB_DEPENDS+=	krb5support:${PORTSDIR}/security/krb5 \
 		pcre:${PORTSDIR}/devel/pcre \
@@ -18,10 +18,10 @@ RESTRICTED=	Requires manual distfile fetch
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+#USES=		cmake
 USE_CMAKE=	yes
 USE_PERL5=	yes
 USE_PGSQL=	server
-CMAKE_VERBOSE=	yes
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-rpath=${LOCALBASE}/lib:/usr/lib:/lib
 CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
@@ -40,41 +40,49 @@ PORTDOCS=	*
 MANCOMPRESSED=	yes
 
 MAN1=	\
-	cleanup_release.1 \
+	bosco_cluster.1 \
+	bosco_findplatform.1 \
+	bosco_install.1 \
+	bosco_ssh_start.1 \
+	bosco_start.1 \
+	bosco_stop.1 \
+	bosco_uninstall.1 \
 	condor_advertise.1 \
 	condor_check_userlogs.1 \
 	condor_checkpoint.1 \
 	condor_chirp.1 \
 	condor_cod.1 \
-	condor_cold_start.1 \
-	condor_cold_stop.1 \
 	condor_compile.1 \
-	condor_config_bind.1 \
 	condor_config_val.1 \
 	condor_configure.1 \
 	condor_continue.1 \
 	condor_dagman.1 \
+	condor_drain.1 \
 	condor_fetchlog.1 \
 	condor_findhost.1 \
 	condor_gather_info.1 \
 	condor_glidein.1 \
 	condor_history.1 \
 	condor_hold.1 \
+	condor_install.1 \
 	condor_load_history.1 \
 	condor_master.1 \
 	condor_off.1 \
 	condor_on.1 \
+	condor_ping.1 \
 	condor_power.1 \
 	condor_preen.1 \
 	condor_prio.1 \
 	condor_procd.1 \
 	condor_q.1 \
 	condor_qedit.1 \
+	condor_qsub.1 \
 	condor_reconfig.1 \
 	condor_release.1 \
 	condor_reschedule.1 \
 	condor_restart.1 \
 	condor_rm.1 \
+	condor_rmdir.1 \
 	condor_router_history.1 \
 	condor_router_q.1 \
 	condor_router_rm.1 \
@@ -87,6 +95,7 @@ MAN1=	\
 	condor_submit.1 \
 	condor_submit_dag.1 \
 	condor_suspend.1 \
+	condor_tail.1 \
 	condor_transfer_data.1 \
 	condor_updates_stats.1 \
 	condor_userlog.1 \
@@ -95,18 +104,14 @@ MAN1=	\
 	condor_vacate_job.1 \
 	condor_version.1 \
 	condor_wait.1 \
-	filelock_midwife.1 \
-	filelock_undertaker.1 \
+	condor_who.1 \
 	gidd_alloc.1 \
-	install_release.1 \
-	procd_ctl.1 \
-	uniq_pid_midwife.1 \
-	uniq_pid_undertaker.1
+	procd_ctl.1
 
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	requires that you go to http://research.cs.wisc.edu/condor/ to register and manually download the source distribution ${DISTNAME}${EXTRACT_SUFX}, place it in ${DISTDIR}, and then run make again."
+IGNORE=	requires that you go to http://research.cs.wisc.edu/condor/ to register and manually download the source distribution ${DISTNAME}${EXTRACT_SUFX}, place it in ${DISTDIR}, and then run make again
 .endif
 
 pre-everything::
@@ -117,6 +122,8 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's,\(set( C_SHARE_EXAMPLES	\)share/condor,\1${EXAMPLESDIR_REL},' \
 		${WRKSRC}/build/cmake/CondorPackageConfig.cmake
+	@${REINPLACE_CMD} \
+		-e '/create_symlink/d' ${WRKSRC}/src/condor_scripts/CMakeLists.txt
 
 pre-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL

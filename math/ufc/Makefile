@@ -15,6 +15,7 @@ LIB_DEPENDS=	boost_math_c99:${PORTSDIR}/devel/boost-libs
 # LICENSE=	public domain
 
 USES=		cmake
+USE_CMAKE=	yes
 USE_PYTHON=	-2.7
 PYDISTUTILS_PKGNAME=	ufc
 

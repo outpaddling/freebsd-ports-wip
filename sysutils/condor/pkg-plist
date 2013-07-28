@@ -10,10 +10,12 @@ bin/condor_findhost
 bin/condor_gather_info
 bin/condor_history
 bin/condor_hold
+bin/condor_ping
 bin/condor_power
 bin/condor_prio
 bin/condor_q
 bin/condor_qedit
+bin/condor_qsub
 bin/condor_release
 bin/condor_reschedule
 bin/condor_rm
@@ -27,6 +29,7 @@ bin/condor_status
 bin/condor_submit
 bin/condor_submit_dag
 bin/condor_suspend
+bin/condor_tail
 bin/condor_test_match
 bin/condor_transfer_data
 bin/condor_userlog
@@ -36,6 +39,7 @@ bin/condor_vacate
 bin/condor_vacate_job
 bin/condor_version
 bin/condor_wait
+bin/condor_who
 %%ETCDIR%%/condor
 %%ETCDIR%%/condor_config
 %%ETCDIR%%/condor_config.local
@@ -65,6 +69,7 @@ include/chirp_client.h
 include/classad/attrrefs.h
 include/classad/cclassad.h
 include/classad/classad.h
+include/classad/classadCache.h
 include/classad/classadErrno.h
 include/classad/classadItor.h
 include/classad/classad_distribution.h
@@ -108,12 +113,8 @@ include/user_log.README
 include/user_log.c++.h
 include/write_user_log.h
 lib/Chirp.jar
-lib/Condor.pm
 lib/CondorJavaInfo.class
 lib/CondorJavaWrapper.class
-lib/CondorPersonal.pm
-lib/CondorTest.pm
-lib/CondorUtils.pm
 lib/condor_ssh_to_job_sshd_config_template
 lib/libchirp_client.a
 lib/libclassad.a
@@ -136,8 +137,10 @@ libexec/condor_ssh_to_job_sshd_setup
 libexec/condor_transferer
 libexec/curl_plugin
 libexec/data_plugin
+libexec/interactive.sub
 libexec/libvirt_simple_script.awk
 libexec/sshd.sh
+sbin/bosco_install
 sbin/condor_advertise
 sbin/condor_c-gahp
 sbin/condor_c-gahp_worker_thread
@@ -145,6 +148,7 @@ sbin/condor_collector
 sbin/condor_configure
 sbin/condor_credd
 sbin/condor_fetchlog
+sbin/condor_ft-gahp
 sbin/condor_gridmanager
 sbin/condor_had
 sbin/condor_init
