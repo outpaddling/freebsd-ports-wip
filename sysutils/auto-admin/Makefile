@@ -36,7 +36,7 @@ MAN1=		auto-admin.1 \
 		auto-print-make-variable.1 \
 		auto-replace-file.1 \
 		auto-service-enabled.1 \
-		auto-update-port-framework.1 \
+		auto-insert-line.1 \
 		auto-update-xorg.conf.1 \
 		auto-xdm-toggle.1
 
