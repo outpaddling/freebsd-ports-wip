@@ -1,5 +1,5 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
-# $FreeBSD: ports/devel/openvex/Makefile,v 1.1 2012/09/25 12:04:48 makc Exp $
+# $FreeBSD: devel/openvex/Makefile 323682 2013-07-26 05:41:36Z danfe $
 
 PORTNAME=	openvex
 PORTVERSION=	0.5.2
@@ -18,8 +18,18 @@ RUN_DEPENDS=	vexctl:${PORTSDIR}/devel/roboctl \
 		sdcc:${PORTSDIR}/lang/sdcc \
 		gpasm:${PORTSDIR}/devel/gputils
 
+REINPLACE_ARGS=	-i ""
+
 MAN1=		openvex.1 openvex-new-project.1
 
 ALL_TARGET=	all clean
+
+post-patch:
+# Use make's -C option to descent into directories and fix parallel builds
+	@${REINPLACE_CMD} -e 's/^all:/& depend/ ; s/ make depend &&//' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -E 's/cd (.+)(;| &&) make/$$(MAKE) -C \1/' \
+		${WRKSRC}/Advanced/Makefile ${WRKSRC}/Beginner/Makefile \
+		${WRKSRC}/HiBob/Makefile ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

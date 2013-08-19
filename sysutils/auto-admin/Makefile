@@ -2,7 +2,7 @@
 # $FreeBSD: sysutils/auto-admin/Makefile 316097 2013-04-19 11:45:55Z madpilot $
 
 PORTNAME=	auto-admin
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
