@@ -2,7 +2,7 @@
 # $FreeBSD: devel/openvex/Makefile 323682 2013-07-26 05:41:36Z danfe $
 
 PORTNAME=	openvex
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	devel
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
