@@ -1,0 +1,3 @@
+bin/bowtie
+bin/bowtie-build
+bin/bowtie-inspect
