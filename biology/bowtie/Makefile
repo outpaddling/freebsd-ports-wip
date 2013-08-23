@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bowtie
-# Date created:		2013-08-23
-# Whom:			Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
-#
+# Created by:	Jason Bacon
 # $FreeBSD$
-#
 
 PORTNAME=	bowtie
 PORTVERSION=	1.0.0
@@ -29,5 +25,16 @@ do-install:
 		${WRKSRC}/bowtie-build \
 		${WRKSRC}/bowtie-inspect \
 		${PREFIX}/bin
+	${INSTALL_SCRIPT} \
+		${WRKSRC}/scripts/*.sh \
+		${WRKSRC}/scripts/*.pl \
+		${PREFIX}/bin
+	${MKDIR} ${DATADIR}
+	${CP} -R \
+		${WRKSRC}/doc \
+		${WRKSRC}/genomes \
+		${WRKSRC}/indexes \
+		${WRKSRC}/reads \
+		${DATADIR}
 
 .include <bsd.port.mk>
