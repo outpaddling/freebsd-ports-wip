@@ -10,7 +10,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Quickly configure a FreeBSD desktop system
 
-RUN_DEPENDS=	auto-admin>=0.3.2:${PORTSDIR}/sysutils/auto-admin
+RUN_DEPENDS=	auto-admin>=0.3.3:../../sysutils/auto-admin
 
 NO_BUILD=	yes
 
