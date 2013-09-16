@@ -9,7 +9,7 @@ MASTER_SITES=	http://launchpad.net/${PORTNAME}/${MMVERSION}.x/${PORTVERSION}/+do
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Unified framework for finite element assembly
 
-BUILD_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20
+BUILD_DEPENDS=	swig2.0:../../devel/swig20
 LIB_DEPENDS=	boost_math_c99:${PORTSDIR}/devel/boost-libs
 
 # LICENSE=	public domain

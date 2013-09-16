@@ -22,12 +22,13 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ufc_utils:../../math/ufc \
 		${PYTHON_SITELIBDIR}/viper:../../math/py-viper \
 		${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
 		swig2.0:../../devel/swig20 \
-		${LOCALBASE}/petsc/lib/libpetsc.a:../../math/petsc \
+		${LOCALBASE}/petsc/lib/libpetsc.a:../../math/petsc31 \
 		sphinx-build:${PORTSDIR}/textproc/py-sphinx
 
 # Require MPI
 #		${LOCALBASE}/lib/libscotch.a:../../cad/scotch
 #		${LOCALBASE}/lib/parmetis/libparmetis.a:${PORTSDIR}/math/parmetis
+
 LIB_DEPENDS=	blas:${PORTSDIR}/math/blas \
 		lapack:${PORTSDIR}/math/lapack \
 		amd:${PORTSDIR}/math/suitesparse \

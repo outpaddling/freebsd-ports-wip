@@ -1,36 +1,20 @@
-# New ports collection makefile for:	armadillo
-# Date created:		2011-08-14
-# Whom:			Jason Bacon <jwbacon@tds.net>
-#
-# $FreeBSD$
-#
+# $FreeBSD: ports/math/armadillo/Makefile,v 1.1 2013/03/22 19:22:00 svnexp Exp $
 
 PORTNAME=	armadillo
-PORTVERSION=	3.6.1
+PORTVERSION=	3.800.1
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=arma/}
+MASTER_SITES=	SF/arma/
 
-MAINTAINER=	jwbacon@tds.net
-COMMENT=	C++ template matrix library
+MAINTAINER=	giffunip@tutopia.com
+COMMENT=	C++ linear algebra library
 
-LIB_DEPENDS=	blas:${PORTSDIR}/math/blas \
-		lapack:${PORTSDIR}/math/lapack \
-		boost_math_c99:${PORTSDIR}/devel/boost-libs
+LICENSE=	MPL
 
+LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack	\
+		boost_date_time:${PORTSDIR}/devel/boost-libs
+
+USES=		cmake
 USE_CMAKE=	yes
-USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
-
-DATADIR=	${PREFIX}/share/Aramdillo
-
-# Disable search for optional components to ensure consistent build
-post-patch:
-	${REINPLACE_CMD} \
-		-e 's|include(ARMA_FindMKL)|# include(ARMA_FindMKL)|g' \
-		-e 's|include(ARMA_FindACMLMP)|# include(ARMA_FindACMLMP)|g' \
-		-e 's|include(ARMA_FindACML)|# include(ARMA_FindACML)|g' \
-		-e 's|include(ARMA_FindCLAPACK)|# include(ARMA_FindCLAPACK)|g' \
-		-e 's|include(ARMA_FindCBLAS)|# include(ARMA_FindCBLAS)|g' \
-		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

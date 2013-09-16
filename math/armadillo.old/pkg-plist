@@ -265,8 +265,6 @@ include/armadillo_bits/op_sum_bones.hpp
 include/armadillo_bits/op_sum_meat.hpp
 include/armadillo_bits/op_symmat_bones.hpp
 include/armadillo_bits/op_symmat_meat.hpp
-include/armadillo_bits/op_toeplitz_bones.hpp
-include/armadillo_bits/op_toeplitz_meat.hpp
 include/armadillo_bits/op_trimat_bones.hpp
 include/armadillo_bits/op_trimat_meat.hpp
 include/armadillo_bits/op_unique_bones.hpp
@@ -343,7 +341,7 @@ include/armadillo_bits/wall_clock_bones.hpp
 include/armadillo_bits/wall_clock_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.3
-lib/libarmadillo.so.3.800.1
+lib/libarmadillo.so.3.6.1
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
 share/Armadillo/CMake/ArmadilloLibraryDepends-release.cmake
