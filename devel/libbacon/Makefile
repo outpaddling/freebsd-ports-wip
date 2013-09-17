@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libbacon
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 		http://acadix.biz/Ports/distfiles/
