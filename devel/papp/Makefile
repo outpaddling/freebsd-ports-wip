@@ -2,11 +2,11 @@
 # Date created:		18 September 2009
 # Whom:			Jason Bacon <jwbacon@tds.net>
 #
-# $FreeBSD: ports/devel/app/Makefile,v 1.1 2012/05/18 19:01:03 jgh Exp $
+# $FreeBSD: ports/devel/papp/Makefile,v 1.2 2012/11/17 05:56:37 svnexp Exp $
 #
 
 PORTNAME=	papp
-PORTVERSION=	0.3
+PORTVERSION=	0.3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
