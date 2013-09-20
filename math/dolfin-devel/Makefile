@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ufc_utils:../../math/ufc \
 		${PYTHON_SITELIBDIR}/ufl:../../math/py-ufl \
 		${PYTHON_SITELIBDIR}/viper:../../math/py-viper \
 		${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
+		${PYTHON_SITELIBDIR}/ply:${PORTSDIR}/devel/py-ply \
 		swig2.0:../../devel/swig20 \
 		${LOCALBASE}/petsc/lib/libpetsc.a:../../math/petsc31 \
 		sphinx-build:${PORTSDIR}/textproc/py-sphinx
@@ -50,6 +51,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ufc_utils:../../math/ufc \
 		${PYTHON_SITELIBDIR}/ufl:../../math/py-ufl \
 		${PYTHON_SITELIBDIR}/viper:../../math/py-viper \
 		${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
+		${PYTHON_SITELIBDIR}/ply:${PORTSDIR}/devel/py-ply \
 		sphinx-build:${PORTSDIR}/textproc/py-sphinx \
 		vtkpython:${PORTSDIR}/math/vtk5
 
@@ -79,7 +81,7 @@ CMAKE_ARGS+=	-DDOLFIN_ENABLE_MPI:BOOL=OFF \
 		-DDOLFIN_MAN_DIR:PATH=man \
 		-DCHOLMOD_DIR:PATH=${LOCALBASE} \
 		-DUMFPACK_DIR:PATH=${LOCALBASE} \
-		-DPETSC_DIR:PATH=${LOCALBASE}/petsc \
+		-DPETSC_ARCH=${OPSYS:L} \
 		-DDOLFIN_PKGCONFIG_DIR:PATH=${LOCALBASE}/libdata/pkgconfig
 
 # Trilinos requires MPI
@@ -101,5 +103,7 @@ MMVERSION=	1.2
 
 post-patch:
 	${REINPLACE_CMD} -e 's|os.path.join(os.path.sep,"usr")|os.path.normpath("${PREFIX}")|' ${WRKSRC}/site-packages/dolfin/compilemodules/compilemodule.py
+	${REINPLACE_CMD} -e 's|/usr/local/lib/petsc|/usr/local/petsc|' ${WRKSRC}/cmake/modules/FindPETSc.cmake
+	${REINPLACE_CMD} -e 's|$${PETSC_ARCH}/include|include|' ${WRKSRC}/cmake/modules/FindPETSc.cmake
 
 .include <bsd.port.mk>
