@@ -9,7 +9,7 @@ PORTNAME=	petsc
 PORTVERSION=	3.3
 CATEGORIES=	math
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-p6
+DISTNAME=	${PORTNAME}-${PORTVERSION}-p7
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Parallel solution of partial differential equations
@@ -21,16 +21,14 @@ USE_FORTRAN=	yes
 CONFIG_SHELL=	${PYTHONBIN}
 CONFIGURE_LOG=	configure.log
 
-CONFIGURE_ENV=	PETSC_ARCH=${OPSYS:L} \
-		PETSC_DIR=${WRKSRC}
-
-MAKE_ENV+=	PETSC_DIR=${WRKSRC} \
+CONFIGURE_ENV=	PETSC_DIR=${WRKSRC} \
 		PETSC_ARCH=${OPSYS:L}
+
+MAKE_ENV+=	${CONFIGURE_ENV}
 
 USE_GMAKE=	yes
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu \
-		svn:${PORTSDIR}/devel/subversion \
 		svn:${PORTSDIR}/devel/subversion
 #		${LOCALBASE}/lib/libBS95.a:${PORTSDIR}/math/blocksolve95 \
 
@@ -61,13 +59,10 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--with-64-bit-indices=1 \
 		--with-64-bit-pointers=1 \
 		--with-pic \
-		--with-mpi=0
+		--with-mpi=0 \
+		--with-matlab=0
 
 MAKEFILE=	makefile
-
-CFLAGS+=	-O
-CXXFLAGS+=	-O
-FFLAGS+=	-O
 
 LIB_DEPENDS=	blas:${PORTSDIR}/math/blas \
 		lapack:${PORTSDIR}/math/lapack
@@ -77,5 +72,4 @@ CONFIGURE_ARGS+=	| tr '\r' '\n'
 pre-configure:
 	${MKDIR} ${WRKSRC}/temp
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

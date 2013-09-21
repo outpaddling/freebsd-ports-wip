@@ -14,7 +14,8 @@ LICENSE=	LGPL3
 # Note: Currently can't tell if parmetis was built with openmpi or mpich2
 # Leave paths as ../../ instead of ${PORTSDIR} until committed for
 # development purposes
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ufc_utils:../../math/ufc \
+# PETSc 3.4 fails PETSC_TEST_RUNS.  3.1 is rejected.  Use 3.2 or 3.3.
+COMMON_DEPENDS=	${PYTHON_SITELIBDIR}/ufc_utils:../../math/ufc \
 		${PYTHON_SITELIBDIR}/ffc:../../math/py-ffc \
 		${PYTHON_SITELIBDIR}/FIAT:../../math/py-fiat \
 		${PYTHON_SITELIBDIR}/instant:../../devel/py-instant \
@@ -23,8 +24,10 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ufc_utils:../../math/ufc \
 		${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
 		${PYTHON_SITELIBDIR}/ply:${PORTSDIR}/devel/py-ply \
 		swig2.0:../../devel/swig20 \
-		${LOCALBASE}/petsc/lib/libpetsc.a:../../math/petsc31 \
+		${LOCALBASE}/lib/libpetsc.a:../../math/petsc34 \
 		sphinx-build:${PORTSDIR}/textproc/py-sphinx
+
+BUILD_DEPENDS=	${COMMON_DEPENDS}
 
 # Require MPI
 #		${LOCALBASE}/lib/libscotch.a:../../cad/scotch
@@ -44,16 +47,7 @@ LIB_DEPENDS=	blas:${PORTSDIR}/math/blas \
 # Dolfin requires MPI if Trilinos is enabled
 #		amesos:../../math/trilinos
 # Need better depend rule to ensure vtk5 is installed
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ufc_utils:../../math/ufc \
-		${PYTHON_SITELIBDIR}/ffc:../../math/py-ffc \
-		${PYTHON_SITELIBDIR}/FIAT:../../math/py-fiat \
-		${PYTHON_SITELIBDIR}/instant:../../devel/py-instant \
-		${PYTHON_SITELIBDIR}/ufl:../../math/py-ufl \
-		${PYTHON_SITELIBDIR}/viper:../../math/py-viper \
-		${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
-		${PYTHON_SITELIBDIR}/ply:${PORTSDIR}/devel/py-ply \
-		sphinx-build:${PORTSDIR}/textproc/py-sphinx \
-		vtkpython:${PORTSDIR}/math/vtk5
+RUN_DEPENDS=	${COMMON_DEPENDS}
 
 USE_CMAKE=	yes
 USE_PYTHON=	-2.7
@@ -79,9 +73,9 @@ CMAKE_ARGS+=	-DDOLFIN_ENABLE_MPI:BOOL=OFF \
 		-DDOLFIN_ENABLE_MTL4:BOOL=OFF \
 		-DDOLFIN_ENABLE_PETSC:BOOL=ON \
 		-DDOLFIN_MAN_DIR:PATH=man \
+		-DPETSC_DIR:PATH=${LOCALBASE} \
 		-DCHOLMOD_DIR:PATH=${LOCALBASE} \
 		-DUMFPACK_DIR:PATH=${LOCALBASE} \
-		-DPETSC_ARCH=${OPSYS:L} \
 		-DDOLFIN_PKGCONFIG_DIR:PATH=${LOCALBASE}/libdata/pkgconfig
 
 # Trilinos requires MPI
@@ -103,7 +97,7 @@ MMVERSION=	1.2
 
 post-patch:
 	${REINPLACE_CMD} -e 's|os.path.join(os.path.sep,"usr")|os.path.normpath("${PREFIX}")|' ${WRKSRC}/site-packages/dolfin/compilemodules/compilemodule.py
-	${REINPLACE_CMD} -e 's|/usr/local/lib/petsc|/usr/local/petsc|' ${WRKSRC}/cmake/modules/FindPETSc.cmake
+	${REINPLACE_CMD} -e "s|/usr/local/lib/petsc|${LOCALBASE}|" ${WRKSRC}/cmake/modules/FindPETSc.cmake
 	${REINPLACE_CMD} -e 's|$${PETSC_ARCH}/include|include|' ${WRKSRC}/cmake/modules/FindPETSc.cmake
 
 .include <bsd.port.mk>

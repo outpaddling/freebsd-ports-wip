@@ -40,7 +40,7 @@ LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
 #		--with-large-file-io=1 \	conftest fails
 #		--with-c++-support \
 
-CONFIGURE_ARGS+=--prefix=${PREFIX}/${PORTNAME} \
+CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--CPPFLAGS=${CPPFLAGS} \
 		--CFLAGS=${CFLAGS} \
 		--CXXFLAGS=${CXXFLAGS} \
@@ -59,7 +59,8 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}/${PORTNAME} \
 		--with-64-bit-indices=1 \
 		--with-64-bit-pointers=1 \
 		--with-pic \
-		--with-mpi=0
+		--with-mpi=0 \
+		--with-matlab=0
 
 MAKEFILE=	makefile
 
