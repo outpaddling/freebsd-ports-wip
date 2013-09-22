@@ -37,7 +37,8 @@ USE_LDCONFIG=	yes
 USE_MYSQL=	yes
 GNU_CONFIGURE=	yes
 
-CFLAGS=		-I${LOCALBASE}/include -g -O0 -mx32
+# CFLAGS=		-I${LOCALBASE}/include -g -O0 -mx32
+CFLAGS=		-I${LOCALBASE}/include -g -O0
 LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
 
 SUB_FILES=	slurm.conf pkg-message
