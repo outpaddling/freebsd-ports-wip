@@ -1,19 +1,15 @@
-# New ports collection makefile for:	lnphost
-# Date created:		2007-09-13
-# Whom:			Jason Bacon <jwbacon@tds.net>
-#
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
-#
 
 PORTNAME=	lnphost
 PORTVERSION=	1.0a
-#PORTREVISION=	0
-#PORTEPOCH=	0
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	jwbacon@tds.net
-COMMENT=	Lego RCX API
+COMMENT=	Lego RCX iinfrared communication API
+
+LICENSE=	GPLv2
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
