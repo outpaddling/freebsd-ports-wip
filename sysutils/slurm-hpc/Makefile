@@ -69,7 +69,8 @@ MAN1=	\
 	sshare.1 \
 	sstat.1 \
 	strigger.1 \
-	sview.1
+	sview.1 \
+	sh5util.1
 
 MAN3=	\
 	slurm_allocate_resources.3 \
@@ -212,11 +213,12 @@ MAN5=	\
 	cgroup.conf.5 \
 	cray.conf.5 \
 	gres.conf.5 \
-	ipmi.conf.5 \
 	slurm.conf.5 \
 	slurmdbd.conf.5 \
 	topology.conf.5 \
-	wiki.conf.5
+	wiki.conf.5 \
+	acct_gather.conf.5 \
+	ext_sensors.conf.5
 
 MAN8 =	\
 	slurmctld.8 \

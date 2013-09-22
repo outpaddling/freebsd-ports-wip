@@ -362,26 +362,26 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%-2.6.2/html/slurm_ug_agenda.html
 %%PORTDOCS%%%%DOCSDIR%%-2.6.2/html/slurm_ug_cfp.html
 %%PORTDOCS%%%%DOCSDIR%%-2.6.2/html/slurm_ug_registration.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurmctld_plugstack.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurmstyles.css
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sponsors.gif
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sun_const.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/switchplugins.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/taskplugins.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/team.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/testimonials.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/topo_ex1.gif
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/topo_ex2.gif
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/topology.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/topology_plugin.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/troubleshoot.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/tutorial_intro_files.tar
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/tutorials.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/usage_pies.gif
+%%PORTDOCS%%%%DOCSDIR%%-2.6.2/html/slurmctld_plugstack.html
+%%PORTDOCS%%%%DOCSDIR%%-2.6.2/html/slurmstyles.css
+%%PORTDOCS%%%%DOCSDIR%%-2.6.2/html/sponsors.gif
+%%PORTDOCS%%%%DOCSDIR%%-2.6.2/html/sun_const.html
+%%PORTDOCS%%%%DOCSDIR%%-2.6.2/html/switchplugins.html
+%%PORTDOCS%%%%DOCSDIR%%-2.6.2/html/taskplugins.html
+%%PORTDOCS%%%%DOCSDIR%%-2.6.2/html/team.html
+%%PORTDOCS%%%%DOCSDIR%%-2.6.2/html/testimonials.html
+%%PORTDOCS%%%%DOCSDIR%%-2.6.2/html/topo_ex1.gif
+%%PORTDOCS%%%%DOCSDIR%%-2.6.2/html/topo_ex2.gif
+%%PORTDOCS%%%%DOCSDIR%%-2.6.2/html/topology.html
+%%PORTDOCS%%%%DOCSDIR%%-2.6.2/html/topology_plugin.html
+%%PORTDOCS%%%%DOCSDIR%%-2.6.2/html/troubleshoot.html
+%%PORTDOCS%%%%DOCSDIR%%-2.6.2/html/tutorial_intro_files.tar
+%%PORTDOCS%%%%DOCSDIR%%-2.6.2/html/tutorials.html
+%%PORTDOCS%%%%DOCSDIR%%-2.6.2/html/usage_pies.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slurm.conf
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-2.6.2/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-2.6.2
 @dirrm lib/slurm/src/srun
 @dirrm lib/slurm/src/sattach
 @dirrm lib/slurm/src
