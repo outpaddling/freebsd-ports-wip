@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/archive/ \
 		http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/development/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-0pre2
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Simple Linux Resource Manager
