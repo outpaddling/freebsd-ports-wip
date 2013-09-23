@@ -20,9 +20,11 @@ CONFLICTS_INSTALL=	slurm-2.5*
 # wiki/wiki2 default port = 7321
 
 BUILD_DEPENDS+=	${LOCALBASE}/include/sys/sysinfo.h:${PORTSDIR}/devel/libsysinfo \
-		${LOCALBASE}/h5copy:${PORTSDIR}/science/hdf5-18
+		${LOCALBASE}/bin/h5copy:${PORTSDIR}/science/hdf5-18
 RUN_DEPENDS+=	munge:${PORTSDIR}/security/munge \
-		${LOCALBASE}/h5copy:${PORTSDIR}/science/hdf5-18
+		${LOCALBASE}/bin/h5copy:${PORTSDIR}/science/hdf5-18
+
+LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
 
 # OPTIONS	mysql, totalview, padb, hostlist, qsnetlibs+libelanhosts
 #		io-watchdog, pam-slurm, sqlog
@@ -36,13 +38,16 @@ RUN_DEPENDS+=	munge:${PORTSDIR}/security/munge \
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_MYSQL=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
-USES=		perl5
+USES=		perl5 gmake
+USE_MYSQL=	server	# Job accounting
+USE_PGSQL=	server	# Job accounting
+USE_GNOME=	gtk20	# sview
 
+# Enable full debugger info
 # CFLAGS=		-I${LOCALBASE}/include -g -O0 -mx32
-CFLAGS=		-I${LOCALBASE}/include -g -O0
+CFLAGS=		-I${LOCALBASE}/include -g -O
 LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
 
 SUB_FILES=	slurm.conf pkg-message
