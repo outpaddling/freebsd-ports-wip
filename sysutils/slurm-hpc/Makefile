@@ -19,8 +19,10 @@ CONFLICTS_INSTALL=	slurm-2.5*
 # slurmd default port = 6818
 # wiki/wiki2 default port = 7321
 
-BUILD_DEPENDS+=	${LOCALBASE}/include/sys/sysinfo.h:${PORTSDIR}/devel/libsysinfo
-RUN_DEPENDS+=	munge:${PORTSDIR}/security/munge
+BUILD_DEPENDS+=	${LOCALBASE}/include/sys/sysinfo.h:${PORTSDIR}/devel/libsysinfo \
+		${LOCALBASE}/h5copy:${PORTSDIR}/science/hdf5-18
+RUN_DEPENDS+=	munge:${PORTSDIR}/security/munge \
+		${LOCALBASE}/h5copy:${PORTSDIR}/science/hdf5-18
 
 # OPTIONS	mysql, totalview, padb, hostlist, qsnetlibs+libelanhosts
 #		io-watchdog, pam-slurm, sqlog
