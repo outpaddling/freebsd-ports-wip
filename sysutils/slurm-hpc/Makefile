@@ -36,6 +36,8 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_MYSQL=	yes
 GNU_CONFIGURE=	yes
+USE_PYTHON=	yes
+USES=		perl5
 
 # CFLAGS=		-I${LOCALBASE}/include -g -O0 -mx32
 CFLAGS=		-I${LOCALBASE}/include -g -O0
