@@ -1,0 +1,3 @@
+
+Force configure to use text file accounting by default.  Use options
+to enable mysql and/or postgresql.
