@@ -41,6 +41,9 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USES=		perl5 gmake
+
+# Can we disable these in configure even if they're installed?
+# Need control to ensure a consistent plist.
 USE_MYSQL=	server	# Job accounting
 USE_PGSQL=	server	# Job accounting
 USE_GNOME=	gtk20	# sview
