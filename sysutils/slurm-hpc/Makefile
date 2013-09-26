@@ -44,6 +44,7 @@ USES=		perl5 gmake
 
 # Can we disable these in configure even if they're installed?
 # Need control to ensure a consistent plist.
+# Try --with-mysql_config=/nowhere --with-pg_config=/nowhere --disable-gtktest
 USE_MYSQL=	server	# Job accounting
 USE_PGSQL=	server	# Job accounting
 USE_GNOME=	gtk20	# sview
