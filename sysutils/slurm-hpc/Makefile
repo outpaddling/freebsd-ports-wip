@@ -45,12 +45,45 @@ USES=		perl5 gmake
 # Can we disable these in configure even if they're installed?
 # Need control to ensure a consistent plist.
 # Try --with-mysql_config=/nowhere --with-pg_config=/nowhere --disable-gtktest
+
+.if WITH_MYSQL
 USE_MYSQL=	server	# Job accounting
+PLIST_FILES+=	lib/slurm/accounting_storage_mysql.a \
+		lib/slurm/accounting_storage_mysql.la \
+		lib/slurm/accounting_storage_mysql.so \
+		lib/slurm/jobcomp_mysql.a \
+		lib/slurm/jobcomp_mysql.la \
+		lib/slurm/jobcomp_mysql.so
+.else
+# Can't disable configure test, so make it fail
+CONFIGURE_ARGS+=--with-mysql_config=/nomysql
+.endif
+
+.if WITH_PGSQL
 USE_PGSQL=	server	# Job accounting
-USE_GNOME=	gtk20	# sview
+PLIST_FILES+=	lib/slurm/accounting_storage_pgsql.a \
+		lib/slurm/accounting_storage_pgsql.la \
+		lib/slurm/accounting_storage_pgsql.so \
+		lib/slurm/jobcomp_pgsql.a \
+		lib/slurm/jobcomp_pgsql.la \
+		lib/slurm/jobcomp_pgsql.so
+.else
+# Can't disable configure test, so make it fail
+CONFIGURE_ARGS+=--with-pg_config=/nopostgres
+.endif
+
+.if WITH_SVIEW
+USE_GNOME=	glib20 gtk20	# sview
+PLIST_FILES+=	bin/sview
+.else
+# Can't disable configure test, so make it fail
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's|min_gtk_version=2.7.1|min_gtk_version=200.7.1|' \
+		${WRKSRC}/configure
+.endif
 
 # Enable full debugger info
-# CFLAGS=		-I${LOCALBASE}/include -g -O0 -mx32
 CFLAGS=		-I${LOCALBASE}/include -g -O
 LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
 
@@ -60,6 +93,10 @@ USERS=		slurm
 GROUPS=		${USERS}
 
 USE_RC_SUBR=	slurmctld slurmd
+
+OPTIONS=	MYSQL	"Build with MYSQL accounting support" off \
+		PGSQL	"Build with POSTGRESQL accounting support" off \
+		SVIEW	"Build sview config tool (requires GTK2)" off
 
 MAN1=	\
 	sacct.1 \
