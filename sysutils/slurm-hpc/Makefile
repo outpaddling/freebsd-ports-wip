@@ -42,11 +42,25 @@ GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USES=		perl5 gmake
 
+# Old
+OPTIONS=	MYSQL	"Build with MYSQL accounting support" off \
+		PGSQL	"Build with POSTGRESQL accounting support" off \
+		GUI	"Build GUI config tools (requires GTK2)" off
+
+# New
+OPTIONS_DEFINE=	MYSQL PGSQL GUI
+OPTIONS_DEFAULT=""
+MYSQL_DESC=	Build with MYSQL accounting support
+PGSQL_DESC=	Build with POSTGRESQL accounting support
+GUI_DESC=	Build GUI config tools (requires GTK2)
+
 # Can we disable these in configure even if they're installed?
 # Need control to ensure a consistent plist.
 # Try --with-mysql_config=/nowhere --with-pg_config=/nowhere --disable-gtktest
 
-.if WITH_MYSQL
+.include <bsd.port.options.mk>
+
+.if WITH_MYSQL || ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	server	# Job accounting
 PLIST_FILES+=	lib/slurm/accounting_storage_mysql.a \
 		lib/slurm/accounting_storage_mysql.la \
@@ -59,7 +73,8 @@ PLIST_FILES+=	lib/slurm/accounting_storage_mysql.a \
 CONFIGURE_ARGS+=--with-mysql_config=/nomysql
 .endif
 
-.if WITH_PGSQL
+#.if WITH_PGSQL
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	server	# Job accounting
 PLIST_FILES+=	lib/slurm/accounting_storage_pgsql.a \
 		lib/slurm/accounting_storage_pgsql.la \
@@ -72,7 +87,8 @@ PLIST_FILES+=	lib/slurm/accounting_storage_pgsql.a \
 CONFIGURE_ARGS+=--with-pg_config=/nopostgres
 .endif
 
-.if WITH_SVIEW
+#.if WITH_GUI
+.if ${PORT_OPTIONS:MGUI}
 USE_GNOME=	glib20 gtk20	# sview
 PLIST_FILES+=	bin/sview
 .else
@@ -93,10 +109,6 @@ USERS=		slurm
 GROUPS=		${USERS}
 
 USE_RC_SUBR=	slurmctld slurmd
-
-OPTIONS=	MYSQL	"Build with MYSQL accounting support" off \
-		PGSQL	"Build with POSTGRESQL accounting support" off \
-		SVIEW	"Build sview config tool (requires GTK2)" off
 
 MAN1=	\
 	sacct.1 \
