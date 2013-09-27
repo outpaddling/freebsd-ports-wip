@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
 
 PORTNAME=	slurm
@@ -13,50 +13,29 @@ COMMENT=	Simple Linux Resource Manager
 
 LICENSE=	GPLv1
 
-CONFLICTS_INSTALL=	slurm-2.5*
-
-# slurmctld default port = 6817
-# slurmd default port = 6818
-# wiki/wiki2 default port = 7321
-
-BUILD_DEPENDS+=	${LOCALBASE}/include/sys/sysinfo.h:${PORTSDIR}/devel/libsysinfo \
-		${LOCALBASE}/bin/h5copy:${PORTSDIR}/science/hdf5-18
+LIB_DEPENDS=	sysinfo:${PORTSDIR}/devel/libsysinfo \
+		rrd:${PORTSDIR}/databases/rrdtool
+BUILD_DEPENDS+=	${LOCALBASE}/bin/h5copy:${PORTSDIR}/science/hdf5-18
 RUN_DEPENDS+=	munge:${PORTSDIR}/security/munge \
 		${LOCALBASE}/bin/h5copy:${PORTSDIR}/science/hdf5-18
-
-LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
-
-# OPTIONS	mysql, totalview, padb, hostlist, qsnetlibs+libelanhosts
-#		io-watchdog, pam-slurm, sqlog
-
-# Install munge.key to all nodes and start munge daemons before slurm
-# RUN_DEPENDS=	munge
-# Create SlurmUser (Unix: slurm)
-# Use doc/html/configurator.html to generate slurm.conf
-# install into sysconfdir
-# start slurm daemons
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
+USE_PERL5=	yes
+USE_GMAKE=	yes
 USES=		perl5 gmake
 
-# Old
 OPTIONS=	MYSQL	"Build with MYSQL accounting support" off \
 		PGSQL	"Build with POSTGRESQL accounting support" off \
 		GUI	"Build GUI config tools (requires GTK2)" off
 
-# New
 OPTIONS_DEFINE=	MYSQL PGSQL GUI
 OPTIONS_DEFAULT=""
 MYSQL_DESC=	Build with MYSQL accounting support
 PGSQL_DESC=	Build with POSTGRESQL accounting support
 GUI_DESC=	Build GUI config tools (requires GTK2)
-
-# Can we disable these in configure even if they're installed?
-# Need control to ensure a consistent plist.
-# Try --with-mysql_config=/nowhere --with-pg_config=/nowhere --disable-gtktest
 
 .include <bsd.port.options.mk>
 
@@ -73,8 +52,7 @@ PLIST_FILES+=	lib/slurm/accounting_storage_mysql.a \
 CONFIGURE_ARGS+=--with-mysql_config=/nomysql
 .endif
 
-#.if WITH_PGSQL
-.if ${PORT_OPTIONS:MPGSQL}
+.if WITH_PGSQL || ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	server	# Job accounting
 PLIST_FILES+=	lib/slurm/accounting_storage_pgsql.a \
 		lib/slurm/accounting_storage_pgsql.la \
@@ -87,20 +65,17 @@ PLIST_FILES+=	lib/slurm/accounting_storage_pgsql.a \
 CONFIGURE_ARGS+=--with-pg_config=/nopostgres
 .endif
 
-#.if WITH_GUI
-.if ${PORT_OPTIONS:MGUI}
+.if WITH_GUI || ${PORT_OPTIONS:MGUI}
 USE_GNOME=	glib20 gtk20	# sview
 PLIST_FILES+=	bin/sview
 .else
 # Can't disable configure test, so make it fail
 post-patch:
-	${REINPLACE_CMD} \
-		-e 's|min_gtk_version=2.7.1|min_gtk_version=200.7.1|' \
+	${REINPLACE_CMD} -e 's|min_gtk_version=2.7.1|min_gtk_version=200.7.1|' \
 		${WRKSRC}/configure
 .endif
 
-# Enable full debugger info
-CFLAGS=		-I${LOCALBASE}/include -g -O
+CFLAGS+=	-I${LOCALBASE}/include -g -O1
 LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
 
 SUB_FILES=	slurm.conf pkg-message
