@@ -66,6 +66,8 @@ CONFIGURE_ARGS+=--with-pg_config=/nopostgres
 .endif
 
 .if WITH_GUI || ${PORT_OPTIONS:MGUI}
+# Note: Configure could not find pcre when building with no ports
+# preinstalled on 9.1-RELEASE.  Worked fine on second try.
 USE_GNOME=	glib20 gtk20	# sview
 PLIST_FILES+=	bin/sview
 .else
