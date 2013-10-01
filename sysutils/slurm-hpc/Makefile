@@ -14,10 +14,10 @@ COMMENT=	Simple Linux Resource Manager
 LICENSE=	GPLv1
 
 LIB_DEPENDS=	sysinfo:${PORTSDIR}/devel/libsysinfo \
+		munge:${PORTSDIR}/security/munge \
 		rrd:${PORTSDIR}/databases/rrdtool
 BUILD_DEPENDS+=	${LOCALBASE}/bin/h5copy:${PORTSDIR}/science/hdf5-18
-RUN_DEPENDS+=	munge:${PORTSDIR}/security/munge \
-		${LOCALBASE}/bin/h5copy:${PORTSDIR}/science/hdf5-18
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
@@ -40,7 +40,7 @@ GUI_DESC=	Build GUI config tools (requires GTK2)
 .include <bsd.port.options.mk>
 
 .if WITH_MYSQL || ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	server	# Job accounting
+USE_MYSQL=	yes	# Job accounting
 PLIST_FILES+=	lib/slurm/accounting_storage_mysql.a \
 		lib/slurm/accounting_storage_mysql.la \
 		lib/slurm/accounting_storage_mysql.so \
@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=--with-mysql_config=/nomysql
 .endif
 
 .if WITH_PGSQL || ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	server	# Job accounting
+USE_PGSQL=	yes	# Job accounting
 PLIST_FILES+=	lib/slurm/accounting_storage_pgsql.a \
 		lib/slurm/accounting_storage_pgsql.la \
 		lib/slurm/accounting_storage_pgsql.so \
