@@ -2433,6 +2433,7 @@ lib/libtwintk.a
 %%DATADIR%%/terminfo/x/xerox1720
 %%DATADIR%%/terminfo/x/xerox820
 %%DATADIR%%/terminfo/x/xfce
+%%DATADIR%%/terminfo/x/xfce4-terminal
 %%DATADIR%%/terminfo/x/xiterm
 %%DATADIR%%/terminfo/x/xl83
 %%DATADIR%%/terminfo/x/xnuppc

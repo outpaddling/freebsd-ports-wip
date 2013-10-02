@@ -6,7 +6,7 @@
 #
 
 PORTNAME=       twintk
-PORTVERSION=    0.9.3
+PORTVERSION=    0.9.4
 CATEGORIES=     devel
 MASTER_SITES=   http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 		http://acadix.biz/Ports/distfiles/
