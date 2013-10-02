@@ -1,0 +1,58 @@
+#!/bin/sh -e
+
+usage()
+{
+    printf "Usage: $0 head|compute\n"
+    exit 1
+}
+
+
+pause()
+{
+    local junk
+    
+    printf 'Press return to continue...'
+    read junk
+}
+
+
+# Make sure slurm UID and GID are registered
+uids='/usr/ports/UIDs'
+if ! fgrep -q slurm $uids; then
+    awk -F ':' '
+    {
+	if ( $1 == "_bbstored" )
+	{
+	    print "slurm:*:467:467::0:0:SLURM Daemon:/home/slurm:/usr/sbin/nologin";
+	    print $0;
+	}
+	else
+	{
+	    print $0;
+	}
+    }' $uids > $uids.new
+    if [ ! -e $uids.orig ]; then
+	cp $uids $uids.orig
+    fi
+    mv $uids.new $uids
+fi
+
+gids='/usr/ports/GIDs'
+if ! fgrep -q slurm $gids; then
+    awk -F ':' '
+    { 
+	if ( $1 == "_bbstored" )
+	{
+	    print "slurm:*:467:"
+	    print $0;
+	}
+	else
+	{
+	    print $0;
+	}
+    }' $gids > $gids.new
+    if [ ! -e $gids.orig ]; then
+	cp $gids $gids.orig
+    fi
+    mv $gids.new $gids
+fi

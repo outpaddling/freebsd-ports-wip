@@ -1,0 +1,15 @@
+
+# slurmctld default port = 6817
+# slurmd default port = 6818
+# wiki/wiki2 default port = 7321
+# OPTIONS	mysql, totalview, padb, hostlist, qsnetlibs+libelanhosts
+#		io-watchdog, pam-slurm, sqlog
+# Install munge.key to all nodes and start munge daemons before slurm
+# RUN_DEPENDS=	munge
+# Create SlurmUser (Unix: slurm)
+# Use doc/html/configurator.html to generate slurm.conf
+# install into sysconfdir
+# start slurm daemons
+
+Force configure to use text file accounting by default.  Use options
+to enable mysql and/or postgresql.

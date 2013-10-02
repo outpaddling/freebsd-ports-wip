@@ -27,15 +27,11 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 USES=		perl5 gmake
 
-OPTIONS_DEFINE=	MYSQL PGSQL GUI
-OPTIONS_DEFAULT=""
-MYSQL_DESC=	Build with MYSQL accounting support
-PGSQL_DESC=	Build with POSTGRESQL accounting support
-GUI_DESC=	Build GUI config tools (requires GTK2)
+OPTIONS=	MYSQL	"Build with MYSQL accounting support" off \
+		PGSQL	"Build with POSTGRESQL accounting support" off \
+		GUI	"Build GUI config tools (requires GTK2)" off
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
+.if WITH_MYSQL
 USE_MYSQL=	yes	# Job accounting
 PLIST_FILES+=	lib/slurm/accounting_storage_mysql.a \
 		lib/slurm/accounting_storage_mysql.la \
@@ -48,7 +44,7 @@ PLIST_FILES+=	lib/slurm/accounting_storage_mysql.a \
 CONFIGURE_ARGS+=--with-mysql_config=/nomysql
 .endif
 
-.if ${PORT_OPTIONS:MPGSQL}
+.if WITH_PGSQL
 USE_PGSQL=	yes	# Job accounting
 PLIST_FILES+=	lib/slurm/accounting_storage_pgsql.a \
 		lib/slurm/accounting_storage_pgsql.la \
@@ -61,7 +57,7 @@ PLIST_FILES+=	lib/slurm/accounting_storage_pgsql.a \
 CONFIGURE_ARGS+=--with-pg_config=/nopostgres
 .endif
 
-.if ${PORT_OPTIONS:MGUI}
+.if WITH_GUI
 # Note: Configure could not find pcre when building with no ports
 # preinstalled on 9.1-RELEASE.  Worked fine on second try.
 USE_GNOME=	glib20 gtk20	# sview
