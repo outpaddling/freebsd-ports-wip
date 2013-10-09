@@ -16,5 +16,16 @@ COMMENT=
 GNU_CONFIGURE=	yes
 USE_FORTRAN=	yes
 
+# Causes gcc conftests to fail
+# CPPFLAGS+=	-P -traditional
+
+LD=	${FC}
+
+post-configure:
+	${REINPLACE_CMD} \
+		-e 's|CPPFLAGS[ \t]*=|CPPFLAGS = -P -traditional|g' \
+		-e "s|/usr/local/bin/ld|${FC}|g" \
+		${WRKSRC}/make.sys
+
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>
