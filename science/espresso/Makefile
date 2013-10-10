@@ -19,13 +19,26 @@ USE_FORTRAN=	yes
 # Causes gcc conftests to fail
 # CPPFLAGS+=	-P -traditional
 
-LD=	${FC}
+# Doesn't help
+# LD=	${FC}
 
 post-configure:
 	${REINPLACE_CMD} \
 		-e 's|CPPFLAGS[ \t]*=|CPPFLAGS = -P -traditional|g' \
 		-e "s|/usr/local/bin/ld|${FC}|g" \
 		${WRKSRC}/make.sys
+
+post-build:
+	${MKDIR} ${WRKSRC}/scripts
+	${MV} ${WRKSRC}/bin/iotk ${WRKSRC}/scripts
+
+do-install:
+	${MKDIR} ${DESTDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/iotk ${DESTDIR}${PREFIX}/bin
+	for p in ${WRKSRC}/bin/*; do \
+		${INSTALL_PROGRAM} $${p} \
+		${DESTDIR}${PREFIX}/bin; \
+	done
 
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>
