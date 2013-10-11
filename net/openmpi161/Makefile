@@ -40,15 +40,23 @@ USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
 MANPREFIX=	${PREFIX}/${MPIDIR}
 .include "${.CURDIR}/Makefile.man"
 
-OPTIONS_DEFINE=	IPV6 TORQUE
+OPTIONS_DEFINE=	IPV6 TORQUE SLURM
 
 TORQUE_DESC=	Enable Torque support
+SLURM_DESC=	Enable SLURM support
 
 OPTIONS_DEFAULT=	IPV6
 
-.include <bsd.port.options.mk>
+OPTIONS=	TORQUE "Enable Torque support" on \
+		SLURM "Enable SLURM SUPPORT" on \
+		IPV6 "Enable IPV6 support" off
 
-.if ${PORT_OPTIONS:MIPV6}
+# .include <bsd.port.options.mk>
+
+.include <bsd.port.pre.mk>
+
+# .if ${PORT_OPTIONS:MIPV6}
+.ifdef WITH_IPV6
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
@@ -56,7 +64,8 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 CONFIGURE_ARGS+=	--without-sge
 
-.if ${PORT_OPTIONS:MTORQUE}
+.ifdef WITH_TORQUE
+# .if ${PORT_OPTIONS:MTORQUE}
 LIB_DEPENDS+=	torque:${PORTSDIR}/sysutils/torque
 CONFIGURE_ARGS+=	--with-tm=${LOCALBASE}
 PLIST_FILES+=	${MPIDIR}/lib/openmpi/mca_plm_tm.so \
@@ -69,7 +78,7 @@ PLIST_FILES+=	${MPIDIR}/lib/openmpi/mca_plm_tm.so \
 CONFIGURE_ARGS+=	--without-tm
 .endif
 
-.include <bsd.port.pre.mk>
+# FIXME: Add slurm section
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
