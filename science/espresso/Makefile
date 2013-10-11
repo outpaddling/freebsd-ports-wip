@@ -16,6 +16,8 @@ COMMENT=
 GNU_CONFIGURE=	yes
 USE_FORTRAN=	yes
 
+LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack
+
 # Causes gcc conftests to fail
 # CPPFLAGS+=	-P -traditional
 

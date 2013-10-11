@@ -10,6 +10,8 @@ MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Open source flash program for STM32 ARM processors using ST bootloader
 
+USES=		gmake
+
 .include <bsd.port.pre.mk>
 
 USE_GMAKE=	yes
