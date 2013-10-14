@@ -14,6 +14,7 @@ LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack	\
 		boost_date_time:${PORTSDIR}/devel/boost-libs
 
 USES=		cmake
+USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
