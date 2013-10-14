@@ -24,7 +24,6 @@ COMMON_DEPENDS=	${PYTHON_SITELIBDIR}/ufc_utils:../../math/ufc \
 		${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
 		${PYTHON_SITELIBDIR}/ply:${PORTSDIR}/devel/py-ply \
 		swig2.0:../../devel/swig20 \
-		${LOCALBASE}/lib/libpetsc.a:../../math/petsc33 \
 		sphinx-build:${PORTSDIR}/textproc/py-sphinx
 
 BUILD_DEPENDS=	${COMMON_DEPENDS}
@@ -42,7 +41,8 @@ LIB_DEPENDS=	blas:${PORTSDIR}/math/blas \
 		CGAL:${PORTSDIR}/math/cgal \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		cppunit:${PORTSDIR}/devel/cppunit \
-		armadillo:../../math/armadillo
+		armadillo:../../math/armadillo \
+		petsc:../../math/petsc33
 
 # Dolfin requires MPI if Trilinos is enabled
 #		amesos:../../math/trilinos
