@@ -776,7 +776,6 @@ lib/libpetsc.so
 @dirrm bin/julia/examples/tutorials
 @dirrm bin/julia/examples
 @dirrm bin/julia
-@dirrm bin
 @exec mkdir -p %D/www
 @exec mkdir -p %D/share/xml
 @exec mkdir -p %D/share/skel

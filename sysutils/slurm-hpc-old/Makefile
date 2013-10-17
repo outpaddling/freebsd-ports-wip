@@ -31,7 +31,9 @@ OPTIONS=	MYSQL	"Build with MYSQL accounting support" off \
 		PGSQL	"Build with POSTGRESQL accounting support" off \
 		GUI	"Build GUI config tools (requires GTK2)" off
 
-.if WITH_MYSQL
+.include <bsd.port.pre.mk>
+
+.ifdef WITH_MYSQL
 USE_MYSQL=	yes	# Job accounting
 PLIST_FILES+=	lib/slurm/accounting_storage_mysql.a \
 		lib/slurm/accounting_storage_mysql.la \
@@ -44,7 +46,7 @@ PLIST_FILES+=	lib/slurm/accounting_storage_mysql.a \
 CONFIGURE_ARGS+=--with-mysql_config=/nomysql
 .endif
 
-.if WITH_PGSQL
+.ifdef WITH_PGSQL
 USE_PGSQL=	yes	# Job accounting
 PLIST_FILES+=	lib/slurm/accounting_storage_pgsql.a \
 		lib/slurm/accounting_storage_pgsql.la \
@@ -57,10 +59,13 @@ PLIST_FILES+=	lib/slurm/accounting_storage_pgsql.a \
 CONFIGURE_ARGS+=--with-pg_config=/nopostgres
 .endif
 
-.if WITH_GUI
+.ifdef WITH_GUI
 # Note: Configure could not find pcre when building with no ports
 # preinstalled on 9.1-RELEASE.  Worked fine on second try.
-USE_GNOME=	glib20 gtk20	# sview
+# Doesn't like this after port.pre.mk
+# USE_GNOME+=	glib20 gtk20	# sview
+LIB_DEPENDS+=	gtk-x11-2:${PORTSDIR}/x11-toolkits/gtk20
+CFLAGS+=	-I${LOCALBASE}/include/gtk-2.0
 PLIST_FILES+=	bin/sview
 .else
 # Can't disable configure test, so make it fail
@@ -268,4 +273,4 @@ post-install:
 .endif
 	@${CAT} ${WRKDIR}/pkg-message
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
