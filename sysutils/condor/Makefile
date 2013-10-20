@@ -2,7 +2,7 @@
 # $FreeBSD: ports/sysutils/condor/Makefile,v 1.15 2013/01/10 20:35:20 svnexp Exp $
 
 PORTNAME=	condor
-PORTVERSION=	8.0.1
+PORTVERSION=	8.0.3
 CATEGORIES=	sysutils net
 MASTER_SITES=	# empty
 DISTNAME=	condor_src-${PORTVERSION}-all-all
@@ -18,7 +18,8 @@ RESTRICTED=	Requires manual distfile fetch
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-#USES=		cmake
+# USES=		cmake gmake perl5
+# USE_GCC=	yes
 USE_CMAKE=	yes
 USE_PERL5=	yes
 USE_PGSQL=	server
