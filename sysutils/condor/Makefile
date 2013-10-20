@@ -4,7 +4,7 @@
 PORTNAME=	condor
 PORTVERSION=	8.0.3
 CATEGORIES=	sysutils net
-MASTER_SITES=	# empty
+MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 DISTNAME=	condor_src-${PORTVERSION}-all-all
 
 MAINTAINER=	jwbacon@tds.net
@@ -14,7 +14,6 @@ LIB_DEPENDS+=	krb5support:${PORTSDIR}/security/krb5 \
 		pcre:${PORTSDIR}/devel/pcre \
 		curl:${PORTSDIR}/ftp/curl
 
-RESTRICTED=	Requires manual distfile fetch
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
@@ -111,10 +110,6 @@ MAN1=	\
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	requires that you go to http://research.cs.wisc.edu/condor/ to register and manually download the source distribution ${DISTNAME}${EXTRACT_SUFX}, place it in ${DISTDIR}, and then run make again
-.endif
-
 pre-everything::
 	@( ${PRINTF} "\nWARNING: Condor needs approximately 3GB to build!"; \
 	   ${PRINTF} "         Please make sure your build environment has that much before continuing.\n" )
@@ -133,6 +128,9 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/condor_config ${ETCDIR}
 	${INSTALL_DATA} ${WRKDIR}/condor_config.local ${ETCDIR}
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.if defined(NOPORTEXAMPLES)
+	${RM} -rf ${EXAMPLESDIR}
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
