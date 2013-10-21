@@ -8,3 +8,5 @@ for dir in */*; do
     fi
 done
 
+find . -name '.*.bak' -exec rm '{}' \;
+
