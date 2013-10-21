@@ -104,8 +104,6 @@ MAN1=	\
 	gidd_alloc.1 \
 	procd_ctl.1
 
-# NO_STAGE=	yes
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 1000000
@@ -123,9 +121,6 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e '/create_symlink/d' ${WRKSRC}/src/condor_scripts/CMakeLists.txt
 
-pre-install:
-	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/condor_config ${ETCDIR}
 	${INSTALL_DATA} ${WRKDIR}/condor_config.local ${ETCDIR}
