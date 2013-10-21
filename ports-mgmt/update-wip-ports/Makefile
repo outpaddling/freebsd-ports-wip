@@ -18,8 +18,8 @@ PLIST_FILES=	bin/update-wip-ports bin/reinstall-wip-port
 MAN1=		update-wip-ports.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/update-wip-ports ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/reinstall-wip-port ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/update-wip-ports.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/update-wip-ports ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/reinstall-wip-port ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/update-wip-ports.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
