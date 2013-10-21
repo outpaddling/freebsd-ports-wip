@@ -15,8 +15,10 @@ LIB_DEPENDS+=	krb5support:${PORTSDIR}/security/krb5 \
 		curl:${PORTSDIR}/ftp/curl
 
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USES=		cmake gmake perl5
+USE_CMAKE=	yes
+USE_PERL5=	yes
 USE_PGSQL=	server
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-rpath=${LOCALBASE}/lib:/usr/lib:/lib
@@ -104,13 +106,7 @@ MAN1=	\
 	gidd_alloc.1 \
 	procd_ctl.1
 
-# NO_STAGE=	yes
-
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 1000000
-USE_GCC=	yes
-.endif
 
 pre-everything::
 	@( ${PRINTF} "\nWARNING: Condor needs approximately 3GB to build!"; \

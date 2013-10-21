@@ -263,10 +263,10 @@ MAN8 =	\
 	spank.8
 
 post-install:
-.ifdef(NOPORTDOCS)
+.if defined(NOPORTDOCS)
 	${RM} -rf ${DOCSDIR}-${PORTVERSION}
 .endif
-.ifndef(NOPORTEXAMPLES)
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKDIR}/slurm.conf ${EXAMPLESDIR}
 .endif
