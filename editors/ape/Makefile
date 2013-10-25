@@ -36,6 +36,9 @@ MAN1=		ape.1 \
 # -fsigned-char
 CFLAGS=		-g -Wall
 
+MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
+		MANPREFIX=${STAGEDIR}${PREFIX}
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_RXVT)

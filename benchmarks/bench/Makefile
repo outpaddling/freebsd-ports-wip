@@ -27,5 +27,6 @@ PLIST_FILES=	bin/bench
 
 MAN1=		bench.1
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX}
+
+.include <bsd.port.mk>

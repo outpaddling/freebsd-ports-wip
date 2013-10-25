@@ -21,4 +21,7 @@ PLIST_FILES=	lib/libbacon.a \
 
 CFLAGS=		-g -Wall
 
+MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
+		MANPREFIX=${STAGEDIR}${PREFIX}
+
 .include <bsd.port.mk>

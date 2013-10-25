@@ -19,8 +19,8 @@ NO_BUILD=	yes
 MAN1=		docviewer.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/docviewer ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/docviewer.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/docviewer ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/docviewer.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 PLIST_FILES=	bin/docviewer
 

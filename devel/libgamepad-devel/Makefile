@@ -19,4 +19,6 @@ pre-build:
 
 MAN3=		libgamepad.3
 
+
+
 .include <bsd.port.mk>

@@ -41,15 +41,15 @@ MAN1=		auto-admin.1 \
 		auto-xdm-toggle.1
 
 do-install:
-	${MKDIR} ${PREFIX}/sbin ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/Common/* ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/FreeBSD/* ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/Data/* ${DATADIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/sbin ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/Common/* ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/FreeBSD/* ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/Data/* ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/Doc/auto-admin.man \
-		${MANPREFIX}/man/man1/auto-admin.1
+		${STAGEDIR}${MANPREFIX}/man/man1/auto-admin.1
 	for name in ${WRKSRC}/Scripts/Common/* ${WRKSRC}/Scripts/FreeBSD/*; do \
 		${INSTALL_MAN} ${WRKSRC}/Doc/auto-admin.man \
-			${MANPREFIX}/man/man1/`basename $${name}`.1; \
+			${STAGEDIR}${MANPREFIX}/man/man1/`basename $${name}`.1; \
 	done
 
 .include <bsd.port.mk>

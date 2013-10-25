@@ -20,4 +20,7 @@ CFLAGS=         -g -Wall
 
 CONFLICTS=      libtwin-[0-9]* twintk-0.9.[13456789]
 
+MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
+		MANPREFIX=${STAGEDIR}${PREFIX}
+
 .include <bsd.port.mk>

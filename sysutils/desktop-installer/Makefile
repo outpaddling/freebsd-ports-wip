@@ -17,20 +17,20 @@ NO_BUILD=	yes
 MAN1=		${PORTNAME}.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/Doc/${PORTNAME}.man \
-		${PREFIX}/man/man1/${PORTNAME}.1
-	${MKDIR} ${DATADIR}
-	${CP} -r ${WRKSRC}/Data/* ${DATADIR}
-	${MKDIR} ${DATADIR}/Scripts
-	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${DATADIR}/Scripts
+		${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -r ${WRKSRC}/Data/* ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}/Scripts
+	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${STAGEDIR}${DATADIR}/Scripts
 
 .include <bsd.port.pre.mk>
 post-patch:
 	${REINPLACE_CMD} 's|/etc/mtree|$${PORTSDIR=/usr/ports}/Templates|' \
 		${WRKSRC}/${PORTNAME}
 	${REINPLACE_CMD} \
-		's|DATADIR=Data|DATADIR=${PREFIX}/share/desktop-installer|g' \
+		's|DATADIR=Data|DATADIR=${STAGEDIR}${PREFIX}/share/desktop-installer|g' \
 		${WRKSRC}/desktop-installer
 
 .include <bsd.port.post.mk>

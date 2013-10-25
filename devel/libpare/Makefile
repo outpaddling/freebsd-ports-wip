@@ -23,4 +23,7 @@ CFLAGS=		-g -Wall
 
 MAN3=	pare.3
 
+MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
+		MANPREFIX=${STAGEDIR}${PREFIX}
+
 .include <bsd.port.mk>
