@@ -8,7 +8,24 @@
 PORTNAME=	espresso
 PORTVERSION=	5.0.2
 CATEGORIES=	science
-MASTER_SITES=	http://qe-forge.org/gf/download/frsrelease/116/403/
+MASTER_SITES=	http://qe-forge.org/gf/download/frsrelease/116/403/ \
+		http://files.qe-forge.org/index.php?file=
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
+		want-2.4.0-base.tar.gz \
+		yambo-3.2.5-rev.26.tar.gz \
+		wannier90-1.2.tar.gz \
+		sax-2.0.3.tar.gz \
+		qe-gipaw-5.0.tar.gz \
+		plumed-1.3-qe.tar.gz \
+		atomic-5.0.2.tar.gz \
+		xspectra-5.0.2.tar.gz \
+		pwcond-5.0.2.tar.gz \
+		neb-5.0.2.tar.gz \
+		PHonon-5.0.2.tar.gz \
+		tddfpt-5.0.2.tar.gz \
+		PWgui-5.0.2.tgz
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
 COMMENT=
@@ -23,6 +40,9 @@ LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack
 
 # Doesn't help
 # LD=	${FC}
+
+post-extract:
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/* ${WRKSRC}/archive
 
 post-configure:
 	${REINPLACE_CMD} \
