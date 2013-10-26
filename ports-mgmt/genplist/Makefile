@@ -17,7 +17,7 @@ PLIST_FILES=	bin/genplist
 MAN1=		genplist.1
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/genplist ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/genplist.1 ${PREFIX}/man/man1
+	@${INSTALL_SCRIPT} ${WRKSRC}/genplist ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/genplist.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
