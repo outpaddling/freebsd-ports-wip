@@ -32,4 +32,7 @@ post-patch:
 		${WRKSRC}/Advanced/Makefile ${WRKSRC}/Beginner/Makefile \
 		${WRKSRC}/HiBob/Makefile ${WRKSRC}/Makefile
 
+MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
+		MANPREFIX=${STAGEDIR}${PREFIX}
+
 .include <bsd.port.mk>

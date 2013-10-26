@@ -1,5 +1,5 @@
---- serial_posix.c.orig	2011-05-31 18:38:05.000000000 -0500
-+++ serial_posix.c	2011-05-31 18:38:41.000000000 -0500
+--- serial_posix.c.orig	2011-05-31 18:43:53.000000000 -0500
++++ serial_posix.c	2013-10-25 21:56:43.000000000 -0500
 @@ -176,7 +176,7 @@
  	if (
  		settings.c_iflag != h->newtio.c_iflag ||

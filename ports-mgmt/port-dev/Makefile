@@ -17,6 +17,6 @@ COMMENT=	Tools for port development
 NO_BUILD=	yes
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>

@@ -19,6 +19,7 @@ pre-build:
 
 MAN3=		libgamepad.3
 
-
+MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
+		MANPREFIX=${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>

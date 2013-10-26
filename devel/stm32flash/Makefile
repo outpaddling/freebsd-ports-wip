@@ -24,6 +24,6 @@ post-patch:
 	${RM} ${WRKSRC}/parsers/parsers.a
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.post.mk>

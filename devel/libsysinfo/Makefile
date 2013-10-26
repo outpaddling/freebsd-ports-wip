@@ -28,4 +28,6 @@ PLIST_DIRSTRY=	include/sys
 
 MAN3=		sysinfo.3
 
+NO_STAGE=	yes
+
 .include <bsd.port.mk>

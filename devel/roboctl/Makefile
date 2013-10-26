@@ -24,6 +24,9 @@ OPTIONS=	CUTECOM "Install cutecom for Vex debugging" Off
 MAN1=		legoctl.1 vexctl.1 nxtremote.1
 MAN3=		roboctl.3
 
+MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
+		MANPREFIX=${STAGEDIR}${PREFIX}
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800069
@@ -39,8 +42,8 @@ pre-build:
 
 post-install:
 	(cd ${WRKSRC}/Commands/NXTRemote; ${MAKE})
-	${INSTALL_PROGRAM} ${WRKSRC}/Commands/NXTRemote/nxtremote ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/lego_bluetooth_config ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/Commands/NXTRemote/nxtremote.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/Commands/NXTRemote/nxtremote ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/lego_bluetooth_config ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/Commands/NXTRemote/nxtremote.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.post.mk>

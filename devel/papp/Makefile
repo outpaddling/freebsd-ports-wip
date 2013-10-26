@@ -18,4 +18,7 @@ LICENSE=	BSD
 
 MAN1=		papp.1
 
+MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
+		MANPREFIX=${STAGEDIR}${PREFIX}
+
 .include <bsd.port.mk>

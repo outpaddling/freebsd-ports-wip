@@ -1,0 +1,10 @@
+--- Makefile.orig	2013-10-25 21:58:20.000000000 -0500
++++ Makefile	2013-10-25 21:58:47.000000000 -0500
+@@ -1,5 +1,5 @@
+-CC = $(CROSS_COMPILE)gcc
+-AR = $(CROSS_COMPILE)ar
++CC ?= $(CROSS_COMPILE)gcc
++AR ?= $(CROSS_COMPILE)ar
+ export CC
+ export AR
+ 

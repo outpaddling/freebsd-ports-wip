@@ -20,7 +20,10 @@ CFLAGS=         -g -Wall
 
 CONFLICTS=      libtwin-[0-9]* twintk-0.9.[13456789]
 
-MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
-		MANPREFIX=${STAGEDIR}${PREFIX}
+# Makefile uses PREFIX to determine location of terminfo db, so it should be
+# the final destination, not the staged.
+INSTALL_TARGET= PREFIX=${STAGEDIR}${PREFIX} \
+		MANPREFIX=${STAGEDIR}${PREFIX} \
+		install
 
 .include <bsd.port.mk>

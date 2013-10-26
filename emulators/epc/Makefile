@@ -15,15 +15,19 @@ MAINTAINER=	jwbacon@tds.net
 COMMENT=	Educational Perrsonal Computer
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtwintk.a:../../devel/twintk \
-		${LOCALBASE}/lib/libbacon.a:../../devel/libbacon
+		${LOCALBASE}/lib/libbacon.a:../../devel/libbacon \
+		${LOCALBASE}/include/epc.h:../../devel/plasm
 RUN_DEPENDS=	asepc:../../devel/plasm
 
 MAKE_ARGS=	CFLAGS="-O -I${LOCALBASE}/include"
 
 MAN1=		epc.1
 
+INSTALL_TARGET=	PREFIX=${STAGEDIR}${PREFIX} \
+		MANPREFIX=${STAGEDIR}${PREFIX} \
+		install
+
 pre-build:
 	make depend
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
