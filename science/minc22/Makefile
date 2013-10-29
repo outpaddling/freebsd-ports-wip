@@ -37,6 +37,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/h5copy:${PORTSDIR}/science/hdf5-18
 
 USE_LDCONFIG=	yes
 USES=		cmake:outsource bison:build
+CFLAGS+=	-Wno-switch
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CMAKE_ARGS=	-DMINC2_BUILD_SHARED_LIBS:BOOL=YES
 
