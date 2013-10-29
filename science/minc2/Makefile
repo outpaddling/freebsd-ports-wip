@@ -12,9 +12,11 @@
 
 PORTNAME=	minc
 PORTVERSION=	2.0.18
+PORTEPOCH=	1
 CATEGORIES=	science biology
 MASTER_SITES=	http://packages.bic.mni.mcgill.ca/tgz/ \
 		http://www.nitrc.org/frs/download.php/801/
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Medical Imaging NetCDF
@@ -74,6 +76,8 @@ MAN1=	dcm2mnc.1 \
 	xfminvert.1
 
 MAN3=	ParseArgv.3
+
+NO_STAGE=	yes
 
 post-install:
 	${CAT} ${PKGMESSAGE}
