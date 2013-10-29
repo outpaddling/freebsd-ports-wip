@@ -1,10 +1,5 @@
-############################################################################
-# Ports collection Makefile for:   afni
-# Date created:        11 Jan 2005
-# Whom:                Jason W. Bacon <jwbacon@tds.net>
-#
-# $FreeBSD: ports/science/afni/Makefile,v 1.27 2013/01/04 18:45:37 svnexp Exp $
-#
+# Created by: Jason W. Bacon <jwbacon@tds.net>
+# $FreeBSD: science/afni/Makefile 327767 2013-09-20 22:48:30Z bapt $
 
 ############################################################################
 # http://www.neuro.mcw.edu/Ports has the latest source distribution from
@@ -16,7 +11,7 @@
 
 PORTNAME=	afni
 PORTVERSION=	2012.04.17.2129
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	science biology graphics
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/AFNI/${PORTVERSION}/ \
 		http://www.acadix.biz/Ports/distfiles/AFNI/${PORTVERSION}/
@@ -43,6 +38,10 @@ CONFLICTS=	im-[0-9]* \
 		nifticlib-[0-9]* \
 		open-usp-tukubai-[0-9]*
 
+USES=		gettext iconv gmake motif
+
+NO_STAGE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
@@ -51,10 +50,6 @@ BROKEN=	Does not compile on sparc64: "undefined reference to '_mcount'"
 
 USE_GL=		glw glu
 USE_XORG=	xi
-USE_GETTEXT=	yes
-USE_GMAKE=	yes
-USE_ICONV=	yes
-USE_MOTIF=	yes
 MAKE_ENV=	CC="${CC}"
 MAKE_JOBS_UNSAFE=yes
 

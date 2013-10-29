@@ -1,20 +1,18 @@
-# New ports collection makefile for:	nifticlib
-# Date created:		2007-04-27
-# Whom:			Jason W. Bacon
-#
-# $FreeBSD$
-#
+# Created by: Jason W. Bacon <jwbacon@tds.net>
+# $FreeBSD: science/nifticlib/Makefile 327767 2013-09-20 22:48:30Z bapt $
 
 PORTNAME=	nifticlib
 PORTVERSION=	2.0.0
 CATEGORIES=	science graphics
-MASTER_SITES=	${SF}
-MASTER_SITE_SUBDIR=	niftilib
+MASTER_SITES=	SF/niftilib/nifticlib/nifticlib_2_0_0
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Neuroimaging Infoirmatics Technology Initiative data format
 
-USE_GMAKE=	yes
+# LICENSE=	public domain
+
+# USE_GMAKE=	yes
+USES=		gmake
 
 # AFNI currently has nifti embedded in the distfile and installs the
 # nifti bins by itself.
@@ -23,9 +21,9 @@ CONFLICTS=	afni-[0-9]* dbh-[0-9]*
 MAN1=		nifticlib.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/lib/*.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include
-	${INSTALL_MAN} ${FILESDIR}/nifticlib.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/lib/*.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_MAN} ${FILESDIR}/nifticlib.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
