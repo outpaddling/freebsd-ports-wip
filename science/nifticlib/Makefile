@@ -11,7 +11,6 @@ COMMENT=	Neuroimaging Infoirmatics Technology Initiative data format
 
 # LICENSE=	public domain
 
-# USE_GMAKE=	yes
 USES=		gmake
 
 # AFNI currently has nifti embedded in the distfile and installs the
