@@ -1,10 +1,5 @@
-############################################################################
-# New ports collection Makefile for:   minc 1.x (Medical Imaging NetCDF)
-# Date created:        21 Dec 2005
-# Whom:                jbacon
-#
-# $FreeBSD: branches/RELENG_9_1_0/science/minc2/Makefile 301234 2012-07-20 16:33:32Z zeising $
-#
+# Created by: jbacon
+# $FreeBSD: science/minc2/Makefile 330275 2013-10-14 06:52:32Z bapt $
 
 ############################################################################
 # http://www.bic.mni.mcgill.ca/software/minc/
@@ -18,10 +13,13 @@
 PORTNAME=	minc
 PORTVERSION=	2.0.18
 CATEGORIES=	science biology
-MASTER_SITES=	http://www.nitrc.org/frs/download.php/801/
+MASTER_SITES=	http://packages.bic.mni.mcgill.ca/tgz/ \
+		http://www.nitrc.org/frs/download.php/801/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Medical Imaging NetCDF
+
+LICENSE=	BSD
 
 LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf \
 		hdf5:${PORTSDIR}/science/hdf5
