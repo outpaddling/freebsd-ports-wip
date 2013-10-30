@@ -23,6 +23,8 @@ EXTRACT_ONLY=	afni_src.tgz CA_EZ_v1.5-July3107.tgz
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Advanced Functional Neuro Imaging
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	Xm:${PORTSDIR}/x11-toolkits/open-motif \
 		R:${PORTSDIR}/math/R \
 		gsl:${PORTSDIR}/math/gsl \

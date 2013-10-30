@@ -11,11 +11,10 @@ DISTNAME=	praat4639_sources
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Phonetics by Computer
 
+LICENSE=	GPLv2
+
 USE_DOS2UNIX=	yes
 NO_STAGE=	yes
-# /usr/local/lib/libfontconfig.so.1: could not read symbols: Bad value
-# Same error
-# USE_GCC=	yes
 DOS2UNIX_REGEX=	.*Makefile
 USES=		iconv motif
 WRKSRC=		${WRKDIR}/sources_4639
