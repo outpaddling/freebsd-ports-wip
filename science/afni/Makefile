@@ -11,7 +11,7 @@
 
 PORTNAME=	afni
 PORTVERSION=	2012.04.17.2129
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science biology graphics
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/AFNI/${PORTVERSION}/ \
 		http://www.acadix.biz/Ports/distfiles/AFNI/${PORTVERSION}/
@@ -40,6 +40,9 @@ CONFLICTS=	im-[0-9]* \
 
 USES=		gettext iconv gmake motif
 
+# Some prereqs use gcc anyway
+USE_GCC=	yes
+
 NO_STAGE=	yes
 
 .include <bsd.port.pre.mk>
@@ -50,6 +53,8 @@ BROKEN=	Does not compile on sparc64: "undefined reference to '_mcount'"
 
 USE_GL=		glw glu
 USE_XORG=	xi
+# Some build scripts pick up MAKE from the environment, not from Makefile
+# MAKE_ENV=	CC="${CC}" MAKE="gmake"
 MAKE_ENV=	CC="${CC}"
 MAKE_JOBS_UNSAFE=yes
 
