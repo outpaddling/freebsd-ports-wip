@@ -12,6 +12,8 @@ COMMENT=	Quickly configure a FreeBSD desktop system
 
 RUN_DEPENDS=	auto-admin>=0.3.3:../../sysutils/auto-admin
 
+USE_XZ=		yes
+
 NO_BUILD=	yes
 
 MAN1=		${PORTNAME}.1
