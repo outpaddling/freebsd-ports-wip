@@ -1,9 +1,5 @@
-# New ports collection makefile for:	endian
-# Date created:		3 Jan 2006
-# Whom:			bacon@smithers.neuro.mcw.edu
-#
-# $FreeBSD: ports/sysutils/endian/Makefile,v 1.3 2009/06/19 20:06:31 linimon Exp $
-#
+# Created by: J Bacon
+# $FreeBSD: sysutils/endian/Makefile 327772 2013-09-20 23:05:58Z bapt $
 
 PORTNAME=	endian
 PORTVERSION=	1.0
@@ -18,4 +14,5 @@ MAN1=		endian.1
 
 PLIST_FILES=	bin/endian
 
+NO_STAGE=	yes
 .include <bsd.port.mk>

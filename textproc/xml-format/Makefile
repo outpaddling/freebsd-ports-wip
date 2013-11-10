@@ -16,4 +16,6 @@ MAN1=		xml-format.1
 
 MAKE_ENV+=	DATADIR=${DATADIR}
 
+NO_STAGE=	yes
+
 .include <bsd.port.mk>
