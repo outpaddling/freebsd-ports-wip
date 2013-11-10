@@ -23,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/twintk/terminfo:../../devel/twintk \
 		webbrowser:../../www/webbrowser \
 		docviewer:../../textproc/docviewer
 
-# OPTIONS=	RXVT	"Install RXVT for xape"	Off
+USE_XZ=		yes
 
 CONFLICTS=	ape-3.[123]* ape-3.4.[13456789]
 
