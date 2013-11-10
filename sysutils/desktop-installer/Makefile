@@ -10,6 +10,8 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Quickly configure a FreeBSD desktop system
 
+LICENSE=	BSD
+
 RUN_DEPENDS=	auto-admin>=0.3.3:../../sysutils/auto-admin
 
 USE_XZ=		yes

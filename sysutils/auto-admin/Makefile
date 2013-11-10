@@ -10,6 +10,10 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Tools for automating system management
 
+LICENSE=	BSD
+
+USE_XZ=		yes
+
 NO_BUILD=	yes
 
 MAN1=		auto-admin.1 \
