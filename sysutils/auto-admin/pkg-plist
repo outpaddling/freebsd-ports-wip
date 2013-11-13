@@ -23,6 +23,7 @@ sbin/auto-print-make-variable
 sbin/auto-replace-file
 sbin/auto-service-enabled
 sbin/auto-set-suspend-mode
+sbin/auto-update-port-framework
 sbin/auto-update-xorg.conf
 sbin/auto-using-pkgng
 sbin/auto-xdm-toggle
