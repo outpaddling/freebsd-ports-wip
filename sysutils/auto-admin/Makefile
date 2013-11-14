@@ -1,5 +1,5 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
-# $FreeBSD: sysutils/auto-admin/Makefile 316097 2013-04-19 11:45:55Z madpilot $
+# $FreeBSD: head/sysutils/auto-admin/Makefile 327772 2013-09-20 23:05:58Z bapt $
 
 PORTNAME=	auto-admin
 PORTVERSION=	0.3.3

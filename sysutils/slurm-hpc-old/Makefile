@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/archive/ \
 		http://www.schedmd.com/download/latest/ \
@@ -13,7 +13,10 @@ COMMENT=	Simple Linux Resource Manager
 
 LICENSE=	GPLv1
 
+# SLURM uses hwloc if present.  It cannot be disabled, so include it
+# for the sake of a consistent build.
 LIB_DEPENDS=	sysinfo:${PORTSDIR}/devel/libsysinfo \
+		hwloc:${PORTSDIR}/devel/hwloc \
 		munge:${PORTSDIR}/security/munge \
 		rrd:${PORTSDIR}/databases/rrdtool
 BUILD_DEPENDS+=	${LOCALBASE}/bin/h5copy:${PORTSDIR}/science/hdf5-18
