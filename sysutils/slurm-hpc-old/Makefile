@@ -22,6 +22,8 @@ LIB_DEPENDS=	sysinfo:${PORTSDIR}/devel/libsysinfo \
 BUILD_DEPENDS+=	${LOCALBASE}/bin/h5copy:${PORTSDIR}/science/hdf5-18
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
+STRIP_CMD=	# NONE
+
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
