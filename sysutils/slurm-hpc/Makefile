@@ -267,6 +267,8 @@ MAN8 =	\
 	slurmstepd.8 \
 	spank.8
 
+NO_STAGE=	yes
+
 post-install:
 .if defined(NOPORTDOCS)
 	${RM} -rf ${DOCSDIR}-${PORTVERSION}
@@ -274,6 +276,9 @@ post-install:
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKDIR}/slurm.conf ${EXAMPLESDIR}
+.endif
+.if !exists(${PREFIX}/etc/slurm.conf)
+	${INSTALL_DATA} ${WRKDIR}/slurm.conf ${PREFIX}/etc
 .endif
 	@${CAT} ${WRKDIR}/pkg-message
 

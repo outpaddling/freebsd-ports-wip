@@ -159,11 +159,10 @@ SlurmdLogFile=/var/log/slurmd
 # COMPUTE NODES
 
 #############################################################################
-# Note: Using CPUs=2 or Sockets=2 causes slurmctld 2.5.4 to seg fault on
-#       FreeBSD.
+# Note: Using CPUs=2 or Sockets=2 causes slurmctld to seg fault on FreeBSD.
 #       Use Sockets=1, CoresPerSocket=total-cores-in-node, and
 #       ThreadsPerCore=N, even if your motherboard has more than 1 socket.
-#       This problem is being investigated by the slurm developers.
+#	This issue is related to get_cpuinfo() and is being investigated.
 #############################################################################
 
 NodeName=compute-[001-002] Sockets=1 CoresPerSocket=1 ThreadsPerCore=1 State=UNKNOWN
