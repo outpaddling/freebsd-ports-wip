@@ -4,7 +4,6 @@
 PORTNAME=	praat
 PORTVERSION=	5.3.59
 CATEGORIES=	audio science
-# http://www.fon.hum.uva.nl/praat/praat5359_sources.tar.gz
 MASTER_SITES=	http://www.fon.hum.uva.nl/praat/
 DISTNAME=	praat5359_sources
 
@@ -14,18 +13,14 @@ COMMENT=	Phonetics by Computer
 LICENSE=	GPLv2
 
 USE_DOS2UNIX=	yes
-NO_STAGE=	yes
 DOS2UNIX_REGEX=	.*Makefile
 USES=		iconv motif
 WRKSRC=		${WRKDIR}/sources_5359
 MAKEFILE=	makefile
 PLIST_FILES=	bin/praat
 MAKE_JOBS_UNSAFE=	yes
-# CFLAGS+=	-ltinfow
 
-# USE_GCC=	4.5+
-
-LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
 
 MAN1=		praat.1
 
@@ -46,7 +41,7 @@ post-patch:
 		${WRKSRC}/fon/Sound_files.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/praat ${PREFIX}/bin
-	${INSTALL_MAN} ${FILESDIR}/praat.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/praat ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${FILESDIR}/praat.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
