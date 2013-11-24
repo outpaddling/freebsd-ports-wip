@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon
 # $FreeBSD$
 
 PORTNAME=	slurm
@@ -9,27 +9,26 @@ MASTER_SITES=	http://www.schedmd.com/download/archive/ \
 		http://www.schedmd.com/download/development/
 
 MAINTAINER=	jwbacon@tds.net
-COMMENT=	Simple Linux Resource Manager
+COMMENT=	Simple Linux Utility for Resource Management
 
 LICENSE=	GPLv1
 
-# SLURM uses hwloc if present.  It cannot be disabled, so include it
-# for the sake of a consistent build.
 LIB_DEPENDS=	sysinfo:${PORTSDIR}/devel/libsysinfo \
 		hwloc:${PORTSDIR}/devel/hwloc \
 		munge:${PORTSDIR}/security/munge \
 		rrd:${PORTSDIR}/databases/rrdtool
+# Testing for hdf5.so is insufficient.  It will accept hdf5 1.6 and
+# slurm requires hdf5 1.8.  h5copy is present only in 1.8.
 BUILD_DEPENDS+=	${LOCALBASE}/bin/h5copy:${PORTSDIR}/science/hdf5-18
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
+# This is a new and complex port.  Allow debugging.
 STRIP_CMD=	# NONE
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
-USE_PERL5=	yes
-USE_GMAKE=	yes
 USES=		perl5 gmake
 
 OPTIONS_DEFINE=	MYSQL PGSQL GUI
@@ -78,10 +77,11 @@ post-patch:
 		${WRKSRC}/configure
 .endif
 
+# This is a new and complex port.  Allow debugging.
 CFLAGS+=	-I${LOCALBASE}/include -g -O1
 LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
 
-SUB_FILES=	slurm.conf pkg-message
+SUB_FILES+=	slurm.conf pkg-message
 
 USERS=		slurm
 GROUPS=		${USERS}
@@ -267,18 +267,16 @@ MAN8 =	\
 	slurmstepd.8 \
 	spank.8
 
-NO_STAGE=	yes
-
 post-install:
-.if defined(NOPORTDOCS)
-	${RM} -rf ${DOCSDIR}-${PORTVERSION}
+.if !${PORT_OPTIONS:MDOCS}
+	${RM} -rf ${STAGEDIR}${DOCSDIR}-${PORTVERSION}
 .endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKDIR}/slurm.conf ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKDIR}/slurm.conf ${STAGEDIR}${EXAMPLESDIR}
 .endif
 .if !exists(${PREFIX}/etc/slurm.conf)
-	${INSTALL_DATA} ${WRKDIR}/slurm.conf ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKDIR}/slurm.conf ${STAGEDIR}${PREFIX}/etc
 .endif
 	@${CAT} ${WRKDIR}/pkg-message
 
