@@ -70,6 +70,8 @@ PLIST_FILES+=	${MPIDIR}/lib/openmpi/mca_plm_tm.so \
 
 .ifdef WITH_SLURM
 # .if ${PORT_OPTIONS:MSLURM}
+# http://www.schedmd.com/slurmdocs/mpi_guide.html#open_mpi
+# CONFIGURE_ARGS+=	--with-pmi
 LIB_DEPENDS+=	slurm:../../sysutils/slurm-hpc-old
 PLIST_FILES+=	${MPIDIR}/lib/openmpi/mca_ess_slurm.la \
 		${MPIDIR}/lib/openmpi/mca_ess_slurm.so \
