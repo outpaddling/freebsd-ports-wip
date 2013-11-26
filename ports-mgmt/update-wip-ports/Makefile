@@ -11,6 +11,8 @@ COMMENT=	Update ports tree with work-in-progress ports
 
 NO_BUILD=	yes
 
+USE_XZ=		yes
+
 RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 
 PLIST_FILES=	bin/update-wip-ports bin/reinstall-wip-port
