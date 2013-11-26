@@ -57,7 +57,7 @@ TORQUE_CONFIGURE_OFF=	--without-tm
 
 .ifdef WITH_TORQUE
 #.if ${PORT_OPTIONS:MTORQUE}
-LIB_DEPENDS+=	libtorque.so:${PORTSDIR}/sysutils/torque
+LIB_DEPENDS+=	torque:${PORTSDIR}/sysutils/torque
 PLIST_FILES+=	${MPIDIR}/lib/openmpi/mca_plm_tm.so \
 		${MPIDIR}/lib/openmpi/mca_plm_tm.la \
 		${MPIDIR}/lib/openmpi/mca_ras_tm.la \
