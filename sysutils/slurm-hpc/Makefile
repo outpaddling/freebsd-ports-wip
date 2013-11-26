@@ -30,9 +30,7 @@ USE_PYTHON=	yes
 USES=		perl5 gmake
 
 OPTIONS_DEFINE=	DOCS MYSQL PGSQL GTK2
-MYSQL_DESC=	Build with MYSQL accounting support
-PGSQL_DESC=	Build with POSTGRESQL accounting support
-GUI_DESC=	Build GUI config tools (requires GTK2)
+GTK2_DESC=	Build GUI config tools (sview)
 
 USERS=		slurm
 GROUPS=		${USERS}
