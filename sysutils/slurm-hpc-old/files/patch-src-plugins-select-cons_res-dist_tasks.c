@@ -1,5 +1,5 @@
---- src/plugins/select/cons_res/dist_tasks.c.orig	2013-09-10 16:44:33.000000000 -0500
-+++ src/plugins/select/cons_res/dist_tasks.c	2013-11-14 10:23:02.000000000 -0600
+--- src/plugins/select/cons_res/dist_tasks.c.orig	2013-11-04 15:19:15.000000000 -0600
++++ src/plugins/select/cons_res/dist_tasks.c	2013-11-26 12:51:50.000000000 -0600
 @@ -271,6 +271,30 @@
  	return SLURM_SUCCESS;
  }

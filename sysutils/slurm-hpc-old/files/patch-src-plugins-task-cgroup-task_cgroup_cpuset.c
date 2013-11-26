@@ -1,5 +1,5 @@
---- src/plugins/task/cgroup/task_cgroup_cpuset.c.orig	2013-11-14 10:56:33.000000000 -0600
-+++ src/plugins/task/cgroup/task_cgroup_cpuset.c	2013-11-14 11:10:51.000000000 -0600
+--- src/plugins/task/cgroup/task_cgroup_cpuset.c.orig	2013-11-04 15:19:15.000000000 -0600
++++ src/plugins/task/cgroup/task_cgroup_cpuset.c	2013-11-26 12:51:50.000000000 -0600
 @@ -59,7 +59,12 @@
  
  #ifdef HAVE_HWLOC
@@ -13,7 +13,7 @@
  
  # if HWLOC_API_VERSION <= 0x00010000
  /* After this version the cpuset structure and all it's functions
-@@ -714,7 +719,7 @@
+@@ -734,7 +739,7 @@
  	hwloc_obj_type_t req_hwtype;
  
  	size_t tssize;
@@ -22,7 +22,7 @@
  
  	bind_type = job->cpu_bind_type ;
  	if (conf->task_plugin_param & CPU_BIND_VERBOSE ||
-@@ -900,7 +905,7 @@
+@@ -920,7 +925,7 @@
  
  		hwloc_bitmap_asprintf(&str, cpuset);
  
