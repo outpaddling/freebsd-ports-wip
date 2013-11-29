@@ -15,7 +15,7 @@ LICENSE=	GPLv1
 
 # SLURM uses hwloc if present.  It cannot be disabled, so include it
 # for the sake of a consistent build.
-LIB_DEPENDS=	sysinfo:${PORTSDIR}/devel/libsysinfo \
+LIB_DEPENDS=	sysinfo:../../devel/libsysinfo \
 		hwloc:${PORTSDIR}/devel/hwloc \
 		munge:${PORTSDIR}/security/munge \
 		rrd:${PORTSDIR}/databases/rrdtool
