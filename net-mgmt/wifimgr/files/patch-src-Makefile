@@ -1,0 +1,17 @@
+--- src/Makefile.orig	2012-01-28 13:05:49.000000000 -0600
++++ src/Makefile	2013-11-30 15:27:06.000000000 -0600
+@@ -49,12 +49,14 @@
+ 		${PREFIX}/share/icons/hicolor/64x64/apps/wifimgr.png \
+ 		${PREFIX}/share/icons/hicolor/scalable/apps/wifimgr.svg
+ 
++.ifndef WITHOUT_NLS
+ langs =		${PREFIX}/share/locale/bg/LC_MESSAGES/wifimgr.mo \
+ 		${PREFIX}/share/locale/de/LC_MESSAGES/wifimgr.mo \
+ 		${PREFIX}/share/locale/fr/LC_MESSAGES/wifimgr.mo \
+ 		${PREFIX}/share/locale/ja/LC_MESSAGES/wifimgr.mo \
+ 		${PREFIX}/share/locale/nl/LC_MESSAGES/wifimgr.mo \
+ 		${PREFIX}/share/locale/ru/LC_MESSAGES/wifimgr.mo
++.endif
+ 
+ installed =	${PREFIX}/bin/wifimgr \
+ 		${PREFIX}/libexec/wifimgrsu \

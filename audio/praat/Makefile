@@ -17,12 +17,9 @@ DOS2UNIX_REGEX=	.*Makefile
 USES=		iconv motif
 WRKSRC=		${WRKDIR}/sources_5359
 MAKEFILE=	makefile
-PLIST_FILES=	bin/praat
-MAKE_JOBS_UNSAFE=	yes
+PLIST_FILES=	bin/praat man/man1/praat.1.gz
 
-LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
-
-MAN1=		praat.1
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile -exec \
