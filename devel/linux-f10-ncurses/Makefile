@@ -17,5 +17,19 @@ COMMENT=	Terminfo database required by Linux ncurses programs
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	10
 RPMVERSION=	20.20080927.fc10
+USE_LDCONFIG=	yes
+
+NO_STAGE=	yes
+
+# DOCSDIR=	${PREFIX}/share/doc
+
+.include <bsd.port.options.mk>
+
+# FIXME
+.if ! ${PORT_OPTIONS:MDOC}
+post-install:
+	${RM} -rf ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+	${RM} -rf ${STAGEDIR}${PREFIX}/usr/share/doc/${PORTNAME}-devel-${PORTVERSION}
+.endif
 
 .include <bsd.port.mk>
