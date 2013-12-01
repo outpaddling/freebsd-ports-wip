@@ -1,13 +1,4 @@
 ====================================================================
-If you did not allow the Matlab installer to create symbolic links 
-to the Matlab binaries, users will need %%PREFIX%%/matlab/bin 
-in their PATH to run matlab.
-
-If you want to run matlab without the graphical desktop, you will need
-a terminfo database installed in
-
-	/compat/linux/usr/share/terminfo
-
 To install Matlab (r), have your license.dat file and installation
 media ready, and run
 
@@ -15,6 +6,14 @@ media ready, and run
 
 as root.
 
+If you do not allow the Matlab installer to create symbolic links 
+to the Matlab binaries, users will need %%PREFIX%%/matlab/bin 
+in their PATH to run matlab.
+
 NOTE: The root user must have the ability to run X11 applications,
 as Matlab R2012a does not have a text-based installer.
+
+To use MEX, users will need the following in their environment:
+
+
 ====================================================================

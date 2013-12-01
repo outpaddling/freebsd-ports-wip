@@ -16,9 +16,8 @@ COMMENT=	Mathworks(r) Matlab installation tool
 # Tcsh PATH hash table will not include both /compat/linux/bin and /bin, etc.
 # so it's better to use the FreeBSD tcsh and add /compat/linux bins to the
 # path.
-RUN_DEPENDS=	${LINUXBASE}/usr/share/terminfo:../../devel/linux-f10-ncurses-base \
-		${LINUXBASE}/usr/bin/g++:../../lang/linux-f10-gcc-c++ \
-		${LINUXBASE}/usr/bin/gfortran:../../lang/linux-f10-gcc-gfortran \
+RUN_DEPENDS=	${LINUXBASE}/usr/bin/gfortran:../../devel/linux-f10-devtools \
+		${LINUXBASE}/usr/share/terminfo:../../devel/linux-f10-ncurses-base \
 		${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/graphics/linux-f10-dri \
 		${LOCALBASE}/sbin/mount_image:../../sysutils/diskimage-tools \
 		webbrowser:../../www/webbrowser
@@ -39,9 +38,9 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME} bin/matlab-browser
 
 do-install:
-	${MKDIR} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/matlab-browser ${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/matlab-browser ${STAGEDIR}${PREFIX}/bin
 
 post-install:
 	@${CAT} ${WRKDIR}/pkg-message
