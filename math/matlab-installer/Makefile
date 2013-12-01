@@ -25,6 +25,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/bin/gfortran:../../devel/linux-f10-devtools \
 # Not needed if LD_LIBRARY_PATH is correct in shells started from Matlab
 #		${LINUXBASE}/usr/bin/firefox:${PORTSDIR}/www/linux-firefox
 
+USE_XZ=		yes
 USE_LINUX=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
