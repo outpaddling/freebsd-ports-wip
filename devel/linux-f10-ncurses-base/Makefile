@@ -1,13 +1,16 @@
 # Created by:	Jason Bacon
 # $FreeBSD$
 
-PORTNAME=	ncurses-base
+PORTNAME=	ncurses
 PORTVERSION=	5.6
 CATEGORIES=	devel linux
-MASTER_SITES=	http://archives.fedoraproject.org/pub/archive/fedora/linux/releases/10/Fedora/i386/os/Packages/
+MASTER_SITES=	http://archives.fedoraproject.org/pub/archive/fedora/linux/releases/10/Fedora/${LINUX_RPM_ARCH}/os/Packages/
 PKGNAMEPREFIX=	linux-f10-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
+# DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
+DISTFILES=	ncurses-base-${PORTVERSION}-20.20080927.fc10.${LINUX_RPM_ARCH}.rpm \
+		ncurses-devel-${PORTVERSION}-20.20080927.fc10.${LINUX_RPM_ARCH}.rpm \
+		ncurses-libs-${PORTVERSION}-20.20080927.fc10.${LINUX_RPM_ARCH}.rpm
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Terminfo database required by Linux ncurses programs
 
