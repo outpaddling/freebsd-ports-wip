@@ -28,6 +28,7 @@ MAN1=		cluster-setup.1 \
 		cluster-shutdown.1 \
 		cluster-update-ssh_config.1
 
+USE_XZ=		yes
 NO_BUILD=	yes
 
 do-install:
