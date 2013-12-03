@@ -5,7 +5,6 @@ sbin/cluster-add-to-group
 sbin/cluster-adduser
 sbin/cluster-admin
 sbin/cluster-compute-nodes
-sbin/cluster-condor-setup
 sbin/cluster-cp
 sbin/cluster-ganglia-restart
 sbin/cluster-generate-hosts.equiv
