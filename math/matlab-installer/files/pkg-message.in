@@ -2,16 +2,13 @@
 To install Matlab (r), have your license.dat file and installation
 media ready, and run
 
-	matlab-R2012a-installer
+	matlab-installer
 
 as root.
 
 If you do not allow the Matlab installer to create symbolic links 
 to the Matlab binaries, users will need %%PREFIX%%/matlab/bin 
 in their PATH to run matlab.
-
-NOTE: The root user must have the ability to run X11 applications,
-as Matlab R2012a does not have a text-based installer.
 
 To use MEX, add something like the following to your .cshrc or
 other startup scripts, so that MEX will use then Linux compilers:
