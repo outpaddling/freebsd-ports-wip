@@ -13,7 +13,11 @@ in their PATH to run matlab.
 NOTE: The root user must have the ability to run X11 applications,
 as Matlab R2012a does not have a text-based installer.
 
-To use MEX, users will need the following in their environment:
+To use MEX, add something like the following to your .cshrc or
+other startup scripts, so that MEX will use then Linux compilers:
 
+if ( "$ARCH" == "glnx86" ) then
+    set path = (/compat/linux/bin /compat/linux/usr/bin $path)
+endif
 
 ====================================================================
