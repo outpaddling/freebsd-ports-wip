@@ -30,7 +30,6 @@ sbin/cluster-rmuser
 sbin/cluster-run
 sbin/cluster-setup
 sbin/cluster-shutdown
-sbin/cluster-slurm-setup
 sbin/cluster-ssh-keygen
 sbin/cluster-sync-files
 sbin/cluster-update-all-ssh_config
