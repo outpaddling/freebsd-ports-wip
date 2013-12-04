@@ -32,15 +32,15 @@ USE_XZ=		yes
 NO_BUILD=	yes
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${PREFIX}/sbin
-	${MV} ${PREFIX}/sbin/topnode ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${STAGEDIR}${PREFIX}/sbin
+	${MV} ${STAGEDIR}${PREFIX}/sbin/topnode ${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC}/Man && for f in *.mdoc; \
 	do \
 		${INSTALL_MAN} $${f} \
-			${PREFIX}/man/man1/$${f%.mdoc}.1; \
+			${STAGEDIR}${PREFIX}/man/man1/$${f%.mdoc}.1; \
 	done)
-	${MKDIR} ${DATADIR}/WWW
-	${INSTALL_DATA} ${WRKSRC}/Share/* ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/WWW/* ${DATADIR}/WWW
+	${MKDIR} ${STAGEDIR}${DATADIR}/WWW
+	${INSTALL_DATA} ${WRKSRC}/Share/* ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/WWW/* ${STAGEDIR}${DATADIR}/WWW
 
 .include <bsd.port.mk>
