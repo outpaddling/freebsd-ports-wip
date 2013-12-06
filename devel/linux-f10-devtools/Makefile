@@ -3,7 +3,7 @@
 
 PORTNAME=	devtools
 PORTVERSION=	10
-CATEGORIES=	devel linux
+CATEGORIES=	devel
 MASTER_SITES=	http://archives.fedoraproject.org/pub/archive/fedora/linux/releases/${PORTVERSION}/Fedora/${LINUX_RPM_ARCH}/os/Packages/ \
 		ftp://ftp.pbone.net/mirror/archive.fedoraproject.org/fedora/linux/updates/10/i386/ \
 		ftp://ftp.uni-bayreuth.de/pub/redhat.com/fedora/linux/updates/10/i386/ \
@@ -30,7 +30,9 @@ DISTFILES=	binutils-2.18.50.0.9-7.fc10.${LINUX_RPM_ARCH}.rpm \
 		gcc-gfortran-4.3.2-7.${LINUX_RPM_ARCH}.rpm
 
 MAINTAINER=	jwbacon@tds.net
-COMMENT=	GNU Compiler Collection C compiler
+COMMENT=	Linux compilers and base libraries
+
+# LICENSE=	Various GNU
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	10
@@ -38,6 +40,6 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB+=	NLS=""
 
-NO_STAGE=	yes
+# NO_STAGE=	yes
 
 .include <bsd.port.mk>
