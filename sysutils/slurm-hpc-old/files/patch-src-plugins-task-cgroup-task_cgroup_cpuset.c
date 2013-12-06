@@ -1,5 +1,5 @@
 --- src/plugins/task/cgroup/task_cgroup_cpuset.c.orig	2013-11-04 15:19:15.000000000 -0600
-+++ src/plugins/task/cgroup/task_cgroup_cpuset.c	2013-11-26 14:05:35.000000000 -0600
++++ src/plugins/task/cgroup/task_cgroup_cpuset.c	2013-12-06 10:16:32.000000000 -0600
 @@ -59,7 +59,12 @@
  
  #ifdef HAVE_HWLOC

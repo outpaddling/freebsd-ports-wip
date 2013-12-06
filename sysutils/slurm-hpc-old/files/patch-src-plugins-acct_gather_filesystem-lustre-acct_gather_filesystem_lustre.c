@@ -1,5 +1,5 @@
 --- src/plugins/acct_gather_filesystem/lustre/acct_gather_filesystem_lustre.c.orig	2013-11-04 15:19:15.000000000 -0600
-+++ src/plugins/acct_gather_filesystem/lustre/acct_gather_filesystem_lustre.c	2013-11-26 14:05:35.000000000 -0600
++++ src/plugins/acct_gather_filesystem/lustre/acct_gather_filesystem_lustre.c	2013-12-06 10:16:32.000000000 -0600
 @@ -49,6 +49,8 @@
  #include <getopt.h>
  #include <netinet/in.h>
