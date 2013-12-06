@@ -1,4 +1,4 @@
-# Created by:	Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD: math/matlab-R2012a-installer/Makefile 327746 2013-09-20 20:55:04Z bapt $
 
 PORTNAME=	matlab-installer
@@ -10,14 +10,15 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Mathworks(r) Matlab installation tool
 
-RUN_DEPENDS=	${LINUXBASE}/usr/bin/gfortran:../../devel/linux-f10-devtools \
-		${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/graphics/linux-f10-dri \
-		${LOCALBASE}/sbin/mount_image:../../sysutils/diskimage-tools \
-		webbrowser:../../www/webbrowser
+LICENSE=	BSD
+
+RUN_DEPENDS=	${LOCALBASE}/sbin/mount_image:../../sysutils/diskimage-tools \
+		webbrowser:../../www/webbrowser \
+		${LINUXBASE}/usr/bin/gfortran:../../devel/linux-f10-devtools
 
 USE_XZ=		yes
 USE_LINUX=	yes
-USE_LINUX_APPS=	ncurses-base
+USE_LINUX_APPS=	ncurses-base dri
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	linux
