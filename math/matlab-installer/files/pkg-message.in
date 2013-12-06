@@ -27,4 +27,12 @@ if ( "$ARCH" == "glnx86" ) then
     setenv LD_LIBRARY_PATH /lib:/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH
 endif
 
+If you do not have /dev/ptmx, run
+
+    kldload pty
+
+and add the following to /boot/loader.conf:
+
+    pty_load="YES"
+
 ====================================================================
