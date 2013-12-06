@@ -1,4 +1,5 @@
-Terminfo database required by Linux applications using ncurses, such as
-Matlab (r).
+Development tools and base libraries for linux_base-f10.  Required by
+some Linux applications such as Matlab, which allows the user to integrate
+custom C, C++, and Fortran code via the MEX compiler.
 
-WWW:  http://invisible-island.net/ncurses/ncurses.html
+WWW: http://gcc.gnu.org/
