@@ -24,15 +24,12 @@ JAVA_OS=	linux
 JAVA_RUN=	yes
 
 NO_BUILD=	yes
-SUB_FILES=	pkg-message
-PLIST_FILES=	bin/${PORTNAME} bin/matlab-browser
+PLIST_FILES=	bin/${PORTNAME} bin/matlab-browser man/man1/matlab-installer.1.gz
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/matlab-browser ${STAGEDIR}${PREFIX}/bin
-
-post-install:
-	@${CAT} ${WRKDIR}/pkg-message
+	${INSTALL_MAN} ${WRKSRC}/matlab-installer.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
