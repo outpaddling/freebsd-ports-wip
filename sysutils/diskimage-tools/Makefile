@@ -1,25 +1,32 @@
-# New ports collection makefile for:	diskimage-tools
-# Date created:		2013-03-02
-# Whom:			Jason Bacon <jwbacon@tds.net>
-#
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
-#
 
 PORTNAME=	diskimage-tools
 PORTVERSION=	0.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
+		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
-COMMENT=	Tools for manipulating disk images
+COMMENT=	Convenience tools for manipulating disk images
 
 NO_BUILD=	yes
-
-PLIST_FILES=	sbin/mount_image sbin/umount_image
+USE_XZ=		yes
+MANCOMPRESSED=	yes
 
 do-install:
 	${MKDIR} ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/mount_image ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/umount_image ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/mount_cd9660_image \
+		${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/umount_cd9660_image \
+		${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/img2dev \
+		${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/mount_cd9660_image.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/umount_cd9660_image.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/img2dev.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
