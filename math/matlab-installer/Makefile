@@ -12,8 +12,9 @@ COMMENT=	Mathworks(r) Matlab installation tool
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/mount_image:../../sysutils/diskimage-tools \
-		webbrowser:../../www/webbrowser \
+# Move devtools depend to USE_LINUX_APPS when possible
+RUN_DEPENDS=	mount_image:${PORTSDIR}/sysutils/diskimage-tools \
+		auto-ask:${PORTSDIR}/sysutils/auto-admin \
 		${LINUXBASE}/usr/bin/gfortran:../../devel/linux-f10-devtools
 
 USE_XZ=		yes
