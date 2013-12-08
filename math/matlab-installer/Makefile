@@ -8,7 +8,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
-COMMENT=	Mathworks(r) Matlab installation tool
+COMMENT=	Easy installation of Linux Matlab(r) on FreeBSD
 
 LICENSE=	BSD
 
@@ -27,7 +27,7 @@ JAVA_OS=	linux
 JAVA_RUN=	yes
 
 NO_BUILD=	yes
-PLIST_FILES=	bin/${PORTNAME} man/man1/matlab-installer.1.gz
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin
