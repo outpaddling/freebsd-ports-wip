@@ -15,6 +15,7 @@ LICENSE=	BSD
 # Move devtools depend to USE_LINUX_APPS when possible
 RUN_DEPENDS=	mount_image:${PORTSDIR}/sysutils/diskimage-tools \
 		auto-ask:${PORTSDIR}/sysutils/auto-admin \
+		webbrowser:${PORTSDIR}/www/webbrowser \
 		${LINUXBASE}/usr/bin/gfortran:../../devel/linux-f10-devtools
 
 USE_XZ=		yes
@@ -26,12 +27,11 @@ JAVA_OS=	linux
 JAVA_RUN=	yes
 
 NO_BUILD=	yes
-PLIST_FILES=	bin/${PORTNAME} bin/matlab-browser man/man1/matlab-installer.1.gz
+PLIST_FILES=	bin/${PORTNAME} man/man1/matlab-installer.1.gz
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/matlab-browser ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/matlab-installer.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>

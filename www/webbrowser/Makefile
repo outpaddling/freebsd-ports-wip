@@ -1,5 +1,5 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
-# $FreeBSD: ports/www/runsomebrowser/Makefile,v 1.2 2008/02/07 23:17:13 edwin Exp $
+# $FreeBSD: www/runsomebrowser/Makefile 327776 2013-09-20 23:36:50Z bapt $
 
 PORTNAME=	webbrowser
 PORTVERSION=	0.3
@@ -8,17 +8,17 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
-COMMENT=	Script for running an available WEB browser
+COMMENT=	Wrapper for running the "best" available WEB browser
+
+LICENSE=	BSD
 
 NO_BUILD=	yes
 USE_XZ=		yes
-
-MAN1=		webbrowser.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/webbrowser ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/webbrowser.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-PLIST_FILES=	bin/webbrowser
+PLIST_FILES=	bin/webbrowser man/man1/webbrowser.1.gz
 
 .include <bsd.port.mk>
