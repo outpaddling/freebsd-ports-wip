@@ -10,7 +10,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Convenience tools for manipulating disk images
 
-LICENSE=	bsd
+LICENSE=	BSD
 
 NO_BUILD=	yes
 USE_XZ=		yes

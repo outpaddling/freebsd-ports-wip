@@ -13,7 +13,7 @@ COMMENT=	Easy installation of Linux Matlab(r) on FreeBSD
 LICENSE=	BSD
 
 # Move devtools depend to USE_LINUX_APPS when possible
-RUN_DEPENDS=	mount_image:${PORTSDIR}/sysutils/diskimage-tools \
+RUN_DEPENDS=	mount_cd9660_image:${PORTSDIR}/sysutils/diskimage-tools \
 		auto-ask:${PORTSDIR}/sysutils/auto-admin \
 		webbrowser:${PORTSDIR}/www/webbrowser \
 		${LINUXBASE}/usr/bin/gfortran:../../devel/linux-f10-devtools

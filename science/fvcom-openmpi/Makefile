@@ -13,7 +13,7 @@ LIB_DEPENDS+=	mpi:${PORTSDIR}/net/openmpi
 
 MASTERDIR=	${.CURDIR}/../fvcom
 
-MAKE_ARGS+=	FC=${LOCALBASE}/${MPIDIR}/bin/mpif90 \
+MAKE_ARGS+=	FC=${LOCALBASE}/${MPIPREFIX}bin/mpif90 \
 		PORT_CPP_FLAGS+=-DMULTIPROCESSOR
 
 .include "${MASTERDIR}/Makefile"
