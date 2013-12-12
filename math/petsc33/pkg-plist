@@ -629,6 +629,7 @@ include/web/AMSJavascript.py
 include/web/AMSOptions.py
 lib/libpetsc.a
 lib/libpetsc.so
+lib/libpetsc.so.3
 %%DATADIR%%/datafiles/matrices/hpd-complex-int32-float32
 %%DATADIR%%/datafiles/matrices/hpd-complex-int32-float64
 %%DATADIR%%/datafiles/matrices/hpd-complex-int64-float32

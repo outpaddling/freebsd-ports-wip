@@ -74,4 +74,7 @@ CONFIGURE_ARGS+=	| tr '\r' '\n'
 pre-configure:
 	${MKDIR} ${WRKSRC}/temp
 
+post-install:
+	${LN} -s ${PREFIX}/lib/libpetsc.so ${PREFIX}/lib/libpetsc.so.3
+
 .include <bsd.port.mk>
