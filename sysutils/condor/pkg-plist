@@ -246,9 +246,7 @@ src/chirp/chirp_client.h
 src/chirp/chirp_protocol.h
 @dirrmtry src/chirp
 @dirrmtry src
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/examples/dagman
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/examples
 @dirrm include/classad
-@dirrmtry %%ETCDIR%%/sysconfig
-@dirrmtry %%ETCDIR%%/examples
-@dirrmtry %%ETCDIR%%
+@dirrm %%ETCDIR%%/sysconfig
+@dirrm %%ETCDIR%%/examples
+@dirrm %%ETCDIR%%

@@ -32,17 +32,8 @@ POST-INSTALL)
 	mkdir -p $homedir/$dir
     done
     chown -Rh $u:$g $homedir
-    
-    # Insurance in case someone messed with the link
-    if [ -L /var/db/condor ]; then
-	/bin/rm -f /var/db/condor
-    fi
-    
-    # Condor is built to use the standard /var/db/condor
+    # Insurance in case pkg-deinstall was not executed
+    /bin/rm -f /var/db/condor
     /bin/ln -s $homedir /var/db
     ;;
-*)
-    printf "Usage: $0 condor POST-INSTALL\n"
-    exit 1
 esac
-
