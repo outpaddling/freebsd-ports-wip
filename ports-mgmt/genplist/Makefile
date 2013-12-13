@@ -11,6 +11,7 @@ MAINTAINER=	jwbacon@tds.net
 COMMENT=	Generates a static plist for a port
 
 NO_BUILD=	yes
+USE_XZ=		yes
 
 PLIST_FILES=	bin/genplist
 
