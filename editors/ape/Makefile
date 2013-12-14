@@ -27,10 +27,6 @@ USE_XZ=		yes
 
 CONFLICTS=	ape-3.[123]* ape-3.4.[13456789]
 
-MAN1=		ape.1 \
-		apeascii.1 \
-		apekeys.1
-
 # gcc on PowerPC uses unsigned chars by default.  Should be fixed in
 # source code now.
 # -fsigned-char
