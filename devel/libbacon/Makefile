@@ -20,6 +20,7 @@ PLIST_FILES=	lib/libbacon.a \
 		include/bacon.h
 
 CFLAGS=		-g -Wall
+USE_XZ=		yes
 
 MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
 		MANPREFIX=${STAGEDIR}${PREFIX}
