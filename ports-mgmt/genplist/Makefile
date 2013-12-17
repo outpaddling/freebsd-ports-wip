@@ -1,5 +1,5 @@
-# Created by:	Jason Bacon
-# $FreeBSD: ports/ports-mgmt/genplist/Makefile,v 1.7 2012/11/17 06:00:45 svnexp Exp $
+# Created by: Jason Bacon
+# $FreeBSD: ports-mgmt/genplist/Makefile 327762 2013-09-20 22:36:49Z bapt $
 
 PORTNAME=	genplist
 PORTVERSION=	1.1
