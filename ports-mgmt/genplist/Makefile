@@ -13,9 +13,7 @@ COMMENT=	Generates a static plist for a port
 NO_BUILD=	yes
 USE_XZ=		yes
 
-PLIST_FILES=	bin/genplist
-
-MAN1=		genplist.1
+PLIST_FILES=	bin/genplist man/man1/genplist.1.gz
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/genplist ${STAGEDIR}${PREFIX}/bin
