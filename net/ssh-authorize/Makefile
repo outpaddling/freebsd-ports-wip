@@ -19,6 +19,6 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/ssh-authorize
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ssh-authorize ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/ssh-authorize ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
