@@ -14,8 +14,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Tools for building and managing HPC clusters
 
-RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
-		auto-append-line:../../sysutils/auto-admin
+RUN_DEPENDS=	auto-append-line:../../sysutils/auto-admin
 
 MAN1=		cluster-setup.1 \
 		cluster-adduser.1 \
