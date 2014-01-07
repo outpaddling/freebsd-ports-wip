@@ -16,11 +16,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIT Photonic-Bands
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	fftw:${PORTSDIR}/math/fftw \
-		hdf5.7:${PORTSDIR}/science/hdf5-18 \
-		ctl.4:${PORTSDIR}/science/libctl \
-		guile.21:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw \
+		libhdf5.so.7:${PORTSDIR}/science/hdf5-18 \
+		libctl.so:${PORTSDIR}/science/libctl \
+		libguile.so:${PORTSDIR}/lang/guile
 USE_FORTRAN=	yes
+
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 GNU_CONFIGURE=	yes
@@ -75,6 +77,8 @@ MAN1+=	mpb-data.1 mpb-split.1
 .endif
 
 PLIST=	${.CURDIR}/pkg-plist
+
+NO_STAGE=yes
 
 post-patch:
 	@${REINPLACE_CMD} \

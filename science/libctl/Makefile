@@ -29,6 +29,8 @@ MAN1=		gen-ctl-io.1
 BROKEN=		does not build
 .endif
 
+NO_STAGE=	yes
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

@@ -28,6 +28,7 @@ USE_FORTRAN=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal automake autoconf libtool
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
@@ -92,6 +93,8 @@ CONFIGURE_ARGS+=	--enable-i386-hacks
 .if ${ARCH} == "sparc64"
 BROKEN=		does not build
 .endif
+
+NO_STAGE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc | |' ${WRKSRC}/Makefile.am
