@@ -1,8 +1,8 @@
 # Created by: jkh
-# $FreeBSD: head/devel/swig20/Makefile 327726 2013-09-20 17:17:44Z bapt $
+# $FreeBSD: ports/devel/swig20/Makefile,v 1.99 2012/12/10 19:24:00 svnexp Exp $
 
 PORTNAME=	swig
-PORTVERSION=	2.0.11
+PORTVERSION=	2.0.9
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -11,15 +11,20 @@ COMMENT=	Generate wrappers for calling C/C++ code from other languages
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
+LATEST_LINK?=	swig2
 USE_AUTOTOOLS=	autoconf:env libtool
 
-VER=		${PORTVERSION:R}
-PLIST_SUB+=	PORTVERSION=${PORTVERSION} VER="${VER}"
+MAN1=		ccache-swig${VER}.1
 
+VER=		${PORTVERSION:R}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
 CFLAGS+=	-fPIC -DPIC
-ALL_TARGET=	# none
+ALL_TARGET=	swig
+PLIST_SUB+=	VER="${VER}"
 
 WANT_LUA=	yes
 WANT_LUA_VER=	5.0+
@@ -53,19 +58,21 @@ post-configure:
 	${REINPLACE_CMD} -e 's#null#&|| true#' ${WRKSRC}/Makefile
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}
+#.if ${PORT_OPTIONS:MEXAMPLES}
+.if !defined(NO_PORT_EXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}/${PORTVERSION}
 	cd ${WRKSRC}/Examples && ${FIND} . -type d \
-		-exec ${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}/{} \;
+		-exec ${INSTALL} -d ${EXAMPLESDIR}/${PORTVERSION}/{} \;
 	cd ${WRKSRC}/Examples && ${FIND} . -type f \
-		-exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}/{} \;
+		-exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/${PORTVERSION}/{} \;
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/${PORTVERSION}
+#.if ${PORT_OPTIONS:MDOCS}
+.if !defined(NO_PORT_DOCS)
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}
 	cd ${WRKSRC}/Doc && ${FIND} . -type d \
-		-exec ${INSTALL} -d ${STAGEDIR}${DOCSDIR}/${PORTVERSION}/{} \;
+		-exec ${INSTALL} -d ${DOCSDIR}/${PORTVERSION}/{} \;
 	cd ${WRKSRC}/Doc && ${FIND} . -type f \
-		-exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/${PORTVERSION}/{} \;
+		-exec ${INSTALL_DATA} {} ${DOCSDIR}/${PORTVERSION}/{} \;
 .endif
 
 .include <bsd.port.post.mk>
