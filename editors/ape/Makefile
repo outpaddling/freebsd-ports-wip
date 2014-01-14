@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ape
-PORTVERSION=	3.5.1
+PORTVERSION=	3.5.2
 CATEGORIES=	editors devel
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 		http://acadix.biz/Ports/distfiles/

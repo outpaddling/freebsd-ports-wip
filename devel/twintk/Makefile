@@ -14,6 +14,8 @@ MASTER_SITES=   http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 MAINTAINER=     jwbacon@tds.net
 COMMENT=        Misc functions
 
+USE_XZ=		yes
+
 BUILD_DEPENDS=  ${LOCALBASE}/lib/libbacon.a:../../devel/libbacon
 
 CFLAGS=         -g -Wall
