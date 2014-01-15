@@ -21,7 +21,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libpare.a:../../devel/libpare \
 		${LOCALBASE}/lib/libtwintk.a:../../devel/twintk
 RUN_DEPENDS=	${LOCALBASE}/share/twintk/terminfo:../../devel/twintk \
 		webbrowser:../../www/webbrowser \
-		docviewer:../../textproc/docviewer
+		docviewer:../../textproc/docviewer \
+		mcrypt:${PORTSDIR}/security/mcrypt
 
 USE_XZ=		yes
 
