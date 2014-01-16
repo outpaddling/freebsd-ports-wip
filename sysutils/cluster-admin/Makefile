@@ -33,6 +33,7 @@ NO_BUILD=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${STAGEDIR}${PREFIX}/sbin
 	${MV} ${STAGEDIR}${PREFIX}/sbin/topnode ${STAGEDIR}${PREFIX}/bin
+	${MV} ${STAGEDIR}${PREFIX}/sbin/slurm-shell ${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC}/Man && for f in *.mdoc; \
 	do \
 		${INSTALL_MAN} $${f} \
