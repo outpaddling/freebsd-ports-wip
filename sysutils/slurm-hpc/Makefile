@@ -40,7 +40,8 @@ SUB_FILES+=	slurm.conf
 
 # This is a new and complex port.  Allow debugging.
 STRIP_CMD=	# NONE
-CFLAGS+=	-I${LOCALBASE}/include -g -O1
+# ${WRKSRC}/slurm is for pty.h in configure
+CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include -g -O1
 LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
 
 post-install:
@@ -79,9 +80,12 @@ CONFIGURE_ARGS+=--with-pg_config=/nopostgres
 # preinstalled on 9.1-RELEASE.  Worked fine on second try.
 USE_GNOME=	glib20 gtk20	# sview
 PLIST_FILES+=	bin/sview
-.else
+.endif
+
 # Can't disable configure test, so make it fail
 post-patch:
+	${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
+.if ! ${PORT_OPTIONS:MGTK2}
 	${REINPLACE_CMD} -e 's|min_gtk_version=2.7.1|min_gtk_version=200.7.1|' \
 		${WRKSRC}/configure
 .endif
