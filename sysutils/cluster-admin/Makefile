@@ -16,17 +16,6 @@ COMMENT=	Tools for building and managing HPC clusters
 
 RUN_DEPENDS=	auto-append-line:../../sysutils/auto-admin
 
-MAN1=		cluster-setup.1 \
-		cluster-adduser.1 \
-		cluster-admin.1 \
-		cluster-cp.1 \
-		cluster-pkg_add.1 \
-		cluster-port_add.1 \
-		cluster-rmuser.1 \
-		cluster-run.1 \
-		cluster-shutdown.1 \
-		cluster-update-ssh_config.1
-
 USE_XZ=		yes
 NO_BUILD=	yes
 
