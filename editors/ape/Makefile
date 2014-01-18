@@ -26,15 +26,18 @@ RUN_DEPENDS=	${LOCALBASE}/share/twintk/terminfo:../../devel/twintk \
 
 USE_XZ=		yes
 
-CONFLICTS=	ape-3.[123]* ape-3.4.[13456789]
+CONFLICTS=	ape-3.[01234]* ape-3.5.[01]
 
 # gcc on PowerPC uses unsigned chars by default.  Should be fixed in
 # source code now.
 # -fsigned-char
 CFLAGS=		-g -Wall
 
-MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
-		MANPREFIX=${STAGEDIR}${PREFIX}
+MAKE_FLAGS+=	PREFIX=${PREFIX} \
+		MANPREFIX=${PREFIX} \
+		DATADIR=${DATADIR} \
+		DOCSDIR=${DOCSDIR} \
+		STAGEDIR=${STAGEDIR}
 
 .include <bsd.port.pre.mk>
 
