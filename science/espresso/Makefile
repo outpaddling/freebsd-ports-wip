@@ -5,6 +5,8 @@ PORTNAME=	espresso
 PORTVERSION=	5.0.2
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITES_BASE}/116/403/
+# espresso will try to download plugins during build phase if they are
+# not already present in the archive directory.
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		XSpectra-5.0.2.tar.gz \
 		qe-gipaw-5.0.3.tar.gz \
@@ -18,8 +20,9 @@ COMMENT=	Nanoscale electronic-structure calculations and materials modeling
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
-		blas:${PORTSDIR}/math/blas
+LIB_DEPENDS=	liblapack.so:${PORTSDIR}/math/lapack \
+		libblas.so:${PORTSDIR}/math/blas \
+		libfftw3.so:${PORTSDIR}/math/fftw3
 
 GNU_CONFIGURE=	yes
 USE_FORTRAN=	yes
@@ -50,22 +53,22 @@ PLUGINS_DISTFILES=want-2.4.0-base.tar.gz \
 # I don't see a clean way to use -o in FETCH_ARGS with multiple DISTFILES
 do-fetch:
 	@${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
-	@${FETCH_BINARY} -Fro \
-		${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
-		${MASTER_SITES}${DISTNAME}${EXTRACT_SUFX}
-	@${FETCH_BINARY} -Fro \
-		${DISTDIR}/${DIST_SUBDIR}/XSpectra-5.0.2.tar.gz \
-		${MASTER_SITES_BASE}/116/410/XSpectra-5.0.2.tar.gz
-	@${FETCH_BINARY} -Fro \
-		${DISTDIR}/${DIST_SUBDIR}/qe-gipaw-5.0.3.tar.gz \
-		${MASTER_SITES_BASE}/146/473/qe-gipaw-5.0.3.tar.gz
-	@${FETCH_BINARY} -Fro \
-		${DISTDIR}/${DIST_SUBDIR}/SaX-2.0.2.tar.gz \
-		${MASTER_SITES_BASE}/111/192/SaX-2.0.2.tar.gz
+	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${FETCH_BINARY} -Fro \
+		${DISTNAME}${EXTRACT_SUFX} \
+		${MASTER_SITES}${DISTNAME}${EXTRACT_SUFX})
+	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${FETCH_BINARY} -Fro \
+		XSpectra-5.0.2.tar.gz \
+		${MASTER_SITES_BASE}/116/410/XSpectra-5.0.2.tar.gz)
+	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${FETCH_BINARY} -Fro \
+		qe-gipaw-5.0.3.tar.gz \
+		${MASTER_SITES_BASE}/146/473/qe-gipaw-5.0.3.tar.gz)
+	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${FETCH_BINARY} -Fro \
+		SaX-2.0.2.tar.gz \
+		${MASTER_SITES_BASE}/111/192/SaX-2.0.2.tar.gz)
 
 .for file in ${PLUGINS_DISTFILES}
-	@${FETCH_BINARY} -Fro ${DISTDIR}/${DIST_SUBDIR}/${file} \
-		http://files.qe-forge.org/index.php?file=${file}
+	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${FETCH_BINARY} -Fro ${file} \
+		http://files.qe-forge.org/index.php?file=${file})
 .endfor
 
 post-extract:
