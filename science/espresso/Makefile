@@ -1,38 +1,38 @@
-# New ports collection makefile for:	quantum-espresso
-# Date created:		2013-10-06
-# Whom:			Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
-#
+# Created by: Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
 # $FreeBSD$
-#
 
 PORTNAME=	espresso
 PORTVERSION=	5.0.2
 CATEGORIES=	science
-MASTER_SITES=	http://qe-forge.org/gf/download/frsrelease/116/403/
+MASTER_SITES=	${MASTER_SITES_BASE}/116/403/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		XSpectra-5.0.2.tar.gz \
 		qe-gipaw-5.0.3.tar.gz \
 		SaX-2.0.2.tar.gz \
 		${PLUGINS_DISTFILES}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
-COMMENT=
+MAINTAINER=	jwbacon@tds.net
+COMMENT=	Nanoscale electronic-structure calculations and materials modeling
 
-GNU_CONFIGURE=	yes
-USE_FORTRAN=	yes
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
 		blas:${PORTSDIR}/math/blas
 
-# Causes gcc conftests to fail
+GNU_CONFIGURE=	yes
+USE_FORTRAN=	yes
+
+# Causes gcc conftests to fail.  Do it post-configure instead.
 # CPPFLAGS+=	-P -traditional
 
 # Doesn't help
 # LD=	${FC}
 
 MAKE_JOBS_UNSAFE=	yes
+
+MASTER_SITES_BASE=	http://www.qe-forge.org/gf/download/frsrelease
 
 # install/plugins_list
 PLUGINS_DISTFILES=want-2.4.0-base.tar.gz \
@@ -55,13 +55,13 @@ do-fetch:
 		${MASTER_SITES}${DISTNAME}${EXTRACT_SUFX}
 	@${FETCH_BINARY} -Fro \
 		${DISTDIR}/${DIST_SUBDIR}/XSpectra-5.0.2.tar.gz \
-		http://www.qe-forge.org/gf/download/frsrelease/116/410/XSpectra-5.0.2.tar.gz
+		${MASTER_SITES_BASE}/116/410/XSpectra-5.0.2.tar.gz
 	@${FETCH_BINARY} -Fro \
 		${DISTDIR}/${DIST_SUBDIR}/qe-gipaw-5.0.3.tar.gz \
-		http://www.qe-forge.org/gf/download/frsrelease/146/473/qe-gipaw-5.0.3.tar.gz
+		${MASTER_SITES_BASE}/146/473/qe-gipaw-5.0.3.tar.gz
 	@${FETCH_BINARY} -Fro \
 		${DISTDIR}/${DIST_SUBDIR}/SaX-2.0.2.tar.gz \
-		http://www.qe-forge.org/gf/download/frsrelease/111/192/SaX-2.0.2.tar.gz
+		${MASTER_SITES_BASE}/111/192/SaX-2.0.2.tar.gz
 
 .for file in ${PLUGINS_DISTFILES}
 	@${FETCH_BINARY} -Fro ${DISTDIR}/${DIST_SUBDIR}/${file} \
