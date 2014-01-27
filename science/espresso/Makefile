@@ -50,21 +50,21 @@ PLUGINS_DISTFILES=want-2.4.0-base.tar.gz \
 # I don't see a clean way to use -o in FETCH_ARGS with multiple DISTFILES
 do-fetch:
 	@${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
-	@${FETCH_BINARY} -ro \
+	@${FETCH_BINARY} -Fro \
 		${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		${MASTER_SITES}${DISTNAME}${EXTRACT_SUFX}
-	@${FETCH_BINARY} -ro \
+	@${FETCH_BINARY} -Fro \
 		${DISTDIR}/${DIST_SUBDIR}/XSpectra-5.0.2.tar.gz \
 		http://www.qe-forge.org/gf/download/frsrelease/116/410/XSpectra-5.0.2.tar.gz
-	@${FETCH_BINARY} -ro \
+	@${FETCH_BINARY} -Fro \
 		${DISTDIR}/${DIST_SUBDIR}/qe-gipaw-5.0.3.tar.gz \
 		http://www.qe-forge.org/gf/download/frsrelease/146/473/qe-gipaw-5.0.3.tar.gz
-	@${FETCH_BINARY} -ro \
+	@${FETCH_BINARY} -Fro \
 		${DISTDIR}/${DIST_SUBDIR}/SaX-2.0.2.tar.gz \
 		http://www.qe-forge.org/gf/download/frsrelease/111/192/SaX-2.0.2.tar.gz
 
 .for file in ${PLUGINS_DISTFILES}
-	@${FETCH_BINARY} -ro ${DISTDIR}/${DIST_SUBDIR}/${file} \
+	@${FETCH_BINARY} -Fro ${DISTDIR}/${DIST_SUBDIR}/${file} \
 		http://files.qe-forge.org/index.php?file=${file}
 .endfor
 
