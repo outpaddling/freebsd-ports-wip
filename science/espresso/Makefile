@@ -27,7 +27,9 @@ LIB_DEPENDS=	liblapack.so:${PORTSDIR}/math/lapack \
 GNU_CONFIGURE=	yes
 USE_FORTRAN=	yes
 
-# Slave ports for gui xspectra gipaw w90 want yambo plumed?
+# Slave packages for gui xspectra gipaw w90 want yambo?  
+# Some could be independent packages?
+# plumed must be compiled in - option?
 # doc links
 ALL_TARGET=	all links
 
