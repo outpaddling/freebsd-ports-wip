@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		XSpectra-5.0.2.tar.gz \
 		qe-gipaw-5.0.3.tar.gz \
 		SaX-2.0.2.tar.gz \
-		${PLUGINS_DISTFILES}
+		${PLUGIN_DISTFILES}
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -27,6 +27,10 @@ LIB_DEPENDS=	liblapack.so:${PORTSDIR}/math/lapack \
 GNU_CONFIGURE=	yes
 USE_FORTRAN=	yes
 
+# Slave ports for gui xspectra gipaw w90 want yambo plumed?
+# doc links
+ALL_TARGET=	all links
+
 # Causes gcc conftests to fail.  Do it post-configure instead.
 # CPPFLAGS+=	-P -traditional
 
@@ -38,7 +42,7 @@ MAKE_JOBS_UNSAFE=	yes
 MASTER_SITES_BASE=	http://www.qe-forge.org/gf/download/frsrelease
 
 # install/plugins_list
-PLUGINS_DISTFILES=want-2.4.0-base.tar.gz \
+PLUGIN_DISTFILES=want-2.4.0-base.tar.gz \
 		yambo-3.2.5-rev.26.tar.gz \
 		wannier90-1.2.tar.gz \
 		plumed-1.3-qe.tar.gz \
@@ -66,7 +70,7 @@ do-fetch:
 		SaX-2.0.2.tar.gz \
 		${MASTER_SITES_BASE}/111/192/SaX-2.0.2.tar.gz)
 
-.for file in ${PLUGINS_DISTFILES}
+.for file in ${PLUGIN_DISTFILES}
 	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${FETCH_BINARY} -Fro ${file} \
 		http://files.qe-forge.org/index.php?file=${file})
 .endfor

@@ -24,6 +24,7 @@ bin/ld1.x
 bin/matdyn.x
 bin/neb.x
 bin/path_interpolation.x
+bin/pawplot.x
 bin/ph.x
 bin/phcg.x
 bin/plan_avg.x
