@@ -6,7 +6,7 @@ PORTVERSION=	1.01.75
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.lsi.com/downloads/Public/MegaRAID%20Common%20Files/
 PKGNAMESUFFIX=	mr
-DISTNAME=	MR_SAS_CLI_StorCLI-${PORTVERSION}
+DISTNAME=	Storcli_FreeBSD_10175
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	MegaRAID comand-line management utiliity
@@ -26,17 +26,20 @@ FETCH_ARGS=	-F
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-BASENAME=storcli
+BASENAME=StorCli
 .elif ${ARCH} == "amd64"
-BASENAME=storcli64
+BASENAME=StorCli64
 .endif
 
-post-extract:
-	(cd ${WRKSRC}/FreeBSD && \
+do-extract:
+	${MKDIR} ${WRKSRC}
+	(cd ${WRKSRC} && ${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+	(cd ${WRKSRC} && \
 		${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${BASENAME}.zip)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/FreeBSD/${BASENAME} \
+	${INSTALL_PROGRAM} ${WRKSRC}/${BASENAME} \
 		${STAGEDIR}${PREFIX}/sbin/storcli-${PKGNAMESUFFIX}
 
 .include <bsd.port.post.mk>
