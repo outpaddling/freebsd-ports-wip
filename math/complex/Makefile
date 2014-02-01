@@ -15,5 +15,7 @@ MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Complex math functions
 
+NO_STAGE=	yes
+
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>

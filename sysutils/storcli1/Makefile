@@ -37,6 +37,6 @@ do-install:
 .if ${ARCH} == "i386"
 		${INSTALL_PROGRAM} ${WRKSRC}/FreeBSD/storcli   ${PREFIX}/sbin/storcli
 .elif ${ARCH} == "amd64"
-		${INSTALL_PROGRAM} ${WRKSRC}/FreeBSD/storcli64 ${PREFIX}/sbin/storcli
+		${INSTALL_PROGRAM} ${WRKSRC}/FreeBSD/storcli64 ${STAGEDIR}${PREFIX}/sbin/storcli
 .endif
 .include <bsd.port.post.mk>

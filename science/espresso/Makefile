@@ -71,7 +71,6 @@ do-fetch:
 	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${FETCH_BINARY} -Fro \
 		SaX-2.0.2.tar.gz \
 		${MASTER_SITES_BASE}/111/192/SaX-2.0.2.tar.gz)
-
 .for file in ${PLUGIN_DISTFILES}
 	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${FETCH_BINARY} -Fro ${file} \
 		http://files.qe-forge.org/index.php?file=${file})
