@@ -5,7 +5,7 @@ PORTNAME=	storcli
 PORTVERSION=	1.01.75
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.lsi.com/downloads/Public/Nytro/downloads/Nytro%20XM/Management%20Software%20and%20Tools/NMR%201.5/
-PKGNAMESUFFIX=	mr
+PKGNAMESUFFIX=	nmr
 DISTNAME=	Storcli_FreeBSD_10175
 
 MAINTAINER=	jwbacon@tds.net
