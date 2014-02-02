@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	storcli
-PORTVERSION=	1.01.75
+PORTVERSION=	1.02.08
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.lsi.com/downloads/Public/Nytro/downloads/Nytro%20XM/Management%20Software%20and%20Tools/NMR%201.5/
-PKGNAMESUFFIX=	mr
-DISTNAME=	Storcli_FreeBSD_10175
+MASTER_SITES=	http://www.lsi.com/downloads/Public/MegaRAID%20Common%20Files/
+PKGNAMESUFFIX=	-mr
+DISTNAME=	${PORTVERSION}_StorCLI_Phase3
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	MegaRAID comand-line management utiliity
@@ -17,29 +17,27 @@ ONLY_FOR_ARCHS= i386 amd64
 
 USE_ZIP=        yes
 NO_BUILD=       yes
-WRKSRC=		${WRKDIR}/storcli_all_os
+WRKSRC=		${WRKDIR}/FreeBSD
 
-PLIST_FILES=    sbin/storcli-${PKGNAMESUFFIX}
-
-FETCH_ARGS=	-F
+PLIST_FILES=    sbin/storcli${PKGNAMESUFFIX}
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-BASENAME=StorCli
+BASENAME=storcli
 .elif ${ARCH} == "amd64"
-BASENAME=StorCli64
+BASENAME=storcli64
 .endif
 
-do-extract:
-	${MKDIR} ${WRKSRC}
-	(cd ${WRKSRC} && ${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+post-extract:
+	(cd ${WRKSRC} && \
+		${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} \
+		MR_SAS_CLI_StorCLI-1.02.08.zip)
 	(cd ${WRKSRC} && \
 		${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${BASENAME}.zip)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${BASENAME} \
-		${STAGEDIR}${PREFIX}/sbin/storcli-${PKGNAMESUFFIX}
+		${STAGEDIR}${PREFIX}/sbin/storcli${PKGNAMESUFFIX}
 
 .include <bsd.port.post.mk>
