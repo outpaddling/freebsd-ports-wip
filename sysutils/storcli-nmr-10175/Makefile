@@ -5,6 +5,7 @@ PORTNAME=	storcli
 PORTVERSION=	1.01.75
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.lsi.com/downloads/Public/MegaRAID%20Common%20Files/
+http://www.lsi.com/downloads/Public/Nytro/downloads/Nytro%20XM/Management%20Software%20and%20Tools/NMR%201.5/Storcli_FreeBSD_10175.zip
 PKGNAMESUFFIX=	mr
 DISTNAME=	Storcli_FreeBSD_10175
 
