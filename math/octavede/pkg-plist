@@ -1,7 +1,0 @@
-bin/octavede
-@dirrm %%DATADIR%%/DOC/overview
-@dirrm %%DATADIR%%/DOC
-@dirrm %%DATADIR%%/DATABASE
-@dirrm %%DATADIR%%
-@exec mkdir -p %D/%%DATADIR%%/DOC/overview
-@exec mkdir -p %D/%%DATADIR%%/DATABASE
