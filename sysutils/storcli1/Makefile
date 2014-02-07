@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.lsi.com/downloads/Public/MegaRAID%20Common%20Files/
 DISTNAME=	${PORTVERSION}_StorCLI
 
-MAINTAINER=	h-fujishima@sakura.ad.jp
+MAINTAINER=	jwbacon@tds.net
 COMMENT=	SAS MegaRAID FreeBSD StorCLI
 
 RESTRICTED=	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/Pages/user/eula.aspx

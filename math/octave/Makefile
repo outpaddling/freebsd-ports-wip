@@ -35,7 +35,7 @@ LIB_DEPENDS=	GraphicsMagick.14:${PORTSDIR}/graphics/GraphicsMagick13 \
 		umfpack.1:${PORTSDIR}/math/suitesparse \
 		glpk:${PORTSDIR}/math/glpk \
 		gl2ps:${PORTSDIR}/print/gl2ps \
-		qscintilla2:${PORTSDIR}/deve/qscintilla2
+		qscintilla2:${PORTSDIR}/devel/qscintilla2
 
 USES=		charsetfix fortran gmake perl5 pkgconfig
 USE_BZIP2=	yes

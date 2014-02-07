@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.lsi.com/downloads/Public/Nytro/downloads/Nytro%20XM/Man
 PKGNAMESUFFIX=	nmr
 DISTNAME=	StorCLI-${PORTVERSION}
 
-MAINTAINER=	h-fujishima@sakura.ad.jp
+MAINTAINER=	jwbacon@tds.net
 COMMENT=	MegaRAID comand-line management utiliity
 
 RESTRICTED=	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/Pages/user/eula.aspx
