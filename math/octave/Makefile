@@ -34,7 +34,8 @@ LIB_DEPENDS=	GraphicsMagick.14:${PORTSDIR}/graphics/GraphicsMagick13 \
 		qrupdate:${PORTSDIR}/math/qrupdate \
 		umfpack.1:${PORTSDIR}/math/suitesparse \
 		glpk:${PORTSDIR}/math/glpk \
-		gl2ps:${PORTSDIR}/print/gl2ps
+		gl2ps:${PORTSDIR}/print/gl2ps \
+		qscintilla2:${PORTSDIR}/deve/qscintilla2
 
 USES=		charsetfix fortran gmake perl5 pkgconfig
 USE_BZIP2=	yes
@@ -45,7 +46,7 @@ GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 CONFIGURE_ENV+=	JAVA_HOME=${JAVA_HOME}
-USE_QT4=	gui network uic moc rcc
+USE_QT4=	gui network uic moc rcc assistant
 
 INFO=		octave liboctave
 MAN1=		octave.1 mkoctfile.1 octave-config.1
