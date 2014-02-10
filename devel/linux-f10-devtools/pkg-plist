@@ -306,6 +306,7 @@ usr/include/linux/bfs_fs.h
 usr/include/linux/binfmts.h
 usr/include/linux/blkpg.h
 usr/include/linux/bpqether.h
+usr/include/linux/bsg.h
 usr/include/linux/byteorder/big_endian.h
 usr/include/linux/byteorder/little_endian.h
 usr/include/linux/byteorder/swab.h
@@ -1099,7 +1100,7 @@ usr/lib/libBrokenLocale.a
 usr/lib/libBrokenLocale.so
 usr/lib/libanl.a
 usr/lib/libanl.so
-usr/lib/libbfd-2.18.50.0.9-7.fc10.so
+usr/lib/libbfd-2.18.50.0.9-8.fc10.so
 usr/lib/libbfd.a
 usr/lib/libbfd.so
 usr/lib/libbsd-compat.a
@@ -1135,7 +1136,7 @@ usr/lib/libnss_files.so
 usr/lib/libnss_hesiod.so
 usr/lib/libnss_nis.so
 usr/lib/libnss_nisplus.so
-usr/lib/libopcodes-2.18.50.0.9-7.fc10.so
+usr/lib/libopcodes-2.18.50.0.9-8.fc10.so
 usr/lib/libopcodes.a
 usr/lib/libopcodes.so
 usr/lib/libpthread.a
@@ -1391,52 +1392,52 @@ usr/share/man/man1/windmc.1.gz
 @dirrm usr/lib/gcc/i386-redhat-linux/4.3.2
 @dirrm usr/lib/gcc/i386-redhat-linux
 @dirrm usr/lib/gcc
-@dirrmtry usr/lib
-@dirrmtry usr/include/video
-@dirrmtry usr/include/sys
-@dirrmtry usr/include/sound
-@dirrmtry usr/include/scsi
-@dirrmtry usr/include/rpcsvc
-@dirrmtry usr/include/rpc
-@dirrmtry usr/include/rdma
-@dirrmtry usr/include/protocols
-@dirrmtry usr/include/nfs
-@dirrmtry usr/include/netrose
-@dirrmtry usr/include/netrom
-@dirrmtry usr/include/netpacket
-@dirrmtry usr/include/netiucv
-@dirrmtry usr/include/netipx
-@dirrmtry usr/include/netinet
-@dirrmtry usr/include/neteconet
-@dirrmtry usr/include/netax25
-@dirrmtry usr/include/netatalk
-@dirrmtry usr/include/netash
-@dirrmtry usr/include/net
-@dirrmtry usr/include/mtd
-@dirrmtry usr/include/linux/usb
-@dirrmtry usr/include/linux/tc_ematch
-@dirrmtry usr/include/linux/tc_act
-@dirrmtry usr/include/linux/sunrpc
-@dirrmtry usr/include/linux/spi
-@dirrmtry usr/include/linux/raid
-@dirrmtry usr/include/linux/nfsd
-@dirrmtry usr/include/linux/netfilter_ipv6
-@dirrmtry usr/include/linux/netfilter_ipv4
-@dirrmtry usr/include/linux/netfilter_bridge
-@dirrmtry usr/include/linux/netfilter_arp
-@dirrmtry usr/include/linux/netfilter
-@dirrmtry usr/include/linux/isdn
-@dirrmtry usr/include/linux/hdlc
-@dirrmtry usr/include/linux/dvb
-@dirrmtry usr/include/linux/can
-@dirrmtry usr/include/linux/byteorder
-@dirrmtry usr/include/linux
-@dirrmtry usr/include/gnu
-@dirrmtry usr/include/drm
-@dirrmtry usr/include/bits
-@dirrmtry usr/include/asm-generic
-@dirrmtry usr/include/asm
-@dirrmtry usr/include/arpa
+@dirrm usr/lib
+@dirrm usr/include/video
+@dirrm usr/include/sys
+@dirrm usr/include/sound
+@dirrm usr/include/scsi
+@dirrm usr/include/rpcsvc
+@dirrm usr/include/rpc
+@dirrm usr/include/rdma
+@dirrm usr/include/protocols
+@dirrm usr/include/nfs
+@dirrm usr/include/netrose
+@dirrm usr/include/netrom
+@dirrm usr/include/netpacket
+@dirrm usr/include/netiucv
+@dirrm usr/include/netipx
+@dirrm usr/include/netinet
+@dirrm usr/include/neteconet
+@dirrm usr/include/netax25
+@dirrm usr/include/netatalk
+@dirrm usr/include/netash
+@dirrm usr/include/net
+@dirrm usr/include/mtd
+@dirrm usr/include/linux/usb
+@dirrm usr/include/linux/tc_ematch
+@dirrm usr/include/linux/tc_act
+@dirrm usr/include/linux/sunrpc
+@dirrm usr/include/linux/spi
+@dirrm usr/include/linux/raid
+@dirrm usr/include/linux/nfsd
+@dirrm usr/include/linux/netfilter_ipv6
+@dirrm usr/include/linux/netfilter_ipv4
+@dirrm usr/include/linux/netfilter_bridge
+@dirrm usr/include/linux/netfilter_arp
+@dirrm usr/include/linux/netfilter
+@dirrm usr/include/linux/isdn
+@dirrm usr/include/linux/hdlc
+@dirrm usr/include/linux/dvb
+@dirrm usr/include/linux/can
+@dirrm usr/include/linux/byteorder
+@dirrm usr/include/linux
+@dirrm usr/include/gnu
+@dirrm usr/include/drm
+@dirrm usr/include/bits
+@dirrm usr/include/asm-generic
+@dirrm usr/include/asm
+@dirrm usr/include/arpa
 @dirrmtry usr/include
 @dirrmtry usr/bin
 @dirrmtry usr
