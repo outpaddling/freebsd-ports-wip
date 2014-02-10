@@ -18,8 +18,6 @@ USE_XZ=		yes
 
 NO_BUILD=	yes
 
-MAN1=		${PORTNAME}.1
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/Doc/${PORTNAME}.man \
