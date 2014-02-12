@@ -46,7 +46,8 @@ GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 CONFIGURE_ENV+=	JAVA_HOME=${JAVA_HOME}
-USE_QT4=	gui network uic moc rcc assistant
+USE_QT4=	gui network uic moc rcc linguist
+# assistant
 
 INFO=		octave liboctave
 MAN1=		octave.1 mkoctfile.1 octave-config.1
