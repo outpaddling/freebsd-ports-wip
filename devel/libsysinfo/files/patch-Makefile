@@ -1,0 +1,12 @@
+--- Makefile.orig	2012-04-15 09:37:42.000000000 -0500
++++ Makefile	2014-02-23 11:15:06.000000000 -0600
+@@ -1,7 +1,7 @@
+ LIB		= sysinfo
+ LIBDIR		= ${PREFIX}/lib/
+-INCLUDEDIR 	= ${PREFIX}/include/sys/
+-MANDIR		= ${PREFIX}/man/man3
++INCLUDEDIR 	= ${STAGEDIR}${PREFIX}/include/sys/
++MANDIR		= ${STAGEDIR}${PREFIX}/man/man3
+ SHLIB_MAJOR	= 0
+ WITHOUT_PROFILE = yes
+ MAKEOBJDIRPREFIX= /

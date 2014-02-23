@@ -1,5 +1,5 @@
 # Created by: Jason W. Bacon <jwbacon@tds.net>
-# $FreeBSD: science/afni/Makefile 327767 2013-09-20 22:48:30Z bapt $
+# $FreeBSD: head/science/afni/Makefile 333659 2013-11-13 08:19:34Z bf $
 
 ############################################################################
 # http://www.neuro.mcw.edu/Ports has the latest source distribution from
@@ -45,7 +45,7 @@ USES=		gettext iconv gmake motif
 # Some prereqs use gcc anyway
 USE_GCC=	yes
 
-NO_STAGE=	yes
+# NO_STAGE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -55,8 +55,6 @@ BROKEN=	Does not compile on sparc64: "undefined reference to '_mcount'"
 
 USE_GL=		glw glu
 USE_XORG=	xi
-# Some build scripts pick up MAKE from the environment, not from Makefile
-# MAKE_ENV=	CC="${CC}" MAKE="gmake"
 MAKE_ENV=	CC="${CC}"
 MAKE_JOBS_UNSAFE=yes
 
@@ -66,12 +64,10 @@ ALL_TARGET=	vastness suma
 ###########################################################################
 # Install parameters
 
-MAN1=		afni.1
-
 SUB_FILES=	pkg-message afni.cshrc afni.profile
 
 INSTALL_WRKSRC=	${WRKSRC}/BSD
-STAGE=		${WRKSRC}/stage
+PRESTAGE=	${WRKSRC}/prestage
 
 X11R6_FILES=	coxplot/Makefile \
 		coxplot/Makefile.f2c \
@@ -96,48 +92,50 @@ post-extract:
 	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" ${WRKDIR}/afni.1
 
 post-build:
-	${MKDIR} ${STAGE}/bin \
-		${STAGE}/scripts \
-		${STAGE}/lib \
-		${STAGE}/include \
-		${STAGE}/trash \
-		${STAGE}/doc \
-		${STAGE}/share
+	${MKDIR} ${PRESTAGE}/bin \
+		${PRESTAGE}/scripts \
+		${PRESTAGE}/lib \
+		${PRESTAGE}/include \
+		${PRESTAGE}/trash \
+		${PRESTAGE}/doc \
+		${PRESTAGE}/share
 	${MV}	${INSTALL_WRKSRC}/libf2c.a \
-		${STAGE}/trash
+		${PRESTAGE}/trash
 	${MV}	${INSTALL_WRKSRC}/*.a \
 		${INSTALL_WRKSRC}/*.so \
-		${STAGE}/lib
+		${PRESTAGE}/lib
 	${MV}	${INSTALL_WRKSRC}/funstuff \
 		${INSTALL_WRKSRC}/AFNI.*rc \
 		${INSTALL_WRKSRC}/afnigui* \
-		${STAGE}/share
+		${PRESTAGE}/share
 	${MV}	${INSTALL_WRKSRC}/*.h \
-		${STAGE}/include
+		${PRESTAGE}/include
 	${MV}	${INSTALL_WRKSRC}/README* \
-		${STAGE}/doc
+		${PRESTAGE}/doc
 	${MV}	${INSTALL_WRKSRC}/abut ${INSTALL_WRKSRC}/afni_abut
 	for binary in `${FILE} ${INSTALL_WRKSRC}/* | fgrep 'ELF' | ${AWK} -F ':' ' { print $$1 }'` ; do \
-		${MV} $${binary} ${STAGE}/bin ; \
+		${MV} $${binary} ${PRESTAGE}/bin ; \
 	done
 	${MV}	${INSTALL_WRKSRC}/* \
-		${STAGE}/scripts
+		${PRESTAGE}/scripts
 
 do-install:
-	${MKDIR} ${DATADIR} ${PREFIX}/lib/afni ${PREFIX}/include/afni
-	${INSTALL_DATA} ${STAGE}/lib/* ${PREFIX}/lib/afni
-	${INSTALL_DATA} ${STAGE}/include/* ${PREFIX}/include/afni
-	${CP} -R ${STAGE}/share/* ${DATADIR}
-	${INSTALL_PROGRAM} ${STAGE}/bin/* ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${STAGE}/scripts/* ${PREFIX}/bin
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/TTatlas* ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/CA_EZ_v1.5-July3107/* ${DATADIR}
-	${INSTALL_MAN} ${WRKDIR}/afni.1 ${MAN1PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${DATADIR} \
+		${STAGEDIR}${PREFIX}/lib/afni \
+		${STAGEDIR}${PREFIX}/include/afni
+	${INSTALL_DATA} ${PRESTAGE}/lib/* ${STAGEDIR}${PREFIX}/lib/afni
+	${INSTALL_DATA} ${PRESTAGE}/include/* ${STAGEDIR}${PREFIX}/include/afni
+	${CP} -R ${PRESTAGE}/share/* ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${PRESTAGE}/bin/* ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${PRESTAGE}/scripts/* ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/TTatlas* ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/CA_EZ_v1.5-July3107/* ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKDIR}/afni.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} ${PREFIX}/etc/mri
-	${INSTALL_DATA} ${STAGE}/doc/* ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${PREFIX}/etc/mri
+	${INSTALL_DATA} ${PRESTAGE}/doc/* ${STAGEDIR}${DOCSDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/afni.cshrc ${WRKDIR}/afni.profile \
-		${PREFIX}/etc/mri
+		${STAGEDIR}${PREFIX}/etc/mri
 .endif
 
 post-install:
