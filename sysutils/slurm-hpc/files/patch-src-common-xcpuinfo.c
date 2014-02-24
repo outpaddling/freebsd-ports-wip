@@ -1,5 +1,5 @@
 --- src/common/xcpuinfo.c.orig	2013-11-04 15:19:15.000000000 -0600
-+++ src/common/xcpuinfo.c	2013-12-06 13:52:11.000000000 -0600
++++ src/common/xcpuinfo.c	2014-02-23 19:28:31.000000000 -0600
 @@ -53,6 +53,7 @@
  #include <stdlib.h>
  #include <string.h>

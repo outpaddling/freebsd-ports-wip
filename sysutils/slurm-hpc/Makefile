@@ -1,5 +1,5 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
-# $FreeBSD: head/sysutils/slurm-hpc/Makefile 334858 2013-11-25 15:54:38Z bsam $
+# $FreeBSD: head/sysutils/slurm-hpc/Makefile 336471 2013-12-14 19:01:33Z wg $
 
 PORTNAME=	slurm
 PORTVERSION=	2.6.4
@@ -89,5 +89,9 @@ post-patch:
 	${REINPLACE_CMD} -e 's|min_gtk_version=2.7.1|min_gtk_version=200.7.1|' \
 		${WRKSRC}/configure
 .endif
+	@${REINPLACE_CMD} \
+		-e 's|/usr/bin/env python|${PYTHON_CMD}|g' \
+		${WRKSRC}/doc/html/shtml2html.py \
+		${WRKSRC}/doc/man/man2html.py
 
 .include <bsd.port.mk>

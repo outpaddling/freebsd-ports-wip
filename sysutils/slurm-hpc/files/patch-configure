@@ -1,5 +1,14 @@
---- configure.orig	2013-09-10 16:44:33.000000000 -0500
-+++ configure	2013-11-14 10:23:02.000000000 -0600
+--- configure.orig	2013-11-04 15:19:15.000000000 -0600
++++ configure	2014-02-23 19:28:31.000000000 -0600
+@@ -21252,7 +21252,7 @@
+     no_gtk=yes
+   fi
+ 
+-  min_gtk_version=2.7.1
++  min_gtk_version=200.7.1
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for GTK+ - version >= $min_gtk_version" >&5
+ $as_echo_n "checking for GTK+ - version >= $min_gtk_version... " >&6; }
+ 
 @@ -21594,12 +21594,9 @@
  main ()
  {
