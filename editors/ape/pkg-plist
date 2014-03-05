@@ -16,7 +16,6 @@ man/man1/apekeys.1.gz
 %%DATADIR%%/Languages/BASH/syntax_highlighting
 %%DATADIR%%/Languages/BC/language_opts
 %%DATADIR%%/Languages/BC/syntax_highlighting
-%%DATADIR%%/Languages/Bash/.language_opts.bak
 %%DATADIR%%/Languages/Bash/Macros/macros
 %%DATADIR%%/Languages/Bash/Macros/menu.txt
 %%DATADIR%%/Languages/Bash/language_opts
@@ -71,7 +70,6 @@ man/man1/apekeys.1.gz
 %%DATADIR%%/Languages/Java/Macros/menu.txt
 %%DATADIR%%/Languages/Java/language_opts
 %%DATADIR%%/Languages/Java/syntax_highlighting
-%%DATADIR%%/Languages/Ksh/.language_opts.bak
 %%DATADIR%%/Languages/Ksh/Macros/macros
 %%DATADIR%%/Languages/Ksh/Macros/menu.txt
 %%DATADIR%%/Languages/Ksh/language_opts
