@@ -33,9 +33,9 @@ do-build:
 # Install with siesta group and 550?  Users must agree to license terms.
 # Separate license for site installation requires restricting user access.
 # chgrp below does not work
+#	${CHMOD} 550 ${STAGEDIR}${PREFIX}/bin/siesta
+#	${CHGRP} siesta ${STAGEDIR}${PREFIX}/bin/siesta
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/siesta ${STAGEDIR}${PREFIX}/bin
-	${CHMOD} 550 ${STAGEDIR}${PREFIX}/bin/siesta
-	${CHGRP} siesta ${STAGEDIR}${PREFIX}/bin/siesta
 
 .include <bsd.port.mk>
