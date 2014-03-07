@@ -18,17 +18,20 @@ CONFIGURE_ARGS+=--srcdir=../Src
 
 FCFLAGS+=       -DGRID_DP -DPHI_GRID_SP -O2
 
-WRKSRC=         ${WRKDIR}/${DISTNAME}/Obj
+WRKSRC=		${WRKDIR}/${DISTNAME}/Obj
 
 MAKE_ENV+=      TARGET=""
 
-PLIST_FILES=	bin/siesta
+PLIST_FILES=	bin/siesta bin/transiesta
 
 pre-configure:
 	(cd ${WRKSRC} && sh ../Src/obj_setup.sh && ${CP} ../Src/configure .)
 
+# Does pkgsrc have a MAKE_TARGET equivalent?
 do-build:
-	(cd ${WRKSRC} && ${GMAKE})
+	(cd ${WRKSRC} && ${GMAKE} siesta)
+	(cd ${WRKSRC} && ${MV} siesta siesta.save)
+	(cd ${WRKSRC} && ${GMAKE} clean transiesta)
 
 # Install with siesta group and 550?  Users must agree to license terms.
 # Separate license for site installation requires restricting user access.
@@ -36,6 +39,7 @@ do-build:
 #	${CHMOD} 550 ${STAGEDIR}${PREFIX}/bin/siesta
 #	${CHGRP} siesta ${STAGEDIR}${PREFIX}/bin/siesta
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/siesta ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/siesta.save ${STAGEDIR}${PREFIX}/bin/siesta
+	${INSTALL_PROGRAM} ${WRKSRC}/transiesta ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
