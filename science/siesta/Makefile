@@ -11,7 +11,7 @@ EXTRACT_SUFX=   .tgz
 MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
 COMMENT=	Spanish Initiative for Electronic Simulations with Thousands of Atoms
 
-USES=		gmake fortran
+USES=		fortran gmake
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS+=--srcdir=../Src
@@ -20,8 +20,6 @@ FCFLAGS+=       -DGRID_DP -DPHI_GRID_SP -O2
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Obj
 
-MAKE_ENV+=      TARGET=""
-
 PLIST_FILES=	bin/siesta bin/transiesta
 
 pre-configure:
@@ -29,9 +27,9 @@ pre-configure:
 
 # Does pkgsrc have a MAKE_TARGET equivalent?
 do-build:
-	(cd ${WRKSRC} && ${GMAKE} siesta)
+	(cd ${WRKSRC} && ${MAKE_CMD} siesta)
 	(cd ${WRKSRC} && ${MV} siesta siesta.save)
-	(cd ${WRKSRC} && ${GMAKE} clean transiesta)
+	(cd ${WRKSRC} && ${MAKE_CMD} clean transiesta)
 
 # Install with siesta group and 550?  Users must agree to license terms.
 # Separate license for site installation requires restricting user access.
