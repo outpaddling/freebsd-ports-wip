@@ -1,43 +1,46 @@
-# Created by: Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
 
 PORTNAME=	siesta
 PORTVERSION=	3.2
 CATEGORIES=	science
-MASTER_SITES=	http://departments.icmab.es/leem/siesta/CodeAccess/Code/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-pl-4
-EXTRACT_SUFX=   .tgz
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
+MAINTAINER=	jwbacon@tds.net
 COMMENT=	Spanish Initiative for Electronic Simulations with Thousands of Atoms
 
-USES=		fortran gmake
+# LICENSE=	Siesta license
 
-GNU_CONFIGURE=  yes
+RESTRICTED=	Redistribution is not permitted
+
+USES=		gmake fortran
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--srcdir=../Src
 
-FCFLAGS+=       -DGRID_DP -DPHI_GRID_SP -O2
+FCFLAGS+=	-DGRID_DP -DPHI_GRID_SP -O2
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Obj
 
 PLIST_FILES=	bin/siesta bin/transiesta
 
+.include <bsd.port.pre.mk>
+
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE=		is not redistributable. You must agree to the license terms at http://departments.icmab.es/leem/siesta/CodeAccess/selector.html and download ${DISTFILES} manually. Then copy ${DISTFILES} into ${DISTDIR} and run make again.  Note that the license for computer centers requires that systems managers limit access to users who have agreed to the user license
+.endif
+
 pre-configure:
-	(cd ${WRKSRC} && sh ../Src/obj_setup.sh && ${CP} ../Src/configure .)
+	(cd ${WRKSRC} && ${SH} ../Src/obj_setup.sh && ${CP} ../Src/configure .)
 
-# Does pkgsrc have a MAKE_TARGET equivalent?
 do-build:
-	(cd ${WRKSRC} && ${MAKE_CMD} siesta)
-	(cd ${WRKSRC} && ${MV} siesta siesta.save)
-	(cd ${WRKSRC} && ${MAKE_CMD} clean transiesta)
+	(cd ${WRKSRC} && \
+		${MAKE_CMD} siesta && \
+		${MV} siesta siesta.save && \
+		${MAKE_CMD} clean transiesta)
 
-# Install with siesta group and 550?  Users must agree to license terms.
-# Separate license for site installation requires restricting user access.
-# chgrp below does not work
-#	${CHMOD} 550 ${STAGEDIR}${PREFIX}/bin/siesta
-#	${CHGRP} siesta ${STAGEDIR}${PREFIX}/bin/siesta
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/siesta.save ${STAGEDIR}${PREFIX}/bin/siesta
 	${INSTALL_PROGRAM} ${WRKSRC}/transiesta ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

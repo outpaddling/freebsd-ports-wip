@@ -1,3 +1,6 @@
-[description of the port]
+SIESTA (Spanish Initiative for Electronic Simulations with Thousands of Atoms)
+is both a method and its computer program implementation, to perform electronic
+structure calculations and ab initio molecular dynamics simulations of
+molecules and solids.
 
-WWW: http://port.home.page/
+WWW: http://departments.icmab.es/leem/siesta/
