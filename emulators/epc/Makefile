@@ -14,6 +14,8 @@ MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Educational Perrsonal Computer
 
+USE_XZ=		yes
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtwintk.a:../../devel/twintk \
 		${LOCALBASE}/lib/libbacon.a:../../devel/libbacon \
 		${LOCALBASE}/include/epc.h:../../devel/plasm
