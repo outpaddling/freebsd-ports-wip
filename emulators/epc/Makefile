@@ -21,8 +21,6 @@ RUN_DEPENDS=	asepc:../../devel/plasm
 
 MAKE_ARGS=	CFLAGS="-O -I${LOCALBASE}/include"
 
-MAN1=		epc.1
-
 INSTALL_TARGET=	PREFIX=${STAGEDIR}${PREFIX} \
 		MANPREFIX=${STAGEDIR}${PREFIX} \
 		install

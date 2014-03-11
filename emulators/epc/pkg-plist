@@ -1,4 +1,5 @@
 bin/epc
+man/man1/epc.1.gz
 %%DATADIR%%/Examples/bench.epc
 %%DATADIR%%/Examples/echo.epc
 %%DATADIR%%/Examples/float.epc
@@ -7,6 +8,6 @@ bin/epc
 %%DATADIR%%/Examples/torture.epc
 %%DATADIR%%/include/io.epc
 %%DATADIR%%/include/macros.epc
-@dirrm %%DATADIR%%/include
-@dirrm %%DATADIR%%/Examples
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/include
+@dirrmtry %%DATADIR%%/Examples
+@dirrmtry %%DATADIR%%
