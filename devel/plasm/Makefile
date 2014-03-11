@@ -21,6 +21,8 @@ MAN1=           asepc.1
 LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	papp:../../devel/papp
 
+USE_XZ=		yes
+
 MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
 		MANPREFIX=${STAGEDIR}${PREFIX}
 
