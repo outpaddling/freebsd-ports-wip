@@ -16,7 +16,8 @@ RESTRICTED=	Source recipient must acknowledge license. Reproduction or redistrib
 
 ONLY_FOR_ARCHS= i386 amd64
 
-USE_ZIP=        yes
+USES=		zip
+UNZIP_CMD=	/usr/bin/unzip
 NO_BUILD=       yes
 WRKSRC=		${WRKDIR}/FreeBSD
 
