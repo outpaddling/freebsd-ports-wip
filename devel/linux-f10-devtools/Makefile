@@ -1,5 +1,5 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
-# $FreeBSD$
+# $FreeBSD: head/devel/linux-f10-devtools/Makefile 344012 2014-02-12 20:14:12Z thierry $
 
 PORTNAME=	devtools
 PORTVERSION=	10
@@ -39,10 +39,12 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	10
 USE_LDCONFIG=	yes
-USES+=		gettext
 
 PLIST_SUB+=	NLS=""
 
-NO_STAGE=	yes
+# Replace link to absolute path /lib/libgcc_s.so.1, which is a FreeBSD lib
+post-install:
+	${RM} ${STAGEDIR}/compat/linux/usr/lib/gcc/i386-redhat-linux/4.3.2/libgcc_s.so
+	${LN} -s ../../../../../lib/libgcc_s.so.1 ${STAGEDIR}/compat/linux/usr/lib/gcc/i386-redhat-linux/4.3.2/libgcc_s.so
 
 .include <bsd.port.mk>

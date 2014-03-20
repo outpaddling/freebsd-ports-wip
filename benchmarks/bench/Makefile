@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bench
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	benchmarks
@@ -22,6 +22,8 @@ MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	General benchmark for CPU, RAM, and disk
+
+USE_XZ=		yes
 
 PLIST_FILES=	bin/bench
 
