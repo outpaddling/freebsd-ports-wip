@@ -10,12 +10,12 @@ man/man1/apeascii.1.gz
 man/man1/apekeys.1.gz
 %%DATADIR%%/Languages/AWK/language_opts
 %%DATADIR%%/Languages/AWK/syntax_highlighting
-%%DATADIR%%/Languages/BASH/Macros/macros
-%%DATADIR%%/Languages/BASH/Macros/menu.txt
-%%DATADIR%%/Languages/BASH/language_opts
-%%DATADIR%%/Languages/BASH/syntax_highlighting
 %%DATADIR%%/Languages/BC/language_opts
 %%DATADIR%%/Languages/BC/syntax_highlighting
+%%DATADIR%%/Languages/Bash/Macros/macros
+%%DATADIR%%/Languages/Bash/Macros/menu.txt
+%%DATADIR%%/Languages/Bash/language_opts
+%%DATADIR%%/Languages/Bash/syntax_highlighting
 %%DATADIR%%/Languages/C++/Macros/macros
 %%DATADIR%%/Languages/C++/Macros/menu.txt
 %%DATADIR%%/Languages/C++/language_opts
@@ -237,9 +237,9 @@ man/man1/apekeys.1.gz
 @dirrmtry %%DATADIR%%/Languages/C++/Macros
 @dirrmtry %%DATADIR%%/Languages/C++
 @dirrmtry %%DATADIR%%/Languages/C
+@dirrmtry %%DATADIR%%/Languages/Bash/Macros
+@dirrmtry %%DATADIR%%/Languages/Bash
 @dirrmtry %%DATADIR%%/Languages/BC
-@dirrmtry %%DATADIR%%/Languages/BASH/Macros
-@dirrmtry %%DATADIR%%/Languages/BASH
 @dirrmtry %%DATADIR%%/Languages/AWK
 @dirrmtry %%DATADIR%%/Languages
 @dirrmtry %%DATADIR%%
