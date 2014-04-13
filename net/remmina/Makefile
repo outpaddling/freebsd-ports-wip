@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=--disable-ssh
 .endif
 
 .if !defined(WITHOUT_GCRYPT)
-LIB_DEPENDS+=	gcrypt.18:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 .else
 CONFIGURE_ARGS+=--disable-gcrypt
 .endif
