@@ -6,8 +6,8 @@ MASTER_SITES=	SF/remmina/0.9
 DISTNAME=	remmina-plugins-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz
 
-BUILD_DEPENDS+=	${LOCALBASE}/include/remmina/plugin.h:${PORTSDIR}/net/remmina
-RUN_DEPENDS+=	remmina:${PORTSDIR}/net/remmina
+BUILD_DEPENDS+=	${LOCALBASE}/include/remmina/plugin.h:../remmina
+RUN_DEPENDS+=	remmina:../remmina
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -48,7 +48,7 @@ PLIST_SUB+=	SSH=""
 .endif
 
 .if !defined(WITHOUT_NLS)
-RUN_DEPENDS+=	${LOCALBASE}/share/locale/bg/LC_MESSAGES/remmina-plugins.mo:${PORTSDIR}/net/remmina-plugin-i18n
+RUN_DEPENDS+=	${LOCALBASE}/share/locale/bg/LC_MESSAGES/remmina-plugins.mo:../remmina-plugin-i18n
 .endif
 
 .endif

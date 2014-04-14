@@ -12,17 +12,11 @@ COMMENT=	Python module for instant inlining of C and C++ code in Python
 
 LICENSE=	LGPL3
 
-RUN_DEPENDS=	swig2.0:../../devel/swig20
+RUN_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20
 
-USE_PYTHON=		-2.7
+USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	instant
-
-FETCH_ARGS=	-F
-
-MAN1=		instant-clean.1 \
-		instant-showcache.1
-MANCOMPRESSED=	yes
 
 MMVERSION=	1.2
 
