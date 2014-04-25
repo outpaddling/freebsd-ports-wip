@@ -3,7 +3,7 @@
 PORTNAME=	mtr
 PORTVERSION=	0.85
 PORTREVISION=	${GITVERSION}
-PORTEPOCH=	9
+PORTEPOCH=	10
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${GITHUB_USER}/${PORTNAME}/tarball/${GITVERSION}/ \
 		${MASTER_SITE_LOCAL}
@@ -29,8 +29,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf automake
 
-MAN8=		mtr.8
-PLIST_FILES=	sbin/mtr
+PLIST_FILES=	man/man8/mtr.8.gz \
+		sbin/mtr
 
 .include <bsd.port.options.mk>
 
