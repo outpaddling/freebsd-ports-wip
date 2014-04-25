@@ -1,8 +1,9 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
-# $FreeBSD: lang/x10/Makefile 327741 2013-09-20 19:53:09Z bapt $
+# $FreeBSD: head/lang/x10/Makefile 347809 2014-03-10 20:55:20Z gerald $
 
 PORTNAME=	x10
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	lang devel java
 MASTER_SITES=	http://dist.codehaus.org/x10/dependencies/ \
 		SF
@@ -38,7 +39,9 @@ BUILD_DEPENDS+=	gmake:${PORTSDIR}/devel/gmake \
 
 WRKSRC=		${WRKDIR}/x10.dist
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	EXAMPLES
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e 's/value="make"/value="gmake"/g' \
@@ -56,16 +59,16 @@ post-patch:
 
 do-install:
 .for f in X10Launcher apgas precommit x10 x10c x10c++ x10j
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${MKDIR} ${PREFIX}/stdlib
-	${INSTALL_DATA} ${WRKSRC}/etc/* ${PREFIX}/etc
-	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/lib
-	${CP} -R ${WRKSRC}/stdlib/* ${PREFIX}/stdlib
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/samples/* ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/stdlib
+	${INSTALL_DATA} ${WRKSRC}/etc/* ${STAGEDIR}${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/include/* ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/lib/* ${STAGEDIR}${PREFIX}/lib
+	${CP} -R ${WRKSRC}/stdlib/* ${STAGEDIR}${PREFIX}/stdlib
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
