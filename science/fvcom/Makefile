@@ -18,7 +18,7 @@ LIB_DEPENDS+=	libnetcdff.so:${PORTSDIR}/science/netcdf-ftn \
 		libblas.so:${PORTSDIR}/math/lapack
 
 USES=		fortran
-USE_GCC=	yes
+USE_GCC=	any
 WRKSRC=		${WRKDIR}/FVCOM2.7.1/FVCOM_source
 
 PLIST_FILES=	${MPIPREFIX}bin/${PORTNAME}${PKGNAMESUFFIX}

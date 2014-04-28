@@ -19,7 +19,7 @@ LIB_DEPENDS=	wx_gtk2_core-2.8.0:${PORTSDIR}/x11-toolkits/wxgtk28 \
 
 CONFLICTS=	dtiquery-1.0*
 
-RESTRICTED=	Must register to download at http://graphics.stanford.edu/projects/dti/
+RESTRICTED=	License agreement is required
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
