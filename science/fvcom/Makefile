@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/FVCOM2.7.1/FVCOM_source
 
 PLIST_FILES=	${MPIPREFIX}bin/${PORTNAME}${PKGNAMESUFFIX}
 
-RESTRICTED=	may not be redistributed because of licensing reasons
+RESTRICTED=	Requires (free) registration
 
 .include <bsd.port.pre.mk>
 
