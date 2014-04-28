@@ -34,6 +34,8 @@ IGNORE=	may not be redistributed because of licensing reasons.\
 	and place it in ${DISTDIR}/${DIST_SUBDIR}/
 .endif
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-extract:
 	${MV} ${WRKSRC}/makefile ${WRKSRC}/Makefile
 
