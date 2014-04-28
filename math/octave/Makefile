@@ -1,8 +1,9 @@
 # Created by: chuckr@FreeBSD.org
-# $FreeBSD: math/octave/Makefile 336344 2013-12-13 13:43:17Z tijl $
+# $FreeBSD: head/math/octave/Makefile 347809 2014-03-10 20:55:20Z gerald $
 
 PORTNAME=	octave
 PORTVERSION=	3.8.0
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	octave
@@ -11,8 +12,6 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	High-level interactive language for numerical computations
 
 LICENSE=	GPLv3
-
-MAKE_JOBS_UNSAFE=	yes
 
 BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
@@ -47,10 +46,8 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 CONFIGURE_ENV+=	JAVA_HOME=${JAVA_HOME}
 USE_QT4=	gui network uic moc rcc linguist
-# assistant
 
 INFO=		octave liboctave
-MAN1=		octave.1 mkoctfile.1 octave-config.1
 
 .include <bsd.port.pre.mk>
 
