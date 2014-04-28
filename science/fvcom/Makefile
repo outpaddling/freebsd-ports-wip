@@ -1,8 +1,9 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
-# $FreeBSD: ports/science/fvcom/Makefile,v 1.1 2013/02/20 17:46:51 svnexp Exp $
+# $FreeBSD: head/science/fvcom/Makefile 351162 2014-04-12 23:58:02Z danilo $
 
 PORTNAME=	fvcom
 PORTVERSION=	2.7.1
+PORTREVISION?=	2
 CATEGORIES=	science
 MASTER_SITES=	http://fvcom.smast.umassd.edu/FVCOM/index.html/
 DISTNAME=	sourcecode1
@@ -12,11 +13,12 @@ MAINTAINER=	jwbacon@tds.net
 COMMENT=	Unstructured Grid Finite Volume Coastal Ocean Model
 
 # Check netcdf lib for Fortran support!
-LIB_DEPENDS+=	netcdff.5:${PORTSDIR}/science/netcdf-ftn \
-		lapack:${PORTSDIR}/math/lapack \
-		blas:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	libnetcdff.so:${PORTSDIR}/science/netcdf-ftn \
+		liblapack.so:${PORTSDIR}/math/lapack \
+		libblas.so:${PORTSDIR}/math/lapack
 
-USE_FORTRAN=	yes
+USES=		fortran
+USE_GCC=	yes
 WRKSRC=		${WRKDIR}/FVCOM2.7.1/FVCOM_source
 
 PLIST_FILES=	${MPIPREFIX}bin/${PORTNAME}${PKGNAMESUFFIX}
@@ -35,11 +37,17 @@ IGNORE=	may not be redistributed because of licensing reasons.\
 post-extract:
 	${MV} ${WRKSRC}/makefile ${WRKSRC}/Makefile
 
+post-patch:
+	${REINPLACE_CMD} -e 's|gcc|${CC}|g' \
+		${WRKDIR}/FVCOM2.7.1/METIS_source/makefile
+	${REINPLACE_CMD} -e 's|cpp|${CPP}|g' \
+		${WRKDIR}/FVCOM2.7.1/FVCOM_source/Makefile
+
 pre-build:
 	(cd ${WRKSRC}/../METIS_source && make)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fvcom \
-		${PREFIX}/${MPIPREFIX}bin/${PORTNAME}${PKGNAMESUFFIX}
+		${STAGEDIR}${PREFIX}/${MPIPREFIX}bin/${PORTNAME}${PKGNAMESUFFIX}
 
 .include <bsd.port.post.mk>
