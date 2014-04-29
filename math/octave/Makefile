@@ -45,7 +45,7 @@ GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 CONFIGURE_ENV+=	JAVA_HOME=${JAVA_HOME}
-USE_QT4=	gui network uic moc rcc linguist
+USE_QT4=	gui network uic_build moc_build rcc_build linguist_build
 
 INFO=		octave liboctave
 
