@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bowtie
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	biology
 MASTER_SITES=	https://github.com/BenLangmead/bowtie/archive/
 DISTNAME=	v${PORTVERSION}
@@ -24,17 +24,17 @@ do-install:
 		${WRKSRC}/bowtie \
 		${WRKSRC}/bowtie-build \
 		${WRKSRC}/bowtie-inspect \
-		${PREFIX}/bin
+		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/scripts/*.sh \
 		${WRKSRC}/scripts/*.pl \
-		${PREFIX}/bin
-	${MKDIR} ${DATADIR}
+		${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	${CP} -R \
 		${WRKSRC}/doc \
 		${WRKSRC}/genomes \
 		${WRKSRC}/indexes \
 		${WRKSRC}/reads \
-		${DATADIR}
+		${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

@@ -43,10 +43,10 @@ bin/reconcile_alignments_pe.pl
 %%DATADIR%%/doc/style.css
 %%DATADIR%%/doc/website/css/style.css
 %%DATADIR%%/doc/website/foot.ssi
-%%DATADIR%%/doc/website/images/JHU_white_sm.png
 %%DATADIR%%/doc/website/images/bowtie_logo.png
 %%DATADIR%%/doc/website/images/osi-certified.gif
 %%DATADIR%%/doc/website/images/sflogo.png
+%%DATADIR%%/doc/website/images/university.small.horizontal.white.png
 %%DATADIR%%/doc/website/index.html
 %%DATADIR%%/doc/website/index.shtml
 %%DATADIR%%/doc/website/latest-version.txt
