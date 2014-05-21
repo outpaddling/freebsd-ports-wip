@@ -13,7 +13,7 @@ MAINTAINER=	jwbacon@tds.net
 COMMENT=	Unstructured Grid Finite Volume Coastal Ocean Model
 
 # Check netcdf lib for Fortran support!
-LIB_DEPENDS+=	libnetcdff.so:${PORTSDIR}/science/netcdf-ftn \
+LIB_DEPENDS+=	libnetcdff.so:${PORTSDIR}/science/netcdf-fortran \
 		liblapack.so:${PORTSDIR}/math/lapack \
 		libblas.so:${PORTSDIR}/math/lapack
 
