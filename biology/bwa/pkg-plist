@@ -1,0 +1,3 @@
+bin/bwa
+bin/qualfa2fq.pl
+bin/xa2multi.pl

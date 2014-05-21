@@ -1,5 +1,5 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
-# $FreeBSD: ports/science/fvcom-mpi/Makefile,v 1.1 2013/02/20 17:46:51 svnexp Exp $
+# $FreeBSD: head/science/fvcom-mpi/Makefile 351165 2014-04-13 00:17:45Z danilo $
 
 PKGNAMESUFFIX=	-openmpi
 
@@ -9,7 +9,7 @@ MPIPREFIX=	mpi/openmpi/
 
 MAINTAINER=	jwbacon@tds.net
 
-LIB_DEPENDS+=	mpi:${PORTSDIR}/net/openmpi
+LIB_DEPENDS+=	libmpi.so:${PORTSDIR}/net/openmpi
 
 MASTERDIR=	${.CURDIR}/../fvcom
 
