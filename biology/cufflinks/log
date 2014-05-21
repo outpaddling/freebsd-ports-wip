@@ -1,0 +1,179 @@
+===>  Cleaning for cufflinks-2.2.1
+===>   cufflinks-2.2.1 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by cufflinks-2.2.1 for building
+===>  Extracting for cufflinks-2.2.1
+=> SHA256 Checksum OK for cufflinks-2.2.1.tar.gz.
+===>  Patching for cufflinks-2.2.1
+/usr/bin/sed -i.bak -e 's|logl|log|g' /usr/wip/biology/cufflinks/work/cufflinks-2.2.1/src/differential.cpp
+===>   cufflinks-2.2.1 depends on file: /usr/local/lib/libbam.a - found
+===>   cufflinks-2.2.1 depends on executable: bjam - found
+===>   cufflinks-2.2.1 depends on package: eigen>0 - found
+===>   cufflinks-2.2.1 depends on file: /usr/local/bin/python2.7 - found
+===>   cufflinks-2.2.1 depends on shared library: libboost_iostreams.so - found
+===>  Configuring for cufflinks-2.2.1
+configure: loading site script /usr/ports/Templates/config.site
+checking for a BSD-compatible install... /usr/bin/install -c -o root -g wheel
+checking whether build environment is sane... yes
+checking for gawk... (cached) /usr/bin/awk
+checking whether make sets $(MAKE)... yes
+checking for gawk... (cached) /usr/bin/awk
+checking for C++ compiler default output file name... a.out
+checking whether the C++ compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether c++ accepts -g... yes
+checking for style of include used by make... GNU
+checking dependency style of c++... gcc3
+checking for gcc... cc
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking dependency style of cc... gcc3
+checking whether make sets $(MAKE)... (cached) yes
+checking for ranlib... ranlib
+checking for a BSD-compatible install... /usr/bin/install -c -o root -g wheel
+checking whether /usr/local/bin/python2.7 version >= 2.4... yes
+checking for /usr/local/bin/python2.7 version... 2.7
+checking for /usr/local/bin/python2.7 platform... freebsd9
+checking for /usr/local/bin/python2.7 script directory... ${prefix}/lib/python2.7/site-packages
+checking for /usr/local/bin/python2.7 extension module directory... ${exec_prefix}/lib/python2.7/site-packages
+checking for boostlib >= 1.47.0... yes
+checking for bamlib... yes
+checking build system type... amd64-portbld-freebsd9.2
+checking whether the Boost::System library is available... yes
+checking for exit in -lboost_system... yes
+checking for exit in -lboost_system... (cached) yes
+checking whether the Boost::Serialization library is available... yes
+checking for exit in -lboost_serialization... yes
+checking for exit in -lboost_serialization... (cached) yes
+checking whether the Boost::Thread library is available... yes
+checking for exit in -lboost_thread... yes
+checking for exit in -lboost_system... (cached) yes
+checking how to run the C preprocessor... cpp
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking if zlib is wanted... yes
+checking for inflateEnd in -lz... yes
+checking for zlib.h... (cached) yes
+checking for inflateEnd in -lz... (cached) yes
+checking zlib in /usr... ok
+checking for eigenlib... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for stdbool.h that conforms to C99... (cached) yes
+checking for _Bool... (cached) yes
+checking for inline... inline
+checking for pid_t... (cached) yes
+checking for size_t... (cached) yes
+checking for ptrdiff_t... (cached) yes
+checking host system type... amd64-portbld-freebsd9.2
+checking if gcc accepts -m64... yes
+checking for struct sysinfo.totalram... no
+checking whether sysctl is declared... no
+checking whether CTL_HW is declared... no
+checking whether HW_PHYSMEM is declared... no
+checking how to create a pax tar archive... gnutar
+checking dependency style of cc... (cached) gcc3
+checking dependency style of c++... (cached) gcc3
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+
+-- cufflinks 2.2.1 Configuration Results --
+  C++ compiler:        c++ -Wall -Wno-strict-aliasing -g -gdwarf-2 -Wunused -Wuninitialized -ftemplate-depth-1024 -m64 -O3 -O2 -pipe -I/usr/local/include/eigen3 -Wno-unused -fno-strict-aliasing -DNDEBUG  -pthread -I/usr/local/include -I/usr/local/include   
+  GCC version:         cc (GCC) 4.2.1 20070831 patched [FreeBSD]
+  Host System type:    amd64-portbld-freebsd9.2
+  Install prefix:      /usr/local
+  Install eprefix:     ${prefix}
+
+  See config.h for further configuration information.
+  Email <cole@cs.umd.edu> with questions and bug reports.
+
+===>  Building for cufflinks-2.2.1
+/usr/bin/make  all-recursive
+Making all in src
+if c++ -DHAVE_CONFIG_H -I. -I. -I..   -I../src -I/usr/include  -Wall -Wno-strict-aliasing -g -gdwarf-2 -Wunused -Wuninitialized -ftemplate-depth-1024 -m64 -O3 -O2 -pipe -I/usr/local/include/eigen3 -Wno-unused -fno-strict-aliasing -DNDEBUG  -pthread -I/usr/local/include -I/usr/local/include -MT clustering.o -MD -MP -MF ".deps/clustering.Tpo" -c -o clustering.o clustering.cpp;  then mv -f ".deps/clustering.Tpo" ".deps/clustering.Po"; else rm -f ".deps/clustering.Tpo"; exit 1; fi
+In file included from /usr/local/include/boost/fusion/tuple/tuple.hpp:22,
+                 from /usr/local/include/boost/fusion/tuple.hpp:10,
+                 from /usr/local/include/boost/fusion/include/tuple.hpp:10,
+                 from /usr/local/include/boost/math/tools/tuple.hpp:89,
+                 from /usr/local/include/boost/math/special_functions/detail/igamma_inverse.hpp:13,
+                 from /usr/local/include/boost/math/special_functions/gamma.hpp:1696,
+                 from /usr/local/include/boost/math/special_functions/erf.hpp:15,
+                 from /usr/local/include/boost/math/distributions/normal.hpp:19,
+                 from common.h:21,
+                 from hits.h:23,
+                 from abundances.h:23,
+                 from clustering.h:38,
+                 from clustering.cpp:10:
+/usr/local/include/boost/fusion/tuple/detail/preprocessed/tuple.hpp:21:7: warning: no newline at end of file
+In file included from abundances.h:23,
+                 from clustering.h:38,
+                 from clustering.cpp:10:
+hits.h: In constructor 'PrecomputedExpressionHitFactory::PrecomputedExpressionHitFactory(const std::string&, ReadTable&, RefSequenceTable&)':
+hits.h:928: warning: 'PrecomputedExpressionHitFactory::_expression_file_name' will be initialized after
+hits.h:927: warning:   'std::ifstream PrecomputedExpressionHitFactory::_ifs'
+hits.h:816: warning:   when initialized here
+if c++ -DHAVE_CONFIG_H -I. -I. -I..   -I../src -I/usr/include  -Wall -Wno-strict-aliasing -g -gdwarf-2 -Wunused -Wuninitialized -ftemplate-depth-1024 -m64 -O3 -O2 -pipe -I/usr/local/include/eigen3 -Wno-unused -fno-strict-aliasing -DNDEBUG  -pthread -I/usr/local/include -I/usr/local/include -MT differential.o -MD -MP -MF ".deps/differential.Tpo" -c -o differential.o differential.cpp;  then mv -f ".deps/differential.Tpo" ".deps/differential.Po"; else rm -f ".deps/differential.Tpo"; exit 1; fi
+In file included from /usr/local/include/boost/fusion/tuple/tuple.hpp:22,
+                 from /usr/local/include/boost/fusion/tuple.hpp:10,
+                 from /usr/local/include/boost/fusion/include/tuple.hpp:10,
+                 from /usr/local/include/boost/math/tools/tuple.hpp:89,
+                 from /usr/local/include/boost/math/special_functions/detail/igamma_inverse.hpp:13,
+                 from /usr/local/include/boost/math/special_functions/gamma.hpp:1696,
+                 from differential.cpp:16:
+/usr/local/include/boost/fusion/tuple/detail/preprocessed/tuple.hpp:21:7: warning: no newline at end of file
+In file included from abundances.h:23,
+                 from differential.cpp:20:
+hits.h: In constructor 'PrecomputedExpressionHitFactory::PrecomputedExpressionHitFactory(const std::string&, ReadTable&, RefSequenceTable&)':
+hits.h:928: warning: 'PrecomputedExpressionHitFactory::_expression_file_name' will be initialized after
+hits.h:927: warning:   'std::ifstream PrecomputedExpressionHitFactory::_ifs'
+hits.h:816: warning:   when initialized here
+/usr/local/include/boost/math/tools/promotion.hpp: At global scope:
+/usr/local/include/boost/math/tools/promotion.hpp: In instantiation of 'boost::math::tools::promote_args<long double, float, float, float, float, float>':
+differential.cpp:271:   instantiated from here
+/usr/local/include/boost/math/tools/promotion.hpp:141: error: invalid application of 'sizeof' to incomplete type 'boost::STATIC_ASSERTION_FAILURE<false>' 
+differential.cpp: In function 'SampleDifference test_diffexp(const FPKMContext&, const FPKMContext&)':
+differential.cpp:460: warning: comparison between signed and unsigned integer expressions
+differential.cpp:468: warning: comparison between signed and unsigned integer expressions
+differential.cpp:490: warning: comparison between signed and unsigned integer expressions
+differential.cpp:498: warning: comparison between signed and unsigned integer expressions
+differential.cpp: In function 'bool test_js(const AbundanceGroup&, const AbundanceGroup&, double&, double&)':
+differential.cpp:742: warning: comparison between signed and unsigned integer expressions
+differential.cpp:754: warning: comparison between signed and unsigned integer expressions
+differential.cpp:780: warning: comparison between signed and unsigned integer expressions
+differential.cpp:792: warning: comparison between signed and unsigned integer expressions
+differential.cpp: In function 'void test_differential(const std::string&, const std::vector<boost::shared_ptr<SampleAbundances>, std::allocator<boost::shared_ptr<SampleAbundances> > >&, const std::vector<std::pair<long unsigned int, long unsigned int>, std::allocator<std::pair<long unsigned int, long unsigned int> > >&, Tests&, Tracking&)':
+differential.cpp:1506: warning: comparison between signed and unsigned integer expressions
+differential.cpp:1507: warning: comparison between signed and unsigned integer expressions
+differential.cpp:1545: warning: comparison between signed and unsigned integer expressions
+differential.cpp:1546: warning: comparison between signed and unsigned integer expressions
+differential.cpp:1583: warning: comparison between signed and unsigned integer expressions
+differential.cpp:1584: warning: comparison between signed and unsigned integer expressions
+*** [differential.o] Error code 1
+
+Stop in /usr/wip/biology/cufflinks/work/cufflinks-2.2.1/src.
+*** [all-recursive] Error code 1
+
+Stop in /usr/wip/biology/cufflinks/work/cufflinks-2.2.1.
+*** [all] Error code 1
+
+Stop in /usr/wip/biology/cufflinks/work/cufflinks-2.2.1.
+*** [do-build] Error code 1
+
+Stop in /usr/wip/biology/cufflinks.

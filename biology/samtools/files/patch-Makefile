@@ -1,0 +1,10 @@
+--- Makefile.orig	2014-05-21 13:47:52.000000000 -0500
++++ Makefile	2014-05-21 13:48:10.000000000 -0500
+@@ -1,5 +1,5 @@
+-CC=			gcc
+-CFLAGS=		-g -Wall -O2
++CC?=			gcc
++CFLAGS?=		-g -Wall -O2
+ #LDFLAGS=		-Wl,-rpath,\$$ORIGIN/../lib
+ DFLAGS=		-D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1
+ KNETFILE_O=	knetfile.o
