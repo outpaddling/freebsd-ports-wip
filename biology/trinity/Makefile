@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	trinity
-PORTVERSION=	2013.02.25
+#PORTVERSION=	2013.02.25
+PORTVERSION=	2014.04.13
 CATEGORIES=	biology
 MASTER_SITES=	https://sourceforge.net/projects/trinityrnaseq/files/
-DISTNAME=	trinityrnaseq_r2013-02-25
-EXTRACT_SUFX=	.tgz
+DISTNAME=	trinityrnaseq_r20140413p1
 
-MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
-COMMENT=
+MAINTAINER=	jwbacon@tds.net
+COMMENT=	RNA sequence assembly
 
 USE_GMAKE=	yes
 
@@ -28,17 +28,10 @@ RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils
 
 post-patch:
 	${REINPLACE_CMD} \
-		-e 's|logl|log|g' \
-		-e 's|expl|exp|g' \
-		${WRKSRC}/trinity-plugins/rsem-1.2.3/sam/errmod.c
-	${REINPLACE_CMD} \
 		-e 's|/bin/bash|/usr/bin/env bash|g' \
 		-e 's|make |${GMAKE} |g' \
 		-e 's|sort |gsort |g' \
 		${WRKSRC}/trinity-plugins/coreutils/build_parallel_sort.sh \
 		${WRKSRC}/trinity-plugins/collectl/build_collectl.sh
-
-post-install:
-	@${CAT} pkg-message
 
 .include <bsd.port.mk>
