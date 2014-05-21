@@ -1,7 +1,12 @@
-bin/GenomeAnalysisTK.jar
+bin/Queue.jar
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/CheckPileup.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/CountLoci.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/CountReads.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleCountLoci.scala
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleCountReads.scala
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleCustomWalker.scala
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleReadFilter.scala
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleUnifiedGenotyper.scala
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Pileup.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/PrintReads.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampleBAM.bam
