@@ -16,6 +16,7 @@ COMMENT=	RNA sequence assembly
 
 USE_GMAKE=	yes
 USE_GCC=	any
+USE_JAVA=	yes
 
 CFLAGS+=	-fopenmp
 LDFLAGS+=	-fopenmp
@@ -43,5 +44,21 @@ post-patch:
 		-e 's|sort |gsort |g' \
 		${WRKSRC}/trinity-plugins/coreutils/build_parallel_sort.sh \
 		${WRKSRC}/trinity-plugins/collectl/build_collectl.sh
+
+# FIXME: Much more needs to be installed
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/Chrysalis/Chrysalis \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/Inchworm/bin/* \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/trinity-plugins/jellyfish/bin/.libs/jellyfish \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/trinity-plugins/jellyfish/bin/jellyfish \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/Trinity ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/Butterfly/Butterfly.jar \
+		${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC}/sample_data && ${COPYTREE_SHARE} \* \
+		${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>

@@ -1,1 +1,236 @@
-@comment $FreeBSD$
+bin/Butterfly.jar
+bin/Chrysalis
+bin/FastaToDeBruijn
+bin/Trinity
+bin/cigar_tweaker
+bin/fastaToKmerCoverageStats
+bin/inchworm
+bin/jellyfish
+bin/pull_reads_with_kmers
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/SP2.annot.bed.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/SP2.chr.SE.sam.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/SP2.chr.bam
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/SP2.chr.fa.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/__run_genome-guided_Trinity_use_existing_bam.use_LSF.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/__run_genome-guided_Trinity_use_existing_bam.use_SGE.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/cleanme.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/mm9chr17.annotation.bed.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/mm9chr17.fasta.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/mm9chr17.tophat.bam
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/run_Schizo_TrinityGG.SE.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/run_Schizo_TrinityGG.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/run_Schizo_TrinityGG_jaccard_clip.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/run_genome-guided_Trinity.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/run_genome-guided_Trinity_use_existing_bam.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/run_mouse_TrinityGG.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/top100k.Left.fq.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/top100k.Right.fq.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_GenomeGuidedTrinity/top100k.genome.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_InSilicoReadNormalization/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_InSilicoReadNormalization/cleanme.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_InSilicoReadNormalization/test_PE_normalization.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_InSilicoReadNormalization/test_PE_normalization.w_base_cov_stats.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_InSilicoReadNormalization/test_SE_normalization.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex01/ex01.IGV.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex01/ex01.reads.left.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex01/ex01.reads.right.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex01/ex01.refSeq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex02/ex02.refSeq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex02/ex2.reads.left.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex02/ex2.reads.right.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex02/example2.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex02/region2.sam
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex02/region2.sam.adj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex03/ex03.refSeq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex03/ex3.reads.left.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex03/ex3.reads.right.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex03/example3.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex03/region3.sam
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex03/region3.sam.adj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex04/ex04.refSeq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex04/ex4.reads.left.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex04/ex4.reads.right.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex04/example4.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex04/region4.sam
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex04/region4.sam.adj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex05/clean.left.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex05/clean.right.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex05/ex05.refSeq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex05/ex5.reads.left.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex05/ex5.reads.right.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex05/example5.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex05/isoform_pair.fasta
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex05/isoform_pair.fasta.Bfly.dot
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex05/isoform_pair.fasta.gmap.bed
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex05/isoform_pair.fasta.gmap.gff
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex05/region5.sam
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex05/region5.sam.adj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex05/runMe.clean.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex05/runMe.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex06/ex06.refSeq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex06/ex6.reads.left.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex06/ex6.reads.right.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex06/example6.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex06/region6.sam
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex06/region6.sam.adj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex07/ex07.refSeq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex07/ex7.reads.left.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex07/ex7.reads.right.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex07/example7.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex07/region7.sam
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex07/region7.sam.adj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex08/ex08.refSeq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex08/ex8.reads.left.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex08/ex8.reads.right.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex08/example8.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex08/region8.sam
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex08/region8.sam.adj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex09/ex09.refSeq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex09/ex9.reads.left.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex09/ex9.reads.right.fq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex09/example9.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex09/region9.sam
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex09/region9.sam.adj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex09/runMe.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/refSeqs.fa
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__test_runMe_with_SE_reads.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/__test_runMe_with_jaccard_clip.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/cleanme.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/longReads.fa
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests/__runMe_CuffFly.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests/__runMe_PasaFly.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests/__runMe_as_DS.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests/__runMe_bowtie_components.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests/__runMe_include_long_reads.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests/__runMe_no_cleanup.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests/__runMe_parallel_iworm_assembly.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests/__runMe_using_Grid_LSF.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests/__runMe_using_Grid_SGE.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests/__runMe_w_monitoring.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests/__runMe_with_qual_trimming.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests/__runMe_with_qual_trimming_and_normalization.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests/__runMe_with_qual_trimming_and_normalize_libs_separately.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests/__run_abundance_estimation_include_antisense.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests/__test_runMe.singleFQ.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests/__test_runMe_include_normalization.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests/__test_runMe_with_jaccard_clip.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/reads.left.fq.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/reads.right.fq.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/reads2.left.fq.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/reads2.right.fq.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Assembly/runMe.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Coding_Extraction/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Coding_Extraction/Trinity.fasta.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Coding_Extraction/cleanme.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_Trinity_Coding_Extraction/runMe.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_align_and_estimate_abundance/Trinity.fasta.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_align_and_estimate_abundance/reads.left.fq.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_align_and_estimate_abundance/reads.right.fq.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_align_and_estimate_abundance/run_eXpress.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_align_and_estimate_abundance/run_rsem.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline/Trinity.fa.seqLens
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline/__example_edgeR_output_dir/TMM_info.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline/__example_edgeR_output_dir/__tmp_runTMM.R
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline/__example_edgeR_output_dir/__tmp_run_edgeR.1820.R
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline/__example_edgeR_output_dir/__tmp_targets.1820.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline/__example_edgeR_output_dir/all_data_files.list
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline/__example_edgeR_output_dir/cysts.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline/__example_edgeR_output_dir/example.matrix.normalized.FPKM
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline/__example_edgeR_output_dir/myc.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline/__example_edgeR_output_dir/myc_vs_cysts.eps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline/__example_edgeR_output_dir/myc_vs_cysts.results.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline/cleanMe.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline/example.matrix
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline/runMe.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/testEdgeRfuncs/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/testEdgeRfuncs/cleanMe.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/testEdgeRfuncs/dataA.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/testEdgeRfuncs/dataB.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/testEdgeRfuncs/runMe.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/testEdgeRfuncs/run_edgeR_on_sample_data.R
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_edgeR_diff_expr/testEdgeRfuncs/targets.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/cleanme.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/combined.nameSorted.pre.bam.finished
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/left/left.bam.finished
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/left/left.nameSorted.bam
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/left/left.nameSorted.bam.finished
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/left/left.pre.bam.finished
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/left/process_info.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/left/target.1.ebwt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/left/target.2.ebwt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/left/target.3.ebwt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/left/target.4.ebwt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/left/target.fa
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/left/target.fa.fai
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/left/target.rev.1.ebwt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/left/target.rev.2.ebwt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/read_content_analysis.coordSorted.bam
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/read_content_analysis.coordSorted.bam.bai
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/read_content_analysis.coordSorted.bam.finished
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/read_content_analysis.coordSorted.pre.bam.finished
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/read_content_analysis.nameSorted.bam
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/read_content_analysis.nameSorted.bam.finished
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/right/process_info.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/right/right.bam.finished
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/right/right.nameSorted.bam
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/right/right.nameSorted.bam.finished
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/right/right.pre.bam.finished
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/right/target.1.ebwt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/right/target.2.ebwt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/right/target.3.ebwt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/right/target.4.ebwt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/right/target.fa
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/right/target.fa.fai
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/right/target.rev.1.ebwt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/right/target.rev.2.ebwt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/target.1.ebwt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/target.2.ebwt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/target.3.ebwt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/target.4.ebwt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/target.fa
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/target.fa.fai
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/target.rev.1.ebwt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/target.rev.2.ebwt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/rnaseq_reads/Sp_ds.10k.left.fq.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/rnaseq_reads/Sp_ds.10k.right.fq.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/rnaseq_reads/Sp_hs.10k.left.fq.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/rnaseq_reads/Sp_hs.10k.right.fq.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/rnaseq_reads/Sp_log.10k.left.fq.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/rnaseq_reads/Sp_log.10k.right.fq.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/rnaseq_reads/Sp_plat.10k.left.fq.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/rnaseq_reads/Sp_plat.10k.right.fq.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/runMe.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/samples_n_reads_decribed.txt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_GenomeGuidedTrinity
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_InSilicoReadNormalization
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex01
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex02
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex03
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex04
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex05
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex06
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex07
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex08
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex09
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Coding_Extraction
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_align_and_estimate_abundance
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline/__example_edgeR_output_dir
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_edgeR_diff_expr/testEdgeRfuncs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_edgeR_diff_expr
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/left
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/right
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_full_edgeR_pipeline/rnaseq_reads
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_full_edgeR_pipeline
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
