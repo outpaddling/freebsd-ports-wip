@@ -18,6 +18,7 @@ FETCH_ARGS+=	-F
 
 post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
+	${REINPLACE_CMD} -e 's|lock_guard<MUTEX_T>|tthread::lock_guard<MUTEX_T>|g' ${WRKSRC}/log.h ${WRKSRC}/hit.h
 
 do-install:
 	${INSTALL_PROGRAM} \
