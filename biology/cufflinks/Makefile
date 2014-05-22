@@ -18,12 +18,18 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libbam.a:../../biology/samtools \
 		eigen>0:${PORTSDIR}/math/eigen3
 LIB_DEPENDS+=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
 
-CFLAGS+=	-I${LOCALBASE}/include/eigen3 -Wno-unused
+CFLAGS+=	-I${LOCALBASE}/include/eigen3 -Wno-unused -Wno-reorder
 
 MAKE_JOBS_UNSAFE=yes
 
 # FIXME: Find logl somewhere instead of falling back to log
+# FIXME: boost problem and hackaround: https://svn.boost.org/trac/boost/query?status=!closed&page=3&order=summary&row=description: #9331
 post-patch:
-	${REINPLACE_CMD} -e 's|logl|log|g' ${WRKSRC}/src/differential.cpp
+	${REINPLACE_CMD} \
+		-e 's|logl|log|g' \
+		-e 's|long double|double|g' \
+		${WRKSRC}/src/*.cpp \
+		${WRKSRC}/src/*.h
+
 
 .include <bsd.port.mk>

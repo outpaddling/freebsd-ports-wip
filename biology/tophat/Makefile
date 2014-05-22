@@ -12,10 +12,14 @@ COMMENT=	A spliced read mapper for RNA-Seq
 
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
+# Hack to allow variable length arrays, which are not supported by ISO C++
+USE_GCC=	yes
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbam.a:../../biology/samtools
 LIB_DEPENDS+=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	bowtie:../../biology/bowtie
+
+CFLAGS+=	-Wno-unused
 
 MAKE_JOBS_UNSAFE=yes
 
