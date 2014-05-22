@@ -15,6 +15,7 @@ MAINTAINER=	jwbacon@tds.net
 COMMENT=	RNA sequence assembly
 
 USE_GMAKE=	yes
+# Requires OpenMP
 USE_GCC=	any
 USE_JAVA=	yes
 
@@ -33,17 +34,23 @@ post-patch:
 		${WRKSRC}/Chrysalis/Makefile* \
 		${WRKSRC}/trinity-plugins/fastool/Makefile \
 		${WRKSRC}/trinity-plugins/slclust/src/Makefile
-	${REINPLACE_CMD} -e "s|configure CC=gcc47 CXX=g++47|configure CC=gcc47 CXX=g++47 LDFLAGS=-lexecinfo|g" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s|configure CC=${CC} CXX=${CXX}|configure CC=${CC} CXX=${CXX} LDFLAGS=-lexecinfo|g" ${WRKSRC}/Makefile
 	${MV} ${WRKSRC}/Chrysalis/Makefile_g++ \
 		${WRKSRC}/Chrysalis/Makefile_${CXX}
 	${MV} ${WRKSRC}/Chrysalis/Makefile_g++_x86_64 \
 		${WRKSRC}/Chrysalis/Makefile_${CXX}_x86_64
+	${MV} ${WRKSRC}/Chrysalis/Makefile_g++_i386 \
+		${WRKSRC}/Chrysalis/Makefile_${CXX}_i386
 	${REINPLACE_CMD} \
 		-e 's|/bin/bash|/usr/bin/env bash|g' \
 		-e 's|make |${GMAKE} |g' \
 		-e 's|sort |gsort |g' \
 		${WRKSRC}/trinity-plugins/coreutils/build_parallel_sort.sh \
 		${WRKSRC}/trinity-plugins/collectl/build_collectl.sh
+	${REINPLACE_CMD} \
+		-e "s|Bin/PerlLib|Bin/../share/trinity/PerlLib|" ${WRKSRC}/Trinity
+
+#		-e "s|use HTC::GridRunner;|use lib ${DATADIR}/PerlLib; use HTC::GridRunner;|" ${WRKSRC}/Trinity
 
 # FIXME: Much more needs to be installed
 do-install:
@@ -51,7 +58,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/Inchworm/bin/* \
 		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/trinity-plugins/jellyfish/bin/.libs/jellyfish \
+	${INSTALL_SCRIPT} \
+		${WRKSRC}/trinity-plugins/jellyfish/bin/.libs/jellyfish \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/trinity-plugins/jellyfish/bin/jellyfish \
 		${STAGEDIR}${PREFIX}/bin
@@ -60,5 +68,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC}/sample_data && ${COPYTREE_SHARE} \* \
 		${STAGEDIR}${EXAMPLESDIR}/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} PerlLib \
+		${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

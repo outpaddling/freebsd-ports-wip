@@ -208,29 +208,131 @@ bin/pull_reads_with_kmers
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/rnaseq_reads/Sp_plat.10k.right.fq.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/runMe.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/samples_n_reads_decribed.txt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_GenomeGuidedTrinity
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_InSilicoReadNormalization
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex01
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex02
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex03
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex04
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex05
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex06
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex07
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex08
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex09
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Assembly
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_Trinity_Coding_Extraction
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_align_and_estimate_abundance
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline/__example_edgeR_output_dir
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_edgeR_diff_expr/testEdgeRfuncs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_edgeR_diff_expr
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/left
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/right
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_full_edgeR_pipeline/rnaseq_reads
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_full_edgeR_pipeline
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%DATADIR%%/PerlLib/Ascii_genome_illustrator.pm
+%%DATADIR%%/PerlLib/BED_utils.pm
+%%DATADIR%%/PerlLib/BHStats.pm
+%%DATADIR%%/PerlLib/CDNA/Alignment_segment.pm
+%%DATADIR%%/PerlLib/CDNA/Alternative_splice_comparer.pm
+%%DATADIR%%/PerlLib/CDNA/CDNA_alignment.pm
+%%DATADIR%%/PerlLib/CDNA/CDNA_stitcher.pm
+%%DATADIR%%/PerlLib/CDNA/Gene_obj_alignment_assembler.pm
+%%DATADIR%%/PerlLib/CDNA/Genome_based_cDNA_assembler.pm
+%%DATADIR%%/PerlLib/CDNA/Genome_based_cDNA_graph_assembler.pm
+%%DATADIR%%/PerlLib/CDNA/Overlap_assembler.pm
+%%DATADIR%%/PerlLib/CDNA/PASA_alignment_assembler.pm
+%%DATADIR%%/PerlLib/CDNA/Splice_graph_assembler.pm
+%%DATADIR%%/PerlLib/CIGAR.pm
+%%DATADIR%%/PerlLib/CMD_processor.pm
+%%DATADIR%%/PerlLib/CanvasXpress/Heatmap.pm
+%%DATADIR%%/PerlLib/ColorGradient.pm
+%%DATADIR%%/PerlLib/EM.pm
+%%DATADIR%%/PerlLib/Exons_to_geneobj.pm
+%%DATADIR%%/PerlLib/FailedCommands
+%%DATADIR%%/PerlLib/Fasta_reader.pm
+%%DATADIR%%/PerlLib/Fasta_retriever.pm
+%%DATADIR%%/PerlLib/Fastq_reader.pm
+%%DATADIR%%/PerlLib/GFF3_alignment_utils.pm
+%%DATADIR%%/PerlLib/GFF3_utils.pm
+%%DATADIR%%/PerlLib/GFF_maker.pm
+%%DATADIR%%/PerlLib/GTF.pm
+%%DATADIR%%/PerlLib/GTF_utils.pm
+%%DATADIR%%/PerlLib/Gene_obj.pm
+%%DATADIR%%/PerlLib/Gene_obj_indexer.pm
+%%DATADIR%%/PerlLib/HTC/Base_handler.pm
+%%DATADIR%%/PerlLib/HTC/FarmIt.pm
+%%DATADIR%%/PerlLib/HTC/GridRunner.pm
+%%DATADIR%%/PerlLib/HTC/LSF_handler.pm
+%%DATADIR%%/PerlLib/HTC/SGE_handler.pm
+%%DATADIR%%/PerlLib/HTC/SLURM_handler.pm
+%%DATADIR%%/PerlLib/J14349.S0.sh.e7297570
+%%DATADIR%%/PerlLib/J14349.S0.sh.o7297570
+%%DATADIR%%/PerlLib/J14349.S1.sh.e7297571
+%%DATADIR%%/PerlLib/J14349.S1.sh.o7297571
+%%DATADIR%%/PerlLib/J14349.S10.sh.e7297580
+%%DATADIR%%/PerlLib/J14349.S10.sh.o7297580
+%%DATADIR%%/PerlLib/J14349.S2.sh.e7297572
+%%DATADIR%%/PerlLib/J14349.S2.sh.o7297572
+%%DATADIR%%/PerlLib/J14349.S3.sh.e7297573
+%%DATADIR%%/PerlLib/J14349.S3.sh.o7297573
+%%DATADIR%%/PerlLib/J14349.S4.sh.e7297574
+%%DATADIR%%/PerlLib/J14349.S4.sh.o7297574
+%%DATADIR%%/PerlLib/J14349.S5.sh.e7297575
+%%DATADIR%%/PerlLib/J14349.S5.sh.o7297575
+%%DATADIR%%/PerlLib/J14349.S6.sh.e7297576
+%%DATADIR%%/PerlLib/J14349.S6.sh.o7297576
+%%DATADIR%%/PerlLib/J14349.S7.sh.e7297577
+%%DATADIR%%/PerlLib/J14349.S7.sh.o7297577
+%%DATADIR%%/PerlLib/J14349.S8.sh.e7297578
+%%DATADIR%%/PerlLib/J14349.S8.sh.o7297578
+%%DATADIR%%/PerlLib/J14349.S9.sh.e7297579
+%%DATADIR%%/PerlLib/J14349.S9.sh.o7297579
+%%DATADIR%%/PerlLib/KmerGraphLib/AlignGraph.pm
+%%DATADIR%%/PerlLib/KmerGraphLib/AlignNode.pm
+%%DATADIR%%/PerlLib/KmerGraphLib/GenericGraph.pm
+%%DATADIR%%/PerlLib/KmerGraphLib/GenericNode.pm
+%%DATADIR%%/PerlLib/KmerGraphLib/KmerGraph.pm
+%%DATADIR%%/PerlLib/KmerGraphLib/KmerNode.pm
+%%DATADIR%%/PerlLib/KmerGraphLib/ReadCoverageGraph.pm
+%%DATADIR%%/PerlLib/KmerGraphLib/ReadCoverageNode.pm
+%%DATADIR%%/PerlLib/KmerGraphLib/ReadManager.pm
+%%DATADIR%%/PerlLib/KmerGraphLib/ReadTracker.pm
+%%DATADIR%%/PerlLib/KmerGraphLib/SAM_entry.pm
+%%DATADIR%%/PerlLib/KmerGraphLib/SAM_reader.pm
+%%DATADIR%%/PerlLib/KmerGraphLib/SAM_to_AlignGraph.pm
+%%DATADIR%%/PerlLib/KmerGraphLib/StringGraph.pm
+%%DATADIR%%/PerlLib/KmerGraphLib/StringNode.pm
+%%DATADIR%%/PerlLib/Ktree.pm
+%%DATADIR%%/PerlLib/Longest_orf.pm
+%%DATADIR%%/PerlLib/Nuc_translator.pm
+%%DATADIR%%/PerlLib/Overlap_info.pm
+%%DATADIR%%/PerlLib/Overlap_piler.pm
+%%DATADIR%%/PerlLib/PSL_parser.pm
+%%DATADIR%%/PerlLib/SAM_entry.pm
+%%DATADIR%%/PerlLib/SAM_reader.pm
+%%DATADIR%%/PerlLib/Simulate/Uniform_Read_Generator.pm
+%%DATADIR%%/PerlLib/SingleLinkageClusterer.pm
+%%DATADIR%%/PerlLib/Thread_helper.pm
+%%DATADIR%%/PerlLib/TiedHash.pm
+%%DATADIR%%/PerlLib/VCF_parser.pm
+%%DATADIR%%/PerlLib/WigParser.pm
+%%DATADIR%%/PerlLib/cache_completed_LSF_cmds
+%%DATADIR%%/PerlLib/cache_completed_SGE_cmds
+%%DATADIR%%/PerlLib/cmds_for_parafly.txt
+%%DATADIR%%/PerlLib/cmds_for_parafly.txt.completed
+%%DATADIR%%/PerlLib/overlapping_nucs.ph
+%%DATADIR%%/PerlLib/test_Fasta_retriever.pl
+%%DATADIR%%/PerlLib/test_htc_gridrunner_LSF.pl
+%%DATADIR%%/PerlLib/test_htc_gridrunner_SGE.pl
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_GenomeGuidedTrinity
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_InSilicoReadNormalization
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex01
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex02
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex03
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex04
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex05
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex06
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex07
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex08
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex09
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Coding_Extraction
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_align_and_estimate_abundance
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline/__example_edgeR_output_dir
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_edgeR_diff_expr/testEdgeRfuncs
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_edgeR_diff_expr
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/left
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/right
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_full_edgeR_pipeline/rnaseq_reads
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_full_edgeR_pipeline
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+@dirrmtry %%DATADIR%%/PerlLib/CDNA
+@dirrmtry %%DATADIR%%/PerlLib/CanvasXpress
+@dirrmtry %%DATADIR%%/PerlLib/HTC
+@dirrmtry %%DATADIR%%/PerlLib/KmerGraphLib
+@dirrmtry %%DATADIR%%/PerlLib/Simulate
+@dirrmtry %%DATADIR%%/PerlLib
+@dirrmtry %%DATADIR%%
