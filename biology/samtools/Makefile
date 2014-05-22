@@ -9,6 +9,8 @@ CATEGORIES=	biology science
 MASTER_SITES=	SF
 
 # FIXME: Check complete deps
+# Just for speed: Recent GCC has better optimizer
+USE_GCC=	yes
 USES=		gmake
 USE_BZIP2=	yes
 USE_PERL5=	run

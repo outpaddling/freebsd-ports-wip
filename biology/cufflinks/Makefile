@@ -10,6 +10,8 @@ MASTER_SITES=	http://cufflinks.cbcb.umd.edu/downloads/
 MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
 COMMENT=	Transcript assembly, differential expression, and differential regulation for RNA-Seq
 
+# Just for speed: Recent GCC has better optimizer
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 

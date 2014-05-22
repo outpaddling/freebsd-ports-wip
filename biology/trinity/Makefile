@@ -19,6 +19,8 @@ USE_GMAKE=	yes
 USE_GCC=	any
 USE_JAVA=	yes
 
+ONLY_FOR_ARCHS=	amd64
+
 CFLAGS+=	-fopenmp
 LDFLAGS+=	-fopenmp
 MAKE_FLAGS+=	FORCE_UNSAFE_CONFIGURE=1
@@ -34,7 +36,9 @@ post-patch:
 		${WRKSRC}/Chrysalis/Makefile* \
 		${WRKSRC}/trinity-plugins/fastool/Makefile \
 		${WRKSRC}/trinity-plugins/slclust/src/Makefile
+.if exists(/usr/lib/libexecinfo.so)
 	${REINPLACE_CMD} -e "s|configure CC=${CC} CXX=${CXX}|configure CC=${CC} CXX=${CXX} LDFLAGS=-lexecinfo|g" ${WRKSRC}/Makefile
+.endif
 	${MV} ${WRKSRC}/Chrysalis/Makefile_g++ \
 		${WRKSRC}/Chrysalis/Makefile_${CXX}
 	${MV} ${WRKSRC}/Chrysalis/Makefile_g++_x86_64 \

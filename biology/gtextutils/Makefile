@@ -10,6 +10,8 @@ MASTER_SITES=	https://github.com/agordon/libgtextutils/releases/download/0.7/
 MAINTAINER=	bacon@unixdev.ceas.uwm.edu
 COMMENT=	Gordon text utilities
 
+# Just for speed: Recent GCC has better optimizer
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
 

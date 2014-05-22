@@ -10,6 +10,8 @@ MASTER_SITES=	http://tophat.cbcb.umd.edu/downloads/
 MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
 COMMENT=	A spliced read mapper for RNA-Seq
 
+# Just for speed: Recent GCC has better optimizer
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 # Hack to allow variable length arrays, which are not supported by ISO C++
