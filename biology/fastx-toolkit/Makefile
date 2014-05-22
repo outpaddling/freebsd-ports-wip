@@ -9,11 +9,14 @@ MASTER_SITES=	https://github.com/agordon/fastx_toolkit/releases/download/0.0.14/
 MAINTAINER=	bacon@unixdev.ceas.uwm.edu
 COMMENT=	CLI tools for Short-Reads FASTA/FASTQ files preprocessing
 
-USES=		tar:bzip2 pkgconfig
+LIB_DEPENDS=	libgtextutils.so:/usr/wip/biology/gtextutils
+
+USES=		tar:bzip2 pkgconfig perl5 shebangfix
+USE_PERL5=	run
+SHEBANG_FILES=	scripts/*.pl
 
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lib/pkgconfig
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
