@@ -16,7 +16,9 @@ RUN_DEPENDS=	webbrowser:${PORTSDIR}/www/webbrowser
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		gmake
+USES=		gmake perl5 shebangfix
+USE_PERL5=	run
+SHEBANG_FILES=	scripts/*.pl
 
 .include <bsd.port.pre.mk>
 
