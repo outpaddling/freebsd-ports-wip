@@ -2,6 +2,7 @@ bin/best_verify.pl
 bin/bowtie
 bin/bowtie-build
 bin/bowtie-inspect
+bin/bowtie-manual
 bin/bs_mapability.pl
 bin/build_test.sh
 bin/colorize_fasta.pl
@@ -36,35 +37,6 @@ bin/random_bowtie_tests.sh
 bin/random_bowtie_tests_p.sh
 bin/reconcile_alignments.pl
 bin/reconcile_alignments_pe.pl
-%%DATADIR%%/doc/README
-%%DATADIR%%/doc/manual.html
-%%DATADIR%%/doc/release.txt
-%%DATADIR%%/doc/strip_markdown.pl
-%%DATADIR%%/doc/style.css
-%%DATADIR%%/doc/website/css/style.css
-%%DATADIR%%/doc/website/foot.ssi
-%%DATADIR%%/doc/website/images/bowtie_logo.png
-%%DATADIR%%/doc/website/images/osi-certified.gif
-%%DATADIR%%/doc/website/images/sflogo.png
-%%DATADIR%%/doc/website/images/university.small.horizontal.white.png
-%%DATADIR%%/doc/website/index.html
-%%DATADIR%%/doc/website/index.shtml
-%%DATADIR%%/doc/website/latest-version.txt
-%%DATADIR%%/doc/website/manual.html
-%%DATADIR%%/doc/website/manual.shtml
-%%DATADIR%%/doc/website/manual.ssi
-%%DATADIR%%/doc/website/md5s.shtml
-%%DATADIR%%/doc/website/md5s.ssi
-%%DATADIR%%/doc/website/news.shtml
-%%DATADIR%%/doc/website/old_news.ssi
-%%DATADIR%%/doc/website/other_tools.shtml
-%%DATADIR%%/doc/website/other_tools.ssi
-%%DATADIR%%/doc/website/push_langmead.sh
-%%DATADIR%%/doc/website/recent_news.ssi
-%%DATADIR%%/doc/website/rhsidebar.ssi
-%%DATADIR%%/doc/website/top.ssi
-%%DATADIR%%/doc/website/tutorial.html
-%%DATADIR%%/doc/website/tutorial.shtml
 %%DATADIR%%/genomes/.cvsignore
 %%DATADIR%%/genomes/NC_008253.fna
 %%DATADIR%%/indexes/e_coli.1.ebwt
@@ -84,11 +56,40 @@ bin/reconcile_alignments_pe.pl
 %%DATADIR%%/reads/e_coli_1000_1.fq
 %%DATADIR%%/reads/e_coli_1000_2.fa
 %%DATADIR%%/reads/e_coli_1000_2.fq
-@dirrm %%DATADIR%%/reads
-@dirrm %%DATADIR%%/indexes
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/release.txt
+%%PORTDOCS%%%%DOCSDIR%%/strip_markdown.pl
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/website/css/style.css
+%%PORTDOCS%%%%DOCSDIR%%/website/foot.ssi
+%%PORTDOCS%%%%DOCSDIR%%/website/images/bowtie_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/website/images/osi-certified.gif
+%%PORTDOCS%%%%DOCSDIR%%/website/images/sflogo.png
+%%PORTDOCS%%%%DOCSDIR%%/website/images/university.small.horizontal.white.png
+%%PORTDOCS%%%%DOCSDIR%%/website/index.html
+%%PORTDOCS%%%%DOCSDIR%%/website/index.shtml
+%%PORTDOCS%%%%DOCSDIR%%/website/latest-version.txt
+%%PORTDOCS%%%%DOCSDIR%%/website/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/website/manual.shtml
+%%PORTDOCS%%%%DOCSDIR%%/website/manual.ssi
+%%PORTDOCS%%%%DOCSDIR%%/website/md5s.shtml
+%%PORTDOCS%%%%DOCSDIR%%/website/md5s.ssi
+%%PORTDOCS%%%%DOCSDIR%%/website/news.shtml
+%%PORTDOCS%%%%DOCSDIR%%/website/old_news.ssi
+%%PORTDOCS%%%%DOCSDIR%%/website/other_tools.shtml
+%%PORTDOCS%%%%DOCSDIR%%/website/other_tools.ssi
+%%PORTDOCS%%%%DOCSDIR%%/website/push_langmead.sh
+%%PORTDOCS%%%%DOCSDIR%%/website/recent_news.ssi
+%%PORTDOCS%%%%DOCSDIR%%/website/rhsidebar.ssi
+%%PORTDOCS%%%%DOCSDIR%%/website/top.ssi
+%%PORTDOCS%%%%DOCSDIR%%/website/tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/website/tutorial.shtml
 @dirrm %%DATADIR%%/genomes
-@dirrm %%DATADIR%%/doc/website/images
-@dirrm %%DATADIR%%/doc/website/css
-@dirrm %%DATADIR%%/doc/website
-@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/indexes
+@dirrm %%DATADIR%%/reads
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/website/css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/website/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/website
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

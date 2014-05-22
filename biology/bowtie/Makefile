@@ -1,23 +1,24 @@
-# Created by:	Jason Bacon
+# Created by: Jason Bacon
 # $FreeBSD$
 
 PORTNAME=	bowtie
 PORTVERSION=	1.0.1
 CATEGORIES=	biology
-MASTER_SITES=	https://github.com/BenLangmead/bowtie/archive/
+MASTER_SITES=	http://github.com/BenLangmead/bowtie/archive/
 DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Ultrafast, memory-efficient short read aligner
 
+LICENSE=	ART10
+
+RUN_DEPENDS=	webbrowser:${PORTSDIR}/www/webbrowser
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_GMAKE=	yes
-
-FETCH_ARGS+=	-F
+USES=		gmake
 
 post-patch:
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	${REINPLACE_CMD} -e 's|lock_guard<MUTEX_T>|tthread::lock_guard<MUTEX_T>|g' ${WRKSRC}/log.h ${WRKSRC}/hit.h
 
 do-install:
@@ -29,13 +30,14 @@ do-install:
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/scripts/*.sh \
 		${WRKSRC}/scripts/*.pl \
+		${FILESDIR}/bowtie-manual \
 		${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	${CP} -R \
-		${WRKSRC}/doc \
-		${WRKSRC}/genomes \
-		${WRKSRC}/indexes \
-		${WRKSRC}/reads \
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \
+		'genomes indexes reads' \
 		${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \
+		\* \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
