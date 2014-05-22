@@ -1,5 +1,5 @@
 --- Makefile.orig	2014-03-20 13:52:20.000000000 -0500
-+++ Makefile	2014-05-22 07:30:30.000000000 -0500
++++ Makefile	2014-05-22 08:16:29.000000000 -0500
 @@ -5,9 +5,13 @@
  SEQAN_DIR = SeqAn-1.1
  SEQAN_INC = -I $(SEQAN_DIR)
@@ -17,21 +17,13 @@
  HEADERS = $(wildcard *.h)
  BOWTIE_MM = 1
  BOWTIE_SHARED_MEM = 1
-@@ -67,7 +71,7 @@
-     PTHREAD_LIB = -lpthread
- endif
- 
--POPCNT_CAPABILITY ?= 1
-+POPCNT_CAPABILITY ?= 0
- ifeq (1, $(POPCNT_CAPABILITY))
-     EXTRA_FLAGS += -DPOPCNT_CAPABILITY
- endif
-@@ -124,13 +128,15 @@
+@@ -124,13 +128,16 @@
      EXTRA_FLAGS += -Wl,-macosx_version_min,10.6
  endif
  
 +# This is unnecessary on most platforms.  The compiler will default
-+# to the native architecture.
++# to the native architecture.  Could this be wrapped in a check for
++# just the platforms that require it?
  # Convert BITS=?? to a -m flag
  BITS_FLAG =
  ifeq (32,$(BITS))
