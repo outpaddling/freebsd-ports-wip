@@ -18,6 +18,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		gmake
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386
+MAKE_ENV+=	POPCNT_CAPABILITY=0
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|lock_guard<MUTEX_T>|tthread::lock_guard<MUTEX_T>|g' ${WRKSRC}/log.h ${WRKSRC}/hit.h
 
@@ -40,4 +46,4 @@ do-install:
 		\* \
 		${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
