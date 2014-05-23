@@ -14,9 +14,9 @@ DISTNAME=	trinityrnaseq_r20140413p1
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	RNA sequence assembly
 
-USE_GMAKE=	yes
-# Requires OpenMP
-USE_GCC=	any
+USES=		gmake
+# Requires OpenMP.  Use newer GCC for better optimizer.
+USE_GCC=	yes
 USE_JAVA=	yes
 
 ONLY_FOR_ARCHS=	amd64

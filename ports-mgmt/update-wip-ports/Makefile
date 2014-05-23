@@ -11,13 +11,11 @@ COMMENT=	Update ports tree with work-in-progress ports
 
 NO_BUILD=	yes
 
-USE_XZ=		yes
+USES=		tar:xz
 
 RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 
-PLIST_FILES=	bin/update-wip-ports bin/reinstall-wip-port
-
-MAN1=		update-wip-ports.1
+PLIST_FILES=	bin/update-wip-ports bin/reinstall-wip-port man/man1/update-wip-ports.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/update-wip-ports ${STAGEDIR}${PREFIX}/bin

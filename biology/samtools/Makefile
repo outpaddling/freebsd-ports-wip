@@ -1,8 +1,6 @@
 # Created by: Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
 # $FreeBSD$
 
-# http://downloads.sourceforge.net/project/samtools/samtools/0.1.19/samtools-0.1.19.tar.bz2?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fsamtools%2Ffiles%2F&ts=1400697947&use_mirror=hivelocity
-
 PORTNAME=	samtools
 PORTVERSION=	0.1.19
 CATEGORIES=	biology science
@@ -11,10 +9,9 @@ MASTER_SITES=	SF
 # FIXME: Check complete deps
 # Just for speed: Recent GCC has better optimizer
 USE_GCC=	yes
-USES=		gmake
-USE_BZIP2=	yes
-USE_PERL5=	run
-USE_PYTHON=	yes
+USES=		gmake tar:bzip2 perl5 shebangfix
+SHEBANG_FILES=	misc/*.pl
+USE_PYTHON=	run
 
 MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
 COMMENT=	Generic format for storing large nucleotide sequence alignments
@@ -25,6 +22,8 @@ ALL_TARGET=	all-recur razip
 post-patch:
 	${REINPLACE_CMD} -e 's|expl|exp|g' -e 's|logl|log|g' \
 		${WRKSRC}/errmod.c ${WRKSRC}/bcftools/prob1.c
+	${REINPLACE_CMD} -e "s|/software/bin/python|${LOCALBASE}/bin/python|g" \
+		${WRKSRC}/misc/*.py
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/samtools ${STAGEDIR}${PREFIX}/bin
@@ -42,5 +41,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/bam
 	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/bam
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

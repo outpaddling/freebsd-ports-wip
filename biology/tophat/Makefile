@@ -11,15 +11,16 @@ MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
 COMMENT=	A spliced read mapper for RNA-Seq
 
 # Just for speed: Recent GCC has better optimizer
+# Hack to allow variable length arrays, which are not supported by ISO C++
 USE_GCC=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
-# Hack to allow variable length arrays, which are not supported by ISO C++
-USE_GCC=	yes
+USES=		shebangfix
+SHEBANG_FILES=	src/tophat2.in
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbam.a:../../biology/samtools
 LIB_DEPENDS+=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	bowtie:../../biology/bowtie
+RUN_DEPENDS=	bowtie:/usr/wip/biology/bowtie
 
 CFLAGS+=	-Wno-unused
 

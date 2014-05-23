@@ -9,7 +9,7 @@ DISTNAME=	Queue-${PORTVERSION}-1
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Analyse next-generation resequencing data
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_JAVA=	yes
 
 RUN_DEPENDS+=	R:${PORTSDIR}/math/R
