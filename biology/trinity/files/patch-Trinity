@@ -1,0 +1,29 @@
+--- Trinity.orig	2014-04-23 11:04:48.000000000 -0500
++++ Trinity	2014-05-23 10:21:51.000000000 -0500
+@@ -6,7 +6,7 @@
+ no strict qw(subs refs);
+ 
+ use FindBin;
+-use lib ("$FindBin::Bin/PerlLib");
++use lib ("$FindBin::Bin/../libexec/trinity/PerlLib");
+ use File::Basename;
+ use Time::localtime;
+ use Cwd;
+@@ -26,7 +26,7 @@
+ 
+ # Site specific setup
+ 
+-my $CPU_MAX = 64; # set higher at your own risk. Definitely don't set it higher than the number of cores available on your machine.
++my $CPU_MAX = `sysctl -n kern.smp.cpus`; # set higher at your own risk. Definitely don't set it higher than the number of cores available on your machine.
+ 
+ my $IWORM_KMER_SIZE = 25;
+ my $MIN_IWORM_LEN = 25;
+@@ -476,7 +476,7 @@
+  ;
+ 
+ 
+-my $ROOTDIR = "$FindBin::RealBin";
++my $ROOTDIR = "$FindBin::RealBin/../libexec/trinity";
+ my $UTILDIR = "$ROOTDIR/util";
+ my $INCHWORM_DIR = "$ROOTDIR/Inchworm";
+ my $CHRYSALIS_DIR = "$ROOTDIR/Chrysalis";
