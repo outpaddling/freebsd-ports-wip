@@ -75,6 +75,8 @@ SLURM_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_ess_slurm.la \
 VT_CONFIGURE_OFF=	--enable-contrib-no-build=vt --disable-vt
 VT_USE=			JAVA=yes
 
+NO_STAGE=		yes
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

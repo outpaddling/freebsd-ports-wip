@@ -32,7 +32,10 @@ LDFLAGS+=	-fopenmp
 MAKE_FLAGS+=	FORCE_UNSAFE_CONFIGURE=1
 
 BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils
-RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils
+RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
+		bowtie:/usr/wip/biology/bowtie \
+		samtools:/usr/wip/biology/samtools
+LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -45,9 +48,7 @@ post-patch:
 		${WRKSRC}/Chrysalis/Makefile* \
 		${WRKSRC}/trinity-plugins/fastool/Makefile \
 		${WRKSRC}/trinity-plugins/slclust/src/Makefile
-.if exists(/usr/lib/libexecinfo.so)
 	${REINPLACE_CMD} -e "s|configure CC=${CC} CXX=${CXX}|configure CC=${CC} CXX=${CXX} LDFLAGS=-lexecinfo|g" ${WRKSRC}/Makefile
-.endif
 	${MV} ${WRKSRC}/Chrysalis/Makefile_g++ \
 		${WRKSRC}/Chrysalis/Makefile_${CXX}
 	${MV} ${WRKSRC}/Chrysalis/Makefile_g++_x86_64 \
