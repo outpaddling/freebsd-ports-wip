@@ -18,6 +18,7 @@ USES=		gmake
 # Requires OpenMP.  Use newer GCC for better optimizer.
 USE_GCC=	yes
 USE_JAVA=	yes
+JAVA_VERSION=	1.7 1.6
 
 ONLY_FOR_ARCHS=	amd64
 
@@ -52,9 +53,9 @@ post-patch:
 		${WRKSRC}/trinity-plugins/coreutils/build_parallel_sort.sh \
 		${WRKSRC}/trinity-plugins/collectl/build_collectl.sh
 	${REINPLACE_CMD} \
-		-e "s|Bin/PerlLib|Bin/../share/trinity/PerlLib|" ${WRKSRC}/Trinity
-
-#		-e "s|use HTC::GridRunner;|use lib ${DATADIR}/PerlLib; use HTC::GridRunner;|" ${WRKSRC}/Trinity
+		-e "s|Bin/PerlLib|Bin/../share/trinity/PerlLib|" \
+		-e "s|RealBin|RealBin/../share/trinity|" \
+		${WRKSRC}/Trinity
 
 # FIXME: Much more needs to be installed
 do-install:
@@ -74,5 +75,11 @@ do-install:
 		${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC} && ${COPYTREE_SHARE} PerlLib \
 		${STAGEDIR}${DATADIR}/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} util \
+		${STAGEDIR}${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DATADIR}/trinity-plugins/Trimmomatic
+	cd ${WRKSRC}/trinity-plugins/Trimmomatic && \
+		${COPYTREE_SHARE} "adapters trimmomatic*.jar" \
+		${STAGEDIR}${DATADIR}/trinity-plugins/Trimmomatic
 
 .include <bsd.port.mk>
