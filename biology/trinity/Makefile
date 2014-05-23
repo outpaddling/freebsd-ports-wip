@@ -31,7 +31,8 @@ CFLAGS+=	-fopenmp
 LDFLAGS+=	-fopenmp
 MAKE_FLAGS+=	FORCE_UNSAFE_CONFIGURE=1
 
-BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils
+BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
+		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bowtie:/usr/wip/biology/bowtie \
 		samtools:/usr/wip/biology/samtools
@@ -58,8 +59,6 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's|/bin/bash|/usr/bin/env bash|g' \
 		-e 's|make |${GMAKE} |g' \
-		-e 's|sort |gsort |g' \
-		${WRKSRC}/trinity-plugins/coreutils/build_parallel_sort.sh \
 		${WRKSRC}/trinity-plugins/collectl/build_collectl.sh
 
 # Some scripts are not available during patch stage
