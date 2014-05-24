@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	lammps
-PORTVERSION=	2013.04.04
+PORTVERSION=	2014.05.24
 CATEGORIES=	science
+# FIXME: Can this be done from http://lammps.sandia.gov/download.html#tar?
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
@@ -12,14 +13,13 @@ COMMENT=	Large-scale Atomic/Molecular Massively Parallel Simulator
 
 LICENSE=	GPLv1
 
-LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3 \
-		jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 BUILD_DEPENDS+=	${LOCALBASE}/lib/liblapack.a:${PORTSDIR}/math/lapack \
 		${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas \
 		${LOCALBASE}/lib/libkim.a:${PORTSDIR}/science/openkim \
 		${LOCALBASE}/lib/libvoro++.a:${PORTSDIR}/science/voro++
 
-WRKSRC=		${WRKDIR}/lammps-3Apr13
 BUILD_WRKSRC=	${WRKSRC}/src
 
 # Allow MPI slave ports to override
@@ -34,7 +34,7 @@ INSTALL_PREFIX?=${PREFIX}
 # Selects a system-specific Makefile.  Allow MPI slave ports to override.
 ALL_TARGET?=	FreeBSD-serial
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_FORTRAN=	yes
 
 # Prevent slave ports from including master plist
@@ -115,18 +115,24 @@ do-build:
 	(cd ${WRKSRC}/tools/msi2lmp/src && ${GMAKE} ${MAKE_ARGS})
 
 do-install:
-	${MKDIR} ${INSTALL_PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${INSTALL_PREFIX}/bin
 	${INSTALL_PROGRAM} \
 		${BUILD_WRKSRC}/lmp_${ALL_TARGET} \
-		${INSTALL_PREFIX}/bin/lmp${PKGNAMESUFFIX}
+		${STAGEDIR}${INSTALL_PREFIX}/bin/lmp${PKGNAMESUFFIX}
 .if ${ALL_TARGET} == "FreeBSD-serial"
 	${MKDIR} ${DATADIR} ${EXAMPLESDIR} ${DOCSDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/binary2txt ${INSTALL_PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/chain ${INSTALL_PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/data2xmovie ${INSTALL_PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/micelle2d ${INSTALL_PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/restart2data ${INSTALL_PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/msi2lmp/src/msi2lmp ${INSTALL_PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/binary2txt \
+		${STAGEDIR}${INSTALL_PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/chain \
+		${STAGEDIR}${INSTALL_PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/data2xmovie \
+		${STAGEDIR}${INSTALL_PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/micelle2d \
+		${STAGEDIR}${INSTALL_PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/restart2data \
+		${STAGEDIR}${INSTALL_PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/msi2lmp/src/msi2lmp \
+		${STAGEDIR}${INSTALL_PREFIX}/bin
 .ifndef(NOPORTDOCS)
 	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
 .endif
