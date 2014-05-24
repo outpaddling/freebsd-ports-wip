@@ -19,7 +19,8 @@ SHEBANG_FILES=	trinity-plugins/collectl/make_data_files.sh \
 		trinity-plugins/collectl/plot.sh \
 		trinity-plugins/collectl/timetable.sh \
 		util/*/*.sh \
-		util/*/*.pl
+		util/*/*.pl \
+		Chrysalis/*.pl
 # Requires OpenMP.  Use newer GCC for better optimizer.
 USE_GCC=	yes
 USE_JAVA=	yes
@@ -74,7 +75,13 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Trinity ${STAGEDIR}${PREFIX}/bin
 
 	${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}/Chrysalis
-	${INSTALL_PROGRAM} ${WRKSRC}/Chrysalis/Chrysalis \
+	cd ${WRKSRC}/Chrysalis && \
+		${INSTALL_PROGRAM} BreakTransByPairs Chrysalis \
+			GraphFromFasta IsoformAugment JoinTransByPairs \
+			QuantifyGraph ReadsToTranscripts RunButterfly \
+			TranscriptomeFromVaryK checkLock \
+			${STAGEDIR}${LIBEXEC_DIR}/Chrysalis
+	${INSTALL_SCRIPT} ${WRKSRC}/Chrysalis/ReadsToComponents.pl \
 		${STAGEDIR}${LIBEXEC_DIR}/Chrysalis
 
 	${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}/Inchworm/bin
