@@ -29,8 +29,7 @@ JAVA_VERSION=	1.7 1.6
 ONLY_FOR_ARCHS=	amd64
 
 CFLAGS+=	-fopenmp
-LDFLAGS+=	-fopenmp -Wl,-rpath=${_GCC_RUNTIME} \
-		-Wl,-rpath=${LOCALBASE}/libexec/trinity/trinity-plugins/jellyfish/.libs
+LDFLAGS+=	-fopenmp -Wl,-rpath=${_GCC_RUNTIME}
 MAKE_FLAGS+=	FORCE_UNSAFE_CONFIGURE=1
 
 BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
@@ -46,28 +45,30 @@ LIBEXEC_DIR=	${PREFIX}/libexec/trinity
 PLUGINS_DIR=	${LIBEXEC_DIR}/trinity-plugins
 
 post-patch:
+	# General changes to respect env
 	${REINPLACE_CMD} -e "s|gcc|${CC}|g" -e "s|g++|${CXX}|g" \
 		${WRKSRC}/Makefile \
 		${WRKSRC}/Chrysalis/Makefile* \
 		${WRKSRC}/trinity-plugins/fastool/Makefile \
 		${WRKSRC}/trinity-plugins/slclust/src/Makefile
 	${REINPLACE_CMD} \
+		-e 's|/bin/bash|/usr/bin/env bash|g' \
+		-e 's|make |${GMAKE} |g' \
+		${WRKSRC}/trinity-plugins/collectl/build_collectl.sh
+
+	# Chrysalis
+	${REINPLACE_CMD} \
 		-e "s|-lm -pthread|-lm -pthread -Wl,-rpath=${_GCC_RUNTIME}|g" \
 		${WRKSRC}/Chrysalis/Makefile
-	${REINPLACE_CMD} -e "s|configure CC=${CC} CXX=${CXX}|configure CC=${CC} CXX=${CXX} LDFLAGS=-lexecinfo|g" ${WRKSRC}/Makefile
 	${MV} ${WRKSRC}/Chrysalis/Makefile_g++ \
 		${WRKSRC}/Chrysalis/Makefile_${CXX}
 	${MV} ${WRKSRC}/Chrysalis/Makefile_g++_x86_64 \
 		${WRKSRC}/Chrysalis/Makefile_${CXX}_x86_64
 	${MV} ${WRKSRC}/Chrysalis/Makefile_g++_i386 \
 		${WRKSRC}/Chrysalis/Makefile_${CXX}_i386
-	${REINPLACE_CMD} \
-		-e 's|/bin/bash|/usr/bin/env bash|g' \
-		-e 's|make |${GMAKE} |g' \
-		${WRKSRC}/trinity-plugins/collectl/build_collectl.sh
 
-pre-fetch:
-	echo ${_GCC_RUNTIME}
+	# Jellyfish sub-make target
+	${REINPLACE_CMD} -e "s|configure CC=${CC} CXX=${CXX}|configure CC=${CC} CXX=${CXX} LDFLAGS='-lexecinfo -Wl,-rpath=${PREFIX}/libexec/trinity/trinity-plugins/jellyfish/.libs'|g" ${WRKSRC}/Makefile
 
 # Some scripts are not available during patch stage
 post-build:
