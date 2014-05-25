@@ -29,7 +29,8 @@ JAVA_VERSION=	1.7 1.6
 ONLY_FOR_ARCHS=	amd64
 
 CFLAGS+=	-fopenmp
-LDFLAGS+=	-fopenmp
+LDFLAGS+=	-fopenmp -Wl,-rpath=${_GCC_RUNTIME} \
+		-Wl,-rpath=${LOCALBASE}/libexec/trinity/trinity-plugins/jellyfish/.libs
 MAKE_FLAGS+=	FORCE_UNSAFE_CONFIGURE=1
 
 BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
@@ -50,6 +51,9 @@ post-patch:
 		${WRKSRC}/Chrysalis/Makefile* \
 		${WRKSRC}/trinity-plugins/fastool/Makefile \
 		${WRKSRC}/trinity-plugins/slclust/src/Makefile
+	${REINPLACE_CMD} \
+		-e "s|-lm -pthread|-lm -pthread -Wl,-rpath=${_GCC_RUNTIME}|g" \
+		${WRKSRC}/Chrysalis/Makefile
 	${REINPLACE_CMD} -e "s|configure CC=${CC} CXX=${CXX}|configure CC=${CC} CXX=${CXX} LDFLAGS=-lexecinfo|g" ${WRKSRC}/Makefile
 	${MV} ${WRKSRC}/Chrysalis/Makefile_g++ \
 		${WRKSRC}/Chrysalis/Makefile_${CXX}
@@ -61,6 +65,9 @@ post-patch:
 		-e 's|/bin/bash|/usr/bin/env bash|g' \
 		-e 's|make |${GMAKE} |g' \
 		${WRKSRC}/trinity-plugins/collectl/build_collectl.sh
+
+pre-fetch:
+	echo ${_GCC_RUNTIME}
 
 # Some scripts are not available during patch stage
 post-build:
