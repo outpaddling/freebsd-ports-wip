@@ -9,6 +9,8 @@ MASTER_SITES=	https://github.com/agordon/fastx_toolkit/releases/download/0.0.14/
 MAINTAINER=	bacon@unixdev.ceas.uwm.edu
 COMMENT=	CLI tools for Short-Reads FASTA/FASTQ files preprocessing
 
+LICENSE=	AGPLv3
+
 LIB_DEPENDS=	libgtextutils.so:/usr/wip/biology/gtextutils
 
 # Just for speed: Recent GCC has better optimizer
