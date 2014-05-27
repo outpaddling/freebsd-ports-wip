@@ -1,0 +1,24 @@
+# Created by: Jason Bacon
+# $FreeBSD$
+
+PORTNAME=	galaxy
+PORTVERSION=	2014.05.27
+CATEGORIES=	biology
+# Mirrored snapshots of github repo
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
+		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
+
+MAINTAINER=	jwbacon@tds.net
+COMMENT=	Web-based platform for data intensive biomedical research
+
+USES=		tar:xz shebangfix
+SHEBANG_FILES=	tools/*/*.pl tools/*/*.py tools/*/*.sh
+
+NO_BUILD=	yes
+
+# This is going to be a mess.  Galaxy is meant to be run out of the source
+# directory.  Just dumping to libexec for deelopment and testing.
+do-install:
+	${CP} -R ${WRKSRC}/ ${STAGEDIR}${PREFIX}/libexec
+
+.include <bsd.port.mk>
