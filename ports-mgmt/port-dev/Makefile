@@ -14,6 +14,8 @@ MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Tools for port development
 
+USES+=		tar:xz
+
 NO_BUILD=	yes
 
 do-install:
