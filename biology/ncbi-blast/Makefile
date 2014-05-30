@@ -19,15 +19,15 @@ USES=		gmake
 USE_GCC=	yes
 
 # Fix undefined _ThreadRuneLocale on 10.0
+#		-e "s|g++|${CXX}|g" \
+#		-e "s|gcc|${CC}|g"
 post-patch:
-	${REINPLACE_CMD} -e "s|g++|${CXX}|g" \
-		-e "s|gcc|${CC}|g" \
+	${REINPLACE_CMD} \
 		-e "s|-D_THREAD_SAFE|-D_THREAD_SAFE -D__RUNETYPE_INTERNAL|g" \
 		${WRKSRC}/src/build-system/configure
 
 do-configure:
-	echo ${CC}
-	cd ${WRKSRC} && ./configure --srcdir=. --without-debug --with-strip --with-openmp --with-mt --with-build-root=./ReleaseMT --prefix=${STAGEDIR}${PREFIX} --build=${ARCH}-portbld-freebsd10.0
+	cd ${WRKSRC} && ./configure CC=${CC} CXX=${CXX} --srcdir=. --without-debug --with-strip --with-openmp --with-mt --with-build-root=./ReleaseMT --prefix=${STAGEDIR}${PREFIX} --build=${ARCH}-portbld-freebsd10.0
 
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>
