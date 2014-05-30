@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libgamepad
-# Date created:		Jul 2008
-# Whom:			Jason Bacon <jwbacon@tds.net>
-#
-# $FreeBSD: ports/devel/libgamepad/Makefile,v 1.1 2008/07/26 07:55:02 edwin Exp $
-#
+# Created by: Jason Bacon <jwbacon@tds.net>
+# $FreeBSD: head/devel/libgamepad/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	libgamepad
 PORTVERSION=	0.1.2
@@ -16,8 +12,6 @@ COMMENT=	Generic gamepad API
 
 pre-build:
 	(cd ${WRKSRC} && make depend)
-
-MAN3=		libgamepad.3
 
 MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
 		MANPREFIX=${STAGEDIR}${PREFIX}
