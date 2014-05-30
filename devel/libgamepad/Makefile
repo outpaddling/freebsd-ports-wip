@@ -4,11 +4,13 @@
 PORTNAME=	libgamepad
 PORTVERSION=	0.1.2
 CATEGORIES=	devel games
-MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
-		http://acadix.biz/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
+		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Generic gamepad API
+
+LICENSE=	BSD2CLAUSE
 
 pre-build:
 	(cd ${WRKSRC} && make depend)
