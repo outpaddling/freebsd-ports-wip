@@ -11,7 +11,7 @@ DISTNAME=	${PKGNAMEPREFIX}-${PORTNAME}-${PORTVERSION}+-src
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Basic Local Alignment Search Tool
 
-LICENSE=	Public_domain
+# LICENSE=	Public_domain
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
@@ -28,7 +28,8 @@ USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 
 # configure chooses /usr/local/bin/ar with no flags
-CONFIGURE_ARGS+=AR="ar cr"
+# FreeBSD boost port flagged by configure as untested version
+CONFIGURE_ARGS+=AR="ar cr" --without-boost
 
 # configure script falsely indicates that it supports --mandir and --infodir
 # Fix undefined _ThreadRuneLocale on 10.0

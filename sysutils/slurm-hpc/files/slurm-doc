@@ -1,0 +1,4 @@
+#!/bin/sh
+
+webbrowser /usr/local/share/doc/slurm-2.6.4/html/slurm.html
+
