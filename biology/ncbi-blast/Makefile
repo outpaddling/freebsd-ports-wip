@@ -11,7 +11,7 @@ DISTNAME=	${PKGNAMEPREFIX}-${PORTNAME}-${PORTVERSION}+-src
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Basic Local Alignment Search Tool
 
-LICENSE=	Public domain
+LICENSE=	Public_domain
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
