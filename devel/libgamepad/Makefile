@@ -12,6 +12,8 @@ COMMENT=	Generic gamepad API
 
 LICENSE=	BSD2CLAUSE
 
+USES=		tar:xz
+
 pre-build:
 	(cd ${WRKSRC} && make depend)
 
