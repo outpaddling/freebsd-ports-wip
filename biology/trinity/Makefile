@@ -21,7 +21,7 @@ SHEBANG_FILES=	trinity-plugins/collectl/make_data_files.sh \
 		util/*/*.sh \
 		util/*/*.pl \
 		Chrysalis/*.pl
-# Requires OpenMP.  Use newer GCC for better optimizer.
+# Requires OpenMP.
 USE_GCC=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7 1.6

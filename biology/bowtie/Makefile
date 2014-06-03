@@ -17,7 +17,7 @@ RUN_DEPENDS=	webbrowser:${PORTSDIR}/www/webbrowser
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 # Just for speed: Recent GCC has better optimizer
-USE_GCC=	yes
+# USE_GCC=	yes
 USES=		gmake perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	scripts/*.pl

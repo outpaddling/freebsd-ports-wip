@@ -13,7 +13,7 @@ COMMENT=	Gordon text utilities
 LICENSE=	AGPLv3
 
 # Just for speed: Recent GCC has better optimizer
-USE_GCC=	yes
+# USE_GCC=	yes
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
 

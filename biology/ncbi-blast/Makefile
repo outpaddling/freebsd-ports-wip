@@ -22,7 +22,7 @@ USES=		gmake shebangfix perl5
 SHEBANG_FILES=	src/app/blast/legacy_blast.pl \
 		src/app/blast/update_blastdb.pl \
 		src/app/winmasker/windowmasker_2.2.22_adapter.py
-# openmp
+# Requires openmp
 USE_GCC=	yes
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
@@ -37,10 +37,16 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e "s|-D_THREAD_SAFE|-D_THREAD_SAFE -D__RUNETYPE_INTERNAL|g" \
 		${WRKSRC}/src/build-system/configure
-
-post-configure:
 	${REINPLACE_CMD} \
-		-e 's|$${prefix}|${STAGEDIR}$${prefix}|g' \
-		${WRKSRC}/Makefile
+		-e 's|@prefix@|${STAGEDIR}@prefix@|g' \
+		${WRKSRC}/src/build-system/Makefile.in.top
+
+#post-configure:
+#	${REINPLACE_CMD} \
+#		-e 's|$${prefix}|${STAGEDIR}$${prefix}|g' \
+#		${WRKSRC}/Makefile
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include <bsd.port.mk>
