@@ -1,0 +1,105 @@
+
+Distfile
+    If maintaining the source, clean up and reroll distfile
+
+Makefile:
+    Check all installed scripts for proper shebang line
+    
+    Merge latest changes in committed port into development port
+
+    # Created by: First Last <email>
+    # $FreeBSD$
+    
+    Check use of each LOCALBASE and PREFIX
+    Convert /usr/wip and ../.. to ${PORTSDIR}
+    Use ${PORTNAME}, ${PORTVERSION}, etc in body wherever possible
+    Check categories
+    
+    Check/correct MASTER_SITES
+    
+    MAINTAINER=     email
+    
+    Check comment
+
+    Add LICENSE (after COMMENT)
+    
+    Check versions of all depends
+	Be as generic as possible
+	Use USES or USE_* variables wherever possible
+	New LIB_DEPENDS format: libname.so
+    
+    OPTIONS
+	All non-options macros before bsd.options.mk
+	Add DOCS to OPTIONS_DEFINE if needed
+	Remove PORT_OPTIONS:MDOCS checks (automatic with staging)
+	Check OPTIONS_DEFINE for standards like MYSQL, etc.
+    
+    If installing config files in PREFIX/etc:
+	suffix with .sample
+	delete real config file on deinstall if identical to .sample
+    
+    Man pages
+	Remove MANx macros from Makefile (obsolete with staging)
+    
+    Bump PORT_REVISION if not changing VERSION
+    
+    Add PORT_EPOCH if downgrading
+
+    Remove MAKE_JOBS_UNSAFE if possible
+    
+    Remove NO_STAGE if possible
+	Follow checklist at https://wiki.freebsd.org/ports/StageDir
+    
+Carefully inspect plist
+
+Check pkg-descr
+    spell-check
+    space, not tab after WWW
+
+Make sure there's a man page
+
+Remove any extraneous files from port framework
+
+Test on a blank VM
+
+Test on all available platforms
+
+    make distclean
+    portlint -A
+    make deinstall
+    make rmconfig
+    make reinstall
+    test with NOPORT* (whatever is in pkg-plist)
+
+portlint -A
+
+Generate unified diff for updates, shar file for new ports
+    (diff-port or shar-port scripts)
+
+Carefully inspect diff or shar
+
+Follow porter's handbook to submit new port or update.
+    
+touch submitted; svn add submitted; svn commit
+
+If maintaining source
+
+    tag this version of source and create next one
+
+else
+    Contact author:
+	Ask them to post that their software can be installed on FreeBSD via
+	ports:
+    
+	pkg install name
+	
+	or
+	
+	cd /usr/ports/category/name && make install
+	
+	People often assume the only supported platforms are those listed on
+	the software's home page.  A simple link to a ports site can do a lot
+	to raise awareness of the advantages of FreeBSD ports.
+    
+	Send patches through proper channels.
+
