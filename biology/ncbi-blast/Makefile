@@ -11,9 +11,13 @@ DISTNAME=	${PKGNAMEPREFIX}-${PORTNAME}-${PORTVERSION}+-src
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Basic Local Alignment Search Tool
 
-# LICENSE=	Public_domain
+LICENSE=	Public_domain
+LICENSE_NAME=	Public Domain
+LICENSE_FILE=	${WRKSRC}/scripts/projects/blast/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libbz2.so:${PORTSDIR}/archivers/bzip2
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/c++
 

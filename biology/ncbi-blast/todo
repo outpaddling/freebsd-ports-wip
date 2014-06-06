@@ -1,0 +1,2 @@
+
+Make sure we're using bzip2, xmlwrapp, pcre from ports, not bundled.
