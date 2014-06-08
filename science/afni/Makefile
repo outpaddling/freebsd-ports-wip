@@ -27,8 +27,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
 		libR.so:${PORTSDIR}/math/R \
-		libgsl:.so${PORTSDIR}/math/gsl \
-		libnetcdf:.so${PORTSDIR}/science/netcdf-ftn
+		libgsl.so:${PORTSDIR}/math/gsl \
+		libnetcdf.so:${PORTSDIR}/science/netcdf-fortran
 RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg \
 		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
 		whirlgif:${PORTSDIR}/graphics/whirlgif \
@@ -40,7 +40,31 @@ CONFLICTS=	im-[0-9]* \
 		nifticlib-[0-9]* \
 		open-usp-tukubai-[0-9]*
 
-USES=		gettext iconv gmake motif
+USES=		gettext iconv gmake motif shebangfix perl5
+SHEBANG_LANG=	tcsh
+tcsh_OLD_CMD=	/bin/tcsh
+tcsh_CMD=	/bin/tcsh
+SHEBANG_FILES=	1dRplot 3dMEMA 3dMax 3dPAR2AFNI.pl 3dSignatures @1dDiffMag \
+		@2dwarper @2dwarper.Allin @ANATICOR @AddEdge @AfniEnv \
+		@AfniOrient2RAImap @AfniOrientSign @Align_Centers @Atlasize \
+		@Center_Distance @CheckForAfniDset @CommandGlobb @DO.examples \
+		@DTI_studio_reposition @DeblankFileNames @DiceMetric \
+		@DriveAfni @DriveSuma @ElectroGrid @FS_roi_label @FSlabel2dset \
+		@FromRAI @FullPath @GetAfniBin @GetAfniDims @GetAfniID \
+		@GetAfniOrient @GetAfniPrefix @GetAfniRes @GetAfniView \
+		@Install_InstaCorr_Demo @IsoMasks @MakeLabelTable @NoExt \
+		@NoPound @NoisySkullStrip @Quiet_Talkers @ROI_Corr_Mat \
+		@R_funclist @Reorder @RetinoProc @SUMA_AlignToExperiment @np \
+		@SUMA_FSvolToBRIK @SUMA_Make_Spec_Caret @SUMA_Make_Spec_FS \
+		@SUMA_Make_Spec_SF @ScaleVolume @ScriptCheck @Shift_Volume \
+		@ShowDynamicRange @Spharm.examples \
+		@SurfSmooth.HEAT_07.examples @TimeDiff @ToRAI @VolCenter \
+		@align_partial_oblique @auto_align @auto_tlrc @build_afni_Xlib \
+		@clean_help_dir @clip_volume @demo_prompt @escape- @fast_roi \
+		@fix_FSsphere @float_fix @global_parse @help.AFNI @isOblique \
+		@make_plug_diff @make_stim_file @parse_afni_name @parse_name \
+		@radial_correlate @statauxcode @update.afni.binaries \
+		AFNI_Batch_R ExamineXmat afni_run_R suma_change_spec
 
 # Some prereqs use gcc anyway
 USE_GCC=	yes
