@@ -1,5 +1,5 @@
 # Created by: Jason W. Bacon <jwbacon@tds.net>
-# $FreeBSD: head/science/afni/Makefile 333659 2013-11-13 08:19:34Z bf $
+# $FreeBSD: head/science/afni/Makefile 353973 2014-05-13 16:59:52Z antoine $
 
 ############################################################################
 # http://www.neuro.mcw.edu/Ports has the latest source distribution from
@@ -11,7 +11,7 @@
 
 PORTNAME=	afni
 PORTVERSION=	2012.04.17.2129
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	science biology graphics
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/AFNI/${PORTVERSION}/ \
 		http://www.acadix.biz/Ports/distfiles/AFNI/${PORTVERSION}/
@@ -25,10 +25,10 @@ COMMENT=	Advanced Functional Neuro Imaging
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	Xm:${PORTSDIR}/x11-toolkits/open-motif \
-		R:${PORTSDIR}/math/R \
-		gsl:${PORTSDIR}/math/gsl \
-		netcdf:${PORTSDIR}/science/netcdf-ftn
+LIB_DEPENDS=	libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
+		libR.so:${PORTSDIR}/math/R \
+		libgsl:.so${PORTSDIR}/math/gsl \
+		libnetcdf:.so${PORTSDIR}/science/netcdf-ftn
 RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg \
 		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
 		whirlgif:${PORTSDIR}/graphics/whirlgif \
