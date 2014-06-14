@@ -1,3 +1,6 @@
-[description of the port]
+The BIOM file format (canonically pronounced biome) is designed to be a
+general-use format for representing counts of observations (e.g., OTUs, KO
+categories, lipid types) in one or more biological samples (e.g., microbiome
+samples, genomes, metagenomes).
 
-WWW:	http://port.home.page/
+WWW: https://github.com/biocore/biom-format
