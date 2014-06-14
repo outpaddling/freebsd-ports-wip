@@ -1,1 +1,48 @@
-@comment $FreeBSD$
+bin/add_metadata.py
+bin/biom_validator.py
+bin/convert_biom.py
+bin/print_biom_python_config.py
+bin/print_biom_table_summary.py
+bin/subset_biom.py
+bin/test_biom_validator.py
+%%PYTHON_SITELIBDIR%%/biom/__init__.py
+%%PYTHON_SITELIBDIR%%/biom/__init__.pyc
+%%PYTHON_SITELIBDIR%%/biom/__init__.pyo
+%%PYTHON_SITELIBDIR%%/biom/biomdb.py
+%%PYTHON_SITELIBDIR%%/biom/biomdb.pyc
+%%PYTHON_SITELIBDIR%%/biom/biomdb.pyo
+%%PYTHON_SITELIBDIR%%/biom/csmat.py
+%%PYTHON_SITELIBDIR%%/biom/csmat.pyc
+%%PYTHON_SITELIBDIR%%/biom/csmat.pyo
+%%PYTHON_SITELIBDIR%%/biom/dbdata.py
+%%PYTHON_SITELIBDIR%%/biom/dbdata.pyc
+%%PYTHON_SITELIBDIR%%/biom/dbdata.pyo
+%%PYTHON_SITELIBDIR%%/biom/exception.py
+%%PYTHON_SITELIBDIR%%/biom/exception.pyc
+%%PYTHON_SITELIBDIR%%/biom/exception.pyo
+%%PYTHON_SITELIBDIR%%/biom/parse.py
+%%PYTHON_SITELIBDIR%%/biom/parse.pyc
+%%PYTHON_SITELIBDIR%%/biom/parse.pyo
+%%PYTHON_SITELIBDIR%%/biom/sparsedict.py
+%%PYTHON_SITELIBDIR%%/biom/sparsedict.pyc
+%%PYTHON_SITELIBDIR%%/biom/sparsedict.pyo
+%%PYTHON_SITELIBDIR%%/biom/sparsemat.py
+%%PYTHON_SITELIBDIR%%/biom/sparsemat.pyc
+%%PYTHON_SITELIBDIR%%/biom/sparsemat.pyo
+%%PYTHON_SITELIBDIR%%/biom/table.py
+%%PYTHON_SITELIBDIR%%/biom/table.pyc
+%%PYTHON_SITELIBDIR%%/biom/table.pyo
+%%PYTHON_SITELIBDIR%%/biom/unit_test.py
+%%PYTHON_SITELIBDIR%%/biom/unit_test.pyc
+%%PYTHON_SITELIBDIR%%/biom/unit_test.pyo
+%%PYTHON_SITELIBDIR%%/biom/util.py
+%%PYTHON_SITELIBDIR%%/biom/util.pyc
+%%PYTHON_SITELIBDIR%%/biom/util.pyo
+%%PYTHON_SITELIBDIR%%/biom_format-1.1.2-py2.7.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/biom_format-1.1.2-py2.7.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/biom_format-1.1.2-py2.7.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/biom_format-1.1.2-py2.7.egg-info/top_level.txt
+@dirrmtry %%PYTHON_SITELIBDIR%%/biom_format-1.1.2-py2.7.egg-info
+@dirrmtry %%PYTHON_SITELIBDIR%%/biom
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%

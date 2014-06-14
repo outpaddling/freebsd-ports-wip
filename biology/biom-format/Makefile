@@ -1,17 +1,22 @@
-# New ports collection makefile for:	biom-format
-# Date created:		2013-08-22
-# Whom:			Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
-#
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
-#
 
-PORTNAME=	biom-format
-PORTVERSION=	1.1.2
+PORTNAME=	biom
+PORTVERSION=	2.0.1
 CATEGORIES=	biology science
-MASTER_SITES=	ftp://thebeast.colorado.edu/pub/biom-format-releases/
+MASTER_SITES=	https://github.com/biocore/biom-format/archive/
+PKGNAMESUFFIX=	format
+DISTNAME=	${PORTVERSION}
 
-MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
-COMMENT=
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PKGNAMESUFFIX}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+MAINTAINER=	jwbacon@tds.net
+COMMENT=	The Biological Observation Matrix (BIOM) Format Project
+
+USE_PYTHON=             yes
+USE_PYDISTUTILS=        yes
+PYDISTUTILS_PKGNAME=    biom
+
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
+
+.include <bsd.port.mk>
