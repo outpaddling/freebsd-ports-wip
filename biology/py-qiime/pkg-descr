@@ -1,0 +1,6 @@
+QIIME is an open source software package for comparison and analysis of
+microbial communities, primarily based on high-throughput amplicon sequencing
+data (such as SSU rRNA) generated on a variety of platforms, but also
+supporting analysis of other types of data (such as shotgun metagenomic data).
+
+WWW: http://qiime.org/
