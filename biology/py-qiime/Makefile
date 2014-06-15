@@ -18,6 +18,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
+# Add notification so that users running uclust will be made aware of
+# license restrictions.
+
 #       install_requires=['numpy >= 1.5.1, <= 1.7.1',
 #                        'matplotlib >= 1.1.0, <= 1.3.1', 'cogent == 1.5.3',
 #                        'pynast == 1.2.2', 'qcli', 'gdata',
