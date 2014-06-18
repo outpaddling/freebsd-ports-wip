@@ -1,8 +1,8 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
-# $FreeBSD: devel/openvex/Makefile 323682 2013-07-26 05:41:36Z danfe $
+# $FreeBSD: head/devel/openvex/Makefile 327724 2013-09-20 17:13:42Z bapt $
 
 PORTNAME=	openvex
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.2
 CATEGORIES=	devel
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
@@ -20,12 +20,8 @@ RUN_DEPENDS=	vexctl:${PORTSDIR}/devel/roboctl \
 
 REINPLACE_ARGS=	-i ""
 
-MAN1=		openvex.1 openvex-new-project.1
-
-ALL_TARGET=	all clean
-
 post-patch:
-# Use make's -C option to descent into directories and fix parallel builds
+# Use make's -C option to descend into directories and fix parallel builds
 	@${REINPLACE_CMD} -e 's/^all:/& depend/ ; s/ make depend &&//' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -E 's/cd (.+)(;| &&) make/$$(MAKE) -C \1/' \
