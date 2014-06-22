@@ -41,8 +41,10 @@ Makefile:
     
     Man pages
 	Remove MANx macros from Makefile (obsolete with staging)
+	Add to pkg-plist
     
     Bump PORT_REVISION if not changing VERSION
+	Otherwise, remove PORT_REVISION
     
     Add PORT_EPOCH if downgrading
 

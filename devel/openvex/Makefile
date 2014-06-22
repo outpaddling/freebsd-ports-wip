@@ -24,6 +24,8 @@ MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
 		MANPREFIX=${STAGEDIR}${PREFIX}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|--denable-peeps|--denable-peeps --use-non-free|g' ${WRKSRC}/Include/Makefile.sdcc_defs
+	@${REINPLACE_CMD} \
+		-e 's|--denable-peeps|--denable-peeps --use-non-free|g' \
+		${WRKSRC}/Include/Makefile.sdcc_defs
 
 .include <bsd.port.mk>
