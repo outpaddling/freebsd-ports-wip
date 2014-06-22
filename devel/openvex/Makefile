@@ -2,7 +2,7 @@
 # $FreeBSD: head/devel/openvex/Makefile 327724 2013-09-20 17:13:42Z bapt $
 
 PORTNAME=	openvex
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	devel
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
@@ -18,17 +18,12 @@ RUN_DEPENDS=	vexctl:${PORTSDIR}/devel/roboctl \
 		sdcc:${PORTSDIR}/lang/sdcc \
 		gpasm:${PORTSDIR}/devel/gputils
 
-REINPLACE_ARGS=	-i ""
-
-post-patch:
-# Use make's -C option to descend into directories and fix parallel builds
-	@${REINPLACE_CMD} -e 's/^all:/& depend/ ; s/ make depend &&//' \
-		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -E 's/cd (.+)(;| &&) make/$$(MAKE) -C \1/' \
-		${WRKSRC}/Advanced/Makefile ${WRKSRC}/Beginner/Makefile \
-		${WRKSRC}/HiBob/Makefile ${WRKSRC}/Makefile
+USES+=		tar:xz
 
 MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
 		MANPREFIX=${STAGEDIR}${PREFIX}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|--denable-peeps|--denable-peeps --use-non-free|g' ${WRKSRC}/Include/Makefile.sdcc_defs
 
 .include <bsd.port.mk>
