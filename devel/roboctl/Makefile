@@ -1,11 +1,11 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
-# $FreeBSD: ports/devel/roboctl/Makefile,v 1.9 2010/03/28 06:33:38 dinoex Exp $
+# $FreeBSD: head/devel/roboctl/Makefile 327726 2013-09-20 17:17:44Z bapt $
 
 PORTNAME=	roboctl
 PORTVERSION=	0.3.8
 CATEGORIES=	devel
-MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
-		http://acadix.biz/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
+		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	API and tools for communicating with Lego and Vex robots
@@ -15,18 +15,19 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgamepad.a:${PORTSDIR}/devel/libgamepad
 
 MAKE_ENV=	EXTRALIBS=-lbluetooth
-MAKE_JOBS_UNSAFE=	yes
+# MAKE_JOBS_UNSAFE=	yes
 
 USES=		tar:xz
 
-OPTIONS=	CUTECOM "Install cutecom for Vex debugging" Off
+OPTIONS_DEFINE=	CUTECOM
+CUTECOM_DESC=	Install cutecom for Vex debugging
 
 MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
 		MANPREFIX=${STAGEDIR}${PREFIX}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_CUTECOM)
+.if ${PORT_OPTIONS:MCUTECOM}
 RUN_DEPENDS+=	cutecom:${PORTSDIR}/comms/cutecom
 .endif
 
