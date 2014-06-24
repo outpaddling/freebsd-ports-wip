@@ -85,7 +85,9 @@ Carefully inspect diff or shar
 
 Follow porter's handbook to submit new port or update.
     
-touch submitted; svn add submitted; svn commit
+touch submitted
+svn add submitted
+svn commit -m 'Submitted category/port'
 
 If maintaining source
 
