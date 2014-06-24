@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgamepad.a:${PORTSDIR}/devel/libgamepad
 
 MAKE_ENV=	EXTRALIBS=-lbluetooth
-# MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 USES=		tar:xz
 
