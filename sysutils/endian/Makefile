@@ -10,9 +10,11 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Report endianness of a system
 
+LICENSE=	BSD2CLAUSE
+
 USES=		tar:xz
 
-PLIST_FILES=	bin/endian
+PLIST_FILES=	bin/endian man/man1/endian.1.gz
 
 MAKE_ARGS=	STAGEDIR=${STAGEDIR}
 
