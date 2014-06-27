@@ -76,6 +76,7 @@ Test on all available platforms.  Do the following IN ORDER:
     make deinstall
     make rmconfig
     make reinstall
+    make check-plist
     test with NOPORT* (whatever is in pkg-plist)
 
 Generate unified diff for updates, shar file for new ports

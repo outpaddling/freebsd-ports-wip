@@ -1,18 +1,19 @@
-# Created by: J Bacon
-# $FreeBSD: sysutils/endian/Makefile 327772 2013-09-20 23:05:58Z bapt $
+# Created by: Jason W. Bacon <jwbacon@tds.net>
+# $FreeBSD: head/sysutils/endian/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	endian
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
-		http://acadix.biz/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
+		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Report endianness of a system
 
-MAN1=		endian.1
+USES=		tar:xz
 
 PLIST_FILES=	bin/endian
 
-NO_STAGE=	yes
+MAKE_ARGS=	STAGEDIR=${STAGEDIR}
+
 .include <bsd.port.mk>
