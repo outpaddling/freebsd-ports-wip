@@ -10,19 +10,14 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Removable media eject
 
+LICENSE=	BSD3CLAUSE
+
 SUB_FILES=	pkg-message
 
 CONFLICTS=	eject-[0-9]*
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USES=		tar:xz
 
-# PLIST_FILES=	sbin/eject share/examples/mcweject/eject.allow
-PLIST_DIRS=	share/examples/mcweject
-
 MAKE_ARGS+=	STAGEDIR=${STAGEDIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

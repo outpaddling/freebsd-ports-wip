@@ -57,6 +57,8 @@ Makefile:
     
     Replace pre.mk with options.mk, post.mk with mk
     
+    Remove cat pkg-message if present
+    
 Carefully inspect plist
 
 Check pkg-descr
