@@ -14,9 +14,9 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Tools for building and managing HPC clusters
 
-RUN_DEPENDS=	auto-append-line:../../sysutils/auto-admin
+RUN_DEPENDS=	auto-append-line:/usr/wip/sysutils/auto-admin
 
-USE_XZ=		yes
+USES=		tar:xz
 NO_BUILD=	yes
 
 do-install:
