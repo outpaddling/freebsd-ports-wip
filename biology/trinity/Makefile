@@ -37,7 +37,8 @@ BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bowtie:/usr/wip/biology/bowtie \
 		samtools:/usr/wip/biology/samtools \
-		jellyfish:/usr/wip/biology/jellyfish
+		jellyfish:/usr/wip/biology/jellyfish \
+		ParaFly:/usr/wip/biology/parafly
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 MAKE_JOBS_UNSAFE=	yes
@@ -47,7 +48,7 @@ PLUGINS_DIR=	${LIBEXEC_DIR}/trinity-plugins
 
 post-patch:
 	# General changes to respect env
-	${REINPLACE_CMD} -e "s|chrysalis_target jellyfish|chrysalis_target|g" \
+	${REINPLACE_CMD} -e "s|chrysalis_target jellyfish fastool parafly|chrysalis_target fastool|g" \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e "s|gcc|${CC}|g" -e "s|g++|${CXX}|g" \
 		${WRKSRC}/Makefile \
@@ -117,10 +118,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/coreutils
 	cd ${WRKSRC}/trinity-plugins/coreutils && \
 		${COPYTREE_BIN} bin ${STAGEDIR}${PLUGINS_DIR}/coreutils
-
-	${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/parafly/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/trinity-plugins/parafly/bin/ParaFly \
-		${STAGEDIR}${PLUGINS_DIR}/parafly/bin
 
 	${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/Trimmomatic
 

@@ -138,7 +138,6 @@ libexec/trinity/trinity-plugins/collectl/bin/timetable.sh
 libexec/trinity/trinity-plugins/collectl/bin/vmstat.ph
 libexec/trinity/trinity-plugins/coreutils/bin/sort
 libexec/trinity/trinity-plugins/fastool/fastool
-libexec/trinity/trinity-plugins/parafly/bin/ParaFly
 libexec/trinity/util/HTC_helpers/bsub_fasta_bin_cmd_processor.pl
 libexec/trinity/util/HTC_helpers/htc_bin_blastPlus.pl
 libexec/trinity/util/HTC_helpers/run_cmds_on_grid.pl
@@ -581,8 +580,6 @@ libexec/trinity/util/support_scripts/wig_clip_to_bed.pl
 @dirrmtry libexec/trinity/trinity-plugins/coreutils/bin
 @dirrmtry libexec/trinity/trinity-plugins/coreutils
 @dirrmtry libexec/trinity/trinity-plugins/fastool
-@dirrmtry libexec/trinity/trinity-plugins/parafly/bin
-@dirrmtry libexec/trinity/trinity-plugins/parafly
 @dirrmtry libexec/trinity/trinity-plugins
 @dirrmtry libexec/trinity/util/HTC_helpers
 @dirrmtry libexec/trinity/util/PBS
