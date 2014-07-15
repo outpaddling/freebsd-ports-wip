@@ -36,7 +36,8 @@ BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bowtie:/usr/wip/biology/bowtie \
-		samtools:/usr/wip/biology/samtools
+		samtools:/usr/wip/biology/samtools \
+		jellyfish:/usr/wip/biology/jellyfish
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 MAKE_JOBS_UNSAFE=	yes
@@ -46,6 +47,8 @@ PLUGINS_DIR=	${LIBEXEC_DIR}/trinity-plugins
 
 post-patch:
 	# General changes to respect env
+	${REINPLACE_CMD} -e "s|chrysalis_target jellyfish|chrysalis_target|g" \
+		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e "s|gcc|${CC}|g" -e "s|g++|${CXX}|g" \
 		${WRKSRC}/Makefile \
 		${WRKSRC}/Chrysalis/Makefile* \
@@ -66,9 +69,6 @@ post-patch:
 		${WRKSRC}/Chrysalis/Makefile_${CXX}_x86_64
 	${MV} ${WRKSRC}/Chrysalis/Makefile_g++_i386 \
 		${WRKSRC}/Chrysalis/Makefile_${CXX}_i386
-
-	# Jellyfish sub-make target
-	${REINPLACE_CMD} -e "s|configure CC=${CC} CXX=${CXX}|configure CC=${CC} CXX=${CXX} LDFLAGS='-lexecinfo -Wl,-rpath=${PREFIX}/libexec/trinity/trinity-plugins/jellyfish/.libs'|g" ${WRKSRC}/Makefile
 
 # Some scripts are not available during patch stage
 post-build:
@@ -105,12 +105,6 @@ do-install:
 
 	cd ${WRKSRC} && ${COPYTREE_BIN} util \
 		${STAGEDIR}${LIBEXEC_DIR}
-
-	${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/jellyfish
-	${STRIP_CMD} ${WRKSRC}/trinity-plugins/jellyfish/bin/.libs/jellyfish \
-		${WRKSRC}/trinity-plugins/jellyfish/.libs/libjellyfish-1.1.so.1
-	cd ${WRKSRC}/trinity-plugins/jellyfish && \
-		${COPYTREE_BIN} 'bin .libs' ${STAGEDIR}${PLUGINS_DIR}/jellyfish
 
 	${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/fastool
 	${INSTALL_PROGRAM} ${WRKSRC}/trinity-plugins/fastool/fastool \

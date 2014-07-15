@@ -1,5 +1,5 @@
 --- Trinity.orig	2014-04-23 11:04:48.000000000 -0500
-+++ Trinity	2014-05-23 16:54:38.000000000 -0500
++++ Trinity	2014-07-15 10:33:37.000000000 -0500
 @@ -6,7 +6,7 @@
  no strict qw(subs refs);
  
@@ -18,7 +18,7 @@
  
  my $IWORM_KMER_SIZE = 25;
  my $MIN_IWORM_LEN = 25;
-@@ -476,7 +476,7 @@
+@@ -476,12 +476,12 @@
   ;
  
  
@@ -27,3 +27,9 @@
  my $UTILDIR = "$ROOTDIR/util";
  my $INCHWORM_DIR = "$ROOTDIR/Inchworm";
  my $CHRYSALIS_DIR = "$ROOTDIR/Chrysalis";
+ my $BUTTERFLY_DIR = "$ROOTDIR/Butterfly";
+-my $JELLYFISH_DIR = "$ROOTDIR/trinity-plugins/jellyfish";
++my $JELLYFISH_DIR = "/usr/local";
+ my $FASTOOL_DIR = "$ROOTDIR/trinity-plugins/fastool";
+ my $COLLECTL_DIR = "$ROOTDIR/trinity-plugins/collectl/bin";
+ my $COREUTILS_DIR = "$ROOTDIR/trinity-plugins/coreutils/bin";

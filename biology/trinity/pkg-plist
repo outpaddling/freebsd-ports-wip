@@ -138,14 +138,6 @@ libexec/trinity/trinity-plugins/collectl/bin/timetable.sh
 libexec/trinity/trinity-plugins/collectl/bin/vmstat.ph
 libexec/trinity/trinity-plugins/coreutils/bin/sort
 libexec/trinity/trinity-plugins/fastool/fastool
-libexec/trinity/trinity-plugins/jellyfish/.libs/libjellyfish-1.1.a
-libexec/trinity/trinity-plugins/jellyfish/.libs/libjellyfish-1.1.la
-libexec/trinity/trinity-plugins/jellyfish/.libs/libjellyfish-1.1.lai
-libexec/trinity/trinity-plugins/jellyfish/.libs/libjellyfish-1.1.so
-libexec/trinity/trinity-plugins/jellyfish/.libs/libjellyfish-1.1.so.1
-libexec/trinity/trinity-plugins/jellyfish/bin/.dirstamp
-libexec/trinity/trinity-plugins/jellyfish/bin/.libs/jellyfish
-libexec/trinity/trinity-plugins/jellyfish/bin/jellyfish
 libexec/trinity/trinity-plugins/parafly/bin/ParaFly
 libexec/trinity/util/HTC_helpers/bsub_fasta_bin_cmd_processor.pl
 libexec/trinity/util/HTC_helpers/htc_bin_blastPlus.pl
@@ -589,10 +581,6 @@ libexec/trinity/util/support_scripts/wig_clip_to_bed.pl
 @dirrmtry libexec/trinity/trinity-plugins/coreutils/bin
 @dirrmtry libexec/trinity/trinity-plugins/coreutils
 @dirrmtry libexec/trinity/trinity-plugins/fastool
-@dirrmtry libexec/trinity/trinity-plugins/jellyfish/.libs
-@dirrmtry libexec/trinity/trinity-plugins/jellyfish/bin/.libs
-@dirrmtry libexec/trinity/trinity-plugins/jellyfish/bin
-@dirrmtry libexec/trinity/trinity-plugins/jellyfish
 @dirrmtry libexec/trinity/trinity-plugins/parafly/bin
 @dirrmtry libexec/trinity/trinity-plugins/parafly
 @dirrmtry libexec/trinity/trinity-plugins
