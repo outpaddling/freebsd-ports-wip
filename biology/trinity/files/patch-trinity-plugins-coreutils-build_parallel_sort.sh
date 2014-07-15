@@ -1,5 +1,5 @@
 --- trinity-plugins/coreutils/build_parallel_sort.sh.orig	2014-04-23 10:59:35.000000000 -0500
-+++ trinity-plugins/coreutils/build_parallel_sort.sh	2014-07-15 10:31:06.000000000 -0500
++++ trinity-plugins/coreutils/build_parallel_sort.sh	2014-07-15 17:50:59.000000000 -0500
 @@ -1,34 +1,34 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash

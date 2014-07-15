@@ -1,5 +1,5 @@
 --- Trinity.orig	2014-04-23 11:04:48.000000000 -0500
-+++ Trinity	2014-07-15 10:33:37.000000000 -0500
++++ Trinity	2014-07-15 18:06:46.000000000 -0500
 @@ -6,7 +6,7 @@
  no strict qw(subs refs);
  
@@ -18,7 +18,7 @@
  
  my $IWORM_KMER_SIZE = 25;
  my $MIN_IWORM_LEN = 25;
-@@ -476,12 +476,12 @@
+@@ -476,16 +476,16 @@
   ;
  
  
@@ -33,3 +33,8 @@
  my $FASTOOL_DIR = "$ROOTDIR/trinity-plugins/fastool";
  my $COLLECTL_DIR = "$ROOTDIR/trinity-plugins/collectl/bin";
  my $COREUTILS_DIR = "$ROOTDIR/trinity-plugins/coreutils/bin";
+-my $PARAFLY = "$ROOTDIR/trinity-plugins/parafly/bin/ParaFly";
++my $PARAFLY = "/usr/local/bin/ParaFly";
+ my $TRIMMOMATIC = "$ROOTDIR/trinity-plugins/Trimmomatic/trimmomatic.jar";
+ 
+ my $usage = $basic_usage . $usage_synopsis;
