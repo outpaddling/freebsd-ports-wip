@@ -17,7 +17,7 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libltdl.so:${PORTSDIR}/devel/libltdl
 
 HAS_CONFIGURE=	yes
-USES=		gmake pkgconfig fortran tar:bzip2
+USES=		fortran gmake pkgconfig tar:bzip2
 
 MPIBASE?=	mpi
 MPIDIR?=	${MPIBASE}/${UNIQUENAME}
@@ -30,6 +30,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
 			--program-prefix= \
 			--with-hwloc=${LOCALBASE} \
 			--with-libltdl=${LOCALBASE}
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
 		${PREFIX}/${MPIDIR}/lib/openmpi
@@ -72,8 +73,6 @@ SLURM_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_ess_slurm.la \
 
 VT_CONFIGURE_OFF=	--enable-contrib-no-build=vt --disable-vt
 VT_USE=			JAVA=yes
-
-NO_STAGE=		yes
 
 .include <bsd.port.pre.mk>
 
