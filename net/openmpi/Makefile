@@ -16,10 +16,8 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libhwloc.so:${PORTSDIR}/devel/hwloc \
 		libltdl.so:${PORTSDIR}/devel/libltdl
 
-USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
-USES=		gmake pkgconfig
-USE_FORTRAN=	yes
+USES=		gmake pkgconfig fortran tar:bzip2
 
 MPIBASE?=	mpi
 MPIDIR?=	${MPIBASE}/${UNIQUENAME}
