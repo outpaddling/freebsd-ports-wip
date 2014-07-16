@@ -6,6 +6,8 @@ Makefile:
     Check all installed scripts for proper shebang line
 	(DEVELOPER=yes in /etc/make.conf will enable QA tests to detect this)
     
+    portsnap fetch update
+
     Merge latest changes in committed port into development port
 
     # Created by: First Last <email>
