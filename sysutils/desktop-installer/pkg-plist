@@ -48,14 +48,14 @@ sbin/desktop-installer
 %%DATADIR%%/todo
 %%DATADIR%%/vbox
 %%DATADIR%%/xfce4-print-options
-@dirrmtry %%DATADIR%%/gcc45/files
-@dirrmtry %%DATADIR%%/gcc45
-@dirrmtry %%DATADIR%%/XFCE4
-@dirrmtry %%DATADIR%%/Scripts
+@dirrmtry %%DATADIR%%/Gnome
+@dirrmtry %%DATADIR%%/KDE3
+@dirrmtry %%DATADIR%%/KDE4
+@dirrmtry %%DATADIR%%/LXDE
 @dirrmtry %%DATADIR%%/Patches/linux-f10-flashplugin11
 @dirrmtry %%DATADIR%%/Patches
-@dirrmtry %%DATADIR%%/LXDE
-@dirrmtry %%DATADIR%%/KDE4
-@dirrmtry %%DATADIR%%/KDE3
-@dirrmtry %%DATADIR%%/Gnome
+@dirrmtry %%DATADIR%%/Scripts
+@dirrmtry %%DATADIR%%/XFCE4
+@dirrmtry %%DATADIR%%/gcc45/files
+@dirrmtry %%DATADIR%%/gcc45
 @dirrmtry %%DATADIR%%
