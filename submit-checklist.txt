@@ -80,8 +80,11 @@ Test on all available platforms.  Do the following IN ORDER:
     make deinstall
     make rmconfig
     make reinstall
-    make check-plist
     test with NOPORT* (whatever is in pkg-plist)
+
+Safe output of these commands and attach to PR
+    make check-plist > check-plist.out
+    make stage-qa > stage-qa.out
 
 Generate unified diff for updates, shar file for new ports
     (diff-port or shar-port scripts)
