@@ -11,19 +11,22 @@ COMMENT=	Lego RCX iinfrared communication API
 
 LICENSE=	GPLv2
 
-USE_ZIP=	yes
-USE_GMAKE=	yes
+USES=		zip gmake
 WRKSRC=		${WRKDIR}/lnphost
 CFLAGS+=	-DHAVE_STRING_H
 
 PLIST_FILES=	bin/lnpdump \
 		lib/lnphost.a \
-		include/lnphost.h
+		include/lnphost.h \
+		man/man1/lnpdump.1.gz
 
-MAN1=		lnpdump.1
+MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 # Use system getopt
 post-patch:
 	${RM} ${WRKSRC}/Include/getopt.h ${WRKSRC}/Modules/getopt.c
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lnpdump
 
 .include <bsd.port.mk>

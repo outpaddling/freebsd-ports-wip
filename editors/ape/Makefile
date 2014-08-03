@@ -21,8 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libpare.a:/usr/wip/devel/libpare \
 		${LOCALBASE}/lib/libtwintk.a:/usr/wip/devel/twintk
 RUN_DEPENDS=	${LOCALBASE}/share/twintk/terminfo:/usr/wip/devel/twintk \
 		webbrowser:/usr/wip/www/webbrowser \
-		docviewer:/usr/wip/textproc/docviewer \
-		${LOCALBASE}/share/aspell/american-variant_0.alias:${PORTSDIR}/textproc/en-aspell
+		docviewer:/usr/wip/textproc/docviewer
 
 USES=		tar:xz
 
