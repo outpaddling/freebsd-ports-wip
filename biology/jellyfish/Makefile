@@ -11,6 +11,7 @@ COMMENT=	Fast, memory-efficient counting of k-mers in DNA
 
 LICENSE=	GPLv3
 
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 # Variable length arrays
