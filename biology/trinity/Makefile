@@ -14,13 +14,14 @@ DISTNAME=	trinityrnaseq_r20140413p1
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	RNA sequence assembly
 
-USES=		gmake perl5 shebangfix
+USES=		gmake perl5 shebangfix dos2unix
 SHEBANG_FILES=	trinity-plugins/collectl/make_data_files.sh \
 		trinity-plugins/collectl/plot.sh \
 		trinity-plugins/collectl/timetable.sh \
 		util/*/*.sh \
 		util/*/*.pl \
 		Chrysalis/*.pl
+DOS2UNIX_FILES=	PerlLib/HTC/GridRunner.pm
 # Requires OpenMP.
 USE_GCC=	yes
 USE_JAVA=	yes
@@ -38,13 +39,15 @@ RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bowtie:/usr/wip/biology/bowtie \
 		samtools:/usr/wip/biology/samtools \
 		jellyfish:/usr/wip/biology/jellyfish \
-		ParaFly:/usr/wip/biology/parafly
+		ParaFly:/usr/wip/sysutils/parafly
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 MAKE_JOBS_UNSAFE=	yes
 
 LIBEXEC_DIR=	${PREFIX}/libexec/trinity
 PLUGINS_DIR=	${LIBEXEC_DIR}/trinity-plugins
+
+#FETCH_ARGS+=	-F
 
 post-patch:
 	# General changes to respect env
@@ -70,6 +73,11 @@ post-patch:
 		${WRKSRC}/Chrysalis/Makefile_${CXX}_x86_64
 	${MV} ${WRKSRC}/Chrysalis/Makefile_g++_i386 \
 		${WRKSRC}/Chrysalis/Makefile_${CXX}_i386
+
+	# GridRunner: ParaFly is intalled separately, so remove absolute path
+	${REINPLACE_CMD} \
+		-e 's|$$trin_home/trinity-plugins/parafly/bin/||g' \
+		${WRKSRC}/PerlLib/HTC/GridRunner.pm
 
 # Some scripts are not available during patch stage
 post-build:
