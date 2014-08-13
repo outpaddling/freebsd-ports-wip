@@ -1,5 +1,5 @@
 --- Trinity.orig	2014-04-23 11:04:48.000000000 -0500
-+++ Trinity	2014-07-15 18:06:46.000000000 -0500
++++ Trinity	2014-08-13 16:33:00.000000000 -0500
 @@ -6,7 +6,7 @@
  no strict qw(subs refs);
  
@@ -9,7 +9,17 @@
  use File::Basename;
  use Time::localtime;
  use Cwd;
-@@ -26,7 +26,7 @@
+@@ -15,8 +15,7 @@
+ 
+ BEGIN {
+ 
+-    $ENV{TRINITY_HOME} = "$FindBin::Bin";
+-
++    $ENV{TRINITY_HOME} = "$FindBin::Bin/../libexec/trinity";
+ }
+ 
+ use HTC::GridRunner;
+@@ -26,7 +25,7 @@
  
  # Site specific setup
  
@@ -18,7 +28,7 @@
  
  my $IWORM_KMER_SIZE = 25;
  my $MIN_IWORM_LEN = 25;
-@@ -476,16 +476,16 @@
+@@ -476,16 +475,16 @@
   ;
  
  
