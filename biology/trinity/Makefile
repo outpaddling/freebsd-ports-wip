@@ -21,7 +21,8 @@ SHEBANG_FILES=	trinity-plugins/collectl/make_data_files.sh \
 		util/*/*.sh \
 		util/*/*.pl \
 		Chrysalis/*.pl
-DOS2UNIX_FILES=	PerlLib/HTC/GridRunner.pm
+DOS2UNIX_FILES=	PerlLib/HTC/GridRunner.pm \
+		PerlLib/HTC/SLURM_handler.pm
 # Requires OpenMP.
 USE_GCC=	yes
 USE_JAVA=	yes
@@ -78,6 +79,14 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's|$$trin_home/trinity-plugins/parafly/bin/||g' \
 		${WRKSRC}/PerlLib/HTC/GridRunner.pm
+
+	# Remove absolute paths to Trinity command
+	${REINPLACE_CMD} \
+		-e 's|$$BASEDIR/Trinity|Trinity|g' \
+		${WRKSRC}/util/run_Trinity_edgeR_pipeline.pl
+	${REINPLACE_CMD} \
+		-e 's|$$FindBin::Bin/../../Trinity|Trinity|g' \
+		${WRKSRC}/util/support_scripts/GG_write_trinity_cmds.pl
 
 # Some scripts are not available during patch stage
 post-build:
