@@ -90,8 +90,6 @@ post-build:
 #        Just dumping them to libexec/trinity for now
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Trinity ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/Trinity ${STAGEDIR}${LIBEXEC_DIR}
 
 	${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}/Chrysalis
 	cd ${WRKSRC}/Chrysalis && \
