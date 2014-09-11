@@ -25,11 +25,7 @@ sbin/cluster-groupdel
 sbin/cluster-head-node
 sbin/cluster-local-pkg_add
 sbin/cluster-local-port_add
-sbin/cluster-local-sync-group
-sbin/cluster-local-sync-groups
 sbin/cluster-local-sync-software
-sbin/cluster-local-sync-user
-sbin/cluster-local-sync-users
 sbin/cluster-pbs-restart
 sbin/cluster-pkg_add
 sbin/cluster-pkgdir
@@ -42,12 +38,14 @@ sbin/cluster-setup
 sbin/cluster-shutdown
 sbin/cluster-ssh-keygen
 sbin/cluster-sync-files
+sbin/cluster-sync-user
 sbin/cluster-update-all-ssh_config
 sbin/cluster-update-ssh_config
 sbin/cluster-update-wip-ports
 sbin/cluster-useradd
 sbin/cluster-usermod
 sbin/cluster-users
+sbin/node-sync-user
 sbin/pbs-cluster-load
 sbin/slurm-cluster-load
 sbin/slurm-job-stats

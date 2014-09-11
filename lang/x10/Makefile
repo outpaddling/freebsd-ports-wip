@@ -1,9 +1,9 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
-# $FreeBSD: head/lang/x10/Makefile 347809 2014-03-10 20:55:20Z gerald $
+# $FreeBSD: head/lang/x10/Makefile 354467 2014-05-18 20:22:52Z cs $
 
 PORTNAME=	x10
 PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel java
 MASTER_SITES=	http://dist.codehaus.org/x10/dependencies/ \
 		SF
@@ -42,6 +42,10 @@ WRKSRC=		${WRKDIR}/x10.dist
 OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.options.mk>
+
+.if ${OSVERSION} <= 90100 
+BROKEN=         port requires FreeBSD 9.2 or later
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's/value="make"/value="gmake"/g' \
