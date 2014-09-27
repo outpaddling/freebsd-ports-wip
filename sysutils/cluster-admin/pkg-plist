@@ -57,6 +57,7 @@ sbin/slurm-restart
 %%DATADIR%%/csh.login
 %%DATADIR%%/patch-gmetad.conf
 %%DATADIR%%/patch-httpd.conf
+%%DATADIR%%/patch-httpd22.conf
 %%DATADIR%%/profile
 @dirrmtry %%DATADIR%%/WWW
 @dirrmtry %%DATADIR%%
