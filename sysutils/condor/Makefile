@@ -2,7 +2,7 @@
 # $FreeBSD: head/sysutils/condor/Makefile 360673 2014-07-04 22:25:48Z adamw $
 
 PORTNAME=	condor
-PORTVERSION=	8.0.3
+PORTVERSION=	8.3.1
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 DISTNAME=	condor_src-${PORTVERSION}-all-all
@@ -18,9 +18,9 @@ LIB_DEPENDS+=	libkrb5support.so:${PORTSDIR}/security/krb5 \
 
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_LDCONFIG=	yes
-USES=		cmake gmake perl5
-USE_GCC=	any
-USE_PGSQL=	server
+USES+=		cmake gmake perl5 pgsql
+#USE_GCC=	any
+WANT_PGSQL=	server
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-rpath=${LOCALBASE}/lib:/usr/lib:/lib
 CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
