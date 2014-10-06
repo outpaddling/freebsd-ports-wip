@@ -1,5 +1,5 @@
---- src/build-system/configure.orig	2014-05-30 13:48:24.000000000 -0500
-+++ src/build-system/configure	2014-05-30 13:49:53.000000000 -0500
+--- src/build-system/configure.orig	2013-11-25 13:58:10.000000000 -0600
++++ src/build-system/configure	2014-10-06 11:29:38.000000000 -0500
 @@ -849,8 +849,6 @@
    --libdir=DIR           object code libraries [EPREFIX/lib]
    --includedir=DIR       C header files [PREFIX/include]
@@ -9,3 +9,19 @@
  _ACEOF
  
    cat <<\_ACEOF
+@@ -8487,11 +8485,11 @@
+ if test "${ncbi_cv_prog_amq_w+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+-  if $AMQ -w >/dev/null 2>&1; then
+-          ncbi_cv_prog_amq_w=yes
+-       else
++#  if $AMQ -w >/dev/null 2>&1; then
++#          ncbi_cv_prog_amq_w=yes
++#       else
+           ncbi_cv_prog_amq_w=no
+-       fi
++#       fi
+ fi
+ echo "$as_me:$LINENO: result: $ncbi_cv_prog_amq_w" >&5
+ echo "${ECHO_T}$ncbi_cv_prog_amq_w" >&6

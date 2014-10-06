@@ -28,7 +28,7 @@ SHEBANG_FILES=	src/app/blast/legacy_blast.pl \
 		src/app/winmasker/windowmasker_2.2.22_adapter.py
 # Requires openmp
 USE_GCC=	yes
-USE_PYTHON=	yes
+USES=		python
 USE_LDCONFIG=	yes
 
 # configure chooses /usr/local/bin/ar with no flags
@@ -37,10 +37,10 @@ CONFIGURE_ARGS+=AR="ar cr" --without-boost
 
 # Fix "undefined _ThreadRuneLocale" error on 10.0
 # Add staging support to configure-generated Makefile
+#	${REINPLACE_CMD} \
+#		-e "s|-D_THREAD_SAFE|-D_THREAD_SAFE -D__RUNETYPE_INTERNAL|g" \
+#		${WRKSRC}/src/build-system/configure
 post-patch:
-	${REINPLACE_CMD} \
-		-e "s|-D_THREAD_SAFE|-D_THREAD_SAFE -D__RUNETYPE_INTERNAL|g" \
-		${WRKSRC}/src/build-system/configure
 	${REINPLACE_CMD} \
 		-e 's|@prefix@|${STAGEDIR}@prefix@|g' \
 		${WRKSRC}/src/build-system/Makefile.in.top
