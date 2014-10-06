@@ -37,9 +37,6 @@ CONFIGURE_ARGS+=AR="ar cr" --without-boost
 
 # Fix "undefined _ThreadRuneLocale" error on 10.0
 # Add staging support to configure-generated Makefile
-#	${REINPLACE_CMD} \
-#		-e "s|-D_THREAD_SAFE|-D_THREAD_SAFE -D__RUNETYPE_INTERNAL|g" \
-#		${WRKSRC}/src/build-system/configure
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's|@prefix@|${STAGEDIR}@prefix@|g' \

@@ -1,5 +1,5 @@
 --- src/build-system/configure.orig	2013-11-25 13:58:10.000000000 -0600
-+++ src/build-system/configure	2014-10-06 11:29:38.000000000 -0500
++++ src/build-system/configure	2014-10-06 11:34:17.000000000 -0500
 @@ -849,8 +849,6 @@
    --libdir=DIR           object code libraries [EPREFIX/lib]
    --includedir=DIR       C header files [PREFIX/include]
@@ -9,6 +9,15 @@
  _ACEOF
  
    cat <<\_ACEOF
+@@ -5109,7 +5107,7 @@
+ echo "$as_me: error: Do not know how to build MT-safe with compiler $CXX $compiler_ver" >&2;}
+    { (exit 1); exit 1; }; } ;;
+    esac
+-   CPPFLAGS="$CPPFLAGS -D_MT -D_REENTRANT -D_THREAD_SAFE"
++   CPPFLAGS="$CPPFLAGS -D_MT -D_REENTRANT -D_THREAD_SAFE -D__RUNETYPE_INTERNAL"
+    case "$host_os:$compiler" in
+      solaris2.10:GCC ) : ${THREAD_LIBS:="-lposix4"} ;;
+      solaris*        ) : ${THREAD_LIBS:="-lpthread -lposix4"} ;;
 @@ -8487,11 +8485,11 @@
  if test "${ncbi_cv_prog_amq_w+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
