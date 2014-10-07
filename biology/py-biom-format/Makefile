@@ -8,8 +8,9 @@ PORTVERSION=	2.1
 CATEGORIES=	biology
 #MASTER_SITES=	http://github.com/biocore/biom-format/archive/
 MASTER_SITES=	http://pypi.python.org/packages/source/b/biom-format/
-PKGNAMESUFFIX=	format
-DISTNAME=	${PORTNAME}-${PKGNAMESUFFIX}-${PORTVERSION}
+PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	-format
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	The Biological Observation Matrix (BIOM) Format Project
@@ -17,8 +18,6 @@ COMMENT=	The Biological Observation Matrix (BIOM) Format Project
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PKGNAMESUFFIX}-${PORTVERSION}
 
 USES=		python
 USE_PYTHON=	distutils

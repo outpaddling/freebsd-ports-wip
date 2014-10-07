@@ -1,0 +1,104 @@
+# Created by: Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
+# $FreeBSD$
+
+PORTNAME=	qiime
+PORTVERSION=	1.8.0
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+CATEGORIES=	biology
+MASTER_SITES=	http://github.com/biocore/qiime/archive/ \
+		http://www.drive5.com/uclust/
+DISTFILES=	${PORTVERSION}${EXTRACT_SUFX} \
+		uclustq1.2.22_i86linux32
+EXTRACT_ONLY=	${PORTVERSION}${EXTRACT_SUFX}
+MAINTAINER=	jwbacon@tds.net
+COMMENT=	Quantitative Insights Into Microbial Ecology
+
+# uclust is a Linux closed-source binary and required for qiime
+ONLY_FOR_ARCH=	i386 amd64
+
+USES=		python:2 shebangfix
+USE_PYTHON=	distutils
+SHEBANG_FILES=	scripts/ec2Clean scripts/ec2Dispatch
+
+PYDISTUTILS_PKGNAME=	qiime
+
+#####################
+# Base installation
+#
+# http://qiime.org/install/install.html
+# Canopy Express
+#    Python 2.7.3, numpy 1.5.1 - 1.7.1, MatPlotLib 1.1.0 - 1.3.1
+# Other
+#    pycogent 1.5.3, biom-format 1.3.1, qcli 0.1.0, pynast 1.2.2, emperor 0.9.3
+#    
+# Non-python
+#    uclust 1.2.22q, fasttree 2.1.3
+
+BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.5.1:${PORTSDIR}/math/py-numpy \
+		${PKGNAMEPREFIX}matplotlib>=1.1.0:${PORTSDIR}/math/py-matplotlib \
+		pycogent>=1.1.0:${PORTSDIR}/biology/pycogent \
+		${PKGNAMEPREFIX}biom-format>=1.3.1:/usr/wip/biology/py-biom-format \
+		${PKGNAMEPREFIX}qcli>=0.1.0:/usr/wip/biology/py-qcli \
+		${PKGNAMEPREFIX}pynast>=1.2.2:/usr/wip/biology/py-pynast \
+		${PKGNAMEPREFIX}emperor>=0.9.3:/usr/wip/biology/py-emperor \
+		FastTree>=2.1.7:/usr/wip/biology/fasttree
+RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+
+###############
+# Full install
+
+#     jre1.6.0_05 (src_jre) (license: GPL2)
+#     rdp_classifier-2.2 (src_rdp) See RDP install notes. (license: GPL)
+#     tax2tree 1.0.0 (src_tax2tree)
+#     blast-2.2.22 (legacy BLAST from NCBI, NOT BLAST+) (OS X or linux 32-bit) (license: GNU)
+#     cd-hit 3.1.1 (src_cdhit) (license: Free access)
+#     ChimeraSlayer (via microbiomeutil_2010-04-29) (src_chimeraslayer) See ChimeraSlayer install notes.
+#     mothur 1.25.0 (src_mothur) (license: GPL)
+#     clearcut v1.0.9 (src_clearcut)
+#     raxml 7.3.0 (src_raxml)
+#     infernal 1.0.2 (src_infernal) (license: GPL)
+#     cdbtools (src_cdbtools)
+#     muscle 3.8.31 (src_muscle) (Public domain)
+#     rtax 0.984 (src_rtax) (license: BSD)
+#     pplacer 1.1 (src_pplacer) (license: GPL)
+#     ParsInsert 1.04 (src_parsinsert) (license: GPL)
+#     usearch v5.2.236 and/or usearch v6.1 (src_usearch) (license: see http://www.drive5.com/usearch/nonprofit_form.html) At this stage two different versions of usearch are supported. usearch v5.2.236 is referred to as usearch in QIIME, and usearch v6.1 is referred to as usearch61.
+# 
+# Processing sff files:
+# 
+#     sfffile and sffinfo (optional, QIIME 1.2.0 and later contain built-in tools for processing sff files although they are about 10x slower than the tools from Roche) (license: proprietary - must be obtained from Roche/454)
+# 
+# Denoising 454 data:
+# 
+#     GNU Science Library (required by AmpliconNoise) (src_gsl)
+#     AmpliconNoise 1.27 (src_ampliconnoise) See AmpliconNoise install notes.
+#     ghc 6.8 (required by the QIIME denoiser) (src_ghc)
+# 
+# Visualization and plotting steps:
+# 
+#     cytoscape v2.7.0 (src_cytoscape) (license: LGPL)
+# 
+# Supervised learning (supervised_learning.py) and compare_categories.py:
+# 
+#     R 3.0.2 (src_r) See R install notes. (license: GPL2)
+# 
+# If you plan to build the QIIME documentation locally:
+# 
+#     Sphinx 1.0.4 (src) See Building the QIIME documentation (license: BSD)
+# 
+# If you plan to use remote mapping files (stored as Google Spreadsheets) with QIIME (see the tutorial here):
+# 
+#     gdata 2.0.17 (src) (license: Apache 2.0)
+# 
+# If you plan to use SourceTracker with QIIME:
+# 
+#     SourceTracker 0.9.5 (src) (license: GPL)
+# 
+# BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+
+post-install:
+	${INSTALL_PROGRAM} ${DISTDIR}/uclustq1.2.22_i86linux32 \
+		${STAGEDIR}${PREFIX}/bin/uclust
+
+.include <bsd.port.mk>

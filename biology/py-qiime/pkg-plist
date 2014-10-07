@@ -1,0 +1,1755 @@
+bin/add_alpha_to_mapping_file.py
+bin/add_qiime_labels.py
+bin/adjust_seq_orientation.py
+bin/align_seqs.py
+bin/alpha_diversity.py
+bin/alpha_rarefaction.py
+bin/ampliconnoise.py
+bin/assign_taxonomy.py
+bin/beta_diversity.py
+bin/beta_diversity_through_plots.py
+bin/beta_significance.py
+bin/blast_wrapper.py
+bin/categorized_dist_scatterplot.py
+bin/check_id_map.py
+bin/clean_raxml_parsimony_tree.py
+bin/cluster_quality.py
+bin/collate_alpha.py
+bin/compare_3d_plots.py
+bin/compare_alpha_diversity.py
+bin/compare_categories.py
+bin/compare_distance_matrices.py
+bin/compare_taxa_summaries.py
+bin/compute_core_microbiome.py
+bin/conditional_uncovered_probability.py
+bin/consensus_tree.py
+bin/convert_fastaqual_fastq.py
+bin/convert_otu_table_to_unifrac_sample_mapping.py
+bin/convert_unifrac_sample_mapping_to_otu_table.py
+bin/core_diversity_analyses.py
+bin/count_seqs.py
+bin/demultiplex_fasta.py
+bin/denoise_wrapper.py
+bin/denoiser.py
+bin/denoiser_preprocess.py
+bin/denoiser_worker.py
+bin/detrend.py
+bin/dissimilarity_mtx_stats.py
+bin/distance_matrix_from_mapping.py
+bin/ec2Clean
+bin/ec2Dispatch
+bin/estimate_observation_richness.py
+bin/exclude_seqs_by_blast.py
+bin/extract_barcodes.py
+bin/extract_seqs_by_sample_id.py
+bin/filter_alignment.py
+bin/filter_distance_matrix.py
+bin/filter_fasta.py
+bin/filter_otus_by_sample.py
+bin/filter_otus_from_otu_table.py
+bin/filter_samples_from_otu_table.py
+bin/filter_taxa_from_otu_table.py
+bin/filter_tree.py
+bin/fix_arb_fasta.py
+bin/group_significance.py
+bin/identify_chimeric_seqs.py
+bin/identify_missing_files.py
+bin/identify_paired_differences.py
+bin/inflate_denoiser_output.py
+bin/insert_seqs_into_tree.py
+bin/jackknifed_beta_diversity.py
+bin/join_paired_ends.py
+bin/load_remote_mapping_file.py
+bin/make_2d_plots.py
+bin/make_3d_plots.py
+bin/make_bipartite_network.py
+bin/make_bootstrapped_tree.py
+bin/make_distance_boxplots.py
+bin/make_distance_comparison_plots.py
+bin/make_distance_histograms.py
+bin/make_fastq.py
+bin/make_library_id_lists.py
+bin/make_otu_heatmap.py
+bin/make_otu_heatmap_html.py
+bin/make_otu_network.py
+bin/make_otu_table.py
+bin/make_per_library_sff.py
+bin/make_phylogeny.py
+bin/make_prefs_file.py
+bin/make_qiime_py_file.py
+bin/make_rarefaction_plots.py
+bin/make_tep.py
+bin/map_reads_to_reference.py
+bin/merge_mapping_files.py
+bin/merge_otu_maps.py
+bin/merge_otu_tables.py
+bin/multiple_rarefactions.py
+bin/multiple_rarefactions_even_depth.py
+bin/neighbor_joining.py
+bin/nmds.py
+bin/otu_category_significance.py
+bin/parallel_align_seqs_pynast.py
+bin/parallel_alpha_diversity.py
+bin/parallel_assign_taxonomy_blast.py
+bin/parallel_assign_taxonomy_rdp.py
+bin/parallel_assign_taxonomy_uclust.py
+bin/parallel_beta_diversity.py
+bin/parallel_blast.py
+bin/parallel_identify_chimeric_seqs.py
+bin/parallel_map_reads_to_reference.py
+bin/parallel_merge_otu_tables.py
+bin/parallel_multiple_rarefactions.py
+bin/parallel_pick_otus_blast.py
+bin/parallel_pick_otus_trie.py
+bin/parallel_pick_otus_uclust_ref.py
+bin/parallel_pick_otus_usearch61_ref.py
+bin/pick_closed_reference_otus.py
+bin/pick_de_novo_otus.py
+bin/pick_open_reference_otus.py
+bin/pick_otus.py
+bin/pick_rep_set.py
+bin/plot_rank_abundance_graph.py
+bin/plot_semivariogram.py
+bin/plot_taxa_summary.py
+bin/poller.py
+bin/poller_example.py
+bin/principal_coordinates.py
+bin/print_metadata_stats.py
+bin/print_qiime_config.py
+bin/process_iseq.py
+bin/process_qseq.py
+bin/process_sff.py
+bin/quality_scores_plot.py
+bin/relatedness.py
+bin/shared_phylotypes.py
+bin/simsam.py
+bin/single_rarefaction.py
+bin/sort_otu_table.py
+bin/split_fasta_on_sample_ids.py
+bin/split_libraries.py
+bin/split_libraries_fastq.py
+bin/split_otu_table.py
+bin/split_otu_table_by_taxonomy.py
+bin/start_parallel_jobs.py
+bin/start_parallel_jobs_sc.py
+bin/start_parallel_jobs_torque.py
+bin/submit_to_mgrast.py
+bin/subsample_fasta.py
+bin/summarize_otu_by_cat.py
+bin/summarize_taxa.py
+bin/summarize_taxa_through_plots.py
+bin/supervised_learning.py
+bin/transform_coordinate_matrices.py
+bin/tree_compare.py
+bin/trflp_file_to_otu_table.py
+bin/trim_sff_primers.py
+bin/truncate_fasta_qual_files.py
+bin/truncate_reverse_primer.py
+bin/uclust
+bin/unweight_fasta.py
+bin/upgma_cluster.py
+bin/validate_demultiplexed_fasta.py
+bin/validate_mapping_file.py
+%%PYTHON_SITELIBDIR%%/qiime-1.8.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/qiime-1.8.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/qiime-1.8.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/qiime-1.8.0-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/qiime-1.8.0-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/qiime/__init__.py
+%%PYTHON_SITELIBDIR%%/qiime/__init__.pyc
+%%PYTHON_SITELIBDIR%%/qiime/__init__.pyo
+%%PYTHON_SITELIBDIR%%/qiime/add_alpha_to_mapping_file.py
+%%PYTHON_SITELIBDIR%%/qiime/add_alpha_to_mapping_file.pyc
+%%PYTHON_SITELIBDIR%%/qiime/add_alpha_to_mapping_file.pyo
+%%PYTHON_SITELIBDIR%%/qiime/add_qiime_labels.py
+%%PYTHON_SITELIBDIR%%/qiime/add_qiime_labels.pyc
+%%PYTHON_SITELIBDIR%%/qiime/add_qiime_labels.pyo
+%%PYTHON_SITELIBDIR%%/qiime/adjust_seq_orientation.py
+%%PYTHON_SITELIBDIR%%/qiime/adjust_seq_orientation.pyc
+%%PYTHON_SITELIBDIR%%/qiime/adjust_seq_orientation.pyo
+%%PYTHON_SITELIBDIR%%/qiime/align_seqs.py
+%%PYTHON_SITELIBDIR%%/qiime/align_seqs.pyc
+%%PYTHON_SITELIBDIR%%/qiime/align_seqs.pyo
+%%PYTHON_SITELIBDIR%%/qiime/alpha_diversity.py
+%%PYTHON_SITELIBDIR%%/qiime/alpha_diversity.pyc
+%%PYTHON_SITELIBDIR%%/qiime/alpha_diversity.pyo
+%%PYTHON_SITELIBDIR%%/qiime/assign_taxonomy.py
+%%PYTHON_SITELIBDIR%%/qiime/assign_taxonomy.pyc
+%%PYTHON_SITELIBDIR%%/qiime/assign_taxonomy.pyo
+%%PYTHON_SITELIBDIR%%/qiime/barcode.py
+%%PYTHON_SITELIBDIR%%/qiime/barcode.pyc
+%%PYTHON_SITELIBDIR%%/qiime/barcode.pyo
+%%PYTHON_SITELIBDIR%%/qiime/beta_diversity.py
+%%PYTHON_SITELIBDIR%%/qiime/beta_diversity.pyc
+%%PYTHON_SITELIBDIR%%/qiime/beta_diversity.pyo
+%%PYTHON_SITELIBDIR%%/qiime/beta_metrics.py
+%%PYTHON_SITELIBDIR%%/qiime/beta_metrics.pyc
+%%PYTHON_SITELIBDIR%%/qiime/beta_metrics.pyo
+%%PYTHON_SITELIBDIR%%/qiime/biplots.py
+%%PYTHON_SITELIBDIR%%/qiime/biplots.pyc
+%%PYTHON_SITELIBDIR%%/qiime/biplots.pyo
+%%PYTHON_SITELIBDIR%%/qiime/categorized_dist_scatterplot.py
+%%PYTHON_SITELIBDIR%%/qiime/categorized_dist_scatterplot.pyc
+%%PYTHON_SITELIBDIR%%/qiime/categorized_dist_scatterplot.pyo
+%%PYTHON_SITELIBDIR%%/qiime/check_id_map.py
+%%PYTHON_SITELIBDIR%%/qiime/check_id_map.pyc
+%%PYTHON_SITELIBDIR%%/qiime/check_id_map.pyo
+%%PYTHON_SITELIBDIR%%/qiime/clean_raxml_parsimony_tree.py
+%%PYTHON_SITELIBDIR%%/qiime/clean_raxml_parsimony_tree.pyc
+%%PYTHON_SITELIBDIR%%/qiime/clean_raxml_parsimony_tree.pyo
+%%PYTHON_SITELIBDIR%%/qiime/cluster_quality.py
+%%PYTHON_SITELIBDIR%%/qiime/cluster_quality.pyc
+%%PYTHON_SITELIBDIR%%/qiime/cluster_quality.pyo
+%%PYTHON_SITELIBDIR%%/qiime/collate_alpha.py
+%%PYTHON_SITELIBDIR%%/qiime/collate_alpha.pyc
+%%PYTHON_SITELIBDIR%%/qiime/collate_alpha.pyo
+%%PYTHON_SITELIBDIR%%/qiime/colors.py
+%%PYTHON_SITELIBDIR%%/qiime/colors.pyc
+%%PYTHON_SITELIBDIR%%/qiime/colors.pyo
+%%PYTHON_SITELIBDIR%%/qiime/compare_alpha_diversity.py
+%%PYTHON_SITELIBDIR%%/qiime/compare_alpha_diversity.pyc
+%%PYTHON_SITELIBDIR%%/qiime/compare_alpha_diversity.pyo
+%%PYTHON_SITELIBDIR%%/qiime/compare_categories.py
+%%PYTHON_SITELIBDIR%%/qiime/compare_categories.pyc
+%%PYTHON_SITELIBDIR%%/qiime/compare_categories.pyo
+%%PYTHON_SITELIBDIR%%/qiime/compare_distance_matrices.py
+%%PYTHON_SITELIBDIR%%/qiime/compare_distance_matrices.pyc
+%%PYTHON_SITELIBDIR%%/qiime/compare_distance_matrices.pyo
+%%PYTHON_SITELIBDIR%%/qiime/compare_taxa_summaries.py
+%%PYTHON_SITELIBDIR%%/qiime/compare_taxa_summaries.pyc
+%%PYTHON_SITELIBDIR%%/qiime/compare_taxa_summaries.pyo
+%%PYTHON_SITELIBDIR%%/qiime/convert_fastaqual_fastq.py
+%%PYTHON_SITELIBDIR%%/qiime/convert_fastaqual_fastq.pyc
+%%PYTHON_SITELIBDIR%%/qiime/convert_fastaqual_fastq.pyo
+%%PYTHON_SITELIBDIR%%/qiime/core_microbiome.py
+%%PYTHON_SITELIBDIR%%/qiime/core_microbiome.pyc
+%%PYTHON_SITELIBDIR%%/qiime/core_microbiome.pyo
+%%PYTHON_SITELIBDIR%%/qiime/demultiplex_fasta.py
+%%PYTHON_SITELIBDIR%%/qiime/demultiplex_fasta.pyc
+%%PYTHON_SITELIBDIR%%/qiime/demultiplex_fasta.pyo
+%%PYTHON_SITELIBDIR%%/qiime/denoise_wrapper.py
+%%PYTHON_SITELIBDIR%%/qiime/denoise_wrapper.pyc
+%%PYTHON_SITELIBDIR%%/qiime/denoise_wrapper.pyo
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/__init__.py
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/__init__.pyc
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/__init__.pyo
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/cluster_utils.py
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/cluster_utils.pyc
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/cluster_utils.pyo
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/denoise_postprocess.py
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/denoise_postprocess.pyc
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/denoise_postprocess.pyo
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/denoise_worker.py
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/denoise_worker.pyc
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/denoise_worker.pyo
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/flowgram_clustering.py
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/flowgram_clustering.pyc
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/flowgram_clustering.pyo
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/flowgram_filter.py
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/flowgram_filter.pyc
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/flowgram_filter.pyo
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/make_cluster_jobs.py
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/make_cluster_jobs.pyc
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/make_cluster_jobs.pyo
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/preprocess.py
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/preprocess.pyc
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/preprocess.pyo
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/utils.py
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/utils.pyc
+%%PYTHON_SITELIBDIR%%/qiime/denoiser/utils.pyo
+%%PYTHON_SITELIBDIR%%/qiime/detrend.py
+%%PYTHON_SITELIBDIR%%/qiime/detrend.pyc
+%%PYTHON_SITELIBDIR%%/qiime/detrend.pyo
+%%PYTHON_SITELIBDIR%%/qiime/distance_matrix_from_mapping.py
+%%PYTHON_SITELIBDIR%%/qiime/distance_matrix_from_mapping.pyc
+%%PYTHON_SITELIBDIR%%/qiime/distance_matrix_from_mapping.pyo
+%%PYTHON_SITELIBDIR%%/qiime/estimate_observation_richness.py
+%%PYTHON_SITELIBDIR%%/qiime/estimate_observation_richness.pyc
+%%PYTHON_SITELIBDIR%%/qiime/estimate_observation_richness.pyo
+%%PYTHON_SITELIBDIR%%/qiime/exclude_seqs_by_blast.py
+%%PYTHON_SITELIBDIR%%/qiime/exclude_seqs_by_blast.pyc
+%%PYTHON_SITELIBDIR%%/qiime/exclude_seqs_by_blast.pyo
+%%PYTHON_SITELIBDIR%%/qiime/extract_barcodes.py
+%%PYTHON_SITELIBDIR%%/qiime/extract_barcodes.pyc
+%%PYTHON_SITELIBDIR%%/qiime/extract_barcodes.pyo
+%%PYTHON_SITELIBDIR%%/qiime/filter.py
+%%PYTHON_SITELIBDIR%%/qiime/filter.pyc
+%%PYTHON_SITELIBDIR%%/qiime/filter.pyo
+%%PYTHON_SITELIBDIR%%/qiime/filter_alignment.py
+%%PYTHON_SITELIBDIR%%/qiime/filter_alignment.pyc
+%%PYTHON_SITELIBDIR%%/qiime/filter_alignment.pyo
+%%PYTHON_SITELIBDIR%%/qiime/filter_otus_by_sample.py
+%%PYTHON_SITELIBDIR%%/qiime/filter_otus_by_sample.pyc
+%%PYTHON_SITELIBDIR%%/qiime/filter_otus_by_sample.pyo
+%%PYTHON_SITELIBDIR%%/qiime/format.py
+%%PYTHON_SITELIBDIR%%/qiime/format.pyc
+%%PYTHON_SITELIBDIR%%/qiime/format.pyo
+%%PYTHON_SITELIBDIR%%/qiime/golay.py
+%%PYTHON_SITELIBDIR%%/qiime/golay.pyc
+%%PYTHON_SITELIBDIR%%/qiime/golay.pyo
+%%PYTHON_SITELIBDIR%%/qiime/group.py
+%%PYTHON_SITELIBDIR%%/qiime/group.pyc
+%%PYTHON_SITELIBDIR%%/qiime/group.pyo
+%%PYTHON_SITELIBDIR%%/qiime/hamming.py
+%%PYTHON_SITELIBDIR%%/qiime/hamming.pyc
+%%PYTHON_SITELIBDIR%%/qiime/hamming.pyo
+%%PYTHON_SITELIBDIR%%/qiime/hierarchical_cluster.py
+%%PYTHON_SITELIBDIR%%/qiime/hierarchical_cluster.pyc
+%%PYTHON_SITELIBDIR%%/qiime/hierarchical_cluster.pyo
+%%PYTHON_SITELIBDIR%%/qiime/identify_chimeric_seqs.py
+%%PYTHON_SITELIBDIR%%/qiime/identify_chimeric_seqs.pyc
+%%PYTHON_SITELIBDIR%%/qiime/identify_chimeric_seqs.pyo
+%%PYTHON_SITELIBDIR%%/qiime/insert_seqs_into_tree.py
+%%PYTHON_SITELIBDIR%%/qiime/insert_seqs_into_tree.pyc
+%%PYTHON_SITELIBDIR%%/qiime/insert_seqs_into_tree.pyo
+%%PYTHON_SITELIBDIR%%/qiime/join_paired_ends.py
+%%PYTHON_SITELIBDIR%%/qiime/join_paired_ends.pyc
+%%PYTHON_SITELIBDIR%%/qiime/join_paired_ends.pyo
+%%PYTHON_SITELIBDIR%%/qiime/longitudinal_otu_category_significance.py
+%%PYTHON_SITELIBDIR%%/qiime/longitudinal_otu_category_significance.pyc
+%%PYTHON_SITELIBDIR%%/qiime/longitudinal_otu_category_significance.pyo
+%%PYTHON_SITELIBDIR%%/qiime/make_2d_plots.py
+%%PYTHON_SITELIBDIR%%/qiime/make_2d_plots.pyc
+%%PYTHON_SITELIBDIR%%/qiime/make_2d_plots.pyo
+%%PYTHON_SITELIBDIR%%/qiime/make_3d_plots.py
+%%PYTHON_SITELIBDIR%%/qiime/make_3d_plots.pyc
+%%PYTHON_SITELIBDIR%%/qiime/make_3d_plots.pyo
+%%PYTHON_SITELIBDIR%%/qiime/make_bipartite_network.py
+%%PYTHON_SITELIBDIR%%/qiime/make_bipartite_network.pyc
+%%PYTHON_SITELIBDIR%%/qiime/make_bipartite_network.pyo
+%%PYTHON_SITELIBDIR%%/qiime/make_bootstrapped_tree.py
+%%PYTHON_SITELIBDIR%%/qiime/make_bootstrapped_tree.pyc
+%%PYTHON_SITELIBDIR%%/qiime/make_bootstrapped_tree.pyo
+%%PYTHON_SITELIBDIR%%/qiime/make_distance_boxplots.py
+%%PYTHON_SITELIBDIR%%/qiime/make_distance_boxplots.pyc
+%%PYTHON_SITELIBDIR%%/qiime/make_distance_boxplots.pyo
+%%PYTHON_SITELIBDIR%%/qiime/make_distance_histograms.py
+%%PYTHON_SITELIBDIR%%/qiime/make_distance_histograms.pyc
+%%PYTHON_SITELIBDIR%%/qiime/make_distance_histograms.pyo
+%%PYTHON_SITELIBDIR%%/qiime/make_fastq.py
+%%PYTHON_SITELIBDIR%%/qiime/make_fastq.pyc
+%%PYTHON_SITELIBDIR%%/qiime/make_fastq.pyo
+%%PYTHON_SITELIBDIR%%/qiime/make_library_id_lists.py
+%%PYTHON_SITELIBDIR%%/qiime/make_library_id_lists.pyc
+%%PYTHON_SITELIBDIR%%/qiime/make_library_id_lists.pyo
+%%PYTHON_SITELIBDIR%%/qiime/make_otu_heatmap.py
+%%PYTHON_SITELIBDIR%%/qiime/make_otu_heatmap.pyc
+%%PYTHON_SITELIBDIR%%/qiime/make_otu_heatmap.pyo
+%%PYTHON_SITELIBDIR%%/qiime/make_otu_heatmap_html.py
+%%PYTHON_SITELIBDIR%%/qiime/make_otu_heatmap_html.pyc
+%%PYTHON_SITELIBDIR%%/qiime/make_otu_heatmap_html.pyo
+%%PYTHON_SITELIBDIR%%/qiime/make_otu_network.py
+%%PYTHON_SITELIBDIR%%/qiime/make_otu_network.pyc
+%%PYTHON_SITELIBDIR%%/qiime/make_otu_network.pyo
+%%PYTHON_SITELIBDIR%%/qiime/make_otu_table.py
+%%PYTHON_SITELIBDIR%%/qiime/make_otu_table.pyc
+%%PYTHON_SITELIBDIR%%/qiime/make_otu_table.pyo
+%%PYTHON_SITELIBDIR%%/qiime/make_per_library_sff.py
+%%PYTHON_SITELIBDIR%%/qiime/make_per_library_sff.pyc
+%%PYTHON_SITELIBDIR%%/qiime/make_per_library_sff.pyo
+%%PYTHON_SITELIBDIR%%/qiime/make_phylogeny.py
+%%PYTHON_SITELIBDIR%%/qiime/make_phylogeny.pyc
+%%PYTHON_SITELIBDIR%%/qiime/make_phylogeny.pyo
+%%PYTHON_SITELIBDIR%%/qiime/make_rarefaction_plots.py
+%%PYTHON_SITELIBDIR%%/qiime/make_rarefaction_plots.pyc
+%%PYTHON_SITELIBDIR%%/qiime/make_rarefaction_plots.pyo
+%%PYTHON_SITELIBDIR%%/qiime/map_reads_to_reference.py
+%%PYTHON_SITELIBDIR%%/qiime/map_reads_to_reference.pyc
+%%PYTHON_SITELIBDIR%%/qiime/map_reads_to_reference.pyo
+%%PYTHON_SITELIBDIR%%/qiime/merge_mapping_files.py
+%%PYTHON_SITELIBDIR%%/qiime/merge_mapping_files.pyc
+%%PYTHON_SITELIBDIR%%/qiime/merge_mapping_files.pyo
+%%PYTHON_SITELIBDIR%%/qiime/nmds.py
+%%PYTHON_SITELIBDIR%%/qiime/nmds.pyc
+%%PYTHON_SITELIBDIR%%/qiime/nmds.pyo
+%%PYTHON_SITELIBDIR%%/qiime/otu_significance.py
+%%PYTHON_SITELIBDIR%%/qiime/otu_significance.pyc
+%%PYTHON_SITELIBDIR%%/qiime/otu_significance.pyo
+%%PYTHON_SITELIBDIR%%/qiime/parallel/__init__.py
+%%PYTHON_SITELIBDIR%%/qiime/parallel/__init__.pyc
+%%PYTHON_SITELIBDIR%%/qiime/parallel/__init__.pyo
+%%PYTHON_SITELIBDIR%%/qiime/parallel/align_seqs.py
+%%PYTHON_SITELIBDIR%%/qiime/parallel/align_seqs.pyc
+%%PYTHON_SITELIBDIR%%/qiime/parallel/align_seqs.pyo
+%%PYTHON_SITELIBDIR%%/qiime/parallel/alpha_diversity.py
+%%PYTHON_SITELIBDIR%%/qiime/parallel/alpha_diversity.pyc
+%%PYTHON_SITELIBDIR%%/qiime/parallel/alpha_diversity.pyo
+%%PYTHON_SITELIBDIR%%/qiime/parallel/assign_taxonomy.py
+%%PYTHON_SITELIBDIR%%/qiime/parallel/assign_taxonomy.pyc
+%%PYTHON_SITELIBDIR%%/qiime/parallel/assign_taxonomy.pyo
+%%PYTHON_SITELIBDIR%%/qiime/parallel/beta_diversity.py
+%%PYTHON_SITELIBDIR%%/qiime/parallel/beta_diversity.pyc
+%%PYTHON_SITELIBDIR%%/qiime/parallel/beta_diversity.pyo
+%%PYTHON_SITELIBDIR%%/qiime/parallel/blast.py
+%%PYTHON_SITELIBDIR%%/qiime/parallel/blast.pyc
+%%PYTHON_SITELIBDIR%%/qiime/parallel/blast.pyo
+%%PYTHON_SITELIBDIR%%/qiime/parallel/identify_chimeric_seqs.py
+%%PYTHON_SITELIBDIR%%/qiime/parallel/identify_chimeric_seqs.pyc
+%%PYTHON_SITELIBDIR%%/qiime/parallel/identify_chimeric_seqs.pyo
+%%PYTHON_SITELIBDIR%%/qiime/parallel/map_reads_to_reference.py
+%%PYTHON_SITELIBDIR%%/qiime/parallel/map_reads_to_reference.pyc
+%%PYTHON_SITELIBDIR%%/qiime/parallel/map_reads_to_reference.pyo
+%%PYTHON_SITELIBDIR%%/qiime/parallel/merge_otus.py
+%%PYTHON_SITELIBDIR%%/qiime/parallel/merge_otus.pyc
+%%PYTHON_SITELIBDIR%%/qiime/parallel/merge_otus.pyo
+%%PYTHON_SITELIBDIR%%/qiime/parallel/multiple_rarefactions.py
+%%PYTHON_SITELIBDIR%%/qiime/parallel/multiple_rarefactions.pyc
+%%PYTHON_SITELIBDIR%%/qiime/parallel/multiple_rarefactions.pyo
+%%PYTHON_SITELIBDIR%%/qiime/parallel/pick_otus.py
+%%PYTHON_SITELIBDIR%%/qiime/parallel/pick_otus.pyc
+%%PYTHON_SITELIBDIR%%/qiime/parallel/pick_otus.pyo
+%%PYTHON_SITELIBDIR%%/qiime/parallel/poller.py
+%%PYTHON_SITELIBDIR%%/qiime/parallel/poller.pyc
+%%PYTHON_SITELIBDIR%%/qiime/parallel/poller.pyo
+%%PYTHON_SITELIBDIR%%/qiime/parallel/util.py
+%%PYTHON_SITELIBDIR%%/qiime/parallel/util.pyc
+%%PYTHON_SITELIBDIR%%/qiime/parallel/util.pyo
+%%PYTHON_SITELIBDIR%%/qiime/parse.py
+%%PYTHON_SITELIBDIR%%/qiime/parse.pyc
+%%PYTHON_SITELIBDIR%%/qiime/parse.pyo
+%%PYTHON_SITELIBDIR%%/qiime/pick_otus.py
+%%PYTHON_SITELIBDIR%%/qiime/pick_otus.pyc
+%%PYTHON_SITELIBDIR%%/qiime/pick_otus.pyo
+%%PYTHON_SITELIBDIR%%/qiime/pick_rep_set.py
+%%PYTHON_SITELIBDIR%%/qiime/pick_rep_set.pyc
+%%PYTHON_SITELIBDIR%%/qiime/pick_rep_set.pyo
+%%PYTHON_SITELIBDIR%%/qiime/plot_rank_abundance_graph.py
+%%PYTHON_SITELIBDIR%%/qiime/plot_rank_abundance_graph.pyc
+%%PYTHON_SITELIBDIR%%/qiime/plot_rank_abundance_graph.pyo
+%%PYTHON_SITELIBDIR%%/qiime/plot_semivariogram.py
+%%PYTHON_SITELIBDIR%%/qiime/plot_semivariogram.pyc
+%%PYTHON_SITELIBDIR%%/qiime/plot_semivariogram.pyo
+%%PYTHON_SITELIBDIR%%/qiime/plot_taxa_summary.py
+%%PYTHON_SITELIBDIR%%/qiime/plot_taxa_summary.pyc
+%%PYTHON_SITELIBDIR%%/qiime/plot_taxa_summary.pyo
+%%PYTHON_SITELIBDIR%%/qiime/principal_coordinates.py
+%%PYTHON_SITELIBDIR%%/qiime/principal_coordinates.pyc
+%%PYTHON_SITELIBDIR%%/qiime/principal_coordinates.pyo
+%%PYTHON_SITELIBDIR%%/qiime/process_sff.py
+%%PYTHON_SITELIBDIR%%/qiime/process_sff.pyc
+%%PYTHON_SITELIBDIR%%/qiime/process_sff.pyo
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/__init__.py
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/__init__.pyc
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/__init__.pyo
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/alpha_diversity.py
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/alpha_diversity.pyc
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/alpha_diversity.pyo
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/blat.py
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/blat.pyc
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/blat.pyo
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/bwa.py
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/bwa.pyc
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/bwa.pyo
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/distribution_plots.py
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/distribution_plots.pyc
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/distribution_plots.pyo
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/fastq.py
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/fastq.pyc
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/fastq.pyo
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/fastq_join.py
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/fastq_join.pyc
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/fastq_join.pyo
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/mothur.py
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/mothur.pyc
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/mothur.pyo
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/rdp_classifier.py
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/rdp_classifier.pyc
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/rdp_classifier.pyo
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/seqprep.py
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/seqprep.pyc
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/seqprep.pyo
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/tax2tree.py
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/tax2tree.pyc
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/tax2tree.pyo
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/test.py
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/test.pyc
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/test.pyo
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/uclust.py
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/uclust.pyc
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/uclust.pyo
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/usearch.py
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/usearch.pyc
+%%PYTHON_SITELIBDIR%%/qiime/pycogent_backports/usearch.pyo
+%%PYTHON_SITELIBDIR%%/qiime/quality.py
+%%PYTHON_SITELIBDIR%%/qiime/quality.pyc
+%%PYTHON_SITELIBDIR%%/qiime/quality.pyo
+%%PYTHON_SITELIBDIR%%/qiime/quality_scores_plot.py
+%%PYTHON_SITELIBDIR%%/qiime/quality_scores_plot.pyc
+%%PYTHON_SITELIBDIR%%/qiime/quality_scores_plot.pyo
+%%PYTHON_SITELIBDIR%%/qiime/rarefaction.py
+%%PYTHON_SITELIBDIR%%/qiime/rarefaction.pyc
+%%PYTHON_SITELIBDIR%%/qiime/rarefaction.pyo
+%%PYTHON_SITELIBDIR%%/qiime/relatedness_library.py
+%%PYTHON_SITELIBDIR%%/qiime/relatedness_library.pyc
+%%PYTHON_SITELIBDIR%%/qiime/relatedness_library.pyo
+%%PYTHON_SITELIBDIR%%/qiime/remote.py
+%%PYTHON_SITELIBDIR%%/qiime/remote.pyc
+%%PYTHON_SITELIBDIR%%/qiime/remote.pyo
+%%PYTHON_SITELIBDIR%%/qiime/shared_phylotypes.py
+%%PYTHON_SITELIBDIR%%/qiime/shared_phylotypes.pyc
+%%PYTHON_SITELIBDIR%%/qiime/shared_phylotypes.pyo
+%%PYTHON_SITELIBDIR%%/qiime/simsam.py
+%%PYTHON_SITELIBDIR%%/qiime/simsam.pyc
+%%PYTHON_SITELIBDIR%%/qiime/simsam.pyo
+%%PYTHON_SITELIBDIR%%/qiime/sort.py
+%%PYTHON_SITELIBDIR%%/qiime/sort.pyc
+%%PYTHON_SITELIBDIR%%/qiime/sort.pyo
+%%PYTHON_SITELIBDIR%%/qiime/split.py
+%%PYTHON_SITELIBDIR%%/qiime/split.pyc
+%%PYTHON_SITELIBDIR%%/qiime/split.pyo
+%%PYTHON_SITELIBDIR%%/qiime/split_libraries.py
+%%PYTHON_SITELIBDIR%%/qiime/split_libraries.pyc
+%%PYTHON_SITELIBDIR%%/qiime/split_libraries.pyo
+%%PYTHON_SITELIBDIR%%/qiime/split_libraries_fastq.py
+%%PYTHON_SITELIBDIR%%/qiime/split_libraries_fastq.pyc
+%%PYTHON_SITELIBDIR%%/qiime/split_libraries_fastq.pyo
+%%PYTHON_SITELIBDIR%%/qiime/stats.py
+%%PYTHON_SITELIBDIR%%/qiime/stats.pyc
+%%PYTHON_SITELIBDIR%%/qiime/stats.pyo
+%%PYTHON_SITELIBDIR%%/qiime/submit_to_mgrast.py
+%%PYTHON_SITELIBDIR%%/qiime/submit_to_mgrast.pyc
+%%PYTHON_SITELIBDIR%%/qiime/submit_to_mgrast.pyo
+%%PYTHON_SITELIBDIR%%/qiime/summarize_taxa.py
+%%PYTHON_SITELIBDIR%%/qiime/summarize_taxa.pyc
+%%PYTHON_SITELIBDIR%%/qiime/summarize_taxa.pyo
+%%PYTHON_SITELIBDIR%%/qiime/supervised_learning.py
+%%PYTHON_SITELIBDIR%%/qiime/supervised_learning.pyc
+%%PYTHON_SITELIBDIR%%/qiime/supervised_learning.pyo
+%%PYTHON_SITELIBDIR%%/qiime/support_files/R/adonis.r
+%%PYTHON_SITELIBDIR%%/qiime/support_files/R/dbrda.r
+%%PYTHON_SITELIBDIR%%/qiime/support_files/R/detrend.r
+%%PYTHON_SITELIBDIR%%/qiime/support_files/R/detrend_util.r
+%%PYTHON_SITELIBDIR%%/qiime/support_files/R/loaddata.r
+%%PYTHON_SITELIBDIR%%/qiime/support_files/R/morans_i.r
+%%PYTHON_SITELIBDIR%%/qiime/support_files/R/mrpp.r
+%%PYTHON_SITELIBDIR%%/qiime/support_files/R/permdisp.r
+%%PYTHON_SITELIBDIR%%/qiime/support_files/R/randomforests.r
+%%PYTHON_SITELIBDIR%%/qiime/support_files/R/randomforests_util.r
+%%PYTHON_SITELIBDIR%%/qiime/support_files/R/util.r
+%%PYTHON_SITELIBDIR%%/qiime/support_files/css/qiime_style.css
+%%PYTHON_SITELIBDIR%%/qiime/support_files/denoiser/Data/FLX_error_profile.dat
+%%PYTHON_SITELIBDIR%%/qiime/support_files/denoiser/Data/Titanium_error_profile.dat
+%%PYTHON_SITELIBDIR%%/qiime/support_files/denoiser/Data/probabilities.txt
+%%PYTHON_SITELIBDIR%%/qiime/support_files/denoiser/FlowgramAlignment/ADPCombinators.lhs
+%%PYTHON_SITELIBDIR%%/qiime/support_files/denoiser/FlowgramAlignment/FlowgramAli_4frame.lhs
+%%PYTHON_SITELIBDIR%%/qiime/support_files/denoiser/FlowgramAlignment/FlowgramUtils.lhs
+%%PYTHON_SITELIBDIR%%/qiime/support_files/denoiser/FlowgramAlignment/Makefile
+%%PYTHON_SITELIBDIR%%/qiime/support_files/denoiser/TestData/denoiser_test_set.sff.txt
+%%PYTHON_SITELIBDIR%%/qiime/support_files/denoiser/TestData/test_flow_file.dat
+%%PYTHON_SITELIBDIR%%/qiime/support_files/denoiser/TestData/test_set_seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime/support_files/denoiser/TestData/tiny_test.sff.txt
+%%PYTHON_SITELIBDIR%%/qiime/support_files/images/qiime_header.png
+%%PYTHON_SITELIBDIR%%/qiime/support_files/jar/king.jar
+%%PYTHON_SITELIBDIR%%/qiime/support_files/js/histograms.js
+%%PYTHON_SITELIBDIR%%/qiime/support_files/js/jquery.js
+%%PYTHON_SITELIBDIR%%/qiime/support_files/js/jquery.tablednd_0_5.js
+%%PYTHON_SITELIBDIR%%/qiime/support_files/js/otu_count_display.js
+%%PYTHON_SITELIBDIR%%/qiime/support_files/js/overlib.js
+%%PYTHON_SITELIBDIR%%/qiime/support_files/qiime_config
+%%PYTHON_SITELIBDIR%%/qiime/test.py
+%%PYTHON_SITELIBDIR%%/qiime/test.pyc
+%%PYTHON_SITELIBDIR%%/qiime/test.pyo
+%%PYTHON_SITELIBDIR%%/qiime/transform_coordinate_matrices.py
+%%PYTHON_SITELIBDIR%%/qiime/transform_coordinate_matrices.pyc
+%%PYTHON_SITELIBDIR%%/qiime/transform_coordinate_matrices.pyo
+%%PYTHON_SITELIBDIR%%/qiime/tree_compare.py
+%%PYTHON_SITELIBDIR%%/qiime/tree_compare.pyc
+%%PYTHON_SITELIBDIR%%/qiime/tree_compare.pyo
+%%PYTHON_SITELIBDIR%%/qiime/trim_sff_primers.py
+%%PYTHON_SITELIBDIR%%/qiime/trim_sff_primers.pyc
+%%PYTHON_SITELIBDIR%%/qiime/trim_sff_primers.pyo
+%%PYTHON_SITELIBDIR%%/qiime/truncate_fasta_qual_files.py
+%%PYTHON_SITELIBDIR%%/qiime/truncate_fasta_qual_files.pyc
+%%PYTHON_SITELIBDIR%%/qiime/truncate_fasta_qual_files.pyo
+%%PYTHON_SITELIBDIR%%/qiime/truncate_reverse_primer.py
+%%PYTHON_SITELIBDIR%%/qiime/truncate_reverse_primer.pyc
+%%PYTHON_SITELIBDIR%%/qiime/truncate_reverse_primer.pyo
+%%PYTHON_SITELIBDIR%%/qiime/util.py
+%%PYTHON_SITELIBDIR%%/qiime/util.pyc
+%%PYTHON_SITELIBDIR%%/qiime/util.pyo
+%%PYTHON_SITELIBDIR%%/qiime/validate_demultiplexed_fasta.py
+%%PYTHON_SITELIBDIR%%/qiime/validate_demultiplexed_fasta.pyc
+%%PYTHON_SITELIBDIR%%/qiime/validate_demultiplexed_fasta.pyo
+%%PYTHON_SITELIBDIR%%/qiime/workflow/__init__.py
+%%PYTHON_SITELIBDIR%%/qiime/workflow/__init__.pyc
+%%PYTHON_SITELIBDIR%%/qiime/workflow/__init__.pyo
+%%PYTHON_SITELIBDIR%%/qiime/workflow/ampliconnoise.py
+%%PYTHON_SITELIBDIR%%/qiime/workflow/ampliconnoise.pyc
+%%PYTHON_SITELIBDIR%%/qiime/workflow/ampliconnoise.pyo
+%%PYTHON_SITELIBDIR%%/qiime/workflow/core_diversity_analyses.py
+%%PYTHON_SITELIBDIR%%/qiime/workflow/core_diversity_analyses.pyc
+%%PYTHON_SITELIBDIR%%/qiime/workflow/core_diversity_analyses.pyo
+%%PYTHON_SITELIBDIR%%/qiime/workflow/downstream.py
+%%PYTHON_SITELIBDIR%%/qiime/workflow/downstream.pyc
+%%PYTHON_SITELIBDIR%%/qiime/workflow/downstream.pyo
+%%PYTHON_SITELIBDIR%%/qiime/workflow/pick_open_reference_otus.py
+%%PYTHON_SITELIBDIR%%/qiime/workflow/pick_open_reference_otus.pyc
+%%PYTHON_SITELIBDIR%%/qiime/workflow/pick_open_reference_otus.pyo
+%%PYTHON_SITELIBDIR%%/qiime/workflow/upstream.py
+%%PYTHON_SITELIBDIR%%/qiime/workflow/upstream.pyc
+%%PYTHON_SITELIBDIR%%/qiime/workflow/upstream.pyo
+%%PYTHON_SITELIBDIR%%/qiime/workflow/util.py
+%%PYTHON_SITELIBDIR%%/qiime/workflow/util.pyc
+%%PYTHON_SITELIBDIR%%/qiime/workflow/util.pyo
+%%PYTHON_SITELIBDIR%%/qiime_test_data/__init__.py
+%%PYTHON_SITELIBDIR%%/qiime_test_data/__init__.pyc
+%%PYTHON_SITELIBDIR%%/qiime_test_data/__init__.pyo
+%%PYTHON_SITELIBDIR%%/qiime_test_data/add_alpha_to_mapping_file/adiv_pd.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/add_alpha_to_mapping_file/chao1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/add_alpha_to_mapping_file/mapping.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/add_alpha_to_mapping_file/shannon.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/add_qiime_labels/example_mapping.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/add_qiime_labels/fasta_dir/seqs1.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/add_qiime_labels/fasta_dir/seqs2.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/adjust_seq_orientation/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/adjust_seq_orientation/seqs_rc.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/align_seqs/core_set_aligned.fasta.imputed
+%%PYTHON_SITELIBDIR%%/qiime_test_data/align_seqs/infernal_aligned/unaligned_aligned.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/align_seqs/infernal_aligned/unaligned_log.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/align_seqs/muscle_alignment/unaligned_aligned.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/align_seqs/muscle_alignment/unaligned_log.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/align_seqs/pynast_aligned/unaligned_aligned.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/align_seqs/pynast_aligned/unaligned_failures.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/align_seqs/pynast_aligned/unaligned_log.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/align_seqs/seed.16s.reference_model.sto
+%%PYTHON_SITELIBDIR%%/qiime_test_data/align_seqs/unaligned.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/alpha_diversity/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/alpha_diversity/otu_tables/otu_table_1.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/alpha_diversity/otu_tables/otu_table_2.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/alpha_diversity/otu_tables/otu_table_3.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/alpha_diversity/rep_set.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/alpha_rarefaction/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/alpha_rarefaction/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/alpha_rarefaction/rep_set.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/ampliconnoise/Fasting_Example.sff.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/ampliconnoise/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/assign_taxonomy/id_to_taxonomy.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/assign_taxonomy/mothur_id_to_taxonomy.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/assign_taxonomy/mothur_ref_seq_set.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/assign_taxonomy/mothur_repr_set_seqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/assign_taxonomy/read_1.seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/assign_taxonomy/read_2.seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/assign_taxonomy/ref_seq_set.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/assign_taxonomy/repr_set_seqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/assign_taxonomy/rtax_id_to_taxonomy.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/assign_taxonomy/rtax_ref_seq_set.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/assign_taxonomy/rtax_repr_set_seqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/assign_taxonomy/uclust_assigned_taxonomy/repr_set_seqs_tax_assignments.log
+%%PYTHON_SITELIBDIR%%/qiime_test_data/assign_taxonomy/uclust_assigned_taxonomy/repr_set_seqs_tax_assignments.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/beta_diversity/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/beta_diversity/otu_tables/otu_table_1.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/beta_diversity/otu_tables/otu_table_2.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/beta_diversity/otu_tables/otu_table_3.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/beta_diversity/rep_set.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/beta_diversity_through_plots/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/beta_diversity_through_plots/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/beta_diversity_through_plots/rep_set.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/beta_significance/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/beta_significance/rep_set.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/blast_wrapper/inseqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/blast_wrapper/refseqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/cluster_quality/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/cluster_quality/quality_dob.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/cluster_quality/quality_treatment.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/cluster_quality/weighted_unifrac_otu_table.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_101_1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_101_3.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_101_7.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_101_9.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_10_1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_10_3.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_10_7.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_10_9.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_114_1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_114_3.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_114_7.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_114_9.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_127_1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_127_3.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_127_7.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_127_9.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_140_1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_140_3.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_140_7.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_140_9.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_23_1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_23_3.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_23_7.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_23_9.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_36_1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_36_3.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_36_7.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_36_9.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_49_1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_49_3.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_49_7.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_49_9.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_62_1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_62_3.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_62_7.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_62_9.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_75_1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_75_3.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_75_7.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_75_9.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_88_1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_88_3.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_88_7.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div/alpha_rarefaction_88_9.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_3d_plots/20121016153539WaASawPaWWaLHPZgHOd1/raw_pca_data1.txt.kin
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_3d_plots/201210161537065pMcHLnhtABdBtfrWgdZ/raw_pca_data1.txt.kin
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_3d_plots/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_3d_plots/edges.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_3d_plots/jar/king.jar
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_3d_plots/raw_pca_data1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_3d_plots/raw_pca_data1_3D_PCoA_plots.html
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_3d_plots/raw_pca_data2.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_alpha_diversity/PD_whole_tree.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_alpha_diversity/mapping.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_categories/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_categories/unweighted_unifrac_dm.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_distance_matrices/PH_dm.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_distance_matrices/unweighted_unifrac_dm.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_distance_matrices/unweighted_unifrac_even100_dm.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_distance_matrices/weighted_unifrac_dm.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_distance_matrices/weighted_unifrac_even100_dm.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_taxa_summaries/sample_id_map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_taxa_summaries/ts_rdp_0.60.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_taxa_summaries/ts_rdp_0.60_renamed.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compare_taxa_summaries/ts_rdp_0.80.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compute_core_microbiome/map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compute_core_microbiome/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/compute_core_microbiome/otu_table_core_50.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/conditional_uncovered_probability/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/consensus_tree/jackknifed_trees/bs1.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/consensus_tree/jackknifed_trees/bs2.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/consensus_tree/jackknifed_trees/bs3.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/consensus_tree/jackknifed_trees/bs4.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/convert_fastaqual_fastq/seqs.fastq
+%%PYTHON_SITELIBDIR%%/qiime_test_data/convert_fastaqual_fastq/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/convert_fastaqual_fastq/seqs.qual
+%%PYTHON_SITELIBDIR%%/qiime_test_data/core_diversity_analyses/map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/core_diversity_analyses/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/core_diversity_analyses/rep_set.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/count_seqs/in.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/count_seqs/in1.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/count_seqs/in2.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/count_seqs/in2.fastq
+%%PYTHON_SITELIBDIR%%/qiime_test_data/demultiplex_fasta/.DS_Store
+%%PYTHON_SITELIBDIR%%/qiime_test_data/demultiplex_fasta/1.TCA.454Reads.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/demultiplex_fasta/1.TCA.454Reads.qual
+%%PYTHON_SITELIBDIR%%/qiime_test_data/demultiplex_fasta/2.TCA.454Reads.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/demultiplex_fasta/2.TCA.454Reads.qual
+%%PYTHON_SITELIBDIR%%/qiime_test_data/demultiplex_fasta/Mapping_File1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/demultiplex_fasta/Mapping_File2.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/demultiplex_fasta/Mapping_File_8bp_barcodes.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/demultiplex_fasta/Mapping_File_golay.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/demultiplex_fasta/Mapping_File_run_prefix.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/denoiser_preprocess/Fasting_Example.sff.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/denoiser_preprocess/preproc_out/prefix_dereplicated.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/denoiser_preprocess/preproc_out/prefix_dereplicated.sff.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/denoiser_preprocess/preproc_out/prefix_mapping.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/denoiser_preprocess/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/dissimilarity_mtx_stats/dists/unweighted_unifrac_dm.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/dissimilarity_mtx_stats/dists/weighted_unifrac_dm.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/distance_matrix_from_mapping/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/distance_matrix_from_mapping/lat_long.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/distance_matrix_from_mapping/map_distance_matrix.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/estimate_observation_richness/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/exclude_seqs_by_blast/ref_seq_set.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/exclude_seqs_by_blast/repr_set_seqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/extract_seqs_by_sample_id/inseqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/extract_seqs_by_sample_id/map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_alignment/filtered_alignment_gap_95/seqs_rep_set_aligned_pfiltered.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_alignment/lanemask_in_1s_and_0s
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_alignment/seqs_rep_set_aligned.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_distance_matrix/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_distance_matrix/dm.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_distance_matrix/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_distance_matrix/sample_id_list.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_fasta/chimeric_seqs.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_fasta/inseqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_fasta/inseqs.fastq
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_fasta/map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_fasta/otu_map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_fasta/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_fasta/seqs_to_keep.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_fasta/sl_inseqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_otus_by_sample/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_otus_by_sample/seqs_otus.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_otus_from_otu_table/chimeric_otus.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_otus_from_otu_table/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_samples_from_otu_table/map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_samples_from_otu_table/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_samples_from_otu_table/samples_to_keep.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_taxa_from_otu_table/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_tree/fast_f.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_tree/pruned_fasta.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_tree/rep_seqs.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/filter_tree/tips_to_keep.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/fix_arb_fasta/arb.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/group_significance/btt_ocs.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/group_significance/gtest_ocs.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/group_significance/kw_ocs.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/group_significance/map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/group_significance/map_overlapping.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/group_significance/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/group_significance/tt_ocs.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/identify_chimeric_seqs/chimeric_seqs.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/identify_chimeric_seqs/formatdb.log
+%%PYTHON_SITELIBDIR%%/qiime_test_data/identify_chimeric_seqs/ref_seq_set.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/identify_chimeric_seqs/ref_seq_set_aligned.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/identify_chimeric_seqs/ref_seq_set_aligned.fasta.cidx
+%%PYTHON_SITELIBDIR%%/qiime_test_data/identify_chimeric_seqs/ref_sequences.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/identify_chimeric_seqs/repr_set_seqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/identify_chimeric_seqs/repr_set_seqs_aligned.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/identify_chimeric_seqs/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/identify_chimeric_seqs/taxonomy_assignment.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/identify_missing_files/ALIGN_BQ7_/a.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/identify_missing_files/ALIGN_BQ7_/b.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/identify_missing_files/ALIGN_BQ7_/expected_out_files.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/identify_paired_differences/map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/identify_paired_differences/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/centroids.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/centroids1.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/centroids2.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/Fasting_Example.sff
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/Fasting_Example_1st_half.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/Fasting_Example_1st_half.qual
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/Fasting_Example_1st_half.sff
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/Fasting_Example_1st_half.sff.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/Fasting_Example_2nd_half.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/Fasting_Example_2nd_half.qual
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/Fasting_Example_2nd_half.sff
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/Fasting_Example_2nd_half.sff.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_1st_half/centroids.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_1st_half/denoised_clusters.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_1st_half/denoised_seqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_1st_half/denoiser.log
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_1st_half/denoiser_mapping.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_1st_half/prefix_dereplicated.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_1st_half/prefix_dereplicated.sff.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_1st_half/prefix_mapping.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_1st_half/singletons.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_2nd_half/centroids.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_2nd_half/denoised_clusters.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_2nd_half/denoised_seqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_2nd_half/denoiser.log
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_2nd_half/denoiser_mapping.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_2nd_half/prefix_dereplicated.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_2nd_half/prefix_dereplicated.sff.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_2nd_half/prefix_mapping.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_2nd_half/singletons.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_combined.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/seq_ids.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/seq_ids_1st_half.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/seq_ids_2nd_half.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/split_libraries_output_1st_half/histograms.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/split_libraries_output_1st_half/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/split_libraries_output_1st_half/split_library_log.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/split_libraries_output_2nd_half/histograms.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/split_libraries_output_2nd_half/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/split_libraries_output_2nd_half/split_library_log.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/denoiser_mapping.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/denoiser_mapping1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/denoiser_mapping2.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/seqs1.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/seqs2.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/singletons.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/singletons1.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/singletons2.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/jackknifed_beta_diversity/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/jackknifed_beta_diversity/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/jackknifed_beta_diversity/rep_set.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/join_paired_ends/barcodes.fastq
+%%PYTHON_SITELIBDIR%%/qiime_test_data/join_paired_ends/forward_reads.fastq
+%%PYTHON_SITELIBDIR%%/qiime_test_data/join_paired_ends/reverse_reads.fastq
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/201210161504183YSZLtkVlW0WiMeW1hw5/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/201210161504183YSZLtkVlW0WiMeW1hw5/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/201210161504183YSZLtkVlW0WiMeW1hw5/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/201210161504183YSZLtkVlW0WiMeW1hw5/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/201210161504183YSZLtkVlW0WiMeW1hw5/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/201210161504183YSZLtkVlW0WiMeW1hw5/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150418yGn50OalsFKxVgdCPKHV/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150418yGn50OalsFKxVgdCPKHV/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150418yGn50OalsFKxVgdCPKHV/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150418yGn50OalsFKxVgdCPKHV/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150418yGn50OalsFKxVgdCPKHV/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150418yGn50OalsFKxVgdCPKHV/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150419dazkbiLaQpqTxIbSz2HR/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150419dazkbiLaQpqTxIbSz2HR/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150419dazkbiLaQpqTxIbSz2HR/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150419dazkbiLaQpqTxIbSz2HR/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150419dazkbiLaQpqTxIbSz2HR/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150419dazkbiLaQpqTxIbSz2HR/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150419o1Rv7IQSdPYPmFSLR0Mp/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150419o1Rv7IQSdPYPmFSLR0Mp/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150419o1Rv7IQSdPYPmFSLR0Mp/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150419o1Rv7IQSdPYPmFSLR0Mp/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150419o1Rv7IQSdPYPmFSLR0Mp/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150419o1Rv7IQSdPYPmFSLR0Mp/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150420RH7QimybYhiSMYayO5qF/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150420RH7QimybYhiSMYayO5qF/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150420RH7QimybYhiSMYayO5qF/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150420RH7QimybYhiSMYayO5qF/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150420RH7QimybYhiSMYayO5qF/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150420RH7QimybYhiSMYayO5qF/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150420aDFutSkIU91iUxOKfLer/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150420aDFutSkIU91iUxOKfLer/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150420aDFutSkIU91iUxOKfLer/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150420aDFutSkIU91iUxOKfLer/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150420aDFutSkIU91iUxOKfLer/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150420aDFutSkIU91iUxOKfLer/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150441FneURRPQ3TIvFUySfGZg/20121016150441YgWyD9TKTvkxolKSTB0D/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150441FneURRPQ3TIvFUySfGZg/20121016150441YgWyD9TKTvkxolKSTB0D/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150441FneURRPQ3TIvFUySfGZg/20121016150441YgWyD9TKTvkxolKSTB0D/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150441FneURRPQ3TIvFUySfGZg/20121016150441YgWyD9TKTvkxolKSTB0D/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150441FneURRPQ3TIvFUySfGZg/20121016150441YgWyD9TKTvkxolKSTB0D/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150441FneURRPQ3TIvFUySfGZg/20121016150441YgWyD9TKTvkxolKSTB0D/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150454Dt11u49Ld4DFd05HgbN3/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150454Dt11u49Ld4DFd05HgbN3/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150454Dt11u49Ld4DFd05HgbN3/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150454Dt11u49Ld4DFd05HgbN3/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150454Dt11u49Ld4DFd05HgbN3/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150454Dt11u49Ld4DFd05HgbN3/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/201210161504559CaeyTXq6cvBD72kXQU7/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/201210161504559CaeyTXq6cvBD72kXQU7/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/201210161504559CaeyTXq6cvBD72kXQU7/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/201210161504559CaeyTXq6cvBD72kXQU7/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/201210161504559CaeyTXq6cvBD72kXQU7/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/201210161504559CaeyTXq6cvBD72kXQU7/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150455PbRxRwl0uQp91000stgB/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150455PbRxRwl0uQp91000stgB/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150455PbRxRwl0uQp91000stgB/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150455PbRxRwl0uQp91000stgB/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150455PbRxRwl0uQp91000stgB/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150455PbRxRwl0uQp91000stgB/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150456FeeuBdhygXkuGgrGeVzn/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150456FeeuBdhygXkuGgrGeVzn/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150456FeeuBdhygXkuGgrGeVzn/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150456FeeuBdhygXkuGgrGeVzn/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150456FeeuBdhygXkuGgrGeVzn/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150456FeeuBdhygXkuGgrGeVzn/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150456os1oHWmcH5xal2tYRcnD/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150456os1oHWmcH5xal2tYRcnD/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150456os1oHWmcH5xal2tYRcnD/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150456os1oHWmcH5xal2tYRcnD/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150456os1oHWmcH5xal2tYRcnD/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150456os1oHWmcH5xal2tYRcnD/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150457fTuYkZLKssYEoPRIrkmK/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150457fTuYkZLKssYEoPRIrkmK/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150457fTuYkZLKssYEoPRIrkmK/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150457fTuYkZLKssYEoPRIrkmK/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150457fTuYkZLKssYEoPRIrkmK/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150457fTuYkZLKssYEoPRIrkmK/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150457nZgflu6OEO64tF7xoRFG/scree_plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150457nZgflu6OEO64tF7xoRFG/scree_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150502RVgilhcBleFnMWi6ndGG/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150502RVgilhcBleFnMWi6ndGG/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150502RVgilhcBleFnMWi6ndGG/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150502RVgilhcBleFnMWi6ndGG/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150502RVgilhcBleFnMWi6ndGG/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150502RVgilhcBleFnMWi6ndGG/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150503WA6HUI4W4nbtC0YGS19A/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150503WA6HUI4W4nbtC0YGS19A/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150503WA6HUI4W4nbtC0YGS19A/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150503WA6HUI4W4nbtC0YGS19A/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150503WA6HUI4W4nbtC0YGS19A/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150503WA6HUI4W4nbtC0YGS19A/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150503p2Tq2Bnf0PVHQmupiGMk/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150503p2Tq2Bnf0PVHQmupiGMk/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150503p2Tq2Bnf0PVHQmupiGMk/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150503p2Tq2Bnf0PVHQmupiGMk/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150503p2Tq2Bnf0PVHQmupiGMk/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150503p2Tq2Bnf0PVHQmupiGMk/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150504C6EdpKyfMKYuMtZGiGLO/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150504C6EdpKyfMKYuMtZGiGLO/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150504C6EdpKyfMKYuMtZGiGLO/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150504C6EdpKyfMKYuMtZGiGLO/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150504C6EdpKyfMKYuMtZGiGLO/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150504C6EdpKyfMKYuMtZGiGLO/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150504Fogr95nWRxpY1CPPPZOM/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150504Fogr95nWRxpY1CPPPZOM/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150504Fogr95nWRxpY1CPPPZOM/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150504Fogr95nWRxpY1CPPPZOM/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150504Fogr95nWRxpY1CPPPZOM/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150504Fogr95nWRxpY1CPPPZOM/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150505VGWEdylGluXosgtfR0I1/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150505VGWEdylGluXosgtfR0I1/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150505VGWEdylGluXosgtfR0I1/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150505VGWEdylGluXosgtfR0I1/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150505VGWEdylGluXosgtfR0I1/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150505VGWEdylGluXosgtfR0I1/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150511ED4PikD6rsXgDMHLYmPo/20121016150511365u20ZGT5vgLoHQmet0/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150511ED4PikD6rsXgDMHLYmPo/20121016150511365u20ZGT5vgLoHQmet0/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150511ED4PikD6rsXgDMHLYmPo/20121016150511365u20ZGT5vgLoHQmet0/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150511ED4PikD6rsXgDMHLYmPo/20121016150511365u20ZGT5vgLoHQmet0/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150511ED4PikD6rsXgDMHLYmPo/20121016150511365u20ZGT5vgLoHQmet0/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150511ED4PikD6rsXgDMHLYmPo/20121016150511365u20ZGT5vgLoHQmet0/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150511ED4PikD6rsXgDMHLYmPo/20121016150512GIx3mmRLLlrshskqIioX/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150511ED4PikD6rsXgDMHLYmPo/20121016150512GIx3mmRLLlrshskqIioX/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150511ED4PikD6rsXgDMHLYmPo/20121016150512GIx3mmRLLlrshskqIioX/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150511ED4PikD6rsXgDMHLYmPo/20121016150512GIx3mmRLLlrshskqIioX/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150511ED4PikD6rsXgDMHLYmPo/20121016150512GIx3mmRLLlrshskqIioX/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150511ED4PikD6rsXgDMHLYmPo/20121016150512GIx3mmRLLlrshskqIioX/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150521AsYMBmMaRBb3IknrAMmc/20121016150521b2Dag0vPefYGgCaKv9iX/PC1_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150521AsYMBmMaRBb3IknrAMmc/20121016150521b2Dag0vPefYGgCaKv9iX/PC1_vs_PC3_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150521AsYMBmMaRBb3IknrAMmc/20121016150521b2Dag0vPefYGgCaKv9iX/PC1vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150521AsYMBmMaRBb3IknrAMmc/20121016150521b2Dag0vPefYGgCaKv9iX/PC1vsPC3plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150521AsYMBmMaRBb3IknrAMmc/20121016150521b2Dag0vPefYGgCaKv9iX/PC3_vs_PC2_plot.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150521AsYMBmMaRBb3IknrAMmc/20121016150521b2Dag0vPefYGgCaKv9iX/PC3vsPC2plot.eps.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/_2D_PCoA_plots.html
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/js/overlib.js
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_0.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_2.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_3.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_4.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_5.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_6.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_7.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_8.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_9.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/prefs.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/unweighted_unifrac_pc.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/unweighted_unifrac_pc_2D_PCoA_plots.html
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/20121016135550x0gsWnYKc1VqGICCg9Gf/unweighted_unifrac_pc.txt.kin
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/201210161356063GtH6cPf1OY03WgK3ohA/unweighted_unifrac_pc.txt.kin
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/20121016135639uTR1AVms6Rsw42DfM2W6/unweighted_unifrac_pc.txt.kin
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/201210161357081EU4wzIZq07nZa7Xnr07/unweighted_unifrac_pc.txt.kin
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/20121016135724lPuDS9I70TxcGr5ZISDy/pcoa_unweighted_unifrac_rarefaction_100_0.txt.kin
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/20121016135734pYG1fmI04R7tBowaOiOS/unweighted_unifrac_pc.txt.kin
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/20121016135946wi5FKkYvODQbWHcGo2TC/unweighted_unifrac_pc.txt.kin
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/20121016140120BwbUdx5rK45eGhMZG971/unweighted_unifrac_pc.txt.kin
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/jar/king.jar
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/otu_table_L3.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_0.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_2.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_3.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_4.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_5.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_6.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_7.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_8.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/pcoa/pcoa_unweighted_unifrac_rarefaction_100_9.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/pcoa_unweighted_unifrac_rarefaction_100_0_3D_PCoA_plots.html
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/prefs.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/unweighted_unifrac_pc.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/unweighted_unifrac_pc_3D_PCoA_plots.html
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_bipartite_network/mapping_file.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_bipartite_network/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_bootstrapped_tree/jackknife_support.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_bootstrapped_tree/master_tree.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_distance_boxplots/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_distance_boxplots/unweighted_unifrac_dm.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_distance_comparison_plots/costello_timeseries_map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_distance_comparison_plots/forearm_only_unweighted_unifrac_dm.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_distance_histograms/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_distance_histograms/prefs.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_distance_histograms/unweighted_unifrac_dm.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_fastq/Fasting_Example.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_fastq/Fasting_Example.qual
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_fastq/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_fastq/README.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_fastq/histograms.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_fastq/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_fastq/seqs.fna.fastq_example/PC.354.fastq
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_fastq/seqs.fna.fastq_example/PC.355.fastq
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_fastq/seqs.fna.fastq_example/PC.356.fastq
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_fastq/seqs.fna.fastq_example/PC.481.fastq
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_fastq/seqs.fna.fastq_example/PC.593.fastq
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_fastq/seqs.fna.fastq_example/PC.607.fastq
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_fastq/seqs.fna.fastq_example/PC.634.fastq
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_fastq/seqs.fna.fastq_example/PC.635.fastq
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_fastq/seqs.fna.fastq_example/PC.636.fastq
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_fastq/split_library_log.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_otu_heatmap_html/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_otu_heatmap_html/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_otu_heatmap_html/rep_set.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_otu_network/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_otu_network/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_otu_table/chimeric_seqs.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_otu_table/otu_map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_otu_table/pynast_failures.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_otu_table/tax_assignments.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_phylogeny/aligned.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_phylogeny/aligned.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_prefs_file/mapping.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_prefs_file/taxa_level_3.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/average_plots/PD_whole_treeBarcodeSequence.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/average_plots/PD_whole_treeDOB.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/average_plots/PD_whole_treeDescription.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/average_plots/PD_whole_treeLinkerPrimerSequence.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/average_plots/PD_whole_treeSampleID.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/average_plots/PD_whole_treeTreatment.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/average_plots/chao1BarcodeSequence.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/average_plots/chao1DOB.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/average_plots/chao1Description.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/average_plots/chao1LinkerPrimerSequence.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/average_plots/chao1SampleID.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/average_plots/chao1Treatment.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/average_plots/observed_speciesBarcodeSequence.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/average_plots/observed_speciesDOB.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/average_plots/observed_speciesDescription.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/average_plots/observed_speciesLinkerPrimerSequence.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/average_plots/observed_speciesSampleID.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/average_plots/observed_speciesTreatment.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/rarefaction_plots.html
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/average_plots/PD_whole_treeBarcodeSequence.pdf
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/average_plots/PD_whole_treeDOB.pdf
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/average_plots/PD_whole_treeDescription.pdf
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/average_plots/PD_whole_treeLinkerPrimerSequence.pdf
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/average_plots/PD_whole_treeSampleID.pdf
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/average_plots/PD_whole_treeTreatment.pdf
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/average_plots/chao1BarcodeSequence.pdf
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/average_plots/chao1DOB.pdf
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/average_plots/chao1Description.pdf
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/average_plots/chao1LinkerPrimerSequence.pdf
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/average_plots/chao1SampleID.pdf
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/average_plots/chao1Treatment.pdf
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/average_plots/observed_speciesBarcodeSequence.pdf
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/average_plots/observed_speciesDOB.pdf
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/average_plots/observed_speciesDescription.pdf
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/average_plots/observed_speciesLinkerPrimerSequence.pdf
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/average_plots/observed_speciesSampleID.pdf
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/average_plots/observed_speciesTreatment.pdf
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/rarefaction_plots.html
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080010T6e6Og7XQHBiRPd2Gz5Z/average_plots/PD_whole_treeDOB.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080010T6e6Og7XQHBiRPd2Gz5Z/average_plots/PD_whole_treeTreatment.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080010T6e6Og7XQHBiRPd2Gz5Z/average_plots/chao1DOB.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080010T6e6Og7XQHBiRPd2Gz5Z/average_plots/chao1Treatment.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080010T6e6Og7XQHBiRPd2Gz5Z/average_plots/observed_speciesDOB.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080010T6e6Og7XQHBiRPd2Gz5Z/average_plots/observed_speciesTreatment.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080010T6e6Og7XQHBiRPd2Gz5Z/rarefaction_plots.html
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/average_plots/PD_whole_treeBarcodeSequence.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/average_plots/PD_whole_treeDOB.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/average_plots/PD_whole_treeDescription.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/average_plots/PD_whole_treeLinkerPrimerSequence.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/average_plots/PD_whole_treeSampleID.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/average_plots/PD_whole_treeTreatment.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/average_plots/chao1BarcodeSequence.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/average_plots/chao1DOB.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/average_plots/chao1Description.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/average_plots/chao1LinkerPrimerSequence.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/average_plots/chao1SampleID.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/average_plots/chao1Treatment.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/average_plots/observed_speciesBarcodeSequence.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/average_plots/observed_speciesDOB.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/average_plots/observed_speciesDescription.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/average_plots/observed_speciesLinkerPrimerSequence.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/average_plots/observed_speciesSampleID.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/average_plots/observed_speciesTreatment.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/rarefaction_plots.html
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/average_plots/PD_whole_treeBarcodeSequence.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/average_plots/PD_whole_treeDOB.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/average_plots/PD_whole_treeDescription.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/average_plots/PD_whole_treeLinkerPrimerSequence.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/average_plots/PD_whole_treeSampleID.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/average_plots/PD_whole_treeTreatment.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/average_plots/chao1BarcodeSequence.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/average_plots/chao1DOB.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/average_plots/chao1Description.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/average_plots/chao1LinkerPrimerSequence.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/average_plots/chao1SampleID.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/average_plots/chao1Treatment.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/average_plots/observed_speciesBarcodeSequence.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/average_plots/observed_speciesDOB.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/average_plots/observed_speciesDescription.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/average_plots/observed_speciesLinkerPrimerSequence.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/average_plots/observed_speciesSampleID.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/average_plots/observed_speciesTreatment.png
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/rarefaction_plots.html
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/alpha_div_collated/PD_whole_tree.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/alpha_div_collated/chao1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/alpha_div_collated/observed_species.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/prefs.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_tep/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_tep/make_tep_output/otu_table.jnlp
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_tep/make_tep_output/otu_table.tep
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_tep/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/make_tep/rep_set.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/blat-nt_mapped/observation_map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/blat-nt_mapped/observation_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/blat-nt_mapped/observation_table.log
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/blat-nt_mapped/out.bl9
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/blat_mapped/observation_map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/blat_mapped/observation_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/blat_mapped/observation_table.log
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/blat_mapped/out.bl9
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/bwa-short_mapped/bwa_raw_out.sai
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/bwa-short_mapped/bwa_raw_out.sam
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/bwa-short_mapped/observation_map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/bwa-short_mapped/observation_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/bwa-short_mapped/observation_table.log
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/bwa-sw_mapped/bwa_raw_out.sam
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/bwa-sw_mapped/observation_map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/bwa-sw_mapped/observation_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/bwa-sw_mapped/observation_table.log
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/query_nt.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/refseqs_nt.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/refseqs_nt_md.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/refseqs_pr.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/refseqs_pr_md.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/usearch_mapped/observation_map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/usearch_mapped/observation_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/usearch_mapped/out.bl6
+%%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/usearch_mapped/out.uc
+%%PYTHON_SITELIBDIR%%/qiime_test_data/merge_mapping_files/map_controls.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/merge_mapping_files/map_fasting.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/merge_otu_maps/fail.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/merge_otu_maps/otu_map1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/merge_otu_maps/otu_map2.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/merge_otu_maps/otu_map_fail.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/merge_otu_tables/otu_table1.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/merge_otu_tables/otu_table2.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/multiple_rarefactions/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/multiple_rarefactions_even_depth/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/neighbor_joining/beta_div.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/neighbor_joining/beta_div_weighted_unifrac/weighted_unifrac_otu_table.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/neighbor_joining/beta_div_weighted_unifrac/weighted_unifrac_otu_table_1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/neighbor_joining/beta_div_weighted_unifrac/weighted_unifrac_otu_table_2.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/neighbor_joining/beta_div_weighted_unifrac/weighted_unifrac_otu_table_3.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/nmds/beta_div.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/nmds/beta_div_weighted_unifrac/weighted_unifrac_otu_table.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/nmds/beta_div_weighted_unifrac/weighted_unifrac_otu_table_1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/nmds/beta_div_weighted_unifrac/weighted_unifrac_otu_table_2.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/nmds/beta_div_weighted_unifrac/weighted_unifrac_otu_table_3.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_align_seqs_pynast/inseqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_align_seqs_pynast/jobs/ALIGN_yw7_0
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_align_seqs_pynast/jobs/ALIGN_yw7_1
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_align_seqs_pynast/jobs/ALIGN_yw7_2
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_alpha_diversity/rarefied_otu_tables/rarefaction_100_0.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_alpha_diversity/rarefied_otu_tables/rarefaction_100_1.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_alpha_diversity/rarefied_otu_tables/rarefaction_100_2.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_alpha_diversity/rarefied_otu_tables/rarefaction_100_3.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_alpha_diversity/rarefied_otu_tables/rarefaction_100_4.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_alpha_diversity/rarefied_otu_tables/rarefaction_100_5.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_alpha_diversity/rarefied_otu_tables/rarefaction_100_6.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_alpha_diversity/rarefied_otu_tables/rarefaction_100_7.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_alpha_diversity/rarefied_otu_tables/rarefaction_100_8.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_alpha_diversity/rarefied_otu_tables/rarefaction_100_9.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_alpha_diversity/rep_set.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_assign_taxonomy_blast/id_to_tax.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_assign_taxonomy_blast/inseqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_assign_taxonomy_blast/refseqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_assign_taxonomy_rdp/inseqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_assign_taxonomy_rdp/jobs/RDP_IUbHy_0
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_assign_taxonomy_rdp/jobs/RDP_IUbHy_1
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_assign_taxonomy_rdp/jobs/RDP_IUbHy_2
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_assign_taxonomy_uclust/inseqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_beta_diversity/jobs/BDIV_XAF0_0
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_beta_diversity/jobs/BDIV_XAF0_1
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_beta_diversity/jobs/BDIV_XAF0_2
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_beta_diversity/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_beta_diversity/rarefied_otu_tables/rarefaction_100_0.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_beta_diversity/rarefied_otu_tables/rarefaction_100_1.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_beta_diversity/rarefied_otu_tables/rarefaction_100_2.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_beta_diversity/rarefied_otu_tables/rarefaction_100_3.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_beta_diversity/rarefied_otu_tables/rarefaction_100_4.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_beta_diversity/rarefied_otu_tables/rarefaction_100_5.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_beta_diversity/rarefied_otu_tables/rarefaction_100_6.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_beta_diversity/rarefied_otu_tables/rarefaction_100_7.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_beta_diversity/rarefied_otu_tables/rarefaction_100_8.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_beta_diversity/rarefied_otu_tables/rarefaction_100_9.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_beta_diversity/rep_set.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_blast/inseqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_blast/jobs/BLAST_bxw_0
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_blast/jobs/BLAST_bxw_1
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_blast/jobs/BLAST_bxw_2
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_blast/jobs/BLAST_fCy_0
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_blast/jobs/BLAST_fCy_1
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_blast/jobs/BLAST_fCy_2
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_blast/jobs/BLAST_pru_0
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_blast/jobs/BLAST_pru_1
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_blast/jobs/BLAST_pru_2
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_blast/refseqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_identify_chimeric_seqs/cs_refseqs_aligned.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_identify_chimeric_seqs/id_to_tax.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_identify_chimeric_seqs/inseqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_identify_chimeric_seqs/inseqs_aligned.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_identify_chimeric_seqs/refseqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_map_reads_to_reference/query_nt.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_map_reads_to_reference/refseqs_nt.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_map_reads_to_reference/refseqs_nt_md.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_map_reads_to_reference/refseqs_pr.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_map_reads_to_reference/refseqs_pr_md.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_merge_otu_tables/foo/merged/MOTU_BxH1_/0.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_merge_otu_tables/foo/merged/MOTU_BxH1_/0.biom.poll
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_merge_otu_tables/foo/merged/MOTU_BxH1_/1.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_merge_otu_tables/foo/merged/MOTU_BxH1_/1.biom.poll
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_merge_otu_tables/foo/merged/MOTU_BxH1_/2.biom.poll
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_merge_otu_tables/foo/merged/merged.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_merge_otu_tables/foo/merged/parallel_merge_otus.log
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_merge_otu_tables/t1.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_merge_otu_tables/t2.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_merge_otu_tables/t3.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_merge_otu_tables/t4.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_multiple_rarefactions/jobs/RARIF_7dA_0
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_multiple_rarefactions/jobs/RARIF_7dA_1
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_multiple_rarefactions/jobs/RARIF_7dA_2
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_multiple_rarefactions/jobs/RARIF_Tul_0
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_multiple_rarefactions/jobs/RARIF_Tul_1
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_multiple_rarefactions/jobs/RARIF_Tul_2
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_multiple_rarefactions/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_pick_otus_blast/refseqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_pick_otus_blast/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_pick_otus_trie/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_pick_otus_uclust_ref/refseqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_pick_otus_uclust_ref/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_pick_otus_usearch61_ref/refseqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_pick_otus_usearch61_ref/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_closed_reference_otus/refseqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_closed_reference_otus/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_closed_reference_otus/taxa.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_closed_reference_otus/usearch_params.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_de_novo_otus/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_open_reference_otus/map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_open_reference_otus/refseqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_open_reference_otus/seqs1.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_open_reference_otus/seqs2.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_open_reference_otus/ucrss_params.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_otus/refseqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_otus/refseqs.fasta.log
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_otus/refseqs.fasta.nhr
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_otus/refseqs.fasta.nin
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_otus/refseqs.fasta.nsd
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_otus/refseqs.fasta.nsi
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_otus/refseqs.fasta.nsq
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_otus/seqs.aligned.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_otus/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_otus/uclust_ref_picked_otus/seqs_clusters.uc
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_otus/uclust_ref_picked_otus/seqs_failures.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_otus/uclust_ref_picked_otus/seqs_otus.log
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_otus/uclust_ref_picked_otus/seqs_otus.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_rep_set/refseqs.fasta
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_rep_set/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/pick_rep_set/seqs_otus.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/plot_rank_abundance_graph/all_plot.eps_log.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/plot_rank_abundance_graph/multi_plot.pdf_log.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/plot_rank_abundance_graph/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/plot_rank_abundance_graph/single_plot.pdf_log.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/plot_semivariogram/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/plot_semivariogram/categories_legend.eps
+%%PYTHON_SITELIBDIR%%/qiime_test_data/plot_semivariogram/distance.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/plot_semivariogram/time_dm.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/plot_semivariogram/unifrac.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/plot_semivariogram/unweighted_unifrac_dm.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/plot_taxa_summary/class.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/plot_taxa_summary/family.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/plot_taxa_summary/genus.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/plot_taxa_summary/order.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/plot_taxa_summary/phylum.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/poller/clean_up.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/poller/file1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/poller/file2.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/poller/poller_test_completed.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/poller/run_complete.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/principal_coordinates/beta_div.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/principal_coordinates/beta_div_weighted_unifrac/weighted_unifrac_otu_table.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/principal_coordinates/beta_div_weighted_unifrac/weighted_unifrac_otu_table_1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/principal_coordinates/beta_div_weighted_unifrac/weighted_unifrac_otu_table_2.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/principal_coordinates/beta_div_weighted_unifrac/weighted_unifrac_otu_table_3.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/print_metadata_stats/mapping.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/quality_scores_plot/.DS_Store
+%%PYTHON_SITELIBDIR%%/qiime_test_data/quality_scores_plot/seqs.qual
+%%PYTHON_SITELIBDIR%%/qiime_test_data/relatedness/group1_otus.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/relatedness/reference.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/shared_phylotypes/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/shared_phylotypes/rarefied_otu_tables/rarefaction_100_0.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/shared_phylotypes/rarefied_otu_tables/rarefaction_100_1.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/shared_phylotypes/rarefied_otu_tables/rarefaction_100_2.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/shared_phylotypes/rarefied_otu_tables/rarefaction_100_3.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/shared_phylotypes/rarefied_otu_tables/rarefaction_100_4.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/shared_phylotypes/rarefied_otu_tables/rarefaction_100_5.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/shared_phylotypes/rarefied_otu_tables/rarefaction_100_6.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/shared_phylotypes/rarefied_otu_tables/rarefaction_100_7.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/shared_phylotypes/rarefied_otu_tables/rarefaction_100_8.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/shared_phylotypes/rarefied_otu_tables/rarefaction_100_9.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/simsam/map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/simsam/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/simsam/rep_set.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/single_rarefaction/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/sort_otu_table/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/sort_otu_table/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/sort_otu_table/sample_id_list.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_fasta_on_sample_ids/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_libraries/1.TCA.454Reads.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_libraries/1.TCA.454Reads.qual
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_libraries/2.TCA.454Reads.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_libraries/2.TCA.454Reads.qual
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_libraries/Combined_seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_libraries/Mapping_File.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_libraries/Mapping_File1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_libraries/Mapping_File2.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_libraries/Mapping_File_8bp_barcodes.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_libraries/Mapping_File_reverse_primer.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_libraries_fastq/lane1_barcode.fastq.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_libraries_fastq/lane1_read1.fastq.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_libraries_fastq/lane2_barcode.fastq.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_libraries_fastq/lane2_read1.fastq.gz
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_libraries_fastq/map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_libraries_fastq/map_not_multiplexed.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_otu_table/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_otu_table/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/split_otu_table_by_taxonomy/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/start_parallel_jobs/test_jobs.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/start_parallel_jobs_sc/test_jobs.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/start_parallel_jobs_torque/test_jobs.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/subsample_fasta/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/summarize_otu_by_cat/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/summarize_otu_by_cat/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/summarize_otu_by_cat/otu_table_by_treatment_and_dob.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/summarize_taxa/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/summarize_taxa/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/summarize_taxa_through_plots/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/summarize_taxa_through_plots/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/Fasting_Map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/otu_table.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/rarefied_tables/rarefaction_100_0.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/rarefied_tables/rarefaction_100_1.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/rarefied_tables/rarefaction_100_2.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/rarefied_tables/rarefaction_100_3.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/rarefied_tables/rarefaction_100_4.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/rarefied_tables/rarefaction_100_5.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/rarefied_tables/rarefaction_100_6.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/rarefied_tables/rarefaction_100_7.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/rarefied_tables/rarefaction_100_8.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/rarefied_tables/rarefaction_100_9.biom
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_cv10_sweep.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_oob_sweep.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_0_Treatment/confusion_matrix.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_0_Treatment/cv_probabilities.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_0_Treatment/feature_importance_scores.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_0_Treatment/mislabeling.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_0_Treatment/summary.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_1_Treatment/confusion_matrix.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_1_Treatment/cv_probabilities.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_1_Treatment/feature_importance_scores.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_1_Treatment/mislabeling.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_1_Treatment/summary.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_2_Treatment/confusion_matrix.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_2_Treatment/cv_probabilities.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_2_Treatment/feature_importance_scores.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_2_Treatment/mislabeling.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_2_Treatment/summary.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_3_Treatment/confusion_matrix.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_3_Treatment/cv_probabilities.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_3_Treatment/feature_importance_scores.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_3_Treatment/mislabeling.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_3_Treatment/summary.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_4_Treatment/confusion_matrix.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_4_Treatment/cv_probabilities.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_4_Treatment/feature_importance_scores.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_4_Treatment/mislabeling.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_4_Treatment/summary.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_5_Treatment/confusion_matrix.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_5_Treatment/cv_probabilities.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_5_Treatment/feature_importance_scores.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_5_Treatment/mislabeling.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_5_Treatment/summary.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_6_Treatment/confusion_matrix.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_6_Treatment/cv_probabilities.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_6_Treatment/feature_importance_scores.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_6_Treatment/mislabeling.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_6_Treatment/summary.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_7_Treatment/confusion_matrix.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_7_Treatment/cv_probabilities.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_7_Treatment/feature_importance_scores.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_7_Treatment/mislabeling.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_7_Treatment/summary.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_8_Treatment/confusion_matrix.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_8_Treatment/cv_probabilities.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_8_Treatment/feature_importance_scores.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_8_Treatment/mislabeling.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_8_Treatment/summary.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_9_Treatment/confusion_matrix.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_9_Treatment/cv_probabilities.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_9_Treatment/feature_importance_scores.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_9_Treatment/mislabeling.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_9_Treatment/summary.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/transform_coordinate_matrices/bray_curtis_pc.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/transform_coordinate_matrices/euclidean_pc.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/transform_coordinate_matrices/s1_pc.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/transform_coordinate_matrices/s1_s2_map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/transform_coordinate_matrices/s1_s3_map.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/transform_coordinate_matrices/s2_pc.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/transform_coordinate_matrices/s3_pc.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/transform_coordinate_matrices/unweighted_unifrac_pc.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/transform_coordinate_matrices/weighted_unifrac_pc.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/tree_compare/bootstrapped_trees/bs1.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/tree_compare/bootstrapped_trees/bs2.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/tree_compare/bootstrapped_trees/bs3.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/tree_compare/bootstrapped_trees/bs4.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/tree_compare/input_master_tree.tre
+%%PYTHON_SITELIBDIR%%/qiime_test_data/trflp_file_to_otu_table/trflp_in.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/truncate_fasta_qual_files/.DS_Store
+%%PYTHON_SITELIBDIR%%/qiime_test_data/truncate_fasta_qual_files/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/truncate_fasta_qual_files/seqs.qual
+%%PYTHON_SITELIBDIR%%/qiime_test_data/truncate_reverse_primer/Mapping_File_Rev_Primer.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/truncate_reverse_primer/seqs.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/unweight_fasta/input.fna
+%%PYTHON_SITELIBDIR%%/qiime_test_data/upgma_cluster/beta_div.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/upgma_cluster/beta_div_folder/beta_div_1.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/upgma_cluster/beta_div_folder/beta_div_2.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/upgma_cluster/beta_div_folder/beta_div_3.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/upgma_cluster/beta_div_folder/beta_div_4.txt
+%%PYTHON_SITELIBDIR%%/qiime_test_data/validate_mapping_file/.DS_Store
+%%PYTHON_SITELIBDIR%%/qiime_test_data/validate_mapping_file/Fasting_Map.txt
+@dir %%PYTHON_SITELIBDIR%%/qiime/denoiser
+@dir %%PYTHON_SITELIBDIR%%/qiime/parallel
+@dir %%PYTHON_SITELIBDIR%%/qiime/pycogent_backports
+@dir %%PYTHON_SITELIBDIR%%/qiime/support_files/R
+@dir %%PYTHON_SITELIBDIR%%/qiime/support_files/css
+@dir %%PYTHON_SITELIBDIR%%/qiime/support_files/denoiser/Data
+@dir %%PYTHON_SITELIBDIR%%/qiime/support_files/denoiser/FlowgramAlignment
+@dir %%PYTHON_SITELIBDIR%%/qiime/support_files/denoiser/TestData
+@dir %%PYTHON_SITELIBDIR%%/qiime/support_files/denoiser
+@dir %%PYTHON_SITELIBDIR%%/qiime/support_files/images
+@dir %%PYTHON_SITELIBDIR%%/qiime/support_files/jar
+@dir %%PYTHON_SITELIBDIR%%/qiime/support_files/js
+@dir %%PYTHON_SITELIBDIR%%/qiime/support_files
+@dir %%PYTHON_SITELIBDIR%%/qiime/workflow
+@dir %%PYTHON_SITELIBDIR%%/qiime
+@dir %%PYTHON_SITELIBDIR%%/qiime-1.8.0-py%%PYTHON_VER%%.egg-info
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/add_alpha_to_mapping_file
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/add_qiime_labels/fasta_dir
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/add_qiime_labels
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/adjust_seq_orientation
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/align_seqs/infernal_aligned
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/align_seqs/muscle_alignment
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/align_seqs/pynast_aligned
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/align_seqs
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/alpha_diversity/otu_tables
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/alpha_diversity
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/alpha_rarefaction
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/ampliconnoise
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/assign_taxonomy/uclust_assigned_taxonomy
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/assign_taxonomy
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/beta_diversity/otu_tables
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/beta_diversity
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/beta_diversity_through_plots
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/beta_significance
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/blast_wrapper
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/cluster_quality
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha/alpha_div
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/collate_alpha
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/compare_3d_plots/20121016153539WaASawPaWWaLHPZgHOd1
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/compare_3d_plots/201210161537065pMcHLnhtABdBtfrWgdZ
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/compare_3d_plots/jar
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/compare_3d_plots
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/compare_alpha_diversity
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/compare_categories
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/compare_distance_matrices
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/compare_taxa_summaries
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/compute_core_microbiome
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/conditional_uncovered_probability
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/consensus_tree/jackknifed_trees
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/consensus_tree
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/convert_fastaqual_fastq
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/core_diversity_analyses
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/count_seqs
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/demultiplex_fasta
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/denoiser_preprocess/preproc_out
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/denoiser_preprocess
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/dissimilarity_mtx_stats/dists
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/dissimilarity_mtx_stats
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/distance_matrix_from_mapping
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/estimate_observation_richness
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/exclude_seqs_by_blast
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/extract_seqs_by_sample_id
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/filter_alignment/filtered_alignment_gap_95
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/filter_alignment
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/filter_distance_matrix
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/filter_fasta
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/filter_otus_by_sample
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/filter_otus_from_otu_table
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/filter_samples_from_otu_table
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/filter_taxa_from_otu_table
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/filter_tree
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/fix_arb_fasta
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/group_significance
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/identify_chimeric_seqs
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/identify_missing_files/ALIGN_BQ7_
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/identify_missing_files
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/identify_paired_differences
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_1st_half
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/denoised_2nd_half
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/split_libraries_output_1st_half
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined/split_libraries_output_2nd_half
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output/combined
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/inflate_denoiser_output
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/jackknifed_beta_diversity
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/join_paired_ends
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/201210161504183YSZLtkVlW0WiMeW1hw5
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150418yGn50OalsFKxVgdCPKHV
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150419dazkbiLaQpqTxIbSz2HR
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150419o1Rv7IQSdPYPmFSLR0Mp
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150420RH7QimybYhiSMYayO5qF
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI/20121016150420aDFutSkIU91iUxOKfLer
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150418fvEtn34Xui5ZGvKhQnhI
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150441FneURRPQ3TIvFUySfGZg/20121016150441YgWyD9TKTvkxolKSTB0D
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150441FneURRPQ3TIvFUySfGZg
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150454Dt11u49Ld4DFd05HgbN3
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/201210161504559CaeyTXq6cvBD72kXQU7
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150455PbRxRwl0uQp91000stgB
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150456FeeuBdhygXkuGgrGeVzn
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150456os1oHWmcH5xal2tYRcnD
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150457fTuYkZLKssYEoPRIrkmK
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE/20121016150457nZgflu6OEO64tF7xoRFG
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150454Ll4EIvhlOtME3ZB24iOE
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150502RVgilhcBleFnMWi6ndGG
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150503WA6HUI4W4nbtC0YGS19A
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150503p2Tq2Bnf0PVHQmupiGMk
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150504C6EdpKyfMKYuMtZGiGLO
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150504Fogr95nWRxpY1CPPPZOM
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE/20121016150505VGWEdylGluXosgtfR0I1
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/201210161505024UcKASqirfxUIpDmlyWE
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150511ED4PikD6rsXgDMHLYmPo/20121016150511365u20ZGT5vgLoHQmet0
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150511ED4PikD6rsXgDMHLYmPo/20121016150512GIx3mmRLLlrshskqIioX
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150511ED4PikD6rsXgDMHLYmPo
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150521AsYMBmMaRBb3IknrAMmc/20121016150521b2Dag0vPefYGgCaKv9iX
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/20121016150521AsYMBmMaRBb3IknrAMmc
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/js
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots/pcoa
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_2d_plots
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/20121016135550x0gsWnYKc1VqGICCg9Gf
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/201210161356063GtH6cPf1OY03WgK3ohA
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/20121016135639uTR1AVms6Rsw42DfM2W6
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/201210161357081EU4wzIZq07nZa7Xnr07
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/20121016135724lPuDS9I70TxcGr5ZISDy
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/20121016135734pYG1fmI04R7tBowaOiOS
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/20121016135946wi5FKkYvODQbWHcGo2TC
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/20121016140120BwbUdx5rK45eGhMZG971
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/jar
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots/pcoa
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_3d_plots
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_bipartite_network
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_bootstrapped_tree
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_distance_boxplots
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_distance_comparison_plots
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_distance_histograms
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_fastq/seqs.fna.fastq_example
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_fastq
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_otu_heatmap_html
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_otu_network
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_otu_table
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_phylogeny
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_prefs_file
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA/average_plots
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250759520LlVv2ALm9Adix6etTSA
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV/average_plots
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080000FwWyziHGUL9yqu9t0YaV
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080010T6e6Og7XQHBiRPd2Gz5Z/average_plots
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080010T6e6Og7XQHBiRPd2Gz5Z
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R/average_plots
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/20131025080017ezLEgL1rHzyepZhamG9R
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW/average_plots
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/201310250800246RS5Kk7VFlOXZNuhMirW
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots/alpha_div_collated
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_rarefaction_plots
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_tep/make_tep_output
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/make_tep
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/blat-nt_mapped
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/blat_mapped
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/bwa-short_mapped
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/bwa-sw_mapped
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference/usearch_mapped
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/map_reads_to_reference
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/merge_mapping_files
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/merge_otu_maps
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/merge_otu_tables
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/multiple_rarefactions
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/multiple_rarefactions_even_depth
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/neighbor_joining/beta_div_weighted_unifrac
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/neighbor_joining
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/nmds/beta_div_weighted_unifrac
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/nmds
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_align_seqs_pynast/jobs
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_align_seqs_pynast
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_alpha_diversity/rarefied_otu_tables
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_alpha_diversity
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_assign_taxonomy_blast
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_assign_taxonomy_rdp/jobs
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_assign_taxonomy_rdp
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_assign_taxonomy_uclust
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_beta_diversity/jobs
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_beta_diversity/rarefied_otu_tables
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_beta_diversity
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_blast/jobs
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_blast
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_identify_chimeric_seqs
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_map_reads_to_reference
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_merge_otu_tables/foo/merged/MOTU_BxH1_
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_merge_otu_tables/foo/merged
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_merge_otu_tables/foo
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_merge_otu_tables
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_multiple_rarefactions/jobs
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_multiple_rarefactions
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_pick_otus_blast
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_pick_otus_trie
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_pick_otus_uclust_ref
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/parallel_pick_otus_usearch61_ref
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/pick_closed_reference_otus
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/pick_de_novo_otus
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/pick_open_reference_otus
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/pick_otus/uclust_ref_picked_otus
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/pick_otus
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/pick_rep_set
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/plot_rank_abundance_graph
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/plot_semivariogram
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/plot_taxa_summary
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/poller
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/principal_coordinates/beta_div_weighted_unifrac
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/principal_coordinates
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/print_metadata_stats
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/quality_scores_plot
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/relatedness
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/shared_phylotypes/rarefied_otu_tables
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/shared_phylotypes
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/simsam
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/single_rarefaction
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/sort_otu_table
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/split_fasta_on_sample_ids
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/split_libraries
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/split_libraries_fastq
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/split_otu_table
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/split_otu_table_by_taxonomy
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/start_parallel_jobs
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/start_parallel_jobs_sc
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/start_parallel_jobs_torque
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/subsample_fasta
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/summarize_otu_by_cat
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/summarize_taxa
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/summarize_taxa_through_plots
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/rarefied_tables
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_0_Treatment
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_1_Treatment
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_2_Treatment
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_3_Treatment
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_4_Treatment
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_5_Treatment
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_6_Treatment
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_7_Treatment
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_8_Treatment
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob/sl_rarefaction_100_9_Treatment
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning/sl_rarefied_tables_oob
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/supervised_learning
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/transform_coordinate_matrices
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/tree_compare/bootstrapped_trees
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/tree_compare
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/trflp_file_to_otu_table
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/truncate_fasta_qual_files
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/truncate_reverse_primer
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/unweight_fasta
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/upgma_cluster/beta_div_folder
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/upgma_cluster
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data/validate_mapping_file
+@dir %%PYTHON_SITELIBDIR%%/qiime_test_data
+@dir %%PYTHON_SITELIBDIR%%
+@dir %%PYTHON_LIBDIR%%

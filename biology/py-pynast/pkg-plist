@@ -1,0 +1,26 @@
+bin/pynast
+%%PYTHON_SITELIBDIR%%/pynast-1.2.2-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/pynast-1.2.2-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/pynast-1.2.2-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/pynast-1.2.2-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/pynast-1.2.2-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/pynast/__init__.py
+%%PYTHON_SITELIBDIR%%/pynast/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pynast/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pynast/logger.py
+%%PYTHON_SITELIBDIR%%/pynast/logger.pyc
+%%PYTHON_SITELIBDIR%%/pynast/logger.pyo
+%%PYTHON_SITELIBDIR%%/pynast/pycogent_backports/__init__.py
+%%PYTHON_SITELIBDIR%%/pynast/pycogent_backports/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pynast/pycogent_backports/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pynast/pycogent_backports/uclust.py
+%%PYTHON_SITELIBDIR%%/pynast/pycogent_backports/uclust.pyc
+%%PYTHON_SITELIBDIR%%/pynast/pycogent_backports/uclust.pyo
+%%PYTHON_SITELIBDIR%%/pynast/util.py
+%%PYTHON_SITELIBDIR%%/pynast/util.pyc
+%%PYTHON_SITELIBDIR%%/pynast/util.pyo
+@dir %%PYTHON_SITELIBDIR%%/pynast/pycogent_backports
+@dir %%PYTHON_SITELIBDIR%%/pynast
+@dir %%PYTHON_SITELIBDIR%%/pynast-1.2.2-py%%PYTHON_VER%%.egg-info
+@dir %%PYTHON_SITELIBDIR%%
+@dir %%PYTHON_LIBDIR%%
