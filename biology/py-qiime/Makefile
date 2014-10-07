@@ -30,8 +30,8 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 USES=			shebangfix
 SHEBANG_FILES=	scripts/ec2Clean scripts/ec2Dispatch
 # USE_GCC=		any
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	qiime
 
 .include <bsd.port.mk>
