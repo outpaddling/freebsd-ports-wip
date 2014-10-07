@@ -11,7 +11,7 @@ MAINTAINER=	jwbacon@tds.net
 # See also pyqi, an expanded version of qcli
 COMMENT=	wrapping general commands in multiple types of interfaces
 
-LICENSE=	GPL	# From qiime install site
+LICENSE=	GPLv2	# From qiime install site.  Double check this.
 
 USES=		python
 USE_PYTHON=	distutils

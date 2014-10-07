@@ -95,7 +95,8 @@ BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 # 
 #     SourceTracker 0.9.5 (src) (license: GPL)
 # 
-# BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+
+BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 
 post-install:
 	${INSTALL_PROGRAM} ${DISTDIR}/uclustq1.2.22_i86linux32 \
