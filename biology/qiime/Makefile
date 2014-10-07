@@ -16,8 +16,9 @@ COMMENT=	Quantitative Insights Into Microbial Ecology
 # uclust is a Linux closed-source binary and required for qiime
 ONLY_FOR_ARCH=	i386 amd64
 
-USES=		python:2
+USES=		python:2 shebangfix
 USE_PYTHON=	distutils
+SHEBANG_FILES=	scripts/ec2Clean scripts/ec2Dispatch
 
 PYDISTUTILS_PKGNAME=	qiime
 
@@ -26,6 +27,8 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.5.1:${PORTSDIR}/math/py-numpy \
 		pycogent>=1.1.0:${PORTSDIR}/biology/pycogent \
 		${PKGNAMEPREFIX}biom-format>=1.3.1:/usr/wip/biology/py-biom-format
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 
 # http://qiime.org/install/install.html
 # Canopy Express
