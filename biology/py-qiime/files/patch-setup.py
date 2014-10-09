@@ -1,5 +1,5 @@
---- setup.py.orig	2014-10-07 13:35:43.000000000 -0500
-+++ setup.py	2014-10-07 13:38:33.000000000 -0500
+--- setup.py.orig	2013-12-11 20:53:03.000000000 -0600
++++ setup.py	2014-10-09 10:30:54.000000000 -0500
 @@ -175,13 +175,13 @@
      else:
          print "GHC not installed, so cannot build the Denoiser binary."

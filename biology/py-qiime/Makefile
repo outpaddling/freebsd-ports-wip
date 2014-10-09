@@ -39,6 +39,7 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.5.1:${PORTSDIR}/math/py-numpy \
 		pycogent>=1.1.0:${PORTSDIR}/biology/pycogent \
 		${PKGNAMEPREFIX}biom-format==1.3.1:/usr/wip/biology/py-biom-format131 \
 		${PKGNAMEPREFIX}qcli>=0.1.0:/usr/wip/biology/py-qcli \
+		${PKGNAMEPREFIX}pyqi>=0.3.2:/usr/wip/biology/py-pyqi \
 		${PKGNAMEPREFIX}pynast>=1.2.2:/usr/wip/biology/py-pynast \
 		${PKGNAMEPREFIX}emperor>=0.9.3:/usr/wip/biology/py-emperor \
 		${PKGNAMEPREFIX}h5py>=2.3.0:${PORTSDIR}/science/py-h5py \

@@ -177,8 +177,10 @@ include/ncbi-tools++/algo/blast/dbindex/sequence_istream_bdb.hpp
 include/ncbi-tools++/algo/blast/dbindex/sequence_istream_fasta.hpp
 include/ncbi-tools++/algo/blast/format/blast_format.hpp
 include/ncbi-tools++/algo/blast/format/blastfmtutil.hpp
+include/ncbi-tools++/algo/blast/format/blastxml2_format.hpp
 include/ncbi-tools++/algo/blast/format/blastxml_format.hpp
 include/ncbi-tools++/algo/blast/format/build_archive.hpp
+include/ncbi-tools++/algo/blast/format/data4xml2format.hpp
 include/ncbi-tools++/algo/blast/format/data4xmlformat.hpp
 include/ncbi-tools++/algo/blast/format/vecscreen_run.hpp
 include/ncbi-tools++/algo/blast/igblast/igblast.hpp
@@ -279,6 +281,7 @@ include/ncbi-tools++/connect/ncbi_gnutls.h
 include/ncbi-tools++/connect/ncbi_heapmgr.h
 include/ncbi-tools++/connect/ncbi_host_info.h
 include/ncbi-tools++/connect/ncbi_http_connector.h
+include/ncbi-tools++/connect/ncbi_http_session.hpp
 include/ncbi-tools++/connect/ncbi_memory_connector.h
 include/ncbi-tools++/connect/ncbi_misc.hpp
 include/ncbi-tools++/connect/ncbi_namedpipe.hpp
@@ -329,6 +332,7 @@ include/ncbi-tools++/connect/services/netstorage.hpp
 include/ncbi-tools++/connect/services/netstorage_admin.hpp
 include/ncbi-tools++/connect/services/netstorage_impl.hpp
 include/ncbi-tools++/connect/services/ns_client_factory.hpp
+include/ncbi-tools++/connect/services/ns_job_serializer.hpp
 include/ncbi-tools++/connect/services/ns_output_parser.hpp
 include/ncbi-tools++/connect/services/remote_app.hpp
 include/ncbi-tools++/connect/services/srv_connections.hpp
@@ -369,6 +373,7 @@ include/ncbi-tools++/corelib/ncbi_autoinit.hpp
 include/ncbi-tools++/corelib/ncbi_base64.h
 include/ncbi-tools++/corelib/ncbi_bswap.hpp
 include/ncbi-tools++/corelib/ncbi_config.hpp
+include/ncbi-tools++/corelib/ncbi_cookies.hpp
 include/ncbi-tools++/corelib/ncbi_limits.h
 include/ncbi-tools++/corelib/ncbi_limits.hpp
 include/ncbi-tools++/corelib/ncbi_mask.hpp
@@ -383,6 +388,7 @@ include/ncbi-tools++/corelib/ncbi_strings.h
 include/ncbi-tools++/corelib/ncbi_system.hpp
 include/ncbi-tools++/corelib/ncbi_toolkit.hpp
 include/ncbi-tools++/corelib/ncbi_tree.hpp
+include/ncbi-tools++/corelib/ncbi_url.hpp
 include/ncbi-tools++/corelib/ncbi_xstr.hpp
 include/ncbi-tools++/corelib/ncbiapp.hpp
 include/ncbi-tools++/corelib/ncbiargs.hpp
@@ -757,6 +763,34 @@ include/ncbi-tools++/objects/blastxml/Parameters_.hpp
 include/ncbi-tools++/objects/blastxml/Statistics.hpp
 include/ncbi-tools++/objects/blastxml/Statistics_.hpp
 include/ncbi-tools++/objects/blastxml/blastxml__.hpp
+include/ncbi-tools++/objects/blastxml2/BlastOutput.hpp
+include/ncbi-tools++/objects/blastxml2/BlastOutput_.hpp
+include/ncbi-tools++/objects/blastxml2/Err.hpp
+include/ncbi-tools++/objects/blastxml2/Err_.hpp
+include/ncbi-tools++/objects/blastxml2/Hit.hpp
+include/ncbi-tools++/objects/blastxml2/HitDescr.hpp
+include/ncbi-tools++/objects/blastxml2/HitDescr_.hpp
+include/ncbi-tools++/objects/blastxml2/Hit_.hpp
+include/ncbi-tools++/objects/blastxml2/Hsp.hpp
+include/ncbi-tools++/objects/blastxml2/Hsp_.hpp
+include/ncbi-tools++/objects/blastxml2/Iteration.hpp
+include/ncbi-tools++/objects/blastxml2/Iteration_.hpp
+include/ncbi-tools++/objects/blastxml2/NCBI_BlastOutput_module.hpp
+include/ncbi-tools++/objects/blastxml2/Parameters.hpp
+include/ncbi-tools++/objects/blastxml2/Parameters_.hpp
+include/ncbi-tools++/objects/blastxml2/Range.hpp
+include/ncbi-tools++/objects/blastxml2/Range_.hpp
+include/ncbi-tools++/objects/blastxml2/Report.hpp
+include/ncbi-tools++/objects/blastxml2/Report_.hpp
+include/ncbi-tools++/objects/blastxml2/Results.hpp
+include/ncbi-tools++/objects/blastxml2/Results_.hpp
+include/ncbi-tools++/objects/blastxml2/Search.hpp
+include/ncbi-tools++/objects/blastxml2/Search_.hpp
+include/ncbi-tools++/objects/blastxml2/Statistics.hpp
+include/ncbi-tools++/objects/blastxml2/Statistics_.hpp
+include/ncbi-tools++/objects/blastxml2/Target.hpp
+include/ncbi-tools++/objects/blastxml2/Target_.hpp
+include/ncbi-tools++/objects/blastxml2/blastxml2__.hpp
 include/ncbi-tools++/objects/cdd/.cvsignore
 include/ncbi-tools++/objects/cdd/Algorithm_type.hpp
 include/ncbi-tools++/objects/cdd/Algorithm_type_.hpp
@@ -1126,12 +1160,24 @@ include/ncbi-tools++/objects/genomecoll/GCClientRequest.hpp
 include/ncbi-tools++/objects/genomecoll/GCClientRequest_.hpp
 include/ncbi-tools++/objects/genomecoll/GCClientResponse.hpp
 include/ncbi-tools++/objects/genomecoll/GCClientResponse_.hpp
+include/ncbi-tools++/objects/genomecoll/GCClient_AssemblyInfo.hpp
+include/ncbi-tools++/objects/genomecoll/GCClient_AssemblyInfo_.hpp
 include/ncbi-tools++/objects/genomecoll/GCClient_AttributeFlags.hpp
 include/ncbi-tools++/objects/genomecoll/GCClient_AttributeFlags_.hpp
+include/ncbi-tools++/objects/genomecoll/GCClient_BestAssembly.hpp
+include/ncbi-tools++/objects/genomecoll/GCClient_BestAssembly_.hpp
 include/ncbi-tools++/objects/genomecoll/GCClient_Error.hpp
 include/ncbi-tools++/objects/genomecoll/GCClient_Error_.hpp
+include/ncbi-tools++/objects/genomecoll/GCClient_FindBestAssemblyF.hpp
+include/ncbi-tools++/objects/genomecoll/GCClient_FindBestAssemblyF_.hpp
+include/ncbi-tools++/objects/genomecoll/GCClient_FindBestAssemblyR.hpp
+include/ncbi-tools++/objects/genomecoll/GCClient_FindBestAssemblyR_.hpp
+include/ncbi-tools++/objects/genomecoll/GCClient_FindBestAssemblyS.hpp
+include/ncbi-tools++/objects/genomecoll/GCClient_FindBestAssemblyS_.hpp
 include/ncbi-tools++/objects/genomecoll/GCClient_GetAssemblyReques.hpp
 include/ncbi-tools++/objects/genomecoll/GCClient_GetAssemblyReques_.hpp
+include/ncbi-tools++/objects/genomecoll/GCClient_SeqIdAssemblyInfo.hpp
+include/ncbi-tools++/objects/genomecoll/GCClient_SeqIdAssemblyInfo_.hpp
 include/ncbi-tools++/objects/genomecoll/GCClient_ValidateChrTypeLo.hpp
 include/ncbi-tools++/objects/genomecoll/GCClient_ValidateChrTypeLo_.hpp
 include/ncbi-tools++/objects/genomecoll/GC_Assemblies.hpp
@@ -2737,6 +2783,8 @@ include/ncbi-tools++/objects/seqsplit/ID2S_Split_Info_.hpp
 include/ncbi-tools++/objects/seqsplit/NCBI_Seq_split_module.hpp
 include/ncbi-tools++/objects/seqsplit/seqsplit__.hpp
 include/ncbi-tools++/objects/seqtable/.cvsignore
+include/ncbi-tools++/objects/seqtable/BVector_data.hpp
+include/ncbi-tools++/objects/seqtable/BVector_data_.hpp
 include/ncbi-tools++/objects/seqtable/CommonBytes_table.hpp
 include/ncbi-tools++/objects/seqtable/CommonBytes_table_.hpp
 include/ncbi-tools++/objects/seqtable/CommonString_table.hpp
@@ -2758,6 +2806,7 @@ include/ncbi-tools++/objects/seqtable/SeqTable_sparse_index.hpp
 include/ncbi-tools++/objects/seqtable/SeqTable_sparse_index_.hpp
 include/ncbi-tools++/objects/seqtable/Seq_table.hpp
 include/ncbi-tools++/objects/seqtable/Seq_table_.hpp
+include/ncbi-tools++/objects/seqtable/impl/delta_cache.hpp
 include/ncbi-tools++/objects/seqtable/seq_table_exception.hpp
 include/ncbi-tools++/objects/seqtable/seqtable__.hpp
 include/ncbi-tools++/objects/seqtest/.cvsignore
@@ -2830,6 +2879,10 @@ include/ncbi-tools++/objects/trackmgr/.cvsignore
 include/ncbi-tools++/objects/trackmgr/NCBI_TrackManager_module.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_ACL_AccessLevel.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_ACL_AccessLevel_.hpp
+include/ncbi-tools++/objects/trackmgr/TMgr_AnnotCounts.hpp
+include/ncbi-tools++/objects/trackmgr/TMgr_AnnotCounts_.hpp
+include/ncbi-tools++/objects/trackmgr/TMgr_AnnotType.hpp
+include/ncbi-tools++/objects/trackmgr/TMgr_AnnotType_.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_Assembly.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_AssemblySpec.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_AssemblySpec_.hpp
@@ -2863,6 +2916,8 @@ include/ncbi-tools++/objects/trackmgr/TMgr_CreateUserTrackReques_.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_DTrackId.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_DTrackId_.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_DatasetItem.hpp
+include/ncbi-tools++/objects/trackmgr/TMgr_DatasetItemSeq.hpp
+include/ncbi-tools++/objects/trackmgr/TMgr_DatasetItemSeq_.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_DatasetItem_.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_DisplayTrack.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_DisplayTrackChoice.hpp
@@ -2884,10 +2939,14 @@ include/ncbi-tools++/objects/trackmgr/TMgr_ItemResolverReply.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_ItemResolverReply_.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_ItemResolverRequest.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_ItemResolverRequest_.hpp
+include/ncbi-tools++/objects/trackmgr/TMgr_LengthStats.hpp
+include/ncbi-tools++/objects/trackmgr/TMgr_LengthStats_.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_Message.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_MessageLevel.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_MessageLevel_.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_Message_.hpp
+include/ncbi-tools++/objects/trackmgr/TMgr_PositionStats.hpp
+include/ncbi-tools++/objects/trackmgr/TMgr_PositionStats_.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_RemoveUserTrackReply.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_RemoveUserTrackReply_.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_RemoveUserTrackReques.hpp
@@ -2916,6 +2975,8 @@ include/ncbi-tools++/objects/trackmgr/TMgr_TrackAttributes.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_TrackAttributes_.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_TrackItems.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_TrackItems_.hpp
+include/ncbi-tools++/objects/trackmgr/TMgr_TypeStat.hpp
+include/ncbi-tools++/objects/trackmgr/TMgr_TypeStat_.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_ValueRequest.hpp
 include/ncbi-tools++/objects/trackmgr/TMgr_ValueRequest_.hpp
 include/ncbi-tools++/objects/trackmgr/blast_client.hpp
@@ -2985,6 +3046,7 @@ include/ncbi-tools++/objmgr/edits_db_engine.hpp
 include/ncbi-tools++/objmgr/edits_db_saver.hpp
 include/ncbi-tools++/objmgr/error_codes.hpp
 include/ncbi-tools++/objmgr/feat_ci.hpp
+include/ncbi-tools++/objmgr/gc_assembly_parser.hpp
 include/ncbi-tools++/objmgr/graph_ci.hpp
 include/ncbi-tools++/objmgr/impl/annot_collector.hpp
 include/ncbi-tools++/objmgr/impl/annot_finder.hpp
@@ -3163,9 +3225,6 @@ include/ncbi-tools++/objtools/data_loaders/genbank/cache/reader_cache_entry.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/cache/reader_cache_params.h
 include/ncbi-tools++/objtools/data_loaders/genbank/cache/writer_cache.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/cache/writer_cache_entry.hpp
-include/ncbi-tools++/objtools/data_loaders/genbank/cache_manager.hpp
-include/ncbi-tools++/objtools/data_loaders/genbank/dispatcher.hpp
-include/ncbi-tools++/objtools/data_loaders/genbank/gbload_util.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/gbloader.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/gbloader_params.h
 include/ncbi-tools++/objtools/data_loaders/genbank/gicache/reader_gicache.hpp
@@ -3177,9 +3236,20 @@ include/ncbi-tools++/objtools/data_loaders/genbank/id1/reader_id1_params.h
 include/ncbi-tools++/objtools/data_loaders/genbank/id2/reader_id2.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/id2/reader_id2_entry.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/id2/reader_id2_params.h
-include/ncbi-tools++/objtools/data_loaders/genbank/incr_time.hpp
-include/ncbi-tools++/objtools/data_loaders/genbank/processor.hpp
-include/ncbi-tools++/objtools/data_loaders/genbank/processors.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/cache_manager.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/dispatcher.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/gbload_util.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/incr_time.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/info_cache.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/processor.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/processors.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/reader_id1_base.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/reader_id2_base.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/reader_service.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/request_result.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/split_parser.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/standalone_result.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/statistics.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/pubseq/reader_pubseq.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/pubseq/reader_pubseq_entry.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/pubseq/reader_pubseq_params.h
@@ -3187,11 +3257,8 @@ include/ncbi-tools++/objtools/data_loaders/genbank/pubseq2/reader_pubseq2.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/pubseq2/reader_pubseq2_entry.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/pubseq2/reader_pubseq2_params.h
 include/ncbi-tools++/objtools/data_loaders/genbank/reader.hpp
-include/ncbi-tools++/objtools/data_loaders/genbank/reader_id1_base.hpp
-include/ncbi-tools++/objtools/data_loaders/genbank/reader_id2_base.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/reader_interface.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/reader_params.h
-include/ncbi-tools++/objtools/data_loaders/genbank/reader_service.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/reader_service_params.h
 include/ncbi-tools++/objtools/data_loaders/genbank/reader_snp.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/readers.hpp
@@ -3201,13 +3268,35 @@ include/ncbi-tools++/objtools/data_loaders/genbank/readers/id1/reader_id1.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/readers/id2/reader_id2.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/readers/pubseqos/reader_pubseq.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/readers/pubseqos2/reader_pubseq2.hpp
-include/ncbi-tools++/objtools/data_loaders/genbank/request_result.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/seqref.hpp
-include/ncbi-tools++/objtools/data_loaders/genbank/split_parser.hpp
-include/ncbi-tools++/objtools/data_loaders/genbank/statistics.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/writer.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/writer_interface.hpp
 include/ncbi-tools++/objtools/data_loaders/loaders.hpp
+include/ncbi-tools++/objtools/edit/autodef.hpp
+include/ncbi-tools++/objtools/edit/autodef_available_modifier.hpp
+include/ncbi-tools++/objtools/edit/autodef_feature_clause.hpp
+include/ncbi-tools++/objtools/edit/autodef_feature_clause_base.hpp
+include/ncbi-tools++/objtools/edit/autodef_mod_combo.hpp
+include/ncbi-tools++/objtools/edit/autodef_source_desc.hpp
+include/ncbi-tools++/objtools/edit/autodef_source_group.hpp
+include/ncbi-tools++/objtools/edit/capitalization_string.hpp
+include/ncbi-tools++/objtools/edit/cds_fix.hpp
+include/ncbi-tools++/objtools/edit/dblink_field.hpp
+include/ncbi-tools++/objtools/edit/edit_exception.hpp
+include/ncbi-tools++/objtools/edit/feattable_edit.hpp
+include/ncbi-tools++/objtools/edit/field_handler.hpp
+include/ncbi-tools++/objtools/edit/gaps_edit.hpp
+include/ncbi-tools++/objtools/edit/gb_block_field.hpp
+include/ncbi-tools++/objtools/edit/gene_utils.hpp
+include/ncbi-tools++/objtools/edit/link_cds_mrna.hpp
+include/ncbi-tools++/objtools/edit/loc_edit.hpp
+include/ncbi-tools++/objtools/edit/mail_report.hpp
+include/ncbi-tools++/objtools/edit/promote.hpp
+include/ncbi-tools++/objtools/edit/seq_entry_edit.hpp
+include/ncbi-tools++/objtools/edit/seqid_guesser.hpp
+include/ncbi-tools++/objtools/edit/string_constraint.hpp
+include/ncbi-tools++/objtools/edit/struc_comm_field.hpp
+include/ncbi-tools++/objtools/edit/text_desc_field.hpp
 include/ncbi-tools++/objtools/error_codes.hpp
 include/ncbi-tools++/objtools/format/cigar_formatter.hpp
 include/ncbi-tools++/objtools/format/context.hpp
@@ -3302,6 +3391,7 @@ include/ncbi-tools++/objtools/readers/rm_reader.hpp
 include/ncbi-tools++/objtools/readers/source_mod_parser.hpp
 include/ncbi-tools++/objtools/readers/source_mod_parser_wrapper.hpp
 include/ncbi-tools++/objtools/readers/table_filter.hpp
+include/ncbi-tools++/objtools/readers/ucscregion_reader.hpp
 include/ncbi-tools++/objtools/readers/vcf_reader.hpp
 include/ncbi-tools++/objtools/readers/wiggle_reader.hpp
 include/ncbi-tools++/objtools/seqmasks_io/mask_bdb_reader.hpp
@@ -3567,6 +3657,8 @@ lib/libblastinput-static.a
 lib/libblastinput.a
 lib/libblastxml-static.a
 lib/libblastxml.a
+lib/libblastxml2-static.a
+lib/libblastxml2.a
 lib/libcdd-static.a
 lib/libcdd.a
 lib/libcn3d-static.a
@@ -3778,6 +3870,8 @@ lib/libxnetblast-static.a
 lib/libxnetblast.a
 lib/libxnetblastcli-static.a
 lib/libxnetblastcli.a
+lib/libxobjedit-static.a
+lib/libxobjedit.a
 lib/libxobjmgr-static.a
 lib/libxobjmgr.a
 lib/libxobjread-static.a
@@ -3798,148 +3892,3 @@ lib/libxutil-static.a
 lib/libxutil.a
 lib/libxxconnect-static.a
 lib/libxxconnect.a
-@dirrm include/ncbi-tools++/algo/blast/api
-@dirrm include/ncbi-tools++/algo/blast/blastinput
-@dirrm include/ncbi-tools++/algo/blast/composition_adjustment
-@dirrm include/ncbi-tools++/algo/blast/core
-@dirrm include/ncbi-tools++/algo/blast/dbindex
-@dirrm include/ncbi-tools++/algo/blast/format
-@dirrm include/ncbi-tools++/algo/blast/igblast
-@dirrm include/ncbi-tools++/algo/blast
-@dirrm include/ncbi-tools++/algo/dustmask
-@dirrm include/ncbi-tools++/algo/segmask
-@dirrm include/ncbi-tools++/algo/winmask
-@dirrm include/ncbi-tools++/algo
-@dirrm include/ncbi-tools++/cgi/impl
-@dirrm include/ncbi-tools++/cgi
-@dirrm include/ncbi-tools++/common/config
-@dirrm include/ncbi-tools++/common
-@dirrm include/ncbi-tools++/connect/ext
-@dirrm include/ncbi-tools++/connect/impl
-@dirrm include/ncbi-tools++/connect/services
-@dirrm include/ncbi-tools++/connect
-@dirrm include/ncbi-tools++/corelib/hash_impl
-@dirrm include/ncbi-tools++/corelib/impl
-@dirrm include/ncbi-tools++/corelib
-@dirrm include/ncbi-tools++/dbapi/cache
-@dirrm include/ncbi-tools++/dbapi/driver/impl
-@dirrm include/ncbi-tools++/dbapi/driver/odbc/unix_odbc
-@dirrm include/ncbi-tools++/dbapi/driver/odbc
-@dirrm include/ncbi-tools++/dbapi/driver/util
-@dirrm include/ncbi-tools++/dbapi/driver
-@dirrm include/ncbi-tools++/dbapi
-@dirrm include/ncbi-tools++/html
-@dirrm include/ncbi-tools++/objects/access
-@dirrm include/ncbi-tools++/objects/biblio
-@dirrm include/ncbi-tools++/objects/biotree
-@dirrm include/ncbi-tools++/objects/blast
-@dirrm include/ncbi-tools++/objects/blastdb
-@dirrm include/ncbi-tools++/objects/blastxml
-@dirrm include/ncbi-tools++/objects/cdd
-@dirrm include/ncbi-tools++/objects/cn3d
-@dirrm include/ncbi-tools++/objects/coords
-@dirrm include/ncbi-tools++/objects/docsum
-@dirrm include/ncbi-tools++/objects/entrez2
-@dirrm include/ncbi-tools++/objects/entrezgene
-@dirrm include/ncbi-tools++/objects/featdef
-@dirrm include/ncbi-tools++/objects/gbproj
-@dirrm include/ncbi-tools++/objects/gbseq
-@dirrm include/ncbi-tools++/objects/general
-@dirrm include/ncbi-tools++/objects/genesbyloc
-@dirrm include/ncbi-tools++/objects/genomecoll
-@dirrm include/ncbi-tools++/objects/homologene
-@dirrm include/ncbi-tools++/objects/id1
-@dirrm include/ncbi-tools++/objects/id2
-@dirrm include/ncbi-tools++/objects/insdseq
-@dirrm include/ncbi-tools++/objects/macro
-@dirrm include/ncbi-tools++/objects/medlars
-@dirrm include/ncbi-tools++/objects/medline
-@dirrm include/ncbi-tools++/objects/mim
-@dirrm include/ncbi-tools++/objects/misc
-@dirrm include/ncbi-tools++/objects/mla
-@dirrm include/ncbi-tools++/objects/mmdb1
-@dirrm include/ncbi-tools++/objects/mmdb2
-@dirrm include/ncbi-tools++/objects/mmdb3
-@dirrm include/ncbi-tools++/objects/ncbimime
-@dirrm include/ncbi-tools++/objects/objprt
-@dirrm include/ncbi-tools++/objects/omssa
-@dirrm include/ncbi-tools++/objects/pcassay
-@dirrm include/ncbi-tools++/objects/pcsubstance
-@dirrm include/ncbi-tools++/objects/proj
-@dirrm include/ncbi-tools++/objects/pub
-@dirrm include/ncbi-tools++/objects/pubmed
-@dirrm include/ncbi-tools++/objects/remap
-@dirrm include/ncbi-tools++/objects/scoremat
-@dirrm include/ncbi-tools++/objects/seq
-@dirrm include/ncbi-tools++/objects/seqalign
-@dirrm include/ncbi-tools++/objects/seqblock
-@dirrm include/ncbi-tools++/objects/seqcode
-@dirrm include/ncbi-tools++/objects/seqedit
-@dirrm include/ncbi-tools++/objects/seqfeat
-@dirrm include/ncbi-tools++/objects/seqloc
-@dirrm include/ncbi-tools++/objects/seqres
-@dirrm include/ncbi-tools++/objects/seqset
-@dirrm include/ncbi-tools++/objects/seqsplit
-@dirrm include/ncbi-tools++/objects/seqtable
-@dirrm include/ncbi-tools++/objects/seqtest
-@dirrm include/ncbi-tools++/objects/submit
-@dirrm include/ncbi-tools++/objects/taxon1
-@dirrm include/ncbi-tools++/objects/taxon3
-@dirrm include/ncbi-tools++/objects/tinyseq
-@dirrm include/ncbi-tools++/objects/trackmgr
-@dirrm include/ncbi-tools++/objects/valerr
-@dirrm include/ncbi-tools++/objects/valid
-@dirrm include/ncbi-tools++/objects/variation
-@dirrm include/ncbi-tools++/objects
-@dirrm include/ncbi-tools++/objmgr/impl
-@dirrm include/ncbi-tools++/objmgr/split
-@dirrm include/ncbi-tools++/objmgr/util
-@dirrm include/ncbi-tools++/objmgr
-@dirrm include/ncbi-tools++/objtools/align_format
-@dirrm include/ncbi-tools++/objtools/alnmgr
-@dirrm include/ncbi-tools++/objtools/blast/blastdb_format
-@dirrm include/ncbi-tools++/objtools/blast/gene_info_reader
-@dirrm include/ncbi-tools++/objtools/blast/seqdb_reader/impl
-@dirrm include/ncbi-tools++/objtools/blast/seqdb_reader
-@dirrm include/ncbi-tools++/objtools/blast/seqdb_writer/impl
-@dirrm include/ncbi-tools++/objtools/blast/seqdb_writer
-@dirrm include/ncbi-tools++/objtools/blast/services
-@dirrm include/ncbi-tools++/objtools/blast
-@dirrm include/ncbi-tools++/objtools/cleanup
-@dirrm include/ncbi-tools++/objtools/data_loaders/blastdb
-@dirrm include/ncbi-tools++/objtools/data_loaders/genbank/cache
-@dirrm include/ncbi-tools++/objtools/data_loaders/genbank/gicache
-@dirrm include/ncbi-tools++/objtools/data_loaders/genbank/id1
-@dirrm include/ncbi-tools++/objtools/data_loaders/genbank/id2
-@dirrm include/ncbi-tools++/objtools/data_loaders/genbank/pubseq
-@dirrm include/ncbi-tools++/objtools/data_loaders/genbank/pubseq2
-@dirrm include/ncbi-tools++/objtools/data_loaders/genbank/readers/cache
-@dirrm include/ncbi-tools++/objtools/data_loaders/genbank/readers/id1
-@dirrm include/ncbi-tools++/objtools/data_loaders/genbank/readers/id2
-@dirrm include/ncbi-tools++/objtools/data_loaders/genbank/readers/pubseqos
-@dirrm include/ncbi-tools++/objtools/data_loaders/genbank/readers/pubseqos2
-@dirrm include/ncbi-tools++/objtools/data_loaders/genbank/readers
-@dirrm include/ncbi-tools++/objtools/data_loaders/genbank
-@dirrm include/ncbi-tools++/objtools/data_loaders
-@dirrm include/ncbi-tools++/objtools/format/items
-@dirrm include/ncbi-tools++/objtools/format
-@dirrm include/ncbi-tools++/objtools/readers
-@dirrm include/ncbi-tools++/objtools/seqmasks_io
-@dirrm include/ncbi-tools++/objtools/simple
-@dirrm include/ncbi-tools++/objtools
-@dirrm include/ncbi-tools++/serial/impl
-@dirrm include/ncbi-tools++/serial
-@dirrm include/ncbi-tools++/util/bitset
-@dirrm include/ncbi-tools++/util/cache
-@dirrm include/ncbi-tools++/util/compress/bzip2
-@dirrm include/ncbi-tools++/util/compress/zlib
-@dirrm include/ncbi-tools++/util/compress
-@dirrm include/ncbi-tools++/util/creaders
-@dirrm include/ncbi-tools++/util/impl
-@dirrm include/ncbi-tools++/util/math
-@dirrm include/ncbi-tools++/util/regexp
-@dirrm include/ncbi-tools++/util/sequtil
-@dirrm include/ncbi-tools++/util/tables
-@dirrm include/ncbi-tools++/util/xregexp
-@dirrm include/ncbi-tools++/util
-@dirrm include/ncbi-tools++
