@@ -44,7 +44,9 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.5.1:${PORTSDIR}/math/py-numpy \
 		${PKGNAMEPREFIX}pynast>=1.2.2:/usr/wip/biology/py-pynast \
 		${PKGNAMEPREFIX}emperor>=0.9.3:/usr/wip/biology/py-emperor \
 		${PKGNAMEPREFIX}h5py>=2.3.0:${PORTSDIR}/science/py-h5py \
-		FastTree>=2.1.7:/usr/wip/biology/fasttree
+		FastTree>=2.1.7:/usr/wip/biology/fasttree \
+		bl2seq:${PORTSDIR}/biology/ncbi-toolkit \
+		muscle:${PORTSDIR}/biology/muscle
 RUN_DEPENDS=	${BUILD_DEPENDS}
 BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 
