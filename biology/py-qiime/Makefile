@@ -50,6 +50,9 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.5.1:${PORTSDIR}/math/py-numpy \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 
+# Hack to work around matplotlib package not installing pyparsing on 10.0
+RUN_DEPENDS+=	${PKGNAMEPREFIX}parsing>=0:${PORTSDIR}/devel/py-parsing
+
 ###############
 # Full install
 
