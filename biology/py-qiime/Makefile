@@ -16,6 +16,7 @@ COMMENT=	Quantitative Insights Into Microbial Ecology
 # uclust is a Linux closed-source binary and required for qiime
 ONLY_FOR_ARCH=	i386 amd64
 
+USE_LINUX=	yes	# For uclust closed-source binary
 USES=		python:2 shebangfix
 USE_PYTHON=	distutils
 SHEBANG_FILES=	scripts/ec2Clean scripts/ec2Dispatch
