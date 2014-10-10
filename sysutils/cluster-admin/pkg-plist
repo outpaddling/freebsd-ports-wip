@@ -23,11 +23,12 @@ sbin/cluster-get-sync-file
 sbin/cluster-groupadd
 sbin/cluster-groupdel
 sbin/cluster-head-node
-sbin/cluster-local-pkg_add
+sbin/cluster-local-pkg-install
 sbin/cluster-local-port_add
 sbin/cluster-local-sync-software
 sbin/cluster-pbs-restart
-sbin/cluster-pkg_add
+sbin/cluster-pkg-install
+sbin/cluster-pkg-upgrade
 sbin/cluster-pkgdir
 sbin/cluster-port_add
 sbin/cluster-portsnap
@@ -59,5 +60,5 @@ sbin/slurm-restart
 %%DATADIR%%/patch-httpd.conf
 %%DATADIR%%/patch-httpd22.conf
 %%DATADIR%%/profile
-@dirrmtry %%DATADIR%%/WWW
-@dirrmtry %%DATADIR%%
+@dir %%DATADIR%%/WWW
+@dir %%DATADIR%%
