@@ -23,6 +23,8 @@ SHEBANG_FILES=	scripts/ec2Clean scripts/ec2Dispatch
 
 PYDISTUTILS_PKGNAME=	qiime
 
+# Add license notification for uclust/usearch
+
 #####################
 # Base installation
 #
@@ -46,7 +48,8 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.5.1:${PORTSDIR}/math/py-numpy \
 		${PKGNAMEPREFIX}h5py>=2.3.0:${PORTSDIR}/science/py-h5py \
 		FastTree>=2.1.7:/usr/wip/biology/fasttree \
 		bl2seq:${PORTSDIR}/biology/ncbi-toolkit \
-		muscle:${PORTSDIR}/biology/muscle
+		muscle:${PORTSDIR}/biology/muscle \
+		cmbuild:/usr/wip/biology/infernal102
 RUN_DEPENDS=	${BUILD_DEPENDS}
 BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 
