@@ -12,21 +12,45 @@ COMMENT=	Toolset for working with human genetic variation data
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
-
-USES=		dos2unix libtool shebangfix
-#SHEBANG_FILES=	${WRKSRC}/browser/pbrowse.in ${WRKSRC}/index/index.in
+USES=		dos2unix libtool shebangfix gmake
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-protobuf=${LOCALBASE}
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/sources
+# MAKE_JOBS_UNSAFE=yes
 
 post-patch:
-	#${REINPLACE_CMD} -e 's|PF_INET|AF_INET|g' ${WRKSRC}/browser/mongoose.c
-	#${REINPLACE_CMD} -e 's|-ldl||g' \
-		#${WRKSRC}/browser/Makefile.in \
-		#${WRKSRC}/client/Makefile.in \
-		#${WRKSRC}/index/Makefile.in
+	${REINPLACE_CMD} -e 's|PF_INET|AF_INET|g' \
+		${WRKSRC}/sources/mongoose/sources/lib/mongoose.c
+	${REINPLACE_CMD} \
+		-e 's|g++|${CXX}|g' \
+		-e 's|gcc|${CC}|g' \
+		-e 's|CXXFLAGS = -O3|CXXFLAGS = ${CXXFLAGS}|g' \
+		-e 's|ALL_CFLAGS =-O3|ALL_CFLAGS = ${CFLAGS}|g' \
+		${WRKSRC}/config_defs.Makefile
+	${REINPLACE_CMD} \
+		-e 's| -ldl||g' \
+		-e 's| $$(STATIC_FLAG)||g' \
+		${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/build/execs/behead \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/build/execs/browser \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/build/execs/gcol \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/build/execs/mm \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/build/execs/mongoose \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/build/execs/pdas \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/build/execs/pseq \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/build/execs/smp \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/build/execs/tab2vcf \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/sources/plinkseq/build/lib/libplinkseq.a \
+		${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>
