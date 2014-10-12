@@ -82,7 +82,7 @@ Test on all available platforms.  Do the following IN ORDER:
     make reinstall
     test with NOPORT* (whatever is in pkg-plist)
 
-Safe output of these commands and attach to PR
+Save output of these commands and attach to PR
     make check-plist > check-plist.out
     make stage-qa > stage-qa.out
 
@@ -93,10 +93,6 @@ Carefully inspect diff or shar
 
 Follow porter's handbook to submit new port or update.
     
-touch submitted
-svn add submitted
-svn commit -m 'Submitted category/port'
-
 If maintaining source
 
     tag this version of source and create next one

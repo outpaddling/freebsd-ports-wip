@@ -5,6 +5,7 @@ PORTNAME=	plinkseq
 PORTVERSION=	0.10
 CATEGORIES=	biology science
 MASTER_SITES=	http://psychgen.u.hpc.mssm.edu/plinkseq_downloads/
+# Default DISTNAME is correct, so leave it alone.
 DISTFILES=	${PORTNAME}-src-${PORTVERSION}.tgz
 
 MAINTAINER=	jwbacon@tds.net
@@ -12,13 +13,11 @@ COMMENT=	Toolset for working with human genetic variation data
 
 LICENSE=	GPLv2
 
-USES=		dos2unix libtool shebangfix gmake
-USE_LDCONFIG=	yes
-
-# MAKE_JOBS_UNSAFE=yes
+USES=		libtool gmake
 
 post-patch:
-	${REINPLACE_CMD} -e 's|PF_INET|AF_INET|g' \
+	${REINPLACE_CMD} \
+		-e 's|PF_INET|AF_INET|g' \
 		${WRKSRC}/sources/mongoose/sources/lib/mongoose.c
 	${REINPLACE_CMD} \
 		-e 's|g++|${CXX}|g' \
@@ -32,24 +31,9 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/build/execs/behead \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/build/execs/browser \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/build/execs/gcol \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/build/execs/mm \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/build/execs/mongoose \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/build/execs/pdas \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/build/execs/pseq \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/build/execs/smp \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/build/execs/tab2vcf \
-		${STAGEDIR}${PREFIX}/bin
+.for f in behead browser gcol mm mongoose pdas pseq smp tab2vcf
+	${INSTALL_PROGRAM} ${WRKSRC}/build/execs/${f} ${STAGEDIR}${PREFIX}/bin
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/sources/plinkseq/build/lib/libplinkseq.a \
 		${STAGEDIR}${PREFIX}/lib
 
