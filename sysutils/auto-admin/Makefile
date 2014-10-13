@@ -10,9 +10,9 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Tools for automating system management
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
-USE_XZ=		yes
+USES=		tar:xz
 
 NO_BUILD=	yes
 
