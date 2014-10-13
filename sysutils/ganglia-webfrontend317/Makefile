@@ -1,15 +1,14 @@
-# $FreeBSD: head/sysutils/ganglia-webfrontend/Makefile 360930 2014-07-06 15:52:25Z bapt $
+# $FreeBSD: head/sysutils/ganglia-webfrontend/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	webfrontend
-# PORTVERSION=	3.1.7
-# PORTREVISION=	3
-PORTVERSION=	3.4.0
+PORTVERSION=	3.1.7
+PORTREVISION=	3
 CATEGORIES=	sysutils net parallel www
 MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}
 PKGNAMEPREFIX=	ganglia-
 DISTNAME=	ganglia-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, web frontend
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/gmetad:${PORTSDIR}/sysutils/ganglia-monitor-core
@@ -36,7 +35,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/web
 # information on these variables.
 WEBFRONTDIR?=	www/ganglia
 
-# NO_STAGE=	yes
+NO_STAGE=	yes
 # Set custom variables:
 #
 PKGOPTS=	${FILESDIR}/pkg-opts
