@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 www/ganglia/AUTHORS
 www/ganglia/COPYING
 www/ganglia/Makefile.bak
@@ -1090,11 +1092,11 @@ www/ganglia/trend_navigation.php
 www/ganglia/version.php
 www/ganglia/view_content.php
 www/ganglia/views_view.php
-/var/lib/%%AP_NAME%%/conf/default.json
-/var/lib/%%AP_NAME%%/conf/event_color.json
-/var/lib/%%AP_NAME%%/conf/events.json
-/var/lib/%%AP_NAME%%/conf/sql/ganglia.mysql
-/var/lib/%%AP_NAME%%/conf/view_default.json
+/var/db/%%AP_NAME%%/conf/default.json
+/var/db/%%AP_NAME%%/conf/event_color.json
+/var/db/%%AP_NAME%%/conf/events.json
+/var/db/%%AP_NAME%%/conf/sql/ganglia.mysql
+/var/db/%%AP_NAME%%/conf/view_default.json
 @dir www/ganglia/api
 @dir www/ganglia/contrib/jquery-ui-1.10.2/demos/accordion
 @dir www/ganglia/contrib/jquery-ui-1.10.2/demos/addClass
@@ -1232,10 +1234,10 @@ www/ganglia/views_view.php
 @dir www/ganglia/templates
 @dir www/ganglia/test
 @dir www/ganglia
-@dir /var/lib/%%AP_NAME%%/conf/sql
-@dir /var/lib/%%AP_NAME%%/conf
-@dir /var/lib/%%AP_NAME%%/dwoo/cache
-@dir /var/lib/%%AP_NAME%%/dwoo/compiled
-@dir /var/lib/%%AP_NAME%%/dwoo
-@dir /var/lib/%%AP_NAME%%
-@dir /var/lib
+@dir /var/db/%%AP_NAME%%/conf/sql
+@dir /var/db/%%AP_NAME%%/conf
+@dir /var/db/%%AP_NAME%%/dwoo/cache
+@dir /var/db/%%AP_NAME%%/dwoo/compiled
+@dir /var/db/%%AP_NAME%%/dwoo
+@dir /var/db/%%AP_NAME%%
+@dir /var/db

@@ -11,17 +11,24 @@ COMMENT=	Ganglia network monitor web interface
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/gmetad:${PORTSDIR}/sysutils/ganglia-monitor-core
 
-USE_PHP=	gd pcre xml ctype
+USE_PHP=	gd pcre xml ctype session
 WANT_PHP_MOD=	yes
 
 WEBDIR=		www/ganglia
+
+PLIST_SUB+=     WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|/usr/share/ganglia-webfrontend|${PREFIX}/${WEBDIR}|g' \
 		-e 's|/etc|${PREFIX}/etc|g' \
 		-e 's|www-data|www|g' \
+		-e 's|/var/lib/ganglia|/var/db/ganglia|g' \
 		${WRKSRC}/Makefile
+	${REINPLACE_CMD} \
+		-e 's|/usr/bin/rrdtool|${PREFIX}/bin/rrdtool|g' \
+		-e 's|/var/lib/ganglia|/var/db/ganglia|g' \
+		${WRKSRC}/conf_default.php*
 
 # /var/lib/ganglia-web must be owned by www
 # /var/lib/ganglia must be owned by ganglia
