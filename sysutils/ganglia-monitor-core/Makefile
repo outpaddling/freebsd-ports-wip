@@ -24,8 +24,7 @@ OPTIONS_DEFINE=	GMETAD
 OPTIONS_DEFAULT=	GMETAD
 GMETAD_DESC=	include gmetad
 
-USES=		libtool pkgconfig
-USE_PYTHON=	yes
+USES=		libtool pkgconfig python
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-setuid=ganglia --enable-setgid=ganglia \
@@ -107,6 +106,8 @@ post-patch:
 		${FIX_GMOND_CONF_DIR:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e "s|nobody|ganglia|g" \
 		${FIX_USER_FILES:S|^|${WRKSRC}/|}
+	${REINPLACE_CMD} -e "s|@moduledir@/python_modules|@moduledir@|g" \
+		${WRKSRC}/gmond/modules/conf.d/modpython.conf.in
 
 post-build:
 	${WRKSRC}/gmond/gmond -t > ${WRKDIR}/gmond.conf
