@@ -1,6 +1,12 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
 
+# Note: /var/lib/ganglia-web must be owned by www.  Add the following to
+# the top of pkg-plist:
+#
+# @owner %%WWWOWN%%
+# @group %%WWWGRP%%
+
 PORTNAME=	ganglia-web
 PORTVERSION=	3.6.2
 CATEGORIES=	sysutils www
@@ -29,10 +35,5 @@ post-patch:
 		-e 's|/usr/bin/rrdtool|${PREFIX}/bin/rrdtool|g' \
 		-e 's|/var/lib/ganglia|/var/db/ganglia|g' \
 		${WRKSRC}/conf_default.php*
-
-# /var/lib/ganglia-web must be owned by www
-# /var/lib/ganglia must be owned by ganglia
-post-install:
-        @${CHOWN} -Rh ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${WEBDIR}
 
 .include <bsd.port.mk>

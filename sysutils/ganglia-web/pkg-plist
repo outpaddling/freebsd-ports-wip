@@ -2,7 +2,6 @@
 @group %%WWWGRP%%
 www/ganglia/AUTHORS
 www/ganglia/COPYING
-www/ganglia/Makefile.bak
 www/ganglia/README
 www/ganglia/TODO
 www/ganglia/actions.php
