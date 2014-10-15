@@ -1240,4 +1240,3 @@ www/ganglia/views_view.php
 @dir /var/db/%%AP_NAME%%/dwoo/compiled
 @dir /var/db/%%AP_NAME%%/dwoo
 @dir /var/db/%%AP_NAME%%
-@dir /var/db
