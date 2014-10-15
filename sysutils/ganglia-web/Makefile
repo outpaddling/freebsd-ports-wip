@@ -11,7 +11,7 @@ COMMENT=	Ganglia network monitor web interface
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/gmetad:${PORTSDIR}/sysutils/ganglia-monitor-core
 
-USE_PHP=	gd pcre xml ctype session
+USE_PHP=	gd pcre xml ctype session filter
 WANT_PHP_MOD=	yes
 
 WEBDIR=		www/ganglia
