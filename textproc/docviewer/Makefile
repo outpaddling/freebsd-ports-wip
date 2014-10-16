@@ -16,12 +16,10 @@ COMMENT=	Run the best available PDF viewer
 
 NO_BUILD=	yes
 
-MAN1=		docviewer.1
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/docviewer ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/docviewer.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-PLIST_FILES=	bin/docviewer
+PLIST_FILES=	bin/docviewer man/man1/docviewer.1.gz
 
 .include <bsd.port.mk>

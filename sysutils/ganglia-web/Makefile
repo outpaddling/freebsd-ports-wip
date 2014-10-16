@@ -15,6 +15,8 @@ MASTER_SITES=	SF/ganglia/ganglia-web/${PORTVERSION}
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Ganglia network monitor web interface
 
+LICENSE=	BSD3CLAUSE
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/gmetad:${PORTSDIR}/sysutils/ganglia-monitor-core
 
 USE_PHP=	gd pcre xml ctype session filter
@@ -22,7 +24,7 @@ WANT_PHP_MOD=	yes
 
 WEBDIR=		www/ganglia
 
-PLIST_SUB+=     WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 post-patch:
 	@${REINPLACE_CMD} \
