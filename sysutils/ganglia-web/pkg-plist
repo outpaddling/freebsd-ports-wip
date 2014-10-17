@@ -1091,11 +1091,6 @@ www/ganglia/trend_navigation.php
 www/ganglia/version.php
 www/ganglia/view_content.php
 www/ganglia/views_view.php
-/var/db/%%AP_NAME%%/conf/default.json
-/var/db/%%AP_NAME%%/conf/event_color.json
-/var/db/%%AP_NAME%%/conf/events.json
-/var/db/%%AP_NAME%%/conf/sql/ganglia.mysql
-/var/db/%%AP_NAME%%/conf/view_default.json
 @dirrm www/ganglia/api
 @dirrm www/ganglia/contrib/jquery-ui-1.10.2/demos/accordion
 @dirrm www/ganglia/contrib/jquery-ui-1.10.2/demos/addClass
@@ -1233,9 +1228,3 @@ www/ganglia/views_view.php
 @dirrm www/ganglia/templates
 @dirrm www/ganglia/test
 @dirrm www/ganglia
-@dirrm /var/db/%%AP_NAME%%/conf/sql
-@dirrm /var/db/%%AP_NAME%%/conf
-@dirrm /var/db/%%AP_NAME%%/dwoo/cache
-@dirrm /var/db/%%AP_NAME%%/dwoo/compiled
-@dirrm /var/db/%%AP_NAME%%/dwoo
-@dirrm /var/db/%%AP_NAME%%

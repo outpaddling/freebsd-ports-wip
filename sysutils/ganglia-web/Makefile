@@ -1,12 +1,6 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
 
-# Note: /var/lib/ganglia-web must be owned by www.  Add the following to
-# the top of pkg-plist:
-#
-# @owner %%WWWOWN%%
-# @group %%WWWGRP%%
-
 PORTNAME=	ganglia-web
 PORTVERSION=	3.6.2
 CATEGORIES=	sysutils www
@@ -19,23 +13,43 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/gmetad:${PORTSDIR}/sysutils/ganglia-monitor-core
 
+PKGINSTALL=	${WRKDIR}/pkg-install
+
 USE_PHP=	gd pcre xml ctype session filter
 WANT_PHP_MOD=	yes
 
-WEBDIR=		www/ganglia
+HTMLDIR=	www/ganglia
 
-PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+# HTMLDIR and GWEBDIR must be owned by WWWOWN:WWWGRP.
+# Add the following to pkg-plist:
+# @owner %%WWWOWN%%
+# @group %%WWWGRP%%
+
+PLIST_SUB+=	WWWOWN=${WWWOWN} \
+		WWWGRP=${WWWGRP}
+SUB_LIST+=	STAGEDIR=${STAGEDIR} \
+		WWWOWN=${WWWOWN} \
+		WWWGRP=${WWWGRP} \
+		GWEBDIR=${GWEBDIR}
+
+SUB_FILES+=	pkg-install
+
+# Taken from ganglia-monitor-core.  Must match for ganglia-web to function!
+RRD_ROOTDIR=	/var/db/ganglia
+GWEBDIR=	${RRD_ROOTDIR}-web
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|/usr/share/ganglia-webfrontend|${PREFIX}/${WEBDIR}|g' \
+		-e 's|/usr/share/ganglia-webfrontend|${PREFIX}/${HTMLDIR}|g' \
 		-e 's|/etc|${PREFIX}/etc|g' \
 		-e 's|www-data|www|g' \
-		-e 's|/var/lib/ganglia|/var/db/ganglia|g' \
+		-e 's|/var/lib/ganglia-web|${GWEBDIR}|g' \
+		-e 's|/var/lib/ganglia|${RRD_ROOTDIR}|g' \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} \
 		-e 's|/usr/bin/rrdtool|${PREFIX}/bin/rrdtool|g' \
-		-e 's|/var/lib/ganglia|/var/db/ganglia|g' \
+		-e 's|/var/lib/ganglia-web|${GWEBDIR}|g' \
+		-e 's|/var/lib/ganglia|${RRD_ROOTDIR}|g' \
 		${WRKSRC}/conf_default.php*
 
 .include <bsd.port.mk>
