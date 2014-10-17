@@ -1,58 +1,45 @@
-# New ports collection makefile for: science/meep
-# Date created:		26 Dec 2009
-# Whom:			Stas Timokhin <devel@stasyan.com>
-#
-# $FreeBSD: ports/science/meep/Makefile,v 1.8 2012/04/07 15:31:51 gerald Exp $
-#
+# Created by: Stas Timokhin <devel@stasyan.com>
+# $FreeBSD: head/science/meep/Makefile 369434 2014-09-28 03:41:24Z danilo $
 
 PORTNAME=	meep
-PORTVERSION=	1.1.1
-PORTREVISION=	4
+PORTVERSION=	1.2.1
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/meep/
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	FDTD simulation software to model electromagnetic systems
 
-BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash \
-		harminv:${PORTSDIR}/science/harminv \
+BUILD_DEPENDS=	harminv:${PORTSDIR}/science/harminv \
 		gsed:${PORTSDIR}/textproc/gsed
-LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile \
-		blas.2:${PORTSDIR}/math/blas \
-		ctl.4:${PORTSDIR}/science/libctl \
-		hdf5:${PORTSDIR}/science/hdf5
-RUN_DEPENDS+=	harminv:${PORTSDIR}/science/harminv
+LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile \
+		libblas.so:${PORTSDIR}/math/blas \
+		libctl.so:${PORTSDIR}/science/libctl \
+		libhdf5.so:${PORTSDIR}/science/hdf5
+RUN_DEPENDS=	harminv:${PORTSDIR}/science/harminv
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_FORTRAN=	yes
-USE_GCC=	4.6+
-USE_ICONV=	yes
-USE_GETTEXT=	yes
-USE_AUTOTOOLS+=	libltdl
+USE_GCC=	yes
+USES=		fortran gettext gmake iconv libtool pathfix pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
-LD_LIBRARY_PATH=	-L${LOCALBASE}/lib -L/usr/lib
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	LD_LIBRARY_PATH="${LD_LIBRARY_PATH}"
+MAKE_ARGS+=	CC="${CC}" CXX="${CXX}"
 
-OPTIONS=	OPENMPI "Enable MPI support using openmpi" On
+OPTIONS_DEFINE=		OPENMPI
+OPTIONS_DEFAULT=	OPENMPI
+OPENMPI_DESC=		MPI support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_OPENMPI)
+.if ${PORT_OPTIONS:MOPENMPI}
 BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpiCC:${PORTSDIR}/net/openmpi
 RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
 CONFIGURE_ARGS+=--with-mpi
 CONFIGURE_ENV+=	MPICXX=${LOCALBASE}/mpi/openmpi/bin/mpiCC
+CFLAGS+=	-I${LOCALBASE}/mpi/openmpi/include
 PLIST_SUB+=	MPI="" NOMPI="@comment "
 .else
 CONFIGURE_ARGS+=--without-mpi
 PLIST_SUB+=	MPI="@comment " NOMPI=""
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -e 's+\#\! /bin/sh+\#\! ${PREFIX}/bin/bash+' \
-		-e s+\$$\(SHELL\)+${PREFIX}/bin/bash+ ${WRKSRC}/configure
-	echo ${CC}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
