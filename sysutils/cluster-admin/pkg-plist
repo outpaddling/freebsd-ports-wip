@@ -56,9 +56,7 @@ sbin/slurm-restart
 %%DATADIR%%/WWW/powerlogo.gif
 %%DATADIR%%/WWW/sync-compute-docs.sh
 %%DATADIR%%/csh.login
-%%DATADIR%%/patch-gmetad.conf
-%%DATADIR%%/patch-httpd.conf
-%%DATADIR%%/patch-httpd22.conf
+%%DATADIR%%/patch-apache.awk
 %%DATADIR%%/profile
 @dir %%DATADIR%%/WWW
 @dir %%DATADIR%%
