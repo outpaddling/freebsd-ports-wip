@@ -20,16 +20,16 @@ USES=		tar:xz
 NO_BUILD=	yes
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/FreeBSD/Scripts/* ${STAGEDIR}${PREFIX}/sbin
 	${MV} ${STAGEDIR}${PREFIX}/sbin/topnode ${STAGEDIR}${PREFIX}/bin
 	${MV} ${STAGEDIR}${PREFIX}/sbin/slurm-shell ${STAGEDIR}${PREFIX}/bin
-	(cd ${WRKSRC}/Man && for f in *.mdoc; \
+	(cd ${WRKSRC}/FreeBSD/Man && for f in *.mdoc; \
 	do \
 		${INSTALL_MAN} $${f} \
 			${STAGEDIR}${PREFIX}/man/man1/$${f%.mdoc}.1; \
 	done)
 	${MKDIR} ${STAGEDIR}${DATADIR}/WWW
-	${INSTALL_DATA} ${WRKSRC}/Share/* ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/WWW/* ${STAGEDIR}${DATADIR}/WWW
+	${INSTALL_DATA} ${WRKSRC}/FreeBSD/Share/* ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/FreeBSD/WWW/* ${STAGEDIR}${DATADIR}/WWW
 
 .include <bsd.port.mk>
