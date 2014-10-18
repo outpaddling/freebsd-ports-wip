@@ -11,7 +11,7 @@ COMMENT=	Ganglia network monitor web interface
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/gmetad:${PORTSDIR}/sysutils/ganglia-monitor-core
+RUN_DEPENDS=	gmetad:${PORTSDIR}/sysutils/ganglia-monitor-core
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 

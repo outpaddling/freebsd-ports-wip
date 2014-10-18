@@ -1,5 +1,2 @@
 
-AddType
-/ require all granted
-
-Need to compile php5 with session enabled?
+What is GCONFDIR?
