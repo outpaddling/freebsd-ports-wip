@@ -29,6 +29,8 @@ BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13 \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CFLAGS+=	-I${PYTHON_SITELIBDIR}/numpy/core/include
+#CXXFLAGS+=	-I${PYTHON_SITELIBDIR}/numpy/core/include -fPIC
+#LDFLAGS+=	-I${PYTHON_SITELIBDIR}/numpy/core/include -fPIC
 
 post-patch:
 		${MV} ${WRKSRC}/setup-mpi.py ${WRKSRC}/setup.py

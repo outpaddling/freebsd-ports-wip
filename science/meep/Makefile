@@ -21,7 +21,9 @@ GNU_CONFIGURE=	yes
 USE_GCC=	yes
 USES=		fortran gettext gmake iconv libtool pathfix pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-fPIC
+CXXFLAGS+=	-fPIC
+LDFLAGS+=	-L${LOCALBASE}/lib -fPIC
 MAKE_ARGS+=	CC="${CC}" CXX="${CXX}"
 
 OPTIONS_DEFINE=		OPENMPI
