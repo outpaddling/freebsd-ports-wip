@@ -35,6 +35,8 @@ post-patch:
 		${REINPLACE_CMD} \
 			-e 's|/usr/include|${LOCALBASE}/include|g' \
 			-e 's|/usr/lib|${LOCALBASE}/lib|g' \
+			-e 's|I:L:|I:L:c:|g' \
+			-e "s|'help'|'help', 'single-version-externally-managed'|g" \
 			${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

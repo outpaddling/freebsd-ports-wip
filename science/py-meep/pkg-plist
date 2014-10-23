@@ -1,1 +1,12 @@
-@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/_meep_mpi.so
+%%PYTHON_SITELIBDIR%%/custom.hpp
+%%PYTHON_SITELIBDIR%%/meep_mpi.py
+%%PYTHON_SITELIBDIR%%/meep_mpi.pyc
+%%PYTHON_SITELIBDIR%%/meep_mpi.pyo
+%%PYTHON_SITELIBDIR%%/python_meep-1.4-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/python_meep-1.4-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/python_meep-1.4-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/python_meep-1.4-py%%PYTHON_VER%%.egg-info/top_level.txt
+@dirrm %%PYTHON_SITELIBDIR%%/python_meep-1.4-py%%PYTHON_VER%%.egg-info
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
