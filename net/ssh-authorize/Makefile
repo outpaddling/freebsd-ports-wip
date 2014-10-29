@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ssh-authorize
-PORTVERSION=	1.0
+PORTVERSION=	0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 		http://acadix.biz/Ports/distfiles/
