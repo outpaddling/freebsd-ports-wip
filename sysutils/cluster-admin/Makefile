@@ -20,6 +20,7 @@ USES=		tar:xz
 NO_BUILD=	yes
 
 do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/Common/Scripts/* ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/FreeBSD/Scripts/* ${STAGEDIR}${PREFIX}/sbin
 	${MV} ${STAGEDIR}${PREFIX}/sbin/topnode ${STAGEDIR}${PREFIX}/bin
 	${MV} ${STAGEDIR}${PREFIX}/sbin/slurm-shell ${STAGEDIR}${PREFIX}/bin

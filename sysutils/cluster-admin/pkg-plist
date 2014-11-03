@@ -10,7 +10,6 @@ man/man1/cluster-run.1.gz
 man/man1/cluster-setup.1.gz
 man/man1/cluster-shutdown.1.gz
 man/man1/cluster-update-ssh_config.1.gz
-sbin/cluster-add-node
 sbin/cluster-add-to-group
 sbin/cluster-adduser
 sbin/cluster-admin
