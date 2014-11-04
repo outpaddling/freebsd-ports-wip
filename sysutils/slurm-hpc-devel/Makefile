@@ -2,13 +2,13 @@
 # $FreeBSD: head/sysutils/slurm-hpc/Makefile 336471 2013-12-14 19:01:33Z wg $
 
 PORTNAME=	slurm
-PORTVERSION=	14.03.0
+PORTVERSION=	14.11.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/archive/ \
 		http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/development/
 PKGNAMESUFFIX=	-hpc
-DISTNAME=	slurm-${PORTVERSION}-0pre6
+DISTNAME=	slurm-${PORTVERSION}-0rc3
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Simple Linux Utility for Resource Management
@@ -21,14 +21,13 @@ LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo \
 		librrd.so:${PORTSDIR}/databases/rrdtool
 # Testing for hdf5.so is insufficient.  It will accept hdf5 1.6 and
 # slurm requires hdf5 1.8.  h5copy is present only in 1.8.
-BUILD_DEPENDS+=	${LOCALBASE}/bin/h5copy:${PORTSDIR}/science/hdf5-18
+BUILD_DEPENDS+=	${LOCALBASE}/bin/h5copy:${PORTSDIR}/science/hdf5
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
-USES=		perl5 gmake
+USES=		perl5 gmake tar:bz2
 
 OPTIONS_DEFINE=	DOCS MYSQL PGSQL GTK2
 GTK2_DESC=	Build GUI config tools (sview)

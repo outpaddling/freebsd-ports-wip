@@ -2,12 +2,13 @@
 # $FreeBSD: head/sysutils/slurm-hpc/Makefile 336471 2013-12-14 19:01:33Z wg $
 
 PORTNAME=	slurm
-PORTVERSION=	2.6.4
+PORTVERSION=	14.03.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/archive/ \
 		http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/development/
 PKGNAMESUFFIX=	-hpc
+#DISTNAME=	slurm-${PORTVERSION}-0pre6
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Simple Linux Utility for Resource Management
@@ -20,14 +21,13 @@ LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo \
 		librrd.so:${PORTSDIR}/databases/rrdtool
 # Testing for hdf5.so is insufficient.  It will accept hdf5 1.6 and
 # slurm requires hdf5 1.8.  h5copy is present only in 1.8.
-BUILD_DEPENDS+=	${LOCALBASE}/bin/h5copy:${PORTSDIR}/science/hdf5-18
+BUILD_DEPENDS+=	${LOCALBASE}/bin/h5copy:${PORTSDIR}/science/hdf5
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
-USES=		perl5 gmake
+USES=		perl5 gmake tar:bz2
 
 OPTIONS_DEFINE=	DOCS MYSQL PGSQL GTK2
 GTK2_DESC=	Build GUI config tools (sview)
@@ -93,5 +93,8 @@ post-patch:
 		-e 's|/usr/bin/env python|${PYTHON_CMD}|g' \
 		${WRKSRC}/doc/html/shtml2html.py \
 		${WRKSRC}/doc/man/man2html.py
+	@${REINPLACE_CMD} \
+		-e 's|min_gtk_version=2.7.1|min_gtk_version=200.7.1|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
