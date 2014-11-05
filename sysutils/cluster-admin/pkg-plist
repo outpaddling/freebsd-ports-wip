@@ -22,6 +22,8 @@ sbin/cluster-get-sync-file
 sbin/cluster-groupadd
 sbin/cluster-groupdel
 sbin/cluster-head-node
+sbin/cluster-load
+sbin/cluster-load-summary
 sbin/cluster-local-pkg-install
 sbin/cluster-local-port_add
 sbin/cluster-local-sync-software
