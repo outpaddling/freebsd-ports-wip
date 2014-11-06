@@ -83,8 +83,8 @@ PLIST_FILES+=	bin/sview
 .endif
 
 # Can't disable configure test, so make it fail
+#	${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
 post-patch:
-	${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
 .if ! ${PORT_OPTIONS:MGTK2}
 	${REINPLACE_CMD} \
 		-e 's|min_gtk_version=2.7.1|min_gtk_version=200.7.1|g' \

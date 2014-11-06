@@ -1,4 +1,6 @@
 
+Remaining two patch files appear to be unnecessary
+
 Check %a in -o and -e.  Returns 65534 in some cases.
 
 Test on old hardware with hwloc > 1.3.1.  Remove patch from xcpuinfo.c
