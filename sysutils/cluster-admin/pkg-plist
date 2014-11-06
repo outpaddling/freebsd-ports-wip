@@ -51,9 +51,14 @@ sbin/cluster-usermod
 sbin/cluster-users
 sbin/node-sync-user
 sbin/pbs-cluster-load
+sbin/pending-jobs
 sbin/slurm-cluster-load
+sbin/slurm-find-strays
 sbin/slurm-job-stats
+sbin/slurm-job-status
+sbin/slurm-pending-jobs
 sbin/slurm-restart
+sbin/slurm-user-cores
 %%DATADIR%%/WWW/global_styles.css
 %%DATADIR%%/WWW/index.php
 %%DATADIR%%/WWW/powerlogo.gif
