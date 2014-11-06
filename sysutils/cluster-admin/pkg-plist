@@ -13,6 +13,7 @@ man/man1/cluster-update-ssh_config.1.gz
 sbin/cluster-add-to-group
 sbin/cluster-adduser
 sbin/cluster-admin
+sbin/cluster-backup-login-nodes
 sbin/cluster-compute-nodes
 sbin/cluster-cp
 sbin/cluster-ganglia-restart
@@ -22,6 +23,7 @@ sbin/cluster-get-sync-file
 sbin/cluster-groupadd
 sbin/cluster-groupdel
 sbin/cluster-head-node
+sbin/cluster-io-nodes
 sbin/cluster-load
 sbin/cluster-load-summary
 sbin/cluster-local-pkg-install
