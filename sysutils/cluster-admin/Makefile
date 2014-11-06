@@ -20,10 +20,12 @@ USES=		tar:xz
 NO_BUILD=	yes
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/Common/Scripts/* ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/FreeBSD/Scripts/* ${STAGEDIR}${PREFIX}/sbin
-	${MV} ${STAGEDIR}${PREFIX}/sbin/topnode ${STAGEDIR}${PREFIX}/bin
-	${MV} ${STAGEDIR}${PREFIX}/sbin/slurm-shell ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} \
+		${WRKSRC}/Common/Sys-scripts/* ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} \
+		${WRKSRC}/FreeBSD/Sys-scripts/* ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} \
+		${WRKSRC}/Common/User-scripts/* ${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC}/FreeBSD/Man && for f in *.mdoc; \
 	do \
 		${INSTALL_MAN} $${f} \

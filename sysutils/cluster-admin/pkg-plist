@@ -1,4 +1,13 @@
+bin/cluster-load
+bin/cluster-load-summary
+bin/pending-jobs
+bin/slurm-cluster-load
+bin/slurm-job-hist
+bin/slurm-job-stats
+bin/slurm-job-status
+bin/slurm-pending-jobs
 bin/slurm-shell
+bin/slurm-user-cores
 bin/topnode
 man/man1/cluster-adduser.1.gz
 man/man1/cluster-admin.1.gz
@@ -24,8 +33,6 @@ sbin/cluster-groupadd
 sbin/cluster-groupdel
 sbin/cluster-head-node
 sbin/cluster-io-nodes
-sbin/cluster-load
-sbin/cluster-load-summary
 sbin/cluster-local-pkg-install
 sbin/cluster-local-port_add
 sbin/cluster-local-sync-software
@@ -51,14 +58,8 @@ sbin/cluster-usermod
 sbin/cluster-users
 sbin/node-sync-user
 sbin/pbs-cluster-load
-sbin/pending-jobs
-sbin/slurm-cluster-load
 sbin/slurm-find-strays
-sbin/slurm-job-stats
-sbin/slurm-job-status
-sbin/slurm-pending-jobs
 sbin/slurm-restart
-sbin/slurm-user-cores
 %%DATADIR%%/WWW/global_styles.css
 %%DATADIR%%/WWW/index.php
 %%DATADIR%%/WWW/powerlogo.gif
