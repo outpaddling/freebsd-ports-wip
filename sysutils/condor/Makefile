@@ -19,7 +19,7 @@ LIB_DEPENDS+=	libkrb5support.so:${PORTSDIR}/security/krb5 \
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_LDCONFIG=	yes
 USES+=		cmake gmake perl5 pgsql
-#USE_GCC=	any
+USE_GCC=	any
 WANT_PGSQL=	server
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-rpath=${LOCALBASE}/lib:/usr/lib:/lib
