@@ -83,13 +83,13 @@ PLIST_FILES+=	bin/sview
 .endif
 
 # Can't disable configure test, so make it fail
-#	${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
 post-patch:
 .if ! ${PORT_OPTIONS:MGTK2}
 	${REINPLACE_CMD} \
 		-e 's|min_gtk_version=2.7.1|min_gtk_version=200.7.1|g' \
 		${WRKSRC}/configure
 .endif
+	${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
 	@${REINPLACE_CMD} \
 		-e 's|/usr/bin/env python|${PYTHON_CMD}|g' \
 		${WRKSRC}/doc/html/shtml2html.py \
