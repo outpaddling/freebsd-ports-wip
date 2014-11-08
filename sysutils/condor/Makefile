@@ -12,6 +12,8 @@ COMMENT=	High-throughput computing on distributively owned resources
 
 LICENSE=	APACHE20
 
+MAKE_JOBS_UNSAFE=	yes
+
 LIB_DEPENDS+=	libkrb5support.so:${PORTSDIR}/security/krb5 \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libcurl.so:${PORTSDIR}/ftp/curl
@@ -21,8 +23,8 @@ USE_LDCONFIG=	yes
 USES+=		cmake gmake perl5 pgsql
 USE_GCC=	any
 WANT_PGSQL=	server
-CXXFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-rpath=${LOCALBASE}/lib:/usr/lib:/lib
+CXXFLAGS+=	-I${LOCALBASE}/include -fPIC
+LDFLAGS+=	-rpath=${LOCALBASE}/lib:/usr/lib:/lib -fPIC
 CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING=${LDFLAGS}
 
