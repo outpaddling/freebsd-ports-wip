@@ -9,7 +9,6 @@ man/man1/auto-disable-service.1.gz
 man/man1/auto-enable-compat32.1.gz
 man/man1/auto-enable-hal-mount.1.gz
 man/man1/auto-enable-passwdqc.1.gz
-man/man1/auto-enable-pkgng.1.gz
 man/man1/auto-enable-procfs.1.gz
 man/man1/auto-enable-service.1.gz
 man/man1/auto-fastest-mirror.1.gz
@@ -38,7 +37,6 @@ sbin/auto-disable-service
 sbin/auto-enable-compat32
 sbin/auto-enable-hal-mount
 sbin/auto-enable-passwdqc
-sbin/auto-enable-pkgng
 sbin/auto-enable-procfs
 sbin/auto-enable-service
 sbin/auto-fastest-mirror
@@ -58,4 +56,4 @@ sbin/auto-update-xorg.conf
 sbin/auto-using-pkgng
 sbin/auto-xdm-toggle
 %%DATADIR%%/ipfw-rules.sh
-@dirrmtry %%DATADIR%%
+@dir %%DATADIR%%
