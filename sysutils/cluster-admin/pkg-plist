@@ -40,7 +40,7 @@ sbin/cluster-pbs-restart
 sbin/cluster-pkg-install
 sbin/cluster-pkg-upgrade
 sbin/cluster-pkgdir
-sbin/cluster-port_add
+sbin/cluster-port-install
 sbin/cluster-portsnap
 sbin/cluster-remove-ldap-expired-users
 sbin/cluster-rmuser
