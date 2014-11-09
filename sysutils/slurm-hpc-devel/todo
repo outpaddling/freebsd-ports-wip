@@ -1,4 +1,6 @@
 
+Make sure job counter isn't reset when deinstalling!
+
 Remaining two patch files appear to be unnecessary
 
 Check %a in -o and -e.  Returns 65534 in some cases.
