@@ -126,6 +126,9 @@ lib/condor_ssh_to_job_sshd_config_template
 lib/libchirp_client.a
 lib/libclassad.a
 lib/libcondorapi.a
+lib/libpyclassad2.7_8_3_1.a
+lib/python/classad.so
+lib/python/htcondor.so
 lib/scimark2lib.jar
 libexec/accountant_log_fixer
 libexec/condor_chirp
@@ -294,13 +297,14 @@ sbin/remote_gahp
 src/chirp/chirp_client.c
 src/chirp/chirp_client.h
 src/chirp/chirp_protocol.h
-@dir %%ETCDIR%%/examples
-@dir %%ETCDIR%%/sysconfig
-@dir %%ETCDIR%%
-@dir include/classad
-%%PORTDOCS%%@dir %%DOCSDIR%%
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/examples/dagman
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/examples
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%
-@dir src/chirp
-@dir src
+@dirrmtry %%ETCDIR%%/examples
+@dirrmtry %%ETCDIR%%/sysconfig
+@dirrmtry %%ETCDIR%%
+@dirrmtry include/classad
+@dirrmtry lib/python
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/examples/dagman
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/examples
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+@dirrmtry src/chirp
+@dirrmtry src
