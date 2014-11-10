@@ -16,7 +16,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 LIB_DEPENDS+=	libkrb5support.so:${PORTSDIR}/security/krb5 \
 		libpcre.so:${PORTSDIR}/devel/pcre \
-		libcurl.so:${PORTSDIR}/ftp/curl
+		libcurl.so:${PORTSDIR}/ftp/curl \
+		libboost_python.so:${PORTSDIR}/devel/boost-python-libs
 
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_LDCONFIG=	yes
