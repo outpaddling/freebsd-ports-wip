@@ -10,7 +10,6 @@ bin/condor_findhost
 bin/condor_gather_info
 bin/condor_history
 bin/condor_hold
-bin/condor_job_router_tool
 bin/condor_ping
 bin/condor_pool_job_report
 bin/condor_power
@@ -127,7 +126,7 @@ lib/condor_ssh_to_job_sshd_config_template
 lib/libchirp_client.a
 lib/libclassad.a
 lib/libcondorapi.a
-lib/libpyclassad2.7_8_2_3.a
+lib/libpyclassad2.7_8_3_1.a
 lib/python/classad.so
 lib/python/htcondor.so
 lib/scimark2lib.jar
