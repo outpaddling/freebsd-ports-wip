@@ -1,3 +1,3 @@
-sbin/mkpatches
+sbin/mkpatch
 sbin/patch-vi
 sbin/remake

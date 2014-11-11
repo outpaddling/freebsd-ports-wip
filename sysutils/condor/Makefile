@@ -53,19 +53,6 @@ post-patch:
 		${WRKSRC}/build/cmake/CondorPackageConfig.cmake
 	@${REINPLACE_CMD} \
 		-e '/create_symlink/d' ${WRKSRC}/src/condor_scripts/CMakeLists.txt
-	find ${WRKSRC}/src \
-		-name '*.cpp' \
-		-exec sed -i '' -E 's|dprintf[\(\s]|htc_&|g' '{}' \;
-	find ${WRKSRC}/src \
-		-name '*.c' \
-		-exec sed -i '' -E 's|dprintf[\(\s]|htc_&|g' '{}' \;
-	find ${WRKSRC}/src \
-		-name '*.h' \
-		-exec sed -i '' -E 's|dprintf[\(\s]|htc_&|g' '{}' \;
-	find ${WRKSRC}/src \
-		-name '*.epilogue' \
-		-exec sed -i '' -E 's|dprintf[\(\s]|htc_&|g' '{}' \;
-
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/condor_config ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKDIR}/condor_config.local ${STAGEDIR}${ETCDIR}
