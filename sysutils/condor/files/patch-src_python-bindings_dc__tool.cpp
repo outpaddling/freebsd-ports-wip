@@ -1,5 +1,5 @@
---- src/python-bindings/dc_tool.cpp.orig	2014-11-09 15:17:29.000000000 -0600
-+++ src/python-bindings/dc_tool.cpp	2014-11-09 15:17:59.000000000 -0600
+--- src/python-bindings/dc_tool.cpp.orig	2014-09-30 16:17:32.000000000 -0500
++++ src/python-bindings/dc_tool.cpp	2014-11-10 21:57:29.000000000 -0600
 @@ -7,6 +7,19 @@
  # include <pyport.h>
  # endif
@@ -12,8 +12,8 @@
 + */
 +
 +#ifdef __FreeBSD__
-+#undef _BSD_SOURCE
-+#undef _GNU_SOURCE
++//#undef _BSD_SOURCE
++//#undef _GNU_SOURCE
 +#include <Python.h>
 +#endif
 +

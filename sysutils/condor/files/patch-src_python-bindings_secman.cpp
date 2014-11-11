@@ -1,5 +1,5 @@
---- src/python-bindings/secman.cpp.orig	2014-11-09 15:16:44.000000000 -0600
-+++ src/python-bindings/secman.cpp	2014-11-09 15:16:51.000000000 -0600
+--- src/python-bindings/secman.cpp.orig	2014-09-30 16:17:32.000000000 -0500
++++ src/python-bindings/secman.cpp	2014-11-10 21:57:01.000000000 -0600
 @@ -7,6 +7,19 @@
  # include <pyport.h>
  # endif
@@ -12,8 +12,8 @@
 + */
 +
 +#ifdef __FreeBSD__
-+#undef _BSD_SOURCE
-+#undef _GNU_SOURCE
++//#undef _BSD_SOURCE
++//#undef _GNU_SOURCE
 +#include <Python.h>
 +#endif
 +
