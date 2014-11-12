@@ -23,9 +23,9 @@ WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_LDCONFIG=	yes
 USES+=		cmake gmake perl5 pgsql shebangfix
 SHEBANG_FILES=	src/condor_scripts/condor_qsub \
-		src/condor_gridmanaager/remote_gahp \
+		src/condor_gridmanager/remote_gahp \
 		src/condor_examples/condor_limits_wrapper.sh \
-		src/condor_examples/condor_schedd_init.sh \
+		src/condor_examples/condor_schedd.init \
 		src/condor_starter.V6.1/condor_ssh_to_job_shell_setup
 
 USE_GCC=	yes
