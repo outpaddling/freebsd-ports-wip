@@ -1,6 +1,6 @@
 --- src/python-bindings/secman.cpp.orig	2014-09-30 16:17:32.000000000 -0500
-+++ src/python-bindings/secman.cpp	2014-11-10 21:57:01.000000000 -0600
-@@ -7,6 +7,19 @@
++++ src/python-bindings/secman.cpp	2014-11-11 18:13:02.000000000 -0600
+@@ -7,6 +7,20 @@
  # include <pyport.h>
  # endif
  
@@ -12,9 +12,10 @@
 + */
 +
 +#ifdef __FreeBSD__
-+//#undef _BSD_SOURCE
++#undef _BSD_SOURCE
 +//#undef _GNU_SOURCE
 +#include <Python.h>
++#define _BSD_SOURCE
 +#endif
 +
  #include "condor_common.h"
