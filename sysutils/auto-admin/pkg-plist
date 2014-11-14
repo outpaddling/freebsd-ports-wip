@@ -23,6 +23,7 @@ man/man1/auto-print-make-variable.1.gz
 man/man1/auto-replace-file.1.gz
 man/man1/auto-service-enabled.1.gz
 man/man1/auto-set-suspend-mode.1.gz
+man/man1/auto-ssh-authorize.1.gz
 man/man1/auto-update-port-framework.1.gz
 man/man1/auto-update-xorg.conf.1.gz
 man/man1/auto-using-pkgng.1.gz
@@ -51,6 +52,7 @@ sbin/auto-print-make-variable
 sbin/auto-replace-file
 sbin/auto-service-enabled
 sbin/auto-set-suspend-mode
+sbin/auto-ssh-authorize
 sbin/auto-update-port-framework
 sbin/auto-update-xorg.conf
 sbin/auto-using-pkgng
