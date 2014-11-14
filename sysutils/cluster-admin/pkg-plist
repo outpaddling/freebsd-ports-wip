@@ -60,6 +60,8 @@ sbin/node-sync-user
 sbin/pbs-cluster-load
 sbin/slurm-find-strays
 sbin/slurm-restart
+sbin/slurm-resume-jobs
+sbin/slurm-suspend-jobs
 %%DATADIR%%/WWW/global_styles.css
 %%DATADIR%%/WWW/index.php
 %%DATADIR%%/WWW/powerlogo.gif
