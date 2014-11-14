@@ -2,13 +2,13 @@
 # $FreeBSD: head/sysutils/slurm-hpc/Makefile 336471 2013-12-14 19:01:33Z wg $
 
 PORTNAME=	slurm
-PORTVERSION=	14.03.0
+PORTVERSION=	14.11.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/archive/ \
 		http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/development/
 PKGNAMESUFFIX=	-hpc
-#DISTNAME=	slurm-${PORTVERSION}-0pre6
+#DISTNAME=	slurm-${PORTVERSION}-0rc3
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Simple Linux Utility for Resource Management
@@ -84,12 +84,12 @@ PLIST_FILES+=	bin/sview
 
 # Can't disable configure test, so make it fail
 post-patch:
-	${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
 .if ! ${PORT_OPTIONS:MGTK2}
 	${REINPLACE_CMD} \
 		-e 's|min_gtk_version=2.7.1|min_gtk_version=200.7.1|g' \
 		${WRKSRC}/configure
 .endif
+	${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
 	@${REINPLACE_CMD} \
 		-e 's|/usr/bin/env python|${PYTHON_CMD}|g' \
 		${WRKSRC}/doc/html/shtml2html.py \
