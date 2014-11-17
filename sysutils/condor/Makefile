@@ -28,7 +28,7 @@ SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 		src/condor_examples/condor_schedd.init \
 		src/condor_starter.V6.1/condor_ssh_to_job_shell_setup
 
-USE_GCC=	yes
+# USE_GCC=	yes
 WANT_PGSQL=	server
 CXXFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-rpath=${LOCALBASE}/lib:/usr/lib:/lib -fPIC
