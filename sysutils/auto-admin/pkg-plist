@@ -20,6 +20,7 @@ man/man1/auto-ldap-adduser.1.gz
 man/man1/auto-ldap-client-setup.1.gz
 man/man1/auto-package-installed.1.gz
 man/man1/auto-print-make-variable.1.gz
+man/man1/auto-pxe-installer-setup.1.gz
 man/man1/auto-replace-file.1.gz
 man/man1/auto-service-enabled.1.gz
 man/man1/auto-set-suspend-mode.1.gz
@@ -49,6 +50,7 @@ sbin/auto-ldap-adduser
 sbin/auto-ldap-client-setup
 sbin/auto-package-installed
 sbin/auto-print-make-variable
+sbin/auto-pxe-installer-setup
 sbin/auto-replace-file
 sbin/auto-service-enabled
 sbin/auto-set-suspend-mode
