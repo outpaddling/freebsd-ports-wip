@@ -28,7 +28,6 @@ SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 		src/condor_examples/condor_schedd.init \
 		src/condor_starter.V6.1/condor_ssh_to_job_shell_setup
 
-# USE_GCC=	yes
 WANT_PGSQL=	server
 CXXFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-rpath=${LOCALBASE}/lib:/usr/lib:/lib -fPIC
@@ -48,6 +47,11 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
+
+# Builds with clang, but not gcc 4.2
+.if ${OSVERSION} < 1000000 && !defined(WITH_OPENSSL_PORT)
+USE_GCC=	yes
+.endif
 
 pre-everything::
 	@( ${PRINTF} "\nWARNING: Condor needs approximately 3GB to build!"; \
