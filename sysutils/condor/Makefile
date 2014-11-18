@@ -22,6 +22,8 @@ LIB_DEPENDS+=	libkrb5support.so:${PORTSDIR}/security/krb5 \
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_LDCONFIG=	yes
 USES+=		cmake gmake perl5 pgsql shebangfix
+# Does not build with gcc 4.2 or clang
+USE_GCC=	yes
 SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 		src/condor_gridmanager/remote_gahp \
 		src/condor_examples/condor_limits_wrapper.sh \
@@ -47,11 +49,6 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
-
-# Builds with clang, but not gcc 4.2
-.if ${OSVERSION} < 1000000 && !defined(WITH_OPENSSL_PORT)
-USE_GCC=	yes
-.endif
 
 pre-everything::
 	@( ${PRINTF} "\nWARNING: Condor needs approximately 3GB to build!"; \
