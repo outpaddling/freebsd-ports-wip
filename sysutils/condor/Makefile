@@ -36,7 +36,7 @@ LDFLAGS+=	-rpath=${LOCALBASE}/lib:/usr/lib:/lib -fPIC
 CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING=${LDFLAGS}
 
-SUB_FILES=	condor_config condor_config.local pkg-message
+SUB_FILES=	condor_config.local pkg-message
 
 USERS=		condor
 GROUPS=		${USERS}
@@ -59,9 +59,16 @@ post-patch:
 		-e 's,\(set( C_SHARE_EXAMPLES	\)share/condor,\1${EXAMPLESDIR_REL},' \
 		${WRKSRC}/build/cmake/CondorPackageConfig.cmake
 	@${REINPLACE_CMD} \
-		-e '/create_symlink/d' ${WRKSRC}/src/condor_scripts/CMakeLists.txt
+		-e '/create_symlink/d' \
+		${WRKSRC}/src/condor_scripts/CMakeLists.txt
+	@${REINPLACE_CMD} \
+		-e 's|/bin/mail|/usr/bin/mail|g' \
+		${WRKSRC}/src/condor_examples/condor_config.annotated
+
 post-install:
-	${INSTALL_DATA} ${WRKDIR}/condor_config ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} \
+		${STAGEDIR}${ETCDIR}/examples/condor_config.annotated \
+		${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKDIR}/condor_config.local ${STAGEDIR}${ETCDIR}
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
