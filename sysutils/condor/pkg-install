@@ -22,7 +22,10 @@ g=condor
 # Place condor on a large partition so it can accommodate output files from
 # jobs.  The default /var/db/condor could result in /var filling up with
 # job output.
-homedir=/home/condor
+# Note that /home may be linked to a shared partition on a cluster built
+# with sysutils/cluster-admin, but /usr/home should be on a local disk, which
+# is what condor needs.
+homedir=/usr/home/condor
 
 case $2 in
 PRE-INSTALL)
