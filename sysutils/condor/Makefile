@@ -68,6 +68,8 @@ post-patch:
 		${WRKSRC}/src/condor_scripts/CMakeLists.txt
 	@${REINPLACE_CMD} \
 		-e 's|/bin/mail|/usr/bin/mail|g' \
+		-e 's|$$(LOCAL_DIR)/condor_config.local|${PREFIX}/etc/condor_config.local|g' \
+		-e 's|/usr/local/condor|${PREFIX}|g' \
 		${WRKSRC}/src/condor_examples/condor_config.annotated
 
 post-install:
