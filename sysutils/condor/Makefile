@@ -4,6 +4,7 @@
 # Notes: Caused by presence of python3?
 # /usr/wip/sysutils/condor/work/condor-8.2.3/src/python-bindings/collector.cpp:55:43: error: 'PyString_Check' was not declared in this scope
 #         else if (PyString_Check(pool.ptr()) || PyUnicode_Check(pool.ptr()))
+# CONFLICTS+=	python3
 
 PORTNAME=	condor
 PORTVERSION=	8.2.3
