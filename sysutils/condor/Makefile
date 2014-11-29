@@ -1,6 +1,10 @@
 # Created by: Andy Pavlo
 # $FreeBSD: head/sysutils/condor/Makefile 360673 2014-07-04 22:25:48Z adamw $
 
+# Notes: Caused by presence of python3?
+# /usr/wip/sysutils/condor/work/condor-8.2.3/src/python-bindings/collector.cpp:55:43: error: 'PyString_Check' was not declared in this scope
+#         else if (PyString_Check(pool.ptr()) || PyUnicode_Check(pool.ptr()))
+
 PORTNAME=	condor
 PORTVERSION=	8.2.3
 CATEGORIES=	sysutils net
