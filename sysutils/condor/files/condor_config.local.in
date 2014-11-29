@@ -20,7 +20,12 @@
 ############################################################################
 ##  When is this machine willing to start a job? 
 
-START = TRUE
+# For compute hosts dedicated to HTCondor
+# START = TRUE
+
+# For compute hosts used primarily for other purposes
+START = START = (KeyboardIdle > 15 * 60) && \
+  ((LoadAvg - CondorLoadAvg) <= 0.3)
 
 ############################################################################
 ##  When to suspend a job?
@@ -37,7 +42,11 @@ PREEMPT = FALSE
 ##  When to instantaneously kill a preempting job
 ##  (e.g. if a job is in the pre-empting stage for too long)
 
-KILL = FALSE
+# Dedicated Condor compute host
+# KILL = FALSE
+
+# Compute host used for non-Condor activities
+KILL = (KeyboardIdle < 60) || (LoadAvg - CondorLoadAvg > 0.3)
 
 ###########################################################################
 # DAEMON LIST:
