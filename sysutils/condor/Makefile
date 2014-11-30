@@ -37,7 +37,7 @@ SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 
 WANT_PGSQL=	server
 CXXFLAGS+=	-I${LOCALBASE}/include -fPIC
-LDFLAGS+=	-rpath=${LOCALBASE}/lib:/usr/lib:/lib -fPIC
+LDFLAGS+=	-Wl,-rpath=${_GCC_RUNTIME}:${LOCALBASE}/lib:/usr/lib:/lib -fPIC
 CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING=${LDFLAGS}
 
@@ -75,7 +75,7 @@ post-patch:
 post-install:
 	${INSTALL_DATA} \
 		${STAGEDIR}${ETCDIR}/examples/condor_config.annotated \
-		${STAGEDIR}${ETCDIR}
+		${STAGEDIR}${ETCDIR}/condor_config
 	${INSTALL_DATA} ${WRKDIR}/condor_config.local ${STAGEDIR}${ETCDIR}
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
