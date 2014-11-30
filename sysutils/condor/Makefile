@@ -67,9 +67,11 @@ post-patch:
 		-e '/create_symlink/d' \
 		${WRKSRC}/src/condor_scripts/CMakeLists.txt
 	@${REINPLACE_CMD} \
-		-e 's|/bin/mail|/usr/bin/mail|g' \
-		-e 's|$$(LOCAL_DIR)/condor_config.local|${PREFIX}/etc/condor_config.local|g' \
 		-e 's|/usr/local/condor|${PREFIX}|g' \
+		-e 's|$$(LOCAL_DIR)/condor_config.local|$$(RELEASE_DIR)/etc/condor_config.local|g' \
+		-e 's|/bin/mail|/usr/bin/mail|g' \
+		-e 's|^CONDOR_HOST|##  CONDOR_HOST|' \
+		-e 's|#CONDOR_IDS=x.x|CONDOR_IDS=466.466|' \
 		${WRKSRC}/src/condor_examples/condor_config.annotated
 
 post-install:

@@ -10,22 +10,22 @@
 ##  Use $(FULL_HOSTNAME) if this is the central manager, or the central
 ##  manager's hostname otherwise.
 
-##  CONDOR_HOST = $(FULL_HOSTNAME)
+CONDOR_HOST = $(FULL_HOSTNAME)
 
 ############################################################################
 ## Pool's short description
 
-##  COLLECTOR_NAME = Condor pool at $(CONDOR_HOST)
+COLLECTOR_NAME = Condor pool at $(CONDOR_HOST)
 
 ############################################################################
 ##  When is this machine willing to start a job? 
 
 # For compute hosts dedicated to HTCondor
-# START = TRUE
+START = TRUE
 
 # For compute hosts used primarily for other purposes
-START = START = (KeyboardIdle > 15 * 60) && \
-  ((LoadAvg - CondorLoadAvg) <= 0.3)
+# START = START = (KeyboardIdle > 15 * 60) && \
+#  ((LoadAvg - CondorLoadAvg) <= 0.3)
 
 ############################################################################
 ##  When to suspend a job?
@@ -43,10 +43,10 @@ PREEMPT = FALSE
 ##  (e.g. if a job is in the pre-empting stage for too long)
 
 # Dedicated Condor compute host
-# KILL = FALSE
+KILL = FALSE
 
 # Compute host used for non-Condor activities
-KILL = (KeyboardIdle < 60) || (LoadAvg - CondorLoadAvg > 0.3)
+# KILL = (KeyboardIdle < 60) || (LoadAvg - CondorLoadAvg > 0.3)
 
 ###########################################################################
 # DAEMON LIST:
@@ -77,6 +77,9 @@ DAEMON_LIST = MASTER, STARTD
 ##  ALLOW_ADMINISTRATOR is required by condor_off
 ##  If central manager is not this host, this entry allows both the central
 ##  manager and this host to manage the pool.
+##
+##  For central manager, allow all other hosts, e.g. 192.168.0.*, to
+##  read and write.
 
 ALLOW_ADMINISTRATOR = $(CONDOR_HOST), $(FULL_HOSTNAME)
 
@@ -90,7 +93,7 @@ ALLOW_READ = $(CONDOR_HOST), $(FULL_HOSTNAME)
 
 ALLOW_WRITE = $(CONDOR_HOST), $(FULL_HOSTNAME)
 
-##
+###########################################################################
 ##  Use the settings below for compute hosts behind a NAT firewall relative
 ##  to the scheduler.  This includes virtual machines not using bridged
 ##  networking.
@@ -109,8 +112,9 @@ ALLOW_WRITE = $(CONDOR_HOST), $(FULL_HOSTNAME)
 # Network device on private network, if multihomed
 # PRIVATE_NETWORK_INTERFACE = bge0
 
+###########################################################################
 ##  For virtual machines to get keyboard activity and load from the host
-##  http://research.cs.wisc.edu/htcondor/manual/v8.2/3_12Setting_Up.html#SECTION004127100000000000000
+##  http://research.cs.wisc.edu/htcondor/manual/v8.2/3_12Setting_Up.html
 
 ########
 # Host:
@@ -128,4 +132,3 @@ ALLOW_WRITE = $(CONDOR_HOST), $(FULL_HOSTNAME)
 # VMP_HOST_MACHINE = 1.2.3.4
 # START = ( (KeyboardIdle > 150 ) && ( HOST_KeyboardIdle > 150 ) \
 #        && ( LoadAvg <= 0.3 ) && ( HOST_TotalLoadAvg <= 0.3 ) )
-
