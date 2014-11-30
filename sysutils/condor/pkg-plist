@@ -67,7 +67,6 @@ bin/condor_who
 %%ETCDIR%%/examples/mp2script
 %%ETCDIR%%/examples/openmpiscript
 %%ETCDIR%%/sysconfig/condor
-etc/rc.d/condor
 include/MyString.h
 include/chirp_client.h
 include/classad/attrrefs.h
@@ -259,53 +258,17 @@ sbin/condor_transferd
 sbin/condor_updates_stats
 sbin/condor_vm-gahp
 sbin/remote_gahp
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE-2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/dagman/A.submit
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/dagman/B.submit
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/dagman/C.submit
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/dagman/D.submit
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/dagman/Diamond.gif
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/dagman/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/dagman/README.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/dagman/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/dagman/diamond.dag
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/dagman/half.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/dagman/random.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/dagman/sum.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/env.cmd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/env.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/fortIO.cmd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/fortIO.f
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/fstream.cmd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/fstream.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/io.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/io.cmd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/loop.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/loop.cmd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/printer.cmd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/printer.f
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/reader.cmd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/reader.f
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/reader.in
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/registers.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/registers.cmd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/sh_loop
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/sh_loop.cmd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/submit
 src/chirp/chirp_client.c
 src/chirp/chirp_client.h
 src/chirp/chirp_protocol.h
-@dirrmtry %%ETCDIR%%/examples
-@dirrmtry %%ETCDIR%%/sysconfig
-@dirrmtry %%ETCDIR%%
-@dirrmtry include/classad
+@dirrm %%ETCDIR%%/examples
+@dirrm %%ETCDIR%%/sysconfig
+@dirrm %%ETCDIR%%
+@dirrm include/classad
 @dirrmtry lib/python
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/examples/dagman
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/examples
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry src/chirp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/examples/dagman
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/examples
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm src/chirp
 @dirrmtry src
