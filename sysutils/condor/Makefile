@@ -1,11 +1,6 @@
 # Created by: Andy Pavlo
 # $FreeBSD: head/sysutils/condor/Makefile 360673 2014-07-04 22:25:48Z adamw $
 
-# Notes: Caused by presence of python3?
-# /usr/wip/sysutils/condor/work/condor-8.2.3/src/python-bindings/collector.cpp:55:43: error: 'PyString_Check' was not declared in this scope
-#         else if (PyString_Check(pool.ptr()) || PyUnicode_Check(pool.ptr()))
-# CONFLICTS+=	python3
-
 PORTNAME=	condor
 PORTVERSION=	8.2.3
 CATEGORIES=	sysutils net
@@ -17,7 +12,8 @@ COMMENT=	High-throughput computing on distributively owned resources
 
 LICENSE=	APACHE20
 
-MAKE_JOBS_UNSAFE=	yes
+# Does not build in the presence of Python 3
+CONFLICTS+=	python3
 
 LIB_DEPENDS+=	libkrb5support.so:${PORTSDIR}/security/krb5 \
 		libpcre.so:${PORTSDIR}/devel/pcre \
@@ -40,6 +36,7 @@ CXXFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-Wl,-rpath=${_GCC_RUNTIME}:${LOCALBASE}/lib:/usr/lib:/lib -fPIC
 CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING=${LDFLAGS}
+MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	condor_config.local pkg-message
 
