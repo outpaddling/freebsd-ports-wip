@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	slepc
-PORTVERSION=	3.2
-DISTNAME=	${PORTNAME}-${PORTVERSION}-p5
+PORTVERSION=	3.5.2
+# DISTNAME=	${PORTNAME}-${PORTVERSION}-p5
 CATEGORIES=	math
 MASTER_SITES=	http://www.grycap.upv.es/slepc/download/distrib/
 
