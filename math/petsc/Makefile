@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+# Note: -lpetsc-ufo... is supposed to fail in conftest
+
 PORTNAME=	petsc
 PORTVERSION=	3.5.2
 CATEGORIES=	math
@@ -19,8 +21,6 @@ USES=		gmake python perl5 fortran
 USE_GCC=	yes
 CONFIG_SHELL=	${PYTHONBIN}
 CONFIGURE_LOG=	configure.log
-
-LDFLAGS+=	-L.
 
 MAKE_ENV+=	${CONFIGURE_ENV}
 
