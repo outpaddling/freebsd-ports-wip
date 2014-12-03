@@ -44,24 +44,30 @@ LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf \
 CONFIGURE_ENV=	PETSC_DIR=${WRKSRC} \
 		PETSC_ARCH=${OPSYS:L}
 
+# PETSc build ignores the environment, so we have to pass everything to the
+# configure script.
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--doCleanup=0 \
+		--with-clanguage=C \
+		--with-fortran-interfaces \
+		--with-proc-filesystem=0 \
 		--with-cpp=${CPP} \
+		--CPPFLAGS=${CPPFLAGS} \
 		--with-cc=${CC} \
+		--CFLAGS=${CFLAGS} \
 		--with-cxx=${CXX} \
+		--CXXFLAGS=${CXXFLAGS} \
 		--with-fc=${FC} \
+		--FFLAGS=${FFLAGS} \
 		--LDFLAGS=-Wl,-rpath=${_GCC_RUNTIME} \
 		--with-error-checking=yes \
-		--with-language=C \
-		--with-fortran \
-		--with-fortran-interfaces \
 		--with-debugger=gdb \
-		--with-shared-libraries=1 \
-		--with-64-bit-indices=1 \
-		--with-64-bit-pointers=1 \
-		--with-pic \
+		--with-pic=1 \
 		--with-mpi=0 \
-		--with-matlab=0
+		--with-mpi-dir=${LOCALBASE}/mpi/openmpi \
+		--with-matlab=0 \
+		--with-openmp=1 \
+		--with-hwloc=1
 
 MAKEFILE=	makefile
 
