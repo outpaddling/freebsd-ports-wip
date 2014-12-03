@@ -19,11 +19,11 @@ USE_PYTHON=	yes
 USE_FORTRAN=	yes
 
 CONFIGURE_ENV=	PETSC_ARCH=${OPSYS:L} \
-		PETSC_DIR=${LOCALBASE}/petsc
+		PETSC_DIR=${LOCALBASE}
 
 # USE_LDCONFIG=	${PREFIX}/${PORTNAME}/lib
 
-# MAKE_ENV+=	PETSC_DIR=${LOCALBASE}/petsc
+MAKE_ENV+=	PETSC_DIR=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>

@@ -11,7 +11,6 @@ PORTNAME=	petsc
 PORTVERSION=	3.5.2
 CATEGORIES=	math
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
-#DISTNAME=	${PORTNAME}-${PORTVERSION}-p6
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Parallel solution of partial differential equations
@@ -24,13 +23,17 @@ CONFIGURE_LOG=	configure.log
 
 MAKE_ENV+=	${CONFIGURE_ENV}
 
+# PETSc automatically parallelizes compiles and rejects make -j
 MAKE_JOBS_UNSAFE=	yes
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu \
 		svn:${PORTSDIR}/devel/subversion
+
 #		${LOCALBASE}/lib/libBS95.a:${PORTSDIR}/math/blocksolve95 \
 
-LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
+LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf \
+		libblas.so:${PORTSDIR}/math/blas \
+		liblapack.so:${PORTSDIR}/math/lapack
 
 #		blacs.1:${PORTSDIR}/math/blacs \
 
@@ -47,7 +50,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--with-cc=${CC} \
 		--with-cxx=${CXX} \
 		--with-fc=${FC} \
-		--LDFLAGS=-L. \
+		--LDFLAGS=-Wl,-rpath=${_GCC_RUNTIME} \
 		--with-error-checking=yes \
 		--with-language=C \
 		--with-fortran \
@@ -62,10 +65,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 
 MAKEFILE=	makefile
 
-LIB_DEPENDS=	libblas.so:${PORTSDIR}/math/blas \
-		liblapack.so:${PORTSDIR}/math/lapack
-
-CONFIGURE_ARGS+=	| tr '\r' '\n'
+CONFIGURE_ARGS+=| tr '\r' '\n'
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/temp
