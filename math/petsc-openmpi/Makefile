@@ -46,24 +46,23 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}/petsc \
 		--with-proc-filesystem=0 \
 		--with-cpp=${CPP} \
 		--CPPFLAGS=${CPPFLAGS} \
-		--with-cc=${CC} \
 		--CFLAGS=${CFLAGS} \
-		--with-cxx=${CXX} \
 		--CXXFLAGS=${CXXFLAGS} \
-		--with-fc=${FC} \
 		--FFLAGS=${FFLAGS} \
 		--LDFLAGS=-Wl,-rpath=${_GCC_RUNTIME} \
 		--with-debugger=gdb \
 		--with-pic=1 \
 		--with-mpi=1 \
+		--with-mpi-dir=${PREFIX}/mpi/openmpi \
 		--with-matlab=0
 
 # Show all build output instead of overwriting the same line
 CONFIGURE_ARGS+=| tr '\r' '\n'
 
-CC=		${PREFIX}/mpi/openmpi/mpicc
-CXX=		${PREFIX}/mpi/openmpi/mpicxx
-FC=		${PREFIX}/mpi/openmpi/mpif90
+# No effect
+#CC=		${PREFIX}/mpi/openmpi/mpicc
+#CXX=		${PREFIX}/mpi/openmpi/mpicxx
+#FC=		${PREFIX}/mpi/openmpi/mpif90
 
 MAKEFILE=	makefile
 MAKE_ENV+=	${CONFIGURE_ENV}

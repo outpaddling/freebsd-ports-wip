@@ -31,5 +31,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 LIB_DEPENDS+=	libpetsc.so:/usr/wip/math/petsc
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+post-build:
+	cd ${WRKSRC} && make SLEPC_DIR=${WRKSRC} PETSC_DIR=${PREFIX}/petsc test
+
+.include <bsd.port.mk>

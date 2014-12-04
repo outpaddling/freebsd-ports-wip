@@ -79,4 +79,6 @@ pre-configure:
 	find ${WRKSRC} -name '*.py' -exec \
 		sed -i '' 's|/usr/bin/python|/usr/bin/env python|g' '{}' \;
 
+# make test?
+
 .include <bsd.port.mk>
