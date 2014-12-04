@@ -15,15 +15,21 @@ MAINTAINER=	jwbacon@tds.net
 COMMENT=	large scale sparse eigenvalue problems on parallel computers
 
 HAS_CONFIGURE=	yes
-USE_PYTHON=	yes
-USE_FORTRAN=	yes
+USES=		python fortran
 
-CONFIGURE_ENV=	PETSC_ARCH=${OPSYS:L} \
-		PETSC_DIR=${LOCALBASE}
+CONFIGURE_ENV=	PETSC_ARCH= \
+		PETSC_DIR=${LOCALBASE}/petsc
+
+CONFIGURE_ARGS+=--prefix=${STAGEDIR}${PREFIX}/slepc
 
 # USE_LDCONFIG=	${PREFIX}/${PORTNAME}/lib
+USE_LDCONFIG=	yes
 
-MAKE_ENV+=	PETSC_DIR=${LOCALBASE}
+MAKEFILE=	makefile
+MAKE_ENV+=	${CONFIGURE_ENV}
+MAKE_JOBS_UNSAFE=	yes
+
+LIB_DEPENDS+=	libpetsc.so:/usr/wip/math/petsc
 
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>

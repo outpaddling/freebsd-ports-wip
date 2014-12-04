@@ -15,13 +15,12 @@ MASTER_SITES=	http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Parallel solution of partial differential equations
 
+# Custom configure script, not GNU
 HAS_CONFIGURE=	yes
 USES=		gmake python perl5 fortran
 USE_GCC=	yes
 CONFIG_SHELL=	${PYTHONBIN}
 CONFIGURE_LOG=	configure.log
-
-MAKE_ENV+=	${CONFIGURE_ENV}
 
 # PETSc automatically parallelizes compiles and rejects make -j
 MAKE_JOBS_UNSAFE=	yes
@@ -29,24 +28,18 @@ MAKE_JOBS_UNSAFE=	yes
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu \
 		svn:${PORTSDIR}/devel/subversion
 
-#		${LOCALBASE}/lib/libBS95.a:${PORTSDIR}/math/blocksolve95 \
-
 LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf \
 		libblas.so:${PORTSDIR}/math/blas \
 		liblapack.so:${PORTSDIR}/math/lapack
 
-#		blacs.1:${PORTSDIR}/math/blacs \
-
-#		--LD_SHARED=${FC} \
-#		--with-large-file-io=1 \	conftest fails
-#		--with-c++-support \
-
 CONFIGURE_ENV=	PETSC_DIR=${WRKSRC} \
-		PETSC_ARCH=${OPSYS:L}
+		PETSC_ARCH=${OPSYS:tl} \
 
-# PETSc build ignores the environment, so we have to pass everything to the
-# configure script.
-CONFIGURE_ARGS+=--prefix=${PREFIX} \
+USE_LDCONFIG=	${PREFIX}/petsc/lib
+
+# PETSc's configure ignores the environment, so we have to pass everything
+# to the configure script.
+CONFIGURE_ARGS+=--prefix=${PREFIX}/petsc \
 		--doCleanup=0 \
 		--with-clanguage=C \
 		--with-fortran-interfaces \
@@ -60,21 +53,30 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--with-fc=${FC} \
 		--FFLAGS=${FFLAGS} \
 		--LDFLAGS=-Wl,-rpath=${_GCC_RUNTIME} \
-		--with-error-checking=yes \
 		--with-debugger=gdb \
 		--with-pic=1 \
 		--with-mpi=0 \
-		--with-mpi-dir=${LOCALBASE}/mpi/openmpi \
-		--with-matlab=0 \
-		--with-openmp=1 \
-		--with-hwloc=1
+		--with-matlab=0
 
-MAKEFILE=	makefile
-
+# Show all build output instead of overwriting the same line
 CONFIGURE_ARGS+=| tr '\r' '\n'
 
+MAKEFILE=	makefile
+MAKE_ENV+=	${CONFIGURE_ENV}
+
+# PETSc appears to be using DESTDIR like PREFIX.  It's set to ${PREFIX}
+# by PETSc's configure script, but then overridden by ports to
+# ${WRKSRC}/stage, resulting in a real install prefix of '/'. Adding
+# DESTDIR=${STAGEDIR}${PREFIX} to the default INSTALL_TARGET fixes the problem.
+INSTALL_TARGET=	DESTDIR=${STAGEDIR}${PREFIX}/petsc \
+		PETSC_DIR=/usr/wip/math/petsc/work/petsc-3.5.2 \
+		PETSC_ARCH=freebsd \
+		install
+
+# FIXME: shebang_fix?
 pre-configure:
 	${MKDIR} ${WRKSRC}/temp
-	find ${WRKSRC} -name '*.py' -exec sed -i '' 's|/usr/bin/python|/usr/bin/env python|g' '{}' \;
+	find ${WRKSRC} -name '*.py' -exec \
+		sed -i '' 's|/usr/bin/python|/usr/bin/env python|g' '{}' \;
 
 .include <bsd.port.mk>
