@@ -1,0 +1,531 @@
+
+WARNING: Condor needs approximately 3GB to build!         Please make sure your build environment has that much before continuing.
+===>  License APACHE20 accepted by the user
+===>  Found saved configuration for condor-8.3.1
+===>   condor-8.3.1 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by condor-8.3.1 for building
+===>  Extracting for condor-8.3.1
+=> SHA256 Checksum OK for condor_src-8.3.1-all-all.tar.gz.
+===>  Patching for condor-8.3.1
+===>  Applying FreeBSD patches for condor-8.3.1
+===>   condor-8.3.1 depends on file: /usr/local/bin/cmake - found
+===>   condor-8.3.1 depends on executable: gmake - found
+===>   condor-8.3.1 depends on executable: postgres - found
+===>   condor-8.3.1 depends on executable: gcc48 - found
+===>   condor-8.3.1 depends on file: /usr/local/bin/as - found
+===>   condor-8.3.1 depends on file: /usr/local/bin/perl5.16.3 - found
+===>   condor-8.3.1 depends on shared library: libkrb5support.so - found (/usr/local/lib/libkrb5support.so.0)
+===>   condor-8.3.1 depends on shared library: libpcre.so - found (/usr/local/lib/libpcre.so.3)
+===>   condor-8.3.1 depends on shared library: libcurl.so - found (/usr/local/lib/libcurl.so.7)
+===>  Configuring for condor-8.3.1
+===>   FreeBSD 10 autotools fix applied to /usr/wip/sysutils/condor/work/condor-8.3.1/src/classad/aclocal.m4
+===>   FreeBSD 10 autotools fix applied to /usr/wip/sysutils/condor/work/condor-8.3.1/src/safefile/configure
+===>  Performing in-source build
+/bin/mkdir -p /usr/wip/sysutils/condor/work/condor-8.3.1
+-- The C compiler identification is GNU 4.8.3
+-- The CXX compiler identification is GNU 4.8.3
+-- Check for working C compiler: /usr/local/bin/gcc48
+-- Check for working C compiler: /usr/local/bin/gcc48 -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working CXX compiler: /usr/local/bin/g++48
+-- Check for working CXX compiler: /usr/local/bin/g++48 -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+CMake Warning (dev) at CMakeLists.txt:82 (include):
+  Syntax Warning in cmake code at
+
+    /usr/wip/sysutils/condor/work/condor-8.3.1/build/cmake/CondorPackageConfig.cmake:238:63
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at CMakeLists.txt:82 (include):
+  Syntax Warning in cmake code at
+
+    /usr/wip/sysutils/condor/work/condor-8.3.1/build/cmake/CondorPackageConfig.cmake:238:64
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at CMakeLists.txt:82 (include):
+  Syntax Warning in cmake code at
+
+    /usr/wip/sysutils/condor/work/condor-8.3.1/build/cmake/CondorPackageConfig.cmake:258:48
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at CMakeLists.txt:82 (include):
+  Syntax Warning in cmake code at
+
+    /usr/wip/sysutils/condor/work/condor-8.3.1/build/cmake/CondorPackageConfig.cmake:258:49
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- ***********************************************************
+-- System(tianpar.cs.uwm.edu): FREEBSD(10.0-RELEASE-P12) Arch=x86_64 BitMode= BUILDID:
+-- install prefix:/usr/local
+-- ********* BEGINNING CONFIGURATION *********
+-- Found PythonLibs: /usr/local/lib/libpython2.7.so (found version "2.7.8") 
+-- Found PythonInterp: /usr/local/bin/python (found suitable exact version "2.7.8") 
+-- Looking for include file pthread.h
+-- Looking for include file pthread.h - found
+-- Found Threads: TRUE  
+-- Could not find libs(uuid)
+-- Could not find libs(resolv)
+-- Could not find libs(dl)
+-- Looking for dlopen in dl
+-- Looking for dlopen in dl - not found
+-- Looking for res_init
+-- Looking for res_init - found
+-- Looking for TCP_KEEPIDLE
+-- Looking for TCP_KEEPIDLE - found
+-- Looking for TCP_KEEPALIVE
+-- Looking for TCP_KEEPALIVE - not found
+-- Looking for TCP_KEEPCNT
+-- Looking for TCP_KEEPCNT - found
+-- Looking for TCP_KEEPINTVL,
+-- Looking for TCP_KEEPINTVL, - found
+-- Looking for TCP_USER_TIMEOUT,
+-- Looking for TCP_USER_TIMEOUT, - not found
+-- Looking for MS_PRIVATE
+-- Looking for MS_PRIVATE - not found
+-- Looking for MS_SHARED
+-- Looking for MS_SHARED - not found
+-- Looking for MS_SLAVE
+-- Looking for MS_SLAVE - not found
+-- Looking for MS_REC
+-- Looking for MS_REC - not found
+-- Looking for epoll_create1
+-- Looking for epoll_create1 - not found
+-- Looking for poll
+-- Looking for poll - found
+-- Looking for fdatasync
+-- Looking for fdatasync - not found
+-- Looking for access
+-- Looking for access - found
+-- Looking for clone
+-- Looking for clone - not found
+-- Looking for dirfd
+-- Looking for dirfd - found
+-- Looking for euidaccess
+-- Looking for euidaccess - not found
+-- Looking for execl
+-- Looking for execl - found
+-- Looking for fstat64
+-- Looking for fstat64 - not found
+-- Looking for _fstati64
+-- Looking for _fstati64 - not found
+-- Looking for getdtablesize
+-- Looking for getdtablesize - found
+-- Looking for getpagesize
+-- Looking for getpagesize - found
+-- Looking for gettimeofday
+-- Looking for gettimeofday - found
+-- Looking for inet_ntoa
+-- Looking for inet_ntoa - found
+-- Looking for lchown
+-- Looking for lchown - found
+-- Looking for lstat
+-- Looking for lstat - found
+-- Looking for lstat64
+-- Looking for lstat64 - not found
+-- Looking for _lstati64
+-- Looking for _lstati64 - not found
+-- Looking for mkstemp
+-- Looking for mkstemp - found
+-- Looking for setegid
+-- Looking for setegid - found
+-- Looking for setenv
+-- Looking for setenv - found
+-- Looking for seteuid
+-- Looking for seteuid - found
+-- Looking for setlinebuf
+-- Looking for setlinebuf - found
+-- Looking for snprintf
+-- Looking for snprintf - found
+-- Looking for snprintf
+-- Looking for snprintf - found
+-- Looking for include file sys/eventfd.h
+-- Looking for include file sys/eventfd.h - not found
+-- Looking for innetgr
+-- Looking for innetgr - found
+-- Looking for getgrnam
+-- Looking for getgrnam - found
+-- Looking for stat64
+-- Looking for stat64 - not found
+-- Looking for _stati64
+-- Looking for _stati64 - not found
+-- Looking for statfs
+-- Looking for statfs - found
+-- Looking for statvfs
+-- Looking for statvfs - found
+-- Looking for strcasestr
+-- Looking for strcasestr - found
+-- Looking for strsignal
+-- Looking for strsignal - found
+-- Looking for unsetenv
+-- Looking for unsetenv - found
+-- Looking for vasprintf
+-- Looking for vasprintf - found
+-- Looking for getifaddrs
+-- Looking for getifaddrs - found
+-- Looking for readdir64
+-- Looking for readdir64 - not found
+-- Looking for backtrace
+-- Looking for backtrace - not found
+-- Looking for unshare
+-- Looking for unshare - not found
+-- Looking for include file dlfcn.h
+-- Looking for include file dlfcn.h - found
+-- Looking for include file inttypes.h
+-- Looking for include file inttypes.h - found
+-- Looking for include file ldap.h
+-- Looking for include file ldap.h - found
+-- Looking for include file net/if.h
+-- Looking for include file net/if.h - found
+-- Looking for include file os_types.h
+-- Looking for include file os_types.h - not found
+-- Looking for include file resolv.h
+-- Looking for include file resolv.h - not found
+-- Looking for include file sys/mount.h
+-- Looking for include file sys/mount.h - found
+-- Looking for include file sys/param.h
+-- Looking for include file sys/param.h - found
+-- Looking for include file sys/personality.h
+-- Looking for include file sys/personality.h - not found
+-- Looking for include file sys/syscall.h
+-- Looking for include file sys/syscall.h - found
+-- Looking for include file sys/statfs.h
+-- Looking for include file sys/statfs.h - not found
+-- Looking for include file sys/statvfs.h
+-- Looking for include file sys/statvfs.h - found
+-- Looking for include file sys/types.h
+-- Looking for include file sys/types.h - found
+-- Looking for include file sys/vfs.h
+-- Looking for include file sys/vfs.h - not found
+-- Looking for include file stdint.h
+-- Looking for include file stdint.h - found
+-- Looking for include file ustat.h
+-- Looking for include file ustat.h - not found
+-- Looking for include file valgrind.h
+-- Looking for include file valgrind.h - not found
+-- Looking for include file procfs.h
+-- Looking for include file procfs.h - not found
+-- Looking for include file sys/procfs.h
+-- Looking for include file sys/procfs.h - found
+-- Performing Test HAVE_STRUCT_IFCONF
+-- Performing Test HAVE_STRUCT_IFCONF - Success
+-- Performing Test HAVE_STRUCT_IFREQ
+-- Performing Test HAVE_STRUCT_IFREQ - Success
+-- Performing Test HAVE_STRUCT_IFREQ_IFR_HWADDR
+-- Performing Test HAVE_STRUCT_IFREQ_IFR_HWADDR - Failed
+-- Performing Test HAVE_STRUCT_SOCKADDR_IN_SIN_LEN
+-- Performing Test HAVE_STRUCT_SOCKADDR_IN_SIN_LEN - Success
+-- Performing Test HAVE_STRUCT_STATFS_F_FSTYP
+-- Performing Test HAVE_STRUCT_STATFS_F_FSTYP - Failed
+-- Performing Test HAVE_STRUCT_STATFS_F_FSTYPENAME
+-- Performing Test HAVE_STRUCT_STATFS_F_FSTYPENAME - Success
+-- Performing Test HAVE_STRUCT_STATFS_F_TYPE
+-- Performing Test HAVE_STRUCT_STATFS_F_TYPE - Failed
+-- Performing Test HAVE_STRUCT_STATVFS_F_BASETYPE
+-- Performing Test HAVE_STRUCT_STATVFS_F_BASETYPE - Failed
+-- Performing Test HAVE_SCHED_SETAFFINITY
+-- Performing Test HAVE_SCHED_SETAFFINITY - Failed
+-- Performing Test HAVE_SCHED_SETAFFINITY_2ARG
+-- Performing Test HAVE_SCHED_SETAFFINITY_2ARG - Failed
+-- Performing Test cxx_11
+-- Performing Test cxx_11 - Success
+-- Performing Test PREFER_CPP11
+-- Performing Test PREFER_CPP11 - Success
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of id_t
+-- Check size of id_t - done
+-- Check size of __int64
+-- Check size of __int64 - failed
+-- Check size of int64_t
+-- Check size of int64_t - done
+-- Check size of int
+-- Check size of int - done
+-- Check size of long
+-- Check size of long - done
+-- Check size of long long
+-- Check size of long long - done
+-- Check size of void *
+-- Check size of void * - done
+-- Could not find libs(gsoapssl++)
+running cp /usr/share/gsoap/plugin/wsseapi.c /usr/wip/sysutils/condor/work/condor-8.3.1/bld_external/gsoap-2.7.10-p1/install/src/wsseapi.cpp && patch -N -p3 /usr/wip/sysutils/condor/work/condor-8.3.1/bld_external/gsoap-2.7.10-p1/install/src/wsseapi.cpp /usr/wip/sysutils/condor/work/condor-8.3.1/externals/bundles/gsoap/2.7.10-p5/wsseapi.patch  2>&1
+cp: /usr/share/gsoap/plugin/wsseapi.c: No such file or directory
+-- external skipped (drmaa)
+-- external skipped (qpid)
+-- Boost components: python;unit_test_framework
+-- Boost version: 1.55.0
+-- Found the following Boost libraries:
+--   python
+--   unit_test_framework
+-- external configured (BOOST_INCLUDE=/usr/local/include) version:(105500) link directories (/usr/local/lib)
+-- external configured (CURL_FOUND=/usr/local/lib/libcurl.so)
+-- external configured (OPENSSL_FOUND=/usr/lib/libssl.so;/usr/lib/libcrypto.so)
+-- external configured (PCRE_FOUND=/usr/local/lib/libpcre.so)
+-- external configured (KRB5_FOUND=/usr/local/lib/libkrb5.so;/usr/local/lib/libcom_err.so;/usr/local/lib/libk5crypto.so;/usr/local/lib/libkrb5support.so;/usr/local/lib/libgssapi_krb5.so)
+running /usr/local/bin/cmake -E copy_if_different /usr/wip/sysutils/condor/work/condor-8.3.1/src/classad/classad/classad_stl.h.tmp /usr/wip/sysutils/condor/work/condor-8.3.1/src/classad/classad/classad_stl.h  2>&1
+-- configured (CLASSADS_FOUND= classads)
+-- external skipped (coredumper)
+-- external skipped (unicoregahp)
+-- external skipped (libxml2)
+-- external skipped (libvirt)
+-- external skipped (libdeltacloud)
+-- external skipped (libcgroup)
+-- external skipped (globus)
+-- external skipped (blahp)
+-- external skipped (voms)
+-- external skipped (cream)
+-- external skipped (cream)
+-- external skipped (wso2)
+-- external skipped (boinc)
+-- ** Standard Universe Disabled **
+-- safe_open done
+-- /usr/wip/sysutils/condor/work/condor-8.3.1/src/safefile/safe_open.c/usr/wip/sysutils/condor/work/condor-8.3.1/src/safefile/safe_open.h/usr/wip/sysutils/condor/work/condor-8.3.1/src/safefile/safe_fopen.h/usr/wip/sysutils/condor/work/condor-8.3.1/src/safefile/safe_fopen.c/usr/wip/sysutils/condor/work/condor-8.3.1/src/safefile/safe_is_path_trusted.c/usr/wip/sysutils/condor/work/condor-8.3.1/src/safefile/safe_is_path_trusted.h/usr/wip/sysutils/condor/work/condor-8.3.1/src/safefile/safe_id_range_list.c
+-- 
+-- ********* External configuration complete (dropping config.h) *********
+running /usr/local/bin/cmake -E copy_if_different /usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_includes/config.tmp /usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_includes/config.h  2>&1
+running /usr/local/bin/cmake -E copy_if_different /usr/wip/sysutils/condor/work/condor-8.3.1/src/safefile/safe_id_range_list.h.tmp_out /usr/wip/sysutils/condor/work/condor-8.3.1/src/safefile/safe_id_range_list.h  2>&1
+-- ----- Begin compiler options/flags check -----
+-- Performing Test cxx_Wall
+-- Performing Test cxx_Wall - Success
+-- Performing Test cxx_W
+-- Performing Test cxx_W - Success
+-- Performing Test cxx_Wextra
+-- Performing Test cxx_Wextra - Success
+-- Performing Test cxx_Wfloat_equal
+-- Performing Test cxx_Wfloat_equal - Success
+-- Performing Test cxx_Wendif_labels
+-- Performing Test cxx_Wendif_labels - Success
+-- Performing Test cxx_Wpointer_arith
+-- Performing Test cxx_Wpointer_arith - Success
+-- Performing Test cxx_Wcast_qual
+-- Performing Test cxx_Wcast_qual - Success
+-- Performing Test cxx_Wcast_align
+-- Performing Test cxx_Wcast_align - Success
+-- Performing Test cxx_Wvolatile_register_var
+-- Performing Test cxx_Wvolatile_register_var - Success
+-- Performing Test cxx_Wunused_local_typedefs
+-- Performing Test cxx_Wunused_local_typedefs - Success
+-- Performing Test cxx_Wdeprecated_declarations
+-- Performing Test cxx_Wdeprecated_declarations - Success
+-- Performing Test cxx_fstack_protector
+-- Performing Test cxx_fstack_protector - Success
+-- Performing Test cxx_rdynamic
+-- Performing Test cxx_rdynamic - Success
+-- Performing Test HAVE_CC_SHARED
+-- Performing Test HAVE_CC_SHARED - Success
+-- ----- End compiler options/flags check -----
+-- ----- Begin CMake Var DUMP -----
+-- CMAKE_STRIP: /usr/local/bin/strip
+-- LN: /bin/ln
+-- LATEX: /usr/local/bin/latex
+-- LATEX2HTML: LATEX2HTML-NOTFOUND
+-- ----- Begin CMake Var DUMP -----
+-- ********* ENDING CONFIGURATION *********
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/classad_analysis)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/ccb)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_io)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_ckpt_server)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_daemon_client)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_daemon_core.V6)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_privsep)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_procapi)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_procd)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_schedd.V6)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_sysapi)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_utils)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_ckpt)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_io.std)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_syscall_lib)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_submit.V6)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_vm-gahp)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/gt2_gahp)
+-- NOTE: *gt2* targets will not be built HAVE_EXT_GLOBUS=
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_shared_port)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_starter.std)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_unit_tests)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_rm.V6)
+CMake Warning (dev) at build/cmake/macros/CloneInstall.cmake:27 (get_target_property):
+  Policy CMP0026 is not set: Disallow use of the LOCATION target property.
+  Run "cmake --help-policy CMP0026" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The LOCATION property should not be read from target "condor_rm".  Use the
+  target name directly with add_custom_command, or use the generator
+  expression $<TARGET_FILE>, as appropriate.
+
+Call Stack (most recent call first):
+  src/condor_rm.V6/CMakeLists.txt:20 (clone_install)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at build/cmake/macros/CloneInstall.cmake:27 (get_target_property):
+  Policy CMP0026 is not set: Disallow use of the LOCATION target property.
+  Run "cmake --help-policy CMP0026" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The LOCATION property should not be read from target "condor_rm".  Use the
+  target name directly with add_custom_command, or use the generator
+  expression $<TARGET_FILE>, as appropriate.
+
+Call Stack (most recent call first):
+  src/condor_rm.V6/CMakeLists.txt:21 (clone_install)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at build/cmake/macros/CloneInstall.cmake:27 (get_target_property):
+  Policy CMP0026 is not set: Disallow use of the LOCATION target property.
+  Run "cmake --help-policy CMP0026" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The LOCATION property should not be read from target "condor_rm".  Use the
+  target name directly with add_custom_command, or use the generator
+  expression $<TARGET_FILE>, as appropriate.
+
+Call Stack (most recent call first):
+  src/condor_rm.V6/CMakeLists.txt:22 (clone_install)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at build/cmake/macros/CloneInstall.cmake:27 (get_target_property):
+  Policy CMP0026 is not set: Disallow use of the LOCATION target property.
+  Run "cmake --help-policy CMP0026" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The LOCATION property should not be read from target "condor_rm".  Use the
+  target name directly with add_custom_command, or use the generator
+  expression $<TARGET_FILE>, as appropriate.
+
+Call Stack (most recent call first):
+  src/condor_rm.V6/CMakeLists.txt:23 (clone_install)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at build/cmake/macros/CloneInstall.cmake:27 (get_target_property):
+  Policy CMP0026 is not set: Disallow use of the LOCATION target property.
+  Run "cmake --help-policy CMP0026" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The LOCATION property should not be read from target "condor_rm".  Use the
+  target name directly with add_custom_command, or use the generator
+  expression $<TARGET_FILE>, as appropriate.
+
+Call Stack (most recent call first):
+  src/condor_rm.V6/CMakeLists.txt:24 (clone_install)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_master.V6)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_tools)
+CMake Warning (dev) at build/cmake/macros/CloneInstall.cmake:27 (get_target_property):
+  Policy CMP0026 is not set: Disallow use of the LOCATION target property.
+  Run "cmake --help-policy CMP0026" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The LOCATION property should not be read from target "condor_on".  Use the
+  target name directly with add_custom_command, or use the generator
+  expression $<TARGET_FILE>, as appropriate.
+
+Call Stack (most recent call first):
+  src/condor_tools/CMakeLists.txt:68 (clone_install)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at build/cmake/macros/CloneInstall.cmake:27 (get_target_property):
+  Policy CMP0026 is not set: Disallow use of the LOCATION target property.
+  Run "cmake --help-policy CMP0026" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The LOCATION property should not be read from target "condor_on".  Use the
+  target name directly with add_custom_command, or use the generator
+  expression $<TARGET_FILE>, as appropriate.
+
+Call Stack (most recent call first):
+  src/condor_tools/CMakeLists.txt:70 (clone_install)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at build/cmake/macros/CloneInstall.cmake:27 (get_target_property):
+  Policy CMP0026 is not set: Disallow use of the LOCATION target property.
+  Run "cmake --help-policy CMP0026" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The LOCATION property should not be read from target "condor_vacate".  Use
+  the target name directly with add_custom_command, or use the generator
+  expression $<TARGET_FILE>, as appropriate.
+
+Call Stack (most recent call first):
+  src/condor_tools/CMakeLists.txt:72 (clone_install)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_c-gahp)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/deltacloud_gahp)
+-- NOTE: *deltacloud* targets will not be built
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_birdwatcher)
+-- NOTE: *birdwatcher* targets will not be built WINDOWS=
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_gridmanager)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_mail)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_filetransfer_plugins)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_who)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_credd)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_had)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_tests)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/ec2_gahp)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_power)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_shadow.V6.1)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/h)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_job_router)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_ft-gahp)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_kbdd)
+-- NOTE: *condor_kbdd* will not be built, HAVE_KBDD doesn't exist
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/defrag)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_rmdir)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_status.V6)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_scripts)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_userlog)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_release)
+-- excluding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/classad)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_starter.V6.1)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_negotiator.V6)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_shadow.std)
+-- excluding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/safefile)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_examples)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_q.V6)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_prio)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_chirp)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/python-bindings)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_dagman)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_contrib)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/cream_gahp)
+-- NOTE: *cream* targets will not be built HAVE_EXT_CREAM=
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/gce_gahp)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/nordugrid_gahp)
+-- NOTE: *nordugrid* targets will not be built HAVE_EXT_GLOBUS=
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_startd.V6)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_transferd)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/condor_collector.V6)
+-- adding directory (/usr/wip/sysutils/condor/work/condor-8.3.1/src/gangliad)
+-- NOTE: Will install prebuilt man-pages
+-- Configuring done
+CMake Warning (dev) at src/condor_utils/CMakeLists.txt:129 (add_dependencies):
+  Policy CMP0046 is not set: Error on non-existent dependency in
+  add_dependencies.  Run "cmake --help-policy CMP0046" for policy details.
+  Use the cmake_policy command to set the policy and suppress this warning.
+
+  The dependency target "configure_safefile" of target "condor_utils" does
+  not exist.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_CXX_FLAGS_DEBUG
+    CMAKE_CXX_FLAGS_RELEASE
+    CMAKE_C_FLAGS_DEBUG
+    CMAKE_C_FLAGS_RELEASE
+    CMAKE_MODULE_LINKER_FLAGS
+
+
+-- Build files have been written to: /usr/wip/sysutils/condor/work/condor-8.3.1
