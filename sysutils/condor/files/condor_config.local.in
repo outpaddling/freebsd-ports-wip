@@ -1,36 +1,36 @@
 ############################################################################
-##  condor_config.local
-##  Settings here override the defaults in condor_config.
-##  Make changes/additions here and leave condor_config unchanged so
-##  that defaults are documented.
+# condor_config.local
+# Settings here override the defaults in condor_config.
+# Make changes/additions here and leave condor_config unchanged so
+# that defaults are documented.
 ############################################################################
 
 ############################################################################
-##  What machine is your central manager?
-##  Use $(FULL_HOSTNAME) if this is the central manager, or the central
-##  manager's hostname otherwise.
+# What machine is your central manager?
+# Use $(FULL_HOSTNAME) if this is the central manager, or the central
+# manager's hostname otherwise.
 
 CONDOR_HOST = $(FULL_HOSTNAME)
 
 ############################################################################
-## Pool's short description
+# Pool's short description
 
 COLLECTOR_NAME = Condor pool at $(CONDOR_HOST)
 
 ############################################################################
-## Location of logs, job output, etc.
-## Put this on a local partition with plenty of space for job output.
-## Default is $(TILDE) = /home/condor.
+# Location of logs, job output, etc.
+# Put this on a local partition with plenty of space for job output.
+# Default is $(TILDE) = /home/condor.
 
 LOCAL_DIR               = $(TILDE)
 
-## /home is often shared by cluster compute nodes, so log files would collide.
-## In that case, put LOCAL_DIR on a large, local partition.
+# /home is often shared by cluster compute nodes, so log files would collide.
+# In that case, put LOCAL_DIR on a large, local partition.
 
 # LOCAL_DIR               = /usr/condor
 
 ############################################################################
-##  When is this machine willing to start a job? 
+# When is this machine willing to start a job? 
 
 # For compute hosts dedicated to HTCondor
 START = TRUE
@@ -40,19 +40,19 @@ START = TRUE
 #  ((LoadAvg - CondorLoadAvg) <= 0.3)
 
 ############################################################################
-##  When to suspend a job?
+# When to suspend a job?
 
 SUSPEND = FALSE
 
 ############################################################################
-##  When to nicely stop a job?
-##  (as opposed to killing it instantaneously)
+# When to nicely stop a job?
+# (as opposed to killing it instantaneously)
 
 PREEMPT = FALSE
 
 ############################################################################
-##  When to instantaneously kill a preempting job
-##  (e.g. if a job is in the pre-empting stage for too long)
+# When to instantaneously kill a preempting job
+# (e.g. if a job is in the pre-empting stage for too long)
 
 # Dedicated Condor compute host
 KILL = FALSE
@@ -67,53 +67,56 @@ KILL = FALSE
 # Central manager:      COLLECTOR, NEGOTIATOR
 # Submit hosts:         SCHEDD
 # Execute hosts:        STARTD
+# Hosts behind NAT:     SHARED_PORT
 
-##  This macro determines what daemons the condor_master will start and 
-##  keep its watchful eyes on.
-##  The list is a comma or space separated list of subsystem names
+# This macro determines what daemons the condor_master will start and 
+# keep its watchful eyes on.
+# The list is a comma or space separated list of subsystem names
 
-##  Central manager
-##  DAEMON_LIST = MASTER, COLLECTOR, NEGOTIATOR, SCHEDD
+# Central manager
+# DAEMON_LIST = MASTER, COLLECTOR, NEGOTIATOR, SCHEDD
 
-##  Submit/execute host
-##  DAEMON_LIST = MASTER, SCHEDD, STARTD
+# Submit/execute host
+# DAEMON_LIST = MASTER, SCHEDD, STARTD
+# DAEMON_LIST = MASTER, SCHEDD, STARTD
 
-##  Execute-only host
-DAEMON_LIST = MASTER, STARTD
+# Execute-only host
+# DAEMON_LIST = MASTER, STARTD
+DAEMON_LIST = MASTER, STARTD, SHARED_PORT
 
 ###########################################################################
-##  Permissions for this host
-##
-##  *.your.domain, x.y.z.*, hostname, $(MACRO)
-##
-##  ALLOW_ADMINISTRATOR is required by condor_off
-##  If central manager is not this host, this entry allows both the central
-##  manager and this host to manage the pool.
-##
-##  For central manager, allow all other hosts, e.g. 192.168.0.*, to
-##  read and write.
+# Permissions for this host
+#
+# *.your.domain, x.y.z.*, hostname, $(MACRO)
+#
+# ALLOW_ADMINISTRATOR is required by condor_off
+# If central manager is not this host, this entry allows both the central
+# manager and this host to manage the pool.
+#
+# For central manager, allow all other hosts, e.g. 192.168.0.*, to
+# read and write.
 
 ALLOW_ADMINISTRATOR = $(CONDOR_HOST), $(FULL_HOSTNAME)
 
-##
-##  Enables condor_status, condor_q, ...
+#
+# Enables condor_status, condor_q, ...
 
 ALLOW_READ = $(CONDOR_HOST), $(FULL_HOSTNAME)
 
-##
-##  Enables scheduling jobs here
+#
+# Enables scheduling jobs here
 
 ALLOW_WRITE = $(CONDOR_HOST), $(FULL_HOSTNAME)
 
 ###########################################################################
-##  Use the settings below for compute hosts behind a NAT firewall relative
-##  to the scheduler.  This includes virtual machines not using bridged
-##  networking.
+# Use the settings below for compute hosts behind a NAT firewall relative
+# to the scheduler.  This includes virtual machines not using bridged
+# networking.
 
 # USE_SHARED_PORT = True
 
 # Use a different shared port for each host behind the same NAT gateway
-# SHARED_PORT_ARGS = -p 9616
+# SHARED_PORT_ARGS = -p 9613
 
 # Public IP of NAT gateway
 # TCP_FORWARDING_HOST = 1.2.3.4
@@ -125,8 +128,8 @@ ALLOW_WRITE = $(CONDOR_HOST), $(FULL_HOSTNAME)
 # PRIVATE_NETWORK_INTERFACE = bge0
 
 ###########################################################################
-##  For virtual machines to get keyboard activity and load from the host
-##  http://research.cs.wisc.edu/htcondor/manual/v8.2/3_12Setting_Up.html
+# For virtual machines to get keyboard activity and load from the host
+# http://research.cs.wisc.edu/htcondor/manual/v8.2/3_12Setting_Up.html
 
 ########
 # Host:
