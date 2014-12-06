@@ -33,10 +33,10 @@ LOCAL_DIR               = $(TILDE)
 # When is this machine willing to start a job? 
 
 # For compute hosts dedicated to HTCondor
-START = TRUE
+# START = TRUE
 
 # For compute hosts used primarily for other purposes
-# START = (KeyboardIdle > 15 * 60) && ((LoadAvg - CondorLoadAvg) <= 0.3)
+START = (KeyboardIdle > 15 * 60) && ((LoadAvg - CondorLoadAvg) <= 0.3)
 
 ############################################################################
 # When to suspend a job?
@@ -47,10 +47,10 @@ SUSPEND = FALSE
 # When to nicely stop a job?
 # (as opposed to killing it instantaneously)
 
-PREEMPT = FALSE
+# PREEMPT = FALSE
 
 # Compute host used mainly for non-Condor activities
-# PREEMPT = (KeyboardIdle < 60) || (LoadAvg - CondorLoadAvg > 0.3)
+PREEMPT = (KeyboardIdle < 60) || (LoadAvg - CondorLoadAvg > 0.3)
 
 ############################################################################
 # When to instantaneously kill a preempting job
