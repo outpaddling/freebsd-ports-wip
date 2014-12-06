@@ -78,11 +78,11 @@ KILL = FALSE
 
 # Submit/execute host
 # DAEMON_LIST = MASTER, SCHEDD, STARTD
-# DAEMON_LIST = MASTER, SCHEDD, STARTD
+# DAEMON_LIST = MASTER, SCHEDD, STARTD, SHARED_PORT
 
 # Execute-only host
-# DAEMON_LIST = MASTER, STARTD
-DAEMON_LIST = MASTER, STARTD, SHARED_PORT
+DAEMON_LIST = MASTER, STARTD
+# DAEMON_LIST = MASTER, STARTD, SHARED_PORT
 
 ###########################################################################
 # Permissions for this host
