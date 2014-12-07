@@ -9,6 +9,9 @@
 
 PORTNAME=	petsc
 PORTVERSION=	3.5.2
+PKGNAMESUFFIX=	-openmpi
+# Conflict with petsc on ldconfig
+LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 CATEGORIES=	math
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 
@@ -35,16 +38,15 @@ LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf \
 CONFIGURE_ENV=	PETSC_DIR=${WRKSRC} \
 		PETSC_ARCH=${OPSYS:tl} \
 
-USE_LDCONFIG=	${PREFIX}/petsc/lib
+USE_LDCONFIG=	${PREFIX}/petsc${PKGNAMESUFFIX}/lib
 
 # PETSc's configure ignores the environment, so we have to pass everything
 # to the configure script.
-CONFIGURE_ARGS+=--prefix=${PREFIX}/petsc \
+CONFIGURE_ARGS+=--prefix=${PREFIX}/petsc${PKGNAMESUFFIX} \
 		--doCleanup=0 \
 		--with-clanguage=C \
 		--with-fortran-interfaces \
 		--with-proc-filesystem=0 \
-		--with-cpp=${CPP} \
 		--CPPFLAGS=${CPPFLAGS} \
 		--CFLAGS=${CFLAGS} \
 		--CXXFLAGS=${CXXFLAGS} \
@@ -71,8 +73,8 @@ MAKE_ENV+=	${CONFIGURE_ENV}
 # by PETSc's configure script, but then overridden by ports to
 # ${WRKSRC}/stage, resulting in a real install prefix of '/'. Adding
 # DESTDIR=${STAGEDIR}${PREFIX} to the default INSTALL_TARGET fixes the problem.
-INSTALL_TARGET=	DESTDIR=${STAGEDIR}${PREFIX}/petsc \
-		PETSC_DIR=/usr/wip/math/petsc/work/petsc-3.5.2 \
+INSTALL_TARGET=	DESTDIR=${STAGEDIR}${PREFIX}/petsc${PKGNAMESUFFIX} \
+		PETSC_DIR=${WRKSRC} \
 		PETSC_ARCH=freebsd \
 		install
 

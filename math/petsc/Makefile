@@ -69,7 +69,7 @@ MAKE_ENV+=	${CONFIGURE_ENV}
 # ${WRKSRC}/stage, resulting in a real install prefix of '/'. Adding
 # DESTDIR=${STAGEDIR}${PREFIX} to the default INSTALL_TARGET fixes the problem.
 INSTALL_TARGET=	DESTDIR=${STAGEDIR}${PREFIX}/petsc \
-		PETSC_DIR=/usr/wip/math/petsc/work/petsc-3.5.2 \
+		PETSC_DIR=${WRKSRC} \
 		PETSC_ARCH=freebsd \
 		install
 
