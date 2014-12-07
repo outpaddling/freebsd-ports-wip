@@ -42,6 +42,7 @@ bin/condor_vacate_job
 bin/condor_version
 bin/condor_wait
 bin/condor_who
+bin/condor-config
 %%ETCDIR%%/condor
 %%ETCDIR%%/condor_config
 %%ETCDIR%%/condor_config.local

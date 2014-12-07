@@ -38,7 +38,7 @@ CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING=${LDFLAGS}
 MAKE_JOBS_UNSAFE=	yes
 
-SUB_FILES=	condor_config.local pkg-message
+SUB_FILES=	condor_config.local condor-config pkg-message
 
 USERS=		condor
 GROUPS=		${USERS}
@@ -76,6 +76,7 @@ post-install:
 		${STAGEDIR}${ETCDIR}/examples/condor_config.annotated \
 		${STAGEDIR}${ETCDIR}/condor_config
 	${INSTALL_DATA} ${WRKDIR}/condor_config.local ${STAGEDIR}${ETCDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/condor-config ${STAGEDIR}${PREFIX}/bin
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 

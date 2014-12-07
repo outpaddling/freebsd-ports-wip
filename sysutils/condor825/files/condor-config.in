@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+if [ -z $EDITOR ]; then
+    EDITOR=vi
+    export EDITOR
+fi
+
+$EDITOR %%PREFIX%%/etc/condor_config.local
+
