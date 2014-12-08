@@ -115,7 +115,7 @@ ALLOW_WRITE = $(CONDOR_HOST), $(FULL_HOSTNAME)
 # USE_SHARED_PORT = True
 
 # Use a different shared port for each host behind the same NAT gateway
-# SHARED_PORT_ARGS = -p 9613
+# SHARED_PORT_ARGS = -p 9616
 
 # Public IP of NAT gateway
 # TCP_FORWARDING_HOST = 1.2.3.4
