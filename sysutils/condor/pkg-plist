@@ -42,7 +42,6 @@ bin/condor_vacate_job
 bin/condor_version
 bin/condor_wait
 bin/condor_who
-bin/condor-config
 %%ETCDIR%%/condor
 %%ETCDIR%%/condor_config
 %%ETCDIR%%/condor_config.local
@@ -226,6 +225,7 @@ man/man1/condor_who.1.gz
 man/man1/gidd_alloc.1.gz
 man/man1/procd_ctl.1.gz
 sbin/bosco_install
+sbin/condor-config
 sbin/condor_advertise
 sbin/condor_c-gahp
 sbin/condor_c-gahp_worker_thread

@@ -76,7 +76,7 @@ post-install:
 		${STAGEDIR}${ETCDIR}/examples/condor_config.annotated \
 		${STAGEDIR}${ETCDIR}/condor_config
 	${INSTALL_DATA} ${WRKDIR}/condor_config.local ${STAGEDIR}${ETCDIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/condor-config ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/condor-config ${STAGEDIR}${PREFIX}/sbin
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
