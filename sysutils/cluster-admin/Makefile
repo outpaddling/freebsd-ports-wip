@@ -26,6 +26,8 @@ do-install:
 		${WRKSRC}/FreeBSD/Sys-scripts/* ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/Common/User-scripts/* ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} \
+		${WRKSRC}/FreeBSD/User-scripts/* ${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC}/FreeBSD/Man && for f in *.mdoc; \
 	do \
 		${INSTALL_MAN} $${f} \

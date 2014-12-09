@@ -1,5 +1,6 @@
 bin/cluster-load
 bin/cluster-load-summary
+bin/cluster-passwd
 bin/pending-jobs
 bin/slurm-cluster-load
 bin/slurm-job-hist
