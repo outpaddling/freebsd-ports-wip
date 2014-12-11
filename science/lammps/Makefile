@@ -34,7 +34,7 @@ INSTALL_PREFIX?=${PREFIX}
 # Selects a system-specific Makefile.  Allow MPI slave ports to override.
 ALL_TARGET?=	FreeBSD-serial
 
-USES=		gmake fortran
+USES=		gmake fortran tar:xz
 USE_GCC=	yes
 
 # Prevent slave ports from including master plist
@@ -70,7 +70,13 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e "s|-I\$${KIM_DIR}/KIM_API|-I${LOCALBASE}/include/KIM_API|g" \
 		-e "s|-L\$${KIM_DIR}/KIM_API|-L${LOCALBASE}/lib|g" \
+		-e "s|-Iopenkim-api-vX.X.X/KIM_API|-I${LOCALBASE}/include/KIM_API|g" \
+		-e "s|-Lopenkim-api-vX.X.X/KIM_API|-L${LOCALBASE}/lib|g" \
 		${BUILD_WRKSRC}/KIM/Makefile.lammps
+	${CP} ${WRKSRC}/lib/meam/Makefile.lammps.gfortran \
+		${WRKSRC}/lib/meam/Makefile.lammps.${FC}
+	${CP} ${WRKSRC}/lib/reax/Makefile.lammps.gfortran \
+		${WRKSRC}/lib/reax/Makefile.lammps.${FC}
 
 .if ${ALL_TARGET} == FreeBSD-openmpi
 	${REINPLACE_CMD} -e "s|mpic++|${LOCALBASE}/mpi/openmpi/bin/mpic++|g" \
