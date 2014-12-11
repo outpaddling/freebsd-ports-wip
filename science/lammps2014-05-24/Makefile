@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lammps
-PORTVERSION=	2014.12.09
+PORTVERSION=	2014.05.24
 CATEGORIES=	science
 # FIXME: Can this be done from http://lammps.sandia.gov/download.html#tar?
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
@@ -43,23 +43,23 @@ PLIST=	${.CURDIR}/pkg-plist
 .include <bsd.port.pre.mk>
 
 pre-patch:
-	@${CP} ${FILESDIR}/Makefile.${ALL_TARGET} ${BUILD_WRKSRC}/MAKE
+	${CP} ${FILESDIR}/Makefile.${ALL_TARGET} ${BUILD_WRKSRC}/MAKE
 
 post-patch:
-	@${REINPLACE_CMD} \
+	${REINPLACE_CMD} \
 		-e "s|g++|${CXX}|g" \
 		-e "s|LOCALBASE|${LOCALBASE}|g" \
 		-e "s|_GCC_BUILD_DEPENDS|${_GCC_BUILD_DEPENDS}|g" \
 		${BUILD_WRKSRC}/MAKE/Makefile.${ALL_TARGET}
-	@${REINPLACE_CMD} \
+	${REINPLACE_CMD} \
 		-e "s|/bin/bash|/bin/sh|g" \
 		${BUILD_WRKSRC}/Makefile
-	@${REINPLACE_CMD} \
+	${REINPLACE_CMD} \
 		-e "s|gcc|${CC}|g" \
 		-e "s|g++|${CXX}|g" \
 		-e "s|gfortran|${FC}|g" \
 		-e "s|ifort|${FC}|g" \
-		-e "s|-march=native -mpc64|-fPIC|g" \
+		-e "s|-march=native -mpc64||g" \
 		-e "s|\.exe||g" \
 		${WRKSRC}/tools/Makefile \
 		${WRKSRC}/tools/msi2lmp/src/Makefile \
@@ -67,19 +67,18 @@ post-patch:
 		${WRKSRC}/lib/*/Makefile.serial \
 		${WRKSRC}/lib/*/Makefile.g++ \
 		${WRKSRC}/lib/*/Makefile.gfortran
-	@${REINPLACE_CMD} \
+	${REINPLACE_CMD} \
 		-e "s|-Iopenkim-api-vX.X.X/KIM_API|-I${LOCALBASE}/include/kim-api-v1|g" \
 		-e "s|-Lopenkim-api-vX.X.X/KIM_API|-L${LOCALBASE}/lib|g" \
 		-e "s|-lkim|-lkim-api-v1|g" \
-		-e "s|kim-api-build-config|kim-api-v1-build-config|g" \
 		${BUILD_WRKSRC}/KIM/Makefile.lammps
-	@${CP} ${WRKSRC}/lib/meam/Makefile.lammps.gfortran \
+	${CP} ${WRKSRC}/lib/meam/Makefile.lammps.gfortran \
 		${WRKSRC}/lib/meam/Makefile.lammps.${FC}
-	@${CP} ${WRKSRC}/lib/reax/Makefile.lammps.gfortran \
+	${CP} ${WRKSRC}/lib/reax/Makefile.lammps.gfortran \
 		${WRKSRC}/lib/reax/Makefile.lammps.${FC}
 
 .if ${ALL_TARGET} == FreeBSD-openmpi
-	@${REINPLACE_CMD} -e "s|mpic++|${LOCALBASE}/mpi/openmpi/bin/mpic++|g" \
+	${REINPLACE_CMD} -e "s|mpic++|${LOCALBASE}/mpi/openmpi/bin/mpic++|g" \
 		${WRKSRC}/lib/awpmd/Makefile.openmpi \
 		${BUILD_WRKSRC}/MAKE/Makefile.${ALL_TARGET}
 .endif
