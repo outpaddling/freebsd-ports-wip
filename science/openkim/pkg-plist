@@ -1,9 +1,38 @@
-include/KIM_API/KIM_API.h
-include/KIM_API/KIM_API_C.h
-include/KIM_API/KIM_API_status.h
-include/KIM_API/KIM_AUX.h
-include/KIM_API/Unit_Handling.h
-include/KIM_API/model_init_include.h
-include/KIM_API/model_kim_str_include.h
-lib/libkim.a
-@dirrm include/KIM_API
+bin/kim-api-v1-build-config
+bin/kim-api-v1-descriptor-file-match
+include/kim-api-v1
+lib/kim-api-v1/Makefile.KIM_Config
+lib/kim-api-v1/Makefile.Version
+lib/kim-api-v1/bin/kim-api-v1-build-config
+lib/kim-api-v1/bin/kim-api-v1-descriptor-file-match
+lib/kim-api-v1/build_system/Makefile.Generic
+lib/kim-api-v1/build_system/Makefile.LoadDefaults
+lib/kim-api-v1/build_system/Makefile.Model
+lib/kim-api-v1/build_system/Makefile.ModelDriver
+lib/kim-api-v1/build_system/Makefile.ParameterizedModel
+lib/kim-api-v1/build_system/Makefile.SanityCheck
+lib/kim-api-v1/build_system/compiler_defaults/Makefile.GCC
+lib/kim-api-v1/build_system/compiler_defaults/Makefile.INTEL
+lib/kim-api-v1/build_system/linker_defaults/Makefile.DARWIN
+lib/kim-api-v1/build_system/linker_defaults/Makefile.FREEBSD
+lib/kim-api-v1/build_system/linker_defaults/Makefile.LINUX
+lib/kim-api-v1/build_system/parameterized_model.cpp
+lib/kim-api-v1/include/KIM_API.h
+lib/kim-api-v1/include/KIM_API_C.h
+lib/kim-api-v1/include/KIM_API_DIRS.h
+lib/kim-api-v1/include/KIM_API_Version.h
+lib/kim-api-v1/include/KIM_API_status.h
+lib/kim-api-v1/include/KIM_AUX.h
+lib/kim-api-v1/include/Unit_Handling.h
+lib/kim-api-v1/include/kim_api_f03.mod
+lib/kim-api-v1/libkim-api-v1.7.1-git+.GCC.linux.64bit.dynamic-load.so
+lib/kim-api-v1/libkim-api-v1.so
+lib/libkim-api-v1.so
+@dirrm lib/kim-api-v1/bin
+@dirrm lib/kim-api-v1/build_system/compiler_defaults
+@dirrm lib/kim-api-v1/build_system/linker_defaults
+@dirrm lib/kim-api-v1/build_system
+@dirrm lib/kim-api-v1/include
+@dirrm lib/kim-api-v1/model_drivers
+@dirrm lib/kim-api-v1/models
+@dirrm lib/kim-api-v1
