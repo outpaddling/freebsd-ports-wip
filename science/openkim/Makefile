@@ -22,7 +22,7 @@ USES=		gmake fortran
 USE_GCC=	yes
 
 # Is this downloading during build phase?
-BUILD_DEPENDS+=	git:${PORTSDIR}/devel/git
+# BUILD_DEPENDS+=	git:${PORTSDIR}/devel/git
 
 # Just for xxd command.  Figure out how to use hexdump instead.
 BUILD_DEPENDS+=	xxd:${PORTSDIR}/editors/vim
