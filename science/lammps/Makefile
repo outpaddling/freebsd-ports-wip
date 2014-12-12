@@ -13,12 +13,13 @@ COMMENT=	Large-scale Atomic/Molecular Massively Parallel Simulator
 
 LICENSE=	GPLv1
 
+# Need voro++ built with gcc or link will fail - use wip
 LIB_DEPENDS+=	libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libkim-api-v1.so:/usr/wip/science/openkim
 BUILD_DEPENDS+=	${LOCALBASE}/lib/liblapack.a:${PORTSDIR}/math/lapack \
 		${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas \
-		${LOCALBASE}/lib/libvoro++.a:${PORTSDIR}/science/voro++
+		${LOCALBASE}/lib/libvoro++.a:/usr/wip/science/voro++
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
@@ -135,19 +136,17 @@ do-install:
 		${STAGEDIR}${INSTALL_PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/micelle2d \
 		${STAGEDIR}${INSTALL_PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/restart2data \
-		${STAGEDIR}${INSTALL_PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/msi2lmp/src/msi2lmp \
 		${STAGEDIR}${INSTALL_PREFIX}/bin
 .ifndef(NOPORTDOCS)
-	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
+	${CP} -R ${WRKSRC}/doc/ ${STAGEDIR}${DOCSDIR}
 .endif
 .ifndef(NOPORTEXAMPLES)
-	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/bench ${EXAMPLESDIR}
-	${CP} ${FILESDIR}/run-all-examples ${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/examples/ ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/bench ${STAGEDIR}${EXAMPLESDIR}
+	${CP} ${FILESDIR}/run-all-examples ${STAGEDIR}${EXAMPLESDIR}
 .endif
-	${CP} -R ${WRKSRC}/potentials ${DATADIR}
+	${CP} -R ${WRKSRC}/potentials ${STAGEDIR}${DATADIR}
 .endif
 
 # FIXME: make package in slave ports grabs the master pkg-message

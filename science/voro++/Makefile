@@ -13,6 +13,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake
+# LAMMPS linkage fails when using clang on 10.1-RC3
+USE_GCC=	yes
 
 post-patch:
 	${REINPLACE_CMD} \
