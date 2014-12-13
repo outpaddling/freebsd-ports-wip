@@ -81,7 +81,7 @@ post-patch:
 
 .if ${ALL_TARGET} == FreeBSD-openmpi
 	@${REINPLACE_CMD} -e "s|mpic++|${LOCALBASE}/mpi/openmpi/bin/mpic++|g" \
-		${WRKSRC}/lib/awpmd/Makefile.openmpi \
+		${WRKSRC}/lib/awpmd/Makefile.mpicc \
 		${BUILD_WRKSRC}/MAKE/Makefile.${ALL_TARGET}
 .endif
 
@@ -106,7 +106,7 @@ do-build:
 .endif
 # Additional libs: Build before LAMMPS
 .if ${ALL_TARGET} == "FreeBSD-openmpi"
-	(cd ${WRKSRC}/lib/awpmd && ${GMAKE} -f Makefile.openmpi)
+	(cd ${WRKSRC}/lib/awpmd && ${GMAKE} -f Makefile.mpicc)
 .endif
 	(cd ${WRKSRC}/lib/atc && ${GMAKE} -f Makefile.serial)
 	(cd ${WRKSRC}/lib/colvars && ${GMAKE} -f Makefile.g++)
