@@ -30,7 +30,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu \
 
 LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf \
 		libblas.so:${PORTSDIR}/math/blas \
-		liblapack.so:${PORTSDIR}/math/lapack
+		liblapack.so:${PORTSDIR}/math/lapack \
+		libmumps.so:${PORTSDIR}/math/mumps
 
 CONFIGURE_ENV=	PETSC_DIR=${WRKSRC} \
 		PETSC_ARCH=${OPSYS:tl} \
@@ -56,7 +57,8 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}/petsc \
 		--with-debugger=gdb \
 		--with-pic=1 \
 		--with-mpi=0 \
-		--with-matlab=0
+		--with-matlab=0 \
+		--with-mumps=1
 
 # Show all build output instead of overwriting the same line
 CONFIGURE_ARGS+=| tr '\r' '\n'
