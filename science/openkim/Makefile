@@ -25,7 +25,7 @@ USE_GCC=	yes
 # BUILD_DEPENDS+=	git:${PORTSDIR}/devel/git
 
 # Just for xxd command.  Figure out how to use hexdump instead.
-BUILD_DEPENDS+=	xxd:${PORTSDIR}/editors/vim
+# BUILD_DEPENDS+=	xxd:${PORTSDIR}/editors/vim
 
 MAKE_JOBS_UNSAFE=yes
 
@@ -50,6 +50,11 @@ post-patch:
 		-e 's|LDFLAGS *=|LDFLAGS = ${LDFLAGS}|g' \
 		-e 's|-ldl||g' \
 		${WRKSRC}/build_system/compiler_defaults/Makefile.GCC
+	${CC} -o ${WRKSRC}/xxdi ${FILESDIR}/xxdi.c
+	${REINPLACE_CMD} \
+		-e 's|xxd -i|${WRKSRC}/xxdi|g' \
+		${WRKSRC}/build_system/Makefile.Generic \
+		${WRKSRC}/build_system/Makefile.ParameterizedModel
 
 post-stage:
 	${REINPLACE_CMD} -i '' -e 's|${STAGEDIR}||' \
