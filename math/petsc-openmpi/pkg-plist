@@ -354,7 +354,7 @@ petsc-openmpi/include/petscksp.mod
 petsc-openmpi/include/petsckspdef.mod
 petsc-openmpi/include/petsclog.h
 petsc-openmpi/include/petsclog.h.html
-petsc-openmpi/include/petsc%%PERL_ARCH%%ineinfo.h
+petsc-openmpi/include/petscmachineinfo.h
 petsc-openmpi/include/petscmat.h
 petsc-openmpi/include/petscmat.h.html
 petsc-openmpi/include/petscmat.mod

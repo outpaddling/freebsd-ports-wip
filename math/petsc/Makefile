@@ -26,12 +26,13 @@ CONFIGURE_LOG=	configure.log
 MAKE_JOBS_UNSAFE=	yes
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu \
+		${LOCALBASE}/lib/libmumps_common.a:${PORTSDIR}/math/mumps \
 		svn:${PORTSDIR}/devel/subversion
 
 LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf \
 		libblas.so:${PORTSDIR}/math/blas \
 		liblapack.so:${PORTSDIR}/math/lapack \
-		libmumps.so:${PORTSDIR}/math/mumps
+		libscalapack.so:${PORTSDIR}/math/scalapack
 
 CONFIGURE_ENV=	PETSC_DIR=${WRKSRC} \
 		PETSC_ARCH=${OPSYS:tl} \
@@ -58,7 +59,8 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}/petsc \
 		--with-pic=1 \
 		--with-mpi=0 \
 		--with-matlab=0 \
-		--with-mumps=1
+		--with-mumps=1 \
+		--with-scalapack=1
 
 # Show all build output instead of overwriting the same line
 CONFIGURE_ARGS+=| tr '\r' '\n'

@@ -25,6 +25,8 @@ USE_GCC=	yes
 CONFIG_SHELL=	${PYTHONBIN}
 CONFIGURE_LOG=	configure.log
 
+CONFLICTS=	mpich2
+
 # PETSc automatically parallelizes compiles and rejects make -j
 MAKE_JOBS_UNSAFE=	yes
 
