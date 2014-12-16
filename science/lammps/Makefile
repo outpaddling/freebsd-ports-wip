@@ -78,6 +78,9 @@ post-patch:
 		${WRKSRC}/lib/meam/Makefile.lammps.${FC}
 	@${CP} ${WRKSRC}/lib/reax/Makefile.lammps.gfortran \
 		${WRKSRC}/lib/reax/Makefile.lammps.${FC}
+	@${REINPLACE_CMD} \
+		-e 's|IMOLPATH=""|IMOLPATH="${DATADIR}/moltemplate_common"|g' \
+		${WRKSRC}/tools/moltemplate/src/moltemplate.sh
 
 .if ${ALL_TARGET} == FreeBSD-openmpi
 	@${REINPLACE_CMD} -e "s|mpic++|${LOCALBASE}/mpi/openmpi/bin/mpic++|g" \
@@ -121,13 +124,17 @@ do-build:
 # Additional tools
 	(cd ${WRKSRC}/tools/msi2lmp/src && ${GMAKE} ${MAKE_ARGS})
 
+# Users must set MOLTEMPLATE_PATH to "$DATADIR/moltemplate_common"
 do-install:
 	${MKDIR} ${STAGEDIR}${INSTALL_PREFIX}/bin
 	${INSTALL_PROGRAM} \
 		${BUILD_WRKSRC}/lmp_${ALL_TARGET} \
 		${STAGEDIR}${INSTALL_PREFIX}/bin/lmp${PKGNAMESUFFIX}
 .if ${ALL_TARGET} == "FreeBSD-serial"
-	${MKDIR} ${DATADIR} ${EXAMPLESDIR} ${DOCSDIR}
+	${MKDIR} \
+		${STAGEDIR}${DATADIR} \
+		${STAGEDIR}${EXAMPLESDIR} \
+		${STAGEDIR}${DOCSDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/binary2txt \
 		${STAGEDIR}${INSTALL_PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/chain \
@@ -138,6 +145,12 @@ do-install:
 		${STAGEDIR}${INSTALL_PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/msi2lmp/src/msi2lmp \
 		${STAGEDIR}${INSTALL_PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/moltemplate/src/*.sh \
+		${STAGEDIR}${INSTALL_PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/moltemplate/src/*.py \
+		${STAGEDIR}${INSTALL_PREFIX}/bin
+	${CP} -R ${WRKSRC}/tools/moltemplate/common \
+		${STAGEDIR}${DATADIR}/moltemplate_common
 .ifndef(NOPORTDOCS)
 	${CP} -R ${WRKSRC}/doc/ ${STAGEDIR}${DOCSDIR}
 .endif
