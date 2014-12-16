@@ -30,7 +30,10 @@ CONFLICTS=	mpich2
 # PETSc automatically parallelizes compiles and rejects make -j
 MAKE_JOBS_UNSAFE=	yes
 
+# Mumps requires scalapack, which requires either mpich2 or openmpi
+# Need a mumps-openmpi slave port?
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu \
+		${LOCALBASE}/lib/libmumps_common.a:${PORTSDIR}/math/mumps \
 		svn:${PORTSDIR}/devel/subversion
 
 LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf \
@@ -58,7 +61,9 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}/petsc${PKGNAMESUFFIX} \
 		--with-pic=1 \
 		--with-mpi=1 \
 		--with-mpi-dir=${PREFIX}/mpi/openmpi \
-		--with-matlab=0
+		--with-matlab=0 \
+		--with-mumps=1 \
+		--with-scalapack=1
 
 # Show all build output instead of overwriting the same line
 CONFIGURE_ARGS+=| tr '\r' '\n'
