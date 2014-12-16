@@ -109,6 +109,10 @@ RUN_DEPENDS+=	${PKGNAMEPREFIX}parsing>=0:${PORTSDIR}/devel/py-parsing
 
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 
+post-patch:
+	${REINPLACE_CMD} -e 's|qiime_scripts_dir|& ${PREFIX}/bin|g' \
+		${WRKSRC}/qiime/support_files/qiime_config
+
 post-install:
 	${INSTALL_PROGRAM} ${DISTDIR}/uclustq1.2.22_i86linux32 \
 		${STAGEDIR}${PREFIX}/bin/uclust
