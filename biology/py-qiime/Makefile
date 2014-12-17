@@ -109,8 +109,11 @@ RUN_DEPENDS+=	${PKGNAMEPREFIX}parsing>=0:${PORTSDIR}/devel/py-parsing
 
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 
+# start_parallel_jobs.py is for multithreaded?
 post-patch:
-	${REINPLACE_CMD} -e 's|qiime_scripts_dir|& ${PREFIX}/bin|g' \
+	${REINPLACE_CMD} \
+		-e 's|qiime_scripts_dir|& ${PREFIX}/bin|g' \
+		-e 's|cluster_jobs_fp|& ${PREFIX}/bin/start_parallel_jobs.py|g' \
 		${WRKSRC}/qiime/support_files/qiime_config
 
 post-install:
