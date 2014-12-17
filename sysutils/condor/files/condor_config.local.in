@@ -18,6 +18,12 @@ CONDOR_HOST = $(FULL_HOSTNAME)
 COLLECTOR_NAME = Condor pool at $(CONDOR_HOST)
 
 ############################################################################
+# If node is behind a firewall or NAT and cannot be directly reached, use
+# CCB (Condor Connection Broker) or SHARED_PORTS.  The collector host is
+# by default a connection broker, so it's usually the easiest way.
+# CCB_ADDRESS = $(COLLECTOR_HOST)
+
+############################################################################
 # Location of logs, job output, etc.
 # Put this on a local partition with plenty of space for job output.
 # Default is $(TILDE) = /home/condor.
