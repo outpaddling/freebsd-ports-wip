@@ -2,6 +2,7 @@ bin/cluster-load
 bin/cluster-load-summary
 bin/cluster-passwd
 bin/pending-jobs
+bin/ppgen
 bin/slurm-cluster-load
 bin/slurm-job-hist
 bin/slurm-job-stats
@@ -25,7 +26,7 @@ sbin/cluster-adduser
 sbin/cluster-admin
 sbin/cluster-backup-login-nodes
 sbin/cluster-compute-nodes
-sbin/cluster-cp
+sbin/cluster-dist-file
 sbin/cluster-ganglia-restart
 sbin/cluster-generate-hosts.equiv
 sbin/cluster-generate-ssh_known_hosts
@@ -33,6 +34,7 @@ sbin/cluster-get-sync-file
 sbin/cluster-groupadd
 sbin/cluster-groupdel
 sbin/cluster-head-node
+sbin/cluster-init-all
 sbin/cluster-io-nodes
 sbin/cluster-local-pkg-install
 sbin/cluster-local-port_add
@@ -50,6 +52,7 @@ sbin/cluster-setup
 sbin/cluster-shutdown
 sbin/cluster-ssh-keygen
 sbin/cluster-sync-files
+sbin/cluster-sync-pkgsrc
 sbin/cluster-sync-user
 sbin/cluster-update-all-ssh_config
 sbin/cluster-update-ssh_config
@@ -70,5 +73,3 @@ sbin/slurm-suspend-jobs
 %%DATADIR%%/csh.login
 %%DATADIR%%/patch-apache.awk
 %%DATADIR%%/profile
-@dir %%DATADIR%%/WWW
-@dir %%DATADIR%%
