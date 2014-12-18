@@ -5,13 +5,17 @@ man/man1/auto-ask.1.gz
 man/man1/auto-clean-ports.1.gz
 man/man1/auto-config-snd-driver.1.gz
 man/man1/auto-db-dir.1.gz
+man/man1/auto-denyhosts-remove-ip.1.gz
+man/man1/auto-denyhosts-setup.1.gz
 man/man1/auto-disable-service.1.gz
+man/man1/auto-enable-autologout.1.gz
 man/man1/auto-enable-compat32.1.gz
 man/man1/auto-enable-hal-mount.1.gz
 man/man1/auto-enable-passwdqc.1.gz
 man/man1/auto-enable-procfs.1.gz
 man/man1/auto-enable-service.1.gz
 man/man1/auto-fastest-mirror.1.gz
+man/man1/auto-harden.1.gz
 man/man1/auto-insert-line.1.gz
 man/man1/auto-install-packages.1.gz
 man/man1/auto-ipfw-gateway-setup.1.gz
@@ -19,8 +23,10 @@ man/man1/auto-kdm3-toggle.1.gz
 man/man1/auto-ldap-adduser.1.gz
 man/man1/auto-ldap-client-setup.1.gz
 man/man1/auto-package-installed.1.gz
+man/man1/auto-pkgsrc-setup.1.gz
 man/man1/auto-print-make-variable.1.gz
 man/man1/auto-pxe-installer-setup.1.gz
+man/man1/auto-pxe-node-discover.1.gz
 man/man1/auto-replace-file.1.gz
 man/man1/auto-service-enabled.1.gz
 man/man1/auto-set-suspend-mode.1.gz
@@ -35,13 +41,17 @@ sbin/auto-ask
 sbin/auto-clean-ports
 sbin/auto-config-snd-driver
 sbin/auto-db-dir
+sbin/auto-denyhosts-remove-ip
+sbin/auto-denyhosts-setup
 sbin/auto-disable-service
+sbin/auto-enable-autologout
 sbin/auto-enable-compat32
 sbin/auto-enable-hal-mount
 sbin/auto-enable-passwdqc
 sbin/auto-enable-procfs
 sbin/auto-enable-service
 sbin/auto-fastest-mirror
+sbin/auto-harden
 sbin/auto-insert-line
 sbin/auto-install-packages
 sbin/auto-ipfw-gateway-setup
@@ -49,8 +59,10 @@ sbin/auto-kdm3-toggle
 sbin/auto-ldap-adduser
 sbin/auto-ldap-client-setup
 sbin/auto-package-installed
+sbin/auto-pkgsrc-setup
 sbin/auto-print-make-variable
 sbin/auto-pxe-installer-setup
+sbin/auto-pxe-node-discover
 sbin/auto-replace-file
 sbin/auto-service-enabled
 sbin/auto-set-suspend-mode
@@ -60,4 +72,3 @@ sbin/auto-update-xorg.conf
 sbin/auto-using-pkgng
 sbin/auto-xdm-toggle
 %%DATADIR%%/ipfw-rules.sh
-@dir %%DATADIR%%
