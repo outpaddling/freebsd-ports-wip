@@ -22,6 +22,7 @@ LIB_DEPENDS+=	libkrb5support.so:${PORTSDIR}/security/krb5 \
 
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_LDCONFIG=	yes
+USE_GCC=	yes
 USES+=		cmake gmake perl5 pgsql shebangfix
 # Does not build with gcc 4.2 or clang
 USE_GCC=	yes

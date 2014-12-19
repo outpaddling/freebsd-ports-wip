@@ -21,6 +21,7 @@ COLLECTOR_NAME = Condor pool at $(CONDOR_HOST)
 # If node is behind a firewall or NAT and cannot be directly reached, use
 # CCB (Condor Connection Broker) or SHARED_PORTS.  The collector host is
 # by default a connection broker, so it's usually the easiest way.
+
 # CCB_ADDRESS = $(COLLECTOR_HOST)
 
 ############################################################################
