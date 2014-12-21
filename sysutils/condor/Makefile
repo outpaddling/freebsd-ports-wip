@@ -12,9 +12,6 @@ COMMENT=	High-throughput computing on distributively owned resources
 
 LICENSE=	APACHE20
 
-# Does not build in the presence of Python 3
-CONFLICTS+=	python3
-
 LIB_DEPENDS+=	libkrb5support.so:${PORTSDIR}/security/krb5 \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libcurl.so:${PORTSDIR}/ftp/curl \
@@ -23,7 +20,8 @@ LIB_DEPENDS+=	libkrb5support.so:${PORTSDIR}/security/krb5 \
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_LDCONFIG=	yes
 USE_GCC=	yes
-USES+=		cmake gmake perl5 pgsql shebangfix
+# Does not build in the presence of Python 3
+USES+=		cmake gmake perl5 pgsql shebangfix python:2
 # Does not build with gcc 4.2 or clang
 USE_GCC=	yes
 SHEBANG_FILES=	src/condor_scripts/condor_qsub \
