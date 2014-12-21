@@ -127,7 +127,7 @@ lib/condor_ssh_to_job_sshd_config_template
 lib/libchirp_client.a
 lib/libclassad.a
 lib/libcondorapi.a
-lib/libpyclassad2.7_8_2_5.a
+lib/libpyclassad%%PYTHON_VER%%_8_2_5.a
 lib/python/classad.so
 lib/python/htcondor.so
 lib/scimark2lib.jar

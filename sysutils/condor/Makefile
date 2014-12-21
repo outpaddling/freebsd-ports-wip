@@ -20,7 +20,7 @@ LIB_DEPENDS+=	libkrb5support.so:${PORTSDIR}/security/krb5 \
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_LDCONFIG=	yes
 USE_GCC=	yes
-# Does not build in the presence of Python 3
+# Does not build with Python 3
 USES+=		cmake gmake perl5 pgsql shebangfix python:2
 # Does not build with gcc 4.2 or clang
 USE_GCC=	yes
@@ -33,11 +33,11 @@ SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 WANT_PGSQL=	server
 CXXFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-Wl,-rpath=${_GCC_RUNTIME}:${LOCALBASE}/lib:/usr/lib:/lib -fPIC
-# FIXME: Replace hard-coded 2.7 with a macro
+# Does not build with Python 3
 CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING=${LDFLAGS} \
-		-DPYTHON_INCLUDE_DIR:PATH=/usr/local/include/python2.7 \
-		-DPYTHON_LIBRARY:FILEPATH=/usr/local/lib/libpython2.7.so
+		-DPYTHON_INCLUDE_DIR:PATH=/usr/local/include/${PYTHON_VERSION} \
+		-DPYTHON_LIBRARY:FILEPATH=/usr/local/lib/lib${PYTHON_VERSION}.so
 
 MAKE_JOBS_UNSAFE=	yes
 
