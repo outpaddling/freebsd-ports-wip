@@ -2,13 +2,12 @@
 # $FreeBSD: head/sysutils/slurm-hpc/Makefile 336471 2013-12-14 19:01:33Z wg $
 
 PORTNAME=	slurm
-PORTVERSION=	14.11.0
+PORTVERSION=	14.11.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.schedmd.com/download/archive/ \
-		http://www.schedmd.com/download/latest/ \
+MASTER_SITES=	http://www.schedmd.com/download/latest/ \
+		http://www.schedmd.com/download/archive/ \
 		http://www.schedmd.com/download/development/
 PKGNAMESUFFIX=	-hpc
-#DISTNAME=	slurm-${PORTVERSION}-0rc3
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Simple Linux Utility for Resource Management
@@ -26,8 +25,7 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_PYTHON=	yes
-USES=		perl5 gmake tar:bz2
+USES=		perl5 gmake tar:bz2 python libtool
 
 OPTIONS_DEFINE=	DOCS MYSQL PGSQL GTK2
 GTK2_DESC=	Build GUI config tools (sview)
