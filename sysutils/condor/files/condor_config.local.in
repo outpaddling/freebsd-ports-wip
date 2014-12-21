@@ -31,8 +31,8 @@ COLLECTOR_NAME = Condor pool at $(CONDOR_HOST)
 
 LOCAL_DIR               = $(TILDE)
 
-# /home is often shared by cluster compute nodes, so log files would collide.
-# In that case, put LOCAL_DIR on a large, local partition.
+# /home is often shared by cluster compute nodes, so log files would collide
+# when using $(TILDE).  Put LOCAL_DIR on some other large, local partition.
 
 # LOCAL_DIR               = /usr/condor
 
@@ -44,6 +44,12 @@ LOCAL_DIR               = $(TILDE)
 
 # For compute hosts used primarily for other purposes
 START = (KeyboardIdle > 15 * 60) && ((LoadAvg - CondorLoadAvg) <= 0.3)
+
+# For VM host, assuming we only want to run jobs in the VM
+# START = False
+
+# For VM guest, run jobs only when the host is not being used by owner
+# START = ( HOST_KeyboardIdle > 150 ) && ( HOST_LoadAvg <= 0.3 ) )
 
 ############################################################################
 # When to suspend a job?
@@ -117,7 +123,7 @@ ALLOW_WRITE = $(CONDOR_HOST), $(FULL_HOSTNAME)
 ###########################################################################
 # Use the settings below for compute hosts behind a NAT firewall relative
 # to the scheduler.  This includes virtual machines not using bridged
-# networking.
+# networking.  See also CCB.
 
 # USE_SHARED_PORT = True
 
@@ -127,7 +133,8 @@ ALLOW_WRITE = $(CONDOR_HOST), $(FULL_HOSTNAME)
 # Public IP of NAT gateway
 # TCP_FORWARDING_HOST = 1.2.3.4
 
-# Arbitrary name for private network behind NAT
+# Arbitrary name for private network behind NAT using SHARED_PORT or CCB.
+# Nodes with same network name will talk to each other directly.
 # PRIVATE_NETWORK_NAME = mypool
 
 # Network device on private network, if multihomed
@@ -143,13 +150,8 @@ ALLOW_WRITE = $(CONDOR_HOST), $(FULL_HOSTNAME)
 # Indicate hostnames or IPs of virtual machines in host condor_config:
 # VMP_VM_LIST = 1.2.3.4
 
-# Assuming we only want to run jobs in the VM:
-# START = False
-
 ######
 # VM:
 
 # Indicate hostname or IP of host in virtual machine condor_config:
 # VMP_HOST_MACHINE = 1.2.3.4
-# START = ( (KeyboardIdle > 150 ) && ( HOST_KeyboardIdle > 150 ) \
-#        && ( LoadAvg <= 0.3 ) && ( HOST_TotalLoadAvg <= 0.3 ) )
