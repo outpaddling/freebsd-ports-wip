@@ -17,17 +17,14 @@ LICENSE=	GPLv1
 LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo \
 		libhwloc.so:${PORTSDIR}/devel/hwloc \
 		libmunge.so:${PORTSDIR}/security/munge \
-		librrd.so:${PORTSDIR}/databases/rrdtool
-# Testing for hdf5.so is insufficient.  It will accept hdf5 1.6 and
-# slurm requires hdf5 1.8.  h5copy is present only in 1.8.
-BUILD_DEPENDS+=	${LOCALBASE}/bin/h5copy:${PORTSDIR}/science/hdf5
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+		librrd.so:${PORTSDIR}/databases/rrdtool \
+		libhdf5.so:${PORTSDIR}/science/hdf5
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USES=		perl5 gmake tar:bz2 python libtool
 
-OPTIONS_DEFINE=	DOCS MYSQL PGSQL GTK2
+OPTIONS_DEFINE=	DOCS MYSQL GTK2
 GTK2_DESC=	Build GUI config tools (sview)
 
 USERS=		slurm
@@ -50,27 +47,12 @@ post-install:
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes	# Job accounting
 PLIST_FILES+=	lib/slurm/accounting_storage_mysql.a \
-		lib/slurm/accounting_storage_mysql.la \
 		lib/slurm/accounting_storage_mysql.so \
 		lib/slurm/jobcomp_mysql.a \
-		lib/slurm/jobcomp_mysql.la \
 		lib/slurm/jobcomp_mysql.so
 .else
 # Can't disable configure test, so make it fail
 CONFIGURE_ARGS+=--with-mysql_config=/nomysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes	# Job accounting
-PLIST_FILES+=	lib/slurm/accounting_storage_pgsql.a \
-		lib/slurm/accounting_storage_pgsql.la \
-		lib/slurm/accounting_storage_pgsql.so \
-		lib/slurm/jobcomp_pgsql.a \
-		lib/slurm/jobcomp_pgsql.la \
-		lib/slurm/jobcomp_pgsql.so
-.else
-# Can't disable configure test, so make it fail
-CONFIGURE_ARGS+=--with-pg_config=/nopostgres
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}
