@@ -1,0 +1,13 @@
+
+-------------------------------------------------------------
+A sample configuration file is provided in
+
+    %%EXAMPLESDIR%%/slurm.conf
+
+A similar file must be installed in
+
+    %%PREFIX%%/etc
+
+on the controller node in order for slurmctld to function.
+-------------------------------------------------------------
+
