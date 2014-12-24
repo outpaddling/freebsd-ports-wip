@@ -24,7 +24,7 @@ USE_GCC=	yes
 # Is this downloading during build phase?
 # BUILD_DEPENDS+=	git:${PORTSDIR}/devel/git
 
-# Just for xxd command.  Figure out how to use hexdump instead.
+# Just for xxd command.  Use files/file2cinit instead.
 # BUILD_DEPENDS+=	xxd:${PORTSDIR}/editors/vim
 
 MAKE_JOBS_UNSAFE=yes
@@ -37,6 +37,10 @@ MAKE_ENV+=	KIM_SYSTEM32="yes"
 .endif
 
 post-patch:
+#	${REINPLACE_CMD} \
+#		-e 's|xxd -i|${FILESDIR}/file2cinit|' \
+#		${WRKSRC}/build_system/Makefile.ParameterizedModel \
+#		${WRKSRC}/build_system/Makefile.Generic
 	${MV} ${WRKSRC}/Makefile.KIM_Config.example \
 		${WRKSRC}/Makefile.KIM_Config
 	${REINPLACE_CMD} \

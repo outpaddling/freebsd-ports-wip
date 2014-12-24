@@ -23,6 +23,6 @@ USES=		python
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	biom
 # --single-version-externally-managed not recognized on 9.x
-PYDISTUTILS_INSTALLARGS=	-c -O1 --prefix=${PREFIX} --root=${STAGEDIR}
+# PYDISTUTILS_INSTALLARGS=	-c -O1 --prefix=${PREFIX} --root=${STAGEDIR}
 
 .include <bsd.port.mk>
