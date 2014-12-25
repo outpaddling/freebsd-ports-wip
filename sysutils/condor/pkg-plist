@@ -263,14 +263,14 @@ sbin/remote_gahp
 src/chirp/chirp_client.c
 src/chirp/chirp_client.h
 src/chirp/chirp_protocol.h
-@dirrm %%ETCDIR%%/examples
-@dirrm %%ETCDIR%%/sysconfig
-@dirrm %%ETCDIR%%
-@dirrm include/classad
-@dirrmtry lib/python
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/examples/dagman
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/examples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm src/chirp
-@dirrmtry src
+@dir %%ETCDIR%%/examples
+@dir %%ETCDIR%%/sysconfig
+@dir %%ETCDIR%%
+@dir include/classad
+@dir lib/python
+%%PORTDOCS%%@dir %%DOCSDIR%%
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/examples/dagman
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/examples
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%
+@dir src/chirp
+@dir src
