@@ -31,16 +31,14 @@ USERS=		slurm
 GROUPS=		${USERS}
 
 USE_RC_SUBR=	slurmctld slurmd
-SUB_FILES+=	slurm.conf
 
-# This is a new and complex port.  Allow debugging.
-STRIP_CMD=	# NONE
 # ${WRKSRC}/slurm is for pty.h in configure
 CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include -g -O1
 LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
 
 post-install:
-	${INSTALL_DATA} ${WRKDIR}/slurm.conf ${STAGEDIR}${PREFIX}/etc/slurm.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/etc/slurm.conf.example \
+		${STAGEDIR}${PREFIX}/etc/
 
 .include <bsd.port.options.mk>
 
@@ -56,23 +54,30 @@ CONFIGURE_ARGS+=--with-mysql_config=/nomysql
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}
-# Note: Configure could not find pcre when building with no ports
-# preinstalled on 9.1-RELEASE.  Worked fine on second try.
 USE_GNOME=	glib20 gtk20	# sview
 PLIST_FILES+=	bin/sview
 .endif
 
-# Can't disable configure test, so make it fail
+# Can't disable configure test for GTK, so make it fail
+# SLURM configure uses existence of pty.h file to enable interactive jobs.
+# Replacing #include <pty.h> with appropriate headers will therefore not work
+# and we instead add a pty.h for the build.
 post-patch:
 .if ! ${PORT_OPTIONS:MGTK2}
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e 's|min_gtk_version=2.7.1|min_gtk_version=200.7.1|g' \
 		${WRKSRC}/configure
 .endif
-	${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
+	@${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
 	@${REINPLACE_CMD} \
 		-e 's|/usr/bin/env python|${PYTHON_CMD}|g' \
 		${WRKSRC}/doc/html/shtml2html.py \
 		${WRKSRC}/doc/man/man2html.py
+	@${REINPLACE_CMD} \
+		-e 's|linux0|${HOST}|g' \
+		-e 's|ClusterName=linux|ClusterName=${HOST}|g' \
+		-e 's|jobacct_gather/linux|jobacct_gather/none|g' \
+		-e 's|linux|compute-|g' \
+		${WRKSRC}/etc/slurm.conf.example
 
 .include <bsd.port.mk>

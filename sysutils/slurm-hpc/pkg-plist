@@ -19,7 +19,7 @@ bin/sstat
 bin/strigger
 etc/rc.d/slurmctld
 etc/rc.d/slurmd
-%%ETCDIR%%.conf.sample
+etc/slurm.conf.example
 include/slurm/pmi.h
 include/slurm/slurm.h
 include/slurm/slurm_errno.h
@@ -518,9 +518,8 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%-14.11.2/html/tutorials.html
 %%PORTDOCS%%%%DOCSDIR%%-14.11.2/html/usage_pies.gif
 %%PORTDOCS%%%%DOCSDIR%%-14.11.2/html/wckey.html
-@dirrm include/slurm
-@dirrm lib/slurm/src/sattach
-@dirrm lib/slurm/src/srun
-@dirrm lib/slurm/src
-@dirrm lib/slurm
-
+@dir include/slurm
+@dir lib/slurm/src/sattach
+@dir lib/slurm/src/srun
+@dir lib/slurm/src
+@dir lib/slurm
