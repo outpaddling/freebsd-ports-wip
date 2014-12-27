@@ -1,25 +1,22 @@
---- src/python-bindings/secman.cpp.orig	2014-09-30 16:17:32.000000000 -0500
-+++ src/python-bindings/secman.cpp	2014-11-12 07:07:41.000000000 -0600
-@@ -7,6 +7,24 @@
+--- src/python-bindings/secman.cpp.orig	2014-11-26 11:22:10.000000000 -0600
++++ src/python-bindings/secman.cpp	2014-12-27 16:27:22.000000000 -0600
+@@ -7,6 +7,21 @@
  # include <pyport.h>
  # endif
  
 +/* 
-+ * Totally unacceptable hack for proof-of concept.  
 + * #include <Python.h> solves a ctype function overload issue, but causes
-+ * a dprintf() conflict.  The undefs disable dprintf() in stdio.h and
-+ * probably have other side-effects.
++ * a dprintf() conflict.  Redefining dprintf and getline disables them in
++ * in stdio.h, #included by Python.h, so they don't collide with the condor
++ * versions.
 + */
 +
 +#ifdef __FreeBSD__
-+//#undef _BSD_SOURCE
-+//#undef _GNU_SOURCE
 +#define dprintf _hide_dprintf
 +#define getline _hide_getline
 +#include <Python.h>
 +#undef getline
 +#undef dprintf
-+//#define _BSD_SOURCE
 +#endif
 +
  #include "condor_common.h"
