@@ -19,7 +19,6 @@ LIB_DEPENDS+=	libkrb5support.so:${PORTSDIR}/security/krb5 \
 
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_LDCONFIG=	yes
-USE_GCC=	yes
 # Does not build with Python 3
 USES+=		cmake gmake perl5 pgsql python:2 shebangfix
 # Does not build with gcc 4.2 or clang
@@ -36,12 +35,12 @@ LDFLAGS+=	-Wl,-rpath=${_GCC_RUNTIME}:${LOCALBASE}/lib:/usr/lib:/lib -fPIC
 # Does not build with Python 3
 CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING=${LDFLAGS} \
-		-DPYTHON_INCLUDE_DIR:PATH=${PREFIX}/include/${PYTHON_VERSION} \
-		-DPYTHON_LIBRARY:FILEPATH=${PREFIX}/lib/lib${PYTHON_VERSION}.so
+		-DPYTHON_INCLUDE_DIR:PATH=${LOCALBASE}/include/${PYTHON_VERSION} \
+		-DPYTHON_LIBRARY:FILEPATH=${LOCALBASE}/lib/lib${PYTHON_VERSION}.so
 
 MAKE_JOBS_UNSAFE=	yes
 
-SUB_FILES=	condor_config.local condor-config pkg-message
+SUB_FILES=	condor_config.local pkg-message
 
 USERS=		condor
 GROUPS=		${USERS}
