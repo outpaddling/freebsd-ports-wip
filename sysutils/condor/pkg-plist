@@ -67,7 +67,6 @@ bin/condor_who
 %%ETCDIR%%/examples/mp2script
 %%ETCDIR%%/examples/openmpiscript
 %%ETCDIR%%/sysconfig/condor
-etc/rc.d/condor
 include/MyString.h
 include/chirp_client.h
 include/classad/attrrefs.h
