@@ -40,7 +40,7 @@ CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
 
 MAKE_JOBS_UNSAFE=	yes
 
-SUB_FILES=	condor_config.local pkg-message
+SUB_FILES=	condor-config condor_config.local pkg-message
 
 USERS=		condor
 GROUPS=		${USERS}
