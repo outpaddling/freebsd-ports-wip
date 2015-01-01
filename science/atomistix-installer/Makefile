@@ -19,10 +19,18 @@ USE_LINUX=	yes
 USE_LINUX_APPS=	dri devtools
 
 NO_BUILD=	yes
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/atomistix-patch
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/atomistix-patch \
+		${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec
+	${INSTALL_SCRIPT} ${WRKSRC}/atomistix-patch.sed \
+		${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
