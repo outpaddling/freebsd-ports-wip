@@ -19,6 +19,10 @@ RUN_DEPENDS=	auto-append-line:/usr/wip/sysutils/auto-admin
 USES=		tar:xz
 NO_BUILD=	yes
 
+post-patch:
+	${REINPLACE_CMD} -e "s|add-gecos.awk|${PREFIX}/libexec/add-gecos.awk|" \
+		${WRKSRC}/Common/Sys-scripts/slurm-usage-report
+
 do-install:
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/Common/Sys-scripts/* ${STAGEDIR}${PREFIX}/sbin
