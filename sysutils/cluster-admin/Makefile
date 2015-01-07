@@ -20,7 +20,8 @@ USES=		tar:xz
 NO_BUILD=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e "s|add-gecos.awk|${PREFIX}/libexec/add-gecos.awk|" \
+	${REINPLACE_CMD} -i '' \
+		-e "s|add-gecos.awk|${PREFIX}/libexec/add-gecos.awk|" \
 		${WRKSRC}/Common/Sys-scripts/slurm-usage-report
 
 do-install:
