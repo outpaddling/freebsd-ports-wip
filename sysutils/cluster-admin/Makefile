@@ -28,6 +28,8 @@ do-install:
 		${WRKSRC}/Common/User-scripts/* ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/FreeBSD/User-scripts/* ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} \
+		${WRKSRC}/Common/*.awk ${STAGEDIR}${PREFIX}/libexec
 	(cd ${WRKSRC}/FreeBSD/Man && for f in *.mdoc; \
 	do \
 		${INSTALL_MAN} $${f} \
