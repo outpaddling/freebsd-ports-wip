@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	docviewer
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 		http://acadix.biz/Ports/distfiles/
@@ -15,6 +15,7 @@ MAINTAINER=	jwbacon@tds.net
 COMMENT=	Run the best available PDF viewer
 
 NO_BUILD=	yes
+USES=		tar:xz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/docviewer ${STAGEDIR}${PREFIX}/bin
