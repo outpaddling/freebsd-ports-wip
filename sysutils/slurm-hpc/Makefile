@@ -36,6 +36,7 @@ USE_RC_SUBR=	slurmctld slurmd
 CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include -g -O1
 LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
 
+# FIXME: Create /var/spool/slurmd|slumctld?
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/slurm.conf.example \
 		${STAGEDIR}${PREFIX}/etc/
