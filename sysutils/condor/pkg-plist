@@ -262,14 +262,3 @@ sbin/remote_gahp
 src/chirp/chirp_client.c
 src/chirp/chirp_client.h
 src/chirp/chirp_protocol.h
-@dir %%ETCDIR%%/examples
-@dir %%ETCDIR%%/sysconfig
-@dir %%ETCDIR%%
-@dir include/classad
-@dir lib/python
-%%PORTDOCS%%@dir %%DOCSDIR%%
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/examples/dagman
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/examples
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%
-@dir src/chirp
-@dir src

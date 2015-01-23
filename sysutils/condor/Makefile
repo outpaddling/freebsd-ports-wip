@@ -1,5 +1,5 @@
 # Created by: Andy Pavlo
-# $FreeBSD: head/sysutils/condor/Makefile 360673 2014-07-04 22:25:48Z adamw $
+# $FreeBSD: head/sysutils/condor/Makefile 376614 2015-01-09 15:12:14Z madpilot $
 
 PORTNAME=	condor
 PORTVERSION=	8.2.6
@@ -20,7 +20,7 @@ LIB_DEPENDS+=	libkrb5support.so:${PORTSDIR}/security/krb5 \
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_LDCONFIG=	yes
 # Does not build with Python 3
-USES+=		cmake gmake perl5 pgsql python:2 shebangfix
+USES=		cmake gmake perl5 pgsql python:2 shebangfix
 # Does not build with gcc 4.2 or clang
 USE_GCC=	yes
 SHEBANG_FILES=	src/condor_scripts/condor_qsub \
@@ -54,6 +54,10 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 900000
+BROKEN=		Fails to build on FreeBSD 8.x
+.endif
+
 pre-everything::
 	@( ${PRINTF} "\nWARNING: Condor needs approximately 3GB to build!"; \
 	   ${PRINTF} "         Please make sure your build environment has that much before continuing.\n" )
@@ -79,7 +83,5 @@ post-install:
 		${STAGEDIR}${ETCDIR}/condor_config
 	${INSTALL_DATA} ${WRKDIR}/condor_config.local ${STAGEDIR}${ETCDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/condor-config ${STAGEDIR}${PREFIX}/sbin
-	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
