@@ -2,7 +2,7 @@
 # $FreeBSD: head/sysutils/slurm-hpc/Makefile 336471 2013-12-14 19:01:33Z wg $
 
 PORTNAME=	slurm
-PORTVERSION=	14.11.2
+PORTVERSION=	14.11.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \
@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-hpc
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Simple Linux Utility for Resource Management
 
-LICENSE=	GPLv1
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo \
 		libhwloc.so:${PORTSDIR}/devel/hwloc \
