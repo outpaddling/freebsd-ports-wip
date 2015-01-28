@@ -22,7 +22,7 @@ LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo \
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		perl5 gmake tar:bz2 python libtool
+USES=		gmake libtool perl5 python tar:bz2
 
 OPTIONS_DEFINE=	DOCS MYSQL GTK2
 GTK2_DESC=	Build GUI config tools (sview)
