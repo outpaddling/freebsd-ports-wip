@@ -24,7 +24,8 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}pip>=6.0.6:${PORTSDIR}/devel/py-pip \
 		${PKGNAMEPREFIX}scipy>=0.14.0:${PORTSDIR}/science/py-scipy \
 		${PKGNAMEPREFIX}matplotlib>=0.14.0:${PORTSDIR}/math/py-matplotlib \
 		${PKGNAMEPREFIX}biopython>=1.60:${PORTSDIR}/biology/py-biopython \
-		${PKGNAMEPREFIX}django>=1.7:${PORTSDIR}/www/py-django
+		${PKGNAMEPREFIX}django>=1.7:${PORTSDIR}/www/py-django \
+		${PKGNAMEPREFIX}mock>=1.0.1:${PORTSDIR}/devel/py-mock
 
 # No R-cran-vegan, gplots, optparse, pheatmap, compute-es
 RUN_DEPENDS=	${BUILD_DEPENDS} \
