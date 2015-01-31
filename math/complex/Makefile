@@ -15,7 +15,6 @@ MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Complex math functions
 
-NO_STAGE=	yes
+USES=		tar:xz
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
