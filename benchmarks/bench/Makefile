@@ -7,28 +7,16 @@
 
 PORTNAME=	bench
 PORTVERSION=	0.2
-#PORTREVISION=	0
-#PORTEPOCH=	0
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/
-#MASTER_SITE_SUBDIR=
-#PKGNAMEPREFIX=
-#PKGNAMESUFFIX=
-#DISTNAME=
-#EXTRACT_SUFX=
-#DISTFILES=
-#DIST_SUBDIR=	${PORTNAME}
-#EXTRACT_ONLY=
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	General benchmark for CPU, RAM, and disk
 
-USE_XZ=		yes
+USES=		tar:xz
 
 PLIST_FILES=	bin/bench
 
-MAN1=		bench.1
-
-MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX}
+MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} MANPREFIX=${STAGEDIR}${MANPREFIX}
 
 .include <bsd.port.mk>
