@@ -52,9 +52,6 @@ Makefile:
 
     Remove MAKE_JOBS_UNSAFE if possible
     
-    Remove NO_STAGE if possible
-	Follow checklist at https://wiki.freebsd.org/ports/StageDir
-    
     Replace NOPORTDOCS, etc. with PORT_OPTIONS:MDOC
     
     Replace pre.mk with options.mk, post.mk with mk

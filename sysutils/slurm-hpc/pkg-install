@@ -1,0 +1,34 @@
+#!/bin/sh
+
+##########################################################################
+#   Script description:
+#       Install script for SLURM scheduler
+#
+#   Arguments:
+#       $1 = port name
+#       $2 = mode (e.g. 'POST-INSTALL')
+#
+#   Returns:
+#       Standard
+#
+#   History:
+#   Date        Name        Modification
+#   2014-01-27  J Bacon     Derived from condor pkg-install
+##########################################################################
+
+u=slurm
+g=slurm
+
+SPOOL_DIR=/var/spool
+LOG_DIR=/var/log
+
+case $2 in
+PRE-INSTALL)
+    ;;
+POST-INSTALL)
+    for dir in $LOG_DIR/slurm $SPOOL_DIR/slurmd; do
+	mkdir -p $dir
+        chown -Rh $u:$g $dir
+    done
+    ;;
+esac
