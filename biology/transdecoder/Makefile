@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon@manatee.acadix.biz>
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
 
 PORTNAME=	TransDecoder
@@ -7,21 +7,21 @@ CATEGORIES=	biology
 MASTER_SITES=	http://github.com/TransDecoder/TransDecoder/archive/
 DISTNAME=	${PORTVERSION}
 
-MAINTAINER=	bacon@manatee.acadix.biz
-COMMENT=
+MAINTAINER=	jwbacon@tds.net
+COMMENT=	Identify candidate coding regions within transcript sequences
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-# Depends on bash
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USES=		gmake
-USE_GCC=	yes
-
-#SHEBANG_FILES=	${WRKSRC}/transdecoder_plugins/Makefile
+# USE_GCC=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/bin/bash|/usr/local/bin/bash|g' \
-		${WRKSRC}/transdecoder_plugins/Makefile
+		${WRKSRC}/Makefile \
+		${WRKSRC}/transdecoder_plugins/Makefile \
+		${WRKSRC}/sample_data/runMe.sh \
+		${WRKSRC}/util/pfam_mpi.pbs
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
