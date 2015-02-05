@@ -12,16 +12,14 @@ COMMENT=	Identify candidate coding regions within transcript sequences
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-
-USES=		gmake
-# USE_GCC=	yes
+RUN_DEPENDS=	cd-hit:/usr/wip/biology/cd-hit
+NO_BUILD=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/bin/bash|/usr/local/bin/bash|g' \
-		${WRKSRC}/Makefile \
-		${WRKSRC}/transdecoder_plugins/Makefile \
 		${WRKSRC}/sample_data/runMe.sh \
 		${WRKSRC}/util/pfam_mpi.pbs
+
+do-install:
 
 .include <bsd.port.mk>
