@@ -123,5 +123,6 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/gmond/gmond.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/mans/gstat.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${GMOND_CONF} ${STAGEDIR}${PREFIX}/etc/gmond.conf.sample
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/ganglia/python_modules
 
 .include <bsd.port.mk>

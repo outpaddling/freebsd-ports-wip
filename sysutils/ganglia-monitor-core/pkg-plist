@@ -36,5 +36,4 @@ man/man5/gmond.conf.5.gz
 %%GMETAD%%sbin/gmetad
 %%GMETAD%%sbin/gmetasnap
 sbin/gmond
-@dir etc/gmond.conf.d
-@dir lib/ganglia
+@dir lib/ganglia/python_modules
