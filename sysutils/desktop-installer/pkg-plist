@@ -44,15 +44,3 @@ sbin/desktop-installer
 %%DATADIR%%/todo
 %%DATADIR%%/vbox
 %%DATADIR%%/xfce4-print-options
-@dir %%DATADIR%%/GNOME2
-@dir %%DATADIR%%/KDE3
-@dir %%DATADIR%%/KDE4
-@dir %%DATADIR%%/LXDE
-@dir %%DATADIR%%/MATE
-@dir %%DATADIR%%/Patches/linux-f10-flashplugin11
-@dir %%DATADIR%%/Patches
-@dir %%DATADIR%%/Scripts
-@dir %%DATADIR%%/XFCE4
-@dir %%DATADIR%%/gcc45/files
-@dir %%DATADIR%%/gcc45
-@dir %%DATADIR%%
