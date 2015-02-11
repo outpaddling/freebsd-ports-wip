@@ -1,5 +1,5 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
-# $FreeBSD: sysutils/desktop-installer/Makefile 316098 2013-04-19 11:46:48Z madpilot $
+# $FreeBSD: head/sysutils/desktop-installer/Makefile 363395 2014-07-29 21:25:30Z adamw $
 
 PORTNAME=	desktop-installer
 PORTVERSION=	0.4.7
@@ -12,7 +12,7 @@ COMMENT=	Quickly configure a FreeBSD desktop system
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	auto-admin>=0.3.3:/usr/wip/sysutils/auto-admin
+RUN_DEPENDS=	auto-admin>=0.3.4:${PORTSDIR}/sysutils/auto-admin
 
 USES=		tar:xz
 
@@ -27,12 +27,12 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/Scripts
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${STAGEDIR}${DATADIR}/Scripts
 
-.include <bsd.port.pre.mk>
+#.include <bsd.port.pre.mk>
 post-patch:
 	${REINPLACE_CMD} 's|/etc/mtree|$${PORTSDIR=/usr/ports}/Templates|' \
 		${WRKSRC}/${PORTNAME}
 	${REINPLACE_CMD} \
 		's|DATADIR=Data|DATADIR=${STAGEDIR}${PREFIX}/share/desktop-installer|g' \
-		${WRKSRC}/desktop-installer
+		${WRKSRC}/${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
