@@ -9,9 +9,8 @@ MASTER_SITES=	SF
 # FIXME: Check complete deps
 # Just for speed: Recent GCC has better optimizer
 # USE_GCC=	yes
-USES=		gmake tar:bzip2 perl5 shebangfix
+USES=		gmake tar:bzip2 perl5 python:run shebangfix
 SHEBANG_FILES=	misc/*.pl
-USE_PYTHON_RUN=	yes
 
 MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
 COMMENT=	Generic format for storing large nucleotide sequence alignments
