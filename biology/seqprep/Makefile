@@ -10,4 +10,19 @@ DISTNAME=	v${PORTVERSION}
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Strip adaptors and/or merge paired reads with overlap into single reads
 
+WRKSRC=		${WRKDIR}/SeqPrep-${PORTVERSION}
+
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's|CC=|CC?=|' \
+		-e 's|CFLAGS=|CFLAGS?=|' \
+		-e 's|$${CFLAGS}|-c $${CFLAGS}|' \
+		-e 's|$$(CFLAGS)|-c $$(CFLAGS)|' \
+		${WRKSRC}/Makefile
+	${REINPLACE_CMD} \
+		-e 's|inline||' ${WRKSRC}/*.c ${WRKSRC}/*.h
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/SeqPrep ${STAGEDIR}${PREFIX}/bin
+
 .include <bsd.port.mk>
