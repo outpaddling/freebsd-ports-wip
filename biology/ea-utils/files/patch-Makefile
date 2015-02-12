@@ -1,0 +1,71 @@
+--- Makefile.orig	2014-09-04 10:44:33.000000000 -0500
++++ Makefile	2015-02-12 15:59:23.000000000 -0600
+@@ -1,7 +1,8 @@
+ #
+ # $Id: Makefile 805 2014-09-04 15:43:17Z earonesty $
+ 
+-CC=g++
++# Use the correct compiler (CXX, not CC) and respect the environment
++CXX?=g++
+ PREFIX?=/usr
+ BINDIR?=$(PREFIX)/bin
+ CFLAGS?=-O3 -I. 
+@@ -15,7 +16,8 @@
+ VER := $(shell grep '%define ver' ${PKG}.spec | perl -ne 'print $$1 if / (\S+) *$$/')
+ 
+ SRC=fastq-clipper.cpp fastq-mcf.cpp fastq-multx.cpp fastq-join.cpp fastq-stats.cpp gcModel.cpp
+-BIN=fastq-mcf fastq-multx fastq-join fastq-stats fastq-clipper sam-stats varcall
++# Remove sam-stats, which is intalled by a separate port
++BIN=fastq-mcf fastq-multx fastq-join fastq-stats fastq-clipper varcall
+ TOOLS=fastx-graph gtf2bed determine-phred randomFQ alc
+ 
+ all: $(BIN) check
+@@ -67,8 +69,8 @@
+ $(PKG).${VER}-${REL}.tar.gz: $(PKG).tar.gz
+ 	cp $< $@
+ 
+-%: %.cpp fastq-lib.cpp fastq-lib.h sparsehash
+-	$(CC) $(CFLAGS) $< fastq-lib.cpp -o $@
++%: %.cpp fastq-lib.cpp fastq-lib.h
++	$(CXX) $(CFLAGS) $< fastq-lib.cpp -o $@
+ 
+ sparsehash: sparsehash-2.0.2
+ 	cd sparsehash-2.0.2; ./configure; make
+@@ -78,29 +80,29 @@
+ # why the libbam.a doesn't work?  not sure... *.o works
+ sam-stats: sam-stats.cpp samtools/libbam.a samtools/bam.h fastq-lib.h sparsehash
+ ifeq ($(OS),Windows_NT)
+-	$(CC) $(CFLAGS) samtools/*.o -lz -lpthread -lws2_32 fastq-lib.cpp $< -o $@
++	$(CXX) $(CFLAGS) samtools/*.o -lz -lpthread -lws2_32 fastq-lib.cpp $< -o $@
+ else
+-	$(CC) $(CFLAGS) samtools/*.o -lz -lpthread fastq-lib.cpp $< -o $@
++	$(CXX) $(CFLAGS) samtools/*.o -lz -lpthread fastq-lib.cpp $< -o $@
+ endif
+ 
+ samtools/libbam.a: samtools/*.c samtools/*.h
+ 	cd samtools && make libbam.a
+ 
+ ea-bcl2fastq: ea-bcl2fastq.cpp
+-	$(CC) $(CFLAGS) $< -lz -o $@
++	$(CXX) $(CFLAGS) $< -lz -o $@
+ 
+-varcall: varcall.cpp fastq-lib.cpp tidx/tidx-lib.cpp sparsehash
++varcall: varcall.cpp fastq-lib.cpp tidx/tidx-lib.cpp
+ ifeq ($(OS),Windows_NT)
+ 	echo varcall: not supported yet
+ else
+-	$(CC) $(CFLAGS) fastq-lib.cpp tidx/tidx-lib.cpp -o $@ $< -lgsl -lgslcblas
++	$(CXX) $(CFLAGS) fastq-lib.cpp tidx/tidx-lib.cpp -o $@ $< -L${LOCALBASE}/lib -lgsl -lgslcblas
+ endif
+ 
+-fastq-stats: fastq-stats.cpp fastq-lib.cpp gcModel.cpp sparsehash
+-	$(CC) $(CFLAGS) fastq-lib.cpp gcModel.cpp -o $@ $<
++fastq-stats: fastq-stats.cpp fastq-lib.cpp gcModel.cpp
++	$(CXX) $(CFLAGS) fastq-lib.cpp gcModel.cpp -o $@ $<
+ 
+ bam-filter:  bam-filter.cpp 
+-	$(CC) $(CFLAGS) fastq-lib.cpp -o $@  $< -lbamtools 
++	$(CXX) $(CFLAGS) fastq-lib.cpp -o $@  $< -lbamtools 
+ 
+ clean:
+ 	rm -f *.o $(BIN)
