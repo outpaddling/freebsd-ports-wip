@@ -1,5 +1,5 @@
 --- fastq-mcf.cpp.orig	2014-09-04 10:44:33.000000000 -0500
-+++ fastq-mcf.cpp	2015-02-13 10:57:38.000000000 -0600
++++ fastq-mcf.cpp	2015-02-13 11:44:57.000000000 -0600
 @@ -370,7 +370,7 @@
  			case 'P': phred = (char) atoi(optarg); break;
  			case 'D': duplen = atoi(optarg); break;
