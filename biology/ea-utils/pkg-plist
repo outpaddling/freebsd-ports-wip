@@ -1,1 +1,10 @@
-/you/have/to/check/what/port/create/gives/you
+bin/alc
+bin/determine-phred
+bin/fastq-clipper
+bin/fastq-join
+bin/fastq-mcf
+bin/fastq-multx
+bin/fastq-stats
+bin/fastx-graph
+bin/randomFQ
+bin/varcall

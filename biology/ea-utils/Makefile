@@ -12,7 +12,8 @@ COMMENT=	Command-line tools for processing fastq sequence data
 
 # Dist makefile uses GNU make extensions
 USES=		gmake shebangfix
-SHEBANG_FILES=	t/*.sh t/*.pl t/check-fastqs
+SHEBANG_FILES=	t/*.sh t/*.pl t/check-fastqs \
+		determine-phred randomFQ alc
 
 # varcall.cpp calls GSL functions.  For library dependencies, specify the
 # shared lib required.
@@ -28,5 +29,9 @@ CXXFLAGS+=	-I${LOCALBASE}/include -D_WITH_GETLINE
 
 # For now, assume make shouldn't run multiple rules at once
 MAKE_JOBS_UNSAFE=yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's|/usr/bin/Rscript|${LOCALBASE}/bin/Rscript|' \
+		${WRKSRC}/fastx-graph
 
 .include <bsd.port.mk>

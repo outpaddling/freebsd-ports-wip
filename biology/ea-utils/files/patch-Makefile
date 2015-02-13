@@ -1,5 +1,5 @@
 --- Makefile.orig	2014-09-04 10:44:33.000000000 -0500
-+++ Makefile	2015-02-12 16:13:32.000000000 -0600
++++ Makefile	2015-02-12 21:34:37.000000000 -0600
 @@ -1,13 +1,14 @@
  #
  # $Id: Makefile 805 2014-09-04 15:43:17Z earonesty $
@@ -8,8 +8,9 @@
 +# Use the correct compiler (CXX, not CC) and respect the environment
 +CXX?=g++
  PREFIX?=/usr
- BINDIR?=$(PREFIX)/bin
+-BINDIR?=$(PREFIX)/bin
 -CFLAGS?=-O3 -I. 
++BINDIR?=$(DESTDIR)$(PREFIX)/bin
 +CXXFLAGS?=-O3 -I. 
  CPPFLAGS?=-O3 -I.
  # for debugging:
@@ -18,7 +19,7 @@
  # CPPFLAGS?=-g -I.
  
  PKG=ea-utils
-@@ -15,7 +16,8 @@
+@@ -15,15 +16,16 @@
  VER := $(shell grep '%define ver' ${PKG}.spec | perl -ne 'print $$1 if / (\S+) *$$/')
  
  SRC=fastq-clipper.cpp fastq-mcf.cpp fastq-multx.cpp fastq-join.cpp fastq-stats.cpp gcModel.cpp
@@ -27,7 +28,17 @@
 +BIN=fastq-mcf fastq-multx fastq-join fastq-stats fastq-clipper varcall
  TOOLS=fastx-graph gtf2bed determine-phred randomFQ alc
  
- all: $(BIN) check
+-all: $(BIN) check
++all: $(BIN)
+ 
+ debug: 
+ 	CPPFLAGS=-g ${MAKE} $(MFLAGS) varcall
+ 
+-install: $(BIN) $(BINDIR)/fastq-clipper $(BINDIR)/fastq-mcf $(BINDIR)/fastq-multx $(BINDIR)/fastq-join $(BINDIR)/fastq-stats $(BINDIR)/sam-stats $(BINDIR)/varcall $(BINDIR)/fastx-graph $(BINDIR)/determine-phred $(BINDIR)/randomFQ $(BINDIR)/alc
++install: $(BIN) $(BINDIR)/fastq-clipper $(BINDIR)/fastq-mcf $(BINDIR)/fastq-multx $(BINDIR)/fastq-join $(BINDIR)/fastq-stats $(BINDIR)/varcall $(BINDIR)/fastx-graph $(BINDIR)/determine-phred $(BINDIR)/randomFQ $(BINDIR)/alc
+ 
+ $(BINDIR):
+ 	mkdir -p $(BINDIR)
 @@ -67,8 +69,8 @@
  $(PKG).${VER}-${REL}.tar.gz: $(PKG).tar.gz
  	cp $< $@
