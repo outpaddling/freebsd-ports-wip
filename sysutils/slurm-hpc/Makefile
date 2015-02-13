@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		gmake libtool perl5 python tar:bz2
 
-OPTIONS_DEFINE=	DOCS MYSQL GTK2
+OPTIONS_DEFINE=	DOCS GTK2
 OPTIONS_SUB=	yes
 
 GTK2_USE=	GNOME=glib20,gtk20
@@ -73,7 +73,7 @@ post-stage:
 .if ! ${PORT_OPTIONS:MDOCS}
 	${RM} -rf ${STAGEDIR}${LOCALBASE}/share/doc/${PORTNAME}-${PORTVERSION}
 .endif
-	@${CP} ${FILESDIR}/slurm.conf.example ${STAGEDIR}${PREFIX}/etc/
+	@${CP} ${WRKSRC}/etc/slurm.conf.example ${STAGEDIR}${PREFIX}/etc/
 
 INSTALL_TARGET=	install-strip
 
