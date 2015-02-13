@@ -1,5 +1,5 @@
 --- fastq-multx.cpp.orig	2014-09-04 10:44:33.000000000 -0500
-+++ fastq-multx.cpp	2015-02-13 15:17:48.000000000 -0600
++++ fastq-multx.cpp	2015-02-13 16:28:41.000000000 -0600
 @@ -100,7 +100,7 @@
  
  
@@ -41,7 +41,20 @@
  		case 'H': bcinheader = 1; usefile1=1; break;
  		case 'e': end = 'e'; break;
  		case 'G': group = optarg; break;
-@@ -184,6 +187,8 @@
+@@ -160,7 +163,11 @@
+ 			in[f_n++] = optarg;
+ 			out[f_oarg++] = "n/a";
+ 			break;
+-		case 'l': list = optarg; usefile1=0; break;
++		case 'l':
++			list = optarg;
++			usefile1=0;
++			printf("%s %s\n", optarg, argv[optind]);
++			break;
+ 		case 'L': list = optarg; usefile1=1; break;
+ 		case 'B': bfil = optarg; list = NULL; break;
+ 		case 'x': trim = false; break;
+@@ -184,6 +191,8 @@
  		}
  	}
  
@@ -50,7 +63,7 @@
  	if (group && !list) {
  		fprintf(stderr, "Error: -G only works with -l\n");
  		return 1;
-@@ -200,6 +205,8 @@
+@@ -200,6 +209,8 @@
  	}
  
  	if (argc < 3 || !f_n || (!bfil && !guide && !list)) {
@@ -59,7 +72,7 @@
  		usage(stderr);
  		return 1;
  	}
-@@ -257,7 +264,7 @@
+@@ -257,7 +268,7 @@
              if (!strcmp(bcg[bgcnt].b.seq.s,"seq")) continue;
  
              // dual indexed indicated by a dash in the sequence...
@@ -68,25 +81,25 @@
  				*bcg[bgcnt].b.dual = '\0';
  				++bcg[bgcnt].b.dual;
  				bcg[bgcnt].b.dual_n = strlen(bcg[bgcnt].b.dual);
-@@ -662,7 +669,7 @@
+@@ -662,7 +673,7 @@
  				fprintf(stderr, "Barcode file '%s' required format is 'ID SEQ'\n",bfil);
  				return 1;
  			}
 -            if (bc[bcnt].dual=strchr(bc[bcnt].seq.s,'-')) {
-+            if ( (bc[bcnt].dual=strchr(bc[bcnt].seq.s,'-')) != NULL ) {
++	    if ( (bc[bcnt].dual=strchr(bc[bcnt].seq.s,'-')) != NULL ) {
                  *bc[bcnt].dual = '\0';
                  ++bc[bcnt].dual;
  				bc[bcnt].dual_n = strlen(bc[bcnt].dual);
-@@ -713,7 +720,7 @@
+@@ -713,7 +724,7 @@
  
          struct fq fq[2]; meminit(fq);
  
 -        while (read_ok=read_fq(fin[0], nr, &fq[0])) {
-+        while ( (read_ok=read_fq(fin[0], nr, &fq[0])) != 0 ) {
++	while ( (read_ok=read_fq(fin[0], nr, &fq[0])) != 0 ) {
              fq[0].id.s[--fq[0].id.n]='\0';
  
              if (dual)
-@@ -848,7 +855,7 @@
+@@ -848,7 +859,7 @@
  
      // ACTUAL DEMUX HAPPENS HERE
  	// read in 1 record from EACH file supplied
@@ -95,7 +108,7 @@
  		for (i=1;i<f_n;++i) {
  			int mate_ok=read_fq(fin[i], nrec, &fq[i]);
  			if (read_ok != mate_ok) {
-@@ -1186,7 +1193,7 @@
+@@ -1186,7 +1197,7 @@
      }
  
      char *t;
@@ -104,7 +117,7 @@
          p=t+1;
      }
  
-@@ -1210,7 +1217,7 @@
+@@ -1210,7 +1221,7 @@
          (*q)[*ns]='\0';
      }
  

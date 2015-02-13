@@ -1,0 +1,6 @@
+#!/bin/sh -e
+
+make clean build
+cd ls work/ea-utils.1.1.2-806/t
+../fastq-multx -l in/multx/master-barcodes.txt in/multx/mxtest_2.fastq in/multx/mxtest_1.fastq in/multx/mxtest_3.fastq -o n/a -o tmp/multx.t.XwLIW/mxout_%_1.fq -o tmp/multx.t.XwLIW/mxout_%_2.fq
+
