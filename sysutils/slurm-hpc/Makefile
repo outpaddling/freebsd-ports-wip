@@ -1,12 +1,12 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
-# $FreeBSD: head/sysutils/slurm-hpc/Makefile 336471 2013-12-14 19:01:33Z wg $
+# $FreeBSD: head/sysutils/slurm-hpc/Makefile 378061 2015-01-28 14:04:53Z skreuzer $
 
 PORTNAME=	slurm
-PORTVERSION=	14.11.3
+PORTVERSION=	14.11.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \
-		http://www.schedmd.com/download/development/
+ 		http://www.schedmd.com/download/development/
 PKGNAMESUFFIX=	-hpc
 
 MAINTAINER=	jwbacon@tds.net
@@ -20,12 +20,18 @@ LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo \
 		librrd.so:${PORTSDIR}/databases/rrdtool \
 		libhdf5.so:${PORTSDIR}/science/hdf5
 
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+
+USE_LDCONFIG=	yes
 USES=		gmake libtool perl5 python tar:bz2
 
 OPTIONS_DEFINE=	DOCS MYSQL GTK2
-GTK2_DESC=	Build GUI config tools (sview)
+OPTIONS_SUB=	yes
+
+GTK2_USE=	GNOME=glib20,gtk20
+MYSQL_USE=	MYSQL=yes
+
+GTK2_DESC=	Build GUI config tool sview
 
 USERS=		slurm
 GROUPS=		${USERS}
@@ -33,36 +39,18 @@ GROUPS=		${USERS}
 USE_RC_SUBR=	slurmctld slurmd
 
 # ${WRKSRC}/slurm is for pty.h in configure
-CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include -g -O1
+CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
-
-# FIXME: Create /var/spool/slurmd|slumctld?
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/etc/slurm.conf.example \
-		${STAGEDIR}${PREFIX}/etc/
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes	# Job accounting
-PLIST_FILES+=	lib/slurm/accounting_storage_mysql.a \
-		lib/slurm/accounting_storage_mysql.so \
-		lib/slurm/jobcomp_mysql.a \
-		lib/slurm/jobcomp_mysql.so
-.else
-# Can't disable configure test, so make it fail
-CONFIGURE_ARGS+=--with-mysql_config=/nomysql
-.endif
+# 1) SLURM'S configure has no option to disable the GTK test, so make it fail
+#    if we don't want to build in GUI components.
+#
+# 2) SLURM's configure enables interactive jobs if pty.h exists.  Replacing
+#    #include <pty.h> with appropriate headers will therefore not work, so
+#    instead add a pty.h for the build.
 
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME=	glib20 gtk20	# sview
-PLIST_FILES+=	bin/sview
-.endif
-
-# Can't disable configure test for GTK, so make it fail
-# SLURM configure uses existence of pty.h file to enable interactive jobs.
-# Replacing #include <pty.h> with appropriate headers will therefore not work
-# and we instead add a pty.h for the build.
 post-patch:
 .if ! ${PORT_OPTIONS:MGTK2}
 	@${REINPLACE_CMD} \
@@ -80,5 +68,13 @@ post-patch:
 		-e 's|jobacct_gather/linux|jobacct_gather/none|g' \
 		-e 's|linux|compute-|g' \
 		${WRKSRC}/etc/slurm.conf.example
+
+post-stage:
+.if ! ${PORT_OPTIONS:MDOCS}
+	${RM} -rf ${STAGEDIR}${LOCALBASE}/share/doc/${PORTNAME}-${PORTVERSION}
+.endif
+	@${CP} ${FILESDIR}/slurm.conf.example ${STAGEDIR}${PREFIX}/etc/
+
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
