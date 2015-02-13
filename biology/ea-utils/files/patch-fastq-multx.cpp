@@ -1,5 +1,5 @@
 --- fastq-multx.cpp.orig	2014-09-04 10:44:33.000000000 -0500
-+++ fastq-multx.cpp	2015-02-13 16:28:41.000000000 -0600
++++ fastq-multx.cpp	2015-02-13 16:52:57.000000000 -0600
 @@ -100,7 +100,7 @@
  
  
@@ -9,30 +9,43 @@
  	bool trim = true;
  	int mismatch = 1;
  	int distance = 2;
-@@ -127,12 +127,14 @@
+@@ -126,9 +126,16 @@
+ 	int i;
  	bool omode = false;	
  	char *bfil = NULL;
- 	while (	(c = getopt (argc, argv, "-DzxnHhbeov:m:B:g:L:l:G:q:d:t:")) != -1) {
+-	while (	(c = getopt (argc, argv, "-DzxnHhbeov:m:B:g:L:l:G:q:d:t:")) != -1) {
++	while (	(c = getopt (argc, argv, "-DzxnHhbeo:v:m:B:g:L:l:G:q:d:t:")) != -1) {
 +		printf("getopt returned %d (%c)\n", c, c);
  		switch (c) t:{
  		case '\1': 
++			/* 
++			 * FIXME: This case is obsoleted by code inserted
++			 * under 'l' and 'o' below, which does not rely on
++			 * GNU extensions.  Still need to add support for
++			 * bfil and guide.
++			 */
                         	if (omode) {
  				if (f_oarg<5)
  					out[f_oarg++] = optarg;
- 				else {
-+					puts("f_oarg >= 5");
- 					usage(stderr); return 1;
- 				}
- 			} else if (!bfil && !guide && !list) 
-@@ -140,6 +142,7 @@
- 			else if (f_n<5) {
- 				in[f_n++] = optarg; 
- 			} else {
-+				puts("f_n >= 5");
+@@ -143,7 +150,16 @@
  				usage(stderr); return 1;
  			}
  			break;
-@@ -151,7 +154,7 @@
+-                case 'o': omode=true; break;
++                case 'o':
++			omode=true;
++			// FIXME: Max = 5
++			puts(optarg);
++			out[f_oarg++] = optarg;
++			// Is it acceptable to have multiple filenames
++			// after one -o?
++			while ( (optind < argc) && (argv[optind][0] != '-') )
++				out[f_oarg++] = argv[optind++];
++			break;
+                 case 'v': 
+ 			if (strlen(optarg)>1) {
+ 				fprintf(stderr, "Option -v requires a single character argument");
+@@ -151,7 +167,7 @@
  			}
  			verify = *optarg; break;
  		case 'b': end = 'b'; break;
@@ -41,7 +54,7 @@
  		case 'H': bcinheader = 1; usefile1=1; break;
  		case 'e': end = 'e'; break;
  		case 'G': group = optarg; break;
-@@ -160,7 +163,11 @@
+@@ -160,7 +176,13 @@
  			in[f_n++] = optarg;
  			out[f_oarg++] = "n/a";
  			break;
@@ -49,12 +62,14 @@
 +		case 'l':
 +			list = optarg;
 +			usefile1=0;
-+			printf("%s %s\n", optarg, argv[optind]);
++			// FIXME: Max = 5
++			while ( argv[optind][0] != '-' )
++				in[f_n++] = argv[optind++];
 +			break;
  		case 'L': list = optarg; usefile1=1; break;
  		case 'B': bfil = optarg; list = NULL; break;
  		case 'x': trim = false; break;
-@@ -184,6 +191,8 @@
+@@ -184,6 +206,8 @@
  		}
  	}
  
@@ -63,7 +78,7 @@
  	if (group && !list) {
  		fprintf(stderr, "Error: -G only works with -l\n");
  		return 1;
-@@ -200,6 +209,8 @@
+@@ -200,6 +224,8 @@
  	}
  
  	if (argc < 3 || !f_n || (!bfil && !guide && !list)) {
@@ -72,7 +87,7 @@
  		usage(stderr);
  		return 1;
  	}
-@@ -257,7 +268,7 @@
+@@ -257,7 +283,7 @@
              if (!strcmp(bcg[bgcnt].b.seq.s,"seq")) continue;
  
              // dual indexed indicated by a dash in the sequence...
@@ -81,7 +96,7 @@
  				*bcg[bgcnt].b.dual = '\0';
  				++bcg[bgcnt].b.dual;
  				bcg[bgcnt].b.dual_n = strlen(bcg[bgcnt].b.dual);
-@@ -662,7 +673,7 @@
+@@ -662,7 +688,7 @@
  				fprintf(stderr, "Barcode file '%s' required format is 'ID SEQ'\n",bfil);
  				return 1;
  			}
@@ -90,7 +105,7 @@
                  *bc[bcnt].dual = '\0';
                  ++bc[bcnt].dual;
  				bc[bcnt].dual_n = strlen(bc[bcnt].dual);
-@@ -713,7 +724,7 @@
+@@ -713,7 +739,7 @@
  
          struct fq fq[2]; meminit(fq);
  
@@ -99,7 +114,7 @@
              fq[0].id.s[--fq[0].id.n]='\0';
  
              if (dual)
-@@ -848,7 +859,7 @@
+@@ -848,7 +874,7 @@
  
      // ACTUAL DEMUX HAPPENS HERE
  	// read in 1 record from EACH file supplied
@@ -108,7 +123,7 @@
  		for (i=1;i<f_n;++i) {
  			int mate_ok=read_fq(fin[i], nrec, &fq[i]);
  			if (read_ok != mate_ok) {
-@@ -1186,7 +1197,7 @@
+@@ -1186,7 +1212,7 @@
      }
  
      char *t;
@@ -117,7 +132,7 @@
          p=t+1;
      }
  
-@@ -1210,7 +1221,7 @@
+@@ -1210,7 +1236,7 @@
          (*q)[*ns]='\0';
      }
  
