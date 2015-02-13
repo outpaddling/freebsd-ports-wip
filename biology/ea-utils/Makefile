@@ -23,7 +23,7 @@ LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
 # minimum version, or a binary that it installs.
 BUILD_DEPENDS=	samtools>=0.1.19:/usr/wip/biology/samtools \
 		google-sparsehash>=2.0.2:${PORTSDIR}/devel/google-sparsehash
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS} R:${PORTSDIR}/math/R
 
 CXXFLAGS+=	-I${LOCALBASE}/include -D_WITH_GETLINE
 
