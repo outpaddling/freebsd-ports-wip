@@ -11,7 +11,8 @@ MAINTAINER=	jwbacon@tds.net
 COMMENT=	Command-line tools for processing fastq sequence data
 
 # Dist makefile uses GNU make extensions
-USES=		gmake
+USES=		gmake shebangfix
+SHEBANG_FILES=	t/*.sh t/*.pl t/check-fastqs
 
 # varcall.cpp calls GSL functions.  For library dependencies, specify the
 # shared lib required.
