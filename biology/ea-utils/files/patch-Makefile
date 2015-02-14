@@ -1,5 +1,5 @@
 --- Makefile.orig	2014-09-04 10:44:33.000000000 -0500
-+++ Makefile	2015-02-13 12:16:19.000000000 -0600
++++ Makefile	2015-02-14 08:53:29.000000000 -0600
 @@ -1,13 +1,14 @@
  #
  # $Id: Makefile 805 2014-09-04 15:43:17Z earonesty $
@@ -19,7 +19,7 @@
  # CPPFLAGS?=-g -I.
  
  PKG=ea-utils
-@@ -15,15 +16,16 @@
+@@ -15,15 +16,17 @@
  VER := $(shell grep '%define ver' ${PKG}.spec | perl -ne 'print $$1 if / (\S+) *$$/')
  
  SRC=fastq-clipper.cpp fastq-mcf.cpp fastq-multx.cpp fastq-join.cpp fastq-stats.cpp gcModel.cpp
@@ -29,6 +29,7 @@
  TOOLS=fastx-graph gtf2bed determine-phred randomFQ alc
  
 -all: $(BIN) check
++# all: $(BIN) check
 +all: $(BIN)
  
  debug: 
@@ -39,7 +40,7 @@
  
  $(BINDIR):
  	mkdir -p $(BINDIR)
-@@ -67,8 +69,8 @@
+@@ -67,8 +70,8 @@
  $(PKG).${VER}-${REL}.tar.gz: $(PKG).tar.gz
  	cp $< $@
  
@@ -50,7 +51,7 @@
  
  sparsehash: sparsehash-2.0.2
  	cd sparsehash-2.0.2; ./configure; make
-@@ -78,29 +80,29 @@
+@@ -78,29 +81,29 @@
  # why the libbam.a doesn't work?  not sure... *.o works
  sam-stats: sam-stats.cpp samtools/libbam.a samtools/bam.h fastq-lib.h sparsehash
  ifeq ($(OS),Windows_NT)

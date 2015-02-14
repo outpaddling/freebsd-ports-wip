@@ -1,7 +1,15 @@
-#!/bin/sh -e
+#!/bin/sh -ex
 
-make clean build
+make clean build || true
 cd work/ea-utils.1.1.2-806/t
-mkdir tmp/multx.t.XwLIW
-../fastq-multx -l in/multx/master-barcodes.txt in/multx/mxtest_2.fastq in/multx/mxtest_1.fastq in/multx/mxtest_3.fastq -o n/a -o tmp/multx.t.XwLIW/mxout_%_1.fq -o tmp/multx.t.XwLIW/mxout_%_2.fq
+
+mkdir test
+
+../fastq-join in/join/test-m1.fq in/join/test-m2.fq \
+    -o test/test-m.
+    #2>&1 test/test-m.join
+
+../fastq-multx -l in/multx/master-barcodes.txt in/multx/mxtest_2.fastq \
+    in/multx/mxtest_1.fastq in/multx/mxtest_3.fastq \
+    -o n/a -o test/mxout_%_1.fq -o test/mxout_%_2.fq
 
