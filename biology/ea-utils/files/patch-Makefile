@@ -1,5 +1,5 @@
 --- Makefile.orig	2014-09-04 10:44:33.000000000 -0500
-+++ Makefile	2015-02-14 08:53:29.000000000 -0600
++++ Makefile	2015-02-14 10:54:31.000000000 -0600
 @@ -1,13 +1,14 @@
  #
  # $Id: Makefile 805 2014-09-04 15:43:17Z earonesty $
@@ -28,9 +28,8 @@
 +BIN=fastq-mcf fastq-multx fastq-join fastq-stats fastq-clipper varcall
  TOOLS=fastx-graph gtf2bed determine-phred randomFQ alc
  
--all: $(BIN) check
-+# all: $(BIN) check
-+all: $(BIN)
+ all: $(BIN) check
++# all: $(BIN)
  
  debug: 
  	CPPFLAGS=-g ${MAKE} $(MFLAGS) varcall

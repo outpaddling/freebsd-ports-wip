@@ -1,5 +1,23 @@
 --- fastq-mcf.cpp.orig	2014-09-04 10:44:33.000000000 -0500
-+++ fastq-mcf.cpp	2015-02-13 11:44:57.000000000 -0600
++++ fastq-mcf.cpp	2015-02-14 10:41:19.000000000 -0600
+@@ -265,7 +265,7 @@
+     meminit(phred_adjust);
+ 
+     int option_index = 0;
+-    while (	(c = getopt_long(argc, argv, "-nf0uXUVHKSRdbehp:o:O:l:s:m:t:k:x:P:q:L:C:w:F:D:",long_options,&option_index)) != -1) {
++    while ( ((c = getopt_long(argc, argv, "nf0uXUVHKSRdbehp:o:O:l:s:m:t:k:x:P:q:L:C:w:F:D:",long_options,&option_index)) != -1) || (optind < argc) ) {
+ 		switch (c) {
+ 			case '\0':
+                 { 
+@@ -338,7 +338,7 @@
+                     }
+                     break;
+                 }
+-			case '\1': 
++			case -1: 
+ 				if (!afil) 
+ 					afil = optarg; 
+ 				else if (i_n<MAX_FILES) 
 @@ -370,7 +370,7 @@
  			case 'P': phred = (char) atoi(optarg); break;
  			case 'D': duplen = atoi(optarg); break;

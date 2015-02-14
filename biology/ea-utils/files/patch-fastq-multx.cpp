@@ -1,5 +1,5 @@
 --- fastq-multx.cpp.orig	2014-09-04 10:44:33.000000000 -0500
-+++ fastq-multx.cpp	2015-02-14 08:44:27.000000000 -0600
++++ fastq-multx.cpp	2015-02-14 10:47:59.000000000 -0600
 @@ -100,7 +100,7 @@
  
  
@@ -15,7 +15,7 @@
  	char *bfil = NULL;
 -	while (	(c = getopt (argc, argv, "-DzxnHhbeov:m:B:g:L:l:G:q:d:t:")) != -1) {
 +	while (	(c = getopt (argc, argv, "DzxnHhbeo:v:m:B:g:L:l:G:q:d:t:")) != -1) {
-+		printf("getopt returned %d (%c)\n", c, c);
++		// printf("getopt returned %d (%c)\n", c, c);
  		switch (c) t:{
  		case '\1': 
 +			/* 
@@ -45,15 +45,6 @@
                  case 'v': 
  			if (strlen(optarg)>1) {
  				fprintf(stderr, "Option -v requires a single character argument");
-@@ -151,7 +166,7 @@
- 			}
- 			verify = *optarg; break;
- 		case 'b': end = 'b'; break;
--		case 'h': usage(stdout); exit(0); break;
-+		case 'h': puts("h"); usage(stdout); exit(0); break;
- 		case 'H': bcinheader = 1; usefile1=1; break;
- 		case 'e': end = 'e'; break;
- 		case 'G': group = optarg; break;
 @@ -160,7 +175,12 @@
  			in[f_n++] = optarg;
  			out[f_oarg++] = "n/a";
@@ -72,7 +63,7 @@
  		}
  	}
  
-+	printf("c = %d\n", c);
++	// printf("c = %d\n", c);
 +
  	if (group && !list) {
  		fprintf(stderr, "Error: -G only works with -l\n");
@@ -81,8 +72,8 @@
  	}
  
  	if (argc < 3 || !f_n || (!bfil && !guide && !list)) {
-+		puts("if (argc < 3 || !f_n || (!bfil && !guide && !list))");
-+		fprintf(stderr, "%d %d %d %d %d\n", argc, f_n, bfil, guide, list);
++		//puts("if (argc < 3 || !f_n || (!bfil && !guide && !list))");
++		//fprintf(stderr, "%d %d %d %d %d\n", argc, f_n, bfil, guide, list);
  		usage(stderr);
  		return 1;
  	}
