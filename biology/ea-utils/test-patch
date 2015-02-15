@@ -13,3 +13,7 @@ mkdir test
     in/multx/mxtest_1.fastq in/multx/mxtest_3.fastq \
     -o n/a -o test/mxout_%_1.fq -o test/mxout_%_2.fq
 
+../fastq-mcf -l 15 -L72 -f in/mcf/test.fa in/mcf/test4.fq1 in/mcf/test4.fq2 \
+    -o test/test4.out1 -o test/test4.out2 
+    #> tmp/mcf.t.LaxEb/test4.err 2>&1
+
