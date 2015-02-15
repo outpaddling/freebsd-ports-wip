@@ -1,15 +1,18 @@
 --- Makefile.orig	2014-09-04 10:44:33.000000000 -0500
-+++ Makefile	2015-02-15 10:10:05.000000000 -0600
-@@ -1,13 +1,14 @@
++++ Makefile	2015-02-15 10:37:28.000000000 -0600
+@@ -1,13 +1,17 @@
  #
  # $Id: Makefile 805 2014-09-04 15:43:17Z earonesty $
  
 -CC=g++
-+# Use the correct compiler (CXX, not CC) and respect the environment
++# Use the correct compiler variable (CXX, not CC) and respect the environment
++# for packaging systems such as Debian packages, FreeBSD ports, etc.
 +CXX?=g++
  PREFIX?=/usr
 -BINDIR?=$(PREFIX)/bin
 -CFLAGS?=-O3 -I. 
++# Packaging systems stage installs to prevent conflicting packages from
++# clobbering each other
 +BINDIR?=$(DESTDIR)$(PREFIX)/bin
 +CXXFLAGS?=-O3 -I. 
  CPPFLAGS?=-O3 -I.
@@ -19,17 +22,20 @@
  # CPPFLAGS?=-g -I.
  
  PKG=ea-utils
-@@ -15,15 +16,17 @@
+@@ -15,15 +19,19 @@
  VER := $(shell grep '%define ver' ${PKG}.spec | perl -ne 'print $$1 if / (\S+) *$$/')
  
  SRC=fastq-clipper.cpp fastq-mcf.cpp fastq-multx.cpp fastq-join.cpp fastq-stats.cpp gcModel.cpp
 -BIN=fastq-mcf fastq-multx fastq-join fastq-stats fastq-clipper sam-stats varcall
-+# Remove sam-stats, which is intalled by a separate port
++# Remove sam-stats build when, which is intalled as a separate package
 +BIN=fastq-mcf fastq-multx fastq-join fastq-stats fastq-clipper varcall
  TOOLS=fastx-graph gtf2bed determine-phred randomFQ alc
  
- all: $(BIN) check
-+# all: $(BIN)
+-all: $(BIN) check
++# Check target fails due to minor output differences on FreeBSD, which
++# prevents the port from installing.  It is removed here and run separate
++# from the "all" target instead.
++all: $(BIN)
  
  debug: 
  	CPPFLAGS=-g ${MAKE} $(MFLAGS) varcall
@@ -39,18 +45,19 @@
  
  $(BINDIR):
  	mkdir -p $(BINDIR)
-@@ -67,8 +70,8 @@
+@@ -67,8 +75,9 @@
  $(PKG).${VER}-${REL}.tar.gz: $(PKG).tar.gz
  	cp $< $@
  
 -%: %.cpp fastq-lib.cpp fastq-lib.h sparsehash
 -	$(CC) $(CFLAGS) $< fastq-lib.cpp -o $@
++# Sparsehash is installed as a separate package, so don't bother building.
 +%: %.cpp fastq-lib.cpp fastq-lib.h
 +	$(CXX) $(CXXFLAGS) $< fastq-lib.cpp -o $@
  
  sparsehash: sparsehash-2.0.2
  	cd sparsehash-2.0.2; ./configure; make
-@@ -78,29 +81,29 @@
+@@ -78,29 +87,30 @@
  # why the libbam.a doesn't work?  not sure... *.o works
  sam-stats: sam-stats.cpp samtools/libbam.a samtools/bam.h fastq-lib.h sparsehash
  ifeq ($(OS),Windows_NT)
@@ -79,6 +86,7 @@
  
 -fastq-stats: fastq-stats.cpp fastq-lib.cpp gcModel.cpp sparsehash
 -	$(CC) $(CFLAGS) fastq-lib.cpp gcModel.cpp -o $@ $<
++# Sparsehash is installed as a separate package, so don't bother building.
 +fastq-stats: fastq-stats.cpp fastq-lib.cpp gcModel.cpp
 +	$(CXX) $(CXXFLAGS) fastq-lib.cpp gcModel.cpp -o $@ $<
  

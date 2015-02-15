@@ -34,4 +34,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/usr/bin/Rscript|${LOCALBASE}/bin/Rscript|' \
 		${WRKSRC}/fastx-graph
 
+check:
+	make build
+	cd ${WRKSRC} && ${GMAKE} check
+
 .include <bsd.port.mk>
