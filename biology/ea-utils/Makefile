@@ -15,6 +15,12 @@ USES=		gmake shebangfix
 SHEBANG_FILES=	t/*.sh t/*.pl t/check-fastqs \
 		determine-phred randomFQ alc
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000000
+USE_GCC=	yes
+.endif
+
 # varcall.cpp calls GSL functions.  For library dependencies, specify the
 # shared lib required.
 LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
@@ -38,4 +44,4 @@ check:
 	make build
 	cd ${WRKSRC} && ${GMAKE} check
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
