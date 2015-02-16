@@ -17,6 +17,7 @@ SHEBANG_FILES=	t/*.sh t/*.pl t/check-fastqs \
 
 .include <bsd.port.pre.mk>
 
+# Does not build with GCC 4.2
 .if ${OSVERSION} < 1000000
 USE_GCC=	yes
 .endif
