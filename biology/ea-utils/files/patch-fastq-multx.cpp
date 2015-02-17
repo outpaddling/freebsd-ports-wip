@@ -1,5 +1,5 @@
 --- fastq-multx.cpp.orig	2014-09-04 10:44:33.000000000 -0500
-+++ fastq-multx.cpp	2015-02-15 10:59:34.000000000 -0600
++++ fastq-multx.cpp	2015-02-17 09:04:16.000000000 -0600
 @@ -100,7 +100,7 @@
  
  
@@ -26,7 +26,7 @@
 +	 * the non-option arguments should be bound to option arguments.
 +         */
 +
-+	while (	(c = getopt (argc, argv, "-DzxnHhbeo:v:m:B:g:L:l:G:q:d:t:")) != -1) {
++	while (	(c = getopt (argc, argv, "DzxnHhbeo:v:m:B:g:L:l:G:q:d:t:")) != -1) {
  		switch (c) t:{
 +		/* 
 +		 * FIXME: This code is obsoleted by code inserted

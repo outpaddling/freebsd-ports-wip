@@ -10,6 +10,18 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}-806
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Command-line tools for processing fastq sequence data
 
+LICENSE=	MIT
+
+# Unbundled dependencies.  For build and run deps, specify the port name and
+# minimum version, or a binary that it installs.
+BUILD_DEPENDS=	samtools>=0.1.19:/usr/wip/biology/samtools \
+		google-sparsehash>=2.0.2:${PORTSDIR}/devel/google-sparsehash
+RUN_DEPENDS=	samtools:/usr/wip/biology/samtools \
+		R:${PORTSDIR}/math/R
+# varcall.cpp calls GSL functions.  For library dependencies, specify the
+# shared lib required.
+LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
+
 # Dist makefile uses GNU make extensions
 USES=		gmake shebangfix
 SHEBANG_FILES=	t/*.sh t/*.pl t/check-fastqs \
@@ -21,16 +33,6 @@ SHEBANG_FILES=	t/*.sh t/*.pl t/check-fastqs \
 .if ${OSVERSION} < 1000000
 USE_GCC=	yes
 .endif
-
-# varcall.cpp calls GSL functions.  For library dependencies, specify the
-# shared lib required.
-LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
-
-# Unbundled dependencies.  For build and run deps, specify the port name and
-# minimum version, or a binary that it installs.
-BUILD_DEPENDS=	samtools>=0.1.19:/usr/wip/biology/samtools \
-		google-sparsehash>=2.0.2:${PORTSDIR}/devel/google-sparsehash
-RUN_DEPENDS=	${BUILD_DEPENDS} R:${PORTSDIR}/math/R
 
 CXXFLAGS+=	-I${LOCALBASE}/include -D_WITH_GETLINE
 

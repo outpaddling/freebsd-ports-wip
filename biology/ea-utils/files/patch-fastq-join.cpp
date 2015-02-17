@@ -1,6 +1,6 @@
 --- fastq-join.cpp.orig	2014-09-04 10:44:33.000000000 -0500
-+++ fastq-join.cpp	2015-02-15 10:47:59.000000000 -0600
-@@ -53,15 +53,25 @@
++++ fastq-join.cpp	2015-02-15 11:12:52.000000000 -0600
+@@ -53,15 +53,24 @@
      bool norevcomp = false;
      bool allow_ex = false;
  
@@ -15,7 +15,6 @@
 +         */
 +	while (	((c = getopt (argc, argv, "dRnbeo:t:v:m:p:r:xV")) != -1) 
 +		|| (optind < argc) ) {
-+		// fprintf(stderr, "%c %s\n", c, optarg);
  		switch (c) {
 -		case '\1':
 +		case -1:
@@ -31,7 +30,7 @@
  			else {
  				usage(stderr); return 1;
  			}
-@@ -125,7 +135,7 @@
+@@ -125,7 +134,7 @@
  			out[i]=(char *)malloc(strlen(pre)+10);
  			strcpy(out[i], pre);
  			char *p;
@@ -40,7 +39,7 @@
  				// substiture instead of append
  				strcpy(p, suffix[i]);
  				strcpy(p+strlen(suffix[i]), pre+(p-out[i])+1);
-@@ -180,7 +190,7 @@
+@@ -180,7 +189,7 @@
  	meminit(rc);
  
  	// read in 1 record from each file
