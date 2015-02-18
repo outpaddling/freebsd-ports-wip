@@ -1,24 +1,28 @@
 # Created by: J.R. Oldroyd <fbsd@opal.com>
-# $FreeBSD: net-mgmt/wifimgr/Makefile 327757 2013-09-20 22:24:43Z bapt $
+# $FreeBSD: head/net-mgmt/wifimgr/Makefile 376416 2015-01-06 10:01:41Z ehaupt $
 
 PORTNAME=	wifimgr
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 PORTREVISION=	1
 CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	http://opal.com/freebsd/ports/net-mgmt/wifimgr/ \
-		CRITICAL
+		LOCAL/ehaupt
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	WiFi Networks Manager
 
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		desktop-file-utils pkgconfig tar:bzip2
 USE_XORG=	x11
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	NLS
+
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 901504
+MAKE_ENV+=	INSTALL="install -U"
+.endif
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext pkgconfig
@@ -29,6 +33,9 @@ PLIST_SUB+=	NLS="@comment "
 MAKE_ENV+=	WITHOUT_NLS=${WITHOUT_NLS}
 .endif
 
-MAN8=		wifimgr.8
+post-patch:
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 901504
+	@${REINPLACE_CMD} -e 's/-o root -g wheel//' ${WRKSRC}/src/Makefile
+.endif
 
 .include <bsd.port.mk>
