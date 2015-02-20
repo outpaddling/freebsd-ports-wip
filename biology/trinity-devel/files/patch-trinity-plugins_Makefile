@@ -1,0 +1,11 @@
+--- trinity-plugins/Makefile.orig	2015-02-20 09:21:20.698554930 -0600
++++ trinity-plugins/Makefile	2015-02-20 09:21:31.241564325 -0600
+@@ -21,7 +21,7 @@
+ PARAFLY_CODE=parafly-code
+ TRIMMOMATIC_CODE=Trimmomatic-0.32
+ 
+-trinity_essentials: jellyfish fastool_target parafly_target trimmomatic_target
++trinity_essentials: fastool_target trimmomatic_target
+ 
+ trimmomatic_target:
+ 	ln -sf ${TRIMMOMATIC_CODE} Trimmomatic
