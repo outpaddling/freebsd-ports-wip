@@ -1,0 +1,11 @@
+--- Makefile.orig	2015-02-20 14:10:08.330371604 -0600
++++ Makefile	2015-02-20 14:11:10.095392313 -0600
+@@ -14,7 +14,7 @@
+ endif
+ 
+ 
+-all: inchworm_target chrysalis_target trinity_essentials
++all: inchworm_target chrysalis_target trinity_essentials plugins
+ 	sh ./util/support_scripts/trinity_install_tests.sh
+ 
+ inchworm_target:

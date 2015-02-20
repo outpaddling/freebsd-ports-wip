@@ -37,7 +37,13 @@ RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bowtie:/usr/wip/biology/bowtie \
 		samtools:/usr/wip/biology/samtools \
 		jellyfish:/usr/wip/biology/jellyfish \
-		ParaFly:/usr/wip/sysutils/parafly
+		ParaFly:/usr/wip/sysutils/parafly \
+		fastool:/usr/wip/biology/fastool \
+		trimmomatic:/usr/wip/biology/trimmomatic \
+		Transdecoder:/usr/wip/biology/transdecoder \
+		slclust:/usr/wip/biology/slclust \
+		rsem:/usr/wip/biology/rsem
+
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 MAKE_JOBS_UNSAFE=	yes
