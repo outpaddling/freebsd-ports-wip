@@ -43,13 +43,13 @@ LOCAL_DIR               = $(TILDE)
 # START = TRUE
 
 # For compute hosts used primarily for other purposes
-START = (KeyboardIdle > 15 * 60) && ((LoadAvg - CondorLoadAvg) <= 0.3)
+START = (KeyboardIdle > 15 * 60) && ((LoadAvg - CondorLoadAvg) <= 0.5)
 
 # For VM host, assuming we only want to run jobs in the VM
 # START = False
 
 # For VM guest, run jobs only when the host is not being used by owner
-# START = ( HOST_KeyboardIdle > 150 ) && ( HOST_LoadAvg <= 0.3 ) )
+# START = ( HOST_KeyboardIdle > 150 ) && ( HOST_LoadAvg <= 0.5 ) )
 
 ############################################################################
 # When to suspend a job?
@@ -63,7 +63,7 @@ SUSPEND = FALSE
 # PREEMPT = FALSE
 
 # Compute host used mainly for non-Condor activities
-PREEMPT = (KeyboardIdle < 60) || (LoadAvg - CondorLoadAvg > 0.3)
+PREEMPT = (KeyboardIdle < 60) || (LoadAvg - CondorLoadAvg > 0.5)
 
 ############################################################################
 # When to instantaneously kill a preempting job
