@@ -15,14 +15,11 @@ MAINTAINER=	jwbacon@tds.net
 COMMENT=	RNA sequence assembly
 
 USES=		gmake perl5 shebangfix dos2unix
-SHEBANG_FILES=	trinity-plugins/collectl/make_data_files.sh \
-		trinity-plugins/collectl/plot.sh \
-		trinity-plugins/collectl/timetable.sh \
-		util/*/*.sh \
+SHEBANG_FILES=	util/*/*.sh \
 		util/*/*.pl \
 		Chrysalis/*.pl
-DOS2UNIX_FILES=	PerlLib/HTC/GridRunner.pm \
-		PerlLib/HTC/SLURM_handler.pm
+DOS2UNIX_FILES=	PerlLib/HPC/GridRunner.pm \
+		PerlLib/HPC/SLURM_handler.pm
 # Requires OpenMP.
 USE_GCC=	yes
 USE_JAVA=	yes
@@ -48,7 +45,7 @@ MAKE_JOBS_UNSAFE=	yes
 LIBEXEC_DIR=	${PREFIX}/libexec/trinity
 PLUGINS_DIR=	${LIBEXEC_DIR}/trinity-plugins
 
-#FETCH_ARGS+=	-F
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	# General changes to respect env
@@ -57,12 +54,32 @@ post-patch:
 	${REINPLACE_CMD} -e "s|gcc|${CC}|g" -e "s|g++|${CXX}|g" \
 		${WRKSRC}/Makefile \
 		${WRKSRC}/Chrysalis/Makefile* \
-		${WRKSRC}/trinity-plugins/fastool/Makefile \
+		${WRKSRC}/trinity-plugins/fstrozzi-Fastool-7c3e034f05/Makefile \
 		${WRKSRC}/trinity-plugins/slclust/src/Makefile
 	${REINPLACE_CMD} \
 		-e 's|/bin/bash|/usr/bin/env bash|g' \
 		-e 's|make |${GMAKE} |g' \
 		${WRKSRC}/trinity-plugins/collectl/build_collectl.sh
+
+	# Trinity paths
+	${REINPLACE_CMD} \
+		-e "s|$$FindBin::Bin/PerlLib|$$FindBin::Bin/../libexec/trinity/PerlLib|g" \
+		${WRKSRC}/Trinity
+	${REINPLACE_CMD} \
+		-e "s|$$FindBin::Bin|$$FindBin::Bin/../libexec/trinity|g" \
+		${WRKSRC}/Trinity
+	${REINPLACE_CMD} \
+		-e "s|$$CPU_MAX = 64|$$CPU_MAX = `sysctl -n kern.smp.cpus`|g" \
+		${WRKSRC}/Trinity
+	${REINPLACE_CMD} \
+		-e "s|$$FindBin::RealBin|$$FindBin::RealBin/../libexec/trinity|g" \
+		${WRKSRC}/Trinity
+	${REINPLACE_CMD} \
+		-e "s|$$ROOTDIR/trinity-plugins/jellyfish|$PREFIX|g" \
+		${WRKSRC}/Trinity
+	${REINPLACE_CMD} \
+		-e "s|$$ROOTDIR/trinity-plugins/parafly/bin/Parafly|$PREFIX/bin/ParaFly|g" \
+		${WRKSRC}/Trinity
 
 	# Chrysalis
 	${REINPLACE_CMD} \
@@ -78,7 +95,7 @@ post-patch:
 	# GridRunner: ParaFly is intalled separately, so remove absolute path
 	${REINPLACE_CMD} \
 		-e 's|$$trin_home/trinity-plugins/parafly/bin/||g' \
-		${WRKSRC}/PerlLib/HTC/GridRunner.pm
+		${WRKSRC}/PerlLib/HPC/GridRunner.pm
 
 	# Remove absolute paths to Trinity command
 	${REINPLACE_CMD} \

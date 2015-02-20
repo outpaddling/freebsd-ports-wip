@@ -1,5 +1,5 @@
---- PerlLib/HTC/SLURM_handler.pm.orig	2014-08-15 08:34:45.000000000 -0500
-+++ PerlLib/HTC/SLURM_handler.pm	2014-08-15 08:35:47.000000000 -0500
+--- PerlLib/HPC/SLURM_handler.pm.orig	2015-02-20 08:40:14.578718581 -0600
++++ PerlLib/HPC/SLURM_handler.pm	2015-02-20 08:40:14.648715555 -0600
 @@ -42,10 +42,11 @@
      
      $cmd .= " $shell_script 2>&1 ";
