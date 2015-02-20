@@ -49,8 +49,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	# General changes to respect env
-	${REINPLACE_CMD} -e "s|chrysalis_target jellyfish fastool parafly|chrysalis_target fastool|g" \
-		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e "s|gcc|${CC}|g" -e "s|g++|${CXX}|g" \
 		${WRKSRC}/Makefile \
 		${WRKSRC}/Chrysalis/Makefile* \
