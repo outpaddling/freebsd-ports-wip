@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	trinity
-PORTVERSION=	2014.07.17
+PORTNAME=	trinityrnaseq
+PORTVERSION=	2.0.4
 CATEGORIES=	biology
-MASTER_SITES=	https://sourceforge.net/projects/trinityrnaseq/files/
-DISTNAME=	trinityrnaseq_r20140717
+MASTER_SITES=	http://github.com/trinityrnaseq/trinityrnaseq/archive/
+DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	RNA sequence assembly
