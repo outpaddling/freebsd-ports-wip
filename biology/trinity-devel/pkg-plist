@@ -115,7 +115,6 @@ libexec/trinity/trinity-plugins/collectl/bin/plot.py
 libexec/trinity/trinity-plugins/collectl/bin/proctree.ph
 libexec/trinity/trinity-plugins/collectl/bin/timetable.py
 libexec/trinity/trinity-plugins/collectl/bin/vmstat.ph
-libexec/trinity/trinity-plugins/fastool/fastool
 libexec/trinity/util/PBS/N50stats.pl
 libexec/trinity/util/PBS/README
 libexec/trinity/util/PBS/TRINITY.CONFIG.template
@@ -561,4 +560,3 @@ libexec/trinity/util/support_scripts/wig_clip_to_bed.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/rnaseq_reads/Sp_plat.10k.right.fq.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/runMe.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/samples_n_reads_decribed.txt
-@dir libexec/trinity/trinity-plugins/coreutils
