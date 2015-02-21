@@ -37,12 +37,14 @@ RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bowtie:/usr/wip/biology/bowtie \
 		samtools:/usr/wip/biology/samtools \
 		jellyfish:/usr/wip/biology/jellyfish \
-		ParaFly:/usr/wip/sysutils/parafly \
-		fastool:/usr/wip/biology/fastool \
-		trimmomatic:/usr/wip/biology/trimmomatic \
-		Transdecoder:/usr/wip/biology/transdecoder \
-		slclust:/usr/wip/biology/slclust \
-		rsem:/usr/wip/biology/rsem
+		ParaFly:/usr/wip/sysutils/parafly
+
+# Unbundled ports to be added
+#		fastool:/usr/wip/biology/fastool \
+#		trimmomatic:/usr/wip/biology/trimmomatic \
+#		Transdecoder:/usr/wip/biology/transdecoder \
+#		slclust:/usr/wip/biology/slclust \
+#		rsem:/usr/wip/biology/rsem
 
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
@@ -152,10 +154,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/collectl
 	cd ${WRKSRC}/trinity-plugins/collectl && \
 		${COPYTREE_BIN} bin ${STAGEDIR}${PLUGINS_DIR}/collectl
-
-	${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/coreutils
-	cd ${WRKSRC}/trinity-plugins/coreutils && \
-		${COPYTREE_BIN} bin ${STAGEDIR}${PLUGINS_DIR}/coreutils
 
 	${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/Trimmomatic
 
