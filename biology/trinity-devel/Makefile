@@ -37,12 +37,10 @@ RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bowtie:/usr/wip/biology/bowtie \
 		samtools:/usr/wip/biology/samtools \
 		jellyfish:/usr/wip/biology/jellyfish \
+		ParaFly:/usr/wip/sysutils/parafly \
 		fastool:/usr/wip/biology/fastool \
-		Transdecoder:/usr/wip/biology/transdecoder \
-		ParaFly:/usr/wip/sysutils/parafly
-
-# Unbundled ports to be added
-#		slclust:/usr/wip/biology/slclust \
+		TransDecoder.Predict:/usr/wip/biology/p5-transdecoder \
+		slclust:/usr/wip/biology/slclust
 #		rsem:/usr/wip/biology/rsem
 
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo

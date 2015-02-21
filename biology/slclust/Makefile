@@ -1,23 +1,19 @@
-# Created by: Jason Bacon <bacon@unixdev.ceas.uwm.edu>
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
 
 PORTNAME=	slclust
-PORTVERSION=
-#PORTREVISION=	0
-#PORTEPOCH=	0
-CATEGORIES=
-MASTER_SITES=
-#MASTER_SITE_SUBDIR=
-#PKGNAMEPREFIX=
-#PKGNAMESUFFIX=
-#DISTNAME=
-#EXTRACT_SUFX=
-#DISTFILES=
-#DIST_SUBDIR=	${PORTNAME}
-#EXTRACT_ONLY=
+PORTVERSION=	02022010
+CATEGORIES=	biology
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	slclust/slclust
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	bacon@unixdev.ceas.uwm.edu
-COMMENT=
+MAINTAINER=	jwbacon@tds.net>
+COMMENT=	Single-linkage clustering with Jaccard similarity
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+WRKSRC=		${WRKDIR}/slclust
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/slclust ${STAGEDIR}${PREFIX}/bin
+
+.include <bsd.port.mk>
