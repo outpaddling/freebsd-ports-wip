@@ -1,23 +1,13 @@
-# Created by: Jason Bacon <bacon@unixdev.ceas.uwm.edu>
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
 
 PORTNAME=	transdecoder
-PORTVERSION=
-#PORTREVISION=	0
-#PORTEPOCH=	0
-CATEGORIES=
-MASTER_SITES=
-#MASTER_SITE_SUBDIR=
-#PKGNAMEPREFIX=
-#PKGNAMESUFFIX=
-#DISTNAME=
-#EXTRACT_SUFX=
-#DISTFILES=
-#DIST_SUBDIR=	${PORTNAME}
-#EXTRACT_ONLY=
+PORTVERSION=	2.0.1
+CATEGORIES=	biology
+MASTER_SITES=	https://github.com/TransDecoder/TransDecoder/archive/2.0.1.tar.gz
+DISTNAME=	${PORTVERSION}
 
-MAINTAINER=	bacon@unixdev.ceas.uwm.edu
-COMMENT=
+MAINTAINER=	jwbacon@tds.net>
+COMMENT=	Identifies candidate coding regions within transcript sequences
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

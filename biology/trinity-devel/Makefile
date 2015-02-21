@@ -37,12 +37,11 @@ RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bowtie:/usr/wip/biology/bowtie \
 		samtools:/usr/wip/biology/samtools \
 		jellyfish:/usr/wip/biology/jellyfish \
+		fastool:/usr/wip/biology/fastool \
+		Transdecoder:/usr/wip/biology/transdecoder \
 		ParaFly:/usr/wip/sysutils/parafly
 
 # Unbundled ports to be added
-#		fastool:/usr/wip/biology/fastool \
-#		trimmomatic:/usr/wip/biology/trimmomatic \
-#		Transdecoder:/usr/wip/biology/transdecoder \
 #		slclust:/usr/wip/biology/slclust \
 #		rsem:/usr/wip/biology/rsem
 
@@ -58,7 +57,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 post-patch:
 	# General changes to respect env
 	${REINPLACE_CMD} -e "s|gcc|${CC}|g" -e "s|g++|${CXX}|g" \
-		${WRKSRC}/Makefile \
 		${WRKSRC}/Chrysalis/Makefile* \
 		${WRKSRC}/trinity-plugins/fstrozzi-Fastool-7c3e034f05/Makefile \
 		${WRKSRC}/trinity-plugins/slclust/src/Makefile
@@ -67,24 +65,21 @@ post-patch:
 		-e 's|make |${GMAKE} |g' \
 		${WRKSRC}/trinity-plugins/collectl/build_collectl.sh
 
-	# Trinity paths
+	# Trinity paths, etc.
 	${REINPLACE_CMD} \
-		-e "s|$$FindBin::Bin/PerlLib|$$FindBin::Bin/../libexec/trinity/PerlLib|g" \
+		-e 's|$$FindBin::Bin|$$FindBin::Bin/../libexec/trinity|g' \
 		${WRKSRC}/Trinity
 	${REINPLACE_CMD} \
-		-e "s|$$FindBin::Bin|$$FindBin::Bin/../libexec/trinity|g" \
+		-e 's|$$FindBin::RealBin|$$FindBin::RealBin/../libexec/trinity|g' \
 		${WRKSRC}/Trinity
 	${REINPLACE_CMD} \
-		-e "s|$$CPU_MAX = 64|$$CPU_MAX = `sysctl -n kern.smp.cpus`|g" \
+		-e 's|$$ROOTDIR/trinity-plugins/jellyfish|${LOCALBASE}|g' \
 		${WRKSRC}/Trinity
 	${REINPLACE_CMD} \
-		-e "s|$$FindBin::RealBin|$$FindBin::RealBin/../libexec/trinity|g" \
+		-e 's|$$ROOTDIR/trinity-plugins/parafly/bin/ParaFly|${LOCALBASE}/bin/ParaFly|g' \
 		${WRKSRC}/Trinity
 	${REINPLACE_CMD} \
-		-e "s|$$ROOTDIR/trinity-plugins/jellyfish|$PREFIX|g" \
-		${WRKSRC}/Trinity
-	${REINPLACE_CMD} \
-		-e "s|$$ROOTDIR/trinity-plugins/parafly/bin/Parafly|$PREFIX/bin/ParaFly|g" \
+		-e 's|$$ROOTDIR/trinity-plugins/fastool|${LOCALBASE}/bin|g' \
 		${WRKSRC}/Trinity
 
 	# Chrysalis
@@ -146,10 +141,6 @@ do-install:
 
 	cd ${WRKSRC} && ${COPYTREE_BIN} util \
 		${STAGEDIR}${LIBEXEC_DIR}
-
-	${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/fastool
-	${INSTALL_PROGRAM} ${WRKSRC}/trinity-plugins/fastool/fastool \
-		${STAGEDIR}${PLUGINS_DIR}/fastool
 
 	${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/collectl
 	cd ${WRKSRC}/trinity-plugins/collectl && \

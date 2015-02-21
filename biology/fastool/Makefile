@@ -1,23 +1,27 @@
-# Created by: Jason Bacon <bacon@unixdev.ceas.uwm.edu>
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
 
 PORTNAME=	fastool
-PORTVERSION=
-#PORTREVISION=	0
-#PORTEPOCH=	0
-CATEGORIES=
-MASTER_SITES=
-#MASTER_SITE_SUBDIR=
-#PKGNAMEPREFIX=
-#PKGNAMESUFFIX=
-#DISTNAME=
-#EXTRACT_SUFX=
-#DISTFILES=
-#DIST_SUBDIR=	${PORTNAME}
-#EXTRACT_ONLY=
+PORTVERSION=	0.1.4
+CATEGORIES=	biology
+MASTER_SITES=	http://github.com/fstrozzi/Fastool/archive/
+DISTNAME=	${PORTVERSION}
 
-MAINTAINER=	bacon@unixdev.ceas.uwm.edu
-COMMENT=
+MAINTAINER=	jwbacon@tds.net
+COMMENT=	Simple and quick FastQ and FastA tool for file reading and conversion
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+LICENSE=	BSD2CLAUSE
+
+WRKSRC=		${WRKDIR}/Fastool-${PORTVERSION}
+
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's|CC *=|CC ?=|g' \
+		-e 's|CFLAGS *=|CFLAGS ?=|g' \
+		${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/fastool \
+		${STAGEDIR}${PREFIX}/bin
+
+.include <bsd.port.mk>

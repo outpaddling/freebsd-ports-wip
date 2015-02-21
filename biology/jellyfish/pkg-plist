@@ -53,11 +53,9 @@ include/jellyfish-1.1.11/jellyfish/time.hpp
 include/jellyfish-1.1.11/jellyfish/toFloat.h
 include/jellyfish-1.1.11/jellyfish/token_ring.hpp
 lib/libjellyfish-1.1.a
-lib/libjellyfish-1.1.la
 lib/libjellyfish-1.1.so
 lib/libjellyfish-1.1.so.1
+lib/libjellyfish-1.1.so.1.0.1
 libdata/pkgconfig/jellyfish-1.1.pc
 man/man1/jellyfish.1.gz
-@dirrmtry include/jellyfish-1.1.11/jellyfish
-@dirrmtry include/jellyfish-1.1.11
-@dirrmtry lib/pkgconfig
+@dir lib/pkgconfig
