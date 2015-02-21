@@ -36,12 +36,13 @@ BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bowtie:/usr/wip/biology/bowtie \
 		samtools:/usr/wip/biology/samtools \
-		jellyfish:/usr/wip/biology/jellyfish \
+		jellyfish>=2.1.4:/usr/wip/biology/jellyfish2 \
 		ParaFly:/usr/wip/sysutils/parafly \
 		fastool:/usr/wip/biology/fastool \
 		TransDecoder.Predict:/usr/wip/biology/p5-transdecoder \
 		slclust:/usr/wip/biology/slclust
 #		rsem:/usr/wip/biology/rsem
+#		/usr/wip/biology/trinotate
 
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 

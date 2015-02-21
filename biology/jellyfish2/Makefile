@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jellyfish
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2.0
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.genome.umd.edu/pub/jellyfish/
 
@@ -13,7 +13,16 @@ LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 
+USES=		libtool
+
+# OpenMP
+USE_GCC=	yes
+
+MAKE_JOBS_UNSAFE=	yes
+
 USE_LDCONFIG=	yes
+
+CXXFLAGS+=	-std=c++0x
 
 post-stage:
 	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/* \

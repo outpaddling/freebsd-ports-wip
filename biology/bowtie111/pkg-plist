@@ -1,0 +1,95 @@
+bin/best_verify.pl
+bin/bowtie
+bin/bowtie-build
+bin/bowtie-inspect
+bin/bowtie-manual
+bin/bs_mapability.pl
+bin/build_test.sh
+bin/colorize_fasta.pl
+bin/colorize_fastq.pl
+bin/convert_quals.pl
+bin/fastq_to_tabbed.pl
+bin/gen_2b_occ_lookup.pl
+bin/gen_dnamasks2colormask.pl
+bin/gen_occ_lookup.pl
+bin/gen_solqual_lookup.pl
+bin/infer_fraglen.pl
+bin/make_a_thaliana_tair.sh
+bin/make_b_taurus_UMD3.sh
+bin/make_c_elegans.sh
+bin/make_canFam2.sh
+bin/make_d_melanogaster.sh
+bin/make_e_coli.sh
+bin/make_galGal3.sh
+bin/make_h_sapiens_ncbi36.sh
+bin/make_h_sapiens_ncbi37.sh
+bin/make_hg18.sh
+bin/make_hg19.sh
+bin/make_m_musculus_ncbi37.sh
+bin/make_mm8.sh
+bin/make_mm9.sh
+bin/make_rn4.sh
+bin/make_s_cerevisiae.sh
+bin/mapability.pl
+bin/pe_verify.pl
+bin/random_bowtie_tests.pl
+bin/random_bowtie_tests.sh
+bin/random_bowtie_tests_p.sh
+bin/reconcile_alignments.pl
+bin/reconcile_alignments_pe.pl
+%%DATADIR%%/genomes/.cvsignore
+%%DATADIR%%/genomes/NC_008253.fna
+%%DATADIR%%/indexes/e_coli.1.ebwt
+%%DATADIR%%/indexes/e_coli.2.ebwt
+%%DATADIR%%/indexes/e_coli.3.ebwt
+%%DATADIR%%/indexes/e_coli.4.ebwt
+%%DATADIR%%/indexes/e_coli.README
+%%DATADIR%%/indexes/e_coli.rev.1.ebwt
+%%DATADIR%%/indexes/e_coli.rev.2.ebwt
+%%DATADIR%%/reads/e_coli_1000.fa
+%%DATADIR%%/reads/e_coli_1000.fq
+%%DATADIR%%/reads/e_coli_1000.raw
+%%DATADIR%%/reads/e_coli_10000snp.csfasta
+%%DATADIR%%/reads/e_coli_10000snp.fa
+%%DATADIR%%/reads/e_coli_10000snp.fq
+%%DATADIR%%/reads/e_coli_1000_1.fa
+%%DATADIR%%/reads/e_coli_1000_1.fq
+%%DATADIR%%/reads/e_coli_1000_2.fa
+%%DATADIR%%/reads/e_coli_1000_2.fq
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/release.txt
+%%PORTDOCS%%%%DOCSDIR%%/strip_markdown.pl
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/website/css/style.css
+%%PORTDOCS%%%%DOCSDIR%%/website/foot.ssi
+%%PORTDOCS%%%%DOCSDIR%%/website/images/bowtie_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/website/images/osi-certified.gif
+%%PORTDOCS%%%%DOCSDIR%%/website/images/sflogo.png
+%%PORTDOCS%%%%DOCSDIR%%/website/images/university.small.horizontal.white.png
+%%PORTDOCS%%%%DOCSDIR%%/website/index.html
+%%PORTDOCS%%%%DOCSDIR%%/website/index.shtml
+%%PORTDOCS%%%%DOCSDIR%%/website/latest-version.txt
+%%PORTDOCS%%%%DOCSDIR%%/website/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/website/manual.shtml
+%%PORTDOCS%%%%DOCSDIR%%/website/manual.ssi
+%%PORTDOCS%%%%DOCSDIR%%/website/md5s.shtml
+%%PORTDOCS%%%%DOCSDIR%%/website/md5s.ssi
+%%PORTDOCS%%%%DOCSDIR%%/website/news.shtml
+%%PORTDOCS%%%%DOCSDIR%%/website/old_news.ssi
+%%PORTDOCS%%%%DOCSDIR%%/website/other_tools.shtml
+%%PORTDOCS%%%%DOCSDIR%%/website/other_tools.ssi
+%%PORTDOCS%%%%DOCSDIR%%/website/push_langmead.sh
+%%PORTDOCS%%%%DOCSDIR%%/website/recent_news.ssi
+%%PORTDOCS%%%%DOCSDIR%%/website/rhsidebar.ssi
+%%PORTDOCS%%%%DOCSDIR%%/website/top.ssi
+%%PORTDOCS%%%%DOCSDIR%%/website/tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/website/tutorial.shtml
+@dirrm %%DATADIR%%/genomes
+@dirrm %%DATADIR%%/indexes
+@dirrm %%DATADIR%%/reads
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/website/css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/website/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/website
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
