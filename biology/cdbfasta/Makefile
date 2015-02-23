@@ -2,19 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	cdbfasta
-PORTVERSION=	r20100722
+PORTVERSION=	2010.07.22
 CATEGORIES=	biology
-MASTER_SITES=	SF
-DISTFILES=      cdbfasta.tar.gz
-MASTER_SITE_SUBDIR=     cdbfasta
-
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
+		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	dsiercks@uwm.edu
 COMMENT=	Fast indexing and retrieval of fasta records from flat file databases.
 
 LICENSE=        BSD4CLAUSE
 WRKSRC=         ${WRKDIR}/${PORTNAME}
-USES=           gmake tar:tgz
 
+USES=		gmake
 
 .include <bsd.port.mk>
