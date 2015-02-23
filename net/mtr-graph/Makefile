@@ -3,7 +3,7 @@
 PORTNAME=	mtr
 PORTVERSION=	0.85
 PORTREVISION=	${GITVERSION}
-PORTEPOCH=	2
+PORTEPOCH=	3
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${GITHUB_USER}/${PORTNAME}/tarball/${GITVERSION}/ \
 		${MASTER_SITE_LOCAL}
@@ -19,15 +19,16 @@ PATCH_DEPENDS=	${AUTOCONF_DEPENDS} ${AUTOMAKE_DEPENDS}
 PKGNAMESUFFIX+=	-graph
 
 GITHUB_USER=	yvs2014
-GITVERSION=	8c4005a
+GITVERSION=	a9f7e08
 WRKSRC=		${WRKDIR}/${GITHUB_USER}-${PORTNAME}-${GITVERSION}
 FETCH_ARGS=	-Fpr
 
-OPTIONS_DEFINE=	IPV6 GTK ipinfo graphcairo_xcb graphcairo_xlib IDN
+OPTIONS_DEFINE=	IPV6 GTK ipinfo graphcairo_xcb graphcairo_xlib IDN Unicode
 OPTIONS_DEFAULT=graphcairo_xlib ipinfo
 GTK_DESC=	Build X11/GTK enabled mtr
 ipinfo_DESC=	ipinfo support
 IDN_DESC=	IDN support
+Unicode_DESC=	Unicode histogram support
 graphcairo_xcb_DESC=	graphcairo X11 XCB backend
 graphcairo_xlib_DESC=	graphcairo X11 Xlib backend
 
@@ -78,6 +79,10 @@ CONFIGURE_ARGS+=--with-graphcairo-xlib
 .if ${PORT_OPTIONS:MIDN}
 LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
 CONFIGURE_ARGS+=--with-libidn
+.endif
+
+.if ${PORT_OPTIONS:MUnicode}
+CONFIGURE_ARGS+=--with-unicode
 .endif
 
 pre-configure:
