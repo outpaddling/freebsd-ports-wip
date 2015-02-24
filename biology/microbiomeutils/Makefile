@@ -13,5 +13,14 @@ COMMENT=	Utilities for processing and analyzing 16S rRNA genes
 LICENSE=	BSD4CLAUSE
 
 USES=		tar:tgz
+BUILD_DEPENDS=	cdbfasta>=2010.07.22:/usr/wip/biology/cdbfasta
+WORKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's|gcc|$${CXX}|g' \
+		${WRKSRC}/NAST-iEr/Makefile
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/NAST-iEr/NAST-iEr ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
