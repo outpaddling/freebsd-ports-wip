@@ -10,9 +10,11 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 MAINTAINER=	dsiercks@uwm.edu
 COMMENT=	Fast indexing and retrieval of fasta records from flat file databases.
 
-LICENSE=        BSD4CLAUSE
-WRKSRC=         ${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		gmake
 
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/cdbfasta ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/cdbyank ${STAGEDIR}${PREFIX}/bin
 .include <bsd.port.mk>
