@@ -12,9 +12,11 @@ COMMENT=	Utilities for processing and analyzing 16S rRNA genes
 
 LICENSE=	BSD4CLAUSE
 
-USES=		tar:tgz
 BUILD_DEPENDS=	cdbfasta>=2010.07.22:/usr/wip/biology/cdbfasta
-WORKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USES=		tar:tgz
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	${REINPLACE_CMD} \
