@@ -18,7 +18,7 @@ WORKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	${REINPLACE_CMD} \
-		-e 's|gcc|$${CXX}|g' \
+		-e 's|gcc|$${CC}|g' \
 		${WRKSRC}/NAST-iEr/Makefile
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/NAST-iEr/NAST-iEr ${STAGEDIR}${PREFIX}/bin
