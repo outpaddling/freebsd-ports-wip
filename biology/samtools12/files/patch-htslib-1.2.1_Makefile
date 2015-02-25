@@ -1,0 +1,18 @@
+--- htslib-1.2.1/Makefile.orig	2015-02-25 15:18:11.925311408 -0600
++++ htslib-1.2.1/Makefile	2015-02-25 15:18:30.535317671 -0600
+@@ -22,13 +22,13 @@
+ # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ # DEALINGS IN THE SOFTWARE.
+ 
+-CC     = gcc
++CC     ?= gcc
+ AR     = ar
+ RANLIB = ranlib
+ 
+ CPPFLAGS = -I.
+ # TODO: probably update cram code to make it compile cleanly with -Wc++-compat
+-CFLAGS   = -g -Wall -O2
++CFLAGS   ?= -g -Wall -O2
+ EXTRA_CFLAGS_PIC = -fpic
+ LDFLAGS  =
+ LDLIBS   =
