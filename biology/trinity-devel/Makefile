@@ -34,7 +34,7 @@ MAKE_FLAGS+=	FORCE_UNSAFE_CONFIGURE=1
 BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
-		bowtie:/usr/wip/biology/bowtie \
+		bowtie:/usr/wip/biology/bowtie2 \
 		samtools:/usr/wip/biology/samtools \
 		jellyfish>=2.1.4:/usr/wip/biology/jellyfish2 \
 		ParaFly:/usr/wip/sysutils/parafly \
