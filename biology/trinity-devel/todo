@@ -1,2 +1,5 @@
 
 Fix jellyfish script - contains paths from port work dir
+
+Jellyfish is multithreaded, but doesn't utilize many cores.
+    Disable multithreading in jellyfish to better utilize cores?
