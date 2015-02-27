@@ -1,11 +1,12 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
-# $FreeBSD: head/biology/ncbi-blast/Makefile 370220 2014-10-06 20:16:35Z marino $
+# $FreeBSD: head/biology/ncbi-blast+/Makefile 375866 2014-12-31 00:31:55Z grembo $
 
-PORTNAME=	blast
+PORTNAME=	blast+
 PORTVERSION=	2.2.30
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/
-PKGNAMEPREFIX=	ncbi
+PKGNAMEPREFIX=	ncbi-
 DISTNAME=	ncbi-blast-${PORTVERSION}+-src
 
 MAINTAINER=	jwbacon@tds.net
@@ -50,7 +51,11 @@ post-patch:
 	${REINPLACE_CMD} -e 's|@prefix@|${STAGEDIR}@prefix@|g' \
 		${WRKSRC}/src/build-system/Makefile.in.top
 
-post-install:
+post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+	${MV} ${STAGEDIR}${PREFIX}/bin/rpsblast \
+		${STAGEDIR}${PREFIX}/bin/rpsblast+
+	${MV} ${STAGEDIR}${PREFIX}/bin/seedtop \
+		${STAGEDIR}${PREFIX}/bin/seedtop+
 
 .include <bsd.port.mk>

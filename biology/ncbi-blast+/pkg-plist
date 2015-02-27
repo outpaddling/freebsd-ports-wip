@@ -17,9 +17,9 @@ bin/makembindex
 bin/makeprofiledb
 bin/project_tree_builder
 bin/psiblast
-bin/rpsblast
+bin/rpsblast+
 bin/rpstblastn
-bin/seedtop
+bin/seedtop+
 bin/segmasker
 bin/seqdb_demo
 bin/seqdb_perf
