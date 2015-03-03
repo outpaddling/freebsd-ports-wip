@@ -2,12 +2,16 @@ bin/Trinity
 libexec/trinity/Butterfly/Butterfly.jar
 libexec/trinity/Chrysalis/BreakTransByPairs
 libexec/trinity/Chrysalis/Chrysalis
+libexec/trinity/Chrysalis/CreateIwormFastaBundle
 libexec/trinity/Chrysalis/GraphFromFasta
+libexec/trinity/Chrysalis/GraphFromFasta_MPI
 libexec/trinity/Chrysalis/IsoformAugment
 libexec/trinity/Chrysalis/JoinTransByPairs
 libexec/trinity/Chrysalis/QuantifyGraph
 libexec/trinity/Chrysalis/ReadsToComponents.pl
 libexec/trinity/Chrysalis/ReadsToTranscripts
+libexec/trinity/Chrysalis/ReadsToTranscripts_MPI
+libexec/trinity/Chrysalis/ReadsToTranscripts_MPI_chang
 libexec/trinity/Chrysalis/RunButterfly
 libexec/trinity/Chrysalis/TranscriptomeFromVaryK
 libexec/trinity/Chrysalis/checkLock

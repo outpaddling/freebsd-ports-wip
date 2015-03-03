@@ -22,10 +22,11 @@ SHEBANG_FILES=	scripts/*.pl
 
 .include <bsd.port.pre.mk>
 
+# FIXME: bowtie-align dumps core when compiled with clang
 # Just for speed: Recent GCC has better optimizer
-.if ${OSVERSION} < 1000000
+# .if ${OSVERSION} < 1000000
 USE_GCC=	yes
-.endif
+# .endif
 
 .if ${ARCH} == i386
 MAKE_ENV+=	POPCNT_CAPABILITY=0

@@ -120,8 +120,11 @@ do-install:
 	${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}/Chrysalis
 	cd ${WRKSRC}/Chrysalis && \
 		${INSTALL_PROGRAM} BreakTransByPairs Chrysalis \
-			GraphFromFasta IsoformAugment JoinTransByPairs \
-			QuantifyGraph ReadsToTranscripts RunButterfly \
+			CreateIwormFastaBundle \
+			GraphFromFasta GraphFromFasta_MPI \
+			IsoformAugment JoinTransByPairs QuantifyGraph \
+			ReadsToTranscripts ReadsToTranscripts_MPI \
+			ReadsToTranscripts_MPI_chang RunButterfly \
 			TranscriptomeFromVaryK checkLock \
 			${STAGEDIR}${LIBEXEC_DIR}/Chrysalis
 	${INSTALL_SCRIPT} ${WRKSRC}/Chrysalis/ReadsToComponents.pl \
