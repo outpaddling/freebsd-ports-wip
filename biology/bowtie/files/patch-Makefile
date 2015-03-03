@@ -1,5 +1,5 @@
---- Makefile.orig	2014-03-20 13:52:20.000000000 -0500
-+++ Makefile	2014-05-22 08:16:29.000000000 -0500
+--- Makefile.orig	2014-09-30 19:40:20.000000000 -0500
++++ Makefile	2015-02-21 14:16:13.931391514 -0600
 @@ -5,9 +5,13 @@
  SEQAN_DIR = SeqAn-1.1
  SEQAN_INC = -I $(SEQAN_DIR)
@@ -17,22 +17,23 @@
  HEADERS = $(wildcard *.h)
  BOWTIE_MM = 1
  BOWTIE_SHARED_MEM = 1
-@@ -124,13 +128,16 @@
-     EXTRA_FLAGS += -Wl,-macosx_version_min,10.6
+@@ -106,7 +110,7 @@
+ VERSION = $(shell cat VERSION)
+ 
+ BITS=32
+-ifeq (x86_64,$(shell uname -m))
++ifeq (amd64,$(shell uname -m))
+ 	BITS=64
+ endif
+ # msys will always be 32 bit so look at the cpu arch instead.
+@@ -126,8 +130,8 @@
+     $(error bowtie2 compilation requires a 64-bit platform )
  endif
  
-+# This is unnecessary on most platforms.  The compiler will default
-+# to the native architecture.  Could this be wrapped in a check for
-+# just the platforms that require it?
- # Convert BITS=?? to a -m flag
- BITS_FLAG =
- ifeq (32,$(BITS))
--    BITS_FLAG = -m32
-+    #BITS_FLAG = -m32
- endif
- ifeq (64,$(BITS))
--    BITS_FLAG = -m64
-+    #BITS_FLAG = -m64
- endif
+-DEBUG_FLAGS = -O0 -g3 -m64
+-RELEASE_FLAGS = -O3 -m64
++DEBUG_FLAGS = -O0 -g3
++RELEASE_FLAGS = -O3
+ NOASSERT_FLAGS = -DNDEBUG
+ FILE_FLAGS = -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE
  
- DEBUG_FLAGS = -O0 -g3 $(BITS_FLAG)

@@ -1,3 +1,4 @@
-[description of the port]
+Trinit represents a novel method for the efficient and robust de novo
+reconstruction of transcriptomes from RNA-seq data.
 
-WWW:	http://port.home.page/
+WWW: http://trinityrnaseq.github.io/

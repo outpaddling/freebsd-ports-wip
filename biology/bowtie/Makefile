@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bowtie
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.1
 CATEGORIES=	biology
 MASTER_SITES=	http://github.com/BenLangmead/bowtie/archive/
 DISTNAME=	v${PORTVERSION}
@@ -16,26 +16,31 @@ RUN_DEPENDS=	webbrowser:${PORTSDIR}/www/webbrowser
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-# Just for speed: Recent GCC has better optimizer
-# USE_GCC=	yes
 USES=		gmake perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	scripts/*.pl
 
 .include <bsd.port.pre.mk>
 
+# FIXME: bowtie-align dumps core when compiled with clang
+# Just for speed: Recent GCC has better optimizer
+# .if ${OSVERSION} < 1000000
+USE_GCC=	yes
+# .endif
+
 .if ${ARCH} == i386
 MAKE_ENV+=	POPCNT_CAPABILITY=0
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -e 's|lock_guard<MUTEX_T>|tthread::lock_guard<MUTEX_T>|g' ${WRKSRC}/log.h ${WRKSRC}/hit.h
-
 do-install:
-	${INSTALL_PROGRAM} \
+	${INSTALL_SCRIPT} \
 		${WRKSRC}/bowtie \
 		${WRKSRC}/bowtie-build \
 		${WRKSRC}/bowtie-inspect \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} \
+		${WRKSRC}/bowtie*-s \
+		${WRKSRC}/bowtie*-l \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/scripts/*.sh \

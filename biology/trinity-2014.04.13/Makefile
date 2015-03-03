@@ -5,21 +5,24 @@
 # $FreeBSD$
 #
 
-PORTNAME=	trinityrnaseq
-PORTVERSION=	2.0.4
+PORTNAME=	trinity
+PORTVERSION=	2014.04.13
 CATEGORIES=	biology
-MASTER_SITES=	http://github.com/trinityrnaseq/trinityrnaseq/archive/
-DISTNAME=	v${PORTVERSION}
+MASTER_SITES=	https://sourceforge.net/projects/trinityrnaseq/files/
+DISTNAME=	trinityrnaseq_r20140413p1
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	RNA sequence assembly
 
 USES=		gmake perl5 shebangfix dos2unix
-SHEBANG_FILES=	util/*/*.sh \
+SHEBANG_FILES=	trinity-plugins/collectl/make_data_files.sh \
+		trinity-plugins/collectl/plot.sh \
+		trinity-plugins/collectl/timetable.sh \
+		util/*/*.sh \
 		util/*/*.pl \
 		Chrysalis/*.pl
-DOS2UNIX_FILES=	PerlLib/HPC/GridRunner.pm \
-		PerlLib/HPC/SLURM_handler.pm
+DOS2UNIX_FILES=	PerlLib/HTC/GridRunner.pm \
+		PerlLib/HTC/SLURM_handler.pm
 # Requires OpenMP.
 USE_GCC=	yes
 USE_JAVA=	yes
@@ -34,16 +37,10 @@ MAKE_FLAGS+=	FORCE_UNSAFE_CONFIGURE=1
 BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
-		bowtie:/usr/wip/biology/bowtie111 \
+		bowtie:/usr/wip/biology/bowtie \
 		samtools:/usr/wip/biology/samtools \
-		jellyfish>=2.1.4:/usr/wip/biology/jellyfish2 \
-		ParaFly:/usr/wip/sysutils/parafly \
-		fastool:/usr/wip/biology/fastool \
-		TransDecoder.Predict:/usr/wip/biology/p5-transdecoder \
-		slclust:/usr/wip/biology/slclust
-#		rsem:/usr/wip/biology/rsem
-#		/usr/wip/biology/trinotate
-
+		jellyfish:/usr/wip/biology/jellyfish \
+		ParaFly:/usr/wip/sysutils/parafly
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 MAKE_JOBS_UNSAFE=	yes
@@ -51,35 +48,21 @@ MAKE_JOBS_UNSAFE=	yes
 LIBEXEC_DIR=	${PREFIX}/libexec/trinity
 PLUGINS_DIR=	${LIBEXEC_DIR}/trinity-plugins
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+#FETCH_ARGS+=	-F
 
 post-patch:
 	# General changes to respect env
+	${REINPLACE_CMD} -e "s|chrysalis_target jellyfish fastool parafly|chrysalis_target fastool|g" \
+		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e "s|gcc|${CC}|g" -e "s|g++|${CXX}|g" \
+		${WRKSRC}/Makefile \
 		${WRKSRC}/Chrysalis/Makefile* \
-		${WRKSRC}/trinity-plugins/fstrozzi-Fastool-7c3e034f05/Makefile \
+		${WRKSRC}/trinity-plugins/fastool/Makefile \
 		${WRKSRC}/trinity-plugins/slclust/src/Makefile
 	${REINPLACE_CMD} \
 		-e 's|/bin/bash|/usr/bin/env bash|g' \
 		-e 's|make |${GMAKE} |g' \
 		${WRKSRC}/trinity-plugins/collectl/build_collectl.sh
-
-	# Trinity paths, etc.
-	${REINPLACE_CMD} \
-		-e 's|$$FindBin::Bin|$$FindBin::Bin/../libexec/trinity|g' \
-		${WRKSRC}/Trinity
-	${REINPLACE_CMD} \
-		-e 's|$$FindBin::RealBin|$$FindBin::RealBin/../libexec/trinity|g' \
-		${WRKSRC}/Trinity
-	${REINPLACE_CMD} \
-		-e 's|$$ROOTDIR/trinity-plugins/jellyfish|${LOCALBASE}|g' \
-		${WRKSRC}/Trinity
-	${REINPLACE_CMD} \
-		-e 's|$$ROOTDIR/trinity-plugins/parafly/bin/ParaFly|${LOCALBASE}/bin/ParaFly|g' \
-		${WRKSRC}/Trinity
-	${REINPLACE_CMD} \
-		-e 's|$$ROOTDIR/trinity-plugins/fastool|${LOCALBASE}/bin|g' \
-		${WRKSRC}/Trinity
 
 	# Chrysalis
 	${REINPLACE_CMD} \
@@ -95,7 +78,7 @@ post-patch:
 	# GridRunner: ParaFly is intalled separately, so remove absolute path
 	${REINPLACE_CMD} \
 		-e 's|$$trin_home/trinity-plugins/parafly/bin/||g' \
-		${WRKSRC}/PerlLib/HPC/GridRunner.pm
+		${WRKSRC}/PerlLib/HTC/GridRunner.pm
 
 	# Remove absolute paths to Trinity command
 	${REINPLACE_CMD} \
@@ -120,11 +103,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}/Chrysalis
 	cd ${WRKSRC}/Chrysalis && \
 		${INSTALL_PROGRAM} BreakTransByPairs Chrysalis \
-			CreateIwormFastaBundle \
-			GraphFromFasta GraphFromFasta_MPI \
-			IsoformAugment JoinTransByPairs QuantifyGraph \
-			ReadsToTranscripts ReadsToTranscripts_MPI \
-			ReadsToTranscripts_MPI_chang RunButterfly \
+			GraphFromFasta IsoformAugment JoinTransByPairs \
+			QuantifyGraph ReadsToTranscripts RunButterfly \
 			TranscriptomeFromVaryK checkLock \
 			${STAGEDIR}${LIBEXEC_DIR}/Chrysalis
 	${INSTALL_SCRIPT} ${WRKSRC}/Chrysalis/ReadsToComponents.pl \
@@ -144,9 +124,17 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_BIN} util \
 		${STAGEDIR}${LIBEXEC_DIR}
 
+	${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/fastool
+	${INSTALL_PROGRAM} ${WRKSRC}/trinity-plugins/fastool/fastool \
+		${STAGEDIR}${PLUGINS_DIR}/fastool
+
 	${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/collectl
 	cd ${WRKSRC}/trinity-plugins/collectl && \
 		${COPYTREE_BIN} bin ${STAGEDIR}${PLUGINS_DIR}/collectl
+
+	${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/coreutils
+	cd ${WRKSRC}/trinity-plugins/coreutils && \
+		${COPYTREE_BIN} bin ${STAGEDIR}${PLUGINS_DIR}/coreutils
 
 	${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/Trimmomatic
 
