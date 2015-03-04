@@ -1,6 +1,0 @@
-
-Note:
-
-rpsblast and seedtop have been renamed rpsblast+ and seedtop+ in order
-to resolve a collision with the legacy BLAST port, biology/ncbi-toolkit.
-
