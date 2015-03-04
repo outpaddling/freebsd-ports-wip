@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	trinityrnaseq
+PORTNAME=	trinity
 PORTVERSION=	2.0.4
 CATEGORIES=	biology
 MASTER_SITES=	http://github.com/trinityrnaseq/trinityrnaseq/archive/
@@ -42,7 +42,6 @@ RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		TransDecoder.Predict:/usr/wip/biology/p5-transdecoder \
 		slclust:/usr/wip/biology/slclust
 #		rsem:/usr/wip/biology/rsem
-#		/usr/wip/biology/trinotate
 
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
@@ -51,7 +50,7 @@ MAKE_JOBS_UNSAFE=	yes
 LIBEXEC_DIR=	${PREFIX}/libexec/trinity
 PLUGINS_DIR=	${LIBEXEC_DIR}/trinity-plugins
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}rnaseq-${PORTVERSION}
 
 post-patch:
 	# General changes to respect env
