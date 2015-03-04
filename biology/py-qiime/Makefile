@@ -47,10 +47,10 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.5.1:${PORTSDIR}/math/py-numpy \
 		${PKGNAMEPREFIX}emperor>=0.9.3:/usr/wip/biology/py-emperor \
 		${PKGNAMEPREFIX}h5py>=2.3.0:${PORTSDIR}/science/py-h5py \
 		FastTree>=2.1.7:/usr/wip/biology/fasttree \
-		bl2seq:${PORTSDIR}/biology/ncbi-toolkit \
-		muscle:${PORTSDIR}/biology/muscle \
-		cmbuild:/usr/wip/biology/infernal102
-RUN_DEPENDS=	${BUILD_DEPENDS}
+		muscle>=3.8.31:${PORTSDIR}/biology/muscle \
+		infernal>=1.0.2:/usr/wip/biology/infernal102
+RUN_DEPENDS=	${BUILD_DEPENDS} \
+		ncbi-toolkit>=2012.06.20:${PORTSDIR}/biology/ncbi-toolkit
 BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 
 # Hack to work around matplotlib package not installing pyparsing on 10.0
