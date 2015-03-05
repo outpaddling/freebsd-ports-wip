@@ -14,6 +14,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		perl5
 
+# TransDecoder.LongOrfs suggests doing Pfam or BlastP searches?
 RUN_DEPENDS=	cd-hit:/usr/wip/biology/cd-hit
 NO_BUILD=	yes
 
@@ -23,6 +24,7 @@ post-patch:
 		${WRKSRC}/util/pfam_mpi.pbs
 	${REINPLACE_CMD} \
 		-e 's|$$FindBin::RealBin/PerlLib|${LOCALBASE}/lib/TransDecoder/PerlLib|g' \
+		-e 's|$$FindBin::Bin/../PerlLib|${LOCALBASE}/lib/TransDecoder/PerlLib|g' \
 		${WRKSRC}/TransDecoder* \
 		${WRKSRC}/util/*.pl
 	${REINPLACE_CMD} \
