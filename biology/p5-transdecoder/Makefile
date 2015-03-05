@@ -17,14 +17,12 @@ RUN_DEPENDS=	cd-hit>=4.6.1:/usr/wip/biology/cd-hit
 
 NO_BUILD=	yes
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	sample_data/runMe.sh util/pfam_mpi.pbs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/bin/bash|/usr/local/bin/bash|g' \
-		${WRKSRC}/sample_data/runMe.sh \
-		${WRKSRC}/util/pfam_mpi.pbs
 	${REINPLACE_CMD} \
 		-e 's|$$FindBin::RealBin/PerlLib|${LOCALBASE}/lib/TransDecoder/PerlLib|g' \
 		-e 's|$$FindBin::Bin/../PerlLib|${LOCALBASE}/lib/TransDecoder/PerlLib|g' \
