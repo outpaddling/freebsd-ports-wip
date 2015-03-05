@@ -26,12 +26,8 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's|$$FindBin::RealBin/PerlLib|${LOCALBASE}/lib/TransDecoder/PerlLib|g' \
 		-e 's|$$FindBin::Bin/../PerlLib|${LOCALBASE}/lib/TransDecoder/PerlLib|g' \
-		${WRKSRC}/TransDecoder* \
-		${WRKSRC}/util/*.pl
-	${REINPLACE_CMD} \
 		-e 's|$$FindBin::RealBin/util|${LOCALBASE}/libexec/TransDecoder/util|g' \
-		${WRKSRC}/TransDecoder* \
-		${WRKSRC}/util/*.pl
+		${WRKSRC}/TransDecoder* ${WRKSRC}/util/*.pl
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/TransDecoder/PerlLib
