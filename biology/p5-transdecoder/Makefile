@@ -10,13 +10,16 @@ DISTNAME=	${PORTVERSION}
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Identify candidate coding regions within transcript sequences
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+LICENSE=	BSD3CLAUSE
+
+# TransDecoder.LongOrfs suggests doing Pfam or BlastP searches?
+RUN_DEPENDS=	cd-hit>=4.6.1:/usr/wip/biology/cd-hit
+
+NO_BUILD=	yes
 
 USES=		perl5
 
-# TransDecoder.LongOrfs suggests doing Pfam or BlastP searches?
-RUN_DEPENDS=	cd-hit:/usr/wip/biology/cd-hit
-NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/bin/bash|/usr/local/bin/bash|g' \
