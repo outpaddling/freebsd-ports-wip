@@ -3,7 +3,7 @@
 PORTNAME=	mtr
 PORTVERSION=	0.85
 PORTREVISION=	${GITVERSION}
-PORTEPOCH=	4
+PORTEPOCH=	5
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${GITHUB_USER}/${PORTNAME}/tarball/${GITVERSION}/ \
 		${MASTER_SITE_LOCAL}
@@ -19,16 +19,17 @@ PATCH_DEPENDS=	${AUTOCONF_DEPENDS} ${AUTOMAKE_DEPENDS}
 PKGNAMESUFFIX+=	-graph
 
 GITHUB_USER=	yvs2014
-GITVERSION=	93eddb8
+GITVERSION=	cbb1851
 WRKSRC=		${WRKDIR}/${GITHUB_USER}-${PORTNAME}-${GITVERSION}
 FETCH_ARGS=	-Fpr
 
-OPTIONS_DEFINE=	IPV6 GTK ipinfo graphcairo_xcb graphcairo_xlib IDN Unicode
+OPTIONS_DEFINE=	IPV6 GTK ipinfo graphcairo_xcb graphcairo_xlib IDN Unicode sys_getopt
 OPTIONS_DEFAULT=graphcairo_xlib ipinfo
 GTK_DESC=	Build X11/GTK enabled mtr
 ipinfo_DESC=	ipinfo support
 IDN_DESC=	IDN support
 Unicode_DESC=	Unicode histogram support
+sys_getopt_DESC=	System's own getopt
 graphcairo_xcb_DESC=	graphcairo X11 XCB backend
 graphcairo_xlib_DESC=	graphcairo X11 Xlib backend
 
@@ -85,10 +86,12 @@ CONFIGURE_ARGS+=--with-libidn
 CONFIGURE_ARGS+=--with-unicode
 .endif
 
+.if ${PORT_OPTIONS:Msys_getopt}
+CONFIGURE_ARGS+=--with-sys-getopt
+.endif
+
 pre-configure:
 	@${AUTORECONF} -fi ${WRKSRC}
-	@${REINPLACE_CMD} -e 's|getopt.*$$(OBJEXT)||g; s|getopt.*[ch]||g; /getopt.*Po/d' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|"getopt\.h"|<getopt.h>|g' ${WRKSRC}/mtr.c
 
 post-install:
 	@${ECHO_MSG} ""
