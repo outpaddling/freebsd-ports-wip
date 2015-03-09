@@ -37,6 +37,14 @@ LOCAL_DIR               = $(TILDE)
 # LOCAL_DIR               = /usr/condor
 
 ############################################################################
+# Use dynamic provisioning
+
+NUM_SLOTS=1
+NUM_SLOTS_TYPE_1=1
+SLOT_TYPE_1=100%
+SLOT_TYPE_1_PARTITIONABLE=true
+
+############################################################################
 # When is this machine willing to start a job? 
 
 # For compute hosts dedicated to HTCondor
