@@ -12,18 +12,19 @@ COMMENT=	Utilities for processing and analyzing 16S rRNA genes
 
 LICENSE=	BSD4CLAUSE
 
-RUN_DEPENDS=	cdbfasta>=2010.07.22:/usr/wip/biology/cdbfasta \
-		ncbi-toolkit>=2012.06.20:${PORTSDIR}/biology/ncbi-toolkit
-
 USES=		tar:tgz
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+BUILD_DEPENDS=	cdbfasta>=2010.07.22:/usr/wip/biology/cdbfasta
+WORKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's|gcc|$${CC}|g' \
 		${WRKSRC}/NAST-iEr/Makefile
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/NAST-iEr/NAST-iEr ${STAGEDIR}${PREFIX}/bin
-
+	${MV} ${WRKSRC}/AmosCmp16Spipeline ${STAGEDIR}${PREFIX}/${PORTNAME}
+	${MV} ${WRKSRC}/ChimeraSlayer ${STAGEDIR}${PREFIX}/${PORTNAME}
+	${MV} ${WRKSRC}/NAST-iEr ${STAGEDIR}${PREFIX}/${PORTNAME}
+	${MV} ${WRKSRC}/TreeChopper ${STAGEDIR}${PREFIX}/${PORTNAME}
+	${MV} ${WRKSRC}/WigeoN ${STAGEDIR}${PREFIX}/${PORTNAME}
+	${MV} ${WRKSRC}/RESOURCES ${STAGEDIR}${PREFIX}/${PORTNAME}
 .include <bsd.port.mk>
