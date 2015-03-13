@@ -21,10 +21,13 @@ post-patch:
 		-e 's|gcc|$${CC}|g' \
 		${WRKSRC}/NAST-iEr/Makefile
 do-install:
-	${MV} ${WRKSRC}/AmosCmp16Spipeline ${STAGEDIR}${PREFIX}/${PORTNAME}
-	${MV} ${WRKSRC}/ChimeraSlayer ${STAGEDIR}${PREFIX}/${PORTNAME}
-	${MV} ${WRKSRC}/NAST-iEr ${STAGEDIR}${PREFIX}/${PORTNAME}
-	${MV} ${WRKSRC}/TreeChopper ${STAGEDIR}${PREFIX}/${PORTNAME}
-	${MV} ${WRKSRC}/WigeoN ${STAGEDIR}${PREFIX}/${PORTNAME}
-	${MV} ${WRKSRC}/RESOURCES ${STAGEDIR}${PREFIX}/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} 'AmosCmp16Spipeline ChimeraSlayer \
+	NAST-iEr TreeChopper WigeoN RESOURCES' ${STAGEDIR}${PREFIX}/${PORTNAME}
+#	${MV} ${WRKSRC}/AmosCmp16Spipeline ${STAGEDIR}${PREFIX}/${PORTNAME}
+#	${MV} ${WRKSRC}/ChimeraSlayer ${STAGEDIR}${PREFIX}/${PORTNAME}
+#	${MV} ${WRKSRC}/NAST-iEr ${STAGEDIR}${PREFIX}/${PORTNAME}
+#	${MV} ${WRKSRC}/TreeChopper ${STAGEDIR}${PREFIX}/${PORTNAME}
+#	${MV} ${WRKSRC}/WigeoN ${STAGEDIR}${PREFIX}/${PORTNAME}
+#	${MV} ${WRKSRC}/RESOURCES ${STAGEDIR}${PREFIX}/${PORTNAME}
 .include <bsd.port.mk>
