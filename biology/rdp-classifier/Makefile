@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	rdp-classifier/rdp-classifier/
 DISTNAME=	rdp_classifier_${PORTVERSION}
 
 MAINTAINER=	dsiercks@uwm.edu
-COMMENT=	RDP Classifier is a naive Bayesian classfiier.
+COMMENT=	RDP Classifier is a naive Bayesian classfiier
 
 USES=		zip
 
