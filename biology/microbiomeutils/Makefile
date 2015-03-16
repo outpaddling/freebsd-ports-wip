@@ -12,7 +12,7 @@ COMMENT=	Utilities for processing and analyzing 16S rRNA genes
 
 LICENSE=	BSD4CLAUSE
 
-BUILD_DEPENDS=	cdbfasta>=2010.07.22:/usr/wip/biology/cdbfasta
+RUN_DEPENDS=	cdbfasta>=2010.07.22:/usr/wip/biology/cdbfasta
 
 USES=		tar:tgz
 
