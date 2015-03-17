@@ -10,11 +10,18 @@ DISTNAME=	PfamScan-${PORTVERSION}
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Pfam protein database scanner
 
-USES=		tar:xz
+USES=		perl5 tar:xz
+# USE_PERL5=	?
 
-# Need bioperl and Moose
+# See README file for instructions on deps
+
+# FIXME: Check version compat
+BUILD_DEPENDS=	p5-bioperl>=1.6:${PORTSDIR}/biology/p5-bioperl \
+		p5-Moose>=2:${PORTSDIR}/devel/p5-Moose
+
 # Need 3.1?
-RUN_DEPENDS+=	hmmer>=3.0:${PORTSDIR}/biology/hmmer
+RUN_DEPENDS+=	${BUILD_DEPENDS} \
+		hmmer>=3.0:${PORTSDIR}/biology/hmmer
 
 NO_BUILD=	yes
 
