@@ -48,7 +48,10 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.5.1:${PORTSDIR}/math/py-numpy \
 		${PKGNAMEPREFIX}h5py>=2.3.0:${PORTSDIR}/science/py-h5py \
 		FastTree>=2.1.7:/usr/wip/biology/fasttree \
 		muscle>=3.8.31:${PORTSDIR}/biology/muscle \
-		infernal>=1.0.2:/usr/wip/biology/infernal102
+		infernal>=1.0.2:/usr/wip/biology/infernal102 \
+		rdp-classifier=2.2:/usr/wip/biology/rdp-classifier-2.2 \
+		microbiomutil>=r20110519:/usr/wip/biology/microbiomutils \
+		cdbfasta>=2010.07.22:/usr/wip/biology/cdbfasta
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		ncbi-toolkit>=2012.06.20:${PORTSDIR}/biology/ncbi-toolkit
 BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
