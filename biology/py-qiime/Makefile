@@ -50,7 +50,7 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.5.1:${PORTSDIR}/math/py-numpy \
 		muscle>=3.8.31:${PORTSDIR}/biology/muscle \
 		infernal>=1.0.2:/usr/wip/biology/infernal102 \
 		rdp-classifier=2.2:/usr/wip/biology/rdp-classifier-2.2 \
-		microbiomutil>=r20110519:/usr/wip/biology/microbiomutils \
+		microbiomutil>=r20110519:/usr/wip/biology/microbiomeutil \
 		cdbfasta>=2010.07.22:/usr/wip/biology/cdbfasta
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		ncbi-toolkit>=2012.06.20:${PORTSDIR}/biology/ncbi-toolkit
