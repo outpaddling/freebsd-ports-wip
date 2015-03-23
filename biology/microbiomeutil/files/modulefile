@@ -1,0 +1,18 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+## modulefiles/modules.  Generated from modules.in by configure.
+##
+proc ModulesHelp { } {
+        puts stderr "\tApplication: ncbi-toolkit 2012.06.20"
+}
+
+module-whatis	"ncbi-toolkit (containing blast v2.2.27)"
+
+set	version		2012.06.20
+set	appsroot	/usr/local/ncbi-toolkit
+
+prepend-path    PATH   		$appsroot/bin
+prepend-path	LD_LIBRARY_PATH	$appsroot/lib
+prepend-path	MANPATH		$appsroot/man
