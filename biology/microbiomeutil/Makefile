@@ -22,6 +22,8 @@ post-patch:
 		${WRKSRC}/NAST-iEr/Makefile
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/modulefiles/${PORTNAME}
+	${CP} ${FILESDIR}/modulefile	${STAGEDIR}${PREFIX}/etc/modulefiles/${PORTNAME}/${PORTVERSION}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} 'AmosCmp16Spipeline ChimeraSlayer \
 	NAST-iEr TreeChopper WigeoN RESOURCES' ${STAGEDIR}${PREFIX}/${PORTNAME}
 #	${MV} ${WRKSRC}/AmosCmp16Spipeline ${STAGEDIR}${PREFIX}/${PORTNAME}
