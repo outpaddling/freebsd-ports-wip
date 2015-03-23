@@ -1,14 +1,14 @@
 # $FreeBSD: head/sysutils/ganglia-monitor-core/Makefile 368131 2014-09-13 19:24:23Z tijl $
 
 PORTNAME=	monitor-core
-PORTVERSION=	3.6.1
+PORTVERSION=	3.6.0
 CATEGORIES=	sysutils net parallel
-MASTER_SITES=	https://github.com/ganglia/monitor-core/archive/
+MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}
 PKGNAMEPREFIX=	ganglia-
 .if defined(CLUSTER)
 PKGNAMESUFFIX=	-${CLUSTER}
 .endif
-DISTNAME=	${PORTVERSION}
+DISTNAME=	ganglia-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, monitoring daemon
@@ -25,8 +25,6 @@ OPTIONS_DEFAULT=	GMETAD
 GMETAD_DESC=	include gmetad
 
 USES=		libtool pkgconfig python
-
-WRKSRC=		${WRKDIR}/monitor-core-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-setuid=ganglia --enable-setgid=ganglia \
