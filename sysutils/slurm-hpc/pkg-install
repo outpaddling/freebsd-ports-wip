@@ -21,12 +21,13 @@ g=slurm
 
 SPOOL_DIR=/var/spool
 LOG_DIR=/var/log
+RUN_DIR=/var/run
 
 case $2 in
 PRE-INSTALL)
     ;;
 POST-INSTALL)
-    for dir in $LOG_DIR/slurm $SPOOL_DIR/slurmd; do
+    for dir in $LOG_DIR/slurm $SPOOL_DIR/slurmd $RUN_DIR/slurm; do
 	mkdir -p $dir
         chown -Rh $u:$g $dir
     done
