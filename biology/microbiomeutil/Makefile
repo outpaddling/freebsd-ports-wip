@@ -16,6 +16,8 @@ RUN_DEPENDS=	cdbfasta>=2010.07.22:/usr/wip/biology/cdbfasta
 
 USES=		tar:tgz
 
+MODULE_PATH=	etc/modulefiles/${PORTNAME}/${PORTVERSION}
+
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's|gcc|$${CC}|g' \
@@ -23,13 +25,9 @@ post-patch:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/modulefiles/${PORTNAME}
-	${CP} ${FILESDIR}/modulefile	${STAGEDIR}${PREFIX}/etc/modulefiles/${PORTNAME}/${PORTVERSION}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} 'AmosCmp16Spipeline ChimeraSlayer \
-	NAST-iEr TreeChopper WigeoN RESOURCES' ${STAGEDIR}${PREFIX}/${PORTNAME}
-#	${MV} ${WRKSRC}/AmosCmp16Spipeline ${STAGEDIR}${PREFIX}/${PORTNAME}
-#	${MV} ${WRKSRC}/ChimeraSlayer ${STAGEDIR}${PREFIX}/${PORTNAME}
-#	${MV} ${WRKSRC}/NAST-iEr ${STAGEDIR}${PREFIX}/${PORTNAME}
-#	${MV} ${WRKSRC}/TreeChopper ${STAGEDIR}${PREFIX}/${PORTNAME}
-#	${MV} ${WRKSRC}/WigeoN ${STAGEDIR}${PREFIX}/${PORTNAME}
-#	${MV} ${WRKSRC}/RESOURCES ${STAGEDIR}${PREFIX}/${PORTNAME}
+	${INSTALL_SCRIPT} ${FILESDIR}/modulefile \
+		${STAGEDIR}${LOCALBASE}/${MODULE_PATH}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \
+		'AmosCmp16Spipeline ChimeraSlayer NAST-iEr TreeChopper WigeoN RESOURCES' ${STAGEDIR}${PREFIX}/${PORTNAME}
+
 .include <bsd.port.mk>
