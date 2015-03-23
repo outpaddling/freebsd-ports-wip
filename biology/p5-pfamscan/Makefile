@@ -1,17 +1,18 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
 
-PORTNAME=	p5-pfam
+PORTNAME=	pfamscan
 PORTVERSION=	2013.10.15
 CATEGORIES=	biology
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
-DISTNAME=	PfamScan-${PORTVERSION}
-
+#DISTNAME=	PfamScan-${PORTVERSION}
+PKGNAMEPREFIX=	p5-
+ 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Pfam protein database scanner
 
 USES=		perl5 tar:xz
-# USE_PERL5=	?
+USE_PERL5=	run
 
 # See README file for instructions on deps
 
@@ -24,5 +25,12 @@ RUN_DEPENDS+=	${BUILD_DEPENDS} \
 		hmmer>=3.0:${PORTSDIR}/biology/hmmer
 
 NO_BUILD=	yes
+
+do-install:
+		${MKDIR} ${STAGEDIR}${PREFIX}/bin
+		${INSTALL_SCRIPT} ${WRKSRC}/pfam_scan.pl \
+			${STAGEDIR}${PREFIX}/bin
+		(cd ${WRKSRC} && ${COPYTREE_SHARE} Bio \
+			${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/)
 
 .include <bsd.port.mk>
