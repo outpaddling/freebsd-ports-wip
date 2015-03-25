@@ -24,7 +24,8 @@ DOS2UNIX_FILES=	util/*.txt
 RUN_DEPENDS=	trinity>=2.0.4:/usr/wip/biology/trinity \
 		ncbi-blast+>=2.2.30:${PORTSDIR}/biology/ncbi-blast+ \
 		hmmer>=3.0:${PORTSDIR}/biology/hmmer \
-		p5-pfamscan>=2013.10.15:/usr/wip/biology/p5-pfamscan
+		p5-pfamscan>=2013.10.15:/usr/wip/biology/p5-pfamscan \
+		signalp>=4.1:/usr/wip/biology/signalp
 
 # Optional but recommended deps:
 # signalP v4 http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?signalp
