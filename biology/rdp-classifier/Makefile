@@ -16,10 +16,15 @@ LICENSE=	GPLv2
 
 USES=		zip
 
+MODULE_PATH=	etc/modulefiles/${PORTNAME}/${PORTVERSION}
+
 NO_BUILD=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/modulefiles/${PORTNAME}
+	${INSTALL_SCRIPT} ${FILESDIR}/modulefile \
+		${STAGEDIR}${LOCALBASE}/${MODULE_PATH}
 	${INSTALL_SCRIPT} ${WRKSRC}/dist/classifier.jar \
 		${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}
 	cd ${WRKSRC}/dist && ${COPYTREE_SHARE} 'lib' \
