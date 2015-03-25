@@ -1,0 +1,13 @@
+bin/decodeanhmm.Linux_i386
+bin/decodeanhmm.Linux_i486
+bin/decodeanhmm.Linux_i586
+bin/decodeanhmm.Linux_i686
+bin/decodeanhmm.Linux_ia64
+bin/decodeanhmm.Linux_x86_64
+bin/tmhmm
+bin/tmhmm.ORIG
+bin/tmhmmformat.pl
+bin/tmhmmformat.pl.bak
+%%DATADIR%%/TMHMM1.0.model
+%%DATADIR%%/TMHMM2.0.model
+%%DATADIR%%/TMHMM2.0.options

@@ -28,7 +28,6 @@ RUN_DEPENDS=	trinity>=2.0.4:/usr/wip/biology/trinity \
 		signalp>=4.1:/usr/wip/biology/signalp
 
 # Optional but recommended deps:
-# signalP v4 http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?signalp
 # tmhmm v2 http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?tmhmm
 # rnammer http://www.cbs.dtu.dk/cgi-bin/sw_request?rnammer
 
