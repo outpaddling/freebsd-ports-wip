@@ -12,6 +12,7 @@ COMMENT=	Predicts the presence and location of signal peptide cleavage sites
 
 # LICENSE=
 
+USE_LINUX=	yes
 USES=		perl5 shebangfix
 SHEBANG_FILES=	signalp
 

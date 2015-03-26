@@ -12,8 +12,9 @@ COMMENT=	Predicts the presence and location of signal peptide cleavage sites
 
 # LICENSE=
 
+USE_LINUX=	yes
 USES=		perl5 shebangfix
-SHEBANG_FILES=	bin/tmhmmformat.pl
+SHEBANG_FILES=	bin/tmhmmformat.pl bin/tmhmm
 
 RESTRICTED=	Redistribution is not permitted
 
