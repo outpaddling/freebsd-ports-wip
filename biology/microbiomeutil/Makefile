@@ -27,7 +27,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/modulefiles/${PORTNAME}
 	${INSTALL_SCRIPT} ${FILESDIR}/modulefile \
 		${STAGEDIR}${LOCALBASE}/${MODULE_PATH}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} \
+	cd ${WRKSRC} && ${COPYTREE_BIN} \
 		'AmosCmp16Spipeline ChimeraSlayer NAST-iEr TreeChopper WigeoN RESOURCES' ${STAGEDIR}${PREFIX}/${PORTNAME}
 
 .include <bsd.port.mk>
