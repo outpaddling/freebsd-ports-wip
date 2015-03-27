@@ -5,12 +5,12 @@
 ## modulefiles/modules.  Generated from modules.in by configure.
 ##
 proc ModulesHelp { } {
-        puts stderr "\tApplication: rdp-classifier 2.2"
+        puts stderr "\tApplication: rdp-classifier %%PORTVERSION%%"
 }
 
 module-whatis	"rdp-classifier"
 
-set	version		2.2
+set	version		%%PORTVERSION%%
 set	appsroot	%%PREFIX%%/rdp-classifier
 
 prepend-path    PATH   		$appsroot/
