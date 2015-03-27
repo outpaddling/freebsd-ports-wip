@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 USES=		zip
 
-PLIST_FILES=	etc/modulefiles/classifier/2.2 \
+PLIST_FILES=	etc/modulefiles/rdp-classifier/2.2 \
 		rdp-classifier/lib/commons-cli-1.2.jar \
 		rdp-classifier/lib/junit_3.8.1.jar \
 		rdp-classifier/rdp_classifier-2.2.jar
@@ -34,7 +34,7 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} 'lib' \
 		${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}
 	${MKDIR} ${STAGEDIR}${PREFIX}/${MODULE_PATH}
-	${INSTALL_SCRIPT} ${FILESDIR}/modulefile \
+	${INSTALL_SCRIPT} ${WRKDIR}/modulefile \
 		${STAGEDIR}${LOCALBASE}/${MODULE_PATH}/${PORTVERSION}
 
 .include <bsd.port.mk>
