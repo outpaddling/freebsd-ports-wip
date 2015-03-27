@@ -11,7 +11,7 @@ proc ModulesHelp { } {
 module-whatis	"rdp-classifier"
 
 set	version		2.2
-set	appsroot	/usr/local/rdp-classifier
+set	appsroot	%%PREFIX%%/rdp-classifier
 
 prepend-path    PATH   		$appsroot/
 prepend-path	LD_LIBRARY_PATH	$appsroot/lib
