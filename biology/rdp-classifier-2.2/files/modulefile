@@ -1,0 +1,17 @@
+#%Module1.0#####################################################################
+##
+## modules modulefile
+##
+## modulefiles/modules.  Generated from modules.in by configure.
+##
+proc ModulesHelp { } {
+        puts stderr "\tApplication: rdp-classifier 2.2"
+}
+
+module-whatis	"rdp-classifier"
+
+set	version		2.2
+set	appsroot	/usr/local/rdp-classifier
+
+prepend-path    PATH   		$appsroot/
+prepend-path	LD_LIBRARY_PATH	$appsroot/lib
