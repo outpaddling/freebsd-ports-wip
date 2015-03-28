@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-bioperl>=1.6:${PORTSDIR}/biology/p5-bioperl \
 
 # Need 3.1?
 RUN_DEPENDS+=	${BUILD_DEPENDS} \
-		hmmer>=3.0:${PORTSDIR}/biology/hmmer
+		hmmer>=3.0:/usr/wip/biology/hmmer
 
 NO_BUILD=	yes
 
