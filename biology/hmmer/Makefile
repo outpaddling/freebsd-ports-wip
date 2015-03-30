@@ -12,7 +12,6 @@ COMMENT=	Profile hidden Markov models for biological sequence analysis
 
 GNU_CONFIGURE=	yes
 USES=		perl5
-USE_GCC=	yes	# Needs openmp
 CONFIGURE_ARGS+=--enable-threads --enable-lfs
 
 DOCFILES=	COPYRIGHT INSTALL LICENSE Userguide.pdf
