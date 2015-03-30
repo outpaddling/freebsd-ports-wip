@@ -1,11 +1,11 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
 
-PORTNAME=	fasta-splitter
+PORTNAME=	splitter
 PORTVERSION=	0.2.4
 CATEGORIES=	biology
 MASTER_SITES=	http://kirill-kryukov.com/study/tools/fasta-splitter/files/
-PKGNAMEPREFIX=	fasta
+PKGNAMEPREFIX=	fasta-
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Divides a FASTA file into a set of smaller, approximately equally sized files
