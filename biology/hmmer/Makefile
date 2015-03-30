@@ -12,19 +12,21 @@ COMMENT=	Profile hidden Markov models for biological sequence analysis
 
 GNU_CONFIGURE=	yes
 USES=		perl5
-CONFIGURE_ARGS+=--enable-threads --enable-lfs --enable-sse
+CONFIGURE_ARGS+=--enable-threads
 
 DOCFILES=	COPYRIGHT INSTALL LICENSE Userguide.pdf
 EXAMPLES=	7LESS_DROME Pkinase.sto fn3.sto globins4.sto minifam.h3f minifam.h3p \
 		HBB_HUMAN fn3.hmm globins4.hmm globins45.fa minifam.h3i \
 		Pkinase.hmm fn3.out globins4.out minifam minifam.h3m
 
-OPTIONS_DEFINE=	PVM DOCS EXAMPLES
-PVM_DESC=	PVM support
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-PVM_CONFIGURE_ENV=	PVM_ROOT="${LOCALBASE}/lib/pvm" PVM_ARCH="FREEBSD"
-PVM_CONFIGURE_WITH=	pvm
-PVM_BUILD_DEPENDS=	pvm:${PORTSDIR}/net/pvm
+.include <bsd.port.options.mk>
+
+# HMMER is useless without SSE and any PC in use today should support it
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "i386"
+CONFIGURE_ARGS+=--enable-sse
+.endif
 
 post-install:
 	(cd ${WRKSRC}/documentation/man; for i in *.man; do \
