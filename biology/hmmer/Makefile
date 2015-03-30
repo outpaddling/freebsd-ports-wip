@@ -12,7 +12,7 @@ COMMENT=	Profile hidden Markov models for biological sequence analysis
 
 GNU_CONFIGURE=	yes
 USES=		perl5
-CONFIGURE_ARGS+=--enable-threads --enable-lfs
+CONFIGURE_ARGS+=--enable-threads --enable-lfs --enable-sse
 
 DOCFILES=	COPYRIGHT INSTALL LICENSE Userguide.pdf
 EXAMPLES=	7LESS_DROME Pkinase.sto fn3.sto globins4.sto minifam.h3f minifam.h3p \
