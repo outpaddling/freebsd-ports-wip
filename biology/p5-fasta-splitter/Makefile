@@ -5,6 +5,7 @@ PORTNAME=	splitter
 PORTVERSION=	0.2.4
 CATEGORIES=	biology
 MASTER_SITES=	http://kirill-kryukov.com/study/tools/fasta-splitter/files/
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	fasta-
 
 MAINTAINER=	jwbacon@tds.net
