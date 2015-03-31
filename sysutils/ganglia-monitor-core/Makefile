@@ -42,6 +42,8 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 SUB_FILES=	pkg-install
 
+INSTALL_TARGET=	install-strip
+
 .if defined (GMETAD_CONF)
 .if !exists (${GMETAD_CONF})
 IGNORE=		the variable GMETAD_CONF must point to a file when defined
