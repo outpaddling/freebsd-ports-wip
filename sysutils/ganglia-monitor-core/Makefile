@@ -1,3 +1,4 @@
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD: head/sysutils/ganglia-monitor-core/Makefile 368131 2014-09-13 19:24:23Z tijl $
 
 PORTNAME=	monitor-core
@@ -10,7 +11,7 @@ PKGNAMESUFFIX=	-${CLUSTER}
 .endif
 DISTNAME=	ganglia-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jwbacon@tds.net
 COMMENT=	Ganglia cluster monitor, monitoring daemon
 
 LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
@@ -21,7 +22,7 @@ LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 OPTIONS_DEFINE=	GMETAD
-OPTIONS_DEFAULT=	GMETAD
+OPTIONS_DEFAULT=GMETAD
 GMETAD_DESC=	include gmetad
 
 USES=		libtool pkgconfig python
