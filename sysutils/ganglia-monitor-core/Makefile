@@ -3,7 +3,7 @@
 
 PORTNAME=	monitor-core
 PORTVERSION=	3.6.0
-CATEGORIES=	sysutils net parallel
+CATEGORIES=	sysutils net
 MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}
 PKGNAMEPREFIX=	ganglia-
 .if defined(CLUSTER)
@@ -13,6 +13,8 @@ DISTNAME=	ganglia-${PORTVERSION}
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Ganglia cluster monitor, monitoring daemon
+
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libconfuse.so:${PORTSDIR}/devel/libconfuse \
