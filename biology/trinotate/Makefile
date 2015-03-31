@@ -21,7 +21,7 @@ DOS2UNIX_FILES=	util/*.txt
 # FIXME: Make sample_data/runMe.sh work out of the box
 
 # Trinity must include TransDecoder and support for expression and DE analysis using RSEM and Bioconductor
-RUN_DEPENDS=	trinity>=2.0.4:/usr/wip/biology/trinity \
+RUN_DEPENDS=	Trinity:/usr/wip/biology/trinity \
 		ncbi-blast+>=2.2.30:${PORTSDIR}/biology/ncbi-blast+ \
 		hmmer>=3.0:/usr/wip/biology/hmmer \
 		p5-pfamscan>=2013.10.15:/usr/wip/biology/p5-pfamscan \
