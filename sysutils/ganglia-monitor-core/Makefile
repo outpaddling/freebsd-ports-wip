@@ -1,5 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
-# $FreeBSD: head/sysutils/ganglia-monitor-core/Makefile 368131 2014-09-13 19:24:23Z tijl $
+# $FreeBSD: head/sysutils/ganglia-monitor-core/Makefile 371454 2014-10-24 16:56:10Z mva $
 
 PORTNAME=	monitor-core
 PORTVERSION=	3.6.0
@@ -32,7 +31,7 @@ USES=		libtool pkgconfig python
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-setuid=ganglia --enable-setgid=ganglia \
 		--with-python=${PYTHON_CMD}
-CONFIGURE_ENV=	GANGLIA_ACK_SYSCONFDIR=1 "LDFLAGS=${LDFLAGS}"
+CONFIGURE_ENV=	GANGLIA_ACK_SYSCONFDIR=1
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -64,7 +63,6 @@ GMOND_CONF=	${WRKDIR}/gmond.conf
 USE_RC_SUBR=	gmond
 .if ${PORT_OPTIONS:MGMETAD}
 USE_RC_SUBR+=	gmetad
-
 LIB_DEPENDS+=	librrd.so:${PORTSDIR}/databases/rrdtool
 CONFIGURE_ARGS+=	--with-gmetad
 PLIST_SUB+=	GMETAD=
@@ -78,20 +76,6 @@ USE_LDCONFIG=	yes
 
 CONF_DIR=	${PREFIX}/etc
 
-FIX_CONF_FILES=	README \
-		mans/gmetad.1 \
-		mans/gmond.1
-FIX_GMOND_CONF_DIR=	\
-		gmond/modules/conf.d/modpython.conf.in \
-		gmond/modules/python/Makefile.in \
-		lib/default_conf.h.in
-# gmond.conf.5 and gmond.conf.html can be generated from conf.pod, but
-# doing so requires perl installed in the build stage.
-FIX_USER_FILES=	gmetad/gmetad.conf.in \
-		gmond/conf.pod \
-		gmond/gmond.conf.5 \
-		gmond/gmond.conf.html
-
 MODULES=	modcpu.so \
 		moddisk.so \
 		modload.so \
@@ -102,30 +86,40 @@ MODULES=	modcpu.so \
 		modpython.so \
 		modsys.so
 
+# gmond.conf.5 and gmond.conf.html can be generated from conf.pod, but
+# doing so requires perl installed in the build stage.
 post-patch:
-	${REINPLACE_CMD} -e "s|/etc/ganglia/\(gm[a-z]*d.conf\)|${PREFIX}/etc/\1|g" \
-		${FIX_CONF_FILES:S|^|${WRKSRC}/|}
-	${REINPLACE_CMD} -e "s|%%GMONDCONFDIR%%|gmond.conf.d|g" \
-		${FIX_GMOND_CONF_DIR:S|^|${WRKSRC}/|}
+	${REINPLACE_CMD} \
+		-e "s|/etc/ganglia/\(gm[a-z]*d.conf\)|${PREFIX}/etc/\1|g" \
+		${WRKSRC}/README \
+		${WRKSRC}/mans/gmetad.1 \
+		${WRKSRC}/mans/gmond.1
 	${REINPLACE_CMD} -e "s|nobody|ganglia|g" \
-		${FIX_USER_FILES:S|^|${WRKSRC}/|}
-	${REINPLACE_CMD} -e "s|@moduledir@/python_modules|@moduledir@|g" \
-		${WRKSRC}/gmond/modules/conf.d/modpython.conf.in
+		${WRKSRC}/gmetad/gmetad.conf.in \
+		${WRKSRC}/gmond/conf.pod \
+		${WRKSRC}/gmond/gmond.conf.5 \
+		${WRKSRC}/gmond/gmond.conf.html
 
 post-build:
 	${WRKSRC}/gmond/gmond -t > ${WRKDIR}/gmond.conf
 
 post-install:
 .if ${PORT_OPTIONS:MGMETAD}
-	${INSTALL_SCRIPT} ${FILESDIR}/gmetasnap.sh ${STAGEDIR}${PREFIX}/sbin/gmetasnap
+	${INSTALL_SCRIPT} ${FILESDIR}/gmetasnap.sh \
+		${STAGEDIR}${PREFIX}/sbin/gmetasnap
 	${INSTALL_MAN} ${WRKSRC}/mans/gmetad.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${GMETAD_CONF} ${STAGEDIR}${PREFIX}/etc/gmetad.conf.sample
+	${INSTALL_DATA} ${GMETAD_CONF} \
+		${STAGEDIR}${PREFIX}/etc/gmetad.conf.sample
 .endif
-	${INSTALL_MAN} ${WRKSRC}/mans/gmetric.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/mans/gmond.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/gmond/gmond.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/mans/gstat.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${GMOND_CONF} ${STAGEDIR}${PREFIX}/etc/gmond.conf.sample
+	${INSTALL_MAN} \
+		${WRKSRC}/mans/gmetric.1 \
+		${WRKSRC}/mans/gmond.1 \
+		${WRKSRC}/mans/gstat.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/gmond/gmond.conf.5 \
+		${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_DATA} ${GMOND_CONF} \
+		${STAGEDIR}${PREFIX}/etc/gmond.conf.sample
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/ganglia/python_modules
 
 .include <bsd.port.mk>
