@@ -1,0 +1,29 @@
+
+FYI, it might be nice to add the following to your download page:
+
+    http://url
+
+FreeBSD Users:
+
+X, like most mainstream open source software, is available in the
+FreeBSD ports system and can be installed as a binary package on
+FreeBSD using the following command:
+
+    pkg install X
+
+Building and installing from source can also be easily performed using
+the following:
+
+    cd /usr/ports/category/X
+    make install
+
+This method allows building with non-default options in many cases.
+
+Requested additions:
+
+http://hmmer.janelia.org/software
+
+Confirmed additions:
+
+ncbi-blast+
+?cad
