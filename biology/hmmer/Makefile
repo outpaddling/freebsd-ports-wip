@@ -31,13 +31,12 @@ CONFIGURE_ARGS+=--enable-sse
 .endif
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 	(cd ${WRKSRC}/documentation/man; for i in *.man; do \
 		${INSTALL_MAN} $$i ${STAGEDIR}${PREFIX}/man/man1/`echo $$i|${SED} 's/.man/.1/'`; \
 	done)
-
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/tutorial/,} ${STAGEDIR}${EXAMPLESDIR}
 
