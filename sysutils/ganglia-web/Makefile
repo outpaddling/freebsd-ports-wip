@@ -3,7 +3,7 @@
 
 PORTNAME=	ganglia-web
 PORTVERSION=	3.6.2
-CATEGORIES=	sysutils www
+CATEGORIES=	sysutils net www
 MASTER_SITES=	SF/ganglia/ganglia-web/${PORTVERSION}
 
 MAINTAINER=	jwbacon@tds.net
@@ -20,6 +20,7 @@ WANT_PHP_MOD=	yes
 
 HTMLDIR=	www/ganglia
 
+# DO NOT DELETE!!
 # HTMLDIR and GWEBDIR must be owned by WWWOWN:WWWGRP.
 # Add the following to pkg-plist:
 # @owner %%WWWOWN%%
@@ -35,6 +36,8 @@ SUB_LIST+=	STAGEDIR=${STAGEDIR} \
 SUB_FILES+=	pkg-install
 
 # Taken from ganglia-monitor-core.  Must match for ganglia-web to function!
+# Content of these directories should not be touched by deinstall.  It
+# contains history and must remain intact through an upgrade.
 RRD_ROOTDIR=	/var/db/ganglia
 GWEBDIR=	${RRD_ROOTDIR}-web
 
@@ -47,7 +50,7 @@ post-patch:
 		-e 's|/var/lib/ganglia|${RRD_ROOTDIR}|g' \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} \
-		-e 's|/usr/bin/rrdtool|${PREFIX}/bin/rrdtool|g' \
+		-e 's|/usr/bin/rrdtool|${LOCALBASE}/bin/rrdtool|g' \
 		-e 's|/var/lib/ganglia-web|${GWEBDIR}|g' \
 		-e 's|/var/lib/ganglia|${RRD_ROOTDIR}|g' \
 		${WRKSRC}/conf_default.php*
