@@ -14,6 +14,7 @@ COMMENT=	Predicts the presence and location of signal peptide cleavage sites
 
 USE_LINUX=	yes
 USES=		perl5 shebangfix
+USE_PERL5=	run
 SHEBANG_FILES=	bin/tmhmmformat.pl bin/tmhmm
 
 RESTRICTED=	Redistribution is not permitted
@@ -39,9 +40,20 @@ post-patch:
 		-e 's|/usr/local/bin/gs|gs|g' \
 		-e 's|/usr/freeware/bin/ppmtogif|ppmtogif|g' \
 		${WRKSRC}/bin/tmhmmformat.pl
+	${REINPLACE_CMD} \
+		-e 's|$$opt_basedir .=|$$opt_basedir = "${PREFIX}"; # |g' \
+		-e 's|$$opt_libdir =|$$opt_libdir = "${DATADIR}"; # |g' \
+		-e 's|$$opt_bindir =|$$opt_bindir = "${PREFIX}/bin"; # |g' \
+		-e 's|$$opt_scrdir =|$$opt_scrdir = "${PREFIX}/bin"; # |g' \
+		-e 's|decodeanhmm.$${unix}_$$arch|decodeanhmm|g' \
+		${WRKSRC}/bin/tmhmm
 
 do-install:
-	${CP} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} \
+		${WRKSRC}/bin/tmhmm ${WRKSRC}/bin/tmhmmformat.pl \
+		 ${STAGEDIR}${PREFIX}/bin
+	${CP} ${WRKSRC}/bin/decodeanhmm.Linux_i686 \
+		${STAGEDIR}${PREFIX}/bin/decodeanhmm
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${CP} ${WRKSRC}/lib/* ${STAGEDIR}${DATADIR}
 
