@@ -15,7 +15,8 @@ COMMENT=	Genomic Mapping and Alignment Program for mRNA and EST Sequences
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
 
-# shebang_fix operates during patch and scripts are created during configure
+# shebang_fix operates during patch.
+# These scripts are created during configure.
 post-configure:
 	${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|g' \
 		${WRKSRC}/Makefile ${WRKSRC}/util/*.pl
