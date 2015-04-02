@@ -14,6 +14,7 @@ COMMENT=	Predicts the presence and location of signal peptide cleavage sites
 
 USE_LINUX=	yes
 USES=		perl5 shebangfix
+USE_PERL5=	run
 SHEBANG_FILES=	signalp
 
 RESTRICTED=	Redistribution is not permitted
