@@ -30,12 +30,13 @@ IGNORE=		is not redistributable. You must agree to the license terms at http://w
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's|/usr/cbs/bio/src/signalp-4.1|${DATADIR}|g' \
-		-e 's|$$ENV{SIGNALP}/bin/nnhowplayer.$$platform"."_"."$$architecture|${PREFIX}/bin/nnhowplayer.Linux_i686|g' \
+		-e 's|$$ENV{SIGNALP}/bin/nnhowplayer.$$platform"."_"."$$architecture|${PREFIX}/bin/nnhowplayer|g' \
 		-e 's|$$ENV{SIGNALP}/lib|${PREFIX}/${SITE_PERL_REL}/SignalP|g' \
 		${WRKSRC}/signalp
 
 do-install:
-	${CP} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
+	${CP} ${WRKSRC}/bin/nnhowplayer.Linux_i686 \
+		${STAGEDIR}${PREFIX}/bin/nnhowplayer
 	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/SignalP
 	${CP} ${WRKSRC}/lib/* ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/SignalP
 	${INSTALL_SCRIPT} ${WRKSRC}/signalp ${STAGEDIR}${PREFIX}/bin

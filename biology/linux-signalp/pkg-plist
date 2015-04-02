@@ -1,9 +1,4 @@
-bin/nnhowplayer.Linux_i386
-bin/nnhowplayer.Linux_i486
-bin/nnhowplayer.Linux_i586
-bin/nnhowplayer.Linux_i686
-bin/nnhowplayer.Linux_ia64
-bin/nnhowplayer.Linux_x86_64
+bin/nnhowplayer
 bin/signalp
 %%SITE_PERL%%/SignalP/FASTA.pm
 man/man1/signalp.1.gz
