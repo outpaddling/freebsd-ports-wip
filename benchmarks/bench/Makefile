@@ -15,8 +15,6 @@ COMMENT=	General benchmark for CPU, RAM, and disk
 
 USES=		tar:xz
 
-PLIST_FILES=	bin/bench
-
 MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} MANPREFIX=${STAGEDIR}${MANPREFIX}
 
 .include <bsd.port.mk>
