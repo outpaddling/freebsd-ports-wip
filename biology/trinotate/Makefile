@@ -59,6 +59,9 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's|$$FindBin::Bin/util|${PREFIX}/libexec/trinotate/util|g' \
 		${WRKSRC}/Trinotate
+	${REINPLACE_CMD} \
+		-e 's|$$FindBin::Bin/.*/PerlLib|${LOCALBASE}/lib/perl5/site_perl/Trinity|g' \
+		`find ${WRKSRC} -type f -exec fgrep -l PerlLib '{}' \;`
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin

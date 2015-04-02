@@ -1,11 +1,11 @@
 --- Trinity.orig	2014-04-23 11:04:48.000000000 -0500
-+++ Trinity	2014-08-15 08:34:43.000000000 -0500
++++ Trinity	2015-04-01 17:19:20.772789705 -0500
 @@ -6,7 +6,7 @@
  no strict qw(subs refs);
  
  use FindBin;
 -use lib ("$FindBin::Bin/PerlLib");
-+use lib ("$FindBin::Bin/../libexec/trinity/PerlLib");
++use lib ("$FindBin::Bin/../lib/perl5/site_perl/Trinity");
  use File::Basename;
  use Time::localtime;
  use Cwd;

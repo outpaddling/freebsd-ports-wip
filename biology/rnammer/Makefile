@@ -26,6 +26,18 @@ do-extract:
 	${MKDIR} ${WRKSRC}
 	cd ${WRKSRC} && tar zxvf ${DISTDIR}/${DISTFILES}
 
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's|/usr/cbs/bio/src/rnammer-1.2|${PREFIX}|g' \
+		-e 's|$$INSTALL_PATH/lib|${DATADIR}|g' \
+		-e 's|$$INSTALL_PATH/xml|${PREFIX}/bin/xml|g' \
+		-e 's|$$INSTALL_PATH/core-rnammer|${PREFIX}/bin/core-rnammer|g' \
+		-e "s|'\$$INSTALL_PATH'|'${PREFIX}'|g" \
+		-e 's|/usr/cbs/bio/bin/linux64/hmmsearch|${PREFIX}/bin/hmmsearch|g' \
+		-e 's|Linux|FreeBSD|g' \
+		-e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|g' \
+		${WRKSRC}/rnammer
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/*rnammer ${WRKSRC}/xml2* \
 		${STAGEDIR}${PREFIX}/bin

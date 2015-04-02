@@ -1,4 +1,101 @@
 bin/Trinity
+%%SITE_PERL%%/Trinity/Ascii_genome_illustrator.pm
+%%SITE_PERL%%/Trinity/BED_utils.pm
+%%SITE_PERL%%/Trinity/BHStats.pm
+%%SITE_PERL%%/Trinity/CDNA/Alignment_segment.pm
+%%SITE_PERL%%/Trinity/CDNA/Alternative_splice_comparer.pm
+%%SITE_PERL%%/Trinity/CDNA/CDNA_alignment.pm
+%%SITE_PERL%%/Trinity/CDNA/CDNA_stitcher.pm
+%%SITE_PERL%%/Trinity/CDNA/Gene_obj_alignment_assembler.pm
+%%SITE_PERL%%/Trinity/CDNA/Genome_based_cDNA_assembler.pm
+%%SITE_PERL%%/Trinity/CDNA/Genome_based_cDNA_graph_assembler.pm
+%%SITE_PERL%%/Trinity/CDNA/Overlap_assembler.pm
+%%SITE_PERL%%/Trinity/CDNA/PASA_alignment_assembler.pm
+%%SITE_PERL%%/Trinity/CDNA/Splice_graph_assembler.pm
+%%SITE_PERL%%/Trinity/CIGAR.pm
+%%SITE_PERL%%/Trinity/CMD_processor.pm
+%%SITE_PERL%%/Trinity/CanvasXpress/Heatmap.pm
+%%SITE_PERL%%/Trinity/ColorGradient.pm
+%%SITE_PERL%%/Trinity/EM.pm
+%%SITE_PERL%%/Trinity/Exons_to_geneobj.pm
+%%SITE_PERL%%/Trinity/FailedCommands
+%%SITE_PERL%%/Trinity/Fasta_reader.pm
+%%SITE_PERL%%/Trinity/Fasta_retriever.pm
+%%SITE_PERL%%/Trinity/Fastq_reader.pm
+%%SITE_PERL%%/Trinity/GFF3_alignment_utils.pm
+%%SITE_PERL%%/Trinity/GFF3_utils.pm
+%%SITE_PERL%%/Trinity/GFF_maker.pm
+%%SITE_PERL%%/Trinity/GTF.pm
+%%SITE_PERL%%/Trinity/GTF_utils.pm
+%%SITE_PERL%%/Trinity/Gene_obj.pm
+%%SITE_PERL%%/Trinity/Gene_obj_indexer.pm
+%%SITE_PERL%%/Trinity/HTC/Base_handler.pm
+%%SITE_PERL%%/Trinity/HTC/FarmIt.pm
+%%SITE_PERL%%/Trinity/HTC/GridRunner.pm
+%%SITE_PERL%%/Trinity/HTC/GridRunner.pm.bak
+%%SITE_PERL%%/Trinity/HTC/LSF_handler.pm
+%%SITE_PERL%%/Trinity/HTC/SGE_handler.pm
+%%SITE_PERL%%/Trinity/HTC/SLURM_handler.pm
+%%SITE_PERL%%/Trinity/HTC/SLURM_handler.pm.orig
+%%SITE_PERL%%/Trinity/J14349.S0.sh.e7297570
+%%SITE_PERL%%/Trinity/J14349.S0.sh.o7297570
+%%SITE_PERL%%/Trinity/J14349.S1.sh.e7297571
+%%SITE_PERL%%/Trinity/J14349.S1.sh.o7297571
+%%SITE_PERL%%/Trinity/J14349.S10.sh.e7297580
+%%SITE_PERL%%/Trinity/J14349.S10.sh.o7297580
+%%SITE_PERL%%/Trinity/J14349.S2.sh.e7297572
+%%SITE_PERL%%/Trinity/J14349.S2.sh.o7297572
+%%SITE_PERL%%/Trinity/J14349.S3.sh.e7297573
+%%SITE_PERL%%/Trinity/J14349.S3.sh.o7297573
+%%SITE_PERL%%/Trinity/J14349.S4.sh.e7297574
+%%SITE_PERL%%/Trinity/J14349.S4.sh.o7297574
+%%SITE_PERL%%/Trinity/J14349.S5.sh.e7297575
+%%SITE_PERL%%/Trinity/J14349.S5.sh.o7297575
+%%SITE_PERL%%/Trinity/J14349.S6.sh.e7297576
+%%SITE_PERL%%/Trinity/J14349.S6.sh.o7297576
+%%SITE_PERL%%/Trinity/J14349.S7.sh.e7297577
+%%SITE_PERL%%/Trinity/J14349.S7.sh.o7297577
+%%SITE_PERL%%/Trinity/J14349.S8.sh.e7297578
+%%SITE_PERL%%/Trinity/J14349.S8.sh.o7297578
+%%SITE_PERL%%/Trinity/J14349.S9.sh.e7297579
+%%SITE_PERL%%/Trinity/J14349.S9.sh.o7297579
+%%SITE_PERL%%/Trinity/KmerGraphLib/AlignGraph.pm
+%%SITE_PERL%%/Trinity/KmerGraphLib/AlignNode.pm
+%%SITE_PERL%%/Trinity/KmerGraphLib/GenericGraph.pm
+%%SITE_PERL%%/Trinity/KmerGraphLib/GenericNode.pm
+%%SITE_PERL%%/Trinity/KmerGraphLib/KmerGraph.pm
+%%SITE_PERL%%/Trinity/KmerGraphLib/KmerNode.pm
+%%SITE_PERL%%/Trinity/KmerGraphLib/ReadCoverageGraph.pm
+%%SITE_PERL%%/Trinity/KmerGraphLib/ReadCoverageNode.pm
+%%SITE_PERL%%/Trinity/KmerGraphLib/ReadManager.pm
+%%SITE_PERL%%/Trinity/KmerGraphLib/ReadTracker.pm
+%%SITE_PERL%%/Trinity/KmerGraphLib/SAM_entry.pm
+%%SITE_PERL%%/Trinity/KmerGraphLib/SAM_reader.pm
+%%SITE_PERL%%/Trinity/KmerGraphLib/SAM_to_AlignGraph.pm
+%%SITE_PERL%%/Trinity/KmerGraphLib/StringGraph.pm
+%%SITE_PERL%%/Trinity/KmerGraphLib/StringNode.pm
+%%SITE_PERL%%/Trinity/Ktree.pm
+%%SITE_PERL%%/Trinity/Longest_orf.pm
+%%SITE_PERL%%/Trinity/Nuc_translator.pm
+%%SITE_PERL%%/Trinity/Overlap_info.pm
+%%SITE_PERL%%/Trinity/Overlap_piler.pm
+%%SITE_PERL%%/Trinity/PSL_parser.pm
+%%SITE_PERL%%/Trinity/SAM_entry.pm
+%%SITE_PERL%%/Trinity/SAM_reader.pm
+%%SITE_PERL%%/Trinity/Simulate/Uniform_Read_Generator.pm
+%%SITE_PERL%%/Trinity/SingleLinkageClusterer.pm
+%%SITE_PERL%%/Trinity/Thread_helper.pm
+%%SITE_PERL%%/Trinity/TiedHash.pm
+%%SITE_PERL%%/Trinity/VCF_parser.pm
+%%SITE_PERL%%/Trinity/WigParser.pm
+%%SITE_PERL%%/Trinity/cache_completed_LSF_cmds
+%%SITE_PERL%%/Trinity/cache_completed_SGE_cmds
+%%SITE_PERL%%/Trinity/cmds_for_parafly.txt
+%%SITE_PERL%%/Trinity/cmds_for_parafly.txt.completed
+%%SITE_PERL%%/Trinity/overlapping_nucs.ph
+%%SITE_PERL%%/Trinity/test_Fasta_retriever.pl
+%%SITE_PERL%%/Trinity/test_htc_gridrunner_LSF.pl
+%%SITE_PERL%%/Trinity/test_htc_gridrunner_SGE.pl
 libexec/trinity/Butterfly/Butterfly.jar
 libexec/trinity/Chrysalis/BreakTransByPairs
 libexec/trinity/Chrysalis/Chrysalis
@@ -16,101 +113,6 @@ libexec/trinity/Inchworm/bin/cigar_tweaker
 libexec/trinity/Inchworm/bin/fastaToKmerCoverageStats
 libexec/trinity/Inchworm/bin/inchworm
 libexec/trinity/Inchworm/bin/pull_reads_with_kmers
-libexec/trinity/PerlLib/Ascii_genome_illustrator.pm
-libexec/trinity/PerlLib/BED_utils.pm
-libexec/trinity/PerlLib/BHStats.pm
-libexec/trinity/PerlLib/CDNA/Alignment_segment.pm
-libexec/trinity/PerlLib/CDNA/Alternative_splice_comparer.pm
-libexec/trinity/PerlLib/CDNA/CDNA_alignment.pm
-libexec/trinity/PerlLib/CDNA/CDNA_stitcher.pm
-libexec/trinity/PerlLib/CDNA/Gene_obj_alignment_assembler.pm
-libexec/trinity/PerlLib/CDNA/Genome_based_cDNA_assembler.pm
-libexec/trinity/PerlLib/CDNA/Genome_based_cDNA_graph_assembler.pm
-libexec/trinity/PerlLib/CDNA/Overlap_assembler.pm
-libexec/trinity/PerlLib/CDNA/PASA_alignment_assembler.pm
-libexec/trinity/PerlLib/CDNA/Splice_graph_assembler.pm
-libexec/trinity/PerlLib/CIGAR.pm
-libexec/trinity/PerlLib/CMD_processor.pm
-libexec/trinity/PerlLib/CanvasXpress/Heatmap.pm
-libexec/trinity/PerlLib/ColorGradient.pm
-libexec/trinity/PerlLib/EM.pm
-libexec/trinity/PerlLib/Exons_to_geneobj.pm
-libexec/trinity/PerlLib/FailedCommands
-libexec/trinity/PerlLib/Fasta_reader.pm
-libexec/trinity/PerlLib/Fasta_retriever.pm
-libexec/trinity/PerlLib/Fastq_reader.pm
-libexec/trinity/PerlLib/GFF3_alignment_utils.pm
-libexec/trinity/PerlLib/GFF3_utils.pm
-libexec/trinity/PerlLib/GFF_maker.pm
-libexec/trinity/PerlLib/GTF.pm
-libexec/trinity/PerlLib/GTF_utils.pm
-libexec/trinity/PerlLib/Gene_obj.pm
-libexec/trinity/PerlLib/Gene_obj_indexer.pm
-libexec/trinity/PerlLib/HTC/Base_handler.pm
-libexec/trinity/PerlLib/HTC/FarmIt.pm
-libexec/trinity/PerlLib/HTC/GridRunner.pm
-libexec/trinity/PerlLib/HTC/LSF_handler.pm
-libexec/trinity/PerlLib/HTC/SGE_handler.pm
-libexec/trinity/PerlLib/HTC/SLURM_handler.pm
-libexec/trinity/PerlLib/J14349.S0.sh.e7297570
-libexec/trinity/PerlLib/J14349.S0.sh.o7297570
-libexec/trinity/PerlLib/J14349.S1.sh.e7297571
-libexec/trinity/PerlLib/J14349.S1.sh.o7297571
-libexec/trinity/PerlLib/J14349.S10.sh.e7297580
-libexec/trinity/PerlLib/J14349.S10.sh.o7297580
-libexec/trinity/PerlLib/J14349.S2.sh.e7297572
-libexec/trinity/PerlLib/J14349.S2.sh.o7297572
-libexec/trinity/PerlLib/J14349.S3.sh.e7297573
-libexec/trinity/PerlLib/J14349.S3.sh.o7297573
-libexec/trinity/PerlLib/J14349.S4.sh.e7297574
-libexec/trinity/PerlLib/J14349.S4.sh.o7297574
-libexec/trinity/PerlLib/J14349.S5.sh.e7297575
-libexec/trinity/PerlLib/J14349.S5.sh.o7297575
-libexec/trinity/PerlLib/J14349.S6.sh.e7297576
-libexec/trinity/PerlLib/J14349.S6.sh.o7297576
-libexec/trinity/PerlLib/J14349.S7.sh.e7297577
-libexec/trinity/PerlLib/J14349.S7.sh.o7297577
-libexec/trinity/PerlLib/J14349.S8.sh.e7297578
-libexec/trinity/PerlLib/J14349.S8.sh.o7297578
-libexec/trinity/PerlLib/J14349.S9.sh.e7297579
-libexec/trinity/PerlLib/J14349.S9.sh.o7297579
-libexec/trinity/PerlLib/KmerGraphLib/AlignGraph.pm
-libexec/trinity/PerlLib/KmerGraphLib/AlignNode.pm
-libexec/trinity/PerlLib/KmerGraphLib/GenericGraph.pm
-libexec/trinity/PerlLib/KmerGraphLib/GenericNode.pm
-libexec/trinity/PerlLib/KmerGraphLib/KmerGraph.pm
-libexec/trinity/PerlLib/KmerGraphLib/KmerNode.pm
-libexec/trinity/PerlLib/KmerGraphLib/ReadCoverageGraph.pm
-libexec/trinity/PerlLib/KmerGraphLib/ReadCoverageNode.pm
-libexec/trinity/PerlLib/KmerGraphLib/ReadManager.pm
-libexec/trinity/PerlLib/KmerGraphLib/ReadTracker.pm
-libexec/trinity/PerlLib/KmerGraphLib/SAM_entry.pm
-libexec/trinity/PerlLib/KmerGraphLib/SAM_reader.pm
-libexec/trinity/PerlLib/KmerGraphLib/SAM_to_AlignGraph.pm
-libexec/trinity/PerlLib/KmerGraphLib/StringGraph.pm
-libexec/trinity/PerlLib/KmerGraphLib/StringNode.pm
-libexec/trinity/PerlLib/Ktree.pm
-libexec/trinity/PerlLib/Longest_orf.pm
-libexec/trinity/PerlLib/Nuc_translator.pm
-libexec/trinity/PerlLib/Overlap_info.pm
-libexec/trinity/PerlLib/Overlap_piler.pm
-libexec/trinity/PerlLib/PSL_parser.pm
-libexec/trinity/PerlLib/SAM_entry.pm
-libexec/trinity/PerlLib/SAM_reader.pm
-libexec/trinity/PerlLib/Simulate/Uniform_Read_Generator.pm
-libexec/trinity/PerlLib/SingleLinkageClusterer.pm
-libexec/trinity/PerlLib/Thread_helper.pm
-libexec/trinity/PerlLib/TiedHash.pm
-libexec/trinity/PerlLib/VCF_parser.pm
-libexec/trinity/PerlLib/WigParser.pm
-libexec/trinity/PerlLib/cache_completed_LSF_cmds
-libexec/trinity/PerlLib/cache_completed_SGE_cmds
-libexec/trinity/PerlLib/cmds_for_parafly.txt
-libexec/trinity/PerlLib/cmds_for_parafly.txt.completed
-libexec/trinity/PerlLib/overlapping_nucs.ph
-libexec/trinity/PerlLib/test_Fasta_retriever.pl
-libexec/trinity/PerlLib/test_htc_gridrunner_LSF.pl
-libexec/trinity/PerlLib/test_htc_gridrunner_SGE.pl
 libexec/trinity/trinity-plugins/Trimmomatic/adapters/TruSeq2-PE.fa
 libexec/trinity/trinity-plugins/Trimmomatic/adapters/TruSeq2-SE.fa
 libexec/trinity/trinity-plugins/Trimmomatic/adapters/TruSeq3-PE.fa
@@ -322,9 +324,11 @@ libexec/trinity/util/misc/transdecoder_pep_to_false_fusion_finder.pl
 libexec/trinity/util/misc/trinity_component_distribution.pl
 libexec/trinity/util/retrieve_sequences_from_fasta.pl
 libexec/trinity/util/run_Trinity_edgeR_pipeline.pl
+libexec/trinity/util/run_Trinity_edgeR_pipeline.pl.bak
 libexec/trinity/util/support_scripts/ExitTester.jar
 libexec/trinity/util/support_scripts/GG_trinity_accession_incrementer.pl
 libexec/trinity/util/support_scripts/GG_write_trinity_cmds.pl
+libexec/trinity/util/support_scripts/GG_write_trinity_cmds.pl.bak
 libexec/trinity/util/support_scripts/SAM_coordSorted_fragment_Read_coverage_writer.pl
 libexec/trinity/util/support_scripts/SAM_coordSorted_fragment_coverage_writer2.pl
 libexec/trinity/util/support_scripts/SAM_extract_properly_mapped_pairs.pl
@@ -563,62 +567,3 @@ libexec/trinity/util/support_scripts/wig_clip_to_bed.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/rnaseq_reads/Sp_plat.10k.right.fq.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/runMe.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_full_edgeR_pipeline/samples_n_reads_decribed.txt
-@dirrmtry libexec/trinity/Butterfly
-@dirrmtry libexec/trinity/Chrysalis
-@dirrmtry libexec/trinity/Inchworm/bin
-@dirrmtry libexec/trinity/Inchworm
-@dirrmtry libexec/trinity/PerlLib/CDNA
-@dirrmtry libexec/trinity/PerlLib/CanvasXpress
-@dirrmtry libexec/trinity/PerlLib/HTC
-@dirrmtry libexec/trinity/PerlLib/KmerGraphLib
-@dirrmtry libexec/trinity/PerlLib/Simulate
-@dirrmtry libexec/trinity/PerlLib
-@dirrmtry libexec/trinity/trinity-plugins/Trimmomatic/adapters
-@dirrmtry libexec/trinity/trinity-plugins/Trimmomatic
-@dirrmtry libexec/trinity/trinity-plugins/collectl/bin
-@dirrmtry libexec/trinity/trinity-plugins/collectl
-@dirrmtry libexec/trinity/trinity-plugins/coreutils/bin
-@dirrmtry libexec/trinity/trinity-plugins/coreutils
-@dirrmtry libexec/trinity/trinity-plugins/fastool
-@dirrmtry libexec/trinity/trinity-plugins
-@dirrmtry libexec/trinity/util/HTC_helpers
-@dirrmtry libexec/trinity/util/PBS
-@dirrmtry libexec/trinity/util/R
-@dirrmtry libexec/trinity/util/deprecated/RSEM_util
-@dirrmtry libexec/trinity/util/deprecated/eXpress_util
-@dirrmtry libexec/trinity/util/deprecated
-@dirrmtry libexec/trinity/util/misc/Artemis
-@dirrmtry libexec/trinity/util/misc/PerlLib
-@dirrmtry libexec/trinity/util/misc/blat_util
-@dirrmtry libexec/trinity/util/misc/insilico_norm_kmer_hists
-@dirrmtry libexec/trinity/util/misc/splice_path_analysis
-@dirrmtry libexec/trinity/util/misc
-@dirrmtry libexec/trinity/util/support_scripts
-@dirrmtry libexec/trinity/util
-@dirrmtry libexec/trinity
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_GenomeGuidedTrinity
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_InSilicoReadNormalization
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex01
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex02
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex03
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex04
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex05
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex06
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex07
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex08
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived/ex09
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/__indiv_ex_sample_derived
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly/misc_run_tests
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Assembly
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_Trinity_Coding_Extraction
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_align_and_estimate_abundance
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline/__example_edgeR_output_dir
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_edgeR_diff_expr/example_edgeR_analysis_pipeline
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_edgeR_diff_expr/testEdgeRfuncs
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_edgeR_diff_expr
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/left
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis/right
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_full_edgeR_pipeline/read_content_analysis
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_full_edgeR_pipeline/rnaseq_reads
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test_full_edgeR_pipeline
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

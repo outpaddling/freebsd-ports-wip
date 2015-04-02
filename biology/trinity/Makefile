@@ -118,8 +118,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Butterfly/Butterfly.jar \
 		${STAGEDIR}${LIBEXEC_DIR}/Butterfly
 
-	cd ${WRKSRC} && ${COPYTREE_BIN} PerlLib \
-		${STAGEDIR}${LIBEXEC_DIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Trinity
+	cd ${WRKSRC}/PerlLib && ${COPYTREE_BIN} '*' \
+		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Trinity
 
 	cd ${WRKSRC} && ${COPYTREE_BIN} util \
 		${STAGEDIR}${LIBEXEC_DIR}
