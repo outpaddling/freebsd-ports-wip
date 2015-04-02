@@ -1,3 +1,8 @@
-sbin/mkpatch
-sbin/patch-vi
-sbin/remake
+sbin/port-check
+sbin/port-diff
+sbin/port-grep
+sbin/port-mkpatch
+sbin/port-patch-vi
+sbin/port-remake
+sbin/port-shar
+sbin/port-which
