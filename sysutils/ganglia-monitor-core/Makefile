@@ -18,19 +18,15 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libconfuse.so:${PORTSDIR}/devel/libconfuse \
 		libpcre.so:${PORTSDIR}/devel/pcre \
-		libexpat.so:${PORTSDIR}/textproc/expat2
-
-PKGINSTALL=	${WRKDIR}/pkg-install
-
-OPTIONS_DEFINE=	GMETAD
-OPTIONS_DEFAULT=GMETAD
-GMETAD_DESC=	include gmetad
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		librrd.so:${PORTSDIR}/databases/rrdtool
 
 USES=		libtool pkgconfig python
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-setuid=ganglia --enable-setgid=ganglia \
-		--with-python=${PYTHON_CMD}
+		--with-python=${PYTHON_CMD} \
+		--with-gmetad
 CONFIGURE_ENV=	GANGLIA_ACK_SYSCONFDIR=1
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -40,39 +36,11 @@ GROUPS=	ganglia
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-SUB_FILES=	pkg-install
+SUB_FILES+=	pkg-message
 
 INSTALL_TARGET=	install-strip
 
-.if defined (GMETAD_CONF)
-.if !exists (${GMETAD_CONF})
-IGNORE=		the variable GMETAD_CONF must point to a file when defined
-.endif
-.else
-GMETAD_CONF=	${WRKSRC}/gmetad/gmetad.conf
-.endif
-
-.if defined (GMOND_CONF)
-.if !exists (${GMOND_CONF})
-IGNORE=		the variable GMOND_CONF must point to a file when defined
-.endif
-.else
-GMOND_CONF=	${WRKDIR}/gmond.conf
-.endif
-
-.include <bsd.port.options.mk>
-
-USE_RC_SUBR=	gmond
-.if ${PORT_OPTIONS:MGMETAD}
-USE_RC_SUBR+=	gmetad
-LIB_DEPENDS+=	librrd.so:${PORTSDIR}/databases/rrdtool
-CONFIGURE_ARGS+=	--with-gmetad
-PLIST_SUB+=	GMETAD=
-SUB_LIST+=	GMETAD=
-.else
-PLIST_SUB+=	GMETAD="@comment "
-SUB_LIST+=	GMETAD="\#"
-.endif
+USE_RC_SUBR=	gmond gmetad
 
 USE_LDCONFIG=	yes
 
@@ -106,13 +74,14 @@ post-build:
 	${WRKSRC}/gmond/gmond -t > ${WRKDIR}/gmond.conf
 
 post-install:
-.if ${PORT_OPTIONS:MGMETAD}
+	${INSTALL_DATA} ${WRKDIR}/gmond.conf \
+		${STAGEDIR}${PREFIX}/etc/gmond.conf.sample
 	${INSTALL_SCRIPT} ${FILESDIR}/gmetasnap.sh \
 		${STAGEDIR}${PREFIX}/sbin/gmetasnap
-	${INSTALL_MAN} ${WRKSRC}/mans/gmetad.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${GMETAD_CONF} \
+	${INSTALL_DATA} ${WRKSRC}/gmetad/gmetad.conf \
 		${STAGEDIR}${PREFIX}/etc/gmetad.conf.sample
-.endif
+	${INSTALL_MAN} ${WRKSRC}/mans/gmetad.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_MAN} \
 		${WRKSRC}/mans/gmetric.1 \
 		${WRKSRC}/mans/gmond.1 \
@@ -120,8 +89,7 @@ post-install:
 		${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/gmond/gmond.conf.5 \
 		${STAGEDIR}${MANPREFIX}/man/man5
-	${INSTALL_DATA} ${GMOND_CONF} \
-		${STAGEDIR}${PREFIX}/etc/gmond.conf.sample
+	${MKDIR} ${STAGEDIR}/var/db/ganglia/rrds
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/ganglia/python_modules
 
 .include <bsd.port.mk>

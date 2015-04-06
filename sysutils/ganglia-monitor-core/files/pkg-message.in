@@ -1,0 +1,13 @@
+
+======================================================================
+
+First-time configuration:
+
+Copy %%PREFIX%%/etc/gmond.conf.sample to %%PREFIX%%/etc/gmond.conf
+and %%PREFIX%%/etc/gmetad.conf.sample to %%PREFIX%%/etc/gmetad.conf
+and edit to suit your network.
+
+To enable services, set gmond_enable/gmond_flags and/or
+gmetad_enable/gmetad_flags in /etc/rc.conf.
+
+======================================================================
