@@ -23,7 +23,8 @@ LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo \
 GNU_CONFIGURE=	yes
 
 USE_LDCONFIG=	yes
-USES=		gmake libtool perl5 python tar:bz2
+USES=		gmake libtool perl5 python shebangfix tar:bz2
+SHEBANG_FILES=	${WRKSRC}/contribs/torque/*.pl
 
 OPTIONS_DEFINE=	DOCS MYSQL GTK2
 OPTIONS_SUB=	yes
@@ -74,6 +75,8 @@ post-stage:
 	${RM} -rf ${STAGEDIR}${LOCALBASE}/share/doc/${PORTNAME}-${PORTVERSION}
 .endif
 	@${CP} ${WRKSRC}/etc/slurm.conf.example ${STAGEDIR}${PREFIX}/etc/
+	@${INSTALL_SCRIPT} ${WRKSRC}/contribs/torque/generate_pbs_nodefile.pl \
+		${STAGEDIR}${PREFIX}/bin
 
 INSTALL_TARGET=	install-strip
 

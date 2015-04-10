@@ -1,3 +1,4 @@
+bin/generate_pbs_nodefile.pl
 bin/sacct
 bin/sacctmgr
 bin/salloc
