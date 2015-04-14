@@ -19,8 +19,7 @@ CONFLICTS=	libbacon-1.[023456789]
 PLIST_FILES=	lib/libbacon.a \
 		include/bacon.h
 
-CFLAGS=		-g -Wall
-USE_XZ=		yes
+USES=		tar:xz
 
 MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
 		MANPREFIX=${STAGEDIR}${PREFIX}
