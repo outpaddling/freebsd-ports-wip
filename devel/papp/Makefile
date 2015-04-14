@@ -14,7 +14,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Assembly Preprocessor
 
-USE_XZ=		yes
+USES=		tar:xz
 
 LICENSE=	BSD
 

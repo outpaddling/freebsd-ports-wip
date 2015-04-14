@@ -13,7 +13,7 @@ COMMENT=	Generates a static plist for a port
 LICENSE=	BSD
 
 NO_BUILD=	yes
-USE_XZ=		yes
+USES=		tar:xz
 
 PLIST_FILES=	bin/genplist man/man1/genplist.1.gz
 

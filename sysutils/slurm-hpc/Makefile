@@ -77,6 +77,7 @@ post-stage:
 	@${CP} ${WRKSRC}/etc/slurm.conf.example ${STAGEDIR}${PREFIX}/etc/
 	@${INSTALL_SCRIPT} ${WRKSRC}/contribs/torque/generate_pbs_nodefile.pl \
 		${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}${SITE_PER_REL}/Slurm
 
 INSTALL_TARGET=	install-strip
 
