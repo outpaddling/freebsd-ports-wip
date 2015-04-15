@@ -24,7 +24,6 @@ DOS2UNIX_FILES=	util/*.txt
 RUN_DEPENDS=	Trinity:/usr/wip/biology/trinity \
 		ncbi-blast+>=2.2.30:${PORTSDIR}/biology/ncbi-blast+ \
 		hmmer>=3.0:/usr/wip/biology/hmmer \
-		p5-pfamscan>=2013.10.15:/usr/wip/biology/p5-pfamscan \
 		signalp>=4.1:/usr/wip/biology/linux-signalp \
 		tmhmm>=2.0:/usr/wip/biology/linux-tmhmm \
 		rnammer>=1.2:/usr/wip/biology/rnammer
