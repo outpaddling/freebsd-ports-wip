@@ -12,10 +12,13 @@ COMMENT=	Manipulates and analyzes netCDF data
 
 LICENSE=	GPLv3
 
+# Building docs requires GNU nm, so install binutils and add
+# $LOCALBASE/bin to PATH during configure and build stages.
 BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison \
 		flex:${PORTSDIR}/textproc/flex \
 		antlr:${PORTSDIR}/devel/antlr \
-		makeinfo:${PORTSDIR}/print/texinfo
+		makeinfo:${PORTSDIR}/print/texinfo \
+		${LOCALBASE}/bin/nm:${PORTSDIR}/devel/binutils
 LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl \
 		libhdf5.so:${PORTSDIR}/science/hdf5 \
 		libnetcdf.so:${PORTSDIR}/science/netcdf \
@@ -26,13 +29,17 @@ GNU_CONFIGURE=	yes
 USES=		gmake libtool
 CONFIGURE_ENV=	ANTLR_ROOT=${PREFIX} \
 		NETCDF_INC=${PREFIX}/include \
-		NETCDF_LIB=${PREFIX}/lib
+		NETCDF_LIB=${PREFIX}/lib \
+		PATH=${LOCALBASE}/bin:$$PATH
+MAKE_ENV+=	PATH=${LOCALBASE}/bin:$$PATH
 
 USE_LDCONFIG=	yes
 
-MAKE_JOBS_UNSAFE=	yes
+# MAKE_JOBS_UNSAFE=	yes
 
 INSTALL_TARGET=	install-strip
+
+INFO=		nco
 
 post-configure:
 	${REINPLACE_CMD} \

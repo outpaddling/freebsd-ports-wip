@@ -20,11 +20,6 @@ include/nco_fl.hh
 include/nco_hgh.hh
 include/nco_utl.hh
 include/nco_var.hh
-info/dir
-info/nco.info
-info/nco.info-1
-info/nco.info-2
-info/nco.info-3
 lib/libnco-4.4.8.so
 lib/libnco.a
 lib/libnco.so

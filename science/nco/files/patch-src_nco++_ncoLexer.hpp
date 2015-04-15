@@ -1,5 +1,5 @@
---- src/nco++/ncoLexer.hpp.orig	2015-04-13 15:21:02.000000000 -0500
-+++ src/nco++/ncoLexer.hpp	2015-04-13 15:21:19.000000000 -0500
+--- src/nco++/ncoLexer.hpp.orig	2015-01-17 00:49:35 UTC
++++ src/nco++/ncoLexer.hpp
 @@ -1,6 +1,9 @@
  #ifndef INC_ncoLexer_hpp_
  #define INC_ncoLexer_hpp_
