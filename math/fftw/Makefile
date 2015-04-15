@@ -94,8 +94,6 @@ CONFIGURE_ARGS+=	--enable-i386-hacks
 BROKEN=		does not build
 .endif
 
-NO_STAGE=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc | |' ${WRKSRC}/Makefile.am
 
@@ -126,6 +124,9 @@ post-install:
 .endif
 .endif
 .endif
+
+do-configure:
+	echo $$MAKEINFO
 
 regression-test: build
 	@cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MAKE} check
