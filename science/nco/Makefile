@@ -32,19 +32,20 @@ USE_LDCONFIG=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 
+INSTALL_TARGET=	install-strip
+
 post-configure:
 	${REINPLACE_CMD} \
 		-e 's|-D_POSIX_SOURCE||g' \
 		`find ${WRKSRC} -name Makefile`
-	${REINPLACE_CMD} \
-		-e 's|man doc|man|g' \
-		${WRKSRC}/Makefile
+#	${REINPLACE_CMD} \
+#		-e 's|man doc|man|g' \
+#		${WRKSRC}/Makefile
 
-post-install:
-	${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/lib/libnco-4.4.8.so
-	${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/lib/libnco_c++-4.4.8.so
+#post-install:
+#	${STRIP_CMD} \
+#		${STAGEDIR}${PREFIX}/lib/libnco-4.4.8.so
+#	${STRIP_CMD} \
+#		${STAGEDIR}${PREFIX}/lib/libnco_c++-4.4.8.so
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
