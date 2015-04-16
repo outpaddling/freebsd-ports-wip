@@ -5,6 +5,13 @@
 # $FreeBSD$
 #
 
+# Unbundle:
+# fstrozzi fastool
+# trimmomatic
+# transdecoder
+# slclust
+# rsem
+
 PORTNAME=	trinity
 PORTVERSION=	2.0.4
 CATEGORIES=	biology
