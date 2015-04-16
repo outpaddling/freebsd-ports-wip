@@ -1,21 +1,21 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
-# $FreeBSD: audio/praat/Makefile 327706 2013-09-20 14:36:35Z bapt $
+# $FreeBSD: head/audio/praat/Makefile 383354 2015-04-05 19:21:57Z bapt $
 
 PORTNAME=	praat
-PORTVERSION=	5.3.59
+PORTVERSION=	5.4.08
 CATEGORIES=	audio science
 MASTER_SITES=	http://www.fon.hum.uva.nl/praat/
-DISTNAME=	praat5359_sources
+DISTNAME=	praat5408_sources
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Phonetics by Computer
 
 LICENSE=	GPLv2
 
-USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*Makefile
-USES=		iconv motif
-WRKSRC=		${WRKDIR}/sources_5359
+USES=		dos2unix iconv motif pkgconfig
+USE_GNOME=	gtk20
+WRKSRC=		${WRKDIR}/sources_5408
 MAKEFILE=	makefile
 PLIST_FILES=	bin/praat man/man1/praat.1.gz
 
