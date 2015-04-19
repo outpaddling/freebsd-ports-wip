@@ -21,6 +21,12 @@ PLIST_FILES=	bin/praat man/man1/praat.1.gz
 
 LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000000
+BROKEN=	Requires uchar.h, which was introduced in FreeBSD 10.0
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile -exec \
 		${REINPLACE_CMD} -e 's|^CFLAGS =|CFLAGS +=|' "{}" \;
@@ -41,4 +47,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/praat ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${FILESDIR}/praat.1 ${STAGEDIR}${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

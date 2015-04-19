@@ -3,6 +3,7 @@
 for dir in */*; do
     if [ -d $dir/work ]; then
 	cd $dir
+	pwd
 	make clean
 	cd ../..
     fi
