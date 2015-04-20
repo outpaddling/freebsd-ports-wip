@@ -1,3 +1,4 @@
+bin/chrome
 etc/cron.daily/google-chrome
 opt/google/chrome/PepperFlash/libpepflashplayer.so
 opt/google/chrome/PepperFlash/manifest.json

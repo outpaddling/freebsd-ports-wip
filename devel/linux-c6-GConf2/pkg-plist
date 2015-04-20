@@ -13,9 +13,6 @@ usr/libexec/gconfd-2
 usr/share/GConf/schema/evoldap.schema
 usr/share/dbus-1/services/org.gnome.GConf.service
 usr/share/dbus-1/system-services/org.gnome.GConf.Defaults.service
-usr/share/doc/GConf2-2.28.0/COPYING
-usr/share/doc/GConf2-2.28.0/NEWS
-usr/share/doc/GConf2-2.28.0/README
 usr/share/doc/GConf2-2.28.0/README.evoldap
 usr/share/locale/am/LC_MESSAGES/GConf2.mo
 usr/share/locale/ar/LC_MESSAGES/GConf2.mo
