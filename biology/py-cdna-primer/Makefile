@@ -24,11 +24,18 @@ SHEBANG_FILES=	pbtools/pbtranscript/cleanup_ice.py \
 		pbtools/pbtranscript/picking_up_ice.py \
 		pbtools/pbtranscript/tofu_wrap.py \
 
+BUILD_DEPENDS+=	cython:${PORTSDIR}/lang/cython \
+		${PYNUMPY}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/pbtranscript-tofu/pbtranscript
 
 post-patch:
-		${REINPLACE_CMD} -i'' -e \
-			's|/home/UNIXHOME/etseng/.*/bin/|/usr/bin/env |g' \
-			${WRKSRC}/build/scripts-2.7/*.py
+		${REINPLACE_CMD} -i '' -e \
+			's|/home/.*/bin/|/usr/bin/env |g' \
+			${WRKSRC}/build/scripts-2.7/*.py*
+
+post-stage:
+		${STRIP_CMD} \
+			${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/pbtools/pbtranscript/*.so \
+			${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/pbtools/pbtranscript/*/*.so
 
 .include <bsd.port.mk>
