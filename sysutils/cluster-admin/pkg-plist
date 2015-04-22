@@ -4,6 +4,7 @@ bin/cluster-io-nodes
 bin/cluster-load
 bin/cluster-load-summary
 bin/cluster-passwd
+bin/condor-cpus
 bin/pending-jobs
 bin/ppgen
 bin/slurm-cluster-load
