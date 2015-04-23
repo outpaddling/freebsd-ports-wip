@@ -29,13 +29,15 @@ SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 		src/condor_examples/condor_schedd.init \
 		src/condor_starter.V6.1/condor_ssh_to_job_shell_setup
 
+# Failed fix for --std=gnu++99 in C_FLAGS
+# CFLAGS+=	-I${LOCALBASE}/include -fPIC -std=gnu99
+#		-DCMAKE_C_FLAGS:STRING=${CFLAGS} \
+
 WANT_PGSQL=	server
-CFLAGS+=	-I${LOCALBASE}/include -fPIC -std=gnu99
 CXXFLAGS+=	-I${LOCALBASE}/include -fPIC -std=gnu++11
 LDFLAGS+=	-Wl,-rpath=${_GCC_RUNTIME}:${LOCALBASE}/lib:/usr/lib:/lib -fPIC
 # Does not build with Python 3
-CMAKE_ARGS+=	-DCMAKE_C_FLAGS:STRING=${CFLAGS} \
-		-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
+CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING=${LDFLAGS} \
 		-DPYTHON_INCLUDE_DIR:PATH=${LOCALBASE}/include/${PYTHON_VERSION} \
 		-DPYTHON_LIBRARY:FILEPATH=${LOCALBASE}/lib/lib${PYTHON_VERSION}.so
