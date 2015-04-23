@@ -23,6 +23,8 @@ post-patch:
 	${REINPLACE_CMD} -i '' \
 		-e "s|add-gecos.awk|${PREFIX}/libexec/add-gecos.awk|" \
 		${WRKSRC}/Common/Sys-scripts/slurm-usage-report
+	${REINPLACE_CMD} -i '' -e 's|%%DATADIR%%|${DATADIR}|g' \
+		${WRKSRC}/Common/Sys-scripts/slurm-update-idle-nodes
 
 do-install:
 	${INSTALL_SCRIPT} \
@@ -41,6 +43,7 @@ do-install:
 			${STAGEDIR}${PREFIX}/man/man1/$${f%.mdoc}.1; \
 	done)
 	${MKDIR} ${STAGEDIR}${DATADIR}/WWW
+	${INSTALL_DATA} ${WRKSRC}/Common/Share/* ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/FreeBSD/Share/* ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/FreeBSD/WWW/* ${STAGEDIR}${DATADIR}/WWW
 

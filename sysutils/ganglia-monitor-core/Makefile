@@ -18,15 +18,17 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libconfuse.so:${PORTSDIR}/devel/libconfuse \
 		libpcre.so:${PORTSDIR}/devel/pcre \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		librrd.so:${PORTSDIR}/databases/rrdtool
+		libexpat.so:${PORTSDIR}/textproc/expat2
+
+OPTIONS_DEFINE=	GMETAD
+OPTIONS_DEFAULT=	GMETAD
+GMETAD_DESC=	include gmetad
 
 USES=		libtool pkgconfig python
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-setuid=ganglia --enable-setgid=ganglia \
-		--with-python=${PYTHON_CMD} \
-		--with-gmetad
+		--with-python=${PYTHON_CMD}
 CONFIGURE_ENV=	GANGLIA_ACK_SYSCONFDIR=1
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -40,7 +42,21 @@ SUB_FILES+=	pkg-message
 
 INSTALL_TARGET=	install-strip
 
-USE_RC_SUBR=	gmond gmetad
+USE_RC_SUBR=	gmond
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGMETAD}
+USE_RC_SUBR+=	gmetad
+
+LIB_DEPENDS+=	librrd.so:${PORTSDIR}/databases/rrdtool
+CONFIGURE_ARGS+=	--with-gmetad
+PLIST_SUB+=	GMETAD=
+SUB_LIST+=	GMETAD=
+.else
+PLIST_SUB+=	GMETAD="@comment "
+SUB_LIST+=	GMETAD="\#"
+.endif
 
 USE_LDCONFIG=	yes
 
@@ -76,12 +92,14 @@ post-build:
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/gmond.conf \
 		${STAGEDIR}${PREFIX}/etc/gmond.conf.sample
+.if ${PORT_OPTIONS:MGMETAD}
 	${INSTALL_SCRIPT} ${FILESDIR}/gmetasnap.sh \
 		${STAGEDIR}${PREFIX}/sbin/gmetasnap
 	${INSTALL_DATA} ${WRKSRC}/gmetad/gmetad.conf \
 		${STAGEDIR}${PREFIX}/etc/gmetad.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/mans/gmetad.1 \
 		${STAGEDIR}${MANPREFIX}/man/man1
+.endif
 	${INSTALL_MAN} \
 		${WRKSRC}/mans/gmetric.1 \
 		${WRKSRC}/mans/gmond.1 \

@@ -67,6 +67,7 @@ sbin/slurm-find-strays
 sbin/slurm-restart
 sbin/slurm-resume-jobs
 sbin/slurm-suspend-jobs
+sbin/slurm-update-idle-nodes
 sbin/slurm-usage-report
 %%DATADIR%%/WWW/global_styles.css
 %%DATADIR%%/WWW/index.php
@@ -75,3 +76,4 @@ sbin/slurm-usage-report
 %%DATADIR%%/csh.login
 %%DATADIR%%/patch-apache.awk
 %%DATADIR%%/profile
+%%DATADIR%%/sys-update.sbatch
