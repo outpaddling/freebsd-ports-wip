@@ -2,8 +2,8 @@ bin/ganglia-config
 bin/gmetric
 bin/gstat
 etc/gmond.conf.d/modpython.conf
-etc/gmond.conf.sample
-etc/gmetad.conf.sample
+@sample etc/gmond.conf.sample
+@sample etc/gmetad.conf.sample
 include/ganglia.h
 include/ganglia_gexec.h
 include/gm_file.h

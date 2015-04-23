@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 # Does not build with Python 3
 USES=		cmake gmake perl5 pgsql python:2 shebangfix
 # Does not build with gcc 4.2 or clang
-USE_GCC=	yes
+# USE_GCC=	yes
 SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 		src/condor_gridmanager/remote_gahp \
 		src/condor_examples/condor_limits_wrapper.sh \
@@ -30,7 +30,7 @@ SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 		src/condor_starter.V6.1/condor_ssh_to_job_shell_setup
 
 WANT_PGSQL=	server
-CXXFLAGS+=	-I${LOCALBASE}/include -fPIC
+CXXFLAGS+=	-I${LOCALBASE}/include -fPIC -std=gnu++99
 LDFLAGS+=	-Wl,-rpath=${_GCC_RUNTIME}:${LOCALBASE}/lib:/usr/lib:/lib -fPIC
 # Does not build with Python 3
 CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \

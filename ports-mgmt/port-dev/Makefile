@@ -14,6 +14,9 @@ MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Tools for port development
 
+RUN_DEPENDS=	portlint:${PORTSDIR}/ports-mgmt/portlint \
+		port:${PORTSDIR}/ports-mgmt/porttools
+
 USES+=		tar:xz
 
 NO_BUILD=	yes
