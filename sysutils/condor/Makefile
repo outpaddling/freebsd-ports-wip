@@ -82,13 +82,13 @@ post-patch:
 # cmake is copying CXX_FLAGS to C_FLAGS for some odd reason.  Until we
 # can fix that, remove -std=gnu++11 from C_FLAGS.
 FIX_FLAGS = \
-	src/condor_privsep/CMakeFiles/condor_root_switchboard.dir/flags.make \
-	src/condor_procd/CMakeFiles/procdutils.dir/flags.make \
-	src/condor_utils/CMakeFiles/condor_utils.dir/flags.make \
-	src/condor_utils/CMakeFiles/condorapi.dir/flags.make \
-	src/condor_filetransfer_plugins/CMakeFiles/curl_plugin.dir \
-	src/condor_filetransfer_plugins/CMakeFiles/data_plugin.dir \
-	src/condor_chirp/CMakeFiles/chirp_client.dir
+	${WRKSRC}/src/condor_privsep/CMakeFiles/condor_root_switchboard.dir/flags.make \
+	${WRKSRC}/src/condor_procd/CMakeFiles/procdutils.dir/flags.make \
+	${WRKSRC}/src/condor_utils/CMakeFiles/condor_utils.dir/flags.make \
+	${WRKSRC}/src/condor_utils/CMakeFiles/condorapi.dir/flags.make \
+	${WRKSRC}/src/condor_filetransfer_plugins/CMakeFiles/curl_plugin.dir/flags.make \
+	${WRKSRC}/src/condor_filetransfer_plugins/CMakeFiles/data_plugin.dir/flags.make \
+	${WRKSRC}/src/condor_chirp/CMakeFiles/chirp_client.dir/flags.make
 
 post-configure:
 	${REINPLACE_CMD} -e 's|-std=gnu++11||g' ${FIX_FLAGS}
