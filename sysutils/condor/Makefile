@@ -30,10 +30,12 @@ SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 		src/condor_starter.V6.1/condor_ssh_to_job_shell_setup
 
 WANT_PGSQL=	server
-CXXFLAGS+=	-I${LOCALBASE}/include -fPIC -std=gnu++99
+CFLAGS+=	-I${LOCALBASE}/include -fPIC -std=gnu99
+CXXFLAGS+=	-I${LOCALBASE}/include -fPIC -std=gnu++11
 LDFLAGS+=	-Wl,-rpath=${_GCC_RUNTIME}:${LOCALBASE}/lib:/usr/lib:/lib -fPIC
 # Does not build with Python 3
-CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
+CMAKE_ARGS+=	-DCMAKE_C_FLAGS:STRING=${CFLAGS} \
+		-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING=${LDFLAGS} \
 		-DPYTHON_INCLUDE_DIR:PATH=${LOCALBASE}/include/${PYTHON_VERSION} \
 		-DPYTHON_LIBRARY:FILEPATH=${LOCALBASE}/lib/lib${PYTHON_VERSION}.so
@@ -76,6 +78,22 @@ post-patch:
 		-e 's|^CONDOR_HOST|##  CONDOR_HOST|' \
 		-e 's|#CONDOR_IDS=x.x|CONDOR_IDS=466.466|' \
 		${WRKSRC}/src/condor_examples/condor_config.annotated
+
+# cmake is copying CXX_FLAGS to C_FLAGS for some odd reason.  Until we
+# can fix that, remove -std=gnu++11 from C_FLAGS.
+FIX_FLAGS = \
+	src/condor_privsep/CMakeFiles/condor_root_switchboard.dir/flags.make \
+	src/condor_procd/CMakeFiles/procdutils.dir/flags.make \
+	src/condor_utils/CMakeFiles/condor_utils.dir/flags.make \
+	src/condor_utils/CMakeFiles/condorapi.dir/flags.make \
+	src/condor_filetransfer_plugins/CMakeFiles/curl_plugin.dir \
+	src/condor_filetransfer_plugins/CMakeFiles/data_plugin.dir \
+	src/condor_chirp/CMakeFiles/chirp_client.dir
+
+post-configure:
+	${REINPLACE_CMD} -e 's|-std=gnu++11||g' ${FIX_FLAGS}
+	${REINPLACE_CMD} -e 's|CXX_FLAGS =|CXX_FLAGS = -std=gnu++11|g' \
+		${FIX_FLAGS}
 
 post-install:
 	${INSTALL_DATA} \
