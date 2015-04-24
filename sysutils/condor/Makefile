@@ -22,7 +22,6 @@ USE_LDCONFIG=	yes
 # Does not build with Python 3
 USES=		cmake gmake perl5 pgsql python:2 shebangfix
 # Does not build with gcc 4.2 or clang
-# USE_GCC=	yes
 SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 		src/condor_gridmanager/remote_gahp \
 		src/condor_examples/condor_limits_wrapper.sh \
@@ -34,7 +33,8 @@ SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 #		-DCMAKE_C_FLAGS:STRING=${CFLAGS} \
 
 WANT_PGSQL=	server
-CXXFLAGS+=	-I${LOCALBASE}/include -fPIC -std=gnu++11
+# CXXFLAGS+=	-I${LOCALBASE}/include -fPIC -std=gnu++11
+CXXFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-Wl,-rpath=${_GCC_RUNTIME}:${LOCALBASE}/lib:/usr/lib:/lib -fPIC
 # Does not build with Python 3
 CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
@@ -62,6 +62,10 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 BROKEN=		Fails to build on FreeBSD 8.x
 .endif
 
+.if ${OSVERSION} < 1000000
+# USE_GCC=	yes
+.endif
+
 pre-everything::
 	@( ${PRINTF} "\nWARNING: Condor needs approximately 3GB to build!"; \
 	   ${PRINTF} "         Please make sure your build environment has that much before continuing.\n" )
@@ -81,21 +85,23 @@ post-patch:
 		-e 's|#CONDOR_IDS=x.x|CONDOR_IDS=466.466|' \
 		${WRKSRC}/src/condor_examples/condor_config.annotated
 
+# This appears to be unnecessary.  Cannot reproduce initial errors when
+# building with clang.
 # cmake is copying CXX_FLAGS to C_FLAGS for some odd reason.  Until we
 # can fix that, remove -std=gnu++11 from C_FLAGS.
-FIX_FLAGS = \
-	${WRKSRC}/src/condor_privsep/CMakeFiles/condor_root_switchboard.dir/flags.make \
-	${WRKSRC}/src/condor_procd/CMakeFiles/procdutils.dir/flags.make \
-	${WRKSRC}/src/condor_utils/CMakeFiles/condor_utils.dir/flags.make \
-	${WRKSRC}/src/condor_utils/CMakeFiles/condorapi.dir/flags.make \
-	${WRKSRC}/src/condor_filetransfer_plugins/CMakeFiles/curl_plugin.dir/flags.make \
-	${WRKSRC}/src/condor_filetransfer_plugins/CMakeFiles/data_plugin.dir/flags.make \
-	${WRKSRC}/src/condor_chirp/CMakeFiles/chirp_client.dir/flags.make
+#FIX_FLAGS = \
+#	${WRKSRC}/src/condor_privsep/CMakeFiles/condor_root_switchboard.dir/flags.make \
+#	${WRKSRC}/src/condor_procd/CMakeFiles/procdutils.dir/flags.make \
+#	${WRKSRC}/src/condor_utils/CMakeFiles/condor_utils.dir/flags.make \
+#	${WRKSRC}/src/condor_utils/CMakeFiles/condorapi.dir/flags.make \
+#	${WRKSRC}/src/condor_filetransfer_plugins/CMakeFiles/curl_plugin.dir/flags.make \
+#	${WRKSRC}/src/condor_filetransfer_plugins/CMakeFiles/data_plugin.dir/flags.make \
+#	${WRKSRC}/src/condor_chirp/CMakeFiles/chirp_client.dir/flags.make
 
-post-configure:
-	${REINPLACE_CMD} -e 's|-std=gnu++11||g' ${FIX_FLAGS}
-	${REINPLACE_CMD} -e 's|CXX_FLAGS =|CXX_FLAGS = -std=gnu++11|g' \
-		${FIX_FLAGS}
+#post-configure:
+#	${REINPLACE_CMD} -e 's|-std=gnu++11||g' ${FIX_FLAGS}
+#	${REINPLACE_CMD} -e 's|CXX_FLAGS =|CXX_FLAGS = -std=gnu++11|g' \
+#		${FIX_FLAGS}
 
 post-install:
 	${INSTALL_DATA} \
