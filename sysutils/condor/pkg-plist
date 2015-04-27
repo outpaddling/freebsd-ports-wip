@@ -42,8 +42,8 @@ bin/condor_vacate_job
 bin/condor_version
 bin/condor_wait
 bin/condor_who
-@sample etc/condor_config
-@sample etc/condor_config.local
+@sample etc/condor_config.sample
+@sample etc/condor_config.local.sample
 %%ETCDIR%%/condor
 %%ETCDIR%%/examples/README
 %%ETCDIR%%/examples/condor.boot.generic

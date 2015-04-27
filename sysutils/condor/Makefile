@@ -79,7 +79,7 @@ post-install:
 		${STAGEDIR}${ETCDIR}/examples/condor_config.annotated \
 		${STAGEDIR}${PREFIX}/etc/condor_config.sample
 	${INSTALL_DATA} ${WRKDIR}/condor_config.local \
-		${STAGEDIR}${PREFIX}/condor_config.local.sample
+		${STAGEDIR}${PREFIX}/etc/condor_config.local.sample
 	${INSTALL_SCRIPT} ${WRKDIR}/condor-config ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.post.mk>
