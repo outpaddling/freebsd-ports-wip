@@ -52,10 +52,10 @@ USE_RC_SUBR+=	gmetad
 LIB_DEPENDS+=	librrd.so:${PORTSDIR}/databases/rrdtool
 CONFIGURE_ARGS+=	--with-gmetad
 PLIST_SUB+=	GMETAD=
-SUB_LIST+=	GMETAD=
+# SUB_LIST+=	GMETAD=
 .else
 PLIST_SUB+=	GMETAD="@comment "
-SUB_LIST+=	GMETAD="\#"
+# SUB_LIST+=	GMETAD="\#"
 .endif
 
 USE_LDCONFIG=	yes
