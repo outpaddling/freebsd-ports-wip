@@ -48,7 +48,7 @@ CONFIGURE_ARGS=		--disable-nls --with-ICU=no --with-cairo=no \
 			--without-libintl-prefix
 CONFIGURE_ENV+=		ac_cv_header_iconv_h=no
 PLIST_SUB=		RMATH_SOVERSION="${RMATH_SOVERSION}"
-USE_LDCONFIG=		yes
+USE_LDCONFIG=		${PREFIX}/lib
 .else # LIBRMATH_SLAVEPORT
 ALL_TARGET=		all
 INSTALL_TARGET=		install

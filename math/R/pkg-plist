@@ -1,13 +1,5 @@
 bin/R
 bin/Rscript
-info/R-FAQ.info
-info/R-admin.info
-info/R-data.info
-info/R-exts.info
-info/R-exts.info-%%R_SOVERSION%%
-info/R-exts.info-%%RBLAS_SOVERSION%%
-info/R-intro.info
-info/R-lang.info
 lib/R/COPYING
 lib/R/SVN-REVISION
 lib/R/bin/BATCH
@@ -1410,7 +1402,6 @@ lib/R/share/texmf/tex/latex/omsaett.fd
 lib/R/share/texmf/tex/latex/omscmtt.fd
 lib/R/share/texmf/tex/latex/ts%%R_SOVERSION%%aer.fd
 lib/R/share/texmf/tex/latex/ts%%R_SOVERSION%%aett.fd
-libdata/ldconfig/R
 libdata/pkgconfig/libR.pc
 man/man%%R_SOVERSION%%/R.%%R_SOVERSION%%.gz
 man/man%%R_SOVERSION%%/Rscript.%%R_SOVERSION%%.gz
