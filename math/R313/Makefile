@@ -1,7 +1,7 @@
 # Created by: Maurice Castro <maurice@serc.rmit.edu.au>
 # $FreeBSD: head/math/R/Makefile 384614 2015-04-23 21:26:09Z bapt $
 
-PORTNAME?=	R
+PORTNAME?=	R313
 PORTVERSION=	3.1.3
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/%SUBDIR%/ \
@@ -48,7 +48,7 @@ CONFIGURE_ARGS=		--disable-nls --with-ICU=no --with-cairo=no \
 			--without-libintl-prefix
 CONFIGURE_ENV+=		ac_cv_header_iconv_h=no
 PLIST_SUB=		RMATH_SOVERSION="${RMATH_SOVERSION}"
-USE_LDCONFIG=		${PREFIX}/lib
+USE_LDCONFIG=		yes
 .else # LIBRMATH_SLAVEPORT
 ALL_TARGET=		all
 INSTALL_TARGET=		install
