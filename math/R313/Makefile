@@ -1,7 +1,7 @@
 # Created by: Maurice Castro <maurice@serc.rmit.edu.au>
 # $FreeBSD: head/math/R/Makefile 384614 2015-04-23 21:26:09Z bapt $
 
-PORTNAME?=	R313
+PORTNAME?=	R
 PORTVERSION=	3.1.3
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/%SUBDIR%/ \
@@ -20,6 +20,7 @@ MASTER_SITES=	http://cran.r-project.org/%SUBDIR%/ \
 		http://probability.ca/cran/%SUBDIR%/
 MASTER_SITE_SUBDIR=	src/base/R-${PORTVERSION:C|\..*||}
 DISTNAME=	R-${PORTVERSION}
+LATEST_LINK=	R313
 
 #PATCH_SITES=		${MASTER_SITE_LOCAL}
 #PATCH_SITE_SUBDIR=	bf
