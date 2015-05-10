@@ -53,6 +53,7 @@ sbin/cluster-setup
 sbin/cluster-shutdown
 sbin/cluster-ssh-keygen
 sbin/cluster-sync-files
+sbin/cluster-sync-packages
 sbin/cluster-sync-pkgsrc
 sbin/cluster-sync-user
 sbin/cluster-update-all-ssh_config
@@ -61,6 +62,7 @@ sbin/cluster-update-wip-ports
 sbin/cluster-useradd
 sbin/cluster-usermod
 sbin/cluster-users
+sbin/node-sync-all-users
 sbin/node-sync-user
 sbin/pbs-cluster-load
 sbin/slurm-find-strays
