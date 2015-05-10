@@ -1,5 +1,5 @@
---- sys/melder.h.orig	2015-04-15 19:10:29.000000000 -0500
-+++ sys/melder.h	2015-04-15 19:16:34.000000000 -0500
+--- sys/melder.h.orig	2015-03-22 12:29:26.000000000 -0500
++++ sys/melder.h	2015-05-10 15:53:27.000000000 -0500
 @@ -51,6 +51,8 @@
  	#define INT54_MIN  -9007199254740991LL
  #endif
@@ -67,3 +67,15 @@
  				return 0;
  			}
  		}
+@@ -1171,6 +1173,11 @@
+ 			Melder_fclose (file, tmp);
+ 		}
+ 	}
++	// operator () is not working in Sound_files.cpp:226 for some reason
++	FILE * get_ptr(void)
++	{
++	        return ptr;
++	}
+ };
+ 
+ class autoMelderFile {
