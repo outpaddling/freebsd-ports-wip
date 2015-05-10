@@ -24,7 +24,10 @@ LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000000
-BROKEN=	Requires uchar.h, which was introduced in FreeBSD 10.0
+# Requires std=g++11
+USE_GCC=	yes
+# Requires uchar.h, which was introduced in FreeBSD 10.0
+LIB_DEPENDS+=	libicuuc.so:${PORTSDIR}/devel/icu
 .endif
 
 post-patch:
