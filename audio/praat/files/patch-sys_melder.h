@@ -1,5 +1,5 @@
---- sys/melder.h.orig	2015-03-22 12:29:26.000000000 -0500
-+++ sys/melder.h	2015-05-10 15:53:27.000000000 -0500
+--- sys/melder.h.orig	2015-03-22 17:29:26 UTC
++++ sys/melder.h
 @@ -51,6 +51,8 @@
  	#define INT54_MIN  -9007199254740991LL
  #endif
@@ -9,7 +9,7 @@
  typedef wchar_t wchar;
  typedef uint8_t  char8_t;
  typedef char32_t char32;
-@@ -222,7 +224,7 @@
+@@ -222,7 +224,7 @@ static inline int64_t str16len (const ch
  		return (int64_t) wcslen ((const wchar_t *) string);
  	} else {
  		int64_t result = 0;
@@ -18,7 +18,7 @@
  		return result;
  	}
  }
-@@ -230,8 +232,8 @@
+@@ -230,8 +232,8 @@ static inline void str16cpy (char16_t *t
  	if (sizeof (wchar_t) == 2) {
  		wcscpy ((wchar_t *) target, (const wchar_t *) source);
  	} else {
@@ -29,7 +29,7 @@
  	}
  }
  static inline int str16cmp (const char16_t *string1, const char16_t *string2) {
-@@ -239,7 +241,7 @@
+@@ -239,7 +241,7 @@ static inline int str16cmp (const char16
  		return wcscmp ((const wchar_t *) string1, (const wchar_t *) string2);
  	} else {
  		while (*string1 == *string2 ++) {
@@ -38,7 +38,7 @@
  				return 0;
  			}
  		}
-@@ -251,7 +253,7 @@
+@@ -251,7 +253,7 @@ static inline int64_t str32len (const ch
  		return (int64_t) wcslen ((const wchar_t *) string);
  	} else {
  		int64_t result = 0;
@@ -47,7 +47,7 @@
  		return result;
  	}
  }
-@@ -259,8 +261,8 @@
+@@ -259,8 +261,8 @@ static inline void str32cpy (char32_t *t
  	if (sizeof (wchar_t) == 4) {
  		wcscpy ((wchar_t *) target, (const wchar_t *) source);
  	} else {
@@ -58,7 +58,7 @@
  	}
  }
  static inline int str32cmp (const char32_t *string1, const char32_t *string2) {
-@@ -268,7 +270,7 @@
+@@ -268,7 +270,7 @@ static inline int str32cmp (const char32
  		return wcscmp ((const wchar_t *) string1, (const wchar_t *) string2);
  	} else {
  		while (*string1 == *string2 ++) {
@@ -67,7 +67,7 @@
  				return 0;
  			}
  		}
-@@ -1171,6 +1173,11 @@
+@@ -1171,6 +1173,11 @@ public:
  			Melder_fclose (file, tmp);
  		}
  	}
