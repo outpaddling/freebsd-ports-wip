@@ -39,9 +39,15 @@ condor_stop() {
     checkyesno condor_enable && echo "Stopping condor_master." && \
 	%%PREFIX%%/sbin/condor_off
     # Prevent restart command from issuing start before daemons are down
+    tries=1
     while ps ax | egrep -v 'grep|rc\.d' | grep -q condor; do
         echo 'Waiting for daemons to shut down...'
         sleep 2
+        tries=$(($tries + 1))
+        if [ $tries = 20 ]; then
+            printf "condor_off has failed.  Force killing condor_master...\n"
+            killall condor_master
+        fi
     done
 }
 
