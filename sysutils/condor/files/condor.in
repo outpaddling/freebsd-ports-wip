@@ -37,7 +37,7 @@ condor_start() {
 
 condor_stop() {
     checkyesno condor_enable && echo "Stopping condor_master." && \
-	%%PREFIX%%/sbin/condor_off -master
+	%%PREFIX%%/sbin/condor_off
     # Prevent restart command from issuing start before daemons are down
     while ps ax | egrep -v 'grep|rc\.d' | grep -q condor; do
         echo 'Waiting for daemons to shut down...'
