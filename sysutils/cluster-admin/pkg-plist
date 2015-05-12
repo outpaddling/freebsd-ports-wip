@@ -1,5 +1,6 @@
 bin/cluster-backup-login-nodes
 bin/cluster-compute-nodes
+bin/cluster-down-nodes
 bin/cluster-io-nodes
 bin/cluster-load
 bin/cluster-load-summary
