@@ -24,8 +24,6 @@ if [ 0$restart = 0y ]; then
     ps ax | grep condor
 
     service condor start
-    # FIXME: Embed this in rc script restart?
-    sleep 5
     printf "\nCondor processes running after start:\n\n"
     ps ax | grep condor
 fi

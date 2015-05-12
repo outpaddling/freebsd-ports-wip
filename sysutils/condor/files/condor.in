@@ -29,14 +29,20 @@ stop_cmd=condor_stop
 condor_start() {
     checkyesno condor_enable && echo "Starting condor_master." && \
 	%%PREFIX%%/sbin/condor_master ${condor_flags}
+    while ! ps ax | grep -v grep | grep condor; do
+        echo 'Waiting for daemons to start...'
+        sleep 2
+    done
 }
 
 condor_stop() {
     checkyesno condor_enable && echo "Stopping condor_master." && \
 	%%PREFIX%%/sbin/condor_off -master
     # Prevent restart command from issuing start before daemons are down
-    echo 'Waiting for daemons to shut down...'
-    sleep 5
+    while ps ax | grep -v grep | grep condor; do
+        echo 'Waiting for daemons to shut down...'
+        sleep 2
+    done
 }
 
 run_rc_command "$1"
