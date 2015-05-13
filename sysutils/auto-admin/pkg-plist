@@ -3,6 +3,7 @@ man/man1/auto-amd-nfs-setup.1.gz
 man/man1/auto-append-line.1.gz
 man/man1/auto-ask.1.gz
 man/man1/auto-backup-file.1.gz
+man/man1/auto-clean-pkgsrc.1.gz
 man/man1/auto-clean-ports.1.gz
 man/man1/auto-config-snd-driver.1.gz
 man/man1/auto-db-dir.1.gz
@@ -40,6 +41,7 @@ sbin/auto-amd-nfs-setup
 sbin/auto-append-line
 sbin/auto-ask
 sbin/auto-backup-file
+sbin/auto-clean-pkgsrc
 sbin/auto-clean-ports
 sbin/auto-config-snd-driver
 sbin/auto-db-dir
