@@ -46,9 +46,10 @@ condor_stop() {
         echo 'Waiting for daemons to shut down...'
         sleep 2
         tries=$(($tries + 1))
-        if [ $tries = 20 ]; then
+        if [ $tries = 10 ]; then
             printf "condor_off has failed.  Force killing condor_master...\n"
             killall condor_master
+            sleep 2
         fi
     done
 }
