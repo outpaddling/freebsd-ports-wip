@@ -36,8 +36,10 @@ condor_start() {
 }
 
 condor_stop() {
+    # FIXME: condor_off with no arguments should be the same as
+    # -daemon master according to the man page, but it doesn't work
     checkyesno condor_enable && echo "Stopping condor_master." && \
-	%%PREFIX%%/sbin/condor_off
+	/usr/local/sbin/condor_off -daemon master
     # Prevent restart command from issuing start before daemons are down
     tries=1
     while ps ax | egrep -v 'grep|rc\.d' | grep -q condor; do
