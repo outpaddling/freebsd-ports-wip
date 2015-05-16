@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	GenomeAnalysisTK
-PORTVERSION=	3.1
+PORTVERSION=	3.4
 CATEGORIES=	biology science
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
+DISTNAME=	${PORTNAME}-${PORTVERSION}-0
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Analyse next-generation resequencing data
