@@ -30,6 +30,7 @@ man/man1/auto-print-make-variable.1.gz
 man/man1/auto-pxe-installer-setup.1.gz
 man/man1/auto-pxe-node-discover.1.gz
 man/man1/auto-replace-file.1.gz
+man/man1/auto-restore-pw.1.gz
 man/man1/auto-service-enabled.1.gz
 man/man1/auto-set-suspend-mode.1.gz
 man/man1/auto-ssh-authorize.1.gz
@@ -68,6 +69,7 @@ sbin/auto-print-make-variable
 sbin/auto-pxe-installer-setup
 sbin/auto-pxe-node-discover
 sbin/auto-replace-file
+sbin/auto-restore-pw
 sbin/auto-service-enabled
 sbin/auto-set-suspend-mode
 sbin/auto-ssh-authorize
