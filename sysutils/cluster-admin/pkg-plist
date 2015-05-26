@@ -29,6 +29,7 @@ man/man1/cluster-shutdown.1.gz
 man/man1/cluster-update-ssh_config.1.gz
 sbin/cluster-add-to-group
 sbin/cluster-adduser
+sbin/cluster-adduser2
 sbin/cluster-admin
 sbin/cluster-dist-file
 sbin/cluster-ganglia-restart
@@ -42,12 +43,14 @@ sbin/cluster-init-all
 sbin/cluster-local-pkg-install
 sbin/cluster-local-port_add
 sbin/cluster-local-sync-software
+sbin/cluster-lowest-uid
 sbin/cluster-pbs-restart
 sbin/cluster-pkg-install
 sbin/cluster-pkg-upgrade
 sbin/cluster-pkgdir
 sbin/cluster-portsnap
 sbin/cluster-remove-ldap-expired-users
+sbin/cluster-restore-user
 sbin/cluster-rmuser
 sbin/cluster-run
 sbin/cluster-setup
@@ -61,6 +64,7 @@ sbin/cluster-update-all-ssh_config
 sbin/cluster-update-ssh_config
 sbin/cluster-update-wip-ports
 sbin/cluster-useradd
+sbin/cluster-useradd2
 sbin/cluster-usermod
 sbin/cluster-users
 sbin/node-sync-all-users
