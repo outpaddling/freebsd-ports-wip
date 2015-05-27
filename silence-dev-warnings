@@ -1,0 +1,4 @@
+#!/bin/sh -e
+
+sed -i '' -e 's|DEV_WARNING+=.*"Not validating|#&|' /usr/ports/Mk/bsd.sanity.mk
+

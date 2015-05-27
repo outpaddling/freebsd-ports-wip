@@ -1,9 +1,9 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
-# $FreeBSD: head/biology/ncbi-blast+/Makefile 375866 2014-12-31 00:31:55Z grembo $
+# $FreeBSD: head/biology/ncbi-blast+/Makefile 384733 2015-04-25 14:21:58Z marino $
 
 PORTNAME=	blast+
 PORTVERSION=	2.2.30
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	biology
 MASTER_SITES=	http://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/ \
 		http://acadix.biz/Ports/distfiles/
