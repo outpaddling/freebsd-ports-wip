@@ -50,6 +50,7 @@ sbin/cluster-pkg-upgrade
 sbin/cluster-pkgdir
 sbin/cluster-portsnap
 sbin/cluster-remove-ldap-expired-users
+sbin/cluster-restore-pw
 sbin/cluster-restore-user
 sbin/cluster-rmuser
 sbin/cluster-run
