@@ -20,7 +20,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 # [3]: http://vcftools.sourceforge.net/specs.html
 
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
-		git:${PORTSDIR}/devel/git
+		git:${PORTSDIR}/devel/git \
+		${JAVAJARDIR}/htsjdk/htsjdk-${PORTVERSION}.jar:/usr/wip/biology/htsjdk
+
+RUN_DEPENDS=	samtools:/usr/wip/biology/samtools
 
 # Prefers 1.6, 1.7 should work, but jars built with 1.7 won't run in 1.6 env
 USE_JAVA=	1.6+

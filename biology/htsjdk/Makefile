@@ -26,7 +26,7 @@ do-build:
 	cd ${WRKSRC} && ant && ant htsjdk-jar
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/dist/*.jar \
-		${STAGEDIR}${JAVAJARDIR}
+	cd ${WRKSRC}/dist && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
