@@ -74,6 +74,7 @@ sbin/pbs-cluster-load
 sbin/slurm-find-strays
 sbin/slurm-restart
 sbin/slurm-resume-jobs
+sbin/slurm-spool-setup
 sbin/slurm-suspend-jobs
 sbin/slurm-update-idle-nodes
 sbin/slurm-usage-report
