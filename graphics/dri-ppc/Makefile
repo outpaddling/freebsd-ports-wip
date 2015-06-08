@@ -94,6 +94,7 @@ PLIST_SUB+=	VDPAU="@comment "
 .if ${ARCH} == powerpc || ${ARCH} == powerpc64
 DRI_DRIVERS=	RADEON SWRAST
 # Use /usr/local/bin/ld to avoid segfault
+# https://forums.freebsd.org/threads/problem-building-xorgs-dependencies-on-powerpc.50356/
 .endif
 .if ${ARCH} == sparc64 || ${ARCH} == armv6
 DRI_DRIVERS=	SWRAST

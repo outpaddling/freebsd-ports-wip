@@ -19,7 +19,9 @@ LIB_DEPENDS+=	libkrb5support.so:${PORTSDIR}/security/krb5 \
 
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_LDCONFIG=	yes
-USES=		cmake gmake perl5 pgsql python:2 shebangfix
+# Does not build with Python 3
+USES=		cmake cpe gmake perl5 pgsql python:2 shebangfix
+CPE_VENDOR=	condor_project
 SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 		src/condor_gridmanager/remote_gahp \
 		src/condor_examples/condor_limits_wrapper.sh \
