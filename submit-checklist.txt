@@ -58,7 +58,9 @@ Makefile:
     
     Remove cat pkg-message if present
     
-Carefully inspect plist
+Carefully inspect pkg-plist
+
+Carefully check patches
 
 Check pkg-descr
     spell-check
