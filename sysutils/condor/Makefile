@@ -1,5 +1,5 @@
 # Created by: Andy Pavlo
-# $FreeBSD: head/sysutils/condor/Makefile 376614 2015-01-09 15:12:14Z madpilot $
+# $FreeBSD: head/sysutils/condor/Makefile 388591 2015-06-05 16:29:41Z amdmi3 $
 
 PORTNAME=	condor
 PORTVERSION=	8.2.8

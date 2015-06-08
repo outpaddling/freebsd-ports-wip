@@ -5,13 +5,11 @@ if [ -z $EDITOR ]; then
     export EDITOR
 fi
 
-if [ ! -e %%PREFIX%%/etc/condor_config ]; then
-    cp %%PREFIX%%/etc/condor/condor_config %%PREFIX%%/etc
-fi
-
-if [ ! -e %%PREFIX%%/etc/condor_config.local ]; then
-    cp %%PREFIX%%/etc/condor/condor_config.local %%PREFIX%%/etc
-fi
+for file in condor_config condor_config.local; do
+    if [ ! -e %%PREFIX%%/etc/$file ]; then
+	cp %%PREFIX%%/etc/$file.sample %%PREFIX%%/etc/$file
+    fi
+done
 
 $EDITOR %%PREFIX%%/etc/condor_config.local
 
