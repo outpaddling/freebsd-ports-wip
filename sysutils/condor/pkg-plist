@@ -45,6 +45,7 @@ bin/condor_who
 @sample etc/condor_config.sample
 @sample etc/condor_config.local.sample
 %%ETCDIR%%/condor
+%%ETCDIR%%/condor_config
 %%ETCDIR%%/examples/README
 %%ETCDIR%%/examples/condor.boot.generic
 %%ETCDIR%%/examples/condor.boot.rpm
