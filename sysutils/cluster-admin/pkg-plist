@@ -29,7 +29,6 @@ man/man1/cluster-shutdown.1.gz
 man/man1/cluster-update-ssh_config.1.gz
 sbin/cluster-add-to-group
 sbin/cluster-adduser
-sbin/cluster-adduser2
 sbin/cluster-admin
 sbin/cluster-dist-file
 sbin/cluster-ganglia-restart
@@ -66,7 +65,6 @@ sbin/cluster-update-all-ssh_config
 sbin/cluster-update-ssh_config
 sbin/cluster-update-wip-ports
 sbin/cluster-useradd
-sbin/cluster-useradd2
 sbin/cluster-usermod
 sbin/cluster-users
 sbin/node-sync-all-users
