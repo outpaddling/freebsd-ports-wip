@@ -16,10 +16,8 @@ COMMENT=        Portable Assembler
 
 PLIST_FILES=    bin/asepc bin/asepc.bin include/epc.h
 
-MAN1=           asepc.1
-
 LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	papp:../../devel/papp
+RUN_DEPENDS=	papp:/usr/wip/devel/papp
 
 USES=		tar:xz
 .include <bsd.port.pre.mk>
