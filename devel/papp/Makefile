@@ -16,9 +16,7 @@ COMMENT=	Assembly Preprocessor
 
 USES=		tar:xz
 
-LICENSE=	BSD
-
-MAN1=		papp.1
+LICENSE=	BSD3CLAUSE
 
 MAKE_FLAGS+=	PREFIX=${PREFIX} \
 		MANPREFIX=${PREFIX} \
