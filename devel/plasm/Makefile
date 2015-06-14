@@ -18,10 +18,14 @@ PLIST_FILES=    bin/asepc bin/asepc.bin include/epc.h
 
 MAN1=           asepc.1
 
-LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	papp:../../devel/papp
 
 USES=		tar:xz
+.include <bsd.port.pre.mk>
+.if ${ARCH} == "powerpc"
+USE_GCC=	yes
+.endif
 
 MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
 		MANPREFIX=${STAGEDIR}${PREFIX}
@@ -29,4 +33,4 @@ MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
 pre-build:
 	make depend
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
