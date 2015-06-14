@@ -8,6 +8,3 @@ man/man1/epc.1.gz
 %%DATADIR%%/Examples/torture.epc
 %%DATADIR%%/include/io.epc
 %%DATADIR%%/include/macros.epc
-@dirrmtry %%DATADIR%%/include
-@dirrmtry %%DATADIR%%/Examples
-@dirrmtry %%DATADIR%%

@@ -19,7 +19,7 @@ USES=		tar:xz
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtwintk.a:../../devel/twintk \
 		${LOCALBASE}/lib/libbacon.a:../../devel/libbacon \
 		${LOCALBASE}/include/epc.h:../../devel/plasm
-RUN_DEPENDS=	asepc:../../devel/plasm
+RUN_DEPENDS=	asepc:/usr/wip/devel/plasm
 
 MAKE_ARGS=	CFLAGS="-O -I${LOCALBASE}/include"
 
