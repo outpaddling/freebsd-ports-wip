@@ -31,7 +31,6 @@ RUN_DEPENDS+=	hicolor-icon-theme>=0:${PORTSDIR}/misc/hicolor-icon-theme \
 
 USE_PERL5=	build
 USE_LDCONFIG=	yes
-USE_GCC=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk gdkpixbuf2 gtk-update-icon-cache \
 		introspection:build pango
@@ -70,6 +69,10 @@ DEBUG_CONFIGURE_ENABLE=debug
 
 # needed for the exists() check, booo
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == "powerpc"
+USE_GCC=	yes
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${GREP} -l lgmodule | \
