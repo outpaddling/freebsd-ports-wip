@@ -72,6 +72,7 @@ sbin/node-sync-user
 sbin/pbs-cluster-load
 sbin/slurm-find-strays
 sbin/slurm-restart
+sbin/slurm-resume-down-nodes
 sbin/slurm-resume-jobs
 sbin/slurm-spool-setup
 sbin/slurm-suspend-jobs
