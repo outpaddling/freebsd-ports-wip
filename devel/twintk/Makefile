@@ -16,7 +16,7 @@ COMMENT=        Misc functions
 
 USES=		tar:xz
 
-BUILD_DEPENDS=  ${LOCALBASE}/lib/libbacon.a:../../devel/libbacon
+BUILD_DEPENDS=  ${LOCALBASE}/lib/libbacon.a:/usr/wip/devel/libbacon
 
 CFLAGS=         -g -Wall
 
