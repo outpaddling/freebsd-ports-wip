@@ -36,6 +36,7 @@ man/man1/auto-service-enabled.1.gz
 man/man1/auto-set-suspend-mode.1.gz
 man/man1/auto-ssh-authorize.1.gz
 man/man1/auto-update-port-framework.1.gz
+man/man1/auto-update-system.1.gz
 man/man1/auto-update-xorg.conf.1.gz
 man/man1/auto-using-pkgng.1.gz
 man/man1/auto-xdm-toggle.1.gz
@@ -76,6 +77,7 @@ sbin/auto-service-enabled
 sbin/auto-set-suspend-mode
 sbin/auto-ssh-authorize
 sbin/auto-update-port-framework
+sbin/auto-update-system
 sbin/auto-update-xorg.conf
 sbin/auto-using-pkgng
 sbin/auto-xdm-toggle
