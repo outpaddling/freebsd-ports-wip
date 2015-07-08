@@ -4,19 +4,25 @@
 PORTNAME=	x10
 PORTVERSION=	2.5.3
 CATEGORIES=	lang devel java
-MASTER_SITES=	http://dist.codehaus.org/x10/dependencies/ \
+MASTER_SITES=	http://x10-lang.org/dependencies/ \
+      		http://central.maven.org/maven2/org/xerial/snappy/snappy-java/1.1.2-RC2/ \
 		SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-#		lpg.runtime.java_2.0.22.jar \
-		ecj-3.5.1.jar \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		lpg.runtime.java_2.0.22.jar \
+		antlr-runtime_4.5.0.201505151407.jar \
+		ecj-4.4.2.jar \
+		hazelcast-3.3.1.jar \
 		com.ibm.wala.cast.java_1.0.0.201101071300.jar \
 		com.ibm.wala.cast_1.0.0.201101071300.jar \
 		com.ibm.wala.core_1.1.3.201101071300.jar \
 		com.ibm.wala.shrike_1.3.1.201101071300.jar \
 		org.eclipse.equinox.common_3.6.0.v20100503.jar \
-		commons-math-2.2.jar \
-		bdwgc-7.1.tar.gz
+		commons-math3-3.5.jar \
+		commons-logging-1.2.jar \
+		snappy-java-1.1.2-RC2.jar
+		# bdwgc-7.1.tar.gz
+
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jwbacon@tds.net
@@ -46,14 +52,15 @@ post-patch:
 	${REINPLACE_CMD} -e 's/value="make"/value="gmake"/g' \
 		${WRKDIR}/x10.runtime/build.xml
 	${MKDIR} ${WRKSRC}/lib ${WRKDIR}/x10.runtime/src-cpp/bdwgc/src
-#	${CP} ${DISTDIR}/lpg.runtime.java_2.0.22.jar ${WRKSRC}/lib/lpg.jar
-#	${CP} ${DISTDIR}/ecj-3.5.1.jar ${WRKSRC}/lib/ecj.jar
-#	${CP} ${DISTDIR}/com.ibm.wala.cast.java_1.0.0.201101071300.jar ${WRKSRC}/lib
-#	${CP} ${DISTDIR}/com.ibm.wala.cast_1.0.0.201101071300.jar ${WRKSRC}/lib
-#	${CP} ${DISTDIR}/com.ibm.wala.core_1.1.3.201101071300.jar ${WRKSRC}/lib
-#	${CP} ${DISTDIR}/com.ibm.wala.shrike_1.3.1.201101071300.jar ${WRKSRC}/lib
-#	${CP} ${DISTDIR}/org.eclipse.equinox.common_3.6.0.v20100503.jar ${WRKSRC}/lib
-#	${CP} ${DISTDIR}/commons-math-2.2.jar ${WRKSRC}/lib
+	${CP} ${DISTDIR}/lpg.runtime.java_2.0.22.jar ${WRKSRC}/lib/lpg.jar
+	${CP} ${DISTDIR}/ecj-4.4.2.jar ${WRKSRC}/lib/ecj.jar
+	${CP} ${DISTDIR}/hazelcast-3.3.1.jar ${WRKSRC}/lib
+	${CP} ${DISTDIR}/com.ibm.wala.cast.java_1.0.0.201101071300.jar ${WRKSRC}/lib
+	${CP} ${DISTDIR}/com.ibm.wala.cast_1.0.0.201101071300.jar ${WRKSRC}/lib
+	${CP} ${DISTDIR}/com.ibm.wala.core_1.1.3.201101071300.jar ${WRKSRC}/lib
+	${CP} ${DISTDIR}/com.ibm.wala.shrike_1.3.1.201101071300.jar ${WRKSRC}/lib
+	${CP} ${DISTDIR}/org.eclipse.equinox.common_3.6.0.v20100503.jar ${WRKSRC}/lib
+	${CP} ${DISTDIR}/commons-math3-3.5.jar ${WRKSRC}/lib
 #	${CP} ${DISTDIR}/bdwgc-7.1.tar.gz ${WRKDIR}/x10.runtime/src-cpp/bdwgc
 #	(cd ${WRKDIR}/x10.runtime/src-cpp/bdwgc/src && tar zxvf ../bdwgc-7.1.tar.gz && ${REINPLACE_CMD} -e 's|freebsd1\*|freebsd1.*|g' configure)
 
