@@ -75,6 +75,7 @@ sbin/cluster-users
 sbin/node-sync-all-users
 sbin/node-sync-user
 sbin/pbs-cluster-load
+sbin/slurm-admin
 sbin/slurm-find-strays
 sbin/slurm-restart
 sbin/slurm-resume-down-nodes
