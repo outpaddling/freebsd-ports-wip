@@ -7,6 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	https://github.com/biocore/pynast/archive/
 PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PORTVERSION}${EXTRACT_SUFX}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Nearest Alignment Space Termination tool

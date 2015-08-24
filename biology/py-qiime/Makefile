@@ -9,6 +9,7 @@ MASTER_SITES=	http://github.com/biocore/qiime/archive/ \
 		http://www.drive5.com/uclust/
 DISTFILES=	${PORTVERSION}${EXTRACT_SUFX} \
 		uclustq1.2.22_i86linux32
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Quantitative Insights Into Microbial Ecology

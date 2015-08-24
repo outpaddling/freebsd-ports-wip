@@ -19,7 +19,7 @@ COMMENT=	Another Programmer's Editor
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpare.a:/usr/wip/devel/libpare \
 		${LOCALBASE}/lib/libbacon.a:/usr/wip/devel/libbacon \
 		${LOCALBASE}/lib/libtwintk.a:/usr/wip/devel/twintk
-RUN_DEPENDS=	${LOCALBASE}/share/twintk/terminfo/README:/usr/wip/devel/twintk \
+RUN_DEPENDS=	${LOCALBASE}/share/twintk/terminfo:/usr/wip/devel/twintk \
 		webbrowser:/usr/wip/www/webbrowser \
 		docviewer:/usr/wip/textproc/docviewer
 
