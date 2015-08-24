@@ -19,6 +19,8 @@ USE_PHP=	gd pcre xml ctype session filter
 WANT_PHP_MOD=	yes
 
 HTMLDIR=	www/ganglia
+USES=		shebangfix
+SHEBANG_FILES=	nagios/*.sh
 
 # DO NOT DELETE!!
 # HTMLDIR and GWEBDIR must be owned by WWWOWN:WWWGRP.
