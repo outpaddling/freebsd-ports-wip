@@ -1,6 +1,9 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
 
+# Note: pthreads performance on FreeBSD 10.1 is lacking compared to
+# CentOS 6 on identical hardware.  Investigate tuning options.
+
 PORTNAME=	daligner
 # Must use the same version of dazz_db, daligner, pypeflow, and falcon!
 PORTVERSION=	2015.08.17
