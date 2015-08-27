@@ -10,7 +10,7 @@ Makefile:
 
     Merge latest changes in committed port into development port
 
-    # Created by: First Last <email>
+    # Created by: First-name Last-name <email>
     # $FreeBSD$
     
     Check use of each LOCALBASE and PREFIX
