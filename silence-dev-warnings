@@ -1,4 +1,8 @@
 #!/bin/sh -e
 
-sed -i '' -e 's|DEV_WARNING+=.*"Not validating|#&|' /usr/ports/Mk/bsd.sanity.mk
+printf "This will disable security checks.  Are you sure?  y/[n] "
+read sure
+if [ 0$sure = 0y ]; then
+    sed -i '' -e 's|DEV_WARNING+=.*"Not validating|#&|' /usr/ports/Mk/bsd.sanity.mk
+fi
 
