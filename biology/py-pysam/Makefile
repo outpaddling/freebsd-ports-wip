@@ -14,7 +14,8 @@ COMMENT=	Python module for reading and manipulating samfiles
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython
+# Currently does not build with cython 0.23
+BUILD_DEPENDS=	cython:/usr/wip/lang/cython022
 
 # Tested with python 2.5 and 2.6
 # Still not finding ncurses
