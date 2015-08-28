@@ -18,11 +18,11 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0:${PORTSDIR}/math/py-numpy \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=0:${PORTSDIR}/devel/py-jsonschema \
 		${PYTHON_PKGNAMEPREFIX}avro>=0:${PORTSDIR}/devel/py-avro \
-		${PYTHON_PKGNAMEPREFIX}pbcore==0.9.1:/usr/wip/biology/py-pbcore
+		${PYTHON_PKGNAMEPREFIX}pbcore==0.9.1:/usr/wip/biology/py-pbcore091
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0:${PORTSDIR}/math/py-numpy \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=0:${PORTSDIR}/devel/py-jsonschema \
 		${PYTHON_PKGNAMEPREFIX}avro>=0:${PORTSDIR}/devel/py-avro \
-		${PYTHON_PKGNAMEPREFIX}pbcore>=0:/usr/wip/biology/py-pbcore
+		${PYTHON_PKGNAMEPREFIX}pbcore>=0:/usr/wip/biology/py-pbcore091
 
 USES=		python
 USE_PYTHON=	distutils
