@@ -11,6 +11,7 @@ COMMENT=	Consensus algorithm implementation based on directed acyclic graphs
 
 LICENSE=	BSD3CLAUSE
 
+# argparse?
 BUILD_DEPENDS=	${LOCALBASE}/lib/libblasr.a:/usr/wip/biology/blasr_libcpp \
 		dazz_db>=2015.08.17:/usr/wip/biology/dazz_db \
 		daligner>=2015.08.17:/usr/wip/biology/daligner
