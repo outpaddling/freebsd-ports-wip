@@ -17,7 +17,7 @@ LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
 USES=		gmake tar:xz
 
 # Requires 64-bit long
-NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS=	i386 powerpc
 
 MAKEFILE=	makefile
 
