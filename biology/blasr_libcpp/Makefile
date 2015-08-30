@@ -26,6 +26,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 # MAKE_JOBS_UNSAFE=	yes
 
+.include <bsd.port.pre.mk>
+
+# Uses C++11 syntax
+.if ${OSVERSION} < 1000000
+USE_GCC=	yes
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|g' \
 		${WRKSRC}/makefile
@@ -47,4 +54,4 @@ do-install:
 		${INSTALL_DATA} $$fn ${STAGEDIR}${PREFIX}/lib; \
 	done
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
