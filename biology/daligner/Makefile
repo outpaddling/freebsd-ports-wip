@@ -25,6 +25,11 @@ MAKEFILE=	GNUmakefile
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 1000000
+USE_GCC=	yes
+.endif
+
 post-patch:
 	for f in ${WRKSRC}/py_utils/*.py; do \
 		${PRINTF} "#!/usr/bin/env python\n\n" > $$f.temp; \
@@ -56,4 +61,4 @@ do-install:
 	${AR} rs ${STAGEDIR}${PREFIX}/lib/libdaligner.a \
 		${WRKSRC}/align.o
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

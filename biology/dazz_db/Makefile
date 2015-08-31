@@ -17,6 +17,11 @@ USES=		gmake tar:xz
 
 MAKEFILE=	GNUmakefile
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 1000000
+USE_GCC=	yes
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} \
 		${WRKSRC}/Catrack \
@@ -38,4 +43,4 @@ do-install:
 	${INSTALL_DATA} \
 		${WRKSRC}/libdazzdb.a ${STAGEDIR}${PREFIX}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
