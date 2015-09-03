@@ -25,4 +25,9 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+# Patch for cython 0.23
+post-patch:
+	${REINPLACE_CMD} -e 's|ctypedef enum|cdef enum|g' \
+		${WRKSRC}/pysam/chtslib.pxd
+
 .include <bsd.port.mk>
