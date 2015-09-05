@@ -19,7 +19,4 @@ USE_PYTHON=	distutils
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-do-install:
-	echo ${PYDISTUTILS_INSTALLARGS}
-
 .include <bsd.port.mk>
