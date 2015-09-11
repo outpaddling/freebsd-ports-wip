@@ -16,9 +16,6 @@ LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
 
 USES=		gmake tar:xz
 
-# Requires 64-bit long
-NOT_FOR_ARCHS=	i386 powerpc
-
 MAKEFILE=	makefile
 
 CXXFLAGS+=	-I${LOCALBASE}/include
@@ -34,6 +31,8 @@ USE_GCC=	yes
 .endif
 
 post-patch:
+	${REINPLACE_CMD} -e 's|SAIndex, UINT_MAX|SAIndex, INT_MAX|g' \
+		${WRKSRC}/alignment/suffixarray/SuffixArray.hpp
 	${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|g' \
 		${WRKSRC}/makefile
 
