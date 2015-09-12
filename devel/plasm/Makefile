@@ -19,7 +19,6 @@ PLIST_FILES=    bin/asepc \
 		include/epc.h \
 		man/man1/asepc.1.gz
 
-LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	papp:/usr/wip/devel/papp
 
 USES=		tar:xz
