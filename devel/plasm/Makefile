@@ -14,10 +14,9 @@ MASTER_SITES=   http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 MAINTAINER=     jwbacon@tds.net
 COMMENT=        Portable Assembler
 
-PLIST_FILES=    bin/asepc \
-		bin/asepc.bin \
+PLIST_FILES=    bin/plasm \
 		include/epc.h \
-		man/man1/asepc.1.gz
+		man/man1/plasm.1.gz
 
 RUN_DEPENDS=	papp:/usr/wip/devel/papp
 
