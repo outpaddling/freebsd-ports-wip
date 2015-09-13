@@ -15,6 +15,7 @@ MAINTAINER=     jwbacon@tds.net
 COMMENT=        Portable Assembler
 
 PLIST_FILES=    bin/plasm \
+		bin/plasm.bin \
 		include/epc.h \
 		man/man1/plasm.1.gz
 
