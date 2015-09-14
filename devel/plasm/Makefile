@@ -16,7 +16,7 @@ COMMENT=        Portable Assembler
 
 PLIST_FILES=    bin/plasm \
 		bin/plasm.bin \
-		include/epc.h \
+		include/plasm-epc-bits.h \
 		man/man1/plasm.1.gz
 
 RUN_DEPENDS=	papp:/usr/wip/devel/papp
