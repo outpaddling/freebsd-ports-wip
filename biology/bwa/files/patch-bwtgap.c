@@ -1,6 +1,6 @@
---- bwtgap.c.orig	2014-05-21 12:44:57.000000000 -0500
-+++ bwtgap.c	2014-05-21 12:45:02.000000000 -0500
-@@ -58,7 +58,7 @@
+--- bwtgap.c.orig	2014-02-25 21:20:01 UTC
++++ bwtgap.c
+@@ -58,7 +58,7 @@ static inline void gap_push(gap_stack_t 
  		q->stack = (gap_entry_t*)realloc(q->stack, sizeof(gap_entry_t) * q->m_entries);
  	}
  	p = q->stack + q->n_entries;

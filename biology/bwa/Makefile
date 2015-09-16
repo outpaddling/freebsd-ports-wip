@@ -1,9 +1,9 @@
-# Created by: Jason Bacon
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
 
 PORTNAME=	bwa
 PORTVERSION=	0.7.9a
-CATEGORIES=	biology science
+CATEGORIES=	biology
 MASTER_SITES=	SF/bio-bwa/
 
 MAINTAINER=	jwbacon@tds.net
@@ -11,9 +11,7 @@ COMMENT=	Burrows-Wheeler sequence aligner
 
 LICENSE=	GPLv3
 
-# Just for speed: Recent GCC has better optimizer
-# USE_GCC=	yes
-USES=		tar:bzip2 perl5 shebangfix
+USES=		perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	qualfa2fq.pl xa2multi.pl
 USE_PERL5=	run
 

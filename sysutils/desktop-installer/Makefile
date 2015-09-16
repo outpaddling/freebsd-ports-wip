@@ -12,7 +12,7 @@ COMMENT=	Quickly configure a FreeBSD desktop system
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	auto-admin>=0.3.4:${PORTSDIR}/sysutils/auto-admin
+RUN_DEPENDS=	auto-admin>=0.3.5:${PORTSDIR}/sysutils/auto-admin
 
 USES=		tar:xz
 

@@ -1,6 +1,6 @@
---- bwt_lite.c.orig	2014-05-21 12:45:26.000000000 -0500
-+++ bwt_lite.c	2014-05-21 12:45:31.000000000 -0500
-@@ -48,7 +48,7 @@
+--- bwt_lite.c.orig	2014-05-19 13:11:41 UTC
++++ bwt_lite.c
+@@ -48,7 +48,7 @@ bwtl_t *bwtl_seq2bwtl(int len, const uin
  	}
  	{ // generate cnt_table
  		for (i = 0; i != 256; ++i) {
