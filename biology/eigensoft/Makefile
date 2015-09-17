@@ -9,6 +9,12 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 MAINTAINER=	bacon@oyster.jbacon.dyndns.org
 COMMENT=
 
-USES=		tar:xz
+USES=		fortran tar:xz
+
+# GSL, openblas, fortran
+LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl \
+		libblas.so:${PORTSDIR}/math/blas
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 .include <bsd.port.mk>
