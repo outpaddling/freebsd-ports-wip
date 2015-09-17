@@ -31,7 +31,3 @@ bin/clstr_sql_tbl_sort.pl
 bin/make_multi_seq.pl
 bin/plot_2d.pl
 bin/plot_len1.pl
-bin/psi-cd-hit-2d-g1.pl
-bin/psi-cd-hit-2d.pl
-bin/psi-cd-hit-local.pl
-bin/psi-cd-hit.pl
