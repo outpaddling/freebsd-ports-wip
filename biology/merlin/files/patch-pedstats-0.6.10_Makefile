@@ -1,0 +1,49 @@
+--- pedstats-0.6.10/Makefile.orig	2015-09-16 22:40:07.000000000 -0500
++++ pedstats-0.6.10/Makefile	2015-09-16 22:42:14.000000000 -0500
+@@ -10,9 +10,9 @@
+ INSTALLDIR = /usr/local/bin/
+ 
+ # default C++ compiler
+-CXX=g++
++CXX?=	g++
+ 
+-# default compilation flags are CFLAGS=-O3 -I./libsrc/
++# default compilation flags are CXXFLAGS=-O3 -I./libsrc/
+ # 
+ # The following special options may also be added to the default
+ # 
+@@ -25,7 +25,7 @@
+ #                                    on systems where gcc supports the long
+ #                                    long data type and on Windows.
+ # 
+-CFLAGS=-O2 -I./libsrc -I./pedstats -I./janpdf -D__ZLIB_AVAILABLE__
++CXXFLAGS+=	-I./libsrc -I./pedstats -I./janpdf -D__ZLIB_AVAILABLE__
+ 
+ # executable file names and locations
+ BINDIR = executables
+@@ -95,7 +95,7 @@
+ 
+ # dependencies for executables
+ $(PEDSTATS) : $(LIBFILE) $(PDFLIB) $(PEDSTATSOBJ) $(LIBHDR)
+-	$(CXX) $(CFLAGS) -o $@ $(PEDSTATSOBJ) ${PDFLIB} $(LIBFILE) -lm -lz
++	$(CXX) $(CXXFLAGS) -o $@ $(PEDSTATSOBJ) ${PDFLIB} $(LIBFILE) -lm -lz
+ 
+ $(LIBFILE) : $(LIBOBJ)
+ 	ar -cr $@ $(LIBOBJ)
+@@ -143,13 +143,13 @@
+ 	cd $(DISTRIBDIR); csh ../stamp PEDSTATS
+ 
+ .c.o :
+-	$(CXX) $(CFLAGS) -o $@ -c $*.c
++	$(CXX) $(CXXFLAGS) -o $@ -c $*.c
+ 
+ .cpp.X.o : 
+-	$(CXX) $(CFLAGS) -o $@ -c $*.cpp -DPEDVERSION=\"$(PEDVERSION)\" -D__CHROMOSOME_X__
++	$(CXX) $(CXXFLAGS) -o $@ -c $*.cpp -DPEDVERSION=\"$(PEDVERSION)\" -D__CHROMOSOME_X__
+ 
+ .cpp.o : 
+-	$(CXX) $(CFLAGS) -o $@ -c $*.cpp -DPEDVERSION=\"$(PEDVERSION)\"
++	$(CXX) $(CXXFLAGS) -o $@ -c $*.cpp -DPEDVERSION=\"$(PEDVERSION)\"
+ 
+ archive : clean
+ 	mkdir -p pedstats-$(PEDVERSION)

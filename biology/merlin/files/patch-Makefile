@@ -1,0 +1,84 @@
+--- Makefile.orig	2015-09-16 22:36:50.000000000 -0500
++++ Makefile	2015-09-16 22:38:04.000000000 -0500
+@@ -11,11 +11,11 @@
+ INSTALLDIR=/usr/local/bin
+ 
+ # default C++ compiler
+-CXX=g++ 
++CXX?=	g++ 
+ 
+ # default compilation flags are 
+ #
+-# CFLAGS=-O2 -I./libsrc/ -I./merlin/ -I./pdf/
++# CXXFLAGS=-O2 -I./libsrc/ -I./merlin/ -I./pdf/
+ # 
+ # The following special options may also be added to the default
+ # 
+@@ -29,7 +29,7 @@
+ #                                    long data type and on Windows.
+ #      -D__ZLIB_AVAILABLE__          Enables support for GZIP'ed input files
+ # 
+-CFLAGS=-O2 -I./libsrc -I./merlin -I./pdf -I./clusters -D_FILE_OFFSET_BITS=64 -D__ZLIB_AVAILABLE__ -Wall
++CXXFLAGS+=	-O2 -I./libsrc -I./merlin -I./pdf -I./clusters -D_FILE_OFFSET_BITS=64 -D__ZLIB_AVAILABLE__ -Wall
+ 
+ # executable file names and locations
+ BINDIR = executables
+@@ -164,19 +164,19 @@
+ 
+ # dependencies for executables
+ $(MERLIN) : $(LIBFILE) $(PDFLIB) $(MERLINOBJ) $(CLUSTEROBJ)
+-	$(CXX) $(CFLAGS) -o $@ $(MERLINOBJ) $(CLUSTEROBJ) $(PDFLIB) $(LIBFILE) -lm -lz
++	$(CXX) $(CXXFLAGS) -o $@ $(MERLINOBJ) $(CLUSTEROBJ) $(PDFLIB) $(LIBFILE) -lm -lz
+ 
+ $(MERLINX) : $(LIBFILE) $(PDFLIB) $(MERLINXOBJ) $(CLUSTERXOBJ)
+-	$(CXX) $(CFLAGS) -o $@ $(MERLINXOBJ) $(CLUSTERXOBJ) $(PDFLIB) $(LIBFILE) -lm -lz
++	$(CXX) $(CXXFLAGS) -o $@ $(MERLINXOBJ) $(CLUSTERXOBJ) $(PDFLIB) $(LIBFILE) -lm -lz
+ 
+ $(MERLINREG) : $(LIBFILE) $(PDFLIB) $(REGOBJ) $(CLUSTEROBJ)
+-	$(CXX) $(CFLAGS) -o $@ $(REGOBJ) $(CLUSTEROBJ) $(PDFLIB) $(LIBFILE) -lm -lz
++	$(CXX) $(CXXFLAGS) -o $@ $(REGOBJ) $(CLUSTEROBJ) $(PDFLIB) $(LIBFILE) -lm -lz
+ 
+ $(MERLINOFF) :  $(LIBFILE) $(PDFLIB) $(OFFOBJ) $(CLUSTEROBJ)
+-	 $(CXX) $(CFLAGS) -o $@ $(OFFOBJ) $(CLUSTEROBJ) $(PDFLIB) $(LIBFILE) -lm -lz
++	 $(CXX) $(CXXFLAGS) -o $@ $(OFFOBJ) $(CLUSTEROBJ) $(PDFLIB) $(LIBFILE) -lm -lz
+ 
+ $(MERLINXOFF) :  $(LIBFILE) $(PDFLIB) $(OFFXOBJ) $(CLUSTEROBJ)
+-	 $(CXX) $(CFLAGS) -o $@ $(OFFXOBJ) $(CLUSTERXOBJ) $(PDFLIB) $(LIBFILE) -lm -lz
++	 $(CXX) $(CXXFLAGS) -o $@ $(OFFXOBJ) $(CLUSTERXOBJ) $(PDFLIB) $(LIBFILE) -lm -lz
+ 
+ $(PEDSTATS) : pedstats-$(PSVERSION).tar.gz
+ 	gunzip -c pedstats-$(PSVERSION).tar.gz | tar -xf - 
+@@ -185,13 +185,13 @@
+ 	rm -rf pedstats-$(PSVERSION)
+ 
+ $(PEDWIPE) : $(LIBFILE) extras/pedwipe.cpp 
+-	$(CXX) $(CFLAGS) -o $@ extras/pedwipe.cpp $(LIBFILE) -lm -lz
++	$(CXX) $(CXXFLAGS) -o $@ extras/pedwipe.cpp $(LIBFILE) -lm -lz
+ 
+ $(PEDMERGE) : $(LIBFILE) extras/pedmerge.cpp
+-	$(CXX) $(CFLAGS) -o $@ extras/pedmerge.cpp $(LIBFILE) -lm -lz
++	$(CXX) $(CXXFLAGS) -o $@ extras/pedmerge.cpp $(LIBFILE) -lm -lz
+ 
+ $(HAPMAPCONVERTER) : $(LIBFILE) extras/hapmapConverter.cpp
+-	$(CXX) $(CFLAGS) -o $@ extras/hapmapConverter.cpp $(LIBFILE) -lm -lz
++	$(CXX) $(CXXFLAGS) -o $@ extras/hapmapConverter.cpp $(LIBFILE) -lm -lz
+ 
+ $(LIBFILE) : $(LIBOBJ) $(LIBHDR)
+ 	ar -cr $@ $(LIBOBJ)
+@@ -257,13 +257,13 @@
+ 	cd $(DISTRIBDIR); csh ../stamp MERLIN
+ 
+ .c.o :
+-	$(CXX) $(CFLAGS) -o $@ -c $*.c
++	$(CXX) $(CXXFLAGS) -o $@ -c $*.c
+ 
+ .cpp.X.o : 
+-	$(CXX) $(CFLAGS) -o $@ -c $*.cpp -DVERSION=\"$(VERSION)\" -D__CHROMOSOME_X__
++	$(CXX) $(CXXFLAGS) -o $@ -c $*.cpp -DVERSION=\"$(VERSION)\" -D__CHROMOSOME_X__
+ 
+ .cpp.o : 
+-	$(CXX) $(CFLAGS) -o $@ -c $*.cpp -DVERSION=\"$(VERSION)\"
++	$(CXX) $(CXXFLAGS) -o $@ -c $*.cpp -DVERSION=\"$(VERSION)\"
+ 
+ archive : clean
+ 	mkdir -p merlin-$(VERSION)
