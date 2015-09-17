@@ -1,5 +1,5 @@
---- Makefile.orig	2014-09-30 19:40:20.000000000 -0500
-+++ Makefile	2015-02-21 14:16:13.931391514 -0600
+--- Makefile.orig	2014-10-01 00:40:20 UTC
++++ Makefile
 @@ -5,9 +5,13 @@
  SEQAN_DIR = SeqAn-1.1
  SEQAN_INC = -I $(SEQAN_DIR)
@@ -17,7 +17,7 @@
  HEADERS = $(wildcard *.h)
  BOWTIE_MM = 1
  BOWTIE_SHARED_MEM = 1
-@@ -106,7 +110,7 @@
+@@ -106,7 +110,7 @@ SEARCH_FRAGMENTS = $(wildcard search_*_p
  VERSION = $(shell cat VERSION)
  
  BITS=32
@@ -26,7 +26,7 @@
  	BITS=64
  endif
  # msys will always be 32 bit so look at the cpu arch instead.
-@@ -126,8 +130,8 @@
+@@ -126,8 +130,8 @@ ifeq (32,$(BITS))
      $(error bowtie2 compilation requires a 64-bit platform )
  endif
  
