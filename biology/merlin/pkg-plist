@@ -1,1 +1,8 @@
-@comment $FreeBSD$
+bin/hapmapConverter
+bin/merlin
+bin/merlin-offline
+bin/merlin-regress
+bin/minx
+bin/minx-offline
+bin/pedmerge
+bin/pedwipe

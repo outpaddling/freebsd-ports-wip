@@ -1,0 +1,20 @@
+--- Makefile.orig	2008-08-14 04:02:31 UTC
++++ Makefile
+@@ -10,7 +10,7 @@ PEDVERSION = 0.6.12
+ INSTALLDIR = /usr/local/bin/
+ 
+ # default C++ compiler
+-CXX=g++
++CXX?=g++
+ 
+ # default compilation flags are CFLAGS=-O3 -I./libsrc/
+ # 
+@@ -26,7 +26,7 @@ CXX=g++
+ #                                    long data type and on Windows.
+ # 
+ USERFLAGS=
+-CFLAGS=-O2 -I./libsrc -I./pedstats -I./janpdf -D__ZLIB_AVAILABLE__ $(USERFLAGS)
++CFLAGS+=-O2 -I./libsrc -I./pedstats -I./janpdf -D__ZLIB_AVAILABLE__ $(USERFLAGS)
+ 
+ # executable file names and locations
+ BINDIR = executables

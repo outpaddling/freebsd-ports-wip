@@ -1,6 +1,6 @@
---- Makefile.orig	2015-09-16 22:36:50.000000000 -0500
-+++ Makefile	2015-09-16 22:38:04.000000000 -0500
-@@ -11,11 +11,11 @@
+--- Makefile.orig	2007-12-19 04:03:09 UTC
++++ Makefile
+@@ -11,11 +11,11 @@ PSVERSION = 0.6.10
  INSTALLDIR=/usr/local/bin
  
  # default C++ compiler
@@ -14,7 +14,7 @@
  # 
  # The following special options may also be added to the default
  # 
-@@ -29,7 +29,7 @@
+@@ -29,7 +29,7 @@ CXX=g++ 
  #                                    long data type and on Windows.
  #      -D__ZLIB_AVAILABLE__          Enables support for GZIP'ed input files
  # 
@@ -23,7 +23,16 @@
  
  # executable file names and locations
  BINDIR = executables
-@@ -164,19 +164,19 @@
+@@ -43,7 +43,7 @@ PEDWIPE = $(BINDIR)/pedwipe
+ PEDMERGE = $(BINDIR)/pedmerge
+ HAPMAPCONVERTER = $(BINDIR)/hapmapConverter
+ EXECUTABLES = $(MERLIN) $(MERLINX) $(MERLINREG) $(MERLINOFF) $(MERLINXOFF) \
+-              $(PEDSTATS) $(PEDWIPE) $(PEDMERGE) $(HAPMAPCONVERTER)
++              $(PEDWIPE) $(PEDMERGE) $(HAPMAPCONVERTER)
+ 
+ # MERLIN File Set
+ MERLINBASE = merlin/AssociationAnalysis merlin/FastAssociation \
+@@ -164,19 +164,19 @@ $(BINDIR) :
  
  # dependencies for executables
  $(MERLIN) : $(LIBFILE) $(PDFLIB) $(MERLINOBJ) $(CLUSTEROBJ)
@@ -48,7 +57,7 @@
  
  $(PEDSTATS) : pedstats-$(PSVERSION).tar.gz
  	gunzip -c pedstats-$(PSVERSION).tar.gz | tar -xf - 
-@@ -185,13 +185,13 @@
+@@ -185,13 +185,13 @@ $(PEDSTATS) : pedstats-$(PSVERSION).tar.
  	rm -rf pedstats-$(PSVERSION)
  
  $(PEDWIPE) : $(LIBFILE) extras/pedwipe.cpp 
@@ -65,7 +74,7 @@
  
  $(LIBFILE) : $(LIBOBJ) $(LIBHDR)
  	ar -cr $@ $(LIBOBJ)
-@@ -257,13 +257,13 @@
+@@ -257,13 +257,13 @@ fetch : 
  	cd $(DISTRIBDIR); csh ../stamp MERLIN
  
  .c.o :
