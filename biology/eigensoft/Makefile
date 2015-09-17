@@ -9,12 +9,16 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 MAINTAINER=	bacon@oyster.jbacon.dyndns.org
 COMMENT=
 
-USES=		fortran tar:xz
+USES=		fortran gmake tar:xz
 
-# GSL, openblas, fortran
 LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl \
-		libblas.so:${PORTSDIR}/math/blas
+		libopenblas.so:${PORTSDIR}/math/openblas
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+
+MAKE_ENV=	LOCALBASE=${LOCALBASE} FC=${FC}
+
+# Just for debugging
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
