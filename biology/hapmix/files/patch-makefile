@@ -1,0 +1,31 @@
+--- makefile.orig	2009-05-05 23:32:07.000000000 -0500
++++ makefile	2015-09-18 10:39:48.000000000 -0500
+@@ -1,18 +1,23 @@
+ 
++CC	?= cc
++CXX	?= c++
++CFLAGS	?= -w -O3
++CXXFLAGS?= -w -O3
++
+ objects= admix.o data.o params.o ran2.o
+ 
+ admix : $(objects) 
+-	 gcc  -w -O3  -o admix2 $(objects) -lstdc++ -static -lm
++	 ${CXX}  ${CXXFLAGS}  -o admix2 $(objects) -static -lm
+ 
+ 
+ admix.o : admix.h
+-	gcc  -w -O3  -c -o admix.o admix.cpp
++	${CXX}  ${CXXFLAGS}  -c -o admix.o admix.cpp
+ data.o : data.h
+-	gcc  -w -O3  -c -o data.o data.cpp
++	${CXX}  ${CXXFLAGS}  -c -o data.o data.cpp
+ params.o : params.h
+-	gcc  -w -O3  -c -o params.o params.cpp
++	${CXX}  ${CXXFLAGS}  -c -o params.o params.cpp
+ ran2.o : ran2.h
+-	gcc  -w -O3  -c -o ran2.o ran2.c
++	${CC}  ${CFLAGS}  -c -o ran2.o ran2.c
+ 
+ 
+ clean :

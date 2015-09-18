@@ -1,1 +1,18 @@
-@comment $FreeBSD$
+bin/baseprog
+bin/convertf
+bin/eigenstrat
+bin/eigenstratQTL
+bin/evec2pca-ped.perl
+bin/evec2pca.perl
+bin/fixgreen
+bin/gc.perl
+bin/mergeit
+bin/pca
+bin/pcatoy
+bin/ploteig
+bin/smarteigenstrat
+bin/smarteigenstrat.perl
+bin/smartpca
+bin/smartpca.perl
+bin/smartrel
+bin/twstats

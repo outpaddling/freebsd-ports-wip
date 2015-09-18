@@ -1,5 +1,5 @@
 --- Makefile.orig	2015-03-06 10:21:28.000000000 -0600
-+++ Makefile	2015-09-17 12:17:35.000000000 -0500
++++ Makefile	2015-09-18 11:04:14.000000000 -0500
 @@ -7,23 +7,23 @@
  $(info *** Broad Institute users can execute use .openblas-0.2.8 and use GCC-4.9 to link to OpenBLAS ***)
  else
@@ -18,11 +18,12 @@
 +LDFLAGS += -L$(OPENBLAS)/lib -D_GNU_SOURCE
  LDLIBS  = -Wl,-Bdynamic -lgsl -Wl,-Bstatic -lopenblas -Wl,-Bdynamic -lgfortran -pthread -lm
  else
- CFLAGS  = -I../include -D_GNU_SOURCE
+-CFLAGS  = -I../include -D_GNU_SOURCE
 -LDFLAGS = -D_GNU_SOURCE
 -LDLIBS  = -lgsl -lopenblas -lgfortran -pthread -lm
++CFLAGS  = -I../include -I${LOCALBASE}/include -D_GNU_SOURCE
 +LDFLAGS = -D_GNU_SOURCE -L${LOCALBASE}/lib
-+LDLIBS  = -lgsl -lopenblas -lblas -pthread -lm
++LDLIBS  = -L${LOCALBASE}/lib/gcc48 -lgsl -llapack -lopenblas -lgfortran -pthread -lm
  endif
  
 -CC = gcc
