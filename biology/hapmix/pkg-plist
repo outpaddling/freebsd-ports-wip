@@ -1,1 +1,13 @@
-@comment $FreeBSD$
+bin/admix2
+bin/convert_phasedeghapmix_chr.pl
+bin/convert_phasedeghapmix_chrsamp.pl
+bin/extract_output.pl
+bin/extract_output2.pl
+bin/extract_output3.pl
+bin/extract_output5.pl
+bin/extract_outputhap.pl
+bin/filterSNPs.pl
+bin/interpolateSNPs.pl
+bin/runHapmix.pl
+bin/runHapmix_v0.pl
+bin/runHapmix_v1.pl
