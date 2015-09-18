@@ -33,19 +33,21 @@ MAKE_JOBS_UNSAFE=	yes
 pre-build:
 	cd ${WRKSRC} && ${GMAKE} clobber
 
+# What are these binaries?
+#		${WRKSRC}/../bin/smarteigenstrat \
+#		${WRKSRC}/../bin/smartpca \
+#		${WRKSRC}/../bin/smartrel \
+
 do-install:
 	${INSTALL_PROGRAM} \
-		${WRKSRC}/../bin/baseprog \
-		${WRKSRC}/../bin/convertf \
-		${WRKSRC}/../bin/eigenstrat \
-		${WRKSRC}/../bin/eigenstratQTL \
-		${WRKSRC}/../bin/mergeit \
-		${WRKSRC}/../bin/pca \
-		${WRKSRC}/../bin/pcatoy \
-		${WRKSRC}/../bin/smarteigenstrat \
-		${WRKSRC}/../bin/smartpca \
-		${WRKSRC}/../bin/smartrel \
-		${WRKSRC}/../bin/twstats \
+		${WRKSRC}/../src/baseprog \
+		${WRKSRC}/../src/convertf \
+		${WRKSRC}/../src/eigensrc/eigenstrat \
+		${WRKSRC}/../src/eigensrc/eigenstratQTL \
+		${WRKSRC}/../src/mergeit \
+		${WRKSRC}/../src/pca \
+		${WRKSRC}/../src/eigensrc/pcatoy \
+		${WRKSRC}/../src/eigensrc/twstats \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/../bin/evec2pca-ped.perl \

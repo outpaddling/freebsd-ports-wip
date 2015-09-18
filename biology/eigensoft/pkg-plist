@@ -10,9 +10,6 @@ bin/mergeit
 bin/pca
 bin/pcatoy
 bin/ploteig
-bin/smarteigenstrat
 bin/smarteigenstrat.perl
-bin/smartpca
 bin/smartpca.perl
-bin/smartrel
 bin/twstats
