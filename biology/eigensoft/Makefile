@@ -9,8 +9,6 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 MAINTAINER=	bacon@oyster.jbacon.dyndns.org
 COMMENT=	Population genetics and stratification correction method
 
-# LICENSE=	
-
 LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl \
 		libopenblas.so:${PORTSDIR}/math/openblas \
 		liblapack.so:${PORTSDIR}/math/lapack

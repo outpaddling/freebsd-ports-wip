@@ -1,6 +1,6 @@
---- Makefile.orig	2015-03-06 10:21:28.000000000 -0600
-+++ Makefile	2015-09-18 11:04:14.000000000 -0500
-@@ -7,23 +7,23 @@
+--- Makefile.orig	2015-03-06 16:21:28 UTC
++++ Makefile
+@@ -7,23 +7,23 @@ ifeq ($(DOMAINNAME),broadinstitute.org)
  $(info *** Broad Institute users can execute use .openblas-0.2.8 and use GCC-4.9 to link to OpenBLAS ***)
  else
  # ----- On orchestra this will work  

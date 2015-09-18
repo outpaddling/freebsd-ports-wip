@@ -1,6 +1,6 @@
---- qpsubs.c.orig	2015-09-18 11:02:56.000000000 -0500
-+++ qpsubs.c	2015-09-18 11:03:23.000000000 -0500
-@@ -2252,7 +2252,7 @@
+--- qpsubs.c.orig	2015-03-06 16:21:28 UTC
++++ qpsubs.c
+@@ -2252,7 +2252,7 @@ double doinbreed(double *inb, double *in
      free2D(&btop, nblocks);
      free2D(&bbot, nblocks);
  

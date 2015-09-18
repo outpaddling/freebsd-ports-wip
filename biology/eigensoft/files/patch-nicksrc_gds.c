@@ -1,6 +1,6 @@
---- nicksrc/gds.c.orig	2015-09-18 11:00:01.000000000 -0500
-+++ nicksrc/gds.c	2015-09-18 11:00:24.000000000 -0500
-@@ -347,7 +347,7 @@
+--- nicksrc/gds.c.orig	2015-03-06 16:21:28 UTC
++++ nicksrc/gds.c
+@@ -347,7 +347,7 @@ int ewens(int *a, int n, double theta) 
       int i, k, maxcat=0 ;
       double t, x ;
  
