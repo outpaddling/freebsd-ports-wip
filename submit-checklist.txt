@@ -13,6 +13,8 @@ Makefile:
     # Created by: First-name Last-name <email>
     # $FreeBSD$
     
+    USE_GITHUB, SF, DISTVERSIONPREFIX, etc. if possible
+    
     Check use of each LOCALBASE and PREFIX
     Convert /usr/wip and ../.. to ${PORTSDIR}
     Use ${PORTNAME}, ${PORTVERSION}, etc in body wherever possible
