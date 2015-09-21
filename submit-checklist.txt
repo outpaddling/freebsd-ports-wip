@@ -95,14 +95,32 @@ If maintaining source
 
 else
     Contact author:
-	Ask them to post that their software can be installed on FreeBSD via
-	ports:
-    
-	pkg install name
+	Send the following message after the commit:
 	
-	or
-	
-	cd /usr/ports/category/name && make install
+====
+FYI:
+
+[Software name] has been committed to the FreeBSD ports collection.
+It might be helpful to users if you could post a message like
+the following on your website:
+
+Cheers,
+
+    [Your name]
+
+[Software name] can be installed on FreeBSD via the FreeBSD ports
+system.
+
+To install via the binary package, simply run:
+
+    pkg install name
+
+To build and install from source code, run:
+
+    cd /usr/ports/category/name && make install
+
+For more information, visit https://www.freebsd.org/ports/index.html.
+===
 	
 	People often assume the only supported platforms are those listed on
 	the software's home page.  A simple link to a ports site can do a lot
