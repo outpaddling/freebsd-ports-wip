@@ -41,6 +41,7 @@ CFLAGS+=	-fopenmp
 LDFLAGS+=	-fopenmp -Wl,-rpath=${_GCC_RUNTIME}
 MAKE_FLAGS+=	FORCE_UNSAFE_CONFIGURE=1
 
+# Use samtools 0.1.19.  http://trinityrnaseq.github.io/
 BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
