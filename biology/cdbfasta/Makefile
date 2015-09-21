@@ -7,10 +7,10 @@ CATEGORIES=	biology
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
-MAINTAINER=	dsiercks@uwm.edu
-COMMENT=	Fast indexing and retrieval of fasta records from flat file databases
+MAINTAINER=	jwbacon@tds.net
+COMMENT=	Fast indexing and retrieval of FASTA records from flat file databases
 
-# LICENSE=	Unspecified
+# LICENSE=	unspecified
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

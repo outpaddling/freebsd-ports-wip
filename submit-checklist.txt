@@ -55,8 +55,6 @@ Makefile:
     
     Replace NOPORTDOCS, etc. with PORT_OPTIONS:MDOC
     
-    Replace pre.mk with options.mk, post.mk with mk
-    
     Remove cat pkg-message if present
     
 Carefully inspect pkg-plist
