@@ -81,7 +81,7 @@ Test on all available platforms.  Do the following IN ORDER:
     test with NOPORT* (whatever is in pkg-plist)
 
 Generate unified diff for updates, shar file for new ports
-    (diff-port or shar-port scripts)
+    (port-diff or port-shar scripts from ports-mgmt/port-dev)
 
 Carefully inspect diff or shar
 
