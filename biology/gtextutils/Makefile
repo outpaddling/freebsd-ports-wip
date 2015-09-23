@@ -1,21 +1,20 @@
-# Created by: Jason Bacon <bacon@unixdev.ceas.uwm.edu>
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
-
 
 PORTNAME=	libgtextutils
 PORTVERSION=	0.7
 CATEGORIES=	biology
-MASTER_SITES=	https://github.com/agordon/libgtextutils/releases/download/0.7/
 
-MAINTAINER=	bacon@unixdev.ceas.uwm.edu
+MAINTAINER=	jwbacon@tds.net
 COMMENT=	Gordon text utilities
 
 LICENSE=	AGPLv3
 
-# Just for speed: Recent GCC has better optimizer
-# USE_GCC=	yes
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		libtool pkgconfig
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+USE_GITHUB=	yes
+GH_ACCOUNT=	agordon
+GH_PROJECT=	libgtextutils
+
+.include <bsd.port.mk>
