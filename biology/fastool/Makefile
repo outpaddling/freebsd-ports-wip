@@ -4,15 +4,19 @@
 PORTNAME=	fastool
 PORTVERSION=	0.1.4
 CATEGORIES=	biology
-MASTER_SITES=	http://github.com/fstrozzi/Fastool/archive/
-DISTNAME=	${PORTVERSION}
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Simple and quick FastQ and FastA tool for file reading and conversion
 
 LICENSE=	BSD2CLAUSE
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	fstrozzi
+GH_PROJECT=	Fastool
+
 WRKSRC=		${WRKDIR}/Fastool-${PORTVERSION}
+
+PLIST_FILES=	bin/fastool
 
 post-patch:
 	${REINPLACE_CMD} \
