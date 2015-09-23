@@ -18,6 +18,8 @@ WRKSRC=		${WRKDIR}/Fastool-${PORTVERSION}
 
 PLIST_FILES=	bin/fastool
 
+CFLAGS+=	-std=c99
+
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's|CC *=|CC ?=|g' \
