@@ -26,8 +26,9 @@ SUB_LIST=	JARNAME=${DISTNAME}
 PLIST_FILES=	bin/haploview ${JAVAJARDIR:C,${PREFIX}/?,,}/${DISTNAME}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${JAVAJARDIR}/
-	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${STAGEDIR}${JAVAJARDIR}/
-	${INSTALL_SCRIPT} ${WRKDIR}/haploview.sh ${STAGEDIR}${PREFIX}/bin/haploview
+	${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/haploview.sh \
+		${STAGEDIR}${PREFIX}/bin/haploview
 
 .include <bsd.port.mk>
