@@ -1,17 +1,18 @@
-# Created by: Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
 
 PORTNAME=	FastTree
-PORTVERSION=	2.1.7
+PORTVERSION=	2.1.8
 CATEGORIES=	biology
 MASTER_SITES=	http://www.microbesonline.org/fasttree/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.c
 
 MAINTAINER=	jwbacon@tds.net
-COMMENT=	Approximately-maximum-likelihood phylogenetic trees from alignments of nucleotide or protein sequences
+COMMENT=	Approximately-maximum-likelihood phylogenetic trees from alignments
 
-USE_GCC=	any
+# LICENSE=	unspecified open source
+
+USES=		compiler:openmp
 
 CFLAGS+=	-DOPENMP -fopenmp -O3 -finline-functions -funroll-loops
 LDFLAGS+=	-lm
@@ -28,5 +29,5 @@ do-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/FastTree ${STAGEDIR}${PREFIX}/bin
-	
+
 .include <bsd.port.mk>
