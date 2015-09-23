@@ -1,0 +1,126 @@
+bin/fastqc
+%%PORTDOCS%%%%DOCSDIR%%/Help/1 Introduction/1.1 What is FastQC.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/2 Basic Operations/2.1 Opening a sequence file.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/2 Basic Operations/2.2 Evaluating Results.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/2 Basic Operations/2.3 Saving a Report.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/1 Basic Statistics.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/10 Adapter Content.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/11 Kmer Content.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/12 Per Tile Sequence Quality.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/2 Per Base Sequence Quality.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/3 Per Sequence Quality Scores.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/4 Per Base Sequence Content.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/5 Per Sequence GC Content.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/6 Per Base N Content.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/7 Sequence Length Distribution.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/8 Duplicate Sequences.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/9 Overrepresented Sequences.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/duplication_levels.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/kmer_profiles.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/per_base_gc_content.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/per_base_n_content.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/per_base_quality.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/per_base_sequence_content.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/per_sequence_gc_content.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/per_sequence_quality.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/per_tile_quality.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/3 Analysis Modules/sequence_length_distribution.png
+%%DATADIR%%/Configuration/adapter_list.txt
+%%DATADIR%%/Configuration/contaminant_list.txt
+%%DATADIR%%/Configuration/limits.txt
+%%DATADIR%%/Templates/Icons/error.png
+%%DATADIR%%/Templates/Icons/fastqc_icon.png
+%%DATADIR%%/Templates/Icons/tick.png
+%%DATADIR%%/Templates/Icons/warning.png
+%%DATADIR%%/Templates/fastqc2fo.xsl
+%%DATADIR%%/Templates/header_template.html
+%%DATADIR%%/uk/ac/babraham/FastQC/Analysis/AnalysisListener.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Analysis/AnalysisQueue.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Analysis/AnalysisRunner.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Analysis/OfflineRunner.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Dialogs/AboutDialog$1.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Dialogs/AboutDialog.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Dialogs/FastQCTitlePanel$SmoothJLabel.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Dialogs/FastQCTitlePanel.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Dialogs/WelcomePanel.class
+%%DATADIR%%/uk/ac/babraham/FastQC/FastQCApplication$1.class
+%%DATADIR%%/uk/ac/babraham/FastQC/FastQCApplication.class
+%%DATADIR%%/uk/ac/babraham/FastQC/FastQCConfig.class
+%%DATADIR%%/uk/ac/babraham/FastQC/FastQCMenuBar.class
+%%DATADIR%%/uk/ac/babraham/FastQC/FileFilters/BAMFileFilter.class
+%%DATADIR%%/uk/ac/babraham/FastQC/FileFilters/CasavaFastQFileFilter.class
+%%DATADIR%%/uk/ac/babraham/FastQC/FileFilters/FastQFileFilter.class
+%%DATADIR%%/uk/ac/babraham/FastQC/FileFilters/GobyFileFilter.class
+%%DATADIR%%/uk/ac/babraham/FastQC/FileFilters/MappedBAMFileFilter.class
+%%DATADIR%%/uk/ac/babraham/FastQC/FileFilters/SequenceFileFilter.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Graphs/BaseGroup.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Graphs/LineGraph.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Graphs/QualityBoxPlot.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Graphs/TileGraph.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Help/HelpDialog.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Help/HelpIndexRoot$FileSorter.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Help/HelpIndexRoot.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Help/HelpPage.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Help/HelpPageDisplay$HelpEditor.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Help/HelpPageDisplay.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Help/HelpSearchPanel.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/AbstractQCModule.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/AdapterContent$Adapter.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/AdapterContent$ResultsTable.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/AdapterContent.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/BasicStats$ResultsTable.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/BasicStats.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/DuplicationLevel.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/GCModel/GCModel.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/GCModel/GCModelValue.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/KmerContent$Kmer.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/KmerContent$ResultsTable.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/KmerContent.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/ModuleConfig.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/ModuleFactory.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/NContent.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/OverRepresentedSeqs$OverrepresentedSeq.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/OverRepresentedSeqs$ResultsTable.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/OverRepresentedSeqs.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/PerBaseQualityScores.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/PerBaseSequenceContent.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/PerSequenceGCContent.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/PerSequenceQualityScores.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/PerTileQualityScores.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/QCModule.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Modules/SequenceLengthDistribution.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Report/HTMLReportArchive.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Report/stylesheet.txt
+%%DATADIR%%/uk/ac/babraham/FastQC/Resources/error.png
+%%DATADIR%%/uk/ac/babraham/FastQC/Resources/fastqc_icon.png
+%%DATADIR%%/uk/ac/babraham/FastQC/Resources/fastqc_icon.svg
+%%DATADIR%%/uk/ac/babraham/FastQC/Resources/fastqc_icon_100.png
+%%DATADIR%%/uk/ac/babraham/FastQC/Resources/tick.png
+%%DATADIR%%/uk/ac/babraham/FastQC/Resources/warning.png
+%%DATADIR%%/uk/ac/babraham/FastQC/Results/ResultsPanel$ModuleRenderer.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Results/ResultsPanel.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Sequence/BAMFile.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Sequence/Contaminant/Contaminant.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Sequence/Contaminant/ContaminantHit.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Sequence/Contaminant/ContaminentFinder.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Sequence/Fast5File.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Sequence/FastQFile.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Sequence/QualityEncoding/PhredEncoding.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Sequence/Sequence.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Sequence/SequenceFactory.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Sequence/SequenceFile.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Sequence/SequenceFileGroup.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Sequence/SequenceFormatException.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Statistics/NormalDistribution.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Statistics/PearsonCorrelation.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Utilities/CasavaBasename.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Utilities/HotColdColourGradient.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Utilities/ImageToBase64.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Utilities/MultiMemberGZIPInputStream.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Utilities/NameFormatException.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Utilities/NanoporeBasename.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Utilities/QualityCount.class
+%%DATADIR%%/uk/ac/babraham/FastQC/Utilities/RGB.class
+%%JAVAJARDIR%%/cisd-jhdf5.jar
+%%JAVAJARDIR%%/jbzip2-0.9.jar
+%%JAVAJARDIR%%/sam-1.103.jar
