@@ -4,18 +4,15 @@
 PORTNAME=	fastx_toolkit
 PORTVERSION=	0.0.14
 CATEGORIES=	biology science
-# MASTER_SITES=	https://github.com/agordon/fastx_toolkit/releases/download/0.0.14/
 
 MAINTAINER=	bacon@unixdev.ceas.uwm.edu
 COMMENT=	CLI tools for Short-Reads FASTA/FASTQ files preprocessing
 
 LICENSE=	AGPLv3
 
-LIB_DEPENDS=	libgtextutils.so:/usr/wip/biology/gtextutils
+LIB_DEPENDS=	libgtextutils.so:/usr/wip/biology/libgtextutils
 
-# Just for speed: Recent GCC has better optimizer
-# USE_GCC=	yes
-USES=		tar:bzip2 pkgconfig perl5 shebangfix
+USES=		perl5 pkgconfig shebangfix tar:bzip2
 USE_PERL5=	run
 SHEBANG_FILES=	scripts/*.pl
 
