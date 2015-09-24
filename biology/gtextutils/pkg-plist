@@ -9,11 +9,8 @@ include/gtextutils/gtextutils/string_tokenize.h
 include/gtextutils/gtextutils/strnatcmp.h
 include/gtextutils/gtextutils/text_line_reader.h
 include/gtextutils/gtextutils/tuple_parser.h
-lib/libgtextutils-0.7.so
 lib/libgtextutils-0.7.so.0
+lib/libgtextutils-0.7.so.0.0.0
 lib/libgtextutils.a
-lib/libgtextutils.la
 lib/libgtextutils.so
-lib/pkgconfig/gtextutils.pc
-@dirrmtry include/gtextutils/gtextutils
-@dirrmtry include/gtextutils
+libdata/pkgconfig/gtextutils.pc
