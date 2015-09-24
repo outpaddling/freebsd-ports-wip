@@ -88,7 +88,8 @@ Generate unified diff for updates, shar file for new ports
 Carefully inspect diff or shar
 
 Follow porter's handbook to submit new port or update.
-    
+    https://www.freebsd.org/support/bugreports.html
+
 If maintaining source
 
     tag this version of source and create next one
