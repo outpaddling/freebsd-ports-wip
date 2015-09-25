@@ -12,7 +12,7 @@ LICENSE=	AGPLv3
 
 LIB_DEPENDS=	libgtextutils.so:${PORTSDIR}/biology/libgtextutils
 
-USES=		autoreconf perl5 pkgconfig shebangfix tar:bzip2
+USES=		autoreconf libtool perl5 pkgconfig shebangfix tar:bzip2
 USE_PERL5=	run
 SHEBANG_FILES=	scripts/*.pl
 
