@@ -22,8 +22,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Sablotron.pm:${PORTSDIR}/textproc/p5-
 USE_PERL5=	yes
 NO_BUILD=	yes
 
-MAN1=		docbook2odf.1
-
 post-patch:
 	${FIND} ${WRKSRC} -type f -exec \
 		${REINPLACE_CMD} -e 's|/usr/share|/usr/local/share|g' '{}' \;

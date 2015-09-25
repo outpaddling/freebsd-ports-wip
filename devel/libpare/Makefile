@@ -15,13 +15,12 @@ MAINTAINER=	jwbacon@tds.net
 COMMENT=	Misc functions
 
 PLIST_FILES=	lib/libpare.a \
-		include/pare.h
+		include/pare.h \
+		man/man3/pare.3.gz
 
 STRIP_CMD=
 
 CFLAGS=		-g -Wall
-
-MAN3=	pare.3
 
 MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
 		MANPREFIX=${STAGEDIR}${PREFIX}
