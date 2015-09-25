@@ -28,6 +28,7 @@ bin/md_coords
 bin/psl_genes
 bin/psl_introns
 bin/psl_splicesites
+bin/sam_sort
 bin/snpindex
 bin/uniqscan
 bin/uniqscanl
