@@ -10,8 +10,10 @@ DISTNAME=	${PORTNAME}-gsnap-${PORTVERSION:C|\.|-|g}
 MAINTAINER=	rpz@cse.wustl.edu
 COMMENT=	Genomic Mapping and Alignment Program for mRNA and EST Sequences
 
-# LICENSE=	
-# LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GMAP
+LICENSE_NAME=	GMAP License
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
