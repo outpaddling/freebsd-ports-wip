@@ -46,7 +46,7 @@ BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bowtie:/usr/wip/biology/bowtie \
-		samtools:/usr/wip/biology/samtools \
+		samtools==0.1.9:/usr/wip/biology/samtools \
 		jellyfish:/usr/wip/biology/jellyfish \
 		ParaFly:/usr/wip/sysutils/parafly
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
