@@ -1,23 +1,90 @@
---- Makefile.orig	2013-03-19 02:48:09.000000000 -0500
-+++ Makefile	2014-05-21 19:07:53.000000000 -0500
-@@ -1,6 +1,7 @@
--CC=			gcc
--CFLAGS=		-g -Wall -O2
--#LDFLAGS=		-Wl,-rpath,\$$ORIGIN/../lib
-+CC?=		gcc
-+CFLAGS?=	-g -Wall -O2
-+RANLIB?=	/usr/bin/ranlib
-+#LDFLAGS=	-Wl,-rpath,\$$ORIGIN/../lib
- DFLAGS=		-D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1
- KNETFILE_O=	knetfile.o
- LOBJS=		bgzf.o kstring.o bam_aux.o bam.o bam_import.o sam.o bam_index.o	\
-@@ -41,7 +42,8 @@
- lib:libbam.a
+--- Makefile.orig	2015-02-02 15:18:41 UTC
++++ Makefile
+@@ -21,12 +21,12 @@
+ # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ # DEALINGS IN THE SOFTWARE.
  
+-CC       = gcc
+-CPPFLAGS = $(DFLAGS) $(INCLUDES)
+-CFLAGS   = -g -Wall -O2
+-LDFLAGS  =
+-LDLIBS   =
+-DFLAGS=     -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1
++CC       ?= cc
++CPPFLAGS += $(DFLAGS) $(INCLUDES)
++CFLAGS   += -Wall -Wno-unused-function -Wno-implicit-function-declaration
++LDFLAGS  +=
++LDLIBS   +=
++DFLAGS=     -D_CURSES_LIB=1
+ LOBJS=      bam_aux.o bam.o bam_import.o sam.o \
+             sam_header.o bam_plbuf.o
+ AOBJS=      bam_index.o bam_plcmd.o sam_view.o \
+@@ -39,18 +39,13 @@ AOBJS=      bam_index.o bam_plcmd.o sam_
+ INCLUDES=   -I. -I$(HTSDIR)
+ LIBCURSES=  -lcurses # -lXCurses
+ 
+-prefix      = /usr/local
++prefix      = ${STAGEDIR}${PREFIX}
+ exec_prefix = $(prefix)
+ bindir      = $(exec_prefix)/bin
+-mandir      = $(prefix)/share/man
++mandir      = $(prefix)/man
+ man1dir     = $(mandir)/man1
+-
+-MKDIR_P = mkdir -p
+-INSTALL = install -p
+-INSTALL_PROGRAM = $(INSTALL)
+-INSTALL_DATA    = $(INSTALL) -m 644
+-INSTALL_DIR     = $(MKDIR_P) -m 755
+-
++includedir  = $(prefix)/include/bam
++libdir      = $(prefix)/lib
+ 
+ PROGRAMS = samtools
+ 
+@@ -59,7 +54,6 @@ BUILT_MISC_PROGRAMS = \
+ 	misc/md5fa misc/md5sum-lite misc/wgsim
+ 
+ MISC_PROGRAMS = \
+-	$(BUILT_MISC_PROGRAMS) \
+ 	misc/blast2sam.pl misc/bowtie2sam.pl misc/export2sam.pl \
+ 	misc/interpolate_sam.pl misc/novo2sam.pl \
+ 	misc/plot-bamstats misc/psl2sam.pl \
+@@ -82,9 +76,8 @@ all: $(PROGRAMS) $(BUILT_MISC_PROGRAMS) 
+ 
+ 
+ # Adjust $(HTSDIR) to point to your top-level htslib directory
+-HTSDIR = ../htslib
+-include $(HTSDIR)/htslib.mk
+-HTSLIB = $(HTSDIR)/libhts.a
++HTSDIR = $(prefix)/include
++HTSLIB = -lhts
+ BGZIP  = $(HTSDIR)/bgzip
+ 
+ 
+@@ -121,7 +114,7 @@ lib:libbam.a
  libbam.a:$(LOBJS)
--		$(AR) -csru $@ $(LOBJS)
-+		$(AR) cr $@ $(LOBJS)
-+		$(RANLIB) $@
+ 	$(AR) -csru $@ $(LOBJS)
  
- samtools:lib-recur $(AOBJS)
- 		$(CC) $(CFLAGS) -o $@ $(AOBJS) $(LDFLAGS) libbam.a -Lbcftools -lbcf $(LIBPATH) $(LIBCURSES) -lm -lz -lpthread
+-samtools: $(AOBJS) libbam.a $(HTSLIB)
++samtools: $(AOBJS) libbam.a
+ 	$(CC) -pthread $(LDFLAGS) -o $@ $(AOBJS) libbam.a $(HTSLIB) $(LDLIBS) $(LIBCURSES) -lm -lz
+ 
+ bam_h = bam.h $(htslib_bgzf_h) $(htslib_sam_h)
+@@ -268,10 +261,13 @@ misc/md5sum-lite.o: misc/md5.c misc/md5.
+ 
+ 
+ install: $(PROGRAMS) $(BUILT_MISC_PROGRAMS)
+-	$(INSTALL_DIR) $(DESTDIR)$(bindir) $(DESTDIR)$(man1dir)
+-	$(INSTALL_PROGRAM) $(PROGRAMS) $(MISC_PROGRAMS) $(DESTDIR)$(bindir)
++	$(INSTALL_DIR) $(DESTDIR)$(bindir) $(DESTDIR)$(bindir)/samtools_misc $(DESTDIR)$(man1dir) $(DESTDIR)$(includedir) $(DESTDIR)$(libdir)
++	$(INSTALL_PROGRAM) $(PROGRAMS) $(DESTDIR)$(bindir)
++	$(INSTALL_PROGRAM) $(BUILT_MISC_PROGRAMS) $(DESTDIR)$(bindir)/samtools_misc
++	$(INSTALL_SCRIPT) $(MISC_PROGRAMS) $(DESTDIR)$(bindir)/samtools_misc
+ 	$(INSTALL_DATA) samtools.1 $(DESTDIR)$(man1dir)
+-
++	$(INSTALL_DATA) *.h $(DESTDIR)$(includedir)
++	$(INSTALL_DATA) libbam.a $(DESTDIR)$(libdir)
+ 
+ testclean:
+ 	-rm -f test/*.new test/*.tmp test/*/*.new test/*/*.tmp
