@@ -1,0 +1,21 @@
+--- trinity-plugins/Makefile.orig	2015-02-14 13:34:09.000000000 -0600
++++ trinity-plugins/Makefile	2015-02-20 21:18:50.000000000 -0600
+@@ -21,7 +21,7 @@
+ PARAFLY_CODE=parafly-code
+ TRIMMOMATIC_CODE=Trimmomatic-0.32
+ 
+-trinity_essentials: jellyfish fastool_target parafly_target trimmomatic_target
++trinity_essentials: trimmomatic_target
+ 
+ trimmomatic_target:
+ 	ln -sf ${TRIMMOMATIC_CODE} Trimmomatic
+@@ -46,7 +46,8 @@
+ ### Needed for downstream analyses
+ ##################################
+ 
+-plugins: transdecoder_target slclust_target collectl_target rsem
++# All plugins except collectl are installed as dependency ports
++plugins: collectl_target
+ 	@echo "\n\n** Done building plugins **\n\n"
+ 
+ 
