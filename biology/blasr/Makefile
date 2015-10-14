@@ -12,7 +12,8 @@ COMMENT=	PacBio(R) long read aligner
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
+LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
+		libsz.so:${PORTSDIR}/science/szip
 BUILD_DEPENDS=	${LOCALBASE}/lib/libblasr.a:/usr/wip/biology/blasr_libcpp
 
 USES=		gmake tar:xz
