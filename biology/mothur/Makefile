@@ -8,8 +8,9 @@ CATEGORIES=	biology
 MAINTAINER=	bacon@sciprog.ceas.uwm.edu
 COMMENT=
 
-USES=		gmake fortran
-# Causes clang to crash - submit a bug report
+USES=		gmake fortran shebangfix
+SHEBANGFILES=	source/uchime_src/mk
+# Does not build with clang
 # USE_GCC=	yes
 
 USE_GITHUB=	yes
@@ -24,5 +25,6 @@ post-patch:
 	${REINPLACE_CMD} -e 's|-O3|-I${LOCALBASE}/include|g' ${WRKSRC}/makefile
 	${REINPLACE_CMD} -e 's|gfortran|${FC}|g' ${WRKSRC}/source/makefile
 	${REINPLACE_CMD} -e 's|-arch x86_64||g' ${WRKSRC}/makefile
+	${REINPLACE_CMD} -e 's|g++|${CXX}|g' ${WRKSRC}/source/uchime_src/mk
 
 .include <bsd.port.mk>
