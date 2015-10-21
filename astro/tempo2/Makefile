@@ -12,10 +12,23 @@ COMMENT=	Pulsar software for forming timing residuals.
 
 LICENSE=	GPLv2
 
-USES=		fortran
+USES=		fortran libtool
 GNU_CONFIGURE=	yes
-# USE_GCC=	any
 
-# CFLAGS+=	-Wno-implicit-function-declaration
+LIB_DEPENDS=	libpgplot.so:${PORTSDIR}/graphics/pgplot
+
+INSTALL_TARGET=	install-strip
+
+CONFIGURE_ARGS+=	--with-tempo2-plug-dir=${PREFIX}/lib/tempo2/plugins
+
+post-configure:
+	${REINPLACE_CMD} \
+		-e 's|-p $$(plugindir)|-p ${STAGEDIR}$$(plugindir)|g' \
+		-e 's|t2 $$(plugindir)|t2 ${STAGEDIR}$$(plugindir)|g' \
+		${WRKSRC}/plugin/Makefile
+
+post-install:
+	cd ${WRKSRC}/plugin && ${MAKE} plugins-install
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/tempo2/plugins/*
 
 .include <bsd.port.mk>
