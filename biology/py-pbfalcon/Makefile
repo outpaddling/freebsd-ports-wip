@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pbfalcon
-PORTVERSION=	2015.08.17
+PORTVERSION=	2015.10.28
 CATEGORIES=	biology
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/

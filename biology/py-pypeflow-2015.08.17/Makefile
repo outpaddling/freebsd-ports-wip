@@ -3,7 +3,7 @@
 
 PORTNAME=	pypeflow
 # Must use the same version of dazz_db, daligner, pypeflow, and falcon!
-PORTVERSION=	2015.10.28
+PORTVERSION=	2015.08.17
 CATEGORIES=	biology
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
