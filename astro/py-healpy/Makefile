@@ -16,6 +16,7 @@ LICENSE=	GPLv2
 USES=		python
 USE_PYTHON=	distutils
 
+BUILD_DEPENDS+=	cython:${PORTSDIR}/lang/cython
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}numpy>0:${PORTSDIR}/math/py-numpy \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib \
 		${PYTHON_PKGNAMEPREFIX}pyfits>0:${PORTSDIR}/astro/py-pyfits
