@@ -13,7 +13,7 @@ COMMENT=	Python healpix maps tools
 
 LICENSE=	GPLv2
 
-USES=		python
+USES=		pkgconfig python
 USE_PYTHON=	distutils
 
 BUILD_DEPENDS+=	cython:${PORTSDIR}/lang/cython
