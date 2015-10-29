@@ -1,0 +1,4 @@
+#!/bin/sh
+
+scp bacon@unixdev.ceas.uwm.edu:/usr/wip/astro/py-healpy/log unixdev.log
+
