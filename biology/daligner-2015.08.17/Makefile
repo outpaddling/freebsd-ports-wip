@@ -16,7 +16,8 @@ COMMENT=	Find all significant local alignments between reads
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdazzdb.a:/usr/wip/biology/dazz_db
+# BUILD_DEPENDS=	${LOCALBASE}/lib/libdazzdb.a:/usr/wip/biology/dazz_db-${PORTVERSION}
+BUILD_DEPENDS=	dazz_db==${PORTVERSION}:/usr/wip/biology/dazz_db-${PORTVERSION}
 
 USES=		gmake tar:xz
 

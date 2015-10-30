@@ -17,10 +17,10 @@ LICENSE=	BSD3CLAUSE
 # Distfiles are rolled from a FALCON-integrate snapshot to ensure that
 # this is possible.
 # FIXME: Get to a newer version of rdflib and eliminate rdfextras
-RUN_DEPENDS=	dazz_db==${PORTVERSION}:/usr/wip/biology/dazz_db \
-		daligner==${PORTVERSION}:/usr/wip/biology/daligner \
+RUN_DEPENDS=	dazz_db==${PORTVERSION}:/usr/wip/biology/dazz_db-${PORTVERSION} \
+		daligner==${PORTVERSION}:/usr/wip/biology/daligner-${PORTVERSION} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=0:${PORTSDIR}/math/py-networkx \
-		${PYTHON_PKGNAMEPREFIX}pypeflow==${PORTVERSION}:/usr/wip/biology/py-pypeflow \
+		${PYTHON_PKGNAMEPREFIX}pypeflow==${PORTVERSION}:/usr/wip/biology/py-pypeflow-${PORTVERSION} \
 		${PYTHON_PKGNAMEPREFIX}rdflib==3.4.0:/usr/wip/textproc/py-rdflib340 \
 		${PYTHON_PKGNAMEPREFIX}rdfextras==0.4:/usr/wip/textproc/py-rdfextras
 
