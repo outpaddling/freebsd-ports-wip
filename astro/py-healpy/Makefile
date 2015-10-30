@@ -16,10 +16,14 @@ LICENSE=	GPLv2
 USES=		pkgconfig python
 USE_PYTHON=	distutils
 
-BUILD_DEPENDS+=	cython:${PORTSDIR}/lang/cython \
-		f2c:${PORTSDIR}/lang/f2c
+BUILD_DEPENDS+=	cython:${PORTSDIR}/lang/cython
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}numpy>0:${PORTSDIR}/math/py-numpy \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib \
 		${PYTHON_PKGNAMEPREFIX}pyfits>0:${PORTSDIR}/astro/py-pyfits
+
+post-stage:
+	for f in ${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/healpy/*.so; do \
+	${STRIP_CMD} $$f; \
+	done
 
 .include <bsd.port.mk>
