@@ -21,7 +21,9 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}numpy>0:${PORTSDIR}/math/py-numpy \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib \
 		${PYTHON_PKGNAMEPREFIX}pyfits>0:${PORTSDIR}/astro/py-pyfits
 
-MAKE_JOBS_UNSAFE=	yes
+# Hacks to find emmintrin.h and xmmintrin.h
+# CFLAGS+=	-I /usr/include/clang/3.3
+USE_GCC=	yes
 
 post-stage:
 	for f in ${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/healpy/*.so; do \
