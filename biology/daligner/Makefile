@@ -32,7 +32,7 @@ USE_GCC=	yes
 
 post-patch:
 	for f in ${WRKSRC}/py_utils/*.py; do \
-		${PRINTF} "#!/usr/bin/env python\n\n" > $$f.temp; \
+		${PRINTF} "#!${PYTHON_CMD}\n\n" > $$f.temp; \
 		${CAT} $$f >> $$f.temp; \
 		${MV} -f $$f.temp $$f; \
 	done
