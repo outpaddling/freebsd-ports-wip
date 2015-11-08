@@ -20,7 +20,7 @@ MASTER_SITES=	http://cran.r-project.org/%SUBDIR%/ \
 		http://probability.ca/cran/%SUBDIR%/
 MASTER_SITE_SUBDIR=	src/base/R-${PORTVERSION:C|\..*||}
 DISTNAME=	R-${PORTVERSION}
-LATEST_LINK=	R313
+PKGBASE=	R313
 
 #PATCH_SITES=		${MASTER_SITE_LOCAL}
 #PATCH_SITE_SUBDIR=	bf
@@ -197,7 +197,7 @@ USES+=			readline
 .else # LIBR_SLAVEPORT
 
 .if ${PORT_OPTIONS:MGHOSTSCRIPT}
-USE_GHOSTSCRIPT_RUN=	yes
+USES+=		ghostscript
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}

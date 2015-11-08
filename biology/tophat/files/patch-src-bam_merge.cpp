@@ -1,5 +1,5 @@
---- src/bam_merge.cpp.orig	2014-05-21 19:31:17.000000000 -0500
-+++ src/bam_merge.cpp	2014-05-21 19:37:10.000000000 -0500
+--- src/bam_merge.cpp.orig	2012-07-12 21:06:38 UTC
++++ src/bam_merge.cpp
 @@ -1,3 +1,4 @@
 +#include <getopt.h>
  #include "bam_merge.h"
