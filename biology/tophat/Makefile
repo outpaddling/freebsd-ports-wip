@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tophat
-PORTVERSION=	2.0.11
+PORTVERSION=	2.0.12
 CATEGORIES=	biology science
 MASTER_SITES=	http://ccb.jhu.edu/software/tophat/downloads/
 
