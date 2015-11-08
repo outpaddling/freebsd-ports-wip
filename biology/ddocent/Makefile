@@ -18,8 +18,9 @@ RUN_DEPENDS=	mawk>=0:${PORTSDIR}/lang/mawk \
 		cd-hit>=0:${PORTSDIR}/biology/cd-hit \
 		gnuplot>=0:${PORTSDIR}/math/gnuplot \
 		parallel>=0:${PORTSDIR}/sysutils/parallel \
-		gawk>=0:${PORTSDIR}/lang/gawk
-		# vcftools>=0:/usr/wip/biology/vfctools
+		gawk>=0:${PORTSDIR}/lang/gawk \
+		vcftools>=0:/usr/wip/biology/vcftools
+		# Unfinished: vcflib>=0:/usr/wip/biology/vcflib
 
 # Still needs:
 # FreeBayes 	https://github.com/ekg/freebayes
@@ -28,7 +29,6 @@ RUN_DEPENDS=	mawk>=0:${PORTSDIR}/lang/mawk \
 # rainbow 	http://sourceforge.net/projects/bio-rainbow/files/
 # seqtk 	https://github.com/lh3/seqtk
 # bedtools 	https://code.google.com/p/bedtools/
-# vcflib 	https://github.com/ekg/vcflib
 # bamtools 	https://github.com/pezmaster31/bamtools
 # PEAR read merger**
 

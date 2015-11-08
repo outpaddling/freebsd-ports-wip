@@ -2,15 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	vcftools
-PORTVERSION=	0.1.12b
+PORTVERSION=	0.1.14
 CATEGORIES=	biology
 DISTNAME=	${PORTNAME}_${PORTVERSION}
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	vcftools
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=
 
-USES=		gmake
+USES=		autoreconf gmake
+
+GNU_CONFIGURE=	yes
+
+USE_GITHUB=	yes
+GH_TAGNAME=	v${PORTVERSION}
 
 .include <bsd.port.mk>
