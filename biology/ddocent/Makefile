@@ -12,10 +12,16 @@ COMMENT=	Bash pipeline for ddRAD sequencing
 
 LICENSE=	MIT
 
-USES=		shebangfix tar:xz
-USE_JAVA=	yes
-SHEBANG_FILES=	dDocent scripts/*
+RUN_DEPENDS=	mawk>=0:${PORTSDIR}/lang/mawk \
+		bwa>=0:${PORTSDIR}/biology/bwa \
+		samtools>=0:${PORTSDIR}/biology/samtools \
+		cd-hit>=0:${PORTSDIR}/biology/cd-hit \
+		gnuplot>=0:${PORTSDIR}/math/gnuplot \
+		parallel>=0:${PORTSDIR}/sysutils/parallel \
+		gawk>=0:${PORTSDIR}/lang/gawk
+		# vcftools>=0:/usr/wip/biology/vfctools
 
+# Still needs:
 # FreeBayes 	https://github.com/ekg/freebayes
 # STACKS 	http://creskolab.uoregon.edu/stacks
 # Trimmomatic 	http://www.usadellab.org/cms/?page=trimmomatic
@@ -25,13 +31,10 @@ SHEBANG_FILES=	dDocent scripts/*
 # vcflib 	https://github.com/ekg/vcflib
 # bamtools 	https://github.com/pezmaster31/bamtools
 # PEAR read merger**
-RUN_DEPENDS=	mawk>=0:${PORTSDIR}/lang/mawk \
-		bwa>=0:${PORTSDIR}/biology/bwa \
-		samtools>=0:${PORTSDIR}/biology/samtools \
-		cd-hit>=0:${PORTSDIR}/biology/cd-hit \
-		gnuplot>=0:${PORTSDIR}/math/gnuplot \
-		parallel>=0:${PORTSDIR}/sysutils/parallel
-		# vcftools>=0:/usr/wip/biology/vfctools
+
+USES=		shebangfix tar:xz
+USE_JAVA=	yes
+SHEBANG_FILES=	dDocent scripts/*
 
 NO_BUILD=	yes
 
