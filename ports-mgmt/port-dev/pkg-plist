@@ -1,5 +1,6 @@
 sbin/port-check
 sbin/port-diff
+sbin/port-gen-install-target
 sbin/port-grep
 sbin/port-mkpatch
 sbin/port-patch-vi
