@@ -1,0 +1,8 @@
+--- Makefile.orig	2015-03-06 17:56:48 UTC
++++ Makefile
+@@ -1,4 +1,4 @@
+-all: vcflib/Makefile log
++all: log
+ 	cd src && $(MAKE)
+ 
+ log: src/version_git.h
