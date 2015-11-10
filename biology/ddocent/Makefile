@@ -27,7 +27,6 @@ RUN_DEPENDS=	mawk>=0:${PORTSDIR}/lang/mawk \
 # FreeBayes 	https://github.com/ekg/freebayes
 # STACKS 	http://creskolab.uoregon.edu/stacks
 # Trimmomatic 	http://www.usadellab.org/cms/?page=trimmomatic
-# rainbow 	http://sourceforge.net/projects/bio-rainbow/files/
 # seqtk 	https://github.com/lh3/seqtk
 # bedtools 	https://code.google.com/p/bedtools/
 # bamtools 	https://github.com/pezmaster31/bamtools
