@@ -4,8 +4,6 @@
 PORTNAME=	bamtools
 PORTVERSION=	2.4.0
 CATEGORIES=	biology
-MASTER_SITES=	http://github.com/pezmaster31/bamtools/archive/
-DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	dsiercks@uwm.edu
 COMMENT=	API and toolkit for handling BAM files.
@@ -17,6 +15,10 @@ LICENSE=	MIT
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 #USES=		cmake 
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	pezmaster31
+GH_TAGNAME=	v${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -30,7 +32,6 @@ MAKE_ENV+=	POPCNT_CAPABILITY=0
 .endif
 
 do-build:
-	(mkdir ${WRKSRC}/build && cd ${WRKSRC}/build && cmake .. && make)
-
+	${MKDIR} ${WRKSRC}/build && cd ${WRKSRC}/build && cmake .. && ${MAKE}
 
 .include <bsd.port.post.mk>
