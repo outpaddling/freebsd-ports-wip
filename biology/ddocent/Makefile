@@ -20,7 +20,8 @@ RUN_DEPENDS=	mawk>=0:${PORTSDIR}/lang/mawk \
 		parallel>=0:${PORTSDIR}/sysutils/parallel \
 		gawk>=0:${PORTSDIR}/lang/gawk \
 		vcftools>=0:/usr/wip/biology/vcftools \
-		vcflib>=0:/usr/wip/biology/vcflib
+		vcflib>=0:/usr/wip/biology/vcflib \
+		rainbow>=0:/usr/wip/biology/rainbow
 
 # Still needs:
 # FreeBayes 	https://github.com/ekg/freebayes
