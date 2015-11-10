@@ -28,6 +28,13 @@ SHEBANG_FILES=	bin/vcfgtcompare.sh \
 
 LIB_DEPENDS=	libhts.so:${PORTSDIR}/biology/htslib
 
+.include <bsd.port.pre.mk>
+
+# GCC disables sse2 by default on i386, but it's required for vcflib
+.if ${ARCH} == i386
+CFLAGS+=	-msse2
+.endif
+
 # MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
@@ -161,4 +168,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/src/*.h ${STAGEDIR}${PREFIX}/include
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
