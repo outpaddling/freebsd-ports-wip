@@ -21,7 +21,8 @@ RUN_DEPENDS=	mawk>=0:${PORTSDIR}/lang/mawk \
 		gawk>=0:${PORTSDIR}/lang/gawk \
 		vcftools>=0:/usr/wip/biology/vcftools \
 		vcflib>=0:/usr/wip/biology/vcflib \
-		rainbow>=0:/usr/wip/biology/rainbow
+		rainbow>=0:/usr/wip/biology/rainbow \
+		bamtools>=0:/usr/wip/biology/bamtools
 
 # Still needs:
 # FreeBayes 	https://github.com/ekg/freebayes
@@ -29,7 +30,6 @@ RUN_DEPENDS=	mawk>=0:${PORTSDIR}/lang/mawk \
 # Trimmomatic 	http://www.usadellab.org/cms/?page=trimmomatic
 # seqtk 	https://github.com/lh3/seqtk
 # bedtools 	https://code.google.com/p/bedtools/
-# bamtools 	https://github.com/pezmaster31/bamtools
 # PEAR read merger**
 
 USES=		shebangfix tar:xz
