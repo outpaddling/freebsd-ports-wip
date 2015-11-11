@@ -1,0 +1,12 @@
+
+This is a collection of work-in-progress FreeBSD ports.
+
+1)  Check out a copy to /usr/wip.
+
+2)  Then install the ports of interest:
+
+    cd /usr/wip/category/port && make deinstall clean install
+
+If you would like to contribute, contact the owner of the repository and
+ask to be added as a collaborator.
+
