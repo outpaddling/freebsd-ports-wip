@@ -1,5 +1,5 @@
---- src/Makefile.orig	2015-03-06 17:56:48 UTC
-+++ src/Makefile
+--- src/Makefile.orig	2015-03-06 11:56:48.000000000 -0600
++++ src/Makefile	2015-11-11 13:16:38.000000000 -0600
 @@ -5,18 +5,18 @@
  ################################################################################
  
@@ -10,7 +10,8 @@
 +CC?=gcc
  
  # Compiler flags
- CFLAGS=-O3 -D_FILE_OFFSET_BITS=64
+-CFLAGS=-O3 -D_FILE_OFFSET_BITS=64
++CFLAGS+=-O3 -D_FILE_OFFSET_BITS=64
  #CFLAGS=-O3 -static -D VERBOSE_DEBUG  # enables verbose debugging via --debug2
  
 -BAMTOOLS_ROOT=../bamtools

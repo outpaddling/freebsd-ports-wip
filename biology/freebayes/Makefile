@@ -12,7 +12,7 @@ COMMENT=	Bayesian haplotype-based polymorphism discovery and genotyping
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libvcflib.a:/usr/wip/biology/vcflib
-# LIB_DEPENDS=	libbamtools.so:/usr/wip/biology/bamtools
+LIB_DEPENDS=	libbamtools.so:/usr/wip/biology/bamtools
 # ekg/intervaltree
 
 USES=		gmake
@@ -20,5 +20,7 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	ekg
 GH_TAGNAME=	v${PORTVERSION}
+
+CFLAGS+=	-I${LOCALBASE}/include/bamtools
 
 .include <bsd.port.mk>

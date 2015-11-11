@@ -19,6 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pezmaster31
 GH_TAGNAME=	v${PORTVERSION}
 
+CMAKE_ARGS+=	-DLIB_DIR=${PREFIX}/lib
+
 .include <bsd.port.pre.mk>
 
 # Just for speed: Recent GCC has better optimizer
@@ -29,5 +31,9 @@ USE_GCC=	yes
 .if ${ARCH} == i386
 MAKE_ENV+=	POPCNT_CAPABILITY=0
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|lib/bamtools|lib|g' \
+		work/bamtools-2.4.0/src/api/CMakeLists.txt
 
 .include <bsd.port.post.mk>
