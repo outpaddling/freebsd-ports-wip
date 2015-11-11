@@ -14,6 +14,8 @@ MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Misc functions
 
+USES=		tar:xz
+
 PLIST_FILES=	lib/libpare.a \
 		include/pare.h \
 		man/man3/pare.3.gz
