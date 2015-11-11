@@ -38,7 +38,7 @@ USES=		gettext iconv jpeg:run gmake motif perl5 shebangfix tar:xz
 SHEBANG_FILES=	suma_change_spec 3dPAR2AFNI.pl
 
 # Some prereqs use gcc anyway
-USE_GCC=	yes
+# USE_GCC=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -51,7 +51,6 @@ USE_XORG=	xi
 MAKE_ENV=	CC="${CC}"
 MAKE_JOBS_UNSAFE=yes
 
-WRKSRC=		${WRKDIR}/afni_src
 ALL_TARGET=	vastness suma
 
 ###########################################################################
@@ -75,14 +74,14 @@ X11R6_FILES=	coxplot/Makefile \
 		SUMA/SUMA_Surface_IO.c
 
 post-extract:
-	@${CP} -f ${FILESDIR}/Makefile.FreeBSD_PORT ${WRKSRC}/Makefile
 .for f in ${X11R6_FILES}
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|$${LOCALBASE}|g' ${WRKSRC}/${f}
+	@${REINPLACE_CMD} \
+		-e 's|/usr/X11R6|$${LOCALBASE}|g' ${WRKSRC}/${f}
 .endfor
-	@${REINPLACE_CMD} -E 's|AFNI_[0-9_]+|${PORTVERSION}|g' ${WRKSRC}/AFNI_label.h
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/afni.1 ${WRKDIR}
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/3dClustBust.c ${WRKSRC}
-	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" ${WRKDIR}/afni.1
+	@${REINPLACE_CMD} \
+		-E 's|AFNI_[0-9_]+|${PORTVERSION}|g' ${WRKSRC}/AFNI_label.h
+	@${REINPLACE_CMD} \
+		-e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/afni.1
 
 post-build:
 	${MKDIR} ${PRESTAGE}/bin \
@@ -121,9 +120,9 @@ do-install:
 	${CP} -R ${PRESTAGE}/share/* ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${PRESTAGE}/bin/* ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${PRESTAGE}/scripts/* ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/TTatlas* ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/CA_EZ_v1.5-July3107/* ${STAGEDIR}${DATADIR}
-	${INSTALL_MAN} ${WRKDIR}/afni.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/TTatlas* ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/CA_EZ_v1.5-July3107/* ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/afni.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${PREFIX}/etc/mri
 	${INSTALL_DATA} ${PRESTAGE}/doc/* ${STAGEDIR}${DOCSDIR}
