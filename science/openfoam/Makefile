@@ -1,26 +1,32 @@
-# New ports collection makefile for:	openfoam
-# Date created:		2013-01-08
-# Whom:			Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
-#
+# Created by: Jason W. Bacon <jwbacon@tds.net>
 # $FreeBSD$
-#
 
 PORTNAME=	openfoam
-PORTVERSION=	2.1.1
+PORTVERSION=	3.0.0
 CATEGORIES=	science
-# http://downloads.sourceforge.net/foam/OpenFOAM-2.1.1.tgz?use_mirror=mesh
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	../foam
 DISTNAME=	OpenFOAM-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
-COMMENT=
+MAINTAINER=	jwbacon@tds.net
+COMMENT=	Open source computational fluid dynamics
 
-FETCH_ARGS+=	-F
+LICENSE=	GPLv3
+
+BUILD_DEPENDS=	flex>=2.5.35:${PORTSDIR}/textproc/flex \
+		${LOCALBASE}/mpi/openmpi/bin/mpiCC:${PORTSDIR}/net/openmpi
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
+		${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
+
+USES=		bison cmake ncurses readline tar:tgz
+QT4_USE=	opengl webkit
+USE_GL=		glut
+
+# Ubuntu deps not accounted for:
+# libxt-dev qt4-dev-tools libqt4-dev freeglut3-dev
 
 do-build:
-	( cd ${WRKSRC} && ./Allwmake )
+	cd ${WRKSRC} && ./Allwmake
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
