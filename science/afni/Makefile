@@ -48,7 +48,7 @@ BROKEN_sparc64=	Does not compile: "undefined reference to '_mcount'"
 
 USE_GL=		glw glu
 USE_XORG=	xi
-MAKE_ENV=	CC="${CC}"
+MAKE_ENV=	CC="${CC}" R_SHARE_DIR=/usr/local/lib/R/share
 MAKE_JOBS_UNSAFE=yes
 
 ALL_TARGET=	vastness suma
