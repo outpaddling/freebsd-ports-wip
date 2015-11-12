@@ -24,11 +24,6 @@ more of the following shared memory limits using sysctl (and
 
 ---
 
-The program "abut" has been renamed "afni_abut" to resolve a collision
-with the unixstat port.
-
----
-
 AFNI_PLUGIN_PATH should be set to %%PREFIX%%/lib/afni:%%DATADIR%%
 AFNI_GLOBAL_SESSION should be set to %%DATADIR%%.
 

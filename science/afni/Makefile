@@ -35,7 +35,11 @@ CONFLICTS=	im-[0-9]* \
 		open-usp-tukubai-[0-9]*
 
 USES=		gettext iconv jpeg:run gmake motif perl5 shebangfix tar:xz
-SHEBANG_FILES=	suma_change_spec 3dPAR2AFNI.pl
+SHEBANG_FILES=	suma_change_spec \
+		3dPAR2AFNI.pl \
+		python_scripts/afni_restproc.py \
+		python_scripts/lib_fat_Rfactor.py \
+		pkundu/meica.libs/siemens_me2nii.py
 
 # Some prereqs use gcc anyway
 # USE_GCC=	yes
@@ -84,6 +88,10 @@ post-extract:
 		-e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/afni.1
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
+# The unixstat port has ceased to exist, but we'll need this if it's
+# ever resurrected
+#	${MV}	${INSTALL_WRKSRC}/abut ${INSTALL_WRKSRC}/afni_abut
+
 post-build:
 	${MKDIR} ${PRESTAGE}/bin \
 		${PRESTAGE}/scripts \
@@ -105,22 +113,25 @@ post-build:
 		${PRESTAGE}/include
 	${MV}	${INSTALL_WRKSRC}/README* \
 		${PRESTAGE}/doc
-	${MV}	${INSTALL_WRKSRC}/abut ${INSTALL_WRKSRC}/afni_abut
 	for binary in `${FILE} ${INSTALL_WRKSRC}/* | fgrep 'ELF' | ${AWK} -F ':' ' { print $$1 }'` ; do \
 		${MV} $${binary} ${PRESTAGE}/bin ; \
 	done
 	${MV}	${INSTALL_WRKSRC}/* \
 		${PRESTAGE}/scripts
+	${MV}	${PRESTAGE}/scripts/meica.libs ${PRESTAGE}
 
+#${CP} -R ${PRESTAGE}/share/* ${STAGEDIR}${DATADIR}
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${PREFIX}/lib/afni \
 		${STAGEDIR}${PREFIX}/include/afni
 	${INSTALL_DATA} ${PRESTAGE}/lib/* ${STAGEDIR}${PREFIX}/lib/afni
 	${INSTALL_DATA} ${PRESTAGE}/include/* ${STAGEDIR}${PREFIX}/include/afni
-	${CP} -R ${PRESTAGE}/share/* ${STAGEDIR}${DATADIR}
+	cd ${PRESTAGE}/share && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${PRESTAGE}/bin/* ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${PRESTAGE}/scripts/* ${STAGEDIR}${PREFIX}/bin
+	cd ${PRESTAGE} && ${COPYTREE_BIN} meica.libs \
+		${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_DATA} ${WRKSRC}/TTatlas* ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/CA_EZ_v1.5-July3107/* ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/afni.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
