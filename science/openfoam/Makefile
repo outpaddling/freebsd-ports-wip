@@ -19,14 +19,30 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
 
-USES=		bison cmake ncurses readline tar:tgz
+# Need cmake, but not for auto-configure
+USES=		bison gmake ncurses readline tar:tgz
 QT4_USE=	opengl webkit
 USE_GL=		glut
 
 # Ubuntu deps not accounted for:
 # libxt-dev qt4-dev-tools libqt4-dev freeglut3-dev
 
+NO_CONFIGURE=	yes
+
+# See etc/bashrc
+# MAKE_ENV=	FOAM_INST_DIR=${WRKDIR} WM_COMPILER=Clang
+
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's|$$HOME/$$WM_PROJECT|${WRKDIR}|' \
+		-e 's|WM_COMPILER=Gcc|WM_COMPILER=Clang|' \
+		${WRKSRC}/etc/bashrc
+	${CP} -r ${WRKSRC}/wmake/rules/linux64Clang \
+		${WRKSRC}/wmake/rules/FreeBSDClang
+	find ${WRKSRC} -name Allwmake -exec \
+		sed -i '' -e 's|#!/bin/sh|#!/usr/local/bin/bash|' '{}' \;
+
 do-build:
-	cd ${WRKSRC} && ./Allwmake
+	(cd ${WRKSRC} && . etc/bashrc && ./Allwmake)
 
 .include <bsd.port.mk>
