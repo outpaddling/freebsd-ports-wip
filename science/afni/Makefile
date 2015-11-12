@@ -20,6 +20,7 @@ COMMENT=	Advanced Functional Neuro Imaging
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
 		libR.so:${PORTSDIR}/math/R \
 		libgsl.so:${PORTSDIR}/math/gsl \
