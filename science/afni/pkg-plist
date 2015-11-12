@@ -1,4 +1,3 @@
-/you/have/to/check/what/makeplist/gives/you
 bin/1dAstrip
 bin/1dBandpass
 bin/1dBport
@@ -348,9 +347,9 @@ bin/RSFgen
 bin/Signatures.R
 bin/Vecwarp
 bin/Xphace
+bin/abut
 bin/adwarp
 bin/afni
-bin/afni_abut
 bin/afni_base.py
 bin/afni_history
 bin/afni_open
@@ -480,9 +479,6 @@ bin/siemens_vision
 bin/slow_surf_clustsim.py
 bin/smooth.R
 bin/sqwave
-bin/stJDejHR
-bin/stXzFNhb
-bin/stazSW9s
 bin/strblast
 bin/suma_change_spec
 bin/tfim
