@@ -82,6 +82,7 @@ post-extract:
 		-E 's|AFNI_[0-9_]+|${PORTVERSION}|g' ${WRKSRC}/AFNI_label.h
 	@${REINPLACE_CMD} \
 		-e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/afni.1
+	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 post-build:
 	${MKDIR} ${PRESTAGE}/bin \
