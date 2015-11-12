@@ -1,5 +1,5 @@
---- nifti/cifti/afni_xml.h.orig	2015-11-11 21:47:45.000000000 -0600
-+++ nifti/cifti/afni_xml.h	2015-11-11 21:48:01.000000000 -0600
+--- nifti/cifti/afni_xml.h.orig	2015-11-06 21:25:14 UTC
++++ nifti/cifti/afni_xml.h
 @@ -5,6 +5,7 @@
  #define AXML_MAX_ELEN  128   /* maximum element length */
  

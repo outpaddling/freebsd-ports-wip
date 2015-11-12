@@ -35,18 +35,12 @@ CONFLICTS=	im-[0-9]* \
 		nifticlib-[0-9]* \
 		open-usp-tukubai-[0-9]*
 
-USES=		gettext iconv jpeg:run gmake motif perl5 python shebangfix \
-		tar:xz
+USES=		gettext gmake iconv jpeg:run motif perl5 python shebangfix tar:xz
 SHEBANG_FILES=	suma_change_spec \
 		3dPAR2AFNI.pl \
 		python_scripts/afni_restproc.py \
 		python_scripts/lib_fat_Rfactor.py \
 		pkundu/meica.libs/siemens_me2nii.py
-
-# Some prereqs use gcc anyway
-# USE_GCC=	yes
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
@@ -54,7 +48,7 @@ BROKEN_sparc64=	Does not compile: "undefined reference to '_mcount'"
 
 USE_GL=		glw glu
 USE_XORG=	xi
-MAKE_ENV=	CC="${CC}" R_SHARE_DIR=/usr/local/lib/R/share
+MAKE_ENV=	CC="${CC}" R_SHARE_DIR=${LOCALBASE}/lib/R/share
 MAKE_JOBS_UNSAFE=yes
 
 ALL_TARGET=	vastness suma
@@ -145,11 +139,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/TTatlas* ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/CA_EZ_v1.5-July3107/* ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/afni.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${PREFIX}/etc/mri
 	${INSTALL_DATA} ${PRESTAGE}/doc/* ${STAGEDIR}${DOCSDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/afni.cshrc ${WRKDIR}/afni.profile \
 		${STAGEDIR}${PREFIX}/etc/mri
-.endif
 
 .include <bsd.port.mk>
