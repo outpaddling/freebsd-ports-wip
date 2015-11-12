@@ -12,6 +12,12 @@ or DRI (graphics/dri).
 
 ---
 
+FreeBSD ports for other AFNI versions are available at
+
+    https://github.com/outpaddling/freebsd-ports-wip
+
+---
+
 For large 3dDeconvolve analyses, you may need to increase one or
 more of the following shared memory limits using sysctl (and
 /etc/sysctl.conf to make the changes permanent):

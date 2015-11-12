@@ -125,6 +125,9 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${PREFIX}/lib/afni \
 		${STAGEDIR}${PREFIX}/include/afni
+	for f in ${PRESTAGE}/lib/*; do \
+		${STRIP_CMD} $${f}; \
+	done
 	${INSTALL_DATA} ${PRESTAGE}/lib/* ${STAGEDIR}${PREFIX}/lib/afni
 	${INSTALL_DATA} ${PRESTAGE}/include/* ${STAGEDIR}${PREFIX}/include/afni
 	cd ${PRESTAGE}/share && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
