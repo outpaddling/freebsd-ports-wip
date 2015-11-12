@@ -34,7 +34,8 @@ CONFLICTS=	im-[0-9]* \
 		nifticlib-[0-9]* \
 		open-usp-tukubai-[0-9]*
 
-USES=		gettext iconv jpeg:run gmake motif perl5 shebangfix tar:xz
+USES=		gettext iconv jpeg:run gmake motif perl5 python shebangfix \
+		tar:xz
 SHEBANG_FILES=	suma_change_spec \
 		3dPAR2AFNI.pl \
 		python_scripts/afni_restproc.py \
@@ -91,6 +92,11 @@ post-extract:
 # The unixstat port has ceased to exist, but we'll need this if it's
 # ever resurrected
 #	${MV}	${INSTALL_WRKSRC}/abut ${INSTALL_WRKSRC}/afni_abut
+
+# shebangfix misses /bin/python on 10.1
+post-patch:
+	${REINPLACE_CMD} -e "s|/bin/python|${PYTHON_CMD}|g" \
+		${WRKSRC}/python_scripts/lib_fat_Rfactor.py
 
 post-build:
 	${MKDIR} ${PRESTAGE}/bin \
