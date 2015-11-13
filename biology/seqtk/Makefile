@@ -2,8 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	seqtk
-PORTVERSION=	sgdb
+PORTVERSION=	2015.11.13
 CATEGORIES=	biology
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
+		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	dsiercks@uwm.edu
 COMMENT=	Tool for processing sequences in FASTA/FASTQ format
@@ -12,9 +14,9 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	lh3
-GH_TAGNAME=	${PORTVERSION}
+#USE_GITHUB=	yes
+#GH_ACCOUNT=	lh3
+#GH_TAGNAME=	${PORTVERSION}
 
 USES=	gmake
 
