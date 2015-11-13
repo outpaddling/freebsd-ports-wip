@@ -10,7 +10,7 @@
 # you can download the latest sources and build manually.
 
 PORTNAME=	afni
-PORTVERSION=	2015.11.11
+PORTVERSION=	2015.11.13
 CATEGORIES=	science biology graphics
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 		http://www.acadix.biz/Ports/distfiles/
@@ -92,6 +92,8 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e "s|/bin/python|${PYTHON_CMD}|g" \
 		${WRKSRC}/python_scripts/lib_fat_Rfactor.py
+	${REINPLACE_CMD} -e 's|os\.path\.dirname(sys\.argv\[0\])|"${PREFIX}/libexec"|g' \
+		${WRKSRC}/pkundu/meica.py
 
 post-build:
 	${MKDIR} ${PRESTAGE}/bin \
@@ -136,8 +138,7 @@ do-install:
 	${INSTALL_SCRIPT} ${PRESTAGE}/scripts/* ${STAGEDIR}${PREFIX}/bin
 	cd ${PRESTAGE} && ${COPYTREE_BIN} meica.libs \
 		${STAGEDIR}${PREFIX}/libexec
-	${INSTALL_DATA} ${WRKSRC}/TTatlas* ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/CA_EZ_v1.5-July3107/* ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/Atlases/* ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/afni.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${PREFIX}/etc/mri
 	${INSTALL_DATA} ${PRESTAGE}/doc/* ${STAGEDIR}${DOCSDIR}
