@@ -19,7 +19,7 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
 
-# Need cmake, but not for auto-configure
+# Need cmake only for Paraview
 USES=		bison gmake ncurses readline tar:tgz
 QT4_USE=	opengl webkit
 USE_GL=		glut
@@ -31,7 +31,7 @@ NO_CONFIGURE=	yes
 
 MAKE_ENV=	SED=${SED}
 
-# See etc/bashrc
+# See etc/bashrc.  These have no effect here.  Why?
 # MAKE_ENV=	FOAM_INST_DIR=${WRKDIR} WM_COMPILER=Clang
 
 post-patch:
