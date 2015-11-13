@@ -29,6 +29,8 @@ USE_GL=		glut
 
 NO_CONFIGURE=	yes
 
+MAKE_ENV=	SED=${SED}
+
 # See etc/bashrc
 # MAKE_ENV=	FOAM_INST_DIR=${WRKDIR} WM_COMPILER=Clang
 

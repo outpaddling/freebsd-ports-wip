@@ -1,0 +1,11 @@
+--- applications/utilities/postProcessing/graphics/PV3Readers/PV3FoamReader/Allwmake.orig	2015-11-13 14:42:50.000000000 -0600
++++ applications/utilities/postProcessing/graphics/PV3Readers/PV3FoamReader/Allwmake	2015-11-13 14:42:58.000000000 -0600
+@@ -10,7 +10,7 @@
+         mkdir -p Make/$WM_OPTIONS > /dev/null 2>&1
+         cd Make/$WM_OPTIONS
+         cmake ../..
+-        make
++        gmake
+     )
+ fi
+ 
