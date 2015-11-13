@@ -41,8 +41,8 @@ post-patch:
 		${WRKSRC}/etc/bashrc
 	${CP} -r ${WRKSRC}/wmake/rules/linux64Clang \
 		${WRKSRC}/wmake/rules/FreeBSDClang
-	find ${WRKSRC} -name Allwmake -exec \
-		sed -i '' -e 's|#!/bin/sh|#!/usr/local/bin/bash|' '{}' \;
+	#find ${WRKSRC} -name Allwmake -exec \
+	#	sed -i '' -e 's|#!/bin/sh|#!/usr/local/bin/bash|' '{}' \;
 
 do-build:
 	(cd ${WRKSRC} && . etc/bashrc && ./Allwmake)
