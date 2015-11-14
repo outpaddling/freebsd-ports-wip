@@ -1,0 +1,18 @@
+--- wmake/MakefileFiles.orig	2015-11-03 04:30:23.000000000 -0600
++++ wmake/MakefileFiles	2015-11-14 07:38:49.000000000 -0600
+@@ -68,13 +68,13 @@
+ 	# Add a newline to files to ensure the last line is followed by a newline
+ 	@echo "" >> $(SFILES)
+ 	# Remove commented lines, blank lines, and trailing blanks from files
+-	@sed -i \
++	@sed -i '' \
+ 	    -e '/^#/ d'         \
+ 	    -e '/^[ \t]*$$/ d'   \
+ 	    -e 's,[ \t]*$$,,'    \
+ 	     $(SFILES)
+ 	# Add backslashes
+-	@sed -i \
++	@sed -i '' \
+ 	    -e 's,$$, \\,'    \
+ 	    -e '$$s,\\,,'    \
+ 	    $(SFILES)

@@ -21,6 +21,8 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 
 # Need cmake only for Paraview
 USES=		bison gmake ncurses readline tar:tgz
+# Requires gcc 4.5 or clang 3.6
+# USE_GCC=	yes
 QT4_USE=	opengl webkit
 USE_GL=		glut
 
@@ -41,8 +43,12 @@ post-patch:
 		${WRKSRC}/etc/bashrc
 	${CP} -r ${WRKSRC}/wmake/rules/linux64Clang \
 		${WRKSRC}/wmake/rules/FreeBSDClang
-	#find ${WRKSRC} -name Allwmake -exec \
-	#	sed -i '' -e 's|#!/bin/sh|#!/usr/local/bin/bash|' '{}' \;
+	#${REINPLACE_CMD} \
+		#-e 's|gcc|gcc48|g' \
+		#${WRKSRC}/wmake/rules/FreeBSDGcc48/c
+	#${REINPLACE_CMD} \
+		#-e 's|g++|g++48|g' \
+		#${WRKSRC}/wmake/rules/FreeBSDGcc48/c++
 
 do-build:
 	(cd ${WRKSRC} && . etc/bashrc && ./Allwmake)
