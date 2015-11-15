@@ -26,6 +26,10 @@ RUN_DEPENDS+=	${PYNUMPY} \
 		pbdagcon>=${PORTVERSION}:/usr/wip/biology/pbdagcon
 
 # Using bundled daligner and dazz_db for now
+# https://github.com/PacificBiosciences/FALCON/issues/167#issuecomment-151914194
+# PacBio response: Unfortunately, LA4Ice uses a very different version of
+# daligner at the moment. We don't have a short-term solution for that.
+# LA4Ice needs to use its own version.
 #		daligner>=${PORTVERSION}:/usr/wip/biology/daligner \
 
 USES=		python shebangfix tar:xz

@@ -1,5 +1,6 @@
 
-This is a collection of work-in-progress FreeBSD ports.
+This is a collection of work-in-progress FreeBSD ports.  To use these
+ports:
 
 1)  Check out a copy to /usr/wip.
 
@@ -9,4 +10,16 @@ This is a collection of work-in-progress FreeBSD ports.
 
 If you would like to contribute, contact the owner of the repository and
 ask to be added as a collaborator.
+
+---
+
+Note that there are committed, quality-controlled versions of many of these
+ports available.  If you want the latest stable version, use the usual
+FreeBSD ports installation methods:
+
+    pkg install package-name
+
+or
+
+    cd /usr/ports/category/port && make deinstall clean install
 

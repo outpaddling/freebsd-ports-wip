@@ -1,6 +1,7 @@
 # Created by: Johannes Meixner <xmj@chaot.net>
 # $FreeBSD: head/devel/linux-c6-ncurses-base/Makefile 392922 2015-07-26 13:35:29Z antoine $
 
+# http://mirror.centos.org/centos/6.7/os/i386/Packages/ncurses-base-5.7-4.20090207.el6.i686.rpm
 PORTNAME=	${LINUX_NAME}-base
 PORTVERSION=	5.7
 PORTREVISION=	2
