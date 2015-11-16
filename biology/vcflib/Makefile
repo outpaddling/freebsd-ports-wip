@@ -27,6 +27,7 @@ SHEBANG_FILES=	bin/vcfgtcompare.sh \
 		bin/vcfsort
 
 LIB_DEPENDS=	libhts.so:${PORTSDIR}/biology/htslib
+# fastahack, filevercmp, fsom, intervaltree, multichoose, smithwaterman, tabixpp
 
 .include <bsd.port.pre.mk>
 
