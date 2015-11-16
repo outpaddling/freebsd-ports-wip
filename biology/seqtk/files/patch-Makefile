@@ -1,0 +1,8 @@
+--- Makefile.orig	2015-11-13 21:39:36 UTC
++++ Makefile
+@@ -1,4 +1,4 @@
+-CC=gcc
++CC?=gcc
+ CFLAGS=-g -Wall -O2 -Wno-unused-function
+ 
+ all:seqtk trimadap

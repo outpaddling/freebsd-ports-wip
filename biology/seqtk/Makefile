@@ -32,9 +32,10 @@ USE_GCC=	yes
 MAKE_ENV+=	POPCNT_CAPABILITY=0
 .endif
 
-INSTALL_TARGET	=install-strip
-#post-patch:
-#	@${REINPLACE_CMD} -e 's|CXX\t*=|CXX\t?|g' ${WRKSRC}/Makefile
-#	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' ${WRKSRC}/Makefile
-
+PLIST_FILES=	bin/seqtk bin/trimadap
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/seqtk \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/trimadap \
+		${STAGEDIR}${PREFIX}/bin
 .include <bsd.port.post.mk>
