@@ -149,6 +149,7 @@ bin/3dSignatures
 bin/3dSignatures.R
 bin/3dSpatNorm
 bin/3dStatClust
+bin/3dSurf2Vol
 bin/3dSynthesize
 bin/3dTORTOISEtoHere
 bin/3dTRfix
@@ -175,6 +176,7 @@ bin/3dUndump
 bin/3dUnifize
 bin/3dUniformize
 bin/3dUpsample
+bin/3dVol2Surf
 bin/3dWarp
 bin/3dWarpDrive
 bin/3dWavelets
@@ -333,6 +335,9 @@ bin/AFNI_atlas_spaces.niml
 bin/AFNIio.R
 bin/AFNIplot.R
 bin/AlphaSim
+bin/CompareSurfaces
+bin/ConvertDset
+bin/ConvertSurface
 bin/DTIStudioFibertoSegments
 bin/Dimon
 bin/Dimon1
@@ -343,8 +348,17 @@ bin/FIRdesign
 bin/GLTsymtest
 bin/Ifile
 bin/Level2.R
+bin/MakeColorMap
+bin/ROI2dataset
 bin/RSFgen
+bin/SUMA_glxdino
+bin/SUMA_paperplane
+bin/SUMA_pixmap2eps
+bin/ScaleToMap
 bin/Signatures.R
+bin/SurfClust
+bin/SurfFWHM
+bin/SurfMeasures
 bin/Vecwarp
 bin/Xphace
 bin/abut
@@ -480,6 +494,7 @@ bin/slow_surf_clustsim.py
 bin/smooth.R
 bin/sqwave
 bin/strblast
+bin/suma
 bin/suma_change_spec
 bin/tfim
 bin/timing_tool.py

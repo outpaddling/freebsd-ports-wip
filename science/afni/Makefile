@@ -24,7 +24,8 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
 		libR.so:${PORTSDIR}/math/R \
 		libgsl.so:${PORTSDIR}/math/gsl \
-		libnetcdff.so:${PORTSDIR}/science/netcdf-fortran
+		libnetcdff.so:${PORTSDIR}/science/netcdf-fortran \
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
 		whirlgif:${PORTSDIR}/graphics/whirlgif \
 		ppmtogif:${PORTSDIR}/graphics/netpbm \
@@ -41,6 +42,7 @@ SHEBANG_FILES=	suma_change_spec \
 		python_scripts/afni_restproc.py \
 		python_scripts/lib_fat_Rfactor.py \
 		pkundu/meica.libs/siemens_me2nii.py
+USE_GNOME=	glib20
 
 .include <bsd.port.options.mk>
 
