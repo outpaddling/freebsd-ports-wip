@@ -104,7 +104,7 @@ SUMA_INCLUDE_PATH = -I${LOCALBASE}/include/glib-2.0 -I${LOCALBASE}/lib/glib-2.0/
 SUMA_LINK_PATH = -L/usr/lib -L${LOCALBASE}/lib -L../
 #use -lGLw if you have libGLw.a or libGLw.so* or 
 #  -lMesaGLw if you have Mesa's version (libMesaGLw*) of libGLw
-SUMA_LINK_LIB = -lXm -lGLw -lGLU -lGL -lXmu -lXp -lXt -lXext -lX11 -lm $(LZLIB) -lxml2
+SUMA_LINK_LIB = -lXm -lGLw -lGLU -lGL -lXmu -lXp -lXt -lXext -lX11 -lm $(LZLIB) -lxml2 -lexpat
 SUMA_MAKEFILE_NAME = SUMA_Makefile
 SUMA_BIN_ARCHIVE = SUMA_FreeBSD.tar
 SUMA_GLIB_VER = -2.0

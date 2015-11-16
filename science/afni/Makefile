@@ -96,8 +96,19 @@ post-patch:
 		${WRKSRC}/SUMA/SUMA_Makefile
 	${REINPLACE_CMD} -e "s|/bin/python|${PYTHON_CMD}|g" \
 		${WRKSRC}/python_scripts/lib_fat_Rfactor.py
-	${REINPLACE_CMD} -e 's|os\.path\.dirname(sys\.argv\[0\])|"${PREFIX}/libexec"|g' \
+	${REINPLACE_CMD} \
+		-e 's|os\.path\.dirname(sys\.argv\[0\])|"${PREFIX}/libexec"|g' \
 		${WRKSRC}/pkundu/meica.py
+	${REINPLACE_CMD} \
+		-e 's|g_info|afni_g_info|g' \
+		${WRKSRC}/rickr/Dimon.c \
+		${WRKSRC}/rickr/Dimon1.c \
+		${WRKSRC}/afni_history_rickr.c \
+		${WRKSRC}/mri_dicom_stuff.c \
+		${WRKSRC}/mri_process_siemens.c \
+		${WRKSRC}/mri_read_dicom.c \
+		${WRKSRC}/to3d.c \
+		${WRKSRC}/mri_dicom_stuff.h
 
 post-build:
 	${MKDIR} ${PRESTAGE}/bin \
