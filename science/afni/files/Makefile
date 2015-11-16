@@ -100,7 +100,7 @@ LLIBS  = -lmri -lf2c -lXm -lXp -lXpm -lXext -lXmu -lXt -lX11 -lm $(LZLIB) $(LGIF
 
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 # For suma (NO STATIC LINKING OF GL libs)
-SUMA_INCLUDE_PATH = -I${LOCALBASE}/include/glib-2.0 -I${LOCALBASE}/include -I./ -I../ -I../niml/ -Igts/src 
+SUMA_INCLUDE_PATH = -I${LOCALBASE}/include/glib-2.0 -I${LOCALBASE}/lib/glib-2.0/include -I${LOCALBASE}/include -I./ -I../ -I../niml/ -Igts/src 
 SUMA_LINK_PATH = -L/usr/lib -L${LOCALBASE}/lib -L../
 #use -lGLw if you have libGLw.a or libGLw.so* or 
 #  -lMesaGLw if you have Mesa's version (libMesaGLw*) of libGLw
