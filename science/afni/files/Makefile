@@ -107,6 +107,7 @@ SUMA_LINK_PATH = -L/usr/lib -L${LOCALBASE}/lib -L../
 SUMA_LINK_LIB = -lXm -lGLw -lGLU -lGL -lXmu -lXp -lXt -lXext -lX11 -lm $(LZLIB) -lxml2
 SUMA_MAKEFILE_NAME = SUMA_Makefile
 SUMA_BIN_ARCHIVE = SUMA_FreeBSD.tar
+SUMA_GLIB_VER = -2.0
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ###############################################################

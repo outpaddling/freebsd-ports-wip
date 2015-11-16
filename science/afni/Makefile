@@ -92,6 +92,8 @@ post-extract:
 
 # shebangfix misses /bin/python on 10.1
 post-patch:
+	${REINPLACE_CMD} -e "s|-lglib|-lglib-2.0|g" \
+		${WRKSRC}/SUMA/SUMA_Makefile
 	${REINPLACE_CMD} -e "s|/bin/python|${PYTHON_CMD}|g" \
 		${WRKSRC}/python_scripts/lib_fat_Rfactor.py
 	${REINPLACE_CMD} -e 's|os\.path\.dirname(sys\.argv\[0\])|"${PREFIX}/libexec"|g' \
