@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	intervaltree
-PORTVERSION=	2015.11.15
+PORTVERSION=	2015.11.16
 CATEGORIES=	math
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
