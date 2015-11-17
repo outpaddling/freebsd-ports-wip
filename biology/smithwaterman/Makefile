@@ -2,15 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	smithwaterman
-PORTVERSION=	2015.11.16
+PORTVERSION=	ebfdcd14b3f8f0d37e3bf4c3282aa32d7c1399d2
 CATEGORIES=	biology
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Smith-waterman-gotoh alignment algorithm
 
 USES=		gmake
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	outpaddling
+GH_TAGNAME=	${PORTVERSION}
+
+MAKE_ENV+=	OBJ=libsw.a
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}

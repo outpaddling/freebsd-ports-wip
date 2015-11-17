@@ -1,5 +1,7 @@
 bin/bed2region
 bin/plot_roc.r
+bin/smithwaterman
+bin/tabix++
 bin/vcf2bed.py
 bin/vcf2dag
 bin/vcf2fasta
@@ -101,7 +103,17 @@ include/Variant.h
 include/convert.h
 include/join.h
 include/mt19937ar.h
+include/smithwaterman/BandedSmithWaterman.h
+include/smithwaterman/IndelAllele.h
+include/smithwaterman/LeftAlign.h
+include/smithwaterman/Mosaik.h
+include/smithwaterman/Repeats.h
+include/smithwaterman/SmithWatermanGotoh.h
+include/smithwaterman/convert.h
+include/smithwaterman/disorder.h
 include/split.h
 include/ssw.h
 include/ssw_cpp.h
+include/tabixpp/tabix.hpp
+lib/libtabix.a
 lib/libvcflib.a

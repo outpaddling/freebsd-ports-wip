@@ -169,5 +169,18 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/*.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/src/*.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_PROGRAM} ${WRKSRC}/tabixpp/tabix++ \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/tabixpp/libtabix.a \
+		${STAGEDIR}${PREFIX}/lib
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/tabixpp
+	${INSTALL_DATA} ${WRKSRC}/tabixpp/tabix.hpp \
+		${STAGEDIR}${PREFIX}/include/tabixpp
+	${INSTALL_PROGRAM} ${WRKSRC}/smithwaterman/smithwaterman \
+		${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/smithwaterman
+	${INSTALL_DATA} ${WRKSRC}/smithwaterman/*.h \
+		${STAGEDIR}${PREFIX}/include/smithwaterman
+
 
 .include <bsd.port.post.mk>
