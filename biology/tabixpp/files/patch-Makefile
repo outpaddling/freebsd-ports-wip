@@ -1,0 +1,45 @@
+--- Makefile.orig	2015-11-17 01:19:48 UTC
++++ Makefile
+@@ -1,11 +1,11 @@
+-CC=			gcc
+-CPP= 		g++
+-CFLAGS=		-g -Wall -O2 -fPIC #-m64 #-arch ppc
+-DFLAGS=		-D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE
+-PROG=		tabix++
+-INCLUDES=-Ihtslib
+-SUBDIRS=.
+-LIBPATH=-L. -Lhtslib
++CC ?=		gcc
++CXX ?= 		g++
++CFLAGS ?=	-g -Wall -O2 -fPIC #-m64 #-arch ppc
++DFLAGS =	-D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE
++PROG =		tabix++
++INCLUDES =	-I${LOCALBASE}/include
++SUBDIRS =	.
++LIBPATH =	-L. -L${LOCALBASE}/lib
+ 
+ .SUFFIXES:.c .o
+ 
+@@ -24,17 +24,13 @@ all-recur lib-recur clean-recur cleanloc
+ 
+ all:$(PROG)
+ 
+-tabix.o: htslib/htslib/bgzf.h htslib/htslib/tbx.h tabix.cpp tabix.hpp
+-		$(CPP) $(CFLAGS) -c tabix.cpp $(INCLUDES)
+-
+-htslib/libhts.a:
+-		cd htslib && $(MAKE) lib-static
++tabix.o: tabix.cpp tabix.hpp
++	$(CXX) $(CFLAGS) -c tabix.cpp $(INCLUDES)
+ 
+-tabix++:tabix.o main.cpp htslib/libhts.a
+-		$(CPP) $(CFLAGS) -o $@ main.cpp tabix.o $(INCLUDES) $(LIBPATH) -lhts -lpthread -lm -lz
++tabix++:tabix.o main.cpp
++	$(CXX) $(CFLAGS) -o $@ main.cpp tabix.o $(INCLUDES) $(LIBPATH) -lhts -lpthread -lm -lz
+ 
+ cleanlocal:
+-		rm -fr gmon.out *.o a.out *.dSYM $(PROG) *~ *.a tabix.aux tabix.log tabix.pdf *.class libtabix.*.dylib libtabix.so*
+-		cd htslib && $(MAKE) clean
++	rm -fr gmon.out *.o a.out *.dSYM $(PROG) *~ *.a tabix.aux tabix.log tabix.pdf *.class libtabix.*.dylib libtabix.so*
+ 
+ clean:cleanlocal-recur

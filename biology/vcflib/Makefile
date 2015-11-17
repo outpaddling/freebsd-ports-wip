@@ -8,7 +8,8 @@
 PORTNAME=	vcflib
 PORTVERSION=	2015.11.08
 CATEGORIES=	biology
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
+		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	C++ library and CLI tools for parsing and manipulating VCF files
