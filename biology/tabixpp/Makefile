@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tabixpp
-PORTVERSION=	e75be649b38c8315d1fdc51c0a07e3765d66bb26
+PORTVERSION=	ef377b497f130be3304c8dd16a02f04f70900fac
 CATEGORIES=	biology
 
 MAINTAINER=	jwbacon@tds.net
@@ -13,7 +13,7 @@ LIB_DEPENDS=	libhts.so:${PORTSDIR}/biology/htslib
 USES=		tar:xz
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	outpaddling
+GH_ACCOUNT=	ekg
 GH_TAGNAME=	${PORTVERSION}
 
 PLIST_FILES=	bin/tabix++ include/${PORTNAME}/tabix.hpp
