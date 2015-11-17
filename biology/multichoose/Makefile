@@ -1,24 +1,27 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
 
-PORTNAME=	tabixpp
+PORTNAME=	multichoose
 PORTVERSION=	2015.11.16
 CATEGORIES=	biology
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
-COMMENT=	C++ wrapper to tabix indexer
+COMMENT=
 
-LIB_DEPENDS=	libhts.so:${PORTSDIR}/biology/htslib
-
-USES=		tar:xz
-
-PLIST_FILES=	bin/tabix++ include/${PORTNAME}/tabix.hpp
+USES=		shebangfix
+SHEBANG_FILES=	*.py
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/tabix++ ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/tabix.hpp ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+	${INSTALL_PROGRAM} \
+		${WRKSRC}/multichoose \
+		${WRKSRC}/multipermute \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} \
+		${WRKSRC}/*.py \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 
 .include <bsd.port.mk>
