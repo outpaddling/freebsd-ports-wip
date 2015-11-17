@@ -2,16 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	multichoose
-PORTVERSION=	2015.11.16
+PORTVERSION=	9d52eb40bcfca1bcc92d933c925410d6300b2f10
 CATEGORIES=	biology
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=
 
 USES=		shebangfix
 SHEBANG_FILES=	*.py
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	outpaddling
+GH_TAGNAME=	${PORTVERSION}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
