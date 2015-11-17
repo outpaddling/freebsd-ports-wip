@@ -14,7 +14,7 @@ COMMENT=	Minimal C++ interval tree implementation
 
 USES=		tar:xz
 
-PLIST_FILES=	include/IntervalTree.h
+PLIST_FILES=	include/${PORTNAME}/IntervalTree.h
 
 ALL_TARGET=	interval_tree_test
 
@@ -22,7 +22,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|g++|${CXX}|g' ${WRKSRC}/Makefile
 
 do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/IntervalTree.h \
-		${STAGEDIR}${PREFIX}/include
+		${STAGEDIR}${PREFIX}/include/${PORTNAME}
 
 .include <bsd.port.mk>

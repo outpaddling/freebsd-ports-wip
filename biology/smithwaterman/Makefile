@@ -13,11 +13,9 @@ COMMENT=	Smith-waterman-gotoh alignment algorithm
 USES=		gmake
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/bin \
-		${STAGEDIR}${PREFIX}/include \
-		${STAGEDIR}${PREFIX}/include
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/smithwaterman ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/*.a ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>
