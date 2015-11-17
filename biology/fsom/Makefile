@@ -3,10 +3,11 @@
 
 PORTNAME=	fsom
 PORTVERSION=	5105f1c93b738dcd6747ff03efb1092f6c3fddfb
+# FIXME: Is this the right category?
 CATEGORIES=	biology
 
 MAINTAINER=	jwbacon@tds.net
-COMMENT=
+COMMENT=	Tiny C library for managing SOM (Self-Organizing Maps) neural networks
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
