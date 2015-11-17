@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	intervaltree
-PORTVERSION=	2015.11.16
+PORTVERSION=	f21e1e973175c6f4f2e7b153ba312177309bdbae
 CATEGORIES=	math
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Minimal C++ interval tree implementation
@@ -17,6 +15,10 @@ USES=		tar:xz
 PLIST_FILES=	include/${PORTNAME}/IntervalTree.h
 
 ALL_TARGET=	interval_tree_test
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	outpaddling
+GH_TAGNAME=	${PORTVERSION}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|g++|${CXX}|g' ${WRKSRC}/Makefile
