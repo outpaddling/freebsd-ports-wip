@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 GH_TAGNAME=	${PORTVERSION}
 
-PLIST_FILES=	bin/tabix++ include/tabix.hpp
+PLIST_FILES=	bin/tabix++ include/tabix.hpp lib/libtabix.a
 
 CXXFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	HTS_HEADERS='' LIBPATH=-L${LOCALBASE}/lib HTS_LIB=''

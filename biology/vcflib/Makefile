@@ -1,10 +1,6 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
 
-# FIXME: Needs to be unbundled.  tabixpp, htslib, fastahack are all separate
-# packages.  Use same strategy as py-pbfalcon: Snapshot vcflib and all
-# submodules using recursive git and roll separate distfiles.
-
 PORTNAME=	vcflib
 PORTVERSION=	93beb25a27d60d51b6b1e7b71b6771ce2bafd845
 CATEGORIES=	biology
@@ -31,7 +27,7 @@ BUILD_DEPENDS=	fastahack>=0:/usr/wip/biology/fastahack \
 		fsom>=0:/usr/wip/biology/filevercmp \
 		multichoose>=0:/usr/wip/biology/multichoose \
 		smithwaterman>=0:/usr/wip/biology/smithwaterman \
-		tabixpp>=0:/usr/wip/biology/tabixpp
+		${LOCALBASE}/lib/libtabix.a:/usr/wip/biology/tabixpp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
