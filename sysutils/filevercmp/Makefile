@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	filevercmp
-PORTVERSION=	68966fcee774f7b7133dcfdd9a9d4ce16ef86143
+PORTVERSION=	efdf453ab605880661ede9519bc20f3b8b868b61
 CATEGORIES=	sysutils
 
 MAINTAINER=	jwbacon@tds.net
@@ -12,9 +12,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 GH_TAGNAME=	${PORTVERSION}
 
-PLIST_FILES=	bin/filevercmp
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/filevercmp ${STAGEDIR}${PREFIX}/bin
+PLIST_FILES=	bin/filevercmp lib/libfilevercmp.a
 
 .include <bsd.port.mk>

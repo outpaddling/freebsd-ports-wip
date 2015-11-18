@@ -6,29 +6,33 @@
 # submodules using recursive git and roll separate distfiles.
 
 PORTNAME=	vcflib
-PORTVERSION=	2015.11.08
+PORTVERSION=	955b7a0f11eea344c750e85f6ff522979b3a75e3
 CATEGORIES=	biology
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	C++ library and CLI tools for parsing and manipulating VCF files
 
 USES=		compiler:openmp gmake shebangfix tar:xz
-SHEBANG_FILES=	bin/vcfgtcompare.sh \
-		bin/vcfmultiway \
-		bin/vcfmultiwayscripts \
-		bin/vcfplotaltdiscrepancy.sh \
-		bin/vcfplottstv.sh \
-		bin/vcfprintaltdiscrepancy.sh \
-		bin/vcfregionreduce \
-		bin/vcfregionreduce_and_cut \
-		bin/vcfregionreduce_pipe \
-		bin/vcfregionreduce_uncompressed \
-		bin/vcfsort
+#SHEBANG_FILES=	bin/vcfgtcompare.sh \
+#		bin/vcfmultiway \
+#		bin/vcfmultiwayscripts \
+#		bin/vcfplotaltdiscrepancy.sh \
+#		bin/vcfplottstv.sh \
+#		bin/vcfprintaltdiscrepancy.sh \
+#		bin/vcfregionreduce \
+#		bin/vcfregionreduce_and_cut \
+#		bin/vcfregionreduce_pipe \
+#		bin/vcfregionreduce_uncompressed \
+#		bin/vcfsort
 
 LIB_DEPENDS=	libhts.so:${PORTSDIR}/biology/htslib
 # fastahack, filevercmp, fsom, intervaltree, multichoose, smithwaterman, tabixpp
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	outpaddling
+GH_TAGNAME=	${PORTVERSION}
+
+MAKE_ENV+=	SUBMOD_BINS='' SUBMOD_OBJS=''
 
 .include <bsd.port.pre.mk>
 
@@ -41,23 +45,12 @@ CFLAGS+=	-msse2
 
 post-patch:
 	${REINPLACE_CMD} -e 's|make|${GMAKE}|g' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's|g++|${CXX}|g' ${WRKSRC}/smithwaterman/Makefile
-	${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/filevercmp/Makefile
-	${REINPLACE_CMD} -e 's|defined(__APPLE__)|& \|\| defined(__FreeBSD__)|g' ${WRKSRC}/fastahack/LargeFileSupport.h
-	${REINPLACE_CMD} \
-		-e 's|CPP|CXX|g' \
-		-e 's|main.cpp htslib/libhts.a|main.cpp|g' \
-		-e 's|-Ihtslib|-I${LOCALBASE}/include|g' \
-		-e 's|-Lhtslib|-L${LOCALBASE}/lib|g' \
-		${WRKSRC}/tabixpp/Makefile
 	${REINPLACE_CMD} \
 		-e 's|^CC[ \t]*=|CC ?=|' \
 		-e 's|^CXX[ \t]*=|CXX ?=|' \
 		-e 's|^CFLAGS[ \t]*=|CFLAGS +=|' \
 		-e 's|^CXXFLAGS[ \t]*=|CXXFLAGS +=|' \
-		${WRKSRC}/Makefile \
-		${WRKSRC}/*/Makefile \
-		${WRKSRC}/*/*/Makefile
+		${WRKSRC}/Makefile
 
 # FIXME: Not sure which header files need to be installed
 # FIXME: Add install target to upstream Makefile
@@ -169,18 +162,5 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/*.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/src/*.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_PROGRAM} ${WRKSRC}/tabixpp/tabix++ \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/tabixpp/libtabix.a \
-		${STAGEDIR}${PREFIX}/lib
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/tabixpp
-	${INSTALL_DATA} ${WRKSRC}/tabixpp/tabix.hpp \
-		${STAGEDIR}${PREFIX}/include/tabixpp
-	${INSTALL_PROGRAM} ${WRKSRC}/smithwaterman/smithwaterman \
-		${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/smithwaterman
-	${INSTALL_DATA} ${WRKSRC}/smithwaterman/*.h \
-		${STAGEDIR}${PREFIX}/include/smithwaterman
-
 
 .include <bsd.port.post.mk>

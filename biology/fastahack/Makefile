@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fastahack
-PORTVERSION=	6846daed076983105b87e24d2be913b094c4ea12
+PORTVERSION=	54d0711ca962d7a69788dc1f842a267a6c514e7f
 CATEGORIES=	biology
 
 MAINTAINER=	jwbacon@tds.net
@@ -14,6 +14,6 @@ GH_TAGNAME=	${PORTVERSION}
 
 INSTALL_TARGET=	install-strip
 
-PLIST_FILES=	bin/fastahack
+PLIST_FILES=	bin/fastahack lib/libfastahack.a
 
 .include <bsd.port.mk>
