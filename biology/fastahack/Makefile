@@ -14,6 +14,4 @@ GH_TAGNAME=	${PORTVERSION}
 
 INSTALL_TARGET=	install-strip
 
-PLIST_FILES=	bin/fastahack lib/libfastahack.a
-
 .include <bsd.port.mk>
