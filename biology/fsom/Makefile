@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fsom
-PORTVERSION=	5105f1c93b738dcd6747ff03efb1092f6c3fddfb
+PORTVERSION=	23c8bb0b0a1de866ef05ed2be283f67bca4d2f47
 # FIXME: Is this the right category?
 CATEGORIES=	biology
 
@@ -15,9 +15,8 @@ GH_TAGNAME=	${PORTVERSION}
 
 CXXFLAGS+=	-fomit-frame-pointer -ffast-math
 
-PLIST_FILES=	bin/fsom
+PLIST_FILES=	bin/fsom lib/libfsom.a
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fsom ${STAGEDIR}${PREFIX}/bin
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

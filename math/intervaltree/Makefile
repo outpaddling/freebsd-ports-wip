@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	intervaltree
-PORTVERSION=	f21e1e973175c6f4f2e7b153ba312177309bdbae
+PORTVERSION=	74cfcccc40686c0f714ec10215509e663d95e40e
 CATEGORIES=	math
 
 MAINTAINER=	jwbacon@tds.net
@@ -12,20 +12,12 @@ COMMENT=	Minimal C++ interval tree implementation
 
 USES=		tar:xz
 
-PLIST_FILES=	include/${PORTNAME}/IntervalTree.h
-
-ALL_TARGET=	interval_tree_test
+PLIST_FILES=	bin/interval_tree_test include/${PORTNAME}/IntervalTree.h
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 GH_TAGNAME=	${PORTVERSION}
 
-post-patch:
-	${REINPLACE_CMD} -e 's|g++|${CXX}|g' ${WRKSRC}/Makefile
-
-do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/IntervalTree.h \
-		${STAGEDIR}${PREFIX}/include/${PORTNAME}
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
