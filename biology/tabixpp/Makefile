@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tabixpp
-PORTVERSION=	ef377b497f130be3304c8dd16a02f04f70900fac
+PORTVERSION=	c39bac6930dac16decdfc682489efc7d608e8b94
 CATEGORIES=	biology
 
 MAINTAINER=	jwbacon@tds.net
@@ -13,17 +13,14 @@ LIB_DEPENDS=	libhts.so:${PORTSDIR}/biology/htslib
 USES=		tar:xz
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	ekg
+GH_ACCOUNT=	outpaddling
 GH_TAGNAME=	${PORTVERSION}
 
-PLIST_FILES=	bin/tabix++ include/${PORTNAME}/tabix.hpp
+PLIST_FILES=	bin/tabix++ include/tabix.hpp
 
 CXXFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	HTS_HEADERS='' LIBPATH=-L${LOCALBASE}/lib HTS_LIB=''
 
-do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/tabix++ ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/tabix.hpp ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

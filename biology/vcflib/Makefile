@@ -6,7 +6,7 @@
 # submodules using recursive git and roll separate distfiles.
 
 PORTNAME=	vcflib
-PORTVERSION=	955b7a0f11eea344c750e85f6ff522979b3a75e3
+PORTVERSION=	93beb25a27d60d51b6b1e7b71b6771ce2bafd845
 CATEGORIES=	biology
 
 MAINTAINER=	jwbacon@tds.net
@@ -26,13 +26,18 @@ USES=		compiler:openmp gmake shebangfix tar:xz
 #		bin/vcfsort
 
 LIB_DEPENDS=	libhts.so:${PORTSDIR}/biology/htslib
-# fastahack, filevercmp, fsom, intervaltree, multichoose, smithwaterman, tabixpp
+BUILD_DEPENDS=	fastahack>=0:/usr/wip/biology/fastahack \
+		filevercmp>=0:/usr/wip/sysutils/filevercmp \
+		fsom>=0:/usr/wip/biology/filevercmp \
+		multichoose>=0:/usr/wip/biology/multichoose \
+		smithwaterman>=0:/usr/wip/biology/smithwaterman \
+		tabixpp>=0:/usr/wip/biology/tabixpp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 GH_TAGNAME=	${PORTVERSION}
 
-MAKE_ENV+=	SUBMOD_BINS='' SUBMOD_OBJS=''
+MAKE_ENV+=	SUBMOD_BINS='' SUBMOD_OBJS='' SW_PATH=${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
@@ -41,16 +46,11 @@ MAKE_ENV+=	SUBMOD_BINS='' SUBMOD_OBJS=''
 CFLAGS+=	-msse2
 .endif
 
-# MAKE_JOBS_UNSAFE=	yes
+CXXFLAGS+=	-I${LOCALBASE}/include/smithwaterman \
+		-I${LOCALBASE}/include/multichoose \
+		-I${LOCALBASE}/include/filevercmp
 
-post-patch:
-	${REINPLACE_CMD} -e 's|make|${GMAKE}|g' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} \
-		-e 's|^CC[ \t]*=|CC ?=|' \
-		-e 's|^CXX[ \t]*=|CXX ?=|' \
-		-e 's|^CFLAGS[ \t]*=|CFLAGS +=|' \
-		-e 's|^CXXFLAGS[ \t]*=|CXXFLAGS +=|' \
-		${WRKSRC}/Makefile
+MAKE_JOBS_UNSAFE=	yes
 
 # FIXME: Not sure which header files need to be installed
 # FIXME: Add install target to upstream Makefile
