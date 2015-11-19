@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smithwaterman
-PORTVERSION=	9adc6a523f73e737a7fb47bfb4e281897efc92fa
+PORTVERSION=	c57ff47a006168c6f1289cc01cc5705f43567d86
 CATEGORIES=	biology
 
 MAINTAINER=	jwbacon@tds.net

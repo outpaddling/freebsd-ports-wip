@@ -8,3 +8,4 @@ include/smithwaterman/SmithWatermanGotoh.h
 include/smithwaterman/convert.h
 include/smithwaterman/disorder.h
 lib/libsw.a
+lib/libsw.so

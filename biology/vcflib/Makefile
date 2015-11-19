@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vcflib
-PORTVERSION=	8d144f46a33a94d7fd2a599b0000935df32a5ed5
+PORTVERSION=	b21a8738fcb7086c069c31b7b59c744edde31f8b
 CATEGORIES=	biology
 
 MAINTAINER=	jwbacon@tds.net
@@ -21,13 +21,13 @@ USES=		compiler:openmp gmake shebangfix tar:xz
 #		bin/vcfregionreduce_uncompressed \
 #		bin/vcfsort
 
-LIB_DEPENDS=	libhts.so:${PORTSDIR}/biology/htslib
+LIB_DEPENDS=	libhts.so:${PORTSDIR}/biology/htslib \
+		libtabix.so:${PORTSDIR}/biology/tabixpp \
+		libsw.so:/usr/wip/biology/smithwaterman
 BUILD_DEPENDS=	fastahack>=0:/usr/wip/biology/fastahack \
 		filevercmp>=0:/usr/wip/sysutils/filevercmp \
 		fsom>=0:/usr/wip/biology/fsom \
-		multichoose>=0:/usr/wip/biology/multichoose \
-		smithwaterman>=0:/usr/wip/biology/smithwaterman \
-		${LOCALBASE}/lib/libtabix.a:/usr/wip/biology/tabixpp
+		multichoose>=0:/usr/wip/biology/multichoose
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
