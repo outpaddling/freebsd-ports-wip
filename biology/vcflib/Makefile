@@ -8,7 +8,7 @@ CATEGORIES=	biology
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	C++ library and CLI tools for parsing and manipulating VCF files
 
-USES=		compiler:openmp gmake shebangfix tar:xz
+USES=		gmake shebangfix tar:xz
 #SHEBANG_FILES=	bin/vcfgtcompare.sh \
 #		bin/vcfmultiway \
 #		bin/vcfmultiwayscripts \
@@ -22,7 +22,7 @@ USES=		compiler:openmp gmake shebangfix tar:xz
 #		bin/vcfsort
 
 LIB_DEPENDS=	libhts.so:${PORTSDIR}/biology/htslib \
-		libtabix.so:${PORTSDIR}/biology/tabixpp \
+		libtabix.so:/usr/wip/biology/tabixpp \
 		libsw.so:/usr/wip/biology/smithwaterman
 BUILD_DEPENDS=	fastahack>=0:/usr/wip/biology/fastahack \
 		filevercmp>=0:/usr/wip/sysutils/filevercmp \
@@ -44,7 +44,9 @@ CFLAGS+=	-msse2
 
 CXXFLAGS+=	-I${LOCALBASE}/include/smithwaterman \
 		-I${LOCALBASE}/include/multichoose \
-		-I${LOCALBASE}/include/filevercmp
+		-I${LOCALBASE}/include/filevercmp \
+		-I${LOCALBASE}/include/fastahack \
+		-I${LOCALBASE}/include/intervaltree
 
 MAKE_JOBS_UNSAFE=	yes
 
