@@ -39,7 +39,7 @@ CXXFLAGS+=	-I${LOCALBASE}/include/smithwaterman \
 CFLAGS+=	-msse2
 .endif
 
-MAKE_JOBS_UNSAFE=	yes
+# MAKE_JOBS_UNSAFE=	yes
 MAKEFILE=		Makefile.external-libs
 INSTALL_TARGET=		install-strip
 
