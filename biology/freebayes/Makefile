@@ -11,9 +11,9 @@ COMMENT=	Bayesian haplotype-based polymorphism discovery and genotyping
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libvcflib.a:/usr/wip/biology/vcflib \
-		${LOCALBASE}/include/IntervalTree.h:/usr/wip/math/intervaltree
-LIB_DEPENDS=	libbamtools.so:/usr/wip/biology/bamtools
+BUILD_DEPENDS=	${LOCALBASE}/include/intervaltree/IntervalTree.h:/usr/wip/math/intervaltree
+LIB_DEPENDS=	libbamtools.so:/usr/wip/biology/bamtools \
+		libvcflib.so:/usr/wip/biology/vcflib
 
 USES=		gmake
 
@@ -21,7 +21,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ekg
 GH_TAGNAME=	v${PORTVERSION}
 
-CFLAGS+=	-I${LOCALBASE}/include/bamtools
+CFLAGS+=	-I${LOCALBASE}/include/bamtools \
+		-I${LOCALBASE}/include/intervaltree \
+		-I${LOCALBASE}/include/vcflib \
+		-I${LOCALBASE}/include/multichoose \
+		-I${LOCALBASE}/include/smithwaterman
+
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	${REINPLACE_CMD} \
