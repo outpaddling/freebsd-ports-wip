@@ -32,6 +32,8 @@ CXXFLAGS+=	-I${LOCALBASE}/include/smithwaterman \
 		-I${LOCALBASE}/include/fastahack \
 		-I${LOCALBASE}/include/intervaltree
 
+INSTALL_TARGET=	install-strip
+
 .include <bsd.port.pre.mk>
 
 # GCC disables sse2 by default on i386, but it's required for vcflib
