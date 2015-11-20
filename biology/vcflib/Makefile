@@ -16,7 +16,8 @@ LIB_DEPENDS=	libhts.so:${PORTSDIR}/biology/htslib \
 BUILD_DEPENDS=	fastahack>=0:/usr/wip/biology/fastahack \
 		filevercmp>=0:/usr/wip/sysutils/filevercmp \
 		fsom>=0:/usr/wip/biology/fsom \
-		multichoose>=0:/usr/wip/biology/multichoose
+		multichoose>=0:/usr/wip/biology/multichoose \
+		intervaltree>=0:/usr/wip/math/intervaltree
 
 # FIXME: compiler:openmp causes link error
 USES=		gmake shebangfix tar:xz
