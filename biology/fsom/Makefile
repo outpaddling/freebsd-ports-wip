@@ -19,4 +19,10 @@ PLIST_FILES=	bin/fsom lib/libfsom.a
 
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000000
+USE_GCC=	yes
+.endif
+
+.include <bsd.port.post.mk>

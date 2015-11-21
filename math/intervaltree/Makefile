@@ -20,4 +20,16 @@ GH_TAGNAME=	${PORTVERSION}
 
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000000
+USE_GCC=	yes
+.endif
+
+.if ${ARCH} == i386
+post-patch:
+	${REINPLACE_CMD} -e 's|<bool, unsigned long>|<bool, unsigned int>|g' \
+		${WRKSRC}/interval_tree_test.cpp
+.endif
+
+.include <bsd.port.post.mk>
