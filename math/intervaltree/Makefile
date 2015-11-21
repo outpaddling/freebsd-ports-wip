@@ -22,10 +22,12 @@ INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 
+# Needs c++0x
 .if ${OSVERSION} < 1000000
 USE_GCC=	yes
 .endif
 
+# FIXME: Blind hack.  Not sure why this is necessary.
 .if ${ARCH} == i386
 post-patch:
 	${REINPLACE_CMD} -e 's|<bool, unsigned long>|<bool, unsigned int>|g' \
