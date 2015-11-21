@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	intervaltree
-PORTVERSION=	14e3ef9fb4f7987a797f2d07e36661b9764feef1
+PORTVERSION=	49a0e290efaaa760e0b03e52ca18ac03e7582f23
 CATEGORIES=	math
 
 MAINTAINER=	jwbacon@tds.net
@@ -15,7 +15,7 @@ USES=		tar:xz
 PLIST_FILES=	bin/interval_tree_test include/${PORTNAME}/IntervalTree.h
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	outpaddling
+GH_ACCOUNT=	ekg
 GH_TAGNAME=	${PORTVERSION}
 
 INSTALL_TARGET=	install-strip
