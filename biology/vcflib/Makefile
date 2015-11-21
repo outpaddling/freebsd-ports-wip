@@ -20,7 +20,7 @@ BUILD_DEPENDS=	fastahack>=0:/usr/wip/biology/fastahack \
 		intervaltree>=0:/usr/wip/math/intervaltree
 
 # FIXME: compiler:openmp causes link error
-USES=		gmake shebangfix tar:xz
+USES=		gmake shebangfix
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling

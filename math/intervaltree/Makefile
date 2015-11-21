@@ -8,15 +8,13 @@ CATEGORIES=	math
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Minimal C++ interval tree implementation
 
-# LICENSE=	BSDish
-
-USES=		tar:xz
+LICENSE=	MIT
 
 PLIST_FILES=	bin/interval_tree_test include/${PORTNAME}/IntervalTree.h
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ekg
-GH_TAGNAME=	${PORTVERSION}
+# GH_TAGNAME=	${PORTVERSION}
 
 INSTALL_TARGET=	install-strip
 
