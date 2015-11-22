@@ -20,7 +20,7 @@ INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 
-# Needs c++0x
+# Needs <thread>, not available with clang port
 .if ${OSVERSION} < 1000000
 USE_GCC=	yes
 .endif
