@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	multichoose
-PORTVERSION=	9d52eb40bcfca1bcc92d933c925410d6300b2f10
-CATEGORIES=	biology
+PORTVERSION=	d60d639af93f8720e019d824bb2405eb4523fb16
+CATEGORIES=	math
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Generate multiset combinations (n multichoose k)
@@ -17,15 +17,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 GH_TAGNAME=	${PORTVERSION}
 
-do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
-	${INSTALL_PROGRAM} \
-		${WRKSRC}/multichoose \
-		${WRKSRC}/multipermute \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} \
-		${WRKSRC}/*.py \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
