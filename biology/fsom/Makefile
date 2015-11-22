@@ -8,6 +8,8 @@ CATEGORIES=	biology
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Tiny C library for managing SOM (Self-Organizing Maps) neural networks
 
+LICENSE=	GPLv3
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 GH_TAGNAME=	${PORTVERSION}
