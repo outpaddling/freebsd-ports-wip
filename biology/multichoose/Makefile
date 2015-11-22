@@ -6,7 +6,9 @@ PORTVERSION=	9d52eb40bcfca1bcc92d933c925410d6300b2f10
 CATEGORIES=	biology
 
 MAINTAINER=	jwbacon@tds.net
-COMMENT=
+COMMENT=	Generate multiset combinations (n multichoose k)
+
+LICENSE=	MIT
 
 USES=		shebangfix
 SHEBANG_FILES=	*.py
