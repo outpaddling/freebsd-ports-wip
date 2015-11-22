@@ -3,7 +3,6 @@
 
 PORTNAME=	fsom
 PORTVERSION=	23c8bb0b0a1de866ef05ed2be283f67bca4d2f47
-# FIXME: Is this the right category?
 CATEGORIES=	biology
 
 MAINTAINER=	jwbacon@tds.net
