@@ -1,13 +1,12 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	blasr
 PORTVERSION=	2015.08.17
 CATEGORIES=	biology
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	PacBio(R) long read aligner
 
 LICENSE=	BSD3CLAUSE

@@ -1,11 +1,11 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	smithwaterman
 PORTVERSION=	c57ff47a006168c6f1289cc01cc5705f43567d86
 CATEGORIES=	biology
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Smith-waterman-gotoh alignment algorithm
 
 USES=		gmake

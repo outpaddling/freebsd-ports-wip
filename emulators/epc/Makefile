@@ -1,6 +1,6 @@
 # New ports collection makefile for:    plasm
 # Date created:         2010-07-21
-# Whom:                 Jason Bacon <jwbacon@tds.net>
+# Whom:                 Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -8,10 +8,9 @@
 PORTNAME=	epc
 PORTVERSION=	0.1
 CATEGORIES=	emulators
-MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
-		http://acadix.biz/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Educational Perrsonal Computer
 
 USES=		tar:xz

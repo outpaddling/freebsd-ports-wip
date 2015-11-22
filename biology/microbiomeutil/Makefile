@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	microbiomeutil
@@ -7,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	microbiomeutil
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Utilities for processing and analyzing 16S rRNA genes
 
 LICENSE=	BSD4CLAUSE

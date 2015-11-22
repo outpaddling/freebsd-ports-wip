@@ -12,7 +12,7 @@ PORTVERSION=	0.1
 CATEGORIES=	science
 MASTER_SITES=	http://sculpin/~bacon/Ports/private/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	MRI system admin tool
 
 MAN1=		mriadmin.1

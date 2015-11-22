@@ -1,6 +1,6 @@
 # New ports collection makefile for:	mcc18_wrapper
 # Date created:		2008-11-25
-# Whom:			Jason Bacon <jwbacon@tds.net>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -8,10 +8,9 @@
 PORTNAME=	mcc18-wrapper
 PORTVERSION=	0.2
 CATEGORIES=	lang
-MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
-		http://acadix.biz/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Wrappers for Windows based Microchip MCC18 and Wine
 
 DEPENDS_RUN=	wine:${PORTSDIR}/emulators/wine

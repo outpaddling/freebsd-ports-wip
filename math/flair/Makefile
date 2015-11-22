@@ -1,6 +1,6 @@
 # New ports collection makefile for:	flair
 # Date created:		13 Dec 2011
-# Whom:			Jason Bacon <jwbacon@tds.net>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.3.25
 CATEGORIES=	math science
 MASTER_SITES=	https://pantherfile.uwm.edu/weinert/www/flair.html/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	FLAPW method for bulk and thin films
 
 # LICENSE=      Custom free software with restrictions

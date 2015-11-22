@@ -1,6 +1,6 @@
 # New ports collection makefile for:	mricron
 # Date created:		2007-12-18
-# Whom:			Jason Bacon <jwbacon@tds.net>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -17,7 +17,7 @@ DISTNAME=	mricron
 
 USE_ZIP=	yes
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Convert medical image files to nifti
 
 .include <bsd.port.pre.mk>

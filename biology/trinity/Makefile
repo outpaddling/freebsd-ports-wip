@@ -18,7 +18,7 @@ CATEGORIES=	biology
 MASTER_SITES=	https://sourceforge.net/projects/trinityrnaseq/files/
 DISTNAME=	trinityrnaseq_r20140413p1
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	RNA sequence assembly
 
 USES=		gmake perl5 shebangfix dos2unix

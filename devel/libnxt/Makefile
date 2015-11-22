@@ -1,6 +1,6 @@
 # New ports collection makefile for:	libnxt
 # Date created:		2007-05-05
-# Whom:			Jason Bacon <jwbacon@tds.net>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -8,10 +8,9 @@
 PORTNAME=	libnxt
 PORTVERSION=	0.3
 CATEGORIES=	devel
-MASTER_SITES=	http://libnxt.googlecode.com/files/ \
-		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
+MASTER_SITES=	http://libnxt.googlecode.com/files/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Lego NXT library
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \

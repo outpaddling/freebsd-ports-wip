@@ -1,4 +1,4 @@
-# Created by: Jason W. Bacon <jwbacon@tds.net>
+# Created by: Jason W. Bacon <bacon4000@gmail.com>
 # $FreeBSD: head/science/dtiquery/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	dtiquery
@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	science biology
 MASTER_SITES=	http://graphics.stanford.edu/projects/dti/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Stanford DTI Visualization tool
 
 BUILD_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:${PORTSDIR}/devel/tnt \

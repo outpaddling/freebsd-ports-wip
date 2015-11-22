@@ -1,6 +1,6 @@
 # New ports collection makefile for:	lensnns
 # Date created:		9 jan 2007
-# Whom:			Jason W. Bacon <jwbacon@tds.net>
+# Whom:			Jason W. Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD: ports/math/lensnns/Makefile,v 1.2 2008/02/07 12:49:17 tabthorpe Exp $
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://tedlab.mit.edu/~dr/Lens/Dist/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/
 DISTNAME=	lens
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Light Efficient Neural Network Simulator
 
 RUN_DEPENDS=	webbrowser:../../www/webbrowser

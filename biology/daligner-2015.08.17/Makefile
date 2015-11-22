@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 # Note: pthreads performance on FreeBSD 10.1 is lacking compared to
@@ -8,10 +8,9 @@ PORTNAME=	daligner
 # Must use the same version of dazz_db, daligner, pypeflow, and falcon!
 PORTVERSION=	2015.08.17
 CATEGORIES=	biology
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Find all significant local alignments between reads
 
 LICENSE=	BSD3CLAUSE

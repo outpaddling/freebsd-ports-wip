@@ -14,7 +14,7 @@ MASTER_SITES=	http://localcache/~bacon/Ports/distfiles/ \
 		http://www.neuro.mcw.edu/~bacon/Ports/distfiles/
 DISTNAME=	${PORTNAME}-Linux-centos4-stable-pub-v${PORTVERSION}-full
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Cortical Surface Reconstruction
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \

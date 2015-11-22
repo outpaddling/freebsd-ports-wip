@@ -15,7 +15,7 @@ USE_CMAKE=	yes
 USE_PYTHON=     yes
 PYDISTUTILS_PKGNAME=    FreeFOAM
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Open source computational fluid dynamics toolbox
 
 # FreeFOAM depends: libccmio metis mcgridgen parmetis scotch zlib

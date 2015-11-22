@@ -5,8 +5,7 @@ PORTNAME=	dazz_db
 # Must use the same version of dazz_db, daligner, pypeflow, and falcon!
 PORTVERSION=	2015.08.17
 CATEGORIES=	biology databases
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jacobsonnenberg0@gmail.com
 COMMENT=	Dresden assembler for long read DNA projects

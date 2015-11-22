@@ -15,7 +15,7 @@ LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 CATEGORIES=	math
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Parallel solution of partial differential equations
 
 # Custom configure script, not GNU

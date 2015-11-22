@@ -28,7 +28,7 @@ PKGNAMESUFFIX+=	-mpi
 PKGNAMESUFFIX!=	echo ${PKGNAMESUFFIX}'-spherical'
 .endif
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Unstructured Grid Finite Volume Coastal Ocean Model
 
 # Check netcdf lib for Fortran support!

@@ -3,7 +3,7 @@
 
 PKGNAMESUFFIX=	-openmpi
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 
 LICENSE=	GPLv1
 

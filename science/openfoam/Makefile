@@ -1,4 +1,4 @@
-# Created by: Jason W. Bacon <jwbacon@tds.net>
+# Created by: Jason W. Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	openfoam
@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	../foam
 DISTNAME=	OpenFOAM-${PORTVERSION}
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Open source computational fluid dynamics
 
 LICENSE=	GPLv3

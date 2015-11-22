@@ -1,11 +1,11 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	fastahack
 PORTVERSION=	18ed4b86ef962fa1b40f89b78625b2f271d9b155
 CATEGORIES=	biology
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Utilities for indexing and sequence extraction from FASTA files
 
 USE_GITHUB=	yes

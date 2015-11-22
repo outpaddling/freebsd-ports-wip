@@ -1,7 +1,7 @@
 ############################################################################
 # New ports collection Makefile for:   bioimagesuite
 # Date created:        2 jan 2007
-# Whom:                Jason Bacon <jwbacon@tds.net>
+# Whom:                Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -17,7 +17,7 @@ CATEGORIES=	science biology
 MASTER_SITES=	http://www.bioimagesuite.org/download/src/
 DISTNAME=	bioimagesuite-26_0_10_Nov_2008_source
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	BioImageSuite
 WRKSRC=		${WRKDIR}/bioimagesuite26_src
 

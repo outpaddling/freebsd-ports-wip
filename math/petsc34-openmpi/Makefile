@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 PKGNAMESUFFIX=	-openmpi
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Parallel solution of partial differential equations
 
 HAS_CONFIGURE=	yes

@@ -1,11 +1,11 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	multichoose
 PORTVERSION=	a35c94abd1b312fdcc10455f90b6e527c271bb35
 CATEGORIES=	math
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Generate multiset combinations (n multichoose k)
 
 LICENSE=	MIT

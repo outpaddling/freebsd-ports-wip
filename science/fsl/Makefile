@@ -17,7 +17,7 @@ CATEGORIES=	science biology
 MASTER_SITES=	http://www.fmrib.ox.ac.uk/fsldownloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	FMRIB Software Library
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \

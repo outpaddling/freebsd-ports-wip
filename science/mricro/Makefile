@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.sph.sc.edu/comd/rorden/ \
 PKGNAMEPREFIX=	linux-
 DISTNAME=	mricrox
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Medical image viewer and converter
 
 USE_LINUX=	yes

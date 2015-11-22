@@ -6,7 +6,7 @@ PORTVERSION=	41
 CATEGORIES=	www
 DISTFILES=	google-chrome-stable_current_i386.rpm
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Linux Chrome closed-source browser
 
 # https://www.google.com/chrome/browser/desktop/index.html?platform=linux

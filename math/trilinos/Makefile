@@ -14,7 +14,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://trilinos.sandia.gov/download/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Object-oriented math libraries
 
 # Add if building shared libs

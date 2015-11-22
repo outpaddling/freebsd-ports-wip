@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	slclust
@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	slclust/slclust
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	jwbacon@tds.net>
+MAINTAINER=	bacon4000@gmail.com>
 COMMENT=	Single-linkage clustering with Jaccard similarity
 
 WRKSRC=		${WRKDIR}/slclust

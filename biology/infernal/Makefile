@@ -7,7 +7,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	biology
 MASTER_SITES=	http://selab.janelia.org/software/infernal/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Search DNA databases for RNA structure and sequence similarities
 
 GNU_CONFIGURE=	yes

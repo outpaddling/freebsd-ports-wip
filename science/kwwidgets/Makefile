@@ -8,8 +8,7 @@
 PORTNAME=	kwwidgets
 PORTVERSION=	2012.05.06
 CATEGORIES=	science
-MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
-		http://acadix.biz/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
 COMMENT=

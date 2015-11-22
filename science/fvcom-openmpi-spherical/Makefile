@@ -1,6 +1,6 @@
 # New ports collection makefile for:	fvcom-mpi
 # Date created:			31 Mar 2012
-# Whom:				Jason Bacon <jwbacon@tds.net>
+# Whom:				Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #

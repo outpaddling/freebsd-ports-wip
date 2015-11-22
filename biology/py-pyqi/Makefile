@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	pyqi
@@ -7,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	https://pypi.python.org/packages/source/p/pyqi/
 PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	wrapping general commands in multiple types of interfaces
 
 LICENSE=	GPLv2	# From qiime install site.  Double check this.

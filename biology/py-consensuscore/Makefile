@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	consensuscore
@@ -8,7 +8,7 @@ MASTER_SITES=	http://github.com/PacificBiosciences/ConsensusCore/archive/
 DISTNAME=	smrtanalysis-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=
 
 USES=		python

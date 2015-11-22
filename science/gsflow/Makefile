@@ -1,6 +1,6 @@
 # New ports collection makefile for:	gsflow
 # Date created:		2010-05-14
-# Whom:			Jason Bacon <jwbacon@tds.net>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 #DIST_SUBDIR=	${PORTNAME}
 #EXTRACT_ONLY=
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=
 
 .include <bsd.port.pre.mk>

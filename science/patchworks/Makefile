@@ -11,7 +11,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/ \
 		http://bacon.is-a-geek.org/~bacon/Ports/distfiles/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Merge FFMAP and 3Ddump data
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbacon.a:../../devel/libbacon

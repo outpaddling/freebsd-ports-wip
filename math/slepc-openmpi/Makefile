@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-openmpi
 CATEGORIES=	math
 MASTER_SITES=	http://www.grycap.upv.es/slepc/download/distrib/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	large scale sparse eigenvalue problems on parallel computers
 
 HAS_CONFIGURE=	yes

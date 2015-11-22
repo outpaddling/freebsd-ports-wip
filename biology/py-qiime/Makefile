@@ -11,7 +11,7 @@ DISTFILES=	${PORTVERSION}${EXTRACT_SUFX} \
 		uclustq1.2.22_i86linux32
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTVERSION}${EXTRACT_SUFX}
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Quantitative Insights Into Microbial Ecology
 
 # uclust is a Linux closed-source binary and required for qiime

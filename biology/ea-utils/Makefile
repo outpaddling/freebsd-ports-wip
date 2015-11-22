@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	ea-utils
@@ -7,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 DISTNAME=	${PORTNAME}.${PORTVERSION}-806
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Command-line tools for processing fastq sequence data
 
 LICENSE=	MIT

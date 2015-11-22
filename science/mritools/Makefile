@@ -15,7 +15,7 @@ CATEGORIES=     science biology
 MASTER_SITES=
 DISTFILES=
 
-MAINTAINER=     jwbacon@tds.net
+MAINTAINER=     bacon4000@gmail.com
 COMMENT=        Metaport for MRI software tools
 
 NO_BUILD=       "YES"

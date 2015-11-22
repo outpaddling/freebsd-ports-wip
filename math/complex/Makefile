@@ -1,6 +1,6 @@
 # New ports collection makefile for:	complex
 # Date created:		2011-10-13
-# Whom:			Jason Bacon <jwbacon@tds.net>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -10,9 +10,9 @@ PORTVERSION=	0.1
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	math science
-MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Complex math functions
 
 USES=		tar:xz

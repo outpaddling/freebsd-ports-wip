@@ -5,10 +5,9 @@ PORTNAME=	lammps
 PORTVERSION=	2014.12.09
 CATEGORIES=	science
 # FIXME: Can this be done from http://lammps.sandia.gov/download.html#tar?
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Large-scale Atomic/Molecular Massively Parallel Simulator
 
 LICENSE=	GPLv1

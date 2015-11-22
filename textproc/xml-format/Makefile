@@ -1,13 +1,12 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD: head/textproc/xml-format/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	xml-format
 PORTVERSION=	0.2
 CATEGORIES=	textproc
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	XML beautifier
 
 LICENSE=	BSD2CLAUSE

@@ -1,11 +1,11 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	vcflib
 PORTVERSION=	5f0fbe629593e5fb996a1a71201776424eef3834
 CATEGORIES=	biology
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	C++ library and CLI tools for parsing and manipulating VCF files
 
 LICENSE=	MIT

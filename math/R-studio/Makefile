@@ -10,8 +10,6 @@ PORTVERSION=	0.95.262
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/rstudio/rstudio/tarball/ \
 		https://s3.amazonaws.com/rstudio-buildtools/
-#		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
-#DISTNAME=	rstudio-rstudio-v0.95.262-0-g928abf1
 DISTFILES=	v${PORTVERSION} \
 		gin-1.5.zip \
 		gwt-2.4.0.zip \

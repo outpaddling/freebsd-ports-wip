@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	cufflinks
@@ -7,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/
 # Switch to USE_GITHUB?
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Transcript assembly, differential expression and regulation for RNA-Seq
 
 USES=		python

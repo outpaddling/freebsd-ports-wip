@@ -1,7 +1,7 @@
 ############################################################################
 # New ports collection Makefile for:   RAPID
 # Date created:        18 July 2006
-# Whom:                Jason W. Bacon <jwbacon@tds.net>
+# Whom:                Jason W. Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -22,7 +22,7 @@ MASTER_SITES=	http://www.cs.sunysb.edu/~algorith/implement/RAPID/distrib/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/
 DISTNAME=	RAPID_v2_01
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Robust and Accurate Polygon Interference Detection
 
 SUB_FILES=	pkg-message

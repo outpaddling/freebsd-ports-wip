@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	freebayes
@@ -6,7 +6,7 @@ PORTNAME=	freebayes
 PORTVERSION=	0.9.21
 CATEGORIES=	biology
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Bayesian haplotype-based polymorphism discovery and genotyping
 
 LICENSE=	MIT

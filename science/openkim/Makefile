@@ -7,7 +7,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://github.com/openkim/kim-api/archive/
 DISTNAME=	v${PORTVERSION}
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Knowledgebase of Interatomic Models
 
 LICENSE=	CDDL

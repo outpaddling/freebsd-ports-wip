@@ -1,6 +1,6 @@
 # New ports collection makefile for:	docviewer
 # Date created:		2010-11-15
-# Whom:			Jason Bacon <jwbacon@tds.net>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -8,10 +8,9 @@
 PORTNAME=	docviewer
 PORTVERSION=	0.2
 CATEGORIES=	textproc
-MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
-		http://acadix.biz/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Run the best available PDF viewer
 
 NO_BUILD=	yes

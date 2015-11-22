@@ -4,8 +4,7 @@
 PORTNAME=	seqtk
 PORTVERSION=	2015.11.13
 CATEGORIES=	biology
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	dsiercks@uwm.edu
 COMMENT=	Tool for processing sequences in FASTA/FASTQ format

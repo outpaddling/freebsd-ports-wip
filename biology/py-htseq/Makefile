@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	HTSeq
@@ -8,7 +8,7 @@ MASTER_SITES=		${MASTER_SITE_CHEESESHOP}
 MASTER_SITE_SUBDIR=	source/H/HTSeq
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Framework to analyze data from high-throughput sequencing assays
 
 LICENSE=	GPLv3

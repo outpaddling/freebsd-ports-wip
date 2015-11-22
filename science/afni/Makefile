@@ -1,4 +1,4 @@
-# Created by: Jason W. Bacon <jwbacon@tds.net>
+# Created by: Jason W. Bacon <bacon4000@gmail.com>
 # $FreeBSD: head/science/afni/Makefile 390310 2015-06-22 18:33:20Z antoine $
 
 ############################################################################
@@ -12,10 +12,9 @@
 PORTNAME=	afni
 PORTVERSION=	2015.11.13
 CATEGORIES=	science biology graphics
-MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
-		http://www.acadix.biz/Ports/distfiles/
+MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Advanced Functional Neuro Imaging
 
 LICENSE=	GPLv2

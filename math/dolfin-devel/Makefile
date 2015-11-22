@@ -6,7 +6,7 @@ PORTVERSION=	${MMVERSION}.0
 CATEGORIES=	math python
 MASTER_SITES=	http://launchpad.net/dolfin/${MMVERSION}.x/${MMVERSION}.0/+download/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	C++/Python interface of FEniCS
 
 LICENSE=	LGPL3

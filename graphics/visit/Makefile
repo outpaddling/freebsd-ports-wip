@@ -1,6 +1,6 @@
 # New ports collection makefile for:	visit
 # Date created:		2010-12-29
-# Whom:			Jason Bacon <jwbacon@tds.net>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -20,7 +20,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 #DIST_SUBDIR=	${PORTNAME}
 #EXTRACT_ONLY=
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	interactive parallel visualization and graphical analysis tool
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

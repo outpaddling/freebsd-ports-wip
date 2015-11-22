@@ -18,7 +18,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://github.com/trinityrnaseq/trinityrnaseq/archive/
 DISTNAME=	v${PORTVERSION}
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	RNA sequence assembly
 
 USES=		gmake perl5 shebangfix dos2unix

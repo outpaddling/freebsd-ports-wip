@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	GenomeAnalysisTK
@@ -6,7 +6,7 @@ PORTVERSION=	3.4
 CATEGORIES=	biology science
 DISTNAME=	${PORTNAME}-${PORTVERSION}-0
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Analyse next-generation resequencing data
 
 USES=		tar:bzip2

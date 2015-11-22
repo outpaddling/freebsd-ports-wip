@@ -8,7 +8,7 @@ CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.adaptivecomputing.com/index.php?wpfb_dl=77/ \
 		http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Open source distributed computing resource manager based on PBS
 
 USE_AUTOTOOLS=	libtool

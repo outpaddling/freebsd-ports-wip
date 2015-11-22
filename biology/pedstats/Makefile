@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	pedstats
@@ -6,7 +6,7 @@ PORTVERSION=	0.6.12
 CATEGORIES=	biology
 MASTER_SITES=	http://csg.sph.umich.edu/abecasis/PedStats/download/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Quick validation and summary of pedigree and data files
 
 # LICENSE=	unspecified

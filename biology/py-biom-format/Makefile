@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	biom
@@ -12,7 +12,7 @@ PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-format
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	The Biological Observation Matrix (BIOM) Format Project
 
 LICENSE=	BSD3CLAUSE

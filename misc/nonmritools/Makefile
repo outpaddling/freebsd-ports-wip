@@ -1,7 +1,7 @@
 ############################################################################
 # New ports collection Makefile for:   nonmritools
 # Date created:        30 jan 2007
-# Whom:                Jason Bacon <jwbacon@tds.net>
+# Whom:                Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -15,7 +15,7 @@ CATEGORIES=	misc
 MASTER_SITES=
 DISTFILES=
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Metaport for non-mri software for MRI workstation
 
 RUN_DEPENDS=	setfg:../../misc/setfg

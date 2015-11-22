@@ -11,7 +11,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/ \
 		http://bacon.is-a-geek.org/~bacon/Ports/distfiles/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Combine Hilbert delay plugout data into FFMap file
 
 PLIST_FILES=	bin/hilbplug2ffmap

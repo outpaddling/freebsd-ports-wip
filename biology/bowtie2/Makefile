@@ -7,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://github.com/BenLangmead/bowtie2/archive/
 DISTNAME=	v${PORTVERSION}
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Ultrafast, memory-efficient short read aligner
 
 LICENSE=	ART10

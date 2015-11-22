@@ -1,11 +1,11 @@
 # New ports collection makefile for:	arm-none-eabi-gcc
 # Date created:		30 May 2011
-# Whom:			Jason Bacon <jwbacon@tds.net>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 
 TGTARCH=	arm
 TGTABI=		none-eabi

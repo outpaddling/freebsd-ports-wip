@@ -11,7 +11,7 @@ CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.adaptivecomputing.com/resources/downloads/torque/4.0-beta/
 DISTNAME=	torque-4.0.0-snap.26656snapstamp
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Open source distributed computing resource manager based on PBS
 
 USE_AUTOTOOLS=	libtool

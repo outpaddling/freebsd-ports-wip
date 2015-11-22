@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://surfer.nmr.mgh.harvard.edu/pub/dist/ \
 PKGNAMEPREFIX=	linux-
 DISTNAME=	freesurfer-Linux-rh9-stable-pub-v3.0.5-full
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Cortical Surface Reconstruction
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \

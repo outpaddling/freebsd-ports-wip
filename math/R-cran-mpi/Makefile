@@ -1,6 +1,6 @@
 # New ports collection makefile for:	Rmpi
 # Date created:		22 March 2012
-# Whom:			Jason Bacon <jwbacon@tds.net>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ DISTVERSION=	0.5-9
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	MPI wrappers for R
 
 LICENSE=	GPLv2

@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 CATEGORIES=	biology
 MASTER_SITES=	http://oligotyping.org/files/downloads/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Minimum entrop decomposition
 
 # Deps:

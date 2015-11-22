@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD: head/lang/x10/Makefile 386097 2015-05-11 18:34:57Z mat $
 
 PORTNAME=	x10
@@ -25,7 +25,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Object-oriented parallel programming language
 
 LICENSE=	EPL

@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	TransDecoder
@@ -7,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://github.com/TransDecoder/TransDecoder/archive/
 DISTNAME=	${PORTVERSION}
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Identify candidate coding regions within transcript sequences
 
 LICENSE=	BSD3CLAUSE

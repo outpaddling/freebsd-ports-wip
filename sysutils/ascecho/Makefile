@@ -1,6 +1,6 @@
 # New ports collection makefile for:	ascecho
 # Date created:		2008-08-24
-# Whom:			Jason Bacon <jwbacon@tds.net>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -8,9 +8,9 @@
 PORTNAME=	ascecho
 PORTVERSION=	1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	File viewer that shows invisible characters
 
 PLIST_FILES=	bin/ascecho

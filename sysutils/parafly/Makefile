@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 # Direct link:		http://downloads.sourceforge.net/project/parafly/parafly-r2013-01-21.tgz?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fparafly%2F&ts=1405463589&use_mirror=iweb

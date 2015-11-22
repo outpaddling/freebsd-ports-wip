@@ -1,11 +1,11 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	intervaltree
 PORTVERSION=	49a0e290efaaa760e0b03e52ca18ac03e7582f23
 CATEGORIES=	math
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Minimal C++ interval tree implementation
 
 LICENSE=	MIT

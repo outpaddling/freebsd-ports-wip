@@ -1,11 +1,11 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	filevercmp
 PORTVERSION=	261142f1529f6b7464f6ad96d0c77872ff919849
 CATEGORIES=	sysutils
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Filevercmp function as in sort --version-sort
 
 LICENSE=	GPLv3

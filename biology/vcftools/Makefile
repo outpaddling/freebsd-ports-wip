@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	vcftools
@@ -6,7 +6,7 @@ PORTVERSION=	0.1.14
 CATEGORIES=	biology
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=
 
 USES=		autoreconf gmake

@@ -1,6 +1,6 @@
 # New ports collection makefile for:    libtwin
 # Date created:         Nov 2006
-# Whom:                 Jason Bacon <jwbacon@tds.net>
+# Whom:                 Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -8,10 +8,9 @@
 PORTNAME=       twintk
 PORTVERSION=    0.9.4
 CATEGORIES=     devel
-MASTER_SITES=   http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
-		http://acadix.biz/Ports/distfiles/
+MASTER_SITES=   http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=     jwbacon@tds.net
+MAINTAINER=     bacon4000@gmail.com
 COMMENT=        Misc functions
 
 USES=		tar:xz

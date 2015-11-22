@@ -1,7 +1,7 @@
 ############################################################################
 # New ports collection Makefile for:   bioimagesuite
 # Date created:        2 jan 2007
-# Whom:                Jason Bacon <jwbacon@tds.net>
+# Whom:                Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -22,7 +22,7 @@ DISTFILES=	bioimagesuite_latest_FreeBSD_g++32.tar.gz \
 EXTRACT_ONLY=	bioimagesuite_extra_FreeBSD_g++32_Dec_2006.tar.gz \
 		bioimagesuite_latest_FreeBSD_g++32.tar.gz
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	BioImageSuite
 WRKSRC=		${WRKDIR}/bioimagesuite_src
 

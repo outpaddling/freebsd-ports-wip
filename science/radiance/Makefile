@@ -1,4 +1,4 @@
-# Created by:	Jason Bacon <jwbacon@tds.net>
+# Created by:	Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	radiance
@@ -7,7 +7,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://radsite.lbl.gov/radiance/dist/
 DISTNAME=	rad4R1all
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Highly accurate ray-tracing software system
 
 USE_TCL=	yes

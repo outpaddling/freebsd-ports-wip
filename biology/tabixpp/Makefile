@@ -1,11 +1,11 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	tabixpp
 PORTVERSION=	3ef7baaac1df3b91ebd2571b89f5c391ef41519d
 CATEGORIES=	biology
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	C++ wrapper to tabix indexer
 
 LIB_DEPENDS=	libhts.so:${PORTSDIR}/biology/htslib

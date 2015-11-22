@@ -5,10 +5,9 @@ PORTNAME=	galaxy
 PORTVERSION=	2014.05.27
 CATEGORIES=	biology
 # Mirrored snapshots of github repo
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Web-based platform for data intensive biomedical research
 
 USES=		tar:xz shebangfix

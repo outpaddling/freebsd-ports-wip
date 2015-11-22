@@ -14,7 +14,7 @@ DISTFILES=	MIVA20BC83Linux_042005a.tar.gz \
 		MIVA20BC83Linux_042005c.tar.gz \
 		MIVA20BC83Linux_042005d.tar.gz
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Analysis of FMRI Animal Data
 
 USE_LINUX=	yes

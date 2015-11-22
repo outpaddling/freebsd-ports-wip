@@ -4,8 +4,7 @@
 PORTNAME=	einstein-brp
 PORTVERSION=	2014.10.27
 CATEGORIES=	astro
-MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/ \
-		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
+MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 
 MAINTAINER=	bacon@manta.acadix.biz
 COMMENT=

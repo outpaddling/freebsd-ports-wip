@@ -1,6 +1,6 @@
 # New ports collection makefile for:	ape
 # Date created:		Nov 2006
-# Whom:			Jason Bacon <jwbacon@tds.net>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -8,10 +8,9 @@
 PORTNAME=	ape
 PORTVERSION=	3.5.2
 CATEGORIES=	editors devel
-MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
-		http://acadix.biz/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Another Programmer's Editor
 
 # libtwintk is both a build and run depend.  Ape requires the library and

@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	spark
@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://d3kbcqa49mib13.cloudfront.net/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Fast and general-purpose cluster computing system
 
 BUILD_DEPENDS+=	scala:${PORTSDIR}/lang/scala \

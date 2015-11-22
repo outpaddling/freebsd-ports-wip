@@ -1,6 +1,6 @@
 # New ports collection makefile for:	klustakwik
 # Date created:		23 Jan 2013
-# Whom:			Jason Bacon <jwbacon@tds.net>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	math science
 MASTER_SITES=	SF/klustakwik/klustakwik
 DISTNAME=	KlustaKwik-${PORTVERSION}
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Unsupervised classification of multidimensional continuous data
 
 LICENSE=	GPLv1

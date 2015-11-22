@@ -1,6 +1,6 @@
 # New ports collection makefile for:	TLv
 # Date created:		4 jan 2007
-# Whom:			Jason Bacon <jwbacon@tds.net>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/ \
 		http://bacon.is-a-geek.org/~bacon/Ports/distfiles/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	MRI Reconstruction
 
 PLIST_FILES=	bin/TLv

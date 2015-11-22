@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	tophat
@@ -6,7 +6,7 @@ PORTVERSION=	2.0.12
 CATEGORIES=	biology science
 MASTER_SITES=	http://ccb.jhu.edu/software/tophat/downloads/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Spliced read mapper for RNA-Seq
 
 LICENSE=	ClArtistic
