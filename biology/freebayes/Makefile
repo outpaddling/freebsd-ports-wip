@@ -3,7 +3,7 @@
 
 PORTNAME=	freebayes
 # FIXME: Do we need a version >= the submodules bamtools and vcflib?
-PORTVERSION=	fab0673548867340a901ec62e38c8bd28cab062e
+PORTVERSION=	bf31341be12fa616fe1e43c8aef7a04108f7bfdc
 CATEGORIES=	biology
 
 MAINTAINER=	bacon4000@gmail.com
@@ -11,9 +11,13 @@ COMMENT=	Bayesian haplotype-based polymorphism discovery and genotyping
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/include/intervaltree/IntervalTree.h:/usr/wip/math/intervaltree
+BUILD_DEPENDS=	${LOCALBASE}/include/intervaltree/IntervalTree.h:/usr/wip/math/intervaltree \
+		${LOCALBASE}/include/multichoose/multichoose.h:/usr/wip/math/multichoose
 LIB_DEPENDS=	libbamtools.so:/usr/wip/biology/bamtools \
-		libvcflib.so:/usr/wip/biology/vcflib
+		libvcflib.so.1:/usr/wip/biology/vcflib \
+		libtabix.so.1:/usr/wip/biology/tabixpp \
+		libsw.so.1:/usr/wip/biology/smithwaterman \
+		libhts.so:/usr/ports/biology/htslib
 
 USES=		gmake
 
@@ -28,6 +32,9 @@ CFLAGS+=	-I${LOCALBASE}/include/bamtools \
 		-I${LOCALBASE}/include/smithwaterman
 
 MAKEFILE=	Makefile.external-libs
-# MAKE_JOBS_UNSAFE=	yes
+
+INSTALL_TARGET=	install-strip
+
+PLIST_FILES=	bin/bamleftalign bin/freebayes
 
 .include <bsd.port.mk>

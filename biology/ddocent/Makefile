@@ -21,10 +21,10 @@ RUN_DEPENDS=	mawk>=0:${PORTSDIR}/lang/mawk \
 		vcftools>=0:/usr/wip/biology/vcftools \
 		vcflib>=0:/usr/wip/biology/vcflib \
 		rainbow>=0:/usr/wip/biology/rainbow \
-		bamtools>=0:/usr/wip/biology/bamtools
+		bamtools>=0:/usr/wip/biology/bamtools \
+		freebayes:/usr/wip/biology/freebayes
 
 # Still needs:
-# FreeBayes 	https://github.com/ekg/freebayes
 # STACKS 	http://creskolab.uoregon.edu/stacks
 # Trimmomatic 	http://www.usadellab.org/cms/?page=trimmomatic
 # seqtk 	https://github.com/lh3/seqtk

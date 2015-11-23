@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vcflib
-PORTVERSION=	5f0fbe629593e5fb996a1a71201776424eef3834
+PORTVERSION=	6451cf639cc7d735137218c4b08f597ba9dd6e73
 CATEGORIES=	biology
 
 MAINTAINER=	bacon4000@gmail.com
@@ -11,8 +11,8 @@ COMMENT=	C++ library and CLI tools for parsing and manipulating VCF files
 LICENSE=	MIT
 
 LIB_DEPENDS=	libhts.so:${PORTSDIR}/biology/htslib \
-		libtabix.so:/usr/wip/biology/tabixpp \
-		libsw.so:/usr/wip/biology/smithwaterman
+		libtabix.so.1:/usr/wip/biology/tabixpp \
+		libsw.so.1:/usr/wip/biology/smithwaterman
 BUILD_DEPENDS=	fastahack>=0:/usr/wip/biology/fastahack \
 		filevercmp>=0:/usr/wip/sysutils/filevercmp \
 		fsom>=0:/usr/wip/biology/fsom \
