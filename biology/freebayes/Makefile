@@ -3,7 +3,7 @@
 
 PORTNAME=	freebayes
 # FIXME: Do we need a version >= the submodules bamtools and vcflib?
-PORTVERSION=	0.9.21
+PORTVERSION=	fab0673548867340a901ec62e38c8bd28cab062e
 CATEGORIES=	biology
 
 MAINTAINER=	bacon4000@gmail.com
@@ -18,8 +18,8 @@ LIB_DEPENDS=	libbamtools.so:/usr/wip/biology/bamtools \
 USES=		gmake
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	ekg
-GH_TAGNAME=	v${PORTVERSION}
+GH_ACCOUNT=	outpaddling
+GH_TAGNAME=	${PORTVERSION}
 
 CFLAGS+=	-I${LOCALBASE}/include/bamtools \
 		-I${LOCALBASE}/include/intervaltree \
@@ -27,11 +27,7 @@ CFLAGS+=	-I${LOCALBASE}/include/bamtools \
 		-I${LOCALBASE}/include/multichoose \
 		-I${LOCALBASE}/include/smithwaterman
 
-MAKE_JOBS_UNSAFE=	yes
-
-post-patch:
-	${REINPLACE_CMD} \
-		-e 's|../intervaltree/IntervalTree.h|IntervalTree.h|g' \
-		${WRKSRC}/src/BedReader.*
+MAKEFILE=	Makefile.external-libs
+# MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
