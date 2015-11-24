@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-Src-${PORTVERSION}
 MAINTAINER=	dsiercks@uwm.edu
 COMMENT=	Flexible read trimming tool for Illumina NGS data
 
-LICENSE=	GNUv3
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
 
@@ -19,7 +19,7 @@ USES=		zip
 USE_JAVA=	1.6+
 JAVA_RUN=	yes
 
-WRKSRC=		${WRKDIR}/trimmomatic-{$PORTVERSION}
+WRKSRC=		${WRKDIR}/trimmomatic-${PORTVERSION}
 
 MAKE_ENV=	JAVA_HOME=${JAVA_HOME}
 
