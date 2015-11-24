@@ -1,0 +1,14 @@
+bin/clone_filter
+bin/cstacks
+bin/estacks
+bin/genotypes
+bin/hstacks
+bin/kmer_filter
+bin/phasedstacks
+bin/populations
+bin/process_radtags
+bin/process_shortreads
+bin/pstacks
+bin/rxstacks
+bin/sstacks
+bin/ustacks
