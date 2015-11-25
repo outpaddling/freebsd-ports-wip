@@ -33,8 +33,6 @@ NO_CONFIGURE=	yes
 
 MAKE_ENV=	SED=${SED}
 
-MAKE_JOBS_UNSAFE=	yes
-
 # FIXME: Assuming AMD64 for now.  This should probably be made to work
 # on i386 as well.
 post-patch:
