@@ -21,9 +21,9 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS=	gbase-0.* gmap-2006.*
 
-USE_GMAKE=	yes
+USES=		gmake
 .if defined(MAINTAINER_MODE)
-USE_FORTRAN=	yes
+USES+=		fortran
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/b_/_/}
@@ -43,11 +43,6 @@ LICDOCS=	CeCILL-C_V1-en.txt CeCILL-C_V1-fr.txt
 DOCVER=		${PORTVERSION:R:R:R}
 PORTDOCS=	ptscotch_user${DOCVER}.pdf scotch_user${DOCVER}.pdf
 EXAMPLES=	scotch_example_1.f scotch_example_2.f90
-
-MAN1=		acpl.1 amk_ccc.1 amk_fft2.1 amk_grf.1 amk_hy.1 amk_m2.1 amk_p2.1	\
-		atst.1 dggath.1 dgmap.1 dgord.1 dgpart.1 dgscat.1 dgtst.1 gbase.1 gcv.1	\
-		gmap.1 gmk_hy.1 gmk_m2.1 gmk_m3.1 gmk_msh.1 gmk_ub2.1 gmtst.1 gord.1	\
-		gotst.1 gout.1 gpart.1 gtst.1 mcv.1 mmk_m2.1 mmk_m3.1 mord.1 mtst.1
 
 PKGMESSAGE=	${WRKSRC}/LICENSE_en.txt
 

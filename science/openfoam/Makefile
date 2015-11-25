@@ -14,7 +14,8 @@ COMMENT=	Open source computational fluid dynamics
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	flex>=2.5.35:${PORTSDIR}/textproc/flex \
-		${LOCALBASE}/mpi/openmpi/bin/mpiCC:${PORTSDIR}/net/openmpi
+		${LOCALBASE}/mpi/openmpi/bin/mpiCC:${PORTSDIR}/net/openmpi \
+		${LOCALBASE}/lib/libscotch.a:${PORTSDIR}/cad/scotch
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
