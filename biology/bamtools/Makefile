@@ -23,10 +23,8 @@ CMAKE_ARGS+=	-DLIB_DIR=${PREFIX}/lib
 
 .include <bsd.port.pre.mk>
 
-# Just for speed: Recent GCC has better optimizer
-.if ${OSVERSION} < 1000000
-USE_GCC=	yes
-.endif
+# Just for speed: Recent compilers have better optimizers
+USES=		compiler:c++11-lang
 
 .if ${ARCH} == i386
 MAKE_ENV+=	POPCNT_CAPABILITY=0

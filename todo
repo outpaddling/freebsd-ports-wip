@@ -1,0 +1,2 @@
+
+Replace USE_GCC with compiler:* wherever possible

@@ -13,17 +13,14 @@ COMMENT=	Python healpix maps tools
 
 LICENSE=	GPLv2
 
-USES=		pkgconfig python
+# C++11 or USE_GCC is a hack to find emmintrin.h and xmmintrin.h
+USES=		compiler:c++11-lang pkgconfig python
 USE_PYTHON=	distutils
 
 BUILD_DEPENDS+=	cython:${PORTSDIR}/lang/cython
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}numpy>0:${PORTSDIR}/math/py-numpy \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib \
 		${PYTHON_PKGNAMEPREFIX}pyfits>0:${PORTSDIR}/astro/py-pyfits
-
-# Hacks to find emmintrin.h and xmmintrin.h
-# CFLAGS+=	-I /usr/include/clang/3.3
-USE_GCC=	yes
 
 post-stage:
 	for f in ${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/healpy/*.so; do \

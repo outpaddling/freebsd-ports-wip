@@ -19,7 +19,7 @@ LIB_DEPENDS=	libbamtools.so:/usr/wip/biology/bamtools \
 		libsw.so.1:/usr/wip/biology/smithwaterman \
 		libhts.so:/usr/ports/biology/htslib
 
-USES=		gmake
+USES=		compiler:c++11-lang gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
