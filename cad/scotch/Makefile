@@ -1,18 +1,15 @@
-# New ports collection makefile for:	scotch
-# Date created:		Thu 2 feb 2006
-# Whom:			thierry@pompo.net
-#
-# $FreeBSD: ports/cad/scotch/Makefile,v 1.17 2012/11/17 05:54:55 svnexp Exp $
-#
+# Created by: thierry@pompo.net
+# $FreeBSD: head/cad/scotch/Makefile 394778 2015-08-19 13:29:59Z mat $
 
 PORTNAME=	scotch
 DISTVERSION=	5.1.12b_esmumps
+PORTREVISION=	5
 CATEGORIES=	cad science
 MASTER_SITES=	https://gforge.inria.fr/frs/download.php/28978/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	A package for graph and mesh partitioning and sparse matrix ordering
+COMMENT=	Package for graph and mesh partitioning and sparse matrix ordering
 
 LICENSE=	CeCILL_C
 LICENSE_NAME=	CeCILL-C
@@ -22,6 +19,11 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 CONFLICTS=	gbase-0.* gmap-2006.*
 
 USES=		gmake
+
+MAKE_JOBS_UNSAFE=yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .if defined(MAINTAINER_MODE)
 USES+=		fortran
 .endif
@@ -39,23 +41,25 @@ BINS=		acpl amk_ccc amk_fft2 amk_grf amk_hy amk_m2 amk_p2 atst	\
 		mord mtst
 INCS=		esmumps.h scotch.h scotchf.h
 LIBS=		libesmumps.a libscotch.a libscotcherr.a libscotcherrexit.a libscotchmetis.a
-LICDOCS=	CeCILL-C_V1-en.txt CeCILL-C_V1-fr.txt
 DOCVER=		${PORTVERSION:R:R:R}
 PORTDOCS=	ptscotch_user${DOCVER}.pdf scotch_user${DOCVER}.pdf
 EXAMPLES=	scotch_example_1.f scotch_example_2.f90
 
-PKGMESSAGE=	${WRKSRC}/LICENSE_en.txt
-
 .if defined(WITH_OPENMPI)
-LIB_DEPENDS+=	mpich.2:${PORTSDIR}/net/openmpi
-ALL_TARGET+=	ptscotch
-MAKE_ENV+=	PATH=${PATH}:${LOCALBASE}/mpi/openmpi/bin PTHREAD_LIBS=${PTHREAD_LIBS}
-.endif
+MPIPREFIX=	mpi/openmpi/
+PLIST_SUB+=	MPIPREFIX=${MPIPREFIX}
+PKGNAMESUFFIX=	-openmpi
+CC=		${LOCALBASE}/${MPIPREFIX}bin/mpicc
+CFLAGS+=	-I${LOCALBASE}/${MPIPREFIX}include
+LDLAGS+=	-L${LOCALBASE}/${MPIPREFIX}lib
+DOCSDIR=	${PREFIX}/${MPIPREFIX}share/doc/scotch
+EXAMPLESDIR=	${PREFIX}/${MPIPREFIX}share/examples/scotch
 
-.if defined(WITH_MPICH2)
-LIB_DEPENDS+=	mpich.2:${PORTSDIR}/net/mpich2
+# Something unique to openmpi
+LIB_DEPENDS+=	libopen-rte.so:${PORTSDIR}/net/openmpi
+
 ALL_TARGET+=	ptscotch
-MAKE_ENV+=	PATH=${PATH}:${LOCALBASE}/mpich2/bin PTHREAD_LIBS=${PTHREAD_LIBS}
+MAKE_ENV+=	PATH=${PATH}:${LOCALBASE}/mpi/openmpi/bin
 
 INCS+=		ptscotch.h ptscotchf.h
 LIBS+=		libptesmumps.a libptscotch.a libptscotcherr.a libptscotcherrexit.a	\
@@ -67,7 +71,23 @@ PLIST_SUB+=	MPI=""
 PLIST_SUB+=	MPI="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
+.if defined(WITH_MPICH)
+LIB_DEPENDS+=	libmpich.so:${PORTSDIR}/net/mpich2
+
+ALL_TARGET+=	ptscotch
+MAKE_ENV+=	PATH=${PATH}:${LOCALBASE}/mpich2/bin
+
+INCS+=		ptscotch.h ptscotchf.h
+LIBS+=		libptesmumps.a libptscotch.a libptscotcherr.a libptscotcherrexit.a	\
+		libptscotchparmetis.a
+BINS+=		dggath dgmap dgord dgpart dgscat dgtst
+
+PLIST_SUB+=	MPI=""
+.else
+PLIST_SUB+=	MPI="@comment "
+.endif
+
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
 MF=	i686
@@ -76,45 +96,40 @@ MF=	x86-64
 .endif
 
 pre-everything::
-.if !defined(WITHOUT_MPI)
+.if !(defined(WITH_MPICH) || defined(WITH_OPENMPI))
 	@${ECHO_MSG}
-	@${ECHO_MSG} "Define WITH_MPICH2 or WITH_OPENMPI if PT-Scotch is wanted."
+	@${ECHO_MSG} "Define WITH_MPICH or WITH_OPENMPI if PT-Scotch is wanted."
 	@${ECHO_MSG}
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} -e 's/-lthread/$(PTHREAD_LIBS)/;s/-lpthread/$(PTHREAD_LIBS)/'	\
+	${REINPLACE_CMD} -e 's/-lthread/-pthread/;s/-lpthread/-pthread/'\
 		-e 's/CLIBFLAGS	=/CLIBFLAGS	= -fPIC/'	\
 		${WRKSRC}/src/Make.inc/Makefile.inc.${MF}_pc_freebsd
 	${LN} -sf ${WRKSRC}/src/Make.inc/Makefile.inc.${MF}_pc_freebsd	\
 		${WRKSRC}/src/Makefile.inc
-	${REINPLACE_CMD} -e 's|in subdirectory "doc"|under ${DATADIR}|'	\
-		${WRKSRC}/LICENSE_en.txt
+	${REINPLACE_CMD} -E -e 's|cd (.*) ; * \$$\(MAKE\)|\$$(MAKE) -C \1|'	\
+		-e 's|\&\& \$$\(MAKE\)||' ${WRKSRC}/src/Makefile
 
+# FIXME: Update DOCSDIR and EXAMPLESDIR for mpi
 do-install:
-	${INSTALL_PROGRAM} ${BINS:S|^|${WRKSRC}/bin/|} ${PREFIX}/bin
-	${INSTALL_DATA} ${INCS:S|^|${WRKSRC}/include/|} ${PREFIX}/include
-	${INSTALL_DATA} ${LIBS:S|^|${WRKSRC}/lib/|} ${PREFIX}/lib
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${LICDOCS:S|^|${WRKSRC}/doc/|} ${DATADIR}
-	${INSTALL_MAN} ${MAN1:S|^|${WRKSRC}/man/man1/|} ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}/grf ${EXAMPLESDIR}/tgt
-	${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/examples/|} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/grf/* ${EXAMPLESDIR}/grf
-	${INSTALL_DATA} ${WRKSRC}/tgt/* ${EXAMPLESDIR}/tgt
-	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
-.endif
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	${MKDIR} \
+		${STAGEDIR}${PREFIX}/${MPIPREFIX}/bin \
+		${STAGEDIR}${PREFIX}/${MPIPREFIX}/include \
+		${STAGEDIR}${PREFIX}/${MPIPREFIX}/lib \
+		${STAGEDIR}${MANPREFIX}/${MPIPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${BINS:S|^|${WRKSRC}/bin/|} ${STAGEDIR}${PREFIX}/${MPIPREFIX}/bin
+	${INSTALL_DATA} ${INCS:S|^|${WRKSRC}/include/|} ${STAGEDIR}${PREFIX}/${MPIPREFIX}/include
+	${INSTALL_DATA} ${LIBS:S|^|${WRKSRC}/lib/|} ${STAGEDIR}${PREFIX}/${MPIPREFIX}/lib
+	${INSTALL_MAN} ${WRKSRC}/man/man1/* ${STAGEDIR}${MANPREFIX}/${MPIPREFIX}/man/man1
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
+do-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/grf ${STAGEDIR}${EXAMPLESDIR}/tgt
+	${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/examples/|} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/grf/* ${STAGEDIR}${EXAMPLESDIR}/grf
+	${INSTALL_DATA} ${WRKSRC}/tgt/* ${STAGEDIR}${EXAMPLESDIR}/tgt
 
 .if defined(MAINTAINER_MODE)
 regression-test:	install
@@ -122,12 +137,12 @@ regression-test:	install
 	${GUNZIP_CMD} -c ${EXAMPLESDIR}/grf/bump.grf.gz |	\
 	gmap - ${WRKDIR}/ccc3.tgt ${WRKDIR}/brol.map)
 	(cd ${WRKSRC}/examples &&	\
-	${FC} -o scotch_test scotch_example_1.f	\
-		-I${PREFIX}/include -L${PREFIX}/lib -lscotch -lscotcherr -lm	\
+	${FC} -o scotch_test scotch_example_1.f ${FCFLAGS}	\
+		-I${PREFIX}/${MPIPREFIX}/include ${LDFLAGS} -L${PREFIX}/${MPIPREFIX}/lib -lscotch -lscotcherr -lm	\
 	&& ./scotch_test)
-. if !defined(WITHOUT_MPI)
+. if defined(WITH_MPICH) || defined(WITH_OPENMPI)
 	(${GUNZIP_CMD} -c ${EXAMPLESDIR}/grf/bump.grf.gz | dgtst)
 . endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
