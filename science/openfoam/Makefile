@@ -45,11 +45,11 @@ post-patch:
 		${WRKSRC}/wmake/rules/FreeBSDGcc48
 	${REINPLACE_CMD} \
 		-e 's|gcc|gcc48|g' \
-		-e 's|-m64|-m64 -D_WITH_GETLINE|g' \
+		-e 's|-m64|-m64 -D_WITH_GETLINE -I${LOCALBASE}/mpi/openmpi/include|g' \
 		${WRKSRC}/wmake/rules/FreeBSDGcc48/c
 	${REINPLACE_CMD} \
 		-e 's|g++|g++48|g' \
-		-e 's|-m64|-m64 -D_WITH_GETLINE|g' \
+		-e 's|-m64|-m64 -D_WITH_GETLINE -I${LOCALBASE}/mpi/openmpi/include|g' \
 		${WRKSRC}/wmake/rules/FreeBSDGcc48/c++
 
 do-build:
