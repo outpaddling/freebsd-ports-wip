@@ -1,5 +1,5 @@
 --- etc/config/settings.sh.orig	2015-11-03 04:30:23.000000000 -0600
-+++ etc/config/settings.sh	2015-11-14 07:54:13.000000000 -0600
++++ etc/config/settings.sh	2015-11-25 23:21:23.073278461 -0600
 @@ -65,6 +65,25 @@
  export WM_ARCH=`uname -s`
  
@@ -17,7 +17,7 @@
 +        export WM_CXX='g++48'
 +        export WM_CFLAGS='-fPIC'
 +        export WM_CXXFLAGS='-fPIC'
-+        export WM_LDFLAGS=''
++        export WM_LDFLAGS='-L${LOCALBASE}/mpi/openmpi/lib'
 +        ;;
 +
 +    esac
