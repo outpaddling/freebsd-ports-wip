@@ -44,13 +44,12 @@ post-patch:
 	${CP} -r ${FILESDIR}/FreeBSDGcc48 ${WRKSRC}/wmake/rules
 	${REINPLACE_CMD} \
 		-e 's|-lscotch|-L${LOCALBASE}/mpi/openmpi/lib -lscotch|'g \
-		${WRKSRC}/applications/utilities/mesh/generation/foamyMesh/foamyHexMeshBackgroundMesh/Make/options \
-		${WRKSRC}/applications/utilities/mesh/generation/foamyMesh/foamyHexMeshSurfaceSimplify/Make/options \
-		${WRKSRC}/applications/utilities/mesh/manipulation/renumberMesh/Make/options \
 		${WRKSRC}/applications/utilities/parallelProcessing/decomposePar/Make/options \
-		${WRKSRC}/platforms/FreeBSDGcc48DPInt32Opt/src/parallel/decompose/scotchDecomp/options \
+		${WRKSRC}/applications/utilities/mesh/generation/foamyMesh/foamyHexMeshSurfaceSimplify/Make/options \
+		${WRKSRC}/applications/utilities/mesh/generation/foamyMesh/foamyHexMeshBackgroundMesh/Make/options \
+		${WRKSRC}/applications/utilities/mesh/manipulation/renumberMesh/Make/options \
 		${WRKSRC}/src/parallel/decompose/scotchDecomp/Make/options \
-		${WRKSRC}/src/parallel/decompose/ptscotchDecomp/Make/options
+		${WRKSRC}/src/parallel/decompose/ptscotchDecomp/Make/options \
 
 do-build:
 	(cd ${WRKSRC} && . etc/bashrc && ./Allwmake)
