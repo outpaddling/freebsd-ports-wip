@@ -41,18 +41,21 @@ post-patch:
 		-e 's|$$HOME/$$WM_PROJECT|${WRKDIR}|' \
 		-e 's|WM_COMPILER=Gcc|WM_COMPILER=Gcc48|' \
 		${WRKSRC}/etc/bashrc
-	${CP} -r ${WRKSRC}/wmake/rules/linux64Gcc \
-		${WRKSRC}/wmake/rules/FreeBSDGcc48
+	${CP} -r ${FILESDIR}/FreeBSDGcc48 ${WRKSRC}/wmake/rules
 	${REINPLACE_CMD} \
-		-e 's|gcc|gcc48|g' \
-		-e 's|-m64|-m64 -D_WITH_GETLINE -I${LOCALBASE}/mpi/openmpi/include|g' \
-		${WRKSRC}/wmake/rules/FreeBSDGcc48/c
-	${REINPLACE_CMD} \
-		-e 's|g++|g++48|g' \
-		-e 's|-m64|-m64 -D_WITH_GETLINE -I${LOCALBASE}/mpi/openmpi/include|g' \
-		${WRKSRC}/wmake/rules/FreeBSDGcc48/c++
+		-e 's|-lscotch|-L${LOCALBASE}/mpi/openmpi/lib -lscotch|'g \
+		${WRKSRC}/applications/utilities/mesh/generation/foamyMesh/foamyHexMeshBackgroundMesh/Make/options \
+		${WRKSRC}/applications/utilities/mesh/generation/foamyMesh/foamyHexMeshSurfaceSimplify/Make/options \
+		${WRKSRC}/applications/utilities/mesh/manipulation/renumberMesh/Make/options \
+		${WRKSRC}/applications/utilities/parallelProcessing/decomposePar/Make/options \
+		${WRKSRC}/platforms/FreeBSDGcc48DPInt32Opt/src/parallel/decompose/scotchDecomp/options \
+		${WRKSRC}/src/parallel/decompose/scotchDecomp/Make/options \
+		${WRKSRC}/src/parallel/decompose/ptscotchDecomp/Make/options
 
 do-build:
 	(cd ${WRKSRC} && . etc/bashrc && ./Allwmake)
+
+do-install:
+	@echo TBD
 
 .include <bsd.port.mk>
