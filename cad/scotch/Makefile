@@ -46,6 +46,7 @@ PORTDOCS=	ptscotch_user${DOCVER}.pdf scotch_user${DOCVER}.pdf
 EXAMPLES=	scotch_example_1.f scotch_example_2.f90
 
 .if defined(WITH_OPENMPI)
+
 MPIPREFIX=	mpi/openmpi/
 PLIST_SUB+=	MPIPREFIX=${MPIPREFIX}
 PKGNAMESUFFIX=	-openmpi
@@ -67,11 +68,9 @@ LIBS+=		libptesmumps.a libptscotch.a libptscotcherr.a libptscotcherrexit.a	\
 BINS+=		dggath dgmap dgord dgpart dgscat dgtst
 
 PLIST_SUB+=	MPI=""
-.else
-PLIST_SUB+=	MPI="@comment "
-.endif
 
-.if defined(WITH_MPICH)
+.elif defined(WITH_MPICH)
+
 LIB_DEPENDS+=	libmpich.so:${PORTSDIR}/net/mpich2
 
 ALL_TARGET+=	ptscotch
@@ -83,8 +82,11 @@ LIBS+=		libptesmumps.a libptscotch.a libptscotcherr.a libptscotcherrexit.a	\
 BINS+=		dggath dgmap dgord dgpart dgscat dgtst
 
 PLIST_SUB+=	MPI=""
-.else
+
+.else	# No MPI
+
 PLIST_SUB+=	MPI="@comment "
+
 .endif
 
 .include <bsd.port.options.mk>
