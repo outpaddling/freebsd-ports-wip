@@ -37,12 +37,17 @@ MAKE_ENV=	SED=${SED}
 # FIXME: Assuming AMD64 for now.  This should probably be made to work
 # on i386 as well.
 post-patch:
-	${REINPLACE_CMD} \
+	${REINPLACE_CMD} -e 's|"make"|"gmake"|g' \
+		${WRKSRC}/wmake/wmake
+	${REINPLACE_CMD} -e 's|sed|gsed|g' \
+		${WRKSRC}/wmake/MakefileFiles \
+		${WRKSRC}/wmake/w*
+	@${REINPLACE_CMD} \
 		-e 's|$$HOME/$$WM_PROJECT|${WRKDIR}|' \
 		-e 's|WM_COMPILER=Gcc|WM_COMPILER=Gcc48|' \
 		${WRKSRC}/etc/bashrc
-	${CP} -r ${FILESDIR}/FreeBSDGcc48 ${WRKSRC}/wmake/rules
-	${REINPLACE_CMD} \
+	@${CP} -r ${FILESDIR}/FreeBSDGcc48 ${WRKSRC}/wmake/rules
+	@${REINPLACE_CMD} \
 		-e 's|-lscotch|-L${LOCALBASE}/mpi/openmpi/lib -lscotch|'g \
 		${WRKSRC}/applications/utilities/parallelProcessing/decomposePar/Make/options \
 		${WRKSRC}/applications/utilities/mesh/generation/foamyMesh/foamyHexMeshSurfaceSimplify/Make/options \
