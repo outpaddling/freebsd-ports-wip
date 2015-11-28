@@ -40,9 +40,14 @@ MAKE_ENV=	SED=${SED}
 post-patch:
 	${REINPLACE_CMD} -e 's|"make"|"gmake"|g' \
 		${WRKSRC}/wmake/wmake
-	${REINPLACE_CMD} -e 's|sed|gsed|g' \
+	${REINPLACE_CMD} -e 's|sed -i|sed -i ""|g' \
+		${WRKSRC}/bin/tools/foamConfigurePaths \
+		${WRKSRC}/bin/tools/pre-commit-hook \
 		${WRKSRC}/wmake/MakefileFiles \
-		${WRKSRC}/wmake/w*
+		${WRKSRC}/tutorials/lagrangian/reactingParcelFilmFoam/hotBoxes/Allrun.pre
+	#${REINPLACE_CMD} -e 's|sed|gsed|g' \
+		#${WRKSRC}/wmake/MakefileFiles \
+		#${WRKSRC}/wmake/w*
 	@${REINPLACE_CMD} \
 		-e 's|$$HOME/$$WM_PROJECT|${WRKDIR}|' \
 		-e 's|WM_COMPILER=Gcc|WM_COMPILER=Gcc48|' \
