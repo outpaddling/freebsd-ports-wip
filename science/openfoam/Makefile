@@ -23,7 +23,8 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 
 USES=		bison gmake ncurses readline tar:tgz
 # Requires gcc 4.5 or clang 3.6 according to docs
-USE_GCC=	yes
+# wmake config files are hacked specifically for 4.8 at the moment
+USE_GCC=	4.8
 QT4_USE=	opengl webkit
 USE_GL=		glut
 
@@ -38,16 +39,13 @@ MAKE_ENV=	SED=${SED}
 # FIXME: Assuming AMD64 for now.  This should probably be made to work
 # on i386 as well.
 post-patch:
-	${REINPLACE_CMD} -e 's|"make"|"gmake"|g' \
+	@${REINPLACE_CMD} -e 's|"make"|"gmake"|g' \
 		${WRKSRC}/wmake/wmake
-	${REINPLACE_CMD} -e 's|sed -i|sed -i ""|g' \
+	@${REINPLACE_CMD} -e 's|sed -i|sed -i ""|g' \
 		${WRKSRC}/bin/tools/foamConfigurePaths \
 		${WRKSRC}/bin/tools/pre-commit-hook \
 		${WRKSRC}/wmake/MakefileFiles \
 		${WRKSRC}/tutorials/lagrangian/reactingParcelFilmFoam/hotBoxes/Allrun.pre
-	#${REINPLACE_CMD} -e 's|sed|gsed|g' \
-		#${WRKSRC}/wmake/MakefileFiles \
-		#${WRKSRC}/wmake/w*
 	@${REINPLACE_CMD} \
 		-e 's|$$HOME/$$WM_PROJECT|${WRKDIR}|' \
 		-e 's|WM_COMPILER=Gcc|WM_COMPILER=Gcc48|' \

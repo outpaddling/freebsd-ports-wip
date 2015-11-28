@@ -1,5 +1,5 @@
 --- etc/config/settings.sh.orig	2015-11-03 04:30:23.000000000 -0600
-+++ etc/config/settings.sh	2015-11-25 23:21:23.073278461 -0600
++++ etc/config/settings.sh	2015-11-28 09:28:02.388860513 -0600
 @@ -65,6 +65,25 @@
  export WM_ARCH=`uname -s`
  
@@ -26,14 +26,11 @@
  Linux)
      WM_ARCH=linux
  
-@@ -391,8 +410,9 @@
+@@ -391,6 +410,7 @@
  SYSTEMOPENMPI)
      # Use the system installed openmpi, get library directory via mpicc
      export FOAM_MPI=openmpi-system
 +    export PATH=${PATH}:/usr/local/mpi/openmpi/bin
  
--    libDir=`mpicc --showme:link | sed -e 's/.*-L\([^ ]*\).*/\1/'`
-+    libDir=`mpicc --showme:link | gsed -e 's/.*-L\([^ ]*\).*/\1/'`
+     libDir=`mpicc --showme:link | sed -e 's/.*-L\([^ ]*\).*/\1/'`
  
-     # Bit of a hack: strip off 'lib' and hope this is the path to openmpi
-     # include files and libraries.
