@@ -13,5 +13,6 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Replace tabs a th spaces in a text file
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+USES=		tar:xz
+
+.include <bsd.port.mk>
