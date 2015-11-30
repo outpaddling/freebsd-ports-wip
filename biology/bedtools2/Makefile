@@ -30,9 +30,12 @@ USE_GCC=	yes
 MAKE_ENV+=	POPCNT_CAPABILITY=0
 .endif
 
-INSTALL_TARGET	=install-strip
+#INSTALL_TARGET=	install-strip
 post-patch:
 	@${REINPLACE_CMD} -e 's|CXX\t*=|CXX\t?|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' ${WRKSRC}/Makefile
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bedtools
 
 .include <bsd.port.post.mk>
