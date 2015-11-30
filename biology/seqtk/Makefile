@@ -17,7 +17,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 #GH_ACCOUNT=	lh3
 #GH_TAGNAME=	${PORTVERSION}
 
-USES=	gmake
+USES=		gmake tar:xz
 
 .include <bsd.port.pre.mk>
 
