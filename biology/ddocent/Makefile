@@ -22,14 +22,12 @@ RUN_DEPENDS=	mawk>=0:${PORTSDIR}/lang/mawk \
 		vcflib>=0:/usr/wip/biology/vcflib \
 		rainbow>=0:/usr/wip/biology/rainbow \
 		bamtools>=0:/usr/wip/biology/bamtools \
-		freebayes:/usr/wip/biology/freebayes
-
-# Still needs:
-# STACKS 	http://creskolab.uoregon.edu/stacks
-# Trimmomatic 	http://www.usadellab.org/cms/?page=trimmomatic
-# seqtk 	https://github.com/lh3/seqtk
-# bedtools 	https://code.google.com/p/bedtools/
-# PEAR read merger**
+		freebayes:/usr/wip/biology/freebayes \
+		stacks>=0:/usr/wip/biology/stacks \
+		Trimmomatic>=0:/usr/wip/biology/trimmomatic \
+		seqtk>=0:/usr/wip/biology/seqtk \
+		bedtools2>=0:/usr/wip/biology/bedtools2 \
+		pear-merger>=0:/usr/wip/biology/pear
 
 USES=		shebangfix tar:xz
 USE_JAVA=	yes
