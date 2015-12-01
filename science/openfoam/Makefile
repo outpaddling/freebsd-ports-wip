@@ -41,7 +41,7 @@ MAKE_ENV=	SED=${SED}
 post-patch:
 	@${REINPLACE_CMD} -e 's|"make"|"gmake"|g' \
 		${WRKSRC}/wmake/wmake
-	@${REINPLACE_CMD} -e 's|sed -i|sed -i ""|g' \
+	@${REINPLACE_CMD} -e 's|sed -i|sed -i.bak|g' \
 		${WRKSRC}/bin/tools/foamConfigurePaths \
 		${WRKSRC}/bin/tools/pre-commit-hook \
 		${WRKSRC}/wmake/MakefileFiles \
