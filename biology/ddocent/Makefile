@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ddocent
-PORTVERSION=	2015.11.08
+PORTVERSION=	2015.11.30
 CATEGORIES=	biology
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
@@ -13,12 +13,12 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	mawk>=0:${PORTSDIR}/lang/mawk \
 		bwa>=0:${PORTSDIR}/biology/bwa \
-		samtools>=0:${PORTSDIR}/biology/samtools \
+		samtools==0.1.19:/usr/wip/biology/samtools019 \
 		cd-hit>=0:${PORTSDIR}/biology/cd-hit \
 		gnuplot>=0:${PORTSDIR}/math/gnuplot \
 		parallel>=0:${PORTSDIR}/sysutils/parallel \
 		gawk>=0:${PORTSDIR}/lang/gawk \
-		vcftools>=0:/usr/wip/biology/vcftools \
+		vcftools=0.1.11:/usr/wip/biology/vcftools0111 \
 		vcflib>=0:/usr/wip/biology/vcflib \
 		rainbow>=0:/usr/wip/biology/rainbow \
 		bamtools>=0:/usr/wip/biology/bamtools \
