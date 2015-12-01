@@ -1,0 +1,7 @@
+%%DATADIR%%/NexteraPE-PE.fa
+%%DATADIR%%/TruSeq2-PE.fa
+%%DATADIR%%/TruSeq2-SE.fa
+%%DATADIR%%/TruSeq3-PE-2.fa
+%%DATADIR%%/TruSeq3-PE.fa
+%%DATADIR%%/TruSeq3-SE.fa
+%%JAVAJARDIR%%/trimmomatic-0.35.jar

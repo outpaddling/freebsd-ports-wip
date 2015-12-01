@@ -21,9 +21,8 @@ WRKSRC=		${WRKDIR}/Trimmomatic-${PORTVERSION}
 
 MAKE_ENV=	JAVA_HOME=${JAVA_HOME}
 
-PLIST_FILES=	%%JAVAJARDIR%%/trimmomatic-0.35.jar
-
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/trimmomatic-0.35.jar ${STAGEDIR}${JAVAJARDIR}/
+	${INSTALL_DATA} ${WRKSRC}/trimmomatic-0.35.jar ${STAGEDIR}${JAVAJARDIR}
+	cd ${WRKSRC}/adapters && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
