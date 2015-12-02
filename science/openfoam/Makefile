@@ -70,6 +70,8 @@ post-patch:
 		${WRKSRC}/applications/utilities/mesh/manipulation/renumberMesh/Make/options \
 		${WRKSRC}/src/parallel/decompose/scotchDecomp/Make/options \
 		${WRKSRC}/src/parallel/decompose/ptscotchDecomp/Make/options \
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|g' \
+		${WRKSRC}/doc/Doxygen/Doxyfile
 
 do-build:
 	(cd ${WRKSRC} && . etc/bashrc && ./Allwmake)
