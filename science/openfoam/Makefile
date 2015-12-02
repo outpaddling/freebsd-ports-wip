@@ -21,12 +21,20 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
 
-USES=		bison gmake ncurses readline tar:tgz
+USES=		bison gmake ncurses readline shebangfix tar:tgz
 # Requires gcc 4.5 or clang 3.6 according to docs
 # wmake config files are hacked specifically for 4.8 at the moment
 USE_GCC=	4.8
 QT4_USE=	opengl webkit
 USE_GL=		glut
+SHEBANG_FILES=	${WRKSRC}/wmake/wmakeSchedulerUptime \
+		${WRKSRC}/wmake/wmakeScheduler \
+		${WRKSRC}/bin/mpirunDebug \
+		${WRKSRC}/bin/tools/pre-receive-hook \
+		${WRKSRC}/bin/tools/pre-commit-hook \
+		${WRKSRC}/bin/tools/doxyFilter \
+		${WRKSRC}/bin/foamExec \
+		${WRKSRC}/doc/tools/find-trailingspace
 
 ONLY_FOR_ARCHS=	amd64
 
