@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bedtools2
-PORTVERSION=	2.25.0
+PORTVERSION=	2.23.0
 CATEGORIES=	biology
 
 MAINTAINER=	dsiercks@uwm.edu
