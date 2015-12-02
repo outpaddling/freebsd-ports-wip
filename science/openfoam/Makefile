@@ -29,7 +29,6 @@ QT4_USE=	opengl webkit
 USE_GL=		glut
 SHEBANG_FILES=	${WRKSRC}/wmake/wmakeSchedulerUptime \
 		${WRKSRC}/wmake/wmakeScheduler \
-		${WRKSRC}/bin/mpirunDebug \
 		${WRKSRC}/bin/tools/pre-receive-hook \
 		${WRKSRC}/bin/tools/pre-commit-hook \
 		${WRKSRC}/bin/tools/doxyFilter \
@@ -69,9 +68,11 @@ post-patch:
 		${WRKSRC}/applications/utilities/mesh/generation/foamyMesh/foamyHexMeshBackgroundMesh/Make/options \
 		${WRKSRC}/applications/utilities/mesh/manipulation/renumberMesh/Make/options \
 		${WRKSRC}/src/parallel/decompose/scotchDecomp/Make/options \
-		${WRKSRC}/src/parallel/decompose/ptscotchDecomp/Make/options \
+		${WRKSRC}/src/parallel/decompose/ptscotchDecomp/Make/options
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|g' \
 		${WRKSRC}/doc/Doxygen/Doxyfile
+	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|g' \
+		${WRKSRC}/bin/mpirunDebug
 
 do-build:
 	(cd ${WRKSRC} && . etc/bashrc && ./Allwmake)
