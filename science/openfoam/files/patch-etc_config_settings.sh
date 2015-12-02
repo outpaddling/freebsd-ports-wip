@@ -1,5 +1,5 @@
---- etc/config/settings.sh.orig	2015-12-01 18:26:50.543756559 -0600
-+++ etc/config/settings.sh	2015-12-01 18:28:08.219760182 -0600
+--- etc/config/settings.sh.orig	2015-11-03 10:30:23 UTC
++++ etc/config/settings.sh
 @@ -65,6 +65,29 @@ _foamAddMan()
  export WM_ARCH=`uname -s`
  

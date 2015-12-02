@@ -32,12 +32,10 @@ USE_GL=		glut
 # Need cmake only for Paraview
 # libxt-dev qt4-dev-tools libqt4-dev freeglut3-dev
 
-NO_CONFIGURE=	yes
-
+INSTALL_DIR=	${PREFIX}/${DISTNAME}
 PLATFORM=	platforms/FreeBSD64Gcc48DPInt32Opt
 USE_LDCONFIG=	${INSTALL_DIR}/${PLATFORM}/lib \
 		${INSTALL_DIR}/${PLATFORM}/lib/dummy
-INSTALL_DIR=	${PREFIX}/${DISTNAME}
 
 # FIXME: Assuming AMD64 for now.  This should probably be made to work
 # on i386 as well.

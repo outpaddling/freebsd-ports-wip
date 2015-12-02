@@ -1,6 +1,6 @@
---- src/conversion/ensight/part/ensightPartIO.C.orig	2015-11-25 15:46:18.783150490 -0600
-+++ src/conversion/ensight/part/ensightPartIO.C	2015-11-25 15:46:35.750154549 -0600
-@@ -63,7 +63,7 @@
+--- src/conversion/ensight/part/ensightPartIO.C.orig	2015-11-03 10:30:23 UTC
++++ src/conversion/ensight/part/ensightPartIO.C
+@@ -63,7 +63,7 @@ void Foam::ensightPart::writeFieldList
      {
          forAll(idList, i)
          {
@@ -9,7 +9,7 @@
              {
                  os.writeUndef();
              }
-@@ -80,7 +80,7 @@
+@@ -80,7 +80,7 @@ void Foam::ensightPart::writeFieldList
          // no idList => perNode
          forAll(field, i)
          {

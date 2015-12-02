@@ -1,6 +1,6 @@
---- Allwmake.orig	2015-11-03 04:30:23.000000000 -0600
-+++ Allwmake	2015-11-12 17:20:56.000000000 -0600
-@@ -20,7 +20,7 @@
+--- Allwmake.orig	2015-11-03 10:30:23 UTC
++++ Allwmake
+@@ -20,7 +20,7 @@ wmakeCheckPwd "$WM_PROJECT_DIR" || {
  }
  
  # Compile wmake support applications
