@@ -28,6 +28,8 @@ USE_GCC=	4.8
 QT4_USE=	opengl webkit
 USE_GL=		glut
 
+ONLY_FOR_ARCHS=	amd64
+
 # Ubuntu deps not accounted for:
 # Need cmake only for Paraview
 # libxt-dev qt4-dev-tools libqt4-dev freeglut3-dev
