@@ -35,7 +35,7 @@ ONLY_FOR_ARCHS=	amd64
 # libxt-dev qt4-dev-tools libqt4-dev freeglut3-dev
 
 INSTALL_DIR=	${PREFIX}/${DISTNAME}
-PLATFORM=	platforms/FreeBSD64Gcc48DPInt32Opt
+PLATFORM=	platforms/FreeBSDGcc48DPInt32Opt
 USE_LDCONFIG=	${INSTALL_DIR}/${PLATFORM}/lib \
 		${INSTALL_DIR}/${PLATFORM}/lib/dummy
 
@@ -53,7 +53,7 @@ post-patch:
 		-e 's|$$HOME/$$WM_PROJECT|${WRKDIR}|' \
 		-e 's|WM_COMPILER=Gcc|WM_COMPILER=Gcc48|' \
 		${WRKSRC}/etc/bashrc
-	@${CP} -r ${FILESDIR}/FreeBSD64Gcc48 ${WRKSRC}/wmake/rules
+	@${CP} -r ${FILESDIR}/FreeBSDGcc48 ${WRKSRC}/wmake/rules
 	@${REINPLACE_CMD} \
 		-e 's|-lscotch|-L${LOCALBASE}/mpi/openmpi/lib -lscotch|'g \
 		${WRKSRC}/applications/utilities/parallelProcessing/decomposePar/Make/options \
