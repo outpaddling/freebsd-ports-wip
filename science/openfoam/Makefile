@@ -34,7 +34,10 @@ USE_GL=		glut
 
 NO_CONFIGURE=	yes
 
-MAKE_ENV=	SED=${SED}
+PLATFORM=	platforms/FreeBSD64Gcc48DPInt32Opt
+USE_LDCONFIG=	${INSTALL_DIR}/${PLATFORM}/lib \
+		${INSTALL_DIR}/${PLATFORM}/lib/dummy
+INSTALL_DIR=	${PREFIX}/${DISTNAME}
 
 # FIXME: Assuming AMD64 for now.  This should probably be made to work
 # on i386 as well.
@@ -50,7 +53,7 @@ post-patch:
 		-e 's|$$HOME/$$WM_PROJECT|${WRKDIR}|' \
 		-e 's|WM_COMPILER=Gcc|WM_COMPILER=Gcc48|' \
 		${WRKSRC}/etc/bashrc
-	@${CP} -r ${FILESDIR}/FreeBSDGcc48 ${WRKSRC}/wmake/rules
+	@${CP} -r ${FILESDIR}/FreeBSD64Gcc48 ${WRKSRC}/wmake/rules
 	@${REINPLACE_CMD} \
 		-e 's|-lscotch|-L${LOCALBASE}/mpi/openmpi/lib -lscotch|'g \
 		${WRKSRC}/applications/utilities/parallelProcessing/decomposePar/Make/options \
@@ -64,6 +67,12 @@ do-build:
 	(cd ${WRKSRC} && . etc/bashrc && ./Allwmake)
 
 do-install:
-	@echo TBD
+	${MKDIR} ${STAGEDIR}${INSTALL_DIR}
+	${CP} -R \
+		${WRKSRC}/applications \
+		${WRKSRC}/bin \
+		${WRKSRC}/etc \
+		${WRKSRC}/platforms \
+		${STAGEDIR}${INSTALL_DIR}
 
 .include <bsd.port.mk>
