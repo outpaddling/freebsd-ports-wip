@@ -29,6 +29,7 @@ USE_GCC=	yes
 
 .if ${ARCH} == i386
 MAKE_ENV+=	POPCNT_CAPABILITY=0
+CFLAGS+=	-msse2
 .endif
 
 PLIST_FILES=	bin/seqtk bin/trimadap
