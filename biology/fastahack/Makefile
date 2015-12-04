@@ -8,6 +8,8 @@ CATEGORIES=	biology
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Utilities for indexing and sequence extraction from FASTA files
 
+LICENSE=	GPLv2
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 GH_TAGNAME=	${PORTVERSION}
