@@ -1,5 +1,5 @@
---- Makefile.orig	2013-06-13 09:40:56.000000000 -0500
-+++ Makefile	2015-11-30 19:16:27.214521886 -0600
+--- Makefile.orig	2013-06-13 14:40:56 UTC
++++ Makefile
 @@ -16,13 +16,17 @@
  ifndef PREFIX
      export PREFIX = $(dir $(realpath $(lastword $(MAKEFILE_LIST))))

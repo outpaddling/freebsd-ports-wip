@@ -1,5 +1,5 @@
---- perl/Makefile.orig	2015-11-30 19:08:02.482553803 -0600
-+++ perl/Makefile	2015-11-30 19:08:26.624558160 -0600
+--- perl/Makefile.orig	2013-06-13 14:40:56 UTC
++++ perl/Makefile
 @@ -5,9 +5,9 @@ BIN = fill-aa fill-an-ac fill-fs fill-re
  MOD = FaSlice.pm Vcf.pm VcfStats.pm
  

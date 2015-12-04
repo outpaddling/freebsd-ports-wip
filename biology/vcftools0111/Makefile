@@ -9,7 +9,9 @@ MASTER_SITES=	SF/vcftools
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	bacon4000@gmail.com
-COMMENT=
+COMMENT=	Accessible methods for working with complex genetic variation data
+
+LICENSE=	LGPL3
 
 USES=		gmake
 

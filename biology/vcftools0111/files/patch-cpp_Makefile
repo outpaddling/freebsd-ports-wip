@@ -1,5 +1,5 @@
---- cpp/Makefile.orig	2013-06-13 09:40:54.000000000 -0500
-+++ cpp/Makefile	2015-12-02 14:27:00.000000000 -0600
+--- cpp/Makefile.orig	2013-06-13 14:40:54 UTC
++++ cpp/Makefile
 @@ -3,8 +3,8 @@
  # ($Revision: 230 $)
  
@@ -11,7 +11,7 @@
  # Output executable
  EXECUTABLE = vcftools
  # Flag used to turn on compilation of PCA routines
-@@ -12,36 +12,36 @@
+@@ -12,36 +12,36 @@ ifndef VCFTOOLS_PCA
  	VCFTOOLS_PCA = 0
  endif
  # Compiler flags
@@ -62,7 +62,7 @@
  
  bgzf: bgzf.c
  	$(CC) -c $(CFLAGS) $(FLAGS) bgzf.c $(LIB) -o bgzf.o
-@@ -50,8 +50,8 @@
+@@ -50,8 +50,8 @@ bgzf: bgzf.c
  -include $(OBJS:.o=.d)
  
  %.o: %.cpp
