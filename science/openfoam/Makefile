@@ -1,5 +1,6 @@
 # Created by: Jason W. Bacon <bacon4000@gmail.com>
 # $FreeBSD$
+# http://www.openfoam.org/download/git.php
 
 PORTNAME=	openfoam
 PORTVERSION=	3.0.0
