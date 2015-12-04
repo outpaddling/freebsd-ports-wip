@@ -35,6 +35,8 @@ SHEBANG_FILES=	${WRKSRC}/wmake/wmakeSchedulerUptime \
 		${WRKSRC}/bin/foamExec \
 		${WRKSRC}/doc/tools/find-trailingspace
 
+# This should probably be made to work on at least i386 as well
+# with a few additional changes.
 ONLY_FOR_ARCHS=	amd64
 
 # Ubuntu deps not accounted for:
@@ -46,8 +48,6 @@ PLATFORM=	platforms/FreeBSDGcc48DPInt32Opt
 USE_LDCONFIG=	${INSTALL_DIR}/${PLATFORM}/lib \
 		${INSTALL_DIR}/${PLATFORM}/lib/dummy
 
-# FIXME: Assuming AMD64 for now.  This should probably be made to work
-# on i386 as well.
 post-patch:
 	@${REINPLACE_CMD} -e 's|"make"|"gmake"|g' \
 		${WRKSRC}/wmake/wmake
@@ -57,9 +57,10 @@ post-patch:
 		${WRKSRC}/wmake/MakefileFiles \
 		${WRKSRC}/tutorials/lagrangian/reactingParcelFilmFoam/hotBoxes/Allrun.pre
 	@${REINPLACE_CMD} \
-		-e 's|$$HOME/$$WM_PROJECT|${WRKDIR}|' \
+		-e 's|foamInstall=$$HOME/$$WM_PROJECT|foamInstall=${WRKDIR}|' \
 		-e 's|WM_COMPILER=Gcc|WM_COMPILER=Gcc48|' \
-		${WRKSRC}/etc/bashrc
+		${WRKSRC}/etc/bashrc \
+		${WRKSRC}/etc/cshrc
 	@${CP} -r ${FILESDIR}/FreeBSDGcc48 ${WRKSRC}/wmake/rules
 	@${REINPLACE_CMD} \
 		-e 's|-lscotch|-L${LOCALBASE}/mpi/openmpi/lib -lscotch|'g \
@@ -77,13 +78,26 @@ post-patch:
 do-build:
 	(cd ${WRKSRC} && . etc/bashrc && ./Allwmake)
 
+# Loosely based on content of the official Debian package.
 do-install:
-	${MKDIR} ${STAGEDIR}${INSTALL_DIR}
+	${MKDIR} ${STAGEDIR}${INSTALL_DIR}/${PLATFORM}
 	${CP} -R \
 		${WRKSRC}/applications \
 		${WRKSRC}/bin \
 		${WRKSRC}/etc \
-		${WRKSRC}/platforms \
 		${STAGEDIR}${INSTALL_DIR}
+	${CP} -R \
+		${WRKSRC}/${PLATFORM}/bin \
+		${WRKSRC}/${PLATFORM}/lib \
+		${STAGEDIR}${INSTALL_DIR}/${PLATFORM}
+
+# Same bashrc and cshrc used to set up the build path are sourced by users.
+# OpenFOAM developers confirmed that installation is relocatable and only
+# these files should need to be altered.
+post-stage:
+	@${REINPLACE_CMD} \
+		-e 's|${WRKDIR}|${PREFIX}|g' \
+		${STAGEDIR}/etc/bashrc \
+		${STAGEDIR}/etc/cshrc
 
 .include <bsd.port.mk>
