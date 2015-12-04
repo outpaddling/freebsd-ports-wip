@@ -8,7 +8,10 @@ CATEGORIES=	biology
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Smith-waterman-gotoh alignment algorithm
 
+LICENSE=	GPLv2
+
 USES=		gmake
+USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
