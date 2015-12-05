@@ -83,7 +83,7 @@ do-build:
 # Loosely based on content of the official Debian package.
 do-install:
 	${MKDIR} \
-		${STAGEDIR}${INSTALL_DIR}/${PLATFORM}
+		${STAGEDIR}${INSTALL_DIR}/${PLATFORM} \
 		${STAGEDIR}${INSTALL_DIR}/ThirdParty
 	${CP} -R \
 		${WRKSRC}/applications \
