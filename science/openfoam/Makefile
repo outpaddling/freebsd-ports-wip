@@ -58,8 +58,9 @@ post-patch:
 		${WRKSRC}/wmake/MakefileFiles \
 		${WRKSRC}/tutorials/lagrangian/reactingParcelFilmFoam/hotBoxes/Allrun.pre
 	@${REINPLACE_CMD} \
-		-e 's|foamInstall=$$HOME/$$WM_PROJECT|foamInstall=${WRKDIR}|' \
-		-e 's|WM_COMPILER=Gcc|WM_COMPILER=Gcc48|' \
+		-e 's|foamInstall.*=.*$$HOME/$$WM_PROJECT|foamInstall=${WRKDIR}|' \
+		-e 's|WM_COMPILER[ =]Gcc|&48|' \
+		-e 's|$$WM_PROJECT_INST_DIR/ThirdParty-$$WM_PROJECT_VERSION|$$WM_PROJECT_DIR/ThirdParty|g' \
 		${WRKSRC}/etc/bashrc \
 		${WRKSRC}/etc/cshrc
 	@${CP} -r ${FILESDIR}/FreeBSDGcc48 ${WRKSRC}/wmake/rules
@@ -81,7 +82,9 @@ do-build:
 
 # Loosely based on content of the official Debian package.
 do-install:
-	${MKDIR} ${STAGEDIR}${INSTALL_DIR}/${PLATFORM}
+	${MKDIR} \
+		${STAGEDIR}${INSTALL_DIR}/${PLATFORM}
+		${STAGEDIR}${INSTALL_DIR}/ThirdParty
 	${CP} -R \
 		${WRKSRC}/applications \
 		${WRKSRC}/bin \
@@ -98,7 +101,7 @@ do-install:
 post-stage:
 	@${REINPLACE_CMD} \
 		-e 's|${WRKDIR}|${PREFIX}|g' \
-		${STAGEDIR}/etc/bashrc \
-		${STAGEDIR}/etc/cshrc
+		${STAGEDIR}${INSTALL_DIR}/etc/bashrc \
+		${STAGEDIR}${INSTALL_DIR}/etc/cshrc
 
 .include <bsd.port.mk>
