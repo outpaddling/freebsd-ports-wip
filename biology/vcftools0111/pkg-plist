@@ -22,6 +22,6 @@ bin/vcf-to-tab
 bin/vcf-tstv
 bin/vcf-validator
 bin/vcftools
-%%SITE_PERL%%/FaSlice.pm
-%%SITE_PERL%%/Vcf.pm
-%%SITE_PERL%%/VcfStats.pm
+lib/perl5/site_perl/FaSlice.pm
+lib/perl5/site_perl/Vcf.pm
+lib/perl5/site_perl/VcfStats.pm
