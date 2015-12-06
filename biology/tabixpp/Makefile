@@ -8,9 +8,10 @@ CATEGORIES=	biology
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	C++ wrapper to tabix indexer
 
+# LICENSE=	unspecified
+
 LIB_DEPENDS=	libhts.so:${PORTSDIR}/biology/htslib
 
-USES=		tar:xz
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
