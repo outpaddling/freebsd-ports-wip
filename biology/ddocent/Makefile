@@ -11,6 +11,7 @@ COMMENT=	Bash pipeline for ddRAD sequencing
 
 LICENSE=	MIT
 
+# bedtools version: https://github.com/jpuritz/dDocent/issues/15
 RUN_DEPENDS=	mawk>=0:${PORTSDIR}/lang/mawk \
 		bwa>=0:${PORTSDIR}/biology/bwa \
 		samtools==0.1.19:/usr/wip/biology/samtools019 \
@@ -26,7 +27,7 @@ RUN_DEPENDS=	mawk>=0:${PORTSDIR}/lang/mawk \
 		stacks>=0:/usr/wip/biology/stacks \
 		Trimmomatic>=0:/usr/wip/biology/trimmomatic \
 		seqtk>=0:/usr/wip/biology/seqtk \
-		bedtools2>=0:/usr/wip/biology/bedtools2 \
+		bedtools2==2.23.0:/usr/wip/biology/bedtools2 \
 		pear-merger>=0:/usr/wip/biology/pear
 
 USES=		shebangfix tar:xz
