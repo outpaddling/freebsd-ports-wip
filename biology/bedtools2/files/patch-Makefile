@@ -1,6 +1,15 @@
---- Makefile.orig	2015-11-13 17:21:51 UTC
-+++ Makefile
-@@ -16,7 +16,7 @@ export OBJ_DIR	= obj
+--- Makefile.orig	2015-02-22 16:33:17.000000000 -0600
++++ Makefile	2015-12-09 12:22:25.000000000 -0600
+@@ -4,7 +4,7 @@
+ # (c) 2009 Aaron Quinlan
+ # ==========================
+ 
+-SHELL := /bin/bash -e
++SHELL := /bin/sh -e
+ 
+ VERSION_FILE=./src/utils/version/version_git.h
+ RELEASED_VERSION_FILE=./src/utils/version/version_release.txt
+@@ -16,7 +16,7 @@
  export BIN_DIR	= bin
  export SRC_DIR	= src
  export UTIL_DIR	= src/utils
@@ -9,3 +18,24 @@
  #ifeq ($(DEBUG),1)
  #export CXXFLAGS = -Wall -O0 -g -fno-inline -fkeep-inline-functions -D_FILE_OFFSET_BITS=64 -fPIC -DDEBUG -D_DEBUG
  #else
+@@ -25,7 +25,7 @@
+ export LIBS		= -lz
+ export BT_ROOT  = src/utils/BamTools/
+ 
+-prefix = /usr/local
++PREFIX ?= /usr/local
+ 
+ SUBDIRS = $(SRC_DIR)/annotateBed \
+ 		  $(SRC_DIR)/bamToBed \
+@@ -113,9 +113,9 @@
+ .PHONY: all
+ 
+ install: all
+-	mkdir -p $(DESTDIR)$(prefix)/bin
++	mkdir -p $(DESTDIR)$(PREFIX)/bin
+ 	for file in bin/* ; do \
+-		cp -f $$file $(DESTDIR)$(prefix)/bin; \
++		cp -f $$file $(DESTDIR)$(PREFIX)/bin; \
+ 	done
+ 
+ print_banner:
