@@ -1,5 +1,5 @@
 --- Makefile.orig	2015-02-22 16:33:17.000000000 -0600
-+++ Makefile	2015-12-09 12:22:25.000000000 -0600
++++ Makefile	2015-12-09 12:32:08.000000000 -0600
 @@ -4,7 +4,7 @@
  # (c) 2009 Aaron Quinlan
  # ==========================
@@ -9,18 +9,31 @@
  
  VERSION_FILE=./src/utils/version/version_git.h
  RELEASED_VERSION_FILE=./src/utils/version/version_release.txt
-@@ -16,7 +16,7 @@
- export BIN_DIR	= bin
- export SRC_DIR	= src
- export UTIL_DIR	= src/utils
+@@ -12,20 +12,20 @@
+ 
+ 
+ # define our object and binary directories
+-export OBJ_DIR	= obj
+-export BIN_DIR	= bin
+-export SRC_DIR	= src
+-export UTIL_DIR	= src/utils
 -export CXX		= g++
-+export CXX		?= g++
++OBJ_DIR	= obj
++BIN_DIR	= bin
++SRC_DIR	= src
++UTIL_DIR	= src/utils
++CXX		?= g++
  #ifeq ($(DEBUG),1)
- #export CXXFLAGS = -Wall -O0 -g -fno-inline -fkeep-inline-functions -D_FILE_OFFSET_BITS=64 -fPIC -DDEBUG -D_DEBUG
+-#export CXXFLAGS = -Wall -O0 -g -fno-inline -fkeep-inline-functions -D_FILE_OFFSET_BITS=64 -fPIC -DDEBUG -D_DEBUG
++#CXXFLAGS = -Wall -O0 -g -fno-inline -fkeep-inline-functions -D_FILE_OFFSET_BITS=64 -fPIC -DDEBUG -D_DEBUG
  #else
-@@ -25,7 +25,7 @@
- export LIBS		= -lz
- export BT_ROOT  = src/utils/BamTools/
+-export CXXFLAGS = -Wall -O2 -D_FILE_OFFSET_BITS=64 -fPIC $(INCLUDES)
++CXXFLAGS = -Wall -O2 -D_FILE_OFFSET_BITS=64 -fPIC $(INCLUDES)
+ #endif
+-export LIBS		= -lz
+-export BT_ROOT  = src/utils/BamTools/
++LIBS		= -lz
++BT_ROOT  = src/utils/BamTools/
  
 -prefix = /usr/local
 +PREFIX ?= /usr/local
