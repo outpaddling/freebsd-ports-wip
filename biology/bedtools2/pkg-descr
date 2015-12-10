@@ -5,4 +5,4 @@ For example, bedtools allows one to intersect, merge, count,
 complement, and shuffle genomic intervals from multiple files in 
 widely-used genomic file formats such as BAM, BED, GFF/GTF, VCF.
 
-HTTP: https://github.com/arq5x/bedtools2
+WWW: https://github.com/arq5x/bedtools2

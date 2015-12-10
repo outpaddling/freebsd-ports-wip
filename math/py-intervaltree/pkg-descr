@@ -4,4 +4,4 @@ Queries may be by point, by range overlap, or by range envelopment.
 This library was designed to allow tagging text and time intervals,
 where the intervals include the lower bound but not the upper bound.
 
-HTTP: https://github.com/chaimleib/intervaltree
+WWW: https://github.com/chaimleib/intervaltree
