@@ -27,10 +27,6 @@ SHEBANG_FILES=	scripts/*.pl
 USE_GCC=	yes
 .endif
 
-.if ${ARCH} == i386
-MAKE_ENV+=	POPCNT_CAPABILITY=0
-.endif
-
 do-install:
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/bowtie \
