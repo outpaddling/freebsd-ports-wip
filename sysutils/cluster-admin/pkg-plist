@@ -7,6 +7,7 @@ bin/cluster-passwd
 bin/cluster-vis-nodes
 bin/condor-build-R-packages
 bin/condor-cpus
+bin/condor-list-packages
 bin/pending-jobs
 bin/ppgen
 bin/slurm-cluster-load
@@ -32,6 +33,7 @@ man/man1/cluster-update-ssh_config.1.gz
 sbin/cluster-add-to-group
 sbin/cluster-adduser
 sbin/cluster-admin
+sbin/cluster-diagnostics
 sbin/cluster-dist-file
 sbin/cluster-ganglia-restart
 sbin/cluster-generate-hosts.equiv
