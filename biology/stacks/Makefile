@@ -13,6 +13,9 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 
+USES=		shebangfix
+SHEBANG_FILES=	scripts/*.pl
+
 .include <bsd.port.pre.mk>
 
 # Something like this would be better, but it's not working
@@ -22,34 +25,34 @@ GNU_CONFIGURE=	yes
 USE_GCC=	yes
 .endif
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/clone_filter \
-	${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/cstacks \
-	${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/estacks \
-	${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/genotypes \
-	${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/hstacks \
-	${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/kmer_filter \
-	${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/phasedstacks \
-	${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/populations \
-	${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/process_radtags \
-	${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/process_shortreads \
-	${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/pstacks \
-	${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/rxstacks \
-	${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/sstacks \
-	${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/ustacks \
-	${STAGEDIR}${PREFIX}/bin
+#do-install:
+#	${INSTALL_PROGRAM} ${WRKSRC}/clone_filter \
+#	${STAGEDIR}${PREFIX}/bin
+#	${INSTALL_PROGRAM} ${WRKSRC}/cstacks \
+#	${STAGEDIR}${PREFIX}/bin
+#	${INSTALL_PROGRAM} ${WRKSRC}/estacks \
+#	${STAGEDIR}${PREFIX}/bin
+#	${INSTALL_PROGRAM} ${WRKSRC}/genotypes \
+#	${STAGEDIR}${PREFIX}/bin
+#	${INSTALL_PROGRAM} ${WRKSRC}/hstacks \
+#	${STAGEDIR}${PREFIX}/bin
+#	${INSTALL_PROGRAM} ${WRKSRC}/kmer_filter \
+#	${STAGEDIR}${PREFIX}/bin
+#	${INSTALL_PROGRAM} ${WRKSRC}/phasedstacks \
+#	${STAGEDIR}${PREFIX}/bin
+#	${INSTALL_PROGRAM} ${WRKSRC}/populations \
+#	${STAGEDIR}${PREFIX}/bin
+#	${INSTALL_PROGRAM} ${WRKSRC}/process_radtags \
+#	${STAGEDIR}${PREFIX}/bin
+#	${INSTALL_PROGRAM} ${WRKSRC}/process_shortreads \
+#	${STAGEDIR}${PREFIX}/bin
+#	${INSTALL_PROGRAM} ${WRKSRC}/pstacks \
+#	${STAGEDIR}${PREFIX}/bin
+#	${INSTALL_PROGRAM} ${WRKSRC}/rxstacks \
+#	${STAGEDIR}${PREFIX}/bin
+#	${INSTALL_PROGRAM} ${WRKSRC}/sstacks \
+#	${STAGEDIR}${PREFIX}/bin
+#	${INSTALL_PROGRAM} ${WRKSRC}/ustacks \
+#	${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.post.mk>
