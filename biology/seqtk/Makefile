@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lh3
 GH_TAGNAME=	${PORTVERSION}
 
-USES=		gmake tar:xz
+USES=		gmake
 
 .include <bsd.port.pre.mk>
 
