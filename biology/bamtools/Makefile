@@ -26,10 +26,6 @@ CMAKE_ARGS+=	-DLIB_DIR=${PREFIX}/lib
 # Just for speed: Recent compilers have better optimizers
 USES=		compiler:c++11-lang
 
-.if ${ARCH} == i386
-MAKE_ENV+=	POPCNT_CAPABILITY=0
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's|lib/bamtools|lib|g' \
 		work/bamtools-2.4.0/src/api/CMakeLists.txt
