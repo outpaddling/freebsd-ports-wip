@@ -20,6 +20,7 @@ SHEBANG_FILES=	scripts/*.pl
 
 # Something like this would be better, but it's not working
 # USES=		compiler:c++11-lang
+# CXXFLAGS+=	-std=gnu++11
 
 .if ${OSVERSION} < 1000000
 USE_GCC=	yes
