@@ -26,10 +26,6 @@ MAKE_JOBS_UNSAFE=	yes
 USE_GCC=	yes
 .endif
 
-.if ${ARCH} == i386
-MAKE_ENV+=	POPCNT_CAPABILITY=0
-.endif
-
 #INSTALL_TARGET=	install-strip
 
 post-install:
