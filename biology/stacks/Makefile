@@ -15,8 +15,9 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-MAKE_JOBS_UNSAFE=	yes
-# Just for speed: Recent GCC has better optimizer
+# Something like this would be better, but it's not working
+# USES=		compiler:c++11-lang
+
 .if ${OSVERSION} < 1000000
 USE_GCC=	yes
 .endif
