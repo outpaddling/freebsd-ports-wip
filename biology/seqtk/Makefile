@@ -22,14 +22,14 @@ USES=		gmake tar:xz
 
 MAKE_JOBS_UNSAFE=	yes
 # Just for speed: Recent GCC has better optimizer
-.if ${OSVERSION} < 1000000
-USE_GCC=	yes
-.endif
+#.if ${OSVERSION} < 1000000
+#USE_GCC=	yes
+#.endif
 
-.if ${ARCH} == i386
-MAKE_ENV+=	POPCNT_CAPABILITY=0
-CFLAGS+=	-msse2
-.endif
+#.if ${ARCH} == i386
+#MAKE_ENV+=	POPCNT_CAPABILITY=0
+#CFLAGS+=	-msse2
+#.endif
 
 PLIST_FILES=	bin/seqtk bin/trimadap
 do-install:
