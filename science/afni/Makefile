@@ -24,7 +24,8 @@ LIB_DEPENDS=	libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
 		libR.so:${PORTSDIR}/math/R \
 		libgsl.so:${PORTSDIR}/math/gsl \
 		libnetcdff.so:${PORTSDIR}/science/netcdf-fortran \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
+		libxml2.so:${PORTSDIR}/textproc/libxml2 \
+		libf2c.so:${PORTSDIR}/lang/f2c
 RUN_DEPENDS=	mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
 		whirlgif:${PORTSDIR}/graphics/whirlgif \
 		ppmtogif:${PORTSDIR}/graphics/netpbm \
