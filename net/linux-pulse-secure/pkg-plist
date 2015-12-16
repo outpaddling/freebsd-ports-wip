@@ -1,0 +1,10 @@
+/compat/linux/usr/local/nc/NC.jar
+/compat/linux/usr/local/nc/libncui.so
+/compat/linux/usr/local/nc/ncdiag
+/compat/linux/usr/local/nc/ncsvc
+/compat/linux/usr/local/nc/version.txt
+@dir /compat/linux/usr/local/nc
+@dir /compat/linux/usr/local
+@dir /compat/linux/usr
+@dir /compat/linux
+@dir /compat
