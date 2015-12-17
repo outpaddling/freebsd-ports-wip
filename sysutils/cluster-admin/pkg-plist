@@ -62,6 +62,7 @@ sbin/cluster-run
 sbin/cluster-setup
 sbin/cluster-shutdown
 sbin/cluster-ssh-keygen
+sbin/cluster-sync-all-pws
 sbin/cluster-sync-files
 sbin/cluster-sync-node
 sbin/cluster-sync-packages
