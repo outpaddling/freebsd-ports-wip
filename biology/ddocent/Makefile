@@ -36,6 +36,14 @@ SHEBANG_FILES=	dDocent scripts/*
 
 NO_BUILD=	yes
 
+# These follow patch-dDocent, so don't apply them within the source tree,
+# or they'll get picked up by patch generators and hard-code PREFIX
+post-stage:
+	${REINPLACE_CMD} \
+		-e 's|%%PREFIX%%|${PREFIX}|g' \
+		-e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g' \
+		${STAGEDIR}${PREFIX}/bin/dDocent
+
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} \
