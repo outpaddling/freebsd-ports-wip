@@ -43,6 +43,7 @@ sbin/cluster-groupadd
 sbin/cluster-groupdel
 sbin/cluster-head-node
 sbin/cluster-init-all
+sbin/cluster-init-node
 sbin/cluster-local-pkg-install
 sbin/cluster-local-port_add
 sbin/cluster-local-sync-software
