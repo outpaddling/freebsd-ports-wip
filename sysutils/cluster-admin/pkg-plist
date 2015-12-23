@@ -49,6 +49,7 @@ sbin/cluster-local-port_add
 sbin/cluster-local-sync-software
 sbin/cluster-lowest-uid
 sbin/cluster-net-admin
+sbin/cluster-node-admin
 sbin/cluster-pbs-restart
 sbin/cluster-pkg-install
 sbin/cluster-pkg-upgrade
