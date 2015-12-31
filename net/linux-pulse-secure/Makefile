@@ -1,5 +1,8 @@
 # Created by:	Jason Bacon
 # $FreeBSD$
+#
+# TODO:
+# Consistently crashes on login to the VPN server
 
 PORTNAME=	Linux-VPN-JunosPulse
 PORTVERSION=	5.1
@@ -22,5 +25,6 @@ NO_BUILD=	yes
 
 do-install:
 	cd ${WRKDIR} && ${COPYTREE_BIN} usr ${STAGEDIR}${LINUXBASE}
+	${INSTALL_SCRIPT} ${FILESDIR}/pulse-secure ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

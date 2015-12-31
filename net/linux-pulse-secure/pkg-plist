@@ -3,6 +3,7 @@
 /compat/linux/usr/local/nc/ncdiag
 /compat/linux/usr/local/nc/ncsvc
 /compat/linux/usr/local/nc/version.txt
+bin/pulse-secure
 @dir /compat/linux/usr/local/nc
 @dir /compat/linux/usr/local
 @dir /compat/linux/usr
