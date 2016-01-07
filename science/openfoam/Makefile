@@ -94,6 +94,7 @@ do-install:
 		${WRKSRC}/${PLATFORM}/bin \
 		${WRKSRC}/${PLATFORM}/lib \
 		${STAGEDIR}${INSTALL_DIR}/${PLATFORM}
+	${CHMOD} -R a+rX ${STAGEDIR}${INSTALL_DIR}
 
 # Same bashrc and cshrc used to set up the build path are sourced by users.
 # OpenFOAM developers confirmed that installation is relocatable and only
