@@ -44,6 +44,7 @@ man/man1/auto-update-port-framework.1.gz
 man/man1/auto-update-system.1.gz
 man/man1/auto-update-xorg.conf.1.gz
 man/man1/auto-using-pkgng.1.gz
+man/man1/auto-wifi-failover.1.gz
 man/man1/auto-xdm-toggle.1.gz
 sbin/auto-amd-nfs-setup
 sbin/auto-append-line
@@ -90,5 +91,6 @@ sbin/auto-update-port-framework
 sbin/auto-update-system
 sbin/auto-update-xorg.conf
 sbin/auto-using-pkgng
+sbin/auto-wifi-failover
 sbin/auto-xdm-toggle
 %%DATADIR%%/ipfw-rules.sh
