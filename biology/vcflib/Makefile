@@ -31,6 +31,8 @@ CXXFLAGS+=	-I${LOCALBASE}/include/smithwaterman \
 		-I${LOCALBASE}/include/filevercmp \
 		-I${LOCALBASE}/include/fastahack \
 		-I${LOCALBASE}/include/intervaltree
+# Hack for X120e
+CFLAGS+=	-I/usr/include/clang/3.3
 
 INSTALL_TARGET=	install-strip
 

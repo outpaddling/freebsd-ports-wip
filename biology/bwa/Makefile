@@ -18,7 +18,9 @@ USE_PERL5=	run
 PLIST_FILES=	bin/bwa bin/qualfa2fq.pl bin/xa2multi.pl man/man1/bwa.1.gz
 
 # Avoid #error in emmintrin.h
-CFLAGS+=	-msse2
+# CFLAGS+=	-msse2
+# Hack for Lenovo X120e
+CFLAGS+=	-I/usr/include/clang/3.3
 
 BROKEN_powerpc64=	Does not build on powerpc64
 
