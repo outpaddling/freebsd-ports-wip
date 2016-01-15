@@ -1,15 +1,15 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	kwiklib
+PORTNAME=	spikedetekt2
 PORTVERSION=	0.3.0
-CATEGORIES=	math python
+CATEGORIES=	python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bacon4000@gmail.com
-COMMENT=	Shared features between the projects (files, statistics, utils)
+COMMENT=	Detecting and extracting spikes from raw recordings
 
-LICENSE=	BSD3CLAUSE
+# LICENSE=
 
 USES=		python
 USE_PYTHON=	distutils
