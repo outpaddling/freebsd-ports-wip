@@ -1,6 +1,5 @@
-KlustaKwik is a program for unsupervised classification of multidimensional
-continuous data. It arose from a specific need - automatic sorting of neuronal
-action potential waveforms (see KD Harris et al, Journal of Neurophysiology
-84:401-414,2000), but works for any type of data.
+Fast software for high-dimensional cluster analysis using the masked EM
+algorithm for Gaussians mixtures. (Can also be used in "classical" mode for
+standard hard EM algorithm)
 
-WWW:	http://klustakwik.sourceforge.net/
+WWW: https://github.com/klusta-team/klustakwik

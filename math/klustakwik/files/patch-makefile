@@ -1,0 +1,76 @@
+--- makefile.orig	2015-01-14 10:10:24 UTC
++++ makefile
+@@ -2,7 +2,7 @@
+ 
+ PROGRAM = KlustaKwik
+ OBJS = io.o linalg.o log.o parameters.o precomputations.o util.o memorytracking.o klustakwik.o
+-CC = g++
++CXX ?= g++
+ DEBUG = -g
+ PROFILE = -pg
+ OPTIMISATIONS = -O3 -ffast-math -march=native
+@@ -21,7 +21,7 @@ else
+ CFLAGS = -Wall -c -Wno-write-strings $(OPTIMISATIONS) $(OPENMPFLAG) -DVERSION=\"$(GIT_VERSION)\"
+ endif
+ 
+-LFLAGS = -Wall $(OPENMPFLAG)
++LDFLAGS = -Wall $(OPENMPFLAG)
+ 
+ all: executable
+ 
+@@ -31,18 +31,18 @@ oldgcc: executable
+ 
+ # Adds debug flags
+ debug: CFLAGS += $(DEBUG)
+-debug: LFLAGS += $(DEBUG)
++debug: LDFLAGS += $(DEBUG)
+ debug: executable
+ 
+ # Adds profiling flags
+ profile: CFLAGS += $(PROFILE)
+-profile: LFLAGS += $(PROFILE)
++profile: LDFLAGS += $(PROFILE)
+ profile: executable
+ 
+ .PHONY: all debug native executable clean noopenmp
+ 
+ executable: $(OBJS)
+-	$(CC) $(LFLAGS) $(OBJS) -o $(PROGRAM)
++	$(CXX) $(LDFLAGS) $(OBJS) -o $(PROGRAM)
+ 
+ clean:
+ 	\rm *.o $(PROGRAM)
+@@ -57,25 +57,25 @@ util.h: numerics.h
+ memorytracking.h: numerics.h
+ 
+ io.o: io.cpp klustakwik.h
+-	$(CC) $(CFLAGS) $<
++	$(CXX) $(CFLAGS) $<
+ 
+ linalg.o: linalg.cpp linalg.h
+-	$(CC) $(CFLAGS) $<
++	$(CXX) $(CFLAGS) $<
+ 
+ log.o: log.cpp log.h parameters.h
+-	$(CC) $(CFLAGS) $<
++	$(CXX) $(CFLAGS) $<
+ 
+ klustakwik.o: klustakwik.cpp klustakwik.h
+-	$(CC) $(CFLAGS) $<
++	$(CXX) $(CFLAGS) $<
+ 	
+ parameters.o: parameters.cpp parameters.h log.h util.h
+-	$(CC) $(CFLAGS) $<
++	$(CXX) $(CFLAGS) $<
+ 
+ precomputations.o: precomputations.cpp klustakwik.h
+-	$(CC) $(CFLAGS) $<
++	$(CXX) $(CFLAGS) $<
+ 
+ util.o: util.cpp util.h
+-	$(CC) $(CFLAGS) $<
++	$(CXX) $(CFLAGS) $<
+ 
+ memorytracking.o: memorytracking.cpp memorytracking.h
+-	$(CC) $(CFLAGS) $<
++	$(CXX) $(CFLAGS) $<
