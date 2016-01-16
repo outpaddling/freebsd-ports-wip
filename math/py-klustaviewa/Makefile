@@ -11,6 +11,13 @@ COMMENT=	GUI for spike sorting manual stage in Python
 
 LICENSE=	BSD3CLAUSE
 
+# Should be klustakwik==${PORTVERSION}, but klustkwik is on 0.3.0.rc2
+# at the moment, which is an illegal version.
+RUN_DEPENDS=	KlustaKwik:/usr/wip/math/klustakwik \
+		${PYTHON_PKGNAMEPREFIX}qtools>=0:/usr/wip/graphics/py-qtools \
+		${PYTHON_PKGNAMEPREFIX}kwiklib==${PORTVERSION}:/usr/wip/math/py-kwiklib \
+		${PYTHON_PKGNAMEPREFIX}spikedetekt==${PORTVERSION}:/usr/wip/math/py-spikedetekt
+
 USES=		python
 USE_PYTHON=	distutils
 

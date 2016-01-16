@@ -9,7 +9,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Detecting and extracting spikes from raw recordings
 
-# LICENSE=
+# Assuming based on other klusta packages
+LICENSE=	BSD3CLAUSE
+
+RUN_DEPENDS=	klustakwik>=0:/usr/wip/math/klustakwik
 
 USES=		python
 USE_PYTHON=	distutils
