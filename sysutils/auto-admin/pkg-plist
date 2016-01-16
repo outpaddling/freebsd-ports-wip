@@ -1,3 +1,4 @@
+man/man1/auto-add-fdesc-mount.1.gz
 man/man1/auto-admin.1.gz
 man/man1/auto-amd-nfs-setup.1.gz
 man/man1/auto-append-line.1.gz
@@ -46,6 +47,7 @@ man/man1/auto-update-xorg.conf.1.gz
 man/man1/auto-using-pkgng.1.gz
 man/man1/auto-wifi-failover.1.gz
 man/man1/auto-xdm-toggle.1.gz
+sbin/auto-add-fdesc-mount
 sbin/auto-amd-nfs-setup
 sbin/auto-append-line
 sbin/auto-ask
