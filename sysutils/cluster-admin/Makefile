@@ -18,6 +18,8 @@ RUN_DEPENDS=	auto-append-line:/usr/wip/sysutils/auto-admin
 USES=		tar:xz
 NO_BUILD=	yes
 
+MAKE_ENV+=		PREFIX=${PREFIX} DATADIR=${DATADIR}
+
 post-patch:
 	${REINPLACE_CMD} -i '' \
 		-e "s|add-gecos.awk|${PREFIX}/libexec/add-gecos.awk|" \
