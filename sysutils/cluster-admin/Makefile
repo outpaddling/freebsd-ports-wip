@@ -27,25 +27,26 @@ post-patch:
 	${REINPLACE_CMD} -i '' -e 's|%%DATADIR%%|${DATADIR}|g' \
 		${WRKSRC}/Common/Sys-scripts/slurm-update-idle-nodes
 
-do-install:
-	${INSTALL_SCRIPT} \
-		${WRKSRC}/Common/Sys-scripts/* ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_SCRIPT} \
-		${WRKSRC}/FreeBSD/Sys-scripts/* ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_SCRIPT} \
-		${WRKSRC}/Common/User-scripts/* ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} \
-		${WRKSRC}/FreeBSD/User-scripts/* ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} \
-		${WRKSRC}/Common/*.awk ${STAGEDIR}${PREFIX}/libexec
-	(cd ${WRKSRC}/FreeBSD/Man && for f in *.mdoc; \
-	do \
-		${INSTALL_MAN} $${f} \
-			${STAGEDIR}${PREFIX}/man/man1/$${f%.mdoc}.1; \
-	done)
-	${MKDIR} ${STAGEDIR}${DATADIR}/WWW
-	${INSTALL_DATA} ${WRKSRC}/Common/Share/* ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/FreeBSD/Share/* ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/FreeBSD/WWW/* ${STAGEDIR}${DATADIR}/WWW
+# FIXME: Switch to upstream install script
+#do-install:
+#	${INSTALL_SCRIPT} \
+#		${WRKSRC}/Common/Sys-scripts/* ${STAGEDIR}${PREFIX}/sbin
+#	${INSTALL_SCRIPT} \
+#		${WRKSRC}/FreeBSD/Sys-scripts/* ${STAGEDIR}${PREFIX}/sbin
+#	${INSTALL_SCRIPT} \
+#		${WRKSRC}/Common/User-scripts/* ${STAGEDIR}${PREFIX}/bin
+#	${INSTALL_SCRIPT} \
+#		${WRKSRC}/FreeBSD/User-scripts/* ${STAGEDIR}${PREFIX}/bin
+#	${INSTALL_SCRIPT} \
+#		${WRKSRC}/Common/*.awk ${STAGEDIR}${PREFIX}/libexec
+#	(cd ${WRKSRC}/FreeBSD/Man && for f in *.mdoc; \
+#	do \
+#		${INSTALL_MAN} $${f} \
+#			${STAGEDIR}${PREFIX}/man/man1/$${f%.mdoc}.1; \
+#	done)
+#	${MKDIR} ${STAGEDIR}${DATADIR}/WWW
+#	${INSTALL_DATA} ${WRKSRC}/Common/Share/* ${STAGEDIR}${DATADIR}
+#	${INSTALL_DATA} ${WRKSRC}/FreeBSD/Share/* ${STAGEDIR}${DATADIR}
+#	${INSTALL_DATA} ${WRKSRC}/FreeBSD/WWW/* ${STAGEDIR}${DATADIR}/WWW
 
 .include <bsd.port.mk>
