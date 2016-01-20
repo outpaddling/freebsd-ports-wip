@@ -11,8 +11,6 @@ COMMENT=	Flexible read trimming tool for Illumina NGS data
 
 LICENSE=	GPLv3
 
-# FIXME: Is this true, or was this comment copied from another port?
-# Prefers 1.6, 1.7 should work, but jars built with 1.7 won't run in 1.6 env
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

@@ -4,8 +4,6 @@
 PORTNAME=	TransDecoder
 PORTVERSION=	2.0.1
 CATEGORIES=	biology
-MASTER_SITES=	http://github.com/TransDecoder/TransDecoder/archive/
-DISTNAME=	${PORTVERSION}
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Identify candidate coding regions within transcript sequences
@@ -22,7 +20,7 @@ NO_BUILD=	yes
 USES=		perl5 shebangfix
 SHEBANG_FILES=	sample_data/runMe.sh util/pfam_mpi.pbs
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_GITHUB=	yes
 
 post-patch:
 	${REINPLACE_CMD} \
