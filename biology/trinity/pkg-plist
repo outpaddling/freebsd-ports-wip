@@ -94,14 +94,6 @@ libexec/trinity/PerlLib/overlapping_nucs.ph
 libexec/trinity/PerlLib/test_Fasta_retriever.pl
 libexec/trinity/PerlLib/test_htc_gridrunner_LSF.pl
 libexec/trinity/PerlLib/test_htc_gridrunner_SGE.pl
-libexec/trinity/trinity-plugins/Trimmomatic/adapters/NexteraPE-PE.fa
-libexec/trinity/trinity-plugins/Trimmomatic/adapters/TruSeq2-PE.fa
-libexec/trinity/trinity-plugins/Trimmomatic/adapters/TruSeq2-SE.fa
-libexec/trinity/trinity-plugins/Trimmomatic/adapters/TruSeq3-PE-2.fa
-libexec/trinity/trinity-plugins/Trimmomatic/adapters/TruSeq3-PE.fa
-libexec/trinity/trinity-plugins/Trimmomatic/adapters/TruSeq3-SE.fa
-libexec/trinity/trinity-plugins/Trimmomatic/trimmomatic-0.32.jar
-libexec/trinity/trinity-plugins/Trimmomatic/trimmomatic.jar
 libexec/trinity/trinity-plugins/collectl/bin/UNINSTALL
 libexec/trinity/trinity-plugins/collectl/bin/client.pl
 libexec/trinity/trinity-plugins/collectl/bin/col2tlviz.pl

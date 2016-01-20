@@ -1,5 +1,5 @@
---- trinity-plugins/Makefile.orig	2015-10-15 07:07:11.000000000 -0500
-+++ trinity-plugins/Makefile	2016-01-20 08:19:42.009705481 -0600
+--- trinity-plugins/Makefile.orig	2015-10-15 12:07:11 UTC
++++ trinity-plugins/Makefile
 @@ -10,7 +10,8 @@ FASTOOL_CODE=fstrozzi-Fastool-7c3e034f05
  PARAFLY_CODE=parafly-code
  TRIMMOMATIC_CODE=Trimmomatic-0.32

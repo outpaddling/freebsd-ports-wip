@@ -3,15 +3,18 @@
 
 PORTNAME=	trinity
 PORTVERSION=	2.1.1
-CATEGORIES=	biology
+CATEGORIES=	biology java
 
 MAINTAINER=	bacon4000@gmail.com
-COMMENT=	RNA sequence assembly
+COMMENT=	Trinity assembles transcript sequences from Illumina RNA-Seq data
+
+LICENSE=	BSD3CLAUSE
 
 USES=		gmake perl5 shebangfix dos2unix	compiler:openmp
 SHEBANG_FILES=	util/*/*.sh \
 		util/*/*.pl \
-		Chrysalis/*.pl
+		Chrysalis/*.pl \
+		trinity-plugins/collectl/build_collectl.sh
 DOS2UNIX_FILES=	PerlLib/HPC/GridRunner.pm \
 		PerlLib/HPC/SLURM_handler.pm
 USE_JAVA=	yes
@@ -50,12 +53,11 @@ RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		fastool:${PORTSDIR}/biology/fastool \
 		TransDecoder.Predict:/usr/wip/biology/p5-transdecoder \
 		slclust:/usr/wip/biology/slclust \
-		trimmomatic>=0.32:/usr/wip/biology/trimmomatic \
+		Trimmomatic>=0.32:/usr/wip/biology/trimmomatic \
 		rsem>=1.2.22:/usr/wip/biology/rsem
-
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
-MAKE_JOBS_UNSAFE=	yes
+# MAKE_JOBS_UNSAFE=	yes
 
 LIBEXEC_DIR=	${PREFIX}/libexec/trinity
 PLUGINS_DIR=	${LIBEXEC_DIR}/trinity-plugins
@@ -69,9 +71,9 @@ post-patch:
 		${WRKSRC}/trinity-plugins/fstrozzi-Fastool-7c3e034f05/Makefile \
 		${WRKSRC}/trinity-plugins/slclust/src/Makefile
 	${REINPLACE_CMD} \
-		-e 's|/bin/bash|/usr/bin/env bash|g' \
 		-e 's|make |${GMAKE} |g' \
 		${WRKSRC}/trinity-plugins/collectl/build_collectl.sh
+		# -e 's|/bin/bash|/usr/bin/env bash|g' \
 
 	# Trinity paths, etc.
 	${REINPLACE_CMD} \
@@ -111,9 +113,9 @@ post-patch:
 		-e 's|$$BASEDIR/Trinity|Trinity|g' \
 		${WRKSRC}/util/run_Trinity_edgeR_pipeline.pl
 
-#	${REINPLACE_CMD} \
-#		-e 's|$$FindBin::Bin/../../Trinity|Trinity|g' \
-#		${WRKSRC}/util/support_scripts/GG_write_trinity_cmds.pl
+	${REINPLACE_CMD} \
+		-i '' -e 's|$$FindBin::Bin/../../Trinity|Trinity|g' \
+		${WRKSRC}/util/support_scripts/write_partitioned_trinity_cmds.pl
 
 # Some scripts are not available during patch stage
 post-build:

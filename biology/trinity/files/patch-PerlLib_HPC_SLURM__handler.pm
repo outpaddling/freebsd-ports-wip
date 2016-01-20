@@ -1,5 +1,5 @@
---- PerlLib/HPC/SLURM_handler.pm.orig	2016-01-19 21:43:32.837312317 -0600
-+++ PerlLib/HPC/SLURM_handler.pm	2016-01-19 21:44:02.798326800 -0600
+--- PerlLib/HPC/SLURM_handler.pm.orig	2016-01-20 16:11:53 UTC
++++ PerlLib/HPC/SLURM_handler.pm
 @@ -41,11 +41,12 @@ sub submit_job_to_grid {
       ##with SLURM max expected running time should preferably be specified, otherwise the scheduler will assume default value for the partition; structure is days-hours:minutes:seconds like so 1-02:30:00  
      
