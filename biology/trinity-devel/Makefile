@@ -13,7 +13,7 @@
 # rsem
 
 PORTNAME=	trinity
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	biology
 MASTER_SITES=	http://github.com/trinityrnaseq/trinityrnaseq/archive/
 DISTNAME=	v${PORTVERSION}
