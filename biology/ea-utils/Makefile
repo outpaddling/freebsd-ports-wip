@@ -14,9 +14,9 @@ LICENSE=	MIT
 
 # Unbundled dependencies.  For build and run deps, specify the port name and
 # minimum version, or a binary that it installs.
-BUILD_DEPENDS=	samtools>=0.1.19:/usr/wip/biology/samtools \
+BUILD_DEPENDS=	samtools01==0.1.19:/usr/wip/biology/samtools0119 \
 		google-sparsehash>=2.0.2:${PORTSDIR}/devel/google-sparsehash
-RUN_DEPENDS=	samtools:/usr/wip/biology/samtools \
+RUN_DEPENDS=	samtools01==0.1.19:/usr/wip/biology/samtools0119 \
 		R:${PORTSDIR}/math/R
 # varcall.cpp calls GSL functions.  For library dependencies, specify the
 # shared lib required.

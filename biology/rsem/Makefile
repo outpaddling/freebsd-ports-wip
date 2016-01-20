@@ -11,6 +11,6 @@ COMMENT=	RNA-Seq by Expectation-Maximization
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS+=	samtools==0.1.19:/usr/wip/biology/samtools
+BUILD_DEPENDS+=	samtools01==0.1.19:/usr/wip/biology/samtools0119
 
 .include <bsd.port.mk>

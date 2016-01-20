@@ -47,7 +47,7 @@ BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bowtie:/usr/wip/biology/bowtie \
-		samtools==0.1.19:/usr/wip/biology/samtools0119 \
+		samtools01==0.1.19:/usr/wip/biology/samtools0119 \
 		jellyfish>=2.1.4:/usr/wip/biology/jellyfish2 \
 		ParaFly:/usr/wip/sysutils/parafly \
 		fastool:${PORTSDIR}/biology/fastool \

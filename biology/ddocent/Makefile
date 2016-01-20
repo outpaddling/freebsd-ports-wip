@@ -14,7 +14,7 @@ LICENSE=	MIT
 # bedtools version: https://github.com/jpuritz/dDocent/issues/15
 RUN_DEPENDS=	mawk>=0:${PORTSDIR}/lang/mawk \
 		bwa>=0:/usr/wip/biology/bwa \
-		samtools==0.1.19:/usr/wip/biology/samtools019 \
+		samtools01==0.1.19:/usr/wip/biology/samtools0119 \
 		cd-hit>=0:${PORTSDIR}/biology/cd-hit \
 		gnuplot>=0:${PORTSDIR}/math/gnuplot \
 		parallel>=0:${PORTSDIR}/sysutils/parallel \

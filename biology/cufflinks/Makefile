@@ -13,12 +13,11 @@ COMMENT=	Transcript assembly, differential expression and regulation for RNA-Seq
 USES=		python
 GNU_CONFIGURE=	yes
 
-# Is samtools 1.2 OK?  Had been using 0.1.19.
-# BUILD_DEPENDS=	samtools:${PORTSDIR}/biology/samtools \
-BUILD_DEPENDS=	${LOCALBASE}/lib/libbam.a:/usr/wip/biology/samtools \
+BUILD_DEPENDS=	samtools01==0.1.19:/usr/wip/biology/samtools0119 \
 		bjam:${PORTSDIR}/devel/boost-jam \
 		eigen>=3.2.20:${PORTSDIR}/math/eigen3
 LIB_DEPENDS+=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
+RUN_DEPENDS=	samtools01==0.1.19:/usr/wip/biology/samtools0119
 
 CFLAGS+=	-I${LOCALBASE}/include/eigen3 \
 		-Wno-unused -Wno-reorder -Wno-sign-compare

@@ -23,7 +23,7 @@ BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		git:${PORTSDIR}/devel/git \
 		${JAVAJARDIR}/htsjdk/htsjdk-${PORTVERSION}.jar:/usr/wip/biology/htsjdk
 
-RUN_DEPENDS=	samtools:/usr/wip/biology/samtools
+RUN_DEPENDS=	samtools01==0.1.19:/usr/wip/biology/samtools0119
 
 # Prefers 1.6, 1.7 should work, but jars built with 1.7 won't run in 1.6 env
 USE_JAVA=	1.6+
