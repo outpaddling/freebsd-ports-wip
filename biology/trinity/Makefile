@@ -57,8 +57,6 @@ RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		rsem>=1.2.22:/usr/wip/biology/rsem
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
-# MAKE_JOBS_UNSAFE=	yes
-
 LIBEXEC_DIR=	${PREFIX}/libexec/trinity
 PLUGINS_DIR=	${LIBEXEC_DIR}/trinity-plugins
 
