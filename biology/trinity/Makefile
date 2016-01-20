@@ -49,7 +49,7 @@ RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		samtools==0.1.19:/usr/wip/biology/samtools0119 \
 		jellyfish>=2.1.4:/usr/wip/biology/jellyfish2 \
 		ParaFly:/usr/wip/sysutils/parafly \
-		fastool:/usr/wip/biology/fastool \
+		fastool:${PORTSDIR}/biology/fastool \
 		TransDecoder.Predict:/usr/wip/biology/p5-transdecoder \
 		slclust:/usr/wip/biology/slclust
 #		rsem:/usr/wip/biology/rsem
