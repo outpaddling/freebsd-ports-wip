@@ -1,3 +1,4 @@
-[description of the port]
+RSEM is a software package for estimating gene and isoform expression levels
+from RNA-Seq data.
 
-WWW: http://port.home.page/
+WWW: http://deweylab.biostat.wisc.edu/rsem/README.html

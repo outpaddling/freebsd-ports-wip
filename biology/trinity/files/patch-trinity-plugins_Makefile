@@ -1,12 +1,12 @@
---- trinity-plugins/Makefile.orig	2016-01-19 21:33:03.104365179 -0600
-+++ trinity-plugins/Makefile	2016-01-19 21:34:07.075400539 -0600
+--- trinity-plugins/Makefile.orig	2015-10-15 07:07:11.000000000 -0500
++++ trinity-plugins/Makefile	2016-01-20 08:19:42.009705481 -0600
 @@ -10,7 +10,8 @@ FASTOOL_CODE=fstrozzi-Fastool-7c3e034f05
  PARAFLY_CODE=parafly-code
  TRIMMOMATIC_CODE=Trimmomatic-0.32
  
 -trinity_essentials: jellyfish scaffold_iworm_contigs_target fastool_target parafly_target trimmomatic_target samtools
 +# trinity_essentials: jellyfish scaffold_iworm_contigs_target fastool_target parafly_target trimmomatic_target samtools
-+trinity_essentials: trimmomatic_target
++trinity_essentials:
  
  trimmomatic_target:
  	ln -sf ${TRIMMOMATIC_CODE} Trimmomatic

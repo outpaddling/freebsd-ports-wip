@@ -1,16 +1,5 @@
-# New ports collection makefile for:	trinity
-# Date created:		2013-05-22
-# Whom:			Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
-#
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
-#
-
-# Unbundle:
-# fstrozzi fastool
-# trimmomatic
-# transdecoder
-# slclust
-# rsem
 
 PORTNAME=	trinity
 PORTVERSION=	2.1.1
@@ -25,8 +14,6 @@ SHEBANG_FILES=	util/*/*.sh \
 		Chrysalis/*.pl
 DOS2UNIX_FILES=	PerlLib/HPC/GridRunner.pm \
 		PerlLib/HPC/SLURM_handler.pm
-# Requires OpenMP.
-# USE_GCC=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7 1.6
 
@@ -41,7 +28,18 @@ CFLAGS+=	-fopenmp
 LDFLAGS+=	-fopenmp -Wl,-rpath=${_GCC_RUNTIME}
 MAKE_FLAGS+=	FORCE_UNSAFE_CONFIGURE=1
 
-# Use samtools 0.1.19.  http://trinityrnaseq.github.io/
+# Trinity core programs: Inchworm, Chrysalis, Butterfly
+
+# Bundled plugins:
+# collectl 3.7.4
+# samtools 0.1.19
+# jellyfish 2.1.4
+# parafly 0.1 (config.h)
+# fastool 7c3e034f05 Nov 18 2013 commit on Github
+# htslib 1.2.1
+# slclust unknown (last version on SF is 02022010)
+# Trimmomatic 0.32
+
 BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
@@ -51,8 +49,9 @@ RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		ParaFly:/usr/wip/sysutils/parafly \
 		fastool:${PORTSDIR}/biology/fastool \
 		TransDecoder.Predict:/usr/wip/biology/p5-transdecoder \
-		slclust:/usr/wip/biology/slclust
-#		rsem:/usr/wip/biology/rsem
+		slclust:/usr/wip/biology/slclust \
+		trimmomatic>=0.32:/usr/wip/biology/trimmomatic \
+		rsem>=1.2.22:/usr/wip/biology/rsem
 
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
@@ -118,7 +117,7 @@ post-patch:
 
 # Some scripts are not available during patch stage
 post-build:
-	${REINPLACE_CMD} -i '' -e "s|/usr/bin/perl|${PREFIX}/bin/perl|g" \
+	${REINPLACE_CMD} -i '' -e "s|/usr/bin/perl|${LOCALBASE}/bin/perl|g" \
 		${WRKSRC}/trinity-plugins/collectl/bin/collectl \
 		${WRKSRC}/trinity-plugins/collectl/bin/*.pl
 
@@ -158,12 +157,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/collectl
 	cd ${WRKSRC}/trinity-plugins/collectl && \
 		${COPYTREE_BIN} bin ${STAGEDIR}${PLUGINS_DIR}/collectl
-
-	${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/Trimmomatic
-
-	cd ${WRKSRC}/trinity-plugins/Trimmomatic && \
-		${COPYTREE_BIN} "adapters trimmomatic*.jar" \
-		${STAGEDIR}${PLUGINS_DIR}/Trimmomatic
 
 	cd ${WRKSRC}/sample_data && ${COPYTREE_SHARE} \* \
 		${STAGEDIR}${EXAMPLESDIR}/
