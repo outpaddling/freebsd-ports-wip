@@ -1,11 +1,9 @@
-# Created by: Jason Bacon
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	bowtie
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	biology
-MASTER_SITES=	http://github.com/BenLangmead/bowtie/archive/
-DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Ultrafast, memory-efficient short read aligner
@@ -20,13 +18,13 @@ USES=		gmake perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	scripts/*.pl
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	BenLangmead
+GH_TAGNAME=	v${PORTVERSION}
+
 .include <bsd.port.pre.mk>
 
 # FIXME: bowtie-align dumps core when compiled with clang
-# Just for speed: Recent GCC has better optimizer
-# .if ${OSVERSION} < 1000000
-USE_GCC=	yes
-# .endif
 
 do-install:
 	${INSTALL_SCRIPT} \

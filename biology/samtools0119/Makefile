@@ -6,21 +6,17 @@ PORTVERSION=	0.1.19
 CATEGORIES=	biology science
 MASTER_SITES=	SF
 
-# FIXME: Check complete deps
-# Just for speed: Recent GCC has better optimizer
-# USE_GCC=	yes
-USES=		gmake tar:bzip2 perl5 python:run shebangfix
-SHEBANG_FILES=	misc/*.pl
-
 MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
 COMMENT=	Generic format for storing large nucleotide sequence alignments
 
+LICENSE=	MIT
+
+USES=		gmake tar:bzip2 perl5 python:run shebangfix
+SHEBANG_FILES=	misc/*.pl
+
 ALL_TARGET=	all-recur razip
 
-# FIXME: Find expl and logl somewhere to avoid reducing precision
 post-patch:
-	${REINPLACE_CMD} -e 's|expl|exp|g' -e 's|logl|log|g' \
-		${WRKSRC}/errmod.c ${WRKSRC}/bcftools/prob1.c
 	${REINPLACE_CMD} -e "s|/software/bin/python|${LOCALBASE}/bin/python|g" \
 		${WRKSRC}/misc/*.py
 

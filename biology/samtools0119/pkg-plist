@@ -44,4 +44,3 @@ include/bam/sam_header.h
 include/bam/sample.h
 lib/libbam.a
 man/man1/samtools.1.gz
-@dirrm include/bam

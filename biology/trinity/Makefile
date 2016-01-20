@@ -73,26 +73,25 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's|make |${GMAKE} |g' \
 		${WRKSRC}/trinity-plugins/collectl/build_collectl.sh
-		# -e 's|/bin/bash|/usr/bin/env bash|g' \
 
-	# Trinity paths, etc.
+	# Change paths for plugins installed separately
 	${REINPLACE_CMD} \
 		-e 's|$$FindBin::Bin|$$FindBin::Bin/../libexec/trinity|g' \
-		${WRKSRC}/Trinity
-	${REINPLACE_CMD} \
 		-e 's|$$FindBin::RealBin|$$FindBin::RealBin/../libexec/trinity|g' \
-		${WRKSRC}/Trinity
-	${REINPLACE_CMD} \
 		-e 's|$$ROOTDIR/trinity-plugins/jellyfish|${LOCALBASE}|g' \
-		${WRKSRC}/Trinity
-	${REINPLACE_CMD} \
 		-e 's|$$ROOTDIR/trinity-plugins/parafly/bin/ParaFly|${LOCALBASE}/bin/ParaFly|g' \
-		${WRKSRC}/Trinity
-	${REINPLACE_CMD} \
 		-e 's|$$ROOTDIR/trinity-plugins/fastool|${LOCALBASE}/bin|g' \
 		${WRKSRC}/Trinity
 
-	# Chrysalis
+	# Utility scripts have some hard-coded paths as well
+	${REINPLACE_CMD} \
+		-e 's|$$ROOTDIR/trinity-plugins/jellyfish|${LOCALBASE}|g' \
+		-e 's|$$ROOTDIR/trinity-plugins/fastool|${LOCALBASE}/bin|g' \
+		${WRKSRC}/util/insilico_read_normalization.pl
+	${REINPLACE_CMD} \
+		-e 's|$$FindBin::Bin/../trinity-plugins/rsem|${LOCALBASE}|g' \
+		${WRKSRC}/util/align_and_estimate_abundance.pl
+
 	${REINPLACE_CMD} \
 		-e "s|-lm -pthread|-lm -pthread -Wl,-rpath=${_GCC_RUNTIME}|g" \
 		${WRKSRC}/Chrysalis/Makefile
@@ -112,7 +111,6 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's|$$BASEDIR/Trinity|Trinity|g' \
 		${WRKSRC}/util/run_Trinity_edgeR_pipeline.pl
-
 	${REINPLACE_CMD} \
 		-i '' -e 's|$$FindBin::Bin/../../Trinity|Trinity|g' \
 		${WRKSRC}/util/support_scripts/write_partitioned_trinity_cmds.pl

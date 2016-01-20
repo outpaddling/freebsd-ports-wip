@@ -2,18 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	jellyfish
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.4
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.genome.umd.edu/pub/jellyfish/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	bacon@unixdev.ceas.uwm.edu
 COMMENT=	Fast, memory-efficient counting of k-mers in DNA
 
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 
-USES=		compiler:openmp libtool
+USES=		autoreconf compiler:openmp libtool
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	gmarcais
+GH_PROJECT=	Jellyfish
+GH_TAGNAME=	v${PORTVERSION}
+
+MAKE_JOBS_UNSAFE=	yes
 
 USE_LDCONFIG=	yes
 
