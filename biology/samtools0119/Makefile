@@ -4,6 +4,8 @@
 PORTNAME=	samtools
 PORTVERSION=	0.1.19
 CATEGORIES=	biology science
+# Prevent pkg upgrade from replacing this with samtools 1.x
+PKGNAMESUFFIX=	-0
 MASTER_SITES=	SF
 
 MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
