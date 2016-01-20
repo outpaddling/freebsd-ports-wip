@@ -1,20 +1,22 @@
---- trinity-plugins/Makefile.orig	2015-02-14 13:34:09.000000000 -0600
-+++ trinity-plugins/Makefile	2015-02-20 21:18:50.000000000 -0600
-@@ -21,7 +21,7 @@
+--- trinity-plugins/Makefile.orig	2016-01-19 21:33:03.104365179 -0600
++++ trinity-plugins/Makefile	2016-01-19 21:34:07.075400539 -0600
+@@ -10,7 +10,8 @@ FASTOOL_CODE=fstrozzi-Fastool-7c3e034f05
  PARAFLY_CODE=parafly-code
  TRIMMOMATIC_CODE=Trimmomatic-0.32
  
--trinity_essentials: jellyfish fastool_target parafly_target trimmomatic_target
+-trinity_essentials: jellyfish scaffold_iworm_contigs_target fastool_target parafly_target trimmomatic_target samtools
++# trinity_essentials: jellyfish scaffold_iworm_contigs_target fastool_target parafly_target trimmomatic_target samtools
 +trinity_essentials: trimmomatic_target
  
  trimmomatic_target:
  	ln -sf ${TRIMMOMATIC_CODE} Trimmomatic
-@@ -46,7 +46,8 @@
+@@ -48,7 +49,9 @@ parafly_target:
  ### Needed for downstream analyses
  ##################################
  
--plugins: transdecoder_target slclust_target collectl_target rsem
+-plugins: slclust_target collectl_target
 +# All plugins except collectl are installed as dependency ports
++# plugins: slclust_target collectl_target
 +plugins: collectl_target
  	@echo "\n\n** Done building plugins **\n\n"
  

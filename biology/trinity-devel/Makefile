@@ -15,22 +15,25 @@
 PORTNAME=	trinity
 PORTVERSION=	2.1.1
 CATEGORIES=	biology
-MASTER_SITES=	http://github.com/trinityrnaseq/trinityrnaseq/archive/
-DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	RNA sequence assembly
 
-USES=		gmake perl5 shebangfix dos2unix
+USES=		gmake perl5 shebangfix dos2unix	compiler:openmp
 SHEBANG_FILES=	util/*/*.sh \
 		util/*/*.pl \
 		Chrysalis/*.pl
 DOS2UNIX_FILES=	PerlLib/HPC/GridRunner.pm \
 		PerlLib/HPC/SLURM_handler.pm
 # Requires OpenMP.
-USE_GCC=	yes
+# USE_GCC=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7 1.6
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	trinityrnaseq
+GH_PROJECT=	trinityrnaseq
+GH_TAGNAME=	v${PORTVERSION}
 
 ONLY_FOR_ARCHS=	amd64
 
@@ -108,9 +111,10 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's|$$BASEDIR/Trinity|Trinity|g' \
 		${WRKSRC}/util/run_Trinity_edgeR_pipeline.pl
-	${REINPLACE_CMD} \
-		-e 's|$$FindBin::Bin/../../Trinity|Trinity|g' \
-		${WRKSRC}/util/support_scripts/GG_write_trinity_cmds.pl
+
+#	${REINPLACE_CMD} \
+#		-e 's|$$FindBin::Bin/../../Trinity|Trinity|g' \
+#		${WRKSRC}/util/support_scripts/GG_write_trinity_cmds.pl
 
 # Some scripts are not available during patch stage
 post-build:
