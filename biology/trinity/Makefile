@@ -1,5 +1,9 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
+# To-do:
+#	Unbundle collectl (low priority)
+#	Path scripts to utilize $PATH instead of absolute pathnames
+#	Send patches upstream
 
 PORTNAME=	trinity
 PORTVERSION=	2.1.1
@@ -45,8 +49,6 @@ MAKE_FLAGS+=	FORCE_UNSAFE_CONFIGURE=1
 # htslib 1.2.1
 # slclust unknown (last version on SF is 02022010)
 # Trimmomatic 0.32
-
-# To-do: Unbundle collectl
 
 BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bash:${PORTSDIR}/shells/bash
