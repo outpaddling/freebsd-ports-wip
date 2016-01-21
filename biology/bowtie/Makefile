@@ -22,6 +22,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	BenLangmead
 GH_TAGNAME=	v${PORTVERSION}
 
+WITH_DEBUG=	yes	# Disable stripping to debug core dumps
+
 .include <bsd.port.pre.mk>
 
 # FIXME: bowtie-align dumps core when compiled with clang
