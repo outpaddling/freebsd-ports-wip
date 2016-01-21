@@ -3,7 +3,7 @@
 
 PORTNAME=	ddocent
 PORTVERSION=	2015.11.30
-CATEGORIES=	biology
+CATEGORIES=	biology java
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	bacon4000@gmail.com
