@@ -1,6 +1,6 @@
---- dDocent.orig	2015-12-19 14:40:58 UTC
-+++ dDocent
-@@ -27,15 +27,15 @@ do
+--- dDocent.orig	2016-01-21 10:02:40.928591000 -0600
++++ dDocent	2016-01-21 10:03:38.404205000 -0600
+@@ -27,15 +27,15 @@
  	fi
  done
  
@@ -15,8 +15,8 @@
  	
 -if find ${PATH//:/ } -maxdepth 1 -name TruSeq2-PE.fa 2> /dev/null | grep -q 'Tru' ; then
 -	ADAPTERS=$(find ${PATH//:/ } -maxdepth 1 -name TruSeq2-PE.fa 2> /dev/null | head -1)
-+if [ -e %%PREFIX%%/share/Trimmomatic ]; then
-+	ADAPTERS=%%PREFIX%%/share/Trimmomatic
++if [ -e %%PREFIX%%/share/Trimmomatic/adapters ]; then
++	ADAPTERS=%%PREFIX%%/share/Trimmomatic/adapters
  	else
      echo "The file listing adapters (included with trimmomatic) is not installed or is not in your" '$PATH'"."
      NUMDEP=$((NUMDEP + 1))
