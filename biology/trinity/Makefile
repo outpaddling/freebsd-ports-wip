@@ -94,14 +94,14 @@ post-patch:
 
 	# Utility scripts have some hard-coded paths as well
 	${REINPLACE_CMD} -i '' \
-		-e 's|$$ROOTDIR/trinity-plugins/jellyfish|${LOCALBASE}|g' \
+		-e 's|$$JELLYFISH_DIR/bin/jellyfish|jellyfish|g' \
 		-e 's|$$ROOTDIR/trinity-plugins/fastool|${LOCALBASE}/bin|g' \
 		${WRKSRC}/util/insilico_read_normalization.pl
 	${REINPLACE_CMD} -i '' \
 		-e 's|$$FindBin::Bin/../trinity-plugins/rsem|${LOCALBASE}|g' \
 		${WRKSRC}/util/align_and_estimate_abundance.pl
 	${REINPLACE_CMD} -i '' \
-		-e 's|$$FindBin::RealBin . "/../../trinity-plugins/jellyfish-1.1.3"|"${LOCALBASE}"|g' \
+		-e 's|$$JELLYFISH_DIR/bin/jellyfish|jellyfish|g' \
 		${WRKSRC}/util/misc/run_jellyfish.pl
 	${REINPLACE_CMD} -i '' \
 		-e 's|$$FindBin::Bin/../../trinity-plugins/Trimmomatic/trimmomatic.jar|${JAVAJARDIR}/trimmomatic.jar|g' \
