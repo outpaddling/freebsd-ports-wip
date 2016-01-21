@@ -84,7 +84,8 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's|$$FindBin::Bin|$$FindBin::Bin/../libexec/trinity|g' \
 		-e 's|$$FindBin::RealBin|$$FindBin::RealBin/../libexec/trinity|g' \
-		-e 's|$$ROOTDIR/trinity-plugins/jellyfish|${LOCALBASE}|g' \
+		-e 's|$$ROOTDIR/trinity-plugins/BIN|&:$$JELLYFISH_DIR/bin|g' \
+		-e 's|$$JELLYFISH_DIR/bin/jellyfish|jellyfish|g' \
 		-e 's|$$ROOTDIR/trinity-plugins/parafly/bin/ParaFly|${LOCALBASE}/bin/ParaFly|g' \
 		-e 's|$$ROOTDIR/trinity-plugins/fastool|${LOCALBASE}/bin|g' \
 		-e 's|$$ROOTDIR/trinity-plugins/Trimmomatic/trimmomatic.jar|${JAVAJARDIR}/trimmomatic.jar|g' \
