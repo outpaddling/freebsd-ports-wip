@@ -94,6 +94,8 @@ libexec/trinity/PerlLib/overlapping_nucs.ph
 libexec/trinity/PerlLib/test_Fasta_retriever.pl
 libexec/trinity/PerlLib/test_htc_gridrunner_LSF.pl
 libexec/trinity/PerlLib/test_htc_gridrunner_SGE.pl
+libexec/trinity/trinity-plugins/GAL_0.2.1/README
+libexec/trinity/trinity-plugins/GAL_0.2.1/fasta_tool
 libexec/trinity/trinity-plugins/collectl/bin/UNINSTALL
 libexec/trinity/trinity-plugins/collectl/bin/client.pl
 libexec/trinity/trinity-plugins/collectl/bin/col2tlviz.pl
@@ -112,6 +114,7 @@ libexec/trinity/trinity-plugins/collectl/bin/plot.py
 libexec/trinity/trinity-plugins/collectl/bin/proctree.ph
 libexec/trinity/trinity-plugins/collectl/bin/timetable.py
 libexec/trinity/trinity-plugins/collectl/bin/vmstat.ph
+libexec/trinity/trinity-plugins/scaffold_iworm_contigs/scaffold_iworm_contigs
 libexec/trinity/util/PBS/N50stats.pl
 libexec/trinity/util/PBS/README
 libexec/trinity/util/PBS/TRINITY.CONFIG.template

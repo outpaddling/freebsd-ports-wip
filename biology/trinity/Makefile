@@ -31,6 +31,9 @@ CFLAGS+=	-fopenmp
 LDFLAGS+=	-fopenmp -Wl,-rpath=${_GCC_RUNTIME}
 MAKE_FLAGS+=	FORCE_UNSAFE_CONFIGURE=1
 
+# Just for debugging build output
+# MAKE_JOBS_UNSAFE=	yes
+
 # Trinity core programs: Inchworm, Chrysalis, Butterfly
 
 # Bundled plugins:
@@ -55,7 +58,8 @@ RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		slclust:/usr/wip/biology/slclust \
 		Trimmomatic>=0.32:/usr/wip/biology/trimmomatic \
 		rsem>=1.2.22:/usr/wip/biology/rsem
-LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libhts.so:${PORTSDIR}/biology/htslib
 
 LIBEXEC_DIR=	${PREFIX}/libexec/trinity
 PLUGINS_DIR=	${LIBEXEC_DIR}/trinity-plugins
@@ -79,16 +83,25 @@ post-patch:
 		-e 's|$$ROOTDIR/trinity-plugins/jellyfish|${LOCALBASE}|g' \
 		-e 's|$$ROOTDIR/trinity-plugins/parafly/bin/ParaFly|${LOCALBASE}/bin/ParaFly|g' \
 		-e 's|$$ROOTDIR/trinity-plugins/fastool|${LOCALBASE}/bin|g' \
+		-e 's|$$ROOTDIR/trinity-plugins/Trimmomatic/trimmomatic.jar|${JAVAJARDIR}/trimmomatic.jar|g' \
+		-e 's|$$ROOTDIR/trinity-plugins/Trimmomatic|${LOCALBASE}/share/Trimmomatic|g' \
 		${WRKSRC}/Trinity
 
 	# Utility scripts have some hard-coded paths as well
-	${REINPLACE_CMD} \
+	${REINPLACE_CMD} -i '' \
 		-e 's|$$ROOTDIR/trinity-plugins/jellyfish|${LOCALBASE}|g' \
 		-e 's|$$ROOTDIR/trinity-plugins/fastool|${LOCALBASE}/bin|g' \
 		${WRKSRC}/util/insilico_read_normalization.pl
-	${REINPLACE_CMD} \
+	${REINPLACE_CMD} -i '' \
 		-e 's|$$FindBin::Bin/../trinity-plugins/rsem|${LOCALBASE}|g' \
 		${WRKSRC}/util/align_and_estimate_abundance.pl
+	${REINPLACE_CMD} -i '' \
+		-e 's|$$FindBin::RealBin . "/../../trinity-plugins/jellyfish-1.1.3"|"${LOCALBASE}"|g' \
+		${WRKSRC}/util/misc/run_jellyfish.pl
+	${REINPLACE_CMD} -i '' \
+		-e 's|$$FindBin::Bin/../../trinity-plugins/Trimmomatic/trimmomatic.jar|${JAVAJARDIR}/trimmomatic.jar|g' \
+		-e 's|/seq/regev_genome_portal/SOFTWARE/BIN/trimmomatic.jar|${JAVAJARDIR}/trimmomatic.jar|g' \
+		${WRKSRC}/util/misc/run_trimmomatic_qual_trimming.pl
 
 	${REINPLACE_CMD} \
 		-e "s|-lm -pthread|-lm -pthread -Wl,-rpath=${_GCC_RUNTIME}|g" \
@@ -109,8 +122,8 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's|$$BASEDIR/Trinity|Trinity|g' \
 		${WRKSRC}/util/run_Trinity_edgeR_pipeline.pl
-	${REINPLACE_CMD} \
-		-i '' -e 's|$$FindBin::Bin/../../Trinity|Trinity|g' \
+	${REINPLACE_CMD} -i '' \
+		-e 's|$$FindBin::Bin/../../Trinity|Trinity|g' \
 		${WRKSRC}/util/support_scripts/write_partitioned_trinity_cmds.pl
 
 # Some scripts are not available during patch stage
@@ -152,9 +165,15 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_BIN} util \
 		${STAGEDIR}${LIBEXEC_DIR}
 
-	${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/collectl
+	${MKDIR} \
+		${STAGEDIR}${PLUGINS_DIR}/collectl \
+		${STAGEDIR}${PLUGINS_DIR}/scaffold_iworm_contigs
 	cd ${WRKSRC}/trinity-plugins/collectl && \
 		${COPYTREE_BIN} bin ${STAGEDIR}${PLUGINS_DIR}/collectl
+	cd ${WRKSRC}/trinity-plugins && \
+		${COPYTREE_BIN} GAL_0.2.1 ${STAGEDIR}${PLUGINS_DIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/trinity-plugins/scaffold_iworm_contigs/scaffold_iworm_contigs \
+		${STAGEDIR}${PLUGINS_DIR}/scaffold_iworm_contigs
 
 	cd ${WRKSRC}/sample_data && ${COPYTREE_SHARE} \* \
 		${STAGEDIR}${EXAMPLESDIR}/
