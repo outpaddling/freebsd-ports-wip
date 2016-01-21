@@ -46,6 +46,8 @@ MAKE_FLAGS+=	FORCE_UNSAFE_CONFIGURE=1
 # slclust unknown (last version on SF is 02022010)
 # Trimmomatic 0.32
 
+# To-do: Unbundle collectl
+
 BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
@@ -132,9 +134,7 @@ post-build:
 		${WRKSRC}/trinity-plugins/collectl/bin/collectl \
 		${WRKSRC}/trinity-plugins/collectl/bin/*.pl
 
-# FIXME: Much more needs to be installed
-# FIXME: Some of the 'plugins' should really be separate ports
-#        Just dumping them to libexec/trinity for now
+# FIXME: More may need to be installed
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Trinity ${STAGEDIR}${PREFIX}/bin
 
