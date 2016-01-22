@@ -14,6 +14,8 @@ RUN_DEPENDS=	webbrowser:${PORTSDIR}/www/webbrowser
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+# FIXME: bowtie-align dumps core when compiled with clang
+# USE_GCC=	any
 USES=		gmake perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	scripts/*.pl
@@ -24,9 +26,10 @@ GH_TAGNAME=	v${PORTVERSION}
 
 WITH_DEBUG=	yes	# Disable stripping to debug core dumps
 
-.include <bsd.port.pre.mk>
+# Silence excessive gcc48 warnings
+# CFLAGS+=	-Wno-unused-local-typedefs
 
-# FIXME: bowtie-align dumps core when compiled with clang
+.include <bsd.port.pre.mk>
 
 do-install:
 	${INSTALL_SCRIPT} \
