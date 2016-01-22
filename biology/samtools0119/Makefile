@@ -22,6 +22,10 @@ post-patch:
 	${REINPLACE_CMD} -e "s|/software/bin/python|${LOCALBASE}/bin/python|g" \
 		${WRKSRC}/misc/*.py
 
+WITH_DEBUG=	yes
+
+MAKE_JOBS_UNSAFE=	yes
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/samtools ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/razip ${STAGEDIR}${PREFIX}/bin
