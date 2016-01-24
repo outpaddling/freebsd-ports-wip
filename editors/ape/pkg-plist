@@ -8,6 +8,8 @@ bin/xape
 man/man1/ape.1.gz
 man/man1/apeascii.1.gz
 man/man1/apekeys.1.gz
+%%DATADIR%%/Languages/AWK/Macros/macros
+%%DATADIR%%/Languages/AWK/Macros/menu.txt
 %%DATADIR%%/Languages/AWK/language_opts
 %%DATADIR%%/Languages/AWK/syntax_highlighting
 %%DATADIR%%/Languages/BC/language_opts
