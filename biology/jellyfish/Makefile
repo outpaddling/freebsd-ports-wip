@@ -21,7 +21,7 @@ MAKE_JOBS_UNSAFE=yes
 
 USE_LDCONFIG=	yes
 
-LDFLAGS=	-lexecinfo
+LDFLAGS+=	-lexecinfo
 # GCC? -Wl,-rpath=${PREFIX}
 
 post-stage:

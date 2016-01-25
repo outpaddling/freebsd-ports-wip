@@ -1,5 +1,5 @@
---- trinity-plugins/scaffold_iworm_contigs/Makefile.orig	2015-10-15 07:07:11.000000000 -0500
-+++ trinity-plugins/scaffold_iworm_contigs/Makefile	2016-01-24 16:34:14.366926000 -0600
+--- trinity-plugins/scaffold_iworm_contigs/Makefile.orig	2015-10-15 12:07:11 UTC
++++ trinity-plugins/scaffold_iworm_contigs/Makefile
 @@ -1,10 +1,8 @@
 -CXX    = g++
 +CXX    ?= g++

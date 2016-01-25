@@ -1,5 +1,5 @@
---- Makefile.orig	2014-10-22 12:17:03.000000000 -0500
-+++ Makefile	2015-03-03 12:05:26.238381615 -0600
+--- Makefile.orig	2014-10-22 17:17:03 UTC
++++ Makefile
 @@ -24,9 +24,9 @@
  INC =
  GCC_PREFIX = $(shell dirname `which gcc`)
@@ -13,7 +13,7 @@
  HEADERS = $(wildcard *.h)
  BOWTIE_MM = 1
  BOWTIE_SHARED_MEM = 0
-@@ -135,7 +135,7 @@
+@@ -135,7 +135,7 @@ SEARCH_FRAGMENTS = $(wildcard search_*_p
  VERSION = $(shell cat VERSION)
  
  BITS=32
@@ -22,7 +22,7 @@
  	BITS=64
  endif
  # msys will always be 32 bit so look at the cpu arch instead.
-@@ -152,7 +152,7 @@
+@@ -152,7 +152,7 @@ SSE_FLAG=-msse2 
  
  DEBUG_FLAGS    = -O0 -g3 -m64 $(SSE_FLAG)
  DEBUG_DEFS     = -DCOMPILER_OPTIONS="\"$(DEBUG_FLAGS) $(EXTRA_FLAGS)\""

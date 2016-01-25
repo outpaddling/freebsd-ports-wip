@@ -1,5 +1,5 @@
---- alignment/tuples/TupleMask.h.orig	2015-09-11 12:13:54.000000000 -0500
-+++ alignment/tuples/TupleMask.h	2015-09-11 12:14:38.000000000 -0500
+--- alignment/tuples/TupleMask.h.orig	2015-08-12 17:41:23 UTC
++++ alignment/tuples/TupleMask.h
 @@ -1,10 +1,13 @@
  #ifndef TUPLES_TUPLE_MASK
  #define TUPLES_TUPLE_MASK
