@@ -18,9 +18,15 @@ SHEBANG_FILES=	misc/*.pl
 
 ALL_TARGET=	all-recur razip
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	${REINPLACE_CMD} -e "s|/software/bin/python|${LOCALBASE}/bin/python|g" \
 		${WRKSRC}/misc/*.py
+.if ${OSVERSION} < 1000000
+	${REINPLACE_CMD} -e 's|expl|exp|g' -e 's|logl|log|g' \
+		${WRKSRC}/errmod.c ${WRKSRC}/bcftools/prob1.c
+.endif
 
 WITH_DEBUG=	yes
 
@@ -42,4 +48,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/bam
 	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/bam
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
