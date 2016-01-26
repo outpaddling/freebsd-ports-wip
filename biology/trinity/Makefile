@@ -166,6 +166,6 @@ do-install:
 		${STAGEDIR}${PLUGINS_DIR}/scaffold_iworm_contigs
 
 	cd ${WRKSRC}/sample_data && ${COPYTREE_SHARE} \* \
-		${STAGEDIR}${EXAMPLESDIR}/
+		${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
