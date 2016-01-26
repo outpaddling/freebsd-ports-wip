@@ -2,8 +2,6 @@
 # $FreeBSD$
 # To-do:
 #	Unbundle collectl (low priority)
-#	Path scripts to utilize $PATH instead of absolute pathnames
-#	Send patches upstream
 
 PORTNAME=	trinity
 PORTVERSION=	2.1.1
@@ -33,7 +31,6 @@ ONLY_FOR_ARCHS=	amd64
 
 CFLAGS+=	-fopenmp
 LDFLAGS+=	-fopenmp -Wl,-rpath=${_GCC_RUNTIME}
-MAKE_FLAGS+=	FORCE_UNSAFE_CONFIGURE=1
 
 # Trinity core programs: Inchworm, Chrysalis, Butterfly
 
