@@ -53,7 +53,6 @@ libexec/trinity/PerlLib/Gene_obj_indexer.pm
 libexec/trinity/PerlLib/HPC/Base_handler.pm
 libexec/trinity/PerlLib/HPC/FarmIt.pm
 libexec/trinity/PerlLib/HPC/GridRunner.pm
-libexec/trinity/PerlLib/HPC/GridRunner.pm.bak
 libexec/trinity/PerlLib/HPC/LSF_handler.pm
 libexec/trinity/PerlLib/HPC/PBS_handler.pm
 libexec/trinity/PerlLib/HPC/SGE_handler.pm
@@ -341,7 +340,6 @@ libexec/trinity/util/retrieve_sequences_from_fasta.pl
 libexec/trinity/util/run_DE_analysis_from_samples_file.pl
 libexec/trinity/util/run_RSEM_from_samples_file.pl
 libexec/trinity/util/run_Trinity_edgeR_pipeline.pl
-libexec/trinity/util/run_Trinity_edgeR_pipeline.pl.bak
 libexec/trinity/util/run_Trinity_from_samples_file.pl
 libexec/trinity/util/support_scripts/ExitTester.jar
 libexec/trinity/util/support_scripts/GG_partitioned_trinity_aggregator.pl

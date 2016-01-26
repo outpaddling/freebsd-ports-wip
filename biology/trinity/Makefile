@@ -35,16 +35,14 @@ CFLAGS+=	-fopenmp
 LDFLAGS+=	-fopenmp -Wl,-rpath=${_GCC_RUNTIME}
 MAKE_FLAGS+=	FORCE_UNSAFE_CONFIGURE=1
 
-# Just for debugging build output
-# MAKE_JOBS_UNSAFE=	yes
-
 # Trinity core programs: Inchworm, Chrysalis, Butterfly
 
-# Bundled plugins:
+# Bundled plugins: Trinity is very sensitive to having the correct versions
+# of some of these.  Test thoroughly if you change any of them.
 # collectl 3.7.4
-# samtools 0.1.19
-# jellyfish 2.1.4
-# parafly 0.1 (config.h)
+# samtools 0.1.19 (must use this version: 1.x does not work well)
+# jellyfish 2.1.4 (2.2.0 seems OK)
+# parafly 0.1 (determined from config.h)
 # fastool 7c3e034f05 Nov 18 2013 commit on Github
 # htslib 1.2.1
 # slclust unknown (last version on SF is 02022010)
@@ -55,7 +53,7 @@ BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bowtie:/usr/wip/biology/bowtie \
 		samtools01==0.1.19:/usr/wip/biology/samtools0119 \
-		jellyfish==2.1.4:/usr/wip/biology/jellyfish2 \
+		jellyfish>=2.1.4:/usr/wip/biology/jellyfish2 \
 		ParaFly:/usr/wip/sysutils/parafly \
 		fastool:${PORTSDIR}/biology/fastool \
 		TransDecoder.Predict:/usr/wip/biology/p5-transdecoder \
@@ -77,17 +75,17 @@ post-patch:
 		${WRKSRC}/trinity-plugins/fstrozzi-Fastool-7c3e034f05/Makefile \
 		${WRKSRC}/trinity-plugins/slclust/src/Makefile
 	${REINPLACE_CMD} \
-		-e 's|make |${GMAKE} |g' \
+		-e 's|make |${MAKE} |g' \
 		${WRKSRC}/trinity-plugins/collectl/build_collectl.sh
 
 	# Change paths for plugins installed separately
 	${REINPLACE_CMD} \
 		-e 's|$$FindBin::Bin|$$FindBin::Bin/../libexec/trinity|g' \
 		-e 's|$$FindBin::RealBin|$$FindBin::RealBin/../libexec/trinity|g' \
-		-e 's|$$ROOTDIR/trinity-plugins/BIN|&:$$JELLYFISH_DIR/bin|g' \
+		-e 's|$$ROOTDIR/trinity-plugins/BIN|&:$$JELLYFISH_DIR/bin:$$FASTOOL_DIR|g' \
 		-e 's|$$JELLYFISH_DIR/bin/jellyfish|jellyfish|g' \
+		-e 's|$$FASTOOL_DIR/fastool|fastool|g' \
 		-e 's|$$ROOTDIR/trinity-plugins/parafly/bin/ParaFly|ParaFly|g' \
-		-e 's|$$ROOTDIR/trinity-plugins/fastool|${LOCALBASE}/bin|g' \
 		-e 's|$$ROOTDIR/trinity-plugins/Trimmomatic/trimmomatic.jar|${JAVAJARDIR}/trimmomatic.jar|g' \
 		-e 's|$$ROOTDIR/trinity-plugins/Trimmomatic|${LOCALBASE}/share/Trimmomatic|g' \
 		${WRKSRC}/Trinity
@@ -95,11 +93,8 @@ post-patch:
 	# Utility scripts have some hard-coded paths as well
 	${REINPLACE_CMD} -i '' \
 		-e 's|$$JELLYFISH_DIR/bin/jellyfish|jellyfish|g' \
-		-e 's|$$ROOTDIR/trinity-plugins/fastool|${LOCALBASE}/bin|g' \
+		-e 's|$$FASTOOL_DIR/fastool|fastool|g' \
 		${WRKSRC}/util/insilico_read_normalization.pl
-	${REINPLACE_CMD} -i '' \
-		-e 's|$$FindBin::Bin/../trinity-plugins/rsem|${LOCALBASE}|g' \
-		${WRKSRC}/util/align_and_estimate_abundance.pl
 	${REINPLACE_CMD} -i '' \
 		-e 's|$$JELLYFISH_DIR/bin/jellyfish|jellyfish|g' \
 		${WRKSRC}/util/misc/run_jellyfish.pl
@@ -117,11 +112,6 @@ post-patch:
 		${WRKSRC}/Chrysalis/Makefile_${CXX}_x86_64
 	${MV} ${WRKSRC}/Chrysalis/Makefile_g++_i386 \
 		${WRKSRC}/Chrysalis/Makefile_${CXX}_i386
-
-	# GridRunner: ParaFly is intalled separately, so remove absolute path
-	${REINPLACE_CMD} \
-		-e 's|$$trin_home/trinity-plugins/parafly/bin/||g' \
-		${WRKSRC}/PerlLib/HPC/GridRunner.pm
 
 	# Remove absolute paths to Trinity command
 	${REINPLACE_CMD} \
