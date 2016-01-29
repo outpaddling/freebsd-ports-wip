@@ -6,7 +6,7 @@ PORTVERSION=	1.36.1
 CATEGORIES=	biology
 
 MAINTAINER=	bacon@sciprog.ceas.uwm.edu
-COMMENT=
+COMMENT=	Bioinformatics tool for the microbial ecology community.
 
 USES=		gmake fortran shebangfix
 SHEBANGFILES=	source/uchime_src/mk
