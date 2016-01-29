@@ -15,6 +15,8 @@ SHEBANGFILES=	source/uchime_src/mk
 # Does not build with clang
 # USE_GCC=	yes
 
+LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
+
 USE_GITHUB=	yes
 GH_TAGNAME=	v${PORTVERSION}
 
