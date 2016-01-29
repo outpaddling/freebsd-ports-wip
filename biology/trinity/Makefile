@@ -118,6 +118,9 @@ post-patch:
 		-e 's|$$FindBin::Bin/../../Trinity|Trinity|g' \
 		${WRKSRC}/util/support_scripts/write_partitioned_trinity_cmds.pl
 
+	# Prevent COPYTREE from installing patch precursors
+	${RM} ${WRKSRC}/PerlLib/HPC/SLURM_handler.pm.orig
+
 # Some scripts are not available during patch stage
 post-build:
 	${REINPLACE_CMD} -i '' -e "s|/usr/bin/perl|${LOCALBASE}/bin/perl|g" \

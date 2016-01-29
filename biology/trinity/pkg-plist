@@ -57,7 +57,6 @@ libexec/trinity/PerlLib/HPC/LSF_handler.pm
 libexec/trinity/PerlLib/HPC/PBS_handler.pm
 libexec/trinity/PerlLib/HPC/SGE_handler.pm
 libexec/trinity/PerlLib/HPC/SLURM_handler.pm
-libexec/trinity/PerlLib/HPC/SLURM_handler.pm.orig
 libexec/trinity/PerlLib/KmerGraphLib/AlignGraph.pm
 libexec/trinity/PerlLib/KmerGraphLib/AlignNode.pm
 libexec/trinity/PerlLib/KmerGraphLib/GenericGraph.pm
