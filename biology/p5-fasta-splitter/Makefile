@@ -5,18 +5,18 @@ PORTNAME=	splitter
 PORTVERSION=	0.2.4
 CATEGORIES=	biology
 MASTER_SITES=	http://kirill-kryukov.com/study/tools/fasta-splitter/files/
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	fasta-
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bacon4000@gmail.com
-COMMENT=	Divides a FASTA file into a set of smaller, approximately equally sized files
+COMMENT=	Divides FASTA file into a smaller approx. equal sized set of files
 
-#LICENSE=
-
-USES=		zip
+LICENSE=	ZLIB
 
 RUN_DEPENDS=	p5-File-Util>=3:${PORTSDIR}/devel/p5-File-Util \
 		p5-Getopt-Long>=2:${PORTSDIR}/devel/p5-Getopt-Long
+
+USES=		zip
 
 # use strict;
 # use File::Basename qw(basename);use File::Path qw(make_path);
