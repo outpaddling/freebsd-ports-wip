@@ -1,5 +1,5 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
-# $FreeBSD: head/sysutils/desktop-installer/Makefile 380000 2015-02-26 13:10:09Z robak $
+# $FreeBSD: head/sysutils/desktop-installer/Makefile 404208 2015-12-22 04:32:23Z miwi $
 
 PORTNAME=	desktop-installer
 PORTVERSION=	0.5.0
@@ -11,7 +11,7 @@ COMMENT=	Quickly configure a FreeBSD desktop system
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	auto-admin>=0.3.5:${PORTSDIR}/sysutils/auto-admin
+RUN_DEPENDS=	auto-admin>=0.3.6:${PORTSDIR}/sysutils/auto-admin
 
 USES=		tar:xz
 
