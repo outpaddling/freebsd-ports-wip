@@ -1,5 +1,5 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
-# $FreeBSD: head/sysutils/auto-admin/Makefile 378612 2015-02-07 19:08:33Z riggs $
+# $FreeBSD: head/sysutils/auto-admin/Makefile 403506 2015-12-11 08:48:56Z miwi $
 
 PORTNAME=	auto-admin
 PORTVERSION=	0.3.6
@@ -14,6 +14,7 @@ LICENSE=	BSD2CLAUSE
 USES=		tar:xz
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/sbin ${STAGEDIR}${DATADIR}
