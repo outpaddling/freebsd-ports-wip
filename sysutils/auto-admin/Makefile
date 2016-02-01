@@ -2,7 +2,7 @@
 # $FreeBSD: head/sysutils/auto-admin/Makefile 403506 2015-12-11 08:48:56Z miwi $
 
 PORTNAME=	auto-admin
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 

@@ -2,7 +2,7 @@
 # $FreeBSD: head/sysutils/desktop-installer/Makefile 404208 2015-12-22 04:32:23Z miwi $
 
 PORTNAME=	desktop-installer
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
