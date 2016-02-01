@@ -20,13 +20,6 @@ NO_BUILD=	yes
 
 MAKE_ENV+=		PREFIX=${PREFIX} DATADIR=${DATADIR}
 
-post-patch:
-	${REINPLACE_CMD} -i '' \
-		-e "s|add-gecos.awk|${PREFIX}/libexec/add-gecos.awk|" \
-		${WRKSRC}/Common/Sys-scripts/slurm-usage-report
-	${REINPLACE_CMD} -i '' -e 's|%%DATADIR%%|${DATADIR}|g' \
-		${WRKSRC}/Common/Sys-scripts/slurm-update-idle-nodes
-
 # FIXME: Switch to upstream install script
 #do-install:
 #	${INSTALL_SCRIPT} \
