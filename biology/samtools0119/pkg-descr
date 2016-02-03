@@ -1,3 +1,4 @@
-[description of the port]
+SAM (Sequence Alignment/Map) format is a generic format for storing large
+nucleotide sequence alignments.
 
-WWW: http://port.home.page/
+WWW: http://samtools.sourceforge.net/

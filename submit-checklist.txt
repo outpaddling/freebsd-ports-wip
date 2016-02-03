@@ -71,15 +71,15 @@ Make sure there's a man page
 
 Remove any extraneous files from port framework
 
-Test on a blank VM or tinderbox to ensure all depends are installed by the port
+Test with poudriere to ensure all depends are installed by the port
 
 Test on all available platforms.  Do the following IN ORDER:
 
-    make distclean
-    portlint -A
-    make deinstall
-    make rmconfig
-    make reinstall
+    Add DEVELOPER=yes to /etc/make.conf to enable QA tests
+
+    reinstall-wip-port -u -r ports-mgmt/port-dev
+    port-check
+
     test with NOPORT* (whatever is in pkg-plist)
 
 Generate unified diff for updates, shar file for new ports

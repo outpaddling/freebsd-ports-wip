@@ -3,10 +3,10 @@
 
 PORTNAME=	samtools
 PORTVERSION=	0.1.19
-CATEGORIES=	biology science
+CATEGORIES=	biology
+MASTER_SITES=	SF
 # Prevent pkg upgrade from replacing this with samtools 1.x
 PKGNAMESUFFIX=	01
-MASTER_SITES=	SF
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Generic format for storing large nucleotide sequence alignments
@@ -20,6 +20,7 @@ ALL_TARGET=	all-recur razip
 
 .include <bsd.port.pre.mk>
 
+# Shebangfix doesn't recognize /software/bin/python
 post-patch:
 	${REINPLACE_CMD} -e "s|/software/bin/python|${LOCALBASE}/bin/python|g" \
 		${WRKSRC}/misc/*.py
@@ -27,10 +28,6 @@ post-patch:
 	${REINPLACE_CMD} -e 's|expl|exp|g' -e 's|logl|log|g' \
 		${WRKSRC}/errmod.c ${WRKSRC}/bcftools/prob1.c
 .endif
-
-WITH_DEBUG=	yes
-
-MAKE_JOBS_UNSAFE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/samtools ${STAGEDIR}${PREFIX}/bin
