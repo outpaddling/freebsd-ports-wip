@@ -1,4 +1,4 @@
-# Created by: Jason Wayne Bacon <bacon@sciprog.ceas.uwm.edu>
+# Created by: Jason Wayne Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	picard
@@ -10,7 +10,7 @@ DISTNAME=	${PORTVERSION}
 # Same distname as htsjdk
 DIST_SUBDIR=	picard
 
-MAINTAINER=	bacon@sciprog.ceas.uwm.edu
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon@oyster.jbacon.dyndns.org>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	eigensoft
@@ -6,7 +6,7 @@ PORTVERSION=	2015.09.17
 CATEGORIES=	biology
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon@oyster.jbacon.dyndns.org
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Population genetics and stratification correction method
 
 LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl \

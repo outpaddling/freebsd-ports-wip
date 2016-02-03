@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon@sculpin.acadix.biz>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	oligotyping

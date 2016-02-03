@@ -1,6 +1,6 @@
 # New ports collection makefile for:	slepc
 # Date created:		2012-05-22
-# Whom:			Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	sage
 # Date created:		2013-01-06
-# Whom:			Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://mirrors.xmission.com/sage/src/
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Open source alternative to Magma, Maple, Mathematica and Matlab
 
 .include <bsd.port.pre.mk>

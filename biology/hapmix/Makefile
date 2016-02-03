@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon@oyster.jbacon.dyndns.org>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	hapmix
@@ -7,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://cdn1.sph.harvard.edu/wp-content/uploads/sites/181/2012/10/
 DISTNAME=	hapmix1.2.tar_.gz
 
-MAINTAINER=	bacon@oyster.jbacon.dyndns.org
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Infer chromosomal segments of ancestry in admixed populations
 
 # Bundles eigensrc and nicksrc

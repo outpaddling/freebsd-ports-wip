@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	structure-frontend
@@ -16,7 +16,7 @@ MASTER_SITES=
 #DIST_SUBDIR=	${PORTNAME}
 #EXTRACT_ONLY=
 
-MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=
 
 .include <bsd.port.pre.mk>

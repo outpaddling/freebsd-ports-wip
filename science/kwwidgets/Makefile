@@ -1,6 +1,6 @@
 # New ports collection makefile for:	kwwidgets
 # Date created:		2012-05-06
-# Whom:			Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	2012.05.06
 CATEGORIES=	science
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=
 
 CONFLICTS=	vtk-4.*

@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon@unixdev.ceas.uwm.edu>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	inchworm
@@ -8,7 +8,7 @@ CATEGORIES=	biology
 MASTER_SITES=	SF/inchworm
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bacon@unixdev.ceas.uwm.edu
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=
 
 GNU_CONFIGURE=	yes

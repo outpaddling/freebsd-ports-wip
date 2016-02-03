@@ -1,6 +1,6 @@
 # New ports collection makefile for:	angora
 # Date created:		2012-06-02
-# Whom:			Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -20,7 +20,7 @@ MASTER_SITES=	http://angorafdtd.org/angora/
 #DIST_SUBDIR=	${PORTNAME}
 #EXTRACT_ONLY=
 
-MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=
 
 GNU_CONFIGURE=	yes

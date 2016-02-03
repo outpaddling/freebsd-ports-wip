@@ -1,4 +1,4 @@
-# Created by: bacon@smithers.neuro.mcw.edu
+# Created by: bacon4000@gmail.com
 # $FreeBSD: science/InsightToolkit/Makefile 327767 2013-09-20 22:48:30Z bapt $
 
 PORTNAME=	InsightToolkit

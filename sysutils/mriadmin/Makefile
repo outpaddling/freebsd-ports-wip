@@ -1,6 +1,6 @@
 # New ports collection makefile for:	mriadmin
 # Date created:		2008-11-13
-# Whom:			Jason Bacon <bacon@sculpin.tds.net>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.1
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	science
-MASTER_SITES=	http://sculpin/~bacon/Ports/private/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	MRI system admin tool

@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon@sculpin.acadix.biz>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	pbcommand
@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	bacon@sculpin.acadix.biz
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=
 
 USES=		python

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	ginkgo
 # Date created:		2013-07-11
-# Whom:			Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ CATEGORIES=
 MASTER_SITES=	SF/ginkgocadx/3.3.0/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.757.27
 
-MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=
 
 WRKSRC=		${WRKDIR}/srcpkg/${DISTNAME}/src/

@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon@tocino.cs.uwm.edu>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	meep

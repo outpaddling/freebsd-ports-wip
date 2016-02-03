@@ -1,6 +1,6 @@
 # New ports collection makefile for:	domainmath
 # Date created:		2013-06-05
-# Whom:			Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	SF/domainmath/DomainMathIDE_v0.1.x/
 DISTNAME=	DomainMathIDE_v${PORTVERSION}
 EXTRACT_SUFX=	.7z
 
-MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Java 1.7 GUI for Octave
 
 EXTRACT_DEPENDS+=	p7zip:${PORTSDIR}/archivers/p7zip

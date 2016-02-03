@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	htsjdk
@@ -11,7 +11,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Generic format for storing large nucleotide sequence alignments
 
 # Prefers 1.6, 1.7 should work, but jars built with 1.7 won't run in 1.6 env

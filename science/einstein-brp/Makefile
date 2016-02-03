@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon@manta.acadix.biz>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	einstein-brp
@@ -6,7 +6,7 @@ PORTVERSION=	2014.10.27
 CATEGORIES=	astro
 MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon@manta.acadix.biz
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=
 
 USES=		tar:xz gmake

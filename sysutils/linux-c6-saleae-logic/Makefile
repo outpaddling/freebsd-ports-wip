@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon@manatee.acadix.biz>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	logic
@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.saleae.com/betas/1.1.30/
 DISTNAME=	Logic+${PORTVERSION}+\(32-bit\)
 
-MAINTAINER=	bacon@manatee.acadix.biz
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=
 
 ONLY_FOR_ARCHS= amd64 i386

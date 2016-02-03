@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jbacon@mcw.edu>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD: head/sysutils/mcweject/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	mcweject

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	vxl
 # Date created:		2012-05-06
-# Whom:			Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
@@ -15,7 +15,7 @@ MASTER_SITES=	SF/vxl/vxl/1.14/
 USE_ZIP=	yes
 USE_CMAKE=	yes
 
-MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=
 
 CFLAGS+=	-fPIC

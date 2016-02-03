@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	samtools
@@ -8,7 +8,7 @@ CATEGORIES=	biology science
 PKGNAMESUFFIX=	01
 MASTER_SITES=	SF
 
-MAINTAINER=	bacon@sculpin.jbacon.dyndns.org
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Generic format for storing large nucleotide sequence alignments
 
 LICENSE=	MIT

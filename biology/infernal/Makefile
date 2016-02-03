@@ -1,4 +1,4 @@
-# Created by: Jason Wayne Bacon <bacon@sciprog.ceas.uwm.edu>
+# Created by: Jason Wayne Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	infernal

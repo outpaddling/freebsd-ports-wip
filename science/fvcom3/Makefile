@@ -1,6 +1,6 @@
 # New ports collection makefile for:	fvcom
 # Date created:		2012-03-13
-# Whom:			Jason Bacon <bacon@sculpin.jbacon.dyndns.org>
+# Whom:			Jason Bacon <bacon4000@gmail.com>
 #
 # $FreeBSD$
 #
