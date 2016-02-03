@@ -16,6 +16,8 @@ USES=		autoreconf gmake
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkgconf
 
 GNU_CONFIGURE=	yes
+# No zlib.pc on 9.x
+CONFIGURE_ENV=	ZLIB_CFLAGS=" " ZLIB_LIBS="-lz"
 
 USE_GITHUB=	yes
 GH_TAGNAME=	v${PORTVERSION}
