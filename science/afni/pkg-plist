@@ -547,6 +547,7 @@ bin/ui_xmat.py
 bin/uniq_images
 bin/waver
 bin/whereami
+bin/whirlgif
 bin/xmat_tool.py
 etc/mri/afni.cshrc
 etc/mri/afni.profile

@@ -27,7 +27,6 @@ LIB_DEPENDS=	libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
 		libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libf2c.so:${PORTSDIR}/lang/f2c
 RUN_DEPENDS=	mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
-		whirlgif:${PORTSDIR}/graphics/whirlgif \
 		ppmtogif:${PORTSDIR}/graphics/netpbm \
 		endian:${PORTSDIR}/sysutils/endian \
 		qhull:${PORTSDIR}/math/qhull5
