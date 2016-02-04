@@ -11,7 +11,7 @@ COMMENT=	Tools for working with VCF genomics files
 
 LICENSE=	LGPL3
 
-USES=		autoreconf gmake
+USES=		autoreconf gmake perl5
 
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkgconf
 
