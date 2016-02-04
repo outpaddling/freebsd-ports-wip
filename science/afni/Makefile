@@ -85,10 +85,6 @@ post-extract:
 		-e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/afni.1
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
-# The unixstat port has ceased to exist, but we'll need this if it's
-# ever resurrected
-#	${MV}	${INSTALL_WRKSRC}/abut ${INSTALL_WRKSRC}/afni_abut
-
 # shebangfix misses /bin/python on 10.1
 post-patch:
 	${REINPLACE_CMD} -e "s|-lglib|-lglib-2.0|g" \

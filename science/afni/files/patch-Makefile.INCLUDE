@@ -1,5 +1,5 @@
---- Makefile.INCLUDE.orig	2015-11-06 15:25:04.000000000 -0600
-+++ Makefile.INCLUDE	2016-02-04 08:15:21.394402871 -0600
+--- Makefile.INCLUDE.orig	2015-11-06 21:25:04 UTC
++++ Makefile.INCLUDE
 @@ -50,7 +50,7 @@ MISC    = AFNI_atlas_spaces.niml AFNI.Xd
  ## AFNI package, but included because they are useful.  Some of
  ## them are Open Source programs, not from the AFNI group at all.
