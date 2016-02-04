@@ -95,17 +95,29 @@ If maintaining source
     tag this version of source and create next one
 
 else
-    Contact author:
-	Send the following message after the commit:
+    1)  Send patches through proper channels.
+    
+    2)  Contact author(s):
+
+    People often assume the only supported platforms are those listed on
+    the software's home page and that they should follow the (usually
+    inadequate) instructions on the developer's site to install the software.
+    A simple note about using a package manager and a link to the ports site
+    can do a lot to raise awareness of the advantages of FreeBSD ports and
+    other package managers.
+
+    Send the following message AFTER THE PORT IS COMMITTED and then
+    update FreeBSD-citing.
 	
-====
+============================================================================
+
 FYI:
 
 [Software name] has been committed to the FreeBSD ports collection.
 It might be helpful to users if you could post a message like
 the following on your website:
 
-Cheers,
+Regards,
 
     [Your name]
 
@@ -114,19 +126,16 @@ system.
 
 To install via the binary package, simply run:
 
-    pkg install name
+    pkg install [put package name here]
 
 To build and install from source code, run:
 
-    cd /usr/ports/category/name && make install
+    cd /usr/ports/category/[put port name here] && make install
+
+Building from source allows installing to a different prefix and
+in some cases, building with non-default options.
 
 For more information, visit https://www.freebsd.org/ports/index.html.
-===
-	
-	People often assume the only supported platforms are those listed on
-	the software's home page.  A simple link to a ports site can do a lot
-	to raise awareness of the advantages of FreeBSD ports.
-    
-	Send patches through proper channels.
 
-    Update FreeBSD-citing
+============================================================================
+

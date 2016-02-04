@@ -1,24 +1,4 @@
 
-FYI, it might be nice to add the following to your download page:
-
-    http://put-developer-site-here
-
-FreeBSD Users:
-
-put-software-name-here, like most mainstream open source software, is
-available in the FreeBSD ports collection and can be installed as a binary
-package on FreeBSD using the following command:
-
-    pkg install put-package-name-here
-
-Building and installing from source can also be easily performed using
-the following:
-
-    cd /usr/ports/category/put-port-name-here
-    make install
-
-This method allows building with non-default options in many cases.
-
 Requested additions:
 
 http://hmmer.janelia.org/software
