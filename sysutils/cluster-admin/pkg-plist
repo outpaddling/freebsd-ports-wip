@@ -69,6 +69,8 @@ sbin/cluster-user-admin
 sbin/cluster-useradd
 sbin/cluster-usermod
 sbin/cluster-users
+sbin/local-init-node
+sbin/local-packages
 sbin/node-sync-all-users
 sbin/node-sync-user
 sbin/pbs-cluster-load
