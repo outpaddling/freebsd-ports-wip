@@ -16,6 +16,9 @@ USES=		compiler:openmp tar:tgz
 
 GNU_CONFIGURE=	yes
 
+CXXFLAGS+=	-fopenmp
+LDFLAGS+=	-fopenmp
+
 PLIST_FILES=	bin/ParaFly
 
 .include <bsd.port.mk>

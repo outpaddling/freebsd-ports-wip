@@ -13,11 +13,11 @@ LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 
-USES=		compiler:openmp libtool
+USES=		compiler:c++11-lib compiler:openmp gmake libtool
 
 USE_LDCONFIG=	yes
 
-CXXFLAGS+=	-std=c++0x
+# CXXFLAGS+=	-std=c++0x
 
 post-stage:
 	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/* \
