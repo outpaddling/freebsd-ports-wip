@@ -1,5 +1,5 @@
---- Makefile.orig	2015-06-23 16:32:51 UTC
-+++ Makefile
+--- Makefile.orig	2015-06-23 11:32:51.000000000 -0500
++++ Makefile	2016-02-05 14:31:20.000000000 -0600
 @@ -8,9 +8,13 @@ bindir = $(prefix)/bin
  SEQAN_DIR = SeqAn-1.1
  SEQAN_INC = -I $(SEQAN_DIR)
@@ -17,6 +17,19 @@
  HEADERS = $(wildcard *.h)
  BOWTIE_MM = 1
  BOWTIE_SHARED_MEM = 1
+@@ -90,10 +94,10 @@ PREFETCH_LOCALITY = 2
+ PREF_DEF = -DPREFETCH_LOCALITY=$(PREFETCH_LOCALITY)
+ 
+ ifeq (1,$(WITH_TBB))
+-	LIBS = $(PTHREAD_LIB) -ltbb -ltbbmalloc_proxy
++	LIBS = ${LDFLAGS} $(PTHREAD_LIB) -ltbb -ltbbmalloc_proxy
+ 	EXTRA_FLAGS += -DWITH_TBB
+ else
+-	LIBS = $(PTHREAD_LIB)
++	LIBS = ${LDFLAGS} $(PTHREAD_LIB)
+ endif
+ 
+ SEARCH_LIBS = 
 @@ -123,7 +127,7 @@ SEARCH_FRAGMENTS = $(wildcard search_*_p
  VERSION = $(shell cat VERSION)
  

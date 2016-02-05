@@ -17,7 +17,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 # May also work on other 64-bit platforms
 ONLY_FOR_ARCHS=	amd64
 # FIXME: bowtie-align intermittently dumps core when compiled with clang
-USE_GCC=	any
+# GCC 4.2 does not provide good performance
+USE_GCC=	yes
 USES=		gmake perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	scripts/*.pl
