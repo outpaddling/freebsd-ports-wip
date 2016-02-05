@@ -15,7 +15,8 @@ USES=		gmake libtool
 GNU_CONFIGURE=	yes
 
 # Variable length arrays
-USE_GCC=	yes
+# USE_GCC=	yes
+USES=		compiler:c++14-lang libtool
 
 MAKE_JOBS_UNSAFE=yes
 
