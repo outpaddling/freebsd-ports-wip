@@ -1,4 +1,6 @@
 man/man1/auto-add-fdesc-mount.1.gz
+man/man1/auto-add-linproc-mount.1.gz
+man/man1/auto-add-proc-mount.1.gz
 man/man1/auto-admin.1.gz
 man/man1/auto-amd-nfs-setup.1.gz
 man/man1/auto-append-line.1.gz
@@ -49,6 +51,8 @@ man/man1/auto-using-pkgsrc.1.gz
 man/man1/auto-wifi-failover.1.gz
 man/man1/auto-xdm-toggle.1.gz
 sbin/auto-add-fdesc-mount
+sbin/auto-add-linproc-mount
+sbin/auto-add-proc-mount
 sbin/auto-amd-nfs-setup
 sbin/auto-append-line
 sbin/auto-ask
