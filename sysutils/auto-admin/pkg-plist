@@ -53,6 +53,7 @@ man/man1/auto-xdm-toggle.1.gz
 sbin/auto-add-fdesc-mount
 sbin/auto-add-linproc-mount
 sbin/auto-add-proc-mount
+sbin/auto-admin
 sbin/auto-amd-nfs-setup
 sbin/auto-append-line
 sbin/auto-ask
