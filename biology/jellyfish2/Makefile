@@ -9,6 +9,9 @@ MASTER_SITES=	ftp://ftp.genome.umd.edu/pub/jellyfish/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Fast, memory-efficient counting of k-mers in DNA
 
+# Contains inline assembly code
+ONLY_FOR_ARCHS=	amd64
+
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
