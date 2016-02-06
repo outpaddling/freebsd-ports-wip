@@ -1,8 +1,8 @@
 # Created by: Reed A. Cartwright <cartwright@asu.edu>
-# $FreeBSD: head/biology/samtools/Makefile 385521 2015-05-06 15:16:53Z mat $
+# $FreeBSD: head/biology/samtools/Makefile 404398 2015-12-25 01:31:09Z junovitch $
 
 PORTNAME=	samtools
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	biology
 
 MAINTAINER=	cartwright@asu.edu
@@ -11,13 +11,17 @@ COMMENT=	Tools for manipulating next-generation sequencing data
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	htslib>=1.2:${PORTSDIR}/biology/htslib
+BUILD_DEPENDS=	htslib>=1.3:${PORTSDIR}/biology/htslib
 LIB_DEPENDS=	libhts.so:${PORTSDIR}/biology/htslib
+TEST_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_GITHUB=	yes
 
-USES=		gmake
+USES=		autoreconf gmake perl5 shebangfix
+USE_PERL5=	test
+GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
+SHEBANG_FILES=	misc/*.pl misc/plot-bamstats test/test.pl
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -29,5 +33,12 @@ MAKE_ENV=	INSTALL_LIB="${INSTALL_LIB}" \
 		INSTALL_DIR="${MKDIR}"
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
+
+TEST_TARGET=	test
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|@PORTVERSION@|${PORTVERSION}|g' ${WRKSRC}/configure.ac
+	${CP} ${FILESDIR}/ax_with_htslib.m4 ${WRKSRC}/
+	${CP} ${FILESDIR}/ax_with_curses.m4 ${WRKSRC}/
 
 .include <bsd.port.mk>

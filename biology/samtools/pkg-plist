@@ -25,13 +25,16 @@ include/bam/bam_endian.h
 include/bam/bam_lpileup.h
 include/bam/bam_plbuf.h
 include/bam/bam_tview.h
+include/bam/config.h
 include/bam/errmod.h
 include/bam/kprobaln.h
 include/bam/sam.h
 include/bam/sam_header.h
+include/bam/sam_opts.h
 include/bam/sample.h
 include/bam/samtools.h
 include/bam/stats_isize.h
 include/bam/version.h
 lib/libbam.a
 man/man1/samtools.1.gz
+man/man1/wgsim.1.gz
