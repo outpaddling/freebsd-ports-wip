@@ -17,6 +17,7 @@ GH_TAGNAME=	v${PORTVERSION}
 
 WRKSRC=		${WRKDIR}/RSEM-${PORTVERSION}
 
-BUILD_DEPENDS+=	samtools01==0.1.19:/usr/wip/biology/samtools0119
+BUILD_DEPENDS+=	samtools>=1.3:${PORTSDIR}/biology/samtools \
+		htslib>=1.3:${PORTSDIR}/biology/htslib
 
 .include <bsd.port.mk>

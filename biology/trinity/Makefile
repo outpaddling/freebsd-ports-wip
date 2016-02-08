@@ -38,6 +38,7 @@ LDFLAGS+=	-fopenmp -Wl,-rpath=${_GCC_RUNTIME}
 # of some of these.  Test thoroughly if you change any of them.
 # collectl 3.7.4
 # samtools 0.1.19 (must use this version: 1.x does not work well)
+#		samtools01==0.1.19:/usr/wip/biology/samtools0119 \
 # jellyfish 2.1.4 (2.2.0 seems OK)
 # parafly 0.1 (determined from config.h)
 # fastool 7c3e034f05 Nov 18 2013 commit on Github
@@ -49,14 +50,14 @@ BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bowtie:/usr/wip/biology/bowtie \
-		samtools01==0.1.19:/usr/wip/biology/samtools0119 \
+		samtools>=1.3:/usr/wip/biology/samtools \
 		jellyfish>=2.1.4:/usr/wip/biology/jellyfish2 \
 		ParaFly:/usr/wip/sysutils/parafly \
 		fastool:${PORTSDIR}/biology/fastool \
 		TransDecoder.Predict:/usr/wip/biology/p5-transdecoder \
 		slclust:/usr/wip/biology/slclust \
 		Trimmomatic>=0.32:/usr/wip/biology/trimmomatic \
-		rsem>=1.2.22:/usr/wip/biology/rsem
+		rsem>=1.2.27:/usr/wip/biology/rsem-devel
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libhts.so:${PORTSDIR}/biology/htslib
 
