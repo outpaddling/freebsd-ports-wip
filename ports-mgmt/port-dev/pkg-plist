@@ -4,6 +4,7 @@ sbin/port-gen-install-target
 sbin/port-grep
 sbin/port-mkpatch
 sbin/port-patch-vi
+sbin/port-poudriere-setup
 sbin/port-reinstall
 sbin/port-remake
 sbin/port-shar
