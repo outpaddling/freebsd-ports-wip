@@ -45,6 +45,8 @@ LDFLAGS+=	-fopenmp -Wl,-rpath=${_GCC_RUNTIME}
 # htslib 1.2.1
 # slclust unknown (last version on SF is 02022010)
 # Trimmomatic 0.32
+# https://github.com/trinityrnaseq/trinityrnaseq/wiki/Installing%20Trinity
+# as of 2016-02-09 specifically states that bowtie-1 should be used.
 
 BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bash:${PORTSDIR}/shells/bash
