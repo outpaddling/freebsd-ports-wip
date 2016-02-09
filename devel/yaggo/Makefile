@@ -6,9 +6,11 @@ PORTVERSION=	1.5.9
 CATEGORIES=	devel
 
 MAINTAINER=	bacon4000@gmail.com
-COMMENT=
+COMMENT=	Generate command line parser using getopt_long
 
-E_RUBY=		yes
+LICENSE=	GPLv3
+
+USE_RUBY=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gmarcais

@@ -1,5 +1,5 @@
---- Makefile.orig	2015-10-14 11:25:43.000000000 -0500
-+++ Makefile	2016-02-08 19:01:08.928919441 -0600
+--- Makefile.orig	2015-10-14 16:25:43 UTC
++++ Makefile
 @@ -1,12 +1,14 @@
 -prefix ?= /usr/local
 +PREFIX ?= /usr/local
