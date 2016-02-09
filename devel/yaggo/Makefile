@@ -16,6 +16,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gmarcais
 GH_TAGNAME=	v${PORTVERSION}
 
-PLIST_FILES=	bin/yaggo man/man1/yaggo.1.gz
+PLIST_FILES=	bin/yaggo man/man1/yaggo.1.gz share/doc/yaggo/README.md
 
 .include <bsd.port.mk>
