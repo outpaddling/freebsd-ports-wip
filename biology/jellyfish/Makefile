@@ -16,7 +16,7 @@ LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 
-USES=		compiler:c++11-lib compiler:openmp gmake libtool
+USES=		compiler:c++11-lib compiler:openmp libtool
 USE_LDCONFIG=	yes
 
 post-stage:

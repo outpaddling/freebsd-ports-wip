@@ -8,22 +8,22 @@ CATEGORIES=	biology
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Fast, memory-efficient counting of k-mers in DNA
 
+# Contains inline assembly code
+ONLY_FOR_ARCHS=	amd64
+
 LICENSE=	GPLv3
+
+BUILD_DEPENDS+=	yaggo:/usr/wip/devel/yaggo
 
 GNU_CONFIGURE=	yes
 
-USES=		autoreconf compiler:openmp libtool
+USES=		autoreconf compiler:c++11-lib compiler:openmp libtool pkgconfig
+USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gmarcais
 GH_PROJECT=	Jellyfish
 GH_TAGNAME=	v${PORTVERSION}
-
-MAKE_JOBS_UNSAFE=	yes
-
-USE_LDCONFIG=	yes
-
-CXXFLAGS+=	-std=c++0x
 
 post-stage:
 	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/* \

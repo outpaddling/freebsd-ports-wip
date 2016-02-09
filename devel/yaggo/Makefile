@@ -1,0 +1,19 @@
+# Created by: Jason Bacon <bacon4000@gmail.com>
+# $FreeBSD$
+
+PORTNAME=	yaggo
+PORTVERSION=	1.5.9
+CATEGORIES=	devel
+
+MAINTAINER=	bacon4000@gmail.com
+COMMENT=
+
+E_RUBY=		yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	gmarcais
+GH_TAGNAME=	v${PORTVERSION}
+
+PLIST_FILES=	bin/yaggo man/man1/yaggo.1.gz
+
+.include <bsd.port.mk>
