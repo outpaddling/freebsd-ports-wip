@@ -1,5 +1,6 @@
 #!/bin/sh -e
 
+printf "Cleaning...\n"
 cd /usr/wip
 for dir in */*; do
     if [ -d $dir/work ]; then
