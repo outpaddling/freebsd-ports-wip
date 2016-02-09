@@ -1,5 +1,5 @@
 --- Makefile.orig	2016-02-01 04:06:28.000000000 -0600
-+++ Makefile	2016-02-08 17:35:52.000000000 -0600
++++ Makefile	2016-02-08 20:40:00.253040000 -0600
 @@ -1,12 +1,16 @@
 -CC = g++
 +CXX ?= g++
@@ -16,7 +16,7 @@
 +INSTALL ?=     install
 +STRIP ?=       strip
 +
-+SAMTOOLS = $(LOCALBASE)/include/bam
++SAMTOOLS = $(LOCALBASE)/include/samtools
 +SAMFLAGS = -I$(SAMTOOLS) -I$(LOCALBASE)/include
 +SAMLIBS = $(LOCALBASE)/lib/libbam.a $(LOCALBASE)/lib/libhts.a $(LOCALBASE)/lib/libcurl.a
  PROGRAMS = rsem-extract-reference-transcripts rsem-synthesis-reference-transcripts rsem-preref rsem-parse-alignments rsem-build-read-index rsem-run-em rsem-tbam2gbam rsem-run-gibbs rsem-calculate-credibility-intervals rsem-simulate-reads rsem-bam2wig rsem-get-unique rsem-bam2readdepth rsem-sam-validator rsem-scan-for-paired-end-reads

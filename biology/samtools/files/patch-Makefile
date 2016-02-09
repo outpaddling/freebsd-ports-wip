@@ -1,5 +1,5 @@
 --- Makefile.orig	2015-12-15 15:26:20.000000000 -0600
-+++ Makefile	2016-02-08 20:27:37.662773000 -0600
++++ Makefile	2016-02-08 20:37:54.614601000 -0600
 @@ -39,18 +39,20 @@ AOBJS=      bam_index.o bam_plcmd.o sam_
              bam_tview.o bam_tview_curses.o bam_tview_html.o bam_lpileup.o \
              bam_quickcheck.o bam_addrprg.o
@@ -9,7 +9,7 @@
  exec_prefix = $(prefix)
  bindir      = $(exec_prefix)/bin
 +libdir      = $(exec_prefix)/lib
-+includedir  = $(exec_prefix)/include/sam
++includedir  = $(exec_prefix)/include/samtools
  datarootdir = $(prefix)/share
 -mandir      = $(datarootdir)/man
 +mandir      = $(prefix)/man
