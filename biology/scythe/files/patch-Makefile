@@ -1,0 +1,10 @@
+--- Makefile.orig	2016-02-10 18:00:40 UTC
++++ Makefile
+@@ -1,6 +1,6 @@
+ PROGRAM_NAME = scythe
+ VERSION = 0.991
+-CC = gcc
++CC ?= gcc
+ DEBUG ?= 0
+ CFLAGS = -Wall -pedantic -DVERSION=$(VERSION) -std=gnu99
+ ifeq ($(DEBUG), 1)
