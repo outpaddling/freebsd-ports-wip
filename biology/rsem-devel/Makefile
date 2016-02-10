@@ -1,6 +1,8 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
+# FIXME: Should install much more
+# https://packages.debian.org/sid/amd64/rsem/filelist
 PORTNAME=	rsem
 PORTVERSION=	1.2.27
 CATEGORIES=	biology
