@@ -18,6 +18,8 @@ GH_TAGNAME=	20d3cff7d7f483bd779aff75f861e93708c0a2b5
 
 USES=		gmake
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
+
 .include <bsd.port.pre.mk>
 
 # Hack for X120e
