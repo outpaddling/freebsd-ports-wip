@@ -11,7 +11,7 @@ COMMENT=	Find total energy, charge density and electronic structure of systems
 
 LICENSE=	GPLv3
 
-USES=		fortran pkgconfig
+USES=		fortran gmake pkgconfig
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
