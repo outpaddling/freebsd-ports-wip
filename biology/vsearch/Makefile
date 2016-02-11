@@ -12,6 +12,9 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo
 
+# Uses inline assembly code
+ONLY_FOR_ARCHS=	amd64
+
 USES=		gmake
 GNU_CONFIGURE=	yes
 
