@@ -13,14 +13,19 @@ LICENSE=	MIT
 RUN_DEPENDS=	vsearch:/usr/wip/biology/vsearch \
 		fastaunique:/usr/wip/biology/fastaunique
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	gast_ill
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MBL-Woods-Hole
 GH_TAGNAME=	73c814a243955dc64ee248d9dacd4f71ac8640dc
 
 NO_BUILD=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e "s|use Taxonomy;|use lib(\"${SITE_PERL}/${PORTNAME}\"); &|g" \
+		${WRKSRC}/gast_ill
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gast_ill ${STAGEDIR}${PREFIX}/bin
