@@ -11,7 +11,7 @@ COMMENT=	Gast Illumina processing
 LICENSE=	MIT
 
 RUN_DEPENDS=	vsearch:/usr/wip/biology/vsearch \
-		fastaunique:/usr/wip/biology/fastunique
+		fastaunique:/usr/wip/biology/fastaunique
 
 USES=		perl5
 USE_PERL5=	run

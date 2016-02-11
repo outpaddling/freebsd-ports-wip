@@ -13,6 +13,8 @@ COMMENT=	Tools for Illumina paired-end data (for CASAVA 1.7+ pipeline)
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:${PORTSDIR}/devel/py-pip
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib \
+		${PYTHON_PKGNAMEPREFIX}levenshtein>0:${PORTSDIR}/devel/py-levenshtein
 
 USES=		python
 USE_PYTHON=	distutils
