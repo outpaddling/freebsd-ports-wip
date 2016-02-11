@@ -14,7 +14,7 @@ RUN_DEPENDS=	webbrowser:${PORTSDIR}/www/webbrowser
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-# May also work on other 64-bit platforms
+# May also work on other 64-bit platforms per Makefile check
 ONLY_FOR_ARCHS=	amd64
 # FIXME: bowtie-align intermittently dumps core when compiled with clang
 # GCC 4.2 does not provide good performance
