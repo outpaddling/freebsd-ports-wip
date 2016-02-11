@@ -12,9 +12,6 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo
 
-# Uses inline assembly code
-ONLY_FOR_ARCHS=	amd64
-
 USES=		gmake
 GNU_CONFIGURE=	yes
 
@@ -22,7 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	torognes
 GH_TAGNAME=	v${PORTVERSION}
 
-CXXFLAGS+=	-I${LOCALBASE}/include
+# sse2 required to compile on 32-bit archs
+CXXFLAGS+=	-I${LOCALBASE}/include -msse2
 
 PLIST_FILES=	bin/vsearch man/man1/vsearch.1.gz
 
