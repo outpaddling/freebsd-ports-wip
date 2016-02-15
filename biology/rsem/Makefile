@@ -24,4 +24,7 @@ GH_TAGNAME=	v${PORTVERSION}
 
 WRKSRC=		${WRKDIR}/RSEM-${PORTVERSION}
 
+# FIXME: Hack for emmintrin.h not found on X120e
+CXXFLAGS+=	-I/usr/include/clang/3.3/
+
 .include <bsd.port.mk>
