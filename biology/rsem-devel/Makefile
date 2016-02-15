@@ -12,8 +12,9 @@ COMMENT=	RNA-Seq by Expectation-Maximization
 
 LICENSE=	GPLv3
 
-# For samtools, which should be unbundled in the future, when RSEM
-# depends only on htslib
+# For bundled samtools, which should be unbundled in the future, when RSEM
+# depends only on an unmodified htslib.  Samtools and rsem developers
+# are already communicating.
 USES=		gmake
 
 USE_GITHUB=	yes
@@ -22,9 +23,5 @@ GH_PROJECT=	RSEM
 GH_TAGNAME=	v${PORTVERSION}
 
 WRKSRC=		${WRKDIR}/RSEM-${PORTVERSION}
-
-CXXFLAGS+=	-msse2
-
-BUILD_DEPENDS+=	htslib>=1.3:${PORTSDIR}/biology/htslib
 
 .include <bsd.port.mk>

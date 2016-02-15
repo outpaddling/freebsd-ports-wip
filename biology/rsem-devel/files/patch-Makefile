@@ -1,6 +1,6 @@
---- Makefile.orig	2016-02-15 14:22:35.000000000 -0600
-+++ Makefile	2016-02-15 14:26:22.000000000 -0600
-@@ -1,7 +1,8 @@
+--- Makefile.orig	2016-02-02 19:03:34.000000000 -0600
++++ Makefile	2016-02-15 14:42:36.887304076 -0600
+@@ -1,7 +1,12 @@
 -CC = g++
 +CXX ?= g++
  CFLAGS = -Wall -c -I.
@@ -9,10 +9,14 @@
 +CXXFLAGS ?= -Wall -O3
 +CXXFLAGS += -I.
 +COFLAGS = ${CXXFLAGS} -ffast-math -c
++INSTALL ?=	install
++STRIP ?=	strip
++PREFIX ?=	bin
++DESTDIR ?=	dest
  
  SAMTOOLS = samtools-1.3
  HTSLIB = htslib-1.3
-@@ -24,10 +25,10 @@
+@@ -24,10 +29,10 @@ Transcript.h : utils.h
  Transcripts.h : utils.h my_assert.h Transcript.h
  
  rsem-extract-reference-transcripts : utils.h my_assert.h GTFItem.h Transcript.h Transcripts.h extractRef.cpp
@@ -25,7 +29,7 @@
  
  BowtieRefSeqPolicy.h : RefSeqPolicy.h
  
-@@ -37,10 +38,10 @@
+@@ -37,10 +42,10 @@ Refs.h : utils.h RefSeq.h RefSeqPolicy.h
  
  
  rsem-preref : preRef.o
@@ -38,7 +42,7 @@
  
  
  SingleRead.h : Read.h
-@@ -62,14 +63,14 @@
+@@ -62,14 +67,14 @@ SamParser.h : $(SAMTOOLS)/sam.h $(SAMTOO
  
  
  rsem-parse-alignments : parseIt.o $(SAMLIBS)
@@ -56,7 +60,7 @@
  
  
  simul.h : boost/random.hpp
-@@ -95,58 +96,58 @@
+@@ -95,62 +100,68 @@ sampling.h : boost/random.hpp
  WriteResults.h : utils.h my_assert.h GroupInfo.h Transcript.h Transcripts.h RefSeq.h Refs.h Model.h SingleModel.h SingleQModel.h PairedEndModel.h PairedEndQModel.h
  
  rsem-run-em : EM.o $(SAMLIBS)
@@ -130,3 +134,13 @@
  
  ebseq :
  	cd EBSeq ; ${MAKE} all
+ 
++install : ${PROGRAMS}
++	for p in ${PROGRAMS}; do \
++		${INSTALL} -c $${p} ${DESTDIR}${PREFIX}/bin; \
++		${STRIP} ${DESTDIR}${PREFIX}/bin/$${p}; \
++	done
++
+ clean :
+ 	rm -f *.o *~ $(PROGRAMS)
+ 	cd $(SAMTOOLS) ; ${MAKE} clean 
