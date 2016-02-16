@@ -14,7 +14,7 @@ LICENSE=	MIT
 # bedtools version: https://github.com/jpuritz/dDocent/issues/15
 RUN_DEPENDS=	mawk>=0:${PORTSDIR}/lang/mawk \
 		bwa>=0:/usr/wip/biology/bwa \
-		samtools01==0.1.19:/usr/wip/biology/samtools0119 \
+		samtools>=1.3:/usr/wip/biology/samtools \
 		cd-hit>=0:${PORTSDIR}/biology/cd-hit \
 		gnuplot>=0:${PORTSDIR}/math/gnuplot \
 		parallel>=0:${PORTSDIR}/sysutils/parallel \
@@ -39,7 +39,7 @@ NO_BUILD=	yes
 # These follow patch-dDocent, so don't apply them within the source tree,
 # or they'll get picked up by patch generators and hard-code PREFIX
 post-stage:
-	${REINPLACE_CMD} \
+	${REINPLACE_CMD} -i '' \
 		-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g' \
 		${STAGEDIR}${PREFIX}/bin/dDocent
@@ -48,6 +48,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/dDocent \
+		${FILESDIR}/ddocent-test*.sh \
 		${WRKSRC}/scripts/* ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
