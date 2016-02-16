@@ -11,10 +11,12 @@ COMMENT=	RNA-Seq by Expectation-Maximization
 
 LICENSE=	GPLv3
 
+RUN_DEPENDS=	Rscript:${PORTSDIR}/math/R
+
 # For bundled samtools, which should be unbundled in the future, when RSEM
 # depends only on an unmodified htslib.  Samtools and rsem developers
 # are already communicating.
-USES=		gmake perl5 shebangfix
+USES=		gmake perl5 python shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	convert-sam-for-rsem \
 		extract-transcript-to-gene-map-from-trinity \
