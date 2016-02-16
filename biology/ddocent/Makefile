@@ -48,7 +48,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/dDocent \
-		${FILESDIR}/ddocent-test*.sh \
+		${FILESDIR}/ddocent-test \
 		${WRKSRC}/scripts/* ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

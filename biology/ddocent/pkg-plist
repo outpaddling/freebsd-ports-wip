@@ -3,8 +3,7 @@ bin/ReferenceOpt.sh
 bin/Rename_SequenceFiles.sh
 bin/dDocent
 bin/dDocent_filters
-bin/ddocent-test-cleanup.sh
-bin/ddocent-test.sh
+bin/ddocent-test
 bin/filter_hwe_by_pop.pl
 bin/filter_missing_ind.sh
 bin/pop_missing_filter.sh

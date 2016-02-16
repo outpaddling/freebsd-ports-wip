@@ -58,6 +58,9 @@ else
     printf "Error: Trimmomatic is not installed in a known location.\n" >> /dev/stderr
 fi
 
+mkdir dDocent-test
+cd dDocent-test
+
 # remake_reference.sh and some other scripts use GNU extensions in awk
 # commands.  Trick systems into using gawk to get around this without
 # having to patch every script.
