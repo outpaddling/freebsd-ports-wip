@@ -47,7 +47,7 @@ MAKE_ENV+=	SITE_PERL=${SITE_PERL}
 
 post-patch:
 	${REINPLACE_CMD} -e \
-		's|use lib $$FindBin::RealBin|&/../${SITE_PERL_REL}/rsem|' \
+		's|use lib $$FindBin::RealBin|use lib "${SITE_PERL}/rsem"|' \
 		${WRKSRC}/rsem*
 
 .include <bsd.port.mk>
