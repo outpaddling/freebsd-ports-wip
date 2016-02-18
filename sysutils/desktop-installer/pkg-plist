@@ -19,12 +19,12 @@ sbin/desktop-installer
 %%DATADIR%%/Patches/linux-f10-flashplugin11/pkg-plist
 %%DATADIR%%/PolicyKit.conf
 %%DATADIR%%/Scripts/battery_shutdown.sh
-%%DATADIR%%/XFCE4/GiveConsole
-%%DATADIR%%/XFCE4/Xsetup_0
-%%DATADIR%%/XFCE4/Xstartup
-%%DATADIR%%/XFCE4/beastie.xpm
-%%DATADIR%%/XFCE4/bsd_background.jpg
-%%DATADIR%%/XFCE4/xdmshutdown
+%%DATADIR%%/XDM/GiveConsole
+%%DATADIR%%/XDM/Xsetup_0
+%%DATADIR%%/XDM/Xstartup
+%%DATADIR%%/XDM/beastie.xpm
+%%DATADIR%%/XDM/bsd_background.jpg
+%%DATADIR%%/XDM/xdmshutdown
 %%DATADIR%%/XFCE4/xinitrc
 %%DATADIR%%/epdfview-options
 %%DATADIR%%/fstab
@@ -44,4 +44,3 @@ sbin/desktop-installer
 %%DATADIR%%/splash.bmp
 %%DATADIR%%/todo
 %%DATADIR%%/vbox
-%%DATADIR%%/xfce4-print-options
