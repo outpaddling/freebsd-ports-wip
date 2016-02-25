@@ -10,7 +10,10 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	dsiercks@uwm.edu
 COMMENT=	Motif-based sequence analysis tools
 
-#USE_GCC=        yes
+# FIXME: Uses multiply defined inline functions, which is not legal
+# in C99 rules used by clang
+# https://wiki.gentoo.org/wiki/Clang
+USE_GCC=        yes
 GNU_CONFIGURE=  yes
 USES=		autoreconf
 #CONFIGURE_ENV=	HAVE_SYS_WAIT_H=1
