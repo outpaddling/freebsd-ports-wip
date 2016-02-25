@@ -24,6 +24,8 @@ SHEBANG_FILES=	src/tophat2.in
 
 CFLAGS+=	-Wno-unused
 
+CONFIGURE_ARGS+=	--with-bam=${LOCALBASE}/samtools0119
+
 MAKE_JOBS_UNSAFE=yes
 
 .include <bsd.port.mk>

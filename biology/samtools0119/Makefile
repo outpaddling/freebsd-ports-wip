@@ -18,6 +18,8 @@ SHEBANG_FILES=	misc/*.pl
 
 ALL_TARGET=	all-recur razip
 
+SAMPREFIX=	${PREFIX}/samtools0119
+
 .include <bsd.port.pre.mk>
 
 # Shebangfix doesn't recognize /software/bin/python
@@ -30,19 +32,23 @@ post-patch:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/samtools ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/razip ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bcftools/bcftools ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} \
+		${STAGEDIR}${SAMPREFIX}/bin \
+		${STAGEDIR}${SAMPREFIX}/lib \
+		${STAGEDIR}${SAMPREFIX}/man/man1 \
+		${STAGEDIR}${SAMPREFIX}/include/bam
+	${INSTALL_PROGRAM} ${WRKSRC}/samtools ${STAGEDIR}${SAMPREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/razip ${STAGEDIR}${SAMPREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bcftools/bcftools ${STAGEDIR}${SAMPREFIX}/bin
 .for f in ace2sam bamcheck maq2sam-long maq2sam-short md5fa md5sum-lite wgsim
-	${INSTALL_PROGRAM} ${WRKSRC}/misc/${f} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/misc/${f} ${STAGEDIR}${SAMPREFIX}/bin
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/misc/*.pl ${WRKSRC}/misc/plot-bamcheck \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/misc/*.py ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/misc/*.lua ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/libbam.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_MAN} ${WRKSRC}/samtools.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/bam
-	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/bam
+		${STAGEDIR}${SAMPREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/misc/*.py ${STAGEDIR}${SAMPREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/misc/*.lua ${STAGEDIR}${SAMPREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/libbam.a ${STAGEDIR}${SAMPREFIX}/lib
+	${INSTALL_MAN} ${WRKSRC}/samtools.1 ${STAGEDIR}${SAMPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${SAMPREFIX}/include/bam
 
 .include <bsd.port.post.mk>
