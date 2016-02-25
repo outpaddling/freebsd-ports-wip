@@ -20,20 +20,10 @@ USES=		gmake
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
 
-.include <bsd.port.pre.mk>
-
-# Hack for X120e
-CFLAGS+=	-I/usr/include/clang/3.3
-
-# Hack for emmintrin.h error?
-.if ${ARCH} == i386
-CFLAGS+=	-msse2
-.endif
-
 PLIST_FILES=	bin/scythe
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scythe \
 		${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
