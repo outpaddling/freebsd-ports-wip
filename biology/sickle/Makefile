@@ -20,12 +20,10 @@ GH_TAGNAME=	v${PORTVERSION}
 
 USES=		gmake
 
-.include <bsd.port.pre.mk>
-
 PLIST_FILES=	bin/sickle
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sickle \
 		${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
