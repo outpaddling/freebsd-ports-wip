@@ -88,7 +88,12 @@ Generate unified diff for updates, shar file for new ports
 Carefully inspect diff or shar
 
 Follow porter's handbook to submit new port or update.
+    https://www.freebsd.org/doc/en/books/porters-handbook/
     https://www.freebsd.org/support/bugreports.html
+
+    [NEW PORT] category/port: COMMENT field
+    [MAINTAINER UPDATE] category/port: ?
+    [CHANGE REQUEST] category/port: ?
 
 If maintaining source
 
