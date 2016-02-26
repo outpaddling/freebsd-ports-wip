@@ -15,6 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	najoshi
 GH_PROJECT=	sickle
 
+# Requires libz
 USES=		gmake
 
 PLIST_FILES=	bin/sickle
