@@ -3,6 +3,7 @@
 
 PORTNAME=	bowtie
 PORTVERSION=	1.1.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	biology
 
 MAINTAINER=	bacon4000@gmail.com
@@ -11,8 +12,6 @@ COMMENT=	Ultrafast, memory-efficient short read aligner
 LICENSE=	ART10
 
 RUN_DEPENDS=	webbrowser:${PORTSDIR}/www/webbrowser
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 # May also work on other 64-bit platforms per Makefile check
 ONLY_FOR_ARCHS=	amd64
@@ -25,21 +24,12 @@ SHEBANG_FILES=	scripts/*.pl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	BenLangmead
-GH_TAGNAME=	v${PORTVERSION}
 
-WITH_DEBUG=	yes	# Disable stripping to debug core dumps
-
-.include <bsd.port.pre.mk>
-
-do-install:
+post-install:
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/bowtie \
 		${WRKSRC}/bowtie-build \
 		${WRKSRC}/bowtie-inspect \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} \
-		${WRKSRC}/bowtie*-s \
-		${WRKSRC}/bowtie*-l \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/scripts/*.sh \
@@ -54,4 +44,4 @@ do-install:
 		\* \
 		${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

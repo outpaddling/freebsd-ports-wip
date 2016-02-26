@@ -2,7 +2,7 @@
 # $FreeBSD$
 # FIXME: Is there a way to use USE_GITHUB with gist repos?
 
-PORTNAME=	fastunique
+PORTNAME=	fastaunique
 PORTVERSION=	2016.02.08
 CATEGORIES=	biology
 MASTER_SITES=	https://gist.github.com/meren/
