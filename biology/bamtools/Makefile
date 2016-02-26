@@ -11,8 +11,6 @@ COMMENT=	API and toolkit for handling BAM files
 
 LICENSE=	MIT
 
-# WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 USES=		cmake:outsource
 USE_LDCONFIG=	yes
 
