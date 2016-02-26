@@ -11,8 +11,6 @@ COMMENT=	Windowed adaptive trimming tool for FASTQ files using quality
 
 LICENSE=	GPLv2
 
-# WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	najoshi
 GH_PROJECT=	sickle
