@@ -106,6 +106,7 @@ post-patch:
 		${WRKSRC}/to3d.c \
 		${WRKSRC}/mri_dicom_stuff.h
 
+# FIXME: Merge this into do-install or the Makefile?
 post-build:
 	${MKDIR} ${PRESTAGE}/bin \
 		${PRESTAGE}/scripts \
