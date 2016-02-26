@@ -10,8 +10,6 @@ COMMENT=	3'-end adapter contaminant trimmer
 
 LICENSE=	GPLv2
 
-# WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	vsbuffalo
 GH_TAGNAME=	20d3cff7d7f483bd779aff75f861e93708c0a2b5
