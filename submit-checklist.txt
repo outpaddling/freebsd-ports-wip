@@ -14,6 +14,7 @@ Makefile:
     # $FreeBSD$
     
     USE_GITHUB, SF, DISTVERSIONPREFIX, etc. if possible
+	DISTVERSIONPREFIX=v preferred over GH_TAGNAME=v${PORTVERSION}
     
     Check use of each LOCALBASE and PREFIX
     Convert /usr/wip and ../.. to ${PORTSDIR}
