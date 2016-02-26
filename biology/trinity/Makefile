@@ -5,6 +5,7 @@
 
 PORTNAME=	trinity
 PORTVERSION=	2.1.1
+DISTVERSIONPREFIX=      v
 CATEGORIES=	biology java
 
 MAINTAINER=	bacon4000@gmail.com
@@ -25,7 +26,6 @@ JAVA_VERSION=	1.7 1.6
 USE_GITHUB=	yes
 GH_ACCOUNT=	trinityrnaseq
 GH_PROJECT=	trinityrnaseq
-GH_TAGNAME=	v${PORTVERSION}
 
 ONLY_FOR_ARCHS=	amd64
 
@@ -66,7 +66,7 @@ LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 LIBEXEC_DIR=	${PREFIX}/libexec/trinity
 PLUGINS_DIR=	${LIBEXEC_DIR}/trinity-plugins
 
-WRKSRC=		${WRKDIR}/${PORTNAME}rnaseq-${PORTVERSION}
+# WRKSRC=		${WRKDIR}/${PORTNAME}rnaseq-${PORTVERSION}
 
 post-patch:
 	# General changes to respect env

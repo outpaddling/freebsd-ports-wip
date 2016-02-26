@@ -3,6 +3,7 @@
 
 PORTNAME=	sickle
 PORTVERSION=	1.33
+DISTVERSIONPREFIX=      v
 CATEGORIES=	biology
 
 MAINTAINER=	dsiercks@uwm.edu
@@ -10,13 +11,11 @@ COMMENT=	Windowed adaptive trimming tool for FASTQ files using quality
 
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+# WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	najoshi
 GH_PROJECT=	sickle
-GH_TAGNAME=	v${PORTVERSION}
-#GH_TAGNAME=	20d3cff7d7f483bd779aff75f861e93708c0a2b5
 
 USES=		gmake
 

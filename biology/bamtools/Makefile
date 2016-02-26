@@ -3,6 +3,7 @@
 
 PORTNAME=	bamtools
 PORTVERSION=	2.4.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	biology
 
 MAINTAINER=	dsiercks@uwm.edu
@@ -10,14 +11,13 @@ COMMENT=	API and toolkit for handling BAM files
 
 LICENSE=	MIT
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+# WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		cmake:outsource
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pezmaster31
-GH_TAGNAME=	v${PORTVERSION}
 
 CMAKE_ARGS+=	-DLIB_DIR=${PREFIX}/lib
 

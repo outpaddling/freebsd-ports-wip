@@ -4,6 +4,7 @@
 # FIXME: Find and install man pages
 PORTNAME=	rsem
 PORTVERSION=	1.2.28
+DISTVERSIONPREFIX=      v
 CATEGORIES=	biology
 
 MAINTAINER=	bacon4000@gmail.com
@@ -36,9 +37,8 @@ SHEBANG_FILES=	convert-sam-for-rsem \
 USE_GITHUB=	yes
 GH_ACCOUNT=	deweylab
 GH_PROJECT=	RSEM
-GH_TAGNAME=	v${PORTVERSION}
 
-WRKSRC=		${WRKDIR}/RSEM-${PORTVERSION}
+# WRKSRC=		${WRKDIR}/RSEM-${PORTVERSION}
 
 # FIXME: Hack for emmintrin.h not found on X120e
 CXXFLAGS+=	-I/usr/include/clang/3.3/

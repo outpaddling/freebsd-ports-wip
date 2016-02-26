@@ -3,6 +3,7 @@
 
 PORTNAME=	vsearch
 PORTVERSION=	1.9.10
+DISTVERSIONPREFIX=      v
 CATEGORIES=	biology
 
 MAINTAINER=	jwbacon@tds.net
@@ -17,7 +18,6 @@ GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	torognes
-GH_TAGNAME=	v${PORTVERSION}
 
 # sse2 required to compile on 32-bit archs
 CXXFLAGS+=	-I${LOCALBASE}/include -msse2

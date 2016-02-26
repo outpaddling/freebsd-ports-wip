@@ -3,6 +3,7 @@
 
 PORTNAME=	spikedetekt2
 PORTVERSION=	0.3.0
+DISTVERSIONPREFIX=      v
 CATEGORIES=	python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,6 +20,5 @@ USE_PYTHON=	distutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	klusta-team
-GH_TAGNAME=	v${PORTVERSION}
 
 .include <bsd.port.mk>

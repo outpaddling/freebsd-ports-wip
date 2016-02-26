@@ -9,7 +9,7 @@ MASTER_SITES=	http://ccb.jhu.edu/software/tophat/downloads/
 #USE_GITHUB=     yes
 #GH_ACCOUNT=     infphilo
 #GH_PROJECT=     tophat
-#GH_TAGNAME=     v${PORTVERSION}
+#DISTVERSIONPREFIX=      v
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Spliced read mapper for RNA-Seq

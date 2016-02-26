@@ -1,0 +1,8 @@
+#!/bin/csh
+
+foreach makefile ( `fgrep -l 'DISTVERSIONPREFIX' */*/Makefile` )
+   cd `dirname $makefile`
+   make distclean makesum
+   cd ../..
+end
+

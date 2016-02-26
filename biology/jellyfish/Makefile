@@ -3,6 +3,7 @@
 
 PORTNAME=	jellyfish
 PORTVERSION=	2.2.4
+DISTVERSIONPREFIX=      v
 CATEGORIES=	biology
 
 MAINTAINER=	bacon4000@gmail.com
@@ -23,7 +24,6 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	gmarcais
 GH_PROJECT=	Jellyfish
-GH_TAGNAME=	v${PORTVERSION}
 
 post-stage:
 	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/* \

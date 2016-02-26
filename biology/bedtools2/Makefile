@@ -3,6 +3,7 @@
 
 PORTNAME=	bedtools2
 PORTVERSION=	2.23.0
+DISTVERSIONPREFIX=      v
 CATEGORIES=	biology
 
 MAINTAINER=	dsiercks@uwm.edu
@@ -10,11 +11,10 @@ COMMENT=	Swiss army knife for genome arithmetic
 
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+# WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arq5x
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=	gmake
 

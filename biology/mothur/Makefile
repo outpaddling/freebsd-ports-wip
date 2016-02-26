@@ -3,6 +3,7 @@
 
 PORTNAME=	mothur
 PORTVERSION=	1.36.1
+DISTVERSIONPREFIX=      v
 CATEGORIES=	biology
 
 MAINTAINER=	bacon4000@gmail.com
@@ -18,7 +19,6 @@ SHEBANGFILES=	source/uchime_src/mk
 LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
 
 USE_GITHUB=	yes
-GH_TAGNAME=	v${PORTVERSION}
 
 # WRKSRC=		${WRKDIR}/${PORTNAME}/source
 MAKEFILE=	makefile
