@@ -26,6 +26,6 @@ USES=		compiler:c++11-lang
 
 post-patch:
 	${REINPLACE_CMD} -e 's|lib/bamtools|lib|g' \
-		work/bamtools-2.4.0/src/api/CMakeLists.txt
+		${WRKSRC}/src/api/CMakeLists.txt
 
 .include <bsd.port.post.mk>
