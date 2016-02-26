@@ -11,9 +11,7 @@ COMMENT=	Tools for working with VCF genomics files
 
 LICENSE=	LGPL3
 
-USES=		autoreconf gmake perl5
-
-BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkgconf
+USES=		autoreconf gmake perl5 pkgconfig
 
 GNU_CONFIGURE=	yes
 # No zlib.pc on 9.x

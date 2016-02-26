@@ -35,6 +35,7 @@ Makefile:
     Check versions of all depends
 	Be as generic as possible
 	Use USES or USE_* variables wherever possible
+	    See /usr/ports/Mk/Uses
 	New LIB_DEPENDS format: libname.so
     
     OPTIONS
