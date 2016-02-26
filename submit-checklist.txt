@@ -28,6 +28,9 @@ Makefile:
     Check comment
 
     Add LICENSE (after COMMENT)
+
+    Add NO_ARCH=yes before USES if the port is architecture free
+	e.g. Only installs scripts
     
     Check versions of all depends
 	Be as generic as possible

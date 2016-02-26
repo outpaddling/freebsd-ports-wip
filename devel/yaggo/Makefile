@@ -10,6 +10,7 @@ COMMENT=	Generate command line parser using getopt_long
 
 LICENSE=	GPLv3
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 
 USE_GITHUB=	yes
