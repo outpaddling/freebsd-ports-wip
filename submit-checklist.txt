@@ -15,6 +15,7 @@ Makefile:
     
     USE_GITHUB, SF, DISTVERSIONPREFIX, etc. if possible
 	DISTVERSIONPREFIX=v preferred over GH_TAGNAME=v${PORTVERSION}
+	No need to manually set WRKSRC if using USE_GITHUB
     
     Check use of each LOCALBASE and PREFIX
     Convert /usr/wip and ../.. to ${PORTSDIR}
@@ -33,6 +34,10 @@ Makefile:
     Add NO_ARCH=yes before USES if the port is architecture free
 	e.g. Only installs scripts
     
+    Remove WITH_DEBUG if present
+
+    Replace pre and post with <bsd.port.mk> if possible
+
     Check versions of all depends
 	Be as generic as possible
 	Use USES or USE_* variables wherever possible
