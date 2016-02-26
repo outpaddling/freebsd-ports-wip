@@ -133,7 +133,6 @@ post-build:
 		${PRESTAGE}/scripts
 	${MV}	${PRESTAGE}/scripts/meica.libs ${PRESTAGE}
 
-#${CP} -R ${PRESTAGE}/share/* ${STAGEDIR}${DATADIR}
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${PREFIX}/lib/afni \
