@@ -69,7 +69,13 @@ Check pkg-descr
 
 Make sure there's a man page
 
-Remove any extraneous files from port framework
+make patch
+
+make makepatch
+
+Remove any extraneous files from port framework and add a post-extract ${RM}
+for any preexisting .orig files that cause makepatch to generate an extraneous
+patch
 
 Test on all available platforms.  Do the following IN ORDER:
 
