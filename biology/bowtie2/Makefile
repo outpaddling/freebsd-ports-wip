@@ -1,11 +1,10 @@
 # Created by: Jason Bacon
 # $FreeBSD$
 
-PORTNAME=	bowtie
-PORTVERSION=	2.2.4
-CATEGORIES=	biology
-MASTER_SITES=	http://github.com/BenLangmead/bowtie2/archive/
-DISTNAME=	v${PORTVERSION}
+PORTNAME=		bowtie2
+PORTVERSION=		2.2.7
+DISTVERSIONPREFIX=	v
+CATEGORIES=		biology
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Ultrafast, memory-efficient short read aligner
@@ -14,18 +13,12 @@ LICENSE=	ART10
 
 RUN_DEPENDS=	webbrowser:${PORTSDIR}/www/webbrowser
 
-WRKSRC=		${WRKDIR}/${PORTNAME}2-${PORTVERSION}
-
 USES=		gmake perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	scripts/*.pl
 
-.include <bsd.port.pre.mk>
-
-# Just for speed: Recent GCC has better optimizer
-.if ${OSVERSION} < 1000000
-USE_GCC=	yes
-.endif
+USE_GITHUB=	yes
+GH_ACCOUNT=	BenLangmead
 
 do-install:
 	${INSTALL_SCRIPT} \
@@ -50,4 +43,4 @@ do-install:
 		\* \
 		${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
