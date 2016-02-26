@@ -84,6 +84,7 @@ post-extract:
 	@${REINPLACE_CMD} \
 		-e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/afni.1
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
+	@${RM} ${WRKSRC}/3DEdge/src/Makefile.orig
 
 # shebangfix misses /bin/python on 10.1
 post-patch:
