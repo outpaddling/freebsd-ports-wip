@@ -20,25 +20,20 @@ SHEBANG_FILES=	scripts/*.pl
 USE_GITHUB=	yes
 GH_ACCOUNT=	BenLangmead
 
-do-install:
-	${INSTALL_SCRIPT} \
-		${WRKSRC}/bowtie \
-		${WRKSRC}/bowtie-build \
-		${WRKSRC}/bowtie-inspect \
-		${STAGEDIR}${PREFIX}/bin
+post-install:
 	${INSTALL_PROGRAM} \
-		${WRKSRC}/bowtie*-s \
-		${WRKSRC}/bowtie*-l \
+		${WRKSRC}/bowtie2*-s \
+		${WRKSRC}/bowtie2*-l \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/scripts/*.sh \
 		${WRKSRC}/scripts/*.pl \
-		${FILESDIR}/bowtie-manual \
+		${FILESDIR}/bowtie2-manual \
 		${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} \
-		'genomes indexes reads' \
-		${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/example && ${COPYTREE_SHARE} \
+		'index reads reference' \
+		${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \
 		\* \
 		${STAGEDIR}${DOCSDIR}
