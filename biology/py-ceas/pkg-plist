@@ -32,7 +32,3 @@ bin/sitepro
 %%PYTHON_SITELIBDIR%%/CEAS/tables.py
 %%PYTHON_SITELIBDIR%%/CEAS/tables.pyc
 %%PYTHON_SITELIBDIR%%/CEAS/tables.pyo
-%%PYTHON_SITELIBDIR%%/CEAS_Package-1.0.2-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/CEAS_Package-1.0.2-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/CEAS_Package-1.0.2-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/CEAS_Package-1.0.2-py%%PYTHON_VER%%.egg-info/top_level.txt
