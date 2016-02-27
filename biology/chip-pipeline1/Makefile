@@ -4,8 +4,6 @@
 PORTNAME=	chip-pipeline1
 PORTVERSION=	0.1
 CATEGORIES=	biology
-MASTER_SITES=
-DISTFILES=
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	RNA sequencing pipeline metaport for
@@ -25,9 +23,6 @@ RUN_DEPENDS=	scythe>=0:/usr/wip/biology/scythe \
 #		idr>=0:/usr/wip/biology/idr
 #		macs>=2:/usr/wip/biology/macs
 
-USES=		python
-
-NO_BUILD=	yes
-NO_INSTALL=	yes
+USES=		metaport python
 
 .include <bsd.port.mk>

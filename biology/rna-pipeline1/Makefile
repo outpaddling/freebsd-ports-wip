@@ -4,8 +4,6 @@
 PORTNAME=	rna-pipeline1
 PORTVERSION=	0.1
 CATEGORIES=	biology
-MASTER_SITES=
-DISTFILES=
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	RNA sequencing pipeline metaport for
@@ -19,7 +17,6 @@ RUN_DEPENDS=	scythe>=0:/usr/wip/biology/scythe \
 		tophat==2.0.12:/usr/wip/biology/tophat2012 \
 		cufflinks>=0:/usr/wip/biology/cufflinks
 
-NO_BUILD=	yes
-NO_INSTALL=	yes
+USES=		metaport
 
 .include <bsd.port.mk>
