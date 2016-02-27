@@ -39,8 +39,7 @@ BUILD_DEPENDS=	${OURTARGET}-as:${PORTSDIR}/devel/cross-binutils
 RUN_DEPENDS=	${OURTARGET}-as:${PORTSDIR}/devel/cross-binutils
 .endif
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake tar:bz2
 USE_BISON=	build
 STRIP=		#empty
 GNU_CONFIGURE=	yes
@@ -81,8 +80,6 @@ CONFIGURE_ARGS=	--target=${OURTARGET} \
 		--with-gmp="${LOCALBASE}" \
 		--with-mpfr="${LOCALBASE}" \
 		--with-mpc="${LOCALBASE}"
-
-MAN1=		${MANPAGES:S,^,${OURTARGET}-,}
 
 INFO=		${OURTARGET}-cpp \
 		${OURTARGET}-cppinternals \
