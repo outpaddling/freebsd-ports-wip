@@ -26,22 +26,23 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	BenLangmead
 
 post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/bowtie1
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/bowtie \
 		${WRKSRC}/bowtie-build \
 		${WRKSRC}/bowtie-inspect \
+		${FILESDIR}/bowtie-manual \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/scripts/*.sh \
 		${WRKSRC}/scripts/*.pl \
-		${FILESDIR}/bowtie-manual \
-		${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DATADIR}
+		${STAGEDIR}${PREFIX}/libexec/bowtie1
 	cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		'genomes indexes reads' \
 		${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \
 		\* \
 		${STAGEDIR}${DOCSDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*-[sl]
 
 .include <bsd.port.mk>
