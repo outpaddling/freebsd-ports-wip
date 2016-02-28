@@ -1,18 +1,18 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	jellyfish
-PORTVERSION=	2.2.4
-DISTVERSIONPREFIX=      v
-CATEGORIES=	biology
+PORTNAME=		jellyfish
+PORTVERSION=		2.2.4
+DISTVERSIONPREFIX=	v
+CATEGORIES=		biology
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Fast, memory-efficient counting of k-mers in DNA
 
+LICENSE=	GPLv3
+
 # Contains inline assembly code
 ONLY_FOR_ARCHS=	amd64
-
-LICENSE=	GPLv3
 
 BUILD_DEPENDS+=	yaggo:/usr/wip/devel/yaggo
 
