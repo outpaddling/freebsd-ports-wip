@@ -19,7 +19,7 @@ RUN_DEPENDS=	mawk>=0:${PORTSDIR}/lang/mawk \
 		gnuplot>=0:${PORTSDIR}/math/gnuplot \
 		parallel>=0:${PORTSDIR}/sysutils/parallel \
 		gawk>=0:${PORTSDIR}/lang/gawk \
-		vcftools>=0.1.11:/usr/wip/biology/vcftools \
+		vcftools>=0.1.11:${PORTSDIR}/biology/vcftools \
 		vcflib>=0:/usr/wip/biology/vcflib \
 		rainbow>=0:/usr/wip/biology/rainbow \
 		bamtools>=0:/usr/wip/biology/bamtools \
