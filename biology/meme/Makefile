@@ -15,7 +15,8 @@ COMMENT=	Motif-based sequence analysis tools
 # https://wiki.gentoo.org/wiki/Clang
 USE_GCC=        yes
 GNU_CONFIGURE=  yes
-USES=		gmake
+USES=		gmake shebangfix
+SHEBANG_FILES=	scripts/fasta-grep
 #CONFIGURE_ENV=	HAVE_SYS_WAIT_H=1
 #CONFIGURE_ENV=	WIFEXITED=1 AM_CFLAGS="-std=gnu89"
 CONFIGURE_ARGS=	--enable-build-libxml2 \
