@@ -17,11 +17,11 @@ RUN_DEPENDS=	scythe>=0:/usr/wip/biology/scythe \
 		bowtie2>=0:/usr/wip/biology/bowtie2 \
 		tophat==2.0.12:/usr/wip/biology/tophat2012 \
 		cufflinks>=0:/usr/wip/biology/cufflinks
+		py-macs2>=0:/usr/wip/biology/py-macs2
 
 # Unfinished
 #		meme>=0:/usr/wip/biology/meme
 #		idr>=0:/usr/wip/biology/idr
-#		macs>=2:/usr/wip/biology/macs
 
 USES=		metaport python
 
