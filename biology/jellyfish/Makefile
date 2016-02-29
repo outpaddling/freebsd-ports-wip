@@ -18,7 +18,8 @@ BUILD_DEPENDS+=	yaggo:/usr/wip/devel/yaggo
 
 GNU_CONFIGURE=	yes
 
-USES=		autoreconf compiler:c++11-lib compiler:openmp libtool pkgconfig
+USES=		autoreconf compiler:c++11-lib compiler:openmp gmake \
+		libtool pkgconfig
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
