@@ -11,9 +11,6 @@ COMMENT=	Fast, memory-efficient counting of k-mers in DNA
 
 LICENSE=	GPLv3
 
-# Contains inline assembly code
-ONLY_FOR_ARCHS=	amd64
-
 BUILD_DEPENDS+=	yaggo:/usr/wip/devel/yaggo
 
 GNU_CONFIGURE=	yes
@@ -26,8 +23,15 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gmarcais
 GH_PROJECT=	Jellyfish
 
+.include <bsd.port.pre.mk>
+
+# SSE code assumes amd64 features
+.if ${ARCH} != "amd64"
+CONFIGURE_ARGS=	--without-sse
+.endif
+
 post-stage:
 	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/* \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
