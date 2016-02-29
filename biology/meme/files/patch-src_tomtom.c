@@ -1,4 +1,4 @@
---- src/tomtom.c.orig	2016-02-24 16:56:16 UTC
+--- src/tomtom.c.orig	2015-10-26 23:37:43 UTC
 +++ src/tomtom.c
 @@ -18,7 +18,7 @@
  #include <time.h>
