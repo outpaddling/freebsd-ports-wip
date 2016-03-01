@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 # Note: tophat depends on bowtie1.  Do we really want both bowties?
 RUN_DEPENDS=	scythe>=0:/usr/wip/biology/scythe \
 		sickle>=0:/usr/wip/biology/sickle \
-		bowtie2>=0:/usr/wip/biology/bowtie2 \
+		bowtie2>=0:/usr/wip/biology/bowtie \
 		tophat==2.0.12:/usr/wip/biology/tophat2012 \
 		cufflinks>=0:/usr/wip/biology/cufflinks
 
