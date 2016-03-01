@@ -21,7 +21,6 @@ RUN_DEPENDS=	scythe>=0:/usr/wip/biology/scythe \
 		meme>=0:/usr/wip/biology/meme
 
 # Unfinished
-#		meme>=0:/usr/wip/biology/meme
 #		idr>=0:/usr/wip/biology/idr
 
 USES=		metaport python
