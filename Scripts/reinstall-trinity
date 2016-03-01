@@ -1,6 +1,5 @@
 #!/bin/sh -e
 
-
 ##########################################################################
 #   Function description:
 #       Pause until user presses return
@@ -20,30 +19,12 @@ depends="bowtie samtools samtools01 jellyfish parafly p5-transdecoder \
 printf "Remove everything? y/[n] "
 read remove
 if [ 0$remove = 0y ]; then
-    if auto-using-pkgsrc; then
-	pkg_delete='pkg_delete -f'
-    else
-	pkg_delete='pkg delete -y'
-    fi
+    pkg_delete='pkg delete -y'
     $pkg_delete $depends || true
     pause
 fi
 
-if auto-using-pkgsrc; then
-    prefix=$(dirname $(dirname $(which bmake)) | sed -e 's|pkg|pkgsrc|g')
-    echo $prefix
-    cd $prefix/jb-wip
-    svn up
-    cd trinity
-    bmake clean
-    bmake clean-depends
-    bmake
-    # Do this late to minimize uninstalled time
-    bmake deinstall
-    bmake install
-else
-    pkg install -y coreutils ruby bash openjdk gmake gcc perl5 samtools m4 \
-	gettext-tools python R
-    wip-reinstall-port biology/trinity
-fi
+pkg install -y coreutils ruby bash openjdk gmake gcc perl5 samtools m4 \
+    gettext-tools python R
+wip-reinstall-port biology/trinity
 

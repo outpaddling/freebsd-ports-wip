@@ -1,71 +1,21 @@
 #!/bin/sh -e
 
 ##########################################################################
-#   Script description:
-#       
-#   Arguments:
-#       
-#   Returns:
-#       
-#   History:
-#   Date        Name        Modification
-#   2015-08-26  Jasson BaconBegin
-##########################################################################
-
-usage()
-{
-    printf "Usage: $0 [pkgsrc-prefix]\n"
-    exit 1
-}
-
-
-##########################################################################
 #   Main
 ##########################################################################
 
-if [ $# -gt 1 ]; then
-    usage
-fi
-
 pyprefix=py27
 
-if [ $# = 1 ]; then
-    # Pkgsrc
-    prefix=$1
-    if [ -e $prefix ]; then
-	cd $prefix/jb-wip
-	pwd
-	svn up
-	cd py-cdna-primer
-	set +e
-	pkg_delete -rv $pyprefix-avro
-	pkg_delete -rv $pyprefix-h5py
-	pkg_delete -rv $pyprefix-pysam
-	pkg_delete -rv $pyprefix-pbcore
-	pkg_delete -rv $pyprefix-pbh5tools
-	pkg_delete -rv blasr_libcpp
-	pkg_delete -rv blasr
-	pkg_delete -rv $pyprefix-cDNA_primer
-	set -e
-	bmake clean
-	bmake clean-depends
-	bmake
-	# Do this late to minimize uninstalled time
-	bmake deinstall
-	bmake install
-    fi
+# FreeBSD ports
+if [ -e /usr/wip ]; then
+    pkg delete $pyprefix-avro $pyprefix-h5py $pyprefix-pysam \
+	$pyprefix-pbcore $pyprefix-pbh5tools \
+	blasr blasr_libcpp py27-cDNA_primer || true
+    pkg install -y py27-numpy py27-scipy hdf5 py27-networkx
+    cd /usr/wip/biology/py-cdna-primer
+    make clean clean-depends
+    make -DBATCH install
 else
-    # FreeBSD ports
-    if [ -e /usr/wip ]; then
-	pkg delete $pyprefix-avro $pyprefix-h5py $pyprefix-pysam \
-	    $pyprefix-pbcore $pyprefix-pbh5tools \
-	    blasr blasr_libcpp py27-cDNA_primer || true
-	pkg install -y py27-numpy py27-scipy hdf5 py27-networkx
-	cd /usr/wip/biology/py-cdna-primer
-	make clean clean-depends
-	make -DBATCH install
-    else
-	printf "No /usr/wip found.\n"
-    fi
+    printf "No /usr/wip found.\n"
 fi
 
