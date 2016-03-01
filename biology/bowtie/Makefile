@@ -1,10 +1,10 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon
 # $FreeBSD$
 
-PORTNAME=	bowtie
-PORTVERSION=	1.1.2
+PORTNAME=		bowtie2
+PORTVERSION=		2.2.7
 DISTVERSIONPREFIX=	v
-CATEGORIES=	biology
+CATEGORIES=		biology
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Ultrafast, memory-efficient short read aligner
@@ -13,11 +13,6 @@ LICENSE=	ART10
 
 RUN_DEPENDS=	webbrowser:${PORTSDIR}/www/webbrowser
 
-# May also work on other 64-bit platforms per Makefile check
-ONLY_FOR_ARCHS=	amd64
-# FIXME: bowtie-align intermittently dumps core when compiled with clang
-# GCC 4.2 does not provide good performance
-USE_GCC=	yes
 USES=		gmake perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	scripts/*.pl
@@ -26,23 +21,23 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	BenLangmead
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/bowtie1
-	${INSTALL_SCRIPT} \
-		${WRKSRC}/bowtie \
-		${WRKSRC}/bowtie-build \
-		${WRKSRC}/bowtie-inspect \
-		${FILESDIR}/bowtie-manual \
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_PROGRAM} \
+		${WRKSRC}/bowtie2*-s \
+		${WRKSRC}/bowtie2*-l \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/scripts/*.sh \
 		${WRKSRC}/scripts/*.pl \
-		${STAGEDIR}${PREFIX}/libexec/bowtie1
-	cd ${WRKSRC} && ${COPYTREE_SHARE} \
-		'genomes indexes reads' \
-		${STAGEDIR}${DATADIR}
+		${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_SCRIPT} \
+		${FILESDIR}/bowtie2-manual \
+		${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC}/example && ${COPYTREE_SHARE} \
+		'index reads reference' \
+		${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \
 		\* \
 		${STAGEDIR}${DOCSDIR}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*-[sl]
 
 .include <bsd.port.mk>
