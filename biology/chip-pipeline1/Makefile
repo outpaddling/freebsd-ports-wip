@@ -14,10 +14,10 @@ RUN_DEPENDS=	scythe>=0:/usr/wip/biology/scythe \
 		sickle>=0:/usr/wip/biology/sickle \
 		bwa>=0:${PORTSDIR}/biology/bwa \
 		${PYTHON_PKGNAMEPREFIX}ceas>=0:/usr/wip/biology/py-ceas \
-		bowtie2>=0:/usr/wip/biology/bowtie2 \
+		bowtie2>=0:/usr/wip/biology/bowtie \
 		tophat==2.0.12:/usr/wip/biology/tophat2012 \
 		cufflinks>=0:/usr/wip/biology/cufflinks \
-		py-macs2>=0:/usr/wip/biology/py-macs2
+		py27-MACS2>=2:/usr/wip/biology/py-macs2
 
 # Unfinished
 #		meme>=0:/usr/wip/biology/meme
