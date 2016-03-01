@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	BenLangmead
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${DATADIR}/scripts
 	${INSTALL_PROGRAM} \
 		${WRKSRC}/bowtie2*-s \
 		${WRKSRC}/bowtie2*-l \
@@ -29,7 +29,7 @@ post-install:
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/scripts/*.sh \
 		${WRKSRC}/scripts/*.pl \
-		${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
+		${STAGEDIR}${DATADIR}/scripts
 	${INSTALL_SCRIPT} \
 		${FILESDIR}/bowtie2-manual \
 		${STAGEDIR}${PREFIX}/bin

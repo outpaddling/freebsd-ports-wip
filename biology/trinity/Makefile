@@ -51,7 +51,8 @@ LDFLAGS+=	-fopenmp -Wl,-rpath=${_GCC_RUNTIME}
 BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
-		bowtie:/usr/wip/biology/bowtie \
+		bowtie:/usr/wip/biology/bowtie1 \
+		bowtie2:/usr/wip/biology/bowtie \
 		samtools>=1.3:${PORTSDIR}/biology/samtools \
 		jellyfish>=2.1.4:/usr/wip/biology/jellyfish \
 		ParaFly:/usr/wip/sysutils/parafly \

@@ -26,7 +26,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	BenLangmead
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/bowtie1
+	${MKDIR} ${STAGEDIR}${DATADIR}/scripts
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/bowtie \
 		${WRKSRC}/bowtie-build \
@@ -36,7 +36,7 @@ post-install:
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/scripts/*.sh \
 		${WRKSRC}/scripts/*.pl \
-		${STAGEDIR}${PREFIX}/libexec/bowtie1
+		${STAGEDIR}${DATADIR}/scripts
 	cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		'genomes indexes reads' \
 		${STAGEDIR}${DATADIR}
