@@ -1,0 +1,46 @@
+#!/bin/sh -e
+
+##########################################################################
+#   Function description:
+#       Pause until user presses return
+##########################################################################
+
+pause()
+{
+    local junk
+    
+    printf "Press return to continue..."
+    read junk
+}
+
+depends="scythe sickle bowtie2 tophat cufflinks"
+
+printf "Remove everything? y/[n] "
+read remove
+if [ 0$remove = 0y ]; then
+    if auto-using-pkgsrc; then
+	pkg_delete='pkg_delete -f'
+    else
+	pkg_delete='pkg delete -y'
+    fi
+    $pkg_delete $depends || true
+    pause
+fi
+
+if auto-using-pkgsrc; then
+    prefix=$(dirname $(dirname $(which bmake)) | sed -e 's|pkg|pkgsrc|g')
+    echo $prefix
+    cd $prefix/jb-wip
+    svn up
+    cd rna-pipeline1
+    bmake clean
+    bmake clean-depends
+    bmake
+    # Do this late to minimize uninstalled time
+    bmake deinstall
+    bmake install
+else
+    pkg install -y python R
+    wip-reinstall-port biology/rna-pipeline1
+fi
+

@@ -1,0 +1,30 @@
+#!/bin/sh -e
+
+printf "Remove everything? y/[n] "
+read remove
+if [ 0$remove = 0y ]; then
+    if auto-using-pkgsrc; then
+	pkg_delete='pkg_delete -f'
+    else
+	pkg_delete='pkg delete -y'
+    fi
+    $pkg_delete tabixpp smithwaterman fastahack filevercmp fsom multichoose \
+	intervaltree vcflib vcftools rainbow bamtools freebayes stacks \
+	Trimmomatic seqtk bedtools2 pear-merger samtools parallel ddocent || true
+fi
+
+if auto-using-pkgsrc; then
+    prefix=$(dirname $(dirname $(which bmake)) | sed -e 's|pkg|pkgsrc|g')
+    echo $prefix
+    cd $prefix/jb-wip/ddocent
+    bmake clean
+    bmake clean-depends
+    bmake
+    # Do this late to minimize uninstalled time
+    bmake deinstall
+    bmake install
+else
+    pkg install -y openjdk cmake gnuplot parallel texinfo gawk mawk htslib help2man
+    wip-reinstall-port biology/ddocent
+fi
+

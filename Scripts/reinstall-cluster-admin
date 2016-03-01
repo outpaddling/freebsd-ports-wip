@@ -1,0 +1,33 @@
+#!/bin/sh -e
+
+os_type=`uname`
+case $os_type in
+FreeBSD)
+    cluster-wip-update
+    wip-reinstall-port -nu -r sysutils/auto-admin
+    wip-reinstall-port -nu -r sysutils/cluster-admin
+    cluster-run 'wip-reinstall-port -nu -r sysutils/auto-admin' all
+    cluster-run 'wip-reinstall-port -nu -r sysutils/cluster-admin' all
+    ;;
+Linux)
+    cd /usr/pkgsrc-1/jb-wip
+    pwd
+    svn up
+    
+    pkg_delete cluster-admin || true
+    
+    cd /usr/pkgsrc-1/jb-wip/auto-admin
+    pwd
+    pkg-reinstall
+    
+    cd ../../jb-wip/cluster-admin
+    pwd
+    pkg-reinstall
+    printf "\nRun cluster-sync-pkgsrc to update other nodes.\n\n"
+    
+    cd ..
+    pwd
+    svn ci -m 'Remakes'
+    ;;
+esac
+
