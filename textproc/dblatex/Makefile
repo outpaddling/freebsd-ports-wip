@@ -1,9 +1,8 @@
 # Created by: Peter Johnson <johnson.peter@gmail.com>
-# $FreeBSD: head/textproc/dblatex/Makefile 386630 2015-05-17 16:31:51Z marino $
+# $FreeBSD: head/textproc/dblatex/Makefile 407344 2016-01-27 09:23:42Z miwi $
 
 PORTNAME=	dblatex
-PORTVERSION=	0.3.2
-PORTREVISION=	5
+PORTVERSION=	0.3.7
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -18,18 +17,18 @@ RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 USES=		tar:bzip2 python:2
 USE_PYTHON=	distutils autoplist
 USE_TEX=	tex
+NO_ARCH=	yes
 
-PYDISTUTILS_INSTALLARGS+=	--catalogs=${LOCALBASE}/share/xml/catalog.ports
+PYDISTUTILS_INSTALLARGS+=	--catalogs=${LOCALBASE}/share/xml/catalog.ports \
+				--prefix=${PREFIX}
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/pdfdocs),/d ; /htmldoc)/d' ${WRKSRC}/setup.py
-.endif
 	@${REINPLACE_CMD} -e "s,share/man/man1,man/man1,g" ${WRKSRC}/setup.py
+
+post-patch-DOCS-off:
+	@${REINPLACE_CMD} -e '/pdfdocs),/d ; /htmldoc)/d' ${WRKSRC}/setup.py
 
 post-install:
 	# shebangfix can't be used because dblatex is built from scratch
