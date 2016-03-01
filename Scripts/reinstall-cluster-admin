@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+cluster-wip-update
+wip-reinstall-port -nu -r sysutils/auto-admin
+wip-reinstall-port -nu -r sysutils/cluster-admin
+cluster-run 'wip-reinstall-port -nu -r sysutils/auto-admin' all
+cluster-run 'wip-reinstall-port -nu -r sysutils/cluster-admin' all
+
