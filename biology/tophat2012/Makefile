@@ -15,7 +15,7 @@ LICENSE=	ClArtistic
 # Is 2.2.7 OK?
 BUILD_DEPENDS=	samtools01==0.1.19:/usr/wip/biology/samtools0119
 LIB_DEPENDS+=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	bowtie2:/usr/wip/biology/bowtie \
+RUN_DEPENDS=	bowtie2:/usr/wip/biology/bowtie2 \
 		samtools01==0.1.19:/usr/wip/biology/samtools0119
 
 # Hack to allow variable length arrays, which are not supported by ISO C++
