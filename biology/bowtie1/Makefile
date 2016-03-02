@@ -1,10 +1,10 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	bowtie
-PORTVERSION=	1.1.2
+PORTNAME=		bowtie
+PORTVERSION=		1.1.2
 DISTVERSIONPREFIX=	v
-CATEGORIES=	biology
+CATEGORIES=		biology
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Ultrafast, memory-efficient short read aligner
@@ -13,7 +13,7 @@ LICENSE=	ART10
 
 RUN_DEPENDS=	webbrowser:${PORTSDIR}/www/webbrowser
 
-# May also work on other 64-bit platforms per Makefile check
+# May also work on other 64-bit platforms, but untested
 ONLY_FOR_ARCHS=	amd64
 # FIXME: bowtie-align intermittently dumps core when compiled with clang
 # GCC 4.2 does not provide good performance

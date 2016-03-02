@@ -1,5 +1,5 @@
---- Makefile.orig	2015-06-23 11:32:51.000000000 -0500
-+++ Makefile	2016-02-05 14:31:20.000000000 -0600
+--- Makefile.orig	2015-06-23 16:32:51 UTC
++++ Makefile
 @@ -8,9 +8,13 @@ bindir = $(prefix)/bin
  SEQAN_DIR = SeqAn-1.1
  SEQAN_INC = -I $(SEQAN_DIR)
