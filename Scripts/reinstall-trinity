@@ -13,7 +13,7 @@ pause()
     read junk
 }
 
-depends="bowtie samtools samtools01 jellyfish parafly p5-transdecoder \
+depends="bowtie bowtie2 samtools samtools01 jellyfish parafly p5-transdecoder \
     slclust Trimmomatic rsem"
 
 printf "Remove everything? y/[n] "
