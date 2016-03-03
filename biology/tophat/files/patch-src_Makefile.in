@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	2016-03-03 08:10:38.000000000 -0600
++++ src/Makefile.in	2016-03-03 08:11:05.000000000 -0600
+@@ -1658,7 +1658,7 @@ uninstall-am: uninstall-binPROGRAMS unin
+ 
+ 
+ clean-local:
+-	cd $(SAMDIR) && make clean
++	cd $(SAMDIR) && ${MAKE} clean
+ 
+ tophat2: tophat2.sh
+ 	cp tophat2.sh tophat2 && chmod 755 tophat2
+@@ -1669,7 +1669,7 @@ tophat: tophat.py
+ $(SAMPROG): $(SAMLIB)
+ 
+ $(SAMLIB):
+-	cd $(SAMDIR) && make $(SAMPROG) && cp $(SAMLIB) $(SAMPROG) ..
++	cd $(SAMDIR) && ${MAKE} $(SAMPROG) && cp $(SAMLIB) $(SAMPROG) ..
+ 
+ install-data-hook:
+ 	cp -r intervaltree sortedcontainers $(DESTDIR)$(bindir)
