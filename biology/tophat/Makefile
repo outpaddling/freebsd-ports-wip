@@ -26,5 +26,6 @@ MAKE_JOBS_UNSAFE=yes
 # configure output.
 pre-build:
 	printenv > env
+	alias >> env
 
 .include <bsd.port.mk>
