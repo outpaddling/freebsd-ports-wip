@@ -4,6 +4,7 @@
 PORTNAME=	tophat
 PORTVERSION=	2.0.12
 CATEGORIES=	biology science
+# Note: Distfiles on Github are not the same as those here
 MASTER_SITES=	http://ccb.jhu.edu/software/tophat/downloads/
 
 MAINTAINER=	bacon4000@gmail.com
