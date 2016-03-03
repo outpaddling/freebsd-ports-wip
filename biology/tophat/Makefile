@@ -22,4 +22,9 @@ LD=		${CXX}
 
 MAKE_JOBS_UNSAFE=yes
 
+# Debugging: builds on some machines and not others.  No differences in
+# configure output.
+pre-build:
+	printenv > env
+
 .include <bsd.port.mk>
