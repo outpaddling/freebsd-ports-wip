@@ -15,10 +15,9 @@ LIB_DEPENDS+=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	bowtie2:/usr/wip/biology/bowtie2
 
 GNU_CONFIGURE=	yes
-USES=		gmake python shebangfix
+USES=		gmake python
 
 CFLAGS+=	-Wno-unused
-LD=		${CXX}
 
 MAKE_JOBS_UNSAFE=yes
 

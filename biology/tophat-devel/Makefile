@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tophat
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	biology science
 MASTER_SITES=	http://ccb.jhu.edu/software/tophat/downloads/
 
@@ -16,11 +16,8 @@ LIB_DEPENDS+=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	bowtie:/usr/wip/biology/bowtie \
 		samtools01==0.1.19:/usr/wip/biology/samtools0119
 
-# Hack to allow variable length arrays, which are not supported by ISO C++
-USE_GCC=	yes
 GNU_CONFIGURE=	yes
-USES=		python shebangfix
-SHEBANG_FILES=	src/tophat2.in
+USES=		gmake python
 
 CFLAGS+=	-Wno-unused
 
