@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	2016-03-03 08:10:38.000000000 -0600
-+++ src/Makefile.in	2016-03-03 08:11:05.000000000 -0600
+--- src/Makefile.in.orig	2016-02-24 03:08:32 UTC
++++ src/Makefile.in
 @@ -1658,7 +1658,7 @@ uninstall-am: uninstall-binPROGRAMS unin
  
  
