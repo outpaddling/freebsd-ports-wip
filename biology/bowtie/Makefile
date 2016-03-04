@@ -29,7 +29,6 @@ post-install:
 		${WRKSRC}/bowtie \
 		${WRKSRC}/bowtie-build \
 		${WRKSRC}/bowtie-inspect \
-		${FILESDIR}/bowtie-manual \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/scripts/*.sh \
