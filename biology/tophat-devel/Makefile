@@ -10,7 +10,7 @@ MASTER_SITES=	http://ccb.jhu.edu/software/tophat/downloads/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Spliced read mapper for RNA-Seq
 
-LICENSE=	ClArtistic
+LICENSE=	BSL
 
 BUILD_DEPENDS=	samtools01==0.1.19:/usr/wip/biology/samtools0119
 LIB_DEPENDS+=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs

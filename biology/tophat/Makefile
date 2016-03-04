@@ -10,7 +10,7 @@ MASTER_SITES=	http://ccb.jhu.edu/software/tophat/downloads/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Fast splice junction mapper for RNA-Seq reads
 
-LICENSE=	ClArtistic
+LICENSE=	BSL
 
 LIB_DEPENDS+=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	bowtie2:/usr/wip/biology/bowtie2

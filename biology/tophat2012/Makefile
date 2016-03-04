@@ -10,7 +10,7 @@ MASTER_SITES=	http://ccb.jhu.edu/software/tophat/downloads/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Spliced read mapper for RNA-Seq
 
-LICENSE=	ClArtistic
+LICENSE=	BSL
 
 # Compatible with bowtie 2.3.3: http://ccb.jhu.edu/software/tophat/index.shtml
 # Is 2.2.7 OK?
