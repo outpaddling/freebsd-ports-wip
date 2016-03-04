@@ -11,8 +11,6 @@ COMMENT=	Ultrafast, memory-efficient short read aligner
 
 LICENSE=	ART10
 
-RUN_DEPENDS=	webbrowser:${PORTSDIR}/www/webbrowser
-
 USES=		gmake perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	scripts/*.pl

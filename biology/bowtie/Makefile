@@ -11,8 +11,6 @@ COMMENT=	Ultrafast, memory-efficient short read aligner
 
 LICENSE=	ART10
 
-RUN_DEPENDS=	webbrowser:${PORTSDIR}/www/webbrowser
-
 # May also work on other 64-bit platforms, but untested
 ONLY_FOR_ARCHS=	amd64
 # FIXME: bowtie-align intermittently dumps core when compiled with clang
