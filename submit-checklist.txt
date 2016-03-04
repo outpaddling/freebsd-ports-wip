@@ -13,7 +13,9 @@ Makefile:
     # Created by: First-name Last-name <email>
     # $FreeBSD$
     
-    USE_GITHUB, SF, DISTVERSIONPREFIX, etc. if possible
+    Check/correct MASTER_SITES
+	Use https if possible to protect download stream from hackers
+	USE_GITHUB, SF, DISTVERSIONPREFIX, etc. if possible
 	DISTVERSIONPREFIX=v preferred over GH_TAGNAME=v${PORTVERSION}
 	No need to manually set WRKSRC if using USE_GITHUB
     
@@ -21,9 +23,6 @@ Makefile:
     Convert /usr/wip and ../.. to ${PORTSDIR}
     Use ${PORTNAME}, ${PORTVERSION}, etc in body wherever possible
     Check categories
-    
-    Check/correct MASTER_SITES
-	Use https if possible to protect download stream from hackers
     
     MAINTAINER=     email
     
@@ -79,9 +78,7 @@ Check pkg-descr
 
 Make sure there's a man page
 
-make patch
-
-make makepatch
+make patch makepatch
 
 Remove any extraneous files from port framework and add a post-extract ${RM}
 for any preexisting .orig files that cause makepatch to generate an extraneous
@@ -110,6 +107,8 @@ Follow porter's handbook to submit new port or update.
     [NEW PORT] category/port: COMMENT field
     [MAINTAINER UPDATE] category/port: ?
     [CHANGE REQUEST] category/port: ?
+
+Update /usr/wip/upstream
 
 If maintaining source
 
