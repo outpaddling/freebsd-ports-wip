@@ -11,6 +11,8 @@ COMMENT=	Ultrafast, memory-efficient short read aligner
 
 LICENSE=	ART10
 
+# May also work on other 64-bit platforms, but untested
+ONLY_FOR_ARCHS=	amd64
 USES=		gmake perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	scripts/*.pl
