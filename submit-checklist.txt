@@ -104,9 +104,17 @@ Follow porter's handbook to submit new port or update.
     https://www.freebsd.org/doc/en/books/porters-handbook/
     https://www.freebsd.org/support/bugreports.html
 
+    Subject line:
+    
     [NEW PORT] category/port: COMMENT field
     [MAINTAINER UPDATE] category/port: ?
     [CHANGE REQUEST] category/port: ?
+    
+    Text:
+    
+    portlint: OK (summary output)
+    testport: OK (poudriere: <versions>, <archs>, <options> tested)
+    unittest: OK (test suite summary output)
 
 Update /usr/wip/upstream
 
