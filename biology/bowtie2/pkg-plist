@@ -7,7 +7,6 @@ bin/bowtie2-build-s
 bin/bowtie2-inspect
 bin/bowtie2-inspect-l
 bin/bowtie2-inspect-s
-bin/bowtie2-manual
 %%DATADIR%%/scripts/convert_quals.pl
 %%DATADIR%%/scripts/gen_2b_occ_lookup.pl
 %%DATADIR%%/scripts/gen_occ_lookup.pl

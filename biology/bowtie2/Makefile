@@ -28,9 +28,6 @@ post-install:
 		${WRKSRC}/scripts/*.sh \
 		${WRKSRC}/scripts/*.pl \
 		${STAGEDIR}${DATADIR}/scripts
-	${INSTALL_SCRIPT} \
-		${FILESDIR}/bowtie2-manual \
-		${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC}/example && ${COPYTREE_SHARE} \
 		'index reads reference' \
 		${STAGEDIR}${EXAMPLESDIR}
