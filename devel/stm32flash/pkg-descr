@@ -1,3 +1,5 @@
-Open source flash program for the STM32 ARM processors using the ST bootloader.
+Open source cross platform flash program for the STM32 ARM microcontrollers
+using the built-in ST serial bootloader over UART or I2C.  Supports the Vex
+Cortex robotics controller.
 
-WWW:	http://code.google.com/p/stm32flash/
+WWW: https://sourceforge.net/projects/stm32flash/
