@@ -12,9 +12,11 @@ COMMENT=	Novel algorithm for identifying transcript factor binding sites
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0:${PORTSDIR}/math/py-numpy
+
 USES=		python
 USE_PYTHON=	autoplist distutils
-PYDISTUTILS_PKGNAME=    macs2
+PYDISTUTILS_PKGNAME=	macs2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.1.0.20150420
 
