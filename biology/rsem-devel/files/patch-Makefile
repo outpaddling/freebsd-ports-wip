@@ -1,6 +1,6 @@
---- Makefile.orig	2016-03-06 21:49:24.486956805 -0600
-+++ Makefile	2016-03-06 21:51:15.551952725 -0600
-@@ -5,13 +5,15 @@ ifneq ($cygwin, true)
+--- Makefile.orig	2016-03-06 20:32:39.000000000 -0600
++++ Makefile	2016-03-08 14:48:50.000000000 -0600
+@@ -5,27 +5,29 @@ ifneq ($cygwin, true)
    SAMTOOLS_MAKEFILE = Makefile
  else
    SAMTOOLS_MAKEFILE = Makefile.cygwin
@@ -18,3 +18,21 @@
  CPPFLAGS =
  
  LDFLAGS =
+ LDLIBS =
+ 
+ # Installation variables
+-INSTALL = install
++INSTALL ?= install
+ INSTALL_PROGRAM = $(INSTALL) -p
+ INSTALL_DATA = $(INSTALL) -p -m 644
+ INSTALL_DIR = $(INSTALL) -d
+-STRIP ?=strip
++STRIP ?= strip
+ 
+-prefix ?= /usr/local
+-exec_prefix = $(prefix)
++PREFIX ?= /usr/local
++exec_prefix = $(PREFIX)
+ bindir = $(exec_prefix)/bin
+ 
+ # Auxiliary variables for compilation
