@@ -1,32 +1,44 @@
 --- Makefile.orig	2016-03-06 20:32:39.000000000 -0600
-+++ Makefile	2016-03-08 14:48:50.000000000 -0600
-@@ -5,27 +5,29 @@ ifneq ($cygwin, true)
++++ Makefile	2016-03-08 14:58:04.000000000 -0600
+@@ -1,36 +1,38 @@
+-SAMTOOLS = samtools-1.3
+-HTSLIB = htslib-1.3
++SAMTOOLS ?= samtools-1.3
++HTSLIB ?= htslib-1.3
+ 
+ ifneq ($cygwin, true)
    SAMTOOLS_MAKEFILE = Makefile
  else
    SAMTOOLS_MAKEFILE = Makefile.cygwin
 +endif
  
  # overridable, defaulting to local copy
- BOOST = .
+-BOOST = .
++BOOST ?= .
  
  # Compilation variables
 -CXX = g++
 -CXXFLAGS = -std=gnu++98 -Wall -I. -I$(BOOST) -I$(SAMTOOLS)/$(HTSLIB)
+-CPPFLAGS =
 +CXX ?= g++
 +CXXFLAGS ?= -Wall
-+CXXFLAGS += -std=gnu++98 -Wall -I. -I$(BOOST) -I$(SAMTOOLS)/$(HTSLIB)
- CPPFLAGS =
++CXXFLAGS += -std=gnu++98 -I. -I$(BOOST) -I$(SAMTOOLS)/$(HTSLIB)
++CPPFLAGS ?=
  
- LDFLAGS =
+-LDFLAGS =
++LDFLAGS ?=
  LDLIBS =
  
  # Installation variables
 -INSTALL = install
-+INSTALL ?= install
- INSTALL_PROGRAM = $(INSTALL) -p
- INSTALL_DATA = $(INSTALL) -p -m 644
- INSTALL_DIR = $(INSTALL) -d
+-INSTALL_PROGRAM = $(INSTALL) -p
+-INSTALL_DATA = $(INSTALL) -p -m 644
+-INSTALL_DIR = $(INSTALL) -d
 -STRIP ?=strip
++INSTALL ?= install
++INSTALL_PROGRAM ?= $(INSTALL) -p
++INSTALL_DATA ?= $(INSTALL) -p -m 644
++INSTALL_DIR ?= $(INSTALL) -d
 +STRIP ?= strip
  
 -prefix ?= /usr/local
@@ -36,3 +48,10 @@
  bindir = $(exec_prefix)/bin
  
  # Auxiliary variables for compilation
+-SAMHEADERS = $(SAMTOOLS)/$(HTSLIB)/htslib/sam.h
+-SAMLIBS = $(SAMTOOLS)/$(HTSLIB)/libhts.a
++SAMHEADERS ?= $(SAMTOOLS)/$(HTSLIB)/htslib/sam.h
++SAMLIBS ?= $(SAMTOOLS)/$(HTSLIB)/libhts.a
+ CONFIGURE = ./configure
+ 
+ OBJS1 = parseIt.o
