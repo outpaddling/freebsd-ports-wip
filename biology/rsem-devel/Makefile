@@ -51,6 +51,6 @@ post-patch:
 		${WRKSRC}/rsem*
 
 post-stage:
-	${RM} -rf ${STAGEDIR}${PREFIX}/bin/samtools
+	${RM} -rf ${STAGEDIR}${PREFIX}/bin/samtools-*
 
 .include <bsd.port.mk>
