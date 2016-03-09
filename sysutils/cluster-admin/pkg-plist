@@ -64,11 +64,11 @@ sbin/cluster-sync-sysfiles
 sbin/cluster-sync-user
 sbin/cluster-update-all-ssh_config
 sbin/cluster-update-ssh_config
-sbin/cluster-update-wip-ports
 sbin/cluster-user-admin
 sbin/cluster-useradd
 sbin/cluster-usermod
 sbin/cluster-users
+sbin/cluster-wip-update
 sbin/local-init-node
 sbin/local-packages
 sbin/node-sync-all-users
