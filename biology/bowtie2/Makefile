@@ -9,7 +9,7 @@ CATEGORIES=		biology
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Ultrafast, memory-efficient short read aligner
 
-LICENSE=	ART10
+LICENSE=	GPLv3
 
 # May also work on other 64-bit platforms, but untested
 ONLY_FOR_ARCHS=	amd64
