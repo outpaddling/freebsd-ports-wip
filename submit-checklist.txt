@@ -112,6 +112,10 @@ Follow porter's handbook to submit new port or update.
     
     Text:
     
+    Description
+    
+    Justification for PR
+    
     portlint: OK (summary output)
     testport: OK (poudriere: <versions>, <archs>, <options> tested)
     unittest: OK (test suite summary output)
