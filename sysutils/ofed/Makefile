@@ -12,5 +12,10 @@ DISTFILES=	MLNX_OFED_FREEBSD_V2.1.6.tar.gz \
 		Mellanox_FreeBSD_User_Manual_v2.1.6.pdf
 MAINTAINER=	bacon@manatee.acadix.biz
 COMMENT=	Mellanox OFED drivers
+WRKSRC=		${WRKDIR}/freebsd-fbsd_ofed_2_1_6
+
+do-build:
+	cd ${WRKSRC}/modules/mlx4 && \
+		make -m /usr/src/share/mk SYSDIR=/usr/src/sys clean cleandepend
 
 .include <bsd.port.mk>
