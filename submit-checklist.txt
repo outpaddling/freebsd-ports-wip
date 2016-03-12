@@ -82,8 +82,6 @@ Check pkg-descr
 
 Make sure there's a man page
 
-make patch makepatch
-
 Remove any extraneous files from port framework and add a post-extract ${RM}
 for any preexisting .orig files that cause makepatch to generate an extraneous
 patch
