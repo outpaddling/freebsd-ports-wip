@@ -30,7 +30,7 @@ INSTALL_TARGET=	install-strip
 # SSE code assumes amd64 features
 .if ${ARCH} != "amd64"
 .if ${OSVERSION} < 1000000
-IGNORE=		Multiple code issues on i386 < 10.0-RELEASE
+IGNORE=		multiple code issues on i386 < 10.0-RELEASE
 .else
 CONFIGURE_ARGS=	--without-sse
 .endif
