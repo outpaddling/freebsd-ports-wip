@@ -23,6 +23,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gmarcais
 GH_PROJECT=	Jellyfish
 
+INSTALL_TARGET=	install-strip
+
 .include <bsd.port.pre.mk>
 
 # SSE code assumes amd64 features
@@ -34,8 +36,10 @@ CONFIGURE_ARGS=	--without-sse
 .endif
 .endif
 
-post-stage:
-	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/* \
-		${STAGEDIR}${PREFIX}/libdata/pkgconfig
+# configure does not support --with-pkgconfigdir
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
+		${WRKSRC}/Makefile.am
 
 .include <bsd.port.post.mk>

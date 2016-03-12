@@ -14,4 +14,6 @@ LICENSE=	GPLv3
 USES=		fortran gmake pkgconfig
 GNU_CONFIGURE=	yes
 
+# FIXME: Put pkgconfig files in libdata
+
 .include <bsd.port.mk>
