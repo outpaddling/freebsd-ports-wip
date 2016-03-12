@@ -73,6 +73,8 @@ Carefully inspect pkg-plist
     Most configure scripts support --with-pkgconfigdir= even if not advertised
 
 Carefully check patches
+    Patching should be done at the earliest possible stage, e.g. don't
+    patch in post-stage if the same effect can be achieved in post-patch
 
 Check pkg-descr
     spell-check
