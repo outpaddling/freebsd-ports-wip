@@ -69,6 +69,8 @@ Makefile:
     Remove cat pkg-message if present
     
 Carefully inspect pkg-plist
+    pkgconfig files should be in libdata/pkgconfig
+    Most configure scripts support --with-pkgconfigdir= even if not advertised
 
 Carefully check patches
 
