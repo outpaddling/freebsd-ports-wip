@@ -28,7 +28,7 @@ GH_PROJECT=	Jellyfish
 # SSE code assumes amd64 features
 .if ${ARCH} != "amd64"
 .if ${OSVERSION} < 1000000
-IGNORE=		Does not compile on i386 < 10.0-RELEASE
+IGNORE=		Multiple code issues on i386 < 10.0-RELEASE
 .else
 CONFIGURE_ARGS=	--without-sse
 .endif
