@@ -1,6 +1,6 @@
---- configure.orig	2016-03-13 15:01:00.000000000 -0500
-+++ configure	2016-03-13 15:01:23.000000000 -0500
-@@ -3144,7 +3144,7 @@ fi
+--- configure.orig	2013-01-22 01:21:10 UTC
++++ configure
+@@ -3016,7 +3016,7 @@ fi
  
  
  #AC_OPENMP # requires autoconf >= 2.62

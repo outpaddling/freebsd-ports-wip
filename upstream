@@ -9,6 +9,7 @@ biology/vcftools
 biology/bowtie
 biology/bowtie2
 biology/jellyfish
+sysutils/parafly
 
 ------------------------------------------------
 Sent patches upstream but not confirmed accepted
