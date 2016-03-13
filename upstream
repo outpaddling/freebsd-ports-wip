@@ -8,6 +8,7 @@ biology/bowtie
 biology/vcftools
 biology/bowtie
 biology/bowtie2
+biology/jellyfish
 
 ------------------------------------------------
 Sent patches upstream but not confirmed accepted
