@@ -124,6 +124,9 @@ Follow porter's handbook to submit new port or update.
 
 Update /usr/wip/upstream
 
+
+After commit
+------------
 If maintaining source
 
     tag this version of source and create next one
@@ -173,3 +176,4 @@ For more information, visit https://www.freebsd.org/ports/index.html.
 
 ============================================================================
 
+Switch dependencies in other wip ports from /usr/wip to ${PORTSDIR}
