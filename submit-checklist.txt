@@ -80,8 +80,6 @@ Check pkg-descr
     spell-check
     space, not tab after WWW
 
-Make sure there's a man page
-
 Remove any extraneous files from port framework and add a post-extract ${RM}
 for any preexisting .orig files that cause makepatch to generate an extraneous
 patch
@@ -96,6 +94,8 @@ Test on all available platforms.  Do the following IN ORDER:
     test with NOPORT* (whatever is in pkg-plist)
 
 Test with poudriere to ensure all depends are installed by the port
+    If you've installed Poudriere with port-poudriere-setup:
+	wip-poudriere-test category/portname all
 
 Generate unified diff for updates, shar file for new ports
     (port-diff or port-shar scripts from ports-mgmt/port-dev)
