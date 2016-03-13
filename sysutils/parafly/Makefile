@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/
 DISTNAME=	${PORTNAME}-r2013-01-21
 
 MAINTAINER=	bacon4000@gmail.com
-COMMENT=	Process the commands in parallel on a single server
+COMMENT=	Process multiple commands in parallel on a single server
 
 LICENSE=	BSD3CLAUSE
 
