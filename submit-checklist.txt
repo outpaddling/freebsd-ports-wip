@@ -23,6 +23,7 @@ Makefile:
     Convert /usr/wip and ../.. to ${PORTSDIR}
     Use ${PORTNAME}, ${PORTVERSION}, etc in body wherever possible
     Check categories
+	Add perl5, python, etc. for ports that use them
     
     MAINTAINER=     email
     
@@ -41,6 +42,7 @@ Makefile:
 	Be as generic as possible
 	Use USES or USE_* variables wherever possible
 	    See /usr/ports/Mk/Uses
+	    USE_TEX instead of tex-* depends
 	New LIB_DEPENDS format: libname.so
     
     OPTIONS
@@ -70,7 +72,11 @@ Makefile:
     
 Carefully inspect pkg-plist
     pkgconfig files should be in libdata/pkgconfig
-    Most configure scripts support --with-pkgconfigdir= even if not advertised
+	configure may support --with-pkgconfigdir= even if not advertised
+    Use EXAMPLESDIR, DOCSDIR, DATADIR where possible
+    Executables called by bin/* but not meant for users go in libexec
+    Optional scripts for users go in DATADIR or EXAMPLESDIR at your discretion
+    Perl modules (*.pm) ${PREFIX}/${SITE_PERL_REL}
 
 Carefully check patches
     Patching should be done at the earliest possible stage, e.g. don't

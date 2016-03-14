@@ -3,38 +3,37 @@
 
 PORTNAME=	TransDecoder
 PORTVERSION=	2.0.1
-CATEGORIES=	biology
+CATEGORIES=	biology perl5
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Identify candidate coding regions within transcript sequences
 
 LICENSE=	BSD3CLAUSE
 
-# TransDecoder.LongOrfs suggests doing Pfam or BlastP searches?
 RUN_DEPENDS=	cd-hit>=4.6.1:${PORTSDIR}/biology/cd-hit \
 		p5-URI>0:${PORTSDIR}/net/p5-URI
 
 NO_BUILD=	yes
-
+NO_ARCH=	yes
 USES=		perl5 shebangfix
 SHEBANG_FILES=	sample_data/runMe.sh util/pfam_mpi.pbs
 
 USE_GITHUB=	yes
 
+PERL_MOD_DIR=	${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
+PERL_UTIL_DIR=	${PREFIX}/libexec/${PORTNAME}
+
 post-patch:
 	${REINPLACE_CMD} \
-		-e 's|$$FindBin::RealBin/PerlLib|${LOCALBASE}/lib/TransDecoder/PerlLib|g' \
-		-e 's|$$FindBin::Bin/../PerlLib|${LOCALBASE}/lib/TransDecoder/PerlLib|g' \
-		-e 's|$$FindBin::RealBin/util|${LOCALBASE}/libexec/TransDecoder/util|g' \
+		-e 's|$$FindBin::RealBin/PerlLib|${PERL_MOD_DIR}|g' \
+		-e 's|$$FindBin::Bin/../PerlLib|${PERL_MOD_DIR}|g' \
+		-e 's|$$FindBin::RealBin/util|${PERL_UTIL_DIR}|g' \
 		${WRKSRC}/TransDecoder* ${WRKSRC}/util/*.pl
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/TransDecoder/PerlLib
-	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/TransDecoder/util
-	${INSTALL_SCRIPT} ${WRKSRC}/PerlLib/* \
-		${STAGEDIR}${PREFIX}/lib/TransDecoder/PerlLib
+	${MKDIR} ${STAGEDIR}${PERL_MOD_DIR} ${STAGEDIR}${PERL_UTIL_DIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/PerlLib/* ${STAGEDIR}${PERL_MOD_DIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/TransDecoder* ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/util/*.pl \
-		${STAGEDIR}${PREFIX}/libexec/TransDecoder/util
+	${INSTALL_SCRIPT} ${WRKSRC}/util/*.pl ${STAGEDIR}${PERL_UTIL_DIR}
 
 .include <bsd.port.mk>
