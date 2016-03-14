@@ -7,7 +7,7 @@
 -# Local additions for the CFLAG options
 -LOCAL_CFLAGS   = -Wall 
 +# Local additions for the CXXFLAGS options
-+LOCAL_CXXFLAGS   = -Wall 
++#LOCAL_CXXFLAGS   = -Wall 
  #-static
  
  

@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	slclust
-PORTVERSION=	02022010
+PORTVERSION=	2010.02.02
 CATEGORIES=	biology
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	slclust/slclust
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_02022010
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Single-linkage clustering with Jaccard similarity
 
 LICENSE=	ART10
 
-WRKSRC=		${WRKDIR}/slclust
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/slclust
 

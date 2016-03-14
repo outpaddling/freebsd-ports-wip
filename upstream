@@ -4,12 +4,12 @@ No patches sent or citing requested
 -----------------------------------
 
 devel/yaggo
-biology/bowtie
 biology/vcftools
 biology/bowtie
 biology/bowtie2
 biology/jellyfish
 sysutils/parafly
+biology/p5-transdecoder
 
 ------------------------------------------------
 Sent patches upstream but not confirmed accepted
