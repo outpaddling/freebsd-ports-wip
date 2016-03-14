@@ -10,6 +10,7 @@ biology/bowtie2
 biology/jellyfish
 sysutils/parafly
 biology/p5-transdecoder
+biology/slclust
 
 ------------------------------------------------
 Sent patches upstream but not confirmed accepted
