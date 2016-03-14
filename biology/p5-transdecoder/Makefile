@@ -11,9 +11,8 @@ COMMENT=	Identify candidate coding regions within transcript sequences
 LICENSE=	BSD3CLAUSE
 
 # TransDecoder.LongOrfs suggests doing Pfam or BlastP searches?
-# p5-URI-ESC?
-# FIXME: Check use statements in all perl scripts for more deps
-RUN_DEPENDS=	cd-hit>=4.6.1:${PORTSDIR}/biology/cd-hit
+RUN_DEPENDS=	cd-hit>=4.6.1:${PORTSDIR}/biology/cd-hit \
+		p5-URI>0:${PORTSDIR}/net/p5-URI
 
 NO_BUILD=	yes
 
