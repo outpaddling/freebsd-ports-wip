@@ -1,9 +1,10 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	TransDecoder
+PORTNAME=	transdecoder
 PORTVERSION=	2.0.1
 CATEGORIES=	biology perl5
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Identify candidate coding regions within transcript sequences
@@ -19,6 +20,9 @@ USES=		perl5 shebangfix
 SHEBANG_FILES=	sample_data/runMe.sh util/pfam_mpi.pbs
 
 USE_GITHUB=	yes
+GH_PROJECT=	TransDecoder
+
+WRKSRC=		${WRKDIR}/${GH_PROJECT}-${PORTVERSION}
 
 PERL_MOD_DIR=	${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
 PERL_UTIL_DIR=	${PREFIX}/libexec/${PORTNAME}
