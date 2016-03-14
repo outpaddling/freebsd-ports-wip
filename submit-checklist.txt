@@ -13,6 +13,11 @@ Makefile:
     # Created by: First-name Last-name <email>
     # $FreeBSD$
     
+    Try to make PKGNAME match port directory name
+    
+    PKGNAMEPREFIX
+	p5-, ${PYTHON_PKGNAMEPREFIX}, etc.
+    
     Check/correct MASTER_SITES
 	Use https if possible to protect download stream from hackers
 	USE_GITHUB, SF, DISTVERSIONPREFIX, etc. if possible

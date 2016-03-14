@@ -1,7 +1,5 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
-# To-do:
-#	Unbundle collectl (low priority)
 
 PORTNAME=	trinity
 PORTVERSION=	2.1.1
@@ -37,16 +35,14 @@ LDFLAGS+=	-fopenmp -Wl,-rpath=${_GCC_RUNTIME}
 # Bundled plugins: Trinity is very sensitive to having the correct versions
 # of some of these.  Test thoroughly if you change any of them.
 # collectl 3.7.4
-# samtools 0.1.19 (must use this version: 1.x does not work well)
-#		samtools01==0.1.19:/usr/wip/biology/samtools0119 \
 # jellyfish 2.1.4 (2.2.0 seems OK)
 # parafly 0.1 (determined from config.h)
 # fastool 7c3e034f05 Nov 18 2013 commit on Github
 # htslib 1.2.1
 # slclust unknown (last version on SF is 02022010)
 # Trimmomatic 0.32
-# https://github.com/trinityrnaseq/trinityrnaseq/wiki/Installing%20Trinity
-# as of 2016-02-09 specifically states that bowtie-1 should be used.
+# To-do:
+#	Unbundle collectl (low priority)
 
 BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bash:${PORTSDIR}/shells/bash
@@ -66,8 +62,6 @@ LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 
 LIBEXEC_DIR=	${PREFIX}/libexec/trinity
 PLUGINS_DIR=	${LIBEXEC_DIR}/trinity-plugins
-
-# WRKSRC=		${WRKDIR}/${PORTNAME}rnaseq-${PORTVERSION}
 
 post-patch:
 	# General changes to respect env
