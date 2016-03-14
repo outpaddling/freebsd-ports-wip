@@ -20,7 +20,8 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/Trimmomatic-${PORTVERSION}
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/trimmomatic-0.35.jar ${STAGEDIR}${JAVAJARDIR}/trimmomatic.jar
+	${INSTALL_DATA} ${WRKSRC}/trimmomatic-0.35.jar \
+		${STAGEDIR}${JAVAJARDIR}/trimmomatic.jar
 	cd ${WRKSRC} && ${COPYTREE_SHARE} adapters ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

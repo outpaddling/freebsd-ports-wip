@@ -28,7 +28,7 @@ Makefile:
     Convert /usr/wip and ../.. to ${PORTSDIR}
     Use ${PORTNAME}, ${PORTVERSION}, etc in body wherever possible
     Check categories
-	Add perl5, python, etc. for ports that use them
+	Add java, perl5, python, etc. for ports that use them
     
     MAINTAINER=     email
     
