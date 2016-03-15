@@ -14,9 +14,9 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	Rscript:${PORTSDIR}/math/R
 
-# For bundled samtools, which should be unbundled in the future, when RSEM
-# depends only on an unmodified htslib.  Samtools and rsem developers
-# are already communicating.
+# gmake is for bundled samtools, which should be unbundled in the future,
+# when RSEM depends only on an unmodified htslib.  Samtools and rsem developers
+# are already communicating about this.
 USES=		gmake perl5 python shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	convert-sam-for-rsem \
