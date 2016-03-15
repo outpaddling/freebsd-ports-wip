@@ -1,3 +1,4 @@
-A flexible read trimming tool for Illumina NGS data.
+Trimmomatic performs a variety of useful trimming tasks for illumina
+NGS paired-end and single ended data.
 
 WWW: http://www.usadellab.org/cms/?page=trimmomatic

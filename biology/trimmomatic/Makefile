@@ -22,7 +22,7 @@ NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/Trimmomatic-${PORTVERSION}
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/trimmomatic-0.35.jar \
+	${INSTALL_DATA} ${WRKSRC}/trimmomatic-${PORTVERSION}.jar \
 		${STAGEDIR}${JAVAJARDIR}/trimmomatic.jar
 	cd ${WRKSRC} && ${COPYTREE_SHARE} adapters ${STAGEDIR}${DATADIR}
 

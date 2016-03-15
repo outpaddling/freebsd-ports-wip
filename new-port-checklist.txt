@@ -1,0 +1,63 @@
+
+1)  Edit ~/.porttools
+    
+    EMAIL="your-email-address"
+    FULLNAME="Your full name"
+
+2)  cd /usr/wip/category
+
+3)  port create portname
+
+    -   Portname preferably contains only lower-case letters.
+	Use DISTNAME in the Makefile if the distfiles have caps or
+	other characters.
+
+4)  cd portname
+
+5)  Edit Makefile
+
+    PORTVERSION should be of the form major.minor.revision or similar.
+    
+    -   This allows the ports system to compare versions in DEPENDS lines.
+    -   If upstream version doesn't conform, use something like YYYY.MM.DD
+	and use DISTNAME to describe the distfile name, e.g.
+	
+	PORTNAME=       slclust
+	PORTVERSION=    2010.02.02
+	DISTNAME=       ${PORTNAME}_02022010
+    
+    CATEGORIES should include the primary category and any major scripting
+    languages used.
+    
+	CATEGORIES=     biology java
+	CATEGORIES=     biology perl5
+	CATEGORIES=     math python
+    
+    Determine correct MASTER_SITES
+    
+    -   Use USE_GITHUB, GH_ACCOUNT, GH_TAGNAME, etc. if possible
+    -   Use DISTVERSIONPREFIX if possible (preferred over GH_TAGNAME
+	when using USE_GITHUB)
+    -   Sourceforge hint: Download from a web browser and examine the
+	"direct link" to determine proper MASTER_SITES syntax.
+
+    COMMENT should be an abbreviated version of pkg-descr limited to
+    less than 1 line. Begins with a capital and no '.' at the end.
+    
+    Set LICENSE= below COMMENT= and a blank line.
+    
+    -   Look for the license info on the project website or look for
+	a file such as LICENSE, COPYING, or README in the source tree
+	after running "make makesum" and "make extract".
+
+6)  Edit pkg-descr
+
+    -   Copy, paste, and edit the summary description from the project
+	website and add the website URL next to WWW.
+
+7)  make makesum
+
+8)  make extract
+
+9)  Refer to the Porter's Handbook for more info.
+
