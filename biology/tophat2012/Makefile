@@ -31,4 +31,9 @@ CONFIGURE_ARGS+=	--with-bam=${LOCALBASE}/samtools0119
 
 MAKE_JOBS_UNSAFE=yes
 
+# FIXME: Temporary hack to avoid using samtools 1.x
+# Need to choose everything in /usr/local/samtools0119/bin over /usr/local/bin
+#post-patch:
+#	${REINPLACE_CMD} -e 's|prog_path("samtools")|"/usr/local/samtools0119/bin/samtools"|g' ${WRKSRC}/src/tophat.py
+
 .include <bsd.port.mk>
