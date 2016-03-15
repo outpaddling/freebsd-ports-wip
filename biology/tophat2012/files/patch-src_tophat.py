@@ -1,5 +1,5 @@
---- src/tophat.py.orig	2016-03-15 15:52:31.788047092 -0500
-+++ src/tophat.py	2016-03-15 15:52:47.356042582 -0500
+--- src/tophat.py.orig	2014-06-24 13:58:01 UTC
++++ src/tophat.py
 @@ -9,6 +9,9 @@ Copyright (c) 2008 Cole Trapnell. All ri
  Updated and maintained by Daehwan Kim and Geo Pertea since Jul 2010.
  """
