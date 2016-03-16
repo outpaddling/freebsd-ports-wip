@@ -55,7 +55,7 @@ RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		fastool:${PORTSDIR}/biology/fastool \
 		TransDecoder.Predict:/usr/wip/biology/p5-transdecoder \
 		slclust:/usr/wip/biology/slclust \
-		Trimmomatic>=0.32:/usr/wip/biology/trimmomatic \
+		trimmomatic>=0.32:/usr/wip/biology/trimmomatic \
 		rsem>=1.2.27:/usr/wip/biology/rsem
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libhts.so:${PORTSDIR}/biology/htslib
