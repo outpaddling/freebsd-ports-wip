@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 # FIXME: Find and install man pages
-# Make all rsem programs use libexec/rsem/samtools
+# Make sure all rsem programs use libexec/rsem/samtools
 PORTNAME=	rsem
 PORTVERSION=	1.2.29
 DISTVERSIONPREFIX=      v
@@ -15,9 +15,8 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	Rscript:${PORTSDIR}/math/R
 
-# For bundled samtools, which should be unbundled in the future, when RSEM
-# depends only on an unmodified htslib.  Samtools and rsem developers
-# are already communicating.
+# Gmake is for bundled samtools, which contains modifications for rsem.
+# Should be unbundled in the future.
 USES=		gmake perl5 python shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	convert-sam-for-rsem \
@@ -44,9 +43,12 @@ MAKE_ENV+=	libexecdir=$(PREFIX)/libexec \
 		LDL_LIB=""
 
 post-patch:
-	${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 		's|use lib $$FindBin::RealBin|use lib "${SITE_PERL}/rsem"|' \
 		${WRKSRC}/rsem*
+	@${REINPLACE_CMD} -e 's|samtools|${PREFIX}/libexec/rsem/samtools|g' \
+		${WRKSRC}/rsem-calculate-expression \
+		${WRKSRC}/rsem-plot-transcript-wiggles
 
 post-stage:
 	${RM} -rf ${STAGEDIR}${PREFIX}/bin/samtools-*
