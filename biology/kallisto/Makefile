@@ -17,6 +17,8 @@ USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	pachterlab
 
-PLIST_FILES=	bin/kallisto
+post-install:
+	${INSTALL_SCRIPT} ${FILESDIR}/kallisto-test ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC} && ${COPYTREE_SHARE} test ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
