@@ -35,10 +35,4 @@ BROKEN_FreeBSD_9_i386= multiple code issues on i386 < 10.0-RELEASE
 CONFIGURE_ARGS+=--without-sse
 .endif
 
-# configure does not support --with-pkgconfigdir
-post-patch:
-	${REINPLACE_CMD} \
-		-e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.am
-
 .include <bsd.port.post.mk>
