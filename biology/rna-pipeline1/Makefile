@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 RUN_DEPENDS=	scythe>=0:/usr/wip/biology/scythe \
 		sickle>=0:/usr/wip/biology/sickle \
 		bowtie2>=0:/usr/wip/biology/bowtie2 \
-		tophat==2.0.12:/usr/wip/biology/tophat2012 \
+		tophat>=2.1.1:/usr/wip/biology/tophat \
 		cufflinks>=0:/usr/wip/biology/cufflinks
 
 USES=		metaport

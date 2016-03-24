@@ -15,7 +15,7 @@ RUN_DEPENDS=	scythe>=0:/usr/wip/biology/scythe \
 		bwa>=0:${PORTSDIR}/biology/bwa \
 		${PYTHON_PKGNAMEPREFIX}ceas>=0:/usr/wip/biology/py-ceas \
 		bowtie2>=0:/usr/wip/biology/bowtie2 \
-		tophat==2.0.12:/usr/wip/biology/tophat2012 \
+		tophat>=2.1.1:/usr/wip/biology/tophat \
 		cufflinks>=0:/usr/wip/biology/cufflinks \
 		${PYTHON_PKGNAMEPREFIX}MACS2>=2:/usr/wip/biology/py-macs2 \
 		meme>=0:/usr/wip/biology/meme
