@@ -11,13 +11,14 @@ COMMENT=	Fast, memory-efficient counting of k-mers in DNA
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS+=	yaggo:${PORTSDIR}/devel/yaggo
+BUILD_DEPENDS=	yaggo:${PORTSDIR}/devel/yaggo
 
 GNU_CONFIGURE=	yes
 
 USES=		autoreconf compiler:c++11-lib compiler:openmp gmake \
-		libtool pkgconfig
+		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+PATHFIX_MAKEFILEIN=	Makefile.am
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gmarcais
@@ -25,15 +26,13 @@ GH_PROJECT=	Jellyfish
 
 INSTALL_TARGET=	install-strip
 
+BROKEN_FreeBSD_9_i386= multiple code issues on i386 < 10.0-RELEASE
+
 .include <bsd.port.pre.mk>
 
 # SSE code assumes amd64 features
 .if ${ARCH} != "amd64"
-.if ${OSVERSION} < 1000000
-IGNORE=		multiple code issues on i386 < 10.0-RELEASE
-.else
-CONFIGURE_ARGS=	--without-sse
-.endif
+CONFIGURE_ARGS+=--without-sse
 .endif
 
 # configure does not support --with-pkgconfigdir
