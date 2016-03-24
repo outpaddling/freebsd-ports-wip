@@ -26,7 +26,6 @@ CFLAGS+=	-I${LOCALBASE}/include/eigen3 \
 
 MAKE_JOBS_UNSAFE=yes
 
-# FIXME: Find logl somewhere instead of falling back to log
 # FIXME: boost problem with long double and hackaround: https://svn.boost.org/trac/boost/query?status=!closed&page=3&order=summary&row=description: #9331
 # Just using double instead for now
 post-patch:
