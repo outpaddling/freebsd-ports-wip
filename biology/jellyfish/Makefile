@@ -1,10 +1,10 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
-# $FreeBSD$
+# $FreeBSD: head/biology/jellyfish/Makefile 411785 2016-03-24 13:53:06Z amdmi3 $
 
-PORTNAME=		jellyfish
-PORTVERSION=		2.2.4
+PORTNAME=	jellyfish
+PORTVERSION=	2.2.4
 DISTVERSIONPREFIX=	v
-CATEGORIES=		biology
+CATEGORIES=	biology
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Fast, memory-efficient counting of k-mers in DNA
@@ -15,10 +15,9 @@ BUILD_DEPENDS=	yaggo:${PORTSDIR}/devel/yaggo
 
 GNU_CONFIGURE=	yes
 
-USES=		autoreconf compiler:c++11-lib compiler:openmp gmake \
-		libtool pathfix pkgconfig
+USES=		autoreconf compiler:c++11-lib gmake \
+		libtool pkgconfig
 USE_LDCONFIG=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gmarcais
@@ -34,5 +33,11 @@ BROKEN_FreeBSD_9_i386= multiple code issues on i386 < 10.0-RELEASE
 .if ${ARCH} != "amd64"
 CONFIGURE_ARGS+=--without-sse
 .endif
+
+# configure does not support --with-pkgconfigdir
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
+		${WRKSRC}/Makefile.am
 
 .include <bsd.port.post.mk>
