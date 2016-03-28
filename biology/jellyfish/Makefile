@@ -26,7 +26,7 @@ GH_PROJECT=	Jellyfish
 
 INSTALL_TARGET=	install-strip
 
-BROKEN_FreeBSD_9_i386= multiple code issues on i386 < 10.0-RELEASE
+BROKEN_FreeBSD_9_i386=	multiple code issues on i386 < 10.0-RELEASE
 
 .include <bsd.port.pre.mk>
 
