@@ -48,7 +48,10 @@ Makefile:
 	Use USES or USE_* variables wherever possible
 	    See /usr/ports/Mk/Uses
 	    USE_TEX instead of tex-* depends
+	    pathfix for pkgconfig lib/libdata
 	New LIB_DEPENDS format: libname.so
+
+    BROKEN_${OPSYS}_${REL}_${ARCH}
     
     OPTIONS
 	All non-options macros before bsd.options.mk

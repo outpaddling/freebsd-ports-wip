@@ -9,7 +9,8 @@ CATEGORIES=	biology
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Fast, memory-efficient counting of k-mers in DNA
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	yaggo:${PORTSDIR}/devel/yaggo
 
