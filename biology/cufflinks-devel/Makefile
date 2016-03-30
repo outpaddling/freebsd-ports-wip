@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cufflinks
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.1
 CATEGORIES=	biology
 MASTER_SITES=	http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/
 # Switch to USE_GITHUB?
