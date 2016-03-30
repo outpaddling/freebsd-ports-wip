@@ -3,7 +3,5 @@ bin/cuffcompare
 bin/cuffdiff
 bin/cufflinks
 bin/cuffmerge
-bin/cuffnorm
-bin/cuffquant
 bin/gffread
 bin/gtf_to_sam

@@ -11,6 +11,7 @@ MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Transcript assembly, differential expression and regulation for RNA-Seq
 
 USES=		python
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 
 BUILD_DEPENDS=	samtools01==0.1.19:/usr/wip/biology/samtools0119 \
