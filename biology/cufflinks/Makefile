@@ -11,7 +11,7 @@ MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Transcript assembly, differential expression and regulation for RNA-Seq
 
 USES=		python
-USE_GCC=	yes
+#USE_GCC=	yes
 GNU_CONFIGURE=	yes
 
 BUILD_DEPENDS=	samtools01==0.1.19:/usr/wip/biology/samtools0119 \
@@ -22,6 +22,8 @@ RUN_DEPENDS=	samtools01==0.1.19:/usr/wip/biology/samtools0119
 
 CONFIGURE_ARGS+=--with-bam=${LOCALBASE}/samtools0119
 
+#CC=		clang37
+#CXX=		clang++37
 CFLAGS+=	-I${LOCALBASE}/include/eigen3 \
 		-Wno-unused -Wno-reorder -Wno-sign-compare
 
@@ -31,9 +33,18 @@ MAKE_JOBS_UNSAFE=yes
 # Just using double instead for now
 post-patch:
 	${REINPLACE_CMD} \
+		-e 's|shared_ptr|boost::shared_ptr|g' \
+		-e 's|boost::shared_ptr.hpp|shared_ptr.hpp|g' \
+		-e 's|boost::boost::|boost::|g' \
+		-e 's|^mutex|boost::mutex|g' \
 		-e 's|logl|log|g' \
 		-e 's|long double|double|g' \
+		-e 's|Lf|lf|g' \
+		-e 's|Lg|lg|g' \
 		${WRKSRC}/src/*.cpp \
 		${WRKSRC}/src/*.h
+	${REINPLACE_CMD} \
+		-e 's|int& is_up|bool\& is_up|g' \
+		${WRKSRC}/src/rounding.h
 
 .include <bsd.port.mk>
