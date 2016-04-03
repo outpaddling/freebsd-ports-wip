@@ -11,10 +11,10 @@ COMMENT=	Bioinformatics tool for the microbial ecology community
 
 LICENSE=	GPLv3
 
-USES=		gmake fortran shebangfix
+USES=		gmake shebangfix
 SHEBANGFILES=	source/uchime_src/mk
-# Does not build with clang
-# USE_GCC=	yes
+# FIXME: Does not build with clang: Canberra type not found
+USE_GCC=	yes
 
 LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
 
