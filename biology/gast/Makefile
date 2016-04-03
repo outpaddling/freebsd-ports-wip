@@ -11,6 +11,9 @@ COMMENT=	Global Alignment for Sequence Taxonomy
 
 LICENSE=	GPLv2
 
+RUN_DEPENDS=	vsearch:/usr/wip/biology/vsearch \
+		mothur:/usr/wip/biology/mothur
+
 USES=		perl5 tar:xz
 USE_PERL5=	run
 
