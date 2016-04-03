@@ -12,7 +12,7 @@ COMMENT=	Bioinformatics tool for the microbial ecology community
 LICENSE=	GPLv3
 
 USES=		gmake shebangfix
-SHEBANGFILES=	source/uchime_src/mk
+SHEBANG_FILES=	source/uchime_src/mk
 # FIXME: Does not build with clang: Canberra type not found
 USE_GCC=	yes
 
@@ -20,15 +20,16 @@ LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
 
 USE_GITHUB=	yes
 
-# WRKSRC=		${WRKDIR}/${PORTNAME}/source
 MAKEFILE=	makefile
 ALL_TARGET=	mothur
-MAKE_JOBS_UNSAFE=yes
+PLIST_FILES=	mothur
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-O3|-I${LOCALBASE}/include|g' ${WRKSRC}/makefile
-	${REINPLACE_CMD} -e 's|gfortran|${FC}|g' ${WRKSRC}/source/makefile
-	${REINPLACE_CMD} -e 's|-arch x86_64||g' ${WRKSRC}/makefile
+	${REINPLACE_CMD} -e 's|-O3|-I${LOCALBASE}/include|g' \
+			-e 's|-arch x86_64||g' \
+			-e 's|$${BOOST_LIBRARY_DIR}/libboost_iostreams.a|-lboost_iostreams|g' \
+			-e 's|$${BOOST_LIBRARY_DIR}/zlib.a|-lz|g' \
+			${WRKSRC}/makefile
 	${REINPLACE_CMD} -e 's|g++|${CXX}|g' ${WRKSRC}/source/uchime_src/mk
 
 .include <bsd.port.mk>
