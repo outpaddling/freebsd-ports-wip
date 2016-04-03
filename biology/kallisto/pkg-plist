@@ -1,0 +1,7 @@
+bin/kallisto
+bin/kallisto-test
+%%DATADIR%%/test/README.md
+%%DATADIR%%/test/Snakefile
+%%DATADIR%%/test/reads_1.fastq.gz
+%%DATADIR%%/test/reads_2.fastq.gz
+%%DATADIR%%/test/transcripts.fasta.gz
