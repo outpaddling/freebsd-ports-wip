@@ -1,0 +1,42 @@
+--- makefile.orig	2015-07-27 09:18:26.000000000 -0500
++++ makefile	2016-04-03 08:36:00.103800556 -0500
+@@ -16,14 +16,17 @@ USEBOOST ?= yes
+ MOTHUR_FILES="\"Enter_your_default_path_here\""
+ RELEASE_DATE = "\"7/27/2015\""
+ VERSION = "\"1.36.1\""
++DESTDIR ?= .
++PREFIX ?= /usr/local
++INSTALL ?= install
+ 
+ # Optimize to level 3:
+-CXXFLAGS += -O3
++CXXFLAGS += -I/usr/local/include
+ 
+ 
+ ifeq  ($(strip $(64BIT_VERSION)),yes)
+     #if you are a mac user use the following line
+-    TARGET_ARCH += -arch x86_64
++    TARGET_ARCH += 
+ 
+     #if you using cygwin to build Windows the following line
+     #CXX = x86_64-w64-mingw32-g++
+@@ -70,8 +73,8 @@ ifeq  ($(strip $(USEBOOST)),yes)
+     CXXFLAGS += -DUSE_BOOST
+ 
+     LIBS += \
+-    ${BOOST_LIBRARY_DIR}/libboost_iostreams.a \
+-    ${BOOST_LIBRARY_DIR}/zlib.a
++    -lboost_iostreams \
++    -lz
+ 
+     #if linux or windows then ${BOOST_LIBRARY_DIR}/libz.a
+ endif
+@@ -116,7 +119,7 @@ uchime:
+ 
+ 
+ install : mothur
+-
++	${INSTALL} -c mothur uchime ${DESTDIR}${PREFIX}/bin
+ 
+ %.o : %.c %.h
+ 	$(COMPILE.c) $(OUTPUT_OPTION) $<

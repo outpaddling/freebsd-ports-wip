@@ -22,14 +22,7 @@ USE_GITHUB=	yes
 
 MAKEFILE=	makefile
 ALL_TARGET=	mothur
-PLIST_FILES=	mothur
-
-post-patch:
-	${REINPLACE_CMD} -e 's|-O3|-I${LOCALBASE}/include|g' \
-			-e 's|-arch x86_64||g' \
-			-e 's|$${BOOST_LIBRARY_DIR}/libboost_iostreams.a|-lboost_iostreams|g' \
-			-e 's|$${BOOST_LIBRARY_DIR}/zlib.a|-lz|g' \
-			${WRKSRC}/makefile
-	${REINPLACE_CMD} -e 's|g++|${CXX}|g' ${WRKSRC}/source/uchime_src/mk
+# FIXME: Unbundle uchime?
+PLIST_FILES=	bin/mothur bin/uchime
 
 .include <bsd.port.mk>
