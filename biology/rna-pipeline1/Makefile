@@ -18,6 +18,6 @@ RUN_DEPENDS=	scythe>=0:/usr/wip/biology/scythe \
 		cufflinks>=0:/usr/wip/biology/cufflinks \
 		${PYTHON_PKGNAMEPREFIX}htseq>=0.6.1:/usr/wip/biology/py-htseq
 
-USES=		metaport
+USES=		metaport python
 
 .include <bsd.port.mk>
