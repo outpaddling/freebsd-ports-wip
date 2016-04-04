@@ -1,11 +1,11 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	BPC-scripts
+PORTNAME=	bpcscripts
 PORTVERSION=	2016.02.09
 CATEGORIES=	biology
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Gast Illumina processing
 
 LICENSE=	MIT
@@ -19,7 +19,9 @@ SHEBANG_FILES=	gast_ill
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MBL-Woods-Hole
+GH_PROJECT=	BPC-scripts
 GH_TAGNAME=	73c814a243955dc64ee248d9dacd4f71ac8640dc
+# Old = fd89ad8b4297eae9bc2896ef65cb6151261f8e1e
 
 NO_BUILD=	yes
 

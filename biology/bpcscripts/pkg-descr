@@ -1,3 +1,4 @@
-[description of the port]
+Global Alignment for Sequence Taxonomy uses a reference database of SSU
+sequences to determine the taxonomy of hypervariable region tags.
 
-WWW: http://example.com
+WWW: https://vamps.mbl.edu/resources/software.php

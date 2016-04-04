@@ -1,4 +1,0 @@
-bin/gast
-%%SITE_PERL%%/gast/Taxonomy.pm
-%%PORTDOCS%%%%DOCSDIR%%/GAST_Manual.pdf
-%%PORTDOCS%%%%DOCSDIR%%/GAST_Manual_refprimers.pdf
