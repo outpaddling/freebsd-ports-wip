@@ -1,6 +1,6 @@
---- makefile.orig	2015-07-27 09:18:26.000000000 -0500
-+++ makefile	2016-04-03 08:36:00.103800556 -0500
-@@ -16,14 +16,17 @@ USEBOOST ?= yes
+--- makefile.orig	2015-07-27 14:18:26 UTC
++++ makefile
+@@ -16,14 +16,19 @@ USEBOOST ?= yes
  MOTHUR_FILES="\"Enter_your_default_path_here\""
  RELEASE_DATE = "\"7/27/2015\""
  VERSION = "\"1.36.1\""
@@ -10,7 +10,9 @@
  
  # Optimize to level 3:
 -CXXFLAGS += -O3
-+CXXFLAGS += -I/usr/local/include
++# Causes global pam.h, canberra.h, and prng.h to be picked up before
++# mothur versions.  Make ${LOCALBASE}/include last
++# CXXFLAGS += -I/usr/local/include
  
  
  ifeq  ($(strip $(64BIT_VERSION)),yes)
@@ -20,7 +22,7 @@
  
      #if you using cygwin to build Windows the following line
      #CXX = x86_64-w64-mingw32-g++
-@@ -70,8 +73,8 @@ ifeq  ($(strip $(USEBOOST)),yes)
+@@ -70,8 +75,8 @@ ifeq  ($(strip $(USEBOOST)),yes)
      CXXFLAGS += -DUSE_BOOST
  
      LIBS += \
@@ -31,12 +33,34 @@
  
      #if linux or windows then ${BOOST_LIBRARY_DIR}/libz.a
  endif
-@@ -116,7 +119,7 @@ uchime:
+@@ -94,7 +99,7 @@ endif
+     subdirs :=  $(sort $(dir $(filter-out  $(skipUchime), $(wildcard source/*/))))
+     subDirIncludes = $(patsubst %, -I %, $(subdirs))
+     subDirLinking =  $(patsubst %, -L%, $(subdirs))
+-    CXXFLAGS += -I. $(subDirIncludes)
++    CXXFLAGS += -I. $(subDirIncludes) -I${LOCALBASE}/include
+     LDFLAGS += $(subDirLinking)
+ 
+ 
+@@ -106,17 +111,17 @@ endif
+     OBJECTS+=$(patsubst %.cpp,%.o,$(wildcard *.cpp))
+     OBJECTS+=$(patsubst %.c,%.o,$(wildcard *.c))
+ 
+-mothur : $(OBJECTS) uchime
++mothur : $(OBJECTS)
+ 	$(CXX) $(LDFLAGS) $(TARGET_ARCH) -o $@ $(OBJECTS) $(LIBS)
+ 	strip mothur
+ 
+ 
+-uchime:
+-	cd source/uchime_src && ./mk && mv uchime ../../ && cd ..
++#uchime:
++#	cd source/uchime_src && ./mk && mv uchime ../../ && cd ..
  
  
  install : mothur
 -
-+	${INSTALL} -c mothur uchime ${DESTDIR}${PREFIX}/bin
++	${INSTALL} -c mothur ${DESTDIR}${PREFIX}/bin
  
  %.o : %.c %.h
  	$(COMPILE.c) $(OUTPUT_OPTION) $<

@@ -3,7 +3,7 @@
 
 PORTNAME=	mothur
 PORTVERSION=	1.36.1
-DISTVERSIONPREFIX=      v
+DISTVERSIONPREFIX=v
 CATEGORIES=	biology
 
 MAINTAINER=	bacon4000@gmail.com
@@ -11,18 +11,17 @@ COMMENT=	Bioinformatics tool for the microbial ecology community
 
 LICENSE=	GPLv3
 
-USES=		gmake shebangfix
-SHEBANG_FILES=	source/uchime_src/mk
-# FIXME: Does not build with clang: Canberra type not found
-USE_GCC=	yes
-
 LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
+RUN_DEPENDS=	uchime>=0:/usr/wip/biology/uchime
+
+USES=		gmake ncurses readline
 
 USE_GITHUB=	yes
 
 MAKEFILE=	makefile
 ALL_TARGET=	mothur
-# FIXME: Unbundle uchime?
-PLIST_FILES=	bin/mothur bin/uchime
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+PLIST_FILES=	bin/mothur
 
 .include <bsd.port.mk>
