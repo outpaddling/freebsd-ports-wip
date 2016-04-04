@@ -19,6 +19,11 @@ USE_PERL5=	run
 
 NO_BUILD=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e \
+                's|#use lib "/class/stamps-software/bin"|use lib "${SITE_PERL}/gast"|' \
+                ${WRKSRC}/gast
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gast ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
