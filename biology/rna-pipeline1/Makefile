@@ -16,7 +16,7 @@ RUN_DEPENDS=	scythe>=0:/usr/wip/biology/scythe \
 		bowtie2>=0:/usr/wip/biology/bowtie2 \
 		tophat>=2.1.1:/usr/wip/biology/tophat \
 		cufflinks>=0:/usr/wip/biology/cufflinks \
-		${PKGNAMEPREFIX}htseq>=0.6.1:/usr/wip/biology/py-htseq
+		${PYTHON_PKGNAMEPREFIX}htseq>=0.6.1:/usr/wip/biology/py-htseq
 
 USES=		metaport
 
