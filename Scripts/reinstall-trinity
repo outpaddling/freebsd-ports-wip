@@ -25,6 +25,6 @@ if [ 0$remove = 0y ]; then
 fi
 
 pkg install -y coreutils ruby bash openjdk gmake gcc perl5 samtools m4 \
-    gettext-tools python R
+    gettext-tools python R || true
 wip-reinstall-port biology/trinity
 
