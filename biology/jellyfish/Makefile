@@ -1,5 +1,6 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD: head/biology/jellyfish/Makefile 411785 2016-03-24 13:53:06Z amdmi3 $
+# Test new versions with Trinity before upgrading
 
 PORTNAME=	jellyfish
 PORTVERSION=	2.2.4

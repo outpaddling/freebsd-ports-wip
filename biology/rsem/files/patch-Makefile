@@ -1,5 +1,5 @@
---- Makefile.orig	2016-03-07 01:49:06.000000000 -0600
-+++ Makefile	2016-03-16 10:20:28.585089000 -0500
+--- Makefile.orig	2016-03-07 07:49:06 UTC
++++ Makefile
 @@ -1,5 +1,9 @@
 -SAMTOOLS = samtools-1.3
 -HTSLIB = htslib-1.3

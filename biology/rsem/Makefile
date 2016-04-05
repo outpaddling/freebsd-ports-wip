@@ -2,11 +2,9 @@
 # $FreeBSD$
 # Test new versions with Trinity before upgrading
 
-# FIXME: Find and install man pages
-# Make sure all rsem programs use libexec/rsem/samtools
 PORTNAME=	rsem
 PORTVERSION=	1.2.29
-DISTVERSIONPREFIX=      v
+DISTVERSIONPREFIX=v
 CATEGORIES=	biology
 
 MAINTAINER=	bacon4000@gmail.com
@@ -18,6 +16,7 @@ RUN_DEPENDS=	Rscript:${PORTSDIR}/math/R
 
 # Gmake is for bundled samtools, which contains modifications for rsem.
 # Should be unbundled in the future.
+# Make sure all rsem programs use libexec/rsem/samtools
 USES=		gmake perl5 python shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	convert-sam-for-rsem \

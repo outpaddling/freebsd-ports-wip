@@ -1,5 +1,6 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
+# Test new versions with Trinity before upgrading
 
 PORTNAME=		bowtie
 PORTVERSION=		1.1.2

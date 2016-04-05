@@ -1,5 +1,6 @@
 # Created by: Dan Siercks <dsiercks@uwm.edu>
 # $FreeBSD$
+# Test new versions with Trinity before upgrading
 
 PORTNAME=	trimmomatic
 PORTVERSION=	0.35
