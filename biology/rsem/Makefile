@@ -1,5 +1,6 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
+# Test new versions with Trinity before upgrading
 
 # FIXME: Find and install man pages
 # Make sure all rsem programs use libexec/rsem/samtools
@@ -38,8 +39,8 @@ GH_PROJECT=	RSEM
 
 WRKSRC=		${WRKDIR}/RSEM-${PORTVERSION}
 
-MAKE_ENV+=	libexecdir=$(PREFIX)/libexec \
-		perl_mod_dir=$(PREFIX)/$(SITE_PERL_REL)/rsem \
+MAKE_ENV+=	libexecdir=${PREFIX}/libexec \
+		perl_mod_dir=${PREFIX}/${SITE_PERL_REL}/rsem \
 		LDL_LIB=""
 
 post-patch:
