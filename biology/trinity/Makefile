@@ -48,14 +48,14 @@ BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
 		bowtie:${PORTSDIR}/biology/bowtie \
-		bowtie2:/usr/wip/biology/bowtie2 \
+		bowtie2:${PORTSDIR}/biology/bowtie2 \
 		samtools>=1.3:${PORTSDIR}/biology/samtools \
-		jellyfish>=2.1.4:/usr/wip/biology/jellyfish \
-		ParaFly:/usr/wip/sysutils/parafly \
+		jellyfish>=2.1.4:${PORTSDIR}/biology/jellyfish \
+		ParaFly:${PORTSDIR}/sysutils/parafly \
 		fastool:${PORTSDIR}/biology/fastool \
-		TransDecoder.Predict:/usr/wip/biology/p5-transdecoder \
-		slclust:/usr/wip/biology/slclust \
-		trimmomatic>=0.32:/usr/wip/biology/trimmomatic \
+		TransDecoder.Predict:${PORTSDIR}/biology/p5-transdecoder \
+		slclust:${PORTSDIR}/biology/slclust \
+		trimmomatic>=0.32:${PORTSDIR}/biology/trimmomatic \
 		rsem>=1.2.27:/usr/wip/biology/rsem
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libhts.so:${PORTSDIR}/biology/htslib
