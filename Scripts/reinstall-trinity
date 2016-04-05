@@ -24,7 +24,9 @@ if [ 0$remove = 0y ]; then
     pause
 fi
 
-pkg install -y coreutils ruby bash openjdk gmake gcc perl5 samtools m4 \
+pkg install coreutils ruby bash openjdk gmake gcc48 perl5 samtools m4 \
     gettext-tools python R || true
+pkg install bowtie bowtie2 jellyfish parafly p5-transdecoder \
+    slclust Trimmomatic || true
 wip-reinstall-port biology/trinity
 
