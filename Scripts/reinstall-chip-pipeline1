@@ -23,6 +23,6 @@ if [ 0$remove = 0y ]; then
     pause
 fi
 
-pkg install -y python R || true
+pkg install -y python R boost-jam cmake py27-numpy || true
 wip-reinstall-port biology/chip-pipeline1
 
