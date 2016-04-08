@@ -4,14 +4,13 @@
 PORTNAME=	cufflinks
 PORTVERSION=	2.1.1
 CATEGORIES=	biology
+# No releases in Github repo, so no USE_GITHUB
 MASTER_SITES=	http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/
-# Switch to USE_GITHUB?
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Transcript assembly, differential expression and regulation for RNA-Seq
 
 USES=		python
-#USE_GCC=	yes
 GNU_CONFIGURE=	yes
 
 BUILD_DEPENDS=	samtools01==0.1.19:/usr/wip/biology/samtools0119 \
@@ -22,8 +21,6 @@ RUN_DEPENDS=	samtools01==0.1.19:/usr/wip/biology/samtools0119
 
 CONFIGURE_ARGS+=--with-bam=${LOCALBASE}/samtools0119
 
-#CC=		clang37
-#CXX=		clang++37
 CFLAGS+=	-I${LOCALBASE}/include/eigen3 \
 		-Wno-unused -Wno-reorder -Wno-sign-compare
 
