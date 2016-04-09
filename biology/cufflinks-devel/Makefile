@@ -1,5 +1,6 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
+# This version is known to crash frequently
 
 PORTNAME=	cufflinks
 PORTVERSION=	2.2.1

@@ -1,5 +1,6 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
+# Do not upgrade until crash bugs are worked out in 2.2.1 or later
 
 PORTNAME=	cufflinks
 PORTVERSION=	2.1.1
