@@ -1,0 +1,32 @@
+--- Makefile.orig	2015-01-27 07:49:28.000000000 -0600
++++ Makefile	2016-04-08 21:58:40.725141000 -0500
+@@ -11,7 +11,7 @@ DISRIN = moware-1.0
+ MANFIL = f90ppr.1 f90pp.1 f90split.1
+ #
+ F90FLAGS=-O
+-FC90=gfortran
++FC90?=gfortran
+ #
+ #
+ # ... Cancel .mod.o rule
+@@ -102,7 +102,7 @@ ALLBSZO = $(SRCBSZO) $(SUPBSZO)\
+ .SUFFIXES: .F90 .f90 .f90~ $(MD90) .flg $(SUFFIXES)
+ #
+ COMPILE.f90=$(FC90) $(F90FLAGS) -c
+-LINK.f90=$(FC90) $(F90FLAGS)
++LINK.f90=$(FC90) $(F90FLAGS) -Wl,-rpath=${LOCALBASE}/lib/gcc48
+ .F90.f90:
+ 	./$(PGMFPPR) < $< > $@
+ .f90.o:
+@@ -168,10 +168,9 @@ $(INTBSZO) : $(SUPBSZO)
+ clean      :
+ 	$(RM) $(OBJSPLT) $(MODSPLT) $(MDLSPLT) $(IDNSPLT)
+ 	$(RM) $(OBJTOPS) $(MODTOPS) $(MDLTOPS) $(IDNTOPS)
+-	$(RM) $(OBJFPPR) $(MODFPPR) $(MDLFPPR) $(IDNFPPR)
++	$(RM) $(OBJFPPR) $(MODFPPR) $(MDLFPPR) $(IDNFPPR) $(PGMFPPR)
+ 	$(RM) $(OBJFAIB) $(MODFAIB) $(MDLFAIB) $(IDNFAIB)
+ 	$(RM) $(INTBSZO)
+-	sccs clean
+ #
+ # ______________________________________________________________________
+ sources    : $(ALLSPLT) $(ALLTOPS) $(ALLFPPR) $(ALLFAIB) $(SRCBSZO)
