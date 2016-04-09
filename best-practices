@@ -1,0 +1,10 @@
+
+Document any deviations from the ideal, such as
+
+-   Using USE_GCC instead of USES=compiler:*, CXXFLAGS+=-std=g++11, etc.
+
+-   Reasons not to run the latest release
+
+    Something depends on an older release
+    There are unacceptable known bugs with the latest
+    
