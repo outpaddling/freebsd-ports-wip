@@ -38,14 +38,12 @@ sbin/cluster-local-pkg-install
 sbin/cluster-local-port_add
 sbin/cluster-local-sync-software
 sbin/cluster-lowest-uid
-sbin/cluster-net-admin
 sbin/cluster-node-admin
 sbin/cluster-pbs-restart
 sbin/cluster-pkg-install
 sbin/cluster-pkg-upgrade
 sbin/cluster-pkgdir
 sbin/cluster-portsnap
-sbin/cluster-raid-admin
 sbin/cluster-remove-ldap-expired-users
 sbin/cluster-restore-pw
 sbin/cluster-restore-user
