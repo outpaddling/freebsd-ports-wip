@@ -9,7 +9,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Generates a static plist for a port
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 NO_BUILD=	yes
 USES=		tar:xz

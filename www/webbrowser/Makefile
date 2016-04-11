@@ -9,7 +9,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Wrapper for running the "best" available WEB browser
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 NO_BUILD=	yes
 USES=		tar:xz
