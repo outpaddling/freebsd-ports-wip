@@ -3,6 +3,7 @@ sbin/desktop-installer
 %%DATADIR%%/90-vboxguest.fdi
 %%DATADIR%%/GNOME2/xinitrc
 %%DATADIR%%/KDE4/xinitrc
+%%DATADIR%%/LUMINA/gtkrc
 %%DATADIR%%/LUMINA/xinitrc
 %%DATADIR%%/LXDE/GiveConsole
 %%DATADIR%%/LXDE/Xsetup_0
