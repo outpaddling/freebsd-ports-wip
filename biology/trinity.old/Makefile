@@ -21,6 +21,9 @@ DISTNAME=	trinityrnaseq_r20140413p1
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	RNA sequence assembly
 
+# Depends on bowtie and jellyfish
+ONLY_FOR_ARCH=	amd64
+
 USES=		gmake perl5 shebangfix dos2unix
 SHEBANG_FILES=	trinity-plugins/collectl/make_data_files.sh \
 		trinity-plugins/collectl/plot.sh \

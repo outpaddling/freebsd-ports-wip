@@ -14,6 +14,7 @@ LICENSE=	ART10
 
 # May also work on other 64-bit platforms, but untested
 ONLY_FOR_ARCHS=	amd64
+
 # FIXME: bowtie-align intermittently dumps core when compiled with clang
 # GCC 4.2 does not provide good performance
 USE_GCC=	yes

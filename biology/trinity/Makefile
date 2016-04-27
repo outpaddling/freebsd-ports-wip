@@ -9,6 +9,9 @@ CATEGORIES=	biology java
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Trinity assembles transcript sequences from Illumina RNA-Seq data
 
+# Depends on bowtie and jellyfish2
+ONLY_FOR_ARCH=	amd64
+
 LICENSE=	BSD3CLAUSE
 
 USES=		gmake perl5 shebangfix dos2unix	compiler:openmp
