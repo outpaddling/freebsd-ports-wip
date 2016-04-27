@@ -25,7 +25,7 @@ Makefile:
 	No need to manually set WRKSRC if using USE_GITHUB
     
     Check use of each LOCALBASE and PREFIX
-    Convert /usr/wip and ../.. to ${PORTSDIR}
+    Remove /usr/wip and ../..
     Use ${PORTNAME}, ${PORTVERSION}, etc in body wherever possible
     Check categories
 	Add java, perl5, python, etc. for ports that use them

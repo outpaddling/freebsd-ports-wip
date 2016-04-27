@@ -1,5 +1,5 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
-# $FreeBSD: head/sysutils/desktop-installer/Makefile 404208 2015-12-22 04:32:23Z miwi $
+# $FreeBSD: head/sysutils/desktop-installer/Makefile 412349 2016-04-01 14:25:16Z mat $
 
 PORTNAME=	desktop-installer
 PORTVERSION=	0.5.2
@@ -16,6 +16,7 @@ RUN_DEPENDS=	auto-admin>=0.3.8:/usr/wip/sysutils/auto-admin
 USES=		tar:xz
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
