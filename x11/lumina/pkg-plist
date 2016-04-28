@@ -6,7 +6,9 @@ bin/lumina-info
 bin/lumina-open
 bin/lumina-screenshot
 bin/lumina-search
+bin/lumina-textedit
 bin/lumina-xconfig
+bin/start-lumina-desktop
 %%ETCDIR%%Desktop.conf.dist
 include/LuminaOS.h
 include/LuminaSingleApplication.h
@@ -42,7 +44,7 @@ share/applications/lumina-info.desktop
 share/applications/lumina-screenshot.desktop
 share/applications/lumina-search.desktop
 share/applications/lumina-support.desktop
-share/pixmaps/Insight-FileManager.png
+share/applications/lumina-textedit.desktop
 share/pixmaps/Lumina-DE.png
 share/wallpapers/Lumina-DE/Lumina_Wispy_blue-grey-zoom.jpg
 share/wallpapers/Lumina-DE/Lumina_Wispy_blue-grey.jpg
