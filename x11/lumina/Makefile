@@ -4,6 +4,7 @@
 PORTNAME=	lumina
 PORTVERSION=	0.9.0
 CATEGORIES=	x11
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Lumina Desktop Environment
@@ -19,7 +20,7 @@ RUN_DEPENDS=	xorg>=0:${PORTSDIR}/x11/xorg \
 		xbrightness:${PORTSDIR}/x11/xbrightness \
 		numlockx:${PORTSDIR}/x11/numlockx
 
-CONFLICTS=      lumina-devel-0*
+#CONFLICTS=      lumina-devel-0*
 
 OPTIONS_DEFINE=	MULTIMEDIA PCBSD
 OPTIONS_DEFAULT=	MULTIMEDIA
