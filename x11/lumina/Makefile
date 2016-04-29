@@ -2,9 +2,7 @@
 # $FreeBSD: head/x11/lumina/Makefile 410144 2016-03-04 18:44:43Z kmoore $
 
 PORTNAME=	lumina
-PORTVERSION=	1e9b663c06a451b215f6fe47e920ff130f4d963a
-#DISTVERSIONPREFIX=	v
-#DISTVERSIONSUFFIX=	-devel
+PORTVERSION=	0.9.0
 CATEGORIES=	x11
 
 MAINTAINER=	kmoore@FreeBSD.org
@@ -44,6 +42,7 @@ USE_QT5=	core gui network svg linguist multimedia imageformats \
 USES=		desktop-file-utils qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	pcbsd
+GH_TAGNAME=	1e9b663c06a451b215f6fe47e920ff130f4d963a
 
 #Setup the qmake configuration options
 .if ${PORT_OPTIONS:MPCBSD}
