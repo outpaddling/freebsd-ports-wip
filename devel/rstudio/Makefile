@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rstudio
-PORTVERSION=	0.98.490
+#PORTVERSION=	0.98.490
+PORTVERSION=	0.99.1169
 DISTVERSION=	v${PORTVERSION}
 CATEGORIES=	devel java
 MASTER_SITES+=	https://s3.amazonaws.com/rstudio-dictionaries/:dictionaries \
@@ -21,6 +22,8 @@ COMMENT=	The premier integrated development environment for R
 
 LICENSE=	AGPLv3
 
+MAKE_JOBS_UNSAFE=	yes
+
 EXTRACT_DEPENDS=unzip>0:archivers/unzip
 RUN_DEPENDS=	${LOCALBASE}/bin/R:math/R
 BUILD_DEPENDS=	${LOCALBASE}/bin/R:math/R \
@@ -36,8 +39,8 @@ GH_TAGNAME=	${DISTVERSION}
 # GH_COMMIT=	79af91e
 
 GINVER=		1.5
-GWTVER=		2.5.1
-JAXVER=		20
+GWTVER=		2.7.0
+JAXVER=		23
 
 USE_GCC=	yes
 USE_FORTRAN=	yes
@@ -46,10 +49,9 @@ JAVA_BUILD=	yes
 USES=		cmake:outsource
 CMAKE_ARGS+=	-DRSTUDIO_TARGET=Server -DCMAKE_BUILD_TYPE=Release \
 		-DRSTUDIO_INSTALL_SUPPORTING=${PREFIX}/lib \
-		-DRSTUDIO_INSTALL_BIN=${PREFIX}/sbin
-
-CMAKE_ARGS+=    -DDL_LIBRARIES:FILEPATH=/usr/lib \
-                -DUUID_LIBRARIES:FILEPATH=/usr/lib
+		-DRSTUDIO_INSTALL_BIN=${PREFIX}/sbin \
+		-DDL_LIBRARIES:FILEPATH=/usr/lib \
+                -DUUID_LIBRARIES:FILEPATH=/usr/local/lib
 
 GINFILES=	LICENSE README aopalliance.jar gin-${GINVER}-post-gwt-2.2.jar \
 		gin-${GINVER}-pre-gwt-2.2.jar guice-assistedinject-snapshot.jar \

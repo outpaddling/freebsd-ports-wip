@@ -1,13 +1,6 @@
 --- src/cpp/core/system/PosixSystem.cpp.orig	2013-12-10 16:16:28.000000000 -0600
-+++ src/cpp/core/system/PosixSystem.cpp	2016-04-30 11:00:49.757597303 -0500
-@@ -32,12 +32,17 @@
- #include <pwd.h>
- #include <grp.h>
- 
--#include <uuid/uuid.h>
-+#include <uuid.h>
- 
- #ifdef __APPLE__
++++ src/cpp/core/system/PosixSystem.cpp	2016-04-30 11:11:48.751538751 -0500
+@@ -38,6 +38,11 @@
  #include <mach-o/dyld.h>
  #endif
  
