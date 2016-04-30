@@ -12,7 +12,7 @@ NO_BUILD=	yes
 
 USES=		tar:xz
 
-RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
+RUN_DEPENDS=	svn:devel/subversion
 
 PLIST_FILES=	bin/update-wip-ports bin/reinstall-wip-port man/man1/update-wip-ports.1.gz
 

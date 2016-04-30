@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.alberta-fem.de/Downloads/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Adaptive multiLevel finite element toolbox
 
-LIB_DEPENDS=	blas:${PORTSDIR}/math/blas
+LIB_DEPENDS=	blas:math/blas
 
 USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes

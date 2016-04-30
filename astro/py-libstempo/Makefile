@@ -11,9 +11,9 @@ MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Python wrapper for tempo2
 # LICENSE=
 
-BUILD_DEPENDS+=	cython:${PORTSDIR}/lang/cython
+BUILD_DEPENDS+=	cython:lang/cython
 LIB_DEPENDS=	libtempo2.so:/usr/wip/astro/tempo2
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}numpy>0:${PORTSDIR}/math/py-numpy
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
 
 USES=		python
 USE_PYTHON=	distutils

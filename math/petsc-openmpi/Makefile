@@ -32,13 +32,13 @@ MAKE_JOBS_UNSAFE=	yes
 
 # Mumps requires scalapack, which requires either mpich2 or openmpi
 # Need a mumps-openmpi slave port?
-BUILD_DEPENDS=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu \
-		${LOCALBASE}/lib/libmumps_common.a:${PORTSDIR}/math/mumps \
-		svn:${PORTSDIR}/devel/subversion
+BUILD_DEPENDS=	${LOCALBASE}/lib/libsuperlu.a:math/superlu \
+		${LOCALBASE}/lib/libmumps_common.a:math/mumps \
+		svn:devel/subversion
 
-LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf \
-		libblas.so:${PORTSDIR}/math/blas \
-		liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS=	libnetcdf.so:science/netcdf \
+		libblas.so:math/blas \
+		liblapack.so:math/lapack
 
 CONFIGURE_ENV=	PETSC_DIR=${WRKSRC} \
 		PETSC_ARCH=${OPSYS:tl} \

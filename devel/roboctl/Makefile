@@ -11,7 +11,7 @@ COMMENT=	API and tools for communicating with Lego and Vex robots
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgamepad.a:${PORTSDIR}/devel/libgamepad
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgamepad.a:devel/libgamepad
 
 MAKE_ENV=	EXTRALIBS=-lbluetooth
 MAKE_JOBS_UNSAFE=	yes
@@ -27,7 +27,7 @@ MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCUTECOM}
-RUN_DEPENDS+=	cutecom:${PORTSDIR}/comms/cutecom
+RUN_DEPENDS+=	cutecom:comms/cutecom
 .endif
 
 pre-build:

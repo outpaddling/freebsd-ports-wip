@@ -22,8 +22,8 @@ EXTRACT_ONLY=	scalapack-${PORTVERSION}.tgz manpages.tgz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	The ScaLAPACK Scalable LAPACK library
 
-BUILD_DEPENDS=	f2c:${PORTSDIR}/lang/f2c
-LIB_DEPENDS=	blacs.1:${PORTSDIR}/math/blacs
+BUILD_DEPENDS=	f2c:lang/f2c
+LIB_DEPENDS=	blacs.1:math/blacs
 
 CONFLICTS=	elmer-mathlibs-1*
 
@@ -46,12 +46,12 @@ SUB_FILES=	pkg-message
 WITH_ATLAS=		yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	atlas.2:math/atlas
 BLAS=		-lf77blas
 LAPACK=		-lalapack -lcblas
 .else
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	blas.2:math/blas
+LIB_DEPENDS+=	lapack.4:math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif
@@ -61,13 +61,13 @@ WITH_OPENMPI=	yes
 .endif
 
 .if defined(WITH_OPENMPI)
-BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:${PORTSDIR}/net/openmpi
-RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
+BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:net/openmpi
+RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
 EXTRA_PATCHES+=	${FILESDIR}/SLmake.inc-openmpi.diff
 .else
-#LIB_DEPENDS+=	mpich:${PORTSDIR}/net/mpich2
-BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
-RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2
+#LIB_DEPENDS+=	mpich:net/mpich2
+BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:net/mpich2
+RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:net/mpich2
 EXTRA_PATCHES+=	${FILESDIR}/SLmake.inc-mpich.diff
 .endif
 

@@ -22,8 +22,8 @@ DOS2UNIX_FILES=	util/*.txt
 
 # Trinity must include TransDecoder and support for expression and DE analysis using RSEM and Bioconductor
 RUN_DEPENDS=	Trinity:/usr/wip/biology/trinity \
-		ncbi-blast+>=2.2.30:${PORTSDIR}/biology/ncbi-blast+ \
-		hmmer>=3.0:${PORTSDIR}/biology/hmmer \
+		ncbi-blast+>=2.2.30:biology/ncbi-blast+ \
+		hmmer>=3.0:biology/hmmer \
 		signalp>=4.1:/usr/wip/biology/linux-signalp \
 		tmhmm>=2.0:/usr/wip/biology/linux-tmhmm \
 		rnammer>=1.2:/usr/wip/biology/rnammer

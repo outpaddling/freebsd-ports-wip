@@ -12,7 +12,7 @@ COMMENT=	Analyse next-generation resequencing data
 USES=		tar:bzip2
 USE_JAVA=	yes
 
-RUN_DEPENDS+=	R:${PORTSDIR}/math/R
+RUN_DEPENDS+=	R:math/R
 
 RESTRICTED=	License required for commercial use
 

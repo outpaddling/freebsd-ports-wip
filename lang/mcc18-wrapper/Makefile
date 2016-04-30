@@ -13,12 +13,12 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Wrappers for Windows based Microchip MCC18 and Wine
 
-DEPENDS_RUN=	wine:${PORTSDIR}/emulators/wine
+DEPENDS_RUN=	wine:emulators/wine
 
 .include <bsd.port.pre.mk>
 
 #ONLY_FOR_ARCHS!=awk '$$1 == "ONLY_FOR_ARCHS=" { print $$2,$$3,$$4,$$5 }' \
-#		${PORTSDIR}/emulators/wine/Makefile
+#		emulators/wine/Makefile
 
 NO_BUILD=	yes
 

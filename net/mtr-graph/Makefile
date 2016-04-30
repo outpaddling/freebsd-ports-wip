@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
 .if ${PORT_OPTIONS:MGTK}
-PATCH_DEPENDS+=	${LOCALBASE}/lib/libgtk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20
+PATCH_DEPENDS+=	${LOCALBASE}/lib/libgtk-x11-2.0.so:x11-toolkits/gtk20
 USE_GNOME=	gtk20
 USES=		pkgconfig
 .else
@@ -61,16 +61,16 @@ CONFIGURE_ARGS+=--with-ipinfo
 .endif
 
 .if ${PORT_OPTIONS:Mgraphcairo_xcb}
-LIB_DEPENDS+=	libcairo.so:${PORTSDIR}/graphics/cairo \
-		libpango-1.0.so:${PORTSDIR}/x11-toolkits/pango \
-		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms
+LIB_DEPENDS+=	libcairo.so:graphics/cairo \
+		libpango-1.0.so:x11-toolkits/pango \
+		libxcb-keysyms.so:x11/xcb-util-keysyms
 USE_XORG=	xcb
 USES=		pkgconfig
 CONFIGURE_ARGS+=--with-graphcairo-xcb
 .else
 .if ${PORT_OPTIONS:Mgraphcairo_xlib}
-LIB_DEPENDS+=	libcairo.so:${PORTSDIR}/graphics/cairo \
-		libpango-1.0.so:${PORTSDIR}/x11-toolkits/pango
+LIB_DEPENDS+=	libcairo.so:graphics/cairo \
+		libpango-1.0.so:x11-toolkits/pango
 USE_XORG=	x11
 USES=		pkgconfig
 CONFIGURE_ARGS+=--with-graphcairo-xlib
@@ -78,7 +78,7 @@ CONFIGURE_ARGS+=--with-graphcairo-xlib
 .endif
 
 .if ${PORT_OPTIONS:MIDN}
-LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	libidn.so:dns/libidn
 CONFIGURE_ARGS+=--with-libidn
 .endif
 

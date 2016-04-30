@@ -11,7 +11,7 @@ COMMENT=	Library for analyzing PacBio sequences
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
+LIB_DEPENDS=	libhdf5.so:science/hdf5
 
 USES=		gmake tar:xz
 

@@ -11,7 +11,7 @@ COMMENT=	Versatile open-source tool for metagenomics
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo
+LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
 
 USES=		gmake
 GNU_CONFIGURE=	yes

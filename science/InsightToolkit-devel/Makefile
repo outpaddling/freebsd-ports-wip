@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	itk
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Insight Segmentation and Registration Toolkit
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
+BUILD_DEPENDS=	cmake:devel/cmake
 
 OPTIONS=	EXAMPLES "Build examples (very time consuming)" off \
 		TESTING  "Build testing programs (very time consuming)" off

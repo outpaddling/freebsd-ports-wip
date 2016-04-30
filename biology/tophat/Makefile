@@ -12,7 +12,7 @@ COMMENT=	Fast splice junction mapper for RNA-Seq reads
 
 LICENSE=	BSL
 
-LIB_DEPENDS+=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=	libboost_iostreams.so:devel/boost-libs
 RUN_DEPENDS=	bowtie2:/usr/wip/biology/bowtie2
 
 GNU_CONFIGURE=	yes

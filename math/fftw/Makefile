@@ -70,8 +70,8 @@ FFTW_PKGNAMESUFFIX=	-openmpi
 CONFIGURE_ARGS+=	--enable-mpi
 CC=			${LOCALBASE}/${MPIDIR}/bin/mpicc
 # Using LIB_DEPENDS=mpi could detect the wrong MPI implementation.
-BUILD_DEPENDS+=		${MPI_LOCALBASE}/lib/libmpi.so:${PORTSDIR}/net/openmpi
-RUN_DEPENDS+=		${MPI_LOCALBASE}/lib/libmpi.so:${PORTSDIR}/net/openmpi
+BUILD_DEPENDS+=		${MPI_LOCALBASE}/lib/libmpi.so:net/openmpi
+RUN_DEPENDS+=		${MPI_LOCALBASE}/lib/libmpi.so:net/openmpi
 CFLAGS+=		-I${MPI_LOCALBASE}/include
 LDFLAGS+=		-L${MPI_LOCALBASE}/lib -L${LOCALBASE}/lib
 .endif
@@ -83,7 +83,7 @@ INFO_PATH=		mpi/mpich/info
 FFTW_PKGNAMESUFFIX=	-mpich
 CONFIGURE_ARGS+=	--enable-mpi
 CC=			${LOCALBASE}/bin/mpicc
-LIB_DEPENDS+=		mpich:${PORTSDIR}/net/mpich2
+LIB_DEPENDS+=		mpich:net/mpich2
 .endif
 
 .if ${ARCH} == "i386"

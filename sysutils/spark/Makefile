@@ -10,8 +10,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Fast and general-purpose cluster computing system
 
-BUILD_DEPENDS+=	scala:${PORTSDIR}/lang/scala \
-		${LOCALBASE}/share/java/maven31/bin/mvn:${PORTSDIR}/devel/maven31
+BUILD_DEPENDS+=	scala:lang/scala \
+		${LOCALBASE}/share/java/maven31/bin/mvn:devel/maven31
 
 BUILD_ENV+=	MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m"
 

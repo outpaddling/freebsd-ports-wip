@@ -15,9 +15,9 @@ USES=		python
 GNU_CONFIGURE=	yes
 
 BUILD_DEPENDS=	samtools01==0.1.19:/usr/wip/biology/samtools0119 \
-		bjam:${PORTSDIR}/devel/boost-jam \
-		eigen>3:${PORTSDIR}/math/eigen3
-LIB_DEPENDS+=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
+		bjam:devel/boost-jam \
+		eigen>3:math/eigen3
+LIB_DEPENDS+=	libboost_iostreams.so:devel/boost-libs
 RUN_DEPENDS=	samtools01==0.1.19:/usr/wip/biology/samtools0119
 
 CONFIGURE_ARGS+=--with-bam=${LOCALBASE}/samtools0119

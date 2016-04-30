@@ -22,10 +22,10 @@ USES=		gmake fortran
 USE_GCC=	yes
 
 # Is this downloading during build phase?
-# BUILD_DEPENDS+=	git:${PORTSDIR}/devel/git
+# BUILD_DEPENDS+=	git:devel/git
 
 # Just for xxd command.  Use files/file2cinit instead.
-# BUILD_DEPENDS+=	xxd:${PORTSDIR}/editors/vim
+# BUILD_DEPENDS+=	xxd:editors/vim
 
 MAKE_JOBS_UNSAFE=yes
 

@@ -17,10 +17,10 @@ GH_TAGNAME=	${PORTVERSION}
 USES=		python
 USE_PYTHON=	distutils
 
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/sortedcontainers:${PORTSDIR}/devel/py-sortedcontainers
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/sortedcontainers:devel/py-sortedcontainers
 
 PIP_DESCR=	Use pip to build intervaltree
-PIP_RUN_DEPENDS=	pip:${PORTSDIR}/devel/py-pip
+PIP_RUN_DEPENDS=	pip:devel/py-pip
 
 MAKE_JOBS_UNSAFE=yes
 

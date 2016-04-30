@@ -60,11 +60,11 @@ OPTIONS +=	PDFTK		"PDF editing tools" on
 .endif
 
 .if defined(WITH_PDFTK)
-RUN_DEPENDS+=		pdftk:${PORTSDIR}/print/pdftk
+RUN_DEPENDS+=		pdftk:print/pdftk
 .endif
 
 .if defined(WITH_KDE)
-RUN_DEPENDS+=		kdm:${PORTSDIR}/x11/kde3
+RUN_DEPENDS+=		kdm:x11/kde3
 .endif
 
 .if defined(WITH_APE)
@@ -72,119 +72,119 @@ RUN_DEPENDS+=		ape:../../editors/ape
 .endif
 
 .if defined(WITH_THUNDERBIRD)
-RUN_DEPENDS+=		thunderbird:${PORTSDIR}/mail/thunderbird
+RUN_DEPENDS+=		thunderbird:mail/thunderbird
 .endif
 
 .if defined(WITH_AUDACITY)
-RUN_DEPENDS+=		audacity:${PORTSDIR}/audio/audacity
+RUN_DEPENDS+=		audacity:audio/audacity
 .endif
 
 .if defined(WITH_RXVT)
-RUN_DEPENDS+=		rxvt:${PORTSDIR}/x11/rxvt
+RUN_DEPENDS+=		rxvt:x11/rxvt
 .endif
 
 .if defined(WITH_FIREFOX)
-RUN_DEPENDS+=		firefox:${PORTSDIR}/www/firefox
+RUN_DEPENDS+=		firefox:www/firefox
 .endif
 
 .if defined(WITH_NEDIT)
-RUN_DEPENDS+=		nedit:${PORTSDIR}/editors/nedit
+RUN_DEPENDS+=		nedit:editors/nedit
 .endif
 
 .if defined(WITH_GIMP)
-RUN_DEPENDS+=		gimp:${PORTSDIR}/graphics/gimp
+RUN_DEPENDS+=		gimp:graphics/gimp
 .endif
 
 .if defined(WITH_GNUPLOT)
-RUN_DEPENDS+=		gnuplot:${PORTSDIR}/math/gnuplot
+RUN_DEPENDS+=		gnuplot:math/gnuplot
 .endif
 
 .if defined(WITH_KRUSADER)
-RUN_DEPENDS+=		krusader:${PORTSDIR}/x11-fm/krusader
+RUN_DEPENDS+=		krusader:x11-fm/krusader
 .endif
 
 .if defined(WITH_WORDNET)
-RUN_DEPENDS+=		wn:${PORTSDIR}/textproc/wordnet
+RUN_DEPENDS+=		wn:textproc/wordnet
 .endif
 
 .if defined(WITH_IMAGEMAGICK)
-RUN_DEPENDS+=		Magick-config:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=		Magick-config:graphics/ImageMagick
 .endif
 
 .if defined(WITH_XPDF)
-RUN_DEPENDS+=		xpdf:${PORTSDIR}/graphics/xpdf
+RUN_DEPENDS+=		xpdf:graphics/xpdf
 .endif
 
 .if defined(WITH_GV)
-RUN_DEPENDS+=		gv:${PORTSDIR}/print/gv
+RUN_DEPENDS+=		gv:print/gv
 .endif
 
 .if defined(WITH_XV)
-RUN_DEPENDS+=		xv:${PORTSDIR}/graphics/xv
+RUN_DEPENDS+=		xv:graphics/xv
 .endif
 
 .if defined(WITH_SCRIBUS)
-RUN_DEPENDS+=		scribus:${PORTSDIR}/print/scribus
+RUN_DEPENDS+=		scribus:print/scribus
 .endif
 
 .if defined(WITH_REALPLAYER)
-RUN_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
+RUN_DEPENDS+=		realplay:multimedia/linux-realplayer
 .endif
 
 .if defined(WITH_VNC)
-RUN_DEPENDS+=		vncviewer:${PORTSDIR}/net/vnc
+RUN_DEPENDS+=		vncviewer:net/vnc
 .endif
 
 .if defined(WITH_EMACS)
-RUN_DEPENDS+=		emacs:${PORTSDIR}/editors/emacs
+RUN_DEPENDS+=		emacs:editors/emacs
 .endif
 
 .if defined(WITH_RSYNC)
-RUN_DEPENDS+=		rsync:${PORTSDIR}/net/rsync
+RUN_DEPENDS+=		rsync:net/rsync
 .endif
 
 .if defined(WITH_UNIX2DOS)
-RUN_DEPENDS+=		unix2dos:${PORTSDIR}/converters/unix2dos
+RUN_DEPENDS+=		unix2dos:converters/unix2dos
 .endif
 
 .if defined(WITH_UNIXSTAT)
-RUN_DEPENDS+=		anova:${PORTSDIR}/math/unixstat
+RUN_DEPENDS+=		anova:math/unixstat
 .endif
 
 .if defined(WITH_UNZIP)
-RUN_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
+RUN_DEPENDS+=		unzip:archivers/unzip
 .endif
 
 .if defined(WITH_WGET)
-RUN_DEPENDS+=		wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS+=		wget:ftp/wget
 .endif
 
 .if defined(WITH_XZGV)
-RUN_DEPENDS+=		xzgv:${PORTSDIR}/graphics/xzgv
+RUN_DEPENDS+=		xzgv:graphics/xzgv
 .endif
 
 .if defined(WITH_ZIP)
-RUN_DEPENDS+=		zip:${PORTSDIR}/archivers/zip
+RUN_DEPENDS+=		zip:archivers/zip
 .endif
 
 .if defined(WITH_TEX)
-RUN_DEPENDS+=		tex:${PORTSDIR}/print/teTeX
+RUN_DEPENDS+=		tex:print/teTeX
 .endif
 
 .if defined(WITH_GINDENT)
-RUN_DEPENDS+=		gindent:${PORTSDIR}/devel/gindent
+RUN_DEPENDS+=		gindent:devel/gindent
 .endif
 
 .if defined(WITH_WEBFONTS)
-RUN_DEPENDS+=		${X11BASE}/lib/X11/fonts/webfonts:${PORTSDIR}/x11-fonts/webfonts
+RUN_DEPENDS+=		${X11BASE}/lib/X11/fonts/webfonts:x11-fonts/webfonts
 .endif
 
 .if defined(WITH_URWFONTS)
-RUN_DEPENDS+=		${X11BASE}/lib/X11/fonts/URW:${PORTSDIR}/x11-fonts/urwfonts
+RUN_DEPENDS+=		${X11BASE}/lib/X11/fonts/URW:x11-fonts/urwfonts
 .endif
 
 .if defined(WITH_) && ${ARCH} == "i386"
-RUN_DEPENDS +=	pdftk:${PORTSDIR}/print/pdftk
+RUN_DEPENDS +=	pdftk:print/pdftk
 .endif
 
 post-patch:

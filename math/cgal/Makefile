@@ -18,11 +18,11 @@ COMMENT=	A computational geometry library
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	GLU.1:${PORTSDIR}/graphics/libGLU \
-		gmp.10:${PORTSDIR}/math/gmp \
-		mpfr.4:${PORTSDIR}/math/mpfr
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs
+RUN_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs
+LIB_DEPENDS=	GLU.1:graphics/libGLU \
+		gmp.10:math/gmp \
+		mpfr.4:math/mpfr
 
 FETCH_ARGS=	-pRr
 

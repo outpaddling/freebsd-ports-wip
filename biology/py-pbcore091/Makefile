@@ -16,12 +16,12 @@ COMMENT=	Python modules for building PacBio bioinformatics applications
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.7.1:${PORTSDIR}/math/py-numpy \
-		${PYTHON_PKGNAMEPREFIX}h5py>=2.0.1:${PORTSDIR}/science/py-h5py \
+BUILD_DEPENDS=	cython:lang/cython \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.7.1:math/py-numpy \
+		${PYTHON_PKGNAMEPREFIX}h5py>=2.0.1:science/py-h5py \
 		${PYTHON_PKGNAMEPREFIX}pysam>=0.8.1:/usr/wip/biology/py-pysam
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.7.1:${PORTSDIR}/math/py-numpy \
-		${PYTHON_PKGNAMEPREFIX}h5py>=2.0.1:${PORTSDIR}/science/py-h5py \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.7.1:math/py-numpy \
+		${PYTHON_PKGNAMEPREFIX}h5py>=2.0.1:science/py-h5py \
 		${PYTHON_PKGNAMEPREFIX}pysam>=0.8.1:/usr/wip/biology/py-pysam
 
 USES=		python

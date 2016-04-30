@@ -15,12 +15,12 @@ LICENSE=	MIT
 # Unbundled dependencies.  For build and run deps, specify the port name and
 # minimum version, or a binary that it installs.
 BUILD_DEPENDS=	samtools01==0.1.19:/usr/wip/biology/samtools0119 \
-		google-sparsehash>=2.0.2:${PORTSDIR}/devel/google-sparsehash
+		google-sparsehash>=2.0.2:devel/google-sparsehash
 RUN_DEPENDS=	samtools01==0.1.19:/usr/wip/biology/samtools0119 \
-		R:${PORTSDIR}/math/R
+		R:math/R
 # varcall.cpp calls GSL functions.  For library dependencies, specify the
 # shared lib required.
-LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	libgsl.so:math/gsl
 
 # Dist makefile uses GNU make extensions
 USES=		gmake shebangfix

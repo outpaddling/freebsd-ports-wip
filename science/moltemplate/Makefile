@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_2013-7-15
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Text-based molecule builder for LAMMPS
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USE_PYTHON=	yes
 

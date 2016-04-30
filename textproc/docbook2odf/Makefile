@@ -15,9 +15,9 @@ COMMENT=	Docbook to ODF converter
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Sablotron.pm:${PORTSDIR}/textproc/p5-XML-Sablotron \
-		${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
-		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Sablotron.pm:textproc/p5-XML-Sablotron \
+		${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:graphics/ImageMagick \
+		${SITE_PERL}/Archive/Zip.pm:archivers/p5-Archive-Zip
 
 USE_PERL5=	yes
 NO_BUILD=	yes

@@ -23,20 +23,20 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	GNU gcc for cross-target development
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		mpfr.4:${PORTSDIR}/math/mpfr \
-		mpc.2:${PORTSDIR}/math/mpc
+LIB_DEPENDS=	gmp.10:math/gmp \
+		mpfr.4:math/mpfr \
+		mpc.2:math/mpc
 
 #
 # Temporary hack to deal with dependencies during package builds for
 # slave ports.
 #
 .if defined(PACKAGE_BUILDING)
-BUILD_DEPENDS=	${OURTARGET}-as:${PORTSDIR}/devel/${OURTARGET}-binutils
-RUN_DEPENDS=	${OURTARGET}-as:${PORTSDIR}/devel/${OURTARGET}-binutils
+BUILD_DEPENDS=	${OURTARGET}-as:devel/${OURTARGET}-binutils
+RUN_DEPENDS=	${OURTARGET}-as:devel/${OURTARGET}-binutils
 .else
-BUILD_DEPENDS=	${OURTARGET}-as:${PORTSDIR}/devel/cross-binutils
-RUN_DEPENDS=	${OURTARGET}-as:${PORTSDIR}/devel/cross-binutils
+BUILD_DEPENDS=	${OURTARGET}-as:devel/cross-binutils
+RUN_DEPENDS=	${OURTARGET}-as:devel/cross-binutils
 .endif
 
 USES=		gmake tar:bz2
@@ -157,7 +157,7 @@ BROKEN=		Does not link
 .endif
 .endif
 
-PKG_ARGS=	-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`cd ${PORTSDIR}/devel/cross-binutils && ${MAKE} ${DEPENDS_ARGS} -V PKGNAME`:devel/cross-binutils" ${EXTRA_PKG_ARGS} $${_LATE_PKG_ARGS} -m ${MTREE_FILE} -o ${PKGORIGIN}
+PKG_ARGS=	-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`cd devel/cross-binutils && ${MAKE} ${DEPENDS_ARGS} -V PKGNAME`:devel/cross-binutils" ${EXTRA_PKG_ARGS} $${_LATE_PKG_ARGS} -m ${MTREE_FILE} -o ${PKGORIGIN}
 
 .if !defined(WITHOUT_CXX)
 TGTLANGS:=	"${TGTLANGS},c++"

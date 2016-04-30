@@ -32,9 +32,9 @@ CMAKE_ARGS+=	-DDL_LIBRARIES:FILEPATH=/usr/lib \
 
 WRKSRC=		${WRKDIR}/rstudio-rstudio-928abf1
 
-BUILD_DEPENDS=	R:${PORTSDIR}/math/R \
-		bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	R:${PORTSDIR}/math/R
+BUILD_DEPENDS=	R:math/R \
+		bash:shells/bash
+RUN_DEPENDS=	R:math/R
 
 post-patch:
 	${CP} ${DISTDIR}/gin-1.5.zip ${WRKSRC}/dependencies/common

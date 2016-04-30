@@ -427,7 +427,7 @@ MLINKS=	Access.3 Tcl_Access.3 \
 
 .endif
 
-TCLBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
+TCLBASE?=	${PKGCATEGORY}/${LATEST_LINK}
 
 post-configure:
 	${REINPLACE_CMD} \

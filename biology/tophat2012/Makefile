@@ -15,7 +15,7 @@ LICENSE=	BSL
 # Compatible with bowtie 2.3.3: http://ccb.jhu.edu/software/tophat/index.shtml
 # Is 2.2.7 OK?
 BUILD_DEPENDS=	samtools01==0.1.19:/usr/wip/biology/samtools0119
-LIB_DEPENDS+=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=	libboost_iostreams.so:devel/boost-libs
 RUN_DEPENDS=	bowtie2:/usr/wip/biology/bowtie2 \
 		samtools01==0.1.19:/usr/wip/biology/samtools0119
 

@@ -11,7 +11,7 @@ COMMENT=	Bioinformatics tool for the microbial ecology community
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 RUN_DEPENDS=	uchime>=0:/usr/wip/biology/uchime
 
 USES=		gmake ncurses readline

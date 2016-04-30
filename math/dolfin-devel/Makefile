@@ -21,26 +21,26 @@ COMMON_DEPENDS=	${PYTHON_SITELIBDIR}/ufc_utils:../../math/ufc \
 		${PYTHON_SITELIBDIR}/instant:../../devel/py-instant \
 		${PYTHON_SITELIBDIR}/ufl:../../math/py-ufl \
 		${PYTHON_SITELIBDIR}/viper:../../math/py-viper \
-		${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
-		${PYTHON_SITELIBDIR}/ply:${PORTSDIR}/devel/py-ply \
+		${PYTHON_SITELIBDIR}/numpy:math/py-numpy \
+		${PYTHON_SITELIBDIR}/ply:devel/py-ply \
 		swig2.0:../../devel/swig20 \
-		sphinx-build:${PORTSDIR}/textproc/py-sphinx
+		sphinx-build:textproc/py-sphinx
 
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 
 # Require MPI
 #		${LOCALBASE}/lib/libscotch.a:../../cad/scotch
-#		${LOCALBASE}/lib/parmetis/libparmetis.a:${PORTSDIR}/math/parmetis
+#		${LOCALBASE}/lib/parmetis/libparmetis.a:math/parmetis
 
-LIB_DEPENDS=	blas:${PORTSDIR}/math/blas \
-		lapack:${PORTSDIR}/math/lapack \
-		amd:${PORTSDIR}/math/suitesparse \
-		umfpack:${PORTSDIR}/math/suitesparse \
-		cholmod:${PORTSDIR}/math/suitesparse \
-		boost_math_c99:${PORTSDIR}/devel/boost-libs \
-		CGAL:${PORTSDIR}/math/cgal \
-		xml2:${PORTSDIR}/textproc/libxml2 \
-		cppunit:${PORTSDIR}/devel/cppunit \
+LIB_DEPENDS=	blas:math/blas \
+		lapack:math/lapack \
+		amd:math/suitesparse \
+		umfpack:math/suitesparse \
+		cholmod:math/suitesparse \
+		boost_math_c99:devel/boost-libs \
+		CGAL:math/cgal \
+		xml2:textproc/libxml2 \
+		cppunit:devel/cppunit \
 		armadillo:../../math/armadillo \
 		petsc:../../math/petsc33
 

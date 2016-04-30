@@ -17,10 +17,10 @@ LICENSE=	GPLv2
 USES=		compiler:c++11-lang pkgconfig python
 USE_PYTHON=	distutils
 
-BUILD_DEPENDS+=	cython:${PORTSDIR}/lang/cython
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}numpy>0:${PORTSDIR}/math/py-numpy \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib \
-		${PYTHON_PKGNAMEPREFIX}pyfits>0:${PORTSDIR}/astro/py-pyfits
+BUILD_DEPENDS+=	cython:lang/cython
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib \
+		${PYTHON_PKGNAMEPREFIX}pyfits>0:astro/py-pyfits
 
 post-stage:
 	for f in ${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/healpy/*.so; do \

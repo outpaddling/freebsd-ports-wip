@@ -15,13 +15,13 @@ LICENSE=	BSD3CLAUSE
 
 # Using pbcore 0.9.1 as a test due to errors with 1.2.2
 # See https://github.com/PacificBiosciences/cDNA_primer/issues/11
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0:${PORTSDIR}/math/py-numpy \
-		${PYTHON_PKGNAMEPREFIX}jsonschema>=0:${PORTSDIR}/devel/py-jsonschema \
-		${PYTHON_PKGNAMEPREFIX}avro>=0:${PORTSDIR}/devel/py-avro \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0:math/py-numpy \
+		${PYTHON_PKGNAMEPREFIX}jsonschema>=0:devel/py-jsonschema \
+		${PYTHON_PKGNAMEPREFIX}avro>=0:devel/py-avro \
 		${PYTHON_PKGNAMEPREFIX}pbcore==0.9.1:/usr/wip/biology/py-pbcore091
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0:${PORTSDIR}/math/py-numpy \
-		${PYTHON_PKGNAMEPREFIX}jsonschema>=0:${PORTSDIR}/devel/py-jsonschema \
-		${PYTHON_PKGNAMEPREFIX}avro>=0:${PORTSDIR}/devel/py-avro \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0:math/py-numpy \
+		${PYTHON_PKGNAMEPREFIX}jsonschema>=0:devel/py-jsonschema \
+		${PYTHON_PKGNAMEPREFIX}avro>=0:devel/py-avro \
 		${PYTHON_PKGNAMEPREFIX}pbcore>=0:/usr/wip/biology/py-pbcore091
 
 USES=		python

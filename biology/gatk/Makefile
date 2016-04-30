@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	broadgsa
 GH_PROJECT=	gatk-protected
 
-RUN_DEPENDS+=	R:${PORTSDIR}/math/R
+RUN_DEPENDS+=	R:math/R
 
 NO_BUILD=	yes
 

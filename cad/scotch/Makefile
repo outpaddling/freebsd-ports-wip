@@ -57,7 +57,7 @@ DOCSDIR=	${PREFIX}/${MPIPREFIX}share/doc/scotch
 EXAMPLESDIR=	${PREFIX}/${MPIPREFIX}share/examples/scotch
 
 # Something unique to openmpi
-LIB_DEPENDS+=	libopen-rte.so:${PORTSDIR}/net/openmpi
+LIB_DEPENDS+=	libopen-rte.so:net/openmpi
 
 ALL_TARGET+=	ptscotch
 MAKE_ENV+=	PATH=${PATH}:${LOCALBASE}/mpi/openmpi/bin
@@ -71,7 +71,7 @@ PLIST_SUB+=	MPI=""
 
 .elif defined(WITH_MPICH)
 
-LIB_DEPENDS+=	libmpich.so:${PORTSDIR}/net/mpich2
+LIB_DEPENDS+=	libmpich.so:net/mpich2
 
 ALL_TARGET+=	ptscotch
 MAKE_ENV+=	PATH=${PATH}:${LOCALBASE}/mpich2/bin

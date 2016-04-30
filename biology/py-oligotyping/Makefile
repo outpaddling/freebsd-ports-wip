@@ -20,19 +20,19 @@ USES=		python:2 shebangfix
 USE_PYTHON=	distutils
 #SHEBANG_FILES=	scripts/ec2Clean scripts/ec2Dispatch
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}pip>=6.0.6:${PORTSDIR}/devel/py-pip \
-		${PKGNAMEPREFIX}scipy>=0.14.0:${PORTSDIR}/science/py-scipy \
-		${PKGNAMEPREFIX}matplotlib>=0.14.0:${PORTSDIR}/math/py-matplotlib \
-		${PKGNAMEPREFIX}biopython>=1.60:${PORTSDIR}/biology/py-biopython \
-		${PKGNAMEPREFIX}django>=1.7:${PORTSDIR}/www/py-django \
-		${PKGNAMEPREFIX}mock>=1.0.1:${PORTSDIR}/devel/py-mock
+BUILD_DEPENDS=	${PKGNAMEPREFIX}pip>=6.0.6:devel/py-pip \
+		${PKGNAMEPREFIX}scipy>=0.14.0:science/py-scipy \
+		${PKGNAMEPREFIX}matplotlib>=0.14.0:math/py-matplotlib \
+		${PKGNAMEPREFIX}biopython>=1.60:biology/py-biopython \
+		${PKGNAMEPREFIX}django>=1.7:www/py-django \
+		${PKGNAMEPREFIX}mock>=1.0.1:devel/py-mock
 
 # No R-cran-vegan, gplots, optparse, pheatmap, compute-es
 RUN_DEPENDS=	${BUILD_DEPENDS} \
-		R-cran-ggplot2>0:${PORTSDIR}/graphics/R-cran-ggplot2 \
-		R-cran-gtools>0:${PORTSDIR}/devel/R-cran-gtools \
-		R-cran-reshape>0:${PORTSDIR}/devel/R-cran-reshape \
-		R-cran-RColorBrewer>0:${PORTSDIR}/graphics/R-cran-RColorBrewer \
-		blastx:${PORTSDIR}/biology/ncbi-blast+
+		R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
+		R-cran-gtools>0:devel/R-cran-gtools \
+		R-cran-reshape>0:devel/R-cran-reshape \
+		R-cran-RColorBrewer>0:graphics/R-cran-RColorBrewer \
+		blastx:biology/ncbi-blast+
 
 .include <bsd.port.mk>

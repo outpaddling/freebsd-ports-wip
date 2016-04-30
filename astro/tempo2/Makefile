@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 USES=		fortran libtool
 GNU_CONFIGURE=	yes
 
-LIB_DEPENDS=	libpgplot.so:${PORTSDIR}/graphics/pgplot
+LIB_DEPENDS=	libpgplot.so:graphics/pgplot
 
 INSTALL_TARGET=	install-strip
 

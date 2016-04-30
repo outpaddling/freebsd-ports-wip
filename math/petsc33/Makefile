@@ -26,16 +26,16 @@ CONFIGURE_ENV=	PETSC_DIR=${WRKSRC} \
 
 MAKE_ENV+=	${CONFIGURE_ENV}
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu \
-		svn:${PORTSDIR}/devel/subversion
-#		${LOCALBASE}/lib/libBS95.a:${PORTSDIR}/math/blocksolve95 \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libsuperlu.a:math/superlu \
+		svn:devel/subversion
+#		${LOCALBASE}/lib/libBS95.a:math/blocksolve95 \
 
-LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf \
-		libblas.so:${PORTSDIR}/math/blas \
-		liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS=	libnetcdf.so:science/netcdf \
+		libblas.so:math/blas \
+		liblapack.so:math/lapack
 
 
-#		blacs.1:${PORTSDIR}/math/blacs \
+#		blacs.1:math/blacs \
 
 #		--LD_SHARED=${FC} \
 #		--with-large-file-io=1 \	conftest fails

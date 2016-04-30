@@ -15,7 +15,7 @@ MASTER_SITES=	http://ab-initio.mit.edu/libctl/
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Control Language Library
 
-LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.21:lang/guile
 
 USE_AUTOTOOLS=	libtool
 USE_FORTRAN=	yes

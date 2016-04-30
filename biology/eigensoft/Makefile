@@ -9,10 +9,10 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Population genetics and stratification correction method
 
-LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl \
-		libopenblas.so:${PORTSDIR}/math/openblas \
-		liblapack.so:${PORTSDIR}/math/lapack
-BUILD_DEPENDS=	${LOCALBASE}/include/lapacke_mangling.h:${PORTSDIR}/math/lapacke
+LIB_DEPENDS=	libgsl.so:math/gsl \
+		libopenblas.so:math/openblas \
+		liblapack.so:math/lapack
+BUILD_DEPENDS=	${LOCALBASE}/include/lapacke_mangling.h:math/lapacke
 
 USES=		fortran gmake shebangfix tar:xz
 SHEBANG_FILES=	${WRKSRC}/../bin/evec2pca-ped.perl \

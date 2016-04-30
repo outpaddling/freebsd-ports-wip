@@ -20,11 +20,11 @@ USES=		python
 USE_PYTHON=	distutils
 
 # swig python-dev python-numpy python-scipy
-BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13 \
-		meep>=1.2:${PORTSDIR}/science/meep \
-		${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
-		${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
-		${PYTHON_SITELIBDIR}/matplotlib:${PORTSDIR}/math/py-matplotlib
+BUILD_DEPENDS+=	swig:devel/swig13 \
+		meep>=1.2:science/meep \
+		${PYTHON_SITELIBDIR}/numpy:math/py-numpy \
+		${PYTHON_SITELIBDIR}/scipy:science/py-scipy \
+		${PYTHON_SITELIBDIR}/matplotlib:math/py-matplotlib
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

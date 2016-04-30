@@ -13,8 +13,8 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Tools for port development
 
-RUN_DEPENDS=	portlint:${PORTSDIR}/ports-mgmt/portlint \
-		port:${PORTSDIR}/ports-mgmt/porttools
+RUN_DEPENDS=	portlint:ports-mgmt/portlint \
+		port:ports-mgmt/porttools
 
 USES+=		tar:xz
 

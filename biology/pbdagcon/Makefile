@@ -15,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${LOCALBASE}/lib/libblasr.a:/usr/wip/biology/blasr_libcpp \
 		dazz_db>=2015.08.17:/usr/wip/biology/dazz_db \
 		daligner>=2015.08.17:/usr/wip/biology/daligner
-LIB_DEPENDS+=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=	libboost_filesystem.so:devel/boost-libs
 # FIXME: What versions of dazz_db and daligner do we really depend on?
 RUN_DEPENDS+=	dazz_db>=2015.08.17:/usr/wip/biology/dazz_db \
 		daligner>=2015.08.17:/usr/wip/biology/daligner

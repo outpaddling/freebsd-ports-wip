@@ -13,7 +13,7 @@ COMMENT=	RNA-Seq by Expectation-Maximization
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	Rscript:${PORTSDIR}/math/R
+RUN_DEPENDS=	Rscript:math/R
 
 # For bundled samtools, which should be unbundled in the future, when RSEM
 # depends only on an unmodified htslib.  Samtools and rsem developers

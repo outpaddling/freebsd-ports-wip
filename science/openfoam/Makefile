@@ -16,11 +16,11 @@ LICENSE=	GPLv3
 
 # Does not build with flex 2.6.0
 BUILD_DEPENDS=	flex<=2.5.39_2:/usr/wip/textproc/flex \
-		${LOCALBASE}/mpi/openmpi/bin/mpiCC:${PORTSDIR}/net/openmpi \
+		${LOCALBASE}/mpi/openmpi/bin/mpiCC:net/openmpi \
 		${LOCALBASE}/mpi/openmpi/lib/libscotch.a:/usr/wip/cad/scotch-openmpi
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
-		${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
+RUN_DEPENDS=	gnuplot:math/gnuplot \
+		${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
 
 USES=		bison gmake ncurses readline shebangfix tar:tgz
 # Requires gcc 4.5 or clang 3.6 according to docs

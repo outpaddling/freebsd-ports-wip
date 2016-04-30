@@ -38,28 +38,28 @@ PYDISTUTILS_PKGNAME=	qiime
 # Non-python
 #    uclust 1.2.22q, fasttree 2.1.3
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.5.1:${PORTSDIR}/math/py-numpy \
-		${PKGNAMEPREFIX}matplotlib>=1.1.0:${PORTSDIR}/math/py-matplotlib \
-		pycogent>=1.1.0:${PORTSDIR}/biology/pycogent \
+BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.5.1:math/py-numpy \
+		${PKGNAMEPREFIX}matplotlib>=1.1.0:math/py-matplotlib \
+		pycogent>=1.1.0:biology/pycogent \
 		${PKGNAMEPREFIX}biom-format==1.3.1:/usr/wip/biology/py-biom-format131 \
 		${PKGNAMEPREFIX}qcli>=0.1.0:/usr/wip/biology/py-qcli \
 		${PKGNAMEPREFIX}pyqi>=0.3.2:/usr/wip/biology/py-pyqi \
 		${PKGNAMEPREFIX}pynast>=1.2.2:/usr/wip/biology/py-pynast \
 		${PKGNAMEPREFIX}emperor>=0.9.3:/usr/wip/biology/py-emperor \
-		${PKGNAMEPREFIX}h5py>=2.3.0:${PORTSDIR}/science/py-h5py \
+		${PKGNAMEPREFIX}h5py>=2.3.0:science/py-h5py \
 		FastTree>=2.1.7:/usr/wip/biology/fasttree \
-		muscle>=3.8.31:${PORTSDIR}/biology/muscle \
+		muscle>=3.8.31:biology/muscle \
 		infernal>=1.0.2:/usr/wip/biology/infernal102 \
 		rdp-classifier=2.2:/usr/wip/biology/rdp-classifier-2.2 \
 		microbiomutil>=r20110519:/usr/wip/biology/microbiomeutil \
 		cdbfasta>=2010.07.22:/usr/wip/biology/cdbfasta
 RUN_DEPENDS=	${BUILD_DEPENDS} \
-		ncbi-toolkit>=2012.06.20:${PORTSDIR}/biology/ncbi-toolkit \
-		cd-hit>=4.6.1:${PORTSDIR}/biology/cd-hit
-BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+		ncbi-toolkit>=2012.06.20:biology/ncbi-toolkit \
+		cd-hit>=4.6.1:biology/cd-hit
+BUILD_DEPENDS+=	sphinx-build:textproc/py-sphinx
 
 # Hack to work around matplotlib package not installing pyparsing on 10.0
-RUN_DEPENDS+=	${PKGNAMEPREFIX}parsing>=0:${PORTSDIR}/devel/py-parsing
+RUN_DEPENDS+=	${PKGNAMEPREFIX}parsing>=0:devel/py-parsing
 
 ###############
 # Full install
@@ -112,7 +112,7 @@ RUN_DEPENDS+=	${PKGNAMEPREFIX}parsing>=0:${PORTSDIR}/devel/py-parsing
 #     SourceTracker 0.9.5 (src) (license: GPL)
 # 
 
-BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS+=	ghc:lang/ghc
 
 # start_parallel_jobs.py is for multithreaded?
 post-patch:

@@ -15,11 +15,11 @@ EXTRACT_SUFX=	.7z
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Java 1.7 GUI for Octave
 
-EXTRACT_DEPENDS+=	p7zip:${PORTSDIR}/archivers/p7zip
+EXTRACT_DEPENDS+=	p7zip:archivers/p7zip
 
 FETCH_ARGS+=	-F
 
 do-extract:
-	(cd ${WRKDIR} && p7zip -d ${PORTSDIR}/distfiles/${DISTNAME}${EXTRACT_SUFX})
+	(cd ${WRKDIR} && p7zip -d distfiles/${DISTNAME}${EXTRACT_SUFX})
 
 .include <bsd.port.mk>

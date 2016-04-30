@@ -9,8 +9,8 @@ CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for the DRI
 
-LIB_DEPENDS=	libdrm.so:${PORTSDIR}/graphics/libdrm \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libdrm.so:graphics/libdrm \
+		libexpat.so:textproc/expat2
 
 USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto \
 		presentproto xvmc xshmfence
@@ -63,8 +63,8 @@ PLIST=	${.CURDIR}/pkg-plist-old
 .endif
 
 .if ${PORT_OPTIONS:MGALLIUM}
-BUILD_DEPENDS+=	llvm${MESA_LLVM_VER}>=0:${PORTSDIR}/devel/llvm${MESA_LLVM_VER}
-RUN_DEPENDS+=	llvm${MESA_LLVM_VER}>=0:${PORTSDIR}/devel/llvm${MESA_LLVM_VER}
+BUILD_DEPENDS+=	llvm${MESA_LLVM_VER}>=0:devel/llvm${MESA_LLVM_VER}
+RUN_DEPENDS+=	llvm${MESA_LLVM_VER}>=0:devel/llvm${MESA_LLVM_VER}
 CONFIGURE_ENV+=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${MESA_LLVM_VER}
 
 CONFIGURE_ARGS+=--enable-gallium-llvm \
@@ -86,7 +86,7 @@ CONFIGURE_ARGS+=--enable-texture-float
 IGNORE=	VDPAU option requires GALLIUM support to be enabled
 .endif
 CONFIGURE_ARGS+=--enable-vdpau
-LIB_DEPENDS+=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+LIB_DEPENDS+=	libvdpau.so:multimedia/libvdpau
 PLIST_SUB+=	VDPAU=""
 .else
 CONFIGURE_ARGS+=--disable-vdpau

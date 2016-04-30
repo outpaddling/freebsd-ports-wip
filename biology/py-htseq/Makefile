@@ -14,8 +14,8 @@ COMMENT=	Framework to analyze data from high-throughput sequencing assays
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.2:${PORTSDIR}/math/py-numpy \
-		${PKGNAMEPREFIX}matplotlib>=1.4.3:${PORTSDIR}/math/py-matplotlib
+BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.2:math/py-numpy \
+		${PKGNAMEPREFIX}matplotlib>=1.4.3:math/py-matplotlib
 
 USES=		python
 USE_PYTHON=	distutils

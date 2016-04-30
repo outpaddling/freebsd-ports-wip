@@ -17,7 +17,7 @@ COMMENT=	The Biological Observation Matrix (BIOM) Format Project
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:math/py-numpy
 
 USES=		python
 USE_PYTHON=	distutils

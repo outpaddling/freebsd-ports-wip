@@ -9,9 +9,9 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Fast lexical analyzer generator
 
-BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man \
-		gm4:${PORTSDIR}/devel/m4
-RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	help2man:misc/help2man \
+		gm4:devel/m4
+RUN_DEPENDS=	gm4:devel/m4
 
 USES=		bison gmake libtool makeinfo tar:bzip2
 GNU_CONFIGURE=	yes

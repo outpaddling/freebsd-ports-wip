@@ -16,8 +16,8 @@ DISTNAME=	freesurfer-Linux-rh9-stable-pub-v4.0.2-full
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Cortical Surface Reconstruction
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
-		${LINUXBASE}/usr/lib/libtiff.so.3:${PORTSDIR}/graphics/linux-tiff
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:graphics/linux-jpeg \
+		${LINUXBASE}/usr/lib/libtiff.so.3:graphics/linux-tiff
 
 USE_LINUX=	yes
 USE_XLIB=	yes

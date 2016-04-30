@@ -40,7 +40,7 @@ MAKE_FLAGS+=	PREFIX=${PREFIX} \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_RXVT)
-RUN_DEPENDS+=	rxvt:${PORTSDIR}/x11/rxvt
+RUN_DEPENDS+=	rxvt:x11/rxvt
 .endif
 
 pre-build:

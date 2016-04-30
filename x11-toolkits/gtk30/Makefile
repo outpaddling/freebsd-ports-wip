@@ -24,10 +24,10 @@ PORTSCOUT=	ignore:1
 .else
 PORTSCOUT=	limit:1,even
 
-BUILD_DEPENDS+=	at-spi2-atk>=0:${PORTSDIR}/accessibility/at-spi2-atk
-RUN_DEPENDS+=	hicolor-icon-theme>=0:${PORTSDIR}/misc/hicolor-icon-theme \
-		adwaita-icon-theme>=0:${PORTSDIR}/x11-themes/adwaita-icon-theme \
-		at-spi2-atk>=0:${PORTSDIR}/accessibility/at-spi2-atk
+BUILD_DEPENDS+=	at-spi2-atk>=0:accessibility/at-spi2-atk
+RUN_DEPENDS+=	hicolor-icon-theme>=0:misc/hicolor-icon-theme \
+		adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme \
+		at-spi2-atk>=0:accessibility/at-spi2-atk
 
 USE_PERL5=	build
 USE_LDCONFIG=	yes
@@ -57,14 +57,14 @@ OPTIONS_DEFINE=	CUPS CLOUDPRINT COLORD DEBUG
 OPTIONS_DEFAULT=CUPS COLORD
 OPTIONS_SUB=	yes
 COLORD_DESC=	Color profile support
-COLORD_LIB_DEPENDS=	libcolord.so:${PORTSDIR}/graphics/colord
+COLORD_LIB_DEPENDS=	libcolord.so:graphics/colord
 COLORD_CONFIGURE_ENABLE=colord
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_LIB_DEPENDS=	libcups.so:print/cups-client
 CUPS_CONFIGURE_ENABLE=	cups
 CLOUDPRINT_DESC=	Cloud printing support
 CLOUDPRINT_CONFIGURE_ENABLE=	cloudprint
-CLOUDPRINT_LIB_DEPENDS=	librest-0.7.so:${PORTSDIR}/devel/librest \
-			libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
+CLOUDPRINT_LIB_DEPENDS=	librest-0.7.so:devel/librest \
+			libjson-glib-1.0.so:devel/json-glib
 DEBUG_CONFIGURE_ENABLE=debug
 
 # needed for the exists() check, booo

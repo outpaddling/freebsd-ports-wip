@@ -26,10 +26,10 @@ COMMENT=
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-LIB_DEPENDS=	blitz:${PORTSDIR}/math/blitz++ \
-		hdf5:${PORTSDIR}/science/hdf5 \
-		config:${PORTSDIR}/devel/libconfig \
-		argp:${PORTSDIR}/devel/argp-standalone
+LIB_DEPENDS=	blitz:math/blitz++ \
+		hdf5:science/hdf5 \
+		config:devel/libconfig \
+		argp:devel/argp-standalone
 
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -largp

@@ -14,16 +14,16 @@ LICENSE=	GPLv3
 
 # Building docs requires GNU nm, so install binutils and add
 # $LOCALBASE/bin to PATH during configure and build stages.
-BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison \
-		flex:${PORTSDIR}/textproc/flex \
-		antlr:${PORTSDIR}/devel/antlr \
-		makeinfo:${PORTSDIR}/print/texinfo \
-		${LOCALBASE}/bin/nm:${PORTSDIR}/devel/binutils
-LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl \
-		libhdf5.so:${PORTSDIR}/science/hdf5 \
-		libnetcdf.so:${PORTSDIR}/science/netcdf \
-		libudunits2.so:${PORTSDIR}/science/udunits \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+BUILD_DEPENDS+=	bison:devel/bison \
+		flex:textproc/flex \
+		antlr:devel/antlr \
+		makeinfo:print/texinfo \
+		${LOCALBASE}/bin/nm:devel/binutils
+LIB_DEPENDS=	libgsl.so:math/gsl \
+		libhdf5.so:science/hdf5 \
+		libnetcdf.so:science/netcdf \
+		libudunits2.so:science/udunits \
+		libexpat.so:textproc/expat2
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool

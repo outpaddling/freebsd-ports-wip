@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 # USE_FORTRAN=	yes
 
 # Netcdf 3 won't cut it.  Need nc-config.
-LIB_DEPENDS+=	netcdf.7:${PORTSDIR}/science/netcdf4
+LIB_DEPENDS+=	netcdf.7:science/netcdf4
 
 PLIST_FILES=	bin/ncview
 

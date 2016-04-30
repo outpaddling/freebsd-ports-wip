@@ -25,13 +25,13 @@ CONFIGURE_LOG=	configure.log
 # PETSc automatically parallelizes compiles and rejects make -j
 MAKE_JOBS_UNSAFE=	yes
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu \
-		svn:${PORTSDIR}/devel/subversion
+BUILD_DEPENDS=	${LOCALBASE}/lib/libsuperlu.a:math/superlu \
+		svn:devel/subversion
 
-LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf \
-		libblas.so:${PORTSDIR}/math/blas \
-		liblapack.so:${PORTSDIR}/math/lapack \
-		libscalapack.so:${PORTSDIR}/math/scalapack
+LIB_DEPENDS=	libnetcdf.so:science/netcdf \
+		libblas.so:math/blas \
+		liblapack.so:math/lapack \
+		libscalapack.so:math/scalapack
 
 CONFIGURE_ENV=	PETSC_DIR=${WRKSRC} \
 		PETSC_ARCH=${OPSYS:tl} \

@@ -13,11 +13,11 @@ COMMENT=	Large-scale Atomic/Molecular Massively Parallel Simulator
 LICENSE=	GPLv1
 
 # Need voro++ built with gcc or link will fail - use wip
-LIB_DEPENDS+=	libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	libfftw3.so:math/fftw3 \
+		libjpeg.so:graphics/jpeg \
 		libkim-api-v1.so:/usr/wip/science/openkim
-BUILD_DEPENDS+=	${LOCALBASE}/lib/liblapack.a:${PORTSDIR}/math/lapack \
-		${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas \
+BUILD_DEPENDS+=	${LOCALBASE}/lib/liblapack.a:math/lapack \
+		${LOCALBASE}/lib/libblas.a:math/blas \
 		${LOCALBASE}/lib/libvoro++.a:/usr/wip/science/voro++
 
 BUILD_WRKSRC=	${WRKSRC}/src

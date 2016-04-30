@@ -10,12 +10,12 @@ MASTER_SITES=	http://graphics.stanford.edu/projects/dti/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Stanford DTI Visualization tool
 
-BUILD_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:${PORTSDIR}/devel/tnt \
-		${LOCALBASE}/include/tnt/jama_cholesky.h:${PORTSDIR}/math/jama \
-		${LOCALBASE}/lib/libRAPID.a:${PORTSDIR}/math/rapid
-EXTRACT_DEPENDS=	dos2unix:${PORTSDIR}/converters/unix2dos
-LIB_DEPENDS=	wx_gtk2_core-2.8.0:${PORTSDIR}/x11-toolkits/wxgtk28 \
-		vtkCommon.5:${PORTSDIR}/math/vtk5
+BUILD_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:devel/tnt \
+		${LOCALBASE}/include/tnt/jama_cholesky.h:math/jama \
+		${LOCALBASE}/lib/libRAPID.a:math/rapid
+EXTRACT_DEPENDS=	dos2unix:converters/unix2dos
+LIB_DEPENDS=	wx_gtk2_core-2.8.0:x11-toolkits/wxgtk28 \
+		vtkCommon.5:math/vtk5
 
 CONFLICTS=	dtiquery-1.0*
 

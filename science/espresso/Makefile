@@ -20,9 +20,9 @@ COMMENT=	Nanoscale electronic-structure calculations and materials modeling
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	liblapack.so:${PORTSDIR}/math/lapack \
-		libblas.so:${PORTSDIR}/math/blas \
-		libfftw3.so:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	liblapack.so:math/lapack \
+		libblas.so:math/blas \
+		libfftw3.so:math/fftw3
 
 GNU_CONFIGURE=	yes
 USE_FORTRAN=	yes

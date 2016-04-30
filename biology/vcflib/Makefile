@@ -10,7 +10,7 @@ COMMENT=	C++ library and CLI tools for parsing and manipulating VCF files
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libhts.so:${PORTSDIR}/biology/htslib \
+LIB_DEPENDS=	libhts.so:biology/htslib \
 		libtabix.so.1:/usr/wip/biology/tabixpp \
 		libsw.so.1:/usr/wip/biology/smithwaterman
 BUILD_DEPENDS=	fastahack>=0:/usr/wip/biology/fastahack \

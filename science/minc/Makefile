@@ -23,7 +23,7 @@ MASTER_SITES=	http://www.nitrc.org/frs/downloadlink.php/400/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Medical Imaging NetCDF
 
-LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
+LIB_DEPENDS=	netcdf.4:science/netcdf
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

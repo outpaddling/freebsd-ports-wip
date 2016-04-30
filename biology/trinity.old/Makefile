@@ -45,14 +45,14 @@ LDFLAGS+=	-fopenmp -Wl,-rpath=${_GCC_RUNTIME}
 MAKE_FLAGS+=	FORCE_UNSAFE_CONFIGURE=1
 
 # Use samtools 0.1.19.  http://trinityrnaseq.github.io/
-BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
-		bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
+BUILD_DEPENDS+=	gsort:sysutils/coreutils \
+		bash:shells/bash
+RUN_DEPENDS+=	gsort:sysutils/coreutils \
 		bowtie:/usr/wip/biology/bowtie \
 		samtools01==0.1.19:/usr/wip/biology/samtools0119 \
 		jellyfish:/usr/wip/biology/jellyfish \
 		ParaFly:/usr/wip/sysutils/parafly
-LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS+=	libexecinfo.so:devel/libexecinfo
 
 MAKE_JOBS_UNSAFE=	yes
 

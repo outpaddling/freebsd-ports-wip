@@ -32,9 +32,9 @@ MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Unstructured Grid Finite Volume Coastal Ocean Model
 
 # Check netcdf lib for Fortran support!
-LIB_DEPENDS=	netcdf:${PORTSDIR}/science/netcdf \
-		lapack:${PORTSDIR}/math/lapack \
-		blas:${PORTSDIR}/math/lapack
+LIB_DEPENDS=	netcdf:science/netcdf \
+		lapack:math/lapack \
+		blas:math/lapack
 
 USE_FORTRAN=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/fvcom_source_mpi
@@ -42,7 +42,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/fvcom_source_mpi
 .include <bsd.port.pre.mk>
 
 .ifdef WITH_MPI
-LIB_DEPENDS+=	mpi:${PORTSDIR}/net/openmpi
+LIB_DEPENDS+=	mpi:net/openmpi
 .endif
 
 PLIST_FILES=	bin/${PORTNAME}${PKGNAMESUFFIX}

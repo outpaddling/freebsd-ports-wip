@@ -12,7 +12,7 @@ COMMENT=	RNA-Seq by Expectation-Maximization
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	Rscript:${PORTSDIR}/math/R
+RUN_DEPENDS=	Rscript:math/R
 
 # Gmake is for bundled samtools, which contains modifications for rsem.
 # Should be unbundled in the future.

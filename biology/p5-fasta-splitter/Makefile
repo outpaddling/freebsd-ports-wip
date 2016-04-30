@@ -13,8 +13,8 @@ COMMENT=	Divides FASTA file into a smaller approx. equal sized set of files
 
 LICENSE=	ZLIB
 
-RUN_DEPENDS=	p5-File-Util>=3:${PORTSDIR}/devel/p5-File-Util \
-		p5-Getopt-Long>=2:${PORTSDIR}/devel/p5-Getopt-Long
+RUN_DEPENDS=	p5-File-Util>=3:devel/p5-File-Util \
+		p5-Getopt-Long>=2:devel/p5-Getopt-Long
 
 USES=		zip
 

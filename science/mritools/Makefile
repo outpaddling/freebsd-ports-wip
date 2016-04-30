@@ -56,12 +56,12 @@ RUN_DEPENDS+=   TLv:../../science/TLv
 .endif
 
 .if defined(WITH_SYSTOOLS)
-RUN_DEPENDS+=   endian:${PORTSDIR}/sysutils/endian \
-		eject:${PORTSDIR}/sysutils/mcweject
+RUN_DEPENDS+=   endian:sysutils/endian \
+		eject:sysutils/mcweject
 .endif
 
 .if defined(WITH_SOUND)
-RUN_DEPENDS+=   audacity:${PORTSDIR}/audio/audacity
+RUN_DEPENDS+=   audacity:audio/audacity
 .endif
 
 .if defined(WITH_FFMAP)
@@ -86,7 +86,7 @@ RUN_DEPENDS+=   caret5:../../science/caret
 .endif
 
 .if defined(WITH_DTIQUERY)
-RUN_DEPENDS+=   dtiquery:${PORTSDIR}/science/dtiquery
+RUN_DEPENDS+=   dtiquery:science/dtiquery
 .endif
 
 .if defined(WITH_FSL)
@@ -98,7 +98,7 @@ RUN_DEPENDS+=   ${LINUXBASE}${LOCALBASE}/freesurfer/bin/csurf:../../science/free
 .endif
 
 .if defined(WITH_SCILAB)
-RUN_DEPENDS+=   scilab:${PORTSDIR}/math/scilab
+RUN_DEPENDS+=   scilab:math/scilab
 .endif
 
 .if ${OSVERSION} < 500000

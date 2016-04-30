@@ -9,13 +9,13 @@ MASTER_SITES=	http://ab-initio.mit.edu/meep/
 MAINTAINER=	devel@stasyan.com
 COMMENT=	FDTD simulation software to model electromagnetic systems
 
-BUILD_DEPENDS=	harminv:${PORTSDIR}/science/harminv \
-		gsed:${PORTSDIR}/textproc/gsed
-LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile \
-		libblas.so:${PORTSDIR}/math/blas \
-		libctl.so:${PORTSDIR}/science/libctl \
-		libhdf5.so:${PORTSDIR}/science/hdf5
-RUN_DEPENDS=	harminv:${PORTSDIR}/science/harminv
+BUILD_DEPENDS=	harminv:science/harminv \
+		gsed:textproc/gsed
+LIB_DEPENDS=	libguile.so:lang/guile \
+		libblas.so:math/blas \
+		libctl.so:science/libctl \
+		libhdf5.so:science/hdf5
+RUN_DEPENDS=	harminv:science/harminv
 
 GNU_CONFIGURE=	yes
 USE_GCC=	yes
@@ -33,8 +33,8 @@ OPENMPI_DESC=		MPI support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENMPI}
-BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpiCC:${PORTSDIR}/net/openmpi
-RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
+BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpiCC:net/openmpi
+RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
 CONFIGURE_ARGS+=--with-mpi
 CONFIGURE_ENV+=	MPICXX=${LOCALBASE}/mpi/openmpi/bin/mpiCC
 CFLAGS+=	-I${LOCALBASE}/mpi/openmpi/include

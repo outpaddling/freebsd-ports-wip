@@ -19,8 +19,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 # [2]: http://samtools.sourceforge.net
 # [3]: http://vcftools.sourceforge.net/specs.html
 
-BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
-		git:${PORTSDIR}/devel/git \
+BUILD_DEPENDS=	ant:devel/apache-ant \
+		git:devel/git \
 		${JAVAJARDIR}/htsjdk/htsjdk-${PORTVERSION}.jar:/usr/wip/biology/htsjdk
 
 RUN_DEPENDS=	samtools01==0.1.19:/usr/wip/biology/samtools0119

@@ -20,9 +20,9 @@ SHEBANG_FILES=	bin/tmhmmformat.pl bin/tmhmm
 RESTRICTED=	Redistribution is not permitted
 
 USE_GHOSTSCRIPT_RUN=	yes
-RUN_DEPENDS=	gnuplot>=4:${PORTSDIR}/math/gnuplot \
-		netpbm>=10:${PORTSDIR}/graphics/netpbm \
-		p5-Getopt-Long>=2:${PORTSDIR}/devel/p5-Getopt-Long
+RUN_DEPENDS=	gnuplot>=4:math/gnuplot \
+		netpbm>=10:graphics/netpbm \
+		p5-Getopt-Long>=2:devel/p5-Getopt-Long
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}c
 

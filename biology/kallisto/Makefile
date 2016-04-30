@@ -10,7 +10,7 @@ DISTVERSIONPREFIX=	v
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Quantify abundances of transcripts from RNA-Seq data
 
-LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
+LIB_DEPENDS=	libhdf5.so:science/hdf5
 
 USES=		cmake
 

@@ -47,21 +47,21 @@ LDFLAGS+=	-fopenmp -Wl,-rpath=${_GCC_RUNTIME}
 # To-do:
 #	Unbundle collectl (low priority)
 
-BUILD_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
-		bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS+=	gsort:${PORTSDIR}/sysutils/coreutils \
-		bowtie:${PORTSDIR}/biology/bowtie \
-		bowtie2:${PORTSDIR}/biology/bowtie2 \
-		samtools>=1.3:${PORTSDIR}/biology/samtools \
-		jellyfish>=2.1.4:${PORTSDIR}/biology/jellyfish \
-		ParaFly:${PORTSDIR}/sysutils/parafly \
-		fastool:${PORTSDIR}/biology/fastool \
-		TransDecoder.Predict:${PORTSDIR}/biology/p5-transdecoder \
-		slclust:${PORTSDIR}/biology/slclust \
-		trimmomatic>=0.32:${PORTSDIR}/biology/trimmomatic \
+BUILD_DEPENDS+=	gsort:sysutils/coreutils \
+		bash:shells/bash
+RUN_DEPENDS+=	gsort:sysutils/coreutils \
+		bowtie:biology/bowtie \
+		bowtie2:biology/bowtie2 \
+		samtools>=1.3:biology/samtools \
+		jellyfish>=2.1.4:biology/jellyfish \
+		ParaFly:sysutils/parafly \
+		fastool:biology/fastool \
+		TransDecoder.Predict:biology/p5-transdecoder \
+		slclust:biology/slclust \
+		trimmomatic>=0.32:biology/trimmomatic \
 		rsem>=1.2.27:/usr/wip/biology/rsem
-LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libhts.so:${PORTSDIR}/biology/htslib
+LIB_DEPENDS+=	libexecinfo.so:devel/libexecinfo \
+		libhts.so:biology/htslib
 
 LIBEXEC_DIR=	${PREFIX}/libexec/trinity
 PLUGINS_DIR=	${LIBEXEC_DIR}/trinity-plugins

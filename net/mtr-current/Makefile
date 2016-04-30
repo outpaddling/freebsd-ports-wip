@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=--disable-ipv6
 
 .if ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=--with-gtk
-PATCH_DEPENDS+=	${LOCALBASE}/lib/libgtk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20
+PATCH_DEPENDS+=	${LOCALBASE}/lib/libgtk-x11-2.0.so:x11-toolkits/gtk20
 USE_GNOME=	gtk20
 USES=		pkgconfig
 .else

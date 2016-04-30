@@ -16,7 +16,7 @@ COMMENT=	MRI Reconstruction
 
 PLIST_FILES=	bin/TLv
 
-LIB_DEPENDS=	Xm.3:${PORTSDIR}/x11-toolkits/open-motif
+LIB_DEPENDS=	Xm.3:x11-toolkits/open-motif
 
 MAN1=		TLv.1
 

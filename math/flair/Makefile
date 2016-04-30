@@ -15,9 +15,9 @@ COMMENT=	FLAPW method for bulk and thin films
 
 # LICENSE=      Custom free software with restrictions
 
-LIB_DEPENDS=	blas:${PORTSDIR}/math/blas \
-		lapack:${PORTSDIR}/math/lapack \
-		open-rte:${PORTSDIR}/net/openmpi
+LIB_DEPENDS=	blas:math/blas \
+		lapack:math/lapack \
+		open-rte:net/openmpi
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

@@ -28,12 +28,12 @@ PLIST_DIRS=	include/parmetis lib/parmetis
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OPENMPI)
-BUILD_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
-RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
+BUILD_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpicc:net/openmpi
+RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
 MPICC=		${LOCALBASE}/mpi/openmpi/bin/mpicc
 .else
-BUILD_DEPENDS=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
-RUN_DEPENDS=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2
+BUILD_DEPENDS=	${LOCALBASE}/bin/mpicc:net/mpich2
+RUN_DEPENDS=	${LOCALBASE}/bin/mpirun:net/mpich2
 MPICC=		${LOCALBASE}/bin/mpicc
 .endif
 

@@ -18,7 +18,7 @@ LICENSE=	BSD3CLAUSE
 # FIXME: Get to a newer version of rdflib and eliminate rdfextras
 RUN_DEPENDS=	dazz_db==${PORTVERSION}:/usr/wip/biology/dazz_db \
 		daligner==${PORTVERSION}:/usr/wip/biology/daligner \
-		${PYTHON_PKGNAMEPREFIX}networkx>=0:${PORTSDIR}/math/py-networkx \
+		${PYTHON_PKGNAMEPREFIX}networkx>=0:math/py-networkx \
 		${PYTHON_PKGNAMEPREFIX}pypeflow==${PORTVERSION}:/usr/wip/biology/py-pypeflow \
 		${PYTHON_PKGNAMEPREFIX}rdflib==3.4.0:/usr/wip/textproc/py-rdflib340 \
 		${PYTHON_PKGNAMEPREFIX}rdfextras==0.4:/usr/wip/textproc/py-rdfextras

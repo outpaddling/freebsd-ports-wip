@@ -12,14 +12,14 @@ COMMENT=	Bash pipeline for ddRAD sequencing
 LICENSE=	MIT
 
 # bedtools version: https://github.com/jpuritz/dDocent/issues/15
-RUN_DEPENDS=	mawk>=0:${PORTSDIR}/lang/mawk \
+RUN_DEPENDS=	mawk>=0:lang/mawk \
 		bwa>=0:/usr/wip/biology/bwa \
-		samtools>=1.3:${PORTSDIR}/biology/samtools \
-		cd-hit>=0:${PORTSDIR}/biology/cd-hit \
-		gnuplot>=0:${PORTSDIR}/math/gnuplot \
-		parallel>=0:${PORTSDIR}/sysutils/parallel \
-		gawk>=0:${PORTSDIR}/lang/gawk \
-		vcftools>=0.1.11:${PORTSDIR}/biology/vcftools \
+		samtools>=1.3:biology/samtools \
+		cd-hit>=0:biology/cd-hit \
+		gnuplot>=0:math/gnuplot \
+		parallel>=0:sysutils/parallel \
+		gawk>=0:lang/gawk \
+		vcftools>=0.1.11:biology/vcftools \
 		vcflib>=0:/usr/wip/biology/vcflib \
 		rainbow>=0:/usr/wip/biology/rainbow \
 		bamtools>=0:/usr/wip/biology/bamtools \

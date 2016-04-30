@@ -14,7 +14,7 @@ COMMENT=
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-BUILD_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20
+BUILD_DEPENDS=	swig2.0:devel/swig20
 CONFIGURE_ARGS+=	--swig=${LOCALBASE}/bin/swig2.0
 MAKE_FLAGS+=	--swig=${LOCALBASE}/bin/swig2.0
 

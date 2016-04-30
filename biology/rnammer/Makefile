@@ -17,8 +17,8 @@ COMMENT=	Predicts 5s/8s, 16s/18s, and 23s/28s ribosomal RNA
 USES=		shebangfix tar:Z
 SHEBANG_FILES=	*rnammer xml2*
 
-RUN_DEPENDS=	p5-Getopt-Long>=2:${PORTSDIR}/devel/p5-Getopt-Long \
-		p5-Data-Dumper>=2:${PORTSDIR}/devel/p5-Data-Dumper
+RUN_DEPENDS=	p5-Getopt-Long>=2:devel/p5-Getopt-Long \
+		p5-Data-Dumper>=2:devel/p5-Data-Dumper
 
 NO_BUILD=	yes
 

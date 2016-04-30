@@ -23,7 +23,7 @@ USE_LDCONFIG=	${PREFIX}/lib/KWWidgets
 
 CFLAGS+=	-fPIC -I${PYTHON_INCLUDEDIR}
 
-LIB_DEPENDS=	vtkCommon.5:${PORTSDIR}/math/vtk5
+LIB_DEPENDS=	vtkCommon.5:math/vtk5
 
 CMAKE_ARGS+=	-DTCL_INCLUDE_PATH=${LOCALBASE}/include/tcl${TCL_VER} \
 		-DTK_INCLUDE_PATH=${LOCALBASE}/include/tk${TK_VER}

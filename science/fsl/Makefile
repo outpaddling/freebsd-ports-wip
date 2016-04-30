@@ -20,17 +20,17 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	FMRIB Software Library
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		gd.4:${PORTSDIR}/graphics/gd \
-		boost_regex.[34]:${PORTSDIR}/devel/boost-libs \
-		fftw3.4:${PORTSDIR}/math/fftw3
-RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
-		convert:${PORTSDIR}/graphics/ImageMagick \
-		tixwish:${PORTSDIR}/x11-toolkits/tix \
-		bash:${PORTSDIR}/shells/bash \
-		whirlgif:${PORTSDIR}/graphics/whirlgif
-BUILD_DEPENDS=	tclsh8.4:${PORTSDIR}/lang/tcl84 \
-		ginstall:${PORTSDIR}/sysutils/coreutils
+LIB_DEPENDS=	png.5:graphics/png \
+		gd.4:graphics/gd \
+		boost_regex.[34]:devel/boost-libs \
+		fftw3.4:math/fftw3
+RUN_DEPENDS=	gnuplot:math/gnuplot \
+		convert:graphics/ImageMagick \
+		tixwish:x11-toolkits/tix \
+		bash:shells/bash \
+		whirlgif:graphics/whirlgif
+BUILD_DEPENDS=	tclsh8.4:lang/tcl84 \
+		ginstall:sysutils/coreutils
 
 OPTIONS=	FSLVIEW "Build fslview (Requires cmake,qt,qwt,vtk)" on
 
@@ -40,9 +40,9 @@ USE_GMAKE=	yes
 
 .if defined(WITH_FSLVIEW)
 LIB_DEPENDS+=	qwt4.4:/usr/ports/x11-toolkits/qwt4 \
-		vtkCommon.5:${PORTSDIR}/math/vtk5
-BUILD_DEPENDS+=	qt>=3.3.6:${PORTSDIR}/x11-toolkits/qt33 \
-		cmake>=2.2.3:${PORTSDIR}/devel/cmake
+		vtkCommon.5:math/vtk5
+BUILD_DEPENDS+=	qt>=3.3.6:x11-toolkits/qt33 \
+		cmake>=2.2.3:devel/cmake
 .endif
 
 CONFLICTS=	fsl-3.3.* fsl-4.0.[012456789]*

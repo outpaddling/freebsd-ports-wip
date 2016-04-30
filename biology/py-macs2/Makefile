@@ -12,7 +12,7 @@ COMMENT=	Novel algorithm for identifying transcript factor binding sites
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0:${PORTSDIR}/math/py-numpy
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0:math/py-numpy
 
 USES=		python
 USE_PYTHON=	autoplist distutils

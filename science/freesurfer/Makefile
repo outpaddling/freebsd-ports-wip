@@ -37,10 +37,10 @@ USE_TCL=	84+
 USE_TK=		84+
 USE_QT_VER=	3	# Can this be 4?
 
-LIB_DEPENDS=	vtkCommon.5:${PORTSDIR}/math/vtk5 \
-		minc:${PORTSDIR}/science/minc \
-		Tix8:${PORTSDIR}/x11-toolkits/tix \
-		BLT24:${PORTSDIR}/x11-toolkits/blt \
+LIB_DEPENDS=	vtkCommon.5:math/vtk5 \
+		minc:science/minc \
+		Tix8:x11-toolkits/tix \
+		BLT24:x11-toolkits/blt \
 		KWWidgets:../../science/kwwidgets
 BUILD_DEPENDS=	${LOCALBASE}/lib/libvul.a:../../science/vxl
 

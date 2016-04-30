@@ -12,19 +12,19 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, base binaries
 
-RUN_DEPENDS=	psbook:${PORTSDIR}/print/psutils
-LIB_DEPENDS=	libicuio.so:${PORTSDIR}/devel/icu \
-		libt1.so:${PORTSDIR}/devel/t1lib \
-		libTECkit.so:${PORTSDIR}/textproc/teckit \
-		libgraphite.so:${PORTSDIR}/graphics/silgraphite \
-		libgd.so:${PORTSDIR}/graphics/gd \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libttf.so:${PORTSDIR}/print/freetype \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libzzip.so:${PORTSDIR}/devel/zziplib \
-		libpoppler.so:${PORTSDIR}/graphics/poppler
+RUN_DEPENDS=	psbook:print/psutils
+LIB_DEPENDS=	libicuio.so:devel/icu \
+		libt1.so:devel/t1lib \
+		libTECkit.so:textproc/teckit \
+		libgraphite.so:graphics/silgraphite \
+		libgd.so:graphics/gd \
+		libfreetype.so:print/freetype2 \
+		libttf.so:print/freetype \
+		libpng.so:graphics/png \
+		libzzip.so:devel/zziplib \
+		libpoppler.so:graphics/poppler
 # XXX
-#		libpotrace.so:${PORTSDIR}/graphics/potrace
+#		libpotrace.so:graphics/potrace
 
 CONFLICTS_INSTALL=	texlive-texmf-201[23]*
 

@@ -21,9 +21,9 @@ ALL_TARGET=	default
 # ZLIB_VERSION=1.2.7
 # clfft?
 
-LIB_DEPENDS+=	libgsl.so:${PORTSDIR}/math/gsl \
-		libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS+=	libgsl.so:math/gsl \
+		libfftw3.so:math/fftw3 \
+		libxml2.so:textproc/libxml2
 		
 
 .include <bsd.port.pre.mk>

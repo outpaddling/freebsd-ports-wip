@@ -12,15 +12,15 @@ COMMENT=	Analyzing transcriptome data generated using the PacBio(R)
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS+=	cython:${PORTSDIR}/lang/cython \
+BUILD_DEPENDS+=	cython:lang/cython \
 		${PYNUMPY} \
 		${PYSCIPY} \
 		${PYTHON_PKGNAMEPREFIX}pbh5tools>=0:/usr/wip/biology/py-pbh5tools \
-		${PYTHON_PKGNAMEPREFIX}networkx>=0:${PORTSDIR}/math/py-networkx
+		${PYTHON_PKGNAMEPREFIX}networkx>=0:math/py-networkx
 RUN_DEPENDS+=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pbh5tools>=0:/usr/wip/biology/py-pbh5tools \
-		${PYTHON_PKGNAMEPREFIX}networkx>=0:${PORTSDIR}/math/py-networkx \
-		hmmer>=3.0:${PORTSDIR}/biology/hmmer \
+		${PYTHON_PKGNAMEPREFIX}networkx>=0:math/py-networkx \
+		hmmer>=3.0:biology/hmmer \
 		blasr>=${PORTVERSION}:/usr/wip/biology/blasr \
 		pbdagcon>=${PORTVERSION}:/usr/wip/biology/pbdagcon
 

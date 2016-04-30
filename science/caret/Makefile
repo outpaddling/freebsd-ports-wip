@@ -17,15 +17,15 @@ DISTFILES=	caret_source.v${PORTVERSION}.zip \
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Computerized Anatomical Reconstruction and Editing Toolkit
 
-LIB_DEPENDS=	minc.1:${PORTSDIR}/science/minc \
-		netcdf.[1-4]:${PORTSDIR}/science/netcdf \
-		vtkCommon.5:${PORTSDIR}/math/vtk5 \
-		lapack.[3-4]:${PORTSDIR}/math/lapack \
+LIB_DEPENDS=	minc.1:science/minc \
+		netcdf.[1-4]:science/netcdf \
+		vtkCommon.5:math/vtk5 \
+		lapack.[3-4]:math/lapack \
 		qwt.5:/usr/ports/x11-toolkits/qwt5
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake \
-		${LOCALBASE}/bin/qmake-qt4:${PORTSDIR}/devel/qmake4
-RUN_DEPENDS=	mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
-		mpeg_play:${PORTSDIR}/multimedia/mpeg_play
+BUILD_DEPENDS=	cmake:devel/cmake \
+		${LOCALBASE}/bin/qmake-qt4:devel/qmake4
+RUN_DEPENDS=	mpeg_encode:multimedia/mpeg_encode \
+		mpeg_play:multimedia/mpeg_play
 
 CONFLICTS=	caret-5.[34]*
 
@@ -71,7 +71,7 @@ pre-fetch:
 .endif
 
 .if defined(WITH_FLAT_FLUID)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	atlas.2:math/atlas
 
 PLIST_FILES+=	bin/flat_fluid
 

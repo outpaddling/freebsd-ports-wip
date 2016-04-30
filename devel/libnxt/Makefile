@@ -13,8 +13,8 @@ MASTER_SITES=	http://libnxt.googlecode.com/files/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Lego NXT library
 
-BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
-		python:${PORTSDIR}/lang/python
+BUILD_DEPENDS=	scons:devel/scons \
+		python:lang/python
 
 SUB_FILES=	pkg-message
 

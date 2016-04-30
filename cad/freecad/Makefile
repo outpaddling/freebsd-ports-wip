@@ -17,11 +17,11 @@ COMMENT=	Free 3D CAD modelling
 
 # See Cmake output
 # gl, python, boost, xerces-c, zlib, swig, eigen3, ode, qt, spnav
-LIB_DEPENDS=	BinLPlugin:${PORTSDIR}/cad/opencascade \
-		SoQt:${PORTSDIR}/x11-toolkits/soqt \
-		xerces-c:${PORTSDIR}/textproc/xerces-c2
-BUILD_DEPENDS=	${PREFIX}/lib/libsysinfo.a:${PORTSDIR}/devel/libsysinfo
-#BUILD_DEPENDS=	ode-config:${PORTSDIR}/devel/ode
+LIB_DEPENDS=	BinLPlugin:cad/opencascade \
+		SoQt:x11-toolkits/soqt \
+		xerces-c:textproc/xerces-c2
+BUILD_DEPENDS=	${PREFIX}/lib/libsysinfo.a:devel/libsysinfo
+#BUILD_DEPENDS=	ode-config:devel/ode
 
 CMAKE_ARGS+=	-DOCC_INCLUDE_DIR:PATH=${PREFIX}/include/opencascade \
 		-DOCC_LIB_DIR:PATH=${PREFIX}/lib

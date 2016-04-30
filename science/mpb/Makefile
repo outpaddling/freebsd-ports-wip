@@ -15,11 +15,11 @@ MASTER_SITES=	http://ab-initio.mit.edu/mpb/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIT Photonic-Bands
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw \
-		libhdf5.so.7:${PORTSDIR}/science/hdf5-18 \
-		libctl.so:${PORTSDIR}/science/libctl \
-		libguile.so:${PORTSDIR}/lang/guile
+BUILD_DEPENDS=	bash:shells/bash
+LIB_DEPENDS=	libfftw.so:math/fftw \
+		libhdf5.so.7:science/hdf5-18 \
+		libctl.so:science/libctl \
+		libguile.so:lang/guile
 USE_FORTRAN=	yes
 
 MAKE_JOBS_UNSAFE=	yes
@@ -37,12 +37,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 #.endif
 
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	atlas.2:math/atlas
 CONFIGURE_ARGS+=	--with-lapack=-lalapack --program-suffix=-atlas
 PKGNAMESUFFIX=	-atlas
 .else
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	blas.2:math/blas
+LIB_DEPENDS+=	lapack.4:math/lapack
 CONFIGURE_ARGS+=	--with-lapack=-llapack
 .endif
 

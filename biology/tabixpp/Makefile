@@ -10,7 +10,7 @@ COMMENT=	C++ wrapper to tabix indexer
 
 # LICENSE=	unspecified
 
-LIB_DEPENDS=	libhts.so:${PORTSDIR}/biology/htslib
+LIB_DEPENDS=	libhts.so:biology/htslib
 
 USE_LDCONFIG=	yes
 

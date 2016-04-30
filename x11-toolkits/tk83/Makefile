@@ -39,7 +39,7 @@ OPTIONS=	TK83_MAN "Install tk 8.3 manpages" off
 
 .include <bsd.port.pre.mk>
 
-TKBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
+TKBASE?=	${PKGCATEGORY}/${LATEST_LINK}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|X11/Intrinsic.h|X11/Xlib.h|g' ${WRKSRC}/configure

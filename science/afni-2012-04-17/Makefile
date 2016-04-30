@@ -24,15 +24,15 @@ COMMENT=	Advanced Functional Neuro Imaging
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
-		libR.so:${PORTSDIR}/math/R \
-		libgsl.so:${PORTSDIR}/math/gsl \
-		libnetcdff.so:${PORTSDIR}/science/netcdf-fortran
-RUN_DEPENDS=	mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
-		whirlgif:${PORTSDIR}/graphics/whirlgif \
-		ppmtogif:${PORTSDIR}/graphics/netpbm \
-		endian:${PORTSDIR}/sysutils/endian \
-		qhull:${PORTSDIR}/math/qhull5
+LIB_DEPENDS=	libXm.so:x11-toolkits/open-motif \
+		libR.so:math/R \
+		libgsl.so:math/gsl \
+		libnetcdff.so:science/netcdf-fortran
+RUN_DEPENDS=	mpeg_encode:multimedia/mpeg_encode \
+		whirlgif:graphics/whirlgif \
+		ppmtogif:graphics/netpbm \
+		endian:sysutils/endian \
+		qhull:math/qhull5
 
 CONFLICTS=	im-[0-9]* \
 		nifticlib-[0-9]* \
