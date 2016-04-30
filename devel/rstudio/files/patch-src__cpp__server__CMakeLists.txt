@@ -1,0 +1,11 @@
+--- ./src/cpp/server/CMakeLists.txt.orig	2013-12-13 18:38:16.000000000 -0500
++++ ./src/cpp/server/CMakeLists.txt	2013-12-13 18:38:42.000000000 -0500
+@@ -130,7 +130,7 @@
+ # install binary
+ install(TARGETS rserver DESTINATION ${RSTUDIO_INSTALL_BIN})
+ 
+-if (UNIX AND NOT APPLE)
++if (UNIX AND NOT APPLE AND NOT (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD"))
+ 
+    # install configured admin script
+    set(RSERVER_ADMIN_SCRIPT "extras/admin/rstudio-server")
