@@ -5,25 +5,27 @@
 # $FreeBSD$
 #
 
-PORTNAME=	R-studio
-PORTVERSION=	0.95.262
+PORTNAME=	rstudio
+PORTVERSION=	0.99.1169
 CATEGORIES=	math
-MASTER_SITES=	https://github.com/rstudio/rstudio/tarball/ \
-		https://s3.amazonaws.com/rstudio-buildtools/
-DISTFILES=	v${PORTVERSION} \
-		gin-1.5.zip \
-		gwt-2.4.0.zip \
-		junit-4.9b3.jar
+DISTVERSIONPREFIX=	v
 
-EXTRACT_ONLY=	v${PORTVERSION}
+#DISTFILES=	${DISTVERSION}.tar.gz \
+#		gin-1.5.zip \
+#		gwt-2.4.0.zip \
+#		junit-4.9b3.jar
+#
+#EXTRACT_ONLY=	v${PORTVERSION}
 
-FETCH_ARGS=	-Fpr 
+#FETCH_ARGS=	-Fpr 
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	GUI for R statistical software
 
-USE_CMAKE=	yes
+USES=		cmake
 USE_ANT=	yes
+
+USE_GITHUB=	yes
 
 CMAKE_ARGS+=	-DDL_LIBRARIES:FILEPATH=/usr/lib \
 		-DUUID_LIBRARIES:FILEPATH=/usr/lib
@@ -40,5 +42,4 @@ post-patch:
 	${CP} ${DISTDIR}/junit-4.9b3.jar ${WRKSRC}/dependencies/common
 	(cd ${WRKSRC}/dependencies/common && ./install-gwt)
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
