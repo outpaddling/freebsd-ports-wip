@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rstudio
-DISTVERSION=	v0.98.490
+PORTVERSION=	0.98.490
+DISTVERSION=	v${PORTVERSION}
 CATEGORIES=	devel java
 MASTER_SITES+=	https://s3.amazonaws.com/rstudio-dictionaries/:dictionaries \
     		https://s3.amazonaws.com/rstudio-buildtools/:buildtools \
@@ -20,19 +21,19 @@ COMMENT=	The premier integrated development environment for R
 
 LICENSE=	AGPLv3
 
-EXTRACT_DEPENDS=unzip>0:${PORTSDIR}/archivers/unzip
-RUN_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
-BUILD_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R \
-    		ant:${PORTSDIR}/devel/apache-ant
-LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
-    		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		libinotify.so:${PORTSDIR}/devel/libinotify
+EXTRACT_DEPENDS=unzip>0:archivers/unzip
+RUN_DEPENDS=	${LOCALBASE}/bin/R:math/R
+BUILD_DEPENDS=	${LOCALBASE}/bin/R:math/R \
+    		ant:devel/apache-ant
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+    		libuuid.so:misc/e2fsprogs-libuuid \
+		libinotify.so:devel/libinotify
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rstudio
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${DISTVERSION}
-GH_COMMIT=	79af91e
+# GH_COMMIT=	79af91e
 
 GINVER=		1.5
 GWTVER=		2.5.1
@@ -46,7 +47,9 @@ USES=		cmake:outsource
 CMAKE_ARGS+=	-DRSTUDIO_TARGET=Server -DCMAKE_BUILD_TYPE=Release \
 		-DRSTUDIO_INSTALL_SUPPORTING=${PREFIX}/lib \
 		-DRSTUDIO_INSTALL_BIN=${PREFIX}/sbin
-NO_STAGE=	yes
+
+CMAKE_ARGS+=    -DDL_LIBRARIES:FILEPATH=/usr/lib \
+                -DUUID_LIBRARIES:FILEPATH=/usr/lib
 
 GINFILES=	LICENSE README aopalliance.jar gin-${GINVER}-post-gwt-2.2.jar \
 		gin-${GINVER}-pre-gwt-2.2.jar guice-assistedinject-snapshot.jar \
