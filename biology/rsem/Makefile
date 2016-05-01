@@ -3,7 +3,7 @@
 # Test new versions with Trinity before upgrading
 
 PORTNAME=	rsem
-PORTVERSION=	1.2.29
+PORTVERSION=	1.2.30
 DISTVERSIONPREFIX=v
 CATEGORIES=	biology
 
