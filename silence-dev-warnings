@@ -3,6 +3,9 @@
 printf "This will disable security checks.  Are you sure?  y/[n] "
 read sure
 if [ 0$sure = 0y ]; then
-    sed -i '' -e 's|DEV_WARNING+=.*"Not validating|#&|' /usr/ports/Mk/bsd.sanity.mk
+    sed -i '' -e 's|DEV_WARNING+=.*"Not validating|#&|' \
+	/usr/ports/Mk/bsd.sanity.mk
+    sed -i '' -e 's|DEV_WARNING+=.*"It looks like the ${d} depends|#&|' \
+	/usr/ports/Mk/bsd.port.mk
 fi
 

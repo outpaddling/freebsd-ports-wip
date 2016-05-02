@@ -20,13 +20,12 @@ printf "Remove everything? y/[n] "
 read remove
 if [ 0$remove = 0y ]; then
     pkg_delete='pkg delete -y'
-    $pkg_delete $depends || true
+    $pkg_delete $depends TransDecoder || true
     pause
 fi
 
-pkg install coreutils ruby bash openjdk gmake gcc48 perl5 samtools m4 \
-    gettext-tools python R || true
-pkg install bowtie bowtie2 jellyfish parafly p5-transdecoder \
+pkg install coreutils ruby bash openjdk gmake perl5 samtools m4 \
+    gettext-tools python R bowtie bowtie2 jellyfish parafly p5-transdecoder \
     slclust Trimmomatic || true
 wip-reinstall-port biology/trinity
 
