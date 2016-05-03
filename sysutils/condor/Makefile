@@ -1,5 +1,5 @@
 # Created by: Andy Pavlo
-# $FreeBSD: head/sysutils/condor/Makefile 388591 2015-06-05 16:29:41Z amdmi3 $
+# $FreeBSD: head/sysutils/condor/Makefile 413746 2016-04-21 16:43:14Z swills $
 
 PORTNAME=	condor
 PORTVERSION=	8.2.8
@@ -11,6 +11,9 @@ MAINTAINER=	bacon4000@gmail.com
 COMMENT=	High-throughput computing on distributively owned resources
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE-2.0.txt
+
+BROKEN_powerpc64=	Does not build
 
 LIB_DEPENDS+=	libkrb5support.so:security/krb5 \
 		libpcre.so:devel/pcre \
@@ -53,12 +56,6 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 900000
-BROKEN=		Fails to build on FreeBSD 8.x
-.endif
-
 pre-everything::
 	@( ${PRINTF} "\nWARNING: Condor needs approximately 3GB to build!"; \
 	   ${PRINTF} "         Please make sure your build environment has that much before continuing.\n" )
@@ -74,6 +71,7 @@ post-patch:
 		-e 's|/usr/local/condor|${PREFIX}|g' \
 		-e 's|$$(LOCAL_DIR)/condor_config.local|$$(RELEASE_DIR)/etc/condor_config.local|g' \
 		-e 's|/bin/mail|/usr/bin/mail|g' \
+		-e 's|/usr/bin/java|${LOCALBASE}/bin/java|g' \
 		-e 's|^CONDOR_HOST|##  CONDOR_HOST|' \
 		-e 's|#CONDOR_IDS=x.x|CONDOR_IDS=466.466|' \
 		${WRKSRC}/src/condor_examples/condor_config.annotated
@@ -86,4 +84,4 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/condor_config.local.sample
 	${INSTALL_SCRIPT} ${WRKDIR}/condor-config ${STAGEDIR}${PREFIX}/sbin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
