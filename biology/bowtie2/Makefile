@@ -3,7 +3,7 @@
 # Test new versions with Trinity before upgrading
 
 PORTNAME=		bowtie2
-PORTVERSION=		2.2.7
+PORTVERSION=		2.2.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=		biology
 

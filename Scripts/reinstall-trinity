@@ -25,7 +25,7 @@ if [ 0$remove = 0y ]; then
 fi
 
 pkg install coreutils ruby bash openjdk gmake perl5 samtools m4 \
-    gettext-tools python R bowtie bowtie2 jellyfish parafly p5-transdecoder \
+    gettext-tools python R bowtie jellyfish parafly p5-transdecoder \
     slclust Trimmomatic || true
 wip-reinstall-port biology/trinity
 
