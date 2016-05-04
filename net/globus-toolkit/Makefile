@@ -19,7 +19,9 @@ BUILD_DEPENDS=	openssl>=1.0:security/openssl \
 		ant:devel/apache-ant
 RUN_DEPENDS=	openssl>=1.0:security/openssl
 
-GNU_CONFIGURE=	yes
+# HAS_CONFIGURE allows overriding PREFIX
+# HAS_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 USES=		libtool perl5 shebangfix
 USE_JAVA=	yes
 USE_GCC=	yes
@@ -115,7 +117,8 @@ SHEBANG_FILES=	io/compat/test/globus-io-authorization-test.pl \
 		xio/src/test/http-put-test.pl \
 		xio/src/globus-vararg-enums-doxygen-filter.pl
 
-CONFIGURE_ARGS+=	--prefix=${PREFIX}/globus-${PORTVERSION}
+# FIXME: Fix --build
+CONFIGURE_ARGS+=--prefix=${PREFIX}/globus-6 --localstatedir=/var --build=amd64-portbld-freebsd10.1
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
