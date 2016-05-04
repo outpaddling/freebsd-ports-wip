@@ -1,0 +1,6 @@
+man/man1/wip-update.1.gz
+sbin/wip-copy-to-poudriere
+sbin/wip-poudriere-test
+sbin/wip-reinstall-port
+sbin/wip-silence-dev-warnings
+sbin/wip-update
