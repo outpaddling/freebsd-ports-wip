@@ -1,7 +1,11 @@
 #!/bin/sh -e
 
-printf "This will disable security checks.  Are you sure?  y/[n] "
-read sure
+if [ 0$1 = 0-y ]; then
+    sure=y
+else
+    printf "This will disable security checks.  Are you sure?  y/[n] "
+    read sure
+fi
 if [ 0$sure = 0y ]; then
     sed -i '' -e 's|DEV_WARNING+=.*"Not validating|#&|' \
 	/usr/ports/Mk/bsd.sanity.mk
