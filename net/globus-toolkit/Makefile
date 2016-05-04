@@ -123,6 +123,5 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 INSTALL_TARGET=	install-strip
-MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
