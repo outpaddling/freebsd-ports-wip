@@ -1,0 +1,7 @@
+The PICRUSt project aims to support prediction of the unobserved character
+states in a community of organisms from phylogenetic information about the
+organisms in that community. The primary application is to predict gene family
+abundance (e.g. the metagenome) in environmental DNA samples for which only
+marker gene (e.g. 16S rRNA gene) data are available.
+
+WWW: https://picrust.github.io/picrust/
