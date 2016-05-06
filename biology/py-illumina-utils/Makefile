@@ -1,5 +1,7 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
+# FIXME: Need echo "backend: Agg" >> ~/.matplotlib/matplotlibrc
+# to avoid "no matplotlib found" errors
 
 PORTNAME=	illumina-utils
 PORTVERSION=	1.4.4
