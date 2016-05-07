@@ -37,6 +37,7 @@ share/Lumina-DE/desktop-background.jpg
 share/Lumina-DE/fluxbox-init-rc
 share/Lumina-DE/fluxbox-keys
 share/Lumina-DE/luminaDesktop.conf
+share/Lumina-DE/themes/Glass.qss.template
 share/Lumina-DE/themes/Lumina-default.qss.template
 share/Lumina-DE/themes/None.qss.template
 share/applications/lumina-fm.desktop
