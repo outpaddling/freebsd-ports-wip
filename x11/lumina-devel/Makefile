@@ -20,8 +20,6 @@ RUN_DEPENDS=	xorg>=0:x11/xorg \
 		xbrightness:x11/xbrightness \
 		numlockx:x11/numlockx
 
-CONFLICTS=      lumina-0*
-
 OPTIONS_DEFINE=	MULTIMEDIA PCBSD
 OPTIONS_DEFAULT=	MULTIMEDIA
 MULTIMEDIA_DESC=	Install multimedia support backend (gstreamer)
@@ -43,7 +41,8 @@ USE_QT5=	core gui network svg linguist multimedia imageformats \
 USES=		desktop-file-utils qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	pcbsd
-GH_TAGNAME=	1e9b663c06a451b215f6fe47e920ff130f4d963a
+#GH_TAGNAME=	1e9b663c06a451b215f6fe47e920ff130f4d963a
+GH_TAGNAME=	80cdfa8494fcec4fce3b593777788fc1a0fdcaf6
 
 #Setup the qmake configuration options
 .if ${PORT_OPTIONS:MPCBSD}
