@@ -62,6 +62,7 @@ sbin/cluster-sync-pw
 sbin/cluster-sync-sysfiles
 sbin/cluster-sync-user
 sbin/cluster-update-all-ssh_config
+sbin/cluster-update-backup-nodes
 sbin/cluster-update-io-nodes
 sbin/cluster-update-ssh_config
 sbin/cluster-user-admin
