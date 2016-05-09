@@ -2,7 +2,7 @@
 # $FreeBSD: head/x11/lumina/Makefile 410144 2016-03-04 18:44:43Z kmoore $
 
 PORTNAME=	lumina
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	x11
 PKGNAMESUFFIX=	-devel
 
