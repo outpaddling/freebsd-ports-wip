@@ -3,7 +3,6 @@ bin/cluster-compute-nodes
 bin/cluster-down-nodes
 bin/cluster-io-nodes
 bin/cluster-load
-bin/cluster-passwd
 bin/cluster-vis-nodes
 bin/condor-build-R-packages
 bin/condor-cpus
