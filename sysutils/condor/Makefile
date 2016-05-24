@@ -2,7 +2,7 @@
 # $FreeBSD: head/sysutils/condor/Makefile 413746 2016-04-21 16:43:14Z swills $
 
 PORTNAME=	condor
-PORTVERSION=	8.2.8
+PORTVERSION=	8.4.6
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 DISTNAME=	condor_src-${PORTVERSION}-all-all
