@@ -82,6 +82,7 @@ sbin/slurm-resume-nodes
 sbin/slurm-resume-updated-nodes
 sbin/slurm-spool-setup
 sbin/slurm-suspend-jobs
+sbin/slurm-sync-backup-login
 sbin/slurm-update-idle-nodes
 sbin/slurm-usage-report
 %%DATADIR%%/WWW/global_styles.css
