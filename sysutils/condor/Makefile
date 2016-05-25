@@ -24,7 +24,6 @@ WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_LDCONFIG=	yes
 # Does not build with Python 3
 USES=		cmake cpe gmake perl5 pgsql python:2 shebangfix
-USE_GCC=	yes
 CPE_VENDOR=	condor_project
 SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 		src/condor_gridmanager/remote_gahp \
@@ -33,7 +32,7 @@ SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 		src/condor_starter.V6.1/condor_ssh_to_job_shell_setup
 
 WANT_PGSQL=	server
-CXXFLAGS+=	-I${LOCALBASE}/include -fPIC
+CXXFLAGS+=	-I${LOCALBASE}/include -fPIC -std=gnu++11
 LDFLAGS+=	-Wl,-rpath=${_GCC_RUNTIME}:${LOCALBASE}/lib:/usr/lib:/lib -fPIC
 # Does not build with Python 3
 CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
@@ -43,7 +42,7 @@ CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
 
 # This was an issue in previous releases, but I've tested 8.2.8 extensively
 # on machines with as many as 16 cores.
-MAKE_JOBS_UNSAFE=	yes
+# MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	condor-config condor_config.local pkg-message
 
