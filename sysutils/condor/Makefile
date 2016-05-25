@@ -1,5 +1,8 @@
 # Created by: Andy Pavlo
 # $FreeBSD: head/sysutils/condor/Makefile 413746 2016-04-21 16:43:14Z swills $
+#
+# Note: Make sure there are no older versions of HTCondor installed during
+#       build.  The build system may pick up incompatible headers and libs.
 
 PORTNAME=	condor
 PORTVERSION=	8.4.6
@@ -32,7 +35,7 @@ SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 		src/condor_starter.V6.1/condor_ssh_to_job_shell_setup
 
 WANT_PGSQL=	server
-CXXFLAGS+=	-I${LOCALBASE}/include -fPIC -std=gnu++11
+CXXFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-Wl,-rpath=${_GCC_RUNTIME}:${LOCALBASE}/lib:/usr/lib:/lib -fPIC
 # Does not build with Python 3
 CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
