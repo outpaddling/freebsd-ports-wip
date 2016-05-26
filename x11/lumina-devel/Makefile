@@ -18,6 +18,7 @@ RUN_DEPENDS=	xorg>=0:x11/xorg \
 		xscreensaver:x11/xscreensaver \
 		xscreensaver-demo:x11/xscreensaver \
 		xbrightness:x11/xbrightness \
+		xcompmgr:x11-wm/xcompmgr \
 		numlockx:x11/numlockx
 
 OPTIONS_DEFINE=	MULTIMEDIA PCBSD
@@ -42,7 +43,8 @@ USES=		desktop-file-utils qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	pcbsd
 #GH_TAGNAME=	1e9b663c06a451b215f6fe47e920ff130f4d963a
-GH_TAGNAME=	80cdfa8494fcec4fce3b593777788fc1a0fdcaf6
+#GH_TAGNAME=	80cdfa8494fcec4fce3b593777788fc1a0fdcaf6
+GH_TAGNAME=	6e048b540dbce694f772bc8f6f3261e93d5f0170
 
 #Setup the qmake configuration options
 .if ${PORT_OPTIONS:MPCBSD}
