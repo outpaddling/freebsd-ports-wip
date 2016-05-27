@@ -74,6 +74,9 @@ INSTALL_TARGET=	DESTDIR=${STAGEDIR}${PREFIX}/petsc \
 		PETSC_ARCH=freebsd \
 		install
 
+# FIXME: Test this
+INSTALL_TARGET=	install-strip
+
 # FIXME: shebang_fix?
 pre-configure:
 	${MKDIR} ${WRKSRC}/temp
