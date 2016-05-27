@@ -1,4 +1,3 @@
-libdata/ldconfig/petsc
 petsc/bin/FASTMathInstaller.py
 petsc/bin/PetscBinaryIO.py
 petsc/bin/PetscBinaryIO_tests.py
