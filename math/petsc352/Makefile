@@ -8,7 +8,7 @@
 # Note: -lpetsc-ufo... is supposed to fail in conftest
 
 PORTNAME=	petsc
-PORTVERSION=	3.7.1
+PORTVERSION=	3.5.2
 CATEGORIES=	math
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 
@@ -25,10 +25,10 @@ CONFIGURE_LOG=	configure.log
 # PETSc automatically parallelizes compiles and rejects make -j
 MAKE_JOBS_UNSAFE=	yes
 
-# LIB_DEPENDS=	svn:devel/subversion
+BUILD_DEPENDS=	${LOCALBASE}/lib/libsuperlu.a:math/superlu \
+		svn:devel/subversion
 
-LIB_DEPENDS=	libsuperlu.so:math/superlu \
-		libnetcdf.so:science/netcdf \
+LIB_DEPENDS=	libnetcdf.so:science/netcdf \
 		libblas.so:math/blas \
 		liblapack.so:math/lapack \
 		libscalapack.so:math/scalapack
