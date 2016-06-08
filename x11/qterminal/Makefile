@@ -10,6 +10,8 @@ COMMENT=	Lightweight Qt-based terminal emulator
 
 LICENSE=	GPLv2
 
+LIB_DEPENDS=	libqtermwidget5.so:/usr/wip/x11-toolkits/qtermwidget
+
 USES=		cmake
 
 CMAKE_ARGS+=	-DUSE_SYSTEM_QXT=0 -DUSE_QT5=1
