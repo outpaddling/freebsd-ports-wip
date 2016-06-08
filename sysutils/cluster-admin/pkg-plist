@@ -1,3 +1,4 @@
+bin/cluster-all-nodes
 bin/cluster-backup-login-nodes
 bin/cluster-compute-nodes
 bin/cluster-down-nodes
@@ -52,8 +53,10 @@ sbin/cluster-run
 sbin/cluster-setup
 sbin/cluster-shutdown
 sbin/cluster-ssh-keygen
+sbin/cluster-sync-all-groups
 sbin/cluster-sync-all-pws
 sbin/cluster-sync-files
+sbin/cluster-sync-groups
 sbin/cluster-sync-node
 sbin/cluster-sync-packages
 sbin/cluster-sync-pkgsrc
