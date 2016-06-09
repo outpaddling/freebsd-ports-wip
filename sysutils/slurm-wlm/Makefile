@@ -62,6 +62,8 @@ RRD_CONFIGURE_WITH=	rrdtool
 
 MYSQL_USE=		MYSQL=yes
 
+MAKE_JOBS_UNSAFE=	yes
+
 CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
 
