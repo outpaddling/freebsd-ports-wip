@@ -1,33 +1,27 @@
-# $FreeBSD: head/net/openmpi/Makefile 392330 2015-07-17 05:40:25Z danilo $
+# $FreeBSD: head/net/openmpi/Makefile 415742 2016-05-23 20:35:01Z amdmi3 $
 
 # TODO:
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-DISTVERSION=	1.8.7
+PORTVERSION=	1.10.2
 CATEGORIES=	net parallel
-MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.8/downloads/
+MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	High Performance Message Passing Library
 
-LIB_DEPENDS=	libexecinfo.so:devel/libexecinfo \
-		libhwloc.so:devel/hwloc \
+LIB_DEPENDS=	libhwloc.so:devel/hwloc \
 		libltdl.so:devel/libltdl
-
-CONFLICTS=	openmpi-devel-1.7.*
 
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 # :keepla because port uses lt_dlopen
-USES=		fortran gmake libtool:keepla perl5 pkgconfig tar:bzip2
+USES=		execinfo fortran gmake libtool:keepla perl5 pkgconfig tar:bzip2
 USE_PERL5=	build
-SUB_FILES=	modulefile
-SUB_LIST+=	PORTVERSION=${PORTVERSION}
-PLIST_SUB=      PORTVERSION=${PORTVERSION}
 
 MPIBASE?=	mpi
-MPIDIR?=	${MPIBASE}/${UNIQUENAME}
+MPIDIR?=	${MPIBASE}/${PKGBASE}
 
 PLIST_SUB+=	MPIBASE=${MPIBASE}
 PLIST_SUB+=	MPIDIR=${MPIDIR}
@@ -36,7 +30,10 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
 			--mandir=${PREFIX}/${MPIDIR}/man \
 			--program-prefix= \
 			--with-hwloc=${LOCALBASE} \
-			--with-libltdl=${LOCALBASE}
+			--with-libltdl=${LOCALBASE} \
+			--enable-mpi-fortran=usempi \
+			ompi_cv_fortran_ignore_tkr_data=0
+
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
 		${PREFIX}/${MPIDIR}/lib/openmpi
@@ -47,7 +44,7 @@ OPTIONS_DEFINE=	IPV6 SLURM TORQUE VT
 TORQUE_DESC=	Enable Torque support
 SLURM_DESC=	Enable SLURM support
 VT_DESC=		Enable VampirTrace support
-OPTIONS_DEFAULT=	IPV6 SLURM
+OPTIONS_DEFAULT=	SLURM
 OPTIONS_SUB=	yes
 
 IPV6_CONFIGURE_ENABLE=	ipv6
@@ -64,8 +61,8 @@ TORQUE_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_plm_tm.so \
 			${MPIDIR}/share/openmpi/help-plm-tm.txt \
 			${MPIDIR}/share/openmpi/help-ras-tm.txt
 
-SLURM_CONFIGURE_WITH=	slurm
-SLURM_LIB_DEPENDS=	libslurm.so:sysutils/slurm-hpc
+SLURM_CONFIGURE_WITH=	slurm pmi=${LOCALBASE}
+SLURM_LIB_DEPENDS=	libslurm.so:sysutils/slurm-wlm
 SLURM_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_ess_slurm.la \
 			${MPIDIR}/lib/openmpi/mca_ess_slurm.so \
 			${MPIDIR}/lib/openmpi/mca_plm_slurm.la \
@@ -79,10 +76,5 @@ VT_CONFIGURE_OFF=	--enable-contrib-no-build=vt --disable-vt
 VT_USE=			JAVA=yes
 
 BROKEN_sparc64=		Does not compile on sparc64
-
-post-stage:
-	${MKDIR} ${STAGEDIR}${PREFIX}/Modules/modulefiles/openmpi
-	${INSTALL_SCRIPT} ${WRKDIR}/modulefile \
-		${STAGEDIR}${PREFIX}/Modules/modulefiles/openmpi/${PORTVERSION}
 
 .include <bsd.port.mk>
