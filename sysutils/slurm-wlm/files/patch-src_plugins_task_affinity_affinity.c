@@ -1,6 +1,55 @@
---- src/plugins/task/affinity/affinity.c.orig	2016-06-08 21:20:12.050179170 -0500
-+++ src/plugins/task/affinity/affinity.c	2016-06-08 21:50:16.291053863 -0500
-@@ -336,7 +336,11 @@ void reset_cpuset(cpu_set_t *new_mask, c
+--- src/plugins/task/affinity/affinity.c.orig	2016-05-03 17:41:59.000000000 -0500
++++ src/plugins/task/affinity/affinity.c	2016-06-09 15:47:38.087977111 -0500
+@@ -291,12 +291,33 @@ int get_cpuset(cpu_set_t *mask, stepd_st
+ 	return false;
+ }
+ 
++#ifdef __FreeBSD__
++#include <sys/types.h>
++#include <sys/sysctl.h>
++#endif
++
++#define	BUFFLEN	127
++
+ /* Return true if Power7 processor */
+ static bool _is_power_cpu(void)
+ {
+ 	if (is_power == -1) {
++#if defined(__FreeBSD__)
++
++		char    buffer[BUFFLEN+1];
++		size_t  len = BUFFLEN;
++    
++		if ( sysctlbyname("hw.model", buffer, &len, NULL, 0) == 0 )
++		    is_power = ( strstr(buffer, "POWER7") != NULL );
++		else {
++		    error("_get_is_power: sysctl could not retrieve hw.model");
++		    return false;
++		}
++
++#elif defined(__linux__)
++
+ 		FILE *cpu_info_file;
+-		char buffer[128];
++		char buffer[BUFFLEN+1];
+ 		char* _cpuinfo_path = "/proc/cpuinfo";
+ 		cpu_info_file = fopen(_cpuinfo_path, "r");
+ 		if (cpu_info_file == NULL) {
+@@ -313,6 +334,13 @@ static bool _is_power_cpu(void)
+ 			}
+ 		}
+ 		fclose(cpu_info_file);
++
++#else
++
++#warning	"Power7 check not implemented for this platform."
++	is_power = 0;
++
++#endif
+ 	}
+ 
+ 	if (is_power == 1)
+@@ -336,7 +364,11 @@ void reset_cpuset(cpu_set_t *new_mask, c
  	if (slurm_getaffinity(1, sizeof(full_mask), &full_mask)) {
  		/* Try to get full CPU mask from process init */
  		CPU_ZERO(&full_mask);
@@ -12,7 +61,7 @@
  	}
  	CPU_ZERO(&newer_mask);
  	for (cur_offset = 0; cur_offset < CPU_SETSIZE; cur_offset++) {
-@@ -361,7 +365,10 @@ int slurm_setaffinity(pid_t pid, size_t 
+@@ -361,7 +393,10 @@ int slurm_setaffinity(pid_t pid, size_t 
  	int rval;
  	char mstr[1 + CPU_SETSIZE / 4];
  
@@ -24,7 +73,7 @@
  	rval = sched_setaffinity(pid, size, mask);
  #else
  	rval = sched_setaffinity(pid, mask);
-@@ -379,7 +386,10 @@ int slurm_getaffinity(pid_t pid, size_t 
+@@ -379,7 +414,10 @@ int slurm_getaffinity(pid_t pid, size_t 
  	char mstr[1 + CPU_SETSIZE / 4];
  
  	CPU_ZERO(mask);
