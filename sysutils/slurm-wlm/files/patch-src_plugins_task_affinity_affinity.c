@@ -1,5 +1,5 @@
---- src/plugins/task/affinity/affinity.c.orig	2016-05-03 17:41:59.000000000 -0500
-+++ src/plugins/task/affinity/affinity.c	2016-06-09 19:51:56.144588044 -0500
+--- src/plugins/task/affinity/affinity.c.orig	2016-05-31 16:35:09.000000000 -0500
++++ src/plugins/task/affinity/affinity.c	2016-06-10 13:59:48.753204000 -0500
 @@ -291,12 +291,34 @@ int get_cpuset(cpu_set_t *mask, stepd_st
  	return false;
  }
@@ -71,7 +71,7 @@
 +#ifdef __FreeBSD__
 +        rval = cpuset_setaffinity(CPU_LEVEL_WHICH, CPU_WHICH_PID,
 +				pid, size, mask);
-+#elif SCHED_GETAFFINITY_THREE_ARGS
++#elif defined(SCHED_GETAFFINITY_THREE_ARGS)
  	rval = sched_setaffinity(pid, size, mask);
  #else
  	rval = sched_setaffinity(pid, mask);
@@ -92,7 +92,7 @@
 +#ifdef __FreeBSD__
 +        rval = cpuset_getaffinity(CPU_LEVEL_WHICH, CPU_WHICH_PID,
 +				pid, size, mask);
-+#elif SCHED_GETAFFINITY_THREE_ARGS
++#elif defined(SCHED_GETAFFINITY_THREE_ARGS)
  	rval = sched_getaffinity(pid, size, mask);
  #else
  	rval = sched_getaffinity(pid, mask);
