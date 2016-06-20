@@ -12,7 +12,8 @@ COMMENT=	Estimating the copula mixture model and plotting correspondence curves
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy \
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy
 
 USES=		python:3
 USE_PYTHON=	distutils
