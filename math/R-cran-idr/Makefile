@@ -2,15 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	idr
-DISTVERSION=	1.2
+DISTVERSION=	2.0.3
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Estimating the copula mixture model and plotting correspondence curves
 
-LICENSE=	GPLv3
+LICENSE=	GPLv2
 
-USES=		cran
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
+
+USES=		python:3
+USE_PYTHON=	distutils
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	nboley
 
 .include <bsd.port.mk>
