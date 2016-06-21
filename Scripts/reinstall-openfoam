@@ -1,0 +1,20 @@
+#!/bin/sh -e
+
+##########################################################################
+#   Main
+##########################################################################
+
+# FreeBSD ports
+if [ -e /usr/wip ]; then
+    set +e
+    pkg delete -y openfoam flex
+    set -e
+    pkg install -y bison gmake openmpi
+    wip-update
+    cd /usr/wip/science/openfoam
+    make clean clean-depends
+    make -DBATCH package
+else
+    printf "No /usr/wip found.\n"
+fi
+
