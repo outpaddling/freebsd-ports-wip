@@ -1,0 +1,23 @@
+#!/bin/sh -e
+
+##########################################################################
+#   Main
+##########################################################################
+
+# FreeBSD ports
+if [ -e /usr/wip ]; then
+    set +e
+    pkg delete -y py34-idr
+    set -e
+    pkg install -y python3
+    wip-update
+    for pkg in math/py-idr; do
+	cd /usr/wip/$pkg
+	make clean clean-depends
+	make -DBATCH package
+	cd ../..
+    done
+else
+    printf "No /usr/wip found.\n"
+fi
+
