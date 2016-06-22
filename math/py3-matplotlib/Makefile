@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing \
 		${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado
 
-USES=		compiler:c++11-lib gettext pkgconfig python:3 shebangfix uniquefiles:dirs
+USES=		compiler:c++11-lib gettext pkgconfig python shebangfix uniquefiles:dirs
 USE_PYTHON=	autoplist distutils
 CFLAGS+=	-I${LOCALBASE}/include
 
