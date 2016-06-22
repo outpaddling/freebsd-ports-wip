@@ -11,13 +11,12 @@ COMMENT=	Estimating the copula mixture model and plotting correspondence curves
 
 LICENSE=	GPLv2
 
+# py-matplotlib does not build under py34 as of 2016-06-22
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:/usr/wip/math/py3-matplotlib
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy \
-		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy
-
-# Required for plotting, but does not build under py34 as of 2016-06-22
-#		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:/usr/wip/math/py3-matplotlib
 
 USES=		python:3
 USE_PYTHON=	distutils
