@@ -1,0 +1,29 @@
+--- Makefile.orig	2016-06-22 20:43:43.000000000 -0500
++++ Makefile	2016-06-22 21:02:32.706630996 -0500
+@@ -12,7 +12,6 @@ OBJS    = mpi-bench.o
+ 
+ # Portable defaults.  Can be overridden by mk.conf or command line.
+ CC          ?= mpicc
+-LD          ?= ${CC}
+ MKDIR       ?= mkdir
+ INSTALL     ?= install
+ 
+@@ -29,15 +28,15 @@ all:    ${BIN}
+ 
+ # Link rules
+ ${BIN}: ${OBJS}
+-	${LD} -o ${BIN} ${OBJS} ${LFLAGS}
++	${CC} -o ${BIN} ${OBJS} ${LFLAGS}
+ 
+ mpi-bench.o: mpi-bench.c mpi-bench.h protos.h
+ 	${CC} -c ${CFLAGS} mpi-bench.c
+ 
+ 
+ install:
+-	${MKDIR} ${DESTDIR}${PREFIX}/bin
+-	${INSTALL} -c mpi-bench ${DESTDIR}${PREFIX}/bin
++	${MKDIR} -p ${DESTDIR}${PREFIX}/bin
++	${INSTALL} -c -s mpi-bench ${DESTDIR}${PREFIX}/bin
+ 
+ ############################################################################
+ # Remove generated files (objs and nroff output from man pages)
