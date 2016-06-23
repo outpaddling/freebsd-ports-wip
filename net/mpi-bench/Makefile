@@ -6,7 +6,9 @@ PORTVERSION=	0.1.1
 CATEGORIES=	net
 
 MAINTAINER=	bacon@sculpin.acadix.biz
-COMMENT=
+COMMENT=	Simple, user-friendly MPI benchmark
+
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS+=	libmpi.so:net/openmpi
 
