@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpi-bench
-PORTVERSION=	0.1
+PORTVERSION=	0.1.1
 CATEGORIES=	net
 
 MAINTAINER=	bacon@sculpin.acadix.biz
