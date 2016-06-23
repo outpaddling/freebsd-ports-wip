@@ -14,7 +14,8 @@ if [ -e /usr/wip ]; then
     for pkg in textproc/flex cad/scotch-openmpi science/openfoam; do
 	cd /usr/wip/$pkg
 	make clean clean-depends
-	make -DBATCH package
+	make -DBATCH install
+	make package
 	cd ../..
     done
 else
