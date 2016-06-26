@@ -1,5 +1,5 @@
 # Created by: Jason W. Bacon <bacon4000@gmail.com>
-# $FreeBSD: head/science/afni/Makefile 403506 2015-12-11 08:48:56Z miwi $
+# $FreeBSD: head/science/afni/Makefile 412349 2016-04-01 14:25:16Z mat $
 
 ############################################################################
 # http://www.neuro.mcw.edu/Ports has the latest source distribution from
