@@ -1,5 +1,5 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
-# $FreeBSD: head/devel/openvex/Makefile 327724 2013-09-20 17:13:42Z bapt $
+# $FreeBSD: head/devel/openvex/Makefile 413746 2016-04-21 16:43:14Z swills $
 
 PORTNAME=	openvex
 PORTVERSION=	0.5.3
@@ -10,6 +10,8 @@ MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Open source firmware for Vex robotics controllers
 
 LICENSE=	GPLv3
+
+BROKEN_powerpc64=	Does not build
 
 BUILD_DEPENDS=	sdcc:lang/sdcc \
 		gpasm:devel/gputils
