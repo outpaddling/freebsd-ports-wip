@@ -1,5 +1,5 @@
---- main.cpp.orig	2016-07-10 07:40:58.590408000 -0500
-+++ main.cpp	2016-07-10 08:19:11.192625000 -0500
+--- main.cpp.orig	2011-05-19 03:38:25 UTC
++++ main.cpp
 @@ -115,6 +115,10 @@ int main(int argc, char *argv[])
  
      else if (next_option == -1)
