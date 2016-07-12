@@ -3,7 +3,7 @@
 
 PORTNAME=	qtermwidget
 PORTVERSION=	0.6.0
-CATEGORIES=	sysutils
+CATEGORIES=	x11-toolkits
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Terminal widget for QTerminal
@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 
 USES=		cmake:outsource
 USE_LDCONFIG=	yes
-USE_QT5=	qmake_build
+USE_QT5=	buildtools_build qmake_build widgets
 
 CMAKE_ARGS+=	-DBUILD_DESIGNER_PLUGIN=0 -DUSE_QT5=1
 
