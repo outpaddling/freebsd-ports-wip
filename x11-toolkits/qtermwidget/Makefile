@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 
 USES=		cmake:outsource
 USE_LDCONFIG=	yes
-USE_QT5=	buildtools_build qmake_build widgets
+USE_QT5=	buildtools_build core gui qmake_build widgets
 
 CMAKE_ARGS+=	-DBUILD_DESIGNER_PLUGIN=0 -DUSE_QT5=1
 
