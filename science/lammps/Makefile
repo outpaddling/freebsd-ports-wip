@@ -124,6 +124,7 @@ do-build:
 	(cd ${WRKSRC}/tools/msi2lmp/src && ${GMAKE} ${MAKE_ARGS})
 
 # Users must set MOLTEMPLATE_PATH to "$DATADIR/moltemplate_common"
+# FIXME: Replace CP with COPYTREE for proper permissions
 do-install:
 	${MKDIR} ${STAGEDIR}${INSTALL_PREFIX}/bin
 	${INSTALL_PROGRAM} \
@@ -152,17 +153,16 @@ do-install:
 		${STAGEDIR}${DATADIR}/moltemplate_common
 .ifndef(NOPORTDOCS)
 	${CP} -R ${WRKSRC}/doc/ ${STAGEDIR}${DOCSDIR}
+	${CHMOD} -R a+rX ${STAGEDIR}${DOSCDIR}
 .endif
 .ifndef(NOPORTEXAMPLES)
 	${CP} -R ${WRKSRC}/examples/ ${STAGEDIR}${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/bench ${STAGEDIR}${EXAMPLESDIR}
 	${CP} ${FILESDIR}/run-all-examples ${STAGEDIR}${EXAMPLESDIR}
+	${CHMOD} -R a+rX ${STAGEDIR}${EXAMPLESDIR}
 .endif
 	${CP} -R ${WRKSRC}/potentials ${STAGEDIR}${DATADIR}
+	${CHMOD} -R a+rX ${STAGEDIR}${DATADIR}
 .endif
-
-# FIXME: make package in slave ports grabs the master pkg-message
-post-install:
-	@${CAT} pkg-message
 
 .include <bsd.port.post.mk>
