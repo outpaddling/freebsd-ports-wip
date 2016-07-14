@@ -11,6 +11,7 @@ COMMENT=	Lightweight Qt-based terminal emulator
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libqtermwidget5.so:/usr/wip/x11-toolkits/qtermwidget
+RUN_DEPENDS=	liberation-fonts-ttf>=2.00:x11-fonts/liberation-fonts-ttf
 
 USES=		cmake
 USE_QT5+=	buildtools_build core gui linguisttools_build qmake_build widgets
