@@ -1,0 +1,5 @@
+=====================================================================
+This port installs *ONLY* the serial binary.
+
+For parallel LAMMPS, install a slave port such as ../lammps-openmpi.
+=====================================================================

@@ -1,0 +1,63 @@
+#!/bin/sh
+
+##########################################################################
+#   Script description:
+#       Test all LAMMPS examples
+#
+#   Arguments:
+#       None
+#
+#   History:
+#   Date        Name        Modification
+#   2013-04-09  Jason Bacon Begin
+##########################################################################
+
+usage()
+{
+    cat << EOM
+This script must be run from the parent directory of all the examples
+directories, as ./run-all-examples.
+EOM
+    exit 1
+}
+
+
+line()
+{
+    printf '================================================================\n'
+}
+
+
+##########################################################################
+#   Main
+##########################################################################
+
+if [ $0 != ./run-all-examples ]; then
+    usage
+fi
+
+# cd into every directory containing an input file (in.*) and run LAMMPS
+# serial and MPI.
+for dir in *; do
+    if [ -d $dir ]; then
+	cd $dir
+	# Is there at least one input file?
+	if ls in.*; then
+	    for file in in.*; do
+		printf '\n'
+		line
+		printf "$(pwd)/$file\n"
+		line
+		printf '\n'
+		if ! lmp < $file; then
+		    printf "Serial lmp failed for $(pwd)\n" >> failures.txt
+		fi
+		if ! mpirun -n 2 lmp-openmpi < $file; then
+		    printf "MPI lmp failed for $(pwd)\n" >> failures.txt
+		fi
+	    done
+	fi
+	cd ..
+    fi
+done
+
