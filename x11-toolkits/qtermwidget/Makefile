@@ -10,7 +10,7 @@ COMMENT=	Terminal widget for QTerminal
 
 LICENSE=	GPLv2
 
-USES=		cmake:outsource
+USES=		cmake:outsource compiler:c++11-lang
 USE_LDCONFIG=	yes
 USE_QT5=	buildtools_build core gui qmake_build widgets
 
