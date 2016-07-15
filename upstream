@@ -13,6 +13,7 @@ biology/p5-transdecoder
 biology/slclust
 biology/trimmomatic
 x11-toolkits/qtermwidget
+x11/qterminal
 
 ------------------------------------------------
 Sent patches upstream but not confirmed accepted
@@ -26,3 +27,8 @@ but not confirmed.
 
 http://hmmer.janelia.org/software
 condor-admin@cs.wisc.edu
+
+----------------------------------------------------------------------
+FreeBSD installation is cited on the upstream website
+----------------------------------------------------------------------
+
