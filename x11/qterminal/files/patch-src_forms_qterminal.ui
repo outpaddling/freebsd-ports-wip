@@ -1,5 +1,5 @@
---- src/forms/qterminal.ui.orig	2014-10-22 03:13:14.000000000 -0500
-+++ src/forms/qterminal.ui	2016-07-14 10:11:59.806787000 -0500
+--- src/forms/qterminal.ui.orig	2014-10-22 08:13:14 UTC
++++ src/forms/qterminal.ui
 @@ -6,8 +6,8 @@
     <rect>
      <x>0</x>

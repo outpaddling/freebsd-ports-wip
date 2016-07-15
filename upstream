@@ -12,6 +12,7 @@ sysutils/parafly
 biology/p5-transdecoder
 biology/slclust
 biology/trimmomatic
+x11-toolkits/qtermwidget
 
 ------------------------------------------------
 Sent patches upstream but not confirmed accepted
