@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lammps
-PORTVERSION=	2016.05.16
+PORTVERSION=	2016.05.14
 CATEGORIES=	science
 # FIXME: Can this be done from http://lammps.sandia.gov/download.html#tar?
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
