@@ -21,7 +21,6 @@ MAKEFILE=	GNUmakefile
 USE_GCC=	yes
 .endif
 
-# FIXME: Old install from 2015.10
 do-install:
 	${INSTALL_PROGRAM} \
 		${WRKSRC}/Catrack \
