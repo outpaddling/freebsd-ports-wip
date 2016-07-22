@@ -18,4 +18,20 @@ USE_PYTHON=	distutils
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+post-build:
+	${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|g' \
+		${WRKSRC}/src/tests/test_pypeflow_task.py \
+		${WRKSRC}/src/tests/test_pypeflow_data.py \
+		${WRKSRC}/examples-pwatcher/ab/run.json \
+		${WRKSRC}/presentation/pypeFLOW_tutorial.rst \
+		${WRKSRC}/presentation/pypeFLOW_tutorial.html \
+		${WRKSRC}/pwatcher/mains/pypeflow_example.py \
+		${WRKSRC}/pwatcher/fs_based.py \
+		${WRKSRC}/pypeflow/pwatcher_bridge.py \
+		${WRKSRC}/pypeflow/task.py \
+		${WRKSRC}/build/lib/pypeflow/pwatcher_bridge.py \
+		${WRKSRC}/build/lib/pypeflow/task.py \
+		${WRKSRC}/build/lib/pwatcher/fs_based.py \
+		${WRKSRC}/build/lib/pwatcher/mains/pypeflow_example.py
+
 .include <bsd.port.mk>
