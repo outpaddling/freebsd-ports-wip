@@ -34,6 +34,8 @@ post-patch:
 		cat $$f >> $$f.temp; \
 		mv -f $$f.temp $$f; \
 	done
+	${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|g' \
+		${WRKSRC}/src/py/mains/run.py
 
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/falcon_kit/*.so
