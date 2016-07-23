@@ -1,0 +1,61 @@
+#!/bin/sh -e
+
+##########################################################################
+#   Script description:
+#       
+#   Arguments:
+#       
+#   Returns:
+#       
+#   History:
+#   Date        Name        Modification
+#   2016-07-22  Charlie &   Begin
+##########################################################################
+
+usage()
+{
+    printf "Usage: $0 category/port-version\n"
+    exit 1
+}
+
+
+##########################################################################
+#   Main
+##########################################################################
+
+if [ $# != 1 ]; then
+    usage
+fi
+
+new_port=$1
+
+cd /usr/wip
+if [ ! -e $new_port ]; then
+    printf "$new_port: No such port.\n"
+    exit 1
+fi
+
+base_port=${new_port%-[0-9]*}
+printf "$base_port\n"
+
+if [ -e $base_port ]; then
+    old_version=`awk '$1 == "PORTVERSION=" { print $2 }' $base_port/Makefile`
+    printf "old_version = $old_version\n"
+    old_port=$base_port-$old_version
+    if [ -e $old_port ]; then
+	printf "$old_port already exists.  Aborting...\n"
+	exit 1
+    fi
+    
+    # Github does not allow renames
+    cp -R $base_port $old_port
+    svn add $old_port
+    svn rm $base_port
+    svn ci -m 'Move $base_port to $old_port'
+    
+    cp -R $new_port $base_port
+    svn add $base_port
+    svn rm $new_port
+    svn ci -m 'Move $new_port to $base_port'
+fi
+
