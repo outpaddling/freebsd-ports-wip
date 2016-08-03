@@ -11,8 +11,6 @@ bin/fc_ctg_link_analysis.py
 bin/fc_dedup_a_tigs
 bin/fc_dedup_a_tigs.py
 bin/fc_fasta2fasta
-bin/fc_fetch_reads
-bin/fc_get_read_ctg_map
 bin/fc_graph_to_contig
 bin/fc_graph_to_contig.py
 bin/fc_graph_to_utgs
@@ -23,8 +21,6 @@ bin/fc_ovlp_stats
 bin/fc_ovlp_stats.py
 bin/fc_ovlp_to_graph
 bin/fc_ovlp_to_graph.py
-bin/fc_pr_ctg_track
-bin/fc_rr_ctg_track
 bin/fc_run
 bin/fc_run.py
 bin/fc_run0
@@ -79,12 +75,6 @@ bin/fc_run1
 %%PYTHON_SITELIBDIR%%/falcon_kit/mains/fasta2fasta.py
 %%PYTHON_SITELIBDIR%%/falcon_kit/mains/fasta2fasta.pyc
 %%PYTHON_SITELIBDIR%%/falcon_kit/mains/fasta2fasta.pyo
-%%PYTHON_SITELIBDIR%%/falcon_kit/mains/fetch_reads.py
-%%PYTHON_SITELIBDIR%%/falcon_kit/mains/fetch_reads.pyc
-%%PYTHON_SITELIBDIR%%/falcon_kit/mains/fetch_reads.pyo
-%%PYTHON_SITELIBDIR%%/falcon_kit/mains/get_read_ctg_map.py
-%%PYTHON_SITELIBDIR%%/falcon_kit/mains/get_read_ctg_map.pyc
-%%PYTHON_SITELIBDIR%%/falcon_kit/mains/get_read_ctg_map.pyo
 %%PYTHON_SITELIBDIR%%/falcon_kit/mains/graph_to_contig.py
 %%PYTHON_SITELIBDIR%%/falcon_kit/mains/graph_to_contig.pyc
 %%PYTHON_SITELIBDIR%%/falcon_kit/mains/graph_to_contig.pyo
@@ -100,12 +90,6 @@ bin/fc_run1
 %%PYTHON_SITELIBDIR%%/falcon_kit/mains/ovlp_to_graph.py
 %%PYTHON_SITELIBDIR%%/falcon_kit/mains/ovlp_to_graph.pyc
 %%PYTHON_SITELIBDIR%%/falcon_kit/mains/ovlp_to_graph.pyo
-%%PYTHON_SITELIBDIR%%/falcon_kit/mains/pr_ctg_track.py
-%%PYTHON_SITELIBDIR%%/falcon_kit/mains/pr_ctg_track.pyc
-%%PYTHON_SITELIBDIR%%/falcon_kit/mains/pr_ctg_track.pyo
-%%PYTHON_SITELIBDIR%%/falcon_kit/mains/rr_ctg_track.py
-%%PYTHON_SITELIBDIR%%/falcon_kit/mains/rr_ctg_track.pyc
-%%PYTHON_SITELIBDIR%%/falcon_kit/mains/rr_ctg_track.pyo
 %%PYTHON_SITELIBDIR%%/falcon_kit/mains/run0.py
 %%PYTHON_SITELIBDIR%%/falcon_kit/mains/run0.pyc
 %%PYTHON_SITELIBDIR%%/falcon_kit/mains/run0.pyo

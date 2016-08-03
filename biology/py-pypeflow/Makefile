@@ -5,7 +5,7 @@ PORTNAME=	pypeflow
 # Must use the same version of dazz_db, daligner, pypeflow, and falcon!
 PORTVERSION=	2016.07.21
 CATEGORIES=	biology
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
+# MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jacobsonnenberg0@gmail.com
@@ -16,7 +16,11 @@ LICENSE=	MIT
 USES=		python tar:xz
 USE_PYTHON=	distutils
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/pypeFLOW-${GH_TAGNAME}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	PacificBiosciences
+GH_TAGNAME=	4eeb8ffc79e0997a887b2879dadaae989e514827
 
 post-build:
 	${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|g' \

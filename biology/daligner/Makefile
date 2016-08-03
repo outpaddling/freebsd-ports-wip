@@ -8,7 +8,7 @@ PORTNAME=	daligner
 # Must use the same version of dazz_db, daligner, pypeflow, and falcon!
 PORTVERSION=	2016.07.21
 CATEGORIES=	biology
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
+# MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Find all significant local alignments between reads
@@ -18,6 +18,12 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdazzdb.a:/usr/wip/biology/dazz_db
 
 USES=		gmake tar:xz
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	PacificBiosciences
+GH_TAGNAME=	31239e24e5b9756dedaad05c8a5193eff5a568d5
+
+WRKSRC=		${WRKDIR}/DALIGNER-${GH_TAGNAME}
 
 MAKEFILE=	GNUmakefile
 

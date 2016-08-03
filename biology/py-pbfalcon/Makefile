@@ -4,7 +4,7 @@
 PORTNAME=	pbfalcon
 PORTVERSION=	2016.07.21
 CATEGORIES=	biology
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
+# MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bacon4000@gmail.com
@@ -27,7 +27,12 @@ RUN_DEPENDS=	dazz_db==${PORTVERSION}:/usr/wip/biology/dazz_db \
 USES=		python tar:xz
 USE_PYTHON=	distutils
 
-# WRKSRC=		${WRKDIR}/FALCON-${DISTNAME}
+USE_GITHUB=	yes
+GH_ACCOUNT=	PacificBiosciences
+GH_PROJECT=	FALCON
+GH_TAGNAME=	35d3d5b0706edf64577d35aed381988fb15623d9
+
+WRKSRC=		${WRKDIR}/FALCON-${GH_TAGNAME}
 
 post-patch:
 	for f in ${WRKSRC}/src/py_scripts/*.py; do \

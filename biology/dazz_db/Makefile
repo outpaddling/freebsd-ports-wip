@@ -5,7 +5,7 @@ PORTNAME=	dazz_db
 # Must use the same version of dazz_db, daligner, pypeflow, and falcon!
 PORTVERSION=	2016.07.21
 CATEGORIES=	biology databases
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
+# MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jacobsonnenberg0@gmail.com
 COMMENT=	Dresden assembler for long read DNA projects
@@ -13,6 +13,12 @@ COMMENT=	Dresden assembler for long read DNA projects
 LICENSE=	BSD3CLAUSE
 
 USES=		gmake tar:xz
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	PacificBiosciences
+GH_TAGNAME=	511f7b5057e41ceaa58b11165b3c4d777726d03c
+
+WRKSRC=		${WRKDIR}/DAZZ_DB-${GH_TAGNAME}
 
 MAKEFILE=	GNUmakefile
 
