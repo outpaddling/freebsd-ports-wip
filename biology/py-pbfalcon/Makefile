@@ -13,8 +13,6 @@ COMMENT=	Experimental PacBio diploid assembler
 LICENSE=	BSD3CLAUSE
 
 # Must use the exact same version of dazz_db, daligner, pypeflow, and falcon!
-# Distfiles are rolled from a FALCON-integrate snapshot to ensure that
-# this is possible.
 # FIXME: Get to a newer version of rdflib and eliminate rdfextras
 # FIXME: Check rdflib depend for 2016.07
 RUN_DEPENDS=	dazz_db==${PORTVERSION}:/usr/wip/biology/dazz_db \
