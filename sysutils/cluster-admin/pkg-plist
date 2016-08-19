@@ -19,7 +19,7 @@ bin/slurm-pending-jobs
 bin/slurm-shell
 bin/slurm-user-cores
 bin/topnode
-%%LIB32DIR%%exec/add-gecos.awk
+libexec/add-gecos.awk
 sbin/cluster-add-to-group
 sbin/cluster-adduser
 sbin/cluster-admin

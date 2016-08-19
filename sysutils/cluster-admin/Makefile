@@ -18,6 +18,6 @@ RUN_DEPENDS=	auto-append-line:/usr/wip/sysutils/auto-admin
 USES=		tar:xz
 NO_BUILD=	yes
 
-MAKE_ENV+=		PREFIX=${PREFIX} DATADIR=${DATADIR}
+MAKE_ENV+=	PREFIX=${PREFIX} DATADIR=${DATADIR}
 
 .include <bsd.port.mk>
