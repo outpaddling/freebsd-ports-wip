@@ -19,7 +19,7 @@ bin/slurm-pending-jobs
 bin/slurm-shell
 bin/slurm-user-cores
 bin/topnode
-libexec/add-gecos.awk
+%%LIB32DIR%%exec/add-gecos.awk
 sbin/cluster-add-to-group
 sbin/cluster-adduser
 sbin/cluster-admin
@@ -38,7 +38,6 @@ sbin/cluster-local-pkg-install
 sbin/cluster-local-port_add
 sbin/cluster-local-sync-software
 sbin/cluster-lowest-uid
-sbin/cluster-munge-enable
 sbin/cluster-node-admin
 sbin/cluster-pbs-restart
 sbin/cluster-pkg-install
@@ -54,7 +53,6 @@ sbin/cluster-rmuser
 sbin/cluster-run
 sbin/cluster-setup
 sbin/cluster-shutdown
-sbin/cluster-slurm-enable
 sbin/cluster-ssh-keygen
 sbin/cluster-sync-all-groups
 sbin/cluster-sync-all-pws
@@ -75,7 +73,6 @@ sbin/cluster-useradd
 sbin/cluster-usermod
 sbin/cluster-users
 sbin/cluster-wip-update
-sbin/ganglia-web-setup
 sbin/local-init-node
 sbin/local-packages
 sbin/node-sync-all-users
@@ -91,7 +88,6 @@ sbin/slurm-resume-updated-nodes
 sbin/slurm-spool-setup
 sbin/slurm-suspend-jobs
 sbin/slurm-sync-backup-login
-sbin/slurm-sync-config
 sbin/slurm-update-idle-nodes
 sbin/slurm-usage-report
 %%DATADIR%%/WWW/global_styles.css
