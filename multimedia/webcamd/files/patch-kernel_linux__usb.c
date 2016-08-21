@@ -1,6 +1,23 @@
 --- kernel/linux_usb.c.orig	2016-08-20 19:48:21.294817000 -0500
-+++ kernel/linux_usb.c	2016-08-20 20:12:53.316550000 -0500
-@@ -330,27 +330,44 @@ usb_linux_probe_p(int *p_bus, int *p_add
++++ kernel/linux_usb.c	2016-08-20 20:58:32.424592000 -0500
+@@ -94,12 +94,15 @@ usb_linux_lookup_id(
+ 	 * "match_flags" equal to zero, which indicates the end of the
+ 	 * array:
+ 	 */
++	fprintf(stderr, "usb_linux_lookup_id(): id->match_flags = %04x\n",
++		id->match_flags);
+ 	for (; id->match_flags; id++) {
+-
++		fprintf(stderr, "Vendor: %x %x\n", id->idVendor, pdd->idVendor);
+ 		if ((id->match_flags & USB_DEVICE_ID_MATCH_VENDOR) &&
+ 		    (id->idVendor != pdd->idVendor)) {
+ 			continue;
+ 		}
++		fprintf(stderr, "Product: %x %x\n", id->idProduct, pdd->idProduct);
+ 		if ((id->match_flags & USB_DEVICE_ID_MATCH_PRODUCT) &&
+ 		    (id->idProduct != pdd->idProduct)) {
+ 			continue;
+@@ -330,27 +333,44 @@ usb_linux_probe_p(int *p_bus, int *p_add
  
  	pdev = NULL;
  	while ((pdev = libusb20_be_device_foreach(pbe, pdev))) {
@@ -45,7 +62,7 @@
  			pifc = pcfg->interface + i;
  
  			/*
-@@ -358,12 +375,17 @@ usb_linux_probe_p(int *p_bus, int *p_add
+@@ -358,12 +378,17 @@ usb_linux_probe_p(int *p_bus, int *p_add
  			 * detection by some V4L drivers.
  			 */
  			if (pifc->desc.bInterfaceClass == USB_CLASS_HUB)
@@ -57,13 +74,13 @@
  			LIST_FOREACH(udrv, &usb_linux_driver_list, linux_driver_list) {
  				id = usb_linux_lookup_id(libusb20_dev_get_device_desc(pdev),
  				    &pifc->desc, udrv->id_table);
-+				fprintf(stderr, "id = %p\n", id);
  				if (id != NULL) {
++					fprintf(stderr, "id = %p\n", id);
 +					fprintf(stderr, "index = %d\n", index);
  					if (!index--)
  						goto found;
  
-@@ -372,6 +394,8 @@ usb_linux_probe_p(int *p_bus, int *p_add
+@@ -372,6 +397,8 @@ usb_linux_probe_p(int *p_bus, int *p_add
  					 * same device
  					 */
  
@@ -72,7 +89,7 @@
  					if ((!match_bus_addr) &&
  					    (!(id->match_flags & USB_DEVICE_ID_MATCH_INT_INFO))) {
  						goto next_dev;
-@@ -386,6 +410,7 @@ next_dev:
+@@ -386,6 +413,7 @@ next_dev:
  		libusb20_dev_close(pdev);
  	}
  	libusb20_be_free(pbe);
@@ -80,7 +97,7 @@
  	return (-ENXIO);
  
  found:
-@@ -423,6 +448,7 @@ found:
+@@ -423,6 +451,7 @@ found:
  	if (p_dev == NULL) {
  		free(pcfg);
  		libusb20_be_free(pbe);
@@ -88,7 +105,7 @@
  		return (-ENOMEM);
  	}
  	ui = p_dev->bsd_iface_start + i;
-@@ -452,6 +478,7 @@ found:
+@@ -452,6 +481,7 @@ found:
  		}
  		usb_linux_detach_sub(sc);
  		libusb20_be_free(pbe);
