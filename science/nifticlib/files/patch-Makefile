@@ -1,5 +1,5 @@
---- Makefile.orig	2010-07-20 12:18:58.000000000 -0500
-+++ Makefile	2016-06-02 20:40:31.332190917 -0500
+--- Makefile.orig	2010-07-20 17:18:58 UTC
++++ Makefile
 @@ -17,21 +17,21 @@ TARFILE_NAME	=	nifticlib-2.0.0
  
  
