@@ -9,7 +9,7 @@ MASTER_SITES=	SF/niftilib/nifticlib/nifticlib_2_0_0
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Neuroimaging Informatics Technology Initiative data format
 
-# LICENSE=	public domain
+LICENSE=	PD
 
 USES=		gmake
 
@@ -18,7 +18,7 @@ USES=		gmake
 CONFLICTS=	afni-[0-9]* dbh-[0-9]*
 
 CFLAGS+=	-fPIC
-MAKE_JOBS_UNSAFE=	yes
+# MAKE_JOBS_UNSAFE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
