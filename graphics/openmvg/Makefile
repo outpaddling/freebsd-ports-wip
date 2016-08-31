@@ -29,7 +29,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libXxf86vm.so:x11/libXxf86vm \
 		libXi.so:x11/libXi \
 		libXrandr.so:x11/libXrandr \
-		libClp.so:math/clp \
+#		libClp.so:math/clp \
 		libCoinMP.so:math/coinmp
 		
 .include <bsd.port.mk>
