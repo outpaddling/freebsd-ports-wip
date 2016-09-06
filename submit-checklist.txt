@@ -77,6 +77,10 @@ Makefile:
     Replace NOPORTDOCS, etc. with PORT_OPTIONS:MDOC
     
     Remove cat pkg-message if present
+
+    Check need for USES vars like pkgconfig, localbase, gettext
+
+    CMAKE_FLAGS format VAR:BOOL=ON, not VAR=1
     
 Carefully check REINPLACE_CMDS and patches
     Patching should be done at the earliest possible stage, e.g. don't
