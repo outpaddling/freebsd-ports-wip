@@ -32,6 +32,7 @@ sbin/cluster-get-sync-file
 sbin/cluster-groupadd
 sbin/cluster-groupdel
 sbin/cluster-head-node
+sbin/cluster-highest-uid
 sbin/cluster-init-all
 sbin/cluster-init-node
 sbin/cluster-local-pkg-install
