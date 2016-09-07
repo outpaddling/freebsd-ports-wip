@@ -50,6 +50,8 @@
 	a file such as LICENSE, COPYING, or README in the source tree
 	after running "make makesum" and "make extract".
 
+    If using cmake, set CMAKE_VERBOSE=yes
+
 6)  Edit pkg-descr
 
     -   Copy, paste, and edit the summary description from the project
