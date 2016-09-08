@@ -17,7 +17,8 @@ COMMENT=	PacBio BAM C++ library, with SWIG bindings
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so:devel/boost-libs
 
-USES=		cmake:outsource ssl
+USES=		cmake:outsource
+#USES=		cmake:outsource ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
