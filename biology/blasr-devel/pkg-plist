@@ -1,3 +1,4 @@
+bin/bax2bam
 bin/blasr
 bin/loadPulses
 bin/pls2fasta
