@@ -23,16 +23,21 @@ GH_ACCOUNT=	PacificBiosciences
 #GH_TAGNAME=	0b166c4ee7cd45f9eb88b7d9284ba299b1c21006
 GH_TAGNAME=	0b166c4
 
-# Still need seqan
+# Same error
+# CXX=		clang++37
+
+# FIXME: Searches /usr/local/include before /usr/local/include/PacBio
+# so it will pick up the wrong seqan headers if biology/seqan is installed.
+# Hopefully PacBio's seqan patches will be in the next seqan release.
 CMAKE_ARGS+=	-DHTSLIB_INCLUDE_DIRS:STRING=${LOCALBASE}/include/htslib \
 		-DHTSLIB_LIBRARIES:STRING="-L${LOCALBASE}/lib -lhts" \
-		-DPacBioBAM_INCLUDE_DIRS:STRING=${LOCALBASE}/pbbam \
+		-DPacBioBAM_INCLUDE_DIRS:STRING=${LOCALBASE}/include/pbbam \
 		-DPacBioBAM_LIBRARIES:STRING="-L${LOCALBASE}/lib -lpbbam" \
-		-DSEQAN_INCLUDE_DIRS:STRING=${LOCALBASE}/include/pbseqan
+		-DSEQAN_INCLUDE_DIRS:STRING=${LOCALBASE}/include/PacBio
+
+CMAKE_VERBOSE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
-
-post-patch:
-	${REINPLACE_CMD} -e 's|seqan/|pbseqan/|' ${WRKSRC}/src/ChainSeeds.cpp
 
 .include <bsd.port.mk>
