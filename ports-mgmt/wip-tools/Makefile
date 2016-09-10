@@ -8,6 +8,8 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Update ports tree with work-in-progress ports
 
+LICENSE=	BSD3CLAUSE
+
 NO_BUILD=	yes
 
 USES=		tar:xz
