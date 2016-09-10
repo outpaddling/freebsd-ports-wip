@@ -8,6 +8,7 @@ For complete information, refer to the BOINC web site at:
 
 When first running boincmgr, you will need to click
 
+	View -> Advanced View
 	Advanced -> Select Computer
 
 	Host name: 127.0.0.1
