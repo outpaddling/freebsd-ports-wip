@@ -1,4 +1,0 @@
-Warning: you need LIB_DEPENDS+=libfontconfig.so:x11-fonts/fontconfig
-Warning: you need LIB_DEPENDS+=libfreetype.so:print/freetype2
-Warning: you need LIB_DEPENDS+=libxcb-util.so:x11/xcb-util
-Warning: you need USE_XORG+=xcb
