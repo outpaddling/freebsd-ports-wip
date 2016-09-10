@@ -36,7 +36,7 @@ CONFIGURE_ENV=	OBJCXX="${CXX}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=		CLIENT MANAGER NLS X11 LINUX LINUX64 USER SKINS
+OPTIONS_DEFINE=		CLIENT MANAGER NLS X11 LINUX USER SKINS
 OPTIONS_DEFAULT=	CLIENT MANAGER X11 USER
 OPTIONS_GROUP=		SCRIPT
 OPTIONS_GROUP_SCRIPT=	NO_GUI_RPC NO_NET_INFO
@@ -44,7 +44,6 @@ CLIENT_DESC=		Build BOINC client
 MANAGER_DESC=		Build BOINC manager GUI
 X11_DESC=		Build graphics API
 LINUX_DESC=		Accept 32-bit Linux science applications
-LINUX64_DESC=		Accept 64-bit Linux science applications
 USER_DESC=		Create/check BOINC client user and directory
 SKINS_DESC=		Install more skins for BOINC manager
 SCRIPT_DESC=		Command line options in script
@@ -74,9 +73,6 @@ CLIENT_USE=		RC_SUBR=boinc-client
 # [version] no app version available: APP#29 (einsteinbinary_BRP6) PLATFORM#1 (i686-pc-linux-gnu) min_version 0
 LINUX_CONFIGURE_ON=	--with-boinc-alt-platform=i686-pc-linux-gnu
 LINUX_USES=		linux:c7
-LINUX64_CONFIGURE_ON=	--with-boinc-alt-platform=x86_64-pc-linux-gnu
-LINUX64_USES=		linux:c7
-LINUX_64_LINUXARCH=	linux-x86-64
 
 X11_USES=		jpeg
 X11_USE=		GL=glut XORG=xmu,xi
