@@ -72,7 +72,7 @@ CLIENT_USE=		RC_SUBR=boinc-client
 # Einstein@home scheduler log
 # [version] no app version available: APP#29 (einsteinbinary_BRP6) PLATFORM#1 (i686-pc-linux-gnu) min_version 0
 LINUX_CONFIGURE_ON=	--with-boinc-alt-platform=i686-pc-linux-gnu
-LINUX_USES=		linux:c7
+LINUX_USES=		linux
 
 X11_USES=		jpeg
 X11_USE=		GL=glut XORG=xmu,xi
