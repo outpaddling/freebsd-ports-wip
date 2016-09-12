@@ -69,10 +69,13 @@ CLIENT_LIB_DEPENDS=	libcurl.so:ftp/curl
 CLIENT_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 CLIENT_USE=		RC_SUBR=boinc-client
 
-# Einstein@home scheduler log
-# [version] no app version available: APP#29 (einsteinbinary_BRP6) PLATFORM#1 (i686-pc-linux-gnu) min_version 0
-LINUX_CONFIGURE_ON=	--with-boinc-alt-platform=i686-pc-linux-gnu
 LINUX_USES=		linux
+# Need USES=linux to define LINUX_ARCH
+#.if ${LINUX_ARCH} == x86_64
+LINUX_CONFIGURE_ON=	--with-boinc-alt-platform=x86_64-pc-linux-gnu
+#.else
+#LINUX_CONFIGURE_ON=	--with-boinc-alt-platform=i686-pc-linux-gnu
+#.endif
 
 X11_USES=		jpeg
 X11_USE=		GL=glut XORG=xmu,xi
