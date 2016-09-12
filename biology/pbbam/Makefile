@@ -8,8 +8,8 @@ CATEGORIES=	biology
 MAINTAINER=	bacon@outpaddling.cs.uwm.edu
 COMMENT=	PacBio BAM C++ library, with SWIG bindings
 
-#LICENSE=	
-#LICENSE_FILE=	
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 # FIXME: Guessing at actual boost lib needed
 #		libgtest.so:devel/googletest
