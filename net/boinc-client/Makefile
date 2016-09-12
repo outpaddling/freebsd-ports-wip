@@ -36,14 +36,15 @@ CONFIGURE_ENV=	OBJCXX="${CXX}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=		CLIENT MANAGER NLS X11 LINUX USER SKINS
+OPTIONS_DEFINE=		CLIENT MANAGER NLS X11 LINUX32 LINUX64 USER SKINS
 OPTIONS_DEFAULT=	CLIENT MANAGER X11 USER
 OPTIONS_GROUP=		SCRIPT
 OPTIONS_GROUP_SCRIPT=	NO_GUI_RPC NO_NET_INFO
 CLIENT_DESC=		Build BOINC client
 MANAGER_DESC=		Build BOINC manager GUI
 X11_DESC=		Build graphics API
-LINUX_DESC=		Accept Linux science applications
+LINUX32_DESC=		Accept 32-bit Linux apps
+LINUX64_DESC=		Accept 64-bit Linux apps (FreeBSD amd64 10.3+)
 USER_DESC=		Create/check BOINC client user and directory
 SKINS_DESC=		Install more skins for BOINC manager
 SCRIPT_DESC=		Command line options in script
@@ -69,13 +70,11 @@ CLIENT_LIB_DEPENDS=	libcurl.so:ftp/curl
 CLIENT_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 CLIENT_USE=		RC_SUBR=boinc-client
 
-LINUX_USES=		linux
+LINUX32_USES=		linux
+LINUX64_USES=		linux
 # Need USES=linux to define LINUX_ARCH
-#.if ${LINUX_ARCH} == x86_64
-LINUX_CONFIGURE_ON=	--with-boinc-alt-platform=x86_64-pc-linux-gnu
-#.else
-#LINUX_CONFIGURE_ON=	--with-boinc-alt-platform=i686-pc-linux-gnu
-#.endif
+LINUX64_CONFIGURE_ON=	--with-boinc-alt-platform=x86_64-pc-linux-gnu
+LINUX32_CONFIGURE_ON=	--with-boinc-alt-platform=i686-pc-linux-gnu
 
 X11_USES=		jpeg
 X11_USE=		GL=glut XORG=xmu,xi
