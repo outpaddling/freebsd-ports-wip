@@ -51,12 +51,6 @@ CMAKE_ARGS= \
 	-DHDF5_LIBRARIES:STRING="-L${LOCALBASE}/lib -lhdf5" \
 	..
 
-post-patch:
-	${REINPLACE_CMD} \
-		-e 's|/bin/bash|${LOCALBASE}/bin/bash|g' \
-		-e 's|-ldl||g' \
-		${WRKSRC}/makefile
-
 # FIXME: PBBAM is available as a port now
 do-configure:
 	cd ${WRKSRC} && ./configure.py --no-pbbam \
