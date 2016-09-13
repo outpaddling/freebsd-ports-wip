@@ -8,8 +8,8 @@ CATEGORIES=	biology
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	PacBio patched and stripped down seqan
 
-#LICENSE=	
-#LICENSE_FILE=	
+LICENSE=        BSD3CLAUSE
+LICENSE_FILE=   ${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
