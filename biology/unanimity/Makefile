@@ -17,6 +17,7 @@ BUILD_DEPENDS=	pbseqan>0:/usr/wip/biology/pbseqan \
 LIB_DEPENDS=	libhts.so:biology/htslib
 
 USES=		cmake python
+# USE_GCC=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
@@ -33,6 +34,9 @@ CMAKE_ARGS+=	-DHTSLIB_INCLUDE_DIRS:STRING=${LOCALBASE}/include/htslib \
 
 CMAKE_VERBOSE=	yes
 MAKE_JOBS_UNSAFE=	yes
+# gcc: stoul is not a member of std
+# http://stackoverflow.com/questions/26832199/getting-gcc-in-c11-mode-to-work-on-freebsd
+# CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
 
