@@ -5,7 +5,7 @@
      find_package(Git QUIET REQUIRED)
      execute_process(COMMAND
 -        "${GIT_EXECUTABLE}" "describe" "--always" "--dirty=*"
-+        echo 0b166c4
++        echo 054c595
          WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
          RESULT_VARIABLE res
          OUTPUT_VARIABLE out
