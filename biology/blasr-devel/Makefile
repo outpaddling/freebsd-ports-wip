@@ -14,7 +14,8 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libsz.so:science/szip \
 		libhts.so:biology/htslib \
-		libconfig.so:devel/libconfig
+		libconfig.so:devel/libconfig \
+		libboost-regex.so:devel/boost-libs
 BUILD_DEPENDS=	blasr_libcpp==${PORTVERSION}:/usr/wip/biology/blasr_libcpp-devel
 
 USES=		cmake gmake tar:xz ssl
