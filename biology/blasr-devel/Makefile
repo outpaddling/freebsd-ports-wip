@@ -18,7 +18,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libboost-regex.so:devel/boost-libs
 BUILD_DEPENDS=	blasr_libcpp==${PORTVERSION}:/usr/wip/biology/blasr_libcpp-devel
 
-USES=		cmake gmake tar:xz ssl
+USES=		cmake gmake ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences

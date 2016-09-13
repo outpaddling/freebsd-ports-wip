@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libhdf5.so:science/hdf5
 
-USES=		compiler:c++11-lang gmake tar:xz
+USES=		compiler:c++11-lang gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
