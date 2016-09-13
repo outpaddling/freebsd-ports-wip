@@ -35,7 +35,7 @@ CMAKE_ARGS+=	-DHTSLIB_INCLUDE_DIRS:STRING=${LOCALBASE}/include/htslib \
 		-DPacBioBAM_LIBRARIES:STRING="-L${LOCALBASE}/lib -lpbbam" \
 		-DSEQAN_INCLUDE_DIRS:STRING=${LOCALBASE}/include/PacBio \
 		-Dpbcopper_INCLUDE_DIRS=${LOCALBASE}/include \
-		-Dpbcopper_LIBRARIES="-l${LOCALBASE}/lib -lcopper"
+		-Dpbcopper_LIBRARIES="-L${LOCALBASE}/lib -lpbcopper"
 
 CMAKE_VERBOSE=	yes
 MAKE_JOBS_UNSAFE=	yes
