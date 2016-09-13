@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	unanimity
-# PORTVERSION=	2016.08.31
 PORTVERSION=	2016.09.13
 CATEGORIES=	biology
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Consensus library and applications
@@ -24,7 +22,6 @@ USES=		cmake python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
-# GH_TAGNAME=	0b166c4
 GH_TAGNAME=	054c595
 
 # FIXME: Searches /usr/local/include before /usr/local/include/PacBio
@@ -39,7 +36,7 @@ CMAKE_ARGS+=	-DHTSLIB_INCLUDE_DIRS:STRING=${LOCALBASE}/include/htslib \
 		-Dpbcopper_LIBRARIES="-L${LOCALBASE}/lib -lpbcopper"
 
 CMAKE_VERBOSE=	yes
-MAKE_JOBS_UNSAFE=	yes
+
 # gcc: stoul is not a member of std
 # http://stackoverflow.com/questions/26832199/getting-gcc-in-c11-mode-to-work-on-freebsd
 # CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1

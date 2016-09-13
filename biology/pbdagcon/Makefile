@@ -35,9 +35,6 @@ CXXFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/blasr_libcpp/pbdata
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-# Just to quell extraneous make output during development
-# MAKE_JOBS_UNSAFE=	yes
-
 PLIST_FILES=	bin/pbdagcon bin/dazcon bin/pbdagcon_wf.sh
 
 post-patch:
