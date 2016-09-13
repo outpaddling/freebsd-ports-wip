@@ -13,8 +13,9 @@ COMMENT=	Consensus library and applications
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	pbseqan>0:/usr/wip/biology/pbseqan \
-		pbbam>0:/usr/wip/biology/pbbam
+BUILD_DEPENDS=	pbseqan==${PORTVERSION}:/usr/wip/biology/pbseqan \
+		pbbam==${PORTVERSION}:/usr/wip/biology/pbbam \
+		pbcopper==${PORTVERSION}:/usr/wip/biology/pbcopper
 LIB_DEPENDS=	libhts.so:biology/htslib
 
 USES=		cmake python

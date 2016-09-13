@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pbseqan
-PORTVERSION=	2016.09.07
+PORTVERSION=	2016.09.13
 CATEGORIES=	biology
 
 MAINTAINER=	bacon4000@gmail.com
