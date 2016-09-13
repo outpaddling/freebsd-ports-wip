@@ -15,7 +15,7 @@ BUILD_DEPENDS=	pbseqan==${PORTVERSION}:/usr/wip/biology/pbseqan \
 		pbbam==${PORTVERSION}:/usr/wip/biology/pbbam \
 		pbcopper==${PORTVERSION}:/usr/wip/biology/pbcopper
 LIB_DEPENDS=	libhts.so:biology/htslib \
-		libboost-regexp:devel/boost-libs
+		libboost_regex.so:devel/boost-libs
 
 USES=		cmake python
 # USE_GCC=	yes
