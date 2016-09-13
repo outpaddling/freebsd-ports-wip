@@ -13,6 +13,8 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Tools for port development
 
+LICENSE=	BSD3CLAUSE
+
 RUN_DEPENDS=	portlint:ports-mgmt/portlint \
 		port:ports-mgmt/porttools
 
