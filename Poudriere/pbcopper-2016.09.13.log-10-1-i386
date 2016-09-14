@@ -1,0 +1,387 @@
+build started at Wed Sep 14 09:58:08 CDT 2016
+port directory: /usr/ports/biology/pbcopper
+building for: FreeBSD 10-1-i386-default 10.1-RELEASE-p29 FreeBSD 10.1-RELEASE-p29 i386
+maintained by: bacon4000@gmail.com
+ident warning: no id keywords in /usr/local/poudriere/data/.m/10-1-i386-default/ref//usr/ports/biology/pbcopper/Makefile
+Makefile ident: 
+Poudriere version: 3.1.14
+Host OSVERSION: 1001000
+Jail OSVERSION: 1001000
+
+---Begin Environment---
+PKGREPOSITORY=/tmp/pkgs
+PACKAGES=/tmp/pkgs
+UNAME_p=i386
+UNAME_m=i386
+UNAME_v=FreeBSD 10.1-RELEASE-p29
+UNAME_r=10.1-RELEASE-p29
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+WARNING_WAIT=0
+OPSYS=FreeBSD
+ARCH=i386
+SAVED_TERM=xterm
+NO_WARNING_PKG_INSTALL_EOL=yes
+MASTERMNT=/usr/local/poudriere/data/.m/10-1-i386-default/ref
+UID=0
+FORCE_PACKAGE=yes
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/root/bin
+_JAVA_VERSION_LIST_REGEXP=1.6\|1.7\|1.8\|1.6+\|1.7+\|1.8+
+POUDRIERE_BUILD_TYPE=bulk
+OSREL=10.1
+_OSRELEASE=10.1-RELEASE-p29
+PYTHONBASE=/usr/local
+OLDPWD=/
+_SMP_CPUS=4
+PWD=/usr/local/poudriere/data/.m/10-1-i386-default/ref/.p/pool
+MASTERNAME=10-1-i386-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+_JAVA_VENDOR_LIST_REGEXP=openjdk\|oracle\|sun
+USER=root
+HOME=/root
+POUDRIERE_VERSION=3.1.14
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+TRYBROKEN=yes
+CONFIGURE_MAX_CMD_LEN=262144
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+LOCALBASE=/usr/local
+PACKAGE_BUILDING=yes
+_JAVA_OS_LIST_REGEXP=native\|linux
+DEV_WARNING_WAIT=0
+OSVERSION=1001000
+---End Environment---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/biology/pbcopper/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/biology/pbcopper/work  HOME=/wrkdirs/usr/ports/biology/pbcopper/work TMPDIR="/tmp" SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/biology/pbcopper/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/biology/pbcopper/work  HOME=/wrkdirs/usr/ports/biology/pbcopper/work TMPDIR="/tmp" NO_PIE=yes WITHOUT_DEBUG_FILES=yes WITHOUT_KERNEL_SYMBOLS=yes SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  LIBDIR="/usr/lib"  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector -fno-strict-aliasing"  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector" LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector -fno-strict-aliasing "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 444"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+CMAKE_BUILD_TYPE="release"
+OSREL=10.1
+PREFIX=%D
+LOCALBASE=/usr/local
+RESETPREFIX=/usr/local
+PORTDOCS=""
+PORTEXAMPLES=""
+LIB32DIR=lib
+DOCSDIR="share/doc/pbcopper"
+EXAMPLESDIR="share/examples/pbcopper"
+DATADIR="share/pbcopper"
+WWWDIR="www/pbcopper"
+ETCDIR="etc/pbcopper"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local
+LOCALBASE=/usr/local
+DATADIR=/usr/local/share/pbcopper
+DOCSDIR=/usr/local/share/doc/pbcopper
+EXAMPLESDIR=/usr/local/share/examples/pbcopper
+WWWDIR=/usr/local/www/pbcopper
+ETCDIR=/usr/local/etc/pbcopper
+--End SUB_LIST--
+
+---Begin make.conf---
+MACHINE=i386
+MACHINE_ARCH=i386
+ARCH=${MACHINE_ARCH}
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+---End make.conf---
+=======================<phase: check-sanity   >============================
+===>  License BSD3CLAUSE accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   pbcopper-2016.09.13 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.8.7_2.txz
+[10-1-i386-default] Installing pkg-1.8.7_2...
+[10-1-i386-default] Extracting pkg-1.8.7_2: .......... done
+===>   pbcopper-2016.09.13 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of pbcopper-2016.09.13
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License BSD3CLAUSE accepted by the user
+===>   pbcopper-2016.09.13 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by pbcopper-2016.09.13 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License BSD3CLAUSE accepted by the user
+===>   pbcopper-2016.09.13 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by pbcopper-2016.09.13 for building
+=> SHA256 Checksum OK for PacificBiosciences-pbcopper-2016.09.13-ce9a4b6_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License BSD3CLAUSE accepted by the user
+===>   pbcopper-2016.09.13 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by pbcopper-2016.09.13 for building
+===>  Extracting for pbcopper-2016.09.13
+=> SHA256 Checksum OK for PacificBiosciences-pbcopper-2016.09.13-ce9a4b6_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for pbcopper-2016.09.13
+===>  Applying FreeBSD patches for pbcopper-2016.09.13
+===========================================================================
+=======================<phase: build-depends  >============================
+===>   pbcopper-2016.09.13 depends on file: /usr/local/bin/cmake - not found
+===>   Installing existing package /packages/All/cmake-3.6.1.txz
+[10-1-i386-default] Installing cmake-3.6.1...
+[10-1-i386-default] `-- Installing expat-2.2.0...
+[10-1-i386-default] `-- Extracting expat-2.2.0: .......... done
+[10-1-i386-default] `-- Installing cmake-modules-3.6.1...
+[10-1-i386-default] `-- Extracting cmake-modules-3.6.1: .......... done
+[10-1-i386-default] `-- Installing curl-7.50.1...
+[10-1-i386-default] |   `-- Installing ca_root_nss-3.26...
+[10-1-i386-default] |   `-- Extracting ca_root_nss-3.26: ....... done
+[10-1-i386-default] `-- Extracting curl-7.50.1: .......... done
+[10-1-i386-default] `-- Installing libarchive-3.2.1,1...
+[10-1-i386-default] |   `-- Installing liblz4-131...
+[10-1-i386-default] |   `-- Extracting liblz4-131: .......... done
+[10-1-i386-default] |   `-- Installing lzo2-2.09...
+[10-1-i386-default] |   `-- Extracting lzo2-2.09: .......... done
+[10-1-i386-default] `-- Extracting libarchive-3.2.1,1: .......... done
+[10-1-i386-default] `-- Installing jsoncpp-1.7.3...
+[10-1-i386-default] `-- Extracting jsoncpp-1.7.3: .......... done
+[10-1-i386-default] Extracting cmake-3.6.1: .......... done
+Message from ca_root_nss-3.26:
+********************************* WARNING *********************************
+
+FreeBSD does not, and can not warrant that the certification authorities
+whose certificates are included in this package have in any way been
+audited for trustworthiness or RFC 3647 compliance.
+
+Assessment and verification of trust is the complete responsibility of the
+system administrator.
+
+*********************************** NOTE **********************************
+
+This package installs symlinks to support root certificates discovery by
+default for software that uses OpenSSL.
+
+This enables SSL Certificate Verification by client software without manual
+intervention.
+
+If you prefer to do this manually, replace the following symlinks with
+either an empty file or your site-local certificate bundle.
+
+  * /etc/ssl/cert.pem
+  * /usr/local/etc/ssl/cert.pem
+  * /usr/local/openssl/cert.pem
+
+***************************************************************************
+===>   pbcopper-2016.09.13 depends on file: /usr/local/bin/cmake - found
+===>   Returning to build of pbcopper-2016.09.13
+===========================================================================
+=======================<phase: lib-depends    >============================
+===>   pbcopper-2016.09.13 depends on shared library: libboost_regex.so - not found
+===>   Installing existing package /packages/All/boost-libs-1.55.0_12.txz
+[10-1-i386-default] Installing boost-libs-1.55.0_12...
+[10-1-i386-default] `-- Installing icu-55.1,1...
+[10-1-i386-default] `-- Extracting icu-55.1,1: .......... done
+[10-1-i386-default] Extracting boost-libs-1.55.0_12: .......... done
+Message from boost-libs-1.55.0_12:
+You have built the Boost library with thread support.
+
+Don't forget to add -pthread to your linker options when
+linking your code.
+===>   pbcopper-2016.09.13 depends on shared library: libboost_regex.so - found (/usr/local/lib/libboost_regex.so)
+===>   Returning to build of pbcopper-2016.09.13
+===========================================================================
+====>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>   pbcopper-2016.09.13 depends on file: /usr/local/bin/cmake - found
+===>   pbcopper-2016.09.13 depends on shared library: libboost_regex.so - found (/usr/local/lib/libboost_regex.so)
+===>  Configuring for pbcopper-2016.09.13
+===>  Performing out-of-source build
+/bin/mkdir -p /wrkdirs/usr/ports/biology/pbcopper/work/.build
+-- The CXX compiler identification is Clang 3.4.1
+-- The C compiler identification is Clang 3.4.1
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Performing Test HAS_NO_UNUSED_LOCAL_TYPEDEFS
+-- Performing Test HAS_NO_UNUSED_LOCAL_TYPEDEFS - Failed
+-- Boost version: 1.55.0
+-- Found ZLIB: /usr/lib/libz.so (found version "1.2.8") 
+-- Could NOT find Doxygen (missing:  DOXYGEN_EXECUTABLE) 
+Doxygen not found. 'make doc' will not be available. Install Doxygen and re-run cmake if you would like to be able to build API documentation locally.
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Found Threads: TRUE  
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_CXX_FLAGS_DEBUG
+    CMAKE_C_FLAGS_DEBUG
+    CMAKE_C_FLAGS_RELEASE
+    CMAKE_MODULE_LINKER_FLAGS
+    CMAKE_SHARED_LINKER_FLAGS
+
+
+-- Build files have been written to: /wrkdirs/usr/ports/biology/pbcopper/work/.build
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for pbcopper-2016.09.13
+/usr/local/bin/cmake -H/wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6 -B/wrkdirs/usr/ports/biology/pbcopper/work/.build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/local/bin/cmake -E cmake_progress_start /wrkdirs/usr/ports/biology/pbcopper/work/.build/CMakeFiles /wrkdirs/usr/ports/biology/pbcopper/work/.build/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+--- src/CMakeFiles/pbcopper.dir/all ---
+/usr/bin/make -f src/CMakeFiles/pbcopper.dir/build.make src/CMakeFiles/pbcopper.dir/depend
+--- src/CMakeFiles/pbcopper.dir/depend ---
+cd /wrkdirs/usr/ports/biology/pbcopper/work/.build && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6 /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/src /wrkdirs/usr/ports/biology/pbcopper/work/.build /wrkdirs/usr/ports/biology/pbcopper/work/.build/src /wrkdirs/usr/ports/biology/pbcopper/work/.build/src/CMakeFiles/pbcopper.dir/DependInfo.cmake
+Scanning dependencies of target pbcopper
+/usr/bin/make -f src/CMakeFiles/pbcopper.dir/build.make src/CMakeFiles/pbcopper.dir/build
+--- src/CMakeFiles/pbcopper.dir/cli/CLI.cpp.o ---
+--- src/CMakeFiles/pbcopper.dir/cli/HelpPrinter.cpp.o ---
+--- src/CMakeFiles/pbcopper.dir/cli/Interface.cpp.o ---
+--- src/CMakeFiles/pbcopper.dir/cli/Parser.cpp.o ---
+--- src/CMakeFiles/pbcopper.dir/cli/CLI.cpp.o ---
+[  7%] Building CXX object src/CMakeFiles/pbcopper.dir/cli/CLI.cpp.o
+cd /wrkdirs/usr/ports/biology/pbcopper/work/.build/src && /usr/bin/c++   -DPBCOPPER_LIBRARY -isystem /usr/local/include -I/wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/include -I/wrkdirs/usr/ports/biology/pbcopper/work/.build/generated -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/pbcopper.dir/cli/CLI.cpp.o -c /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/src/cli/CLI.cpp
+--- src/CMakeFiles/pbcopper.dir/cli/Interface.cpp.o ---
+[ 23%] Building CXX object src/CMakeFiles/pbcopper.dir/cli/Interface.cpp.o
+--- src/CMakeFiles/pbcopper.dir/cli/HelpPrinter.cpp.o ---
+[ 30%] Building CXX object src/CMakeFiles/pbcopper.dir/cli/HelpPrinter.cpp.o
+--- src/CMakeFiles/pbcopper.dir/cli/Parser.cpp.o ---
+[ 30%] Building CXX object src/CMakeFiles/pbcopper.dir/cli/Parser.cpp.o
+--- src/CMakeFiles/pbcopper.dir/cli/HelpPrinter.cpp.o ---
+cd /wrkdirs/usr/ports/biology/pbcopper/work/.build/src && /usr/bin/c++   -DPBCOPPER_LIBRARY -isystem /usr/local/include -I/wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/include -I/wrkdirs/usr/ports/biology/pbcopper/work/.build/generated -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/pbcopper.dir/cli/HelpPrinter.cpp.o -c /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/src/cli/HelpPrinter.cpp
+--- src/CMakeFiles/pbcopper.dir/cli/Parser.cpp.o ---
+cd /wrkdirs/usr/ports/biology/pbcopper/work/.build/src && /usr/bin/c++   -DPBCOPPER_LIBRARY -isystem /usr/local/include -I/wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/include -I/wrkdirs/usr/ports/biology/pbcopper/work/.build/generated -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/pbcopper.dir/cli/Parser.cpp.o -c /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/src/cli/Parser.cpp
+--- src/CMakeFiles/pbcopper.dir/cli/Interface.cpp.o ---
+cd /wrkdirs/usr/ports/biology/pbcopper/work/.build/src && /usr/bin/c++   -DPBCOPPER_LIBRARY -isystem /usr/local/include -I/wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/include -I/wrkdirs/usr/ports/biology/pbcopper/work/.build/generated -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/pbcopper.dir/cli/Interface.cpp.o -c /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/src/cli/Interface.cpp
+--- src/CMakeFiles/pbcopper.dir/cli/Results.cpp.o ---
+[ 38%] Building CXX object src/CMakeFiles/pbcopper.dir/cli/Results.cpp.o
+cd /wrkdirs/usr/ports/biology/pbcopper/work/.build/src && /usr/bin/c++   -DPBCOPPER_LIBRARY -isystem /usr/local/include -I/wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/include -I/wrkdirs/usr/ports/biology/pbcopper/work/.build/generated -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/pbcopper.dir/cli/Results.cpp.o -c /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/src/cli/Results.cpp
+--- src/CMakeFiles/pbcopper.dir/cli/VersionPrinter.cpp.o ---
+[ 46%] Building CXX object src/CMakeFiles/pbcopper.dir/cli/VersionPrinter.cpp.o
+cd /wrkdirs/usr/ports/biology/pbcopper/work/.build/src && /usr/bin/c++   -DPBCOPPER_LIBRARY -isystem /usr/local/include -I/wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/include -I/wrkdirs/usr/ports/biology/pbcopper/work/.build/generated -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/pbcopper.dir/cli/VersionPrinter.cpp.o -c /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/src/cli/VersionPrinter.cpp
+--- src/CMakeFiles/pbcopper.dir/cli/toolcontract/JsonPrinter.cpp.o ---
+[ 53%] Building CXX object src/CMakeFiles/pbcopper.dir/cli/toolcontract/JsonPrinter.cpp.o
+cd /wrkdirs/usr/ports/biology/pbcopper/work/.build/src && /usr/bin/c++   -DPBCOPPER_LIBRARY -isystem /usr/local/include -I/wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/include -I/wrkdirs/usr/ports/biology/pbcopper/work/.build/generated -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/pbcopper.dir/cli/toolcontract/JsonPrinter.cpp.o -c /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/src/cli/toolcontract/JsonPrinter.cpp
+--- src/CMakeFiles/pbcopper.dir/cli/toolcontract/ResolvedToolContract.cpp.o ---
+[ 61%] Building CXX object src/CMakeFiles/pbcopper.dir/cli/toolcontract/ResolvedToolContract.cpp.o
+cd /wrkdirs/usr/ports/biology/pbcopper/work/.build/src && /usr/bin/c++   -DPBCOPPER_LIBRARY -isystem /usr/local/include -I/wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/include -I/wrkdirs/usr/ports/biology/pbcopper/work/.build/generated -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/pbcopper.dir/cli/toolcontract/ResolvedToolContract.cpp.o -c /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/src/cli/toolcontract/ResolvedToolContract.cpp
+--- src/CMakeFiles/pbcopper.dir/data/MovieName.cpp.o ---
+[ 69%] Building CXX object src/CMakeFiles/pbcopper.dir/data/MovieName.cpp.o
+cd /wrkdirs/usr/ports/biology/pbcopper/work/.build/src && /usr/bin/c++   -DPBCOPPER_LIBRARY -isystem /usr/local/include -I/wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/include -I/wrkdirs/usr/ports/biology/pbcopper/work/.build/generated -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/pbcopper.dir/data/MovieName.cpp.o -c /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/src/data/MovieName.cpp
+--- src/CMakeFiles/pbcopper.dir/data/RSMovieName.cpp.o ---
+[ 76%] Building CXX object src/CMakeFiles/pbcopper.dir/data/RSMovieName.cpp.o
+cd /wrkdirs/usr/ports/biology/pbcopper/work/.build/src && /usr/bin/c++   -DPBCOPPER_LIBRARY -isystem /usr/local/include -I/wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/include -I/wrkdirs/usr/ports/biology/pbcopper/work/.build/generated -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/pbcopper.dir/data/RSMovieName.cpp.o -c /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/src/data/RSMovieName.cpp
+--- src/CMakeFiles/pbcopper.dir/logging/Logging.cpp.o ---
+[ 84%] Building CXX object src/CMakeFiles/pbcopper.dir/logging/Logging.cpp.o
+cd /wrkdirs/usr/ports/biology/pbcopper/work/.build/src && /usr/bin/c++   -DPBCOPPER_LIBRARY -isystem /usr/local/include -I/wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/include -I/wrkdirs/usr/ports/biology/pbcopper/work/.build/generated -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/pbcopper.dir/logging/Logging.cpp.o -c /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/src/logging/Logging.cpp
+--- src/CMakeFiles/pbcopper.dir/utility/CallbackTimer.cpp.o ---
+[ 92%] Building CXX object src/CMakeFiles/pbcopper.dir/utility/CallbackTimer.cpp.o
+cd /wrkdirs/usr/ports/biology/pbcopper/work/.build/src && /usr/bin/c++   -DPBCOPPER_LIBRARY -isystem /usr/local/include -I/wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/include -I/wrkdirs/usr/ports/biology/pbcopper/work/.build/generated -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/pbcopper.dir/utility/CallbackTimer.cpp.o -c /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/src/utility/CallbackTimer.cpp
+--- /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/lib/libpbcopper.a ---
+[100%] Linking CXX static library /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/lib/libpbcopper.a
+cd /wrkdirs/usr/ports/biology/pbcopper/work/.build/src && /usr/local/bin/cmake -P CMakeFiles/pbcopper.dir/cmake_clean_target.cmake
+cd /wrkdirs/usr/ports/biology/pbcopper/work/.build/src && /usr/local/bin/cmake -E cmake_link_script CMakeFiles/pbcopper.dir/link.txt --verbose=1
+/usr/bin/ar qc /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/lib/libpbcopper.a  CMakeFiles/pbcopper.dir/cli/CLI.cpp.o CMakeFiles/pbcopper.dir/cli/HelpPrinter.cpp.o CMakeFiles/pbcopper.dir/cli/Interface.cpp.o CMakeFiles/pbcopper.dir/cli/Parser.cpp.o CMakeFiles/pbcopper.dir/cli/Results.cpp.o CMakeFiles/pbcopper.dir/cli/VersionPrinter.cpp.o CMakeFiles/pbcopper.dir/cli/toolcontract/JsonPrinter.cpp.o CMakeFiles/pbcopper.dir/cli/toolcontract/ResolvedToolContract.cpp.o CMakeFiles/pbcopper.dir/data/MovieName.cpp.o CMakeFiles/pbcopper.dir/data/RSMovieName.cpp.o CMakeFiles/pbcopper.dir/logging/Logging.cpp.o CMakeFiles/pbcopper.dir/utility/CallbackTimer.cpp.o
+/usr/bin/ranlib /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/lib/libpbcopper.a
+[100%] Built target pbcopper
+/usr/local/bin/cmake -E cmake_progress_start /wrkdirs/usr/ports/biology/pbcopper/work/.build/CMakeFiles 0
+===========================================================================
+====>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===========================================================================
+====>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for pbcopper-2016.09.13
+===>   pbcopper-2016.09.13 depends on shared library: libboost_regex.so - found (/usr/local/lib/libboost_regex.so)
+===>   Generating temporary packing list
+install  -m 0644 /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/lib/*.a /wrkdirs/usr/ports/biology/pbcopper/work/stage/usr/local/lib
+cd /wrkdirs/usr/ports/biology/pbcopper/work/pbcopper-ce9a4b6/include && /bin/sh -c '(/usr/bin/find -d $0 $2 | /usr/bin/cpio -dumpl $1 >/dev/null  2>&1) &&  /usr/bin/find -d $0 $2 -type d -exec chmod 755 $1/{} \; &&  /usr/bin/find -d $0 $2 -type f -exec chmod 444 $1/{} \;' -- . /wrkdirs/usr/ports/biology/pbcopper/work/stage/usr/local/include
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+====>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for pbcopper-2016.09.13
+===========================================================================
+=======================<phase: install-mtree  >============================
+===========================================================================
+====>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for pbcopper-2016.09.13
+===>   pbcopper-2016.09.13 depends on shared library: libboost_regex.so - found (/usr/local/lib/libboost_regex.so)
+===>  Checking if pbcopper already installed
+===>   Registering installation for pbcopper-2016.09.13
+[10-1-i386-default] Installing pbcopper-2016.09.13...
+===========================================================================
+====>> Checking shared library dependencies
+=======================<phase: deinstall      >============================
+===>  Deinstalling for pbcopper
+===>   Deinstalling pbcopper-2016.09.13
+Updating database digests format: .......... done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	pbcopper-2016.09.13
+
+Number of packages to be removed: 1
+
+The operation will free 1 MiB.
+[10-1-i386-default] [1/1] Deinstalling pbcopper-2016.09.13...
+[10-1-i386-default] [1/1] Deleting files for pbcopper-2016.09.13: .......... done
+===========================================================================
+====>> Checking for extra files and directories
+[00:26:45] ====>> Installing from package
+[10-1-i386-default] Installing pbcopper-2016.09.13...
+[10-1-i386-default] Extracting pbcopper-2016.09.13: .......... done
+[00:26:45] ====>> Cleaning up
+===>  Cleaning for pbcopper-2016.09.13
+[00:26:45] ====>> Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	pbcopper-2016.09.13
+
+Number of packages to be removed: 1
+
+The operation will free 1 MiB.
+[10-1-i386-default] [1/1] Deinstalling pbcopper-2016.09.13...
+[10-1-i386-default] [1/1] Deleting files for pbcopper-2016.09.13: .......... done
+build of biology/pbcopper ended at Wed Sep 14 09:58:33 CDT 2016
+build time: 00:00:25
