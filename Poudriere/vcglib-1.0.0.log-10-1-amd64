@@ -1,4 +1,4 @@
-build started at Wed Sep 14 15:00:58 CDT 2016
+build started at Thu Sep 15 16:20:53 CDT 2016
 port directory: /usr/ports/graphics/vcglib
 building for: FreeBSD 10-1-amd64-default 10.1-RELEASE-p29 FreeBSD 10.1-RELEASE-p29 amd64
 maintained by: bacon4000@gmail.com
@@ -29,9 +29,9 @@ POUDRIERE_BUILD_TYPE=bulk
 OSREL=10.1
 _OSRELEASE=10.1-RELEASE-p29
 PYTHONBASE=/usr/local
-OLDPWD=/
+OLDPWD=/usr/wip/Poudriere
 _SMP_CPUS=32
-PWD=/usr/local/poudriere/data/.m/10-1-amd64-default/ref/.p/pool
+PWD=/
 HAVE_COMPAT_IA32_KERN=YES OPSYS=FreeBSD
 MASTERNAME=10-1-amd64-default
 SCRIPTPREFIX=/usr/local/share/poudriere
@@ -99,10 +99,7 @@ PACKAGES=/packages
 DISTDIR=/distfiles
 ---End make.conf---
 =======================<phase: check-sanity   >============================
-/!\ vcglib-1.0.0: Makefile warnings, please consider fixing /!\
-
-Please set LICENSE for this port
-
+===>  License PD accepted by the user
 ===========================================================================
 =======================<phase: pkg-depends    >============================
 ===>   vcglib-1.0.0 depends on file: /usr/local/sbin/pkg - not found
@@ -115,15 +112,12 @@ Please set LICENSE for this port
 =======================<phase: fetch-depends  >============================
 ===========================================================================
 =======================<phase: fetch          >============================
+===>  License PD accepted by the user
 ===>   vcglib-1.0.0 depends on file: /usr/local/sbin/pkg - found
-=> cnr-isti-vclab-vcglib-v1.0.0_GH0.tar.gz doesn't seem to exist in /portdistfiles/.
-=> Attempting to fetch https://codeload.github.com/cnr-isti-vclab/vcglib/tar.gz/v1.0.0?dummy=/cnr-isti-vclab-vcglib-v1.0.0_GH0.tar.gz
-fetch: https://codeload.github.com/cnr-isti-vclab/vcglib/tar.gz/v1.0.0?dummy=/cnr-isti-vclab-vcglib-v1.0.0_GH0.tar.gz: size unknown
-fetch: https://codeload.github.com/cnr-isti-vclab/vcglib/tar.gz/v1.0.0?dummy=/cnr-isti-vclab-vcglib-v1.0.0_GH0.tar.gz: size of remote file is not known
-cnr-isti-vclab-vcglib-v1.0.0_GH0.tar.gz                  0  B    0  Bps
 ===> Fetching all distfiles required by vcglib-1.0.0 for building
 ===========================================================================
 =======================<phase: checksum       >============================
+===>  License PD accepted by the user
 ===>   vcglib-1.0.0 depends on file: /usr/local/sbin/pkg - found
 ===> Fetching all distfiles required by vcglib-1.0.0 for building
 => SHA256 Checksum OK for cnr-isti-vclab-vcglib-v1.0.0_GH0.tar.gz.
@@ -131,6 +125,7 @@ cnr-isti-vclab-vcglib-v1.0.0_GH0.tar.gz                  0  B    0  Bps
 =======================<phase: extract-depends>============================
 ===========================================================================
 =======================<phase: extract        >============================
+===>  License PD accepted by the user
 ===>   vcglib-1.0.0 depends on file: /usr/local/sbin/pkg - found
 ===> Fetching all distfiles required by vcglib-1.0.0 for building
 ===>  Extracting for vcglib-1.0.0
@@ -201,12 +196,12 @@ The operation will free 23 MiB.
 [10-1-amd64-default] [1/1] Deleting files for vcglib-1.0.0: .......... done
 ===========================================================================
 ====>> Checking for extra files and directories
-[00:01:30] ====>> Installing from package
+[00:00:32] ====>> Installing from package
 [10-1-amd64-default] Installing vcglib-1.0.0...
 [10-1-amd64-default] Extracting vcglib-1.0.0: .......... done
-[00:01:31] ====>> Cleaning up
+[00:00:33] ====>> Cleaning up
 ===>  Cleaning for vcglib-1.0.0
-[00:01:31] ====>> Deinstalling package
+[00:00:34] ====>> Deinstalling package
 Updating database digests format: . done
 Checking integrity... done (0 conflicting)
 Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
@@ -219,5 +214,5 @@ Number of packages to be removed: 1
 The operation will free 23 MiB.
 [10-1-amd64-default] [1/1] Deinstalling vcglib-1.0.0...
 [10-1-amd64-default] [1/1] Deleting files for vcglib-1.0.0: .......... done
-build of graphics/vcglib ended at Wed Sep 14 15:01:29 CDT 2016
-build time: 00:00:31
+build of graphics/vcglib ended at Thu Sep 15 16:21:23 CDT 2016
+build time: 00:00:30
