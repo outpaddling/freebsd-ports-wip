@@ -12,8 +12,6 @@ COMMENT=	Open Multiple View Geometry library
 
 LICENSE=	MPL
 
-#		Conflicts with jpeg-turbo, installed as a dep
-#		libjpeg.so:graphics/jpeg
 BUILD_DEPENDS=	eigen>0:math/eigen3 \
 		ceres-solver>0:/usr/wip/math/ceres-solver \
 		liblemon>0:/usr/wip/science/liblemon
@@ -23,16 +21,15 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libXi.so:x11/libXi \
 		libXrandr.so:x11/libXrandr \
 		libClp.so:math/clp \
+		libglog.so:devel/glog
 
 # Alternative to clp
 #		libCoinMP.so:math/coinmp
 
-USES=		cmake:outsource compiler:c++11-lang tar:xz
+USES=		cmake:outsource compiler:c++11-lang fortran jpeg tar:xz
 
-# http://stackoverflow.com/questions/26832199/getting-gcc-in-c11-mode-to-work-on-freebsd
-# Use with gcc
-# CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH \
-		-D_GLIBCXX_USE_C99_MATH_TR1
+CXXFLAGS+=	-Wno-deprecated-register
+LDFLAGS+=	-L${LOCALBASE}/lib/gcc48 -lgfortran
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 CMAKE_ARGS+=	-DEIGEN_INCLUDE_DIR_HINTS:STRING=${LOCABASE}/include/eigen3 \
@@ -40,9 +37,6 @@ CMAKE_ARGS+=	-DEIGEN_INCLUDE_DIR_HINTS:STRING=${LOCABASE}/include/eigen3 \
 		-DCOINUTILS_INCLUDE_DIR_HINTS:STRING=${LOCALBASE}/include/coin/ \
 		-DOSI_INCLUDE_DIR_HINTS:STRING=${LOCALBASE}/include/coin \
 		-DLEMON_INCLUDE_DIR_HINTS:STRING=${LOCALBASE}/include/lemon
-
-# FIXME: Just for testing.  Remove if possible.
-# MAKE_JOBS_UNSAFE=	yes
 
 # Compiler flag optimizer crashes clang and can't be used for package
 # building anyway.
