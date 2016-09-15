@@ -22,4 +22,8 @@ LIB_DEPENDS=	libglog.so:devel/glog \
 
 USES=		cmake
 
+CXXFLAGS+=	-fPIC
+
+CMAKE_VERBOSE=	yes
+
 .include <bsd.port.mk>

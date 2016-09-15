@@ -12,7 +12,6 @@ COMMENT=	Open Multiple View Geometry library
 
 LICENSE=	MPL
 
-#		libCoinMP.so:math/coinmp
 #		Conflicts with jpeg-turbo, installed as a dep
 #		libjpeg.so:graphics/jpeg
 BUILD_DEPENDS=	eigen>0:math/eigen3 \
@@ -24,20 +23,28 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libXrandr.so:x11/libXrandr \
 		libClp.so:math/clp
 
-# USES=		cmake:outsource compiler:c++11-lang tar:xz
-USES=		cmake:outsource tar:xz
+# Alternative to clp
+#		libCoinMP.so:math/coinmp
+
+USES=		cmake:outsource compiler:c++11-lang tar:xz
+# USES=		cmake:outsource tar:xz
 # FIXME: Hack in place of compiler:c++11-lang
-USE_GCC=	yes
+# clang seg faults
+# USE_GCC=	yes
+# CXX=		clang++37
+
 # http://stackoverflow.com/questions/26832199/getting-gcc-in-c11-mode-to-work-on-freebsd
-CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH \
+# Use with gcc
+# CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH \
 		-D_GLIBCXX_USE_C99_MATH_TR1
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 CMAKE_ARGS+=	-DEIGEN_INCLUDE_DIR_HINTS:STRING=${LOCABASE}/include/eigen3 \
-		-DCLP_INCLUDE_DIR_HINTS=${LOCALBASE}/include/coin \
-		-DCOINUTILS_INCLUDE_DIR_HINTS=${LOCALBASE}/include/coin/
+		-DCLP_INCLUDE_DIR_HINTS:STRING=${LOCALBASE}/include/coin \
+		-DCOINUTILS_INCLUDE_DIR_HINTS:STRING=${LOCALBASE}/include/coin/ \
+		-DOSI_INCLUDE_DIR_HINTS:STRING=${LOCALBASE}/include/coin
 
 # FIXME: Just for testing.  Remove if possible.
-# MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
