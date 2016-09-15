@@ -1,0 +1,706 @@
+build started at Thu Sep 15 09:43:28 CDT 2016
+port directory: /usr/ports/science/liblemon
+building for: FreeBSD 10-1-amd64-default 10.1-RELEASE-p29 FreeBSD 10.1-RELEASE-p29 amd64
+maintained by: bacon@sciprog.ceas.uwm.edu
+ident warning: no id keywords in /usr/local/poudriere/data/.m/10-1-amd64-default/ref//usr/ports/science/liblemon/Makefile
+Makefile ident: 
+Poudriere version: 3.1.14
+Host OSVERSION: 1001000
+Jail OSVERSION: 1001000
+
+---Begin Environment---
+PKGREPOSITORY=/tmp/pkgs
+PACKAGES=/tmp/pkgs
+UNAME_v=FreeBSD 10.1-RELEASE-p29
+UNAME_r=10.1-RELEASE-p29
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+WARNING_WAIT=0
+ARCH=amd64
+SAVED_TERM=xterm
+NO_WARNING_PKG_INSTALL_EOL=yes
+MASTERMNT=/usr/local/poudriere/data/.m/10-1-amd64-default/ref
+UID=0
+FORCE_PACKAGE=yes
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/root/bin
+_JAVA_VERSION_LIST_REGEXP=1.6\|1.7\|1.8\|1.6+\|1.7+\|1.8+
+POUDRIERE_BUILD_TYPE=bulk
+OSREL=10.1
+_OSRELEASE=10.1-RELEASE-p29
+PYTHONBASE=/usr/local
+OLDPWD=/
+_SMP_CPUS=32
+PWD=/usr/local/poudriere/data/.m/10-1-amd64-default/ref/.p/pool
+HAVE_COMPAT_IA32_KERN=YES OPSYS=FreeBSD
+MASTERNAME=10-1-amd64-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+_JAVA_VENDOR_LIST_REGEXP=openjdk\|oracle\|sun
+USER=root
+HOME=/root
+POUDRIERE_VERSION=3.1.14
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+TRYBROKEN=yes
+CONFIGURE_MAX_CMD_LEN=262144
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+LOCALBASE=/usr/local
+PACKAGE_BUILDING=yes
+_JAVA_OS_LIST_REGEXP=native\|linux
+DEV_WARNING_WAIT=0
+OSVERSION=1001000
+---End Environment---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/science/liblemon/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/science/liblemon/work  HOME=/wrkdirs/usr/ports/science/liblemon/work TMPDIR="/tmp" SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/science/liblemon/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/science/liblemon/work  HOME=/wrkdirs/usr/ports/science/liblemon/work TMPDIR="/tmp" NO_PIE=yes WITHOUT_DEBUG_FILES=yes WITHOUT_KERNEL_SYMBOLS=yes SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  LIBDIR="/usr/lib"  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector -fno-strict-aliasing"  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector" LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector -fno-strict-aliasing "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 444"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+CMAKE_BUILD_TYPE="release"
+OSREL=10.1
+PREFIX=%D
+LOCALBASE=/usr/local
+RESETPREFIX=/usr/local
+PORTDOCS=""
+PORTEXAMPLES=""
+LIB32DIR=lib
+DOCSDIR="share/doc/liblemon"
+EXAMPLESDIR="share/examples/liblemon"
+DATADIR="share/liblemon"
+WWWDIR="www/liblemon"
+ETCDIR="etc/liblemon"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local
+LOCALBASE=/usr/local
+DATADIR=/usr/local/share/liblemon
+DOCSDIR=/usr/local/share/doc/liblemon
+EXAMPLESDIR=/usr/local/share/examples/liblemon
+WWWDIR=/usr/local/www/liblemon
+ETCDIR=/usr/local/etc/liblemon
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+---End make.conf---
+=======================<phase: check-sanity   >============================
+===>  License BSL accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   liblemon-1.3.1 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.8.7_2.txz
+[10-1-amd64-default] Installing pkg-1.8.7_2...
+[10-1-amd64-default] Extracting pkg-1.8.7_2: .......... done
+===>   liblemon-1.3.1 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of liblemon-1.3.1
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License BSL accepted by the user
+===>   liblemon-1.3.1 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by liblemon-1.3.1 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License BSL accepted by the user
+===>   liblemon-1.3.1 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by liblemon-1.3.1 for building
+=> SHA256 Checksum OK for lemon-1.3.1.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License BSL accepted by the user
+===>   liblemon-1.3.1 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by liblemon-1.3.1 for building
+===>  Extracting for liblemon-1.3.1
+=> SHA256 Checksum OK for lemon-1.3.1.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for liblemon-1.3.1
+===========================================================================
+=======================<phase: build-depends  >============================
+===>   liblemon-1.3.1 depends on file: /usr/local/bin/cmake - not found
+===>   Installing existing package /packages/All/cmake-3.6.1.txz
+[10-1-amd64-default] Installing cmake-3.6.1...
+[10-1-amd64-default] `-- Installing expat-2.2.0...
+[10-1-amd64-default] `-- Extracting expat-2.2.0: .......... done
+[10-1-amd64-default] `-- Installing cmake-modules-3.6.1...
+[10-1-amd64-default] `-- Extracting cmake-modules-3.6.1: .......... done
+[10-1-amd64-default] `-- Installing curl-7.50.1...
+[10-1-amd64-default] |   `-- Installing ca_root_nss-3.26...
+[10-1-amd64-default] |   `-- Extracting ca_root_nss-3.26: ....... done
+[10-1-amd64-default] `-- Extracting curl-7.50.1: .......... done
+[10-1-amd64-default] `-- Installing libarchive-3.2.1,1...
+[10-1-amd64-default] |   `-- Installing liblz4-131...
+[10-1-amd64-default] |   `-- Extracting liblz4-131: .......... done
+[10-1-amd64-default] |   `-- Installing lzo2-2.09...
+[10-1-amd64-default] |   `-- Extracting lzo2-2.09: .......... done
+[10-1-amd64-default] `-- Extracting libarchive-3.2.1,1: .......... done
+[10-1-amd64-default] `-- Installing jsoncpp-1.7.3...
+[10-1-amd64-default] `-- Extracting jsoncpp-1.7.3: .......... done
+[10-1-amd64-default] Extracting cmake-3.6.1: .......... done
+Message from ca_root_nss-3.26:
+********************************* WARNING *********************************
+
+FreeBSD does not, and can not warrant that the certification authorities
+whose certificates are included in this package have in any way been
+audited for trustworthiness or RFC 3647 compliance.
+
+Assessment and verification of trust is the complete responsibility of the
+system administrator.
+
+*********************************** NOTE **********************************
+
+This package installs symlinks to support root certificates discovery by
+default for software that uses OpenSSL.
+
+This enables SSL Certificate Verification by client software without manual
+intervention.
+
+If you prefer to do this manually, replace the following symlinks with
+either an empty file or your site-local certificate bundle.
+
+  * /etc/ssl/cert.pem
+  * /usr/local/etc/ssl/cert.pem
+  * /usr/local/openssl/cert.pem
+
+***************************************************************************
+===>   liblemon-1.3.1 depends on file: /usr/local/bin/cmake - found
+===>   Returning to build of liblemon-1.3.1
+===========================================================================
+=======================<phase: lib-depends    >============================
+===>   liblemon-1.3.1 depends on shared library: libglpk.so - not found
+===>   Installing existing package /packages/All/glpk-4.55.txz
+[10-1-amd64-default] Installing glpk-4.55...
+[10-1-amd64-default] `-- Installing gmp-5.1.3_3...
+[10-1-amd64-default] |   `-- Installing indexinfo-0.2.4...
+[10-1-amd64-default] |   `-- Extracting indexinfo-0.2.4: .... done
+[10-1-amd64-default] `-- Extracting gmp-5.1.3_3: .......... done
+[10-1-amd64-default] Extracting glpk-4.55: .......... done
+Message from glpk-4.55:
+===>   NOTICE:
+
+The glpk port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://www.freebsd.org/doc/en/articles/contributing/ports-contributing.html#maintain-port
+===>   liblemon-1.3.1 depends on shared library: libglpk.so - found (/usr/local/lib/libglpk.so)
+===>   Returning to build of liblemon-1.3.1
+===========================================================================
+====>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>   liblemon-1.3.1 depends on file: /usr/local/bin/cmake - found
+===>   liblemon-1.3.1 depends on shared library: libglpk.so - found (/usr/local/lib/libglpk.so)
+===>  Configuring for liblemon-1.3.1
+===>  Performing out-of-source build
+/bin/mkdir -p /wrkdirs/usr/ports/science/liblemon/work/.build
+-- The C compiler identification is Clang 3.4.1
+-- The CXX compiler identification is Clang 3.4.1
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Could NOT find PythonInterp (missing:  PYTHON_EXECUTABLE) 
+-- Could NOT find Wget (missing:  WGET_EXECUTABLE) 
+-- Could NOT find Doxygen (missing:  DOXYGEN_EXECUTABLE) 
+-- Could NOT find Ghostscript (missing:  GHOSTSCRIPT_EXECUTABLE) 
+-- Found GLPK: /usr/local/lib/libglpk.so (Required is at least version "4.33") 
+-- Could NOT find ILOG (missing:  ILOG_CPLEX_LIBRARY ILOG_CPLEX_INCLUDE_DIR) 
+-- Could NOT find COIN (missing:  COIN_INCLUDE_DIR COIN_CBC_LIBRARY COIN_CBC_SOLVER_LIBRARY COIN_CGL_LIBRARY COIN_CLP_LIBRARY COIN_COIN_UTILS_LIBRARY COIN_OSI_LIBRARY COIN_OSI_CBC_LIBRARY COIN_OSI_CLP_LIBRARY) 
+-- Could NOT find SOPLEX (missing:  SOPLEX_LIBRARY SOPLEX_INCLUDE_DIR) 
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of long long
+-- Check size of long long - done
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Found Threads: TRUE  
+-- Copy doc from source tree
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_CXX_FLAGS_DEBUG
+    CMAKE_C_FLAGS_DEBUG
+    CMAKE_C_FLAGS_RELEASE
+    CMAKE_MODULE_LINKER_FLAGS
+    CMAKE_SHARED_LINKER_FLAGS
+
+
+-- Build files have been written to: /wrkdirs/usr/ports/science/liblemon/work/.build
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for liblemon-1.3.1
+/usr/local/bin/cmake -H/wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 -B/wrkdirs/usr/ports/science/liblemon/work/.build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/local/bin/cmake -E cmake_progress_start /wrkdirs/usr/ports/science/liblemon/work/.build/CMakeFiles /wrkdirs/usr/ports/science/liblemon/work/.build/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+--- lemon/CMakeFiles/lemon.dir/all ---
+/usr/bin/make -f lemon/CMakeFiles/lemon.dir/build.make lemon/CMakeFiles/lemon.dir/depend
+--- lemon/CMakeFiles/lemon.dir/depend ---
+cd /wrkdirs/usr/ports/science/liblemon/work/.build && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/lemon /wrkdirs/usr/ports/science/liblemon/work/.build /wrkdirs/usr/ports/science/liblemon/work/.build/lemon /wrkdirs/usr/ports/science/liblemon/work/.build/lemon/CMakeFiles/lemon.dir/DependInfo.cmake
+Scanning dependencies of target lemon
+/usr/bin/make -f lemon/CMakeFiles/lemon.dir/build.make lemon/CMakeFiles/lemon.dir/build
+--- lemon/CMakeFiles/lemon.dir/arg_parser.cc.o ---
+--- lemon/CMakeFiles/lemon.dir/base.cc.o ---
+--- lemon/CMakeFiles/lemon.dir/color.cc.o ---
+--- lemon/CMakeFiles/lemon.dir/lp_base.cc.o ---
+--- lemon/CMakeFiles/lemon.dir/lp_skeleton.cc.o ---
+--- lemon/CMakeFiles/lemon.dir/random.cc.o ---
+--- lemon/CMakeFiles/lemon.dir/bits/windows.cc.o ---
+--- lemon/CMakeFiles/lemon.dir/glpk.cc.o ---
+--- lemon/CMakeFiles/lemon.dir/arg_parser.cc.o ---
+[  5%] Building CXX object lemon/CMakeFiles/lemon.dir/arg_parser.cc.o
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/lemon && /usr/bin/c++    -I/wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 -I/wrkdirs/usr/ports/science/liblemon/work/.build -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/lemon.dir/arg_parser.cc.o -c /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/lemon/arg_parser.cc
+--- lemon/CMakeFiles/lemon.dir/color.cc.o ---
+[ 10%] Building CXX object lemon/CMakeFiles/lemon.dir/color.cc.o
+--- lemon/CMakeFiles/lemon.dir/base.cc.o ---
+[ 15%] Building CXX object lemon/CMakeFiles/lemon.dir/base.cc.o
+--- lemon/CMakeFiles/lemon.dir/color.cc.o ---
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/lemon && /usr/bin/c++    -I/wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 -I/wrkdirs/usr/ports/science/liblemon/work/.build -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/lemon.dir/color.cc.o -c /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/lemon/color.cc
+--- lemon/CMakeFiles/lemon.dir/lp_skeleton.cc.o ---
+[ 25%] Building CXX object lemon/CMakeFiles/lemon.dir/lp_skeleton.cc.o
+--- lemon/CMakeFiles/lemon.dir/lp_base.cc.o ---
+[ 25%] Building CXX object lemon/CMakeFiles/lemon.dir/lp_base.cc.o
+--- lemon/CMakeFiles/lemon.dir/base.cc.o ---
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/lemon && /usr/bin/c++    -I/wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 -I/wrkdirs/usr/ports/science/liblemon/work/.build -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/lemon.dir/base.cc.o -c /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/lemon/base.cc
+--- lemon/CMakeFiles/lemon.dir/bits/windows.cc.o ---
+[ 25%] Building CXX object lemon/CMakeFiles/lemon.dir/bits/windows.cc.o
+--- lemon/CMakeFiles/lemon.dir/random.cc.o ---
+[ 30%] Building CXX object lemon/CMakeFiles/lemon.dir/random.cc.o
+--- lemon/CMakeFiles/lemon.dir/lp_skeleton.cc.o ---
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/lemon && /usr/bin/c++    -I/wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 -I/wrkdirs/usr/ports/science/liblemon/work/.build -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/lemon.dir/lp_skeleton.cc.o -c /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/lemon/lp_skeleton.cc
+--- lemon/CMakeFiles/lemon.dir/lp_base.cc.o ---
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/lemon && /usr/bin/c++    -I/wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 -I/wrkdirs/usr/ports/science/liblemon/work/.build -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/lemon.dir/lp_base.cc.o -c /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/lemon/lp_base.cc
+--- lemon/CMakeFiles/lemon.dir/glpk.cc.o ---
+[ 35%] Building CXX object lemon/CMakeFiles/lemon.dir/glpk.cc.o
+--- lemon/CMakeFiles/lemon.dir/bits/windows.cc.o ---
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/lemon && /usr/bin/c++    -I/wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 -I/wrkdirs/usr/ports/science/liblemon/work/.build -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/lemon.dir/bits/windows.cc.o -c /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/lemon/bits/windows.cc
+--- lemon/CMakeFiles/lemon.dir/random.cc.o ---
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/lemon && /usr/bin/c++    -I/wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 -I/wrkdirs/usr/ports/science/liblemon/work/.build -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/lemon.dir/random.cc.o -c /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/lemon/random.cc
+--- lemon/CMakeFiles/lemon.dir/glpk.cc.o ---
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/lemon && /usr/bin/c++    -I/wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 -I/wrkdirs/usr/ports/science/liblemon/work/.build -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/lemon.dir/glpk.cc.o -c /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/lemon/glpk.cc
+--- lemon/libemon.a ---
+[ 40%] Linking CXX static library libemon.a
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/lemon && /usr/local/bin/cmake -P CMakeFiles/lemon.dir/cmake_clean_target.cmake
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/lemon && /usr/local/bin/cmake -E cmake_link_script CMakeFiles/lemon.dir/link.txt --verbose=1
+/usr/bin/ar qc libemon.a  CMakeFiles/lemon.dir/arg_parser.cc.o CMakeFiles/lemon.dir/base.cc.o CMakeFiles/lemon.dir/color.cc.o CMakeFiles/lemon.dir/lp_base.cc.o CMakeFiles/lemon.dir/lp_skeleton.cc.o CMakeFiles/lemon.dir/random.cc.o CMakeFiles/lemon.dir/bits/windows.cc.o CMakeFiles/lemon.dir/glpk.cc.o
+/usr/bin/ranlib libemon.a
+[ 40%] Built target lemon
+--- demo/CMakeFiles/graph_to_eps_demo.dir/all ---
+--- demo/CMakeFiles/arg_parser_demo.dir/all ---
+--- demo/CMakeFiles/lgf_demo.dir/all ---
+--- tools/CMakeFiles/dimacs-solver.dir/all ---
+--- tools/CMakeFiles/dimacs-to-lgf.dir/all ---
+--- tools/CMakeFiles/lgf-gen.dir/all ---
+--- demo/CMakeFiles/graph_to_eps_demo.dir/all ---
+/usr/bin/make -f demo/CMakeFiles/graph_to_eps_demo.dir/build.make demo/CMakeFiles/graph_to_eps_demo.dir/depend
+--- demo/CMakeFiles/arg_parser_demo.dir/all ---
+/usr/bin/make -f demo/CMakeFiles/arg_parser_demo.dir/build.make demo/CMakeFiles/arg_parser_demo.dir/depend
+--- demo/CMakeFiles/lgf_demo.dir/all ---
+/usr/bin/make -f demo/CMakeFiles/lgf_demo.dir/build.make demo/CMakeFiles/lgf_demo.dir/depend
+--- tools/CMakeFiles/dimacs-to-lgf.dir/all ---
+/usr/bin/make -f tools/CMakeFiles/dimacs-to-lgf.dir/build.make tools/CMakeFiles/dimacs-to-lgf.dir/depend
+--- tools/CMakeFiles/dimacs-solver.dir/all ---
+/usr/bin/make -f tools/CMakeFiles/dimacs-solver.dir/build.make tools/CMakeFiles/dimacs-solver.dir/depend
+--- demo/CMakeFiles/graph_to_eps_demo.dir/all ---
+--- demo/CMakeFiles/graph_to_eps_demo.dir/depend ---
+--- tools/CMakeFiles/lgf-gen.dir/all ---
+/usr/bin/make -f tools/CMakeFiles/lgf-gen.dir/build.make tools/CMakeFiles/lgf-gen.dir/depend
+--- demo/CMakeFiles/graph_to_eps_demo.dir/all ---
+cd /wrkdirs/usr/ports/science/liblemon/work/.build && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/demo /wrkdirs/usr/ports/science/liblemon/work/.build /wrkdirs/usr/ports/science/liblemon/work/.build/demo /wrkdirs/usr/ports/science/liblemon/work/.build/demo/CMakeFiles/graph_to_eps_demo.dir/DependInfo.cmake
+--- demo/CMakeFiles/lgf_demo.dir/all ---
+--- demo/CMakeFiles/lgf_demo.dir/depend ---
+--- tools/CMakeFiles/dimacs-to-lgf.dir/all ---
+--- tools/CMakeFiles/dimacs-to-lgf.dir/depend ---
+--- demo/CMakeFiles/arg_parser_demo.dir/all ---
+--- demo/CMakeFiles/arg_parser_demo.dir/depend ---
+--- demo/CMakeFiles/lgf_demo.dir/all ---
+cd /wrkdirs/usr/ports/science/liblemon/work/.build && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/demo /wrkdirs/usr/ports/science/liblemon/work/.build /wrkdirs/usr/ports/science/liblemon/work/.build/demo /wrkdirs/usr/ports/science/liblemon/work/.build/demo/CMakeFiles/lgf_demo.dir/DependInfo.cmake
+--- tools/CMakeFiles/dimacs-to-lgf.dir/all ---
+cd /wrkdirs/usr/ports/science/liblemon/work/.build && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/tools /wrkdirs/usr/ports/science/liblemon/work/.build /wrkdirs/usr/ports/science/liblemon/work/.build/tools /wrkdirs/usr/ports/science/liblemon/work/.build/tools/CMakeFiles/dimacs-to-lgf.dir/DependInfo.cmake
+--- tools/CMakeFiles/dimacs-solver.dir/all ---
+--- tools/CMakeFiles/dimacs-solver.dir/depend ---
+--- tools/CMakeFiles/lgf-gen.dir/all ---
+--- tools/CMakeFiles/lgf-gen.dir/depend ---
+--- demo/CMakeFiles/arg_parser_demo.dir/all ---
+cd /wrkdirs/usr/ports/science/liblemon/work/.build && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/demo /wrkdirs/usr/ports/science/liblemon/work/.build /wrkdirs/usr/ports/science/liblemon/work/.build/demo /wrkdirs/usr/ports/science/liblemon/work/.build/demo/CMakeFiles/arg_parser_demo.dir/DependInfo.cmake
+--- tools/CMakeFiles/lgf-gen.dir/all ---
+cd /wrkdirs/usr/ports/science/liblemon/work/.build && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/tools /wrkdirs/usr/ports/science/liblemon/work/.build /wrkdirs/usr/ports/science/liblemon/work/.build/tools /wrkdirs/usr/ports/science/liblemon/work/.build/tools/CMakeFiles/lgf-gen.dir/DependInfo.cmake
+--- tools/CMakeFiles/dimacs-solver.dir/all ---
+cd /wrkdirs/usr/ports/science/liblemon/work/.build && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/tools /wrkdirs/usr/ports/science/liblemon/work/.build /wrkdirs/usr/ports/science/liblemon/work/.build/tools /wrkdirs/usr/ports/science/liblemon/work/.build/tools/CMakeFiles/dimacs-solver.dir/DependInfo.cmake
+--- demo/CMakeFiles/arg_parser_demo.dir/all ---
+Scanning dependencies of target arg_parser_demo
+/usr/bin/make -f demo/CMakeFiles/arg_parser_demo.dir/build.make demo/CMakeFiles/arg_parser_demo.dir/build
+--- tools/CMakeFiles/dimacs-to-lgf.dir/all ---
+Scanning dependencies of target dimacs-to-lgf
+/usr/bin/make -f tools/CMakeFiles/dimacs-to-lgf.dir/build.make tools/CMakeFiles/dimacs-to-lgf.dir/build
+--- demo/CMakeFiles/arg_parser_demo.dir/all ---
+--- demo/CMakeFiles/arg_parser_demo.dir/arg_parser_demo.cc.o ---
+--- tools/CMakeFiles/dimacs-to-lgf.dir/all ---
+--- tools/CMakeFiles/dimacs-to-lgf.dir/dimacs-to-lgf.cc.o ---
+--- demo/CMakeFiles/graph_to_eps_demo.dir/all ---
+Scanning dependencies of target graph_to_eps_demo
+--- tools/CMakeFiles/dimacs-solver.dir/all ---
+Scanning dependencies of target dimacs-solver
+--- demo/CMakeFiles/graph_to_eps_demo.dir/all ---
+/usr/bin/make -f demo/CMakeFiles/graph_to_eps_demo.dir/build.make demo/CMakeFiles/graph_to_eps_demo.dir/build
+--- tools/CMakeFiles/dimacs-solver.dir/all ---
+/usr/bin/make -f tools/CMakeFiles/dimacs-solver.dir/build.make tools/CMakeFiles/dimacs-solver.dir/build
+--- demo/CMakeFiles/lgf_demo.dir/all ---
+Scanning dependencies of target lgf_demo
+--- tools/CMakeFiles/lgf-gen.dir/all ---
+Scanning dependencies of target lgf-gen
+/usr/bin/make -f tools/CMakeFiles/lgf-gen.dir/build.make tools/CMakeFiles/lgf-gen.dir/build
+--- demo/CMakeFiles/lgf_demo.dir/all ---
+/usr/bin/make -f demo/CMakeFiles/lgf_demo.dir/build.make demo/CMakeFiles/lgf_demo.dir/build
+--- demo/CMakeFiles/graph_to_eps_demo.dir/all ---
+--- demo/CMakeFiles/graph_to_eps_demo.dir/graph_to_eps_demo.cc.o ---
+--- demo/CMakeFiles/arg_parser_demo.dir/all ---
+[ 45%] Building CXX object demo/CMakeFiles/arg_parser_demo.dir/arg_parser_demo.cc.o
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/demo && /usr/bin/c++    -I/wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 -I/wrkdirs/usr/ports/science/liblemon/work/.build -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/arg_parser_demo.dir/arg_parser_demo.cc.o -c /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/demo/arg_parser_demo.cc
+--- tools/CMakeFiles/dimacs-to-lgf.dir/all ---
+[ 50%] Building CXX object tools/CMakeFiles/dimacs-to-lgf.dir/dimacs-to-lgf.cc.o
+--- tools/CMakeFiles/dimacs-solver.dir/all ---
+--- tools/CMakeFiles/dimacs-solver.dir/dimacs-solver.cc.o ---
+--- tools/CMakeFiles/dimacs-to-lgf.dir/all ---
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/tools && /usr/bin/c++    -I/wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 -I/wrkdirs/usr/ports/science/liblemon/work/.build -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/dimacs-to-lgf.dir/dimacs-to-lgf.cc.o -c /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/tools/dimacs-to-lgf.cc
+--- demo/CMakeFiles/lgf_demo.dir/all ---
+--- demo/CMakeFiles/lgf_demo.dir/lgf_demo.cc.o ---
+--- demo/CMakeFiles/graph_to_eps_demo.dir/all ---
+[ 55%] Building CXX object demo/CMakeFiles/graph_to_eps_demo.dir/graph_to_eps_demo.cc.o
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/demo && /usr/bin/c++    -I/wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 -I/wrkdirs/usr/ports/science/liblemon/work/.build -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/graph_to_eps_demo.dir/graph_to_eps_demo.cc.o -c /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/demo/graph_to_eps_demo.cc
+--- demo/CMakeFiles/lgf_demo.dir/all ---
+[ 60%] Building CXX object demo/CMakeFiles/lgf_demo.dir/lgf_demo.cc.o
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/demo && /usr/bin/c++    -I/wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 -I/wrkdirs/usr/ports/science/liblemon/work/.build -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/lgf_demo.dir/lgf_demo.cc.o -c /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/demo/lgf_demo.cc
+--- tools/CMakeFiles/dimacs-solver.dir/all ---
+[ 65%] Building CXX object tools/CMakeFiles/dimacs-solver.dir/dimacs-solver.cc.o
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/tools && /usr/bin/c++    -I/wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 -I/wrkdirs/usr/ports/science/liblemon/work/.build -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/dimacs-solver.dir/dimacs-solver.cc.o -c /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/tools/dimacs-solver.cc
+--- tools/CMakeFiles/lgf-gen.dir/all ---
+--- tools/CMakeFiles/lgf-gen.dir/lgf-gen.cc.o ---
+[ 70%] Building CXX object tools/CMakeFiles/lgf-gen.dir/lgf-gen.cc.o
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/tools && /usr/bin/c++    -I/wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 -I/wrkdirs/usr/ports/science/liblemon/work/.build -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/lgf-gen.dir/lgf-gen.cc.o -c /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/tools/lgf-gen.cc
+--- demo/CMakeFiles/arg_parser_demo.dir/all ---
+--- demo/arg_parser_demo ---
+[ 75%] Linking CXX executable arg_parser_demo
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/demo && /usr/local/bin/cmake -E cmake_link_script CMakeFiles/arg_parser_demo.dir/link.txt --verbose=1
+/usr/bin/c++   -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing   -fstack-protector CMakeFiles/arg_parser_demo.dir/arg_parser_demo.cc.o  -o arg_parser_demo  -L/wrkdirs/usr/ports/science/liblemon/work/.build/lemon  ../lemon/libemon.a /usr/local/lib/libglpk.so -Wl,-rpath,/wrkdirs/usr/ports/science/liblemon/work/.build/lemon:/usr/local/lib 
+[ 75%] Built target arg_parser_demo
+--- tools/CMakeFiles/dimacs-to-lgf.dir/all ---
+--- tools/dimacs-to-lgf ---
+[ 80%] Linking CXX executable dimacs-to-lgf
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/tools && /usr/local/bin/cmake -E cmake_link_script CMakeFiles/dimacs-to-lgf.dir/link.txt --verbose=1
+/usr/bin/c++   -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing   -fstack-protector CMakeFiles/dimacs-to-lgf.dir/dimacs-to-lgf.cc.o  -o dimacs-to-lgf  -L/wrkdirs/usr/ports/science/liblemon/work/.build/lemon  ../lemon/libemon.a /usr/local/lib/libglpk.so -Wl,-rpath,/wrkdirs/usr/ports/science/liblemon/work/.build/lemon:/usr/local/lib: 
+[ 80%] Built target dimacs-to-lgf
+--- demo/CMakeFiles/lgf_demo.dir/all ---
+--- demo/lgf_demo ---
+[ 85%] Linking CXX executable lgf_demo
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/demo && /usr/local/bin/cmake -E cmake_link_script CMakeFiles/lgf_demo.dir/link.txt --verbose=1
+/usr/bin/c++   -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing   -fstack-protector CMakeFiles/lgf_demo.dir/lgf_demo.cc.o  -o lgf_demo  -L/wrkdirs/usr/ports/science/liblemon/work/.build/lemon  ../lemon/libemon.a /usr/local/lib/libglpk.so -Wl,-rpath,/wrkdirs/usr/ports/science/liblemon/work/.build/lemon:/usr/local/lib 
+[ 85%] Built target lgf_demo
+--- demo/CMakeFiles/graph_to_eps_demo.dir/all ---
+--- demo/graph_to_eps_demo ---
+[ 90%] Linking CXX executable graph_to_eps_demo
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/demo && /usr/local/bin/cmake -E cmake_link_script CMakeFiles/graph_to_eps_demo.dir/link.txt --verbose=1
+/usr/bin/c++   -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing   -fstack-protector CMakeFiles/graph_to_eps_demo.dir/graph_to_eps_demo.cc.o  -o graph_to_eps_demo  -L/wrkdirs/usr/ports/science/liblemon/work/.build/lemon  ../lemon/libemon.a /usr/local/lib/libglpk.so -Wl,-rpath,/wrkdirs/usr/ports/science/liblemon/work/.build/lemon:/usr/local/lib 
+[ 90%] Built target graph_to_eps_demo
+--- tools/CMakeFiles/lgf-gen.dir/all ---
+--- tools/lgf-gen ---
+[ 95%] Linking CXX executable lgf-gen
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/tools && /usr/local/bin/cmake -E cmake_link_script CMakeFiles/lgf-gen.dir/link.txt --verbose=1
+/usr/bin/c++   -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing   -fstack-protector CMakeFiles/lgf-gen.dir/lgf-gen.cc.o  -o lgf-gen  -L/wrkdirs/usr/ports/science/liblemon/work/.build/lemon  ../lemon/libemon.a /usr/local/lib/libglpk.so -Wl,-rpath,/wrkdirs/usr/ports/science/liblemon/work/.build/lemon:/usr/local/lib: 
+[ 95%] Built target lgf-gen
+--- tools/CMakeFiles/dimacs-solver.dir/all ---
+--- tools/dimacs-solver ---
+[100%] Linking CXX executable dimacs-solver
+cd /wrkdirs/usr/ports/science/liblemon/work/.build/tools && /usr/local/bin/cmake -E cmake_link_script CMakeFiles/dimacs-solver.dir/link.txt --verbose=1
+/usr/bin/c++   -O2 -pipe -fstack-protector -fno-strict-aliasing -Wall -O2 -pipe -fstack-protector -fno-strict-aliasing   -fstack-protector CMakeFiles/dimacs-solver.dir/dimacs-solver.cc.o  -o dimacs-solver  -L/wrkdirs/usr/ports/science/liblemon/work/.build/lemon  ../lemon/libemon.a /usr/local/lib/libglpk.so -Wl,-rpath,/wrkdirs/usr/ports/science/liblemon/work/.build/lemon:/usr/local/lib: 
+[100%] Built target dimacs-solver
+/usr/local/bin/cmake -E cmake_progress_start /wrkdirs/usr/ports/science/liblemon/work/.build/CMakeFiles 0
+===========================================================================
+====>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===========================================================================
+====>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for liblemon-1.3.1
+===>   liblemon-1.3.1 depends on shared library: libglpk.so - found (/usr/local/lib/libglpk.so)
+===>   Generating temporary packing list
+/usr/local/bin/cmake -H/wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 -B/wrkdirs/usr/ports/science/liblemon/work/.build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/local/bin/cmake -E cmake_progress_start /wrkdirs/usr/ports/science/liblemon/work/.build/CMakeFiles /wrkdirs/usr/ports/science/liblemon/work/.build/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+/usr/bin/make -f lemon/CMakeFiles/lemon.dir/build.make lemon/CMakeFiles/lemon.dir/depend
+cd /wrkdirs/usr/ports/science/liblemon/work/.build && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/lemon /wrkdirs/usr/ports/science/liblemon/work/.build /wrkdirs/usr/ports/science/liblemon/work/.build/lemon /wrkdirs/usr/ports/science/liblemon/work/.build/lemon/CMakeFiles/lemon.dir/DependInfo.cmake
+/usr/bin/make -f lemon/CMakeFiles/lemon.dir/build.make lemon/CMakeFiles/lemon.dir/build
+[ 40%] Built target lemon
+/usr/bin/make -f demo/CMakeFiles/graph_to_eps_demo.dir/build.make demo/CMakeFiles/graph_to_eps_demo.dir/depend
+cd /wrkdirs/usr/ports/science/liblemon/work/.build && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/demo /wrkdirs/usr/ports/science/liblemon/work/.build /wrkdirs/usr/ports/science/liblemon/work/.build/demo /wrkdirs/usr/ports/science/liblemon/work/.build/demo/CMakeFiles/graph_to_eps_demo.dir/DependInfo.cmake
+/usr/bin/make -f demo/CMakeFiles/graph_to_eps_demo.dir/build.make demo/CMakeFiles/graph_to_eps_demo.dir/build
+[ 50%] Built target graph_to_eps_demo
+/usr/bin/make -f demo/CMakeFiles/arg_parser_demo.dir/build.make demo/CMakeFiles/arg_parser_demo.dir/depend
+cd /wrkdirs/usr/ports/science/liblemon/work/.build && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/demo /wrkdirs/usr/ports/science/liblemon/work/.build /wrkdirs/usr/ports/science/liblemon/work/.build/demo /wrkdirs/usr/ports/science/liblemon/work/.build/demo/CMakeFiles/arg_parser_demo.dir/DependInfo.cmake
+/usr/bin/make -f demo/CMakeFiles/arg_parser_demo.dir/build.make demo/CMakeFiles/arg_parser_demo.dir/build
+[ 60%] Built target arg_parser_demo
+/usr/bin/make -f demo/CMakeFiles/lgf_demo.dir/build.make demo/CMakeFiles/lgf_demo.dir/depend
+cd /wrkdirs/usr/ports/science/liblemon/work/.build && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/demo /wrkdirs/usr/ports/science/liblemon/work/.build /wrkdirs/usr/ports/science/liblemon/work/.build/demo /wrkdirs/usr/ports/science/liblemon/work/.build/demo/CMakeFiles/lgf_demo.dir/DependInfo.cmake
+/usr/bin/make -f demo/CMakeFiles/lgf_demo.dir/build.make demo/CMakeFiles/lgf_demo.dir/build
+[ 70%] Built target lgf_demo
+/usr/bin/make -f tools/CMakeFiles/dimacs-solver.dir/build.make tools/CMakeFiles/dimacs-solver.dir/depend
+cd /wrkdirs/usr/ports/science/liblemon/work/.build && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/tools /wrkdirs/usr/ports/science/liblemon/work/.build /wrkdirs/usr/ports/science/liblemon/work/.build/tools /wrkdirs/usr/ports/science/liblemon/work/.build/tools/CMakeFiles/dimacs-solver.dir/DependInfo.cmake
+/usr/bin/make -f tools/CMakeFiles/dimacs-solver.dir/build.make tools/CMakeFiles/dimacs-solver.dir/build
+[ 80%] Built target dimacs-solver
+/usr/bin/make -f tools/CMakeFiles/dimacs-to-lgf.dir/build.make tools/CMakeFiles/dimacs-to-lgf.dir/depend
+cd /wrkdirs/usr/ports/science/liblemon/work/.build && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/tools /wrkdirs/usr/ports/science/liblemon/work/.build /wrkdirs/usr/ports/science/liblemon/work/.build/tools /wrkdirs/usr/ports/science/liblemon/work/.build/tools/CMakeFiles/dimacs-to-lgf.dir/DependInfo.cmake
+/usr/bin/make -f tools/CMakeFiles/dimacs-to-lgf.dir/build.make tools/CMakeFiles/dimacs-to-lgf.dir/build
+[ 90%] Built target dimacs-to-lgf
+/usr/bin/make -f tools/CMakeFiles/lgf-gen.dir/build.make tools/CMakeFiles/lgf-gen.dir/depend
+cd /wrkdirs/usr/ports/science/liblemon/work/.build && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1 /wrkdirs/usr/ports/science/liblemon/work/lemon-1.3.1/tools /wrkdirs/usr/ports/science/liblemon/work/.build /wrkdirs/usr/ports/science/liblemon/work/.build/tools /wrkdirs/usr/ports/science/liblemon/work/.build/tools/CMakeFiles/lgf-gen.dir/DependInfo.cmake
+/usr/bin/make -f tools/CMakeFiles/lgf-gen.dir/build.make tools/CMakeFiles/lgf-gen.dir/build
+[100%] Built target lgf-gen
+/usr/local/bin/cmake -E cmake_progress_start /wrkdirs/usr/ports/science/liblemon/work/.build/CMakeFiles 0
+/usr/bin/make -f CMakeFiles/Makefile2 preinstall
+Installing the project stripped...
+/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+-- Install configuration: "Release"
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/share/lemon/cmake/LEMONConfig.cmake
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/lib/libemon.a
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/.
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./clp.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./glpk.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./adaptors.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./karp_mmc.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./preflow.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bin_heap.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./elevator.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./lgf_reader.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bellman_ford.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./concept_check.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./radix_heap.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./opt2_tsp.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./capacity_scaling.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./fractional_matching.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./matching.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./cost_scaling.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./max_cardinality_search.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./lp.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./concepts
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./concepts/graph_components.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./concepts/bpgraph.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./concepts/digraph.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./concepts/maps.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./concepts/graph.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./concepts/path.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./concepts/heap.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./radix_sort.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./full_graph.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./soplex.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./cplex.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./circulation.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./dheap.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./nagamochi_ibaraki.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./pairing_heap.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./dim2.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bfs.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./quad_heap.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./hartmann_orlin_mmc.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./dijkstra.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./fib_heap.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./min_cost_arborescence.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./lp_skeleton.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./insertion_tsp.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./hao_orlin.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./static_graph.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./grosso_locatelli_pullan_mc.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./unionfind.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./nearest_neighbor_tsp.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./grid_graph.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./lp_base.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./suurballe.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./color.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./graph_to_eps.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./math.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./counter.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./edge_set.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./lgf_writer.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./list_graph.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./hypercube_graph.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./dfs.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./dimacs.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./assert.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./core.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./christofides_tsp.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./gomory_hu.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./euler.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./maps.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./random.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./connectivity.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./path.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./greedy_tsp.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bucket_heap.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./howard_mmc.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./cycle_canceling.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./error.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./network_simplex.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./time_measure.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./smart_graph.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bits
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bits/solver_bits.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bits/variant.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bits/vector_map.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bits/edge_set_extender.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bits/default_map.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bits/bezier.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bits/map_extender.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bits/lock.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bits/alteration_notifier.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bits/graph_adaptor_extender.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bits/traits.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bits/enable_if.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bits/array_map.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bits/windows.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bits/path_dump.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./bits/graph_extender.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./tolerance.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./arg_parser.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./edmonds_karp.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./nauty_reader.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./cbc.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./binomial_heap.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./planarity.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/./kruskal.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/bits
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/bits/solver_bits.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/bits/variant.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/bits/vector_map.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/bits/edge_set_extender.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/bits/default_map.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/bits/bezier.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/bits/map_extender.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/bits/lock.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/bits/alteration_notifier.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/bits/graph_adaptor_extender.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/bits/traits.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/bits/enable_if.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/bits/array_map.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/bits/windows.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/bits/path_dump.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/bits/graph_extender.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/concepts
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/concepts/graph_components.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/concepts/bpgraph.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/concepts/digraph.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/concepts/maps.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/concepts/graph.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/concepts/path.h
+-- Up-to-date: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/concepts/heap.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/include/lemon/config.h
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/lib/pkgconfig/lemon.pc
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/bin/lgf-gen
+-- Set runtime path of "/wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/bin/lgf-gen" to "/usr/local/lib"
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/bin/dimacs-to-lgf
+-- Set runtime path of "/wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/bin/dimacs-to-lgf" to "/usr/local/lib"
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/bin/dimacs-solver
+-- Set runtime path of "/wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/bin/dimacs-solver" to "/usr/local/lib"
+-- Installing: /wrkdirs/usr/ports/science/liblemon/work/stage/usr/local/bin/lemon-0.x-to-1.x.sh
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+====>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for liblemon-1.3.1
+===========================================================================
+=======================<phase: install-mtree  >============================
+===========================================================================
+====>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for liblemon-1.3.1
+===>   liblemon-1.3.1 depends on shared library: libglpk.so - found (/usr/local/lib/libglpk.so)
+===>  Checking if liblemon already installed
+===>   Registering installation for liblemon-1.3.1
+[10-1-amd64-default] Installing liblemon-1.3.1...
+===========================================================================
+====>> Checking shared library dependencies
+ 0x0000000000000001 (NEEDED)             Shared library: [libc++.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.7]
+ 0x0000000000000001 (NEEDED)             Shared library: [libcxxrt.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libglpk.so.36]
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.5]
+=======================<phase: deinstall      >============================
+===>  Deinstalling for liblemon
+===>   Deinstalling liblemon-1.3.1
+Updating database digests format: .......... done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	liblemon-1.3.1
+
+Number of packages to be removed: 1
+
+The operation will free 4 MiB.
+[10-1-amd64-default] [1/1] Deinstalling liblemon-1.3.1...
+[10-1-amd64-default] [1/1] Deleting files for liblemon-1.3.1: .......... done
+===========================================================================
+====>> Checking for extra files and directories
+[00:01:58] ====>> Installing from package
+[10-1-amd64-default] Installing liblemon-1.3.1...
+[10-1-amd64-default] Extracting liblemon-1.3.1: .......... done
+[00:01:58] ====>> Cleaning up
+===>  Cleaning for liblemon-1.3.1
+[00:01:59] ====>> Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	liblemon-1.3.1
+
+Number of packages to be removed: 1
+
+The operation will free 4 MiB.
+[10-1-amd64-default] [1/1] Deinstalling liblemon-1.3.1...
+[10-1-amd64-default] [1/1] Deleting files for liblemon-1.3.1: .......... done
+build of science/liblemon ended at Thu Sep 15 09:43:57 CDT 2016
+build time: 00:00:29
