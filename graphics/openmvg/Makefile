@@ -15,13 +15,14 @@ LICENSE=	MPL
 #		Conflicts with jpeg-turbo, installed as a dep
 #		libjpeg.so:graphics/jpeg
 BUILD_DEPENDS=	eigen>0:math/eigen3 \
-		ceres-solver>0:/usr/wip/math/ceres-solver
+		ceres-solver>0:/usr/wip/math/ceres-solver \
+		liblemon>0:/usr/wip/science/lemon
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libXxf86vm.so:x11/libXxf86vm \
 		libXi.so:x11/libXi \
 		libXrandr.so:x11/libXrandr \
-		libClp.so:math/clp
+		libClp.so:math/clp \
 
 # Alternative to clp
 #		libCoinMP.so:math/coinmp
@@ -42,7 +43,8 @@ CMAKE_SOURCE_PATH=	${WRKSRC}/src
 CMAKE_ARGS+=	-DEIGEN_INCLUDE_DIR_HINTS:STRING=${LOCABASE}/include/eigen3 \
 		-DCLP_INCLUDE_DIR_HINTS:STRING=${LOCALBASE}/include/coin \
 		-DCOINUTILS_INCLUDE_DIR_HINTS:STRING=${LOCALBASE}/include/coin/ \
-		-DOSI_INCLUDE_DIR_HINTS:STRING=${LOCALBASE}/include/coin
+		-DOSI_INCLUDE_DIR_HINTS:STRING=${LOCALBASE}/include/coin \
+		-DLEMON_INCLUDE_DIR_HINTS:STRING=${LOCALBASE}/include/lemon
 
 # FIXME: Just for testing.  Remove if possible.
 MAKE_JOBS_UNSAFE=	yes
