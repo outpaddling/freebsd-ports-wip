@@ -56,14 +56,6 @@ lib/libflann_cpp_s.a
 lib/libflann_s.a
 lib/pkgconfig/flann.pc
 %%PORTDOCS%%%%DOCSDIR%%/manual.pdf
-%%DATADIR%%/octave/flann_build_index.m
-%%DATADIR%%/octave/flann_free_index.m
-%%DATADIR%%/octave/flann_load_index.m
-%%DATADIR%%/octave/flann_save_index.m
-%%DATADIR%%/octave/flann_search.m
-%%DATADIR%%/octave/flann_set_distance_type.m
-%%DATADIR%%/octave/nearest_neighbors.mex
-%%DATADIR%%/octave/test_flann.m
 %%DATADIR%%/python/pyflann/__init__.py
 %%DATADIR%%/python/pyflann/exceptions.py
 %%DATADIR%%/python/pyflann/flann_ctypes.py
