@@ -9,7 +9,8 @@ CATEGORIES=	graphics
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Template library for manipulation of triangle meshes
 
-#LICENSE=	unspecified
+# Unspecified.  Assuming public domain.
+LICENSE=	PD
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cnr-isti-vclab
