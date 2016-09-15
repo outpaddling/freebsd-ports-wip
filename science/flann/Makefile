@@ -22,7 +22,9 @@ CXXFLAGS+=	-I${LOCALBASE}/include
 USES=		cmake:outsource python zip
 
 # FIXME: Matlab bindings can be on as an option with Octave as a dep
-CMAKE_ARGS+=	-DBUILD_MATLAB_BINDINGS:BOOL=off
+# FIXME: Python installs files outside stagedir
+CMAKE_ARGS+=	-DBUILD_MATLAB_BINDINGS:BOOL=off \
+		-DBUILD_PYTHON_BINDINGS:BOOL=off
 CMAKE_VERBOSE=	yes
 
 # post-install:

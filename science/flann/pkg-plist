@@ -56,8 +56,3 @@ lib/libflann_cpp_s.a
 lib/libflann_s.a
 lib/pkgconfig/flann.pc
 %%PORTDOCS%%%%DOCSDIR%%/manual.pdf
-%%DATADIR%%/python/pyflann/__init__.py
-%%DATADIR%%/python/pyflann/exceptions.py
-%%DATADIR%%/python/pyflann/flann_ctypes.py
-%%DATADIR%%/python/pyflann/index.py
-%%DATADIR%%/python/setup.py
