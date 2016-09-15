@@ -13,10 +13,11 @@ COMMENT=	Open Multiple View Geometry library
 LICENSE=	MPL
 
 #		libCoinMP.so:math/coinmp
+#		Conflicts with jpeg-turbo, installed as a dep
+#		libjpeg.so:graphics/jpeg
 BUILD_DEPENDS=	eigen>0:math/eigen3 \
 		ceres-solver>0:/usr/wip/math/ceres-solver
 LIB_DEPENDS=	libpng.so:graphics/png \
-		libjpeg.so:graphics/jpeg \
 		libtiff.so:graphics/tiff \
 		libXxf86vm.so:x11/libXxf86vm \
 		libXi.so:x11/libXi \
@@ -27,6 +28,9 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 USES=		cmake:outsource tar:xz
 # FIXME: Hack in place of compiler:c++11-lang
 USE_GCC=	yes
+# http://stackoverflow.com/questions/26832199/getting-gcc-in-c11-mode-to-work-on-freebsd
+CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH \
+		-D_GLIBCXX_USE_C99_MATH_TR1
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 CMAKE_ARGS+=	-DEIGEN_INCLUDE_DIR_HINTS:STRING=${LOCABASE}/include/eigen3 \
@@ -34,6 +38,6 @@ CMAKE_ARGS+=	-DEIGEN_INCLUDE_DIR_HINTS:STRING=${LOCABASE}/include/eigen3 \
 		-DCOINUTILS_INCLUDE_DIR_HINTS=${LOCALBASE}/include/coin/
 
 # FIXME: Just for testing.  Remove if possible.
-MAKE_JOBS_UNSAFE=	yes
+# MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
