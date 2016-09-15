@@ -16,7 +16,7 @@ LICENSE=	MPL
 #		libjpeg.so:graphics/jpeg
 BUILD_DEPENDS=	eigen>0:math/eigen3 \
 		ceres-solver>0:/usr/wip/math/ceres-solver \
-		liblemon>0:/usr/wip/science/lemon
+		liblemon>0:/usr/wip/science/liblemon
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libXxf86vm.so:x11/libXxf86vm \
@@ -28,11 +28,6 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 #		libCoinMP.so:math/coinmp
 
 USES=		cmake:outsource compiler:c++11-lang tar:xz
-# USES=		cmake:outsource tar:xz
-# FIXME: Hack in place of compiler:c++11-lang
-# clang seg faults
-# USE_GCC=	yes
-# CXX=		clang++37
 
 # http://stackoverflow.com/questions/26832199/getting-gcc-in-c11-mode-to-work-on-freebsd
 # Use with gcc
@@ -47,6 +42,14 @@ CMAKE_ARGS+=	-DEIGEN_INCLUDE_DIR_HINTS:STRING=${LOCABASE}/include/eigen3 \
 		-DLEMON_INCLUDE_DIR_HINTS:STRING=${LOCALBASE}/include/lemon
 
 # FIXME: Just for testing.  Remove if possible.
-MAKE_JOBS_UNSAFE=	yes
+# MAKE_JOBS_UNSAFE=	yes
+
+# Compiler flag optimizer crashes clang and can't be used for package
+# building anyway.
+post-patch:
+	${REINPLACE_CMD} \
+		-e '/OptimizeForArchitecture/d' \
+		-e 's|-O3|-O2|g' \
+		${WRKSRC}/src/CMakeLists.txt
 
 .include <bsd.port.mk>
