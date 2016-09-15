@@ -19,7 +19,7 @@ LIB_DEPENDS+=	libsz.so:science/szip
 # FIXME: Should not be needed and isn't on outpaddling.cs
 CXXFLAGS+=	-I${LOCALBASE}/include
 
-USES=		cmake:outsource zip
+USES=		cmake:outsource python zip
 
 # FIXME: Matlab bindings can be on as an option with Octave as a dep
 CMAKE_ARGS+=	-DBUILD_MATLAB_BINDINGS:BOOL=off
