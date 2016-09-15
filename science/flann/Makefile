@@ -18,8 +18,6 @@ LIB_DEPENDS+=	libsz.so:science/szip
 
 USES=		cmake:outsource zip
 
-LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/octave/4.0.0 -loctave
-
 # FIXME: Make octave an option
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/octave/nearest_neighbors.mex
