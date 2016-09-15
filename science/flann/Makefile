@@ -16,7 +16,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS+=	libhdf5.so:science/hdf5
 LIB_DEPENDS+=	libsz.so:science/szip
 
+# FIXME: Should not be needed and isn't on outpaddling.cs
+CXXFLAGS+=	-I${LOCALBASE}/include
+
 USES=		cmake:outsource zip
+
+CMAKE_VERBOSE=	yes
 
 # FIXME: Make octave an option
 post-install:

@@ -14,7 +14,8 @@ LICENSE=	MPL
 
 BUILD_DEPENDS=	eigen>0:math/eigen3 \
 		ceres-solver>0:/usr/wip/math/ceres-solver \
-		liblemon>0:/usr/wip/science/liblemon
+		liblemon>0:/usr/wip/science/liblemon \
+		flann>0:/usr/wip/science/flann
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libXxf86vm.so:x11/libXxf86vm \
@@ -36,7 +37,8 @@ CMAKE_ARGS+=	-DEIGEN_INCLUDE_DIR_HINTS:STRING=${LOCABASE}/include/eigen3 \
 		-DCLP_INCLUDE_DIR_HINTS:STRING=${LOCALBASE}/include/coin \
 		-DCOINUTILS_INCLUDE_DIR_HINTS:STRING=${LOCALBASE}/include/coin/ \
 		-DOSI_INCLUDE_DIR_HINTS:STRING=${LOCALBASE}/include/coin \
-		-DLEMON_INCLUDE_DIR_HINTS:STRING=${LOCALBASE}/include/lemon
+		-DLEMON_INCLUDE_DIR_HINTS:STRING=${LOCALBASE}/include/lemon \
+		-DFLANN_INCLUDE_DIR_HINTS:STRING=${LOCALBASE}/include/flann
 
 # Compiler flag optimizer crashes clang and can't be used for package
 # building anyway.
