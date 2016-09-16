@@ -25,9 +25,15 @@ LIB_DEPENDS+=	libopencv_objdetect.so:graphics/opencv \
 		libCGAL.so:math/cgal \
 		libboost_date_time.so:devel/boost-libs
 
+# FIXME: vcglib installs headers to datadir
+CXXFLAGS+=	-I${LOCALBASE}/share/vcglib
+
 WRKSRC=		${WRKDIR}/openMVS-${PORTVERSION}
 
 CMAKE_VERBOSE=	yes
-MAKE_JOBS_UNSAFE=	yes
+# MAKE_JOBS_UNSAFE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's|#ifdef __APPLE__|#if defined(__APPLE__) \|\| defined(__FreeBSD__)|g' ${WRKSRC}/libs/Common/CriticalSection.h
 
 .include <bsd.port.mk>
