@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	bacon4000@gmail.com
-COMMENT=	Tools for automating system management
+COMMENT=	Mostly portable tools for automating system management
 
 LICENSE=	BSD2CLAUSE
 
