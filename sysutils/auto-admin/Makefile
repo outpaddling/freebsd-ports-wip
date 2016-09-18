@@ -13,8 +13,6 @@ LICENSE=	BSD2CLAUSE
 
 USES=		tar:xz
 
-RUN_DEPENDS=	gsed:textproc/gsed
-
 NO_BUILD=	yes
 NO_ARCH=	yes
 
