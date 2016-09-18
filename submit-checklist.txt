@@ -138,7 +138,7 @@ Follow porter's handbook to submit new port or update.
     Justification for PR
     
     portlint: OK (summary output)
-    testport: OK (poudriere: <versions>, <archs>, <options> tested)
+    testport: OK (poudriere: {9.3, 10.1}, {i386, amd64}, options tested)
     unittest: OK (test suite summary output)
 
 Update /usr/wip/upstream
