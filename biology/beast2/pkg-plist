@@ -1,6 +1,7 @@
 bin/addonmanager
 bin/appstore
 bin/beast
+bin/beast-init
 bin/beauti
 bin/densitree
 bin/loganalyser

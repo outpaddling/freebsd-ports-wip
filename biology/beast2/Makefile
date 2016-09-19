@@ -18,6 +18,7 @@ USES=		tar:tgz
 
 USE_JAVA=	yes
 
+# For source builds
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	CompEvol
 
@@ -29,11 +30,12 @@ NO_BUILD=	yes
 #VERSION HISTORY.txt  images/              
 
 post-patch:
-	${REINPLACE_CMD} -e 's|$$BEAST/lib|${JAVAJARDIR}|g' \
+	${REINPLACE_CMD} -i '' -e 's|$$BEAST/lib|${JAVAJARDIR}|g' \
 		${WRKSRC}/bin/*
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/* ${FILESDIR}/beast-init \
+		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/lib/* ${STAGEDIR}${JAVAJARDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC} && \

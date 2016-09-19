@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+for rc_dir in ~/.beast/2.4/BEAST ~/templates; do
+    rm -rf $rc_dir/templates
+    mkdir -p $rc_dir
+    ln -s /usr/local/share/beast2/templates $rc_dir
+done
+
