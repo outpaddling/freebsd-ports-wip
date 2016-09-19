@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		tar:tgz
 
+USE_JAVA=	yes
+
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	CompEvol
 
@@ -28,7 +30,7 @@ NO_BUILD=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/lib/* ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/* ${STAGEDIR}${JAVAJARDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC} && \
 		${COPYTREE_SHARE} "images templates" ${STAGEDIR}${DATADIR}

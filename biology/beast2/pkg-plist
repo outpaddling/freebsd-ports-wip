@@ -6,10 +6,6 @@ bin/densitree
 bin/loganalyser
 bin/logcombiner
 bin/treeannotator
-lib/DensiTree.jar
-lib/beast.jar
-lib/beast.src.jar
-lib/launcher.jar
 %%DATADIR%%/images/DensiTree.png
 %%DATADIR%%/images/beast.png
 %%DATADIR%%/images/beauti.png
@@ -85,3 +81,7 @@ lib/launcher.jar
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testYuleCalibrated.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testYuleOneSite.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testYuleUncalibrated.xml
+%%JAVAJARDIR%%/DensiTree.jar
+%%JAVAJARDIR%%/beast.jar
+%%JAVAJARDIR%%/beast.src.jar
+%%JAVAJARDIR%%/launcher.jar
