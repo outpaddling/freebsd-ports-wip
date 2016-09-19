@@ -24,6 +24,7 @@ USE_JAVA=	yes
 
 WRKSRC=		${WRKDIR}/beast
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 #LICENSE.txt          bin/                 lib/
 #README.txt           examples/            templates/
