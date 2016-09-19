@@ -28,6 +28,10 @@ NO_BUILD=	yes
 #README.txt           examples/            templates/
 #VERSION HISTORY.txt  images/              
 
+post-patch:
+	${REINPLACE_CMD} -e 's|$$BEAST/lib|${JAVAJARDIR}|g' \
+		${WRKSRC}/bin/*
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/lib/* ${STAGEDIR}${JAVAJARDIR}
