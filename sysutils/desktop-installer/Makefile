@@ -1,5 +1,5 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
-# $FreeBSD: head/sysutils/desktop-installer/Makefile 412349 2016-04-01 14:25:16Z mat $
+# $FreeBSD: head/sysutils/desktop-installer/Makefile 414558 2016-05-03 21:02:33Z arved $
 
 PORTNAME=	desktop-installer
 PORTVERSION=	0.5.2
@@ -11,7 +11,7 @@ COMMENT=	Quickly configure a FreeBSD desktop system
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	auto-admin>=0.3.8:/usr/wip/sysutils/auto-admin
+RUN_DEPENDS=	auto-admin>=0.3.8:sysutils/auto-admin
 
 USES=		tar:xz
 
@@ -23,7 +23,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/Doc/${PORTNAME}.man \
 		${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	${CP} -r ${WRKSRC}/Data/* ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/Data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${DATADIR}/Scripts
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${STAGEDIR}${DATADIR}/Scripts
 
