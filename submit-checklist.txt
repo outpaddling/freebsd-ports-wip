@@ -82,6 +82,8 @@ Makefile:
 
     CMAKE_FLAGS format VAR:BOOL=ON, not VAR=1
     
+    Use COPYTREE_* instead of ${CP} -r
+    
 Carefully check REINPLACE_CMDS and patches
     Patching should be done at the earliest possible stage, e.g. don't
     patch in post-stage if the same effect can be achieved in post-patch

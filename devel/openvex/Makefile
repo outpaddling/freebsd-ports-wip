@@ -2,7 +2,7 @@
 # $FreeBSD: head/devel/openvex/Makefile 413746 2016-04-21 16:43:14Z swills $
 
 PORTNAME=	openvex
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	devel
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
