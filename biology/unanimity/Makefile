@@ -18,7 +18,8 @@ LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so:devel/boost-libs
 
 USES=		cmake python
-# USE_GCC=	yes
+# Same boost errors with GCC and clang
+# USE_GCC=	4.9+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
