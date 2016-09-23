@@ -2,11 +2,10 @@
 # $FreeBSD: head/devel/boost-libs/Makefile 418153 2016-07-06 22:10:14Z mat $
 
 PORTNAME=	boost-libs
-PORTREVISION=	12
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 
-BUILD_DEPENDS+=	bjam:devel/boost-jam
+BUILD_DEPENDS+=	bjam:/usr/wip/devel/boost-jam
 
 OPTIONS_DEFINE=		VERBOSE_BUILD DEBUG OPTIMIZED_CFLAGS
 OPTIONS_MULTI=		LOCALE
