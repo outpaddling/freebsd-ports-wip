@@ -19,15 +19,16 @@ MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
 		PYTHON_LIB_PATH="${PYTHON_LIBDIR}"
 
 LIB_DEPENDS+=	libboost_thread.so:devel/boost-libs
+MAKE_ARGS+=    --with-python
+ALL_TARGET=    stage
 
-BUILD_DEPENDS+=	${BJAM}:devel/boost-jam
+BUILD_DEPENDS+=        bjam:${PORTSDIR}/devel/boost-jam
 
-do-build:
-	@${ECHO_CMD} "using python : " ${PYTHON_VER} " : " ${PYTHON_CMD} " : " ${PYTHON_INCLUDEDIR} ";" >> ${WRKSRC}/tools/build/v2/site-config.jam
-# build the library
-	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_ARGS} --with-python stage
+pre-build:
+       @${ECHO_CMD} "using python : " ${PYTHON_VER} " : " ${PYTHON_CMD} " : " ${PYTHON_INCLUDEDIR} ";" >> ${WRKSRC}/tools/build/src/site-config.jam
 # do not break compat yet
+
+post-build:
 	@cd ${WRKSRC}/stage/lib && \
 		( for l in lib*.so.*; do ${LN} -sf $${l} $${l%.${PORTVERSION}}.5; done )
 
