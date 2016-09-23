@@ -15,7 +15,7 @@ BUILD_DEPENDS=	pbseqan==${PORTVERSION}:/usr/wip/biology/pbseqan \
 		pbbam==${PORTVERSION}:/usr/wip/biology/pbbam \
 		pbcopper==${PORTVERSION}:/usr/wip/biology/pbcopper
 LIB_DEPENDS=	libhts.so:biology/htslib \
-		boost-libs>=1.60:/usr/wip/devel/boost-libs
+		libboost_regex.so.1.60.0:/usr/wip/devel/boost-libs
 
 USES=		cmake python
 # Same boost errors with GCC and clang
@@ -37,6 +37,8 @@ CMAKE_ARGS+=	-DHTSLIB_INCLUDE_DIRS:STRING=${LOCALBASE}/include/htslib \
 		-Dpbcopper_LIBRARIES="-L${LOCALBASE}/lib -lpbcopper"
 
 CMAKE_VERBOSE=	yes
+
+LDFLAGS+=	-L/usr/lib -lcrypto -lssl
 
 # gcc: stoul is not a member of std
 # http://stackoverflow.com/questions/26832199/getting-gcc-in-c11-mode-to-work-on-freebsd
