@@ -11,9 +11,10 @@ COMMENT=	Consensus library and applications
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# FIXME: Currently requires git.  Should be patched out.
 BUILD_DEPENDS=	pbseqan==${PORTVERSION}:/usr/wip/biology/pbseqan \
 		pbbam==${PORTVERSION}:/usr/wip/biology/pbbam \
-		pbcopper==${PORTVERSION}:/usr/wip/biology/pbcopper
+		pbcopper==${PORTVERSION}:/usr/wip/biology/pbcopper \
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so.1.60.0:/usr/wip/devel/boost-libs
 
