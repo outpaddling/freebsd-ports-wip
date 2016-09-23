@@ -18,7 +18,7 @@ MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
 		PYTHON_INCLUDES="${PYTHON_INCLUDEDIR}"\
 		PYTHON_LIB_PATH="${PYTHON_LIBDIR}"
 
-LIB_DEPENDS+=	libboost_thread.so:devel/boost-libs
+LIB_DEPENDS+=	libboost_thread.so:/usr/wip/devel/boost-libs
 MAKE_ARGS+=    --with-python
 ALL_TARGET=    stage
 

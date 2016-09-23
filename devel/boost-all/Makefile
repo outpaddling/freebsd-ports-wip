@@ -15,9 +15,9 @@ PYTHON_DESC=	Boost.Python - interfacing Python and C++
 
 .include "common.mk"
 
-LIBRARIES_RUN_DEPENDS=	${LOCALBASE}/lib/libboost_thread.so:devel/boost-libs
-JAM_RUN_DEPENDS=	${LOCALBASE}/bin/bjam:devel/boost-jam
-PYTHON_RUN_DEPENDS=	${LOCALBASE}/lib/libboost_python.so:devel/boost-python-libs
-DOCS_RUN_DEPENDS=	${LOCALBASE}/share/doc/boost/doc/html/index.html:devel/boost-docs
+LIBRARIES_RUN_DEPENDS=	${LOCALBASE}/lib/libboost_thread.so:/usr/wip/devel/boost-libs
+JAM_RUN_DEPENDS=	${LOCALBASE}/bin/bjam:/usr/wip/devel/boost-jam
+PYTHON_RUN_DEPENDS=	${LOCALBASE}/lib/libboost_python.so:/usr/wip/devel/boost-python-libs
+DOCS_RUN_DEPENDS=	${LOCALBASE}/share/doc/boost/doc/html/index.html:/usr/wip/devel/boost-docs
 
 .include <bsd.port.mk>
