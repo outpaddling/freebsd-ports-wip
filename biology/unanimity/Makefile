@@ -15,7 +15,7 @@ BUILD_DEPENDS=	pbseqan==${PORTVERSION}:/usr/wip/biology/pbseqan \
 		pbbam==${PORTVERSION}:/usr/wip/biology/pbbam \
 		pbcopper==${PORTVERSION}:/usr/wip/biology/pbcopper
 LIB_DEPENDS=	libhts.so:biology/htslib \
-		libboost_regex.so:devel/boost-libs
+		boost-libs>=1.60:/usr/wip/devel/boost-libs
 
 USES=		cmake python
 # Same boost errors with GCC and clang
