@@ -58,6 +58,8 @@ man/man1/apekeys.1.gz
 %%DATADIR%%/Languages/Fortran90/Macros/menu.txt
 %%DATADIR%%/Languages/Fortran90/language_opts
 %%DATADIR%%/Languages/Fortran90/syntax_highlighting
+%%DATADIR%%/Languages/GO/language_opts
+%%DATADIR%%/Languages/GO/syntax_highlighting
 %%DATADIR%%/Languages/GRADES/language_opts
 %%DATADIR%%/Languages/GRADES/syntax_highlighting
 %%DATADIR%%/Languages/HTML/Macros/macros
