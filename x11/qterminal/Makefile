@@ -1,5 +1,8 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD: head/x11/qterminal/Makefile 420698 2016-08-23 15:18:26Z olivierd $
+#
+# FIXME: Depends on lxqt for translations
+# FIXME: Default gemometry patches are not working
 
 PORTNAME=	qterminal
 PORTVERSION=	0.7.0
