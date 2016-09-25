@@ -1,5 +1,8 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
+#
+# FIXME: Not performing as well as it should.  Profile the code.  Problem
+# is likely in one of the libraries.
 
 PORTNAME=	unanimity
 PORTVERSION=	2016.09.13
