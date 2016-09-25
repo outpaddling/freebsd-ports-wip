@@ -17,14 +17,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # FIXME: Currently requires git.  Should be patched out.
 BUILD_DEPENDS=	pbseqan==${PORTVERSION}:/usr/wip/biology/pbseqan \
 		pbbam==${PORTVERSION}:/usr/wip/biology/pbbam \
-		pbcopper==${PORTVERSION}:/usr/wip/biology/pbcopper \
+		pbcopper==${PORTVERSION}:/usr/wip/biology/pbcopper
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so.1.60.0:/usr/wip/devel/boost-libs
 
 USES=		cmake python
-# Same boost errors with GCC and clang
-# USE_GCC=	4.9+
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
 GH_TAGNAME=	054c595
@@ -40,13 +37,7 @@ CMAKE_ARGS+=	-DHTSLIB_INCLUDE_DIRS:STRING=${LOCALBASE}/include/htslib \
 		-Dpbcopper_INCLUDE_DIRS=${LOCALBASE}/include \
 		-Dpbcopper_LIBRARIES="-L${LOCALBASE}/lib -lpbcopper"
 
-# CMAKE_VERBOSE=	yes
-
 LDFLAGS+=	-L/usr/lib -lcrypto -lssl
-
-# gcc: stoul is not a member of std
-# http://stackoverflow.com/questions/26832199/getting-gcc-in-c11-mode-to-work-on-freebsd
-# CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
 
