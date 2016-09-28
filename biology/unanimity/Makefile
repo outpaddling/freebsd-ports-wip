@@ -2,7 +2,10 @@
 # $FreeBSD$
 #
 # FIXME: Not performing as well as it should.  Profile the code.  Problem
-# is likely in one of the libraries.
+# is likely in one of the libraries.  Runs 30% faster on CentOS / gcc49
+# on identical hardware (dual 3.0Ghz Xeon dual core, unixdev, centosdev).
+# Rules out compiler.  Clang 3.4 and gcc49 produce same performance on
+# unixdev.
 
 PORTNAME=	unanimity
 PORTVERSION=	2016.09.13
