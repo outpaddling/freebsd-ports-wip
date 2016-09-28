@@ -40,7 +40,6 @@ CMAKE_ARGS+=	-DHTSLIB_INCLUDE_DIRS:STRING=${LOCALBASE}/include/htslib \
 		-Dpbcopper_INCLUDE_DIRS=${LOCALBASE}/include \
 		-Dpbcopper_LIBRARIES="-L${LOCALBASE}/lib -lpbcopper"
 
-CXXFLAGS+=	-pg
 LDFLAGS+=	-L/usr/lib -lcrypto -lssl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
