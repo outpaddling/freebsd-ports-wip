@@ -30,7 +30,6 @@ CMAKE_ARGS+=	-DHTSLIB_INCLUDE_DIRS:STRING=${LOCALBASE}/include/htslib \
 		-DPacBioBAM_build_tests:BOOL=OFF \
 		-DPacBioBAM_build_docs:BOOL=OFF
 
-CXXFLAGS+=	-pg
 LDFLAGS+=	-L/usr/lib -lcrypto -lssl
 
 do-install:
