@@ -19,6 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
 GH_TAGNAME=	ce9a4b6
 
+CXXFLAGS+=	-pg
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
 
 do-install:
