@@ -13,6 +13,8 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Tools for building and managing HPC clusters
 
+LICENSE=	BSD2CLAUSE
+
 RUN_DEPENDS=	auto-append-line:/usr/wip/sysutils/auto-admin
 
 USES=		tar:xz

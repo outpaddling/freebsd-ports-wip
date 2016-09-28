@@ -86,6 +86,7 @@ sbin/slurm-restart
 sbin/slurm-resume-jobs
 sbin/slurm-resume-nodes
 sbin/slurm-resume-updated-nodes
+sbin/slurm-shutdown-idle-nodes
 sbin/slurm-spool-setup
 sbin/slurm-suspend-jobs
 sbin/slurm-sync-backup-login
