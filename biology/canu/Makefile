@@ -12,6 +12,8 @@ COMMENT=	A single molecule sequence assembler for genomes large and small
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../README.license.GPL
 
+LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
+
 USES=		compiler:openmp gmake perl5
 
 USE_GITHUB=	yes
