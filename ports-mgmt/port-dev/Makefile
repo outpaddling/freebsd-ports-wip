@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	port-dev
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
