@@ -32,9 +32,15 @@ CMAKE_ARGS+=	-DHTSLIB_INCLUDE_DIRS:STRING=${LOCALBASE}/include/htslib \
 
 LDFLAGS+=	-L/usr/lib -lcrypto -lssl
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} <= 1000000
+IGNORE=	unsupported on FreeBSD 9 or older
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/lib/* ${STAGEDIR}${PREFIX}/lib
 	cd ${WRKSRC}/include && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
