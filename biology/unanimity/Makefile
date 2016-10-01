@@ -24,7 +24,7 @@ BUILD_DEPENDS=	pbseqan==${PORTVERSION}:/usr/wip/biology/pbseqan \
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so.1.60.0:/usr/wip/devel/boost-libs
 
-USES=		cmake python
+USES=		cmake compiler:c++11-lang python
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
 GH_TAGNAME=	054c595

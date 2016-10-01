@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so.1.60.0:/usr/wip/devel/boost-libs
 
-USES=		cmake:outsource ssl
+USES=		cmake:outsource compiler:c++11-lang ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
