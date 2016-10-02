@@ -1,4 +1,4 @@
-build started at Sat Oct  1 18:45:50 CDT 2016
+build started at Sun Oct  2 08:17:47 CDT 2016
 port directory: /usr/ports/biology/unanimity
 building for: FreeBSD 11-0-amd64-default 11.0-RELEASE FreeBSD 11.0-RELEASE amd64
 maintained by: bacon4000@gmail.com
@@ -30,9 +30,9 @@ POUDRIERE_BUILD_TYPE=bulk
 OSREL=11.0
 _OSRELEASE=11.0-RELEASE
 PYTHONBASE=/usr/local
-OLDPWD=/
+OLDPWD=/usr/wip/Poudriere
 _SMP_CPUS=4
-PWD=/usr/local/poudriere/data/.m/11-0-amd64-default/ref/.p/pool
+PWD=/
 HAVE_COMPAT_IA32_KERN=YES OPSYS=FreeBSD
 MASTERNAME=11-0-amd64-default
 SCRIPTPREFIX=/usr/local/share/poudriere
@@ -332,14 +332,15 @@ Scanning dependencies of target unanimity
 --- src/CMakeFiles/unanimity.dir/ChainSeeds.cpp.o ---
 --- src/CMakeFiles/unanimity.dir/ChemistryMapping.cpp.o ---
 --- src/CMakeFiles/unanimity.dir/__/third-party/cpp-optparse/OptionParser.cpp.o ---
-[  3%] Building CXX object src/CMakeFiles/unanimity.dir/__/third-party/cpp-optparse/OptionParser.cpp.o
+[  1%] Building CXX object src/CMakeFiles/unanimity.dir/__/third-party/cpp-optparse/OptionParser.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/unanimity.dir/__/third-party/cpp-optparse/OptionParser.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse/OptionParser.cpp
 --- src/CMakeFiles/unanimity.dir/ChainSeeds.cpp.o ---
 [  3%] Building CXX object src/CMakeFiles/unanimity.dir/ChainSeeds.cpp.o
-cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/unanimity.dir/ChainSeeds.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/ChainSeeds.cpp
---- src/CMakeFiles/unanimity.dir/__/third-party/cpp-optparse/OptionParser.cpp.o ---
-cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/unanimity.dir/__/third-party/cpp-optparse/OptionParser.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse/OptionParser.cpp
 --- src/CMakeFiles/unanimity.dir/ChemistryMapping.cpp.o ---
 [  5%] Building CXX object src/CMakeFiles/unanimity.dir/ChemistryMapping.cpp.o
+--- src/CMakeFiles/unanimity.dir/ChainSeeds.cpp.o ---
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/unanimity.dir/ChainSeeds.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/ChainSeeds.cpp
+--- src/CMakeFiles/unanimity.dir/ChemistryMapping.cpp.o ---
 cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/unanimity.dir/ChemistryMapping.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/ChemistryMapping.cpp
 --- src/CMakeFiles/cc2.dir/all ---
 Scanning dependencies of target cc2
@@ -610,12 +611,12 @@ The operation will free 2 MiB.
 [11-0-amd64-default] [1/1] Deleting files for unanimity-2016.09.13: .... done
 ===========================================================================
 ====>> Checking for extra files and directories
-[00:05:39] ====>> Installing from package
+[00:01:18] ====>> Installing from package
 [11-0-amd64-default] Installing unanimity-2016.09.13...
 [11-0-amd64-default] Extracting unanimity-2016.09.13: .... done
-[00:05:39] ====>> Cleaning up
+[00:01:18] ====>> Cleaning up
 ===>  Cleaning for unanimity-2016.09.13
-[00:05:41] ====>> Deinstalling package
+[00:01:20] ====>> Deinstalling package
 Updating database digests format: . done
 Checking integrity... done (0 conflicting)
 Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
@@ -628,5 +629,5 @@ Number of packages to be removed: 1
 The operation will free 2 MiB.
 [11-0-amd64-default] [1/1] Deinstalling unanimity-2016.09.13...
 [11-0-amd64-default] [1/1] Deleting files for unanimity-2016.09.13: .... done
-build of biology/unanimity ended at Sat Oct  1 18:47:03 CDT 2016
-build time: 00:01:13
+build of biology/unanimity ended at Sun Oct  2 08:18:59 CDT 2016
+build time: 00:01:12
