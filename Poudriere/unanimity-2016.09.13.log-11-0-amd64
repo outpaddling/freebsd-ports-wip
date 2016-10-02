@@ -1,0 +1,632 @@
+build started at Sat Oct  1 18:45:50 CDT 2016
+port directory: /usr/ports/biology/unanimity
+building for: FreeBSD 11-0-amd64-default 11.0-RELEASE FreeBSD 11.0-RELEASE amd64
+maintained by: bacon4000@gmail.com
+ident warning: no id keywords in /usr/local/poudriere/data/.m/11-0-amd64-default/ref//usr/ports/biology/unanimity/Makefile
+Makefile ident: 
+Poudriere version: 3.1.14
+Host OSVERSION: 1100122
+Jail OSVERSION: 1100122
+
+---Begin Environment---
+PKGREPOSITORY=/tmp/pkgs
+PACKAGES=/tmp/pkgs
+SHELL=/bin/csh
+UNAME_v=FreeBSD 11.0-RELEASE
+UNAME_r=11.0-RELEASE
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+WARNING_WAIT=0
+ARCH=amd64
+SAVED_TERM=xterm
+NO_WARNING_PKG_INSTALL_EOL=yes
+MASTERMNT=/usr/local/poudriere/data/.m/11-0-amd64-default/ref
+UID=0
+FORCE_PACKAGE=yes
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+_JAVA_VERSION_LIST_REGEXP=1.6\|1.7\|1.8\|1.6+\|1.7+\|1.8+
+POUDRIERE_BUILD_TYPE=bulk
+OSREL=11.0
+_OSRELEASE=11.0-RELEASE
+PYTHONBASE=/usr/local
+OLDPWD=/
+_SMP_CPUS=4
+PWD=/usr/local/poudriere/data/.m/11-0-amd64-default/ref/.p/pool
+HAVE_COMPAT_IA32_KERN=YES OPSYS=FreeBSD
+MASTERNAME=11-0-amd64-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+_JAVA_VENDOR_LIST_REGEXP=openjdk\|oracle\|sun
+USER=root
+HOME=/root
+POUDRIERE_VERSION=3.1.14
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+TRYBROKEN=yes
+CONFIGURE_MAX_CMD_LEN=262144
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+LOCALBASE=/usr/local
+PACKAGE_BUILDING=yes
+_JAVA_OS_LIST_REGEXP=native\|linux
+DEV_WARNING_WAIT=0
+OSVERSION=1100122
+---End Environment---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+PYTHON="/usr/local/bin/python2.7" XDG_DATA_HOME=/wrkdirs/usr/ports/biology/unanimity/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/biology/unanimity/work  HOME=/wrkdirs/usr/ports/biology/unanimity/work TMPDIR="/tmp" SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/biology/unanimity/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/biology/unanimity/work  HOME=/wrkdirs/usr/ports/biology/unanimity/work TMPDIR="/tmp" NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  LIBDIR="/usr/lib"  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector -fno-strict-aliasing"  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -L/usr/lib -lcrypto -lssl -fstack-protector" LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector -fno-strict-aliasing "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 444"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+CMAKE_BUILD_TYPE="release"
+PYTHON_INCLUDEDIR=include/python2.7
+PYTHON_LIBDIR=lib/python2.7
+PYTHON_PLATFORM=freebsd11
+PYTHON_SITELIBDIR=lib/python2.7/site-packages
+PYTHON_VER=2.7
+PYTHON_VERSION=python2.7
+OSREL=11.0
+PREFIX=%D
+LOCALBASE=/usr/local
+RESETPREFIX=/usr/local
+PORTDOCS=""
+PORTEXAMPLES=""
+LIB32DIR=lib
+DOCSDIR="share/doc/unanimity"
+EXAMPLESDIR="share/examples/unanimity"
+DATADIR="share/unanimity"
+WWWDIR="www/unanimity"
+ETCDIR="etc/unanimity"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local
+LOCALBASE=/usr/local
+DATADIR=/usr/local/share/unanimity
+DOCSDIR=/usr/local/share/doc/unanimity
+EXAMPLESDIR=/usr/local/share/examples/unanimity
+WWWDIR=/usr/local/www/unanimity
+ETCDIR=/usr/local/etc/unanimity
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+---End make.conf---
+=======================<phase: check-sanity   >============================
+/!\ unanimity-2016.09.13: Makefile warnings, please consider fixing /!\
+
+It looks like the pbseqan==2016.09.13:/usr/ports/biology/pbseqan depends line has an absolute port origin, make sure to remove ${PORTSDIR}/ from it.
+It looks like the pbbam==2016.09.13:/usr/ports/biology/pbbam depends line has an absolute port origin, make sure to remove ${PORTSDIR}/ from it.
+It looks like the pbcopper==2016.09.13:/usr/ports/biology/pbcopper depends line has an absolute port origin, make sure to remove ${PORTSDIR}/ from it.
+It looks like the libboost_regex.so.1.60.0:/usr/ports/devel/boost-libs depends line has an absolute port origin, make sure to remove ${PORTSDIR}/ from it.
+
+===>  License BSD3CLAUSE accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   unanimity-2016.09.13 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.8.7_3.txz
+[11-0-amd64-default] Installing pkg-1.8.7_3...
+[11-0-amd64-default] Extracting pkg-1.8.7_3: .......... done
+===>   unanimity-2016.09.13 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of unanimity-2016.09.13
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License BSD3CLAUSE accepted by the user
+===>   unanimity-2016.09.13 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by unanimity-2016.09.13 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License BSD3CLAUSE accepted by the user
+===>   unanimity-2016.09.13 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by unanimity-2016.09.13 for building
+=> SHA256 Checksum OK for PacificBiosciences-unanimity-2016.09.13-054c595_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License BSD3CLAUSE accepted by the user
+===>   unanimity-2016.09.13 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by unanimity-2016.09.13 for building
+===>  Extracting for unanimity-2016.09.13
+=> SHA256 Checksum OK for PacificBiosciences-unanimity-2016.09.13-054c595_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for unanimity-2016.09.13
+===>  Applying FreeBSD patches for unanimity-2016.09.13
+===========================================================================
+=======================<phase: build-depends  >============================
+===>   unanimity-2016.09.13 depends on package: pbseqan==2016.09.13 - not found
+===>   Installing existing package /packages/All/pbseqan-2016.09.13.txz
+[11-0-amd64-default] Installing pbseqan-2016.09.13...
+[11-0-amd64-default] Extracting pbseqan-2016.09.13: .......... done
+===>   unanimity-2016.09.13 depends on package: pbseqan==2016.09.13 - found
+===>   Returning to build of unanimity-2016.09.13
+===>   unanimity-2016.09.13 depends on package: pbbam==2016.09.13 - not found
+===>   Installing existing package /packages/All/pbbam-2016.09.13.txz
+[11-0-amd64-default] Installing pbbam-2016.09.13...
+[11-0-amd64-default] `-- Installing boost-libs-1.60.0...
+[11-0-amd64-default] |   `-- Installing icu-57.1,1...
+[11-0-amd64-default] |   `-- Extracting icu-57.1,1: .......... done
+[11-0-amd64-default] `-- Extracting boost-libs-1.60.0: .......... done
+[11-0-amd64-default] `-- Installing htslib-1.3.1...
+[11-0-amd64-default] |   `-- Installing curl-7.50.3...
+[11-0-amd64-default] |   | `-- Installing ca_root_nss-3.27...
+[11-0-amd64-default] |   | `-- Extracting ca_root_nss-3.27: ....... done
+[11-0-amd64-default] |   `-- Extracting curl-7.50.3: .......... done
+[11-0-amd64-default] `-- Extracting htslib-1.3.1: .......... done
+[11-0-amd64-default] Extracting pbbam-2016.09.13: .......... done
+Message from boost-libs-1.60.0:
+You have built the Boost library with thread support.
+
+Don't forget to add -pthread to your linker options when
+linking your code.
+Message from ca_root_nss-3.27:
+********************************* WARNING *********************************
+
+FreeBSD does not, and can not warrant that the certification authorities
+whose certificates are included in this package have in any way been
+audited for trustworthiness or RFC 3647 compliance.
+
+Assessment and verification of trust is the complete responsibility of the
+system administrator.
+
+*********************************** NOTE **********************************
+
+This package installs symlinks to support root certificates discovery by
+default for software that uses OpenSSL.
+
+This enables SSL Certificate Verification by client software without manual
+intervention.
+
+If you prefer to do this manually, replace the following symlinks with
+either an empty file or your site-local certificate bundle.
+
+  * /etc/ssl/cert.pem
+  * /usr/local/etc/ssl/cert.pem
+  * /usr/local/openssl/cert.pem
+
+***************************************************************************
+===>   unanimity-2016.09.13 depends on package: pbbam==2016.09.13 - found
+===>   Returning to build of unanimity-2016.09.13
+===>   unanimity-2016.09.13 depends on package: pbcopper==2016.09.13 - not found
+===>   Installing existing package /packages/All/pbcopper-2016.09.13.txz
+[11-0-amd64-default] Installing pbcopper-2016.09.13...
+[11-0-amd64-default] Extracting pbcopper-2016.09.13: .......... done
+===>   unanimity-2016.09.13 depends on package: pbcopper==2016.09.13 - found
+===>   Returning to build of unanimity-2016.09.13
+===>   unanimity-2016.09.13 depends on file: /usr/local/bin/cmake - not found
+===>   Installing existing package /packages/All/cmake-3.6.2.txz
+[11-0-amd64-default] Installing cmake-3.6.2...
+[11-0-amd64-default] `-- Installing expat-2.2.0...
+[11-0-amd64-default] `-- Extracting expat-2.2.0: .......... done
+[11-0-amd64-default] `-- Installing cmake-modules-3.6.2...
+[11-0-amd64-default] `-- Extracting cmake-modules-3.6.2: .......... done
+[11-0-amd64-default] `-- Installing libarchive-3.2.1,1...
+[11-0-amd64-default] |   `-- Installing liblz4-131...
+[11-0-amd64-default] |   `-- Extracting liblz4-131: .......... done
+[11-0-amd64-default] |   `-- Installing lzo2-2.09...
+[11-0-amd64-default] |   `-- Extracting lzo2-2.09: .......... done
+[11-0-amd64-default] `-- Extracting libarchive-3.2.1,1: .......... done
+[11-0-amd64-default] `-- Installing jsoncpp-1.7.3...
+[11-0-amd64-default] `-- Extracting jsoncpp-1.7.3: .......... done
+[11-0-amd64-default] Extracting cmake-3.6.2: .......... done
+===>   unanimity-2016.09.13 depends on file: /usr/local/bin/cmake - found
+===>   Returning to build of unanimity-2016.09.13
+===>   unanimity-2016.09.13 depends on file: /usr/local/bin/python2.7 - not found
+===>   Installing existing package /packages/All/python27-2.7.12.txz
+[11-0-amd64-default] Installing python27-2.7.12...
+[11-0-amd64-default] `-- Installing libffi-3.2.1...
+[11-0-amd64-default] |   `-- Installing indexinfo-0.2.5...
+[11-0-amd64-default] |   `-- Extracting indexinfo-0.2.5: .... done
+[11-0-amd64-default] `-- Extracting libffi-3.2.1: .......... done
+[11-0-amd64-default] `-- Installing gettext-runtime-0.19.8.1...
+[11-0-amd64-default] `-- Extracting gettext-runtime-0.19.8.1: .......... done
+[11-0-amd64-default] `-- Installing readline-6.3.8...
+[11-0-amd64-default] `-- Extracting readline-6.3.8: .......... done
+[11-0-amd64-default] Extracting python27-2.7.12: .......... done
+Message from python27-2.7.12:
+===========================================================================
+
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+bsddb           databases/py-bsddb
+gdbm            databases/py-gdbm
+sqlite3         databases/py-sqlite3
+tkinter         x11-toolkits/py-tkinter
+
+===========================================================================
+===>   unanimity-2016.09.13 depends on file: /usr/local/bin/python2.7 - found
+===>   Returning to build of unanimity-2016.09.13
+===========================================================================
+=======================<phase: lib-depends    >============================
+===>   unanimity-2016.09.13 depends on shared library: libhts.so - found (/usr/local/lib/libhts.so)
+===>   unanimity-2016.09.13 depends on shared library: libboost_regex.so.1.60.0 - found (/usr/local/lib/libboost_regex.so.1.60.0)
+===========================================================================
+====>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>   unanimity-2016.09.13 depends on package: pbseqan==2016.09.13 - found
+===>   unanimity-2016.09.13 depends on package: pbbam==2016.09.13 - found
+===>   unanimity-2016.09.13 depends on package: pbcopper==2016.09.13 - found
+===>   unanimity-2016.09.13 depends on file: /usr/local/bin/cmake - found
+===>   unanimity-2016.09.13 depends on file: /usr/local/bin/python2.7 - found
+===>   unanimity-2016.09.13 depends on shared library: libhts.so - found (/usr/local/lib/libhts.so)
+===>   unanimity-2016.09.13 depends on shared library: libboost_regex.so.1.60.0 - found (/usr/local/lib/libboost_regex.so.1.60.0)
+===>  Configuring for unanimity-2016.09.13
+===>  Performing in-source build
+/bin/mkdir -p /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595
+-- The CXX compiler identification is Clang 3.8.0
+-- The C compiler identification is Clang 3.8.0
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Performing Test HAS_NO_UNUSED_LOCAL_TYPEDEFS
+-- Performing Test HAS_NO_UNUSED_LOCAL_TYPEDEFS - Success
+-- Boost version: 1.60.0
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Found Threads: TRUE  
+-- Found ZLIB: /usr/lib/libz.a (found version "1.2.8") 
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_C_FLAGS_DEBUG
+    CMAKE_C_FLAGS_RELEASE
+    CMAKE_MODULE_LINKER_FLAGS
+    CMAKE_SHARED_LINKER_FLAGS
+    Python_ADDITIONAL_VERSIONS
+
+
+-- Build files have been written to: /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for unanimity-2016.09.13
+/usr/local/bin/cmake -H/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 -B/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/local/bin/cmake -E cmake_progress_start /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/CMakeFiles /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+--- src/CMakeFiles/unanimity.dir/all ---
+--- src/CMakeFiles/cc2.dir/all ---
+--- src/CMakeFiles/unanimity.dir/all ---
+/usr/bin/make -f src/CMakeFiles/unanimity.dir/build.make src/CMakeFiles/unanimity.dir/depend
+--- src/CMakeFiles/cc2.dir/all ---
+/usr/bin/make -f src/CMakeFiles/cc2.dir/build.make src/CMakeFiles/cc2.dir/depend
+--- src/CMakeFiles/unanimity.dir/all ---
+--- src/CMakeFiles/unanimity.dir/depend ---
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/CMakeFiles/unanimity.dir/DependInfo.cmake
+--- src/CMakeFiles/cc2.dir/all ---
+--- src/CMakeFiles/cc2.dir/depend ---
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/CMakeFiles/cc2.dir/DependInfo.cmake
+--- src/CMakeFiles/unanimity.dir/all ---
+Scanning dependencies of target unanimity
+/usr/bin/make -f src/CMakeFiles/unanimity.dir/build.make src/CMakeFiles/unanimity.dir/build
+--- src/CMakeFiles/unanimity.dir/__/third-party/cpp-optparse/OptionParser.cpp.o ---
+--- src/CMakeFiles/unanimity.dir/ChainSeeds.cpp.o ---
+--- src/CMakeFiles/unanimity.dir/ChemistryMapping.cpp.o ---
+--- src/CMakeFiles/unanimity.dir/__/third-party/cpp-optparse/OptionParser.cpp.o ---
+[  3%] Building CXX object src/CMakeFiles/unanimity.dir/__/third-party/cpp-optparse/OptionParser.cpp.o
+--- src/CMakeFiles/unanimity.dir/ChainSeeds.cpp.o ---
+[  3%] Building CXX object src/CMakeFiles/unanimity.dir/ChainSeeds.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/unanimity.dir/ChainSeeds.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/ChainSeeds.cpp
+--- src/CMakeFiles/unanimity.dir/__/third-party/cpp-optparse/OptionParser.cpp.o ---
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/unanimity.dir/__/third-party/cpp-optparse/OptionParser.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse/OptionParser.cpp
+--- src/CMakeFiles/unanimity.dir/ChemistryMapping.cpp.o ---
+[  5%] Building CXX object src/CMakeFiles/unanimity.dir/ChemistryMapping.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/unanimity.dir/ChemistryMapping.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/ChemistryMapping.cpp
+--- src/CMakeFiles/cc2.dir/all ---
+Scanning dependencies of target cc2
+/usr/bin/make -f src/CMakeFiles/cc2.dir/build.make src/CMakeFiles/cc2.dir/build
+--- src/CMakeFiles/cc2.dir/align/AffineAlignment.cpp.o ---
+[  7%] Building CXX object src/CMakeFiles/cc2.dir/align/AffineAlignment.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/align/AffineAlignment.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/align/AffineAlignment.cpp
+--- src/CMakeFiles/cc2.dir/align/AlignConfig.cpp.o ---
+[  9%] Building CXX object src/CMakeFiles/cc2.dir/align/AlignConfig.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/align/AlignConfig.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/align/AlignConfig.cpp
+--- src/CMakeFiles/cc2.dir/align/LinearAlignment.cpp.o ---
+[ 11%] Building CXX object src/CMakeFiles/cc2.dir/align/LinearAlignment.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/align/LinearAlignment.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/align/LinearAlignment.cpp
+--- src/CMakeFiles/cc2.dir/align/PairwiseAlignment.cpp.o ---
+[ 13%] Building CXX object src/CMakeFiles/cc2.dir/align/PairwiseAlignment.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/align/PairwiseAlignment.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/align/PairwiseAlignment.cpp
+--- src/CMakeFiles/cc2.dir/matrix/BasicDenseMatrix.cpp.o ---
+[ 15%] Building CXX object src/CMakeFiles/cc2.dir/matrix/BasicDenseMatrix.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/matrix/BasicDenseMatrix.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/matrix/BasicDenseMatrix.cpp
+--- src/CMakeFiles/unanimity.dir/all ---
+--- src/CMakeFiles/unanimity.dir/ChemistryTriple.cpp.o ---
+[ 16%] Building CXX object src/CMakeFiles/unanimity.dir/ChemistryTriple.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/unanimity.dir/ChemistryTriple.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/ChemistryTriple.cpp
+--- src/CMakeFiles/cc2.dir/all ---
+--- src/CMakeFiles/cc2.dir/matrix/ScaledMatrix.cpp.o ---
+[ 18%] Building CXX object src/CMakeFiles/cc2.dir/matrix/ScaledMatrix.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/matrix/ScaledMatrix.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/matrix/ScaledMatrix.cpp
+--- src/CMakeFiles/unanimity.dir/all ---
+--- src/CMakeFiles/unanimity.dir/ConsensusSettings.cpp.o ---
+[ 20%] Building CXX object src/CMakeFiles/unanimity.dir/ConsensusSettings.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/unanimity.dir/ConsensusSettings.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/ConsensusSettings.cpp
+--- src/CMakeFiles/unanimity.dir/Interval.cpp.o ---
+[ 22%] Building CXX object src/CMakeFiles/unanimity.dir/Interval.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/unanimity.dir/Interval.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/Interval.cpp
+--- src/CMakeFiles/cc2.dir/all ---
+--- src/CMakeFiles/cc2.dir/matrix/SparseMatrix.cpp.o ---
+[ 24%] Building CXX object src/CMakeFiles/cc2.dir/matrix/SparseMatrix.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/matrix/SparseMatrix.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/matrix/SparseMatrix.cpp
+--- src/CMakeFiles/cc2.dir/models/MarginalModelForm.cpp.o ---
+[ 26%] Building CXX object src/CMakeFiles/cc2.dir/models/MarginalModelForm.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/models/MarginalModelForm.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/models/MarginalModelForm.cpp
+--- src/CMakeFiles/cc2.dir/models/P6C4NoCovModel.cpp.o ---
+[ 28%] Building CXX object src/CMakeFiles/cc2.dir/models/P6C4NoCovModel.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/models/P6C4NoCovModel.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/models/P6C4NoCovModel.cpp
+--- src/CMakeFiles/cc2.dir/models/PwSnrAModelForm.cpp.o ---
+[ 30%] Building CXX object src/CMakeFiles/cc2.dir/models/PwSnrAModelForm.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/models/PwSnrAModelForm.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/models/PwSnrAModelForm.cpp
+--- src/CMakeFiles/unanimity.dir/all ---
+--- src/CMakeFiles/unanimity.dir/ReadId.cpp.o ---
+[ 32%] Building CXX object src/CMakeFiles/unanimity.dir/ReadId.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/unanimity.dir/ReadId.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/ReadId.cpp
+--- src/CMakeFiles/unanimity.dir/SparsePoa.cpp.o ---
+[ 33%] Building CXX object src/CMakeFiles/unanimity.dir/SparsePoa.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/unanimity.dir/SparsePoa.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/SparsePoa.cpp
+--- src/CMakeFiles/cc2.dir/all ---
+--- src/CMakeFiles/cc2.dir/models/PwSnrModelForm.cpp.o ---
+[ 35%] Building CXX object src/CMakeFiles/cc2.dir/models/PwSnrModelForm.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/models/PwSnrModelForm.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/models/PwSnrModelForm.cpp
+--- src/CMakeFiles/unanimity.dir/all ---
+--- src/CMakeFiles/unanimity.dir/SubreadResultCounter.cpp.o ---
+[ 37%] Building CXX object src/CMakeFiles/unanimity.dir/SubreadResultCounter.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/unanimity.dir/SubreadResultCounter.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/SubreadResultCounter.cpp
+--- src/CMakeFiles/cc2.dir/all ---
+--- src/CMakeFiles/cc2.dir/models/S_P1C1Beta_Model.cpp.o ---
+[ 39%] Building CXX object src/CMakeFiles/cc2.dir/models/S_P1C1Beta_Model.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/models/S_P1C1Beta_Model.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/models/S_P1C1Beta_Model.cpp
+--- src/CMakeFiles/cc2.dir/models/S_P1C1v1_Model.cpp.o ---
+[ 41%] Building CXX object src/CMakeFiles/cc2.dir/models/S_P1C1v1_Model.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/models/S_P1C1v1_Model.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/models/S_P1C1v1_Model.cpp
+--- src/CMakeFiles/unanimity.dir/all ---
+--- src/CMakeFiles/unanimity.dir/Timer.cpp.o ---
+[ 43%] Building CXX object src/CMakeFiles/unanimity.dir/Timer.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/unanimity.dir/Timer.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/Timer.cpp
+--- src/CMakeFiles/cc2.dir/all ---
+--- src/CMakeFiles/cc2.dir/models/S_P1C1v2_Model.cpp.o ---
+[ 45%] Building CXX object src/CMakeFiles/cc2.dir/models/S_P1C1v2_Model.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/models/S_P1C1v2_Model.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/models/S_P1C1v2_Model.cpp
+--- src/CMakeFiles/unanimity.dir/all ---
+--- src/CMakeFiles/unanimity.dir/Utility.cpp.o ---
+[ 47%] Building CXX object src/CMakeFiles/unanimity.dir/Utility.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/unanimity.dir/Utility.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/Utility.cpp
+--- src/CMakeFiles/cc2.dir/all ---
+--- src/CMakeFiles/cc2.dir/models/SnrModelForm.cpp.o ---
+[ 49%] Building CXX object src/CMakeFiles/cc2.dir/models/SnrModelForm.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/models/SnrModelForm.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/models/SnrModelForm.cpp
+--- src/CMakeFiles/cc2.dir/poa/PoaAlignmentMatrix.cpp.o ---
+[ 50%] Building CXX object src/CMakeFiles/cc2.dir/poa/PoaAlignmentMatrix.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/poa/PoaAlignmentMatrix.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/poa/PoaAlignmentMatrix.cpp
+--- src/CMakeFiles/cc2.dir/poa/PoaConsensus.cpp.o ---
+[ 52%] Building CXX object src/CMakeFiles/cc2.dir/poa/PoaConsensus.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/poa/PoaConsensus.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/poa/PoaConsensus.cpp
+--- src/CMakeFiles/unanimity.dir/all ---
+--- src/libunanimity.a ---
+[ 54%] Linking CXX static library libunanimity.a
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/local/bin/cmake -P CMakeFiles/unanimity.dir/cmake_clean_target.cmake
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/local/bin/cmake -E cmake_link_script CMakeFiles/unanimity.dir/link.txt --verbose=1
+/usr/bin/ar qc libunanimity.a  CMakeFiles/unanimity.dir/__/third-party/cpp-optparse/OptionParser.cpp.o CMakeFiles/unanimity.dir/ChainSeeds.cpp.o CMakeFiles/unanimity.dir/ChemistryMapping.cpp.o CMakeFiles/unanimity.dir/ChemistryTriple.cpp.o CMakeFiles/unanimity.dir/ConsensusSettings.cpp.o CMakeFiles/unanimity.dir/Interval.cpp.o CMakeFiles/unanimity.dir/ReadId.cpp.o CMakeFiles/unanimity.dir/SparsePoa.cpp.o CMakeFiles/unanimity.dir/SubreadResultCounter.cpp.o CMakeFiles/unanimity.dir/Timer.cpp.o CMakeFiles/unanimity.dir/Utility.cpp.o
+/usr/bin/ranlib libunanimity.a
+[ 54%] Built target unanimity
+--- src/CMakeFiles/cc2.dir/all ---
+--- src/CMakeFiles/cc2.dir/poa/PoaGraph.cpp.o ---
+[ 56%] Building CXX object src/CMakeFiles/cc2.dir/poa/PoaGraph.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/poa/PoaGraph.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/poa/PoaGraph.cpp
+--- src/CMakeFiles/cc2.dir/poa/PoaGraphImpl.cpp.o ---
+[ 58%] Building CXX object src/CMakeFiles/cc2.dir/poa/PoaGraphImpl.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/poa/PoaGraphImpl.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/poa/PoaGraphImpl.cpp
+--- src/CMakeFiles/cc2.dir/poa/PoaGraphTraversals.cpp.o ---
+[ 60%] Building CXX object src/CMakeFiles/cc2.dir/poa/PoaGraphTraversals.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/poa/PoaGraphTraversals.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/poa/PoaGraphTraversals.cpp
+--- src/CMakeFiles/cc2.dir/poa/RangeFinder.cpp.o ---
+[ 62%] Building CXX object src/CMakeFiles/cc2.dir/poa/RangeFinder.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/poa/RangeFinder.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/poa/RangeFinder.cpp
+--- src/CMakeFiles/cc2.dir/AbstractIntegrator.cpp.o ---
+[ 64%] Building CXX object src/CMakeFiles/cc2.dir/AbstractIntegrator.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/AbstractIntegrator.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/AbstractIntegrator.cpp
+--- src/CMakeFiles/cc2.dir/Coverage.cpp.o ---
+[ 66%] Building CXX object src/CMakeFiles/cc2.dir/Coverage.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/Coverage.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/Coverage.cpp
+--- src/CMakeFiles/cc2.dir/EasyReadScorer.cpp.o ---
+[ 67%] Building CXX object src/CMakeFiles/cc2.dir/EasyReadScorer.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/EasyReadScorer.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/EasyReadScorer.cpp
+--- src/CMakeFiles/cc2.dir/Evaluator.cpp.o ---
+[ 69%] Building CXX object src/CMakeFiles/cc2.dir/Evaluator.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/Evaluator.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/Evaluator.cpp
+--- src/CMakeFiles/cc2.dir/EvaluatorImpl.cpp.o ---
+[ 71%] Building CXX object src/CMakeFiles/cc2.dir/EvaluatorImpl.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/EvaluatorImpl.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/EvaluatorImpl.cpp
+--- src/CMakeFiles/cc2.dir/ModelConfig.cpp.o ---
+[ 73%] Building CXX object src/CMakeFiles/cc2.dir/ModelConfig.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/ModelConfig.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/ModelConfig.cpp
+--- src/CMakeFiles/cc2.dir/ModelFactory.cpp.o ---
+[ 75%] Building CXX object src/CMakeFiles/cc2.dir/ModelFactory.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/ModelFactory.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/ModelFactory.cpp
+--- src/CMakeFiles/cc2.dir/ModelFormFactory.cpp.o ---
+[ 77%] Building CXX object src/CMakeFiles/cc2.dir/ModelFormFactory.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/ModelFormFactory.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/ModelFormFactory.cpp
+--- src/CMakeFiles/cc2.dir/ModelSelection.cpp.o ---
+[ 79%] Building CXX object src/CMakeFiles/cc2.dir/ModelSelection.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/ModelSelection.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/ModelSelection.cpp
+--- src/CMakeFiles/cc2.dir/MonoMolecularIntegrator.cpp.o ---
+[ 81%] Building CXX object src/CMakeFiles/cc2.dir/MonoMolecularIntegrator.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/MonoMolecularIntegrator.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/MonoMolecularIntegrator.cpp
+--- src/CMakeFiles/cc2.dir/MultiMolecularIntegrator.cpp.o ---
+[ 83%] Building CXX object src/CMakeFiles/cc2.dir/MultiMolecularIntegrator.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/MultiMolecularIntegrator.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/MultiMolecularIntegrator.cpp
+--- src/CMakeFiles/cc2.dir/Mutation.cpp.o ---
+[ 84%] Building CXX object src/CMakeFiles/cc2.dir/Mutation.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/Mutation.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/Mutation.cpp
+--- src/CMakeFiles/cc2.dir/Polish.cpp.o ---
+[ 86%] Building CXX object src/CMakeFiles/cc2.dir/Polish.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/Polish.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/Polish.cpp
+--- src/CMakeFiles/cc2.dir/Read.cpp.o ---
+[ 88%] Building CXX object src/CMakeFiles/cc2.dir/Read.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/Read.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/Read.cpp
+--- src/CMakeFiles/cc2.dir/Recursor.cpp.o ---
+[ 90%] Building CXX object src/CMakeFiles/cc2.dir/Recursor.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/Recursor.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/Recursor.cpp
+--- src/CMakeFiles/cc2.dir/Sequence.cpp.o ---
+[ 92%] Building CXX object src/CMakeFiles/cc2.dir/Sequence.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/Sequence.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/Sequence.cpp
+--- src/CMakeFiles/cc2.dir/Template.cpp.o ---
+[ 94%] Building CXX object src/CMakeFiles/cc2.dir/Template.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/cc2.dir/Template.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/Template.cpp
+--- src/libcc2.a ---
+[ 96%] Linking CXX static library libcc2.a
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/local/bin/cmake -P CMakeFiles/cc2.dir/cmake_clean_target.cmake
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cc2.dir/link.txt --verbose=1
+/usr/bin/ar qc libcc2.a  CMakeFiles/cc2.dir/align/AffineAlignment.cpp.o CMakeFiles/cc2.dir/align/AlignConfig.cpp.o CMakeFiles/cc2.dir/align/LinearAlignment.cpp.o CMakeFiles/cc2.dir/align/PairwiseAlignment.cpp.o CMakeFiles/cc2.dir/matrix/BasicDenseMatrix.cpp.o CMakeFiles/cc2.dir/matrix/ScaledMatrix.cpp.o CMakeFiles/cc2.dir/matrix/SparseMatrix.cpp.o CMakeFiles/cc2.dir/models/MarginalModelForm.cpp.o CMakeFiles/cc2.dir/models/P6C4NoCovModel.cpp.o CMakeFiles/cc2.dir/models/PwSnrAModelForm.cpp.o CMakeFiles/cc2.dir/models/PwSnrModelForm.cpp.o CMakeFiles/cc2.dir/models/S_P1C1Beta_Model.cpp.o CMakeFiles/cc2.dir/models/S_P1C1v1_Model.cpp.o CMakeFiles/cc2.dir/models/S_P1C1v2_Model.cpp.o CMakeFiles/cc2.dir/models/SnrModelForm.cpp.o CMakeFiles/cc2.dir/poa/PoaAlignmentMatrix.cpp.o CMakeFiles/cc2.dir/poa/PoaConsensus.cpp.o CMakeFiles/cc2.dir/poa/PoaGraph.cpp.o CMakeFiles/cc2.dir/poa/PoaGraphImpl.cpp.o CMakeFiles/cc2.dir/poa/PoaGraphTraversals.cpp.o CMakeFiles/cc2.dir/poa/RangeFinder.cpp.o CMakeFiles/cc2.dir/AbstractIntegrator.cpp.o CMakeFiles/cc2.dir/Coverage.cpp.o CMakeFiles/cc2.dir/EasyReadScorer.cpp.o CMakeFiles/cc2.dir/Evaluator.cpp.o CMakeFiles/cc2.dir/EvaluatorImpl.cpp.o CMakeFiles/cc2.dir/ModelConfig.cpp.o CMakeFiles/cc2.dir/ModelFactory.cpp.o CMakeFiles/cc2.dir/ModelFormFactory.cpp.o CMakeFiles/cc2.dir/ModelSelection.cpp.o CMakeFiles/cc2.dir/MonoMolecularIntegrator.cpp.o CMakeFiles/cc2.dir/MultiMolecularIntegrator.cpp.o CMakeFiles/cc2.dir/Mutation.cpp.o CMakeFiles/cc2.dir/Polish.cpp.o CMakeFiles/cc2.dir/Read.cpp.o CMakeFiles/cc2.dir/Recursor.cpp.o CMakeFiles/cc2.dir/Sequence.cpp.o CMakeFiles/cc2.dir/Template.cpp.o
+/usr/bin/ranlib libcc2.a
+[ 96%] Built target cc2
+--- src/CMakeFiles/ccs.dir/all ---
+/usr/bin/make -f src/CMakeFiles/ccs.dir/build.make src/CMakeFiles/ccs.dir/depend
+--- src/CMakeFiles/ccs.dir/depend ---
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/CMakeFiles/ccs.dir/DependInfo.cmake
+Scanning dependencies of target ccs
+/usr/bin/make -f src/CMakeFiles/ccs.dir/build.make src/CMakeFiles/ccs.dir/build
+--- src/CMakeFiles/ccs.dir/main/ccs.cpp.o ---
+[ 98%] Building CXX object src/CMakeFiles/ccs.dir/main/ccs.cpp.o
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/bin/c++    -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/include -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/generated -I/usr/local/include -I/usr/local/include/htslib -I/usr/local/include/PacBio -I/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/third-party/cpp-optparse -I/usr/local/include/pbbam -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -o CMakeFiles/ccs.dir/main/ccs.cpp.o -c /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/main/ccs.cpp
+--- ccs ---
+[100%] Linking CXX executable ../ccs
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src && /usr/local/bin/cmake -E cmake_link_script CMakeFiles/ccs.dir/link.txt --verbose=1
+/usr/bin/c++   -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++11 -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing   -L/usr/lib -lcrypto -lssl -fstack-protector  CMakeFiles/ccs.dir/main/ccs.cpp.o  -o ../ccs  -Wl,-whole-archive libcc2.a -Wl,-no-whole-archive libunanimity.a -Wl,-Bstatic -lz -Wl,-Bdynamic -L/usr/local/lib -lhts -L/usr/local/lib -lpbbam -L/usr/local/lib -lpbcopper -pthread 
+[100%] Built target ccs
+/usr/local/bin/cmake -E cmake_progress_start /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/CMakeFiles 0
+===========================================================================
+====>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===>   unanimity-2016.09.13 depends on file: /usr/local/bin/python2.7 - found
+===========================================================================
+====>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for unanimity-2016.09.13
+===>   unanimity-2016.09.13 depends on file: /usr/local/bin/python2.7 - found
+===>   unanimity-2016.09.13 depends on shared library: libhts.so - found (/usr/local/lib/libhts.so)
+===>   unanimity-2016.09.13 depends on shared library: libboost_regex.so.1.60.0 - found (/usr/local/lib/libboost_regex.so.1.60.0)
+===>   Generating temporary packing list
+/usr/local/bin/cmake -H/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 -B/wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/local/bin/cmake -E cmake_progress_start /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/CMakeFiles /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+/usr/bin/make -f src/CMakeFiles/unanimity.dir/build.make src/CMakeFiles/unanimity.dir/depend
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/CMakeFiles/unanimity.dir/DependInfo.cmake
+/usr/bin/make -f src/CMakeFiles/unanimity.dir/build.make src/CMakeFiles/unanimity.dir/build
+[ 22%] Built target unanimity
+/usr/bin/make -f src/CMakeFiles/cc2.dir/build.make src/CMakeFiles/cc2.dir/depend
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/CMakeFiles/cc2.dir/DependInfo.cmake
+/usr/bin/make -f src/CMakeFiles/cc2.dir/build.make src/CMakeFiles/cc2.dir/build
+[ 96%] Built target cc2
+/usr/bin/make -f src/CMakeFiles/ccs.dir/build.make src/CMakeFiles/ccs.dir/depend
+cd /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595 /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/src/CMakeFiles/ccs.dir/DependInfo.cmake
+/usr/bin/make -f src/CMakeFiles/ccs.dir/build.make src/CMakeFiles/ccs.dir/build
+[100%] Built target ccs
+/usr/local/bin/cmake -E cmake_progress_start /wrkdirs/usr/ports/biology/unanimity/work/unanimity-054c595/CMakeFiles 0
+/usr/bin/make -f CMakeFiles/Makefile2 preinstall
+Installing the project stripped...
+/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+-- Install configuration: "Release"
+-- Installing: /wrkdirs/usr/ports/biology/unanimity/work/stage/usr/local/bin/ccs
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+Warning: you need USES=ssl
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+====>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for unanimity-2016.09.13
+===========================================================================
+=======================<phase: install-mtree  >============================
+===========================================================================
+====>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for unanimity-2016.09.13
+===>   unanimity-2016.09.13 depends on file: /usr/local/bin/python2.7 - found
+===>   unanimity-2016.09.13 depends on shared library: libhts.so - found (/usr/local/lib/libhts.so)
+===>   unanimity-2016.09.13 depends on shared library: libboost_regex.so.1.60.0 - found (/usr/local/lib/libboost_regex.so.1.60.0)
+===>  Checking if unanimity already installed
+===>   Registering installation for unanimity-2016.09.13
+[11-0-amd64-default] Installing unanimity-2016.09.13...
+===========================================================================
+====>> Checking shared library dependencies
+ 0x0000000000000001 NEEDED               Shared library: [libc++.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libc.so.7]
+ 0x0000000000000001 NEEDED               Shared library: [libcrypto.so.8]
+ 0x0000000000000001 NEEDED               Shared library: [libcxxrt.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libhts.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libm.so.5]
+ 0x0000000000000001 NEEDED               Shared library: [libssl.so.8]
+ 0x0000000000000001 NEEDED               Shared library: [libthr.so.3]
+=======================<phase: deinstall      >============================
+===>  Deinstalling for unanimity
+===>   Deinstalling unanimity-2016.09.13
+Updating database digests format: .......... done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	unanimity-2016.09.13
+
+Number of packages to be removed: 1
+
+The operation will free 2 MiB.
+[11-0-amd64-default] [1/1] Deinstalling unanimity-2016.09.13...
+[11-0-amd64-default] [1/1] Deleting files for unanimity-2016.09.13: .... done
+===========================================================================
+====>> Checking for extra files and directories
+[00:05:39] ====>> Installing from package
+[11-0-amd64-default] Installing unanimity-2016.09.13...
+[11-0-amd64-default] Extracting unanimity-2016.09.13: .... done
+[00:05:39] ====>> Cleaning up
+===>  Cleaning for unanimity-2016.09.13
+[00:05:41] ====>> Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	unanimity-2016.09.13
+
+Number of packages to be removed: 1
+
+The operation will free 2 MiB.
+[11-0-amd64-default] [1/1] Deinstalling unanimity-2016.09.13...
+[11-0-amd64-default] [1/1] Deleting files for unanimity-2016.09.13: .... done
+build of biology/unanimity ended at Sat Oct  1 18:47:03 CDT 2016
+build time: 00:01:13
