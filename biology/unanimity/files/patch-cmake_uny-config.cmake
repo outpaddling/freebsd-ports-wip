@@ -1,5 +1,5 @@
---- cmake/uny-config.cmake.orig	2016-09-29 18:16:18.923193000 -0500
-+++ cmake/uny-config.cmake	2016-09-29 18:16:38.635334000 -0500
+--- cmake/uny-config.cmake.orig	2016-09-12 19:55:43 UTC
++++ cmake/uny-config.cmake
 @@ -1,6 +1,6 @@
  # Config generation
  

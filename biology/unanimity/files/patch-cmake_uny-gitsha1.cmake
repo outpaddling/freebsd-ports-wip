@@ -1,4 +1,4 @@
---- cmake/uny-gitsha1.cmake.orig	2016-08-12 12:47:37 UTC
+--- cmake/uny-gitsha1.cmake.orig	2016-09-12 19:55:43 UTC
 +++ cmake/uny-gitsha1.cmake
 @@ -7,7 +7,7 @@ set(__find_git_sha1 YES)
  function(find_git_sha1 _GIT_SHA1)
