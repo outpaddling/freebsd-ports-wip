@@ -9,7 +9,7 @@ if [ -e /usr/wip ]; then
     set +e
     pkg delete -y qterminal qtermwidgets
     set -e
-    pkg install -y cmake qt5-qmake
+    pkg install -y cmake qt5-qmake gettext
     wip-update
     for pkg in x11/qterminal; do
 	cd /usr/wip/$pkg
