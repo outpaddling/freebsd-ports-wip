@@ -1,9 +1,8 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
-# $FreeBSD: head/biology/ncbi-blast+/Makefile 384733 2015-04-25 14:21:58Z marino $
+# $FreeBSD$
 
 PORTNAME=	blast+
-PORTVERSION=	2.2.30
-PORTREVISION=	3
+PORTVERSION=	2.5.0
 CATEGORIES=	biology
 MASTER_SITES=	http://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/ \
 		http://acadix.biz/Ports/distfiles/
@@ -13,10 +12,8 @@ DISTNAME=	ncbi-blast-${PORTVERSION}+-src
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	NCBI implementation of Basic Local Alignment Search Tool
 
-LICENSE=	Public_domain
-LICENSE_NAME=	Public Domain
+LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/scripts/projects/blast/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libbz2.so:archivers/bzip2
@@ -25,13 +22,11 @@ RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
 WRKSRC=		${WRKDIR}/${DISTNAME}/c++
 
 GNU_CONFIGURE=	yes
-USES=		gmake shebangfix perl5 python
+USES=		compiler:openmp gmake shebangfix perl5 python
 SHEBANG_FILES=	src/app/blast/legacy_blast.pl \
 		src/app/blast/update_blastdb.pl \
 		src/app/winmasker/windowmasker_2.2.22_adapter.py
 
-# Requires openmp
-USE_GCC=	yes
 USE_LDCONFIG=	yes
 
 # The test for amq can hang, but amq is not needed so just avoid the test
