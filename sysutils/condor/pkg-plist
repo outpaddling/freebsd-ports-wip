@@ -46,10 +46,12 @@ bin/condor_who
 %%ETCDIR%%/condor
 %%ETCDIR%%/condor_config
 %%ETCDIR%%/examples/README
+%%ETCDIR%%/examples/condor-tmpfiles.conf
 %%ETCDIR%%/examples/condor.boot.generic
 %%ETCDIR%%/examples/condor.boot.rpm
 %%ETCDIR%%/examples/condor.init
 %%ETCDIR%%/examples/condor.plist
+%%ETCDIR%%/examples/condor.service
 %%ETCDIR%%/examples/condor.sysconfig
 %%ETCDIR%%/examples/condor_config.annotated
 %%ETCDIR%%/examples/condor_config.generic
@@ -128,7 +130,7 @@ lib/condor_ssh_to_job_sshd_config_template
 lib/libchirp_client.a
 lib/libclassad.a
 lib/libcondorapi.a
-lib/libpyclassad%%PYTHON_VER%%_8_4_6.a
+lib/libpyclassad%%PYTHON_VER%%_8_4_9.a
 lib/python/classad.so
 lib/python/htcondor.so
 lib/scimark2lib.jar

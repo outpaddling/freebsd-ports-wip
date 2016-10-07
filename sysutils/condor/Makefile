@@ -5,7 +5,7 @@
 #       build.  The build system may pick up incompatible headers and libs.
 
 PORTNAME=	condor
-PORTVERSION=	8.4.6
+PORTVERSION=	8.4.9
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 DISTNAME=	condor_src-${PORTVERSION}-all-all
