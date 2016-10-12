@@ -18,12 +18,12 @@ LICENSE=	BSD2CLAUSE
 
 # libtwintk is both a build and run depend.  Ape requires the library and
 # headers to build, and libtwintk's terminfo database to run.
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpare.a:/usr/wip/devel/libpare \
-		${LOCALBASE}/lib/libbacon.a:/usr/wip/devel/libbacon \
-		${LOCALBASE}/lib/libtwintk.a:/usr/wip/devel/twintk
-RUN_DEPENDS=	${LOCALBASE}/share/twintk/terminfo/README:/usr/wip/devel/twintk \
-		webbrowser:/usr/wip/www/webbrowser \
-		docviewer:/usr/wip/textproc/docviewer
+BUILD_DEPENDS=	${LOCALBASE}/lib/libpare.a:${PORTSDIR}/../wip/devel/libpare \
+		${LOCALBASE}/lib/libbacon.a:${PORTSDIR}/../wip/devel/libbacon \
+		${LOCALBASE}/lib/libtwintk.a:${PORTSDIR}/../wip/devel/twintk
+RUN_DEPENDS=	${LOCALBASE}/share/twintk/terminfo/README:${PORTSDIR}/../wip/devel/twintk \
+		webbrowser:${PORTSDIR}/../wip/www/webbrowser \
+		docviewer:${PORTSDIR}/../wip/textproc/docviewer
 
 USES=		tar:xz
 

@@ -13,6 +13,8 @@ MASTER_SITES=   http://acadix.biz/Ports/distfiles/
 MAINTAINER=     bacon4000@gmail.com
 COMMENT=        Misc functions
 
+LICENSE=	BSD2CLAUSE
+
 USES=		tar:xz
 
 BUILD_DEPENDS=  ${LOCALBASE}/lib/libbacon.a:/usr/wip/devel/libbacon
