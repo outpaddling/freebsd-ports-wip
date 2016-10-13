@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS+=	libhdf5.so:science/hdf5
 LIB_DEPENDS+=	libsz.so:science/szip
+LIB_DEPENDS+=	libgtest.so:devel/googletest
 
 # FIXME: Should not be needed and isn't on outpaddling.cs
 CXXFLAGS+=	-I${LOCALBASE}/include
