@@ -20,11 +20,11 @@ GH_PROJECT=	openMVS
 
 BUILD_DEPENDS+=	eigen>3:math/eigen3 \
 		${LOCALBASE}/lib/libceres.a:/usr/wip/math/ceres-solver \
-		${LOCALBASE}/include/vcg/vcg/complex/algorithms/attribute_seam.h:/usr/wip/graphics/vcglib
+		${LOCALBASE}/include/vcg/complex/algorithms/attribute_seam.h:/usr/wip/graphics/vcglib
 LIB_DEPENDS+=	libopencv_objdetect.so:graphics/opencv \
 		libCGAL.so:math/cgal \
 		libboost_date_time.so:devel/boost-libs \
-		libsysinfo.so:devel/libsysinfo
+		libsysinfo.so:/usr/wip/devel/libsysinfo
 
 CMAKE_ARGS+=	-DOpenMVS_USE_OPENMP:BOOL=off \
 		-DOpenMVS_USE_CUDA:BOOK=off
