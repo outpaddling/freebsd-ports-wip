@@ -15,7 +15,9 @@ COMMENT=	Library for modeling and solving complicated optimization problems
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3
+BUILD_DEPENDS=	eigen>=3:math/eigen3
+# Must be rebuilt when eigen is upgraded
+RUN_DEPENDS=	eigen>=3:math/eigen3
 LIB_DEPENDS=	libglog.so:devel/glog \
 		libgflags.so:devel/gflags \
 		libumfpack.so:math/suitesparse

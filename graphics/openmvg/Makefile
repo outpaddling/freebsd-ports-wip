@@ -12,7 +12,7 @@ COMMENT=	Open Multiple View Geometry library
 
 LICENSE=	MPL
 
-BUILD_DEPENDS=	eigen>0:math/eigen3 \
+BUILD_DEPENDS=	eigen>=3:math/eigen3 \
 		ceres-solver>0:/usr/wip/math/ceres-solver \
 		liblemon>0:/usr/wip/science/liblemon \
 		flann>0:/usr/wip/science/flann
@@ -21,11 +21,12 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libXxf86vm.so:x11/libXxf86vm \
 		libXi.so:x11/libXi \
 		libXrandr.so:x11/libXrandr \
-		libCoinMP.so:math/coinmp \
+		libClp.so:math/clp \
 		libglog.so:devel/glog
 
 # Alternative to clp
-#		libClp.so:math/clp \
+# FIXME: Will try to link to coinmp if present. Installed as a libreoffice dep.
+#		libCoinMP.so:math/coinmp \
 
 USES=		cmake:outsource compiler:c++11-lang fortran jpeg tar:xz
 
