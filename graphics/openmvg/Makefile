@@ -21,11 +21,11 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libXxf86vm.so:x11/libXxf86vm \
 		libXi.so:x11/libXi \
 		libXrandr.so:x11/libXrandr \
-		libClp.so:math/clp \
+		libCoinMP.so:math/coinmp \
 		libglog.so:devel/glog
 
 # Alternative to clp
-#		libCoinMP.so:math/coinmp
+#		libClp.so:math/clp \
 
 USES=		cmake:outsource compiler:c++11-lang fortran jpeg tar:xz
 
