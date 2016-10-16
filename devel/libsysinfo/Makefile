@@ -12,7 +12,6 @@ LICENSE=	BSD3CLAUSE
 
 USES=		uidfix
 USE_LDCONFIG=	yes
-PROJECTHOST=	sysinfo-bsd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
@@ -22,6 +21,7 @@ PLIST_FILES=	include/sys/sysinfo.h \
 		lib/libsysinfo.so \
 		lib/libsysinfo.so.0 \
 		man/man3/sysinfo.3.gz
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsysinfo.so.0
 
