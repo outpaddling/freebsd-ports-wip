@@ -3,6 +3,9 @@
 # Deps: http://ceres-solver.org/building.html
 # eigen 3.2.2+, cmake 2.8.0+, Google Log 0.3.1+, Google Flags, SuiteSparse,
 # CXSparse (alternative to SuiteSparse), BLAS, LAPACK (OpenBLAS without threading)
+#
+# NOTE: This port is deprecated.  It has been superceded by a more complete
+# port, which is now committed.
 
 PORTNAME=	ceres-solver
 PORTVERSION=	1.11.0

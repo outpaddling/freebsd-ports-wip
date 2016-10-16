@@ -13,7 +13,7 @@ COMMENT=	Open Multiple View Geometry library
 LICENSE=	MPL
 
 BUILD_DEPENDS=	eigen>=3:math/eigen3 \
-		ceres-solver>0:/usr/wip/math/ceres-solver \
+		ceres-solver>0:math/ceres-solver \
 		liblemon>0:/usr/wip/science/liblemon \
 		flann>0:/usr/wip/science/flann
 LIB_DEPENDS=	libpng.so:graphics/png \
