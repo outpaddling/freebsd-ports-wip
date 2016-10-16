@@ -19,12 +19,12 @@ GH_ACCOUNT=	cdcseacave
 GH_PROJECT=	openMVS
 
 BUILD_DEPENDS+=	eigen>3:math/eigen3 \
-		ceres-solver>0:math/ceres-solver \
-		${LOCALBASE}/include/vcg/complex/algorithms/attribute_seam.h:/usr/wip/graphics/vcglib
+		vcglib>0:/usr/wip/graphics/vcglib
 LIB_DEPENDS+=	libopencv_objdetect.so:graphics/opencv \
 		libCGAL.so:math/cgal \
 		libboost_date_time.so:devel/boost-libs \
-		libsysinfo.so:/usr/wip/devel/libsysinfo
+		libsysinfo.so:/usr/wip/devel/libsysinfo \
+		libceres.so:math/ceres-solver
 
 CMAKE_ARGS+=	-DOpenMVS_USE_OPENMP:BOOL=off \
 		-DOpenMVS_USE_CUDA:BOOK=off

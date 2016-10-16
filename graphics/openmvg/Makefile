@@ -13,16 +13,16 @@ COMMENT=	Open Multiple View Geometry library
 LICENSE=	MPL
 
 BUILD_DEPENDS=	eigen>=3:math/eigen3 \
-		ceres-solver>0:math/ceres-solver \
-		liblemon>0:/usr/wip/science/liblemon \
-		flann>0:/usr/wip/science/flann
+		liblemon>0:/usr/wip/science/liblemon
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libXxf86vm.so:x11/libXxf86vm \
 		libXi.so:x11/libXi \
 		libXrandr.so:x11/libXrandr \
 		libClp.so:math/clp \
-		libglog.so:devel/glog
+		libglog.so:devel/glog \
+		libceres.so:math/ceres-solver \
+		libflann_cpp.so:/usr/wip/science/flann
 
 # Alternative to clp
 # FIXME: Will try to link to coinmp if present. Installed as a libreoffice dep.
