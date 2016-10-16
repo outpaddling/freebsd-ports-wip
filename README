@@ -4,6 +4,14 @@ ports:
 
 1)  Check out a copy to /usr/wip.
 
+    svn co https://outpaddling@github.com/outpaddling/freebsd-ports-wip/trunk \
+        /usr/wip
+
+    or
+
+    git clone https://outpaddling@github.com/outpaddling/freebsd-ports-wip
+    mv freebsd-ports-wip /usr/wip
+
 2)  Then install the ports of interest:
 
     cd /usr/wip/category/port && make deinstall clean install
