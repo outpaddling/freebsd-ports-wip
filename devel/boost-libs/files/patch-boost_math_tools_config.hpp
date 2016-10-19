@@ -1,6 +1,6 @@
---- boost/math/tools/config.hpp.orig	2015-05-05 12:32:10 UTC
-+++ boost/math/tools/config.hpp
-@@ -27,7 +27,9 @@
+--- boost/math/tools/config.hpp.orig	2016-09-21 09:33:31.000000000 -0500
++++ boost/math/tools/config.hpp	2016-10-19 13:57:34.065743000 -0500
+@@ -28,7 +28,9 @@
  
  #include <boost/math/tools/user.hpp>
  
