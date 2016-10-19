@@ -21,12 +21,13 @@ BROKEN_powerpc64=	Does not build
 LIB_DEPENDS+=	libkrb5support.so:security/krb5 \
 		libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl \
-		libboost_python.so:devel/boost-python-libs
+		libboost_python.so:devel/boost-python-libs \
+		libexpat.so:textproc/expat2
 
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_LDCONFIG=	yes
 # Does not build with Python 3
-USES=		cmake cpe gmake perl5 pgsql python:2 shebangfix
+USES=		cmake cpe gmake perl5 pgsql python:2 shebangfix ssl
 CPE_VENDOR=	condor_project
 SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 		src/condor_gridmanager/remote_gahp \
