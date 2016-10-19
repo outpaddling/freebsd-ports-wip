@@ -13,8 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 # Add when tests are enabled	libgtest.so:devel/googletest
 # FIXME: Guessing at actual boost lib needed
+BUILD_DEPENDS=	boost-libs>=1.60.0:/usr/wip/devel/boost-libs
 LIB_DEPENDS=	libhts.so:biology/htslib \
-		libboost_regex.so.1.60.0:/usr/wip/devel/boost-libs
+		libboost_regex.so:/usr/wip/devel/boost-libs
 
 USES=		cmake:outsource compiler:c++11-lang ssl
 
