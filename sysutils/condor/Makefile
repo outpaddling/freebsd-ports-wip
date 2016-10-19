@@ -44,10 +44,6 @@ CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
 		-DPYTHON_INCLUDE_DIR:PATH=${LOCALBASE}/include/${PYTHON_VERSION} \
 		-DPYTHON_LIBRARY:FILEPATH=${LOCALBASE}/lib/lib${PYTHON_VERSION}.so
 
-# This was an issue in previous releases, but I've tested 8.2.8 extensively
-# on machines with as many as 16 cores.
-# MAKE_JOBS_UNSAFE=	yes
-
 SUB_FILES=	condor-config condor_config.local pkg-message
 
 USERS=		condor
