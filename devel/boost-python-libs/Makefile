@@ -22,7 +22,7 @@ LIB_DEPENDS+=	libboost_thread.so:/usr/wip/devel/boost-libs
 MAKE_ARGS+=    --with-python
 ALL_TARGET=    stage
 
-BUILD_DEPENDS+=        bjam:${PORTSDIR}/devel/boost-jam
+BUILD_DEPENDS+=        bjam:/usr/wip/devel/boost-jam
 
 pre-build:
        @${ECHO_CMD} "using python : " ${PYTHON_VER} " : " ${PYTHON_CMD} " : " ${PYTHON_INCLUDEDIR} ";" >> ${WRKSRC}/tools/build/src/site-config.jam
