@@ -22,9 +22,9 @@ ICU_LIB_DEPENDS=	libicuuc.so:devel/icu
 ICU_VARS=		MAKE_ARGS+=-sICU_PATH=${LOCALBASE}
 ICU_VARS_OFF=		MAKE_ARGS+=boost.locale.icu=off
 
-.include "${.CURDIR}/../boost-all/common.mk"
+.include "${.CURDIR}/../boost-all-1.60.0/common.mk"
 
-.include "${.CURDIR}/../boost-all/compiled.mk"
+.include "${.CURDIR}/../boost-all-1.60.0/compiled.mk"
 
 MAKE_ARGS+=    --without-python
 ALL_TARGET=    stage
