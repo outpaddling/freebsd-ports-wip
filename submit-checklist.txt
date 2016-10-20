@@ -114,6 +114,13 @@ Test on all available platforms.  Do the following IN ORDER:
 
     test with NOPORT* (whatever is in pkg-plist)
 
+    If USES=ssl, test with each of the following in /etc/make.conf:
+	DEFAULT_VERSIONS+= ssl=libressl
+	DEFAULT_VERSIONS+= ssl=openssl
+	DEFAULT_VERSIONS+= base
+
+	See /usr/ports/Mk/bsd.default-versions.mk
+
 Test with poudriere to ensure all depends are installed by the port
     If you've installed Poudriere with port-poudriere-setup:
 	wip-poudriere-test category/portname all
