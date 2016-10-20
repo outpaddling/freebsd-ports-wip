@@ -1,0 +1,20 @@
+--- build/cmake/macros/SystemSpecificInformations.cmake.orig	2016-10-19 22:27:09.555151000 -0500
++++ build/cmake/macros/SystemSpecificInformations.cmake	2016-10-19 22:28:10.217670000 -0500
+@@ -265,6 +265,7 @@ if(UNIX)
+     set( SYSTEM_NAME "freebsd_${FREEBSD_RELEASE}" )
+     set( CONDOR_FREEBSD ON )
+     set( BSD_UNIX ON )
++    # FIXME: Is there a >= to replace all the MATCHES operators below?
+     if(FREEBSD_MAJOR MATCHES "4" )
+       set( CONDOR_FREEBSD4 ON )
+     elseif(FREEBSD_MAJOR MATCHES "5" )
+@@ -284,6 +285,9 @@ if(UNIX)
+     elseif(FREEBSD_MAJOR MATCHES "11" )
+       set( CONDOR_FREEBSD11 ON )
+       set( CONDOR_UTMPX ON )
++    elseif(FREEBSD_MAJOR MATCHES "12" )
++      set( CONDOR_FREEBSD11 ON )
++      set( CONDOR_UTMPX ON )
+     endif()
+     if( CMAKE_SYSTEM_PROCESSOR MATCHES "amd64" )
+       set( SYS_ARCH "x86_64")
