@@ -8,18 +8,29 @@ CATEGORIES=	science
 MAINTAINER=	bacon@unixdev.ceas.uwm.edu
 COMMENT=	Fast open framework for deep learning
 
-# boost, glog, gflags, protobuf, hdf5, opencv, atlas, numpy
-LIB_DEPENDS+=	liblmdb.so:databases/lmdb \
-		libleveldb.so:databases/leveldb
-
 LICENSE=	BSD2CLAUSE
-#LICENSE_FILE=	
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
+LIB_DEPENDS+=	libboost_regex.so:devel/boost-libs \
+		libgflags.so:devel/gflags \
+		libglog.so:devel/glog \
+		libhdf5.so:science/hdf5 \
+		liblmdb.so:databases/lmdb \
+		libleveldb.so:databases/leveldb \
+		libopenblasp.so:math/openblas \
+		libopencv_ml.so:graphics/opencv2 \
+		libprotobuf.so:devel/protobuf
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
+
+USES=		cmake python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	BVLC
 GH_TAGNAME=	4ba654f5c88c36ee8ba53964b7faf25c6d7010b4
+
+# FIXME: Add option for atlas instead of openblas
+CMAKE_ARGS+=	-DBLAS:STRING="Open"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
 

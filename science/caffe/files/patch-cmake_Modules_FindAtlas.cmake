@@ -1,5 +1,5 @@
---- cmake/Modules/FindAtlas.cmake.orig	2016-10-20 17:04:11.687504000 -0500
-+++ cmake/Modules/FindAtlas.cmake	2016-10-20 17:04:50.463659000 -0500
+--- cmake/Modules/FindAtlas.cmake.orig	2016-10-05 16:18:26 UTC
++++ cmake/Modules/FindAtlas.cmake
 @@ -12,6 +12,7 @@
  set(Atlas_INCLUDE_SEARCH_PATHS
    /usr/include/atlas
