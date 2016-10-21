@@ -8,7 +8,7 @@ CATEGORIES=	science
 MAINTAINER=	bacon@unixdev.ceas.uwm.edu
 COMMENT=	Fast open framework for deep learning
 
-# boost, glog, gflags, protobuf, hdf5, opencv, atlas
+# boost, glog, gflags, protobuf, hdf5, opencv, atlas, numpy
 LIB_DEPENDS+=	liblmdb.so:databases/lmdb \
 		libleveldb.so:databases/leveldb
 
