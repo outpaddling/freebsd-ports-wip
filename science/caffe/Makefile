@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
 LIB_DEPENDS+=	libboost_regex.so:devel/boost-libs \
 		libboost_python.so:devel/boost-python-libs \
-		libc++.so.1:devel/libc++ \
+		libc++.so:devel/libc++ \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
 		libhdf5.so:science/hdf5 \
@@ -27,10 +27,10 @@ LIB_DEPENDS+=	libboost_regex.so:devel/boost-libs \
 		libprotobuf.so:devel/protobuf \
 		libsnappy.so:archivers/snappy \
 		libsz.so:science/szip
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
 
 USES=		cmake fortran python
+USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	BVLC
