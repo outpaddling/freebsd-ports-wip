@@ -71,13 +71,13 @@ INSTALL_TARGET=	DESTDIR=${STAGEDIR}${PREFIX}/petsc \
 		install
 
 # FIXME: Test this
-INSTALL_TARGET=	install-strip
+# INSTALL_TARGET=	install-strip
 
 # FIXME: shebang_fix?
 pre-configure:
 	${MKDIR} ${WRKSRC}/temp
 	@${FIND} ${WRKSRC} -name '*.py' -exec \
-		@${SED} -i '' 's|/usr/bin/python|/usr/bin/env python|g' '{}' \;
+		${SED} -i '' 's|/usr/bin/python|/usr/bin/env python|g' '{}' \;
 
 # make test?
 
