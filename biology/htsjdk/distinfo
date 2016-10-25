@@ -1,2 +1,3 @@
-SHA256 (htsjdk/1.133.tar.gz) = d52a6b842023638421c795e864bd8d5d5f19b49ed398c7e9aab89ba7d1af25a3
-SIZE (htsjdk/1.133.tar.gz) = 10134142
+TIMESTAMP = 1477431856
+SHA256 (samtools-htsjdk-2.6.1_GH0.tar.gz) = e1c21a3096a59ef9be9d9c22bda705d31d5b01aa737bf7f0252e5578d4a34c76
+SIZE (samtools-htsjdk-2.6.1_GH0.tar.gz) = 9127073

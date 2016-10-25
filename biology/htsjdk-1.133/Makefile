@@ -2,32 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	htsjdk
-PORTVERSION=	2.6.1
+PORTVERSION=	1.133
 CATEGORIES=	biology
+MASTER_SITES=	http://github.com/samtools/htsjdk/archive/
+DISTNAME=	${PORTVERSION}
+# Same distname as picard-tools
+DIST_SUBDIR=	${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Generic format for storing large nucleotide sequence alignments
 
-# LICENSE actually varies
-LICENSE=	BSD2CLAUSE
+# Prefers 1.6, 1.7 should work, but jars built with 1.7 won't run in 1.6 env
+USE_JAVA=	1.6+
 
-USE_JAVA=	1.8
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	samtools
-
-BUILD_DEPENDS=	gradle:devel/gradle
+BUILD_DEPENDS=	ant:devel/apache-ant
 
 MAKE_ENV=	JAVA_HOME=${JAVA_HOME}
 
 # http://samtools.github.io/htsjdk/building.html#BuildingHtsJdk
 do-build:
-	cd ${WRKSRC} && gradle
-
-test:
-	cd ${WRKSRC} && gradle test
+	cd ${WRKSRC} && ant && ant htsjdk-jar
 
 do-install:
 	cd ${WRKSRC}/dist && ${COPYTREE_SHARE} . \
