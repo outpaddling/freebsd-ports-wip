@@ -1,5 +1,5 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
-# $FreeBSD: head/devel/libsysinfo/Makefile 403506 2015-12-11 08:48:56Z miwi $
+# $FreeBSD: head/devel/libsysinfo/Makefile 422140 2016-09-14 15:59:34Z mat $
 
 PORTNAME=	libsysinfo
 PORTVERSION=	0.0.3

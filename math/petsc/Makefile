@@ -1,19 +1,23 @@
-# New ports collection makefile for:	petsc
-# Date created:		2012-04-08
-# Whom:			Jason Bacon <bacon4000@gmail.com>
-#
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
-#
-
 # Note: -lpetsc-ufo... is supposed to fail in conftest
 
 PORTNAME=	petsc
-PORTVERSION=	3.7.1
+PORTVERSION=	3.7.4
 CATEGORIES=	math
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Parallel solution of partial differential equations
+
+LICENSE=	BSD2CLAUSE
+
+# LIB_DEPENDS=	svn:devel/subversion
+LIB_DEPENDS=	libsuperlu.so:math/superlu \
+		libnetcdf.so:science/netcdf \
+		libblas.so:math/blas \
+		liblapack.so:math/lapack \
+		libscalapack.so:math/scalapack
 
 # Custom configure script, not GNU
 HAS_CONFIGURE=	yes
@@ -24,14 +28,6 @@ CONFIGURE_LOG=	configure.log
 
 # PETSc automatically parallelizes compiles and rejects make -j
 MAKE_JOBS_UNSAFE=	yes
-
-# LIB_DEPENDS=	svn:devel/subversion
-
-LIB_DEPENDS=	libsuperlu.so:math/superlu \
-		libnetcdf.so:science/netcdf \
-		libblas.so:math/blas \
-		liblapack.so:math/lapack \
-		libscalapack.so:math/scalapack
 
 CONFIGURE_ENV=	PETSC_DIR=${WRKSRC} \
 		PETSC_ARCH=${OPSYS:tl} \
@@ -60,7 +56,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}/petsc \
 		--with-matlab=0
 
 # Show all build output instead of overwriting the same line
-CONFIGURE_ARGS+=| tr '\r' '\n'
+CONFIGURE_ARGS+=| ${TR} '\r' '\n'
 
 MAKEFILE=	makefile
 MAKE_ENV+=	${CONFIGURE_ENV}
@@ -80,8 +76,8 @@ INSTALL_TARGET=	install-strip
 # FIXME: shebang_fix?
 pre-configure:
 	${MKDIR} ${WRKSRC}/temp
-	find ${WRKSRC} -name '*.py' -exec \
-		sed -i '' 's|/usr/bin/python|/usr/bin/env python|g' '{}' \;
+	@${FIND} ${WRKSRC} -name '*.py' -exec \
+		@${SED} -i '' 's|/usr/bin/python|/usr/bin/env python|g' '{}' \;
 
 # make test?
 
