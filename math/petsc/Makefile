@@ -17,7 +17,7 @@ LIB_DEPENDS=	libsuperlu.so:math/superlu \
 		libnetcdf.so:science/netcdf \
 		libblas.so:math/blas \
 		liblapack.so:math/lapack \
-		libscalapack.so:math/scalapack \
+		libscalapack.so:/usr/wip/math/scalapack \
 		libhwloc.so:devel/hwloc
 
 # Custom configure script, not GNU
