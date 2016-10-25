@@ -1,3 +1,4 @@
+libdata/ldconfig/petsc
 petsc/bin/FASTMathInstaller.py
 petsc/bin/PetscBinaryIO.py
 petsc/bin/PetscBinaryIO_tests.py
@@ -432,7 +433,7 @@ petsc/include/petscwebclient.h
 petsc/include/petscwebclient.h.html
 petsc/lib/libpetsc.so
 petsc/lib/libpetsc.so.3.7
-petsc/lib/libpetsc.so.3.7.1
+petsc/lib/libpetsc.so.3.7.4
 petsc/lib/petsc/conf/PETScBuildInternal.cmake
 petsc/lib/petsc/conf/RDict.db
 petsc/lib/petsc/conf/adic.init
@@ -447,7 +448,7 @@ petsc/lib/petsc/conf/error.log
 petsc/lib/petsc/conf/files
 petsc/lib/petsc/conf/gmake.log
 petsc/lib/petsc/conf/make.log
-petsc/lib/petsc/conf/modules/petsc/3.7.1
+petsc/lib/petsc/conf/modules/petsc/3.7.4
 petsc/lib/petsc/conf/petscrules
 petsc/lib/petsc/conf/petscvariables
 petsc/lib/petsc/conf/reconfigure-freebsd.py

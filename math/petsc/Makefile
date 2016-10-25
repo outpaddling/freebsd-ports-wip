@@ -17,12 +17,15 @@ LIB_DEPENDS=	libsuperlu.so:math/superlu \
 		libnetcdf.so:science/netcdf \
 		libblas.so:math/blas \
 		liblapack.so:math/lapack \
-		libscalapack.so:math/scalapack
+		libscalapack.so:math/scalapack \
+		libhwloc.so:devel/hwloc
 
 # Custom configure script, not GNU
 HAS_CONFIGURE=	yes
-USES=		gmake python perl5 fortran
+# FIXME: USES=ssl breaks the configure script
+USES=		fortran gmake perl5 python
 USE_GCC=	yes
+USE_XORG+=	x11
 CONFIG_SHELL=	${PYTHONBIN}
 CONFIGURE_LOG=	configure.log
 
@@ -63,21 +66,21 @@ MAKE_ENV+=	${CONFIGURE_ENV}
 
 # PETSc appears to be using DESTDIR like PREFIX.  It's set to ${PREFIX}
 # by PETSc's configure script, but then overridden by ports to
-# ${WRKSRC}/stage, resulting in a real install prefix of '/'. Adding
+# ${WRKSRC}/stage, resulting in a real prefix of '/'. Adding
 # DESTDIR=${STAGEDIR}${PREFIX} to the default INSTALL_TARGET fixes the problem.
 INSTALL_TARGET=	DESTDIR=${STAGEDIR}${PREFIX}/petsc \
 		PETSC_DIR=${WRKSRC} \
 		PETSC_ARCH=freebsd \
 		install
 
-# FIXME: Test this
-# INSTALL_TARGET=	install-strip
-
 # FIXME: shebang_fix?
 pre-configure:
 	${MKDIR} ${WRKSRC}/temp
 	@${FIND} ${WRKSRC} -name '*.py' -exec \
 		${SED} -i '' 's|/usr/bin/python|/usr/bin/env python|g' '{}' \;
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/petsc/lib/libpetsc.so.${PORTVERSION}
 
 # make test?
 
