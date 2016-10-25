@@ -9,6 +9,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-0
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Analyse next-generation resequencing data
 
+# Not really.  Set up special license case here.
+LICENSE=	BSD2CLAUSE
+
 USES=		tar:bzip2
 USE_JAVA=	yes
 
