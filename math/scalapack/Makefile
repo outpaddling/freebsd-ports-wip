@@ -43,11 +43,18 @@ DISTFILES+=	scalapack_install.ps scalapackqref.ps  \
 
 .if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=		yes
+.elif exists(${LOCALBASE}/lib/libopenblas.so) && !defined(WITH_BLAS)
+WITH_OPENBLAS=		yes
 .endif
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	libatlas.so:math/atlas
 BLAS=		-lf77blas
 LAPACK=		-lalapack -lcblas
+.elif defined(WITH_OPENBLAS)
+# FIXME: Still getting QA warning about missing dep
+LIB_DEPENDS+=	libopenblas.so:math/openblas
+BLAS=		-lopenblas
+LAPACK=		-lopenblas
 .else
 LIB_DEPENDS+=	libblas.so:math/blas
 LIB_DEPENDS+=	liblapack.so:math/lapack
@@ -94,7 +101,9 @@ CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops 
 NOOPT=	-O0
 .if defined(WITH_OPENMPI)
 MPIF77=	${LOCALBASE}/mpi/openmpi/bin/mpif77
+MPIF90=	${LOCALBASE}/mpi/openmpi/bin/mpif90
 MPICC=	${LOCALBASE}/mpi/openmpi/bin/mpicc
+CMAKE_ARGS+=	-DMPI_BASE_DIR:PATH=${LOCALBASE}/mpi/openmpi
 .else
 MPIF77=	${LOCALBASE}/bin/mpif77
 MPICC=	${LOCALBASE}/bin/mpicc
