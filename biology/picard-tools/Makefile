@@ -1,42 +1,35 @@
 # Created by: Jason Wayne Bacon <bacon4000@gmail.com>
 # $FreeBSD$
+# FIXME: Can we download the jar file using github tools?
 
 PORTNAME=	picard
-PORTVERSION=	2.7.0
+PORTVERSION=	2.7.1
 CATEGORIES=	biology java
+MASTER_SITES=	http://github.com/broadinstitute/picard/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	-tools
+DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	.jar
 
 MAINTAINER=	bacon4000@gmail.com
-COMMENT=	Command line tools for manipulating high-throughput sequencing (HTS) data
+COMMENT=	CLI tools for manipulating high-throughput sequencing (HTS) data
 
 LICENSE=	MIT
 
-# [1]: http://github.com/samtools/htsjdk
-# [2]: http://samtools.sourceforge.net
-# [3]: http://vcftools.sourceforge.net/specs.html
-
-BUILD_DEPENDS=	ant:devel/apache-ant \
-		git:devel/git \
-		${JAVAJARDIR}/htsjdk/htsjdk-${PORTVERSION}.jar:/usr/wip/biology/htsjdk
 RUN_DEPENDS=	samtools:biology/samtools
 
-# Prefers 1.6, 1.7 should work, but jars built with 1.7 won't run in 1.6 env
-USE_JAVA=	1.6+
+USE_JAVA=	1.8+
 JAVA_RUN=	yes
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	broadinstitute
+NO_BUILD=	yes
 
-MAKE_ENV=	JAVA_HOME=${JAVA_HOME}
+PLIST_FILES=	%%JAVAJARDIR%%/picard.jar
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-do-build:
-	#cd ${WRKSRC} && tar zxvf ${DISTDIR}/htsjdk/${PORTVERSION}.tar.gz
-	cd ${WRKSRC} && ${MV} htsjdk-${PORTVERSION} htsjdk
-	cd ${WRKSRC} && ant -lib lib/ant package-commands
+do-extract:
+	# No extract
 
 do-install:
-	cd ${WRKSRC}/dist && ${COPYTREE_SHARE} . ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
+		${STAGEDIR}${JAVAJARDIR}
 
 .include <bsd.port.mk>
