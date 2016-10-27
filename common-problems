@@ -11,3 +11,6 @@
 c++: error: linker command failed with exit code 1 (use -v to see invocation)
 
 LDFLAGS+=	-L/usr/lib -lcrypto -lssl
+
+Maybe USES+=ssl will resolve this as well
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
