@@ -4,6 +4,7 @@
 PORTNAME=	cosmos
 PORTVERSION=	2.0.10
 CATEGORIES=	biology
+PKGNAMESUFFIX=	-wfm
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Python Workflow and Pipeline Management System
