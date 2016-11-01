@@ -134,6 +134,8 @@ man/man1/apekeys.1.gz
 %%DATADIR%%/Languages/Python/Macros/menu.txt
 %%DATADIR%%/Languages/Python/language_opts
 %%DATADIR%%/Languages/Python/syntax_highlighting
+%%DATADIR%%/Languages/Rust/language_opts
+%%DATADIR%%/Languages/Rust/syntax_highlighting
 %%DATADIR%%/Languages/SAL/Macros/macros
 %%DATADIR%%/Languages/SAL/Macros/menu.txt
 %%DATADIR%%/Languages/SAL/language_opts
