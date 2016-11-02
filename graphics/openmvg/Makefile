@@ -29,6 +29,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 #		libCoinMP.so:math/coinmp \
 
 USES=		cmake:outsource compiler:c++11-lang fortran jpeg tar:xz
+USE_QT4=	corelib gui
 
 CXXFLAGS+=	-Wno-deprecated-register
 LDFLAGS+=	-L${LOCALBASE}/lib/gcc48 -lgfortran
