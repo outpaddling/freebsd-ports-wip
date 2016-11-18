@@ -69,6 +69,7 @@ sbin/cluster-update-all-ssh_config
 sbin/cluster-update-backup-nodes
 sbin/cluster-update-io-nodes
 sbin/cluster-update-ssh_config
+sbin/cluster-update-vis-nodes
 sbin/cluster-user-admin
 sbin/cluster-useradd
 sbin/cluster-usermod
