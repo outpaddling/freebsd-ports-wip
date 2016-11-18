@@ -3,13 +3,13 @@
 
 PORTNAME=	beast2
 PORTVERSION=	2.4.3
-CATEGORIES=	biology
-MASTER_SITES=	https://github.com/CompEvol/beast2/releases/download/v2.4.3/
-DISTNAME=	BEAST.v${PORTVERSION}.Linux
 DISTVERSIONPREFIX=	v
+CATEGORIES=	biology java
+MASTER_SITES=	http://github.com/CompEvol/beast2/releases/download/v2.4.3/
+DISTNAME=	BEAST.v${PORTVERSION}.Linux
 
 MAINTAINER=	bacon4000@gmail.com
-COMMENT=	
+COMMENT=	Bayesian phylogenetic analysis of molecular sequences
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -28,7 +28,7 @@ NO_ARCH=	yes
 
 #LICENSE.txt          bin/                 lib/
 #README.txt           examples/            templates/
-#VERSION HISTORY.txt  images/              
+#VERSION HISTORY.txt  images/
 
 post-patch:
 	${REINPLACE_CMD} -i '' -e 's|$$BEAST/lib|${JAVAJARDIR}|g' \
