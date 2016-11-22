@@ -61,6 +61,7 @@ RUN_DEPENDS=	samtools>=0:biology/samtools \
 #    FASTQC: 	http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 #    BWA: 	http://bio-bwa.sourceforge.net/
 #    MUTECT: 	http://www.broadinstitute.org/cancer/cga/mutect
+#
 # ChIP-seq (MACS)
 #
 #    FASTQC: 	http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
