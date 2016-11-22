@@ -13,7 +13,11 @@ MAINTAINER=	bacon@sculpin.acadix.biz
 COMMENT=	Multi-omics data analysis pipelines
 
 LICENSE=	MIT
-#LICENSE_FILE=
+
+RUN_DEPENDS=	samtools>=0:biology/samtools \
+		fastqc>=0:/usr/wip/biology/fastqc \
+		tophat>=0:/usr/wip/biology/tophat \
+		cufflinks>=0:/usr/wip/biology/cufflinks
 
 #
 # R Packages Needed
