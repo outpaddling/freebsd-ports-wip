@@ -1,6 +1,6 @@
-bin/GenomeAnalysisTK.jar
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampleBAM.bam
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampleBAM.bam.bai
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampleFASTA.dict
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampleFASTA.fasta
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exampleFASTA.fasta.fai
+%%JAVAJARDIR%%/GenomeAnalysisTK.jar
