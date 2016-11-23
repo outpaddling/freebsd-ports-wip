@@ -11,6 +11,9 @@ MASTER_SITES=	http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Transcript assembly, differential expression and regulation for RNA-Seq
 
+LICENSE=	BSL
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		python
 GNU_CONFIGURE=	yes
 
