@@ -40,7 +40,5 @@ do-install:
 		${STAGEDIR}${JAVAJARDIR}
 	cd ${WRKDIR}/resources && ${COPYTREE_SHARE} \* \
 		${STAGEDIR}${EXAMPLESDIR}/
-	${CHGRP} -Rh ${GROUPS} ${STAGEDIR}
-	${CHMOD} -R o-rwx ${STAGEDIR}
 
 .include <bsd.port.post.mk>
