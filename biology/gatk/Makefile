@@ -22,6 +22,9 @@ NO_BUILD=	yes
 
 RESTRICTED=	Requires (free) registration
 
+USERS=		gatk
+GROUPS=		${USERS}
+
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
@@ -37,5 +40,7 @@ do-install:
 		${STAGEDIR}${JAVAJARDIR}
 	cd ${WRKDIR}/resources && ${COPYTREE_SHARE} \* \
 		${STAGEDIR}${EXAMPLESDIR}/
+	${CHGRP} -Rh ${GROUPS} ${STAGEDIR}
+	${CHMOD} -R o-rwx ${STAGEDIR}
 
 .include <bsd.port.post.mk>
