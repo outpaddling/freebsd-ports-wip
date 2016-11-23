@@ -1,0 +1,6 @@
+The OMICS pipeline also depends on biology/gatk, which is not redistributable
+and thus not installed as a dependency.  If you require GATK, install as
+follows:
+
+cd /usr/ports/biology/gatk
+make install

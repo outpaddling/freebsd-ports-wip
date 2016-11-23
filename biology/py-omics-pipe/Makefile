@@ -14,6 +14,7 @@ COMMENT=	Multi-omics data analysis pipelines
 
 LICENSE=	MIT
 
+# Do not add gatk as a dep.  It is restricted and will prevent packaging.
 RUN_DEPENDS=	samtools>=0:biology/samtools \
 		fastqc>=0:/usr/wip/biology/fastqc \
 		tophat>=0:/usr/wip/biology/tophat \
