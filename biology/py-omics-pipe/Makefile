@@ -18,7 +18,11 @@ LICENSE=	MIT
 RUN_DEPENDS=	samtools>=0:biology/samtools \
 		fastqc>=0:/usr/wip/biology/fastqc \
 		tophat>=0:/usr/wip/biology/tophat \
-		cufflinks>=0:/usr/wip/biology/cufflinks
+		cufflinks>=0:/usr/wip/biology/cufflinks \
+		bwa>=0:biology/bwa \
+		picard-tools>=0:/usr/wip/biology/picard-tools \
+		bedtools>=0:biology/bedtools \
+		bowtie>=0:biology/bowtie
 
 #
 # R Packages Needed
