@@ -1,0 +1,12 @@
+%%PYTHON_SITELIBDIR%%/hgapi/__init__.py
+%%PYTHON_SITELIBDIR%%/hgapi/__init__.pyc
+%%PYTHON_SITELIBDIR%%/hgapi/__init__.pyo
+%%PYTHON_SITELIBDIR%%/hgapi/hgapi.py
+%%PYTHON_SITELIBDIR%%/hgapi/hgapi.pyc
+%%PYTHON_SITELIBDIR%%/hgapi/hgapi.pyo
+%%PYTHON_SITELIBDIR%%/hgapi/jython_in_practice.py
+%%PYTHON_SITELIBDIR%%/hgapi/jython_in_practice.pyc
+%%PYTHON_SITELIBDIR%%/hgapi/jython_in_practice.pyo
+%%PYTHON_SITELIBDIR%%/hgapi/testhgapi.py
+%%PYTHON_SITELIBDIR%%/hgapi/testhgapi.pyc
+%%PYTHON_SITELIBDIR%%/hgapi/testhgapi.pyo
