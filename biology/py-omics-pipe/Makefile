@@ -23,8 +23,10 @@ RUN_DEPENDS=	samtools>=0:biology/samtools \
 		picard-tools>=0:/usr/wip/biology/picard-tools \
 		bedtools>=0:biology/bedtools \
 		bowtie>=0:biology/bowtie \
+		mercurial>=0:devel/mercurial \
 		${PYTHON_PKGNAMEPREFIX}raven>0:devel/py-raven \
 		${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse \
+		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}hgapi>0:/usr/wip/devel/py-hgapi
 #
 # R Packages Needed
