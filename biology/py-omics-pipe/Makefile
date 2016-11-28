@@ -22,8 +22,9 @@ RUN_DEPENDS=	samtools>=0:biology/samtools \
 		bwa>=0:biology/bwa \
 		picard-tools>=0:/usr/wip/biology/picard-tools \
 		bedtools>=0:biology/bedtools \
-		bowtie>=0:biology/bowtie
-
+		bowtie>=0:biology/bowtie \
+		${PYTHON_PKGNAMEPREFIX}raven>0:devel/py-raven \
+		${PYTHON_PKGNAMEPREFIX}hgapi>0:/usr/wip/devel/py-hgapi
 #
 # R Packages Needed
 #
