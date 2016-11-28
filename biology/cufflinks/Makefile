@@ -14,8 +14,12 @@ COMMENT=	Transcript assembly, differential expression and regulation for RNA-Seq
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# FreeBSD 11 math.h errors
+# Tried: compiler:c++11-lang
+# USE_GCC is a workaround
 USES=		python
 GNU_CONFIGURE=	yes
+USE_GCC=	yes
 
 BUILD_DEPENDS=	samtools01==0.1.19:/usr/wip/biology/samtools0119 \
 		bjam:devel/boost-jam \
