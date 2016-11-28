@@ -27,6 +27,8 @@ RUN_DEPENDS=	samtools>=0:biology/samtools \
 		${PYTHON_PKGNAMEPREFIX}raven>0:devel/py-raven \
 		${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
+		${PYTHON_PKGNAMEPREFIX}drmaa>0:/usr/wip/sysutils/py-drmaa \
+		${PYTHON_PKGNAMEPREFIX}sumatra>0:/usr/wip/devel/py-sumatra \
 		${PYTHON_PKGNAMEPREFIX}hgapi>0:/usr/wip/devel/py-hgapi
 #
 # R Packages Needed
