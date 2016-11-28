@@ -50,6 +50,7 @@ Makefile:
 	    USE_TEX instead of tex-* depends
 	    pathfix for pkgconfig lib/libdata
 	New LIB_DEPENDS format: libname.so
+	XORG= instead of LIB_DEPENDS where possible
 
     BROKEN_${OPSYS}_${REL}_${ARCH}
     
