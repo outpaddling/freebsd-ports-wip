@@ -12,10 +12,10 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # FIXME: Probably don't really need devel/libc++.  Added to silence QA.
+#		libc++.so:devel/libc++ \
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
 LIB_DEPENDS+=	libboost_regex.so:devel/boost-libs \
 		libboost_python.so:devel/boost-python-libs \
-		libc++.so:devel/libc++ \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
 		libhdf5.so:science/hdf5 \
