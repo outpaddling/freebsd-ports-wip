@@ -1,0 +1,12 @@
+%%PYTHON_SITELIBDIR%%/parameters/__init__.py
+%%PYTHON_SITELIBDIR%%/parameters/__init__.pyc
+%%PYTHON_SITELIBDIR%%/parameters/__init__.pyo
+%%PYTHON_SITELIBDIR%%/parameters/export.py
+%%PYTHON_SITELIBDIR%%/parameters/export.pyc
+%%PYTHON_SITELIBDIR%%/parameters/export.pyo
+%%PYTHON_SITELIBDIR%%/parameters/random.py
+%%PYTHON_SITELIBDIR%%/parameters/random.pyc
+%%PYTHON_SITELIBDIR%%/parameters/random.pyo
+%%PYTHON_SITELIBDIR%%/parameters/validators.py
+%%PYTHON_SITELIBDIR%%/parameters/validators.pyc
+%%PYTHON_SITELIBDIR%%/parameters/validators.pyo

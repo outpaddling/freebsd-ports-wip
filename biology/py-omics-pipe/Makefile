@@ -25,11 +25,13 @@ RUN_DEPENDS=	samtools>=0:biology/samtools \
 		bowtie>=0:biology/bowtie \
 		mercurial>=0:devel/mercurial \
 		${PYTHON_PKGNAMEPREFIX}raven>0:devel/py-raven \
+		${PYTHON_PKGNAMEPREFIX}hgapi>0:/usr/wip/devel/py-hgapi \
 		${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
+		${PYTHON_PKGNAMEPREFIX}sumatra>0:/usr/wip/science/py-sumatra \
 		${PYTHON_PKGNAMEPREFIX}drmaa>0:/usr/wip/sysutils/py-drmaa \
-		${PYTHON_PKGNAMEPREFIX}sumatra>0:/usr/wip/devel/py-sumatra \
-		${PYTHON_PKGNAMEPREFIX}hgapi>0:/usr/wip/devel/py-hgapi
+		${PYTHON_PKGNAMEPREFIX}ruffus>0:/usr/wip/science/py-ruffus \
+
 #
 # R Packages Needed
 #
