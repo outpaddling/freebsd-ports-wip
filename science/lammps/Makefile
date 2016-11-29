@@ -34,8 +34,8 @@ INSTALL_PREFIX?=${PREFIX}
 # Selects a system-specific Makefile.  Allow MPI slave ports to override.
 ALL_TARGET?=	FreeBSD-serial
 
-USES=		gmake fortran tar:xz
-USE_GCC=	yes
+USES=		fortran gmake jpeg tar:xz
+#USE_GCC=	yes
 
 # Prevent slave ports from including master plist
 PLIST=	${.CURDIR}/pkg-plist
