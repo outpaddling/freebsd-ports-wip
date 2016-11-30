@@ -32,7 +32,9 @@ USES=		cmake:outsource compiler:c++11-lang fortran jpeg tar:xz
 USE_QT4=	corelib gui
 
 CXXFLAGS+=	-Wno-deprecated-register
-LDFLAGS+=	-L${LOCALBASE}/lib/gcc48 -lgfortran
+# -L should be added by USES=fortran
+# LDFLAGS+=	-L${LOCALBASE}/lib/gcc48 -lgfortran
+LDFLAGS+=	-lgfortran
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 CMAKE_ARGS+=	-DEIGEN_INCLUDE_DIR_HINTS:STRING=${LOCABASE}/include/eigen3 \
