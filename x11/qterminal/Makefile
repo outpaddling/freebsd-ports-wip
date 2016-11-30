@@ -26,6 +26,6 @@ CMAKE_ARGS+=	-DUSE_SYSTEM_QXT:BOOL=OFF -DUSE_QT5:BOOL=ON
 USE_GITHUB=	yes
 GH_ACCOUNT=	lxde
 
-LDFLAGS+=	-lulog
+LDFLAGS+=	-L${LOCALBASE}/lib -lulog
 
 .include <bsd.port.mk>
