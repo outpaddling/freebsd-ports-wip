@@ -21,6 +21,7 @@ HAS_CONFIGURE=	yes
 ALL_TARGET=	subdirs
 
 # Don't do this post-patch, since it modifies files with static patches.
+# Be sure to update static patches only after patch, not any later stages.
 pre-configure:
 	${REINPLACE_CMD} -e 's|x86_64|amd64|g' ${WRKSRC}/*/setup/konfigure.perl
 
