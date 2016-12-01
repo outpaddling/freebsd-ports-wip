@@ -1,5 +1,5 @@
---- ngs-sdk/setup/konfigure.perl.orig	2016-10-07 16:59:36.000000000 -0500
-+++ ngs-sdk/setup/konfigure.perl	2016-12-01 14:54:25.702997400 -0600
+--- ngs-java/setup/konfigure.perl.orig	2016-10-07 16:59:36.000000000 -0500
++++ ngs-java/setup/konfigure.perl	2016-12-01 14:53:59.864994874 -0600
 @@ -198,7 +198,7 @@ print "checking system type... " unless 
  my ($OS, $ARCH, $OSTYPE, $MARCH, @ARCHITECTURES) = OsArch();
  println $OSTYPE unless ($AUTORUN);
@@ -15,7 +15,7 @@
  println $MARCH unless ($AUTORUN);
 -unless ($MARCH =~ /x86_64/i || $MARCH =~ /i?86/i) {
 -    println "configure: error: unsupported architecture '$OSTYPE'";
-+unless ($MARCH =~ /amd64/i || $MARCH =~ /i?86/i || $MARCH eq 'amd64') {
++unless ($MARCH =~ /amd64/i || $MARCH =~ /i?86/i) {
 +    println "configure: error: unsupported architecture '$MARCH'";
      exit 1;
  }
@@ -25,7 +25,7 @@
  my $BITS;
  
 -if ($MARCH =~ /x86_64/i) {
-+if ($MARCH =~ /amd64/i || $MARCH eq 'amd64') {
++if ($MARCH =~ /amd64/i) {
      $BITS = 64;
  } elsif ($MARCH eq 'fat86') {
      $BITS = '32_64';
