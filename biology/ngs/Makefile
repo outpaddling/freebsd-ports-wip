@@ -17,6 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ncbi
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--prefix=${STAGEDIR}${PREFIX}
 
 ALL_TARGET=	subdirs
 
@@ -24,6 +25,7 @@ ALL_TARGET=	subdirs
 # Be sure to update static patches only after patch, not any later stages.
 pre-configure:
 	${REINPLACE_CMD} -e 's|x86_64|amd64|g' ${WRKSRC}/*/setup/konfigure.perl
+	${REINPLACE_CMD} -e 's|lib64|lib|g' ${WRKSRC}/*/setup/install.perl
 	${LN} -s ${WRKSRC}/ngs-sdk/ngs/unix/x86_64 ${WRKSRC}/ngs-sdk/ngs/unix/amd64
 
 .include <bsd.port.mk>
