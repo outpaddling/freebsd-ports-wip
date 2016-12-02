@@ -31,9 +31,17 @@ pre-configure:
 	${LN} -s ${WRKSRC}/ngs-sdk/ngs/unix/x86_64 ${WRKSRC}/ngs-sdk/ngs/unix/amd64
 
 pre-build:
+	for subdir in dispatch adapter; do \
+		${CP} ${FILESDIR}/Makefile-sdk-$$subdir \
+			${WRKSRC}/ngs-sdk/$$subdir/Makefile; \
+		${CP} ${FILESDIR}/Makefile-sdk-$$subdir.depend \
+			${WRKSRC}/ngs-sdk/$$subdir/Makefile.depend; \
+	done
 	for lang in c++ java python; do \
-		${CP} ${FILESDIR}/Makefile-sdk-$$lang ${WRKSRC}/ngs-sdk/language/$$lang/Makefile; \
-		${CP} ${FILESDIR}/Makefile-sdk-$$lang.depend ${WRKSRC}/ngs-sdk/language/$$lang/Makefile.depend; \
+		${CP} ${FILESDIR}/Makefile-sdk-$$lang \
+			${WRKSRC}/ngs-sdk/language/$$lang/Makefile; \
+		${CP} ${FILESDIR}/Makefile-sdk-$$lang.depend \
+			${WRKSRC}/ngs-sdk/language/$$lang/Makefile.depend; \
 	done
 
 .include <bsd.port.mk>
