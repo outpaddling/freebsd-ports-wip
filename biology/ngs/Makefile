@@ -21,11 +21,19 @@ CONFIGURE_ARGS+=	--prefix=${STAGEDIR}${PREFIX}
 
 ALL_TARGET=	subdirs
 
+MAKE_JOBS_UNSAFE=	yes
+
 # Don't do this post-patch, since it modifies files with static patches.
 # Be sure to update static patches only after patch, not any later stages.
 pre-configure:
 	${REINPLACE_CMD} -e 's|x86_64|amd64|g' ${WRKSRC}/*/setup/konfigure.perl
 	${REINPLACE_CMD} -e 's|lib64|lib|g' ${WRKSRC}/*/setup/install.perl
 	${LN} -s ${WRKSRC}/ngs-sdk/ngs/unix/x86_64 ${WRKSRC}/ngs-sdk/ngs/unix/amd64
+
+pre-build:
+	for lang in c++ java python; do \
+		${CP} ${FILESDIR}/Makefile-sdk-$$lang ${WRKSRC}/ngs-sdk/language/$$lang/Makefile; \
+		${CP} ${FILESDIR}/Makefile-sdk-$$lang.depend ${WRKSRC}/ngs-sdk/language/$$lang/Makefile.depend; \
+	done
 
 .include <bsd.port.mk>
