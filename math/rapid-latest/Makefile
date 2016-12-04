@@ -1,19 +1,5 @@
-############################################################################
-# New ports collection Makefile for:   RAPID
-# Date created:        18 July 2006
-# Whom:                Jason W. Bacon <bacon4000@gmail.com>
-#
-# $FreeBSD$
-#
-# The RAPID code is offered "as is" and is free for non-commercial use.
-# 
-# To use RAPID for any commercial purpose, you must request a license from
-# 
-# 	http://www.cs.unc.edu/~geom/OBB/OBBT.html
-# 
-# Redistribution of RAPID code in any form is strictly prohibited.
-# 
-############################################################################
+# Created by: Jason W. Bacon <bacon4000@gmail.com>
+# $FreeBSD: head/math/rapid/Makefile 403506 2015-12-11 08:48:56Z miwi $
 
 PORTNAME=	rapid
 PORTVERSION=	2.01
@@ -25,12 +11,20 @@ DISTNAME=	RAPID_v2_01
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Robust and Accurate Polygon Interference Detection
 
+LICENSE=	RAPID_LICENSE
+LICENSE_NAME=	Software License for RAPID polygon interference detection
+LICENSE_TEXT=	Commercial users must request a license
+LICENSE_PERMS=	auto-accept
+
+RESTRICTED=	For any commercial purpose, you must request a license from http://www.cs.unc.edu/~geom/OBB/OBBT.html
+
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 ALL_TARGET=
+MAKE_JOBS_UNSAFE=	yes
 
-MAN1=	rapid.1
+MAKE_ENV+=	V=1
 
 .include <bsd.port.pre.mk>
 
@@ -38,12 +32,9 @@ post-extract:
 	${REINPLACE_CMD} -E "s/friend RAPID_Collide/friend int RAPID_Collide/" ${WRKSRC}/RAPID_private.H
 
 do-install:
-	${MKDIR} ${PREFIX}/include/RAPID
-	${INSTALL_DATA}	${WRKSRC}/*.H ${PREFIX}/include/RAPID
-	${INSTALL_DATA}	${WRKSRC}/libRAPID.a ${PREFIX}/lib
-	${INSTALL_MAN} ${FILESDIR}/rapid.1 ${MANPREFIX}/man/man1
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/RAPID
+	${INSTALL_DATA}	${WRKSRC}/*.H ${STAGEDIR}${PREFIX}/include/RAPID
+	${INSTALL_DATA}	${WRKSRC}/libRAPID.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_MAN} ${FILESDIR}/rapid.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.post.mk>
