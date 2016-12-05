@@ -25,7 +25,7 @@ RUN_DEPENDS=	mawk>=0:lang/mawk \
 		bamtools>=0:/usr/wip/biology/bamtools \
 		freebayes:/usr/wip/biology/freebayes \
 		stacks>=0:/usr/wip/biology/stacks \
-		Trimmomatic>=0:/usr/wip/biology/trimmomatic \
+		trimmomatic>=0:/usr/wip/biology/trimmomatic \
 		seqtk>=0:/usr/wip/biology/seqtk \
 		bedtools2==2.23.0:/usr/wip/biology/bedtools2 \
 		pear-merger>=0:/usr/wip/biology/pear
