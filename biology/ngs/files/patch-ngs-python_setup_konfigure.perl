@@ -1,5 +1,5 @@
 --- ngs-python/setup/konfigure.perl.orig	2016-10-07 16:59:36.000000000 -0500
-+++ ngs-python/setup/konfigure.perl	2016-12-01 14:53:48.173000501 -0600
++++ ngs-python/setup/konfigure.perl	2016-12-06 14:54:40.035267343 -0600
 @@ -198,7 +198,7 @@ print "checking system type... " unless 
  my ($OS, $ARCH, $OSTYPE, $MARCH, @ARCHITECTURES) = OsArch();
  println $OSTYPE unless ($AUTORUN);
@@ -41,7 +41,7 @@
 +    $SHLX = 'so';
 +    $EXEX = '';
 +    $OSINC = 'unix';
-+    $TOOLS = 'clang' unless ($TOOLS);
++    $TOOLS = 'cc' unless ($TOOLS);
  } elsif ($OSTYPE =~ /darwin/i) {
      $LPFX = 'lib';
      $OBJX = 'o';
@@ -54,3 +54,29 @@
          $OPT    = '-O3';
          $AR     = 'libtool -static -o';
          $LD     = "clang -Wl,-arch_multiple $ARCH_FL -Wl,-all_load";
+@@ -400,6 +409,7 @@ if ($TOOLS =~ /gcc$/) {
+ 
+     $DBG = '-g';
+ } elsif ($TOOLS eq 'vc++') {
++} elsif ($TOOLS eq 'cc') {
+ } else {
+     die "unrecognized tool chain '$TOOLS'";
+ }
+@@ -999,7 +1009,7 @@ EndText
+     L($F, 'export CONFIGURE_FOUND_XML2');
+     L($F);
+ 
+-    if ($OS eq 'linux' || $OS eq 'mac') {
++    if ($OS eq 'linux' || $OS eq 'mac' || $OS eq 'FreeBSD') {
+         L($F, '# installation rules');
+         L($F,
+         '$(INST_LIBDIR)$(BITS)/%.$(VERSION_LIBX): $(LIBDIR)/%.$(VERSION_LIBX)');
+@@ -1031,7 +1041,7 @@ EndText
+           T($F, '      rm -f $(patsubst %$(VERSION),%$(MAJVERS),$@) '
+                       . '$(patsubst %$(VERSION_SHLX),%$(SHLX),$@);    \\');
+         }
+-        if ($OS eq 'linux') {
++        if ($OS eq 'linux' || $OS eq 'FreeBSD') {
+           T($F, '      ln -s $(@F) $(patsubst %$(VERSION),%$(MAJVERS),$@); \\');
+         } elsif ($OS eq 'mac') {
+           T($F, '      ln -sf $(@F) '

@@ -1,5 +1,8 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
+#
+# TODO
+# Patch build system to install examples-python.  See plist vs pkg-plist.
 
 PORTNAME=	ngs
 PORTVERSION=	1.3.0
@@ -18,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ncbi
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--prefix=${STAGEDIR}${PREFIX}
+CONFIGURE_ARGS+=--prefix=${STAGEDIR}${PREFIX}
 
 ALL_TARGET=	subdirs
 
@@ -46,7 +49,7 @@ pre-configure:
 #	done
 
 post-stage:
-	${REINPLACE_CMD} -i '' -e 's|/usr/wip/biology/ngs/work/stage||g' \
-		${STAGEDIR}${PREFIX}/share/examples-java/Makefile
+	${REINPLACE_CMD} -i '' -e 's|${STAGEDIR}||g' \
+		${STAGEDIR}${EXAMPLESDIR}/examples-java/Makefile
 
 .include <bsd.port.mk>
