@@ -1,5 +1,5 @@
 --- ngs-sdk/setup/konfigure.perl.orig	2016-10-07 16:59:36.000000000 -0500
-+++ ngs-sdk/setup/konfigure.perl	2016-12-01 17:48:02.080526000 -0600
++++ ngs-sdk/setup/konfigure.perl	2016-12-06 13:13:29.865681000 -0600
 @@ -198,7 +198,7 @@ print "checking system type... " unless 
  my ($OS, $ARCH, $OSTYPE, $MARCH, @ARCHITECTURES) = OsArch();
  println $OSTYPE unless ($AUTORUN);
@@ -15,7 +15,7 @@
  println $MARCH unless ($AUTORUN);
 -unless ($MARCH =~ /x86_64/i || $MARCH =~ /i?86/i) {
 -    println "configure: error: unsupported architecture '$OSTYPE'";
-+unless ($MARCH =~ /x86_64/i || $MARCH =~ /i?86/i || $MARCH eq 'amd64') {
++unless ($MARCH =~ /amd64/i || $MARCH =~ /i?86/i || $MARCH eq 'amd64') {
 +    println "configure: error: unsupported architecture '$MARCH'";
      exit 1;
  }
@@ -25,7 +25,7 @@
  my $BITS;
  
 -if ($MARCH =~ /x86_64/i) {
-+if ($MARCH =~ /x86_64/i || $MARCH eq 'amd64') {
++if ($MARCH =~ /amd64/i || $MARCH eq 'amd64') {
      $BITS = 64;
  } elsif ($MARCH eq 'fat86') {
      $BITS = '32_64';
@@ -93,6 +93,15 @@
      $CPP  = 'clang++' unless ($CPP);
      $CC   = 'clang -c';
      my $versionMin = '-mmacosx-version-min=10.6';
+@@ -377,7 +401,7 @@ if ($TOOLS =~ /gcc$/) {
+         $LP      = "$CPP $versionMin $ARCH_FL";
+     } else {
+         $MAKE_MANIFEST = '( echo "$^" > $@/manifest )';
+-        $ARCH_FL       = '-arch i386 -arch x86_64';
++        $ARCH_FL       = '-arch i386 -arch amd64';
+         $OPT    = '-O3';
+         $AR     = 'libtool -static -o';
+         $LD     = "clang -Wl,-arch_multiple $ARCH_FL -Wl,-all_load";
 @@ -399,7 +423,7 @@ if ($TOOLS =~ /gcc$/) {
      $JAR   = 'jar cf';
  
@@ -102,3 +111,21 @@
  } else {
      die "unrecognized tool chain '$TOOLS'";
  }
+@@ -1000,7 +1024,7 @@ EndText
+     L($F, 'export CONFIGURE_FOUND_XML2');
+     L($F);
+ 
+-    if ($OS eq 'linux' || $OS eq 'mac') {
++    if ($OS eq 'linux' || $OS eq 'mac' || $OS eq 'FreeBSD') {
+         L($F, '# installation rules');
+         L($F,
+         '$(INST_LIBDIR)$(BITS)/%.$(VERSION_LIBX): $(LIBDIR)/%.$(VERSION_LIBX)');
+@@ -1032,7 +1056,7 @@ EndText
+           T($F, '      rm -f $(patsubst %$(VERSION),%$(MAJVERS),$@) '
+                       . '$(patsubst %$(VERSION_SHLX),%$(SHLX),$@);    \\');
+         }
+-        if ($OS eq 'linux') {
++        if ($OS eq 'linux' || $OS eq 'FreeBSD') {
+           T($F, '      ln -s $(@F) $(patsubst %$(VERSION),%$(MAJVERS),$@); \\');
+         } elsif ($OS eq 'mac') {
+           T($F, '      ln -sf $(@F) '

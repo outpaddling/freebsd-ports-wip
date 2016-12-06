@@ -33,16 +33,20 @@ pre-configure:
 # Experiment with clean simple makefiles to replace custom build system
 #pre-build:
 #	for subdir in dispatch adapter; do \
-#		${CP} ${FILESDIR}/Makefile-sdk-$$subdir \
+#		${CP} ${FILESDIR}/Generic-makefiles/Makefile-sdk-$$subdir \
 #			${WRKSRC}/ngs-sdk/$$subdir/Makefile; \
-#		${CP} ${FILESDIR}/Makefile-sdk-$$subdir.depend \
+#		${CP} ${FILESDIR}/Generic-makefiles/Makefile-sdk-$$subdir.depend \
 #			${WRKSRC}/ngs-sdk/$$subdir/Makefile.depend; \
 #	done
 #	for lang in c++ java python; do \
-#		${CP} ${FILESDIR}/Makefile-sdk-$$lang \
+#		${CP} ${FILESDIR}/Generic-makefiles/Makefile-sdk-$$lang \
 #			${WRKSRC}/ngs-sdk/language/$$lang/Makefile; \
-#		${CP} ${FILESDIR}/Makefile-sdk-$$lang.depend \
+#		${CP} ${FILESDIR}/Generic-makefiles/Makefile-sdk-$$lang.depend \
 #			${WRKSRC}/ngs-sdk/language/$$lang/Makefile.depend; \
 #	done
+
+post-stage:
+	${REINPLACE_CMD} -i '' -e 's|/usr/wip/biology/ngs/work/stage||g' \
+		${STAGEDIR}${PREFIX}/share/examples-java/Makefile
 
 .include <bsd.port.mk>
