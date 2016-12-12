@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	lammps
-PORTVERSION=	2016.05.14
+PORTVERSION=	2016.11.17
 CATEGORIES=	science
-# FIXME: Can this be done from http://lammps.sandia.gov/download.html#tar?
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Large-scale Atomic/Molecular Massively Parallel Simulator
@@ -36,6 +34,9 @@ ALL_TARGET?=	FreeBSD-serial
 
 USES=		gmake fortran tar:xz
 USE_GCC=	yes
+
+USE_GITHUB=	yes
+GH_TAGNAME=	stable_17Nov2016
 
 # Prevent slave ports from including master plist
 PLIST=	${.CURDIR}/pkg-plist
