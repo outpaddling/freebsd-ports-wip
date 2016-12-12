@@ -1,5 +1,7 @@
 # Created by:	Jason Bacon
 # $FreeBSD$
+#
+# FIXME: Picks up mpich2 if installed
 
 PORTNAME=	lammps
 PORTVERSION=	2014.12.09
