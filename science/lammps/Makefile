@@ -89,6 +89,11 @@ post-patch:
 		${BUILD_WRKSRC}/MAKE/Makefile.${ALL_TARGET}
 .endif
 
+# FIXME: Tune build system to ignore other MPI installations
+.if exists(${LOCALBASE}/bin/mpirun)
+IGNORE=	Does not build if mpich2 or other implementation installed with prefix=/usr/local
+.endif
+
 # Enable all possible standard packages
 # Not included:
 #   gpu: requires CUDA
