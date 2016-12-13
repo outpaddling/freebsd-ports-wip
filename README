@@ -1,11 +1,24 @@
 
-This is a collection of work-in-progress FreeBSD ports.  To use these
-ports:
+This is a collection of work-in-progress FreeBSD ports.  
+
+If you would like to contribute to the collection:
+
+o   Contact the owner of the repository and ask to be added as a Github
+    collaborator.
+
+o   ADOPT-A-PORT:
+
+    If there is an existing port that you are interested it, PLEASE PLEASE
+    PLEASE inquire about adopting it by contacting the maintainer (see the
+    port Makefile for contact info).  There are many ports here and they will
+    move beyond WIP faster if more people sign up as maintainers.
+
+To install any of these ports:
 
 1)  Check out a copy to /usr/wip.
 
     svn co https://outpaddling@github.com/outpaddling/freebsd-ports-wip/trunk \
-        /usr/wip
+	/usr/wip
 
     or
 
@@ -15,9 +28,6 @@ ports:
 2)  Then install the ports of interest:
 
     cd /usr/wip/category/port && make deinstall clean install
-
-If you would like to contribute, contact the owner of the repository and
-ask to be added as a collaborator.
 
 ---
 
