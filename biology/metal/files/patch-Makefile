@@ -1,0 +1,47 @@
+--- Makefile.orig	2016-12-15 17:36:16.535897000 -0600
++++ Makefile	2016-12-15 17:37:56.243804000 -0600
+@@ -10,7 +10,7 @@ TOOL = metal
+ INSTALLDIR=/usr/local/bin
+ 
+ # default C++ compiler
+-CXX=g++ 
++CXX?=g++ 
+ 
+ # default compilation flags are 
+ #
+@@ -78,7 +78,7 @@ help : 
+ 	@echo "Type...           To..."
+ 	@echo "make help         Display this help screen"
+ 	@echo "make all          Compile everything "
+-	@echo "make install      Install binaries in $(INSTALLDIR)"
++	@echo "make install      Install binaries in $(DESTDIR)$(INSTALLDIR)"
+ 	@echo "make install INSTALLDIR=directory_for_binaries"
+ 	@echo "                  Install binaries in directory_for_binaries"
+ 	@echo "make clean        Delete temporary files"
+@@ -110,20 +110,20 @@ $(PDFOBJ) : $(PDFHDR)
+ clean :
+ 	-rm -f */*.a */*.o $(EXECUTABLES) 
+ 
+-install : all $(INSTALLDIR)
++install : all $(DESTDIR)$(INSTALLDIR)
+ 	@echo " "
+-	@echo Installing to directory $(INSTALLDIR)
++	@echo Installing to directory $(DESTDIR)$(INSTALLDIR)
+ 	@echo To select a different directory, run
+ 	@echo " "
+ 	@echo make install INSTALLDIR=your_preferred_dir
+ 	@echo " "
+-	cp $(EXECUTABLES) $(INSTALLDIR)
++	cp $(EXECUTABLES) $(DESTDIR)$(INSTALLDIR)
+ 
+-$(INSTALLDIR) :
++$(DESTDIR)$(INSTALLDIR) :
+ 	@echo " "
+-	@echo Creating directory $(INSTALLDIR)
++	@echo Creating directory $(DESTDIR)$(INSTALLDIR)
+ 	@echo " "
+-	@mkdir -p $(INSTALLDIR)
++	@mkdir -p $(DESTDIR)$(INSTALLDIR)
+ 
+ new-version :
+ 	mkdir -p $(DISTRIBDIR) $(DISTRIBDIR)/$(TOOL)
