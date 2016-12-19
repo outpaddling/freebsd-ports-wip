@@ -18,7 +18,6 @@ LICENSE=	BSD2CLAUSE
 RUN_DEPENDS=	auto-append-line:/usr/wip/sysutils/auto-admin
 
 USES=		tar:xz
-NO_BUILD=	yes
 
 MAKE_ENV+=	PREFIX=${PREFIX} DATADIR=${DATADIR}
 
