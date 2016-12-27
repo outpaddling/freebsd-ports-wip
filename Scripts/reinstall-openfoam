@@ -5,20 +5,16 @@
 ##########################################################################
 
 # FreeBSD ports
-if [ -e /usr/wip ]; then
-    set +e
-    pkg delete -y openfoam flex scotch-openmpi
-    set -e
-    pkg install -y bison gmake openmpi
-    wip-update
-    for pkg in textproc/flex cad/scotch-openmpi science/openfoam; do
-	cd /usr/wip/$pkg
-	make clean clean-depends
-	make -DBATCH install
-	make package
-	cd ../..
-    done
-else
-    printf "No /usr/wip found.\n"
-fi
+set +e
+pkg delete -y openfoam flex scotch-openmpi
+set -e
+pkg install -y bison gmake openmpi
+wip-update
+for pkg in textproc/flex cad/scotch-openmpi science/openfoam; do
+    cd /usr/wip/$pkg
+    make clean clean-depends
+    make -DBATCH install
+    make package
+    cd ../..
+done
 

@@ -5,20 +5,16 @@
 ##########################################################################
 
 # FreeBSD ports
-if [ -e /usr/wip ]; then
-    set +e
-    pkg delete -y qterminal qtermwidgets
-    set -e
-    pkg install -y cmake qt5-qmake qt5-buildtools qt5-linguisttools gettext
-    wip-update
-    for pkg in x11/qterminal; do
-	cd /usr/wip/$pkg
-	make clean clean-depends
-	make -DBATCH install
-	make package
-	cd ../..
-    done
-else
-    printf "No /usr/wip found.\n"
-fi
+set +e
+pkg delete -y qterminal qtermwidgets
+set -e
+pkg install -y cmake qt5-qmake qt5-buildtools qt5-linguisttools gettext
+wip-update
+for pkg in x11/qterminal; do
+    cd /usr/wip/$pkg
+    make clean clean-depends
+    make -DBATCH install
+    make package
+    cd ../..
+done
 

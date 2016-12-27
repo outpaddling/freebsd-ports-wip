@@ -7,15 +7,11 @@
 pyprefix=py27
 
 # FreeBSD ports
-if [ -e /usr/wip ]; then
-    pkg delete $pyprefix-avro $pyprefix-h5py $pyprefix-pysam \
-	$pyprefix-pbcore $pyprefix-pbh5tools \
-	blasr blasr_libcpp py27-cDNA_primer || true
-    pkg install -y py27-numpy py27-scipy hdf5 py27-networkx
-    cd /usr/wip/biology/py-cdna-primer
-    make clean clean-depends
-    make -DBATCH install
-else
-    printf "No /usr/wip found.\n"
-fi
+pkg delete $pyprefix-avro $pyprefix-h5py $pyprefix-pysam \
+    $pyprefix-pbcore $pyprefix-pbh5tools \
+    blasr blasr_libcpp py27-cDNA_primer || true
+pkg install -y py27-numpy py27-scipy hdf5 py27-networkx
+cd /usr/wip/biology/py-cdna-primer
+make clean clean-depends
+make -DBATCH install
 

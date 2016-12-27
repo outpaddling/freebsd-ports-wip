@@ -5,17 +5,13 @@
 ##########################################################################
 
 # FreeBSD ports
-if [ -e /usr/wip ]; then
-    set +e
-    pkg delete -y dazz_db daligner py27-pypeflow \
-	py27-pbfalcon
-    set -e
-    pkg install -y py27-networkx py27-isodate
-    wip-update
-    cd /usr/wip/biology/py-pbfalcon
-    make distclean clean-depends
-    make -DBATCH install
-else
-    printf "No /usr/wip found.\n"
-fi
+set +e
+pkg delete -y dazz_db daligner py27-pypeflow \
+    py27-pbfalcon
+set -e
+pkg install -y py27-networkx py27-isodate
+wip-update
+cd /usr/wip/biology/py-pbfalcon
+make distclean clean-depends
+make -DBATCH install
 
