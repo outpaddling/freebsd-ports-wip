@@ -21,9 +21,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	pbseqan==${PORTVERSION}:/usr/wip/biology/pbseqan \
 		pbbam==${PORTVERSION}:/usr/wip/biology/pbbam \
 		pbcopper==${PORTVERSION}:/usr/wip/biology/pbcopper \
-		boost-libs>=1.60.0:/usr/wip/devel/boost-libs
+		boost-libs>=1.60.0:devel/boost-libs
 LIB_DEPENDS=	libhts.so:biology/htslib \
-		libboost_regex.so:/usr/wip/devel/boost-libs
+		libboost_regex.so:devel/boost-libs
 
 USES=		cmake compiler:c++11-lang python
 USE_GITHUB=	yes
