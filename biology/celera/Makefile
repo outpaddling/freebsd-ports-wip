@@ -10,6 +10,8 @@ MASTER_SITES=	SF/wgs-assembler/wgs-assembler/${PORTNAME}-8.3/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=
 
+LICENSE=	GPLv3
+
 USES=		tar:bz2
 
 .include <bsd.port.mk>

@@ -9,6 +9,8 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Population genetics and stratification correction method
 
+#LICENSE=	
+
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		libopenblas.so:math/openblas \
 		liblapack.so:math/lapack

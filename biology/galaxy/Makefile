@@ -10,6 +10,8 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Web-based platform for data intensive biomedical research
 
+#LICENSE=	various
+
 USES=		tar:xz shebangfix
 SHEBANG_FILES=	tools/*/*.pl tools/*/*.py tools/*/*.sh
 

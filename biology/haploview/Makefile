@@ -12,6 +12,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Common interface to tasks relating to haplotype analyses
 
+#LICENSE=	https://www.broadinstitute.org/haploview/contact-and-support
+
 NO_WRKSUBDIR=	yes
 
 USE_JAVA=	yes

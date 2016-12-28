@@ -10,6 +10,8 @@ DISTNAME=	hapmix1.2.tar_.gz
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Infer chromosomal segments of ancestry in admixed populations
 
+#LICENSE=
+
 # Bundles eigensrc and nicksrc
 RUN_DEPENDS=	eigensoft>=2015.09.17:/usr/wip/biology/eigensoft
 

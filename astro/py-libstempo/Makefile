@@ -9,7 +9,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Python wrapper for tempo2
-# LICENSE=
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS+=	cython:lang/cython
 LIB_DEPENDS=	libtempo2.so:/usr/wip/astro/tempo2

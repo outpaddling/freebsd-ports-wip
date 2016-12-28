@@ -13,6 +13,8 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	General benchmark for CPU, RAM, and disk
 
+LICENSE=	BSD2CLAUSE
+
 USES=		tar:xz
 #USE_GCC=	yes
 

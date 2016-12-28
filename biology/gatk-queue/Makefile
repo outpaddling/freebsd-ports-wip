@@ -9,6 +9,8 @@ DISTNAME=	Queue-${PORTVERSION}-1
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Analyse next-generation resequencing data
 
+#LICENSE=	restricted
+
 USES=		tar:bzip2
 USE_JAVA=	yes
 
