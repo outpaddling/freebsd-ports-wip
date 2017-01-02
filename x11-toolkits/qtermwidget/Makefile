@@ -1,22 +1,29 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
-# $FreeBSD: head/x11-toolkits/qtermwidget/Makefile 420694 2016-08-23 15:11:50Z olivierd $
+# $FreeBSD: head/x11-toolkits/qtermwidget/Makefile 429918 2016-12-29 14:29:18Z amdmi3 $
 
 PORTNAME=	qtermwidget
 PORTVERSION=	0.7.0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	https://downloads.lxqt.org/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Terminal widget for QTerminal
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource compiler:c++11-lang pkgconfig tar:xz
+USES=		cmake:outsource compiler:c++11-lang pkgconfig
 USE_LDCONFIG=	yes
 USE_QT5=	buildtools_build core gui qmake_build widgets
 
 CMAKE_ARGS+=	-DBUILD_DESIGNER_PLUGIN:BOOL=OFF -DUSE_QT5:BOOL=ON
 
-CFLAGS+=	-DHAVE_UTEMPTER
+USE_GITHUB=	yes
+GH_ACCOUNT=	lxde
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD
+CFLAGS+=	-DHAVE_UTEMPTER
+.endif
+
+.include <bsd.port.post.mk>
