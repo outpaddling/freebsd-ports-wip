@@ -1,8 +1,5 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
-# $FreeBSD: head/x11/qterminal/Makefile 424271 2016-10-19 16:19:28Z marino $
-#
-# FIXME: Depends on lxqt for translations
-# FIXME: Default gemometry patches are not working
+# $FreeBSD: head/x11/qterminal/Makefile 427977 2016-12-06 16:57:13Z olivierd $
 
 PORTNAME=	qterminal
 PORTVERSION=	0.7.0
@@ -13,11 +10,12 @@ COMMENT=	Lightweight Qt-based terminal emulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libqtermwidget5.so.0.7.0:/usr/wip/x11-toolkits/qtermwidget
-RUN_DEPENDS=	liberation-fonts-ttf>=2.00:x11-fonts/liberation-fonts-ttf
+LIB_DEPENDS=	libqtermwidget5.so:/usr/wip/x11-toolkits/qtermwidget-devel
+RUN_DEPENDS=	liberation-fonts-ttf>=2.00:x11-fonts/liberation-fonts-ttf \
+		qterminal-l10n>0:x11/qterminal-l10n
 
 USES=		cmake:outsource compiler:c++11-lang localbase:ldflags \
-		lxqt pkgconfig
+		lxqt pkgconfig tar:xz
 USE_QT5=	buildtools_build core gui qmake_build widgets x11extras
 USE_XORG=	x11
 USE_LXQT=	lxqt
