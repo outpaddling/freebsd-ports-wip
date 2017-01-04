@@ -90,5 +90,5 @@ lib/libngs-disp.a
 lib/libngs-sdk.so
 lib/libngs-sdk.so.1
 lib/libngs-sdk.so.1.3.0
-lib/ngs-bind=c++.a
+lib/ngs-bind-c++.a
 %%JAVAJARDIR%%/ngs-java.jar
