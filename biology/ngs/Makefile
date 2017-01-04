@@ -25,4 +25,7 @@ GH_TAGNAME=	d9e22b184e34794e1e1dddf56c59dc88c6d3ef5f
 MAKEFILE=	Makefile.simple
 CXXFLAGS+=	-fPIC
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so*
+
 .include <bsd.port.mk>
