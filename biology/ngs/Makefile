@@ -6,7 +6,7 @@
 
 PORTNAME=	ngs
 PORTVERSION=	2016.12.23
-CATEGORIES=	biology
+CATEGORIES=	biology java
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	NCBI NGS language bindings
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # USES=		gmake
 USE_JAVA=	yes
+USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
