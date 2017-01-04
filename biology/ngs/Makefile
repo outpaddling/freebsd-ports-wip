@@ -14,7 +14,6 @@ COMMENT=	NCBI NGS language bindings
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# USES=		gmake
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
 
