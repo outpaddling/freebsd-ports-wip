@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	mtr
-PORTVERSION=	0.86
-PORTREVISION=	${GITVERSION}
+PORTVERSION=	0.87.203
+PORTREVISION=	${GITHUB_HASH}
 #PORTEPOCH=	0
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/${GITHUB_USER}/${PORTNAME}/tarball/${GITVERSION}/ \
+MASTER_SITES=	https://github.com/${GITHUB_USER}/${PORTNAME}/tarball/${GITHUB_HASH}/ \
 		${MASTER_SITE_LOCAL}
-DISTNAME=	${PORTNAME}-${GITVERSION}
+DISTNAME=	${PORTNAME}-${GITHUB_HASH}
 
 MAINTAINER=	e@mail
 COMMENT=	Traceroute and ping in a single network diagnostic tool
@@ -17,8 +17,8 @@ LICENSE=	GPLv2
 PATCH_DEPENDS=	${AUTOCONF_DEPENDS} ${AUTOMAKE_DEPENDS}
 
 GITHUB_USER=	traviscross
-GITVERSION=	effef18
-WRKSRC=		${WRKDIR}/${GITHUB_USER}-${PORTNAME}-${GITVERSION}
+GITHUB_HASH=	0e5edbd
+WRKSRC=		${WRKDIR}/${GITHUB_USER}-${PORTNAME}-${GITHUB_HASH}
 FETCH_ARGS=	-Fpr
 
 OPTIONS_DEFINE=	IPV6 X11
@@ -30,9 +30,13 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf automake
 
 PLIST_FILES=	man/man8/mtr.8.gz \
-		sbin/mtr
+		man/man8/mtr-packet.8.gz \
+		sbin/mtr \
+		sbin/mtr-packet
 
 .include <bsd.port.options.mk>
+
+USES=		pkgconfig
 
 .if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=--enable-ipv6
@@ -45,7 +49,6 @@ CONFIGURE_ARGS+=--disable-ipv6
 CONFIGURE_ARGS+=--with-gtk
 PATCH_DEPENDS+=	${LOCALBASE}/lib/libgtk-x11-2.0.so:x11-toolkits/gtk20
 USE_GNOME=	gtk20
-USES=		pkgconfig
 .else
 CONFIGURE_ARGS+=--without-gtk
 PKGNAMESUFFIX+=	-nox11
@@ -53,12 +56,10 @@ PKGNAMESUFFIX+=	-nox11
 
 pre-configure:
 	@${AUTORECONF} -fi ${WRKSRC}
-	@${REINPLACE_CMD} -e 's|getopt.*$$(OBJEXT)||g; s|getopt.*[ch]||g; /getopt.*Po/d' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|"getopt\.h"|<getopt.h>|g' ${WRKSRC}/mtr.c
 
 post-install:
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "${PREFIX}/sbin/mtr is setuid \"root\" "
+	@${ECHO_MSG} "${PREFIX}/sbin/mtr-packet is setuid \"root\" "
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Please read about potential security issues"
 	@${ECHO_MSG} "in file ${WRKSRC}/SECURITY (not installed)"
