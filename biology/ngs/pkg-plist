@@ -82,7 +82,7 @@ include/ngs/itf/StringItf.hpp
 include/ngs/itf/VTable.h
 include/ngs/itf/VTable.hpp
 include/ngs/itf/defs.h
-include/ngs/unix/amd64/atomic32.h
+include/ngs/unix/%%ARCH%%/atomic32.h
 lib/libbngs-bind-java.a
 lib/libngs-adapt-c++.a
 lib/libngs-bind-python.a
