@@ -1,0 +1,15 @@
+--- Makefile.orig	2017-01-11 18:14:32.042947000 -0600
++++ Makefile	2017-01-11 18:20:00.756590000 -0600
+@@ -8,11 +8,7 @@ OSXLIBDIR        = ${OSXPKGROOT}/resourc
+ 
+ 
+ default:
+-ifeq ($(KERNEL), Darwin)
+-	$(MAKE) $(MAKECMDGOALS) -f system.mk/Makefile.darwin
+-else
+-	$(MAKE) $(MAKECMDGOALS) -f system.mk/Makefile.linux
+-endif
++	$(MAKE) $(MAKECMDGOALS) -f system.mk/Makefile.simple
+ 
+ clean: default
+ 

@@ -12,10 +12,18 @@ COMMENT=	High-performance genomic feature operations
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# Depends
+# LIBS = $(addprefix $(PARTY3)/, jansson/lib/libjansson.a bzip2/libbz2.a zlib/libz.a)
+# bzip2 and zlib are in FreeBSD base
+LIB_DEPENDS+=	libjansson.so:devel/jansson
+
 USES=		gmake
 
 USE_GITHUB=	yes
 
 ALL_TARGET=	default
+
+post-patch:
+	${CP} ${FILESDIR}/Makefile.simple ${WRKSRC}/system.mk
 
 .include <bsd.port.mk>
