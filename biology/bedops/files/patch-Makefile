@@ -1,5 +1,5 @@
---- Makefile.orig	2017-01-11 18:14:32.042947000 -0600
-+++ Makefile	2017-01-11 18:20:00.756590000 -0600
+--- Makefile.orig	2016-07-27 20:04:55 UTC
++++ Makefile
 @@ -8,11 +8,7 @@ OSXLIBDIR        = ${OSXPKGROOT}/resourc
  
  

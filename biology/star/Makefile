@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:openmp gmake
-COMPILER_FEATURES+=      libc++
+# COMPILER_FEATURES+=	libc++
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	alexdobin

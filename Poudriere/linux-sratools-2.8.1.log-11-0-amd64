@@ -1,0 +1,331 @@
+build started at Thu Jan 12 09:31:35 CST 2017
+port directory: /usr/ports/biology/linux-sratools
+building for: FreeBSD 11-0-amd64-default 11.0-RELEASE-p1 FreeBSD 11.0-RELEASE-p1 amd64
+maintained by: bacon@unixdev.ceas.uwm.edu
+ident warning: no id keywords in /usr/local/poudriere/data/.m/11-0-amd64-default/ref//usr/ports/biology/linux-sratools/Makefile
+Makefile ident: 
+Poudriere version: 3.1.14
+Host OSVERSION: 1100122
+Jail OSVERSION: 1100122
+
+---Begin Environment---
+PKGREPOSITORY=/tmp/pkgs
+PACKAGES=/tmp/pkgs
+SHELL=/bin/csh
+UNAME_v=FreeBSD 11.0-RELEASE-p1
+UNAME_r=11.0-RELEASE-p1
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+WARNING_WAIT=0
+ARCH=amd64
+SAVED_TERM=xterm
+NO_WARNING_PKG_INSTALL_EOL=yes
+MASTERMNT=/usr/local/poudriere/data/.m/11-0-amd64-default/ref
+UID=0
+FORCE_PACKAGE=yes
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+_JAVA_VERSION_LIST_REGEXP=1.6\|1.7\|1.8\|1.6+\|1.7+\|1.8+
+POUDRIERE_BUILD_TYPE=bulk
+OSREL=11.0
+_OSRELEASE=11.0-RELEASE-p1
+PYTHONBASE=/usr/local
+OLDPWD=/
+_SMP_CPUS=4
+PWD=/usr/local/poudriere/data/.m/11-0-amd64-default/ref/.p/pool
+HAVE_COMPAT_IA32_KERN=YES OPSYS=FreeBSD
+MASTERNAME=11-0-amd64-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+_JAVA_VENDOR_LIST_REGEXP=openjdk\|oracle\|sun
+USER=root
+HOME=/root
+POUDRIERE_VERSION=3.1.14
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+TRYBROKEN=yes
+CONFIGURE_MAX_CMD_LEN=262144
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+LOCALBASE=/usr/local
+PACKAGE_BUILDING=yes
+_JAVA_OS_LIST_REGEXP=native\|linux
+DEV_WARNING_WAIT=0
+OSVERSION=1100122
+---End Environment---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/biology/linux-sratools/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/biology/linux-sratools/work  HOME=/wrkdirs/usr/ports/biology/linux-sratools/work TMPDIR="/tmp" SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/biology/linux-sratools/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/biology/linux-sratools/work  HOME=/wrkdirs/usr/ports/biology/linux-sratools/work TMPDIR="/tmp" NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  LIBDIR="/usr/lib"  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector -fno-strict-aliasing"  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector" LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector -fno-strict-aliasing "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 444"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+OSREL=11.0
+PREFIX=%D
+LOCALBASE=/usr/local
+RESETPREFIX=/usr/local
+PORTDOCS=""
+PORTEXAMPLES=""
+LIB32DIR=lib
+DOCSDIR="share/doc/linux-sratools"
+EXAMPLESDIR="share/examples/linux-sratools"
+DATADIR="share/linux-sratools"
+WWWDIR="www/linux-sratools"
+ETCDIR="etc/linux-sratools"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local
+LOCALBASE=/usr/local
+DATADIR=/usr/local/share/linux-sratools
+DOCSDIR=/usr/local/share/doc/linux-sratools
+EXAMPLESDIR=/usr/local/share/examples/linux-sratools
+WWWDIR=/usr/local/www/linux-sratools
+ETCDIR=/usr/local/etc/linux-sratools
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+---End make.conf---
+=======================<phase: check-sanity   >============================
+===>  License PD accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   linux-sratools-2.8.1 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.9.1.txz
+[11-0-amd64-default] Installing pkg-1.9.1...
+[11-0-amd64-default] Extracting pkg-1.9.1: .......... done
+===>   linux-sratools-2.8.1 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of linux-sratools-2.8.1
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License PD accepted by the user
+===>   linux-sratools-2.8.1 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by linux-sratools-2.8.1 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License PD accepted by the user
+===>   linux-sratools-2.8.1 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by linux-sratools-2.8.1 for building
+=> SHA256 Checksum OK for sratoolkit.2.8.1-centos_linux64.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License PD accepted by the user
+===>   linux-sratools-2.8.1 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by linux-sratools-2.8.1 for building
+===>  Extracting for linux-sratools-2.8.1
+=> SHA256 Checksum OK for sratoolkit.2.8.1-centos_linux64.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for linux-sratools-2.8.1
+===========================================================================
+=======================<phase: build-depends  >============================
+===========================================================================
+=======================<phase: lib-depends    >============================
+===========================================================================
+====>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>  Configuring for linux-sratools-2.8.1
+===========================================================================
+=======================<phase: build          >============================
+===========================================================================
+====>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===>   linux-sratools-2.8.1 depends on package: linux_base-c6>0 - not found
+===>   Installing existing package /packages/All/linux_base-c6-6.8_2.txz
+[11-0-amd64-default] Installing linux_base-c6-6.8_2...
+[11-0-amd64-default] Extracting linux_base-c6-6.8_2: ......... done
+Message from linux_base-c6-6.8_2:
+Some programs need linprocfs mounted on /compat/linux/proc.  Add the
+following line to /etc/fstab:
+
+linprocfs   /compat/linux/proc	linprocfs	rw	0	0
+
+Then run "mount /compat/linux/proc".
+
+Some programs need tmpfs mounted on /compat/linux/dev/shm.  Add the
+following line to /etc/fstab:
+
+tmpfs    /compat/linux/dev/shm	tmpfs	rw,mode=1777	0	0
+
+Then run "mount /compat/linux/dev/shm".
+===>   linux-sratools-2.8.1 depends on package: linux_base-c6>0 - found
+===>   Returning to build of linux-sratools-2.8.1
+===========================================================================
+====>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for linux-sratools-2.8.1
+===>   linux-sratools-2.8.1 depends on package: linux_base-c6>0 - found
+===>   Generating temporary packing list
+/bin/mkdir -p /wrkdirs/usr/ports/biology/linux-sratools/work/stage/usr/local/sratoolkit-2.8.1/bin
+cd /wrkdirs/usr/ports/biology/linux-sratools/work/sratoolkit.2.8.1-centos_linux64/bin && /bin/sh -c '(/usr/bin/find -d $0 $2 | /usr/bin/cpio -dumpl $1 >/dev/null  2>&1) &&  /usr/bin/find -d $0 $2 -type d -exec chmod 755 $1/{} \; &&  /usr/bin/find -d $0 $2 -type f -exec chmod 555 $1/{} \;' --  . /wrkdirs/usr/ports/biology/linux-sratools/work/stage/usr/local/sratoolkit-2.8.1/bin
+cd /wrkdirs/usr/ports/biology/linux-sratools/work/sratoolkit.2.8.1-centos_linux64 && /bin/sh -c '(/usr/bin/find -d $0 $2 | /usr/bin/cpio -dumpl $1 >/dev/null  2>&1) &&  /usr/bin/find -d $0 $2 -type d -exec chmod 755 $1/{} \; &&  /usr/bin/find -d $0 $2 -type f -exec chmod 555 $1/{} \;' --  "example README-vdb-config schema CHANGES README-blastn README.md"  /wrkdirs/usr/ports/biology/linux-sratools/work/stage/usr/local/sratoolkit-2.8.1
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+Warning: 'sratoolkit-2.8.1/bin/fastq-load.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/remote-fuser.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/rcexplain.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/kdbmeta.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/vdb-lock.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/helicos-load.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/vdb-validate.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/fastdump.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/sff-load.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/pacbio-load.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/cache-mgr.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/sam-dump.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/vdb-copy.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/fastq-dump.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/vdb-dump.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/illumina-load.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/sra-sort.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/illumina-dump.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/srapath.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/vdb-encrypt.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/prefetch.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/vdb-passwd.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/align-info.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/vdb-config.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/kar.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/test-sra.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/abi-load.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/sff-dump.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/cg-load.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/sra-stat.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/sra-search.2.8.0' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/vdb-decrypt.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/sra-pileup.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/srf-load.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/latf-load.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/dump-ref-fasta.2.8.0' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/bam-load.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/vdb-unlock.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'sratoolkit-2.8.1/bin/abi-dump.2.8.1' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+====>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for linux-sratools-2.8.1
+===========================================================================
+=======================<phase: install-mtree  >============================
+===========================================================================
+====>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for linux-sratools-2.8.1
+===>   linux-sratools-2.8.1 depends on package: linux_base-c6>0 - found
+===>  Checking if linux-sratools already installed
+===>   Registering installation for linux-sratools-2.8.1
+[11-0-amd64-default] Installing linux-sratools-2.8.1...
+===> SECURITY REPORT: 
+      This port has installed the following files which may act as network
+      servers and may therefore pose a remote security risk to the system.
+/usr/local/sratoolkit-2.8.1/bin/rcexplain.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/helicos-load.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/vdb-unlock.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/blastn_vdb.2.5.0-2.8.1
+/usr/local/sratoolkit-2.8.1/bin/sff-load.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/bam-load.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/kdbmeta.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/fastq-dump.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/vdb-decrypt.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/vdb-passwd.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/vdb-config.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/vdb-lock.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/kar.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/srf-load.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/vdb-validate.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/tblastn_vdb.2.5.0-2.8.1
+/usr/local/sratoolkit-2.8.1/bin/sra-sort.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/pacbio-load.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/test-sra.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/sra-stat.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/illumina-dump.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/remote-fuser.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/abi-dump.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/prefetch.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/cache-mgr.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/vdb-encrypt.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/vdb-copy.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/sra-search.2.8.0
+/usr/local/sratoolkit-2.8.1/bin/sff-dump.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/sra-pileup.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/latf-load.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/fastq-load.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/fastdump.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/dump-ref-fasta.2.8.0
+/usr/local/sratoolkit-2.8.1/bin/align-info.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/vdb-dump.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/srapath.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/cg-load.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/abi-load.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/illumina-load.2.8.1
+/usr/local/sratoolkit-2.8.1/bin/sam-dump.2.8.1
+
+      If there are vulnerabilities in these programs there may be a security
+      risk to the system. FreeBSD makes no guarantee about the security of
+      ports included in the Ports Collection. Please type 'make deinstall'
+      to deinstall the port if this is a concern.
+
+      For more information, and contact details about the security
+      status of this software, see the following webpage: 
+https://github.com/ncbi/sra-tools
+===========================================================================
+=======================<phase: deinstall      >============================
+===>  Deinstalling for linux-sratools
+===>   Deinstalling linux-sratools-2.8.1
+Updating database digests format: ... done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	linux-sratools-2.8.1
+
+Number of packages to be removed: 1
+
+The operation will free 182 MiB.
+[11-0-amd64-default] [1/1] Deinstalling linux-sratools-2.8.1...
+[11-0-amd64-default] [1/1] Deleting files for linux-sratools-2.8.1: .......... done
+===========================================================================
+====>> Checking for extra files and directories
+[00:06:28] ====>> Installing from package
+[11-0-amd64-default] Installing linux-sratools-2.8.1...
+[11-0-amd64-default] Extracting linux-sratools-2.8.1: .......... done
+[00:06:36] ====>> Cleaning up
+===>  Cleaning for linux-sratools-2.8.1
+[00:06:36] ====>> Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	linux-sratools-2.8.1
+
+Number of packages to be removed: 1
+
+The operation will free 182 MiB.
+[11-0-amd64-default] [1/1] Deinstalling linux-sratools-2.8.1...
+[11-0-amd64-default] [1/1] Deleting files for linux-sratools-2.8.1: .......... done
+build of biology/linux-sratools ended at Thu Jan 12 09:33:40 CST 2017
+build time: 00:02:05

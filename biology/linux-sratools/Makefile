@@ -1,10 +1,11 @@
 # Created by: Jason Bacon <bacon@unixdev.ceas.uwm.edu>
 # $FreeBSD$
 
-PORTNAME=	linux-sratools
+PORTNAME=	sratools
 PORTVERSION=	2.8.1
 CATEGORIES=	biology
 MASTER_SITES=	http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/${PORTVERSION}/
+PKGNAMEPREFIX=	linux-
 DISTNAME=	sratoolkit.${PORTVERSION}-centos_linux64
 
 MAINTAINER=	bacon@unixdev.ceas.uwm.edu
