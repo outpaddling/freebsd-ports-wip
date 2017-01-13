@@ -23,6 +23,9 @@ USE_GITHUB=	yes
 
 ALL_TARGET=	default
 
+# Unsure
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	${CP} ${FILESDIR}/Makefile.simple ${WRKSRC}/system.mk
 

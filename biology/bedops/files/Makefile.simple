@@ -1,20 +1,9 @@
-PARTY3           = third-party
-BZIP2VERSION     = bzip2-1.0.6
-WHICHBZIP2      := ${PARTY3}/${BZIP2VERSION}
-JANSSONVERSION   = jansson-2.6
-WHICHJANSSON    := ${PARTY3}/${JANSSONVERSION}
-ZLIBVERSION      = zlib-1.2.7
-WHICHZLIB       := ${PARTY3}/${ZLIBVERSION}
-APPDIR           = applications/bed
-BINDIR           = bin
-OSXPKGROOT       = packaging/os_x
-OSXBUILDDIR      = ${OSXPKGROOT}/build
-OSXPKGDIR        = ${OSXPKGROOT}/resources/bin
-OSXLIBDIR        = ${OSXPKGROOT}/resources/lib
-WDIR             = ${shell pwd}
-export CC        = gcc
-export CXX       = g++
-SELF             = ${WDIR}/system.mk/Makefile.linux
+APPDIR	= applications/bed
+BINDIR	= bin
+WDIR	= ${shell pwd}
+CC	?= cc
+CXX	?= c++
+SELF	= ${WDIR}/system.mk/Makefile.linux
 
 default: support
 	$(MAKE) build -f $(SELF)
@@ -147,15 +136,3 @@ clean_gprof:
 	rm -rf ${BINDIR}
 
 support: $(LIBS)
-
-${PARTY3}/jansson/lib/libjansson.a: $(WHICHJANSSON).tar.bz2
-	bzcat $^ | tar -x -C ${PARTY3}
-	cd ${PARTY3}/${JANSSONVERSION} && ./configure --prefix=${WDIR}/${PARTY3}/${JANSSONVERSION} && $(MAKE) && $(MAKE) install && cd ${WDIR} && rm -f jansson && ln -sf ${JANSSONVERSION} ${PARTY3}/jansson
-
-$(PARTY3)/bzip2/libbz2.a: $(WHICHBZIP2).tar.bz2
-	bzcat $^ | tar -x -C ${PARTY3}
-	cd ${PARTY3}/${BZIP2VERSION} && $(MAKE) libbz2.a && cd ${WDIR} && rm -f bzip2 && ln -sf ${BZIP2VERSION} ${PARTY3}/bzip2
-
-${PARTY3}/zlib/libz.a: $(WHICHZLIB).tar.bz2
-	bzcat $^ | tar -x -C ${PARTY3}
-	cd ${PARTY3}/${ZLIBVERSION} && ./configure --static && $(MAKE) && cd ${WDIR} && rm -f zlib && ln -sf ${ZLIBVERSION} ${PARTY3}/zlib
