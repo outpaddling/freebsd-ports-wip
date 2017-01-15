@@ -12,6 +12,7 @@ bin/condor-list-packages
 bin/pending-jobs
 bin/ppgen
 bin/slurm-cluster-load
+bin/slurm-find-strays
 bin/slurm-job-hist
 bin/slurm-job-stats
 bin/slurm-job-status
@@ -83,7 +84,6 @@ sbin/node-sync-groups
 sbin/node-sync-user
 sbin/pbs-cluster-load
 sbin/slurm-admin
-sbin/slurm-find-strays
 sbin/slurm-restart
 sbin/slurm-resume-jobs
 sbin/slurm-resume-nodes
