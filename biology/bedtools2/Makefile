@@ -11,6 +11,8 @@ COMMENT=	Swiss army knife for genome arithmetic
 
 LICENSE=	GPLv2
 
+USES+=		python:build
+
 # WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GITHUB=	yes
