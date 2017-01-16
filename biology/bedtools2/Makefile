@@ -3,7 +3,7 @@
 
 PORTNAME=	bedtools2
 PORTVERSION=	2.23.0
-DISTVERSIONPREFIX=      v
+DISTVERSIONPREFIX=v
 CATEGORIES=	biology
 
 MAINTAINER=	dsiercks@uwm.edu
@@ -11,26 +11,14 @@ COMMENT=	Swiss army knife for genome arithmetic
 
 LICENSE=	GPLv2
 
-USES+=		python:build
-
-# WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USES+=		gmake python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arq5x
 
-USES=	gmake
-
-.include <bsd.port.pre.mk>
-
 MAKE_JOBS_UNSAFE=	yes
-# Just for speed: Recent GCC has better optimizer
-.if ${OSVERSION} < 1000000
-USE_GCC=	yes
-.endif
-
-#INSTALL_TARGET=	install-strip
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bedtools
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
