@@ -1,0 +1,1024 @@
+build started at Thu Jan 12 12:19:22 CST 2017
+port directory: /usr/ports/biology/star
+building for: FreeBSD 11-0-amd64-default 11.0-RELEASE-p1 FreeBSD 11.0-RELEASE-p1 amd64
+maintained by: bacon4000@gmail.com
+ident warning: no id keywords in /usr/local/poudriere/data/.m/11-0-amd64-default/ref//usr/ports/biology/star/Makefile
+Makefile ident: 
+Poudriere version: 3.1.14
+Host OSVERSION: 1100122
+Jail OSVERSION: 1100122
+
+---Begin Environment---
+PKGREPOSITORY=/tmp/pkgs
+PACKAGES=/tmp/pkgs
+SHELL=/bin/csh
+UNAME_v=FreeBSD 11.0-RELEASE-p1
+UNAME_r=11.0-RELEASE-p1
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+WARNING_WAIT=0
+ARCH=amd64
+SAVED_TERM=xterm
+NO_WARNING_PKG_INSTALL_EOL=yes
+MASTERMNT=/usr/local/poudriere/data/.m/11-0-amd64-default/ref
+UID=0
+FORCE_PACKAGE=yes
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+_JAVA_VERSION_LIST_REGEXP=1.6\|1.7\|1.8\|1.6+\|1.7+\|1.8+
+POUDRIERE_BUILD_TYPE=bulk
+OSREL=11.0
+_OSRELEASE=11.0-RELEASE-p1
+PYTHONBASE=/usr/local
+OLDPWD=/
+_SMP_CPUS=4
+PWD=/usr/local/poudriere/data/.m/11-0-amd64-default/ref/.p/pool
+HAVE_COMPAT_IA32_KERN=YES OPSYS=FreeBSD
+MASTERNAME=11-0-amd64-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+_JAVA_VENDOR_LIST_REGEXP=openjdk\|oracle\|sun
+USER=root
+HOME=/root
+POUDRIERE_VERSION=3.1.14
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+TRYBROKEN=yes
+CONFIGURE_MAX_CMD_LEN=262144
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+LOCALBASE=/usr/local
+PACKAGE_BUILDING=yes
+_JAVA_OS_LIST_REGEXP=native\|linux
+DEV_WARNING_WAIT=0
+OSVERSION=1100122
+---End Environment---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+MAKE=gmake XDG_DATA_HOME=/wrkdirs/usr/ports/biology/star/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/biology/star/work  HOME=/wrkdirs/usr/ports/biology/star/work TMPDIR="/tmp" SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/biology/star/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/biology/star/work  HOME=/wrkdirs/usr/ports/biology/star/work TMPDIR="/tmp" NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES ADDR2LINE="/usr/local/bin/addr2line" AR="/usr/local/bin/ar" AS="/usr/local/bin/as" CPPFILT="/usr/local/bin/c++filt" GPROF="/usr/local/bin/gprof" LD="/usr/local/bin/ld" NM="/usr/local/bin/nm" OBJCOPY="/usr/local/bin/objcopy" OBJDUMP="/usr/local/bin/objdump" RANLIB="/usr/local/bin/ranlib" READELF="/usr/local/bin/readelf" SIZE="/usr/local/bin/size" STRINGS="/usr/local/bin/strings" PREFIX=/usr/local  LOCALBASE=/usr/local  LIBDIR="/usr/lib"  CC="gcc49" CFLAGS="-O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing"  CPP="cpp49" CPPFLAGS=""  LDFLAGS=" -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -L/usr/local/lib/gcc49" LIBS=""  CXX="g++49" CXXFLAGS="-O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49"  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 444"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+OSREL=11.0
+PREFIX=%D
+LOCALBASE=/usr/local
+RESETPREFIX=/usr/local
+PORTDOCS=""
+PORTEXAMPLES=""
+LIB32DIR=lib
+DOCSDIR="share/doc/star"
+EXAMPLESDIR="share/examples/star"
+DATADIR="share/star"
+WWWDIR="www/star"
+ETCDIR="etc/star"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local
+LOCALBASE=/usr/local
+DATADIR=/usr/local/share/star
+DOCSDIR=/usr/local/share/doc/star
+EXAMPLESDIR=/usr/local/share/examples/star
+WWWDIR=/usr/local/www/star
+ETCDIR=/usr/local/etc/star
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+---End make.conf---
+=======================<phase: check-sanity   >============================
+===>  License GPLv3 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   star-2.5.2a depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.9.4_1.txz
+[11-0-amd64-default] Installing pkg-1.9.4_1...
+[11-0-amd64-default] Extracting pkg-1.9.4_1: .......... done
+===>   star-2.5.2a depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of star-2.5.2a
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License GPLv3 accepted by the user
+===>   star-2.5.2a depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by star-2.5.2a for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License GPLv3 accepted by the user
+===>   star-2.5.2a depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by star-2.5.2a for building
+=> SHA256 Checksum OK for alexdobin-star-2.5.2a_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License GPLv3 accepted by the user
+===>   star-2.5.2a depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by star-2.5.2a for building
+===>  Extracting for star-2.5.2a
+=> SHA256 Checksum OK for alexdobin-star-2.5.2a_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for star-2.5.2a
+===>  Applying FreeBSD patches for star-2.5.2a
+===========================================================================
+=======================<phase: build-depends  >============================
+===>   star-2.5.2a depends on executable: gmake - not found
+===>   Installing existing package /packages/All/gmake-4.2.1_1.txz
+[11-0-amd64-default] Installing gmake-4.2.1_1...
+[11-0-amd64-default] `-- Installing indexinfo-0.2.6...
+[11-0-amd64-default] `-- Extracting indexinfo-0.2.6: .... done
+[11-0-amd64-default] `-- Installing gettext-runtime-0.19.8.1_1...
+[11-0-amd64-default] `-- Extracting gettext-runtime-0.19.8.1_1: .......... done
+[11-0-amd64-default] Extracting gmake-4.2.1_1: .......... done
+===>   star-2.5.2a depends on executable: gmake - found
+===>   Returning to build of star-2.5.2a
+===>   star-2.5.2a depends on executable: gcc49 - not found
+===>   Installing existing package /packages/All/gcc-4.9.4.txz
+[11-0-amd64-default] Installing gcc-4.9.4...
+[11-0-amd64-default] `-- Installing mpc-1.0.3...
+[11-0-amd64-default] |   `-- Installing gmp-5.1.3_3...
+[11-0-amd64-default] |   `-- Extracting gmp-5.1.3_3: .......... done
+[11-0-amd64-default] |   `-- Installing mpfr-3.1.5...
+[11-0-amd64-default] |   `-- Extracting mpfr-3.1.5: .......... done
+[11-0-amd64-default] `-- Extracting mpc-1.0.3: ...... done
+[11-0-amd64-default] `-- Installing binutils-2.27_5,1...
+[11-0-amd64-default] `-- Extracting binutils-2.27_5,1: .......... done
+[11-0-amd64-default] `-- Installing gcc-ecj-4.5...
+[11-0-amd64-default] `-- Extracting gcc-ecj-4.5: . done
+[11-0-amd64-default] Extracting gcc-4.9.4: .......... done
+Message from gcc-4.9.4:
+To ensure binaries built with this toolchain find appropriate versions
+of the necessary run-time libraries, you may want to link using
+
+  -Wl,-rpath=/usr/local/lib/gcc49
+
+For ports leveraging USE_GCC, USES=compiler, or USES=fortran this happens
+transparently.
+===>   star-2.5.2a depends on executable: gcc49 - found
+===>   Returning to build of star-2.5.2a
+===>   star-2.5.2a depends on file: /usr/local/bin/as - found
+===========================================================================
+=======================<phase: lib-depends    >============================
+===========================================================================
+====>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>   star-2.5.2a depends on executable: gmake - found
+===>   star-2.5.2a depends on executable: gcc49 - found
+===>   star-2.5.2a depends on file: /usr/local/bin/as - found
+===>  Configuring for star-2.5.2a
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for star-2.5.2a
+gmake[1]: Entering directory '/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a'
+cd source && gmake STAR
+gmake[2]: Entering directory '/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source'
+gmake -C htslib lib-static
+gmake[3]: Entering directory '/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source/htslib'
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o kfunc.o kfunc.c
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o knetfile.o knetfile.c
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o kstring.o kstring.c
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o bgzf.o bgzf.c
+kstring.c: In function 'kvsprintf':
+kstring.c:15:12: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if (l + 1 > s->m - s->l) {
+            ^
+knetfile.c: In function 'khttp_parse_url':
+knetfile.c:371:55: warning: unused parameter 'mode' [-Wunused-parameter]
+ knetFile *khttp_parse_url(const char *fn, const char *mode)
+                                                       ^
+knetfile.c: In function 'knet_dopen':
+knetfile.c:496:42: warning: unused parameter 'mode' [-Wunused-parameter]
+ knetFile *knet_dopen(int fd, const char *mode)
+                                          ^
+bgzf.c: In function 'bgzf_read':
+bgzf.c:516:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  while (bytes_read < length) {
+                    ^
+bgzf.c:524:37: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   copy_length = length - bytes_read < available? length - bytes_read : available;
+                                     ^
+bgzf.c:524:70: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+   copy_length = length - bytes_read < available? length - bytes_read : available;
+                                                                      ^
+bgzf.c: In function 'bgzf_index_load':
+bgzf.c:1013:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         if ( ret != sizeof(x)*2*(fp->idx->noffs-1) ) return -1;
+                  ^
+bgzf.c:1023:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         if ( ret != sizeof(x)*2*(fp->idx->noffs-1) ) return -1;
+                  ^
+bgzf.c: In function 'bgzf_useek':
+bgzf.c:1058:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         if ( uoffset < fp->idx->offs[i].uaddr ) ihi = i - 1;
+                      ^
+bgzf.c:1059:27: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         else if ( uoffset >= fp->idx->offs[i].uaddr ) ilo = i + 1;
+                           ^
+bgzf.c:1030:44: warning: unused parameter 'where' [-Wunused-parameter]
+ int bgzf_useek(BGZF *fp, long uoffset, int where)
+                                            ^
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o faidx.o faidx.c
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o hfile.o hfile.c
+hfile.c: In function 'mem_close':
+hfile.c:489:29: warning: unused parameter 'fpv' [-Wunused-parameter]
+ static int mem_close(hFILE *fpv)
+                             ^
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o hfile_net.o hfile_net.c
+echo '#define HTS_VERSION "0.0.1"' > version.h
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o sam.o sam.c
+sam.c: In function 'bam_write1':
+sam.c:360:27: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+  return ok? 4 + block_len : -1;
+                           ^
+sam.c: In function 'bam_readrec':
+sam.c:428:40: warning: unused parameter 'ignored' [-Wunused-parameter]
+ static int bam_readrec(BGZF *fp, void *ignored, void *bv, int *tid, int *beg, int *end)
+                                        ^
+sam.c: In function 'cram_readrec':
+sam.c:440:31: warning: unused parameter 'ignored' [-Wunused-parameter]
+ static int cram_readrec(BGZF *ignored, void *fpv, void *bv, int *tid, int *beg, int *end)
+                               ^
+sam.c:440:66: warning: unused parameter 'tid' [-Wunused-parameter]
+ static int cram_readrec(BGZF *ignored, void *fpv, void *bv, int *tid, int *beg, int *end)
+                                                                  ^
+sam.c:440:76: warning: unused parameter 'beg' [-Wunused-parameter]
+ static int cram_readrec(BGZF *ignored, void *fpv, void *bv, int *tid, int *beg, int *end)
+                                                                            ^
+sam.c:440:86: warning: unused parameter 'end' [-Wunused-parameter]
+ static int cram_readrec(BGZF *ignored, void *fpv, void *bv, int *tid, int *beg, int *end)
+                                                                                      ^
+sam.c: In function 'sam_bam_cram_readrec':
+sam.c:448:72: warning: unused parameter 'tid' [-Wunused-parameter]
+ static int sam_bam_cram_readrec(BGZF *bgzfp, void *fpv, void *bv, int *tid, int *beg, int *end)
+                                                                        ^
+sam.c:448:82: warning: unused parameter 'beg' [-Wunused-parameter]
+ static int sam_bam_cram_readrec(BGZF *bgzfp, void *fpv, void *bv, int *tid, int *beg, int *end)
+                                                                                  ^
+sam.c:448:92: warning: unused parameter 'end' [-Wunused-parameter]
+ static int sam_bam_cram_readrec(BGZF *bgzfp, void *fpv, void *bv, int *tid, int *beg, int *end)
+                                                                                            ^
+sam.c: In function 'sam_hdr_parse':
+sam.c:558:30: warning: unused parameter 'l_text' [-Wunused-parameter]
+ bam_hdr_t *sam_hdr_parse(int l_text, const char *text)
+                              ^
+sam.c: In function 'sam_hdr_write':
+sam.c:651:55: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if ( hwrite(fp->fp.hfile, fp->line.s, fp->line.l) != fp->line.l ) return -1;
+                                                       ^
+sam.c: In function 'sam_write1':
+sam.c:1009:53: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if ( hwrite(fp->fp.hfile, fp->line.s, fp->line.l) != fp->line.l ) return -1;
+                                                     ^
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o synced_bcf_reader.o synced_bcf_reader.c
+synced_bcf_reader.c: In function '_regions_add':
+synced_bcf_reader.c:771:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         if ( start < creg->regs[i].start ) max = i - 1;
+                    ^
+synced_bcf_reader.c:772:25: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         else if ( start > creg->regs[i].start ) min = i + 1;
+                         ^
+synced_bcf_reader.c:775:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if ( min>max || creg->regs[i].start!=start || creg->regs[i].end!=end )
+                                        ^
+synced_bcf_reader.c:775:68: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if ( min>max || creg->regs[i].start!=start || creg->regs[i].end!=end )
+                                                                    ^
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o vcf_sweep.o vcf_sweep.c
+vcf_sweep.c: In function 'bcf_sweep_fwd':
+vcf_sweep.c:139:53: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         if ( !sw->nidx || pos - sw->idx[sw->nidx-1] > sw->block_size )
+                                                     ^
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o tbx.o tbx.c
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o vcf.o vcf.c
+vcf.c: In function 'bcf_hdr_sync':
+vcf.c:105:30: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+             for (k=h->n[i]; k<=max_id; k++)
+                              ^
+vcf.c: In function 'bcf_hdr_parse_line':
+vcf.c:244:49: warning: unused parameter 'h' [-Wunused-parameter]
+ bcf_hrec_t *bcf_hdr_parse_line(const bcf_hdr_t *h, const char *line, int *len)
+                                                 ^
+vcf.c: In function 'bcf_hdr_register_hrec':
+vcf.c:421:48: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+     kh_val(d, k).id = idx==-1 ? kh_size(d) - 1 : idx;
+                                                ^
+vcf.c: In function 'bcf_readrec':
+vcf.c:862:33: warning: unused parameter 'null' [-Wunused-parameter]
+ int bcf_readrec(BGZF *fp, void *null, void *vv, int *tid, int *beg, int *end)
+                                 ^
+vcf.c: In function 'bcf_write':
+vcf.c:1055:51: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if ( bgzf_write(fp, v->shared.s, v->shared.l) != v->shared.l ) return -1;
+                                                   ^
+vcf.c:1056:46: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if ( bgzf_write(fp, v->indiv.s, v->indiv.l) != v->indiv.l ) return -1;
+                                              ^
+vcf.c: In function 'vcf_write_line':
+vcf.c:1973:15: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     return ret==line->l ? 0 : -1;
+               ^
+vcf.c: In function 'vcf_write':
+vcf.c:1985:15: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     return ret==fp->line.l ? 0 : -1;
+               ^
+vcf.c: In function 'bcf_hdr_set_samples':
+vcf.c:2290:33: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (k = kh_begin(d); k != kh_end(d); ++k)
+                                 ^
+vcf.c: In function 'bcf_subset':
+vcf.c:2308:33: warning: unused parameter 'h' [-Wunused-parameter]
+ int bcf_subset(const bcf_hdr_t *h, bcf1_t *v, int n, int *imap)
+                                 ^
+vcf.c: In function 'bcf_update_filter':
+vcf.c:2639:40: warning: unused parameter 'hdr' [-Wunused-parameter]
+ int bcf_update_filter(const bcf_hdr_t *hdr, bcf1_t *line, int *flt_ids, int n)
+                                        ^
+vcf.c: In function 'bcf_add_filter':
+vcf.c:2652:37: warning: unused parameter 'hdr' [-Wunused-parameter]
+ int bcf_add_filter(const bcf_hdr_t *hdr, bcf1_t *line, int flt_id)
+                                     ^
+vcf.c: In function '_bcf1_sync_alleles':
+vcf.c:2699:55: warning: unused parameter 'hdr' [-Wunused-parameter]
+ static inline int _bcf1_sync_alleles(const bcf_hdr_t *hdr, bcf1_t *line, int nals)
+                                                       ^
+vcf.c: In function 'bcf_update_id':
+vcf.c:2761:36: warning: unused parameter 'hdr' [-Wunused-parameter]
+ int bcf_update_id(const bcf_hdr_t *hdr, bcf1_t *line, const char *id)
+                                    ^
+vcf.c: In function 'bcf_get_info_values':
+vcf.c:2802:49: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if ( bcf_hdr_id2type(hdr,BCF_HL_INFO,tag_id)!=type ) return -2;     // expected different type
+                                                 ^
+vcf.c: In function 'bcf_get_format_values':
+vcf.c:2909:53: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     else if ( bcf_hdr_id2type(hdr,BCF_HL_FMT,tag_id)!=type ) return -2;     // expected different type
+                                                     ^
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o vcfutils.o vcfutils.c
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o cram/cram_codecs.o cram/cram_codecs.c
+cram/cram_codecs.c: In function 'cram_external_decode_int':
+cram/cram_codecs.c:325:21: warning: unused parameter 'in' [-Wunused-parameter]
+         cram_block *in, char *out, int *out_size) {
+                     ^
+cram/cram_codecs.c: In function 'cram_external_decode_char':
+cram/cram_codecs.c:355:22: warning: unused parameter 'in' [-Wunused-parameter]
+          cram_block *in, char *out,
+                      ^
+cram/cram_codecs.c: In function 'cram_external_decode_block':
+cram/cram_codecs.c:386:22: warning: unused parameter 'in' [-Wunused-parameter]
+          cram_block *in, char *out_,
+                      ^
+cram/cram_codecs.c: In function 'cram_external_decode_init':
+cram/cram_codecs.c:424:15: warning: unused parameter 'version' [-Wunused-parameter]
+           int version) {
+               ^
+cram/cram_codecs.c: In function 'cram_external_encode':
+cram/cram_codecs.c:453:38: warning: unused parameter 'slice' [-Wunused-parameter]
+ int cram_external_encode(cram_slice *slice, cram_codec *c,
+                                      ^
+cram/cram_codecs.c:453:57: warning: unused parameter 'c' [-Wunused-parameter]
+ int cram_external_encode(cram_slice *slice, cram_codec *c,
+                                                         ^
+cram/cram_codecs.c:454:35: warning: unused parameter 'in_size' [-Wunused-parameter]
+    cram_block *out, char *in, int in_size) {
+                                   ^
+cram/cram_codecs.c: In function 'cram_external_encode_store':
+cram/cram_codecs.c:468:15: warning: unused parameter 'version' [-Wunused-parameter]
+           int version) {
+               ^
+cram/cram_codecs.c: In function 'cram_external_encode_init':
+cram/cram_codecs.c:487:51: warning: unused parameter 'st' [-Wunused-parameter]
+ cram_codec *cram_external_encode_init(cram_stats *st,
+                                                   ^
+cram/cram_codecs.c:488:35: warning: unused parameter 'option' [-Wunused-parameter]
+           enum cram_external_type option,
+                                   ^
+cram/cram_codecs.c:490:15: warning: unused parameter 'version' [-Wunused-parameter]
+           int version) {
+               ^
+cram/cram_codecs.c: In function 'cram_beta_decode_int':
+cram/cram_codecs.c:510:38: warning: unused parameter 'slice' [-Wunused-parameter]
+ int cram_beta_decode_int(cram_slice *slice, cram_codec *c, cram_block *in, char *out, int *out_size) {
+                                      ^
+cram/cram_codecs.c: In function 'cram_beta_decode_char':
+cram/cram_codecs.c:525:39: warning: unused parameter 'slice' [-Wunused-parameter]
+ int cram_beta_decode_char(cram_slice *slice, cram_codec *c, cram_block *in, char *out, int *out_size) {
+                                       ^
+cram/cram_codecs.c: In function 'cram_beta_decode_init':
+cram/cram_codecs.c:546:11: warning: unused parameter 'version' [-Wunused-parameter]
+       int version) {
+           ^
+cram/cram_codecs.c: In function 'cram_beta_encode_store':
+cram/cram_codecs.c:575:25: warning: unused parameter 'version' [-Wunused-parameter]
+       char *prefix, int version) {
+                         ^
+cram/cram_codecs.c: In function 'cram_beta_encode_int':
+cram/cram_codecs.c:593:38: warning: unused parameter 'slice' [-Wunused-parameter]
+ int cram_beta_encode_int(cram_slice *slice, cram_codec *c,
+                                      ^
+cram/cram_codecs.c: In function 'cram_beta_encode_char':
+cram/cram_codecs.c:604:39: warning: unused parameter 'slice' [-Wunused-parameter]
+ int cram_beta_encode_char(cram_slice *slice, cram_codec *c,
+                                       ^
+cram/cram_codecs.c: In function 'cram_beta_encode_init':
+cram/cram_codecs.c:622:11: warning: unused parameter 'version' [-Wunused-parameter]
+       int version) {
+           ^
+cram/cram_codecs.c: In function 'cram_subexp_decode':
+cram/cram_codecs.c:683:36: warning: unused parameter 'slice' [-Wunused-parameter]
+ int cram_subexp_decode(cram_slice *slice, cram_codec *c, cram_block *in, char *out, int *out_size) {
+                                    ^
+cram/cram_codecs.c: In function 'cram_subexp_decode_init':
+cram/cram_codecs.c:732:33: warning: unused parameter 'option' [-Wunused-parameter]
+         enum cram_external_type option,
+                                 ^
+cram/cram_codecs.c:733:13: warning: unused parameter 'version' [-Wunused-parameter]
+         int version) {
+             ^
+cram/cram_codecs.c: In function 'cram_gamma_decode':
+cram/cram_codecs.c:760:35: warning: unused parameter 'slice' [-Wunused-parameter]
+ int cram_gamma_decode(cram_slice *slice, cram_codec *c, cram_block *in, char *out, int *out_size) {
+                                   ^
+cram/cram_codecs.c: In function 'cram_gamma_decode_init':
+cram/cram_codecs.c:788:32: warning: unused parameter 'option' [-Wunused-parameter]
+        enum cram_external_type option,
+                                ^
+cram/cram_codecs.c:789:12: warning: unused parameter 'version' [-Wunused-parameter]
+        int version) {
+            ^
+cram/cram_codecs.c: In function 'cram_huffman_decode_char0':
+cram/cram_codecs.c:835:43: warning: unused parameter 'slice' [-Wunused-parameter]
+ int cram_huffman_decode_char0(cram_slice *slice, cram_codec *c,
+                                           ^
+cram/cram_codecs.c:836:22: warning: unused parameter 'in' [-Wunused-parameter]
+          cram_block *in, char *out, int *out_size) {
+                      ^
+cram/cram_codecs.c: In function 'cram_huffman_decode_char':
+cram/cram_codecs.c:857:62: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      if (dlen <= 0 || (in->alloc - in->byte)*8 + in->bit + 7 < dlen)
+                                                              ^
+cram/cram_codecs.c:846:42: warning: unused parameter 'slice' [-Wunused-parameter]
+ int cram_huffman_decode_char(cram_slice *slice, cram_codec *c,
+                                          ^
+cram/cram_codecs.c: In function 'cram_huffman_decode_int0':
+cram/cram_codecs.c:881:42: warning: unused parameter 'slice' [-Wunused-parameter]
+ int cram_huffman_decode_int0(cram_slice *slice, cram_codec *c,
+                                          ^
+cram/cram_codecs.c:882:21: warning: unused parameter 'in' [-Wunused-parameter]
+         cram_block *in, char *out, int *out_size) {
+                     ^
+cram/cram_codecs.c: In function 'cram_huffman_decode_int':
+cram/cram_codecs.c:907:62: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      if (dlen <= 0 || (in->alloc - in->byte)*8 + in->bit + 7 < dlen)
+                                                              ^
+cram/cram_codecs.c:894:41: warning: unused parameter 'slice' [-Wunused-parameter]
+ int cram_huffman_decode_int(cram_slice *slice, cram_codec *c,
+                                         ^
+cram/cram_codecs.c: In function 'cram_huffman_decode_init':
+cram/cram_codecs.c:936:14: warning: unused parameter 'version' [-Wunused-parameter]
+          int version) {
+              ^
+cram/cram_codecs.c: In function 'cram_huffman_encode_char0':
+cram/cram_codecs.c:1053:43: warning: unused parameter 'slice' [-Wunused-parameter]
+ int cram_huffman_encode_char0(cram_slice *slice, cram_codec *c,
+                                           ^
+cram/cram_codecs.c:1053:62: warning: unused parameter 'c' [-Wunused-parameter]
+ int cram_huffman_encode_char0(cram_slice *slice, cram_codec *c,
+                                                              ^
+cram/cram_codecs.c:1054:22: warning: unused parameter 'out' [-Wunused-parameter]
+          cram_block *out, char *in, int in_size) {
+                      ^
+cram/cram_codecs.c:1054:33: warning: unused parameter 'in' [-Wunused-parameter]
+          cram_block *out, char *in, int in_size) {
+                                 ^
+cram/cram_codecs.c:1054:41: warning: unused parameter 'in_size' [-Wunused-parameter]
+          cram_block *out, char *in, int in_size) {
+                                         ^
+cram/cram_codecs.c: In function 'cram_huffman_encode_char':
+cram/cram_codecs.c:1058:42: warning: unused parameter 'slice' [-Wunused-parameter]
+ int cram_huffman_encode_char(cram_slice *slice, cram_codec *c,
+                                          ^
+cram/cram_codecs.c: In function 'cram_huffman_encode_int0':
+cram/cram_codecs.c:1089:42: warning: unused parameter 'slice' [-Wunused-parameter]
+ int cram_huffman_encode_int0(cram_slice *slice, cram_codec *c,
+                                          ^
+cram/cram_codecs.c:1089:61: warning: unused parameter 'c' [-Wunused-parameter]
+ int cram_huffman_encode_int0(cram_slice *slice, cram_codec *c,
+                                                             ^
+cram/cram_codecs.c:1090:21: warning: unused parameter 'out' [-Wunused-parameter]
+         cram_block *out, char *in, int in_size) {
+                     ^
+cram/cram_codecs.c:1090:32: warning: unused parameter 'in' [-Wunused-parameter]
+         cram_block *out, char *in, int in_size) {
+                                ^
+cram/cram_codecs.c:1090:40: warning: unused parameter 'in_size' [-Wunused-parameter]
+         cram_block *out, char *in, int in_size) {
+                                        ^
+cram/cram_codecs.c: In function 'cram_huffman_encode_int':
+cram/cram_codecs.c:1094:41: warning: unused parameter 'slice' [-Wunused-parameter]
+ int cram_huffman_encode_int(cram_slice *slice, cram_codec *c,
+                                         ^
+cram/cram_codecs.c: In function 'cram_huffman_encode_store':
+cram/cram_codecs.c:1140:14: warning: unused parameter 'version' [-Wunused-parameter]
+          int version) {
+              ^
+cram/cram_codecs.c: In function 'cram_huffman_encode_init':
+cram/cram_codecs.c:1186:16: warning: unused parameter 'dat' [-Wunused-parameter]
+          void *dat,
+                ^
+cram/cram_codecs.c:1187:14: warning: unused parameter 'version' [-Wunused-parameter]
+          int version) {
+              ^
+cram/cram_codecs.c: In function 'cram_byte_array_len_encode':
+cram/cram_codecs.c:1430:44: warning: unused parameter 'slice' [-Wunused-parameter]
+ int cram_byte_array_len_encode(cram_slice *slice, cram_codec *c,
+                                            ^
+cram/cram_codecs.c:1430:63: warning: unused parameter 'c' [-Wunused-parameter]
+ int cram_byte_array_len_encode(cram_slice *slice, cram_codec *c,
+                                                               ^
+cram/cram_codecs.c:1431:16: warning: unused parameter 'out' [-Wunused-parameter]
+    cram_block *out, char *in, int in_size) {
+                ^
+cram/cram_codecs.c:1431:27: warning: unused parameter 'in' [-Wunused-parameter]
+    cram_block *out, char *in, int in_size) {
+                           ^
+cram/cram_codecs.c:1431:35: warning: unused parameter 'in_size' [-Wunused-parameter]
+    cram_block *out, char *in, int in_size) {
+                                   ^
+cram/cram_codecs.c: In function 'cram_byte_array_len_encode_store':
+cram/cram_codecs.c:1442:28: warning: unused parameter 'version' [-Wunused-parameter]
+          char *prefix, int version) {
+                            ^
+cram/cram_codecs.c: In function 'cram_byte_array_len_encode_init':
+cram/cram_codecs.c:1463:57: warning: unused parameter 'st' [-Wunused-parameter]
+ cram_codec *cram_byte_array_len_encode_init(cram_stats *st,
+                                                         ^
+cram/cram_codecs.c:1464:34: warning: unused parameter 'option' [-Wunused-parameter]
+          enum cram_external_type option,
+                                  ^
+cram/cram_codecs.c:1466:14: warning: unused parameter 'version' [-Wunused-parameter]
+          int version) {
+              ^
+cram/cram_codecs.c: In function 'cram_byte_array_stop_decode_char':
+cram/cram_codecs.c:1491:22: warning: unused parameter 'in' [-Wunused-parameter]
+          cram_block *in, char *out,
+                      ^
+cram/cram_codecs.c: In function 'cram_byte_array_stop_decode_block':
+cram/cram_codecs.c:1530:23: warning: unused parameter 'in' [-Wunused-parameter]
+           cram_block *in, char *out_,
+                       ^
+cram/cram_codecs.c: In function 'cram_byte_array_stop_encode':
+cram/cram_codecs.c:1623:45: warning: unused parameter 'slice' [-Wunused-parameter]
+ int cram_byte_array_stop_encode(cram_slice *slice, cram_codec *c,
+                                             ^
+cram/cram_codecs.c:1623:64: warning: unused parameter 'c' [-Wunused-parameter]
+ int cram_byte_array_stop_encode(cram_slice *slice, cram_codec *c,
+                                                                ^
+cram/cram_codecs.c:1624:17: warning: unused parameter 'out' [-Wunused-parameter]
+     cram_block *out, char *in, int in_size) {
+                 ^
+cram/cram_codecs.c:1624:28: warning: unused parameter 'in' [-Wunused-parameter]
+     cram_block *out, char *in, int in_size) {
+                            ^
+cram/cram_codecs.c:1624:36: warning: unused parameter 'in_size' [-Wunused-parameter]
+     cram_block *out, char *in, int in_size) {
+                                    ^
+cram/cram_codecs.c: In function 'cram_byte_array_stop_encode_init':
+cram/cram_codecs.c:1666:58: warning: unused parameter 'st' [-Wunused-parameter]
+ cram_codec *cram_byte_array_stop_encode_init(cram_stats *st,
+                                                          ^
+cram/cram_codecs.c:1667:35: warning: unused parameter 'option' [-Wunused-parameter]
+           enum cram_external_type option,
+                                   ^
+cram/cram_codecs.c:1669:15: warning: unused parameter 'version' [-Wunused-parameter]
+           int version) {
+               ^
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o cram/cram_decode.o cram/cram_decode.c
+cram/cram_decode.c: In function 'cram_decode_TD':
+cram/cram_decode.c:101:25: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (nTL = i = 0; i < BLOCK_SIZE(b); i++) {
+                         ^
+cram/cram_decode.c:111:25: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (nTL = i = 0; i < BLOCK_SIZE(b); i++) {
+                         ^
+cram/cram_decode.c: In function 'cram_decode_seq':
+cram/cram_decode.c:752:31: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (ref_pos + pos - seq_pos > bfd->ref[cr->ref_id].len) {
+                               ^
+cram/cram_decode.c:830:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      if (ref_pos >= bfd->ref[cr->ref_id].len || !s->ref) {
+                  ^
+cram/cram_decode.c:996:42: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      if (ref_pos + cr->len - seq_pos + 1 > bfd->ref[cr->ref_id].len) {
+                                          ^
+cram/cram_decode.c: In function 'cram_decode_slice':
+cram/cram_decode.c:1490:9: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      bf >= sizeof(fd->bam_flag_swap)/sizeof(*fd->bam_flag_swap))
+         ^
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o cram/cram_encode.o cram/cram_encode.c
+cram/cram_encode.c: In function 'cram_add_base':
+cram/cram_encode.c:1584:35: warning: unused parameter 'fd' [-Wunused-parameter]
+ static int cram_add_base(cram_fd *fd, cram_container *c,
+                                   ^
+cram/cram_encode.c: In function 'cram_add_quality':
+cram/cram_encode.c:1602:38: warning: unused parameter 'fd' [-Wunused-parameter]
+ static int cram_add_quality(cram_fd *fd, cram_container *c,
+                                      ^
+cram/cram_encode.c: In function 'cram_add_deletion':
+cram/cram_encode.c:1615:33: warning: unused parameter 'base' [-Wunused-parameter]
+         int pos, int len, char *base) {
+                                 ^
+cram/cram_encode.c: In function 'cram_add_hardclip':
+cram/cram_encode.c:1649:33: warning: unused parameter 'base' [-Wunused-parameter]
+         int pos, int len, char *base) {
+                                 ^
+cram/cram_encode.c: In function 'cram_add_skip':
+cram/cram_encode.c:1659:33: warning: unused parameter 'base' [-Wunused-parameter]
+         int pos, int len, char *base) {
+                                 ^
+cram/cram_encode.c: In function 'cram_add_pad':
+cram/cram_encode.c:1669:33: warning: unused parameter 'base' [-Wunused-parameter]
+         int pos, int len, char *base) {
+                                 ^
+cram/cram_encode.c: In function 'cram_encode_aux_1_0':
+cram/cram_encode.c:1712:43: warning: unused parameter 'fd' [-Wunused-parameter]
+ static char *cram_encode_aux_1_0(cram_fd *fd, bam_seq_t *b, cram_container *c,
+                                           ^
+cram/cram_encode.c: In function 'cram_encode_aux':
+cram/cram_encode.c:1868:39: warning: unused parameter 'fd' [-Wunused-parameter]
+ static char *cram_encode_aux(cram_fd *fd, bam_seq_t *b, cram_container *c,
+                                       ^
+cram/cram_encode.c: In function 'process_one_read':
+cram/cram_encode.c:2240:32: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  while (cr->cigar + cr->ncigar >= s->cigar_alloc) {
+                                ^
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o cram/cram_index.o cram/cram_index.c
+In file included from cram/cram_index.c:57:0:
+cram/cram_index.c: In function 'cram_index_build':
+cram/cram_index.c:468:44: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+             assert(spos - cpos - c->offset == c->landmark[j]);
+                                            ^
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o cram/cram_io.o cram/cram_io.c
+cram/cram_io.c: In function 'paranoid_fclose':
+cram/cram_io.c:1006:5: warning: implicit declaration of function 'fsync' [-Wimplicit-function-declaration]
+     if (-1 == fsync(fileno(fp))) {
+     ^
+cram/cram_io.c: In function 'refs_from_header':
+cram/cram_io.c:1279:49: warning: unused parameter 'fd' [-Wunused-parameter]
+ static int refs_from_header(refs_t *r, cram_fd *fd, SAM_hdr *h) {
+                                                 ^
+In file included from ./cram/cram_io.h:52:0,
+                 from ./cram/cram.h:55,
+                 from cram/cram_io.c:65:
+cram/cram_io.c: In function 'expand_cache_path':
+./cram/misc.h:103:26: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define MIN(A,B) ( ( (A) < (B) ) ? (A) : (B) )
+                          ^
+cram/cram_io.c:1368:10: note: in expansion of macro 'MIN'
+      l = MIN(l, strlen(fn));
+          ^
+./cram/misc.h:103:40: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+ #define MIN(A,B) ( ( (A) < (B) ) ? (A) : (B) )
+                                        ^
+cram/cram_io.c:1368:10: note: in expansion of macro 'MIN'
+      l = MIN(l, strlen(fn));
+          ^
+cram/cram_io.c: In function 'cram_populate_ref':
+cram/cram_io.c:1540:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if (r->length != fwrite(r->seq, 1, r->length, fp)) {
+                ^
+cram/cram_io.c:1544:6: warning: implicit declaration of function 'unlink' [-Wimplicit-function-declaration]
+      unlink(path_tmp);
+      ^
+cram/cram_io.c: In function 'load_ref_portion':
+cram/cram_io.c:1645:13: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (len != fread(seq, 1, len, fp)) {
+             ^
+cram/cram_io.c: In function 'full_path':
+cram/cram_io.c:2915:2: warning: implicit declaration of function 'getcwd' [-Wimplicit-function-declaration]
+  if (!getcwd(out, PATH_MAX) ||
+  ^
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o cram/cram_samtools.o cram/cram_samtools.c
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o cram/cram_stats.o cram/cram_stats.c
+cram/cram_stats.c: In function 'cram_stats_add':
+cram/cram_stats.c:74:6: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]
+      ; // FIXME: handle error
+      ^
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o cram/files.o cram/files.c
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o cram/mFILE.o cram/mFILE.c
+cram/mFILE.c: In function 'mfload':
+cram/mFILE.c:102:47: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     } while (!feof(fp) && (fn == NULL || used < sb.st_size));
+                                               ^
+cram/mFILE.c:73:65: warning: unused parameter 'binary' [-Wunused-parameter]
+ static char *mfload(FILE *fp, const char *fn, size_t *size, int binary) {
+                                                                 ^
+cram/mFILE.c: In function 'mftruncate':
+cram/mFILE.c:416:38: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+     mf->size = offset != -1 ? offset : mf->offset;
+                                      ^
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o cram/md5.o cram/md5.c
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o cram/open_trace_file.o cram/open_trace_file.c
+In file included from cram/open_trace_file.c:81:0:
+cram/open_trace_file.c: In function 'find_file_dir':
+./cram/misc.h:103:26: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define MIN(A,B) ( ( (A) < (B) ) ? (A) : (B) )
+                          ^
+cram/open_trace_file.c:271:15: note: in expansion of macro 'MIN'
+   path_end += MIN(strlen(file), l);
+               ^
+./cram/misc.h:103:40: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+ #define MIN(A,B) ( ( (A) < (B) ) ? (A) : (B) )
+                                        ^
+cram/open_trace_file.c:271:15: note: in expansion of macro 'MIN'
+   path_end += MIN(strlen(file), l);
+               ^
+./cram/misc.h:103:26: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define MIN(A,B) ( ( (A) < (B) ) ? (A) : (B) )
+                          ^
+cram/open_trace_file.c:272:15: note: in expansion of macro 'MIN'
+   file     += MIN(strlen(file), l);
+               ^
+./cram/misc.h:103:40: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+ #define MIN(A,B) ( ( (A) < (B) ) ? (A) : (B) )
+                                        ^
+cram/open_trace_file.c:272:15: note: in expansion of macro 'MIN'
+   file     += MIN(strlen(file), l);
+               ^
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o cram/pooled_alloc.o cram/pooled_alloc.c
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o cram/sam_header.o cram/sam_header.c
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o cram/string_alloc.o cram/string_alloc.c
+cram/sam_header.c: In function 'sam_hdr_add_lines':
+cram/sam_header.c:320:9: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if (-1 == (k = kh_put(sam_hdr, sh->h, type, &new)))
+         ^
+cram/sam_header.c: In function 'sam_hdr_vadd':
+cram/sam_header.c:440:12: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (-1 == (k = kh_put(sam_hdr, sh->h, type_i, &new)))
+            ^
+cram/sam_header.c: In function 'sam_hdr_find_key':
+cram/sam_header.c:672:40: warning: unused parameter 'sh' [-Wunused-parameter]
+ SAM_hdr_tag *sam_hdr_find_key(SAM_hdr *sh,
+                                        ^
+cram/sam_header.c: In function 'sam_hdr_rebuild':
+cram/sam_header.c:781:24: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if (kh_key(hdr->h, k) == K("HD"))
+                        ^
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o cram/thread_pool.o cram/thread_pool.c
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o cram/vlen.o cram/vlen.c
+cram/vlen.c: In function 'vflen':
+cram/vlen.c:121:9: warning: variable 'i' set but not used [-Wunused-but-set-variable]
+     int i;
+         ^
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o cram/zfio.o cram/zfio.c
+gcc49 -g -Wall -O2 -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -I. -DSAMTOOLS=1 -c -o hts.o hts.c
+hts.c: In function 'hts_file_type':
+hts.c:409:5: warning: implicit declaration of function 'read' [-Wimplicit-function-declaration]
+     if ( read(fd,magic,2)!=2 ) { close(fd); return 0; }
+     ^
+hts.c:409:5: warning: implicit declaration of function 'close' [-Wimplicit-function-declaration]
+hts.c: In function 'update_loff':
+hts.c:555:43: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    kh_val(bidx, k).loff = kh_key(bidx, k) < idx->n_bins? lidx->offset[hts_bin_bot(kh_key(bidx, k), idx->n_lvls)] : 0;
+                                           ^
+hts.c: In function 'compress_binning':
+hts.c:574:46: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (!kh_exist(bidx, k) || kh_key(bidx, k) >= idx->n_bins || kh_key(bidx, k) < start) continue;
+                                              ^
+hts.c:599:45: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (!kh_exist(bidx, k) || kh_key(bidx, k) >= idx->n_bins) continue;
+                                             ^
+ar -rc libhts.a kfunc.o knetfile.o kstring.o bgzf.o faidx.o hfile.o hfile_net.o hts.o sam.o synced_bcf_reader.o vcf_sweep.o tbx.o vcf.o vcfutils.o cram/cram_codecs.o cram/cram_decode.o cram/cram_encode.o cram/cram_index.o cram/cram_io.o cram/cram_samtools.o cram/cram_stats.o cram/files.o cram/mFILE.o cram/md5.o cram/open_trace_file.o cram/pooled_alloc.o cram/sam_header.o cram/string_alloc.o cram/thread_pool.o cram/vlen.o cram/zfio.o
+ranlib libhts.a
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source/htslib'
+echo GlobalVariables.cpp stringSubstituteAll.cpp genomeSAindex.cpp ReadAlign_assignAlignToWindow.cpp loadGTF.cpp BAMfunctions.cpp mapThreadsSpawn.cpp ReadAlign.cpp SequenceFuns.cpp funCompareUintAndSuffixesMemcmp.cpp ReadAlign_outputTranscriptSJ.cpp ReadAlign_multMapSelect.cpp genomeParametersWrite.cpp ReadAlign_createExtendWindowsWithAlign.cpp ReadAlignChunk_processChunks.cpp streamFuns.cpp insertSeqSA.cpp BAMbinSortUnmapped.cpp Genome.cpp Genome_insertSequences.cpp ThreadControl.cpp binarySearch2.cpp serviceFuns.cpp ReadAlignChunk_mapChunk.cpp ReadAlign_maxMappableLength2strands.cpp outputSJ.cpp sjSplitAlign.cpp Parameters.cpp stitchWindowAligns.cpp Parameters_closeReadsFiles.cpp genomeGenerate.cpp signalFromBAM.cpp ReadAlign_chimericDetection.cpp stitchGapIndel.cpp TimeFunctions.cpp stitchAlignToTranscript.cpp sjdbLoadFromStream.cpp Quantifications.cpp Parameters_openReadsFiles.cpp ErrorWarning.cpp ReadAlign_outputTranscriptCIGARp.cpp PackedArray.cpp Transcriptome.cpp ReadAlignChunk.cpp ReadAlign_stitchWindowSeeds.cpp ReadAlign_alignBAM.cpp ReadAlign_outputAlignments.cpp Transcriptome_quantAlign.cpp BAMbinSortByCoordinate.cpp STAR.cpp funCompareUintAndSuffixes.cpp ReadAlign_stitchPieces.cpp sjdbPrepare.cpp Transcriptome_geneCountsAddAlign.cpp Stats.cpp sjdbInsertJunctions.cpp readLoad.cpp ReadAlign_mapOneRead.cpp ReadAlign_outputTranscriptSAM.cpp BAMoutput.cpp sjdbBuildIndex.cpp genomeScanFastaFiles.cpp ReadAlign_quantTranscriptome.cpp blocksOverlap.cpp sjdbLoadFromFiles.cpp OutSJ.cpp extendAlign.cpp Transcript_alignScore.cpp sortSuffixesBucket.cpp alignSmithWaterman.cpp SuffixArrayFuns.cpp Transcript.cpp ReadAlign_oneRead.cpp ReadAlign_storeAligns.cpp InOutStreams.cpp bamRemoveDuplicates.cpp sysRemoveDir.cpp SharedMemory.cpp bam_cat.c
+GlobalVariables.cpp stringSubstituteAll.cpp genomeSAindex.cpp ReadAlign_assignAlignToWindow.cpp loadGTF.cpp BAMfunctions.cpp mapThreadsSpawn.cpp ReadAlign.cpp SequenceFuns.cpp funCompareUintAndSuffixesMemcmp.cpp ReadAlign_outputTranscriptSJ.cpp ReadAlign_multMapSelect.cpp genomeParametersWrite.cpp ReadAlign_createExtendWindowsWithAlign.cpp ReadAlignChunk_processChunks.cpp streamFuns.cpp insertSeqSA.cpp BAMbinSortUnmapped.cpp Genome.cpp Genome_insertSequences.cpp ThreadControl.cpp binarySearch2.cpp serviceFuns.cpp ReadAlignChunk_mapChunk.cpp ReadAlign_maxMappableLength2strands.cpp outputSJ.cpp sjSplitAlign.cpp Parameters.cpp stitchWindowAligns.cpp Parameters_closeReadsFiles.cpp genomeGenerate.cpp signalFromBAM.cpp ReadAlign_chimericDetection.cpp stitchGapIndel.cpp TimeFunctions.cpp stitchAlignToTranscript.cpp sjdbLoadFromStream.cpp Quantifications.cpp Parameters_openReadsFiles.cpp ErrorWarning.cpp ReadAlign_outputTranscriptCIGARp.cpp PackedArray.cpp Transcriptome.cpp ReadAlignChunk.cpp ReadAlign_stitchWindowSeeds.cpp ReadAlign_alignBAM.cpp ReadAlign_outputAlignments.cpp Transcriptome_quantAlign.cpp BAMbinSortByCoordinate.cpp STAR.cpp funCompareUintAndSuffixes.cpp ReadAlign_stitchPieces.cpp sjdbPrepare.cpp Transcriptome_geneCountsAddAlign.cpp Stats.cpp sjdbInsertJunctions.cpp readLoad.cpp ReadAlign_mapOneRead.cpp ReadAlign_outputTranscriptSAM.cpp BAMoutput.cpp sjdbBuildIndex.cpp genomeScanFastaFiles.cpp ReadAlign_quantTranscriptome.cpp blocksOverlap.cpp sjdbLoadFromFiles.cpp OutSJ.cpp extendAlign.cpp Transcript_alignScore.cpp sortSuffixesBucket.cpp alignSmithWaterman.cpp SuffixArrayFuns.cpp Transcript.cpp ReadAlign_oneRead.cpp ReadAlign_storeAligns.cpp InOutStreams.cpp bamRemoveDuplicates.cpp sysRemoveDir.cpp SharedMemory.cpp bam_cat.c
+/bin/rm -f ./Depend.list
+g++49 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:43 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -MM GlobalVariables.cpp stringSubstituteAll.cpp genomeSAindex.cpp ReadAlign_assignAlignToWindow.cpp loadGTF.cpp BAMfunctions.cpp mapThreadsSpawn.cpp ReadAlign.cpp SequenceFuns.cpp funCompareUintAndSuffixesMemcmp.cpp ReadAlign_outputTranscriptSJ.cpp ReadAlign_multMapSelect.cpp genomeParametersWrite.cpp ReadAlign_createExtendWindowsWithAlign.cpp ReadAlignChunk_processChunks.cpp streamFuns.cpp insertSeqSA.cpp BAMbinSortUnmapped.cpp Genome.cpp Genome_insertSequences.cpp ThreadControl.cpp binarySearch2.cpp serviceFuns.cpp ReadAlignChunk_mapChunk.cpp ReadAlign_maxMappableLength2strands.cpp outputSJ.cpp sjSplitAlign.cpp Parameters.cpp stitchWindowAligns.cpp Parameters_closeReadsFiles.cpp genomeGenerate.cpp signalFromBAM.cpp ReadAlign_chimericDetection.cpp stitchGapIndel.cpp TimeFunctions.cpp stitchAlignToTranscript.cpp sjdbLoadFromStream.cpp Quantifications.cpp Parameters_openReadsFiles.cpp ErrorWarning.cpp ReadAlign_outputTranscriptCIGARp.cpp PackedArray.cpp Transcriptome.cpp ReadAlignChunk.cpp ReadAlign_stitchWindowSeeds.cpp ReadAlign_alignBAM.cpp ReadAlign_outputAlignments.cpp Transcriptome_quantAlign.cpp BAMbinSortByCoordinate.cpp STAR.cpp funCompareUintAndSuffixes.cpp ReadAlign_stitchPieces.cpp sjdbPrepare.cpp Transcriptome_geneCountsAddAlign.cpp Stats.cpp sjdbInsertJunctions.cpp readLoad.cpp ReadAlign_mapOneRead.cpp ReadAlign_outputTranscriptSAM.cpp BAMoutput.cpp sjdbBuildIndex.cpp genomeScanFastaFiles.cpp ReadAlign_quantTranscriptome.cpp blocksOverlap.cpp sjdbLoadFromFiles.cpp OutSJ.cpp extendAlign.cpp Transcript_alignScore.cpp sortSuffixesBucket.cpp alignSmithWaterman.cpp SuffixArrayFuns.cpp Transcript.cpp ReadAlign_oneRead.cpp ReadAlign_storeAligns.cpp InOutStreams.cpp bamRemoveDuplicates.cpp sysRemoveDir.cpp SharedMemory.cpp bam_cat.c parametersDefault.xxd htslib >> Depend.list
+g++49: warning: parametersDefault.xxd: linker input file unused because linking not done
+g++49: warning: htslib: linker input file unused because linking not done
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 SharedMemory.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 PackedArray.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 SuffixArrayFuns.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 STAR.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 Parameters.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 InOutStreams.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 SequenceFuns.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 Genome.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 Stats.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 Transcript.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 Transcript_alignScore.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlign.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlign_storeAligns.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlign_stitchPieces.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlign_multMapSelect.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlign_mapOneRead.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 readLoad.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlignChunk.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlignChunk_processChunks.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlignChunk_mapChunk.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 OutSJ.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 outputSJ.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 blocksOverlap.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ThreadControl.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 sysRemoveDir.cpp
+sysRemoveDir.cpp:7:58: warning: unused parameter 'sb' [-Wunused-parameter]
+ int removeFileOrDir(const char *fpath,const struct stat *sb, int typeflag, struct FTW *ftwbuf) {
+                                                          ^
+sysRemoveDir.cpp:7:88: warning: unused parameter 'ftwbuf' [-Wunused-parameter]
+ int removeFileOrDir(const char *fpath,const struct stat *sb, int typeflag, struct FTW *ftwbuf) {
+                                                                                        ^
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlign_maxMappableLength2strands.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 binarySearch2.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlign_outputAlignments.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlign_outputTranscriptSAM.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlign_outputTranscriptSJ.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlign_outputTranscriptCIGARp.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlign_createExtendWindowsWithAlign.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlign_assignAlignToWindow.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlign_oneRead.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlign_stitchWindowSeeds.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlign_chimericDetection.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 stitchWindowAligns.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 extendAlign.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 stitchAlignToTranscript.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 alignSmithWaterman.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 genomeGenerate.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 genomeParametersWrite.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 genomeScanFastaFiles.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 genomeSAindex.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 Genome_insertSequences.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 insertSeqSA.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 funCompareUintAndSuffixes.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 sortSuffixesBucket.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 funCompareUintAndSuffixesMemcmp.cpp
+funCompareUintAndSuffixesMemcmp.cpp: In function 'int funCompareUintAndSuffixesMemcmp(const void*, const void*)':
+funCompareUintAndSuffixesMemcmp.cpp:21:15: warning: unused variable 'p5' [-Wunused-variable]
+         char *p5=g_funCompareUintAndSuffixesMemcmp_G+va[1]+g_funCompareUintAndSuffixesMemcmp_L;
+               ^
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 TimeFunctions.cpp
+sortSuffixesBucket.cpp: In function 'void sortSuffixesBucket(char*, void*, int, int)':
+sortSuffixesBucket.cpp:27:43: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+         uint64_t iprev=*(uint64_t*)(ind+0*indSkip);
+                                           ^
+sortSuffixesBucket.cpp:31:37: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+             if (*(uint64_t*)(ind+id*indSkip)==iprev)
+                                     ^
+sortSuffixesBucket.cpp:43:43: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+                 iprev=*(uint64_t*)(ind+id*indSkip);
+                                           ^
+sortSuffixesBucket.cpp:62:49: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+                 charCount[G[*(uint64_t*)(ind+id*indSkip+8) + charShift]]++;//TODO can template uint64_t
+                                                 ^
+sortSuffixesBucket.cpp:62:57: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+                 charCount[G[*(uint64_t*)(ind+id*indSkip+8) + charShift]]++;//TODO can template uint64_t
+                                                         ^
+sortSuffixesBucket.cpp:62:72: warning: array subscript has type 'char' [-Wchar-subscripts]
+                 charCount[G[*(uint64_t*)(ind+id*indSkip+8) + charShift]]++;//TODO can template uint64_t
+                                                                        ^
+sortSuffixesBucket.cpp:85:50: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+                     char c=G[*(uint64_t*)(ind+id*indSkip+8) + charShift];
+                                                  ^
+sortSuffixesBucket.cpp:85:58: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+                     char c=G[*(uint64_t*)(ind+id*indSkip+8) + charShift];
+                                                          ^
+sortSuffixesBucket.cpp:86:44: warning: array subscript has type 'char' [-Wchar-subscripts]
+                     memcpy(ind1+charStart[c]*indSkip, ind+id*indSkip, indSkip);
+                                            ^
+sortSuffixesBucket.cpp:86:62: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+                     memcpy(ind1+charStart[c]*indSkip, ind+id*indSkip, indSkip);
+                                                              ^
+sortSuffixesBucket.cpp:87:32: warning: array subscript has type 'char' [-Wchar-subscripts]
+                     charStart[c]++;
+                                ^
+sortSuffixesBucket.cpp:89:36: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+                 memcpy(ind+uB1[iu]*indSkip, ind1+uB1[iu]*indSkip, (uB2[iu]-uB1[iu])*indSkip);
+                                    ^
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ErrorWarning.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 loadGTF.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 streamFuns.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 stringSubstituteAll.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 Transcriptome.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 Transcriptome_quantAlign.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlign_quantTranscriptome.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 Quantifications.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 Transcriptome_geneCountsAddAlign.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 sjdbLoadFromFiles.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 sjdbLoadFromStream.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 sjdbPrepare.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 sjdbBuildIndex.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 sjdbInsertJunctions.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 mapThreadsSpawn.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 BAMoutput.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 BAMfunctions.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 ReadAlign_alignBAM.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 BAMbinSortByCoordinate.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 signalFromBAM.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 bamRemoveDuplicates.cpp
+g++49 -c   -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 BAMbinSortUnmapped.cpp
+g++49 -c  -O3 -pipe -Wall -Wextra -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing bam_cat.c
+BAMbinSortUnmapped.cpp:5:78: warning: unused parameter 'bgzfBAM' [-Wunused-parameter]
+ void BAMbinSortUnmapped(uint32 iBin, uint nThreads, string dirBAMsort, BGZF *bgzfBAM, Parameters *P) {
+                                                                              ^
+g++49 -o STAR  -O3 -pipe -std=c++11 -Wall -Wextra -fopenmp -D'COMPILATION_TIME_PLACE="Thu Jan 12 18:19:57 UTC 2017 :/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source"' -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1 -Wl,-rpath=/usr/local/lib/gcc49 SharedMemory.o PackedArray.o SuffixArrayFuns.o STAR.o Parameters.o InOutStreams.o SequenceFuns.o Genome.o Stats.o Transcript.o Transcript_alignScore.o ReadAlign.o ReadAlign_storeAligns.o ReadAlign_stitchPieces.o ReadAlign_multMapSelect.o ReadAlign_mapOneRead.o readLoad.o ReadAlignChunk.o ReadAlignChunk_processChunks.o ReadAlignChunk_mapChunk.o OutSJ.o outputSJ.o blocksOverlap.o ThreadControl.o sysRemoveDir.o ReadAlign_maxMappableLength2strands.o binarySearch2.o ReadAlign_outputAlignments.o ReadAlign_outputTranscriptSAM.o ReadAlign_outputTranscriptSJ.o ReadAlign_outputTranscriptCIGARp.o ReadAlign_createExtendWindowsWithAlign.o ReadAlign_assignAlignToWindow.o ReadAlign_oneRead.o ReadAlign_stitchWindowSeeds.o ReadAlign_chimericDetection.o stitchWindowAligns.o extendAlign.o stitchAlignToTranscript.o alignSmithWaterman.o genomeGenerate.o genomeParametersWrite.o genomeScanFastaFiles.o genomeSAindex.o Genome_insertSequences.o insertSeqSA.o funCompareUintAndSuffixes.o sortSuffixesBucket.o funCompareUintAndSuffixesMemcmp.o TimeFunctions.o ErrorWarning.o loadGTF.o streamFuns.o stringSubstituteAll.o Transcriptome.o Transcriptome_quantAlign.o ReadAlign_quantTranscriptome.o Quantifications.o Transcriptome_geneCountsAddAlign.o sjdbLoadFromFiles.o sjdbLoadFromStream.o sjdbPrepare.o sjdbBuildIndex.o sjdbInsertJunctions.o mapThreadsSpawn.o Parameters_openReadsFiles.cpp Parameters_closeReadsFiles.cpp BAMoutput.o BAMfunctions.o ReadAlign_alignBAM.o BAMbinSortByCoordinate.o signalFromBAM.o bamRemoveDuplicates.o BAMbinSortUnmapped.o bam_cat.o GlobalVariables.cpp  -pthread -Lhtslib -Bstatic -lhts -Bdynamic -lz -lrt  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -L/usr/local/lib/gcc49
+Parameters_openReadsFiles.cpp: In member function 'void Parameters::openReadsFiles()':
+Parameters_openReadsFiles.cpp:30:20: warning: variable 'imate' might be clobbered by 'longjmp' or 'vfork' [-Wclobbered]
+          for (uint imate=0;imate<readNmates;imate++) {//open readIn files
+                    ^
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a'
+===========================================================================
+====>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===>   star-2.5.2a depends on executable: gcc49 - found
+===========================================================================
+====>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for star-2.5.2a
+===>   star-2.5.2a depends on executable: gcc49 - found
+===>   Generating temporary packing list
+install  -s -m 555 /wrkdirs/usr/ports/biology/star/work/STAR-2.5.2a/source/STAR /wrkdirs/usr/ports/biology/star/work/stage/usr/local/bin
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+====>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for star-2.5.2a
+===========================================================================
+=======================<phase: install-mtree  >============================
+===========================================================================
+====>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for star-2.5.2a
+===>   star-2.5.2a depends on executable: gcc49 - found
+===>  Checking if star already installed
+===>   Registering installation for star-2.5.2a
+[11-0-amd64-default] Installing star-2.5.2a...
+===========================================================================
+====>> Checking shared library dependencies
+ 0x0000000000000001 NEEDED               Shared library: [libc.so.7]
+ 0x0000000000000001 NEEDED               Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libgomp.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libm.so.5]
+ 0x0000000000000001 NEEDED               Shared library: [librt.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libstdc++.so.6]
+ 0x0000000000000001 NEEDED               Shared library: [libthr.so.3]
+ 0x0000000000000001 NEEDED               Shared library: [libz.so.6]
+=======================<phase: deinstall      >============================
+===>  Deinstalling for star
+===>   Deinstalling star-2.5.2a
+Updating database digests format: .......... done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	star-2.5.2a
+
+Number of packages to be removed: 1
+
+The operation will free 1 MiB.
+[11-0-amd64-default] [1/1] Deinstalling star-2.5.2a...
+[11-0-amd64-default] [1/1] Deleting files for star-2.5.2a: .... done
+===========================================================================
+====>> Checking for extra files and directories
+[01:06:22] ====>> Installing from package
+[11-0-amd64-default] Installing star-2.5.2a...
+[11-0-amd64-default] Extracting star-2.5.2a: .... done
+[01:06:22] ====>> Cleaning up
+===>  Cleaning for star-2.5.2a
+[01:06:23] ====>> Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	star-2.5.2a
+
+Number of packages to be removed: 1
+
+The operation will free 1 MiB.
+[11-0-amd64-default] [1/1] Deinstalling star-2.5.2a...
+[11-0-amd64-default] [1/1] Deleting files for star-2.5.2a: .... done
+build of biology/star ended at Thu Jan 12 12:20:37 CST 2017
+build time: 00:01:15
