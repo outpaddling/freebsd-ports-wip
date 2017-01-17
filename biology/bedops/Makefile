@@ -23,6 +23,8 @@ USE_GITHUB=	yes
 
 ALL_TARGET=	default
 
+CXXFLAGS+=	-I${LOCALBASE}/include
+
 # Unsure
 MAKE_JOBS_UNSAFE=	yes
 

@@ -3,7 +3,7 @@ BINDIR	= bin
 WDIR	= ${shell pwd}
 CC	?= cc
 CXX	?= c++
-SELF	= ${WDIR}/system.mk/Makefile.linux
+SELF	= ${WDIR}/system.mk/Makefile.simple
 
 default: support
 	$(MAKE) build -f $(SELF)
