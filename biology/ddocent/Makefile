@@ -12,6 +12,9 @@ COMMENT=	Bash pipeline for ddRAD sequencing
 LICENSE=	MIT
 
 # bedtools version: https://github.com/jpuritz/dDocent/issues/15
+# vcftools 0.1.14 does not report version the same as 0.1.11, so
+# dDocent script fails to recognize it.  Should be easy to patch
+# assuming 0.1.14 is usable.
 RUN_DEPENDS=	mawk>=0:lang/mawk \
 		bwa>=0:/usr/wip/biology/bwa \
 		samtools01>=0:/usr/wip/biology/samtools0119 \
