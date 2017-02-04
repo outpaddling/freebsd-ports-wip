@@ -2,13 +2,14 @@ include/qtermwidget5/Filter.h
 include/qtermwidget5/qtermwidget.h
 lib/libqtermwidget5.so
 lib/libqtermwidget5.so.0
-lib/libqtermwidget5.so.0.7.0
+lib/libqtermwidget5.so.0.7.1
 libdata/pkgconfig/qtermwidget5.pc
 share/cmake/qtermwidget5/qtermwidget5-config.cmake
 share/cmake/qtermwidget5/qtermwidget5_use.cmake
 %%DATADIR%%5/color-schemes/BlackOnLightYellow.schema
 %%DATADIR%%5/color-schemes/BlackOnRandomLight.colorscheme
 %%DATADIR%%5/color-schemes/BlackOnWhite.schema
+%%DATADIR%%5/color-schemes/BreezeModified.colorscheme
 %%DATADIR%%5/color-schemes/DarkPastels.colorscheme
 %%DATADIR%%5/color-schemes/GreenOnBlack.colorscheme
 %%DATADIR%%5/color-schemes/Linux.colorscheme
