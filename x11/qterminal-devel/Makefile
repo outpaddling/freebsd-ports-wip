@@ -10,9 +10,10 @@ COMMENT=	Lightweight Qt-based terminal emulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libqtermwidget5.so:/usr/wip/x11-toolkits/qtermwidget-devel
+BUILD_DEPENDS=	qtermwidget==0.7.1:/usr/wip/x11-toolkits/qtermwidget-devel
 RUN_DEPENDS=	liberation-fonts-ttf>=2.00:x11-fonts/liberation-fonts-ttf \
-		qterminal-l10n>0:x11/qterminal-l10n
+		qterminal-l10n>0:x11/qterminal-l10n \
+		qtermwidget==0.7.1:/usr/wip/x11-toolkits/qtermwidget-devel
 
 USES=		cmake:outsource compiler:c++11-lib localbase:ldflags \
 		lxqt pkgconfig tar:xz
