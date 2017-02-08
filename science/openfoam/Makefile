@@ -24,8 +24,7 @@ RUN_DEPENDS=	gnuplot:math/gnuplot \
 
 USES=		bison gmake ncurses readline shebangfix tar:tgz
 # Requires gcc 4.5 or clang 3.6 according to docs
-# wmake config files are hacked specifically for 4.8 at the moment
-USE_GCC=	4.8
+USE_GCC=	yes
 QT4_USE=	opengl webkit
 USE_GL=		glut
 SHEBANG_FILES=	${WRKSRC}/wmake/wmakeSchedulerUptime \
@@ -45,10 +44,11 @@ ONLY_FOR_ARCHS=	amd64
 # libxt-dev qt4-dev-tools libqt4-dev freeglut3-dev
 
 INSTALL_DIR=	${PREFIX}/${DISTNAME}
-PLATFORM=	platforms/FreeBSDGcc48DPInt32Opt
+PLATFORM=	platforms/FreeBSDGccDPInt32Opt
 USE_LDCONFIG=	${INSTALL_DIR}/${PLATFORM}/lib \
 		${INSTALL_DIR}/${PLATFORM}/lib/dummy
 
+#		-e 's|WM_COMPILER[ =]Gcc|&48|'
 post-patch:
 	@${REINPLACE_CMD} -e 's|"make"|"gmake"|g' \
 		${WRKSRC}/wmake/wmake
@@ -59,11 +59,10 @@ post-patch:
 		${WRKSRC}/tutorials/lagrangian/reactingParcelFilmFoam/hotBoxes/Allrun.pre
 	@${REINPLACE_CMD} \
 		-e 's|foamInstall.*=.*$$HOME/$$WM_PROJECT|foamInstall=${WRKDIR}|' \
-		-e 's|WM_COMPILER[ =]Gcc|&48|' \
 		-e 's|$$WM_PROJECT_INST_DIR/ThirdParty-$$WM_PROJECT_VERSION|$$WM_PROJECT_DIR/ThirdParty|g' \
 		${WRKSRC}/etc/bashrc \
 		${WRKSRC}/etc/cshrc
-	@${CP} -r ${FILESDIR}/FreeBSDGcc48 ${WRKSRC}/wmake/rules
+	@${CP} -r ${FILESDIR}/FreeBSDGcc ${WRKSRC}/wmake/rules
 	@${REINPLACE_CMD} \
 		-e 's|-lscotch|-L${LOCALBASE}/mpi/openmpi/lib -lscotch|'g \
 		${WRKSRC}/applications/utilities/parallelProcessing/decomposePar/Make/options \

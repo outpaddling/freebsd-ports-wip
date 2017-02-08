@@ -1,12 +1,12 @@
---- etc/config/settings.sh.orig	2015-11-03 04:30:23.000000000 -0600
-+++ etc/config/settings.sh	2015-12-02 08:12:49.248331029 -0600
+--- etc/config/settings.sh.orig	2015-11-03 10:30:23 UTC
++++ etc/config/settings.sh
 @@ -65,6 +65,27 @@ _foamAddMan()
  export WM_ARCH=`uname -s`
  
  case "$WM_ARCH" in
 +FreeBSD)
-+    export WM_CC='gcc48'
-+    export WM_CXX='g++48'
++    export WM_CC='gcc'
++    export WM_CXX='g++'
 +    export WM_CFLAGS='-fPIC'
 +    export WM_CXXFLAGS='-fPIC'
 +    export WM_LDFLAGS='-L${LOCALBASE}/mpi/openmpi/lib'

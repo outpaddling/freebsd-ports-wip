@@ -1,12 +1,12 @@
---- etc/config/settings.csh.orig	2015-12-05 07:26:43.975667214 -0600
-+++ etc/config/settings.csh	2015-12-05 07:55:57.759573718 -0600
+--- etc/config/settings.csh.orig	2015-11-03 10:30:23 UTC
++++ etc/config/settings.csh
 @@ -45,6 +45,31 @@ setenv WM_ARCH `uname -s`
  setenv WM_COMPILER_LIB_ARCH
  
  switch ($WM_ARCH)
 +case FreeBSD:
-+    setenv WM_CC 'gcc48'
-+    setenv WM_CXX 'g++48'
++    setenv WM_CC 'gcc'
++    setenv WM_CXX 'g++'
 +    setenv WM_CFLAGS '-fPIC'
 +    setenv WM_CXXFLAGS '-fPIC'
 +    setenv WM_LDFLAGS '-L${LOCALBASE}/mpi/openmpi/lib'
