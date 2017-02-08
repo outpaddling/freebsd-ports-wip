@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	linux-birdsuite
-PORTVERSION=	
+PORTVERSION=	1.5.5
 CATEGORIES=	biology
 MASTER_SITES=	https://www.broadinstitute.org/ftp/pub/mpg/birdsuite/
-DISTNAME=	MCRInstaller.75.glnxa64.bin
+DISTNAME=	birdsuite_executables_${PORTVERSION}
 
 MAINTAINER=	bacon@zebra.acadix.biz
-COMMENT=	
+COMMENT=	Report SNP genotypes, CNPs, and novel, rare, or de novo CNVs
 
-USES=		gz
+USES=		tar:tgz
 
-LICENSE=	
-LICENSE_FILE=	
+#LICENSE=	
+#LICENSE_FILE=	
 
 #    Java 1.5 or higher http://www.java.com
 #    Python 2.5.2 or higher http://www.python.org

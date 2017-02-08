@@ -1,0 +1,43 @@
+--- sdk/configure.orig	2017-02-08 14:30:53.845979000 -0600
++++ sdk/configure	2017-02-08 14:33:30.904078000 -0600
+@@ -250,7 +250,7 @@ if (-f $location_txt_file) {
+     # ... and see if we should warn about stale libs
+     if (-d $var_tmp) {
+       push(@WARNINGS,"$0: warning: '$var_tmp' already exists.\n");
+-      push(@WARNINGS,"$0: warning: Be sure to run 'make clean'.\n");
++      push(@WARNINGS,"$0: warning: Be sure to run 'gmake clean'.\n");
+     }
+   }
+ 
+@@ -329,10 +329,10 @@ if (-f $location_txt_file) {
+ 
+   # post-config actions
+   if (($opt_build==1)||($opt_install==1)) {
+-    system("make -f Makefile2 clean");
+-    system("make -f Makefile2 build");
++    system("gmake -f Makefile2 clean");
++    system("gmake -f Makefile2 build");
+     if ($opt_install==1) {
+-      system("make -f Makefile2 install");
++      system("gmake -f Makefile2 install");
+     }
+   }
+ }
+@@ -421,7 +421,7 @@ OTHER:
+ sub check_make {
+   print "checking make...";
+   # capture stdout and stderr...
+-  $rv=open(OUT,"(make --version 2>&1)|");
++  $rv=open(OUT,"(gmake --version 2>&1)|");
+ 
+   if (!$rv) {
+     print "failed. (not found)\n";
+@@ -437,7 +437,7 @@ sub check_make {
+   }
+ 
+   # This one is know to work.
+-  if (($ver_major==3) && ($ver_minor>=81)) {
++  if (($ver_major==3) && ($ver_minor>=81) || ($ver_major>3)) {
+     print "ok.\n";
+     return 1;
+   }
