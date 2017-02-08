@@ -1,0 +1,333 @@
+build started at Wed Feb  8 13:13:33 CST 2017
+port directory: /usr/ports/biology/cpat
+building for: FreeBSD 11-0-i386-default 11.0-RELEASE-p1 FreeBSD 11.0-RELEASE-p1 i386
+maintained by: bacon4000@gmail.com
+ident warning: no id keywords in /usr/local/poudriere/data/.m/11-0-i386-default/ref//usr/ports/biology/cpat/Makefile
+Makefile ident: 
+Poudriere version: 3.1.14
+Host OSVERSION: 1100122
+Jail OSVERSION: 1100122
+
+---Begin Environment---
+PKGREPOSITORY=/tmp/pkgs
+PACKAGES=/tmp/pkgs
+SHELL=/bin/csh
+UNAME_p=i386
+UNAME_m=i386
+UNAME_v=FreeBSD 11.0-RELEASE-p1
+UNAME_r=11.0-RELEASE-p1
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+WARNING_WAIT=0
+OPSYS=FreeBSD
+ARCH=i386
+SAVED_TERM=xterm
+NO_WARNING_PKG_INSTALL_EOL=yes
+MASTERMNT=/usr/local/poudriere/data/.m/11-0-i386-default/ref
+UID=0
+FORCE_PACKAGE=yes
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+_JAVA_VERSION_LIST_REGEXP=1.6\|1.7\|1.8\|1.6+\|1.7+\|1.8+
+POUDRIERE_BUILD_TYPE=bulk
+OSREL=11.0
+_OSRELEASE=11.0-RELEASE-p1
+PYTHONBASE=/usr/local
+OLDPWD=/usr/home/bacon
+_SMP_CPUS=4
+PWD=/
+MASTERNAME=11-0-i386-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+_JAVA_VENDOR_LIST_REGEXP=openjdk\|oracle\|sun
+USER=root
+HOME=/root
+POUDRIERE_VERSION=3.1.14
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+TRYBROKEN=yes
+CONFIGURE_MAX_CMD_LEN=262144
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+LOCALBASE=/usr/local
+PACKAGE_BUILDING=yes
+_JAVA_OS_LIST_REGEXP=native\|linux
+DEV_WARNING_WAIT=0
+OSVERSION=1100122
+---End Environment---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--CONFIGURE_ARGS--
+--prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/biology/cpat/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/biology/cpat/work  HOME=/wrkdirs/usr/ports/biology/cpat/work TMPDIR="/tmp" SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=262144
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/biology/cpat/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/biology/cpat/work  HOME=/wrkdirs/usr/ports/biology/cpat/work TMPDIR="/tmp" NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  LIBDIR="/usr/lib"  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector -fno-strict-aliasing"  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector" LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector -fno-strict-aliasing "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 444"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+OSREL=11.0
+PREFIX=%D
+LOCALBASE=/usr/local
+RESETPREFIX=/usr/local
+PORTDOCS=""
+PORTEXAMPLES=""
+LIB32DIR=lib
+DOCSDIR="share/doc/cpat"
+EXAMPLESDIR="share/examples/cpat"
+DATADIR="share/cpat"
+WWWDIR="www/cpat"
+ETCDIR="etc/cpat"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local
+LOCALBASE=/usr/local
+DATADIR=/usr/local/share/cpat
+DOCSDIR=/usr/local/share/doc/cpat
+EXAMPLESDIR=/usr/local/share/examples/cpat
+WWWDIR=/usr/local/www/cpat
+ETCDIR=/usr/local/etc/cpat
+--End SUB_LIST--
+
+---Begin make.conf---
+MACHINE=i386
+MACHINE_ARCH=i386
+ARCH=${MACHINE_ARCH}
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+---End make.conf---
+=======================<phase: check-sanity   >============================
+===>  License GPLv2 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   cpat-1.2 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.9.4_1.txz
+[11-0-i386-default] Installing pkg-1.9.4_1...
+[11-0-i386-default] Extracting pkg-1.9.4_1: .......... done
+===>   cpat-1.2 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of cpat-1.2
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License GPLv2 accepted by the user
+===>   cpat-1.2 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by cpat-1.2 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License GPLv2 accepted by the user
+===>   cpat-1.2 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by cpat-1.2 for building
+=> SHA256 Checksum OK for cpat-1.2.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License GPLv2 accepted by the user
+===>   cpat-1.2 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by cpat-1.2 for building
+===>  Extracting for cpat-1.2
+=> SHA256 Checksum OK for cpat-1.2.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for cpat-1.2
+===========================================================================
+=======================<phase: build-depends  >============================
+===========================================================================
+=======================<phase: lib-depends    >============================
+===========================================================================
+====>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>  Configuring for cpat-1.2
+configure: loading site script /usr/ports/Templates/config.site
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for gawk... (cached) /usr/bin/awk
+checking whether make sets $(MAKE)... yes
+checking for gcc... cc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of cc... gcc3
+checking for working ncurses... yes
+checking how to run the C preprocessor... cpp
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for getopt.h... (cached) yes
+checking for pwd.h... (cached) yes
+checking for struct timespec... (cached) yes
+checking return type of signal handlers... void
+checking for strchr... yes
+checking for getopt_long... yes
+checking for nanosleep... yes
+checking for usleep... (cached) yes
+checking for time_t... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating doc/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for cpat-1.2
+--- all ---
+/usr/bin/make  all-recursive
+--- all-recursive ---
+Making all in src
+--- cpat.o ---
+--- common.o ---
+--- document.o ---
+--- highscores.o ---
+--- cpat.o ---
+if cc -DHAVE_CONFIG_H -I. -I. -I..      -O2 -pipe  -fstack-protector -fno-strict-aliasing -MT cpat.o -MD -MP -MF ".deps/cpat.Tpo" -c -o cpat.o cpat.c;  then mv -f ".deps/cpat.Tpo" ".deps/cpat.Po"; else rm -f ".deps/cpat.Tpo"; exit 1; fi
+--- common.o ---
+if cc -DHAVE_CONFIG_H -I. -I. -I..      -O2 -pipe  -fstack-protector -fno-strict-aliasing -MT common.o -MD -MP -MF ".deps/common.Tpo" -c -o common.o common.c;  then mv -f ".deps/common.Tpo" ".deps/common.Po"; else rm -f ".deps/common.Tpo"; exit 1; fi
+--- document.o ---
+if cc -DHAVE_CONFIG_H -I. -I. -I..      -O2 -pipe  -fstack-protector -fno-strict-aliasing -MT document.o -MD -MP -MF ".deps/document.Tpo" -c -o document.o document.c;  then mv -f ".deps/document.Tpo" ".deps/document.Po"; else rm -f ".deps/document.Tpo"; exit 1; fi
+--- highscores.o ---
+if cc -DHAVE_CONFIG_H -I. -I. -I..      -O2 -pipe  -fstack-protector -fno-strict-aliasing -MT highscores.o -MD -MP -MF ".deps/highscores.Tpo" -c -o highscores.o highscores.c;  then mv -f ".deps/highscores.Tpo" ".deps/highscores.Po"; else rm -f ".deps/highscores.Tpo"; exit 1; fi
+highscores.c:38:25: warning: format specifies type 'long' but the argument has type 'time_t' (aka 'int') [-Wformat]
+                        hs.date_first_game[i][j],
+                        ^~~~~~~~~~~~~~~~~~~~~~~~
+highscores.c:39:25: warning: format specifies type 'long' but the argument has type 'time_t' (aka 'int') [-Wformat]
+                        hs.date_recent_game[i][j],
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+highscores.c:40:25: warning: format specifies type 'long' but the argument has type 'time_t' (aka 'int') [-Wformat]
+                        hs.date_best_game[i][j],
+                        ^~~~~~~~~~~~~~~~~~~~~~~
+--- freecell.o ---
+if cc -DHAVE_CONFIG_H -I. -I. -I..      -O2 -pipe  -fstack-protector -fno-strict-aliasing -MT freecell.o -MD -MP -MF ".deps/freecell.Tpo" -c -o freecell.o freecell.c;  then mv -f ".deps/freecell.Tpo" ".deps/freecell.Po"; else rm -f ".deps/freecell.Tpo"; exit 1; fi
+--- common.o ---
+common.c:1266:13: warning: format specifies type 'long' but the argument has type 'time_t' (aka 'int') [-Wformat]
+            hs.date_first_game[g->game][g->variation]);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+common.c:1269:13: warning: format specifies type 'long' but the argument has type 'time_t' (aka 'int') [-Wformat]
+            hs.date_best_game[g->game][g->variation]);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--- highscores.o ---
+3 warnings generated.
+--- klondike.o ---
+if cc -DHAVE_CONFIG_H -I. -I. -I..      -O2 -pipe  -fstack-protector -fno-strict-aliasing -MT klondike.o -MD -MP -MF ".deps/klondike.Tpo" -c -o klondike.o klondike.c;  then mv -f ".deps/klondike.Tpo" ".deps/klondike.Po"; else rm -f ".deps/klondike.Tpo"; exit 1; fi
+--- spider.o ---
+if cc -DHAVE_CONFIG_H -I. -I. -I..      -O2 -pipe  -fstack-protector -fno-strict-aliasing -MT spider.o -MD -MP -MF ".deps/spider.Tpo" -c -o spider.o spider.c;  then mv -f ".deps/spider.Tpo" ".deps/spider.Po"; else rm -f ".deps/spider.Tpo"; exit 1; fi
+--- fortythieves.o ---
+if cc -DHAVE_CONFIG_H -I. -I. -I..      -O2 -pipe  -fstack-protector -fno-strict-aliasing -MT fortythieves.o -MD -MP -MF ".deps/fortythieves.Tpo" -c -o fortythieves.o fortythieves.c;  then mv -f ".deps/fortythieves.Tpo" ".deps/fortythieves.Po"; else rm -f ".deps/fortythieves.Tpo"; exit 1; fi
+--- bakersdozen.o ---
+if cc -DHAVE_CONFIG_H -I. -I. -I..      -O2 -pipe  -fstack-protector -fno-strict-aliasing -MT bakersdozen.o -MD -MP -MF ".deps/bakersdozen.Tpo" -c -o bakersdozen.o bakersdozen.c;  then mv -f ".deps/bakersdozen.Tpo" ".deps/bakersdozen.Po"; else rm -f ".deps/bakersdozen.Tpo"; exit 1; fi
+--- scorpion.o ---
+--- penguin.o ---
+--- scorpion.o ---
+if cc -DHAVE_CONFIG_H -I. -I. -I..      -O2 -pipe  -fstack-protector -fno-strict-aliasing -MT scorpion.o -MD -MP -MF ".deps/scorpion.Tpo" -c -o scorpion.o scorpion.c;  then mv -f ".deps/scorpion.Tpo" ".deps/scorpion.Po"; else rm -f ".deps/scorpion.Tpo"; exit 1; fi
+--- penguin.o ---
+if cc -DHAVE_CONFIG_H -I. -I. -I..      -O2 -pipe  -fstack-protector -fno-strict-aliasing -MT penguin.o -MD -MP -MF ".deps/penguin.Tpo" -c -o penguin.o penguin.c;  then mv -f ".deps/penguin.Tpo" ".deps/penguin.Po"; else rm -f ".deps/penguin.Tpo"; exit 1; fi
+--- yukon.o ---
+if cc -DHAVE_CONFIG_H -I. -I. -I..      -O2 -pipe  -fstack-protector -fno-strict-aliasing -MT yukon.o -MD -MP -MF ".deps/yukon.Tpo" -c -o yukon.o yukon.c;  then mv -f ".deps/yukon.Tpo" ".deps/yukon.Po"; else rm -f ".deps/yukon.Tpo"; exit 1; fi
+--- strategy.o ---
+if cc -DHAVE_CONFIG_H -I. -I. -I..      -O2 -pipe  -fstack-protector -fno-strict-aliasing -MT strategy.o -MD -MP -MF ".deps/strategy.Tpo" -c -o strategy.o strategy.c;  then mv -f ".deps/strategy.Tpo" ".deps/strategy.Po"; else rm -f ".deps/strategy.Tpo"; exit 1; fi
+--- canfield.o ---
+if cc -DHAVE_CONFIG_H -I. -I. -I..      -O2 -pipe  -fstack-protector -fno-strict-aliasing -MT canfield.o -MD -MP -MF ".deps/canfield.Tpo" -c -o canfield.o canfield.c;  then mv -f ".deps/canfield.Tpo" ".deps/canfield.Po"; else rm -f ".deps/canfield.Tpo"; exit 1; fi
+--- common.o ---
+2 warnings generated.
+--- duchess.o ---
+if cc -DHAVE_CONFIG_H -I. -I. -I..      -O2 -pipe  -fstack-protector -fno-strict-aliasing -MT duchess.o -MD -MP -MF ".deps/duchess.Tpo" -c -o duchess.o duchess.c;  then mv -f ".deps/duchess.Tpo" ".deps/duchess.Po"; else rm -f ".deps/duchess.Tpo"; exit 1; fi
+--- cpat ---
+cc  -O2 -pipe  -fstack-protector -fno-strict-aliasing  -fstack-protector -o cpat  cpat.o common.o document.o  highscores.o freecell.o klondike.o  spider.o fortythieves.o bakersdozen.o  scorpion.o penguin.o yukon.o  strategy.o canfield.o duchess.o -lncurses -lncurses
+Making all in doc
+===========================================================================
+====>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===========================================================================
+====>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for cpat-1.2
+===>   Generating temporary packing list
+Making install in src
+test -z "/usr/local/bin" || /wrkdirs/usr/ports/biology/cpat/work/cpat-1.2/config/install-sh -d "/wrkdirs/usr/ports/biology/cpat/work/stage/usr/local/bin"
+  install  -s -m 555 'cpat' '/wrkdirs/usr/ports/biology/cpat/work/stage/usr/local/bin/cpat'
+Making install in doc
+test -z "/usr/local/man/man6" || /wrkdirs/usr/ports/biology/cpat/work/cpat-1.2/config/install-sh -d "/wrkdirs/usr/ports/biology/cpat/work/stage/usr/local/man/man6"
+ install  -m 0644 './cpat.6' '/wrkdirs/usr/ports/biology/cpat/work/stage/usr/local/man/man6/cpat.6'
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+====>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for cpat-1.2
+===========================================================================
+=======================<phase: install-mtree  >============================
+===========================================================================
+====>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for cpat-1.2
+===>  Checking if cpat already installed
+===>   Registering installation for cpat-1.2
+[11-0-i386-default] Installing cpat-1.2...
+===========================================================================
+====>> Checking shared library dependencies
+ 0x00000001 NEEDED               Shared library: [libc.so.7]
+ 0x00000001 NEEDED               Shared library: [libncurses.so.8]
+=======================<phase: deinstall      >============================
+===>  Deinstalling for cpat
+===>   Deinstalling cpat-1.2
+Updating database digests format: .. done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	cpat-1.2
+
+Number of packages to be removed: 1
+[11-0-i386-default] [1/1] Deinstalling cpat-1.2...
+[11-0-i386-default] [1/1] Deleting files for cpat-1.2: ..... done
+===========================================================================
+====>> Checking for extra files and directories
+[00:00:15] ====>> Installing from package
+[11-0-i386-default] Installing cpat-1.2...
+[11-0-i386-default] Extracting cpat-1.2: ..... done
+[00:00:15] ====>> Cleaning up
+===>  Cleaning for cpat-1.2
+[00:00:15] ====>> Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	cpat-1.2
+
+Number of packages to be removed: 1
+[11-0-i386-default] [1/1] Deinstalling cpat-1.2...
+[11-0-i386-default] [1/1] Deleting files for cpat-1.2: ..... done
+build of biology/cpat ended at Wed Feb  8 13:13:43 CST 2017
+build time: 00:00:10
