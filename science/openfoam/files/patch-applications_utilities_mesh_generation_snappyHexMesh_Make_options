@@ -1,5 +1,5 @@
---- applications/utilities/mesh/generation/snappyHexMesh/Make/options.orig	2017-02-10 10:12:14.439017037 -0600
-+++ applications/utilities/mesh/generation/snappyHexMesh/Make/options	2017-02-10 10:12:19.160016123 -0600
+--- applications/utilities/mesh/generation/snappyHexMesh/Make/options.orig	2015-11-03 10:30:23 UTC
++++ applications/utilities/mesh/generation/snappyHexMesh/Make/options
 @@ -1,5 +1,4 @@
  EXE_INC = \
 -    /* -g -DFULLDEBUG -O0 */ \

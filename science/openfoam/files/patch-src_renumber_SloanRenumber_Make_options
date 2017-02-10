@@ -1,8 +1,8 @@
 --- src/renumber/SloanRenumber/Make/options.orig	2015-11-03 10:30:23 UTC
 +++ src/renumber/SloanRenumber/Make/options
 @@ -1,5 +1,6 @@
-+# The comment line removed below causes a line break after EXE_INC =, which
-+# is a syntax error.
++// The comment line removed below causes a line break after EXE_INC =, which
++// is a syntax error.
  EXE_INC = \
 -    /* -DFULLDEBUG -g -O0 */ \
      -I$(BOOST_ARCH_PATH)/include \
