@@ -18,7 +18,10 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	flex<=2.5.39_2:/usr/wip/textproc/flex \
 		${LOCALBASE}/mpi/openmpi/bin/mpiCC:net/openmpi \
 		${LOCALBASE}/mpi/openmpi/lib/libscotch.a:/usr/wip/cad/scotch-openmpi
-LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libCGAL.so:math/cgal \
+		libmpfr.so:math/mpfr \
+		libgmp.so:math/gmp
 RUN_DEPENDS=	gnuplot:math/gnuplot \
 		${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
 
