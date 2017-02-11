@@ -8,6 +8,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://dl.openfoam.org/source/
 MASTER_SITE_SUBDIR=	../foam
 DISTFILES=	4-1
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Open source computational fluid dynamics
