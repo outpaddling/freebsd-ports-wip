@@ -1,0 +1,11 @@
+--- applications/utilities/postProcessing/graphics/PV4Readers/PV4FoamReader/Allwmake.orig	2015-11-03 10:30:23 UTC
++++ applications/utilities/postProcessing/graphics/PV4Readers/PV4FoamReader/Allwmake
+@@ -10,7 +10,7 @@ then
+         mkdir -p Make/$WM_OPTIONS > /dev/null 2>&1
+         cd Make/$WM_OPTIONS
+         cmake ../..
+-        make
++        gmake
+     )
+ fi
+ 
