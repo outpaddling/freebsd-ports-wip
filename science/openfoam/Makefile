@@ -78,6 +78,8 @@ post-patch:
 		${WRKSRC}/doc/Doxygen/Doxyfile
 	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|g' \
 		${WRKSRC}/bin/mpirunDebug
+	@${REINPLACE_CMD} -e 's|$$WM_THIRD_PARTY_DIR/platforms/$$WM_ARCH$$WM_COMPILER/.*|${LOCALBASE}|g' ${WRKSRC}/etc/config/CGAL.*sh
+	@${REINPLACE_CMD} -e 's|$$WM_THIRD_PARTY_DIR/platforms/$$WM_ARCH$$WM_COMPILER_ARCH/.*|${LOCALBASE}|g' ${WRKSRC}/etc/config/settings.*sh
 
 do-build:
 	(cd ${WRKSRC} && . etc/bashrc && ./Allwmake)
