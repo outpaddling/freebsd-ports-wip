@@ -4,7 +4,11 @@ This is a collection of work-in-progress FreeBSD ports.
 If you would like to contribute to the collection:
 
 o   Contact the owner of the repository and ask to be added as a Github
-    collaborator.
+    collaborator, so you can then commit changes made do your local working
+    copy.
+
+    Note: Github does not support subversion "mv" or "cp" commands.
+          Use "cp -R", "svn add", and "svn rm" instead.
 
 o   ADOPT-A-PORT:
 
