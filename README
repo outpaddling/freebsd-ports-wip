@@ -1,48 +1,24 @@
 
-This is a collection of work-in-progress FreeBSD ports.  
+This is a collection of work-in-progress FreeBSD ports.
 
-If you would like to contribute to the collection:
-
-o   Contact the owner of the repository and ask to be added as a Github
-    collaborator, so you can then commit changes made do your local working
-    copy.
-
-    Collaborators need to follow one simple rule:
-
-        Do not modify someone else's port without their consent.
-
-    There are no quality or security requirements for ports of your own.
-    Ports in this collection are works-in-progress and may be in any stage
-    of development from completely non-functional to ready-to-commit.
-
-    You can use either git or subversion to manage your working copy.  Note
-    that ports-mgmt/wip-tools currently relies on subversion.
-
-    Note: Github does not support subversion "mv" or "cp" commands.
-          Use "cp -R", "svn add", and "svn rm" instead.
-
-o   ADOPT-A-PORT:
-
-    If there is an existing port that you are interested it, PLEASE PLEASE
-    PLEASE inquire about adopting it by contacting the maintainer (see the
-    port Makefile for contact info).  There are many ports here and they will
-    move beyond WIP faster if more people sign up as maintainers.
-
-To install any of these ports:
+To install ports from this collection:
 
 1)  Check out a copy to /usr/wip.
 
-    svn co https://outpaddling@github.com/outpaddling/freebsd-ports-wip/trunk \
+    svn co https://github.com/outpaddling/freebsd-ports-wip/trunk \
 	/usr/wip
 
     or
 
-    git clone https://outpaddling@github.com/outpaddling/freebsd-ports-wip
-    mv freebsd-ports-wip /usr/wip
-
+    git clone https://github.com/outpaddling/freebsd-ports-wip \
+	/usr/wip
+    
 2)  Then install the ports of interest:
 
-    cd /usr/wip/category/port && make deinstall clean install
+    Example:
+    
+    cd /usr/wip/ports-mgmt/wip-tools
+    make install
 
 ---
 
@@ -55,4 +31,40 @@ FreeBSD ports installation methods:
 or
 
     cd /usr/ports/category/port && make deinstall clean install
+
+If you would like to contribute to the collection:
+
+o   Contact the owner of the repository and ask to be added as a Github
+    collaborator, so you can commit changes made to your local working
+    copy.
+
+    Collaborators need to follow one simple rule:
+
+	Do not modify someone else's files without their consent.
+
+    There are no quality or security requirements for ports of your own.
+    Ports in this collection are works-in-progress and may be in any stage
+    of development from completely non-functional to ready-to-commit.
+
+    You can use either git or subversion to manage your working copy.
+
+    Note: Github does not support subversion "mv" or "cp" commands.
+	  Use "cp -R", "svn add", and "svn rm" instead.
+
+    Check out the repository using your Github login:
+    
+    svn co https://username@github.com/outpaddling/freebsd-ports-wip/trunk \
+	/usr/wip
+
+    or
+
+    git clone https://username@github.com/outpaddling/freebsd-ports-wip \
+	/usr/wip
+
+o   Adopt an existing port:
+
+    If there is an existing port that you are interested it, PLEASE PLEASE
+    PLEASE inquire about adopting it by contacting the maintainer (see the
+    port Makefile for contact info).  There are many ports here and they will
+    move beyond WIP faster if more people sign up as maintainers.
 
