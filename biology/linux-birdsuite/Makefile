@@ -10,7 +10,12 @@ DISTNAME=	birdsuite_executables_${PORTVERSION}
 MAINTAINER=	bacon@zebra.acadix.biz
 COMMENT=	Report SNP genotypes, CNPs, and novel, rare, or de novo CNVs
 
+# Just a guess
+LICENSE=	GPLv2
+
 USES=		tar:tgz
+
+RUN_DEPENDS=	linux-apt>=0:/usr/wip/biology/linux-apt
 
 #LICENSE=	
 #LICENSE_FILE=	
@@ -21,10 +26,9 @@ USES=		tar:tgz
 #    R 2.4 or higher http://www.r-project.org
 #    mclust R package, version 3 or higher
 #    http://lib.stat.cmu.edu/R/CRAN/web/packages/mclust/index.html
-#    Affymetrix Power Tools (APT) 1.8.6 or 1.10.2, binaries
-#    http://www.affymetrix.com/support/developer/powertools/index.affx
 #    Affymetrix library bundle for Genome-Wide Human SNP Array 6.0
 #    http://www.affymetrix.com/Auth/support/downloads/library_files/genomewidesnp6_libraryfile.zip
 
+NO_BUILD=	yes
 
 .include <bsd.port.mk>
