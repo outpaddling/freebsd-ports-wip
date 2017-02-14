@@ -13,6 +13,7 @@ man/man1/auto-config-snd-driver.1.gz
 man/man1/auto-db-dir.1.gz
 man/man1/auto-denyhosts-remove-ip.1.gz
 man/man1/auto-denyhosts-setup.1.gz
+man/man1/auto-detect-intel-gpu.1.gz
 man/man1/auto-disable-service.1.gz
 man/man1/auto-disable-tcp-timestamps.1.gz
 man/man1/auto-enable-autologout.1.gz
@@ -70,6 +71,7 @@ sbin/auto-config-snd-driver
 sbin/auto-db-dir
 sbin/auto-denyhosts-remove-ip
 sbin/auto-denyhosts-setup
+sbin/auto-detect-intel-gpu
 sbin/auto-disable-service
 sbin/auto-disable-tcp-timestamps
 sbin/auto-enable-autologout
