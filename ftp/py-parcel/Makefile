@@ -38,7 +38,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake python
 USE_PYTHON=	distutils
-USE_GCC=	yes
+# USE_GCC=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	LabAdvComp
@@ -46,7 +46,7 @@ GH_ACCOUNT=	LabAdvComp
 # https://lists.freebsd.org/pipermail/freebsd-ports/2013-February/081632.html
 #PYEASYINSTALL_ARCHDEP=yes
 
-MAKE_ENV+=	os=${OPSYS} arch=${ARCH} PYTHONPATH=${STAGEDIR}/usr/local/lib/python2.7/site-packages/
+MAKE_ENV+=	os=UNIX arch=${ARCH} PYTHONPATH=${STAGEDIR}/usr/local/lib/python2.7/site-packages/
 
 MAKE_JOBS_UNSAFE=	yes
 
