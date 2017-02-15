@@ -13,6 +13,11 @@ COMMENT=	Genomic Data Commons download tool
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}parcel>0:/usr/wip/www/py-parcel \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
+		${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema
+
 USES=		python
 USE_PYTHON=	distutils
 

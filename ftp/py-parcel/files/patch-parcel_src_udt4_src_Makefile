@@ -1,0 +1,58 @@
+--- parcel/src/udt4/src/Makefile.orig	2015-07-15 08:52:20.000000000 -0500
++++ parcel/src/udt4/src/Makefile	2017-02-15 11:17:56.900818000 -0600
+@@ -1,4 +1,4 @@
+-C++ = g++
++CXX ?= g++
+ 
+ INSTALL_PATH = $(HOME)/.parcel/lib
+ MKDIR = mkdir -p
+@@ -12,26 +12,26 @@ ifndef arch
+    arch = IA32
+ endif
+ 
+-CCFLAGS = -fPIC -Wall -Wextra -D$(os) -finline-functions -O3 -fno-strict-aliasing -fvisibility=hidden
++CXXFLAGS += -fPIC -Wall -Wextra -D$(os) -fno-strict-aliasing -fvisibility=hidden
+ 
+ ifeq ($(arch), IA32)
+-   CCFLAGS += -DIA32
++   CXXFLAGS += -DIA32
+ endif
+ 
+ ifeq ($(arch), POWERPC)
+-   CCFLAGS += -mcpu=powerpc
++   CXXFLAGS += -mcpu=powerpc
+ endif
+ 
+ ifeq ($(arch), SPARC)
+-   CCFLAGS += -DSPARC
++   CXXFLAGS += -DSPARC
+ endif
+ 
+ ifeq ($(arch), IA64)
+-   CCFLAGS += -DIA64
++   CXXFLAGS += -DIA64
+ endif
+ 
+ ifeq ($(arch), AMD64)
+-   CCFLAGS += -DAMD64
++   CXXFLAGS += -DAMD64
+ endif
+ 
+ OBJS = api.o buffer.o cache.o ccc.o channel.o common.o core.o epoll.o list.o md5.o packet.o queue.o window.o
+@@ -40,13 +40,13 @@ DIR = $(shell pwd)
+ all: libudt.so libudt.a udt
+ 
+ %.o: %.cpp %.h udt.h
+-	$(C++) $(CCFLAGS) $< -c
++	$(CXX) $(CXXFLAGS) $< -c
+ 
+ libudt.so: $(OBJS)
+ ifneq ($(os), OSX)
+-	$(C++) -shared -o $@ $^
++	$(CXX) -shared -o $@ $^
+ else
+-	$(C++) -dynamiclib -o libudt.dylib -lstdc++ -lpthread -lm $^
++	$(CXX) -dynamiclib -o libudt.dylib -lstdc++ -lpthread -lm $^
+ endif
+ 	$(MKDIR) -p $(INSTALL_PATH)
+ 	$(CP) libudt.so $(INSTALL_PATH)/libudt.so

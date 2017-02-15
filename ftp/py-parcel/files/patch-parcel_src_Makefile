@@ -1,0 +1,54 @@
+--- parcel/src/Makefile.orig	2015-07-15 08:52:20.000000000 -0500
++++ parcel/src/Makefile	2017-02-15 11:19:49.887625000 -0600
+@@ -1,5 +1,5 @@
+-C++ := g++
+-GCC := gcc
++CXX ?= g++
++CC ?= gcc
+ 
+ APP = parcel
+ 
+@@ -48,7 +48,7 @@ endif
+ # Construct include flags from INC_DIRS and dependencies
+   INCLUDES        = $(patsubst %,-I%,$(INC_DIRS)) $(patsubst %,-I%,$(DEP_DIRS))
+ # Optimization flags
+-  OPTFLAGS        = -finline-functions -O3
++  OPTFLAGS        = -O2
+ # Error flags
+   ERRFLAGS        = -Wall
+ # File system flags
+@@ -67,7 +67,8 @@ ifeq ($(os), UNIX)
+ # LD linking flags
+   LDFLAGS         = -lstdc++ $(patsubst %,-L%,$(INC_DIRS))
+ # Other linking flags
+-  LINK_FLAGS      = -shared -Wl,-install_name,lparcel.so
++  #LINK_FLAGS      = -shared -Wl,-install_name,lparcel.so
++  LINK_FLAGS      = -shared
+ endif
+ 
+ ################################################################################
+@@ -110,20 +111,20 @@ endif
+ all: $(APP)
+ 
+ %.o: %.c
+-	$(GCC) $(CCFLAGS) $(LDFLAGS) $< -o $@ -c
++	$(CC) $(CCFLAGS) $(LDFLAGS) $< -o $@ -c
+ 
+ %.o: %.cpp
+-	$(C++) $(CCFLAGS) $(LDFLAGS) $< -o $@ -c
++	$(CXX) $(CCFLAGS) $(LDFLAGS) $< -o $@ -c
+ 
+ parcel: $(OBJECTS) $(DEP_OBJS)
+-	$(C++) $(LINK_FLAGS) -o $(SO_PATH) $(DEP_OBJS) $(OBJECTS) $(LIBS)
++	$(CXX) $(LINK_FLAGS) -o $(SO_PATH) $(DEP_OBJS) $(OBJECTS) $(LIBS)
+ 
+ ################################################################################
+ # Build dependencies
+ ################################################################################
+ 
+ $(UDT_OBJECTS):
+-	make -C udt4/src os=$(os)
++	gmake -C udt4/src os=$(os)
+ 
+ ################################################################################
+ # Manage library
