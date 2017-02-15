@@ -5,6 +5,7 @@ PORTNAME=	apt
 PORTVERSION=	1.19.0
 CATEGORIES=	biology
 MASTER_SITES=	http://media.affymetrix.com/Download/updates/
+PKGNAMEPREFIX=	linux-
 DISTNAME=	APT_${PORTVERSION}_Linux_64_bit_x86_binaries
 
 MAINTAINER=	bacon@unixdev.ceas.uwm.edu

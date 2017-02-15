@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon@unixdev.ceas.uwm.edu>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	apt
@@ -7,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://media.affymetrix.com/Download/updates/
 DISTNAME=	APT-${PORTVERSION}_Source_Code
 
-MAINTAINER=	bacon@unixdev.ceas.uwm.edu
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	command line programs for working with Affymetrix GeneChip® arrays
 
 USES=		gmake shebangfix zip
@@ -23,8 +23,13 @@ WRKSRC=		${WRKDIR}/apt-${PORTVERSION}-src
 
 post-patch:
 	cd ${WRKSRC} && ${CHMOD} u+x ${SHEBANG_FILES} sdk/configure
+	${REINPLACE_CMD} -e 's|/nfs|${WRKSRC}/release|g' \
+		${WRKSRC}/run-build.sh \
+		${WRKSRC}/sdk/Makefile.config \
+		${WRKSRC}/sdk/build/bamboo-build.post.sh
 
 do-build:
+	${MKDIR} ${WRKSRC}/release/bioinformatics/apt/master-dev/sdk/release
 	cd ${WRKSRC} && bash ./run-build.sh
 
 .include <bsd.port.mk>
