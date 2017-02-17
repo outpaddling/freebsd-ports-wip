@@ -44,10 +44,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	LabAdvComp
 
 # https://lists.freebsd.org/pipermail/freebsd-ports/2013-February/081632.html
-# PYEASYINSTALL_ARCHDEP=yes
+PYEASYINSTALL_ARCHDEP=yes
 
-MAKE_ENV+=	arch=${ARCH}
-# PYTHONPATH=${STAGEDIR}/usr/local/lib/python2.7/site-packages/
+MAKE_ENV+=	arch=${ARCH} PYTHONPATH=${PYTHONPATH}:${STAGEDIR}/usr/local/lib/python2.7/site-packages/
 
 # https://setuptools.readthedocs.io/en/latest/easy_install.html#custom-installation-locations
 # PYDISTUTILS_INSTALLARGS+=	--user

@@ -1,12 +1,12 @@
---- setup.py.orig	2017-02-15 11:02:38.421681000 -0600
-+++ setup.py	2017-02-15 11:02:45.861042000 -0600
+--- setup.py.orig	2015-07-15 08:52:20.000000000 -0500
++++ setup.py	2017-02-17 11:34:47.515956000 -0600
 @@ -11,8 +11,8 @@ def parcel_build(command_subclass):
  
      def parcel_run(self):
          try:
 -            call(['make', 'clean'])
 -            check_call(['make'])
-+            call(['gmake', 'clean'])
++            # call(['gmake', 'clean'])
 +            check_call(['gmake'])
          except Exception as e:
              logging.error(
