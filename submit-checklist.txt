@@ -77,8 +77,6 @@ Makefile:
     
     Replace NOPORTDOCS, etc. with PORT_OPTIONS:MDOC
     
-    Remove cat pkg-message if present
-
     Check need for USES vars like pkgconfig, localbase, gettext
 
     CMAKE_FLAGS format VAR:BOOL=ON, not VAR=1
@@ -159,6 +157,8 @@ After commit
 If maintaining source
 
     tag this version of source and create next one
+
+    update wip ports if present
 
 else
     1)  Send patches through proper channels.
