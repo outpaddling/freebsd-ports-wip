@@ -1,8 +1,8 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
-# $FreeBSD: head/sysutils/auto-admin/Makefile 422723 2016-09-24 14:16:14Z robak $
+# $FreeBSD: head/sysutils/auto-admin/Makefile 434407 2017-02-19 16:20:06Z robak $
 
 PORTNAME=	auto-admin
-PORTVERSION=	0.3.10
+PORTVERSION=	0.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 

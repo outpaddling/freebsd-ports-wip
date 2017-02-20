@@ -2,7 +2,7 @@
 # $FreeBSD: head/sysutils/desktop-installer/Makefile 422727 2016-09-24 14:30:58Z robak $
 
 PORTNAME=	desktop-installer
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
