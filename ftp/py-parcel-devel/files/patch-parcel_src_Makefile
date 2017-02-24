@@ -1,0 +1,97 @@
+--- parcel/src/Makefile.orig	2015-07-15 08:52:20.000000000 -0500
++++ parcel/src/Makefile	2017-02-16 12:04:38.201569012 -0600
+@@ -1,10 +1,13 @@
+-C++ := g++
+-GCC := gcc
++CXX ?= g++
++CC ?= gcc
+ 
+ APP = parcel
+ 
+ ifndef os
+     UNAME_S := $(shell uname -s)
++    ifeq ($(UNAME_S),FreeBSD)
++		os = FreeBSD
++    endif
+     ifeq ($(UNAME_S),Linux)
+ 		os = LINUX
+     endif
+@@ -48,7 +51,7 @@ endif
+ # Construct include flags from INC_DIRS and dependencies
+   INCLUDES        = $(patsubst %,-I%,$(INC_DIRS)) $(patsubst %,-I%,$(DEP_DIRS))
+ # Optimization flags
+-  OPTFLAGS        = -finline-functions -O3
++  OPTFLAGS        = -O2
+ # Error flags
+   ERRFLAGS        = -Wall
+ # File system flags
+@@ -56,13 +59,19 @@ endif
+ # Misc flags
+   MISCFLAGS       = -g -fPIC -static
+ # Construct compiler flags
+-  CCFLAGS         = $(INCLUDES) $(OPTFLAGS) $(FSFLAGS) $(ERRFLAGS) $(MISCFLAGS) -D$(os)
++  CFLAGS         += $(INCLUDES) $(OPTFLAGS) $(FSFLAGS) $(ERRFLAGS) $(MISCFLAGS) -D$(os)
+ ifeq ($(os), LINUX)
+ # LD linking flags
+   LDFLAGS         = -lstdc++ -lpthread -lm -ludt $(patsubst %,-L%,$(INC_DIRS))
+ # Other linking flags
+   LINK_FLAGS      = -shared -Wl,-soname,lparcel.so
+ endif
++ifeq ($(os), FreeBSD)
++# LD linking flags
++  LDFLAGS         = -lstdc++ -lpthread -lm -ludt $(patsubst %,-L%,$(INC_DIRS))
++# Other linking flags
++  LINK_FLAGS      = -shared -Wl,-soname,lparcel.so
++endif
+ ifeq ($(os), UNIX)
+ # LD linking flags
+   LDFLAGS         = -lstdc++ $(patsubst %,-L%,$(INC_DIRS))
+@@ -84,19 +93,19 @@ ifndef arch
+ endif
+ 
+ ifeq ($(arch), IA32)
+-    CCFLAGS += -DIA32
++    CFLAGS += -DIA32
+ endif
+ 
+ ifeq ($(arch), POWERPC)
+-   CCFLAGS += -mcpu=powerpc
++   CFLAGS += -mcpu=powerpc
+ endif
+ 
+ ifeq ($(arch), IA64)
+-   CCFLAGS += -DIA64
++   CFLAGS += -DIA64
+ endif
+ 
+ ifeq ($(arch), SPARC)
+-   CCFLAGS += -DSPARC
++   CFLAGS += -DSPARC
+ endif
+ 
+ ifeq ($(os), SUNOS)
+@@ -110,20 +119,20 @@ endif
+ all: $(APP)
+ 
+ %.o: %.c
+-	$(GCC) $(CCFLAGS) $(LDFLAGS) $< -o $@ -c
++	$(CC) $(CFLAGS) $(LDFLAGS) $< -o $@ -c
+ 
+ %.o: %.cpp
+-	$(C++) $(CCFLAGS) $(LDFLAGS) $< -o $@ -c
++	$(CXX) $(CFLAGS) $(LDFLAGS) $< -o $@ -c
+ 
+ parcel: $(OBJECTS) $(DEP_OBJS)
+-	$(C++) $(LINK_FLAGS) -o $(SO_PATH) $(DEP_OBJS) $(OBJECTS) $(LIBS)
++	$(CXX) $(LINK_FLAGS) -o $(SO_PATH) $(DEP_OBJS) $(OBJECTS) $(LIBS)
+ 
+ ################################################################################
+ # Build dependencies
+ ################################################################################
+ 
+ $(UDT_OBJECTS):
+-	make -C udt4/src os=$(os)
++	gmake -C udt4/src os=$(os)
+ 
+ ################################################################################
+ # Manage library
