@@ -64,5 +64,10 @@ MAKE_ENV+=	arch=${ARCH} PYTHONPATH=${PYTHONPATH}:${STAGEDIR}/usr/local/lib/pytho
 # PYDISTUTILS_INSTALLARGS+=	--user
 
 MAKE_JOBS_UNSAFE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
+
+pre-install:
+	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	#${MKDIR} ${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/
 
 .include <bsd.port.mk>
