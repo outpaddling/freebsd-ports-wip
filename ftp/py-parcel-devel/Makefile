@@ -63,6 +63,11 @@ MAKE_ENV+=	arch=${ARCH} PYTHONPATH=${PYTHONPATH}:${STAGEDIR}/usr/local/lib/pytho
 # https://setuptools.readthedocs.io/en/latest/easy_install.html#custom-installation-locations
 # PYDISTUTILS_INSTALLARGS+=	--user
 
+# Got idea from https://github.com/DinoTools/sslscan/pull/14
+# https://github.com/dib-lab/khmer/issues/331
+PYDISTUTILS_BUILDARGS+=		--build-base ${STAGEDIR}
+PYDISTUTILS_INSTALLARGS+=	--root ${STAGEDIR}
+
 MAKE_JOBS_UNSAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
 
