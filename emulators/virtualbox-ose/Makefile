@@ -1,5 +1,5 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD: head/emulators/virtualbox-ose/Makefile 429084 2016-12-21 14:01:15Z jkim $
+# $FreeBSD: head/emulators/virtualbox-ose/Makefile 434556 2017-02-21 22:02:51Z jkim $
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.1.12
@@ -119,6 +119,10 @@ OPTIONS_DEFAULT+=	PYTHON
 CONFLICTS_INSTALL+=	virtualbox-ose-[0-9]*
 .endif
 
+.if ${ARCH} == "amd64"
+_ELF32!=	kldstat -q -m elf32 && echo yes || echo no
+.endif
+
 .if ${PORT_OPTIONS:MNLS} && empty(PORT_OPTIONS:MQT[45])
 BROKEN=		NLS support requires QT frontend. Run 'make config' again!
 .endif
@@ -169,6 +173,8 @@ VBOX_PROGS+=	VirtualBox
 VBOX_UTILS+=	VBoxTestOGL
 VBOX_WITH_QT=	1
 .if ${PORT_OPTIONS:MQT4}
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_net_UIDownloaderAdditions.cpp \
+		${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_net_UIDownloaderExtensionPack.cpp
 CONFIGURE_ARGS+=	--enable-qt4
 USE_QT4=	corelib gui linguist_build moc_build network opengl
 USE_QT4+=	rcc_build uic_build
@@ -238,9 +244,13 @@ CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}"
 
 pre-everything::
 .if ${ARCH} == "amd64"
-.if !exists(/usr/lib32/libc.so)
+.if ${_ELF32} != yes
+	@${ECHO} 'Requires 32-bit runtime support in kernel.'
+	@${ECHO} 'Rebuild kernel with "options COMPAT_FREEBSD32" and reboot.'
+	@${FALSE}
+.elif !exists(/usr/lib32/libc.so)
 	@${ECHO} 'Requires 32-bit libraries installed under /usr/lib32.'
-	@${ECHO} 'Do: cd /usr/src; make build32 install32; /etc/rc.d/ldconfig restart'
+	@${ECHO} 'Do: cd /usr/src; make build32 install32; service ldconfig restart'
 	@${FALSE}
 .endif
 .endif
@@ -276,9 +286,6 @@ post-patch:
 	    ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_VALIDATIONKIT =' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_X11_ADDITIONS =' >> ${WRKSRC}/LocalConfig.kmk
-.if ${PORT_OPTIONS:MQT4}
-	@${ECHO} 'TOOL_QT4_BIN_SUFF = -qt4' >> ${WRKSRC}/LocalConfig.kmk
-.endif
 .if empty(PORT_OPTIONS:MQT5)
 	@${ECHO} 'VBOX_WITH_QTGUI_V5 =' >> ${WRKSRC}/LocalConfig.kmk
 .endif
