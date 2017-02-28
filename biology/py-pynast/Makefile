@@ -12,7 +12,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Nearest Alignment Space Termination tool
 
-# LICENSE=	BSD3CLAUSE
+# Unknown
+LICENSE=	PD
 
 USES=		python
 USE_PYTHON=	distutils
