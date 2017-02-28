@@ -56,7 +56,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	LabAdvComp
 GH_TAGNAME=	bd328c1673909cdbe10946e5457fbf1c7a072774
 
-MAKE_ENV+=	arch=${ARCH} PYTHONPATH=${PYTHONPATH}:${STAGEDIR}/usr/local/lib/python2.7/site-packages/
+MAKE_ENV+=	arch=${ARCH}
+#MAKE_ENV+=	arch=${ARCH} PYTHONPATH=${PYTHONPATH}:${STAGEDIR}/usr/local/lib/python2.7/site-packages/
 
 # .pyc files getting STAGEDIR hard-coded in them
 # None of these helped
