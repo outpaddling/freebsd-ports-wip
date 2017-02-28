@@ -56,24 +56,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	LabAdvComp
 GH_TAGNAME=	bd328c1673909cdbe10946e5457fbf1c7a072774
 
-# https://lists.freebsd.org/pipermail/freebsd-ports/2013-February/081632.html
-# PYEASYINSTALL_ARCHDEP=yes
-
 MAKE_ENV+=	arch=${ARCH} PYTHONPATH=${PYTHONPATH}:${STAGEDIR}/usr/local/lib/python2.7/site-packages/
-
-# https://setuptools.readthedocs.io/en/latest/easy_install.html#custom-installation-locations
-# PYDISTUTILS_INSTALLARGS+=	--user
-
-# Got idea from https://github.com/DinoTools/sslscan/pull/14
-# https://github.com/dib-lab/khmer/issues/331
-PYDISTUTILS_BUILDARGS+=		--build-base ${STAGEDIR}
-PYDISTUTILS_INSTALLARGS+=	--root ${STAGEDIR}
 
 MAKE_JOBS_UNSAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
-	#${MKDIR} ${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/
 
 .include <bsd.port.mk>
