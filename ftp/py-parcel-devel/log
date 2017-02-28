@@ -1,0 +1,312 @@
+===>  Cleaning for py27-parcel-2016.05.26
+===>  License APACHE20 accepted by the user
+===>   py27-parcel-2016.05.26 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by py27-parcel-2016.05.26 for building
+===>  Extracting for py27-parcel-2016.05.26
+=> SHA256 Checksum OK for LabAdvComp-parcel-v2016.05.26-bd328c1673909cdbe10946e5457fbf1c7a072774_GH0.tar.gz.
+===>  Patching for py27-parcel-2016.05.26
+===>  Applying FreeBSD patches for py27-parcel-2016.05.26
+===>   py27-parcel-2016.05.26 depends on package: py27-Flask>0 - found
+===>   py27-parcel-2016.05.26 depends on package: py27-Jinja2>0 - found
+===>   py27-parcel-2016.05.26 depends on package: py27-MarkupSafe>0 - found
+===>   py27-parcel-2016.05.26 depends on package: py27-werkzeug>0 - found
+===>   py27-parcel-2016.05.26 depends on package: py27-cmd2>0 - found
+===>   py27-parcel-2016.05.26 depends on package: py27-intervaltree>0 - found
+===>   py27-parcel-2016.05.26 depends on package: py27-itsdangerous>0 - found
+===>   py27-parcel-2016.05.26 depends on package: py27-progressbar>0 - found
+===>   py27-parcel-2016.05.26 depends on package: py27-pyparsing>0 - found
+===>   py27-parcel-2016.05.26 depends on package: py27-requests>0 - found
+===>   py27-parcel-2016.05.26 depends on package: py27-sortedcontainers>0 - found
+===>   py27-parcel-2016.05.26 depends on package: py27-termcolor>0 - found
+===>   py27-parcel-2016.05.26 depends on executable: gmake - found
+===>   py27-parcel-2016.05.26 depends on package: py27-setuptools27>0 - found
+===>   py27-parcel-2016.05.26 depends on file: /usr/local/bin/python2.7 - found
+===>   py27-parcel-2016.05.26 depends on executable: gcc49 - found
+===>   py27-parcel-2016.05.26 depends on file: /usr/local/bin/as - found
+===>  Configuring for py27-parcel-2016.05.26
+running config
+===>  Building for py27-parcel-2016.05.26
+(cd /usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774; /usr/bin/env arch=amd64 PYTHONPATH=:/usr/wip/ftp/py-parcel-devel/work/stage/usr/local/lib/python2.7/site-packages/ XDG_DATA_HOME=/usr/wip/ftp/py-parcel-devel/work  XDG_CONFIG_HOME=/usr/wip/ftp/py-parcel-devel/work  HOME=/usr/wip/ftp/py-parcel-devel/work NO_PIE=yes WITHOUT_DEBUG_FILES=yes WITHOUT_KERNEL_SYMBOLS=yes SHELL=/bin/sh NO_LINT=YES ADDR2LINE="/usr/local/bin/addr2line" AR="/usr/local/bin/ar" AS="/usr/local/bin/as" CPPFILT="/usr/local/bin/c++filt" GPROF="/usr/local/bin/gprof" LD="/usr/local/bin/ld" NM="/usr/local/bin/nm" OBJCOPY="/usr/local/bin/objcopy" OBJDUMP="/usr/local/bin/objdump" RANLIB="/usr/local/bin/ranlib" READELF="/usr/local/bin/readelf" SIZE="/usr/local/bin/size" STRINGS="/usr/local/bin/strings" LDSHARED="gcc49 -shared" PYTHONDONTWRITEBYTECODE= PYTHONOPTIMIZE= PREFIX=/usr/local  LOCALBASE=/usr/local  LIBDIR="/usr/lib"  CC="gcc49" CFLAGS="-O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing"  CPP="cpp49" CPPFLAGS=""  LDFLAGS=" -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -L/usr/local/lib/gcc49" LIBS=""  CXX="g++49" CXXFLAGS="-O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -Wl,-rpath=/usr/local/lib/gcc49"  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 444"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444" /usr/local/bin/python2.7 -c  "import sys; import setuptools;  __file__='setup.py'; sys.argv[0]='setup.py';  exec(compile(open(__file__, 'rb').read().replace(b'\\r\\n', b'\\n'), __file__, 'exec'))" build )
+running build
+running build_py
+creating build
+creating build/lib
+creating build/lib/parcel
+copying parcel/__init__.py -> build/lib/parcel
+copying parcel/client.py -> build/lib/parcel
+copying parcel/const.py -> build/lib/parcel
+copying parcel/cparcel.py -> build/lib/parcel
+copying parcel/defaults.py -> build/lib/parcel
+copying parcel/download_stream.py -> build/lib/parcel
+copying parcel/http_client.py -> build/lib/parcel
+copying parcel/log.py -> build/lib/parcel
+copying parcel/manifest.py -> build/lib/parcel
+copying parcel/mock_server.py -> build/lib/parcel
+copying parcel/portability.py -> build/lib/parcel
+copying parcel/repl.py -> build/lib/parcel
+copying parcel/segment.py -> build/lib/parcel
+copying parcel/server.py -> build/lib/parcel
+copying parcel/udt_client.py -> build/lib/parcel
+copying parcel/utils.py -> build/lib/parcel
+copying parcel/version.py -> build/lib/parcel
+running build_scripts
+creating build/scripts-2.7
+copying and adjusting bin/parcel -> build/scripts-2.7
+copying and adjusting bin/parcel-server -> build/scripts-2.7
+copying and adjusting bin/parcel-tcp2udt -> build/scripts-2.7
+copying and adjusting bin/parcel-udt2tcp -> build/scripts-2.7
+changing mode of build/scripts-2.7/parcel from 640 to 755
+changing mode of build/scripts-2.7/parcel-server from 640 to 755
+changing mode of build/scripts-2.7/parcel-tcp2udt from 640 to 755
+changing mode of build/scripts-2.7/parcel-udt2tcp from 640 to 755
+===>  Staging for py27-parcel-2016.05.26
+===>   py27-parcel-2016.05.26 depends on package: py27-setuptools27>0 - found
+===>   py27-parcel-2016.05.26 depends on file: /usr/local/bin/python2.7 - found
+===>   py27-parcel-2016.05.26 depends on executable: gcc49 - found
+/bin/mkdir -p /usr/wip/ftp/py-parcel-devel/work/stage/usr/local/lib/python2.7/site-packages
+===>   Generating temporary packing list
+(cd /usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774; /usr/bin/env arch=amd64 PYTHONPATH=:/usr/wip/ftp/py-parcel-devel/work/stage/usr/local/lib/python2.7/site-packages/ XDG_DATA_HOME=/usr/wip/ftp/py-parcel-devel/work  XDG_CONFIG_HOME=/usr/wip/ftp/py-parcel-devel/work  HOME=/usr/wip/ftp/py-parcel-devel/work NO_PIE=yes WITHOUT_DEBUG_FILES=yes WITHOUT_KERNEL_SYMBOLS=yes SHELL=/bin/sh NO_LINT=YES ADDR2LINE="/usr/local/bin/addr2line" AR="/usr/local/bin/ar" AS="/usr/local/bin/as" CPPFILT="/usr/local/bin/c++filt" GPROF="/usr/local/bin/gprof" LD="/usr/local/bin/ld" NM="/usr/local/bin/nm" OBJCOPY="/usr/local/bin/objcopy" OBJDUMP="/usr/local/bin/objdump" RANLIB="/usr/local/bin/ranlib" READELF="/usr/local/bin/readelf" SIZE="/usr/local/bin/size" STRINGS="/usr/local/bin/strings" LDSHARED="gcc49 -shared" PYTHONDONTWRITEBYTECODE= PYTHONOPTIMIZE= PREFIX=/usr/local  LOCALBASE=/usr/local  LIBDIR="/usr/lib"  CC="gcc49" CFLAGS="-O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing"  CPP="cpp49" CPPFLAGS=""  LDFLAGS=" -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -L/usr/local/lib/gcc49" LIBS=""  CXX="g++49" CXXFLAGS="-O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -Wl,-rpath=/usr/local/lib/gcc49"  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 444"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444" /usr/local/bin/python2.7 -c  "import sys; import setuptools;  __file__='setup.py'; sys.argv[0]='setup.py';  exec(compile(open(__file__, 'rb').read().replace(b'\\r\\n', b'\\n'), __file__, 'exec'))" install --record /usr/wip/ftp/py-parcel-devel/work/.PLIST.pymodtmp  -c -O1 --prefix=/usr/local --single-version-externally-managed --root=/usr/wip/ftp/py-parcel-devel/work/stage)
+running install
+gmake[1]: Entering directory '/usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774'
+gmake -C  parcel all
+gmake[2]: Entering directory '/usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel'
+gmake -C  src all
+gmake[3]: Entering directory '/usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src'
+g++49 -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing -Iudt4/src -I/usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/udt4/src -O2 -D_LARGE_FILE_SOURCE=1 -Wall -g -fPIC -static -DFreeBSD -lstdc++ -lpthread -lm -ludt -Ludt4/src transcribers.cpp -o transcribers.o -c
+g++49 -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing -Iudt4/src -I/usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/udt4/src -O2 -D_LARGE_FILE_SOURCE=1 -Wall -g -fPIC -static -DFreeBSD -lstdc++ -lpthread -lm -ludt -Ludt4/src udt2tcp.cpp -o udt2tcp.o -c
+g++49 -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing -Iudt4/src -I/usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/udt4/src -O2 -D_LARGE_FILE_SOURCE=1 -Wall -g -fPIC -static -DFreeBSD -lstdc++ -lpthread -lm -ludt -Ludt4/src tcp2udt.cpp -o tcp2udt.o -c
+g++49 -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing -Iudt4/src -I/usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/udt4/src -O2 -D_LARGE_FILE_SOURCE=1 -Wall -g -fPIC -static -DFreeBSD -lstdc++ -lpthread -lm -ludt -Ludt4/src cbuffer.cpp -o cbuffer.o -c
+gmake -C udt4/src os=FreeBSD
+gmake[4]: Entering directory '/usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/udt4/src'
+g++49 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -Wl,-rpath=/usr/local/lib/gcc49 -fPIC -Wall -Wextra -DFreeBSD -fno-strict-aliasing -fvisibility=hidden api.cpp -c
+g++49 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -Wl,-rpath=/usr/local/lib/gcc49 -fPIC -Wall -Wextra -DFreeBSD -fno-strict-aliasing -fvisibility=hidden buffer.cpp -c
+g++49 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -Wl,-rpath=/usr/local/lib/gcc49 -fPIC -Wall -Wextra -DFreeBSD -fno-strict-aliasing -fvisibility=hidden cache.cpp -c
+g++49 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -Wl,-rpath=/usr/local/lib/gcc49 -fPIC -Wall -Wextra -DFreeBSD -fno-strict-aliasing -fvisibility=hidden ccc.cpp -c
+g++49 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -Wl,-rpath=/usr/local/lib/gcc49 -fPIC -Wall -Wextra -DFreeBSD -fno-strict-aliasing -fvisibility=hidden channel.cpp -c
+g++49 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -Wl,-rpath=/usr/local/lib/gcc49 -fPIC -Wall -Wextra -DFreeBSD -fno-strict-aliasing -fvisibility=hidden common.cpp -c
+g++49 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -Wl,-rpath=/usr/local/lib/gcc49 -fPIC -Wall -Wextra -DFreeBSD -fno-strict-aliasing -fvisibility=hidden core.cpp -c
+g++49 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -Wl,-rpath=/usr/local/lib/gcc49 -fPIC -Wall -Wextra -DFreeBSD -fno-strict-aliasing -fvisibility=hidden epoll.cpp -c
+epoll.cpp:110:69: warning: unused parameter 'events' [-Wunused-parameter]
+ int CEPoll::add_ssock(const int eid, const SYSSOCKET& s, const int* events)
+                                                                     ^
+g++49 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -Wl,-rpath=/usr/local/lib/gcc49 -fPIC -Wall -Wextra -DFreeBSD -fno-strict-aliasing -fvisibility=hidden list.cpp -c
+g++49 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -Wl,-rpath=/usr/local/lib/gcc49 -fPIC -Wall -Wextra -DFreeBSD -fno-strict-aliasing -fvisibility=hidden md5.cpp -c
+g++49 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -Wl,-rpath=/usr/local/lib/gcc49 -fPIC -Wall -Wextra -DFreeBSD -fno-strict-aliasing -fvisibility=hidden packet.cpp -c
+g++49 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -Wl,-rpath=/usr/local/lib/gcc49 -fPIC -Wall -Wextra -DFreeBSD -fno-strict-aliasing -fvisibility=hidden queue.cpp -c
+g++49 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc49 -fno-strict-aliasing  -Wl,-rpath=/usr/local/lib/gcc49 -fPIC -Wall -Wextra -DFreeBSD -fno-strict-aliasing -fvisibility=hidden window.cpp -c
+g++49 -shared -o libudt.so api.o buffer.o cache.o ccc.o channel.o common.o core.o epoll.o list.o md5.o packet.o queue.o window.o
+mkdir -p -p /usr/wip/ftp/py-parcel-devel/work/.parcel/lib
+cp libudt.so /usr/wip/ftp/py-parcel-devel/work/.parcel/lib/libudt.so
+ar -rcs libudt.a api.o buffer.o cache.o ccc.o channel.o common.o core.o epoll.o list.o md5.o packet.o queue.o window.o
+gmake[4]: Leaving directory '/usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/udt4/src'
+g++49 -shared -Wl,-soname,lparcel.so -o /usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/lparcel.so /usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/udt4/src/api.o /usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/udt4/src/buffer.o /usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/udt4/src/cache.o /usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/udt4/src/ccc.o /usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/udt4/src/channel.o /usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/udt4/src/common.o /usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/udt4/src/core.o /usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/udt4/src/epoll.o /usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/udt4/src/list.o /usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/udt4/src/md5.o /usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/udt4/src/packet.o /usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/udt4/src/queue.o /usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src/udt4/src/window.o transcribers.o udt2tcp.o tcp2udt.o cbuffer.o 
+gmake[3]: Leaving directory '/usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel/src'
+gmake[2]: Leaving directory '/usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774/parcel'
+gmake[1]: Leaving directory '/usr/wip/ftp/py-parcel-devel/work/parcel-bd328c1673909cdbe10946e5457fbf1c7a072774'
+running bdist_egg
+running egg_info
+creating parcel.egg-info
+writing requirements to parcel.egg-info/requires.txt
+writing parcel.egg-info/PKG-INFO
+writing top-level names to parcel.egg-info/top_level.txt
+writing dependency_links to parcel.egg-info/dependency_links.txt
+writing manifest file 'parcel.egg-info/SOURCES.txt'
+reading manifest file 'parcel.egg-info/SOURCES.txt'
+writing manifest file 'parcel.egg-info/SOURCES.txt'
+installing library code to build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg
+running install_lib
+running build_py
+creating build/lib/parcel/src
+copying parcel/src/lparcel.so -> build/lib/parcel/src
+creating build/bdist.freebsd-10.3-RELEASE-p11-amd64
+creating build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg
+creating build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel
+copying build/lib/parcel/__init__.py -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel
+copying build/lib/parcel/client.py -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel
+copying build/lib/parcel/const.py -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel
+copying build/lib/parcel/cparcel.py -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel
+copying build/lib/parcel/defaults.py -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel
+copying build/lib/parcel/download_stream.py -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel
+copying build/lib/parcel/http_client.py -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel
+copying build/lib/parcel/log.py -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel
+copying build/lib/parcel/manifest.py -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel
+copying build/lib/parcel/mock_server.py -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel
+copying build/lib/parcel/portability.py -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel
+copying build/lib/parcel/repl.py -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel
+copying build/lib/parcel/segment.py -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel
+copying build/lib/parcel/server.py -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel
+copying build/lib/parcel/udt_client.py -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel
+copying build/lib/parcel/utils.py -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel
+copying build/lib/parcel/version.py -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel
+creating build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel/src
+copying build/lib/parcel/src/lparcel.so -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel/src
+byte-compiling build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel/__init__.py to __init__.pyc
+byte-compiling build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel/client.py to client.pyc
+byte-compiling build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel/const.py to const.pyc
+byte-compiling build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel/cparcel.py to cparcel.pyc
+byte-compiling build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel/defaults.py to defaults.pyc
+byte-compiling build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel/download_stream.py to download_stream.pyc
+byte-compiling build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel/http_client.py to http_client.pyc
+byte-compiling build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel/log.py to log.pyc
+byte-compiling build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel/manifest.py to manifest.pyc
+byte-compiling build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel/mock_server.py to mock_server.pyc
+byte-compiling build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel/portability.py to portability.pyc
+byte-compiling build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel/repl.py to repl.pyc
+byte-compiling build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel/segment.py to segment.pyc
+byte-compiling build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel/server.py to server.pyc
+byte-compiling build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel/udt_client.py to udt_client.pyc
+byte-compiling build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel/utils.py to utils.pyc
+byte-compiling build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/parcel/version.py to version.pyc
+writing byte-compilation script '/tmp/tmp2tENZv.py'
+/usr/local/bin/python2.7 -O /tmp/tmp2tENZv.py
+removing /tmp/tmp2tENZv.py
+creating build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/EGG-INFO
+installing scripts to build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/EGG-INFO/scripts
+running install_scripts
+running build_scripts
+creating build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/parcel -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/parcel-server -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/parcel-tcp2udt -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/parcel-udt2tcp -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/EGG-INFO/scripts
+changing mode of build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/EGG-INFO/scripts/parcel to 755
+changing mode of build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/EGG-INFO/scripts/parcel-server to 755
+changing mode of build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/EGG-INFO/scripts/parcel-tcp2udt to 755
+changing mode of build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/EGG-INFO/scripts/parcel-udt2tcp to 755
+copying parcel.egg-info/PKG-INFO -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/EGG-INFO
+copying parcel.egg-info/SOURCES.txt -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/EGG-INFO
+copying parcel.egg-info/dependency_links.txt -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/EGG-INFO
+copying parcel.egg-info/requires.txt -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/EGG-INFO
+copying parcel.egg-info/top_level.txt -> build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/EGG-INFO
+writing build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg/EGG-INFO/native_libs.txt
+zip_safe flag not set; analyzing archive contents...
+parcel.cparcel: module references __file__
+parcel.cparcel: module references __file__
+creating dist
+creating 'dist/parcel-0.1.13-py2.7.egg' and adding 'build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg' to it
+removing 'build/bdist.freebsd-10.3-RELEASE-p11-amd64/egg' (and everything under it)
+Creating /usr/wip/ftp/py-parcel-devel/work/stage/usr/local/lib/python2.7/site-packages/site.py
+Processing parcel-0.1.13-py2.7.egg
+creating /usr/wip/ftp/py-parcel-devel/work/stage/usr/local/lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg
+Extracting parcel-0.1.13-py2.7.egg to /usr/wip/ftp/py-parcel-devel/work/stage/usr/local/lib/python2.7/site-packages
+Adding parcel 0.1.13 to easy-install.pth file
+Installing parcel script to /usr/wip/ftp/py-parcel-devel/work/stage/usr/local/bin
+Installing parcel-server script to /usr/wip/ftp/py-parcel-devel/work/stage/usr/local/bin
+Installing parcel-tcp2udt script to /usr/wip/ftp/py-parcel-devel/work/stage/usr/local/bin
+Installing parcel-udt2tcp script to /usr/wip/ftp/py-parcel-devel/work/stage/usr/local/bin
+
+Installed /usr/wip/ftp/py-parcel-devel/work/stage/usr/local/lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg
+Processing dependencies for parcel==0.1.13
+Searching for cmd2==0.6.9
+Best match: cmd2 0.6.9
+Adding cmd2 0.6.9 to easy-install.pth file
+
+Using /usr/local/lib/python2.7/site-packages
+Searching for termcolor==1.1.0
+Best match: termcolor 1.1.0
+Adding termcolor 1.1.0 to easy-install.pth file
+
+Using /usr/local/lib/python2.7/site-packages
+Searching for intervaltree==2.1.0
+Best match: intervaltree 2.1.0
+Adding intervaltree 2.1.0 to easy-install.pth file
+
+Using /usr/local/lib/python2.7/site-packages
+Searching for Flask==0.12
+Best match: Flask 0.12
+Adding Flask 0.12 to easy-install.pth file
+Installing flask script to /usr/wip/ftp/py-parcel-devel/work/stage/usr/local/bin
+
+Using /usr/local/lib/python2.7/site-packages
+Searching for progressbar==2.3
+Best match: progressbar 2.3
+Adding progressbar 2.3 to easy-install.pth file
+
+Using /usr/local/lib/python2.7/site-packages
+Searching for requests==2.11.1
+Best match: requests 2.11.1
+Adding requests 2.11.1 to easy-install.pth file
+
+Using /usr/local/lib/python2.7/site-packages
+Searching for pyparsing==2.1.10
+Best match: pyparsing 2.1.10
+Adding pyparsing 2.1.10 to easy-install.pth file
+
+Using /usr/local/lib/python2.7/site-packages
+Searching for sortedcontainers==1.5.7
+Best match: sortedcontainers 1.5.7
+Adding sortedcontainers 1.5.7 to easy-install.pth file
+
+Using /usr/local/lib/python2.7/site-packages
+Searching for click==6.7
+Best match: click 6.7
+Adding click 6.7 to easy-install.pth file
+
+Using /usr/local/lib/python2.7/site-packages
+Searching for itsdangerous==0.24
+Best match: itsdangerous 0.24
+Adding itsdangerous 0.24 to easy-install.pth file
+
+Using /usr/local/lib/python2.7/site-packages
+Searching for Jinja2==2.8
+Best match: Jinja2 2.8
+Adding Jinja2 2.8 to easy-install.pth file
+
+Using /usr/local/lib/python2.7/site-packages
+Searching for Werkzeug==0.11.15
+Best match: Werkzeug 0.11.15
+Adding Werkzeug 0.11.15 to easy-install.pth file
+
+Using /usr/local/lib/python2.7/site-packages
+Searching for MarkupSafe==0.23
+Best match: MarkupSafe 0.23
+Adding MarkupSafe 0.23 to easy-install.pth file
+
+Using /usr/local/lib/python2.7/site-packages
+Finished processing dependencies for parcel==0.1.13
+writing list of installed files to '/usr/wip/ftp/py-parcel-devel/work/.PLIST.pymodtmp'
+====> Compressing man pages (compress-man)
+if [ -d "/usr/wip/ftp/py-parcel-devel/work/stage/usr/local/lib/python2.7/site-packages/parcel-2016.05.26-py2.7.egg-info" ]; then  /bin/ls /usr/wip/ftp/py-parcel-devel/work/stage/usr/local/lib/python2.7/site-packages/parcel-2016.05.26-py2.7.egg-info | while read f; do  echo lib/python2.7/site-packages/parcel-2016.05.26-py2.7.egg-info/${f} >> /usr/wip/ftp/py-parcel-devel/work/.PLIST.mktmp;  done;  fi;
+====> Running Q/A tests (stage-qa)
+Error: 'lib/python2.7/site-packages/site.pyc' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/site.pyo' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/__init__.pyc' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/client.pyc' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/const.pyc' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/cparcel.pyc' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/defaults.pyc' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/http_client.pyc' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/download_stream.pyc' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/log.pyc' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/manifest.pyc' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/mock_server.pyc' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/portability.pyc' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/repl.pyc' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/segment.pyc' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/server.pyc' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/udt_client.pyc' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/utils.pyc' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/version.pyc' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/__init__.pyo' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/client.pyo' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/const.pyo' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/cparcel.pyo' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/defaults.pyo' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/download_stream.pyo' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/http_client.pyo' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/log.pyo' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/manifest.pyo' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/mock_server.pyo' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/portability.pyo' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/repl.pyo' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/segment.pyo' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/server.pyo' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/udt_client.pyo' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/utils.pyo' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Error: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/version.pyo' is referring to /usr/wip/ftp/py-parcel-devel/work/stage
+Warning: 'lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/src/lparcel.so' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Error: /usr/local/lib/python2.7/site-packages/parcel-0.1.13-py2.7.egg/parcel/src/lparcel.so is linked to /usr/local/lib/gcc46/libstdc++.so.6 from lang/gcc46 but it is not declared as a dependency
+*** Error code 1
+
+Stop.
+make: stopped in /usr/wip/ftp/py-parcel-devel
