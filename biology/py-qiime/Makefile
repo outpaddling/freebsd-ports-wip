@@ -7,20 +7,26 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 CATEGORIES=	biology
 MASTER_SITES=	http://github.com/biocore/qiime/archive/ \
 		http://www.drive5.com/uclust/
-DISTFILES=	${PORTVERSION}${EXTRACT_SUFX} \
-		uclustq1.2.22_i86linux32
+DISTNAME=	${PORTVERSION}
+#DISTFILES=	${PORTVERSION}${EXTRACT_SUFX} \
+#		uclustq1.2.22_i86linux32
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${PORTVERSION}${EXTRACT_SUFX}
+#EXTRACT_ONLY=	${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Quantitative Insights Into Microbial Ecology
 
 LICENSE=	GPLv2
 
 # uclust is a Linux closed-source binary and required for qiime
-ONLY_FOR_ARCH=	i386 amd64
+# ONLY_FOR_ARCH=	i386 amd64
+
+LIB_DEPENDS+=libgmp.so:math/gmp
+LIB_DEPENDS+=libffi.so:devel/libffi
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_LINUX=	yes	# For uclust closed-source binary
-USES=		python:2 shebangfix
+USES=		iconv python:2 shebangfix
 USE_PYTHON=	distutils
 SHEBANG_FILES=	scripts/ec2Clean scripts/ec2Dispatch
 
@@ -57,7 +63,8 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.5.1:math/py-numpy \
 		cdbfasta>=2010.07.22:biology/cdbfasta
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		ncbi-toolkit>=2012.06.20:biology/ncbi-toolkit \
-		cd-hit>=4.6.1:biology/cd-hit
+		cd-hit>=4.6.1:biology/cd-hit \
+		vsearch:/usr/wip/biology/vsearch
 BUILD_DEPENDS+=	sphinx-build:textproc/py-sphinx
 
 # Hack to work around matplotlib package not installing pyparsing on 10.0
@@ -123,8 +130,8 @@ post-patch:
 		-e 's|cluster_jobs_fp|& ${PREFIX}/bin/start_parallel_jobs.py|g' \
 		${WRKSRC}/qiime/support_files/qiime_config
 
-post-install:
-	${INSTALL_PROGRAM} ${DISTDIR}/uclustq1.2.22_i86linux32 \
-		${STAGEDIR}${PREFIX}/bin/uclust
+#post-install:
+#	${INSTALL_PROGRAM} ${DISTDIR}/uclustq1.2.22_i86linux32 \
+#		${STAGEDIR}${PREFIX}/bin/uclust
 
 .include <bsd.port.mk>
