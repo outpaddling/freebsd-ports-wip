@@ -14,6 +14,8 @@ EXTRACT_ONLY=	${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Quantitative Insights Into Microbial Ecology
 
+LICENSE=	GPLv2
+
 # uclust is a Linux closed-source binary and required for qiime
 ONLY_FOR_ARCH=	i386 amd64
 

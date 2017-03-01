@@ -6,10 +6,12 @@ PORTNAME=	infernal
 # PORTVERSION=	1.1.1
 PORTVERSION=	1.0.2
 CATEGORIES=	biology
-MASTER_SITES=	http://selab.janelia.org/software/infernal/
+MASTER_SITES=	http://eddylab.org/infernal/
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Search DNA databases for RNA structure and sequence similarities
+
+LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
 # 1.1.1 USES=		gmake
