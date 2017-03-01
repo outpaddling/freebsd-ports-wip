@@ -47,19 +47,19 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.5.1:math/py-numpy \
 		${PKGNAMEPREFIX}pynast>=1.2.2:/usr/wip/biology/py-pynast \
 		${PKGNAMEPREFIX}emperor>=0.9.3:/usr/wip/biology/py-emperor \
 		${PKGNAMEPREFIX}h5py>=2.3.0:science/py-h5py \
-		FastTree>=2.1.7:/usr/wip/biology/fasttree \
+		FastTree>=2.1.7:biology/fasttree \
 		muscle>=3.8.31:biology/muscle \
 		infernal>=1.0.2:/usr/wip/biology/infernal102 \
 		rdp-classifier=2.2:/usr/wip/biology/rdp-classifier-2.2 \
-		microbiomutil>=r20110519:/usr/wip/biology/microbiomeutil \
-		cdbfasta>=2010.07.22:/usr/wip/biology/cdbfasta
+		microbiomeutil>=r20110519:/usr/wip/biology/microbiomeutil \
+		cdbfasta>=2010.07.22:biology/cdbfasta
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		ncbi-toolkit>=2012.06.20:biology/ncbi-toolkit \
 		cd-hit>=4.6.1:biology/cd-hit
 BUILD_DEPENDS+=	sphinx-build:textproc/py-sphinx
 
 # Hack to work around matplotlib package not installing pyparsing on 10.0
-RUN_DEPENDS+=	${PKGNAMEPREFIX}parsing>=0:devel/py-parsing
+# RUN_DEPENDS+=	${PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing
 
 ###############
 # Full install
