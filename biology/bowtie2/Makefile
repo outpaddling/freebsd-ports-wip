@@ -18,7 +18,7 @@ LIB_DEPENDS+=	libtbb.so:devel/tbb
 ONLY_FOR_ARCHS=	amd64
 USES=		gmake perl5 python shebangfix
 USE_PERL5=	run
-SHEBANG_FILES=	bowtie2-build bowtie2-inspect scripts/*.pl 
+SHEBANG_FILES=	bowtie2-build bowtie2-inspect scripts/*.pl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	BenLangmead

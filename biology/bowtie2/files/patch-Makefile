@@ -1,5 +1,5 @@
---- Makefile.orig	2016-12-30 09:40:06.000000000 -0600
-+++ Makefile	2017-02-19 18:55:16.371000000 -0600
+--- Makefile.orig	2016-12-30 15:40:06 UTC
++++ Makefile
 @@ -21,8 +21,8 @@
  # Makefile for bowtie, bowtie2-build, bowtie2-inspect
  #
