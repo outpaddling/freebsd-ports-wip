@@ -1,12 +1,23 @@
 --- setup.py.orig	2016-05-26 08:55:22.000000000 -0500
-+++ setup.py	2017-02-24 13:38:44.023975000 -0600
-@@ -11,8 +11,8 @@ def parcel_build(command_subclass):
++++ setup.py	2017-02-27 16:42:19.455740000 -0600
+@@ -1,3 +1,5 @@
++#!/usr/bin/env python
++
+ from setuptools import setup
+ from subprocess import check_call, call
+ import logging
+@@ -5,14 +7,12 @@ from setuptools.command.develop import d
+ from setuptools.command.install import install
+ from sys import platform
+ 
+-
+ def parcel_build(command_subclass):
+     original = command_subclass.run
  
      def parcel_run(self):
          try:
 -            call(['make', 'clean'])
 -            check_call(['make'])
-+            # call(['gmake', 'clean'])
 +            check_call(['gmake'])
          except Exception as e:
              logging.error(
