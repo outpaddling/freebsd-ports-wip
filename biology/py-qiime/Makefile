@@ -17,9 +17,6 @@ COMMENT=	Quantitative Insights Into Microbial Ecology
 
 LICENSE=	GPLv2
 
-# usearch is a Linux closed-source binary and required for qiime
-# ONLY_FOR_ARCH=	i386 amd64
-
 # http://qiime.org/install/alternative.html
 # Alignment, tree-building, taxonomy assignment, OTU picking, and other data generation steps:
 # 
@@ -78,9 +75,8 @@ LIB_DEPENDS+=libffi.so:devel/libffi
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_LINUX=	yes	# For uclust closed-source binary
-USES=		iconv python:2 shebangfix
+USES=		iconv python:2
 USE_PYTHON=	distutils
-SHEBANG_FILES=	scripts/ec2Clean scripts/ec2Dispatch
 
 PYDISTUTILS_PKGNAME=	qiime
 
@@ -99,14 +95,17 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.5.1:math/py-numpy \
 		infernal>=1.0.2:/usr/wip/biology/infernal102 \
 		rdp-classifier=2.2:/usr/wip/biology/rdp-classifier-2.2 \
 		microbiomeutil>=r20110519:/usr/wip/biology/microbiomeutil \
-		cdbfasta>=2010.07.22:biology/cdbfasta
+		cdbfasta>=2010.07.22:biology/cdbfasta \
 		sphinx-build:textproc/py-sphinx \
 		ghc:lang/ghc
-# Can we substitute vsearch for usearch?
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		ncbi-toolkit>=2012.06.20:biology/ncbi-toolkit \
 		cd-hit>=4.6.1:biology/cd-hit \
-		vsearch:/usr/wip/biology/vsearch
+		usearch:/usr/wip/biology/linux-usearch
+
+# Can we substitute vsearch for usearch?
+# Make this an OPTION?
+#		vsearch:/usr/wip/biology/vsearch
 
 # start_parallel_jobs.py is for multithreaded?
 post-patch:
