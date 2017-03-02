@@ -101,7 +101,7 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.5.1:math/py-numpy \
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		ncbi-toolkit>=2012.06.20:biology/ncbi-toolkit \
 		cd-hit>=4.6.1:biology/cd-hit \
-		usearch:/usr/wip/biology/linux-usearch
+		usearch6.1.544_i86linux32:/usr/wip/biology/linux-usearch-6.1
 
 # Can we substitute vsearch for usearch?
 # Make this an OPTION?
