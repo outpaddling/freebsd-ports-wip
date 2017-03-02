@@ -1,1 +1,8 @@
-@comment $FreeBSD$
+bin/apt-probeset-summarize.sh
+bin/birdseed
+bin/birdseye_32
+bin/birdseye_64
+bin/birdsuite.sh
+bin/run_birdseye.sh
+bin/run_birdseye_32.sh
+bin/run_birdseye_64.sh

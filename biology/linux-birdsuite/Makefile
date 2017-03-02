@@ -13,7 +13,9 @@ COMMENT=	Report SNP genotypes, CNPs, and novel, rare, or de novo CNVs
 # Just a guess
 LICENSE=	GPLv2
 
-USES=		python tar:tgz
+USES=		python shebangfix tar:tgz
+SHEBANG_FILES=	birdsuite.sh apt-probeset-summarize.sh
+
 # Need Linux Java?
 USE_JAVA=	yes
 # https://www.broadinstitute.org/birdsuite/birdsuite-install#birdsuite_prerequisites
@@ -28,5 +30,14 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}numpy>=1.2:math/py-numpy \
 # http://www.affymetrix.com/Auth/support/downloads/library_files/genomewidesnp6_libraryfile.zip
 
 NO_BUILD=	yes
+
+WRKSRC=		${WRKDIR}
+
+# Far from finished
+# https://www.broadinstitute.org/birdsuite/birdsuite-install#birdsuite_installation
+do-install:
+	cd ${WRKSRC} && ${INSTALL_SCRIPT} *.sh \
+		birdseed birdseye_32 birdseye_64 \
+		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

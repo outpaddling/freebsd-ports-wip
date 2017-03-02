@@ -23,6 +23,7 @@ do-build:
 	${MV} ${WRKSRC}/bin/apt-annotation-converter.config ${WRKSRC}
 	${MV} ${WRKSRC}/bin/axiom_param_conversion.txt ${WRKSRC}
 
+# May need apt-probeset-summarize.64 for birdsuite
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DATADIR}
