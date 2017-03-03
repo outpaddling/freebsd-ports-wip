@@ -39,10 +39,10 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.0:math/py-numpy \
 		${PKGNAMEPREFIX}pynast==1.2.2:/usr/wip/biology/py-pynast \
 		${PKGNAMEPREFIX}gdata>=2.0.18:devel/py-gdata \
 		${PKGNAMEPREFIX}biom-format>=2.1.4:biology/py-biom-format \
+		${PKGNAMEPREFIX}emperor>=0.9.51:/usr/wip/biology/py-emperor \
 
 #		${PKGNAMEPREFIX}qcli>=0.1.1:/usr/wip/biology/py-qcli \
 #		${PKGNAMEPREFIX}pyqi>=0.3.2:/usr/wip/biology/py-pyqi \
-#		${PKGNAMEPREFIX}emperor>=0.9.3:/usr/wip/biology/py-emperor \
 #		${PKGNAMEPREFIX}h5py>=2.3.0:science/py-h5py \
 #		FastTree>=2.1.7:biology/fasttree \
 #		muscle>=3.8.31:biology/muscle \

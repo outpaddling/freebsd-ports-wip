@@ -1,5 +1,3 @@
-Collecting emperor<1.0.0,>=0.9.51 (from qiime)
-  Downloading emperor-0.9.60.tar.gz (4.1MB)
 Collecting scikit-bio<0.3.0,>=0.2.3 (from qiime)
   Downloading scikit-bio-0.2.3.tar.gz (8.0MB)
 Collecting burrito-fillings<0.2.0,>=0.1.1 (from qiime)
