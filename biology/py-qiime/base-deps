@@ -1,13 +1,7 @@
-Collecting qiime
-  Downloading qiime-1.9.1.tar.gz (19.5MB)
-Requirement already satisfied: numpy>=1.9.0 in /usr/local/lib/python2.7/site-packages (from qiime)
-Collecting scipy>=0.14.0 (from qiime)
-  Downloading scipy-0.18.1.tar.gz (13.1MB)
 Collecting cogent==1.5.3 (from qiime)
   Downloading cogent-1.5.3.tgz (3.4MB)
 Collecting natsort<4.0.0 (from qiime)
   Downloading natsort-3.5.6-py2.py3-none-any.whl
-Requirement already satisfied: matplotlib!=1.4.2,>=1.1.0 in /usr/local/lib/python2.7/site-packages (from qiime)
 Collecting pynast==1.2.2 (from qiime)
   Downloading pynast-1.2.2.tar.gz (57kB)
 Collecting qcli<0.2.0,>=0.1.1 (from qiime)
