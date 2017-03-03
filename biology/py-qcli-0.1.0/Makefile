@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	qcli
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.0
 CATEGORIES=	biology
-# MASTER_SITES=	http://pypi.python.org/packages/source/q/qcli/
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	http://pypi.python.org/packages/source/q/qcli/
 PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bacon4000@gmail.com
