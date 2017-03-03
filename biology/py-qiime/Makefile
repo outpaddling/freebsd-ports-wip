@@ -17,6 +17,9 @@ COMMENT=	Quantitative Insights Into Microbial Ecology
 
 LICENSE=	GPLv2
 
+# Base install
+#
+
 # http://qiime.org/install/alternative.html
 # Alignment, tree-building, taxonomy assignment, OTU picking, and other data generation steps:
 # 
@@ -81,9 +84,11 @@ USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	qiime
 
 # FIXME: Many of these are probably just run depends
-BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.5.1:math/py-numpy \
-		${PKGNAMEPREFIX}matplotlib>=1.1.0:math/py-matplotlib \
-		pycogent>=1.1.0:biology/pycogent \
+BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.0:math/py-numpy \
+		${PKGNAMEPREFIX}scipy>=0.14.0:science/py-scipy \
+		${PKGNAMEPREFIX}matplotlib:math/py-matplotlib \
+		pycogent:biology/pycogent \
+		${PKGNAMEPREFIX}natsort:devel/py-natsort \
 		${PKGNAMEPREFIX}biom-format==1.3.1:/usr/wip/biology/py-biom-format131 \
 		${PKGNAMEPREFIX}qcli>=0.1.0:/usr/wip/biology/py-qcli \
 		${PKGNAMEPREFIX}pyqi>=0.3.2:/usr/wip/biology/py-pyqi \
