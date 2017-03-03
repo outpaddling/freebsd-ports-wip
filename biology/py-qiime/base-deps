@@ -1,15 +1,3 @@
-Collecting cogent==1.5.3 (from qiime)
-  Downloading cogent-1.5.3.tgz (3.4MB)
-Collecting natsort<4.0.0 (from qiime)
-  Downloading natsort-3.5.6-py2.py3-none-any.whl
-Collecting pynast==1.2.2 (from qiime)
-  Downloading pynast-1.2.2.tar.gz (57kB)
-Collecting qcli<0.2.0,>=0.1.1 (from qiime)
-  Downloading qcli-0.1.1.tar.gz
-Collecting gdata (from qiime)
-  Downloading gdata-2.0.18.zip (3.1MB)
-Collecting biom-format<2.2.0,>=2.1.4 (from qiime)
-  Downloading biom-format-2.1.5.tar.gz (307kB)
 Collecting emperor<1.0.0,>=0.9.51 (from qiime)
   Downloading emperor-0.9.60.tar.gz (4.1MB)
 Collecting scikit-bio<0.3.0,>=0.2.3 (from qiime)
