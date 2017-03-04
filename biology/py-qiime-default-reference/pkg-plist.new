@@ -1,0 +1,16 @@
+%%PYTHON_SITELIBDIR%%/qiime_default_reference/__init__.py
+%%PYTHON_SITELIBDIR%%/qiime_default_reference/__init__.pyc
+%%PYTHON_SITELIBDIR%%/qiime_default_reference/__init__.%%PYTHON_PYOEXTENSION%%
+%%PYTHON_SITELIBDIR%%/qiime_default_reference/gg_13_8_otus/__init__.py
+%%PYTHON_SITELIBDIR%%/qiime_default_reference/gg_13_8_otus/__init__.pyc
+%%PYTHON_SITELIBDIR%%/qiime_default_reference/gg_13_8_otus/__init__.%%PYTHON_PYOEXTENSION%%
+%%PYTHON_SITELIBDIR%%/qiime_default_reference/gg_13_8_otus/rep_set/97_otus.fasta
+%%PYTHON_SITELIBDIR%%/qiime_default_reference/gg_13_8_otus/rep_set_aligned/85_otus.pynast.fasta
+%%PYTHON_SITELIBDIR%%/qiime_default_reference/gg_13_8_otus/taxonomy/97_otu_taxonomy.txt
+%%PYTHON_SITELIBDIR%%/qiime_default_reference/gg_13_8_otus/trees/97_otus.tree
+%%PYTHON_SITELIBDIR%%/qiime_default_reference/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/qiime_default_reference/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/qiime_default_reference/tests/__init__.%%PYTHON_PYOEXTENSION%%
+%%PYTHON_SITELIBDIR%%/qiime_default_reference/tests/test_init.py
+%%PYTHON_SITELIBDIR%%/qiime_default_reference/tests/test_init.pyc
+%%PYTHON_SITELIBDIR%%/qiime_default_reference/tests/test_init.%%PYTHON_PYOEXTENSION%%

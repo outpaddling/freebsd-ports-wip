@@ -77,8 +77,9 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.0:math/py-numpy \
 		${PKGNAMEPREFIX}burrito-fillings>=0.1.1:/usr/wip/biology/py-burrito-fillings \
 		${PKGNAMEPREFIX}pandas>=0.13.1:math/py-pandas \
 		${PKGNAMEPREFIX}burrito>=0.9.1:/usr/wip/biology/py-burrito \
+		${PKGNAMEPREFIX}qiime-default-reference>=0.1.2:/usr/wip/biology/py-qiime-default-reference \
 
-#		${PKGNAMEPREFIX}>=:/usr/wip/biology/ \
+#		${PKGNAMEPREFIX}:/usr/wip/ \
 #		${PKGNAMEPREFIX}qcli>=0.1.1:/usr/wip/biology/py-qcli \
 #		${PKGNAMEPREFIX}pyqi>=0.3.2:/usr/wip/biology/py-pyqi \
 #		${PKGNAMEPREFIX}h5py>=2.3.0:science/py-h5py \
