@@ -17,6 +17,6 @@ LICENSE=	PD
 #LICENSE_FILE=	
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>
