@@ -14,7 +14,7 @@ COMMENT=	Compiler for Writing C Extensions for the Python Language
 LICENSE=	APACHE20
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	distutils
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Cython \

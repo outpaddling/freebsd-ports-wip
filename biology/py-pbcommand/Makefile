@@ -13,7 +13,7 @@ MAINTAINER=	bacon4000@gmail.com
 COMMENT=
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

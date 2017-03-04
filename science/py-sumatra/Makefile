@@ -22,6 +22,6 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pathlib>0:devel/py-pathlib \
 		${PYTHON_PKGNAMEPREFIX}httplib2>0:www/py-httplib2 \
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

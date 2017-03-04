@@ -15,7 +15,7 @@ RUN_DEPENDS=	xsltproc:textproc/libxslt \
 		docbook-xml>0:textproc/docbook-xml
 
 USES=		tar:bzip2 python:2
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils
 USE_TEX=	tex dvipsk:run
 NO_ARCH=	yes
 

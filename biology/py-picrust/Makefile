@@ -23,6 +23,6 @@ GH_ACCOUNT=	picrust
 GH_TAGNAME=	2fafafc
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

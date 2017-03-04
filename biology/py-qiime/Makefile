@@ -75,6 +75,8 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.0:math/py-numpy \
 		${PKGNAMEPREFIX}emperor>=0.9.51:/usr/wip/biology/py-emperor \
 		${PKGNAMEPREFIX}scikit-bio==0.2.3:/usr/wip/biology/py-scikit-bio-0.2.3 \
 		${PKGNAMEPREFIX}burrito-fillings>=0.1.1:/usr/wip/biology/py-burrito-fillings \
+		${PKGNAMEPREFIX}pandas>=0.13.1:math/py-pandas \
+		${PKGNAMEPREFIX}burrito>=0.9.1:/usr/wip/biology/py-burrito \
 
 #		${PKGNAMEPREFIX}>=:/usr/wip/biology/ \
 #		${PKGNAMEPREFIX}qcli>=0.1.1:/usr/wip/biology/py-qcli \

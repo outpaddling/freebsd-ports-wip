@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado
 
 USES=		compiler:c++11-lib gettext pkgconfig python shebangfix uniquefiles:dirs
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	distutils
 CFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=		EXAMPLES GTKBACKEND GTKAGGBACKEND QT4AGGBACKEND \

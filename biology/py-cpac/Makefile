@@ -14,7 +14,7 @@ COMMENT=	Configurable Pipeline for the Analysis of Connectomes
 LICENSE=	BSD3CLAUSE
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	distutils
 
 WRKSRC=		${WRKDIR}/C-PAC-${PORTVERSION}
 

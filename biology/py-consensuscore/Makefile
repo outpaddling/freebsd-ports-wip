@@ -12,7 +12,7 @@ MAINTAINER=	bacon4000@gmail.com
 COMMENT=
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	distutils
 
 BUILD_DEPENDS=	swig2.0:devel/swig20
 CONFIGURE_ARGS+=	--swig=${LOCALBASE}/bin/swig2.0

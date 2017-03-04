@@ -14,7 +14,7 @@ COMMENT=	Provides read write access to common medical and neuroimaging formats
 LICENSE=	MIT
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	distutils
 
 # http://nipy.org/nibabel/installation.html#installation
 #   Python 2.6 or greater

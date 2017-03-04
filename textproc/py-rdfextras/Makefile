@@ -13,7 +13,7 @@ MAINTAINER=	bacon4000@gmail.com
 COMMENT=
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	distutils
 
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}rdflib==3.4.0:/usr/wip/textproc/py-rdflib340
 
