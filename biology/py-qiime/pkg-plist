@@ -1,3 +1,4 @@
+bin/FlowgramAli_4frame
 bin/add_alpha_to_mapping_file.py
 bin/add_qiime_labels.py
 bin/adjust_seq_orientation.py

@@ -22,17 +22,6 @@ COMMENT=	Quantitative Insights Into Microbial Ecology
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS+=libgmp.so:math/gmp
-LIB_DEPENDS+=libffi.so:devel/libffi
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-USE_LINUX=	yes	# For uclust closed-source binary
-USES=		iconv python:2
-USE_PYTHON=	distutils
-
-PYDISTUTILS_PKGNAME=	qiime
-
 # FIXME: Many of these are probably just run depends
 # FIXME: Remove deps of deps
 # From pip install:
@@ -105,7 +94,8 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.0:math/py-numpy \
 		${PKGNAMEPREFIX}sphinx>=0.3:textproc/py-sphinx \
 
 # Unbundled
-BUILD_DEPENDS+=	FastTree>=2.1.7:biology/fasttree
+BUILD_DEPENDS+=	FastTree>=2.1.7:biology/fasttree \
+		sortmerna>=2.0:/usr/wip/biology/sortmerna
 
 # Not listed in setup.py, but installed by pip. Probably pulled in as subdeps.
 #		${PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
@@ -133,6 +123,17 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		ncbi-toolkit>=2012.06.20:biology/ncbi-toolkit \
 		cd-hit>=4.6.1:biology/cd-hit \
 		vsearch:/usr/wip/biology/vsearch
+
+#LIB_DEPENDS+=libgmp.so:math/gmp
+#LIB_DEPENDS+=libffi.so:devel/libffi
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USE_LINUX=	yes	# For uclust closed-source binary
+USES=		iconv python:2
+USE_PYTHON=	distutils
+
+#PYDISTUTILS_PKGNAME=	qiime
 
 # Can we substitute vsearch for usearch?
 # Make this an OPTION?
