@@ -1,7 +1,7 @@
 # Created by: Jason Bacon <bacon@manatee.acadix.biz>
 # $FreeBSD$
 #
-# Do not upgrade this port before testing with py-qiime
+# Do not upgrade this port beyond 0.1.x before testing with py-qiime
 
 PORTNAME=	qiime-default-reference
 PORTVERSION=	0.1.3

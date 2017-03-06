@@ -1,5 +1,7 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
+#
+# Do not upgrade this port beyond 0.2.x before testing with biology/py-qiime
 
 PORTNAME=	scikit-bio
 PORTVERSION=	0.2.3

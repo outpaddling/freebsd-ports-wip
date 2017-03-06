@@ -1,5 +1,7 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
+#
+# Do not uprade this port beyond 1.x before testing with biology/py-qiime
 
 PORTNAME=	qcli
 PORTVERSION=	0.1.1
