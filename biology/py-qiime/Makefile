@@ -93,6 +93,7 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.0:math/py-numpy \
 		${PKGNAMEPREFIX}qiime-default-reference>=0.1.2:/usr/wip/biology/py-qiime-default-reference \
 		${PKGNAMEPREFIX}ipython>0:devel/ipython \
 		${PKGNAMEPREFIX}sphinx>=0.3:textproc/py-sphinx \
+		ghc:lang/ghc
 
 # Unbundled
 BUILD_DEPENDS+=	FastTree>=2.1.7:biology/fasttree \
@@ -118,7 +119,6 @@ BUILD_DEPENDS+=	FastTree>=2.1.7:biology/fasttree \
 #		rdp-classifier=2.2:/usr/wip/biology/rdp-classifier-2.2 \
 #		microbiomeutil>=r20110519:/usr/wip/biology/microbiomeutil \
 #		cdbfasta>=2010.07.22:biology/cdbfasta \
-#		ghc:lang/ghc
 
 LIB_DEPENDS+=libgmp.so:math/gmp
 LIB_DEPENDS+=libffi.so:devel/libffi
