@@ -1,5 +1,9 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
+#
+# TODO:
+# Patch setup.py to avoid downloading files during build phase
+# Finish adding deps
 
 PORTNAME=	qiime
 PORTVERSION=	1.9.1
@@ -8,10 +12,10 @@ CATEGORIES=	biology
 MASTER_SITES=	http://github.com/biocore/qiime/archive/ \
 		http://www.drive5.com/uclust/
 DISTNAME=	${PORTVERSION}
-#DISTFILES=	${PORTVERSION}${EXTRACT_SUFX} \
-#		uclustq1.2.22_i86linux32
+DISTFILES=	${PORTVERSION}${EXTRACT_SUFX} \
+		uclustq1.2.22_i86linux64
 DIST_SUBDIR=	${PORTNAME}
-#EXTRACT_ONLY=	${PORTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Quantitative Insights Into Microbial Ecology
 
@@ -85,13 +89,14 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.0:math/py-numpy \
 		${PKGNAMEPREFIX}pyparsing>=1.5.6:devel/py-pyparsing \
 		${PKGNAMEPREFIX}click>0:devel/py-click \
 		${PKGNAMEPREFIX}future>=0.14.3:devel/py-future \
-		${PKGNAMEPREFIX}pyqi>0:biology/py-pyqi \
-		${PKGNAMEPREFIX}six>0:biology/py-six \
+		${PKGNAMEPREFIX}pyqi>0:devel/py-pyqi \
+		${PKGNAMEPREFIX}six>0:devel/py-six \
+		${PKGNAMEPREFIX}ipython>0:devel/ipython \
+		FastTree>=2.1.7:biology/fasttree \
 
 #		${PKGNAMEPREFIX}:/usr/wip/ \
 #		${PKGNAMEPREFIX}qcli>=0.1.1:/usr/wip/biology/py-qcli \
 #		${PKGNAMEPREFIX}h5py>=2.3.0:science/py-h5py \
-#		FastTree>=2.1.7:biology/fasttree \
 #		muscle>=3.8.31:biology/muscle \
 #		infernal>=1.0.2:/usr/wip/biology/infernal102 \
 #		rdp-classifier=2.2:/usr/wip/biology/rdp-classifier-2.2 \
@@ -114,5 +119,9 @@ post-patch:
 		-e 's|qiime_scripts_dir|& ${PREFIX}/bin|g' \
 		-e 's|cluster_jobs_fp|& ${PREFIX}/bin/start_parallel_jobs.py|g' \
 		${WRKSRC}/qiime/support_files/qiime_config
+
+post-install:
+	${INSTALL_PROGRAM} ${DISTDIR}/${DIST_SUBDIR}/uclustq1.2.22_i86linux64 \
+		${STAGEDIR}${PREFIX}/bin/uclust
 
 .include <bsd.port.mk>
