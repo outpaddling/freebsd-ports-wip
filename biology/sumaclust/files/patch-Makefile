@@ -1,0 +1,13 @@
+--- Makefile.orig	2015-07-16 12:38:28 UTC
++++ Makefile
+@@ -49,4 +49,9 @@ clean:
+ 	$(MAKE) -C ./sumalibs/libfile clean
+ 	$(MAKE) -C ./sumalibs/libutils clean
+ 
+-		
++install: sumaclust
++	$(MKDIR) -p $(DESTDIR)$(PREFIX)/bin
++	$(INSTALL) -c sumaclust $(DESTDIR)$(PREFIX)/bin
++
++install-strip: install
++	$(STRIP) $(DESTDIR)$(PREFIX)/bin/sumaclust
