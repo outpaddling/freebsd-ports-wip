@@ -4,7 +4,6 @@
 PORTNAME=	qcli
 PORTVERSION=	0.1.1
 CATEGORIES=	biology
-# MASTER_SITES=	http://pypi.python.org/packages/source/q/qcli/
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 

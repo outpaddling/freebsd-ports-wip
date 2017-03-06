@@ -69,12 +69,29 @@ PYDISTUTILS_PKGNAME=	qiime
 # ptyprocess>=0.5
 # scandir
 
+# setup.py
+#      install_requires=['numpy >= 1.9.0',
+#                        'scipy >= 0.14.0',
+#                        'cogent == 1.5.3',
+#                        'natsort < 4.0.0',
+#                        'matplotlib >= 1.1.0, != 1.4.2',
+#                        'pynast == 1.2.2', 'qcli >= 0.1.1, < 0.2.0', 'gdata',
+#                        'biom-format >= 2.1.4, < 2.2.0',
+#                        'emperor >= 0.9.51, < 1.0.0',
+#                        'scikit-bio >= 0.2.3, < 0.3.0',
+#                        'burrito-fillings >= 0.1.1, < 0.2.0',
+#                        'pandas >= 0.13.1', 'burrito >= 0.9.1, < 1.0.0',
+#                        'qiime-default-reference >= 0.1.2, < 0.2.0'],
+#      extras_require={'all': ['ipython[notebook] >= 3.1.0, < 4.0.0',
+#                              'sphinx >= 0.3']}
+
 BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.0:math/py-numpy \
 		${PKGNAMEPREFIX}scipy>=0.14.0:science/py-scipy \
-		${PKGNAMEPREFIX}matplotlib>=1.1.0:math/py-matplotlib \
 		pycogent>=1.5.3:biology/pycogent \
 		${PKGNAMEPREFIX}natsort>0:devel/py-natsort \
+		${PKGNAMEPREFIX}matplotlib>=1.1.0:math/py-matplotlib \
 		${PKGNAMEPREFIX}pynast==1.2.2:/usr/wip/biology/py-pynast \
+		${PKGNAMEPREFIX}qcli>=0.1.1:/usr/wip/biology/py-qcli \
 		${PKGNAMEPREFIX}gdata>=2.0.18:devel/py-gdata \
 		${PKGNAMEPREFIX}biom-format>=2.1.4:biology/py-biom-format \
 		${PKGNAMEPREFIX}emperor>=0.9.51:/usr/wip/biology/py-emperor \
@@ -83,35 +100,42 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.0:math/py-numpy \
 		${PKGNAMEPREFIX}pandas>=0.13.1:math/py-pandas \
 		${PKGNAMEPREFIX}burrito>=0.9.1:/usr/wip/biology/py-burrito \
 		${PKGNAMEPREFIX}qiime-default-reference>=0.1.2:/usr/wip/biology/py-qiime-default-reference \
-		${PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
-		${PKGNAMEPREFIX}pytz>0:devel/py-pytz \
-		${PKGNAMEPREFIX}cycler>0:devel/py-cycler \
-		${PKGNAMEPREFIX}pyparsing>=1.5.6:devel/py-pyparsing \
-		${PKGNAMEPREFIX}click>0:devel/py-click \
-		${PKGNAMEPREFIX}future>=0.14.3:devel/py-future \
-		${PKGNAMEPREFIX}pyqi>0:devel/py-pyqi \
-		${PKGNAMEPREFIX}six>0:devel/py-six \
 		${PKGNAMEPREFIX}ipython>0:devel/ipython \
-		FastTree>=2.1.7:biology/fasttree \
+		sphinx>=0.3:textproc/py-sphinx \
 
+# Unbundled
+BUILD_DEPENDS+=	FastTree>=2.1.7:biology/fasttree
+
+# Not listed in setup.py, but installed by pip. Probably pulled in as subdeps.
+#		${PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
+#		${PKGNAMEPREFIX}pytz>0:devel/py-pytz \
+#		${PKGNAMEPREFIX}cycler>0:devel/py-cycler \
+#		${PKGNAMEPREFIX}pyparsing>=1.5.6:devel/py-pyparsing \
+#		${PKGNAMEPREFIX}click>0:devel/py-click \
+#		${PKGNAMEPREFIX}future>=0.14.3:devel/py-future \
+#		${PKGNAMEPREFIX}pyqi>0:devel/py-pyqi \
+#		${PKGNAMEPREFIX}six>0:devel/py-six \
 #		${PKGNAMEPREFIX}:/usr/wip/ \
-#		${PKGNAMEPREFIX}qcli>=0.1.1:/usr/wip/biology/py-qcli \
 #		${PKGNAMEPREFIX}h5py>=2.3.0:science/py-h5py \
+
+# From Qiime 1.8.0 port
 #		muscle>=3.8.31:biology/muscle \
 #		infernal>=1.0.2:/usr/wip/biology/infernal102 \
 #		rdp-classifier=2.2:/usr/wip/biology/rdp-classifier-2.2 \
 #		microbiomeutil>=r20110519:/usr/wip/biology/microbiomeutil \
 #		cdbfasta>=2010.07.22:biology/cdbfasta \
-#		sphinx-build:textproc/py-sphinx \
 #		ghc:lang/ghc
-#RUN_DEPENDS=	${BUILD_DEPENDS} \
-#		ncbi-toolkit>=2012.06.20:biology/ncbi-toolkit \
-#		cd-hit>=4.6.1:biology/cd-hit \
-#		usearch6.1.544_i86linux32:/usr/wip/biology/linux-usearch-6.1
+
+# Not sure how well vsearch will work with qiime, but it's a free sub for
+# uclust/usearch, which only runs on x86 and only the 32-bit version is free.
+RUN_DEPENDS=	${BUILD_DEPENDS} \
+		ncbi-toolkit>=2012.06.20:biology/ncbi-toolkit \
+		cd-hit>=4.6.1:biology/cd-hit \
+		vsearch:/usr/wip/biology/vsearch
 
 # Can we substitute vsearch for usearch?
 # Make this an OPTION?
-#		vsearch:/usr/wip/biology/vsearch
+#		usearch6.1.544_i86linux32:/usr/wip/biology/linux-usearch-6.1
 
 # start_parallel_jobs.py is for multithreaded?
 post-patch:
