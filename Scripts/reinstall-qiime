@@ -10,7 +10,7 @@ pkg delete -y py27-qiime
 pkg autoremove
 set -e
 pkg install -y py27-numpy py27-scipy py27-matplotlib pycogent py27-gdata \
-    py27-natsort py27-h5py py27-pyqi py27-ipython
+    py27-natsort py27-h5py py27-pyqi py27-ipython ncbi-toolkit
 cd /usr/wip/biology/py-qiime
 make clean clean-depends
 make -DBATCH install
