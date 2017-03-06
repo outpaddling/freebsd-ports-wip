@@ -3,6 +3,7 @@
 #
 # TODO:
 # Patch setup.py to avoid downloading files during build phase
+#     Remaining: sortmerna, suma_package, swarm
 # Finish adding deps
 
 PORTNAME=	qiime
@@ -101,7 +102,7 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.0:math/py-numpy \
 		${PKGNAMEPREFIX}burrito>=0.9.1:/usr/wip/biology/py-burrito \
 		${PKGNAMEPREFIX}qiime-default-reference>=0.1.2:/usr/wip/biology/py-qiime-default-reference \
 		${PKGNAMEPREFIX}ipython>0:devel/ipython \
-		sphinx>=0.3:textproc/py-sphinx \
+		${PKGNAMEPREFIX}sphinx>=0.3:textproc/py-sphinx \
 
 # Unbundled
 BUILD_DEPENDS+=	FastTree>=2.1.7:biology/fasttree
