@@ -694,7 +694,6 @@ bin/validate_mapping_file.py
 %%PYTHON_SITELIBDIR%%/qiime_test_data/count_seqs/in1.fasta
 %%PYTHON_SITELIBDIR%%/qiime_test_data/count_seqs/in2.fasta
 %%PYTHON_SITELIBDIR%%/qiime_test_data/count_seqs/in2.fastq
-%%PYTHON_SITELIBDIR%%/qiime_test_data/demultiplex_fasta/.DS_Store
 %%PYTHON_SITELIBDIR%%/qiime_test_data/demultiplex_fasta/1.TCA.454Reads.fna
 %%PYTHON_SITELIBDIR%%/qiime_test_data/demultiplex_fasta/1.TCA.454Reads.qual
 %%PYTHON_SITELIBDIR%%/qiime_test_data/demultiplex_fasta/2.TCA.454Reads.fna
@@ -1254,7 +1253,6 @@ bin/validate_mapping_file.py
 %%PYTHON_SITELIBDIR%%/qiime_test_data/principal_coordinates/beta_div_weighted_unifrac/weighted_unifrac_otu_table_2.txt
 %%PYTHON_SITELIBDIR%%/qiime_test_data/principal_coordinates/beta_div_weighted_unifrac/weighted_unifrac_otu_table_3.txt
 %%PYTHON_SITELIBDIR%%/qiime_test_data/print_metadata_stats/mapping.txt
-%%PYTHON_SITELIBDIR%%/qiime_test_data/quality_scores_plot/.DS_Store
 %%PYTHON_SITELIBDIR%%/qiime_test_data/quality_scores_plot/seqs.qual
 %%PYTHON_SITELIBDIR%%/qiime_test_data/relatedness/group1_otus.txt
 %%PYTHON_SITELIBDIR%%/qiime_test_data/relatedness/reference.tre
@@ -1386,7 +1384,6 @@ bin/validate_mapping_file.py
 %%PYTHON_SITELIBDIR%%/qiime_test_data/tree_compare/bootstrapped_trees/bs4.tre
 %%PYTHON_SITELIBDIR%%/qiime_test_data/tree_compare/input_master_tree.tre
 %%PYTHON_SITELIBDIR%%/qiime_test_data/trflp_file_to_otu_table/trflp_in.txt
-%%PYTHON_SITELIBDIR%%/qiime_test_data/truncate_fasta_qual_files/.DS_Store
 %%PYTHON_SITELIBDIR%%/qiime_test_data/truncate_fasta_qual_files/seqs.fna
 %%PYTHON_SITELIBDIR%%/qiime_test_data/truncate_fasta_qual_files/seqs.qual
 %%PYTHON_SITELIBDIR%%/qiime_test_data/truncate_reverse_primer/Mapping_File_Rev_Primer.txt
@@ -1397,5 +1394,4 @@ bin/validate_mapping_file.py
 %%PYTHON_SITELIBDIR%%/qiime_test_data/upgma_cluster/beta_div_folder/beta_div_2.txt
 %%PYTHON_SITELIBDIR%%/qiime_test_data/upgma_cluster/beta_div_folder/beta_div_3.txt
 %%PYTHON_SITELIBDIR%%/qiime_test_data/upgma_cluster/beta_div_folder/beta_div_4.txt
-%%PYTHON_SITELIBDIR%%/qiime_test_data/validate_mapping_file/.DS_Store
 %%PYTHON_SITELIBDIR%%/qiime_test_data/validate_mapping_file/Fasting_Map.txt

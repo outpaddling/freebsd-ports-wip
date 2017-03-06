@@ -8,15 +8,16 @@
 
 PORTNAME=	qiime
 PORTVERSION=	1.9.1
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 CATEGORIES=	biology
 MASTER_SITES=	http://github.com/biocore/qiime/archive/ \
 		http://www.drive5.com/uclust/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTVERSION}
 DISTFILES=	${PORTVERSION}${EXTRACT_SUFX} \
 		uclustq1.2.22_i86linux64
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTVERSION}${EXTRACT_SUFX}
+
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Quantitative Insights Into Microbial Ecology
 
@@ -95,7 +96,9 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.0:math/py-numpy \
 
 # Unbundled
 BUILD_DEPENDS+=	FastTree>=2.1.7:biology/fasttree \
-		sortmerna>=2.0:/usr/wip/biology/sortmerna
+		sortmerna>=2.0:/usr/wip/biology/sortmerna \
+		sumaclust>=1.0.00:/usr/wip/biology/sumaclust \
+		swarm==1.2.19:/usr/wip/biology/swarm
 
 # Not listed in setup.py, but installed by pip. Probably pulled in as subdeps.
 #		${PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
@@ -117,6 +120,9 @@ BUILD_DEPENDS+=	FastTree>=2.1.7:biology/fasttree \
 #		cdbfasta>=2010.07.22:biology/cdbfasta \
 #		ghc:lang/ghc
 
+LIB_DEPENDS+=libgmp.so:math/gmp
+LIB_DEPENDS+=libffi.so:devel/libffi
+
 # Not sure how well vsearch will work with qiime, but it's a free sub for
 # uclust/usearch, which only runs on x86 and only the 32-bit version is free.
 RUN_DEPENDS=	${BUILD_DEPENDS} \
@@ -124,16 +130,11 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		cd-hit>=4.6.1:biology/cd-hit \
 		vsearch:/usr/wip/biology/vsearch
 
-#LIB_DEPENDS+=libgmp.so:math/gmp
-#LIB_DEPENDS+=libffi.so:devel/libffi
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_LINUX=	yes	# For uclust closed-source binary
 USES=		iconv python:2
 USE_PYTHON=	distutils
-
-#PYDISTUTILS_PKGNAME=	qiime
 
 # Can we substitute vsearch for usearch?
 # Make this an OPTION?
