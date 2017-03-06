@@ -29,6 +29,7 @@ USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	qiime
 
 # FIXME: Many of these are probably just run depends
+# FIXME: Remove deps of deps
 # From pip install:
 # cogent==1.5.3, but 1.9.0 is the next release on Github
 # natsort<4.0.0
@@ -78,10 +79,17 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.0:math/py-numpy \
 		${PKGNAMEPREFIX}pandas>=0.13.1:math/py-pandas \
 		${PKGNAMEPREFIX}burrito>=0.9.1:/usr/wip/biology/py-burrito \
 		${PKGNAMEPREFIX}qiime-default-reference>=0.1.2:/usr/wip/biology/py-qiime-default-reference \
+		${PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
+		${PKGNAMEPREFIX}pytz>0:devel/py-pytz \
+		${PKGNAMEPREFIX}cycler>0:devel/py-cycler \
+		${PKGNAMEPREFIX}pyparsing>=1.5.6:devel/py-pyparsing \
+		${PKGNAMEPREFIX}click>0:devel/py-click \
+		${PKGNAMEPREFIX}future>=0.14.3:devel/py-future \
+		${PKGNAMEPREFIX}pyqi>0:biology/py-pyqi \
+		${PKGNAMEPREFIX}six>0:biology/py-six \
 
 #		${PKGNAMEPREFIX}:/usr/wip/ \
 #		${PKGNAMEPREFIX}qcli>=0.1.1:/usr/wip/biology/py-qcli \
-#		${PKGNAMEPREFIX}pyqi>=0.3.2:/usr/wip/biology/py-pyqi \
 #		${PKGNAMEPREFIX}h5py>=2.3.0:science/py-h5py \
 #		FastTree>=2.1.7:biology/fasttree \
 #		muscle>=3.8.31:biology/muscle \
