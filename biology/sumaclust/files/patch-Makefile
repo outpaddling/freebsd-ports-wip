@@ -1,5 +1,22 @@
---- Makefile.orig	2015-07-16 12:38:28 UTC
-+++ Makefile
+--- Makefile.orig	2015-07-16 07:38:28.000000000 -0500
++++ Makefile	2017-03-06 11:57:43.136977458 -0600
+@@ -25,11 +25,11 @@ all: $(EXEC)
+ 
+ # executable compilation and link
+ 
+-ifeq ($(CC),gcc)
+-        LFLAGS = -fopenmp 
+-else
+-        LFLAGS = 
+-endif
++#ifeq ($(CC),gcc)
++        LFLAGS += -fopenmp 
++#else
++        #LFLAGS = 
++#endif
+ 
+ sumaclust: $(SUMACLUST_OBJ) $(LIBFASTA) $(LIBLCS) $(LIBFILE) $(LIBUTILS)
+ 	$(CC) $(LDFLAGS) -o $@ $(LFLAGS) $(SUMACLUST_OBJ) $(LIB) $(LIBFASTAPATH) $(LIBLCSPATH) $(LIBFILEPATH) $(LIBUTILSPATH)
 @@ -49,4 +49,9 @@ clean:
  	$(MAKE) -C ./sumalibs/libfile clean
  	$(MAKE) -C ./sumalibs/libutils clean
