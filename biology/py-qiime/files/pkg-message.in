@@ -1,0 +1,15 @@
+===
+
+You must have usearch61 in your PATH in order to use certain features of qiime.
+
+The 32-bit version can be installed using biology/usearch-6.1.
+
+Visit the link below for details:
+
+    http://www.drive5.com/usearch/
+
+It may be possible to use biology/vsearch as a replacement by linking or
+copying %%LOCALBASE%%/bin/vsearch to usearch61, but this is not tested or
+supported.
+
+===

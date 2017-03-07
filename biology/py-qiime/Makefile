@@ -143,14 +143,7 @@ SHEBANG_FILES=	setup.py qiime/*.py qiime/*/*.py scripts/*.py \
 		tests/*.py tests/*/*.py
 USE_PYTHON=	distutils
 
-SUB_FILES=	qiime-test
-
-.include <bsd.port.pre.mk>
-
-# vsearch is untested and qiime must be patched to work with it
-.if ${ARCH} == "amd64"
-RUN_DEPENDS+=	usearch61:/usr/wip/biology/linux-usearch-6.1
-.endif
+SUB_FILES=	qiime-test pkg-message
 
 # start_parallel_jobs.py is for multithreaded?
 post-patch:
@@ -175,4 +168,4 @@ post-install:
 	cd ${WRKSRC} && ${COPYTREE_BIN} tests ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/qiime-test ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
