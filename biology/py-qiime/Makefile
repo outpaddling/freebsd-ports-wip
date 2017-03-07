@@ -146,10 +146,13 @@ USE_PYTHON=	distutils
 
 # start_parallel_jobs.py is for multithreaded?
 post-patch:
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e 's|qiime_scripts_dir|& ${PREFIX}/bin|g' \
 		-e 's|cluster_jobs_fp|& ${PREFIX}/bin/start_parallel_jobs.py|g' \
 		${WRKSRC}/qiime/support_files/qiime_config
+	@${REINPLACE_CMD} \
+		-e 's|#!/usr/bin/env python|${PYTHON_CMD}|g' \
+		${WRKSRC}/scripts/make_qiime_py_file.py
 
 # In theory, vsearch could work in place of usearch with few or no changes
 #post-patch-VSEARCH-on:
