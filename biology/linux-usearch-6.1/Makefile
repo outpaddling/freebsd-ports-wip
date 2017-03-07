@@ -23,7 +23,7 @@ RESTRICTED=	Redistribution is not permitted in any form
 
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/${DISTFILES}
+PLIST_FILES=	bin/${PORTNAME}61
 
 .include <bsd.port.pre.mk>
 
@@ -34,6 +34,7 @@ IGNORE=	because of licensing restrictions, you must manually download\
 .endif
 
 do-install:
-	${INSTALL_SCRIPT} ${DISTDIR}/${DISTFILES} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${DISTDIR}/${DISTFILES} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}61
 
 .include <bsd.port.post.mk>

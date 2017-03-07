@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	classifier
-PORTVERSION=	2.10.1
+PORTVERSION=	2.12
 CATEGORIES=	biology
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	rdp-classifier/rdp-classifier/
