@@ -1,0 +1,12 @@
+bin/classificationQualityFilter.pl
+bin/classificationQualityStripper.pl
+bin/fastaidx.pl
+bin/greengenesExtract.pl
+bin/joinDelimitedFasta.pl
+bin/parseUclustClusters.pl
+bin/rtax
+bin/rtaxSearch.pl
+bin/rtaxVote.pl
+bin/splitDelimitedFasta.pl
+%%SITE_PERL%%/rtax/FastaIndex.pm
+%%SITE_PERL%%/rtax/LevelPrediction.pm
