@@ -23,6 +23,9 @@ COMMENT=	Quantitative Insights Into Microbial Ecology
 
 LICENSE=	GPLv2
 
+#OPTIONS_DEFINE=	VSEARCH
+#VSEARCH_DESC=	Use open source vsearch in place of usearch
+
 # FIXME: Many of these are probably just run depends
 # FIXME: Remove deps of deps
 # From pip install:
@@ -146,6 +149,10 @@ post-patch:
 		-e 's|qiime_scripts_dir|& ${PREFIX}/bin|g' \
 		-e 's|cluster_jobs_fp|& ${PREFIX}/bin/start_parallel_jobs.py|g' \
 		${WRKSRC}/qiime/support_files/qiime_config
+
+# In theory, vsearch could work in place of usearch with few or no changes
+#post-patch-VSEARCH-on:
+#	@${REINPLACE_CMD} -e 's|usearch|vsearch|g' ${WRKSRC}/
 
 post-install:
 	${INSTALL_PROGRAM} ${DISTDIR}/${DIST_SUBDIR}/uclustq1.2.22_i86linux64 \
