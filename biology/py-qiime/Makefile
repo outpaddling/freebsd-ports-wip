@@ -141,6 +141,8 @@ SHEBANG_FILES=	setup.py qiime/*.py qiime/*/*.py scripts/*.py \
 		tests/*.py tests/*/*.py
 USE_PYTHON=	distutils
 
+SUB_FILES=	qiime-test
+
 # Can we substitute vsearch for usearch?
 # Make this an OPTION?
 #		usearch6.1.544_i86linux32:/usr/wip/biology/linux-usearch-6.1
@@ -165,6 +167,7 @@ post-patch:
 post-install:
 	${INSTALL_PROGRAM} ${DISTDIR}/${DIST_SUBDIR}/uclustq1.2.22_i86linux64 \
 		${STAGEDIR}${PREFIX}/bin/uclust
-	cd ${WRKSRC}/tests && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_BIN} tests ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/qiime-test ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
