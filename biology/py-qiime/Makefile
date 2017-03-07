@@ -131,9 +131,11 @@ RUN_DEPENDS+=	muscle>=3.8.31:biology/muscle \
 		infernal>=1.0.2:/usr/wip/biology/infernal
 
 # From Qiime 1.8.0 port
-RUN_DEPENDS+=	rdp-classifier>=2.2:/usr/wip/biology/rdp-classifier \
-		microbiomeutil>=r20110519:/usr/wip/biology/microbiomeutil \
+RUN_DEPENDS+=	microbiomeutil>=r20110519:/usr/wip/biology/microbiomeutil \
 		cdbfasta>=2010.07.22:biology/cdbfasta
+
+# 162 MB distfile.  Do we really need it?
+#		rdp-classifier>=2.2:/usr/wip/biology/rdp-classifier \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
