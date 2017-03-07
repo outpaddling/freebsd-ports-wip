@@ -20,6 +20,8 @@ PERL_MOD_DIR=	${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|$$scripts/||g' ${WRKSRC}/rtax
+	${REINPLACE_CMD} -e 's|$$FindBin::Bin|${PERL_MOD_DIR}|g' \
+		${WRKSRC}/scripts/*.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rtax ${WRKSRC}/scripts/*.pl \
