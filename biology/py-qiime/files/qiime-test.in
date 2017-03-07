@@ -28,6 +28,8 @@ if [ $# != 1 ]; then
 fi
 
 test_dir="$1"
-cp -R %%DATADIR%%/tests "$test_dir"
+mkdir -p "$test_dir"
+cp -R %%DATADIR%%/tests/ "$test_dir"
 cd "$test_dir"
+chmod -R u+w .
 ./all_tests.py
