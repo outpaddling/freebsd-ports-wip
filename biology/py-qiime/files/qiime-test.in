@@ -1,0 +1,33 @@
+#!/bin/sh -e
+
+##########################################################################
+#   Script description:
+#       Copy qiime test suite to test-directory and run tests
+#
+#   Arguments:
+#       test-dir: Directory to which test suite is copied.
+#
+#   History:
+#   Date        Name        Modification
+#   2017-03-07  Jason Bacon Begin
+##########################################################################
+
+usage()
+{
+    printf "Usage: $0 test-directory\n"
+    exit 1
+}
+
+
+##########################################################################
+#   Main
+##########################################################################
+
+if [ $# != 1 ]; then
+    usage
+fi
+
+test_dir="$1"
+cp -R %%DATADIR%%/tests "$test_dir"
+cd "$test_dir"
+./all_tests.py
