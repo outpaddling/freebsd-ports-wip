@@ -117,7 +117,6 @@ BUILD_DEPENDS+=	FastTree>=2.1.7:biology/fasttree \
 #		${PKGNAMEPREFIX}h5py>=2.3.0:science/py-h5py \
 
 # From Qiime 1.8.0 port
-#		muscle>=3.8.31:biology/muscle \
 #		infernal>=1.0.2:/usr/wip/biology/infernal102 \
 #		rdp-classifier=2.2:/usr/wip/biology/rdp-classifier-2.2 \
 #		microbiomeutil>=r20110519:/usr/wip/biology/microbiomeutil \
@@ -131,13 +130,15 @@ LIB_DEPENDS+=libffi.so:devel/libffi
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		ncbi-toolkit>=2012.06.20:biology/ncbi-toolkit \
 		cd-hit>=4.6.1:biology/cd-hit \
-		vsearch:/usr/wip/biology/vsearch
+		vsearch:/usr/wip/biology/vsearch \
+		muscle>=3.8.31:biology/muscle
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_LINUX=	yes	# For uclust closed-source binary
 USES=		iconv python:2 shebangfix
-SHEBANG_FILES=	qiime/*.py qiime/*/*.py scripts/*.py tests/*.py tests/*/*.py
+SHEBANG_FILES=	setup.py qiime/*.py qiime/*/*.py scripts/*.py \
+		tests/*.py tests/*/*.py
 USE_PYTHON=	distutils
 
 # Can we substitute vsearch for usearch?
@@ -152,7 +153,12 @@ post-patch:
 		${WRKSRC}/qiime/support_files/qiime_config
 	@${REINPLACE_CMD} \
 		-e 's|#!/usr/bin/env python|${PYTHON_CMD}|g' \
-		${WRKSRC}/scripts/make_qiime_py_file.py
+		${WRKSRC}/scripts/make_qiime_py_file.py \
+		${WRKSRC}/qiime/denoiser/denoise_postprocess.py \
+		${WRKSRC}/qiime/plot_taxa_summary.py
+	@${REINPLACE_CMD} \
+		-e "s|'python'|'${PYTHON_CMD}'|g" \
+		${WRKSRC}/tests/all_tests.py
 
 # In theory, vsearch could work in place of usearch with few or no changes
 #post-patch-VSEARCH-on:
@@ -161,5 +167,6 @@ post-patch:
 post-install:
 	${INSTALL_PROGRAM} ${DISTDIR}/${DIST_SUBDIR}/uclustq1.2.22_i86linux64 \
 		${STAGEDIR}${PREFIX}/bin/uclust
+	cd ${WRKSRC}/tests ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
