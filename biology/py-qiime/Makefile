@@ -130,8 +130,10 @@ LIB_DEPENDS+=libffi.so:devel/libffi
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		ncbi-toolkit>=2012.06.20:biology/ncbi-toolkit \
 		cd-hit>=4.6.1:biology/cd-hit \
-		vsearch:/usr/wip/biology/vsearch \
-		muscle>=3.8.31:biology/muscle
+		vsearch:/usr/wip/biology/vsearch
+
+# Not listed as a dep, but tests fail without it
+RUN_DEPENDS+=	muscle>=3.8.31:biology/muscle
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -143,9 +145,12 @@ USE_PYTHON=	distutils
 
 SUB_FILES=	qiime-test
 
-# Can we substitute vsearch for usearch?
-# Make this an OPTION?
-#		usearch6.1.544_i86linux32:/usr/wip/biology/linux-usearch-6.1
+.include <bsd.port.pre.mk>
+
+# vsearch is untested and qiime must be patched to work with it
+.if ${ARCH} == "amd64"
+RUN_DEPENDS+=	usearch61:/usr/wip/biology/linux-usearch-6.1
+.endif
 
 # start_parallel_jobs.py is for multithreaded?
 post-patch:
@@ -170,4 +175,4 @@ post-install:
 	cd ${WRKSRC} && ${COPYTREE_BIN} tests ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/qiime-test ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
