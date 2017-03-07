@@ -9,9 +9,5 @@ set +e
 pkg delete -y unanimity pbbam pbseqan pbcopper
 set -e
 pkg install -y cmake htslib
-wip-update
-cd /usr/wip/biology/unanimity
-make distclean clean-depends
-make -DBATCH install
-
+wip-reinstall-port unanimity
 

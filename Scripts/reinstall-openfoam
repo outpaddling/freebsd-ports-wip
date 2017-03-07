@@ -9,7 +9,6 @@ set +e
 pkg delete -y openfoam flex scotch-openmpi
 set -e
 pkg install -y bison gmake openmpi
-wip-update
 for pkg in textproc/flex cad/scotch-openmpi science/openfoam; do
     cd /usr/wip/$pkg
     make clean clean-depends
@@ -17,4 +16,3 @@ for pkg in textproc/flex cad/scotch-openmpi science/openfoam; do
     make package
     cd ../..
 done
-
