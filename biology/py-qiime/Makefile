@@ -153,9 +153,7 @@ post-patch:
 		${WRKSRC}/qiime/support_files/qiime_config
 	@${REINPLACE_CMD} \
 		-e 's|#!/usr/bin/env python|${PYTHON_CMD}|g' \
-		${WRKSRC}/scripts/make_qiime_py_file.py \
-		${WRKSRC}/qiime/denoiser/denoise_postprocess.py \
-		${WRKSRC}/qiime/plot_taxa_summary.py
+		${WRKSRC}/scripts/make_qiime_py_file.py
 	@${REINPLACE_CMD} \
 		-e "s|'python'|'${PYTHON_CMD}'|g" \
 		${WRKSRC}/tests/all_tests.py
@@ -167,6 +165,6 @@ post-patch:
 post-install:
 	${INSTALL_PROGRAM} ${DISTDIR}/${DIST_SUBDIR}/uclustq1.2.22_i86linux64 \
 		${STAGEDIR}${PREFIX}/bin/uclust
-	cd ${WRKSRC}/tests ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/tests && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
