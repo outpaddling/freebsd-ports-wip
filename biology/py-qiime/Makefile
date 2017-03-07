@@ -116,12 +116,6 @@ BUILD_DEPENDS+=	FastTree>=2.1.7:biology/fasttree \
 #		${PKGNAMEPREFIX}:/usr/wip/ \
 #		${PKGNAMEPREFIX}h5py>=2.3.0:science/py-h5py \
 
-# From Qiime 1.8.0 port
-#		infernal>=1.0.2:/usr/wip/biology/infernal102 \
-#		rdp-classifier=2.2:/usr/wip/biology/rdp-classifier-2.2 \
-#		microbiomeutil>=r20110519:/usr/wip/biology/microbiomeutil \
-#		cdbfasta>=2010.07.22:biology/cdbfasta \
-
 LIB_DEPENDS+=libgmp.so:math/gmp
 LIB_DEPENDS+=libffi.so:devel/libffi
 
@@ -133,7 +127,13 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		vsearch:/usr/wip/biology/vsearch
 
 # Not listed as a dep, but tests fail without it
-RUN_DEPENDS+=	muscle>=3.8.31:biology/muscle
+RUN_DEPENDS+=	muscle>=3.8.31:biology/muscle \
+		infernal>=1.0.2:/usr/wip/biology/infernal
+
+# From Qiime 1.8.0 port
+RUN_DEPENDS+=	rdp-classifier>=2.2:/usr/wip/biology/rdp-classifier \
+		microbiomeutil>=r20110519:/usr/wip/biology/microbiomeutil \
+		cdbfasta>=2010.07.22:biology/cdbfasta
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
