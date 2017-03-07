@@ -136,7 +136,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_LINUX=	yes	# For uclust closed-source binary
-USES=		iconv python:2
+USES=		iconv python:2 shebangfix
+SHEBANG_FILES=	qiime/*.py qiime/*/*.py scripts/*.py tests/*.py tests/*/*.py
 USE_PYTHON=	distutils
 
 # Can we substitute vsearch for usearch?
