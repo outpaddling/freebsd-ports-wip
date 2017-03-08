@@ -168,9 +168,11 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/uclust
 	cd ${WRKSRC} && ${COPYTREE_BIN} tests ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} \
-		${WRKDIR}/qiime-env.csh \
-		${WRKDIR}/qiime-env.sh \
 		${WRKDIR}/qiime-test \
 		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} \
+		${WRKDIR}/qiime-env.csh \
+		${WRKDIR}/qiime-env.sh \
+		${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>

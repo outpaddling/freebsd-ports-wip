@@ -123,8 +123,6 @@ bin/print_qiime_config.py
 bin/process_iseq.py
 bin/process_qseq.py
 bin/process_sff.py
-bin/qiime-env.csh
-bin/qiime-env.sh
 bin/qiime-test
 bin/quality_scores_plot.py
 bin/relatedness.py
@@ -158,6 +156,8 @@ bin/unweight_fasta.py
 bin/upgma_cluster.py
 bin/validate_demultiplexed_fasta.py
 bin/validate_mapping_file.py
+etc/qiime-env.csh
+etc/qiime-env.sh
 %%PYTHON_SITELIBDIR%%/qiime/__init__.py
 %%PYTHON_SITELIBDIR%%/qiime/__init__.pyc
 %%PYTHON_SITELIBDIR%%/qiime/__init__.%%PYTHON_PYOEXTENSION%%
