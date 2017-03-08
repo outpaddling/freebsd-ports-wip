@@ -1,5 +1,5 @@
---- Makefile.orig	2014-10-06 12:28:25 UTC
-+++ Makefile
+--- Makefile.orig	2014-10-06 07:28:25.000000000 -0500
++++ Makefile	2017-03-07 20:39:52.241469000 -0600
 @@ -25,7 +25,7 @@
  #COMMON=-pg -g
  COMMON=-g
@@ -32,7 +32,7 @@
  
  .SUFFIXES:.o .cc
  
-@@ -61,3 +66,10 @@ swarm : $(OBJS)
+@@ -61,3 +66,11 @@ swarm : $(OBJS)
  
  clean :
  	rm -f *.o *~ $(PROG) gmon.out cityhash/*.o
@@ -40,6 +40,7 @@
 +install: swarm
 +	$(MKDIR) -p $(DESTDIR)$(PREFIX)/bin
 +	$(INSTALL) -c swarm $(DESTDIR)$(PREFIX)/bin
++	$(INSTALL) -c scripts/*.py $(DESTDIR)$(PREFIX)/bin
 +
 +install-strip: install
 +	$(STRIP) $(DESTDIR)$(PREFIX)/bin/swarm
