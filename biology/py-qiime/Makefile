@@ -144,7 +144,7 @@ SHEBANG_FILES=	setup.py qiime/*.py qiime/*/*.py scripts/*.py \
 		tests/*.py tests/*/*.py
 USE_PYTHON=	distutils
 
-SUB_FILES=	qiime-test pkg-message
+SUB_FILES=	pkg-message qiime-env.csh qiime-env.sh qiime-test 
 
 # start_parallel_jobs.py is for multithreaded?
 post-patch:
@@ -167,6 +167,10 @@ post-install:
 	${INSTALL_PROGRAM} ${DISTDIR}/${DIST_SUBDIR}/uclustq1.2.22_i86linux64 \
 		${STAGEDIR}${PREFIX}/bin/uclust
 	cd ${WRKSRC} && ${COPYTREE_BIN} tests ${STAGEDIR}${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/qiime-test ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} \
+		${WRKDIR}/qiime-env.csh \
+		${WRKDIR}/qiime-env.sh \
+		${WRKDIR}/qiime-test \
+		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

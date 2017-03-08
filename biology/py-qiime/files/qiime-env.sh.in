@@ -1,0 +1,2 @@
+BLASTMAT=%%LOCALBASE%%/share/ncbi-toolkit
+export BLASTMAT

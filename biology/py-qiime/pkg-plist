@@ -123,6 +123,8 @@ bin/print_qiime_config.py
 bin/process_iseq.py
 bin/process_qseq.py
 bin/process_sff.py
+bin/qiime-env.csh
+bin/qiime-env.sh
 bin/qiime-test
 bin/quality_scores_plot.py
 bin/relatedness.py

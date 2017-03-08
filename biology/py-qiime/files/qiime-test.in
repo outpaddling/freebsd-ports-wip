@@ -32,4 +32,5 @@ mkdir -p "$test_dir"
 cp -R %%DATADIR%%/tests/ "$test_dir"
 cd "$test_dir"
 chmod -R u+w .
+. %%PREFIX%%/bin/qiime-env.sh
 ./all_tests.py
