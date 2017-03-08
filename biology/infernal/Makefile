@@ -1,8 +1,9 @@
 # Created by: Jason Wayne Bacon <bacon4000@gmail.com>
 # $FreeBSD$
+#
+# 1.1.1 does not work with qiime 1.9.1
 
 PORTNAME=	infernal
-# 1.1.1 does not work with qiime
 PORTVERSION=	1.1.1
 CATEGORIES=	biology
 MASTER_SITES=	http://eddylab.org/infernal/
