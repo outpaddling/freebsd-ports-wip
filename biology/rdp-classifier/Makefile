@@ -15,18 +15,21 @@ COMMENT=	RDP Classifier is a naive Bayesian classfiier
 LICENSE=	GPLv2
 
 USES=		zip
+# Version?
+USE_JAVA=	yes
 
-MODULE_PATH=	etc/modulefiles/${PORTNAME}/${PORTVERSION}
+MODULE_PATH=	${PREFIX}/etc/modulefiles/${PKGNAME:C/-${PORTVERSION}.*//}
+
+SUB_FILES=	modulefile
+SUB_LIST=	JAVAJARDIR=${JAVAJARDIR}
 
 NO_BUILD=	yes
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/modulefiles/${PORTNAME}
-	${INSTALL_SCRIPT} ${FILESDIR}/modulefile \
-		${STAGEDIR}${LOCALBASE}/${MODULE_PATH}
-	${INSTALL_SCRIPT} ${WRKSRC}/dist/classifier.jar \
-		${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}
-	cd ${WRKSRC}/dist && ${COPYTREE_SHARE} 'lib' \
-		${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}
+	${MKDIR} ${STAGEDIR}${MODULE_PATH}
+	${INSTALL_SCRIPT} ${WRKDIR}/modulefile \
+		${STAGEDIR}/${MODULE_PATH}/${PORTVERSION}
+	${INSTALL_DATA} ${WRKSRC}/dist/classifier.jar ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${STAGEDIR}${JAVAJARDIR}
+
 .include <bsd.port.mk>

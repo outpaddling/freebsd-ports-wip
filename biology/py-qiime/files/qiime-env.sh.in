@@ -1,2 +1,3 @@
 BLASTMAT=%%LOCALBASE%%/share/ncbi-toolkit
-export BLASTMAT
+RDP_JAR_PATH=%%JAVAJARDIR%%
+export BLASTMAT RDP_JAR_PATH

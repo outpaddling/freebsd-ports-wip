@@ -1,1 +1,2 @@
 setenv BLASTMAT %%LOCALBASE%%/share/ncbi-toolkit
+setenv RDP_JAR_PATH %%JAVAJARDIR%%

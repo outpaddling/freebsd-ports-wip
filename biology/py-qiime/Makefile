@@ -129,8 +129,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 # Not listed as a dep, but tests fail without it
 RUN_DEPENDS+=	muscle>=3.8.31:biology/muscle \
 		rdp-classifier>=2.2:/usr/wip/biology/rdp-classifier \
-		infernal>=1.0.2:/usr/wip/biology/infernal \
-		rtax:/usr/wip/biology/rtax
+		infernal==1.0.2:/usr/wip/biology/infernal102 \
+		rtax:/usr/wip/biology/rtax \
+		mothur:/usr/wip/biology/mothur
 
 # From Qiime 1.8.0 port
 RUN_DEPENDS+=	microbiomeutil>=r20110519:/usr/wip/biology/microbiomeutil \
@@ -139,12 +140,14 @@ RUN_DEPENDS+=	microbiomeutil>=r20110519:/usr/wip/biology/microbiomeutil \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_LINUX=	yes	# For uclust closed-source binary
+USE_JAVA=	yes	# rdp-classifier jar path
 USES=		iconv python:2 shebangfix
 SHEBANG_FILES=	setup.py qiime/*.py qiime/*/*.py scripts/*.py \
 		tests/*.py tests/*/*.py
 USE_PYTHON=	distutils
 
 SUB_FILES=	pkg-message qiime-env.csh qiime-env.sh qiime-test 
+SUB_LIST+=	JAVAJARDIR=${JAVAJARDIR}
 
 # start_parallel_jobs.py is for multithreaded?
 post-patch:
