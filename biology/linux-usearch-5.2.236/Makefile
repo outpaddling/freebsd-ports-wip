@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	usearch
-PORTVERSION=	6.1.544
+PORTVERSION=	5.2.236
 CATEGORIES=	biology
 MASTER_SITES=	# http://drive5.com/usearch/
 PKGNAMEPREFIX=	linux-
@@ -23,7 +23,7 @@ RESTRICTED=	Redistribution is not permitted in any form
 
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/${PORTNAME}61
+PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
@@ -33,9 +33,8 @@ IGNORE=	because of licensing restrictions, you must manually download\
 	place it in ${DISTDIR}, and run make again
 .endif
 
-# Using binary names assumed by qiime 1.9.1
 do-install:
 	${INSTALL_SCRIPT} ${DISTDIR}/${DISTFILES} \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME}61
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.post.mk>
