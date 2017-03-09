@@ -1,2 +1,4 @@
 setenv BLASTMAT %%LOCALBASE%%/share/ncbi-toolkit
-setenv RDP_JAR_PATH %%JAVAJARDIR%%/rdp-classifier22-2.2/rdp_classifier-2.2.jar
+#setenv RDP_JAR_PATH %%JAVAJARDIR%%/rdp-classifier22-2.2/rdp_classifier-2.2.jar
+setenv RDP_JAR_PATH %%JAVAJARDIR%%/rdp-classifier-2.12/classifier.jar
+setenv CLASSPATH %%JAVAJARDIR%%:%%JAVAJARDIR%%/rdp-classifier-2.12
