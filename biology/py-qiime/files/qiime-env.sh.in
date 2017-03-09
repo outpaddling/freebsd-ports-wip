@@ -1,3 +1,3 @@
 BLASTMAT=%%LOCALBASE%%/share/ncbi-toolkit
-RDP_JAR_PATH=%%JAVAJARDIR%%/classifier.jar
+RDP_JAR_PATH=%%JAVAJARDIR%%/rdp-classifier22-2.2/rdp_classifier-2.2.jar
 export BLASTMAT RDP_JAR_PATH

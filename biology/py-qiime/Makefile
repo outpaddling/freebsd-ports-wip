@@ -128,7 +128,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 
 # Not listed as a dep, but tests fail without it
 RUN_DEPENDS+=	muscle>=3.8.31:biology/muscle \
-		rdp-classifier>=2.2:/usr/wip/biology/rdp-classifier \
+		rdp-classifier22==2.2:/usr/wip/biology/rdp-classifier-2.2 \
 		infernal==1.0.2:/usr/wip/biology/infernal102 \
 		rtax:/usr/wip/biology/rtax \
 		mothur:/usr/wip/biology/mothur
