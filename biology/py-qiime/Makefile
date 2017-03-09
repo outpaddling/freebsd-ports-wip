@@ -127,6 +127,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		vsearch:/usr/wip/biology/vsearch
 
 # Not listed as a dep, but tests fail without it
+# Newer rdp-classifier may work.  Got similar java errors with 2.2 and 2.12
+# java.lang.NoClassDefFoundError: org/apache/commons/cli/...
 RUN_DEPENDS+=	muscle>=3.8.31:biology/muscle \
 		rdp-classifier22==2.2:/usr/wip/biology/rdp-classifier-2.2 \
 		infernal==1.0.2:/usr/wip/biology/infernal102 \
