@@ -1,0 +1,5 @@
+bin/gcta64
+%%DATADIR%%/test.bed
+%%DATADIR%%/test.bim
+%%DATADIR%%/test.fam
+%%DATADIR%%/test.phen
