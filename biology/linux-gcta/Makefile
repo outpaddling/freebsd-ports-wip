@@ -8,7 +8,7 @@ MASTER_SITES=	http://cnsgenomics.com/software/gcta/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 PKGNAMEPREFIX=	linux-
 
-MAINTAINER=	bacon@imacbsd.acadix.biz
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	tool for Genome-wide Complex Trait Analysis
 
 # Different from source (GPLv3)
@@ -19,9 +19,10 @@ USES=		linux zip
 
 NO_BUILD=	yes
 
+# ${UNZIP_CMD} looking for /usr/local/bin/unzip for some reason
 do-extract:
 	${MKDIR} ${WRKSRC}
-	cd ${WRKSRC} && ${UNZIP_CMD} ${DISTDIR}/${DISTFILES}
+	cd ${WRKSRC} && unzip ${DISTDIR}/${DISTFILES}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gcta64 ${STAGEDIR}${PREFIX}/bin
