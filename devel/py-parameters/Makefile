@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon@unixdev.ceas.uwm.edu>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	parameters
@@ -7,7 +7,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bacon@unixdev.ceas.uwm.edu
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Management of large, hierarchical parameter sets for modelling and simulation
 
 LICENSE=	GPLv2

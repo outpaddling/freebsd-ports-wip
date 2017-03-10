@@ -1,4 +1,4 @@
-# Created by: Jason Wayne Bacon <bacon@sciprog.ceas.uwm.edu>
+# Created by: Jason Wayne Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	liblemon
@@ -7,7 +7,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://lemon.cs.elte.hu/pub/sources/
 DISTNAME=	lemon-${PORTVERSION}
 
-MAINTAINER=	bacon@sciprog.ceas.uwm.edu
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Library for Efficient Modeling and Optimization in Networks
 
 LICENSE=	BSL

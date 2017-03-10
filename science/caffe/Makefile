@@ -1,11 +1,11 @@
-# Created by: Jason Bacon <bacon@unixdev.ceas.uwm.edu>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	caffe
 PORTVERSION=	2016.10.20
 CATEGORIES=	science
 
-MAINTAINER=	bacon@unixdev.ceas.uwm.edu
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Fast open framework for deep learning
 
 LICENSE=	BSD2CLAUSE

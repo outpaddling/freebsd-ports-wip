@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon@imacbsd.acadix.biz>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	metal
@@ -7,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://csg.sph.umich.edu/abecasis/Metal/download/
 DISTNAME=	generic-metal-2011-03-25
 
-MAINTAINER=	bacon@imacbsd.acadix.biz
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Meta-analysis of genomewide association scans
 
 #LICENSE=	

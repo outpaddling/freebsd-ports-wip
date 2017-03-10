@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon@unixdev.ceas.uwm.edu>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 #
 # This is a stopgap measure.  Bedops is open source and portable and will

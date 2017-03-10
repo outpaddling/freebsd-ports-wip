@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	abinit
@@ -6,7 +6,7 @@ PORTVERSION=	7.10.5
 CATEGORIES=	science
 MASTER_SITES=	http://ftp.abinit.org/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Find total energy, charge density and electronic structure of systems
 
 LICENSE=	GPLv3

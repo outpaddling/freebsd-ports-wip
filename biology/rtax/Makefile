@@ -1,4 +1,4 @@
-# Created by: Jason Wayne Bacon <bacon@sciprog.ceas.uwm.edu>
+# Created by: Jason Wayne Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	rtax
@@ -6,7 +6,7 @@ PORTVERSION=	0.984
 CATEGORIES=	biology
 MASTER_SITES=	http://static.davidsoergel.com/
 
-MAINTAINER=	bacon@sciprog.ceas.uwm.edu
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Taxonomic classification of short paired-end reads from ribosomal RNA
 
 LICENSE=	BSD3CLAUSE

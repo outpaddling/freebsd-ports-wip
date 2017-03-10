@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon@sculpin.acadix.biz>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	omics
@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-pipe
 DISTNAME=	omics_pipe-${PORTVERSION}
 
-MAINTAINER=	bacon@sculpin.acadix.biz
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Multi-omics data analysis pipelines
 
 LICENSE=	MIT

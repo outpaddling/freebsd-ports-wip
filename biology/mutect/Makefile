@@ -1,11 +1,11 @@
-# Created by: Jason Bacon <bacon@unixdev.ceas.uwm.edu>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	mutect
 PORTVERSION=	1.1.6
 CATEGORIES=	biology
 
-MAINTAINER=	bacon@unixdev.ceas.uwm.edu
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Accurate and sensitive cancer mutation detection
 
 # Fake to silence warnings.  Configure Broad Institute License

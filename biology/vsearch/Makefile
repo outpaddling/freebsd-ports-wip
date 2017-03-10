@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	vsearch
@@ -6,7 +6,7 @@ PORTVERSION=	1.10.2
 DISTVERSIONPREFIX=      v
 CATEGORIES=	biology
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Versatile open-source tool for metagenomics
 
 LICENSE=	GPLv3

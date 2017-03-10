@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon@imacbsd.acadix.biz>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	cpat
