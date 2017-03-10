@@ -1,0 +1,37 @@
+--- Makefile.orig	2017-03-10 08:53:40.620891000 -0600
++++ Makefile	2017-03-10 09:02:59.626786000 -0600
+@@ -6,20 +6,20 @@
+ # ---------------------------------------------------------------------
+ 
+ # Directory of the target
+-OUTPUT = gcta64
++OUTPUT = gcta
+ 
+ # Compiler
+-CXX = g++
++CXX ?= g++
+ 
+ # EIGEN library
+-EIGEN_PATH = ../../../Lib/eigen
++EIGEN_PATH ?= ../../../Lib/eigen
+ 
+ # Intel MKL library
+ MKL_PATH = /opt/intel/mkl
+ 
+ # Compiler flags
+-CXXFLAGS = -w -O3 -m64 -static -fopenmp -I $(EIGEN_PATH) -DEIGEN_NO_DEBUG -I $(MKL_PATH)/include
+-LIB += -static -lz -Wl,--start-group  $(MKL_PATH)/lib/intel64/libmkl_intel_lp64.a $(MKL_PATH)/lib/intel64/libmkl_gnu_thread.a $(MKL_PATH)/lib/intel64/libmkl_core.a -Wl,--end-group -lpthread -lm -ldl
++CXXFLAGS ?= -w -O3 -m64 -static -fopenmp -I $(EIGEN_PATH) -DEIGEN_NO_DEBUG -I $(MKL_PATH)/include
++LDFLAGS += -lz -Wl,--start-group -lpthread -lm -ldl
+ 
+ HDR += CommFunc.h \
+            cdflib.h \
+@@ -58,7 +58,7 @@ OBJ = $(SRC:.cpp=.o)
+ all : $(OUTPUT) 
+ 
+ $(OUTPUT) :
+-	$(CXX) $(CXXFLAGS) -o $(OUTPUT) $(OBJ) $(LIB) 
++	$(CXX) $(CXXFLAGS) -o $(OUTPUT) $(OBJ) $(LDFLAGS) 
+ 
+ $(OBJ) : $(HDR)
+ 
