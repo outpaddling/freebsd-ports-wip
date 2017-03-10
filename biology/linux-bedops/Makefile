@@ -12,7 +12,7 @@ MASTER_SITES=	http://github.com/bedops/bedops/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	bedops_linux_x86_64-v${PORTVERSION}.v2
 
-MAINTAINER=	bacon@unixdev.ceas.uwm.edu
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	High-performance genomic feature operations
 
 LICENSE=	GPLv2

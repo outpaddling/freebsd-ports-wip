@@ -7,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://busco.ezlab.org/files/
 DISTNAME=	BUSCO_v${PORTVERSION}
 
-MAINTAINER=	bacon@unixdev.ceas.uwm.edu
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Assess genome assembly and annotation completeness
 
 LICENSE=	GPLv3

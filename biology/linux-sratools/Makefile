@@ -8,7 +8,7 @@ MASTER_SITES=	http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/${PORTVERSION}/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	sratoolkit.${PORTVERSION}-centos_linux64
 
-MAINTAINER=	bacon@unixdev.ceas.uwm.edu
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Tools and libraries for using data in the INSDC Sequence Read Archives
 
 LICENSE=	PD

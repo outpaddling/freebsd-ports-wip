@@ -7,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	https://www.broadinstitute.org/ftp/pub/mpg/birdsuite/
 DISTNAME=	birdsuite_executables_${PORTVERSION}
 
-MAINTAINER=	bacon@zebra.acadix.biz
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Report SNP genotypes, CNPs, and novel, rare, or de novo CNVs
 
 # Just a guess

@@ -5,7 +5,7 @@ PORTNAME=	cogent
 PORTVERSION=	2016.10.04
 CATEGORIES=	biology
 
-MAINTAINER=	bacon@sciprog.ceas.uwm.edu
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Reconstruct coding genome and group consensus isoforms from same locus
 
 # No license specified

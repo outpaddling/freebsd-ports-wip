@@ -5,7 +5,7 @@ PORTNAME=	detonate
 PORTVERSION=	1.8.1
 CATEGORIES=	biology
 
-MAINTAINER=	bacon@unixdev.ceas.uwm.edu
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	DE novo TranscriptOme rNa-seq Assembly with or without the Truth Evaluation
 
 # FIXME: Not sure

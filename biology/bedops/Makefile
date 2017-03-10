@@ -6,7 +6,7 @@ PORTVERSION=	2.4.20
 DISTVERSIONPREFIX=v
 CATEGORIES=	biology
 
-MAINTAINER=	bacon@unixdev.ceas.uwm.edu
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	High-performance genomic feature operations
 
 LICENSE=	GPLv2
