@@ -15,12 +15,15 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	eigen>=3:math/eigen3 \
 		lapack++>0:math/lapack++ \
-		cblas>0:math/cblas
+		cblas>0:math/cblas \
+		lapacke>0:math/lapacke
 LIB_DEPENDS+=	libopenblas.so:math/openblas
 
 USES=		compiler:openmp gmake zip
 
-CXXFLAGS+=	-I${LOCALBASE}/include/eigen3 -I${LOCALBASE}/include/lapackpp
+CXXFLAGS+=	-I${LOCALBASE}/include/eigen3
+
+# -I${LOCALBASE}/include/lapackpp
 
 do-extract:
 	${MKDIR} ${WRKSRC}
