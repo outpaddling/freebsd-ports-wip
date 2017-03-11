@@ -13,12 +13,14 @@ COMMENT=	tool for Genome-wide Complex Trait Analysis
 LICENSE=	GPLv3
 #LICENSE_FILE=	
 
-BUILD_DEPENDS=	eigen>=3:math/eigen3
+BUILD_DEPENDS=	eigen>=3:math/eigen3 \
+		lapack++>0:math/lapack++ \
+		cblas>0:math/cblas
 LIB_DEPENDS+=	libopenblas.so:math/openblas
 
 USES=		compiler:openmp gmake zip
 
-CXXFLAGS+=	-I${LOCALBASE}/include/eigen3
+CXXFLAGS+=	-I${LOCALBASE}/include/eigen3 -I${LOCALBASE}/include/lapackpp
 
 do-extract:
 	${MKDIR} ${WRKSRC}
