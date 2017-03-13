@@ -7,7 +7,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	bacon4000@gmail.com
-COMMENT=	Download tool for GDC data
+COMMENT=	Download tool for GDC (Genomic Data Commons) data
 
 LICENSE=	BSD2CLAUSE
 #LICENSE_FILE=	
