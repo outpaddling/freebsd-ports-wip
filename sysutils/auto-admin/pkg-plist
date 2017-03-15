@@ -9,6 +9,7 @@ man/man1/auto-ask.1.gz
 man/man1/auto-backup-file.1.gz
 man/man1/auto-clean-pkgsrc.1.gz
 man/man1/auto-clean-ports.1.gz
+man/man1/auto-clean-tmp.1.gz
 man/man1/auto-config-snd-driver.1.gz
 man/man1/auto-db-dir.1.gz
 man/man1/auto-denyhosts-remove-ip.1.gz
@@ -68,6 +69,7 @@ sbin/auto-ask
 sbin/auto-backup-file
 sbin/auto-clean-pkgsrc
 sbin/auto-clean-ports
+sbin/auto-clean-tmp
 sbin/auto-config-snd-driver
 sbin/auto-db-dir
 sbin/auto-denyhosts-remove-ip
