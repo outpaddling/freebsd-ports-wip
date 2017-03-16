@@ -22,4 +22,14 @@ GH_ACCOUNT=	torognes
 # sse2 required to compile on 32-bit archs
 CXXFLAGS+=	-I${LOCALBASE}/include -msse2
 
+OPTIONS_DEFINE=	USEARCH
+OPTIONS_SUB=	yes
+# If emulating usearch and usearch61 with vsearch works well, enable this
+# OPTIONS_DEFAULT=USEARCH
+USEARCH_DESC=	Install wrappers to use vsearch as usearch and usearch61
+USEARCH_PLIST_FILES=	bin/usearch bin/usearch61
+
+do-install-USEARCH-on:
+	${INSTALL_SCRIPT} ${FILESDIR}/usearch* ${STAGEDIR}${PREFIX}/bin
+
 .include <bsd.port.mk>

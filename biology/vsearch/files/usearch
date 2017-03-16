@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+printf "Emulating usearch with vsearch...\n"
+
+# FIXME: Alter usearch command-line flags for compatibility with vsearch
+# torognes has offered to make vsearch more compatible if needed
+# https://github.com/torognes/vsearch
+vsearch $@
