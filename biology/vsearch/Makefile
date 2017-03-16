@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	USEARCH
 OPTIONS_SUB=	yes
 # If emulating usearch and usearch61 with vsearch works well, enable this
 # OPTIONS_DEFAULT=USEARCH
-USEARCH_DESC=	Install wrappers to use vsearch as usearch and usearch61
+USEARCH_DESC=	Install usearch wrapper scripts that call vsearch
 USEARCH_PLIST_FILES=	bin/usearch bin/usearch61
 
 do-install-USEARCH-on:
