@@ -13,12 +13,25 @@ To install ports from this collection:
     git clone https://github.com/outpaddling/freebsd-ports-wip \
 	/usr/wip
     
-2)  Then install the ports of interest:
+2)  Then install the ports of interest, starting with wip-tools:
 
-    Example:
-    
     cd /usr/wip/ports-mgmt/wip-tools
     make install
+
+3)  After installing wip-tools:
+
+    You can update the wip collection by simply running
+
+	wip-update
+
+    You can reinstall a single port using
+
+	wip-reinstall-port portname
+
+    If you are a ports developer and have a poudriere installation, you can
+    test the port by running
+
+	wip-poudriere-test category/portname jail [jail ...] | all | pattern
 
 ---
 
