@@ -135,7 +135,10 @@ RUN_DEPENDS+=	muscle>=3.8.31:biology/muscle \
 		rtax:/usr/wip/biology/rtax \
 		mothur:/usr/wip/biology/mothur \
 		R-cran-optparse>0:/usr/wip/devel/R-cran-optparse \
-		blat>0:biology/blat
+		R-cran-RColorBrewer>0:graphics/R-cran-RColorBrewer \
+		R-cran-randomForest>0:devel/R-cran-randomForest \
+		blat>0:biology/blat \
+		fastq-join>0:/usr/wip/biology/fastq-join
 
 # From Qiime 1.8.0 port
 RUN_DEPENDS+=	microbiomeutil>=r20110519:/usr/wip/biology/microbiomeutil \

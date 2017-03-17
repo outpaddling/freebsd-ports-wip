@@ -12,7 +12,7 @@ COMMENT=	Ordination methods, diversity analysis etc for ecologists
 LICENSE=	GPLv2
 #LICENSE_FILE=	
 
-CRAN_DEPENDS=	R-cran-permute>=0.9-0:/usr/wip/R-cran-permute \
+CRAN_DEPENDS=	R-cran-permute>=0.9-0:/usr/wip/math/R-cran-permute \
 		R-cran-lattice>=3.0.0:/usr/wip/R-cran-lattice
 
 USES=		cran
