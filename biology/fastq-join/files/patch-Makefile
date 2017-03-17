@@ -1,0 +1,26 @@
+--- Makefile.orig	2015-12-15 23:32:25 UTC
++++ Makefile
+@@ -1,10 +1,20 @@
+-CC=g++
+-CFLAGS=-O3 -I.
++CXX	?= g++
++CXXFLAGS?= -O3
++CXXFLAGS+= -I.
++
++MKDIR	?= mkdir
++INSTALL	?= install
++DESTDIR	?= .
++PREFIX	?= /usr/local
+ 
+ all: fastq-join
+ 
+ %: %.cpp fastq-lib.cpp fastq-lib.h
+-	$(CC) $(CFLAGS) $< fastq-lib.cpp -o $@
++	$(CXX) $(CXXFLAGS) $< fastq-lib.cpp -o $@ -lz
++
++install:
++	$(MKDIR) -p $(DESTDIR)$(PREFIX)/bin
++	$(INSTALL) -c -m 0555 fastq-join $(DESTDIR)$(PREFIX)/bin
+ 
+ check:
+ 	prove -j 4 tests
