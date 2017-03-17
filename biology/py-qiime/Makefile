@@ -134,7 +134,8 @@ RUN_DEPENDS+=	muscle>=3.8.31:biology/muscle \
 		infernal==1.0.2:/usr/wip/biology/infernal102 \
 		rtax:/usr/wip/biology/rtax \
 		mothur:/usr/wip/biology/mothur \
-		R-cran-optparse>0:/usr/wip/devel/R-cran-optparse
+		R-cran-optparse>0:/usr/wip/devel/R-cran-optparse \
+		blat>0:biology/blat
 
 # From Qiime 1.8.0 port
 RUN_DEPENDS+=	microbiomeutil>=r20110519:/usr/wip/biology/microbiomeutil \
