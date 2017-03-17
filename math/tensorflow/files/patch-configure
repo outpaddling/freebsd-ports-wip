@@ -1,5 +1,14 @@
---- configure.orig	2017-02-28 09:23:10.092413000 -0600
-+++ configure	2017-02-28 09:24:10.309714000 -0600
+--- configure.orig	2017-02-11 00:33:43.000000000 -0600
++++ configure	2017-03-16 19:38:29.394856000 -0500
+@@ -28,7 +28,7 @@ function bazel_clean_and_fetch() {
+ }
+ 
+ ## Set up python-related environment settings
+-while true; do
++while [ -z $PYTHON_BIN_PATH ]; do
+   fromuser=""
+   if [ -z "$PYTHON_BIN_PATH" ]; then
+     default_python_bin_path=$(which python || which python3  || true)
 @@ -77,9 +77,9 @@ while [ "$TF_NEED_JEMALLOC" == "" ]; do
  done
  
