@@ -1,0 +1,39 @@
+--- Makefile.orig	2013-03-16 16:22:22 UTC
++++ Makefile
+@@ -7,13 +7,13 @@ SRCDESKTOPFILE = client/$(DESKTOPFILE)
+ ICONFILE = vaultaire.svg
+ SRCICON = client/icons/hicolor/scalable/apps/$(ICONFILE)
+ 
+-prefix = $(DESTDIR)/usr
+-BINDIR = $(prefix)/bin
+-DATADIR = $(prefix)/share
++PREFIX ?= /usr
++BINDIR ?= $(PREFIX)/bin
++DATADIR ?= $(PREFIX)/share
+ DESKTOPDIR = $(DATADIR)/applications
+ ICONPATH = $(DATADIR)/icons/hicolor
+ ICONDIR = $(ICONPATH)/scalable/apps
+-MANDIR = $(DATADIR)/man/man1
++MANDIR ?= $(DATADIR)/man/man1
+ 
+ all: $(CLIENTBIN)
+ 
+@@ -22,12 +22,12 @@ $(CLIENTBIN):
+ 	cd client && qmake && $(MAKE)
+ 
+ install: $(BINS)
+-	$(INSTALL) -d -m 755 $(BINDIR)
+-	$(INSTALL) -m 755 $(SRCBIN) $(BINDIR)
+-	$(INSTALL) -d -m 755 $(DESKTOPDIR)
+-	$(INSTALL) -m 644 $(SRCDESKTOPFILE) $(DESKTOPDIR)
+-	$(INSTALL) -d -m 755 $(ICONDIR)
+-	$(INSTALL) -m 644 $(SRCICON) $(ICONDIR)
++	$(INSTALL) -d -m 755 $(DESTDIR)$(BINDIR)
++	$(INSTALL) -m 755 $(SRCBIN) $(DESTDIR)$(BINDIR)
++	$(INSTALL) -d -m 755 $(DESTDIR)$(DESKTOPDIR)
++	$(INSTALL) -m 644 $(SRCDESKTOPFILE) $(DESTDIR)$(DESKTOPDIR)
++	$(INSTALL) -d -m 755 $(DESTDIR)$(ICONDIR)
++	$(INSTALL) -m 644 $(SRCICON) $(DESTDIR)$(ICONDIR)
+ 
+ uninstall:
+ 	rm $(BINDIR)/$(CLIENTBIN)
