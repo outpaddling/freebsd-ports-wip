@@ -14,8 +14,6 @@ NO_BUILD=	yes
 
 USES=		tar:xz
 
-RUN_DEPENDS=	svn:devel/subversion
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/Doc/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
