@@ -4,6 +4,8 @@
 ##
 ## modulefiles/modules.  Generated from modules.in by configure.
 ##
+## FIXME: This modulefile is apparently useless
+
 proc ModulesHelp { } {
         puts stderr "\tApplication: rdp-classifier %%PORTVERSION%%"
 }
