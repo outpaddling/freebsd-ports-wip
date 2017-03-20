@@ -5,13 +5,13 @@
 ## modulefiles/modules.  Generated from modules.in by configure.
 ##
 proc ModulesHelp { } {
-        puts stderr "\tApplication: rdp-classifier 2.10.1"
+        puts stderr "\tApplication: rdp-classifier %%PORTVERSION%%"
 }
 
 module-whatis	"rdp-classifier"
 
-set	version		2.10.1
-set	appsroot	%%JAVAJARDIR%%
+set	version		%%PORTVERSION%%
+set	appsroot	%%RDP_PREFIX%%
 
-prepend-path    PATH   		$appsroot
-#prepend-path	LD_LIBRARY_PATH	$appsroot/lib
+prepend-path    PATH   		$appsroot/
+prepend-path	LD_LIBRARY_PATH	$appsroot/lib
