@@ -13,7 +13,7 @@ COMMENT=	Command line parser inspired by Python's optparse
 LICENSE=	GPLv2
 #LICENSE_FILE=	
 
-CRAN_DEPENDS=	R-cran-getopt>=1.19:/usr/wip/devel/getopt
+CRAN_DEPENDS=	R-cran-getopt>=1.19:/usr/wip/devel/R-cran-getopt
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 

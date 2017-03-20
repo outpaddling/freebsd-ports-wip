@@ -78,6 +78,9 @@ LICENSE=	GPLv2
 #                        'qiime-default-reference >= 0.1.2, < 0.2.0'],
 #      extras_require={'all': ['ipython[notebook] >= 3.1.0, < 4.0.0',
 #                              'sphinx >= 0.3']}
+#
+# Build errors with latest ports snapshot
+#		${PKGNAMEPREFIX}scikit-bio==0.2.3:/usr/wip/biology/py-scikit-bio-0.2.3 \
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.0:math/py-numpy \
 		${PKGNAMEPREFIX}scipy>=0.14.0:science/py-scipy \
@@ -89,7 +92,6 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.0:math/py-numpy \
 		${PKGNAMEPREFIX}gdata>=2.0.18:devel/py-gdata \
 		${PKGNAMEPREFIX}biom-format>=2.1.4:biology/py-biom-format \
 		${PKGNAMEPREFIX}emperor>=0.9.51:/usr/wip/biology/py-emperor \
-		${PKGNAMEPREFIX}scikit-bio==0.2.3:/usr/wip/biology/py-scikit-bio-0.2.3 \
 		${PKGNAMEPREFIX}burrito-fillings>=0.1.1:/usr/wip/biology/py-burrito-fillings \
 		${PKGNAMEPREFIX}pandas>=0.13.1:math/py-pandas \
 		${PKGNAMEPREFIX}burrito>=0.9.1:/usr/wip/biology/py-burrito \
