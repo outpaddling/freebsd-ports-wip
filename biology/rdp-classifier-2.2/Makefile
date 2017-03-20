@@ -3,7 +3,7 @@
 
 PORTNAME=	classifier
 PORTVERSION=	2.2
-CATEGORIES=	biology
+CATEGORIES=	biology java
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	rdp-classifier/rdp-classifier/
 PKGNAMEPREFIX=	rdp-
@@ -16,23 +16,25 @@ COMMENT=	RDP Classifier is a naive Bayesian classfiier
 LICENSE=	GPLv2
 
 USES=		zip
-# Version?
 USE_JAVA=	yes
 
-MODULE_PATH=	${PREFIX}/etc/modulefiles/${PKGNAME:C/-${PORTVERSION}.*//}
+# SUB_FILES=	modulefile
+# SUB_LIST+=	PORTVERSION=${PORTVERSION}
 
-SUB_FILES=	modulefile
-SUB_LIST=	JAVAJARDIR=${JAVAJARDIR} PORTVERSION=${PORTVERSION}
+# MODULE_PATH=	etc/modulefiles/${PKGNAMEPREFIX}${PORTNAME}
 
 NO_BUILD=	yes
 
+RDP_PREFIX=	${JAVAJARDIR}/${PKGNAME}
+
 do-install:
-	${MKDIR} ${STAGEDIR}${MODULE_PATH} \
-		${STAGEDIR}${JAVAJARDIR}/${PKGNAME}
-	${INSTALL_SCRIPT} ${WRKDIR}/modulefile \
-		${STAGEDIR}/${MODULE_PATH}/${PORTVERSION}
-	${INSTALL_DATA} ${WRKSRC}/rdp_classifier*.jar \
-		${STAGEDIR}${JAVAJARDIR}/${PKGNAME}
-	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${STAGEDIR}${JAVAJARDIR}/${PKGNAME}
+	${MKDIR} ${STAGEDIR}${RDP_PREFIX}
+	${INSTALL_SCRIPT} ${WRKSRC}/rdp_classifier-${PORTVERSION}.jar \
+		${STAGEDIR}${RDP_PREFIX}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} 'lib' \
+		${STAGEDIR}${RDP_PREFIX}
+	# ${MKDIR} ${STAGEDIR}${PREFIX}/${MODULE_PATH}
+	# ${INSTALL_SCRIPT} ${WRKDIR}/modulefile \
+		# ${STAGEDIR}${LOCALBASE}/${MODULE_PATH}/${PORTVERSION}
 
 .include <bsd.port.mk>

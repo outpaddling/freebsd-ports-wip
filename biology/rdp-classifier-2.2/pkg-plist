@@ -1,4 +1,3 @@
-etc/modulefiles/rdp-classifier22/2.2
-%%JAVAJARDIR%%/rdp-classifier22-2.2/commons-cli-1.2.jar
-%%JAVAJARDIR%%/rdp-classifier22-2.2/junit_3.8.1.jar
+%%JAVAJARDIR%%/rdp-classifier22-2.2/lib/commons-cli-1.2.jar
+%%JAVAJARDIR%%/rdp-classifier22-2.2/lib/junit_3.8.1.jar
 %%JAVAJARDIR%%/rdp-classifier22-2.2/rdp_classifier-2.2.jar
