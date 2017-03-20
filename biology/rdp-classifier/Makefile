@@ -3,24 +3,27 @@
 
 PORTNAME=	classifier
 PORTVERSION=	2.12
-CATEGORIES=	biology
+CATEGORIES=	biology java
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	rdp-classifier/rdp-classifier/
 PKGNAMEPREFIX=	rdp-
 DISTNAME=	rdp_classifier_${PORTVERSION}
 
-MAINTAINER=	dsiercks@uwm.edu
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	RDP Classifier is a naive Bayesian classfiier
 
 LICENSE=	GPLv2
 
 USES=		zip
+USE_JAVA=	yes
 
-SUB_FILES=	modulefile
-SUB_LIST+=	PORTVERSION=${PORTVERSION} RDP_PREFIX=${RDP_PREFIX}
+# The modulefile is useless.  Does some calling app expect to find
+# rdp-classifier in PATH?
+# SUB_FILES=	modulefile
+# SUB_LIST+=	PORTVERSION=${PORTVERSION} RDP_PREFIX=${RDP_PREFIX}
+# MODULE_PATH=	${PREFIX}/etc/modulefiles/${PKGNAMEPREFIX}${PORTNAME}
 
-MODULE_PATH=	${PREFIX}/etc/modulefiles/${PKGNAMEPREFIX}${PORTNAME}
-RDP_PREFIX=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}
+RDP_PREFIX=	${JAVAJARDIR}
 
 NO_BUILD=	yes
 
@@ -30,8 +33,8 @@ do-install:
 		${STAGEDIR}${RDP_PREFIX}
 	cd ${WRKSRC}/dist && ${COPYTREE_SHARE} 'lib' \
 		${STAGEDIR}${RDP_PREFIX}
-	${MKDIR} ${STAGEDIR}${MODULE_PATH}
-	${INSTALL_SCRIPT} ${WRKDIR}/modulefile \
-		${STAGEDIR}${MODULE_PATH}/${PORTVERSION}
+	# ${MKDIR} ${STAGEDIR}${MODULE_PATH}
+	# ${INSTALL_SCRIPT} ${WRKDIR}/modulefile \
+	#	${STAGEDIR}${MODULE_PATH}/${PORTVERSION}
 
 .include <bsd.port.mk>
