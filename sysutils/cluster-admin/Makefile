@@ -1,9 +1,5 @@
-# New ports collection makefile for:    cluster-admin
-# Date created:         2010-1-15
-# Whom:                 Jason Bacon <bacon4000@gmail.com>
-#
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cluster-admin
 PORTVERSION=	0.3
