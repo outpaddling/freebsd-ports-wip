@@ -79,11 +79,10 @@ LICENSE=	GPLv2
 #      extras_require={'all': ['ipython[notebook] >= 3.1.0, < 4.0.0',
 #                              'sphinx >= 0.3']}
 #
-# Build errors with latest ports snapshot
-#		${PKGNAMEPREFIX}scikit-bio==0.2.3:/usr/wip/biology/py-scikit-bio-0.2.3 \
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.0:math/py-numpy \
 		${PKGNAMEPREFIX}scipy>=0.14.0:science/py-scipy \
+		${PKGNAMEPREFIX}scikit-bio==0.2.3:/usr/wip/biology/py-scikit-bio-0.2.3 \
 		pycogent>=1.5.3:biology/pycogent \
 		${PKGNAMEPREFIX}natsort>0:devel/py-natsort \
 		${PKGNAMEPREFIX}matplotlib>=1.1.0:math/py-matplotlib \

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
 LICENSE=	BSD2CLAUSE
 # LICENSE_FILE=	
 
-USES=		python:2
+USES=		fortran python:2
 USE_PYTHON=	distutils
 
 .include <bsd.port.mk>
