@@ -1,5 +1,8 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
+#
+# FIXME:
+# Downloading http://pypi.python.org/packages/source/d/distribute/distribute-0.6.10.tar.gz
 
 PORTNAME=	cpat
 PORTVERSION=	1.2.2
