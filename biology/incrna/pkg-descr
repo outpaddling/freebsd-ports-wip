@@ -1,0 +1,9 @@
+This software performs machine learning based on computed features of genomic
+regions using a set of supervised learning methods, and picks the best method
+according to an unbiased procedure. It does not generate the features, as the
+generation process involves third-party software for tasks such as sequence
+alignment and RNA structure prediction. The file format of datasets and a
+script for running the program can be found in the file readme.txt inside the
+packages.
+
+WWW: http://archive.gersteinlab.org/proj/incrna/
