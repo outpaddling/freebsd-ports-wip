@@ -1,9 +1,5 @@
-# New ports collection makefile for:	port-dev
-# Date created:		2012-04-16
-# Whom:			Jason Bacon <bacon4000@gmail.com>
-#
+# Created by: Jason W. Bacon <bacon4000@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	port-dev
 PORTVERSION=	0.2
