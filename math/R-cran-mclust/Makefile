@@ -12,8 +12,7 @@ COMMENT=	Gaussian finite mixture models fitted via EM algorithm
 LICENSE=	GPLv2
 #LICENSE_FILE=
 
-#USES=		cran:auto-plist fortran
-USES=		cran fortran
+USES=		cran:auto-plist fortran
 
 # Not working
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/R/lib

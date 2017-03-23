@@ -14,6 +14,8 @@ COMMENT=	Data visualization system with an emphasis on multivariate data
 LICENSE=	GPLv2
 #LICENSE_FILE=
 
-USES=		cran gettext
+USES=		cran:auto-plist gettext
+
+IGNORE=		Installed as part of R base
 
 .include <bsd.port.mk>

@@ -12,6 +12,6 @@ COMMENT=	Restricted permutation designs for freely exchangeable, line transects
 LICENSE=	GPLv2
 #LICENSE_FILE=
 
-USES=		cran
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>
