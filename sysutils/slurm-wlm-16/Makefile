@@ -87,6 +87,7 @@ post-patch:
 		${WRKSRC}/contribs/seff/smail.in \
 		${WRKSRC}/doc/html/configurator.easy.html.in \
 		${WRKSRC}/doc/html/configurator.html.in \
+		${WRKSRC}/contribs/cray/slurm.conf.template \
 		${WRKSRC}/doc/man/man1/strigger.1 \
 		${WRKSRC}/doc/man/man5/slurm.conf.5
 
