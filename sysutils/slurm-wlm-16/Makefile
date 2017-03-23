@@ -77,11 +77,21 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
 # #include <pty.h> with appropriate headers will therefore not work, so instead
 # add a pty.h for the build.
 post-patch:
-	${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
-	${REINPLACE_CMD} -e 's|sched_setaffinity|cpuset_setaffinity|g' \
+	@${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
+	@${REINPLACE_CMD} -e 's|sched_setaffinity|cpuset_setaffinity|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|=linux|=FreeBSD|g' \
+		${WRKSRC}/etc/slurm.conf.example
+	@${REINPLACE_CMD} -e 's|/bin/mail|/usr/bin/mail|g' \
+		${WRKSRC}/src/common/read_config.h \
+		${WRKSRC}/contribs/seff/smail.in \
+		${WRKSRC}/doc/html/configurator.easy.html.in \
+		${WRKSRC}/doc/html/configurator.html.in \
+		${WRKSRC}/doc/man/man1/strigger.1 \
+		${WRKSRC}/doc/man/man5/slurm.conf.5
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/slurm.conf.sample ${STAGEDIR}${PREFIX}/etc/
+	${INSTALL_DATA} ${WRKSRC}/etc/slurm.conf.example \
+		${STAGEDIR}${PREFIX}/etc/slurm.conf.sample 
 
 .include <bsd.port.mk>
