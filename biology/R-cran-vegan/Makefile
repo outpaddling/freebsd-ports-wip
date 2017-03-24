@@ -12,9 +12,15 @@ COMMENT=	Ordination methods, diversity analysis etc for ecologists
 LICENSE=	GPLv2
 #LICENSE_FILE=	
 
-CRAN_DEPENDS=	R-cran-permute>=0.9-0:/usr/wip/math/R-cran-permute \
-		R-cran-lattice>=3.0.0:/usr/wip/R-cran-lattice
+# Depends: 	permute (≥ 0.9-0), lattice, R (≥ 3.0.0)
+# Imports: 	MASS, cluster, mgcv
+# Suggests: 	parallel, tcltk, knitr
 
-USES=		cran
+# R-cran-lattice is in the R base
+CRAN_DEPENDS=	R-cran-permute>=0.9-0:/usr/wip/math/R-cran-permute
+BUILD_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	${CRAN_DEPENDS}
+
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
