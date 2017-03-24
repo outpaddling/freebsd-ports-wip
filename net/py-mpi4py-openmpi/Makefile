@@ -22,20 +22,22 @@ USES=		python
 USE_PYTHON=	distutils
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL?=	py*-mpi4py-mpich-*
-
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-post-patch:
-	${CP} ${FILESDIR}/mpi.cfg ${WRKSRC}/
+PYDISTUTILS_PKGNAME=${PKGNAME}
 
-do-install-DOCS-on:
+# SUB_FILES not working.  Does it not happen before build?
+post-patch:
+	${CP} ${FILESDIR}/mpi.cfg.in ${WRKSRC}/mpi.cfg
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/mpi.cfg
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.rst ${STAGEDIR}${DOCSDIR}
 	${COPYTREE_SHARE} ${WRKSRC}/docs ${STAGEDIR}${DOCSDIR}
 
-do-install-EXAMPLES-on:
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${COPYTREE_SHARE} ${WRKSRC}/examples ${STAGEDIR}${EXAMPLESDIR}
 
