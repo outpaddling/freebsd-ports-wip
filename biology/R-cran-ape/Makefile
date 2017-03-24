@@ -14,6 +14,6 @@ LICENSE=	GPLv2
 
 # Imports: nlme, lattice, graphics, methods, stats, tools, utils, parallel
 
-USES=		cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

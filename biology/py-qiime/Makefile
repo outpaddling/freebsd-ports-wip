@@ -137,6 +137,7 @@ RUN_DEPENDS+=	muscle>=3.8.31:biology/muscle \
 		mothur:/usr/wip/biology/mothur \
 		blat>0:biology/blat \
 		fastq-join>0:/usr/wip/biology/fastq-join \
+		R-cran-ape>0:/usr/wip/devel/R-cran-ape \
 		R-cran-optparse>0:/usr/wip/devel/R-cran-optparse \
 		R-cran-RColorBrewer>0:graphics/R-cran-RColorBrewer \
 		R-cran-randomForest>0:devel/R-cran-randomForest \
