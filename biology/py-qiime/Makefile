@@ -101,7 +101,7 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.0:math/py-numpy \
 
 # Unbundled
 BUILD_DEPENDS+=	FastTree>=2.1.7:biology/fasttree \
-		sortmerna>=2.0:/usr/wip/biology/sortmerna \
+		sortmerna==2.0:/usr/wip/biology/sortmerna \
 		sumaclust>=1.0.00:/usr/wip/biology/sumaclust \
 		swarm==1.2.19:/usr/wip/biology/swarm
 

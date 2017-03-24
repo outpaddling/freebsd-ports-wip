@@ -1,8 +1,11 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
+# Only 2.0 is compatible with qiime 1.9.1
+# https://github.com/biocore/sortmerna#third-party-libraries
 PORTNAME=	sortmerna
-PORTVERSION=	2.1
+#PORTVERSION=	2.1
+PORTVERSION=	2.0
 CATEGORIES=	biology
 
 MAINTAINER=	bacon4000@gmail.com
