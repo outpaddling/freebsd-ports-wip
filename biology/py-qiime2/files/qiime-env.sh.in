@@ -1,0 +1,4 @@
+BLASTMAT=%%LOCALBASE%%/share/ncbi-toolkit
+RDP_JAR_PATH=%%JAVAJARDIR%%/rdp-classifier22-2.2/rdp_classifier-2.2.jar
+PATH=${PATH}:%%LOCALBASE%%/microbiomeutil/ChimeraSlayer
+export BLASTMAT RDP_JAR_PATH PATH

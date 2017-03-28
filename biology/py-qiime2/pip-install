@@ -1,0 +1,92 @@
+FreeBSD outpaddling.cs  bacon ~ 71: pip install qiime
+Collecting qiime
+  Downloading qiime-1.9.1.tar.gz (19.5MB)
+    100% |████████████████████████████████| 19.5MB 38kB/s 
+Requirement already satisfied: numpy>=1.9.0 in /usr/local/lib/python2.7/site-packages (from qiime)
+Collecting scipy>=0.14.0 (from qiime)
+  Downloading scipy-0.18.1.tar.gz (13.1MB)
+    100% |████████████████████████████████| 13.1MB 55kB/s 
+Collecting cogent==1.5.3 (from qiime)
+  Downloading cogent-1.5.3.tgz (3.4MB)
+    100% |████████████████████████████████| 3.4MB 216kB/s 
+Collecting natsort<4.0.0 (from qiime)
+  Downloading natsort-3.5.6-py2.py3-none-any.whl
+Requirement already satisfied: matplotlib!=1.4.2,>=1.1.0 in /usr/local/lib/python2.7/site-packages (from qiime)
+Collecting pynast==1.2.2 (from qiime)
+  Downloading pynast-1.2.2.tar.gz (57kB)
+    100% |████████████████████████████████| 61kB 4.5MB/s 
+Collecting qcli<0.2.0,>=0.1.1 (from qiime)
+  Downloading qcli-0.1.1.tar.gz
+Collecting gdata (from qiime)
+  Downloading gdata-2.0.18.zip (3.1MB)
+    100% |████████████████████████████████| 3.1MB 246kB/s 
+Collecting biom-format<2.2.0,>=2.1.4 (from qiime)
+  Downloading biom-format-2.1.5.tar.gz (307kB)
+    100% |████████████████████████████████| 317kB 2.2MB/s 
+Collecting emperor<1.0.0,>=0.9.51 (from qiime)
+  Downloading emperor-0.9.60.tar.gz (4.1MB)
+    100% |████████████████████████████████| 4.1MB 180kB/s 
+Collecting scikit-bio<0.3.0,>=0.2.3 (from qiime)
+  Downloading scikit-bio-0.2.3.tar.gz (8.0MB)
+    100% |████████████████████████████████| 8.0MB 92kB/s 
+Collecting burrito-fillings<0.2.0,>=0.1.1 (from qiime)
+  Downloading burrito-fillings-0.1.1.tar.gz (214kB)
+    100% |████████████████████████████████| 215kB 2.8MB/s 
+Collecting pandas>=0.13.1 (from qiime)
+  Downloading pandas-0.19.2.tar.gz (9.2MB)
+    100% |████████████████████████████████| 9.2MB 78kB/s 
+Collecting burrito<1.0.0,>=0.9.1 (from qiime)
+  Downloading burrito-0.9.1.tar.gz
+Collecting qiime-default-reference<0.2.0,>=0.1.2 (from qiime)
+  Downloading qiime-default-reference-0.1.3.tar.gz (35.2MB)
+    100% |████████████████████████████████| 35.2MB 20kB/s 
+Requirement already satisfied: python-dateutil in /usr/local/lib/python2.7/site-packages (from matplotlib!=1.4.2,>=1.1.0->qiime)
+Requirement already satisfied: pytz in /usr/local/lib/python2.7/site-packages (from matplotlib!=1.4.2,>=1.1.0->qiime)
+Requirement already satisfied: cycler in /usr/local/lib/python2.7/site-packages (from matplotlib!=1.4.2,>=1.1.0->qiime)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,>=1.5.6 in /usr/local/lib/python2.7/site-packages (from matplotlib!=1.4.2,>=1.1.0->qiime)
+Collecting click (from biom-format<2.2.0,>=2.1.4->qiime)
+  Downloading click-6.7-py2.py3-none-any.whl (71kB)
+    100% |████████████████████████████████| 71kB 4.3MB/s 
+Collecting future>=0.14.3 (from biom-format<2.2.0,>=2.1.4->qiime)
+  Downloading future-0.16.0.tar.gz (824kB)
+    100% |████████████████████████████████| 829kB 863kB/s 
+Collecting pyqi (from biom-format<2.2.0,>=2.1.4->qiime)
+  Downloading pyqi-0.3.2.tar.gz (240kB)
+    100% |████████████████████████████████| 245kB 2.6MB/s 
+Requirement already satisfied: six in /usr/local/lib/python2.7/site-packages (from scikit-bio<0.3.0,>=0.2.3->qiime)
+Collecting IPython (from scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading ipython-5.3.0-py2-none-any.whl (750kB)
+    100% |████████████████████████████████| 757kB 975kB/s 
+Collecting pickleshare (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading pickleshare-0.7.4-py2.py3-none-any.whl
+Collecting backports.shutil-get-terminal-size; python_version == "2.7" (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading backports.shutil_get_terminal_size-1.0.0-py2.py3-none-any.whl
+Requirement already satisfied: setuptools>=18.5 in /usr/local/lib/python2.7/site-packages (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+Collecting prompt-toolkit<2.0.0,>=1.0.4 (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading prompt_toolkit-1.0.13-py2-none-any.whl (247kB)
+    100% |████████████████████████████████| 256kB 2.7MB/s 
+Collecting traitlets>=4.2 (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading traitlets-4.3.2-py2.py3-none-any.whl (74kB)
+    100% |████████████████████████████████| 81kB 2.6MB/s 
+Collecting pexpect; sys_platform != "win32" (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading pexpect-4.2.1-py2.py3-none-any.whl (55kB)
+    100% |████████████████████████████████| 61kB 4.3MB/s 
+Collecting pathlib2; python_version == "2.7" or python_version == "3.3" (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading pathlib2-2.2.1-py2.py3-none-any.whl
+Collecting simplegeneric>0.8 (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading simplegeneric-0.8.1.zip
+Collecting decorator (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading decorator-4.0.11-py2.py3-none-any.whl
+Collecting pygments (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading Pygments-2.2.0-py2.py3-none-any.whl (841kB)
+    100% |████████████████████████████████| 849kB 867kB/s 
+Collecting wcwidth (from prompt-toolkit<2.0.0,>=1.0.4->IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading wcwidth-0.1.7-py2.py3-none-any.whl
+Collecting ipython-genutils (from traitlets>=4.2->IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading ipython_genutils-0.1.0-py2.py3-none-any.whl
+Collecting enum34; python_version == "2.7" (from traitlets>=4.2->IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Using cached enum34-1.1.6-py2-none-any.whl
+Collecting ptyprocess>=0.5 (from pexpect; sys_platform != "win32"->IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading ptyprocess-0.5.1-py2.py3-none-any.whl
+Collecting scandir; python_version < "3.5" (from pathlib2; python_version == "2.7" or python_version == "3.3"->IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading scandir-1.5.tar.gz

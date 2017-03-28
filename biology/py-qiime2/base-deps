@@ -1,0 +1,49 @@
+Collecting burrito-fillings<0.2.0,>=0.1.1 (from qiime)
+  Downloading burrito-fillings-0.1.1.tar.gz (214kB)
+Collecting pandas>=0.13.1 (from qiime)
+  Downloading pandas-0.19.2.tar.gz (9.2MB)
+Collecting burrito<1.0.0,>=0.9.1 (from qiime)
+  Downloading burrito-0.9.1.tar.gz
+Collecting qiime-default-reference<0.2.0,>=0.1.2 (from qiime)
+  Downloading qiime-default-reference-0.1.3.tar.gz (35.2MB)
+Requirement already satisfied: python-dateutil in /usr/local/lib/python2.7/site-packages (from matplotlib!=1.4.2,>=1.1.0->qiime)
+Requirement already satisfied: pytz in /usr/local/lib/python2.7/site-packages (from matplotlib!=1.4.2,>=1.1.0->qiime)
+Requirement already satisfied: cycler in /usr/local/lib/python2.7/site-packages (from matplotlib!=1.4.2,>=1.1.0->qiime)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,>=1.5.6 in /usr/local/lib/python2.7/site-packages (from matplotlib!=1.4.2,>=1.1.0->qiime)
+Collecting click (from biom-format<2.2.0,>=2.1.4->qiime)
+  Downloading click-6.7-py2.py3-none-any.whl (71kB)
+Collecting future>=0.14.3 (from biom-format<2.2.0,>=2.1.4->qiime)
+  Downloading future-0.16.0.tar.gz (824kB)
+Collecting pyqi (from biom-format<2.2.0,>=2.1.4->qiime)
+  Downloading pyqi-0.3.2.tar.gz (240kB)
+Requirement already satisfied: six in /usr/local/lib/python2.7/site-packages (from scikit-bio<0.3.0,>=0.2.3->qiime)
+Collecting IPython (from scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading ipython-5.3.0-py2-none-any.whl (750kB)
+Collecting pickleshare (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading pickleshare-0.7.4-py2.py3-none-any.whl
+Collecting backports.shutil-get-terminal-size; python_version == "2.7" (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading backports.shutil_get_terminal_size-1.0.0-py2.py3-none-any.whl
+Requirement already satisfied: setuptools>=18.5 in /usr/local/lib/python2.7/site-packages (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+Collecting prompt-toolkit<2.0.0,>=1.0.4 (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading prompt_toolkit-1.0.13-py2-none-any.whl (247kB)
+Collecting traitlets>=4.2 (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading traitlets-4.3.2-py2.py3-none-any.whl (74kB)
+Collecting pexpect; sys_platform != "win32" (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading pexpect-4.2.1-py2.py3-none-any.whl (55kB)
+Collecting pathlib2; python_version == "2.7" or python_version == "3.3" (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading pathlib2-2.2.1-py2.py3-none-any.whl
+Collecting simplegeneric>0.8 (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading simplegeneric-0.8.1.zip
+Collecting decorator (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading decorator-4.0.11-py2.py3-none-any.whl
+Collecting pygments (from IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading Pygments-2.2.0-py2.py3-none-any.whl (841kB)
+Collecting wcwidth (from prompt-toolkit<2.0.0,>=1.0.4->IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading wcwidth-0.1.7-py2.py3-none-any.whl
+Collecting ipython-genutils (from traitlets>=4.2->IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading ipython_genutils-0.1.0-py2.py3-none-any.whl
+Collecting enum34; python_version == "2.7" (from traitlets>=4.2->IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+Collecting ptyprocess>=0.5 (from pexpect; sys_platform != "win32"->IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading ptyprocess-0.5.1-py2.py3-none-any.whl
+Collecting scandir; python_version < "3.5" (from pathlib2; python_version == "2.7" or python_version == "3.3"->IPython->scikit-bio<0.3.0,>=0.2.3->qiime)
+  Downloading scandir-1.5.tar.gz
