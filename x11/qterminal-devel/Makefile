@@ -26,6 +26,7 @@ CMAKE_ARGS+=	-DUSE_SYSTEM_QXT:BOOL=OFF
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lxde
+# GH_TAGNAME=	d454a00c7ba20ac05714ddfd7fafc9704781a7f8
 
 .include <bsd.port.pre.mk>
 

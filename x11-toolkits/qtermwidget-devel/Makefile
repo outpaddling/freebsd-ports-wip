@@ -17,6 +17,7 @@ USE_QT5=	buildtools_build core gui qmake_build widgets
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lxde
+# GH_TAGNAME=	1f7f9f8b8db35feb74d09cf6288622eaeefc88ac
 
 OPTIONS_DEFINE=	UTF8
 UTF8_LIB_DEPENDS=	libutf8proc.so:textproc/libutf8proc
