@@ -2,7 +2,7 @@
 # $FreeBSD: wip/x11/qterminal-l10n/Makefile 256 2016-11-18 22:15:13Z olivierd $
 
 PORTNAME=	qterminal-l10n
-PORTVERSION=	0.11.0
+PORTVERSION=	0.11.1
 CATEGORIES=	x11
 DISTNAME=	lxqt-l10n-${DISTVERSION}
 
