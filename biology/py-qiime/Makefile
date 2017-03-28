@@ -9,8 +9,8 @@
 PORTNAME=	qiime
 PORTVERSION=	1.9.1
 CATEGORIES=	biology
-MASTER_SITES=	http://github.com/biocore/qiime/archive/ \
-		http://www.drive5.com/uclust/
+#MASTER_SITES=	http://github.com/biocore/qiime/archive/ \
+#		http://www.drive5.com/uclust/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTVERSION}
 DISTFILES=	${PORTVERSION}${EXTRACT_SUFX} \
@@ -155,6 +155,9 @@ USES=		iconv python:2 shebangfix
 SHEBANG_FILES=	setup.py qiime/*.py qiime/*/*.py scripts/*.py \
 		tests/*.py tests/*/*.py
 USE_PYTHON=	distutils
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	biocore
 
 SUB_FILES=	pkg-message qiime-env.csh qiime-env.sh qiime-test 
 SUB_LIST+=	JAVAJARDIR=${JAVAJARDIR}
