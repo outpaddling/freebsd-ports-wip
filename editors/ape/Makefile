@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ape
-# Date created:		Nov 2006
-# Whom:			Jason Bacon <bacon4000@gmail.com>
-#
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ape
 PORTVERSION=	3.5.2
