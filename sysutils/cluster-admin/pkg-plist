@@ -77,6 +77,8 @@ sbin/cluster-useradd
 sbin/cluster-usermod
 sbin/cluster-users
 sbin/cluster-wip-update
+sbin/condor-build-R-packages
+sbin/condor-list-packages
 sbin/local-init-node
 sbin/local-packages
 sbin/node-sync-all-users
