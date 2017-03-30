@@ -19,7 +19,7 @@ depends="bowtie bowtie2 samtools samtools01 jellyfish parafly p5-transdecoder \
 printf "Remove everything? y/[n] "
 read remove
 if [ 0$remove = 0y ]; then
-    pkg_delete='pkg delete -y'
+    pkg_delete='pkg delete'
     $pkg_delete $depends TransDecoder || true
     pause
 fi

@@ -18,7 +18,7 @@ depends="scythe sickle bowtie2 tophat cufflinks"
 printf "Remove everything? y/[n] "
 read remove
 if [ 0$remove = 0y ]; then
-    pkg_delete='pkg delete -y'
+    pkg_delete='pkg delete'
     $pkg_delete $depends || true
     pause
 fi

@@ -6,7 +6,7 @@
 
 # FreeBSD ports
 set +e
-pkg delete -y openfoam flex scotch-openmpi
+pkg delete openfoam flex scotch-openmpi
 set -e
 pkg install -y bison gmake openmpi
 for pkg in textproc/flex cad/scotch-openmpi science/openfoam; do

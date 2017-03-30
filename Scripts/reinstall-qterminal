@@ -6,7 +6,7 @@
 
 # FreeBSD ports
 set +e
-pkg delete -y qterminal qtermwidgets
+pkg delete qterminal qtermwidgets
 set -e
 pkg install -y cmake qt5-qmake qt5-buildtools qt5-linguisttools gettext
 wip-reinstall-port qterminal

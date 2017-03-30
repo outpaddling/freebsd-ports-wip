@@ -6,7 +6,7 @@
 
 # FreeBSD ports
 set +e
-pkg delete -y dazz_db daligner py27-pypeflow \
+pkg delete dazz_db daligner py27-pypeflow \
     py27-pbfalcon
 set -e
 pkg install -y py27-networkx py27-isodate

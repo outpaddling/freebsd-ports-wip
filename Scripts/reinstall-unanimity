@@ -6,7 +6,7 @@
 
 # FreeBSD ports
 set +e
-pkg delete -y unanimity pbbam pbseqan pbcopper
+pkg delete unanimity pbbam pbseqan pbcopper
 set -e
 pkg install -y cmake htslib
 wip-reinstall-port unanimity
