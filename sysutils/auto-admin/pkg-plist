@@ -35,6 +35,7 @@ man/man1/auto-ldap-client-setup.1.gz
 man/man1/auto-mount-any.1.gz
 man/man1/auto-ostype.1.gz
 man/man1/auto-package-installed.1.gz
+man/man1/auto-passwd-user-expiration.1.gz
 man/man1/auto-pkgsrc-add-license.1.gz
 man/man1/auto-pkgsrc-setup.1.gz
 man/man1/auto-pkgsrc-wip-checkout.1.gz
@@ -95,6 +96,7 @@ sbin/auto-ldap-client-setup
 sbin/auto-mount-any
 sbin/auto-ostype
 sbin/auto-package-installed
+sbin/auto-passwd-user-expiration
 sbin/auto-pkgsrc-add-license
 sbin/auto-pkgsrc-setup
 sbin/auto-pkgsrc-wip-checkout
