@@ -59,6 +59,11 @@ LICENSE=	GPLv2
 # ptyprocess>=0.5
 # scandir
 
+# QIIME 2 specifics
+# q2-deblur (vsearch)
+# q2-feature-classifier (vsearch)
+# q2-vsearch
+
 # setup.py
 #      install_requires=['numpy >= 1.9.0',
 #                        'scipy >= 0.14.0',
