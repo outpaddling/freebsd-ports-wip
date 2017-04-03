@@ -2,9 +2,8 @@
 # $FreeBSD$
 #
 # TODO:
-# Patch setup.py to avoid downloading files during build phase
-#     Remaining: sortmerna, suma_package, swarm
-# Finish adding deps
+# Replace QIIME 1 deps with QIIME2 deps
+# Test
 
 PORTNAME=	qiime2
 PORTVERSION=	2017.2.0
@@ -20,61 +19,6 @@ MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Quantitative Insights Into Microbial Ecology
 
 LICENSE=	GPLv2
-
-# FIXME: These deps from from QIIME 1
-# FIXME: Many of these are probably just run depends
-# FIXME: Remove deps of deps
-# From pip install:
-# cogent==1.5.3, but 1.9.0 is the next release on Github
-# natsort<4.0.0
-# scikit-bio<0.3.0,>=0.2.3 (from qiime)
-# biom-format<2.2.0,>=2.1.4
-# emperor<1.0.0,>=0.9.51
-# scikit-bio<0.3.0,>=0.2.3
-# burrito-fillings<0.2.0,>=0.1.1
-# pandas>=0.13.1
-# burrito<1.0.0,>=0.9.1
-# qiime-default-reference<0.2.0,>=0.1.2
-# python-dateutil
-# pytz
-# cycler
-# pyparsing!=2.0.4,!=2.1.2,>=1.5.6
-# click
-# future>=0.14.3
-# pyqi
-# six
-# IPython
-# pickleshare
-# backports.shutil-get-terminal-size
-# prompt-toolkit<2.0.0,>=1.0.4
-# traitlets>=4.2
-# pexpect
-# pathlib2
-# simplegeneric>0.8
-# decorator
-# pygments
-# wcwidth
-# ipython-genutils
-# enum34
-# ptyprocess>=0.5
-# scandir
-
-# setup.py
-#      install_requires=['numpy >= 1.9.0',
-#                        'scipy >= 0.14.0',
-#                        'cogent == 1.5.3',
-#                        'natsort < 4.0.0',
-#                        'matplotlib >= 1.1.0, != 1.4.2',
-#                        'pynast == 1.2.2', 'qcli >= 0.1.1, < 0.2.0', 'gdata',
-#                        'biom-format >= 2.1.4, < 2.2.0',
-#                        'emperor >= 0.9.51, < 1.0.0',
-#                        'scikit-bio >= 0.2.3, < 0.3.0',
-#                        'burrito-fillings >= 0.1.1, < 0.2.0',
-#                        'pandas >= 0.13.1', 'burrito >= 0.9.1, < 1.0.0',
-#                        'qiime-default-reference >= 0.1.2, < 0.2.0'],
-#      extras_require={'all': ['ipython[notebook] >= 3.1.0, < 4.0.0',
-#                              'sphinx >= 0.3']}
-#
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.0:math/py-numpy \
 		${PKGNAMEPREFIX}scipy>=0.14.0:science/py-scipy \
@@ -101,31 +45,14 @@ BUILD_DEPENDS+=	FastTree>=2.1.7:biology/fasttree \
 		sumaclust>=1.0.00:/usr/wip/biology/sumaclust \
 		swarm==1.2.19:/usr/wip/biology/swarm
 
-# Not listed in setup.py, but installed by pip. Probably pulled in as subdeps.
-#		${PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
-#		${PKGNAMEPREFIX}pytz>0:devel/py-pytz \
-#		${PKGNAMEPREFIX}cycler>0:devel/py-cycler \
-#		${PKGNAMEPREFIX}pyparsing>=1.5.6:devel/py-pyparsing \
-#		${PKGNAMEPREFIX}click>0:devel/py-click \
-#		${PKGNAMEPREFIX}future>=0.14.3:devel/py-future \
-#		${PKGNAMEPREFIX}pyqi>0:devel/py-pyqi \
-#		${PKGNAMEPREFIX}six>0:devel/py-six \
-#		${PKGNAMEPREFIX}:/usr/wip/ \
-#		${PKGNAMEPREFIX}h5py>=2.3.0:science/py-h5py \
-
 LIB_DEPENDS+=libgmp.so:math/gmp
 LIB_DEPENDS+=libffi.so:devel/libffi
 
-# Not sure how well vsearch will work with qiime, but it's a free sub for
-# uclust/usearch, which only runs on x86 and only the 32-bit version is free.
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		ncbi-toolkit>=2012.06.20:biology/ncbi-toolkit \
 		cd-hit>=4.6.1:biology/cd-hit \
 		vsearch:/usr/wip/biology/vsearch
 
-# Not listed as a dep, but tests fail without it
-# Newer rdp-classifier may work.  all_tests.py failed with 2.12.
-# java.lang.NoClassDefFoundError: org/apache/commons/cli/...
 RUN_DEPENDS+=	muscle>=3.8.31:biology/muscle \
 		rdp-classifier22==2.2:/usr/wip/biology/rdp-classifier-2.2 \
 		infernal==1.0.2:/usr/wip/biology/infernal102 \
