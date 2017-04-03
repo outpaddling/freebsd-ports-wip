@@ -59,11 +59,6 @@ LICENSE=	GPLv2
 # ptyprocess>=0.5
 # scandir
 
-# QIIME 2 specifics
-# q2-deblur (vsearch)
-# q2-feature-classifier (vsearch)
-# q2-vsearch
-
 # setup.py
 #      install_requires=['numpy >= 1.9.0',
 #                        'scipy >= 0.14.0',
@@ -147,6 +142,11 @@ RUN_DEPENDS+=	muscle>=3.8.31:biology/muscle \
 # From Qiime 1.8.0 port
 RUN_DEPENDS+=	microbiomeutil>=r20110519:/usr/wip/biology/microbiomeutil \
 		cdbfasta>=2010.07.22:biology/cdbfasta
+
+# QIIME 2 plugins
+BUILD_DEPENDS=	${PKGNAMEPREFIX}q2-vsearch>=0:/usr/wip/biology/py-q2-vsearch \
+		${PKGNAMEPREFIX}q2-deblur>=0:/usr/wip/biology/py-q2-deblur \
+		${PKGNAMEPREFIX}q2-feature-classifier>=0:/usr/wip/biology/py-q2-feature-classifier
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
