@@ -152,9 +152,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_LINUX=	yes	# For uclust closed-source binary
 USE_JAVA=	yes	# rdp-classifier jar path
-USES=		iconv python:2 shebangfix
-SHEBANG_FILES=	setup.py qiime/*.py qiime/*/*.py scripts/*.py \
-		tests/*.py tests/*/*.py
+USES=		iconv python:2
 USE_PYTHON=	distutils
 
 USE_GITHUB=	yes
@@ -162,23 +160,10 @@ USE_GITHUB=	yes
 SUB_FILES=	pkg-message qiime-env.csh qiime-env.sh qiime-test 
 SUB_LIST+=	JAVAJARDIR=${JAVAJARDIR}
 
-# start_parallel_jobs.py is for multithreaded?
-post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|qiime_scripts_dir|& ${PREFIX}/bin|g' \
-		-e 's|cluster_jobs_fp|& ${PREFIX}/bin/start_parallel_jobs.py|g' \
-		${WRKSRC}/qiime/support_files/qiime_config
-	@${REINPLACE_CMD} \
-		-e 's|#!/usr/bin/env python|${PYTHON_CMD}|g' \
-		${WRKSRC}/scripts/make_qiime_py_file.py
-	@${REINPLACE_CMD} \
-		-e "s|'python'|'${PYTHON_CMD}'|g" \
-		${WRKSRC}/tests/all_tests.py
-
 post-install:
-	${INSTALL_PROGRAM} ${DISTDIR}/${DIST_SUBDIR}/uclustq1.2.22_i86linux64 \
+	${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/uclustq1.2.22_i86linux64 \
 		${STAGEDIR}${PREFIX}/bin/uclust
-	cd ${WRKSRC} && ${COPYTREE_BIN} tests ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/qiime2 && ${COPYTREE_BIN} tests ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} \
 		${WRKDIR}/qiime-test \
 		${STAGEDIR}${PREFIX}/bin
