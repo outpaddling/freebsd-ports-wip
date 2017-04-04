@@ -25,6 +25,9 @@ libexec/add-gecos.awk
 sbin/cluster-add-to-group
 sbin/cluster-adduser
 sbin/cluster-admin
+sbin/cluster-change-group-gid
+sbin/cluster-change-primary-group
+sbin/cluster-change-uid
 sbin/cluster-diagnostics
 sbin/cluster-dist-file
 sbin/cluster-ganglia-restart
