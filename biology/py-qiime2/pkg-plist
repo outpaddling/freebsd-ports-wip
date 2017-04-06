@@ -1,7 +1,3 @@
-bin/qiime-test
-bin/uclust
-etc/qiime-env.csh
-etc/qiime-env.sh
 %%PYTHON_SITELIBDIR%%/qiime2/__init__.py
 %%PYTHON_SITELIBDIR%%/qiime2/__init__.pyc
 %%PYTHON_SITELIBDIR%%/qiime2/__init__.%%PYTHON_PYOEXTENSION%%
@@ -190,7 +186,3 @@ etc/qiime-env.sh
 %%PYTHON_SITELIBDIR%%/qiime2/util.py
 %%PYTHON_SITELIBDIR%%/qiime2/util.pyc
 %%PYTHON_SITELIBDIR%%/qiime2/util.%%PYTHON_PYOEXTENSION%%
-%%DATADIR%%/tests/__init__.py
-%%DATADIR%%/tests/data/metadata-no-type-cast.tsv
-%%DATADIR%%/tests/test_artifact_api.py
-%%DATADIR%%/tests/test_metadata.py
