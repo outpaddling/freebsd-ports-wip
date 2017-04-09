@@ -1,9 +1,5 @@
-# New ports collection makefile for:	libbacon
-# Date created:		Nov 2006
-# Whom:			Jason Bacon <bacon4000@gmail.com>
-#
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	libbacon
 PORTVERSION=	1.2.2
