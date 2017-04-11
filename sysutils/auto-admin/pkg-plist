@@ -6,6 +6,7 @@ man/man1/auto-admin.1.gz
 man/man1/auto-amd-nfs-setup.1.gz
 man/man1/auto-append-line.1.gz
 man/man1/auto-ask.1.gz
+man/man1/auto-autofs-nfs-setup.1.gz
 man/man1/auto-backup-file.1.gz
 man/man1/auto-change-group-gid.1.gz
 man/man1/auto-change-group-ownership.1.gz
@@ -71,6 +72,7 @@ sbin/auto-admin
 sbin/auto-amd-nfs-setup
 sbin/auto-append-line
 sbin/auto-ask
+sbin/auto-autofs-nfs-setup
 sbin/auto-backup-file
 sbin/auto-change-group-gid
 sbin/auto-change-group-ownership
