@@ -1,5 +1,5 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
-# $FreeBSD: head/sysutils/slurm-wlm/Makefile 433120 2017-02-02 00:24:07Z jrm $
+# $FreeBSD: head/sysutils/slurm-wlm/Makefile 436851 2017-03-24 18:52:28Z jrm $
 
 PORTNAME=	slurm
 PORTVERSION=	16.05.9
@@ -105,6 +105,31 @@ post-patch:
 post-patch-GTK2-off:
 	@${REINPLACE_CMD} -e 's|min_gtk_version=.*|min_gtk_version=2000.0.0|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|"/proc|"/compat/linux/proc|g' \
+		${WRKSRC}/src/slurmd/slurmstepd/req.c \
+		${WRKSRC}/src/slurmd/slurmstepd/pdebug.c \
+		${WRKSRC}/src/slurmd/slurmd/get_mach_stat.c \
+		${WRKSRC}/src/slurmd/slurmd/read_proc.c \
+		${WRKSRC}/src/slurmd/common/xcpuinfo.c \
+		${WRKSRC}/src/slurmd/common/xcgroup.c \
+		${WRKSRC}/src/slurmd/common/set_oomadj.c \
+		${WRKSRC}/src/slurmd/common/proctrack.c \
+		${WRKSRC}/src/common/callerid.c \
+		${WRKSRC}/src/plugins/task/affinity/affinity.c \
+		${WRKSRC}/src/plugins/acct_gather_energy/rapl/acct_gather_energy_rapl.c \
+		${WRKSRC}/src/plugins/jobacct_gather/cgroup/jobacct_gather_cgroup.c \
+		${WRKSRC}/src/plugins/jobacct_gather/common/common_jag.c \
+		${WRKSRC}/src/plugins/jobacct_gather/linux/jobacct_gather_linux.c \
+		${WRKSRC}/src/plugins/jobacct_gather/aix/jobacct_gather_aix.c \
+		${WRKSRC}/src/plugins/switch/cray/scaling.c \
+		${WRKSRC}/src/plugins/proctrack/cray/proctrack_cray.c \
+		${WRKSRC}/src/plugins/proctrack/cgroup/proctrack_cgroup.c \
+		${WRKSRC}/src/plugins/proctrack/pgid/proctrack_pgid.c \
+		${WRKSRC}/src/plugins/proctrack/linuxproc/kill_tree.c \
+		${WRKSRC}/src/plugins/proctrack/lua/proctrack_lua.c \
+		${WRKSRC}/src/plugins/acct_gather_filesystem/lustre/acct_gather_filesystem_lustre.c \
+		${WRKSRC}/contribs/cray/pam_job.c \
+		${WRKSRC}/contribs/lua/proctrack.lua
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/slurm.conf.example \
