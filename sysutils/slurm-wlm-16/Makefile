@@ -34,7 +34,7 @@ USES=		gmake libtool pkgconfig python:build readline shebangfix ssl \
 USE_PERL5=	configure
 SHEBANG_FILES=	doc/html/shtml2html.py doc/man/man2html.py
 
-OPTIONS_DEFINE=	CURL DOCS GTK2 HDF5 HWLOC IPMI MYSQL RRD
+OPTIONS_DEFINE=	CURL DOCS GTK2 HDF5 HWLOC IPMI MYSQL RRD LINUX
 OPTIONS_DEFAULT=HDF5 HWLOC
 OPTIONS_SUB=	yes
 
@@ -44,6 +44,7 @@ HDF5_DESC=	Job profiling using HDF5
 HWLOC_DESC=	Portable hardware locality
 IPMI_DESC=	IPMI engergy consumption accounting
 RRD_DESC=	RRD external sensor data collection
+LINUX_DESC=	Support jobacct_gather/linux (requires linprocfs)
 
 DOCS_BUILD_DEPENDS=	man2html:textproc/man2html
 
@@ -74,6 +75,8 @@ MYSQL_CONFIGURE_OFF=	--with-mysql_config=/nonexistent
 
 RRD_LIB_DEPENDS=	librrd.so:databases/rrdtool
 RRD_CONFIGURE_WITH=	rrdtool
+
+LINUX_USES=		linux
 
 CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
