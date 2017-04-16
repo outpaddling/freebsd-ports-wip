@@ -103,11 +103,6 @@ post-patch:
 		-e 's|SlurmdSpoolDir=.*|SlurmdSpoolDir=/var/spool/slurmd|' \
 		-e 's|StateSaveLocation=.*|StateSaveLocation=/var/run/slurm|' \
 		${WRKSRC}/etc/slurm.conf.example
-
-# Hack around nonfunctional --disable-gtktest flag
-post-patch-GTK2-off:
-	@${REINPLACE_CMD} -e 's|min_gtk_version=.*|min_gtk_version=2000.0.0|' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|"/proc|"/compat/linux/proc|g' \
 		${WRKSRC}/src/slurmd/slurmstepd/req.c \
 		${WRKSRC}/src/slurmd/slurmstepd/pdebug.c \
@@ -133,6 +128,11 @@ post-patch-GTK2-off:
 		${WRKSRC}/src/plugins/acct_gather_filesystem/lustre/acct_gather_filesystem_lustre.c \
 		${WRKSRC}/contribs/cray/pam_job.c \
 		${WRKSRC}/contribs/lua/proctrack.lua
+
+# Hack around nonfunctional --disable-gtktest flag
+post-patch-GTK2-off:
+	@${REINPLACE_CMD} -e 's|min_gtk_version=.*|min_gtk_version=2000.0.0|' \
+		${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/slurm.conf.example \
