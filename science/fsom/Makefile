@@ -3,7 +3,7 @@
 
 PORTNAME=	fsom
 PORTVERSION=	23c8bb0b0a1de866ef05ed2be283f67bca4d2f47
-CATEGORIES=	biology
+CATEGORIES=	science
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Tiny C library for managing SOM (Self-Organizing Maps) neural networks
