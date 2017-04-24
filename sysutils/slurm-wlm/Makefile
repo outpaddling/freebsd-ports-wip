@@ -1,9 +1,9 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
-# $FreeBSD: head/sysutils/slurm-wlm/Makefile 436851 2017-03-24 18:52:28Z jrm $
+# $FreeBSD: head/sysutils/slurm-wlm/Makefile 438780 2017-04-18 13:38:10Z jrm $
 
 PORTNAME=	slurm
-PORTVERSION=	16.05.9
-PORTREVISION=	1
+PORTVERSION=	17.02.2
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \
@@ -90,7 +90,7 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/bin/mail|/usr/bin/mail|g' \
 		${WRKSRC}/src/common/read_config.h \
-		${WRKSRC}/contribs/seff/smail.in \
+		${WRKSRC}/contribs/seff/smail \
 		${WRKSRC}/doc/html/configurator.easy.html.in \
 		${WRKSRC}/doc/html/configurator.html.in \
 		${WRKSRC}/contribs/cray/slurm.conf.template \
@@ -118,7 +118,6 @@ post-patch:
 		${WRKSRC}/src/plugins/jobacct_gather/cgroup/jobacct_gather_cgroup.c \
 		${WRKSRC}/src/plugins/jobacct_gather/common/common_jag.c \
 		${WRKSRC}/src/plugins/jobacct_gather/linux/jobacct_gather_linux.c \
-		${WRKSRC}/src/plugins/jobacct_gather/aix/jobacct_gather_aix.c \
 		${WRKSRC}/src/plugins/switch/cray/scaling.c \
 		${WRKSRC}/src/plugins/proctrack/cray/proctrack_cray.c \
 		${WRKSRC}/src/plugins/proctrack/cgroup/proctrack_cgroup.c \
