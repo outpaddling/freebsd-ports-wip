@@ -20,8 +20,6 @@ GH_ACCOUNT=	alexdobin
 # 64-bit only
 NOT_FOR_ARCHS=	i386 powerpc
 
-BROKEN=		Threads get stuck in futex state
-
 # to_string() issue with all gcc versions
 # http://stackoverflow.com/questions/26832199/getting-gcc-in-c11-mode-to-work-on-freebsd
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1
