@@ -88,7 +88,7 @@ sbin/local-init-node
 sbin/local-packages
 sbin/node-sync-all-users
 sbin/node-sync-groups
-sbin/node-sync-user
+sbin/node-sync-users
 sbin/pbs-cluster-load
 sbin/slurm-admin
 sbin/slurm-restart
