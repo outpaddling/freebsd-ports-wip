@@ -17,7 +17,7 @@ LICENSE=	BSD2CLAUSE
 BUILD_DEPENDS+=	bash:shells/bash go:lang/go
 
 USES=		shebangfix zip
-SHEBANG_FILES=	setup.sh nquire edirect.pl
+SHEBANG_FILES=	setup.sh nquire edirect.pl xtract.pl
 
 SCRIPTS=	esearch elink efilter efetch xtract edirect-einfo epost
 
@@ -31,6 +31,7 @@ do-build:
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} \
-		${SCRIPTS} nquire edirect.pl ${STAGEDIR}${PREFIX}/bin
+		${SCRIPTS} nquire edirect.pl xtract.pl \
+		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
