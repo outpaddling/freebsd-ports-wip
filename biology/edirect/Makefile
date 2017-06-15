@@ -12,9 +12,9 @@ COMMENT=	Access to the NCBI's suite of interconnected databases
 
 # Fake, find out and update
 LICENSE=	BSD2CLAUSE
-#LICENSE_FILE=	
+#LICENSE_FILE=
 
-BUILD_DEPENDS+=	bash:shells/bash go:lang/go
+BUILD_DEPENDS+=	bash:shells/bash
 
 USES=		shebangfix zip
 SHEBANG_FILES=	setup.sh nquire edirect.pl xtract.pl
