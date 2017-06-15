@@ -1,0 +1,9 @@
+bin/edirect-einfo
+bin/edirect.pl
+bin/efetch
+bin/efilter
+bin/elink
+bin/epost
+bin/esearch
+bin/nquire
+bin/xtract
