@@ -1,15 +1,14 @@
 #!/bin/sh -e
 
 printf "Cleaning...\n"
-cd /usr/wip
-for dir in */*; do
+cd /usr/ports/wip
+for dir in *; do
     if [ -d $dir/work ]; then
 	cd $dir
 	pwd
 	make clean
-	cd ../..
+	cd ..
     fi
 done
 
 find . -name '.*.bak' -exec rm '{}' \;
-

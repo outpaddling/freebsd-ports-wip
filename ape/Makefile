@@ -1,0 +1,48 @@
+# Created by: Jason Bacon <bacon4000@gmail.com>
+# $FreeBSD$
+
+PORTNAME=	ape
+PORTVERSION=	3.5.2
+CATEGORIES=	wip editors devel
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
+
+MAINTAINER=	bacon4000@gmail.com
+COMMENT=	Another Programmer's Editor
+
+# Match this to libs
+LICENSE=	BSD2CLAUSE
+
+# libtwintk is both a build and run depend.  Ape requires the library and
+# headers to build, and libtwintk's terminfo database to run.
+BUILD_DEPENDS=	${LOCALBASE}/lib/libpare.a:wip/libpare \
+		${LOCALBASE}/lib/libbacon.a:wip/libbacon \
+		${LOCALBASE}/lib/libtwintk.a:wip/twintk
+RUN_DEPENDS=	${LOCALBASE}/share/twintk/terminfo/README:wip/twintk \
+		webbrowser:wip/webbrowser \
+		docviewer:wip/docviewer
+
+USES=		tar:xz
+
+CONFLICTS=	ape-3.[01234]* ape-3.5.[01]
+
+# gcc on PowerPC uses unsigned chars by default.  Should be fixed in
+# source code now.
+# -fsigned-char
+CFLAGS=		-g -Wall
+
+MAKE_FLAGS+=	PREFIX=${PREFIX} \
+		MANPREFIX=${PREFIX} \
+		DATADIR=${DATADIR} \
+		DOCSDIR=${DOCSDIR} \
+		STAGEDIR=${STAGEDIR}
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_RXVT)
+RUN_DEPENDS+=	rxvt:x11/rxvt
+.endif
+
+pre-build:
+	(cd ${WRKSRC} && make depend)
+
+.include <bsd.port.post.mk>

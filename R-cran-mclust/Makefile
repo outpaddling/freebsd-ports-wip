@@ -1,0 +1,20 @@
+# Created by: Jason Bacon <bacon4000@gmail.com>
+# $FreeBSD$
+
+PORTNAME=	mclust
+DISTVERSION=	5.2.2
+CATEGORIES=	wip math
+DISTNAME=	${PORTNAME}_${DISTVERSION}
+
+MAINTAINER=	bacon4000@gmail.com
+COMMENT=	Gaussian finite mixture models fitted via EM algorithm
+
+LICENSE=	GPLv2
+#LICENSE_FILE=
+
+USES=		cran:auto-plist fortran
+
+# Not working
+LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/R/lib
+
+.include <bsd.port.mk>
