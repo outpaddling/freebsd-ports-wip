@@ -3,7 +3,7 @@
 
 PORTNAME=	fvcom
 PORTVERSION=	4.0
-CATEGORIES=	science
+CATEGORIES=	wip science
 MASTER_SITES=	http://fvcom.smast.umassd.edu/FVCOM/index.html/
 
 MAINTAINER=	bacon4000@gmail.com
@@ -18,6 +18,8 @@ USES=		fortran
 
 PLIST_FILES=	${MPIPREFIX}bin/${PORTNAME}${PKGNAMESUFFIX}
 
+WRKSRC=		${WRKDIR}/FVCOM4.0
+
 RESTRICTED=	Requires (free) registration
 
 .include <bsd.port.pre.mk>
@@ -30,18 +32,6 @@ IGNORE=	may not be redistributed because of licensing reasons.\
 .endif
 
 MAKE_JOBS_UNSAFE=	yes
-
-post-extract:
-	${MV} ${WRKSRC}/makefile ${WRKSRC}/Makefile
-
-post-patch:
-	${REINPLACE_CMD} -e 's|gcc|${CC}|g' \
-		${WRKDIR}/FVCOM2.7.1/METIS_source/makefile
-	${REINPLACE_CMD} -e 's|cpp|${CPP}|g' \
-		${WRKDIR}/FVCOM2.7.1/FVCOM_source/Makefile
-
-pre-build:
-	(cd ${WRKSRC}/../METIS_source && make)
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${MPIPREFIX}bin
