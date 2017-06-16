@@ -1,21 +1,54 @@
 
+===========================================================================
+
+                           **** IMPORTANT ****
+
+Due to changes in the FreeBSD ports system and the need to support
+arbitrary values of /usr/ports, the structure of freebsd-wip is changing.
+
+Rather than multiple categories under /usr/wip, all WIP ports will be
+under /usr/ports/wip from here on.
+
+This makes it possible to have multiple ports trees, each with their own
+wip category and allows freebsd-wip to play by the new rules of the
+ports system regarding dependencies among other things.
+
+The old wip-update command will fail as a result of this change.
+
+There are two possible solutions:
+
+1)  Rename your old wip directory and check out a new one under $PORTSDIR
+    (normally /usr/ports)
+
+    cd /usr/ports/wip/wip-tools && make install
+
+2)  Add "wip" to VALID_CATEGORIES in /usr/ports/Mk/bsd.ports.mk between
+    "wayland" and "www".
+
+    cd /usr/wip/wip-tools && make deinstall distclean reinstall
+
+    Run wip-update again.  This should move /usr/wip to /usr/ports/wip and
+    properly update the configuration.
+
+===========================================================================
+
 This is a collection of work-in-progress FreeBSD ports.
 
 To install ports from this collection:
 
-1)  Check out a copy to /usr/wip.
+1)  Check out a copy to /usr/ports/wip.
 
     svn co https://github.com/outpaddling/freebsd-ports-wip/trunk \
-	/usr/wip
+	/usr/ports/wip
 
     or
 
     git clone https://github.com/outpaddling/freebsd-ports-wip \
-	/usr/wip
+	/usr/ports/wip
     
 2)  Then install the ports of interest, starting with wip-tools:
 
-    cd /usr/wip/ports-mgmt/wip-tools
+    cd /usr/ports/wip/wip-tools
     make install
 
 3)  After installing wip-tools:
