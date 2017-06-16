@@ -4,5 +4,4 @@ sbin/wip-edit
 sbin/wip-new-port
 sbin/wip-poudriere-test
 sbin/wip-reinstall-port
-sbin/wip-silence-dev-warnings
 sbin/wip-update
