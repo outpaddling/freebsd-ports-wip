@@ -1,9 +1,5 @@
-# New ports collection makefile for:    libtwin
-# Date created:         Nov 2006
-# Whom:                 Jason Bacon <bacon4000@gmail.com>
-#
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	twintk
 PORTVERSION=	0.9.4
@@ -15,11 +11,9 @@ COMMENT=	Misc functions
 
 LICENSE=	BSD2CLAUSE
 
-USES=		tar:xz
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbacon.a:wip/libbacon
 
-CFLAGS=		-g -Wall
+USES=		tar:xz
 
 # Makefile uses PREFIX to determine location of terminfo db, so it should be
 # the final destination, not the staged.
