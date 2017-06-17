@@ -9,20 +9,20 @@
 ############################################################################
 # Metaport for MRI software tools
 
-PORTNAME=       mritools
-PORTVERSION=    1.0
-CATEGORIES=     science biology
+PORTNAME=	mritools
+PORTVERSION=	1.0
+CATEGORIES=	wip science biology
 MASTER_SITES=
 DISTFILES=
 
-MAINTAINER=     bacon4000@gmail.com
-COMMENT=        Metaport for MRI software tools
+MAINTAINER=	bacon4000@gmail.com
+COMMENT=	Metaport for MRI software tools
 
-NO_BUILD=       "YES"
+NO_BUILD=	"YES"
 
 RUN_DEPENDS=
 
-MAN1=           mritools.1
+MAN1=		mritools.1
 
 OPTIONS=        AFNI    "Advanced Functional Neural Imaging"            on \
 		CARET5  "Computerized Anatomical Reconstruction/Editing" on \

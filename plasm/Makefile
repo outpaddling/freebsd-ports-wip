@@ -5,15 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=       plasm
-PORTVERSION=    0.1
-CATEGORIES=     devel
-MASTER_SITES=   http://acadix.biz/Ports/distfiles/
+PORTNAME=	plasm
+PORTVERSION=	0.1
+CATEGORIES=	devel
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=     bacon4000@gmail.com
-COMMENT=        Portable Assembler
+MAINTAINER=	bacon4000@gmail.com
+COMMENT=	Portable Assembler
 
-PLIST_FILES=    bin/plasm \
+PLIST_FILES=	bin/plasm \
 		bin/plasm.bin \
 		include/plasm-epc-bits.h \
 		man/man1/plasm.1.gz

@@ -5,27 +5,25 @@
 # $FreeBSD$
 #
 
-PORTNAME=       twintk
-PORTVERSION=    0.9.4
-CATEGORIES=     devel
-MASTER_SITES=   http://acadix.biz/Ports/distfiles/
+PORTNAME=	twintk
+PORTVERSION=	0.9.4
+CATEGORIES=	wip devel
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=     bacon4000@gmail.com
-COMMENT=        Misc functions
+MAINTAINER=	bacon4000@gmail.com
+COMMENT=	Misc functions
 
 LICENSE=	BSD2CLAUSE
 
 USES=		tar:xz
 
-BUILD_DEPENDS=  ${LOCALBASE}/lib/libbacon.a:wip/libbacon
+BUILD_DEPENDS=	${LOCALBASE}/lib/libbacon.a:wip/libbacon
 
-CFLAGS=         -g -Wall
-
-CONFLICTS=      libtwin-[0-9]* twintk-0.9.[13456789]
+CFLAGS=		-g -Wall
 
 # Makefile uses PREFIX to determine location of terminfo db, so it should be
 # the final destination, not the staged.
-INSTALL_TARGET= PREFIX=${STAGEDIR}${PREFIX} \
+INSTALL_TARGET=	PREFIX=${STAGEDIR}${PREFIX} \
 		MANPREFIX=${STAGEDIR}${PREFIX} \
 		install
 
