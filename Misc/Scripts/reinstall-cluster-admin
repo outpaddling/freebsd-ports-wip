@@ -1,5 +1,6 @@
 #!/bin/sh -e
 
+wip-reinstall-port cluster-admin
 cluster-wip-update
 wip-reinstall-port -nu -r sysutils/auto-admin
 wip-reinstall-port -nu -r sysutils/cluster-admin
