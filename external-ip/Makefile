@@ -13,6 +13,8 @@ LICENSE=	BSD2CLAUSE
 
 USES=		tar:xz
 
-PLIST_FILES=	bin/external-ip bin/reflect-ipd
+USE_RC_SUBR=	reflectipd
+
+PLIST_FILES=	bin/externalip bin/reflectipd
 
 .include <bsd.port.mk>
