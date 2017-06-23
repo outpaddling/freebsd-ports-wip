@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: reflectipd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# reflect-ipd_enable (bool):   Set to NO by default.
+#               Set it to YES to enable reflect-ipd.
+
+. /etc/rc.subr
+
+name=reflectipd
+rcvar=reflectipd_enable
+
+load_rc_config $name
+
+: ${reflect-ipd_enable:="NO"}
+
+command=%%PREFIX%%/bin/${name}
+pidfile=/var/run/${name}.pid
+
+run_rc_command "$1"
