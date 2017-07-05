@@ -91,6 +91,7 @@ sbin/node-sync-groups
 sbin/node-sync-users
 sbin/pbs-cluster-load
 sbin/slurm-admin
+sbin/slurm-drain-all
 sbin/slurm-restart
 sbin/slurm-resume-jobs
 sbin/slurm-resume-nodes
