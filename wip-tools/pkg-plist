@@ -1,5 +1,4 @@
 man/man1/wip-update.1.gz
-sbin/wip-copy-to-poudriere
 sbin/wip-edit
 sbin/wip-new-port
 sbin/wip-poudriere-test
