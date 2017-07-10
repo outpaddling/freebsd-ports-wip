@@ -80,7 +80,7 @@ dashL= $(empty) -L
 
 # STANDARD LOCALBASE
 LOCALBASE	?= /usr/local
-LIBDIR		= -L$(LOCALBASE)/lib -Wl,-rpath=/usr/local/lib/gcc48 -L/usr/local/lib/gcc48
+LIBDIR		= -L$(LOCALBASE)/lib
 INCDIR		= -I$(LOCALBASE)/include
 
 MAKE		?= gmake

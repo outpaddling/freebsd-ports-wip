@@ -24,6 +24,7 @@ PLIST_FILES=	${MPIPREFIX}bin/${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/FVCOM4.0/FVCOM_source
 MAKEFILE=	makefile
 MAKE_CMD=	gmake
+ALL_TARGET=	fvcom
 
 RESTRICTED=	Requires (free) registration
 
