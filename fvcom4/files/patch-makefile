@@ -1,0 +1,54 @@
+--- makefile.orig	2017-07-10 16:08:22.237933699 -0500
++++ makefile	2017-07-10 16:08:50.585923876 -0500
+@@ -126,7 +126,7 @@ FVCOM_OBJS = $(COBJS:.c=.o) $(SRCS:.F=.o
+ 
+ $(EXEC):	$(FVCOM_OBJS)
+ 		$(FC) $(FFLAGS) $(VISOPT) $(LDFLAGS) $(FVCOM_OBJS) $(LIBS) -o $(EXEC)
+-		make libfvcom
++		$(MAKE) libfvcom
+ 
+ 
+ libfvcom: $(FVCOM_OBJS)
+@@ -152,10 +152,10 @@ SUBDIRS = testing input utilities
+ 
+ 
+ all:    
+-	make depend
+-	cd BIO_source && make
+-	make 
+-	for dir in $(SUBDIRS); do (cd $$dir && make) || exit 1; done
++	$(MAKE) depend
++	cd BIO_source && $(MAKE)
++	$(MAKE) 
++	for dir in $(SUBDIRS); do (cd $$dir && $(MAKE)) || exit 1; done
+ 
+ #--------------------------------------------------------------------------
+ #  Tar Up Code                           
+@@ -172,20 +172,20 @@ clean:
+ 		/bin/rm -f *.o *.mod *.f90
+ 
+ clobber:	
+-		make clean
++		$(MAKE) clean
+ 		/bin/rm -f fvcom libfvcom.so libfvcom.a
+ 
+ allclean:
+-		make clean
+-		for dir in $(SUBDIRS); do (cd $$dir && make clean) || exit 1; done
+-	        cd BIO_source && make clean
++		$(MAKE) clean
++		for dir in $(SUBDIRS); do (cd $$dir && $(MAKE) clean) || exit 1; done
++	        cd BIO_source && $(MAKE) clean
+ 
+ 
+ allclobber:
+-		make clean
++		$(MAKE) clean
+ 		/bin/rm -f fvcom libfvcom.so libfvcom.a
+-		for dir in $(SUBDIRS); do (cd $$dir && make clobber) || exit 1; done
+-	        cd BIO_source && make clobber
++		for dir in $(SUBDIRS); do (cd $$dir && $(MAKE) clobber) || exit 1; done
++	        cd BIO_source && $(MAKE) clobber
+ 
+ #--------------------------------------------------------------------------
+ #  Common rules for all Makefiles - do not edit.
