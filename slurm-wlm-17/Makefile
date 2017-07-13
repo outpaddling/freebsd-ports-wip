@@ -2,7 +2,7 @@
 # $FreeBSD: head/sysutils/slurm-wlm/Makefile 441503 2017-05-23 05:03:14Z rezny $
 
 PORTNAME=	slurm
-DISTVERSION=	17.02.3
+DISTVERSION=	17.02.6
 CATEGORIES=	wip sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \
@@ -28,8 +28,8 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	slurmctld slurmd
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pkgconfig python:build readline shebangfix ssl \
-		tar:bz2
+USES=		gmake libtool pkgconfig python:build readline:port shebangfix \
+		ssl tar:bz2
 USE_PERL5=	configure
 SHEBANG_FILES=	doc/html/shtml2html.py doc/man/man2html.py
 

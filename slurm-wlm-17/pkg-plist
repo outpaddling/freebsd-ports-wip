@@ -250,7 +250,7 @@ man/man1/sbcast.1.gz
 man/man1/scancel.1.gz
 man/man1/scontrol.1.gz
 man/man1/sdiag.1.gz
-man/man1/sh5util.1.gz
+%%HDF5%%man/man1/sh5util.1.gz
 man/man1/sinfo.1.gz
 man/man1/slurm.1.gz
 man/man1/smap.1.gz
