@@ -26,6 +26,7 @@ bin/bowtie-inspect-s
 %%DATADIR%%/reads/e_coli_1000_1.fq
 %%DATADIR%%/reads/e_coli_1000_2.fa
 %%DATADIR%%/reads/e_coli_1000_2.fq
+%%DATADIR%%/reads/e_coli_1000_interleaved.fq
 %%DATADIR%%/scripts/best_verify.pl
 %%DATADIR%%/scripts/bs_mapability.pl
 %%DATADIR%%/scripts/build_test.sh
@@ -81,7 +82,7 @@ bin/bowtie-inspect-s
 %%PORTDOCS%%%%DOCSDIR%%/website/old_news.ssi
 %%PORTDOCS%%%%DOCSDIR%%/website/other_tools.shtml
 %%PORTDOCS%%%%DOCSDIR%%/website/other_tools.ssi
-%%PORTDOCS%%%%DOCSDIR%%/website/push_langmead.sh
+%%PORTDOCS%%%%DOCSDIR%%/website/push.sh
 %%PORTDOCS%%%%DOCSDIR%%/website/recent_news.ssi
 %%PORTDOCS%%%%DOCSDIR%%/website/rhsidebar.ssi
 %%PORTDOCS%%%%DOCSDIR%%/website/top.ssi
