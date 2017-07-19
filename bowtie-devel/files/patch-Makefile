@@ -1,20 +1,30 @@
---- Makefile.orig	2017-06-12 15:42:21.000000000 -0500
-+++ Makefile	2017-07-18 11:40:06.619777000 -0500
-@@ -8,9 +8,11 @@ bindir = $(prefix)/bin
+--- Makefile.orig	2017-06-12 20:42:21 UTC
++++ Makefile
+@@ -2,16 +2,18 @@
+ # Makefile for bowtie, bowtie-build, bowtie-inspect
+ #
+ 
+-prefix = /usr/local
++prefix = ${PREFIX}
+ bindir = $(prefix)/bin
+ 
  SEQAN_DIR = SeqAn-1.1
  SEQAN_INC = -I $(SEQAN_DIR)
- INC = $(SEQAN_INC) -I third_party
+-INC = $(SEQAN_INC) -I third_party
 -CPP = g++ -w
 -CXX = $(CPP)
 -CC = gcc
+-LIBS = $(LDFLAGS) -lz
++INC = $(SEQAN_INC) -I third_party -I ${LOCALBASE}/include
 +# Use ?= to allow environment CPP, CC, CXX to take precedence.  This avoids
 +# the need to modify the Makefile on different platforms.  Package managers
 +# such as FreeBSD ports, MacPorts, etc. set these variables automatically.
 +CXX ?= g++ -w
 +CC ?= gcc
- LIBS = $(LDFLAGS) -lz
++LIBS = $(LDFLAGS) -L${LOCALBASE}/lib -ltbb -lz
  HEADERS = $(wildcard *.h)
  BOWTIE_MM = 1
+ BOWTIE_SHARED_MEM = 1
 @@ -45,12 +47,12 @@ MACOS = 0
  ifneq (,$(findstring Darwin,$(shell uname)))
      MACOS = 1
