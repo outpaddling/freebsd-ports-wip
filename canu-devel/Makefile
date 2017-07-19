@@ -35,7 +35,7 @@ post-patch:
 # FIXME: Unravel the willy-nilly directory structure.
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/canu-1.5
-	${CP} -R ${WRKSRC}/usr/local/FreeBSD-${ARCH}/bin \
+	${CP} -R ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin \
 		${STAGEDIR}${PREFIX}/canu-1.5
 
 .include <bsd.port.mk>
