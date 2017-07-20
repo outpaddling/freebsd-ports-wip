@@ -12,6 +12,8 @@ COMMENT=	Ultrafast, memory-efficient short read aligner
 
 LICENSE=	ART10
 
+LIB_DEPENDS+=	libtbb.so:devel/tbb
+
 # May also work on other 64-bit platforms, but untested
 ONLY_FOR_ARCHS=	amd64
 
