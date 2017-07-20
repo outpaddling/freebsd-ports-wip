@@ -20,6 +20,9 @@ USES=		compiler:openmp gmake perl5
 USE_GITHUB=	yes
 GH_ACCOUNT=	marbl
 
+# May work on other 64-bit processors, but untested
+ONLY_FOR_ARCHS=	amd64
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 # Screwy Makefile compiles directly into ${DESTDIR}${PREFIX}
