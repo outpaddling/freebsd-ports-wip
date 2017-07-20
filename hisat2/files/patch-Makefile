@@ -13,3 +13,24 @@
  HEADERS = $(wildcard *.h)
  BOWTIE_MM = 1
  BOWTIE_SHARED_MEM = 0
+@@ -55,7 +55,7 @@ ifneq (,$(findstring Darwin,$(shell unam
+ 	MACOS = 1
+ endif
+ 
+-EXTRA_FLAGS += -DPOPCNT_CAPABILITY
++# EXTRA_FLAGS += -DPOPCNT_CAPABILITY
+ INC += -I third_party
+ 
+ MM_DEF = 
+@@ -439,6 +439,11 @@ doc/manual.inc.html: MANUAL.markdown
+ MANUAL: MANUAL.markdown
+ 	perl doc/strip_markdown.pl < $^ > $@
+ 
++.PHONY: install
++install:
++	mkdir -p ${DESTDIR}${PREFIX}/bin
++	install -c ${HISAT2_BIN_LIST} ${DESTDIR}${PREFIX}/bin
++
+ .PHONY: clean
+ clean:
+ 	rm -f $(HISAT2_BIN_LIST) $(HISAT2_BIN_LIST_AUX) \

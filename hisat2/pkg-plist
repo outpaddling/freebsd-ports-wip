@@ -1,1 +1,6 @@
-@comment $FreeBSD$
+bin/hisat2-align-l
+bin/hisat2-align-s
+bin/hisat2-build-l
+bin/hisat2-build-s
+bin/hisat2-inspect-l
+bin/hisat2-inspect-s
