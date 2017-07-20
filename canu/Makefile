@@ -4,7 +4,7 @@
 PORTNAME=	canu
 PORTVERSION=	1.5
 DISTVERSIONPREFIX=v
-CATEGORIES=	wip biology
+CATEGORIES=	wip biology java
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Single molecule sequence assembler for genomes large and small
@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/../README.license.GPL
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
 USES=		compiler:openmp gmake perl5
+USE_JAVA=	yes
+JAVA_RUN=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	marbl
