@@ -1,0 +1,72 @@
+--- Makefile.orig	2017-03-26 12:54:28 UTC
++++ Makefile
+@@ -6,8 +6,8 @@ GDIR :=./gclib
+ 
+ INCDIRS := -I. -I${GDIR} -I${BAM}
+ 
+-#CC := clang++
+-CC      := g++
++#CXX := clang++
++CXX      ?= g++
+ 
+ 
+ ifneq (,$(findstring nothreads,$(MAKECMDGOALS)))
+@@ -15,7 +15,7 @@ ifneq (,$(findstring nothreads,$(MAKECMD
+ endif
+ 
+ #detect MinGW (Windows environment)
+-ifneq (,$(findstring mingw,$(shell ${CC} -dumpmachine)))
++ifneq (,$(findstring mingw,$(shell ${CXX} -dumpmachine)))
+  WINDOWS=1
+ endif
+ 
+@@ -47,8 +47,8 @@ BASEFLAGS  := -Wall -Wextra ${INCDIRS} $
+ 
+ # C/C++ linker
+ 
+-#LINKER := clang++
+-LINKER  := g++
++#LD := clang++
++LD  = ${CXX}
+ 
+ LIBS := -lbam -lz
+ 
+@@ -75,7 +75,7 @@ ifneq (,$(filter %release %static, $(MAK
+   endif
+ else
+   ifneq (,$(filter %memcheck %memdebug, $(MAKECMDGOALS)))
+-     #make memcheck : use the statically linked address sanitizer in gcc 4.9.x
++     #${MAKE} memcheck : use the statically linked address sanitizer in gcc 4.9.x
+      GCCVER49 := $(shell expr `g++ -dumpversion | cut -f1,2 -d.` \>= 4.9)
+      ifeq "$(GCCVER49)" "0"
+        $(error gcc version 4.9 or greater is required for this build target)
+@@ -103,7 +103,7 @@ else
+ endif
+ 
+ %.o : %.cpp
+-	${CC} ${CFLAGS} -c $< -o $@
++	${CXX} ${CFLAGS} -c $< -o $@
+ 
+ OBJS := ${GDIR}/GBase.o ${GDIR}/GArgs.o ${GDIR}/GStr.o ${GDIR}/GBam.o \
+  ${GDIR}/gdna.o ${GDIR}/codons.o ${GDIR}/GFaSeqGet.o ${GDIR}/gff.o 
+@@ -131,9 +131,9 @@ rlink.o : rlink.h tablemaker.h $(GDIR)/G
+ tmerge.o : rlink.h tmerge.h
+ tablemaker.o : tablemaker.h rlink.h
+ ${BAM}/libbam.a: 
+-	cd ${BAM} && make lib
++	cd ${BAM} && ${MAKE} lib
+ stringtie: ${BAM}/libbam.a $(OBJS) stringtie.o
+-	${LINKER} ${LDFLAGS} -o $@ ${filter-out %.a %.so, $^} ${LIBS}
++	${LD} ${LDFLAGS} -o $@ ${filter-out %.a %.so, $^} ${LIBS}
+ 
+ .PHONY : clean cleanall cleanAll allclean
+ 
+@@ -143,7 +143,7 @@ clean:
+ 	@${RM} stringtie stringtie.o* stringtie.exe $(OBJS)
+ 	@${RM} core.*
+ allclean cleanAll cleanall:
+-	cd ${BAM} && make clean
++	cd ${BAM} && ${MAKE} clean
+ 	@${RM} stringtie stringtie.o* stringtie.exe $(OBJS)
+ 	@${RM} core.*
+ 
