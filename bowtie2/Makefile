@@ -2,7 +2,7 @@
 # $FreeBSD: head/biology/bowtie2/Makefile 429003 2016-12-20 17:01:27Z jrm $
 
 PORTNAME=	bowtie2
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	wip biology
 
