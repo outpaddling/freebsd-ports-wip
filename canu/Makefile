@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	canu
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 DISTVERSIONPREFIX=v
 CATEGORIES=	wip biology
 
 MAINTAINER=	bacon4000@gmail.com
-COMMENT=	A single molecule sequence assembler for genomes large and small
+COMMENT=	Single molecule sequence assembler for genomes large and small
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../README.license.GPL
@@ -18,6 +18,9 @@ USES=		compiler:openmp gmake perl5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	marbl
+
+# May work on other 64-bit processors, but untested
+ONLY_FOR_ARCHS=	amd64
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
@@ -33,8 +36,8 @@ post-patch:
 
 # FIXME: Unravel the willy-nilly directory structure.
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/canu
-	${CP} -R ${WRKSRC}/usr/local/FreeBSD-${ARCH}/bin \
-		${STAGEDIR}${PREFIX}/canu
+	${MKDIR} ${STAGEDIR}${PREFIX}/canu-1.5
+	${CP} -R ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin \
+		${STAGEDIR}${PREFIX}/canu-1.5
 
 .include <bsd.port.mk>
