@@ -21,9 +21,6 @@ JAVA_RUN=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	marbl
 
-# May work on other 64-bit processors, but untested
-ONLY_FOR_ARCHS=	amd64
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 # Screwy Makefile compiles directly into ${DESTDIR}${PREFIX}
@@ -34,6 +31,7 @@ post-patch:
 		-e 's|-O4|-O2|g' \
 		-e 's|-funroll-loops||g' \
 		-e 's|-fexpensive-optimizations||g' \
+		-e 's|amd64|${ARCH}|g' \
 		${WRKSRC}/Makefile
 
 # FIXME: Unravel the willy-nilly directory structure.
