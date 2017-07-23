@@ -21,4 +21,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy \
 USES=		python
 USE_PYTHON=	distutils
 
+CFLAGS+=	-I${PYTHON_SITELIBDIR}/numpy/core/include
+
 .include <bsd.port.mk>

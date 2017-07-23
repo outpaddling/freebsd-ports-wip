@@ -66,6 +66,7 @@
 %%PYTHON_SITELIBDIR%%/gensim/models/doc2vec.%%PYTHON_PYOEXTENSION%%
 %%PYTHON_SITELIBDIR%%/gensim/models/doc2vec_inner.c
 %%PYTHON_SITELIBDIR%%/gensim/models/doc2vec_inner.pyx
+%%PYTHON_SITELIBDIR%%/gensim/models/doc2vec_inner.so
 %%PYTHON_SITELIBDIR%%/gensim/models/hdpmodel.py
 %%PYTHON_SITELIBDIR%%/gensim/models/hdpmodel.pyc
 %%PYTHON_SITELIBDIR%%/gensim/models/hdpmodel.%%PYTHON_PYOEXTENSION%%
@@ -118,6 +119,7 @@
 %%PYTHON_SITELIBDIR%%/gensim/models/word2vec_inner.c
 %%PYTHON_SITELIBDIR%%/gensim/models/word2vec_inner.pxd
 %%PYTHON_SITELIBDIR%%/gensim/models/word2vec_inner.pyx
+%%PYTHON_SITELIBDIR%%/gensim/models/word2vec_inner.so
 %%PYTHON_SITELIBDIR%%/gensim/models/wrappers/__init__.py
 %%PYTHON_SITELIBDIR%%/gensim/models/wrappers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gensim/models/wrappers/__init__.%%PYTHON_PYOEXTENSION%%
