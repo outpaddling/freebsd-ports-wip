@@ -13,6 +13,8 @@ COMMENT=	Python library for topic modeling, document indexing, etc
 LICENSE=	LGPL21
 # LICENSE_FILE=
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy \
+		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
 
