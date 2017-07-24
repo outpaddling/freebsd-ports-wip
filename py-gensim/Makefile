@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
 
 USES=		python
-USE_PYTHON=	distutils
+USE_PYTHON=	autoplist distutils
 
 CFLAGS+=	-I${PYTHON_SITELIBDIR}/numpy/core/include
 
