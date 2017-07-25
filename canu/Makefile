@@ -34,6 +34,8 @@ post-patch:
 		-e 's|-fexpensive-optimizations||g' \
 		-e 's|amd64|${ARCH}|g' \
 		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|\\$$bin/mhap-|${JAVAJARDIR}/mhap-|g' \
+		${WRKSRC}/pipelines/canu/OverlapMhap.pm
 	${REINPLACE_CMD} -e 's|RealBin/lib|RealBin/../${SITE_PERL_REL}/canu|g' \
 		${WRKSRC}/pipelines/canu.pl
 
