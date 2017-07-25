@@ -28,7 +28,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 MAKE_ENV+=	DESTDIR=${WRKSRC}
 
 post-patch:
-	echo ${SITE_PERL_REL} ${JAVAJARDIR}
 	${REINPLACE_CMD} \
 		-e 's|-O4|-O2|g' \
 		-e 's|-funroll-loops||g' \
@@ -43,11 +42,18 @@ post-build:
 	${MV} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/lib/canu \
 		${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/${SITE_PERL_REL}
 	${RMDIR} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/lib
+	${MV} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/*.a \
+		${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/lib
+	${MKDIR} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/${JAVAJARDIR:S,^${PREFIX}/,,}
+	${MV} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/*.jar \
+		${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/${JAVAJARDIR:S,^${PREFIX}/,,}
 
 # FIXME: Unravel the willy-nilly directory structure.
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}
-	${CP} -R ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/{bin,lib} \
+	cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && ${COPYTREE_BIN} bin \
+		${STAGEDIR}${PREFIX}
+	cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && ${COPYTREE_SHARE} "lib share" \
 		${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>
