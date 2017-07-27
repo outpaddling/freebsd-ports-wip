@@ -18,6 +18,7 @@ RUN_DEPENDS+=	gnuplot:math/gnuplot
 USES=		compiler:openmp gmake perl5
 USE_JAVA=	yes
 JAVA_RUN=	yes
+JAVA_VERSION=	1.8+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	marbl
