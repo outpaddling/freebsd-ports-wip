@@ -10,10 +10,10 @@ COMMENT=	Generate include dependencies for Fortran code
 
 LICENSE=	GPLv3
 
-USES=		gmake tar:xz
+USES=		autoreconf gmake tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	a7044043d9b363ab563ef995b069adf477fe2c42
+GH_TAGNAME=	bf704d72d56974f64e462511721b79fd22ec2048
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
 
