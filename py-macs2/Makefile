@@ -1,28 +1,34 @@
 # Created by: Charlie %%FULLNAME%% <root@freebsd-10.1.local>
 # $FreeBSD$
 
-PORTNAME=	MACS2
-PORTVERSION=	2.1.0.20150420.1
+PORTNAME=	macs2
+PORTVERSION=	2017.05.05
 CATEGORIES=	wip biology
-MASTER_SITES=	http://pypi.python.org/packages/source/M/MACS2/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dsiercks@uwm.edu
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Novel algorithm for identifying transcript factor binding sites
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0:math/py-numpy
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0:math/py-numpy \
+		cython:lang/cython
 
 USES=		python
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	macs2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-2.1.0.20150420
+USE_GITHUB=	yes
+GH_ACCOUNT=	taoliu
+GH_PROJECT=	MACS
+GH_TAGNAME=	6946b2f6571cd0a7cfbb882c79aaa25a05a5c48d
+
+post-patch:
+	${MV} -f ${WRKSRC}/setup_w_cython.py ${WRKSRC}/setup.py
 
 post-stage:
-		${STRIP_CMD} \
-			${STAGEDIR}${PYTHON_SITELIBDIR}/MACS2/*.so \
-			${STAGEDIR}${PYTHON_SITELIBDIR}/MACS2/*/*.so
+	${STRIP_CMD} \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/MACS2/*.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/MACS2/*/*.so
 
 .include <bsd.port.mk>
