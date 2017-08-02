@@ -2,8 +2,7 @@
 
 wip-reinstall-port cluster-admin
 cluster-wip-update
-wip-reinstall-port -nu -r sysutils/auto-admin
-wip-reinstall-port -nu -r sysutils/cluster-admin
-cluster-run 'wip-reinstall-port -nu -r sysutils/auto-admin' all
-cluster-run 'wip-reinstall-port -nu -r sysutils/cluster-admin' all
-
+wip-reinstall-port -nu -r auto-admin
+wip-reinstall-port -nu -r cluster-admin
+cluster-run 'wip-reinstall-port -nu -r auto-admin' all
+cluster-run 'wip-reinstall-port -nu -r cluster-admin' all
