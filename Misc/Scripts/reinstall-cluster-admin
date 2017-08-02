@@ -1,7 +1,7 @@
 #!/bin/sh -e
 
-wip-reinstall-port cluster-admin
 cluster-wip-update
+wip-reinstall-port -nu -r cluster-admin
 wip-reinstall-port -nu -r auto-admin
 wip-reinstall-port -nu -r cluster-admin
 cluster-run 'wip-reinstall-port -nu -r auto-admin' all
