@@ -12,7 +12,7 @@ COMMENT=	Get list of common stop words in various languages in Python
 LICENSE=	BSD3CLAUSE
 #LICENSE_FILE=
 
-BUILD_DEPENDS=	stop-words>=0:wip/stop-words
+PATCH_DEPENDS=	stop-words>=0:wip/stop-words
 
 USES=		python
 USE_PYTHON=	autoplist distutils
