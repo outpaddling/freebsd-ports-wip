@@ -20,7 +20,7 @@ LICENSE=	MIT
 # 0.1.15 reports version properly.
 RUN_DEPENDS=	mawk>=0:lang/mawk \
 		bwa>=0.7.13:wip/bwa \
-		samtools01>=0:wip/samtools0119 \
+		samtools>=1.3:biology/samtools \
 		cd-hit>=0:biology/cd-hit \
 		gnuplot>=0:math/gnuplot \
 		parallel>=0:sysutils/parallel \
