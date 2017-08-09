@@ -5,11 +5,11 @@ read remove
 if [ 0$remove = 0y ]; then
     pkg_delete='pkg delete'
     $pkg_delete tabixpp smithwaterman fastahack filevercmp fsom multichoose \
-	intervaltree vcflib vcftools rainbow bamtools freebayes stacks \
-	Trimmomatic seqtk bedtools2 pear-merger ddocent || true
+	intervaltree vcflib rainbow bamtools freebayes stacks \
+	seqtk bedtools2 pear-merger ddocent || true
 fi
 
 pkg install -y samtools cd-hit openjdk cmake gnuplot parallel texinfo \
-    gawk mawk htslib help2man
+    gawk mawk htslib help2man vcftools trimmomatic
 wip-reinstall-port biology/ddocent
 
