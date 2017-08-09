@@ -11,6 +11,7 @@ COMMENT=	Bash pipeline for ddRAD sequencing
 
 LICENSE=	MIT
 
+# Notes on 2015.11.30 snapshot:
 # bedtools version: https://github.com/jpuritz/dDocent/issues/15
 # Do we really still need bedtools 2.23.0?
 # vcftools 0.1.14 does not report version the same as 0.1.11, so
