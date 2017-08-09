@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ddocent
-PORTVERSION=	2.2.19
-DISTVERSIONPREFIX=v
+PORTVERSION=	2015.11.30
 CATEGORIES=	wip biology java
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Bash pipeline for ddRAD sequencing
@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 # Notes on 2015.11.30 snapshot:
 # bedtools version: https://github.com/jpuritz/dDocent/issues/15
-# New ddocent works with 2.23.0 or >= 2.26.0
+# Do we really still need bedtools 2.23.0?
 # vcftools 0.1.14 does not report version the same as 0.1.11, so
 # dDocent script fails to recognize it.  Should be easy to patch
 # assuming 0.1.14 is usable.
@@ -32,20 +32,14 @@ RUN_DEPENDS=	mawk>=0:lang/mawk \
 		stacks>=0:wip/stacks \
 		trimmomatic>=0:biology/trimmomatic \
 		seqtk>=0:wip/seqtk \
-		bedtools>=2.26.0:wip/bedtools \
+		bedtools2==2.23.0:wip/bedtools2 \
 		pear-merger>=0:wip/pear
 
 USES=		shebangfix tar:xz
 USE_JAVA=	yes
-SHEBANG_FILES=	dDocent scripts/*.sh scripts/*.pl scripts/dDocent_filters
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	jpuritz
-GH_PROJECT=	dDocent
+SHEBANG_FILES=	dDocent scripts/*
 
 NO_BUILD=	yes
-
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${PORTVERSION}
 
 # These follow patch-dDocent, so don't apply them within the source tree,
 # or they'll get picked up by patch generators and hard-code PREFIX
@@ -60,9 +54,6 @@ do-install:
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/dDocent \
 		${FILESDIR}/ddocent-test \
-		${WRKSRC}/scripts/*.sh \
-		${WRKSRC}/scripts/*.pl \
-		${WRKSRC}/scripts/dDocent_filters \
-		${STAGEDIR}${PREFIX}/bin
+		${WRKSRC}/scripts/* ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
