@@ -18,7 +18,7 @@ LICENSE=	MIT
 # dDocent script fails to recognize it.  Should be easy to patch
 # assuming 0.1.14 is usable.
 RUN_DEPENDS=	mawk>=0:lang/mawk \
-		bwa>=0:biology/bwa \
+		bwa>=0.7.13:wip/bwa \
 		samtools01>=0:wip/samtools0119 \
 		cd-hit>=0:biology/cd-hit \
 		gnuplot>=0:math/gnuplot \

@@ -1,4 +1,4 @@
---- dDocent.orig	2017-08-09 21:24:20 UTC
+--- dDocent.orig	2017-08-09 21:47:07 UTC
 +++ dDocent
 @@ -27,15 +27,15 @@ do
  	fi
@@ -20,3 +20,12 @@
  	else
      echo "The file listing adapters (included with trimmomatic) is not installed or is not in your" '$PATH'"."
      NUMDEP=$((NUMDEP + 1))
+@@ -89,7 +89,7 @@ VCFTV=$(vcftools | grep VCF | grep -oh '
+         elif [ "$VCFTV" -ge "12" ]; then
+                 VCFGTFLAG="--max-missing"
+ 	fi
+-BWAV=$(bwa 2>&1 | mawk '/Versi/' | sed 's/Version: //g' | sed 's/0.7.//g' | sed 's/-.*//g')
++BWAV=$(bwa 2>&1 | mawk '/Versi/' | sed 's/Version: //g' | sed 's/0.7.//g' | sed 's/a*-.*//g')
+ 	if [ "$BWAV" -lt "13" ]; then
+         	echo "The version of bwa installed in your" '$PATH' "is not optimized for dDocent."
+         	echo "Please install at least version 0.7.13"
