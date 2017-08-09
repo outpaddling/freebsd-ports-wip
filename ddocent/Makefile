@@ -17,6 +17,7 @@ LICENSE=	MIT
 # vcftools 0.1.14 does not report version the same as 0.1.11, so
 # dDocent script fails to recognize it.  Should be easy to patch
 # assuming 0.1.14 is usable.
+# 0.1.15 reports version properly.
 RUN_DEPENDS=	mawk>=0:lang/mawk \
 		bwa>=0.7.13:wip/bwa \
 		samtools01>=0:wip/samtools0119 \
