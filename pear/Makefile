@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Memory-efficient and highly accurate pair-end read merger
 
-# LICENSE=	Creative commons
+# Not sure about the specific flavor of Creative Commons
+LICENSE=	CC0-1.0
 
 GNU_CONFIGURE=	yes
 
