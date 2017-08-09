@@ -15,22 +15,23 @@ LICENSE=	MIT
 # vcftools 0.1.14 does not report version the same as 0.1.11, so
 # dDocent script fails to recognize it.  Should be easy to patch
 # assuming 0.1.14 is usable.
+# Do we really need bedtools 2.23.0?
 RUN_DEPENDS=	mawk>=0:lang/mawk \
-		bwa>=0:wip/bwa \
+		bwa>=0:biology/bwa \
 		samtools01>=0:wip/samtools0119 \
 		cd-hit>=0:biology/cd-hit \
 		gnuplot>=0:math/gnuplot \
 		parallel>=0:sysutils/parallel \
 		gawk>=0:lang/gawk \
-		vcftools==0.1.11:wip/vcftools0111 \
+		vcftools>=0.1.11:biology/vcftools \
 		vcflib>=0:wip/vcflib \
 		rainbow>=0:wip/rainbow \
 		bamtools>=0:wip/bamtools \
 		freebayes:wip/freebayes \
 		stacks>=0:wip/stacks \
-		trimmomatic>=0:wip/trimmomatic \
+		trimmomatic>=0:biology/trimmomatic \
 		seqtk>=0:wip/seqtk \
-		bedtools2==2.23.0:wip/bedtools2 \
+		bedtools2>=2.23.0:biology/bedtools2 \
 		pear-merger>=0:wip/pear
 
 USES=		shebangfix tar:xz
