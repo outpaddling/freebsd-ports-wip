@@ -11,5 +11,5 @@ fi
 
 pkg install -y samtools cd-hit openjdk cmake gnuplot parallel texinfo \
     gawk mawk htslib help2man vcftools trimmomatic
-wip-reinstall-port biology/ddocent
+wip-reinstall-port ddocent
 
