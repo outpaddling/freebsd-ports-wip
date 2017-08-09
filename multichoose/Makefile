@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	multichoose
-PORTVERSION=	a35c94abd1b312fdcc10455f90b6e527c271bb35
+PORTVERSION=	2015.11.22
 CATEGORIES=	wip math
 
 MAINTAINER=	bacon4000@gmail.com
@@ -10,12 +10,14 @@ COMMENT=	Generate multiset combinations (n multichoose k)
 
 LICENSE=	MIT
 
-USES=		shebangfix
+USES=		python shebangfix
 SHEBANG_FILES=	*.py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	${PORTVERSION}
+GH_TAGNAME=	a35c94abd1b312fdcc10455f90b6e527c271bb35
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
 
 INSTALL_TARGET=	install-strip
 
