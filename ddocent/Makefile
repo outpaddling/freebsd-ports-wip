@@ -12,10 +12,10 @@ COMMENT=	Bash pipeline for ddRAD sequencing
 LICENSE=	MIT
 
 # bedtools version: https://github.com/jpuritz/dDocent/issues/15
+# Do we really still need bedtools 2.23.0?
 # vcftools 0.1.14 does not report version the same as 0.1.11, so
 # dDocent script fails to recognize it.  Should be easy to patch
 # assuming 0.1.14 is usable.
-# Do we really need bedtools 2.23.0?
 RUN_DEPENDS=	mawk>=0:lang/mawk \
 		bwa>=0:biology/bwa \
 		samtools01>=0:wip/samtools0119 \
@@ -31,7 +31,7 @@ RUN_DEPENDS=	mawk>=0:lang/mawk \
 		stacks>=0:wip/stacks \
 		trimmomatic>=0:biology/trimmomatic \
 		seqtk>=0:wip/seqtk \
-		bedtools2>=2.23.0:biology/bedtools2 \
+		bedtools2==2.23.0:wip/bedtools2 \
 		pear-merger>=0:wip/pear
 
 USES=		shebangfix tar:xz
