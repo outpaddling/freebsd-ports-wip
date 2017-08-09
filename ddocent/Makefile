@@ -24,7 +24,7 @@ RUN_DEPENDS=	mawk>=0:lang/mawk \
 		gnuplot>=0:math/gnuplot \
 		parallel>=0:sysutils/parallel \
 		gawk>=0:lang/gawk \
-		vcftools>=0.1.11:biology/vcftools \
+		vcftools>=0.1.15:wip/vcftools \
 		vcflib>=0:wip/vcflib \
 		rainbow>=0:wip/rainbow \
 		bamtools>=0:wip/bamtools \
