@@ -1,0 +1,10 @@
+--- Makefile.orig	2015-11-21 16:35:06 UTC
++++ Makefile
+@@ -7,6 +7,7 @@
+ # this is aimed at making it easy to create packages (Debian packages,
+ # FreeBSD ports, MacPorts, pkgsrc, etc.)
+ 
++CC ?=		gcc
+ CXX ?=		g++
+ CXXFLAGS ?=	-w -O3 -pipe -fomit-frame-pointer -ffast-math
+ AR ?=		ar
