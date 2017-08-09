@@ -43,4 +43,4 @@ samtools0119/include/bam/sam.h
 samtools0119/include/bam/sam_header.h
 samtools0119/include/bam/sample.h
 samtools0119/lib/libbam.a
-samtools0119/man/man1/samtools.1
+samtools0119/man/man1/samtools.1.gz

@@ -24,7 +24,7 @@ SAMPREFIX=	${PREFIX}/samtools0119
 
 # Shebangfix doesn't recognize /software/bin/python
 post-patch:
-	${REINPLACE_CMD} -e "s|/software/bin/python|${LOCALBASE}/bin/python|g" \
+	${REINPLACE_CMD} -e "s|/software/bin/python|${PYTHON_CMD}|g" \
 		${WRKSRC}/misc/*.py
 .if ${OSVERSION} < 1000000
 	${REINPLACE_CMD} -e 's|expl|exp|g' -e 's|logl|log|g' \
@@ -48,7 +48,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/misc/*.py ${STAGEDIR}${SAMPREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/misc/*.lua ${STAGEDIR}${SAMPREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/libbam.a ${STAGEDIR}${SAMPREFIX}/lib
-	${INSTALL_MAN} ${WRKSRC}/samtools.1 ${STAGEDIR}${SAMPREFIX}/man/man1
+	${GZIP_CMD} ${WRKSRC}/samtools.1
+	${INSTALL_MAN} ${WRKSRC}/samtools.1.gz ${STAGEDIR}${SAMPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${SAMPREFIX}/include/bam
 
 .include <bsd.port.post.mk>
