@@ -3,7 +3,7 @@
 # Test new versions with Trinity before upgrading
 
 PORTNAME=	trimmomatic
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	wip biology java
 MASTER_SITES=	http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/
 DISTNAME=	Trimmomatic-${PORTVERSION}
