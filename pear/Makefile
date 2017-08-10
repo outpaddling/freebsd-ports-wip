@@ -3,6 +3,7 @@
 
 PORTNAME=	pear
 PORTVERSION=	0.9.6
+# When the website is back up PORTVERSION=	0.9.8
 CATEGORIES=	wip biology
 MASTER_SITES=	http://sco.h-its.org/exelixis/web/software/pear/files/
 PKGNAMESUFFIX=	-merger
