@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	filevercmp
-PORTVERSION=	261142f1529f6b7464f6ad96d0c77872ff919849
+PORTVERSION=	2015.11.21
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	bacon4000@gmail.com
@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	${PORTVERSION}
+GH_TAGNAME=	74d1ced2c6b3a932fe8a9a16b637b1bfdea7c3b3
 
 PLIST_FILES=	bin/filevercmp include/filevercmp.h lib/libfilevercmp.a
 
