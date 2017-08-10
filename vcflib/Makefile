@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vcflib
-PORTVERSION=	6451cf639cc7d735137218c4b08f597ba9dd6e73
+PORTVERSION=	2016.01.05
 CATEGORIES=	wip biology
 
 MAINTAINER=	bacon4000@gmail.com
@@ -11,8 +11,8 @@ COMMENT=	C++ library and CLI tools for parsing and manipulating VCF files
 LICENSE=	MIT
 
 LIB_DEPENDS=	libhts.so:biology/htslib \
-		libtabix.so.1:wip/tabixpp \
-		libsw.so.1:wip/smithwaterman
+		libtabix.so:wip/tabixpp \
+		libsw.so:wip/smithwaterman
 BUILD_DEPENDS=	fastahack>=0:wip/fastahack \
 		filevercmp>=0:wip/filevercmp \
 		fsom>=0:wip/fsom \
@@ -24,7 +24,7 @@ USES=		gmake shebangfix
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	${PORTVERSION}
+GH_TAGNAME=	790904320065e603c6af5b8a32f635134354467c
 
 CXXFLAGS+=	-I${LOCALBASE}/include/smithwaterman \
 		-I${LOCALBASE}/include/multichoose \
