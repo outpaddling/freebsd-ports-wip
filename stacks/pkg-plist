@@ -1,4 +1,5 @@
 bin/clone_filter
+bin/count_fixed_catalog_snps.py
 bin/cstacks
 bin/denovo_map.pl
 bin/estacks
@@ -7,6 +8,7 @@ bin/export_sql.pl
 bin/genotypes
 bin/hstacks
 bin/index_radtags.pl
+bin/integrate_alignments.py
 bin/kmer_filter
 bin/load_radtags.pl
 bin/load_sequences.pl
@@ -58,6 +60,7 @@ bin/ustacks
 %%DATADIR%%/php/stacks.js
 %%DATADIR%%/php/stacks_functions.php
 %%DATADIR%%/php/sumstat_view.php
+%%DATADIR%%/php/tag.php
 %%DATADIR%%/php/tags.php
 %%DATADIR%%/php/version.php
 %%DATADIR%%/php/view_sequence.php
