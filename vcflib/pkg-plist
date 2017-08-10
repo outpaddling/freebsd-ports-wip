@@ -70,4 +70,5 @@ include/vcflib/split.h
 include/vcflib/ssw.h
 include/vcflib/ssw_cpp.h
 lib/libvcflib.a
+lib/libvcflib.so
 lib/libvcflib.so.1

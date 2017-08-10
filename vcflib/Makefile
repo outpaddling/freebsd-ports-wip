@@ -47,4 +47,8 @@ CFLAGS+=	-msse2
 MAKEFILE=		Makefile.external-libs
 INSTALL_TARGET=		install-strip
 
+post-install:
+	${CP} ${STAGEDIR}${PREFIX}/lib/libvcflib.so.1 \
+		${STAGEDIR}${PREFIX}/lib/libvcflib.so
+
 .include <bsd.port.post.mk>
