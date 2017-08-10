@@ -18,6 +18,7 @@ LICENSE=	MIT
 # dDocent script fails to recognize it.  Should be easy to patch
 # assuming 0.1.14 is usable.
 # 0.1.15 reports version properly.
+# Do we really need trimadap?  It used to be part of seqtk.
 RUN_DEPENDS=	mawk>=0:lang/mawk \
 		bwa>=0.7.13:wip/bwa \
 		samtools>=1.3:biology/samtools \
@@ -33,6 +34,7 @@ RUN_DEPENDS=	mawk>=0:lang/mawk \
 		stacks>=0:wip/stacks \
 		trimmomatic>=0:biology/trimmomatic \
 		seqtk>=0:wip/seqtk \
+		trimadap>=0:wip/trimadap \
 		bedtools>=2.26.0:wip/bedtools \
 		pear-merger>=0:wip/pear
 
