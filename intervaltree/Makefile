@@ -12,6 +12,7 @@ LICENSE=	MIT
 
 PLIST_FILES=	bin/interval_tree_test include/${PORTNAME}/IntervalTree.h
 
+# EKG Accepted pull request
 USE_GITHUB=	yes
 GH_ACCOUNT=	ekg
 GH_TAGNAME=	c38e6838883ddf00d0d3b947c8274807b3869215
