@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seqtk
-PORTVERSION=	4feb6e81444ab6bc44139dd3a125068f81ae4ad8
+PORTVERSION=	2017.02.11
 CATEGORIES=	wip biology
 
 MAINTAINER=	dsiercks@uwm.edu
@@ -10,30 +10,17 @@ COMMENT=	Tool for processing sequences in FASTA/FASTQ format
 
 LICENSE=	GPLv2
 
-# WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
+USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	lh3
-GH_TAGNAME=	${PORTVERSION}
+GH_TAGNAME=	32e7903e8fd36cf8975a05295156cc69ca57c82b
 
-USES=		gmake
+WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
 
-.include <bsd.port.pre.mk>
-
-# Hack for X120e
-CFLAGS+=	-I/usr/include/clang/3.3
-
-# Hack for emmintrin.h error?
-.if ${ARCH} == i386
-CFLAGS+=	-msse2
-.endif
-
-PLIST_FILES=	bin/seqtk bin/trimadap
+PLIST_FILES=	bin/seqtk
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/seqtk \
 		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/trimadap \
-		${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
