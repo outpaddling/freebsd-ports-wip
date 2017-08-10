@@ -19,7 +19,9 @@ LICENSE=	MIT
 # assuming 0.1.14 is usable.
 # 0.1.15 reports version properly.
 # Do we really need trimadap?  It used to be part of seqtk.
-RUN_DEPENDS=	mawk>=0:lang/mawk \
+# ddocent test data do not unpack with FreeBSD 10.3 /usr/bin/unzip
+RUN_DEPENDS=	unzip>=0:archivers/unzip \
+		mawk>=0:lang/mawk \
 		bwa>=0.7.13:wip/bwa \
 		samtools>=1.3:biology/samtools \
 		cd-hit>=0:biology/cd-hit \
