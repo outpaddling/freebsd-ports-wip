@@ -1,0 +1,66 @@
+--- Makefile.std.orig	2017-03-20 12:20:30.000000000 -0500
++++ Makefile.std	2017-08-14 13:45:09.470472855 -0500
+@@ -24,19 +24,22 @@ else
+   endif
+ endif
+ 
+-CFLAGS=-Wall -O2
+-BLASFLAGS=-L/usr/lib64/atlas -llapack -lcblas -latlas
+-LINKFLAGS=-lm -lpthread -ldl
+-ZLIB=../zlib-1.2.11/libz.so.1.2.11
++CC ?=		gcc
++CXX ?=		g++
++CXXFLAGS ?=	-Wall -O2
++CFLAGS ?=	-Wall -O2
++BLASFLAGS ?=	-L/usr/lib64/atlas -llapack -lcblas -latlas
++LINKFLAGS ?=	-lm -lpthread -ldl
++ZLIB ?=		../zlib-1.2.11/libz.so.1.2.11
+ 
+ ifeq ($(SYS), MAC)
+-  GCC_GTEQ_43 := $(shell expr `g++ -dumpversion | sed -e 's/\.\([0-9][0-9]\)/\1/g' -e 's/\.\([0-9]\)/0\1/g' -e 's/^[0-9]\{3,4\}$$/&00/'` \>= 40300)
++  GCC_GTEQ_43 := $(shell expr `$(CXX) -dumpversion | sed -e 's/\.\([0-9][0-9]\)/\1/g' -e 's/\.\([0-9]\)/0\1/g' -e 's/^[0-9]\{3,4\}$$/&00/'` \>= 40300)
+   ifeq "$(GCC_GTEQ_43)" "1"
+-    CFLAGS=-Wall -O2 -flax-vector-conversions
++    CXXFLAGS ?= -Wall -O2 -flax-vector-conversions
+   endif
+-  BLASFLAGS=-framework Accelerate
+-  LINKFLAGS=-ldl
+-  ZLIB=../zlib-1.2.11/libz.1.2.11.dylib
++  BLASFLAGS ?= -framework Accelerate
++  LINKFLAGS ?= -ldl
++  ZLIB ?= ../zlib-1.2.11/libz.1.2.11.dylib
+ endif
+ 
+ ifeq ($(SYS), WIN)
+@@ -45,9 +48,9 @@ ifeq ($(SYS), WIN)
+ # on Windows.
+ # If you don't already have LAPACK built, you'll probably want to turn on
+ # NO_LAPACK.
+-  BLASFLAGS=-L. lapack/liblapack.a -L. lapack/librefblas.a
+-  LINKFLAGS=-lm -static-libgcc
+-  ZLIB=../zlib-1.2.11/libz.a
++  BLASFLAGS ?= -L. lapack/liblapack.a -L. lapack/librefblas.a
++  LINKFLAGS ?= -lm -static-libgcc
++  ZLIB ?= ../zlib-1.2.11/libz.a
+ endif
+ 
+ ifdef NO_LAPACK
+@@ -60,7 +63,7 @@ OBJS = plink.o plink_assoc.o plink_calc.
+ # renaming that binary to "plink107", and this one to "plink1".
+ 
+ plink: $(OBJS)
+-	g++ $^ $(LINKFLAGS_EXTRA) $(BLASFLAGS) $(LINKFLAGS) -L. $(ZLIB) -o $@
++	$(CXX) $(OBJS) $(LINKFLAGS_EXTRA) $(BLASFLAGS) $(LINKFLAGS) -L. $(ZLIB) -o $@
+ 
+ plinkw: $(OBJS)
+ 	gfortran -O2 $^ $(LINKFLAGS_EXTRA) -Wl,-Bstatic $(BLASFLAGS) $(LINKFLAGS) -L. $(ZLIB) -o $@
+@@ -73,7 +76,7 @@ clean:
+ # GNU make's built-in rules, except we explicitly use "g++" instead of $(CC).
+ 
+ %.o: %.c
+-	g++ -c $(CFLAGS) $< -o $@
++	$(CC) -c $(CFLAGS) $< -o $@
+ 
+ %.o: %.cc
+-	g++ -x c++ -c $(CFLAGS) $< -o $@
++	$(CXX) -x c++ -c $(CXXFLAGS) $< -o $@

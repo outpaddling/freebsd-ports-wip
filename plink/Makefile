@@ -11,16 +11,25 @@ COMMENT=	Whole genome association analysis toolset
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	liblapack.so:math/lapack
+LIB_DEPENDS=	liblapack.so:math/lapack \
+		libcblas.so:math/cblas
 
 # We need Fortran LDFLAGS to link with Lapack.
-USES=		fortran gmake
+USES=		gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chrchang
 GH_PROJECT=	plink-ng
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-ng-${PORTVERSION}/1.9
+
+CFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include
+CXXFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include
+
+MAKEFILE=	Makefile.std
+ALL_TARGET=	plink
+
+MAKE_FLAGS+=	ZLIB=-lz
 
 #PLIST_FILES=	bin/plink
 
