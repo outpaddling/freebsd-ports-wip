@@ -1,5 +1,5 @@
 --- Makefile.std.orig	2017-03-20 12:20:30.000000000 -0500
-+++ Makefile.std	2017-08-14 13:45:09.470472855 -0500
++++ Makefile.std	2017-08-14 22:34:22.151324000 -0500
 @@ -24,19 +24,22 @@ else
    endif
  endif
@@ -12,8 +12,8 @@
 +CXX ?=		g++
 +CXXFLAGS ?=	-Wall -O2
 +CFLAGS ?=	-Wall -O2
-+BLASFLAGS ?=	-L/usr/lib64/atlas -llapack -lcblas -latlas
-+LINKFLAGS ?=	-lm -lpthread -ldl
++BLASFLAGS ?=	-L${PREFIX}/lib -llapack -lcblas -lopenblas
++LDFLAGS +=	-lm -lpthread
 +ZLIB ?=		../zlib-1.2.11/libz.so.1.2.11
  
  ifeq ($(SYS), MAC)
@@ -27,7 +27,7 @@
 -  LINKFLAGS=-ldl
 -  ZLIB=../zlib-1.2.11/libz.1.2.11.dylib
 +  BLASFLAGS ?= -framework Accelerate
-+  LINKFLAGS ?= -ldl
++  LDFLAGS ?= -ldl
 +  ZLIB ?= ../zlib-1.2.11/libz.1.2.11.dylib
  endif
  
@@ -40,20 +40,24 @@
 -  LINKFLAGS=-lm -static-libgcc
 -  ZLIB=../zlib-1.2.11/libz.a
 +  BLASFLAGS ?= -L. lapack/liblapack.a -L. lapack/librefblas.a
-+  LINKFLAGS ?= -lm -static-libgcc
++  LDFLAGS ?= -lm -static-libgcc
 +  ZLIB ?= ../zlib-1.2.11/libz.a
  endif
  
  ifdef NO_LAPACK
-@@ -60,7 +63,7 @@ OBJS = plink.o plink_assoc.o plink_calc.
+@@ -60,10 +63,10 @@ OBJS = plink.o plink_assoc.o plink_calc.
  # renaming that binary to "plink107", and this one to "plink1".
  
  plink: $(OBJS)
 -	g++ $^ $(LINKFLAGS_EXTRA) $(BLASFLAGS) $(LINKFLAGS) -L. $(ZLIB) -o $@
-+	$(CXX) $(OBJS) $(LINKFLAGS_EXTRA) $(BLASFLAGS) $(LINKFLAGS) -L. $(ZLIB) -o $@
++	$(CXX) $(OBJS) $(LINKFLAGS_EXTRA) $(BLASFLAGS) $(LDFLAGS) -L. $(ZLIB) -o $@
  
  plinkw: $(OBJS)
- 	gfortran -O2 $^ $(LINKFLAGS_EXTRA) -Wl,-Bstatic $(BLASFLAGS) $(LINKFLAGS) -L. $(ZLIB) -o $@
+-	gfortran -O2 $^ $(LINKFLAGS_EXTRA) -Wl,-Bstatic $(BLASFLAGS) $(LINKFLAGS) -L. $(ZLIB) -o $@
++	gfortran -O2 $^ $(LINKFLAGS_EXTRA) -Wl,-Bstatic $(BLASFLAGS) $(LDFLAGS) -L. $(ZLIB) -o $@
+ 
+ clean:
+ 	rm -f $(OBJS) plink plinkw
 @@ -73,7 +76,7 @@ clean:
  # GNU make's built-in rules, except we explicitly use "g++" instead of $(CC).
  

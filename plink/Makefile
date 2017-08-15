@@ -15,7 +15,7 @@ LIB_DEPENDS=	liblapack.so:math/lapack \
 		libcblas.so:math/cblas
 
 # We need Fortran LDFLAGS to link with Lapack.
-USES=		gmake
+USES=		fortran gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chrchang
@@ -25,13 +25,17 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-ng-${PORTVERSION}/1.9
 
 CFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include
 CXXFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib/gcc${_GCC_VER}
 
-MAKEFILE=	Makefile.std
+#MAKEFILE=	Makefile.std
 ALL_TARGET=	plink
 
 MAKE_FLAGS+=	ZLIB=-lz
 
 #PLIST_FILES=	bin/plink
+
+post-patch:
+	${CP} ${WRKSRC}/Makefile.std ${WRKSRC}/Makefile
 
 #do-install:
 #	${MKDIR} ${STAGEDIR}${PREFIX}/bin
