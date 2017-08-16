@@ -1,5 +1,7 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
+#
+# Bugs: Conflicts with bgzip, tabix, epstopdf
 
 PORTNAME=	epacts
 PORTVERSION=	2017.08.15
