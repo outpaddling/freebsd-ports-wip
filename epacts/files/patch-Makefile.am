@@ -1,5 +1,5 @@
---- Makefile.am.orig	2017-02-22 02:30:03.000000000 -0600
-+++ Makefile.am	2017-08-15 21:34:35.309217974 -0500
+--- Makefile.am.orig	2017-02-22 08:30:03 UTC
++++ Makefile.am
 @@ -7,6 +7,6 @@ AUTOMAKE_OPTIONS = foreign
  SUBDIRS = src data scripts
  

@@ -12,11 +12,13 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	Rscript:math/R \
-		gnuplot:graphics/gnuplot
+		gnuplot:math/gnuplot
+RUN_DEPENDS=	Rscript:math/R \
+		gnuplot:math/gnuplot
 
 GNU_CONFIGURE=	yes
 
-USES=		autoreconf shebangfix
+USES=		autoreconf libtool shebangfix
 SHEBANG_FILES=	scripts/epacts* scripts/*.sh
 
 USE_GITHUB=	yes
