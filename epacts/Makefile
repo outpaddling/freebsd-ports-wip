@@ -11,11 +11,19 @@ COMMENT=	Efficient and Parallelizable Association Container Toolbox
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	Rscript:math/R \
+		gnuplot:graphics/gnuplot
+
 GNU_CONFIGURE=	yes
+
+USES=		autoreconf shebangfix
+SHEBANG_FILES=	scripts/epacts* scripts/*.sh
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	statgen
 GH_PROJECT=	EPACTS
 GH_TAGNAME=	a5209db1b3929c4dd2f15f27ea085edf3a634ee7
+
+WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}
 
 .include <bsd.port.mk>
