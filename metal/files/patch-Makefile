@@ -1,7 +1,12 @@
---- Makefile.orig	2016-12-15 17:36:16.535897000 -0600
-+++ Makefile	2016-12-15 17:37:56.243804000 -0600
-@@ -10,7 +10,7 @@ TOOL = metal
- INSTALLDIR=/usr/local/bin
+--- Makefile.orig	2011-03-25 06:16:03.000000000 -0500
++++ Makefile	2017-08-20 17:20:35.066644000 -0500
+@@ -7,10 +7,11 @@
+ TOOL = metal
+ 
+ # default installation directory
+-INSTALLDIR=/usr/local/bin
++PREFIX ?= /usr/local
++INSTALLDIR = ${PREFIX}/bin
  
  # default C++ compiler
 -CXX=g++ 
@@ -9,7 +14,7 @@
  
  # default compilation flags are 
  #
-@@ -78,7 +78,7 @@ help : 
+@@ -78,7 +79,7 @@ help : 
  	@echo "Type...           To..."
  	@echo "make help         Display this help screen"
  	@echo "make all          Compile everything "
@@ -18,7 +23,7 @@
  	@echo "make install INSTALLDIR=directory_for_binaries"
  	@echo "                  Install binaries in directory_for_binaries"
  	@echo "make clean        Delete temporary files"
-@@ -110,20 +110,20 @@ $(PDFOBJ) : $(PDFHDR)
+@@ -110,20 +111,20 @@ $(PDFOBJ) : $(PDFHDR)
  clean :
  	-rm -f */*.a */*.o $(EXECUTABLES) 
  
