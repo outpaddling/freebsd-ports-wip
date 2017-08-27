@@ -32,4 +32,9 @@ WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}
 
 INSTALL_TARGET=	install-strip
 
+post-install:
+	${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/lib/mmSKAT/libs/mmSKAT.so \
+		${STAGEDIR}${PREFIX}/lib/epactsR/libs/epactsR.so
+
 .include <bsd.port.mk>
