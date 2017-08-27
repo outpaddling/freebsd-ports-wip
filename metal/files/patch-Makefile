@@ -1,20 +1,26 @@
---- Makefile.orig	2011-03-25 06:16:03.000000000 -0500
-+++ Makefile	2017-08-20 17:20:35.066644000 -0500
-@@ -7,10 +7,11 @@
- TOOL = metal
+--- Makefile.orig	2011-03-25 11:16:03 UTC
++++ Makefile
+@@ -4,13 +4,16 @@
+ #
+ 
+ # version information
+-TOOL = metal
++TOOL =	metal
  
  # default installation directory
 -INSTALLDIR=/usr/local/bin
-+PREFIX ?= /usr/local
-+INSTALLDIR = ${PREFIX}/bin
++PREFIX ?=	/usr/local
++INSTALLDIR =	${PREFIX}/bin
++INSTALL ?=	install
++STRIP ?=	strip
  
  # default C++ compiler
 -CXX=g++ 
-+CXX?=g++ 
++CXX ?=		g++ 
  
  # default compilation flags are 
  #
-@@ -78,7 +79,7 @@ help : 
+@@ -78,7 +81,7 @@ help : 
  	@echo "Type...           To..."
  	@echo "make help         Display this help screen"
  	@echo "make all          Compile everything "
@@ -23,7 +29,7 @@
  	@echo "make install INSTALLDIR=directory_for_binaries"
  	@echo "                  Install binaries in directory_for_binaries"
  	@echo "make clean        Delete temporary files"
-@@ -110,20 +111,20 @@ $(PDFOBJ) : $(PDFHDR)
+@@ -110,20 +113,23 @@ $(PDFOBJ) : $(PDFHDR)
  clean :
  	-rm -f */*.a */*.o $(EXECUTABLES) 
  
@@ -37,9 +43,12 @@
  	@echo make install INSTALLDIR=your_preferred_dir
  	@echo " "
 -	cp $(EXECUTABLES) $(INSTALLDIR)
-+	cp $(EXECUTABLES) $(DESTDIR)$(INSTALLDIR)
++	$(INSTALL) -c $(EXECUTABLES) $(DESTDIR)$(INSTALLDIR)
  
 -$(INSTALLDIR) :
++install-strip : install
++	$(STRIP) $(DESTDIR)$(INSTALLDIR)/$(TOOL)
++
 +$(DESTDIR)$(INSTALLDIR) :
  	@echo " "
 -	@echo Creating directory $(INSTALLDIR)

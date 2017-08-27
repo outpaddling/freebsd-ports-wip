@@ -30,4 +30,6 @@ GH_TAGNAME=	a5209db1b3929c4dd2f15f27ea085edf3a634ee7
 
 WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}
 
+INSTALL_TARGET=	install-strip
+
 .include <bsd.port.mk>

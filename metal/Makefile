@@ -10,12 +10,15 @@ DISTNAME=	generic-metal-2011-03-25
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Meta-analysis of genomewide association scans
 
-#LICENSE=	
-#LICENSE_FILE=	
+# For twister, and double check
+LICENSE=	BSD3CLAUSE
+#LICENSE_FILE=	LICENSE.twister
 
 USES=		gmake
 
 WRKSRC=		${WRKDIR}/generic-metal
+
+INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	bin/metal
 
