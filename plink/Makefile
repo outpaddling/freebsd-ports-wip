@@ -21,12 +21,10 @@ USES=		fortran gmake
 USE_GCC=	yes
 
 USE_GITHUB=	yes
-#GH_ACCOUNT=	chrchang
-GH_ACCOUNT=	outpaddling
+GH_ACCOUNT=	chrchang
 GH_PROJECT=	plink-ng
-GH_TAGNAME=	381b8f1cd1a1ab502b486405069f2295b851843a
+GH_TAGNAME=	cbcf442c176036138419b14d6b46a3d57e8325d4
 
-#WRKSRC=	${WRKDIR}/${PORTNAME}-ng-${PORTVERSION}/1.9
 WRKSRC=		${WRKDIR}/${PORTNAME}-ng-${GH_TAGNAME}/1.9
 
 CFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include
@@ -34,14 +32,14 @@ CXXFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include
 LDFLAGS+=	-lpthread
 
 # Override defaults in Makefile.generic
-MAKE_FLAGS+=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -llapack -lcblas -lopenblas"
+MAKE_ARGS+=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -llapack -lcblas -lopenblas"
 
 INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	bin/plink19
 
 post-patch:
-	${CP} ${WRKSRC}/Makefile.generic ${WRKSRC}/Makefile
+	${CP} ${WRKSRC}/Makefile.std ${WRKSRC}/Makefile
 
 # Override install target and install as plink1 to allow coexistence with
 # plink 1.07
