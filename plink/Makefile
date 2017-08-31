@@ -18,7 +18,7 @@ LIB_DEPENDS=	liblapack.so:math/lapack \
 # We need Fortran LDFLAGS to link with Lapack.
 USES=		fortran gmake
 # Need to compile C files with C++ compiler, which clang complains about
-USE_GCC=	yes
+# USE_GCC=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chrchang
