@@ -1,5 +1,7 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD: head/biology/plink/Makefile 437439 2017-04-01 15:23:30Z gerald $
+#
+# TODO: Patch source to allow compiling C files with cc instead of c++
 
 PORTNAME=	plink
 PORTVERSION=	1.90b4
@@ -17,8 +19,6 @@ LIB_DEPENDS=	liblapack.so:math/lapack \
 
 # We need Fortran LDFLAGS to link with Lapack.
 USES=		fortran gmake
-# Need to compile C files with C++ compiler, which clang complains about
-# USE_GCC=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chrchang
