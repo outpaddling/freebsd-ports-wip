@@ -1,8 +1,8 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
-# $FreeBSD: head/sysutils/desktop-installer/Makefile 422727 2016-09-24 14:30:58Z robak $
+# $FreeBSD: head/sysutils/desktop-installer/Makefile 434537 2017-02-21 14:41:16Z krion $
 
 PORTNAME=	desktop-installer
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 CATEGORIES=	wip sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
