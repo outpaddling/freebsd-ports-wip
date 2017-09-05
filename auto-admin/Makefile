@@ -2,7 +2,7 @@
 # $FreeBSD: head/sysutils/auto-admin/Makefile 434536 2017-02-21 14:38:36Z krion $
 
 PORTNAME=	auto-admin
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	wip sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
