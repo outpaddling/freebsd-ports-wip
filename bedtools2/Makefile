@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	bedtools2
-PORTVERSION=	2.23.0
+PORTVERSION=	2.26.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	wip biology
 
-MAINTAINER=	dsiercks@uwm.edu
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Swiss army knife for genome arithmetic
 
 LICENSE=	GPLv2
 
-USES+=		gmake python:build
+USES+=		gmake python:build shebangfix
+SHEBANG_FILES=	scripts/*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arq5x
