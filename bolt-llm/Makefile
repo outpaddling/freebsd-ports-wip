@@ -13,4 +13,10 @@ COMMENT=	Statistics for testing association between phenotype and genotypes
 LICENSE=	GPLv3
 #LICENSE_FILE=	
 
+USES=		gmake
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
+ALL_TARGET=	bolt
+
 .include <bsd.port.mk>
