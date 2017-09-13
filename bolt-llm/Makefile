@@ -13,7 +13,10 @@ COMMENT=	Statistics for testing association between phenotype and genotypes
 LICENSE=	GPLv3
 #LICENSE_FILE=	
 
-USES=		gmake
+LIB_DEPENDS+=	libnlopt.so:math/nlopt \
+		libopenblas.so:math/openblas
+
+USES=		compiler:openmp gmake
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 

@@ -1,26 +1,92 @@
---- Makefile.orig	2017-09-10 00:42:55 UTC
-+++ Makefile
-@@ -1,18 +1,18 @@
+--- Makefile.orig	2017-08-02 19:14:08.000000000 -0500
++++ Makefile	2017-09-12 23:24:55.059901000 -0500
+@@ -1,28 +1,28 @@
  ### modify these paths to local Boost and NLopt install directories
 -BOOST_INSTALL_DIR = /home/pl88/boost_1_58_0/install
 -NLOPT_INSTALL_DIR = /groups/price/poru/HSPH_SVN/src/BOLT-LMM/nlopt-2.4.2
-+BOOST_INSTALL_DIR ?= /home/pl88/boost_1_58_0/install
-+NLOPT_INSTALL_DIR ?= /groups/price/poru/HSPH_SVN/src/BOLT-LMM/nlopt-2.4.2
++BOOST_INSTALL_DIR ?= ${LOCALBASE}
++NLOPT_INSTALL_DIR ?= ${LOCALBASE}
  
  MKLROOT = /groups/price/poru/external_software/intel/mkl
  INTELROOT = /groups/price/poru/external_software/intel
 -ZLIB_STATIC_DIR = /opt/zlib-1.2.8/lib # probably unnecessary on most systems
 -GLIBC_STATIC_DIR = /home/pl88/glibc-static/usr/lib64
-+ZLIB_STATIC_DIR ?= /opt/zlib-1.2.8/lib # probably unnecessary on most systems
++ZLIB_STATIC_DIR ?= /usr/lib
 +GLIBC_STATIC_DIR ?= /home/pl88/glibc-static/usr/lib64
  
  ifeq ($(strip ${linking}),)
  	linking = dynamic
  endif
  
- # CC = g++
+-# CC = g++
 -CC = /groups/price/poru/external_software/intel/bin/icpc
-+CC ?= /groups/price/poru/external_software/intel/bin/icpc
++# CXX = g++
++CXX ?= /groups/price/poru/external_software/intel/bin/icpc
  
  ifeq (${debug},true)
- 	CFLAGS += -g
+-	CFLAGS += -g
++	CXXFLAGS += -g
+ else
+-	CFLAGS += -O2
++	CXXFLAGS += -O2
+ endif
+ 
+-CFLAGS += -msse -msse2
+-CFLAGS += -DUSE_SSE -DMEASURE_DGEMM -DVERBOSE
+-CFLAGS += -Wall
++CXXFLAGS += -msse -msse2
++CXXFLAGS += -DUSE_SSE -DMEASURE_DGEMM -DVERBOSE
++CXXFLAGS += -Wall
+ 
+ 
+ # add Boost include and lib paths
+@@ -51,7 +51,7 @@ ifneq ($(strip ${ZLIB_STATIC_DIR}),)
+ endif
+ 
+ # add MKL paths (if not compiling with g++, i.e., compiling with icpc)
+-ifneq (${CC},g++)
++ifneq (${CXX},${CXX})
+ 	CPATHS += -I${MKLROOT}/include
+ 	ifeq (${linking},dynamic)
+ 		LPATHS += -L${MKLROOT}/lib/intel64 -Wl,-rpath,${MKLROOT}/lib/intel64 # for libmkl*
+@@ -60,10 +60,10 @@ ifneq (${CC},g++)
+ endif
+ 
+ # add flags for static linking; build LAPACK/MKL component of link line
+-ifeq (${CC},g++)
+-	CFLAGS += -fopenmp
++ifeq (${CXX},${CXX})
++	CXXFLAGS += -fopenmp
+ 	LFLAGS += -fopenmp
+-	LLAPACK = -llapack -lgfortran
++	LLAPACK = -llapack -lopenblas -lgfortran
+ 	ifeq (${linking},static)
+ 		LFLAGS += -static
+ 		LPATHS += -L${GLIBC_STATIC_DIR} -L${ZLIB_STATIC_DIR}
+@@ -72,10 +72,10 @@ ifeq (${CC},g++)
+ 		LPATHS += -L${ZLIB_STATIC_DIR}
+ 	endif
+ else
+-	CFLAGS += -DUSE_MKL #-DUSE_MKL_MALLOC
+-	CFLAGS += -qopenmp
++	CXXFLAGS += -DUSE_MKL #-DUSE_MKL_MALLOC
++	CXXFLAGS += -qopenmp
+ 	LFLAGS += -qopenmp
+-	CFLAGS += -Wunused-variable -Wpointer-arith -Wuninitialized -Wreturn-type -Wcheck -Wshadow
++	CXXFLAGS += -Wunused-variable -Wpointer-arith -Wuninitialized -Wreturn-type -Wcheck -Wshadow
+ 	ifeq (${linking},static)
+ 		LFLAGS += -static
+ 		LPATHS += -L${GLIBC_STATIC_DIR} -L${ZLIB_STATIC_DIR}
+@@ -110,10 +110,10 @@ OMAIN = BoltMain.o $O
+ .PHONY: clean
+ 
+ %.o: %.cpp
+-	${CC} ${CFLAGS} ${CPATHS} -o $@ -c $<
++	${CXX} ${CXXFLAGS} ${CPATHS} -o $@ -c $<
+ 
+ $T: ${OMAIN}
+-	${CC} ${LFLAGS} -o $T ${OMAIN} $L
++	${CXX} ${LFLAGS} -o $T ${OMAIN} $L
+ 
+ clean:
+ 	rm -f *.o
