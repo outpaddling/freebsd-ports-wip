@@ -1,5 +1,5 @@
 --- Makefile.orig	2017-08-02 19:14:08.000000000 -0500
-+++ Makefile	2017-09-12 23:24:55.059901000 -0500
++++ Makefile	2017-09-13 01:30:38.658392000 -0500
 @@ -1,28 +1,28 @@
  ### modify these paths to local Boost and NLopt install directories
 -BOOST_INSTALL_DIR = /home/pl88/boost_1_58_0/install
@@ -49,34 +49,47 @@
  	CPATHS += -I${MKLROOT}/include
  	ifeq (${linking},dynamic)
  		LPATHS += -L${MKLROOT}/lib/intel64 -Wl,-rpath,${MKLROOT}/lib/intel64 # for libmkl*
-@@ -60,10 +60,10 @@ ifneq (${CC},g++)
+@@ -60,28 +60,28 @@ ifneq (${CC},g++)
  endif
  
  # add flags for static linking; build LAPACK/MKL component of link line
 -ifeq (${CC},g++)
 -	CFLAGS += -fopenmp
+-	LFLAGS += -fopenmp
+-	LLAPACK = -llapack -lgfortran
 +ifeq (${CXX},${CXX})
 +	CXXFLAGS += -fopenmp
- 	LFLAGS += -fopenmp
--	LLAPACK = -llapack -lgfortran
++	LDFLAGS += -fopenmp
 +	LLAPACK = -llapack -lopenblas -lgfortran
  	ifeq (${linking},static)
- 		LFLAGS += -static
+-		LFLAGS += -static
++		LDFLAGS += -static
  		LPATHS += -L${GLIBC_STATIC_DIR} -L${ZLIB_STATIC_DIR}
-@@ -72,10 +72,10 @@ ifeq (${CC},g++)
+ 	else ifeq (${linking},static-except-glibc)
+-		LFLAGS += -static-libgcc -static-libstdc++
++		LDFLAGS += -static-libgcc -static-libstdc++
  		LPATHS += -L${ZLIB_STATIC_DIR}
  	endif
  else
 -	CFLAGS += -DUSE_MKL #-DUSE_MKL_MALLOC
 -	CFLAGS += -qopenmp
+-	LFLAGS += -qopenmp
+-	CFLAGS += -Wunused-variable -Wpointer-arith -Wuninitialized -Wreturn-type -Wcheck -Wshadow
 +	CXXFLAGS += -DUSE_MKL #-DUSE_MKL_MALLOC
 +	CXXFLAGS += -qopenmp
- 	LFLAGS += -qopenmp
--	CFLAGS += -Wunused-variable -Wpointer-arith -Wuninitialized -Wreturn-type -Wcheck -Wshadow
++	LDFLAGS += -qopenmp
 +	CXXFLAGS += -Wunused-variable -Wpointer-arith -Wuninitialized -Wreturn-type -Wcheck -Wshadow
  	ifeq (${linking},static)
- 		LFLAGS += -static
+-		LFLAGS += -static
++		LDFLAGS += -static
  		LPATHS += -L${GLIBC_STATIC_DIR} -L${ZLIB_STATIC_DIR}
+ 		LLAPACK = -Wl,--start-group ${MKLROOT}/lib/intel64/libmkl_intel_lp64.a ${MKLROOT}/lib/intel64/libmkl_core.a ${MKLROOT}/lib/intel64/libmkl_intel_thread.a -Wl,--end-group
+ 	else ifeq (${linking},static-except-glibc)
+-		LFLAGS += -static-intel -static-libstdc++ -static-libgcc
++		LDFLAGS += -static-intel -static-libstdc++ -static-libgcc
+ 		LPATHS += -L${ZLIB_STATIC_DIR}
+ 		LLAPACK = -Wl,--start-group ${MKLROOT}/lib/intel64/libmkl_intel_lp64.a ${MKLROOT}/lib/intel64/libmkl_core.a ${MKLROOT}/lib/intel64/libmkl_intel_thread.a -Wl,--end-group
+ 	else
 @@ -110,10 +110,10 @@ OMAIN = BoltMain.o $O
  .PHONY: clean
  
@@ -86,7 +99,7 @@
  
  $T: ${OMAIN}
 -	${CC} ${LFLAGS} -o $T ${OMAIN} $L
-+	${CXX} ${LFLAGS} -o $T ${OMAIN} $L
++	${CXX} ${LDFLAGS} -o $T ${OMAIN} $L
  
  clean:
  	rm -f *.o

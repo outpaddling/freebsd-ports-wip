@@ -14,7 +14,8 @@ LICENSE=	GPLv3
 #LICENSE_FILE=	
 
 LIB_DEPENDS+=	libnlopt.so:math/nlopt \
-		libopenblas.so:math/openblas
+		libopenblas.so:math/openblas \
+		libboost_program_options.so:devel/boost-libs
 
 USES=		compiler:openmp gmake
 
