@@ -11,7 +11,7 @@ MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Statistics for testing association between phenotype and genotypes
 
 LICENSE=	GPLv3
-#LICENSE_FILE=	
+#LICENSE_FILE=
 
 LIB_DEPENDS+=	libnlopt.so:math/nlopt \
 		libopenblas.so:math/openblas \
