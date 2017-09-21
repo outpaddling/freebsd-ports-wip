@@ -1,11 +1,11 @@
---- Makefile.orig	2017-08-03 00:14:08 UTC
-+++ Makefile
-@@ -1,28 +1,28 @@
+--- Makefile.orig	2017-08-02 19:14:08.000000000 -0500
++++ Makefile	2017-09-14 05:12:28.874441000 -0500
+@@ -1,29 +1,29 @@
  ### modify these paths to local Boost and NLopt install directories
 -BOOST_INSTALL_DIR = /home/pl88/boost_1_58_0/install
 -NLOPT_INSTALL_DIR = /groups/price/poru/HSPH_SVN/src/BOLT-LMM/nlopt-2.4.2
 +BOOST_INSTALL_DIR ?= ${LOCALBASE}
-+# NLOPT_INSTALL_DIR ?= ${LOCALBASE}
++# Redundant on FreeBSD NLOPT_INSTALL_DIR ?= ${LOCALBASE}
  
  MKLROOT = /groups/price/poru/external_software/intel/mkl
  INTELROOT = /groups/price/poru/external_software/intel
@@ -34,12 +34,26 @@
 -CFLAGS += -msse -msse2
 -CFLAGS += -DUSE_SSE -DMEASURE_DGEMM -DVERBOSE
 -CFLAGS += -Wall
+-
 +CXXFLAGS += -msse -msse2
 +CXXFLAGS += -DUSE_SSE -DMEASURE_DGEMM -DVERBOSE
 +CXXFLAGS += -Wall
- 
++CXXFLAGS += -fPIC
  
  # add Boost include and lib paths
+ ifneq ($(strip ${BOOST_INSTALL_DIR}),)
+@@ -37,9 +37,9 @@ endif
+ # add NLopt include and lib paths
+ ifneq ($(strip ${NLOPT_INSTALL_DIR}),)
+ 	CPATHS += -I${NLOPT_INSTALL_DIR}/api
+-	LPATHS += -L${NLOPT_INSTALL_DIR}/.libs
++	LPATHS += -L${NLOPT_INSTALL_DIR}/libs
+ 	ifeq (${linking},dynamic)
+-		LPATHS += -Wl,-rpath,${NLOPT_INSTALL_DIR}/.libs
++		LPATHS += -Wl,-rpath,${NLOPT_INSTALL_DIR}/libs
+ 	endif
+ endif
+ 
 @@ -51,7 +51,7 @@ ifneq ($(strip ${ZLIB_STATIC_DIR}),)
  endif
  
@@ -90,7 +104,17 @@
  		LPATHS += -L${ZLIB_STATIC_DIR}
  		LLAPACK = -Wl,--start-group ${MKLROOT}/lib/intel64/libmkl_intel_lp64.a ${MKLROOT}/lib/intel64/libmkl_core.a ${MKLROOT}/lib/intel64/libmkl_intel_thread.a -Wl,--end-group
  	else
-@@ -110,10 +110,10 @@ OMAIN = BoltMain.o $O
+@@ -94,7 +94,8 @@ else
+ endif
+ 
+ # build link line (minus flags)
+-LLIBS = -lboost_program_options -lboost_iostreams -lz -lnlopt
++LLIBS = -lnlopt -lboost_program_options -lboost_iostreams -lz
++# LLIBS = /usr/local/lib/libboost_program_options.a -lnlopt -lboost_iostreams -lz
+ ifeq (${linking},static-except-glibc)
+ 	L = ${LPATHS} -Wl,-Bstatic ${LLIBS} ${LLAPACK} -Wl,-Bdynamic -lpthread -lm
+ else
+@@ -110,10 +111,10 @@ OMAIN = BoltMain.o $O
  .PHONY: clean
  
  %.o: %.cpp
