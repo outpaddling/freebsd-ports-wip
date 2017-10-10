@@ -12,7 +12,8 @@ COMMENT=	Quantify abundances of transcripts from RNA-Seq data
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libhdf5.so:science/hdf5
+LIB_DEPENDS=	libhdf5.so:science/hdf5 \
+		libsz.so:science/szip
 
 USES=		cmake
 
