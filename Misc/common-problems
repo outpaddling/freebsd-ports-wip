@@ -3,6 +3,7 @@
 # E.g. gcc: stoul is not a member of std
 # Also works for other "not a member of std" errors
 # http://stackoverflow.com/questions/26832199/getting-gcc-in-c11-mode-to-work-on-freebsd
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=193528
 # CXXFLAGS+=    -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
