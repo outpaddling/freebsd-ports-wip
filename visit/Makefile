@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	visit
-PORTVERSION=	2.1.2
+PORTVERSION=	2.12.3
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	wip graphics science math
-MASTER_SITES=	https://wci.llnl.gov/codes/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	http://portal.nersc.gov/project/visit/releases/${PORTVERSION}/
 #MASTER_SITE_SUBDIR=
 #PKGNAMEPREFIX=
 #PKGNAMESUFFIX=
@@ -23,9 +23,14 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	interactive parallel visualization and graphical analysis tool
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyVTK>0:math/py-pyvtk
+# FIXME: Be less specific if possible to avoid breakage on vtk upgrade
+LIB_DEPENDS+=	libvtkFiltersTexture-6.2.so:math/vtk6
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-HAS_CONFIGURE=	yes
+#HAS_CONFIGURE=	yes
+USES=		cmake python:3
 
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>
