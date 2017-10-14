@@ -7,18 +7,9 @@
 
 PORTNAME=	visit
 PORTVERSION=	2.12.3
-#PORTREVISION=	0
-#PORTEPOCH=	0
 CATEGORIES=	wip graphics science math
 MASTER_SITES=	http://portal.nersc.gov/project/visit/releases/${PORTVERSION}/
-#MASTER_SITE_SUBDIR=
-#PKGNAMEPREFIX=
-#PKGNAMESUFFIX=
 DISTNAME=	${PORTNAME}${PORTVERSION}
-#EXTRACT_SUFX=
-#DISTFILES=
-#DIST_SUBDIR=	${PORTNAME}
-#EXTRACT_ONLY=
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	interactive parallel visualization and graphical analysis tool
@@ -29,8 +20,14 @@ LIB_DEPENDS+=	libvtkFiltersTexture-6.2.so:math/vtk6
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-#HAS_CONFIGURE=	yes
-USES=		cmake python:3
+USES=		cmake python
+USE_QT4=	corelib
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+# FIXME: Replace python2.7 with var
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's|site-packages/vtk|site-packages/pyvtk|g' \
+		-e 's|python\*|python2.7|g' \
+		work/visit2.12.3/src/CMake/FindVisItVTK.cmake
+
+.include <bsd.port.mk>
