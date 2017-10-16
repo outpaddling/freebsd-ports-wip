@@ -5,15 +5,18 @@ bin/canu
 bin/canu.defaults
 bin/correctOverlaps
 bin/createFalconSenseInputs
+bin/dumpBlob
 bin/erateEstimate
 bin/errorEstimate
 bin/estimate-mer-threshold
 bin/existDB
 bin/falcon_sense
+bin/falconsense
 bin/fastqAnalyze
 bin/fastqSample
 bin/fastqSimulate
 bin/fastqSimulate-sort
+bin/filterCorrectionLayouts
 bin/filterCorrectionOverlaps
 bin/findErrors
 bin/findErrors-Dump
@@ -23,6 +26,8 @@ bin/gatekeeperDumpMetaData
 bin/gatekeeperPartition
 bin/generateCorrectionLayouts
 bin/leaff
+bin/loadCorrectedReads
+bin/loadTrimmedReads
 bin/maskMers
 bin/merTrim
 bin/meryl
@@ -43,6 +48,7 @@ bin/positionDB
 bin/prefixEditDistance-matchLimitGenerate
 bin/readConsensus
 bin/simple
+bin/simple-dump
 bin/splitReads
 bin/tgStoreCompress
 bin/tgStoreCoverageStat
@@ -79,4 +85,4 @@ lib/libleaff.a
 %%SITE_PERL%%/canu/OverlapStore.pm
 %%SITE_PERL%%/canu/Report.pm
 %%SITE_PERL%%/canu/Unitig.pm
-%%JAVAJARDIR%%/mhap-2.1.2.jar
+%%JAVAJARDIR%%/mhap-2.1.3.jar

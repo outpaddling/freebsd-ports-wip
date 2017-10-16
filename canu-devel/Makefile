@@ -41,6 +41,12 @@ post-patch:
 	${REINPLACE_CMD} -e 's|RealBin/lib|RealBin/../${SITE_PERL_REL}/canu|g' \
 		${WRKSRC}/pipelines/canu.pl
 
+# Upstream does not want to use lib/perl5/site_perl
+post-build:
+	${MKDIR} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/lib/perl5
+	${MV} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/lib/site_perl \
+		${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/lib/perl5
+
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}
 	cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && ${COPYTREE_BIN} bin \
