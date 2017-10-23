@@ -9,8 +9,8 @@
 PORTNAME=	qiime
 PORTVERSION=	1.9.1
 CATEGORIES=	wip biology
-#MASTER_SITES=	http://github.com/biocore/qiime/archive/ \
-#		http://www.drive5.com/uclust/
+MASTER_SITES=	http://github.com/biocore/qiime/archive/ \
+		http://www.drive5.com/uclust/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTVERSION}
 DISTFILES=	${PORTVERSION}${EXTRACT_SUFX} \
@@ -156,8 +156,9 @@ SHEBANG_FILES=	setup.py qiime/*.py qiime/*/*.py scripts/*.py \
 		tests/*.py tests/*/*.py
 USE_PYTHON=	distutils
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	biocore
+# Does not work for uclust
+#USE_GITHUB=	yes
+#GH_ACCOUNT=	biocore
 
 SUB_FILES=	pkg-message qiime-env.csh qiime-env.sh qiime-test 
 SUB_LIST+=	JAVAJARDIR=${JAVAJARDIR}
@@ -182,7 +183,7 @@ post-patch:
 # FIXME: INSTALL_PROGRAM complains when trying to strip a Linux binary.
 # Is there a proper way to install them?
 post-install:
-	${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/uclustq1.2.22_i86linux64 \
+	${INSTALL_PROGRAM} ${DISTDIR}/${DIST_SUBDIR}/uclustq1.2.22_i86linux64 \
 		${STAGEDIR}${PREFIX}/bin/uclust
 	cd ${WRKSRC} && ${COPYTREE_BIN} tests ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} \
