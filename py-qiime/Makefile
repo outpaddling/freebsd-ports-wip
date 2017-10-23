@@ -179,8 +179,10 @@ post-patch:
 #post-patch-VSEARCH-on:
 #	@${REINPLACE_CMD} -e 's|usearch|vsearch|g' ${WRKSRC}/
 
+# FIXME: INSTALL_PROGRAM complains when trying to strip a Linux binary.
+# Is there a proper way to install them?
 post-install:
-	${INSTALL_PROGRAM} ${DISTDIR}/${DIST_SUBDIR}/uclustq1.2.22_i86linux64 \
+	${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/uclustq1.2.22_i86linux64 \
 		${STAGEDIR}${PREFIX}/bin/uclust
 	cd ${WRKSRC} && ${COPYTREE_BIN} tests ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} \

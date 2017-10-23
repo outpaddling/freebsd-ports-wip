@@ -1,5 +1,5 @@
-TIMESTAMP = 1490739836
-SHA256 (qiime/1.9.1.tar.gz) = f0a7cd9c50ce5f5a06fd0d41005856a4c3e4828f657f526e805ef49be81f3bf8
-SIZE (qiime/1.9.1.tar.gz) = 20342151
-SHA256 (qiime/uclustq1.2.22_i86linux64) = f0a7cd9c50ce5f5a06fd0d41005856a4c3e4828f657f526e805ef49be81f3bf8
-SIZE (qiime/uclustq1.2.22_i86linux64) = 20342151
+TIMESTAMP = 1508779070
+SHA256 (qiime/1.9.1.tar.gz) = 4eb6a62bfb72f54ceffdb7cf943ba128dd393e7186ffc412f8df83ed30ee1ccf
+SIZE (qiime/1.9.1.tar.gz) = 20342447
+SHA256 (qiime/uclustq1.2.22_i86linux64) = 4eb6a62bfb72f54ceffdb7cf943ba128dd393e7186ffc412f8df83ed30ee1ccf
+SIZE (qiime/uclustq1.2.22_i86linux64) = 20342447
