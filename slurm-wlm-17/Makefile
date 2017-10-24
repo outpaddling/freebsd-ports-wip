@@ -1,8 +1,8 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
-# $FreeBSD: head/sysutils/slurm-wlm/Makefile 446105 2017-07-17 19:21:59Z jrm $
+# $FreeBSD: head/sysutils/slurm-wlm/Makefile 450626 2017-09-25 17:41:47Z jrm $
 
 PORTNAME=	slurm
-DISTVERSION=	17.02.7
+DISTVERSION=	17.02.8
 CATEGORIES=	wip sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \
@@ -42,7 +42,7 @@ CURL_DESC=	Require cURL for elasticsearch plugins
 GTK2_DESC=	Build sview GUI config tool
 HDF5_DESC=	Job profiling using HDF5
 HWLOC_DESC=	Portable hardware locality
-IPMI_DESC=	IPMI engergy consumption accounting
+IPMI_DESC=	IPMI energy consumption accounting
 RRD_DESC=	RRD external sensor data collection
 LINUX_DESC=	Support jobacct_gather/linux (requires linprocfs)
 
@@ -103,6 +103,8 @@ post-patch:
 		-e 's|SlurmdSpoolDir=.*|SlurmdSpoolDir=/var/spool/slurmd|' \
 		-e 's|StateSaveLocation=.*|StateSaveLocation=/var/run/slurm|' \
 		${WRKSRC}/etc/slurm.conf.example
+
+post-patch-LINUX-on:
 	@${REINPLACE_CMD} -e 's|"/proc|"/compat/linux/proc|g' \
 		${WRKSRC}/src/slurmd/slurmstepd/req.c \
 		${WRKSRC}/src/slurmd/slurmstepd/pdebug.c \
