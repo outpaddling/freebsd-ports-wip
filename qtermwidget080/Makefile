@@ -3,7 +3,7 @@
 
 PORTNAME=	qtermwidget
 PORTVERSION=	0.8.0
-CATEGORIES=	x11-toolkits
+CATEGORIES=	wip x11-toolkits
 MASTER_SITES=	LXQT
 
 MAINTAINER=	bacon4000@gmail.com
