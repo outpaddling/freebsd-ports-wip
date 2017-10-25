@@ -4,8 +4,8 @@
 
 PORTNAME=	kallisto
 PORTVERSION=	0.42.4
-CATEGORIES=	wip biology
 DISTVERSIONPREFIX=	v
+CATEGORIES=	wip biology
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Quantify abundances of transcripts from RNA-Seq data
