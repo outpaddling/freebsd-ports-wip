@@ -1,0 +1,10 @@
+bin/lilyterm
+etc/xdg/lilyterm.conf
+man/man1/lilyterm.1.gz
+share/applications/lilyterm.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lilyterm.conf
+share/pixmaps/lilyterm.png
+share/pixmaps/lilyterm.xpm
