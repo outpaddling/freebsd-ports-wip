@@ -29,8 +29,8 @@ OPTIONS_DEFINE=	WEBP
 WEBP_DESC=	Support for WebP image format (experimental)
 WEBP_QMAKE_ON=	CONFIG+=enable-webp
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|lrelease|lrelease-qt4|g' \
-		${WRKSRC}/Makefile
+#post-configure:
+#	@${REINPLACE_CMD} -e 's|lrelease|lrelease-qt4|g' \
+#		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
