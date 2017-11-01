@@ -15,9 +15,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	p5-IPC-Open3-Simple>=0:devel/p5-IPC-Open3-Simple \
 		p5-File-Spec-Native>=0:devel/p5-File-Spec-Native \
 		p5-File-BaseDir>=0:devel/p5-File-BaseDir \
-		p5-Cwd-Guard>=0:devel/p5-Cwd-Guard
+		p5-Cwd-Guard>=0:devel/p5-Cwd-Guard \
+		${PYTHON_PKGNAMEPREFIX}cutadapt>0:wip/py-cutadapt \
+		fastqc>0:wip/fastqc
 
-USES=		perl5 shebangfix
+USES=		perl5 python shebangfix
 SHEBANG_FILES=	trim_galore
 USE_PERL5=	run
 
