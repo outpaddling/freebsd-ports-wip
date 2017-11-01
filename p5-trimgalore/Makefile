@@ -30,9 +30,8 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/TrimGalore-${PORTVERSION}
 
-PLIST_FILES=	bin/trim_galore
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/trim_galore ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC} && ${COPYTREE_SHARE} test_files ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
