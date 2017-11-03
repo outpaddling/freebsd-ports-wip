@@ -1,0 +1,28 @@
+$NetBSD$
+
+# Add all target for pkg
+--- Makefile.orig	2013-06-13 14:40:56.000000000 +0000
++++ Makefile
+@@ -16,13 +16,17 @@
+ ifndef PREFIX
+     export PREFIX = $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
+ endif
+-export BINDIR = ${PREFIX}/bin
+-export MODDIR = ${PREFIX}/lib/perl5/site_perl
++export BINDIR = ${DESTDIR}${PREFIX}/bin
++export MODDIR = ${DESTDIR}${PREFIX}/lib/perl5/site_perl
+ 
+ DIRS = cpp perl
++
++all:
++	for dir in $(DIRS); do cd $$dir && $(MAKE) && cd ..; done
++
+ install:
+-	    @mkdir -p $(BINDIR); mkdir -p $(MODDIR); \
+-        for dir in $(DIRS); do cd $$dir && $(MAKE) $(MAKEFLAGS) && cd ..; done
++	@mkdir -p $(BINDIR); mkdir -p $(MODDIR); \
++	for dir in $(DIRS); do cd $$dir && $(MAKE) install && cd ..; done
+ 
+ clean:
+-		@for dir in $(DIRS); do cd $$dir && $(MAKE) clean && cd ..; done
++	@for dir in $(DIRS); do cd $$dir && $(MAKE) clean && cd ..; done

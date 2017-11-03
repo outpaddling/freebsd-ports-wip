@@ -1,0 +1,70 @@
+$NetBSD$
+
+# Fix Makefile to respect env
+--- cpp/Makefile.orig	2013-06-13 14:40:54.000000000 +0000
++++ cpp/Makefile
+@@ -4,6 +4,6 @@
+ 
+ # Compiler
+-CC = gcc
+-CPP = g++
++CC ?= gcc
++CXX ?= g++
+ # Output executable
+ EXECUTABLE = vcftools
+@@ -13,8 +13,8 @@ ifndef VCFTOOLS_PCA
+ endif
+ # Compiler flags
+-CFLAGS = -O2 -m64
++#CFLAGS += -m64
+ #CFLAGS = -Wall -O2 -pg -m64
+-CPPFLAGS = -O2 -D_FILE_OFFSET_BITS=64 
+-#CPPFLAGS = -O2 -Wall -pg -D_FILE_OFFSET_BITS=64
++CXXFLAGS += -D_FILE_OFFSET_BITS=64 
++#CXXFLAGS = -O2 -Wall -pg -D_FILE_OFFSET_BITS=64
+ # Included libraries (zlib)
+ LIB = -lz 
+@@ -22,14 +22,14 @@ LIB = -lz 
+ 
+ OBJS = vcftools.o bcf_file.o vcf_file.o variant_file.o \
+-		bcf_entry.o vcf_entry.o entry.o entry_setters.o entry_getters.o \
+-		vcf_entry_setters.o	bcf_entry_setters.o variant_file_filters.o \
+-		variant_file_output.o variant_file_format_convert.o \
+-		variant_file_diff.o header.o parameters.o \
+-		variant_file_index.o \
+-		output_log.o bgzf.o gamma.o
++	bcf_entry.o vcf_entry.o entry.o entry_setters.o entry_getters.o \
++	vcf_entry_setters.o	bcf_entry_setters.o variant_file_filters.o \
++	variant_file_output.o variant_file_format_convert.o \
++	variant_file_diff.o header.o parameters.o \
++	variant_file_index.o \
++	output_log.o bgzf.o gamma.o
+ 
+ ifeq ($(VCFTOOLS_PCA), 1)
+ 	# Define flag for PCA routine compilation
+-	CPPFLAGS += -DVCFTOOLS_PCA
++	CXXFLAGS += -DVCFTOOLS_PCA
+ 	# Add LAPACK library
+ 	LIB += -llapack	
+@@ -39,8 +39,5 @@ endif
+ 
+ vcftools: $(OBJS)
+-	$(CPP) $(CPPFLAGS) $(OBJS) -o vcftools $(LIB)
+-ifdef BINDIR
+-	cp $(CURDIR)/$@ $(BINDIR)/$@
+-endif
++	$(CXX) $(CXXFLAGS) $(OBJS) -o vcftools $(LIB)
+ 
+ bgzf: bgzf.c
+@@ -51,6 +48,9 @@ bgzf: bgzf.c
+ 
+ %.o: %.cpp
+-	$(CPP) -c $(CPPFLAGS) $*.cpp -o $*.o
+-	$(CPP) -MM $(CPPFLAGS) $*.cpp > $*.d
++	$(CXX) -c $(CXXFLAGS) $*.cpp -o $*.o
++	$(CXX) -MM $(CXXFLAGS) $*.cpp > $*.d
++
++install: vcftools
++	cp $(CURDIR)/vcftools $(BINDIR)
+ 
+ # remove compilation products
