@@ -32,11 +32,13 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.jar ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/fastqc \
 		${STAGEDIR}${PREFIX}/bin
-	cd ${WRKSRC} && ${COPYTREE_SHARE} 'Configuration Templates' \
+	cd ${WRKSRC} && ${COPYTREE_SHARE} Configuration \
+		${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} Templates \
 		${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} uk \
 		${STAGEDIR}${JAVAJARDIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} 'Help' \
+	cd ${WRKSRC} && ${COPYTREE_SHARE} Help \
 		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
