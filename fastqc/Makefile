@@ -22,7 +22,10 @@ WRKSRC=		${WRKDIR}/FastQC
 NO_BUILD=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e "s|%%JAVAJARDIR%%|${JAVAJARDIR}|g" ${WRKSRC}/fastqc
+	${REINPLACE_CMD} \
+		-e 's|$$RealBin$$delimiter|${JAVAJARDIR}$$delimiter|g' \
+		-e 's|$$RealBin/|${JAVAJARDIR}/|g' \
+		${WRKSRC}/fastqc
 
 do-install:
 	${MKDIR} ${STAGEDIR}${JAVAJARDIR}
@@ -31,7 +34,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC} && ${COPYTREE_SHARE} 'Configuration Templates' \
 		${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} 'uk' \
+	cd ${WRKSRC} && ${COPYTREE_SHARE} uk \
 		${STAGEDIR}${JAVAJARDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} 'Help' \
 		${STAGEDIR}${DOCSDIR}
