@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	fastqc
-PORTVERSION=	0.11.3
-CATEGORIES=	wip biology
+PORTVERSION=	0.11.5
+CATEGORIES=	wip biology java
 MASTER_SITES=	http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	bacon4000@gmail.com
-COMMENT=	A quality control tool for high throughput sequence data
+COMMENT=	Quality control tool for high throughput sequence data
 
 LICENSE=	GPLv3
 
