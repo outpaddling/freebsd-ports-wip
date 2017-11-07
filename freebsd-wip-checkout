@@ -1,0 +1,66 @@
+#!/bin/sh -e
+
+##########################################################################
+#   Script description:
+#       
+#   Arguments:
+#       
+#   Returns:
+#       
+#   History:
+#   Date        Name        Modification
+#   2017-02-11  Jason Bacon Begin
+##########################################################################
+
+usage()
+{
+    printf "Usage: $0 git|svn\n"
+    exit 1
+}
+
+
+##########################################################################
+#   Main
+##########################################################################
+
+if [ $# != 1 ]; then
+    usage
+fi
+
+if [ -z $PORTSDIR ]; then
+    PORTSDIR=/usr/ports
+fi
+
+rcs=$1
+if [ $rcs = svn ]; then
+    if which svn; then
+	svn=`which svn`
+    else
+	svn=/usr/local/bin/svn
+    fi
+    $svn co \
+	https://outpaddling@github.com/outpaddling/freebsd-ports-wip/trunk \
+	$PORTSDIR/wip
+elif [ $rcs = git ]; then
+    if which git; then
+	git=`which git`
+    else
+	git=/usr/local/bin/git
+    fi
+    $git clone \
+	https://outpaddling@github.com/outpaddling/freebsd-ports-wip \
+	$PORTSDIR/wip
+else
+    printf "Invalid RCS: $rcs\n"
+    exit 1
+fi
+
+sed -i '' -e 's|wayland www|wayland wip www|g' $PORTSDIR/Mk/bsd.port.mk
+cd $PORTSDIR/wip/wip-tools && make deinstall clean install
+cat << EOM
+
+Run wip-update frequently to keep up with the latest WIP ports.
+
+See /usr/wip/README for basic info.
+
+EOM
