@@ -20,13 +20,15 @@ To install ports from this collection:
 
 3)  After installing wip-tools:
 
-    You can update the wip collection by simply running
+    Run
 
 	wip-update
 
     You will need to re-run wip-update following any ports tree updates
     using portsnap.  One of the things wip-update does is add "wip" to
     VALID_CATEGORIES, and portsnap overwrites this mk file.
+
+    Also run wip-update frequently to get the latest commits.
 
     Now you can install any port using
 
