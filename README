@@ -12,6 +12,10 @@ To install ports from this collection:
 
     git clone https://github.com/outpaddling/freebsd-ports-wip \
 	/usr/ports/wip
+
+    wip-update
+
+    * wip-update is necessary to add "wip" to the VALID_CATEGORIES list.
     
 2)  Then install the ports of interest, starting with wip-tools:
 
