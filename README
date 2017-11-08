@@ -61,16 +61,6 @@ o   Contact the owner of the repository and ask to be added as a Github
     Note: Github does not support subversion "mv" or "cp" commands.
 	  Use "cp -R", "svn add", and "svn rm" instead.
 
-    Check out the repository using your Github login:
-    
-    svn co https://username@github.com/outpaddling/freebsd-ports-wip/trunk \
-	/usr/wip
-
-    or
-
-    git clone https://username@github.com/outpaddling/freebsd-ports-wip \
-	/usr/wip
-
 o   Adopt an existing port:
 
     If there is an existing port that you are interested it, PLEASE PLEASE
