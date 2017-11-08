@@ -21,7 +21,7 @@ USES=		compiler:openmp gmake
 
 # https://stackoverflow.com/questions/39591067/undefined-reference-to-boostprogram-options-in-xubuntu
 # Didn't help
-CXXFLAGS+=	-D_GLIBCXX_USE_CXX11_ABI=0
+# CXXFLAGS+=	-D_GLIBCXX_USE_CXX11_ABI=0
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
