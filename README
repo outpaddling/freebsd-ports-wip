@@ -10,13 +10,7 @@ To install ports from this collection:
       inspect it for signs of tampering.  This is especially critical before
       running a script as root.
 
-2)  Run wip-update frequently to retreive the latest commits.
-
-3)  You will need to re-run wip-update following any ports tree updates
-    using portsnap.  One of the things wip-update does is add "wip" to
-    VALID_CATEGORIES, and portsnap overwrites this mk file.
-
-4)  Now you can install any port using
+2)  Now you can install any port using
 
         cd /usr/ports/wip/portname
         make install
@@ -29,6 +23,12 @@ To install ports from this collection:
     test the port by running
 
 	wip-poudriere-test category/portname jail [jail ...] | all | pattern
+
+3)  Run wip-update frequently to retreive the latest commits.
+
+4)  You will need to re-run wip-update following any ports tree updates
+    using portsnap.  One of the things wip-update does is add "wip" to
+    VALID_CATEGORIES, and portsnap overwrites this mk file.
 
 ---
 
