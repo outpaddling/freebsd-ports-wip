@@ -6,6 +6,10 @@ To install ports from this collection:
 1)  Download and run the freebsd-wip-checkout script from the repository
     above.
 
+    * Before running any script downloaded from the Internet, carefully
+      inspect it for signs of tampering.  This is especially critical before
+      running a script as root.
+
 2)  Run wip-update frequently to retreive the latest commits.
 
 3)  You will need to re-run wip-update following any ports tree updates
