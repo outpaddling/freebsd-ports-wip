@@ -55,12 +55,32 @@ else
     exit 1
 fi
 
-sed -i '' -e 's|wayland www|wayland wip www|g' $PORTSDIR/Mk/bsd.port.mk
+if ! fgrep 'USE_LOCAL_MK=yes' /etc/make.conf > /dev/null; then
+    cat << EOM >> /etc/make.conf
+
+# Added by freebsd-wip-checkout
+USE_LOCAL_MK=yes
+# End addition
+
+EOM
+fi
+
+if ! fgrep 'VALID_CATEGORIES+=wip' /usr/ports/Mk/bsd.local.mk > /dev/null; then
+    cat << EOM >> /usr/ports/Mk/bsd.local.mk
+
+# Added by freebsd-wip-checkout
+VALID_CATEGORIES+=wip
+# End addition
+
+EOM
+fi
+
+#sed -i '' -e 's|wayland www|wayland wip www|g' $PORTSDIR/Mk/bsd.port.mk
 cd $PORTSDIR/wip/wip-tools && make deinstall clean install
 cat << EOM
 
 Run wip-update frequently to keep up with the latest WIP ports.
 
-See /usr/wip/README for basic info.
+See /usr/ports/wip/README for basic info.
 
 EOM
