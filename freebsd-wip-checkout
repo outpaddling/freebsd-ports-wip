@@ -2,11 +2,12 @@
 
 ##########################################################################
 #   Script description:
-#       
+#       Check out a copy of FreeBSD ports wip and modify the ports
+#       configuration to accomodate the wip category.
+#
 #   Arguments:
-#       
-#   Returns:
-#       
+#       svn|git
+#
 #   History:
 #   Date        Name        Modification
 #   2017-02-11  Jason Bacon Begin
