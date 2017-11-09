@@ -75,7 +75,6 @@ VALID_CATEGORIES+=wip
 EOM
 fi
 
-#sed -i '' -e 's|wayland www|wayland wip www|g' $PORTSDIR/Mk/bsd.port.mk
 cd $PORTSDIR/wip/wip-tools && make deinstall clean install
 cat << EOM
 
