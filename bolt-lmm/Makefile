@@ -17,6 +17,7 @@ LIB_DEPENDS+=	libnlopt.so:math/nlopt \
 		libopenblas.so:math/openblas \
 		libboost_program_options.so:devel/boost-libs
 
+# USES=		gmake
 USES=		compiler:openmp gmake
 
 # https://stackoverflow.com/questions/39591067/undefined-reference-to-boostprogram-options-in-xubuntu
