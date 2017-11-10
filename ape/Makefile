@@ -3,7 +3,7 @@
 
 PORTNAME=	ape
 PORTVERSION=	3.5.2
-CATEGORIES=	wip editors devel
+CATEGORIES=	wip editors
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	bacon4000@gmail.com
@@ -23,26 +23,13 @@ RUN_DEPENDS=	${LOCALBASE}/share/twintk/terminfo/README:wip/twintk \
 
 USES=		tar:xz
 
-CONFLICTS=	ape-3.[01234]* ape-3.5.[01]
-
-# gcc on PowerPC uses unsigned chars by default.  Should be fixed in
-# source code now.
-# -fsigned-char
-CFLAGS=		-g -Wall
-
 MAKE_FLAGS+=	PREFIX=${PREFIX} \
 		MANPREFIX=${PREFIX} \
 		DATADIR=${DATADIR} \
 		DOCSDIR=${DOCSDIR} \
 		STAGEDIR=${STAGEDIR}
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_RXVT)
-RUN_DEPENDS+=	rxvt:x11/rxvt
-.endif
-
 pre-build:
 	(cd ${WRKSRC} && make depend)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
