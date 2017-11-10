@@ -1,12 +1,12 @@
 --- FileUtils.cpp.orig	2017-08-02 18:43:24.000000000 -0500
-+++ FileUtils.cpp	2017-11-08 18:56:31.526411000 -0600
++++ FileUtils.cpp	2017-11-10 09:16:27.900905000 -0600
 @@ -187,7 +187,8 @@ namespace FileUtils {
    }
  
    AutoGzIfstream::operator bool() const {
 -    return boost_in;
-+    // Guessing at intent here
-+    return ! boost_in.empty();
++    // Po-Ru suggestion to solve type mismatch
++    return ! boost_in.fail();
    }
  
    AutoGzIfstream& AutoGzIfstream::read(char *s, std::streamsize n) {
