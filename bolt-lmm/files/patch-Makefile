@@ -1,6 +1,6 @@
 --- Makefile.orig	2017-08-02 19:14:08.000000000 -0500
-+++ Makefile	2017-09-14 05:12:28.874441000 -0500
-@@ -1,29 +1,29 @@
++++ Makefile	2017-11-10 20:33:00.523248000 -0600
+@@ -1,29 +1,32 @@
  ### modify these paths to local Boost and NLopt install directories
 -BOOST_INSTALL_DIR = /home/pl88/boost_1_58_0/install
 -NLOPT_INSTALL_DIR = /groups/price/poru/HSPH_SVN/src/BOLT-LMM/nlopt-2.4.2
@@ -13,6 +13,9 @@
 -GLIBC_STATIC_DIR = /home/pl88/glibc-static/usr/lib64
 +ZLIB_STATIC_DIR ?= /usr/lib
 +GLIBC_STATIC_DIR ?= /home/pl88/glibc-static/usr/lib64
++
++INSTALL ?=	install
++MKDIR ?=	mkdir
  
  ifeq ($(strip ${linking}),)
  	linking = dynamic
@@ -42,7 +45,7 @@
  
  # add Boost include and lib paths
  ifneq ($(strip ${BOOST_INSTALL_DIR}),)
-@@ -37,9 +37,9 @@ endif
+@@ -37,9 +40,9 @@ endif
  # add NLopt include and lib paths
  ifneq ($(strip ${NLOPT_INSTALL_DIR}),)
  	CPATHS += -I${NLOPT_INSTALL_DIR}/api
@@ -54,7 +57,7 @@
  	endif
  endif
  
-@@ -51,7 +51,7 @@ ifneq ($(strip ${ZLIB_STATIC_DIR}),)
+@@ -51,7 +54,7 @@ ifneq ($(strip ${ZLIB_STATIC_DIR}),)
  endif
  
  # add MKL paths (if not compiling with g++, i.e., compiling with icpc)
@@ -63,7 +66,7 @@
  	CPATHS += -I${MKLROOT}/include
  	ifeq (${linking},dynamic)
  		LPATHS += -L${MKLROOT}/lib/intel64 -Wl,-rpath,${MKLROOT}/lib/intel64 # for libmkl*
-@@ -60,28 +60,28 @@ ifneq (${CC},g++)
+@@ -60,28 +63,28 @@ ifneq (${CC},g++)
  endif
  
  # add flags for static linking; build LAPACK/MKL component of link line
@@ -104,7 +107,7 @@
  		LPATHS += -L${ZLIB_STATIC_DIR}
  		LLAPACK = -Wl,--start-group ${MKLROOT}/lib/intel64/libmkl_intel_lp64.a ${MKLROOT}/lib/intel64/libmkl_core.a ${MKLROOT}/lib/intel64/libmkl_intel_thread.a -Wl,--end-group
  	else
-@@ -94,7 +94,8 @@ else
+@@ -94,7 +97,8 @@ else
  endif
  
  # build link line (minus flags)
@@ -114,7 +117,7 @@
  ifeq (${linking},static-except-glibc)
  	L = ${LPATHS} -Wl,-Bstatic ${LLIBS} ${LLAPACK} -Wl,-Bdynamic -lpthread -lm
  else
-@@ -110,10 +111,10 @@ OMAIN = BoltMain.o $O
+@@ -110,10 +114,13 @@ OMAIN = BoltMain.o $O
  .PHONY: clean
  
  %.o: %.cpp
@@ -124,6 +127,9 @@
  $T: ${OMAIN}
 -	${CC} ${LFLAGS} -o $T ${OMAIN} $L
 +	${CXX} ${LDFLAGS} -o $T ${OMAIN} $L
++
++install:
++	${INSTALL} -c -s $T ${DESTDIR}${PREFIX}/bin
  
  clean:
  	rm -f *.o

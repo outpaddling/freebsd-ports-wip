@@ -15,6 +15,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS+=	libnlopt.so:math/nlopt \
 		libopenblas.so:math/openblas \
+		liblapack.so:math/lapack \
 		libboost_program_options.so:devel/boost-libs
 
 USES+=		compiler:openmp gmake
@@ -29,5 +30,7 @@ USES+=		compiler:openmp gmake
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 ALL_TARGET=	bolt
+
+PLIST_FILES=	bin/bolt
 
 .include <bsd.port.mk>
