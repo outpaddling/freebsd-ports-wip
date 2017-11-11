@@ -1,4 +1,4 @@
---- example/run_example_reml2.sh.orig	2017-08-03 00:12:17 UTC
+--- example/run_example_reml2.sh.orig	2017-11-11 16:45:15 UTC
 +++ example/run_example_reml2.sh
 @@ -1,4 +1,6 @@
 -../bolt \
