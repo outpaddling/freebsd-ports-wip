@@ -3,6 +3,7 @@
 #
 # Tables are huge and may not be necessary for bolt to function.
 # Maybe omit them from plist and add a message about where to get them?
+# Why isn't makeplist using EXAMPLESDIR and DATADIR?
 
 PORTNAME=	bolt-llm
 PORTVERSION=	2.3
@@ -14,7 +15,7 @@ MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Statistics for testing association between phenotype and genotypes
 
 LICENSE=	GPLv3
-#LICENSE_FILE=
+LICENSE_FILE=	${WRKSRC}/license.txt
 
 LIB_DEPENDS+=	libnlopt.so:math/nlopt \
 		libopenblas.so:math/openblas \
@@ -25,12 +26,12 @@ LIB_DEPENDS+=	libnlopt.so:math/nlopt \
 # gcc-c++11-lib is sufficient as it merely adds a GCC requirement.
 USES=		compiler:gcc-c++11-lib gmake
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
-
-ALL_TARGET=	bolt
+BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
+INSTALL_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
 post-install:
-	cd ${WRKSRC}/../example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/.. && ${COPYTREE_SHARE} tables ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	${RM} ${STAGEDIR}${EXAMPLESDIR}/*.orig
+	cd ${WRKSRC} && ${COPYTREE_SHARE} tables ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

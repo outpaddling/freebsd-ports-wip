@@ -1,6 +1,6 @@
---- Makefile.orig	2017-08-03 00:14:08 UTC
-+++ Makefile
-@@ -1,29 +1,32 @@
+--- src/Makefile.orig	2017-08-03 00:14:08 UTC
++++ src/Makefile
+@@ -1,29 +1,38 @@
  ### modify these paths to local Boost and NLopt install directories
 -BOOST_INSTALL_DIR = /home/pl88/boost_1_58_0/install
 -NLOPT_INSTALL_DIR = /groups/price/poru/HSPH_SVN/src/BOLT-LMM/nlopt-2.4.2
@@ -14,8 +14,14 @@
 +ZLIB_STATIC_DIR ?= /usr/lib
 +GLIBC_STATIC_DIR ?= /home/pl88/glibc-static/usr/lib64
 +
++# Standard install tools and targets for package managers
 +INSTALL ?=	install
 +MKDIR ?=	mkdir
++CP ?=		cp
++PREFIX ?=	/usr/local
++DATADIR ?=	${PREFIX}/share/bolt-lmm
++EXAMPLESDIR ?=	${PREFIX}/share/examples/bolt-lmm
++DESTDIR ?=	.
  
  ifeq ($(strip ${linking}),)
  	linking = dynamic
@@ -45,7 +51,7 @@
  
  # add Boost include and lib paths
  ifneq ($(strip ${BOOST_INSTALL_DIR}),)
-@@ -37,9 +40,9 @@ endif
+@@ -37,9 +46,9 @@ endif
  # add NLopt include and lib paths
  ifneq ($(strip ${NLOPT_INSTALL_DIR}),)
  	CPATHS += -I${NLOPT_INSTALL_DIR}/api
@@ -57,7 +63,7 @@
  	endif
  endif
  
-@@ -51,7 +54,7 @@ ifneq ($(strip ${ZLIB_STATIC_DIR}),)
+@@ -51,7 +60,7 @@ ifneq ($(strip ${ZLIB_STATIC_DIR}),)
  endif
  
  # add MKL paths (if not compiling with g++, i.e., compiling with icpc)
@@ -66,7 +72,7 @@
  	CPATHS += -I${MKLROOT}/include
  	ifeq (${linking},dynamic)
  		LPATHS += -L${MKLROOT}/lib/intel64 -Wl,-rpath,${MKLROOT}/lib/intel64 # for libmkl*
-@@ -60,28 +63,28 @@ ifneq (${CC},g++)
+@@ -60,28 +69,28 @@ ifneq (${CC},g++)
  endif
  
  # add flags for static linking; build LAPACK/MKL component of link line
@@ -107,7 +113,7 @@
  		LPATHS += -L${ZLIB_STATIC_DIR}
  		LLAPACK = -Wl,--start-group ${MKLROOT}/lib/intel64/libmkl_intel_lp64.a ${MKLROOT}/lib/intel64/libmkl_core.a ${MKLROOT}/lib/intel64/libmkl_intel_thread.a -Wl,--end-group
  	else
-@@ -94,7 +97,8 @@ else
+@@ -94,7 +103,8 @@ else
  endif
  
  # build link line (minus flags)
@@ -117,8 +123,14 @@
  ifeq (${linking},static-except-glibc)
  	L = ${LPATHS} -Wl,-Bstatic ${LLIBS} ${LLAPACK} -Wl,-Bdynamic -lpthread -lm
  else
-@@ -110,10 +114,13 @@ OMAIN = BoltMain.o $O
- .PHONY: clean
+@@ -107,13 +117,18 @@ T = bolt
+ O = Bolt.o BoltParams.o BoltParEstCV.o BoltReml.o CovariateBasis.o DataMatrix.o FileUtils.o Jackknife.o LDscoreCalibration.o MapInterpolater.o MatrixUtils.o MemoryUtils.o NonlinearOptMulti.o NumericUtils.o PhenoBuilder.o RestrictSnpSet.o SnpData.o SnpInfo.o SpectrumTools.o StatsUtils.o StringUtils.o Timer.o
+ OMAIN = BoltMain.o $O
+ 
+-.PHONY: clean
++.PHONY: clean all
++
++all: $T
  
  %.o: %.cpp
 -	${CC} ${CFLAGS} ${CPATHS} -o $@ -c $<
