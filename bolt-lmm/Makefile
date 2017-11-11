@@ -29,9 +29,11 @@ USES=		compiler:gcc-c++11-lib gmake
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 INSTALL_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
+post-patch:
+	${RM} ${WRKSRC}/example/*.orig
+
 post-install:
 	cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
-	${RM} ${STAGEDIR}${EXAMPLESDIR}/*.orig
 	cd ${WRKSRC} && ${COPYTREE_SHARE} tables ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

@@ -33,5 +33,7 @@ bin/bolt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.log
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.stats
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_reml2.log
+@mode 0755
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/run_example.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/run_example_reml2.sh
+@mode
