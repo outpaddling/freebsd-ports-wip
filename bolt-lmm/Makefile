@@ -1,5 +1,8 @@
 # Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
+#
+# Tables are huge and may not be necessary for bolt to function.
+# Maybe omit them from plist and add a message about where to get them?
 
 PORTNAME=	bolt-llm
 PORTVERSION=	2.3
@@ -26,6 +29,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 ALL_TARGET=	bolt
 
-PLIST_FILES=	bin/bolt
+post-install:
+	cd ${WRKSRC}/../example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/.. && ${COPYTREE_SHARE} tables ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
