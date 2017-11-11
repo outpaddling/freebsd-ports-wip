@@ -1,6 +1,6 @@
 --- src/Makefile.orig	2017-08-03 00:14:08 UTC
 +++ src/Makefile
-@@ -1,29 +1,35 @@
+@@ -1,29 +1,36 @@
  ### modify these paths to local Boost and NLopt install directories
 -BOOST_INSTALL_DIR = /home/pl88/boost_1_58_0/install
 -NLOPT_INSTALL_DIR = /groups/price/poru/HSPH_SVN/src/BOLT-LMM/nlopt-2.4.2
@@ -19,6 +19,7 @@
 +MKDIR ?=	mkdir
 +PREFIX ?=	/usr/local
 +DESTDIR ?=	.
++STRIP_CMD ?=	strip
  
  ifeq ($(strip ${linking}),)
  	linking = dynamic
@@ -48,7 +49,7 @@
  
  # add Boost include and lib paths
  ifneq ($(strip ${BOOST_INSTALL_DIR}),)
-@@ -37,9 +43,9 @@ endif
+@@ -37,9 +44,9 @@ endif
  # add NLopt include and lib paths
  ifneq ($(strip ${NLOPT_INSTALL_DIR}),)
  	CPATHS += -I${NLOPT_INSTALL_DIR}/api
@@ -60,7 +61,7 @@
  	endif
  endif
  
-@@ -51,7 +57,7 @@ ifneq ($(strip ${ZLIB_STATIC_DIR}),)
+@@ -51,7 +58,7 @@ ifneq ($(strip ${ZLIB_STATIC_DIR}),)
  endif
  
  # add MKL paths (if not compiling with g++, i.e., compiling with icpc)
@@ -69,7 +70,7 @@
  	CPATHS += -I${MKLROOT}/include
  	ifeq (${linking},dynamic)
  		LPATHS += -L${MKLROOT}/lib/intel64 -Wl,-rpath,${MKLROOT}/lib/intel64 # for libmkl*
-@@ -60,28 +66,28 @@ ifneq (${CC},g++)
+@@ -60,28 +67,28 @@ ifneq (${CC},g++)
  endif
  
  # add flags for static linking; build LAPACK/MKL component of link line
@@ -110,7 +111,7 @@
  		LPATHS += -L${ZLIB_STATIC_DIR}
  		LLAPACK = -Wl,--start-group ${MKLROOT}/lib/intel64/libmkl_intel_lp64.a ${MKLROOT}/lib/intel64/libmkl_core.a ${MKLROOT}/lib/intel64/libmkl_intel_thread.a -Wl,--end-group
  	else
-@@ -94,7 +100,8 @@ else
+@@ -94,7 +101,8 @@ else
  endif
  
  # build link line (minus flags)
@@ -120,7 +121,7 @@
  ifeq (${linking},static-except-glibc)
  	L = ${LPATHS} -Wl,-Bstatic ${LLIBS} ${LLAPACK} -Wl,-Bdynamic -lpthread -lm
  else
-@@ -107,13 +114,19 @@ T = bolt
+@@ -107,13 +115,22 @@ T = bolt
  O = Bolt.o BoltParams.o BoltParEstCV.o BoltReml.o CovariateBasis.o DataMatrix.o FileUtils.o Jackknife.o LDscoreCalibration.o MapInterpolater.o MatrixUtils.o MemoryUtils.o NonlinearOptMulti.o NumericUtils.o PhenoBuilder.o RestrictSnpSet.o SnpData.o SnpInfo.o SpectrumTools.o StatsUtils.o StringUtils.o Timer.o
  OMAIN = BoltMain.o $O
  
@@ -139,7 +140,10 @@
 +
 +install:
 +	${MKDIR} -p ${DESTDIR}${PREFIX}/bin
-+	${INSTALL} -c -s $T ${DESTDIR}${PREFIX}/bin
++	${INSTALL} -c $T ${DESTDIR}${PREFIX}/bin
++
++install-strip:
++	${STRIP_CMD} ${DESTDIR}${PREFIX}/bin/bolt
  
  clean:
  	rm -f *.o
