@@ -18,7 +18,8 @@ LIB_DEPENDS+=	libnlopt.so:math/nlopt \
 		liblapack.so:math/lapack \
 		libboost_program_options.so:devel/boost-libs
 
-# gcc-c++11-lib needed to link with boost
+# gcc-c++11-lib needed to link with boost. Also requires compiler:openmp, but
+# gcc-c++11-lib is sufficient as it merely adds a GCC requirement.
 USES=		compiler:gcc-c++11-lib gmake
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
