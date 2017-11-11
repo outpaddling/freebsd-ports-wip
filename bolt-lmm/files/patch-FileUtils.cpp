@@ -1,5 +1,5 @@
---- FileUtils.cpp.orig	2017-08-02 18:43:24.000000000 -0500
-+++ FileUtils.cpp	2017-11-10 09:16:27.900905000 -0600
+--- FileUtils.cpp.orig	2017-08-02 23:43:24 UTC
++++ FileUtils.cpp
 @@ -187,7 +187,8 @@ namespace FileUtils {
    }
  

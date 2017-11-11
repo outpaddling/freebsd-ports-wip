@@ -18,13 +18,8 @@ LIB_DEPENDS+=	libnlopt.so:math/nlopt \
 		liblapack.so:math/lapack \
 		libboost_program_options.so:devel/boost-libs
 
-USES+=		compiler:openmp gmake
-# Attempts at link errors:
-# USES+=	compiler:gcc-c++11-lib
-# USE_CXXSTD=	c++11
-# https://stackoverflow.com/questions/39591067/undefined-reference-to-boostprogram-options-in-xubuntu
-# CXXFLAGS+=	-D_GLIBCXX_USE_CXX11_ABI=0
-# Workaround: Build boost-libs with USE_GCC
+# gcc-c++11-lib needed to link with boost
+USES=		compiler:gcc-c++11-lib gmake
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 

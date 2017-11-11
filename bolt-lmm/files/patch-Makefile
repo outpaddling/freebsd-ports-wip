@@ -1,5 +1,5 @@
---- Makefile.orig	2017-08-02 19:14:08.000000000 -0500
-+++ Makefile	2017-11-10 20:33:00.523248000 -0600
+--- Makefile.orig	2017-08-03 00:14:08 UTC
++++ Makefile
 @@ -1,29 +1,32 @@
  ### modify these paths to local Boost and NLopt install directories
 -BOOST_INSTALL_DIR = /home/pl88/boost_1_58_0/install

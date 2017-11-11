@@ -1,5 +1,5 @@
---- StringUtils.cpp.orig	2017-08-02 18:43:24.000000000 -0500
-+++ StringUtils.cpp	2017-11-08 18:42:31.465273000 -0600
+--- StringUtils.cpp.orig	2017-08-02 23:43:24 UTC
++++ StringUtils.cpp
 @@ -22,6 +22,7 @@
  #include <cstdio>
  #include <iostream>
