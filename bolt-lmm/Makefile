@@ -5,7 +5,7 @@
 # Maybe omit them from plist and add a message about where to get them?
 # Why isn't makeplist using EXAMPLESDIR and DATADIR?
 
-PORTNAME=	bolt-llm
+PORTNAME=	bolt-lmm
 PORTVERSION=	2.3
 CATEGORIES=	wip
 MASTER_SITES=	https://data.broadinstitute.org/alkesgroup/BOLT-LMM/downloads/
