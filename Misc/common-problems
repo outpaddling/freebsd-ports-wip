@@ -1,17 +1,37 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# I've hit this issue a few times with programs using gcc -std=c++11
-# E.g. gcc: stoul is not a member of std
-# Also works for other "not a member of std" errors
-# http://stackoverflow.com/questions/26832199/getting-gcc-in-c11-mode-to-work-on-freebsd
-# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=193528
-# CXXFLAGS+=    -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1
+I've hit this issue a few times with programs using gcc -std=c++11
+E.g. gcc: stoul is not a member of std
+Also works for other "not a member of std" errors
+http://stackoverflow.com/questions/26832199/getting-gcc-in-c11-mode-to-work-on-freebsd
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=193528
+CXXFLAGS+=    -D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH -D_GLIBCXX_USE_C99_MATH_TR1
 
+Example: Star
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /usr/bin/ld: //lib/libcrypto.so.7: invalid DSO for symbol `MD5_Final' definition
 //lib/libcrypto.so.7: could not read symbols: Bad value
 c++: error: linker command failed with exit code 1 (use -v to see invocation)
 
-LDFLAGS+=	-L/usr/lib -lcrypto -lssl
+LDFLAGS+=       -L/usr/lib -lcrypto -lssl
 
 Maybe USES+=ssl will resolve this as well
+
+Example: pbbam, unanimity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Undefined reference to boost::yada::yada when linking with g++
+USES=compiler:gcc-c++11-lib
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=199603
+USES=compiler:gcc-c++11-lib compiler::openmp works, but openmp may be ignored
+in reality.  It merely adds a gcc requirement as of 2017-11, so gcc-c++11-lib
+implicitly enables openmp.
+
+Example: bolt-lmm
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Undefined reference to `operator delete(void*, unsigned long)' on 10.3-RELEASE
+linking with g++
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=219484
+USE_CXXSTD=   gnu++11
+
+Example: bolt-lmm
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
