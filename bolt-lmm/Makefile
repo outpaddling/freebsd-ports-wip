@@ -24,7 +24,8 @@ LIB_DEPENDS+=	libnlopt.so:math/nlopt \
 
 # gcc-c++11-lib needed to link with boost. Also requires compiler:openmp, but
 # gcc-c++11-lib is sufficient as it merely adds a GCC requirement.
-USES=		compiler:gcc-c++11-lib gmake
+# The second compiler: flag seems to be ignored.
+USES=		compiler:gcc-c++11-lib compiler:openmp gmake
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=219484
 # Required on 10.3-RELEASE
 USE_CXXSTD=	gnu++11
