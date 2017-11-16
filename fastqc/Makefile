@@ -23,21 +23,25 @@ NO_BUILD=	yes
 
 post-patch:
 	${REINPLACE_CMD} \
-		-e 's|$$RealBin$$delimiter|${JAVAJARDIR}$$delimiter|g' \
-		-e 's|$$RealBin/|${JAVAJARDIR}/|g' \
+		-e 's|$$RealBin$$delimiter|${DATADIR}$$delimiter${JAVAJARDIR}/fastqc$$delimiter|g' \
+		-e 's|$$RealBin/|${JAVAJARDIR}/fastqc/|g' \
 		${WRKSRC}/fastqc
 
 do-install:
-	${MKDIR} ${STAGEDIR}${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.jar ${STAGEDIR}${JAVAJARDIR}
+	${MKDIR} ${STAGEDIR}${JAVAJARDIR}/fastqc
+	${INSTALL_DATA} ${WRKSRC}/*.jar ${STAGEDIR}${JAVAJARDIR}/fastqc
 	${INSTALL_SCRIPT} ${WRKSRC}/fastqc \
 		${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC} && ${COPYTREE_SHARE} Configuration \
 		${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} Templates \
 		${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} net \
+		${STAGEDIR}${JAVAJARDIR}/fastqc
 	cd ${WRKSRC} && ${COPYTREE_SHARE} uk \
-		${STAGEDIR}${JAVAJARDIR}
+		${STAGEDIR}${JAVAJARDIR}/fastqc
+	cd ${WRKSRC} && ${COPYTREE_SHARE} org \
+		${STAGEDIR}${JAVAJARDIR}/fastqc
 	cd ${WRKSRC} && ${COPYTREE_SHARE} Help \
 		${STAGEDIR}${DOCSDIR}
 
