@@ -7,7 +7,7 @@ CATEGORIES=	wip sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	bacon4000@gmail.com
-COMMENT=	Portable tools for automating system management
+COMMENT=	Portable tools for automating systems management
 
 LICENSE=	BSD2CLAUSE
 
