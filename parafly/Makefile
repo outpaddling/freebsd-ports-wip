@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 # Test new versions with Trinity before upgrading
 
@@ -8,7 +8,7 @@ CATEGORIES=	wip sysutils
 MASTER_SITES=	SF/${PORTNAME}/
 DISTNAME=	${PORTNAME}-r2013-01-21
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Process multiple commands in parallel on a single server
 
 LICENSE=	BSD3CLAUSE

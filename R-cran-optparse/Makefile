@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	optparse
@@ -6,7 +6,7 @@ DISTVERSION=	1.3.2
 CATEGORIES=	wip devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Command line parser inspired by Python's optparse
 
 # 2 or 3

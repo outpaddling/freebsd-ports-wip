@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	permute
@@ -6,7 +6,7 @@ DISTVERSION=	0.9-4
 CATEGORIES=	wip math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Restricted permutation designs for freely exchangeable, line transects
 
 LICENSE=	GPLv2

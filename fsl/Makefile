@@ -17,7 +17,7 @@ CATEGORIES=	wip science biology
 MASTER_SITES=	http://www.fmrib.ox.ac.uk/fsldownloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	FMRIB Software Library
 
 LIB_DEPENDS=	png.5:graphics/png \

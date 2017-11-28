@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 # Test new versions with Trinity before upgrading
 
@@ -7,7 +7,7 @@ PORTVERSION=		1.1.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	wip 	biology
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Ultrafast, memory-efficient short read aligner
 
 LICENSE=	ART10

@@ -6,7 +6,7 @@ PORTVERSION=	2.26.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	wip biology
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Swiss army knife for genome arithmetic
 
 LICENSE=	GPLv2

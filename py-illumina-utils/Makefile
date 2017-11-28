@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 # FIXME: Need echo "backend: Agg" >> ~/.matplotlib/matplotlibrc
 # to avoid "no matplotlib found" errors
@@ -9,7 +9,7 @@ CATEGORIES=	wip biology python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for Illumina paired-end data (for CASAVA 1.7+ pipeline)
 
 LICENSE=	GPLv2

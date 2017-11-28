@@ -1,6 +1,6 @@
 # New ports collection makefile for:	angora
 # Date created:		2012-06-02
-# Whom:			Jason Bacon <bacon4000@gmail.com>
+# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -20,7 +20,7 @@ MASTER_SITES=	http://angorafdtd.org/angora/
 #DIST_SUBDIR=	${PORTNAME}
 #EXTRACT_ONLY=
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=
 
 GNU_CONFIGURE=	yes

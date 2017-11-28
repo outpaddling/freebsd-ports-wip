@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	rnammer
@@ -9,7 +9,7 @@ CATEGORIES=	wip biology
 MASTER_SITES=	http://www.cbs.dtu.dk/services/RNAmmer/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Predicts 5s/8s, 16s/18s, and 23s/28s ribosomal RNA
 
 #LICENSE=

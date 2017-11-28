@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	fastqc
@@ -7,7 +7,7 @@ CATEGORIES=	wip biology
 MASTER_SITES=	http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	A quality control tool for high throughput sequence data
 
 LICENSE=	GPLv3

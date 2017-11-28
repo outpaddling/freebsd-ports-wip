@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	splitter
@@ -8,7 +8,7 @@ MASTER_SITES=	http://kirill-kryukov.com/study/tools/fasta-splitter/files/
 PKGNAMEPREFIX=	fasta-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Divides FASTA file into a smaller approx. equal sized set of files
 
 LICENSE=	ZLIB

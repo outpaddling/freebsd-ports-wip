@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	seqprep
@@ -7,7 +7,7 @@ CATEGORIES=	wip biology
 MASTER_SITES=	https://github.com/jstjohn/SeqPrep/archive/
 DISTNAME=	v${PORTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Strip adaptors and/or merge paired reads with overlap into single reads
 
 WRKSRC=		${WRKDIR}/SeqPrep-${PORTVERSION}

@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cDNA_primer
@@ -7,7 +7,7 @@ CATEGORIES=	wip python
 MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Analyzing transcriptome data generated using the PacBio(R)
 
 LICENSE=	BSD3CLAUSE

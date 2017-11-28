@@ -1,6 +1,6 @@
 # New ports collection makefile for:	trilinos
 # Date created:		2012-04-13
-# Whom:			Jason Bacon <bacon4000@gmail.com>
+# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ CATEGORIES=	wip math
 MASTER_SITES=	http://trilinos.sandia.gov/download/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Object-oriented math libraries
 
 # Add if building shared libs

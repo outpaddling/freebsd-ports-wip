@@ -7,7 +7,7 @@ CATEGORIES=	wip science
 # FIXME: Can this be done from http://lammps.sandia.gov/download.html#tar?
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Large-scale Atomic/Molecular Massively Parallel Simulator
 
 LICENSE=	GPLv1

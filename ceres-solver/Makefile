@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 # Deps: http://ceres-solver.org/building.html
 # eigen 3.2.2+, cmake 2.8.0+, Google Log 0.3.1+, Google Flags, SuiteSparse,
@@ -12,7 +12,7 @@ PORTVERSION=	1.11.0
 CATEGORIES=	wip math
 MASTER_SITES=	http://ceres-solver.org/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Library for modeling and solving complicated optimization problems
 
 LICENSE=	BSD3CLAUSE

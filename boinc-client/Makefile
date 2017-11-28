@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	wip net
 MASTER_SITES=	LOCAL/rene
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Berkeley Open Infrastructure for Network Computing client
 
 LICENSE=	LGPL3

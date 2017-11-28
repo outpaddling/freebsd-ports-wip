@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/devel/linux-f10-devtools/Makefile 344012 2014-02-12 20:14:12Z thierry $
 
 PORTNAME=	devtools
@@ -30,7 +30,7 @@ SRC_DISTFILES=	binutils-2.18.50.0.9-8.fc10.src.rpm \
 		gcc-4.3.2-7.src.rpm
 .endif
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Linux compilers and base libraries
 
 # LICENSE=	Various GNU

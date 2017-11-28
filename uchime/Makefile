@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	uchime
@@ -7,7 +7,7 @@ CATEGORIES=	wip biology
 MASTER_SITES=	http://drive5.com/uchime/
 DISTNAME=	uchime4.2.40_src
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Algorithm for detecting chimeric sequences
 
 LICENSE=	PD

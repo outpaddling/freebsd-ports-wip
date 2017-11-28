@@ -1,11 +1,11 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	hisat2
 PORTVERSION=	2.1.0
 CATEGORIES=	wip biology
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Alignment program for mapping next-generation sequencing reads
 
 LICENSE=	GPLv3

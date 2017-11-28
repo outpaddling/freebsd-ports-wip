@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	samtools
@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 # Prevent pkg upgrade from replacing this with samtools 1.x
 PKGNAMESUFFIX=	01
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Generic format for storing large nucleotide sequence alignments
 
 LICENSE=	MIT

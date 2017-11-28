@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	tensorflow
@@ -6,7 +6,7 @@ PORTVERSION=	1.0.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	wip math
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Open-source software library for Machine Intelligence
 
 LICENSE=	APACHE20

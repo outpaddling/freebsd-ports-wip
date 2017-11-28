@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	sratools
@@ -8,7 +8,7 @@ MASTER_SITES=	http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/${PORTVERSION}/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	sratoolkit.${PORTVERSION}-centos_linux64
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools and libraries for using data in the INSDC Sequence Read Archives
 
 LICENSE=	PD

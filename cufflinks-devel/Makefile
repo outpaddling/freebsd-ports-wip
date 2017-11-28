@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 # This version is known to crash frequently
 
@@ -8,7 +8,7 @@ CATEGORIES=	wip biology
 MASTER_SITES=	http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/
 # Switch to USE_GITHUB?
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Transcript assembly, differential expression and regulation for RNA-Seq
 
 LICENSE=	BSL

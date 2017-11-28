@@ -1,11 +1,11 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	chip-pipeline1
 PORTVERSION=	0.1
 CATEGORIES=	wip biology
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	RNA sequencing pipeline metaport for
 
 LICENSE=	BSD3CLAUSE

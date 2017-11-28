@@ -1,11 +1,11 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mpi-bench
 PORTVERSION=	0.1.1
 CATEGORIES=	wip net
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Simple, user-friendly MPI benchmark
 
 LICENSE=	BSD2CLAUSE

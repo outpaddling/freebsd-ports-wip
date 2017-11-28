@@ -1,4 +1,4 @@
-# Created by: Jason Wayne Bacon <bacon4000@gmail.com>
+# Created by: Jason Wayne Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	picard
@@ -10,7 +10,7 @@ DISTNAME=	${PORTVERSION}
 # Same distname as htsjdk
 DIST_SUBDIR=	picard
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Command line tools for manipulating high-throughput sequencing (HTS) data
 
 LICENSE=	MIT

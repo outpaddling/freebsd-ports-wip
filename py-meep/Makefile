@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	meep
@@ -9,7 +9,7 @@ MASTER_SITES=	http://launchpad.net/python-meep/1.4/1.4/+download/
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Allows scripting of Meep-simulations with Python
 
 # LICENSE=	gplv2, gplv3

@@ -1,11 +1,11 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	filevercmp
 PORTVERSION=	2015.11.21
 CATEGORIES=	wip sysutils
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Filevercmp function as in sort --version-sort
 
 LICENSE=	GPLv3

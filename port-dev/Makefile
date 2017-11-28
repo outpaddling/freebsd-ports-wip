@@ -1,4 +1,4 @@
-# Created by: Jason W. Bacon <bacon4000@gmail.com>
+# Created by: Jason W. Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	port-dev
@@ -6,7 +6,7 @@ PORTVERSION=	0.2
 CATEGORIES=	wip ports-mgmt
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for port development
 
 LICENSE=	BSD3CLAUSE

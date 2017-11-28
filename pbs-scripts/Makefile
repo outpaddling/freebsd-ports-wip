@@ -1,6 +1,6 @@
 # New ports collection makefile for:	pbs-scripts
 # Date created:		2012-01-27
-# Whom:			Jason Bacon <bacon4000@gmail.com>
+# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.1
 CATEGORIES=	wip sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Supplemental scripts for PBS scheduler
 
 NO_BUILD=	yes

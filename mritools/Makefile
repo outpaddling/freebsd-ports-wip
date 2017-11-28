@@ -15,7 +15,7 @@ CATEGORIES=	wip science biology
 MASTER_SITES=
 DISTFILES=
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Metaport for MRI software tools
 
 NO_BUILD=	"YES"

@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/biology/plink/Makefile 437439 2017-04-01 15:23:30Z gerald $
 #
 # TODO: Patch source to allow compiling C files with cc instead of c++
@@ -8,7 +8,7 @@ PORTVERSION=	1.90b4
 DISTVERSIONPREFIX=v
 CATEGORIES=	wip biology science
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Whole genome association analysis toolset
 
 LICENSE=	GPLv2

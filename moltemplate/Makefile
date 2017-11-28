@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.moltemplate.org/downloads/ \
 		http://acadix.biz/Ports/distfiles/
 DISTNAME=	${PORTNAME}_2013-7-15
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Text-based molecule builder for LAMMPS
 
 RUN_DEPENDS=	bash:shells/bash

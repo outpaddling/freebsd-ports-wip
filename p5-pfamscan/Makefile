@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pfamscan
@@ -8,7 +8,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 #DISTNAME=	PfamScan-${PORTVERSION}
 PKGNAMEPREFIX=	p5-
  
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Pfam protein database scanner
 
 USES=		perl5 tar:xz

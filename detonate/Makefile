@@ -1,11 +1,11 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	detonate
 PORTVERSION=	1.8.1
 CATEGORIES=	wip biology
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	DE novo TranscriptOme rNa-seq Assembly with or without the Truth Evaluation
 
 # FIXME: Not sure

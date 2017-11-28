@@ -3,7 +3,7 @@
 
 WITH_OPENMPI=	yes
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../mpb
 

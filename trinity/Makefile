@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	trinity
@@ -6,7 +6,7 @@ PORTVERSION=	2.1.1
 DISTVERSIONPREFIX=      v
 CATEGORIES=	wip biology java
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Trinity assembles transcript sequences from Illumina RNA-Seq data
 
 # Depends on bowtie and jellyfish2

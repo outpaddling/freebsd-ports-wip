@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	external-ip
@@ -6,7 +6,7 @@ PORTVERSION=	0.1
 CATEGORIES=	wip
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Determine IP address of client as seen by server
 
 LICENSE=	BSD2CLAUSE

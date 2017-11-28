@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	vaultaire
@@ -6,7 +6,7 @@ PORTVERSION=	1.1
 DISTVERSIONSUFFIX=rc1
 CATEGORIES=	wip graphics
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	QT frontend to scanimage and related tools
 
 LICENSE=	APACHE20

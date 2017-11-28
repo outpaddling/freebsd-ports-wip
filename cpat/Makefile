@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cpat
@@ -6,7 +6,7 @@ PORTVERSION=	1.2
 CATEGORIES=	wip biology
 MASTER_SITES=	SF
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Overcomes alignment search limitations using logistic regression model
 
 LICENSE=	GPLv2

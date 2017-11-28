@@ -11,7 +11,7 @@ MASTER_SITES=
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.i386.rpm
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Junos Pulse Secure Client
 
 USE_LINUX=      yes

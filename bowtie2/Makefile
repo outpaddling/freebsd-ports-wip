@@ -6,7 +6,7 @@ PORTVERSION=	2.3.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	wip biology
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Ultrafast, memory-efficient short read aligner
 
 LICENSE=	GPLv3+

@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 #
 # Bugs: Conflicts with bgzip, tabix, epstopdf
@@ -7,7 +7,7 @@ PORTNAME=	epacts
 PORTVERSION=	2017.08.15
 CATEGORIES=	wip biology
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Efficient and Parallelizable Association Container Toolbox
 
 LICENSE=	GPLv3

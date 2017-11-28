@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 # Test new versions with Trinity before upgrading
 
@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	slclust/slclust
 DISTNAME=	${PORTNAME}_02022010
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Single-linkage clustering with Jaccard similarity
 
 LICENSE=	ART10

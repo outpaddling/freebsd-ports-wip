@@ -1,11 +1,11 @@
 # New ports collection makefile for:    arm-none-eabi-binutils
 # Date created:         28 May 2011
-# Whom:                 Jason Bacon <bacon4000@gmail.com>
+# Whom:                 Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 
 TGTARCH=	arm
 TGTABI=		none-eabi

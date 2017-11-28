@@ -1,4 +1,4 @@
-# Created by: Jason W. Bacon <bacon4000@gmail.com>
+# Created by: Jason W. Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/science/afni/Makefile 427397 2016-11-29 21:15:41Z jrm $
 
 ############################################################################
@@ -15,7 +15,7 @@ PORTREVISION=	1
 CATEGORIES=	wip science biology graphics
 MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Advanced Functional Neuro Imaging
 
 LICENSE=	GPLv2

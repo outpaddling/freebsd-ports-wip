@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	idr
@@ -6,7 +6,7 @@ DISTVERSION=	2.0.3
 CATEGORIES=	wip math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Estimating the copula mixture model and plotting correspondence curves
 
 LICENSE=	GPLv2

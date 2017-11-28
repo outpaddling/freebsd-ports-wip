@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 #
 # Do not upgrade this port before testing the new version with biology/py-qiime
@@ -7,7 +7,7 @@ PORTNAME=	swarm
 PORTVERSION=	1.2.19
 CATEGORIES=	wip biology
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Robust and fast clustering method for amplicon-based studies
 
 LICENSE=	AGPLv3

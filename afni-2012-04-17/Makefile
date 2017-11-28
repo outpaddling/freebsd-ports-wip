@@ -1,4 +1,4 @@
-# Created by: Jason W. Bacon <bacon4000@gmail.com>
+# Created by: Jason W. Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/science/afni/Makefile 390310 2015-06-22 18:33:20Z antoine $
 
 ############################################################################
@@ -19,7 +19,7 @@ DISTFILES=	afni_src.tgz afni.1 3dClustBust.c \
 DIST_SUBDIR=	AFNI-${PORTVERSION}
 EXTRACT_ONLY=	afni_src.tgz CA_EZ_v1.5-July3107.tgz
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Advanced Functional Neuro Imaging
 
 LICENSE=	GPLv2

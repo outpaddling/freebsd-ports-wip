@@ -1,6 +1,6 @@
 # New ports collection makefile for:	libccmio
 # Date created:		2013-01-12
-# Whom:			Jason Bacon <bacon4000@gmail.com>
+# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	wip science math
 MASTER_SITES=	http://freefoam.sf.net/nonfree/
 #MASTER_SITE_SUBDIR=
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=
 
 FETCH_ARGS+=	-F

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	mcc18_wrapper
 # Date created:		2008-11-25
-# Whom:			Jason Bacon <bacon4000@gmail.com>
+# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	wip lang
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Wrappers for Windows based Microchip MCC18 and Wine
 
 DEPENDS_RUN=	wine:emulators/wine

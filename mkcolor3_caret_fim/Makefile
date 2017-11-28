@@ -11,7 +11,7 @@ CATEGORIES=	wip science
 MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/ \
 		http://bacon.is-a-geek.org/~bacon/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Assign colors via caret metric files
 
 PLIST_FILES=	bin/mkcolor3_caret_fim

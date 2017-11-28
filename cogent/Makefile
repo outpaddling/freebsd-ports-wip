@@ -1,11 +1,11 @@
-# Created by: Jason Wayne Bacon <bacon4000@gmail.com>
+# Created by: Jason Wayne Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cogent
 PORTVERSION=	2016.10.04
 CATEGORIES=	wip biology
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Reconstruct coding genome and group consensus isoforms from same locus
 
 # No license specified

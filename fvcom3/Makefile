@@ -1,6 +1,6 @@
 # New ports collection makefile for:	fvcom
 # Date created:		2012-03-13
-# Whom:			Jason Bacon <bacon4000@gmail.com>
+# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -28,7 +28,7 @@ PKGNAMESUFFIX+=	-mpi
 PKGNAMESUFFIX!=	echo ${PKGNAMESUFFIX}'-spherical'
 .endif
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Unstructured Grid Finite Volume Coastal Ocean Model
 
 # Check netcdf lib for Fortran support!

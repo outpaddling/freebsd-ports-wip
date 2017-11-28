@@ -1,6 +1,6 @@
 # New ports collection makefile for:	R-studio
 # Date created:		2012-03-02
-# Whom:			Jason Bacon <bacon4000@gmail.com>
+# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -19,7 +19,7 @@ EXTRACT_ONLY=	v${PORTVERSION}
 
 FETCH_ARGS=	-Fpr 
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	GUI for R statistical software
 
 USE_CMAKE=	yes

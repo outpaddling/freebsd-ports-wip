@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ganglia-web
@@ -6,7 +6,7 @@ PORTVERSION=	3.6.2
 CATEGORIES=	wip sysutils net www
 MASTER_SITES=	SF/ganglia/ganglia-web/${PORTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Ganglia network monitor web interface
 
 LICENSE=	BSD3CLAUSE

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	1dregression
 # Date created:		4 jan 2007
-# Whom:			Jason Bacon <bacon4000@gmail.com>
+# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	wip science
 MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/ \
 		http://bacon.is-a-geek.org/~bacon/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Calculate statistics on 1D files
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbacon.a:../../devel/libbacon

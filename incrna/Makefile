@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	incrna
@@ -7,7 +7,7 @@ CATEGORIES=	wip biology
 MASTER_SITES=	http://archive.gersteinlab.org/proj/incrna/
 DISTNAME=	incrna_without_data
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Machine learning based on computed features of genomic regions
 
 # Guess

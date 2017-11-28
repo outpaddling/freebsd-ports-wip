@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 # http://pritchardlab.stanford.edu/structure_software/release_versions/v2.3.4/structure_kernel_source.tar.gz
@@ -8,7 +8,7 @@ CATEGORIES=	wip biology
 MASTER_SITES=	http://pritchardlab.stanford.edu/structure_software/release_versions/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}_kernel_source
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Multi-locus genotype data to investigate population structure
 
 # LICENSE=	unspecified

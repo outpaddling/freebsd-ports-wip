@@ -1,4 +1,4 @@
-# Created by: Jason W. Bacon <bacon4000@gmail.com>
+# Created by: Jason W. Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 # http://www.openfoam.org/download/git.php
 
@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	../foam
 DISTNAME=	OpenFOAM-${PORTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Open source computational fluid dynamics
 
 LICENSE=	GPLv3

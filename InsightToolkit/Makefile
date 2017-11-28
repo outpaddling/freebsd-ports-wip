@@ -1,4 +1,4 @@
-# Created by: bacon4000@gmail.com
+# Created by: jwb@FreeBSD.org
 # $FreeBSD: science/InsightToolkit/Makefile 327767 2013-09-20 22:48:30Z bapt $
 
 PORTNAME=	InsightToolkit
@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	wip science biology
 MASTER_SITES=	SF/itk/itk/2.8
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Insight Toolkit
 
 OPTIONS_DEFINE=	EXAMPLES TESTING

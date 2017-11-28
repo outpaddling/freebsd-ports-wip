@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 #
 # FIXME: Not performing as well as it should.  Profile the code.  Problem
@@ -11,7 +11,7 @@ PORTNAME=	unanimity
 PORTVERSION=	2016.09.13
 CATEGORIES=	wip biology
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Consensus library and applications
 
 LICENSE=	BSD3CLAUSE

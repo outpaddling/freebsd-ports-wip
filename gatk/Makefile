@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 # Requires login to download the jar file
 
@@ -7,7 +7,7 @@ PORTVERSION=	3.6
 CATEGORIES=	wip biology java
 MASTER_SITES=	http://software.broadinstitute.org/gatk/download/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Analyse next-generation resequencing data
 
 # Not really.  Set up special license case here.

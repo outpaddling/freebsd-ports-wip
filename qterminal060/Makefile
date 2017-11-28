@@ -1,11 +1,11 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/x11/qterminal/Makefile 424271 2016-10-19 16:19:28Z marino $
 
 PORTNAME=	qterminal
 PORTVERSION=	0.6.0
 CATEGORIES=	wip x11
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Lightweight Qt-based terminal emulator
 
 LICENSE=	GPLv2

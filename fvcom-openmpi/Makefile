@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/science/fvcom-mpi/Makefile 351165 2014-04-13 00:17:45Z danilo $
 
 PKGNAMESUFFIX=	-openmpi
@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	-openmpi
 # Include trailing / so that it can be used as ${MPIPREFIX}bin, etc.
 MPIPREFIX=	mpi/openmpi/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 
 LIB_DEPENDS+=	libmpi.so:net/openmpi
 

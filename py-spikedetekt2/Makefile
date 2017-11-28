@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	spikedetekt2
@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=      v
 CATEGORIES=	wip python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Detecting and extracting spikes from raw recordings
 
 # Assuming based on other klusta packages

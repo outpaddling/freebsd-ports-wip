@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	linux-f10-
 DISTFILES=	ncurses-base-${PORTVERSION}-20.20080927.fc10.${LINUX_RPM_ARCH}.rpm \
 		ncurses-devel-${PORTVERSION}-20.20080927.fc10.${LINUX_RPM_ARCH}.rpm \
 		ncurses-libs-${PORTVERSION}-20.20080927.fc10.${LINUX_RPM_ARCH}.rpm
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Terminfo database required by Linux ncurses programs
 
 USE_LINUX_RPM=	yes

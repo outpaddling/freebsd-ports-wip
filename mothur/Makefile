@@ -1,4 +1,4 @@
-# Created by: Jason Wayne Bacon <bacon4000@gmail.com>
+# Created by: Jason Wayne Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mothur
@@ -6,7 +6,7 @@ PORTVERSION=	1.36.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	wip biology
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Bioinformatics tool for the microbial ecology community
 
 LICENSE=	GPLv3

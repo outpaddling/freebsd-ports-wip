@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gdc-download
@@ -6,7 +6,7 @@ PORTVERSION=	0.1
 CATEGORIES=	wip ftp
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Download tool for GDC (Genomic Data Commons) data
 
 LICENSE=	BSD2CLAUSE

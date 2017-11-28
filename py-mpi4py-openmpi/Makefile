@@ -7,7 +7,7 @@ CATEGORIES=	wip net parallel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-openmpi
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	MPI for Python - Python bindings for MPI
 
 LICENSE=	BSD3CLAUSE

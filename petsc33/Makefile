@@ -1,6 +1,6 @@
 # New ports collection makefile for:	petsc
 # Date created:		2012-04-08
-# Whom:			Jason Bacon <bacon4000@gmail.com>
+# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	wip math
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-p7
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Parallel solution of partial differential equations
 
 HAS_CONFIGURE=	yes

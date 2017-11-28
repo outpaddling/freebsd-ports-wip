@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 # Note: -lpetsc-ufo... is supposed to fail in conftest
 
@@ -7,7 +7,7 @@ PORTVERSION=	3.7.4
 CATEGORIES=	wip math
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Parallel solution of partial differential equations
 
 LICENSE=	BSD2CLAUSE

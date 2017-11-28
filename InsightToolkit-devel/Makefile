@@ -1,6 +1,6 @@
 # New ports collection Makefile for:   Insight Toolkit
 # Date created:        10 Aug 2006
-# Whom:                Jason Bacon <bacon4000@gmail.com>
+# Whom:                Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD: ports/science/InsightToolkit/Makefile,v 1.2 2007/01/30 04:23:57 kris Exp $
 #
@@ -11,7 +11,7 @@ CATEGORIES=	wip science biology
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	itk
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Insight Segmentation and Registration Toolkit
 
 BUILD_DEPENDS=	cmake:devel/cmake

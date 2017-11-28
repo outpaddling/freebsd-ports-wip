@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mvapich2
@@ -6,7 +6,7 @@ PORTVERSION=	2.1
 CATEGORIES=	wip net
 MASTER_SITES=	http://mvapich.cse.ohio-state.edu/download/mvapich/mv2/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Ohio State University Network-Based Computing Laboratory MPI
 
 LICENSE=	BSD3CLAUSE

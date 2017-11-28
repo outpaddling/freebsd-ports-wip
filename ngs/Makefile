@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 #
 # TODO
@@ -8,7 +8,7 @@ PORTNAME=	ngs
 PORTVERSION=	2016.12.23
 CATEGORIES=	wip biology java
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	NCBI NGS language bindings
 
 LICENSE=	PD

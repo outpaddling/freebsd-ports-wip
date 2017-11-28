@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mclust
@@ -6,7 +6,7 @@ DISTVERSION=	5.2.2
 CATEGORIES=	wip math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Gaussian finite mixture models fitted via EM algorithm
 
 LICENSE=	GPLv2

@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	beast-mcmc
@@ -6,7 +6,7 @@ PORTVERSION=	1.8.3
 CATEGORIES=	wip biology
 DISTVERSIONPREFIX=	v
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	
 
 LICENSE=	LGPL21

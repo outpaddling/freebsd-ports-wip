@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 #
 # This is a stopgap measure.  Bedops is open source and portable and will
@@ -12,7 +12,7 @@ MASTER_SITES=	http://github.com/bedops/bedops/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	bedops_linux_x86_64-v${PORTVERSION}.v2
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	High-performance genomic feature operations
 
 LICENSE=	GPLv2

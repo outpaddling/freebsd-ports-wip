@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/math/ufc/Makefile 344599 2014-02-16 16:16:16Z miwi $
 
 PORTNAME=	ufc
@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	wip math python
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/${MMVERSION}.x/${PORTVERSION}/+download/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Unified framework for finite element assembly
 
 BUILD_DEPENDS=	swig2.0:devel/swig20

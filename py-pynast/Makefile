@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pynast
@@ -9,7 +9,7 @@ PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PORTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Nearest Alignment Space Termination tool
 
 # Unknown

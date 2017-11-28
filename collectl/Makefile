@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	collectl
@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 # http://downloads.sourceforge.net/project/collectl/collectl/collectl-4.0.2/collectl-4.0.2.src.tar.gz?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fcollectl%2F&ts=1453390424&use_mirror=tcpdiag
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	reports statistics on cpu, disk, infiniband, lustre, memory, etc
 
 LICENSE=	ART10

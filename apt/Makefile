@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	apt
@@ -7,7 +7,7 @@ CATEGORIES=	wip biology
 MASTER_SITES=	http://media.affymetrix.com/Download/updates/
 DISTNAME=	APT-${PORTVERSION}_Source_Code
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	command line programs for working with Affymetrix GeneChip® arrays
 
 USES=		gmake shebangfix zip

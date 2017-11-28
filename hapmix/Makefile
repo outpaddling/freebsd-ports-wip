@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	hapmix
@@ -7,7 +7,7 @@ CATEGORIES=	wip biology
 MASTER_SITES=	http://cdn1.sph.harvard.edu/wp-content/uploads/sites/181/2012/10/
 DISTNAME=	hapmix1.2.tar_.gz
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Infer chromosomal segments of ancestry in admixed populations
 
 #LICENSE=

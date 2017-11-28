@@ -8,7 +8,7 @@ MASTER_SITES=	http://archives.fedoraproject.org/pub/archive/fedora/linux/release
 PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Terminfo database required by Linux ncurses programs
 
 USE_LINUX_RPM=	yes

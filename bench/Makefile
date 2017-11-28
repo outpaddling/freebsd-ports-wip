@@ -1,6 +1,6 @@
 # New ports collection makefile for:	bench
 # Date created:		2011-08-28
-# Whom:			Jason Bacon <bacon4000@gmail.com>
+# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	wip benchmarks
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	General benchmark for CPU, RAM, and disk
 
 LICENSE=	BSD2CLAUSE

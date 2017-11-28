@@ -5,7 +5,7 @@
 
 PKGNAMESUFFIX=	-openmpi
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 
 LICENSE=	GPLv1
 

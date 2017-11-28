@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	tempo2
@@ -7,7 +7,7 @@ CATEGORIES=	wip astro
 # http://downloads.sourceforge.net/project/tempo2/Tempo2%20Release%20Versions/tempo2-2013.9.1.tar.gz?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Ftempo2%2F&ts=1445380186&use_mirror=iweb
 MASTER_SITES=	SF/../project/tempo2/Tempo2%20Release%20Versions/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Pulsar software for forming timing residuals.
 
 LICENSE=	GPLv2

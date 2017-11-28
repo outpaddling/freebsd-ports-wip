@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 # Note: pthreads performance on FreeBSD 10.1 is lacking compared to
@@ -10,7 +10,7 @@ PORTVERSION=	2015.10.28
 CATEGORIES=	wip biology
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Find all significant local alignments between reads
 
 LICENSE=	BSD3CLAUSE

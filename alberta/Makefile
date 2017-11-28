@@ -1,6 +1,6 @@
 # New ports collection makefile for:	alberta
 # Date created:		2012-03-20
-# Whom:			Jason Bacon <bacon4000@gmail.com>
+# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	2.0.1
 CATEGORIES=	wip math
 MASTER_SITES=	http://www.alberta-fem.de/Downloads/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Adaptive multiLevel finite element toolbox
 
 LIB_DEPENDS=	blas:math/blas

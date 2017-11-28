@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 # Do not upgrade until crash bugs are worked out in 2.2.1 or later
 
@@ -8,7 +8,7 @@ CATEGORIES=	wip biology
 # No releases in Github repo, so no USE_GITHUB
 MASTER_SITES=	http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Transcript assembly, differential expression and regulation for RNA-Seq
 
 LICENSE=	BSL

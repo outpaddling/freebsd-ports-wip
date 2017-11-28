@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ddocent
@@ -6,7 +6,7 @@ PORTVERSION=	2015.11.30
 CATEGORIES=	wip biology java
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Bash pipeline for ddRAD sequencing
 
 LICENSE=	MIT

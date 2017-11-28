@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	merlin
@@ -6,7 +6,7 @@ PORTVERSION=	1.1.2
 CATEGORIES=	wip biology
 MASTER_SITES=	http://csg.sph.umich.edu/abecasis/Merlin/download/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Sparse trees to represent gene flow in pedigrees
 
 LICENSE=	BSD3CLAUSE

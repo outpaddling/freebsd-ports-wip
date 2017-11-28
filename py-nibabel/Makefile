@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	nibabel
@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 MASTER_SITE_SUBDIR=source/n/nibabel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Provides read write access to common medical and neuroimaging formats
 
 LICENSE=	MIT

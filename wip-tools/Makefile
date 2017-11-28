@@ -5,7 +5,7 @@ PORTVERSION=	0.2
 CATEGORIES=	wip ports-mgmt
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Update ports tree with work-in-progress ports
 
 LICENSE=	BSD3CLAUSE

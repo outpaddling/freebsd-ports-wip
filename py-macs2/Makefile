@@ -6,7 +6,7 @@ PORTVERSION=	2017.05.05
 CATEGORIES=	wip biology
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Novel algorithm for identifying transcript factor binding sites
 
 LICENSE=	BSD3CLAUSE

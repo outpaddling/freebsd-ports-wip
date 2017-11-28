@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	moware
@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 CATEGORIES=	wip devel
 MASTER_SITES=	ftp://ftp.ifremer.fr/ifremer/fortran90/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Fortran 90 preprocessor and utilities
 
 USES=		fortran gmake

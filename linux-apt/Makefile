@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	apt
@@ -8,7 +8,7 @@ MASTER_SITES=	http://media.affymetrix.com/Download/updates/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	APT_${PORTVERSION}_Linux_64_bit_x86_binaries
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Command line programs for working with Affymetrix GeneChip® arrays
 
 # Not sure of version

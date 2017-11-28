@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	vcglib
@@ -6,7 +6,7 @@ PORTVERSION=	1.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	wip graphics
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Template library for manipulation of triangle meshes
 
 # Unspecified.  Assuming public domain.

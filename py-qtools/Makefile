@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	qtools
@@ -6,7 +6,7 @@ PORTVERSION=	899e34a4876ba232f920105a437efe365efe5c5e
 CATEGORIES=	wip graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Some Python tools for Qt
 
 LICENSE=	BSD3CLAUSE

@@ -20,7 +20,7 @@ PORTVERSION=	1.5.1
 CATEGORIES=	wip science biology
 MASTER_SITES=	http://www.nitrc.org/frs/downloadlink.php/400/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Medical Imaging NetCDF
 
 LIB_DEPENDS=	netcdf.4:science/netcdf

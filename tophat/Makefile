@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	tophat
@@ -7,7 +7,7 @@ CATEGORIES=	wip biology science
 # Note: Distfiles on Github are not the same as those here
 MASTER_SITES=	http://ccb.jhu.edu/software/tophat/downloads/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Fast splice junction mapper for RNA-Seq reads
 
 LICENSE=	BSL

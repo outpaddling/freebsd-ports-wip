@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/math/matlab-installer/Makefile 368845 2014-09-22 10:40:00Z xmj $
 
 PORTNAME=	atomistix-installer
@@ -6,7 +6,7 @@ PORTVERSION=	0.1
 CATEGORIES=	wip science
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Easy installation of Linux Atomistix(r) on FreeBSD
 
 LICENSE=	BSD3CLAUSE

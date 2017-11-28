@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	virusseq
@@ -7,7 +7,7 @@ CATEGORIES=	wip biology
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 DISTNAME=	VirusSeq-${PORTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Detecting known viruses and their integration sites
 
 #LICENSE=	unspecified

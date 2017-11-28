@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	seqkit
@@ -6,7 +6,7 @@ PORTVERSION=	0.6.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	wip
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Cross-platform and ultrafast toolkit for FASTA/Q file manipulation
 
 LICENSE=	MIT

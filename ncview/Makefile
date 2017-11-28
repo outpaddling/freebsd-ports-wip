@@ -1,6 +1,6 @@
 # New ports collection makefile for:	ncview
 # Date created:		2013-02-26
-# Whom:			Jason Bacon <bacon4000@gmail.com>
+# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	2.1.2
 CATEGORIES=	wip science graphics
 MASTER_SITES=	ftp://cirrus.ucsd.edu/pub/ncview/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=
 
 GNU_CONFIGURE=	yes

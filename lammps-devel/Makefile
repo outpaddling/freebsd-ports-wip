@@ -5,7 +5,7 @@ PORTNAME=	lammps
 PORTVERSION=	2016.11.17
 CATEGORIES=	wip science
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Large-scale Atomic/Molecular Massively Parallel Simulator
 
 LICENSE=	GPLv1

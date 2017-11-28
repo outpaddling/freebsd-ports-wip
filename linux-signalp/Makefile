@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	signalp
@@ -7,7 +7,7 @@ CATEGORIES=	wip biology
 MASTER_SITES=	http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?signalp/
 DISTNAME=	${PORTNAME}-${PORTVERSION}c.Linux
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Predicts the presence and location of signal peptide cleavage sites
 
 # LICENSE=

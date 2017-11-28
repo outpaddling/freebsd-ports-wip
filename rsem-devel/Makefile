@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 # Test new versions with Trinity before upgrading
 
@@ -8,7 +8,7 @@ PORTVERSION=	4311a0691a68304f811030d059071209580ea5e6
 #DISTVERSIONPREFIX=      v
 CATEGORIES=	wip biology
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	RNA-Seq by Expectation-Maximization
 
 LICENSE=	GPLv3

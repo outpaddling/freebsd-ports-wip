@@ -1,11 +1,11 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/x11-toolkits/qtermwidget/Makefile 424270 2016-10-19 16:17:40Z marino $
 
 PORTNAME=	qtermwidget
 PORTVERSION=	0.6.0
 CATEGORIES=	wip x11-toolkits
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Terminal widget for QTerminal
 
 LICENSE=	GPLv2

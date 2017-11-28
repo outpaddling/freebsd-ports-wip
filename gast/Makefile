@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gast
@@ -6,7 +6,7 @@ PORTVERSION=	2016.02.10
 CATEGORIES=	wip biology
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Global Alignment for Sequence Taxonomy
 
 LICENSE=	GPLv2

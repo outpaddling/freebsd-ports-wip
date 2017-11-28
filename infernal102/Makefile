@@ -1,4 +1,4 @@
-# Created by: Jason Wayne Bacon <bacon4000@gmail.com>
+# Created by: Jason Wayne Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 #
 # Do not upgrade this port before testing the new version with biology/py-qiime
@@ -9,7 +9,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	wip biology
 MASTER_SITES=	http://eddylab.org/infernal/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Search DNA databases for RNA structure and sequence similarities
 
 LICENSE=	BSD3CLAUSE

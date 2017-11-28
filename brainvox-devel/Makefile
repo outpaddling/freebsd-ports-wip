@@ -1,6 +1,6 @@
 # New ports collection makefile for:	brainvox
 # Date created:		2007-08-02
-# Whom:			Jason Bacon <bacon4000@gmail.com>
+# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -15,7 +15,7 @@ WRKSRC=		${WRKDIR}/brainvox/trunk
 
 USE_GMAKE=	yes
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	U Iowa 3D rendering
 
 post-patch:

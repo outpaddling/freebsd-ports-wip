@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	haploview
@@ -9,7 +9,7 @@ DISTNAME=	Haploview_${PORTVERSION}.jar
 EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Common interface to tasks relating to haplotype analyses
 
 #LICENSE=	https://www.broadinstitute.org/haploview/contact-and-support

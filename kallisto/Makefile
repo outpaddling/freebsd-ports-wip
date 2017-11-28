@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 # Note for pkgsrc conversion: Requires zlib
 
@@ -7,7 +7,7 @@ PORTVERSION=	0.42.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	wip biology
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Quantify abundances of transcripts from RNA-Seq data
 
 LICENSE=	BSD2CLAUSE

@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/science/fvcom/Makefile 437439 2017-04-01 15:23:30Z gerald $
 
 PORTNAME=	fvcom
@@ -6,7 +6,7 @@ PORTVERSION=	4.0
 CATEGORIES=	wip science
 MASTER_SITES=	http://fvcom.smast.umassd.edu/FVCOM/index.html/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Unstructured Grid Finite Volume Coastal Ocean Model
 
 # Phony just to avoid ports delays for now

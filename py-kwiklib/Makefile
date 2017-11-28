@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kwiklib
@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=      v
 CATEGORIES=	wip math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Shared features between the projects (files, statistics, utils)
 
 LICENSE=	BSD3CLAUSE

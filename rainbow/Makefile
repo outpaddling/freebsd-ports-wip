@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	rainbow
@@ -7,7 +7,7 @@ CATEGORIES=	wip biology
 MASTER_SITES=	SF/bio-rainbow
 DISTNAME=	rainbow_${PORTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Short reads clustering and local assembly
 
 # LICENSE=	unspecified

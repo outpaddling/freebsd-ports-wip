@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/devel/openvex/Makefile 413746 2016-04-21 16:43:14Z swills $
 
 PORTNAME=	openvex
@@ -6,7 +6,7 @@ PORTVERSION=	0.5.4
 CATEGORIES=	wip devel
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Open source firmware for Vex robotics controllers
 
 LICENSE=	GPLv3

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	docbook2odf
 # Date created:		2010-09-06
-# Whom:			Jason Bacon <bacon4000@gmail.com>
+# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.244
 CATEGORIES=	wip textproc
 MASTER_SITES=	http://open.comsultia.com/docbook2odf/dwn/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Docbook to ODF converter
 
 LICENSE=	GPLv2

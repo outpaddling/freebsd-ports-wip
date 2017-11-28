@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 # Test new versions with Trinity before upgrading
 
@@ -7,7 +7,7 @@ PORTVERSION=	2.0.1
 CATEGORIES=	wip biology perl5
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Identify candidate coding regions within transcript sequences
 
 LICENSE=	BSD3CLAUSE

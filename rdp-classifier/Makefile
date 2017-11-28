@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	rdp-classifier/rdp-classifier/
 PKGNAMEPREFIX=	rdp-
 DISTNAME=	rdp_classifier_${PORTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	RDP Classifier is a naive Bayesian classfiier
 
 LICENSE=	GPLv2

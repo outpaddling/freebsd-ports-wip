@@ -1,4 +1,4 @@
-# Created by: Jason W. Bacon <bacon4000@gmail.com>
+# Created by: Jason W. Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/math/rapid/Makefile 403506 2015-12-11 08:48:56Z miwi $
 
 PORTNAME=	rapid
@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.cs.sunysb.edu/~algorith/implement/RAPID/distrib/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/
 DISTNAME=	RAPID_v2_01
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Robust and Accurate Polygon Interference Detection
 
 LICENSE=	RAPID_LICENSE

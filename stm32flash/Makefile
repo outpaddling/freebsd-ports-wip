@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	stm32flash
@@ -6,7 +6,7 @@ PORTVERSION=	0.5
 CATEGORIES=	wip devel
 MASTER_SITES=	SF/stm32flash/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Open source flash program for STM32 ARM processors using ST bootloader
 
 USES=		gmake

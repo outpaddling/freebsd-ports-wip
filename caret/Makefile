@@ -14,7 +14,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/Caret/
 DISTFILES=	caret_source.v${PORTVERSION}.zip \
 		caret_distfiles.v${PORTVERSION}.zip
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Computerized Anatomical Reconstruction and Editing Toolkit
 
 LIB_DEPENDS=	minc.1:science/minc \

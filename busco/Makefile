@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	busco
@@ -7,7 +7,7 @@ CATEGORIES=	wip biology
 MASTER_SITES=	http://busco.ezlab.org/files/
 DISTNAME=	BUSCO_v${PORTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Assess genome assembly and annotation completeness
 
 LICENSE=	GPLv3

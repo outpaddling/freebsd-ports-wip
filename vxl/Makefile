@@ -1,6 +1,6 @@
 # New ports collection makefile for:	vxl
 # Date created:		2012-05-06
-# Whom:			Jason Bacon <bacon4000@gmail.com>
+# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -15,7 +15,7 @@ MASTER_SITES=	SF/vxl/vxl/1.14/
 USE_ZIP=	yes
 USE_CMAKE=	yes
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=
 
 CFLAGS+=	-fPIC

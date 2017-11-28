@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	GenomeAnalysisTKQueue
@@ -6,7 +6,7 @@ PORTVERSION=	3.1
 CATEGORIES=	wip biology science
 DISTNAME=	Queue-${PORTVERSION}-1
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Analyse next-generation resequencing data
 
 #LICENSE=	restricted

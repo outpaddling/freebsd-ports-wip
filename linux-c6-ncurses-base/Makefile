@@ -7,7 +7,7 @@ PORTVERSION=	5.7
 PORTREVISION=	2
 CATEGORIES=	wip devel linux
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Terminfo database required by Linux ncurses programs
 
 USE_LINUX=	c6

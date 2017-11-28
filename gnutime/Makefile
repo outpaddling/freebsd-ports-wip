@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	time
@@ -6,7 +6,7 @@ PORTVERSION=	1.7
 CATEGORIES=	wip sysutils
 MASTER_SITES=	http://ftp.gnu.org/gnu/time/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	GNU time command
 
 USES=		gmake

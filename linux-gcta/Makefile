@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gcta
@@ -8,7 +8,7 @@ MASTER_SITES=	http://cnsgenomics.com/software/gcta/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 PKGNAMEPREFIX=	linux-
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	tool for Genome-wide Complex Trait Analysis
 
 # Different from source (GPLv3)

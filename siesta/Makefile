@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	siesta
@@ -7,7 +7,7 @@ CATEGORIES=	wip science
 DISTNAME=	${PORTNAME}-${PORTVERSION}-pl-4
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Spanish Initiative for Electronic Simulations with Thousands of Atoms
 
 # LICENSE=	Siesta license

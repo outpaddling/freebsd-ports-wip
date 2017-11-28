@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	beast2
@@ -8,7 +8,7 @@ CATEGORIES=	wip biology java
 MASTER_SITES=	http://github.com/CompEvol/beast2/releases/download/v2.4.3/
 DISTNAME=	BEAST.v${PORTVERSION}.Linux
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Bayesian phylogenetic analysis of molecular sequences
 
 LICENSE=	LGPL21

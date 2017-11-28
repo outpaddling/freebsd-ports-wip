@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 #
 # Do not uprade this port beyond 1.x before testing with biology/py-qiime
@@ -9,7 +9,7 @@ CATEGORIES=	wip biology
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 # See also pyqi, an expanded version of qcli
 COMMENT=	wrapping general commands in multiple types of interfaces
 

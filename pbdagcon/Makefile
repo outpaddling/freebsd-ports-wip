@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pbdagcon
@@ -6,7 +6,7 @@ PORTVERSION=	2015.08.19
 CATEGORIES=	wip biology
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Consensus algorithm implementation based on directed acyclic graphs
 
 LICENSE=	BSD3CLAUSE

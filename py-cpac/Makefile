@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cpac
@@ -8,7 +8,7 @@ MASTER_SITES=	http://github.com/FCP-INDI/C-PAC/archive/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	v${PORTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Configurable Pipeline for the Analysis of Connectomes
 
 LICENSE=	BSD3CLAUSE

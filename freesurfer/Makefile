@@ -1,6 +1,6 @@
 # New ports collection makefile for:	freesurfer
 # Date created:		2012-05-06
-# Whom:			Jason Bacon <bacon4000@gmail.com>
+# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	5.1.0
 CATEGORIES=	wip science
 MASTER_SITES=
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=
 
 USE_BZIP2=	yes

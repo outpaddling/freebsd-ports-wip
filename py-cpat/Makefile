@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cpat
@@ -11,7 +11,7 @@ DISTNAME=	CPAT-${PORTVERSION}
 DISTFILES=	CPAT-${PORTVERSION}.tar.gz distribute-0.6.10.tar.gz
 EXTRACT_ONLY=	CPAT-${PORTVERSION}.tar.gz
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Overcomes alignment search limitations using logistic regression model
 
 LICENSE=	MIT

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	slepc
 # Date created:		2012-05-22
-# Whom:			Jason Bacon <bacon4000@gmail.com>
+# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-openmpi
 CATEGORIES=	wip math
 MASTER_SITES=	http://www.grycap.upv.es/slepc/download/distrib/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	large scale sparse eigenvalue problems on parallel computers
 
 HAS_CONFIGURE=	yes

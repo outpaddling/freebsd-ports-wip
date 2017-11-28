@@ -1,4 +1,4 @@
-# Created by: Jason W. Bacon <bacon4000@gmail.com>
+# Created by: Jason W. Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/science/nifticlib/Makefile 403506 2015-12-11 08:48:56Z miwi $
 
 PORTNAME=	nifticlib
@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	wip science graphics
 MASTER_SITES=	SF/niftilib/nifticlib/nifticlib_2_0_0
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Neuroimaging Informatics Technology Initiative data format
 
 LICENSE=	PD

@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/sysutils/slurm-wlm/Makefile 436851 2017-03-24 18:52:28Z jrm $
 
 PORTNAME=	slurm

@@ -1,4 +1,4 @@
-# Created by: Jason Wayne Bacon <bacon4000@gmail.com>
+# Created by: Jason Wayne Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 # FIXME: Can we download the jar file using github tools?
 
@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-tools
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	CLI tools for manipulating high-throughput sequencing (HTS) data
 
 LICENSE=	MIT

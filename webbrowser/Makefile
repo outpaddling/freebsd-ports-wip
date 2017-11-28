@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD: www/runsomebrowser/Makefile 327776 2013-09-20 23:36:50Z bapt $
 
 PORTNAME=	webbrowser
@@ -6,7 +6,7 @@ PORTVERSION=	0.3
 CATEGORIES=	wip www
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Wrapper for running the "best" available WEB browser
 
 LICENSE=	BSD3CLAUSE

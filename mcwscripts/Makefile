@@ -1,7 +1,7 @@
 ############################################################################
 # New ports collection Makefile for:   mcwscripts
 # Date created:        26 Jan 2007
-# Whom:                Jason Bacon <bacon4000@gmail.com>
+# Whom:                Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ PORTVERSION=	1.0
 CATEGORIES=	wip misc
 MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Miscellaneous scripts
 
 RUN_DEPENDS=	TLv:../../science/TLv \

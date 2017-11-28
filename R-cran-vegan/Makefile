@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	vegan
@@ -6,7 +6,7 @@ DISTVERSION=	2.4-2
 CATEGORIES=	wip biology
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Ordination methods, diversity analysis etc for ecologists
 
 LICENSE=	GPLv2

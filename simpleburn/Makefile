@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	simpleburn
@@ -6,7 +6,7 @@ PORTVERSION=	1.8.2
 CATEGORIES=	wip sysutils
 MASTER_SITES=	http://simpleburn.tuxfamily.org/IMG/gz/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Simple CD burning utility with minimal dependencies
 
 # Cecill

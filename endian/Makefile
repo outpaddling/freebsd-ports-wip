@@ -1,4 +1,4 @@
-# Created by: Jason W. Bacon <bacon4000@gmail.com>
+# Created by: Jason W. Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/sysutils/endian/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	endian
@@ -6,7 +6,7 @@ PORTVERSION=	1.1
 CATEGORIES=	wip sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Report endianness of a system
 
 LICENSE=	BSD2CLAUSE

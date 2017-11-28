@@ -1,6 +1,6 @@
 # New ports collection makefile for:	visit
 # Date created:		2010-12-29
-# Whom:			Jason Bacon <bacon4000@gmail.com>
+# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	wip graphics science math
 MASTER_SITES=	http://portal.nersc.gov/project/visit/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	interactive parallel visualization and graphical analysis tool
 
 # Unclear about this

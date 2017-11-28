@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pbh5tools
@@ -8,7 +8,7 @@ MASTER_SITES=	http://github.com/PacificBiosciences/pbh5tools/archive/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	smrtanalysis-${PORTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for manipulating HDF5 files produced by Pacific Biosciences
 
 LICENSE=	BSD3CLAUSE

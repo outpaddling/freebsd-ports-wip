@@ -1,11 +1,11 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	klustakwik
 PORTVERSION=	0.3.0.rc3
 CATEGORIES=	wip math science
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Unsupervised classification of multidimensional continuous data
 
 # LICENSE=	GPLv1

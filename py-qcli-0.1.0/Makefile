@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	qcli
@@ -7,7 +7,7 @@ CATEGORIES=	wip biology
 MASTER_SITES=	http://pypi.python.org/packages/source/q/qcli/
 PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 # See also pyqi, an expanded version of qcli
 COMMENT=	wrapping general commands in multiple types of interfaces
 

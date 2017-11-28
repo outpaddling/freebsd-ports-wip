@@ -7,7 +7,7 @@ CATEGORIES=	wip biology
 # Mirrored snapshots of github repo
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Web-based platform for data intensive biomedical research
 
 #LICENSE=	various

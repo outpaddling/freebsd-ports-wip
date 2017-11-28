@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	igv
@@ -7,7 +7,7 @@ CATEGORIES=	wip biology java
 MASTER_SITES=	http://data.broadinstitute.org/igv/projects/downloads/
 DISTNAME=	IGV_${PORTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Visualization tool for interactive exploration of genomic datasets
 
 LICENSE=	MIT

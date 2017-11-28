@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	globus_toolkit
@@ -6,7 +6,7 @@ PORTVERSION=	6.0.1453307864
 CATEGORIES=	wip net java
 MASTER_SITES=	http://toolkit.globus.org/ftppub/gt6/installers/src/
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Open source software toolkit used for building grids
 
 LICENSE=	APACHE20

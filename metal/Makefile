@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	metal
@@ -7,7 +7,7 @@ CATEGORIES=	wip biology
 MASTER_SITES=	http://csg.sph.umich.edu/abecasis/Metal/download/
 DISTNAME=	generic-metal-2011-03-25
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Meta-analysis of genomewide association scans
 
 # For twister, and double check

@@ -1,7 +1,7 @@
 ############################################################################
 # New ports collection Makefile for:   bioimagesuite
 # Date created:        2 jan 2007
-# Whom:                Jason Bacon <bacon4000@gmail.com>
+# Whom:                Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -20,7 +20,7 @@ DISTFILES=	bioimagesuite_latest_FreeBSD_g++32.tar.gz \
 		itk241_yale_FreeBSD_g++32.tar.gz \
 		vtk44_yale_FreeBSD_g++32.tar.gz
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	BioImageSuite
 
 SUB_FILES=	pkg-message

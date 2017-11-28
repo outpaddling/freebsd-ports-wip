@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cosmos
@@ -6,7 +6,7 @@ PORTVERSION=	2.0.10
 CATEGORIES=	wip biology
 PKGNAMESUFFIX=	-wfm
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Python Workflow and Pipeline Management System
 
 # http://cosmos.hms.harvard.edu/ says apache 2.0

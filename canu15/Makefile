@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	canu
@@ -6,7 +6,7 @@ PORTVERSION=	1.5
 DISTVERSIONPREFIX=v
 CATEGORIES=	wip biology java
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Single molecule sequence assembler for genomes large and small
 
 LICENSE=	GPLv2

@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.lsi.com/downloads/Public/Nytro/downloads/Nytro%20XM/Man
 PKGNAMESUFFIX=	nmr
 DISTNAME=	Storcli_FreeBSD_10175
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	MegaRAID comand-line management utiliity
 
 RESTRICTED=	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/Pages/user/eula.aspx

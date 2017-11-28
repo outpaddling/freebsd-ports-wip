@@ -1,6 +1,6 @@
 # New ports collection makefile for:	freecad
 # Date created:		2010-02-27
-# Whom:			Jason Bacon <bacon4000@gmail.com>
+# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES:=	SF/free-cad/FreeCAD%20Source
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/FreeCAD-${PORTVERSION}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Free 3D CAD modelling
 
 # See Cmake output

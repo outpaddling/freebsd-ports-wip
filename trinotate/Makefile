@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	trinotate
@@ -7,7 +7,7 @@ CATEGORIES=	wip biology
 MASTER_SITES=	https://github.com/Trinotate/Trinotate/archive/
 DISTNAME=	v2.0.1
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 
 COMMENT=	Trinotate is a comprehensive annotation suite designed for automatic functional annotation of transcriptomes, particularly de novo assembled transcriptomes, from model or non-model organisms.
 

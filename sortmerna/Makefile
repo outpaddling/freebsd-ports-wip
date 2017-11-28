@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 # Only 2.0 is compatible with qiime 1.9.1
@@ -8,7 +8,7 @@ PORTNAME=	sortmerna
 PORTVERSION=	2.0
 CATEGORIES=	wip biology
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Filtering, mapping and OTU-picking NGS reads
 
 LICENSE=	LGPL3

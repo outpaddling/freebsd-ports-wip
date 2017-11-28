@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 # 
 # to do:
@@ -10,7 +10,7 @@ DISTVERSIONPREFIX=v
 CATEGORIES=	wip ftp python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Combining a UDT network proxy with resumable performant HTTP downloads
 
 LICENSE=	APACHE20

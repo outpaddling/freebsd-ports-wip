@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	flann
@@ -7,7 +7,7 @@ CATEGORIES=	wip science
 MASTER_SITES=	http://www.cs.ubc.ca/research/flann/uploads/FLANN/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Fast approximate nearest neighbor searches in high dimensional spaces
 
 LICENSE=	BSD2CLAUSE

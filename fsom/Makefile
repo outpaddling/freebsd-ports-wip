@@ -1,11 +1,11 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	fsom
 PORTVERSION=	2015.11.21
 CATEGORIES=	wip science
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tiny C library for managing SOM (Self-Organizing Maps) neural networks
 
 LICENSE=	GPLv3

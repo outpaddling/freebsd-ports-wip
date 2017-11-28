@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwb@freebsd.org>
+# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	trimgalore
@@ -6,7 +6,7 @@ PORTVERSION=	0.4.5
 CATEGORIES=	wip perl5
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jwb@freebsd.org
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Wrapper around Cutadapt and FastQC for adapter and quality trimming
 
 LICENSE=	GPLv3
