@@ -2,7 +2,7 @@
 # $FreeBSD: head/biology/bwa/Makefile 441814 2017-05-26 20:02:44Z linimon $
 
 PORTNAME=	bwa
-PORTVERSION=	0.7.16
+PORTVERSION=	0.7.17
 DISTVERSIONPREFIX=v
 CATEGORIES=	wip biology
 
@@ -11,6 +11,7 @@ COMMENT=	Burrows-Wheeler sequence aligner
 
 LICENSE=	GPLv3
 
+# From 0.7.9a
 BROKEN_aarch64=		fails to compile: invalid conversion between vector type and integer type
 BROKEN_armv6=		fails to compile: invalid conversion between vector type and integer type
 BROKEN_powerpc64=	fails to compile: ksw.c: emmintrin.h: No such file or directory
