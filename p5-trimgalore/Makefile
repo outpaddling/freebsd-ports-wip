@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	trimgalore
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	wip perl5
 PKGNAMEPREFIX=	p5-
 
