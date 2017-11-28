@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <bacon4000@gmail.com>
+# Created by: Jason Bacon <jwb@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	trimgalore
@@ -6,7 +6,7 @@ PORTVERSION=	0.4.5
 CATEGORIES=	wip perl5
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	jwb@freebsd.org
 COMMENT=	Wrapper around Cutadapt and FastQC for adapter and quality trimming
 
 LICENSE=	GPLv3
@@ -15,14 +15,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cutadapt>0:wip/py-cutadapt \
 		fastqc>0:wip/fastqc
 
+NO_ARCH=	yes
+NO_BUILD=	yes
+
 USES=		perl5 python shebangfix
 SHEBANG_FILES=	trim_galore
 USE_PERL5=	run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FelixKrueger
-
-NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/TrimGalore-${PORTVERSION}
 
