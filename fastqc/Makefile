@@ -12,6 +12,7 @@ COMMENT=	Quality control tool for high throughput sequence data
 
 LICENSE=	GPLv3
 
+NO_ARCH=	yes
 USES=		zip perl5 shebangfix
 USE_JAVA=	yes
 USE_PERL5=	run
