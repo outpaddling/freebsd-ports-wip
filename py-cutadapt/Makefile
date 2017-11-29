@@ -18,4 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xopen>0:wip/py-xopen
 USES=		python
 USE_PYTHON=	distutils
 
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cutadapt/*.so
+
 .include <bsd.port.mk>
