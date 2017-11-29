@@ -3,7 +3,7 @@
 
 PORTNAME=	xopen
 PORTVERSION=	0.2.1
-CATEGORIES=	wip python
+CATEGORIES=	wip archivers python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +11,6 @@ MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Open compressed files transparently
 
 LICENSE=	MIT
-#LICENSE_FILE=
 
 USES=		python
 USE_PYTHON=	autoplist distutils
