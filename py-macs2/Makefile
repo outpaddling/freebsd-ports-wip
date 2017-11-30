@@ -1,22 +1,21 @@
-# Created by: Charlie %%FULLNAME%% <root@freebsd-10.1.local>
 # $FreeBSD$
 
 PORTNAME=	macs2
 PORTVERSION=	2017.05.05
-CATEGORIES=	wip biology
+CATEGORIES=	wip biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Novel algorithm for identifying transcript factor binding sites
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0:math/py-numpy \
 		cython:lang/cython
 
 USES=		python
 USE_PYTHON=	distutils
-PYDISTUTILS_PKGNAME=	macs2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	taoliu
