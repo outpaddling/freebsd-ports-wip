@@ -51,7 +51,7 @@ BUILD_DEPENDS+=	gsort:sysutils/coreutils \
 		bash:shells/bash
 RUN_DEPENDS+=	gsort:sysutils/coreutils \
 		bowtie:biology/bowtie \
-		bowtie2:wip/bowtie2 \
+		bowtie2:biology/bowtie2 \
 		samtools>=1.3:biology/samtools \
 		jellyfish>=2.1.4:biology/jellyfish \
 		ParaFly:sysutils/parafly \

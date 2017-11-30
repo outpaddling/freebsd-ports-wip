@@ -16,7 +16,7 @@ LICENSE=	BSL
 # Is 2.2.7 OK?
 BUILD_DEPENDS=	samtools01==0.1.19:wip/samtools0119
 LIB_DEPENDS+=	libboost_iostreams.so:devel/boost-libs
-RUN_DEPENDS=	bowtie2:wip/bowtie2 \
+RUN_DEPENDS=	bowtie2:biology/bowtie2 \
 		samtools01==0.1.19:wip/samtools0119
 
 # Hack to allow variable length arrays, which are not supported by ISO C++

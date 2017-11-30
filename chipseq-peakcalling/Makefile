@@ -14,7 +14,7 @@ RUN_DEPENDS=	scythe>=0:wip/scythe \
 		sickle>=0:wip/sickle \
 		bwa>=0:biology/bwa \
 		${PYTHON_PKGNAMEPREFIX}ceas>=0:wip/py-ceas \
-		bowtie2>=0:wip/bowtie2 \
+		bowtie2>=0:biology/bowtie2 \
 		tophat>=2.1.1:wip/tophat \
 		cufflinks>=0:wip/cufflinks \
 		${PYTHON_PKGNAMEPREFIX}MACS2>=2:wip/py-macs2 \
