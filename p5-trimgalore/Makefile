@@ -12,7 +12,7 @@ COMMENT=	Wrapper around Cutadapt and FastQC for adapter and quality trimming
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cutadapt>0:wip/py-cutadapt \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cutadapt>0:biology/py-cutadapt \
 		fastqc>0:wip/fastqc
 
 NO_ARCH=	yes
