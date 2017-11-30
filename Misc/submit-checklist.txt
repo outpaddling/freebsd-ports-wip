@@ -10,7 +10,7 @@ Makefile:
 	portsnap fetch update
 	Merge latest changes in committed port into development port
 
-    # Created by: First-name Last-name <email>
+    Remove # Created by: First-name Last-name <email>
     # $FreeBSD$
     
     Try to make PKGNAME match port directory name
@@ -35,9 +35,10 @@ Makefile:
     Check comment
 
     Add LICENSE (after COMMENT)
+	Add LICENSE_FILE if included in dist
 
     Add NO_ARCH=yes before USES if the port is architecture free
-	e.g. Only installs scripts
+	e.g. Only installs scripts or Java byte code
     
     Remove WITH_DEBUG if present
 
