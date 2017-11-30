@@ -3,8 +3,12 @@ Distfile
     If maintaining the source, clean up and reroll distfile
 
 Makefile:
+    Replace PORTVERSION with DISTVERSION
+
     Check all installed scripts for proper shebang line
 	(DEVELOPER=yes in /etc/make.conf will enable QA tests to detect this)
+	USES=shebangfix
+	SHEBANG_FILES=path ...
     
     If updating a port
 	portsnap fetch update
@@ -21,12 +25,12 @@ Makefile:
     Check/correct MASTER_SITES
 	Use https if possible to protect download stream from hackers
 	USE_GITHUB, SF, DISTVERSIONPREFIX, etc. if possible
-	DISTVERSIONPREFIX=v preferred over GH_TAGNAME=v${PORTVERSION}
+	DISTVERSIONPREFIX=v preferred over GH_TAGNAME=v${DISTVERSION}
 	No need to manually set WRKSRC if using USE_GITHUB
     
     Check use of each LOCALBASE and PREFIX
     Remove /usr/wip and ../..
-    Use ${PORTNAME}, ${PORTVERSION}, etc in body wherever possible
+    Use ${PORTNAME}, ${DISTVERSION}, etc in body wherever possible
     Check categories
 	Add java, perl5, python, etc. for ports that use them
     
@@ -39,6 +43,7 @@ Makefile:
 
     Add NO_ARCH=yes before USES if the port is architecture free
 	e.g. Only installs scripts or Java byte code
+    Keep NO_BUILD with NO_ARCH
     
     Remove WITH_DEBUG if present
 
@@ -83,6 +88,8 @@ Makefile:
     CMAKE_FLAGS format VAR:BOOL=ON, not VAR=1
     
     Use COPYTREE_* instead of ${CP} -r
+	Combine dirs going to the same destination:
+	    cd ${WRKSRC} && COPYTREE_SHARE "A B C" ${STAGEDIR}...
     
 Carefully check REINPLACE_CMDS and patches
     Patching should be done at the earliest possible stage, e.g. don't
