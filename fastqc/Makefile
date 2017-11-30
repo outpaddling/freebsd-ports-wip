@@ -1,16 +1,16 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	fastqc
 PORTVERSION=	0.11.5
-CATEGORIES=	wip biology java
-MASTER_SITES=	http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
+CATEGORIES=	wip biology java perl5
+MASTER_SITES=	https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Quality control tool for high throughput sequence data
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 NO_ARCH=	yes
 USES=		zip perl5 shebangfix
@@ -28,6 +28,7 @@ post-patch:
 		-e 's|$$RealBin/|${JAVAJARDIR}/fastqc/|g' \
 		${WRKSRC}/fastqc
 
+# Help files are not optional docs, but required for Help menu functionality
 do-install:
 	${MKDIR} ${STAGEDIR}${JAVAJARDIR}/fastqc
 	${INSTALL_DATA} ${WRKSRC}/*.jar ${STAGEDIR}${JAVAJARDIR}/fastqc
@@ -37,13 +38,13 @@ do-install:
 		${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} Templates \
 		${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} Help \
+		${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} net \
 		${STAGEDIR}${JAVAJARDIR}/fastqc
 	cd ${WRKSRC} && ${COPYTREE_SHARE} uk \
 		${STAGEDIR}${JAVAJARDIR}/fastqc
 	cd ${WRKSRC} && ${COPYTREE_SHARE} org \
 		${STAGEDIR}${JAVAJARDIR}/fastqc
-	cd ${WRKSRC} && ${COPYTREE_SHARE} Help \
-		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
