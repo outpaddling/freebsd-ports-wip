@@ -27,6 +27,7 @@ Makefile:
 	USE_GITHUB, SF, DISTVERSIONPREFIX, etc. if possible
 	DISTVERSIONPREFIX=v preferred over GH_TAGNAME=v${DISTVERSION}
 	No need to manually set WRKSRC if using USE_GITHUB
+	Remove MASTER_SITE_SUBDIR if present (deprecated)
     
     Check use of each LOCALBASE and PREFIX
     Remove /usr/wip and ../..
