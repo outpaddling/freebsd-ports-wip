@@ -1,7 +1,7 @@
 bin/kallisto
 %%PORTEXAMPLES%%bin/kallisto-test
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/README.md
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/Snakefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/reads_1.fastq.gz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/reads_2.fastq.gz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/transcripts.fasta.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Snakefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/reads_1.fastq.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/reads_2.fastq.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transcripts.fasta.gz
