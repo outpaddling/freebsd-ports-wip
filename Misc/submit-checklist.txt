@@ -53,12 +53,20 @@ Makefile:
     Check versions of all depends
 	Be as generic as possible
 	Use USES or USE_* variables wherever possible
+	    USES before USE_*
 	    See /usr/ports/Mk/Uses
 	    USE_TEX instead of tex-* depends
 	    pathfix for pkgconfig lib/libdata
 	New LIB_DEPENDS format: libname.so
 	USE_XORG= instead of LIB_DEPENDS where possible
 
+    Python
+	https://wiki.freebsd.org/Python/PortsPolicy
+	Use autoplist unless there's a good reason not to
+	If including a plist, USE_PYTHON+=py3kplist
+	    %%PYTHON_PYOEXTENSION%%->pyo? (antoine)
+	USE_PYTHON=concurrent for installing multiple versions
+    
     BROKEN_${OPSYS}_${REL}_${ARCH}
     
     OPTIONS
