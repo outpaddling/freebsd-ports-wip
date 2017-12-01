@@ -6,7 +6,7 @@ CATEGORIES=	wip biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Novel algorithm for identifying transcript factor binding sites
+COMMENT=	Analysis of chromatin immunoprecipitation (ChIP) sequences
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
