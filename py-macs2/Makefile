@@ -11,11 +11,10 @@ COMMENT=	Novel algorithm for identifying transcript factor binding sites
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0:math/py-numpy \
-		cython:lang/cython
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.2:math/py-numpy@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils
+USE_PYTHON=	cython distutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	taoliu
