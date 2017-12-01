@@ -33,7 +33,7 @@ if [ -e "$dir" ]; then
     exit 1
 fi
 
-cp -iR /usr/local/share/kallisto/test/ "$dir"
+cp -iR %%EXAMPLESDIR%%/test/ "$dir"
 cd "$dir"
 kallisto index -i transcripts.idx transcripts.fasta.gz
 kallisto quant -i transcripts.idx -o output -b 100 reads_1.fastq.gz reads_2.fastq.gz
