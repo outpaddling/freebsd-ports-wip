@@ -1,7 +1,0 @@
-bin/kallisto
-%%PORTEXAMPLES%%bin/kallisto-test
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.md
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Snakefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/reads_1.fastq.gz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/reads_2.fastq.gz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transcripts.fasta.gz
