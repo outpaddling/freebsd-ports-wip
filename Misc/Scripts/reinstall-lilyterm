@@ -6,7 +6,7 @@
 
 # FreeBSD ports
 set +e
-pkg delete qterminal qtermwidgets
+pkg delete lilyterm
 set -e
-pkg install -y cmake qt5-qmake qt5-buildtools qt5-linguisttools gettext
-wip-reinstall-port qterminal060
+pkg install -y gettext-tools pkgconf vte
+wip-reinstall-port lilyterm
