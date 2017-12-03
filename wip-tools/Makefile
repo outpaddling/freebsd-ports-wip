@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wip-tools
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	wip ports-mgmt
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
