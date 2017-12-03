@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	canu
@@ -13,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../README.license.GPL
 
 LIB_DEPENDS+=	libboost_regex.so:devel/boost-libs
-# RUN_DEPENDS+=	gnuplot:math/gnuplot
+RUN_DEPENDS+=	gnuplot:math/gnuplot
 
 USES=		compiler:openmp gmake perl5
 USE_JAVA=	yes
@@ -25,7 +24,7 @@ GH_ACCOUNT=	marbl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-# Screwy Makefile compiles directly into ${DESTDIR}${PREFIX}
+# Makefile compiles directly into ${DESTDIR}${PREFIX}
 MAKE_ENV+=	DESTDIR=${WRKSRC}
 
 post-patch:
@@ -51,12 +50,13 @@ post-build:
 	${MV} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/*.jar \
 		${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/${JAVAJARDIR:S,^${PREFIX}/,,}
 
-# FIXME: Unravel the willy-nilly directory structure.
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}
 	cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && ${COPYTREE_BIN} bin \
 		${STAGEDIR}${PREFIX}
 	cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && ${COPYTREE_SHARE} "lib share" \
 		${STAGEDIR}${PREFIX}
+	${STRIP_CMD} \
+		`file ${STAGEDIR}${PREFIX}/bin/* | ${GREP} ELF | cut -d : -f 1`
 
 .include <bsd.port.mk>
