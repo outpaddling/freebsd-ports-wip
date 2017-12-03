@@ -140,6 +140,8 @@ Test on all available platforms.  Do the following IN ORDER:
 Test with poudriere to ensure all depends are installed by the port
     If you've installed Poudriere with port-poudriere-setup:
 	wip-poudriere-test category/portname all
+    Python flavors are not tested by default:
+	Also run testport cat/port@py36
 
 Generate unified diff for updates, shar file for new ports
     (port-diff or port-shar scripts from ports-mgmt/port-dev)
