@@ -3,7 +3,12 @@ Distfile
     If maintaining the source, clean up and reroll distfile
 
 Makefile:
-    Replace PORTVERSION with DISTVERSION
+    Replace PORTVERSION with DISTVERSION wherever possible
+	DISTVERSION must match upstream version
+	PORTVERSION is derived from DISTVERSION
+	Use PORTVERSION directly if DISTVERSION is incompatibly with
+	FreeBSD version rules
+	See porter's handbook "Configuring the Makefile" for details
 
     Check all installed scripts for proper shebang line
 	(DEVELOPER=yes in /etc/make.conf will enable QA tests to detect this)
