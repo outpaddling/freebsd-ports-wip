@@ -1,8 +1,9 @@
 
 BIN =		FastTree
 SRC =		FastTree*.c
-CFLAGS +=	-DOPENMP -fopenmp -finline-functions -funroll-loops
 CC ?=		gcc
+CFLAGS ?=	-O3
+CFLAGS +=	-DOPENMP -fopenmp -finline-functions -funroll-loops
 
 MKDIR ?=	mkdir
 INSTALL ?=	install
@@ -13,7 +14,7 @@ DESTDIR ?=	.
 
 all:	${BIN}
 
-${BIN}: ${SRC} Makefile
+${BIN}: ${SRC}
 	${CC} ${CFLAGS} ${SRC} -o ${BIN} -lm
 
 install: ${BIN}
