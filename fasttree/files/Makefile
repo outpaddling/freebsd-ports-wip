@@ -14,7 +14,7 @@ DESTDIR ?=	.
 
 all:	${BIN}
 
-${BIN}: ${SRC}
+${BIN}: ${SRC} Makefile
 	${CC} ${CFLAGS} ${SRC} -o ${BIN} -lm
 
 install: ${BIN}
