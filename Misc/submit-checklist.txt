@@ -72,7 +72,7 @@ Makefile:
 	Use autoplist unless there's a good reason not to
 	If including a plist, USE_PYTHON+=py3kplist
 	    %%PYTHON_PYOEXTENSION%%->pyo? (antoine)
-	USE_PYTHON=concurrent for installing multiple versions
+	USE_PYTHON=concurrent if multiple flavors install the same files
     
     BROKEN_${OPSYS}_${REL}_${ARCH}
     
