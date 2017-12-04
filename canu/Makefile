@@ -1,15 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	canu
-PORTVERSION=	1.6
 DISTVERSIONPREFIX=v
+DISTVERSION=	1.6
 CATEGORIES=	wip biology java
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Single molecule sequence assembler for genomes large and small
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/../README.license.GPL
+LICENSE_FILE=	${WRKSRC}/README.license.GPL
 
 LIB_DEPENDS+=	libboost_regex.so:devel/boost-libs
 RUN_DEPENDS+=	gnuplot:math/gnuplot
@@ -22,10 +22,10 @@ JAVA_VERSION=	1.8+
 USE_GITHUB=	yes
 GH_ACCOUNT=	marbl
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+BUILD_WRKSRC=	${WRKSRC}/src
 
 # Makefile compiles directly into ${DESTDIR}${PREFIX}
-MAKE_ENV+=	DESTDIR=${WRKSRC}
+MAKE_ENV+=	DESTDIR=${BUILD_WRKSRC}
 
 post-patch:
 	${REINPLACE_CMD} \
@@ -33,28 +33,28 @@ post-patch:
 		-e 's|-funroll-loops||g' \
 		-e 's|-fexpensive-optimizations||g' \
 		-e 's|amd64|${ARCH}|g' \
-		${WRKSRC}/Makefile
+		${BUILD_WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|\\$$bin/mhap-|${JAVAJARDIR}/mhap-|g' \
-		${WRKSRC}/pipelines/canu/OverlapMhap.pm
+		${BUILD_WRKSRC}/pipelines/canu/OverlapMhap.pm
 	${REINPLACE_CMD} -e 's|RealBin/lib|RealBin/../${SITE_PERL_REL}/canu|g' \
-		${WRKSRC}/pipelines/canu.pl
+		${BUILD_WRKSRC}/pipelines/canu.pl
 
 post-build:
-	${MKDIR} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/${SITE_PERL_REL}
-	${MV} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/lib/canu \
-		${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/${SITE_PERL_REL}
-	${RMDIR} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/lib
-	${MV} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/*.a \
-		${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/lib
-	${MKDIR} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/${JAVAJARDIR:S,^${PREFIX}/,,}
-	${MV} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/*.jar \
-		${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/${JAVAJARDIR:S,^${PREFIX}/,,}
+	${MKDIR} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/${SITE_PERL_REL}
+	${MV} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/lib/canu \
+		${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/${SITE_PERL_REL}
+	${RMDIR} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/lib
+	${MV} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/*.a \
+		${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/lib
+	${MKDIR} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/${JAVAJARDIR:S,^${PREFIX}/,,}
+	${MV} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/*.jar \
+		${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/${JAVAJARDIR:S,^${PREFIX}/,,}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}
-	cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && ${COPYTREE_BIN} bin \
+	cd ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH} && ${COPYTREE_BIN} bin \
 		${STAGEDIR}${PREFIX}
-	cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && ${COPYTREE_SHARE} "lib share" \
+	cd ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH} && ${COPYTREE_SHARE} "lib share" \
 		${STAGEDIR}${PREFIX}
 	${STRIP_CMD} \
 		`file ${STAGEDIR}${PREFIX}/bin/* | ${GREP} ELF | cut -d : -f 1`
