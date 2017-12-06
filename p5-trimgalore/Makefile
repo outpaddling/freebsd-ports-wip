@@ -1,9 +1,8 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	trimgalore
 PORTVERSION=	0.4.5
-CATEGORIES=	wip perl5
+CATEGORIES=	wip biology perl5
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cutadapt>0:biology/py-cutadapt \
-		fastqc>0:wip/fastqc
+		fastqc>0:biology/fastqc
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -24,8 +23,7 @@ USE_PERL5=	run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FelixKrueger
-
-WRKSRC=		${WRKDIR}/TrimGalore-${PORTVERSION}
+GH_PROJECT=	TrimGalore
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/trim_galore ${STAGEDIR}${PREFIX}/bin
