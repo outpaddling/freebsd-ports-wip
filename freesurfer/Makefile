@@ -1,57 +1,43 @@
-# New ports collection makefile for:	freesurfer
-# Date created:		2012-05-06
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	freesurfer
-PORTVERSION=	5.1.0
+DISTVERSIONPREFIX=	release_
+DISTVERSION=	6_0_0
 CATEGORIES=	wip science
-MASTER_SITES=
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=
+COMMENT=	Automatically segment white matter lesions on human brain MRI images
 
-USE_BZIP2=	yes
-USE_CMAKE=	yes
-USE_AUTOTOOLS=	autoconf automake libtool
+# Fake to silence warnings until custom license is defined
+LICENSE=	BSD2CLAUSE
 
-# http://surfer.nmr.mgh.harvard.edu/fswiki/DevelopersGuide
-# Freesurfer builds against the following set of open-sourced libraries, thus, these must be installed prior to building:
-# 
-#    MNI 1.4
-#    VXL 1.13.0 
-#
-# These must be installed if you want to build the GUI apps:
-#
-#     Tcl 8.4.6
-#     Tk 8.4.6
-#     Tix 8.1.4
-#     BLT 2.4z
-#     VTK 5.6
-#     KWWidgets - CVS checkout
-#     Qt 3 
+LIB_DEPENDS=	liblapack.so:math/lapack
 
-USE_TCL=	84+
-USE_TK=		84+
-USE_QT_VER=	3	# Can this be 4?
+USES=		cmake fortran gmake libtool tar:bzip2
+GNU_CONFIGURE=	yes
+USE_GITHUB=	yes
 
-LIB_DEPENDS=	vtkCommon.5:math/vtk5 \
-		minc:science/minc \
-		Tix8:x11-toolkits/tix \
-		BLT24:x11-toolkits/blt \
-		KWWidgets:../../science/kwwidgets
-BUILD_DEPENDS=	${LOCALBASE}/lib/libvul.a:../../science/vxl
+# https://surfer.nmr.mgh.harvard.edu/fswiki/freesurfer_linux_developers_page
+# sudo apt-get install build-essential \
+#             tcsh \
+#             libtool-bin \
+#             libtool \
+#             automake \
+#            gfortran \
+#            libglu1-mesa-dev \
+#            libfreetype6-dev \
+#            uuid-dev \
+#            libxmu-dev \
+#            libxmu-headers \
+#            libxi-dev \
+#            libx11-dev \
+#            libxml2-utils \
+#            libxt-dev \
+#            libjpeg62-dev \
+#            libxaw7-dev \
+#            liblapack-dev
 
-#do-fetch:
-#	${MKDIR} ${WRKDIR}
-#	(cd ${WRKDIR} && \
-#	cvs -d :pserver:anonymous@fsvm.nmr.mgh.harvard.edu:/usr/fscvsroot login && \
-#	cvs -d :pserver:anonymous@fsvm.nmr.mgh.harvard.edu:/usr/fscvsroot checkout -P -r stable5 dev)
+pre-configure:
+	cd ${WRKSRC} && ./setup_configure
 
-#do-configure:
-#	(cd ${WRKSRC} && ./setup_configure && ./configure --prefix=${PREFIX})
-
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
