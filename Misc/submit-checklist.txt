@@ -3,6 +3,10 @@ Distfile
     If maintaining the source, clean up and reroll distfile
 
 Makefile:
+    PORTNAME should match the upstream dist, including case
+	pkg is case-insensitive
+	Ports that install only one binary can use the binary name
+
     Replace PORTVERSION with DISTVERSION wherever possible
 	DISTVERSION must match upstream version
 	PORTVERSION is derived from DISTVERSION
@@ -73,6 +77,7 @@ Makefile:
 	If including a plist, USE_PYTHON+=py3kplist
 	    %%PYTHON_PYOEXTENSION%%->pyo? (antoine)
 	USE_PYTHON=concurrent if multiple flavors install the same files
+	Ports that depend on a python module should use USES=python:env or :run
 	${PYNUMPY} for numpy dep.  Check python.mk for other goodies
     
     BROKEN_${OPSYS}_${REL}_${ARCH}
