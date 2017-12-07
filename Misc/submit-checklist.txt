@@ -79,6 +79,7 @@ Makefile:
 	USE_PYTHON=concurrent if multiple flavors install the same files
 	Ports that depend on a python module should use USES=python:env or :run
 	${PYNUMPY} for numpy dep.  Check python.mk for other goodies
+	Deps should end in @${PY_FLAVOR}
     
     BROKEN_${OPSYS}_${REL}_${ARCH}
     
