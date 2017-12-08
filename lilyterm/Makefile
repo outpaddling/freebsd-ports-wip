@@ -13,14 +13,21 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gettext gmake pkgconfig
-USE_GNOME=	gtk20 vte
+USE_GNOME=	cairo gdkpixbuf2 gtk20 vte
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	Tetralet
 GH_PROJECT=	LilyTerm
 
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+USE_XORG=	x11 xext
+
 OPTIONS_DEFINE=	NLS
 NLS_USES=	gettext
 NLS_CONFIGURE_OFF=	--disable-nls
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lilyterm
 
 .include <bsd.port.mk>
