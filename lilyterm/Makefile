@@ -1,9 +1,8 @@
-# Created by: Jason Bacon <bacon@manatee.acadix.biz>
 # $FreeBSD$
 
 PORTNAME=	lilyterm
-PORTVERSION=	0.9.9.4
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9.9.4
 CATEGORIES=	wip editors
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -17,18 +16,18 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		gettext gmake pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk20 vte
+USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	Tetralet
 GH_PROJECT=	LilyTerm
 
-USE_XORG=	x11 xext
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	DOCS EXAMPLES NLS
 NLS_USES=	gettext
 NLS_CONFIGURE_OFF=	--disable-nls
-
-WRKSRC=		${WRKDIR}/LilyTerm-${PORTVERSION}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lilyterm
