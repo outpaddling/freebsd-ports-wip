@@ -1,12 +1,12 @@
 # Created by: anholt@FreeBSD.org
 # $FreeBSD: head/science/paraview/Makefile 455210 2017-11-30 15:50:30Z mat $
 
-PORTNAME=	ParaView
-DISTVERSIONPREFIX=	v
+PORTNAME=	paraview
 DISTVERSION=	5.2.0
 PORTREVISION=	3
 CATEGORIES=	wip science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${VERMAJORMINOR}/
+DISTNAME=	ParaView-v${PORTVERSION}
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Powerful scientific data visualization application
