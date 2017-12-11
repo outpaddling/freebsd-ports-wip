@@ -5,7 +5,7 @@ PORTNAME=	ParaView
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.2.0
 PORTREVISION=	3
-CATEGORIES=	science graphics
+CATEGORIES=	wip science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${VERMAJORMINOR}/
 
 MAINTAINER=	devel@stasyan.com
