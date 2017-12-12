@@ -108,7 +108,7 @@ Makefile:
     
     Check need for USES vars like pkgconfig, localbase, gettext
 
-    CMAKE_FLAGS format VAR:BOOL=ON, not VAR=1
+    CMAKE_ARGS format VAR:BOOL=ON, not VAR=1
     
     Use COPYTREE_* instead of ${CP} -r
 	Combine dirs going to the same destination:
