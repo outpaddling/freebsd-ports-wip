@@ -3,7 +3,7 @@
 PORTNAME=	lilyterm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.9.4
-CATEGORIES=	wip editors
+CATEGORIES=	wip x11
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Lightweight, but functional terminal emulator
@@ -25,7 +25,7 @@ GH_PROJECT=	LilyTerm
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	DOCS EXAMPLES NLS
+OPTIONS_DEFINE=	NLS
 NLS_USES=	gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
