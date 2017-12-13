@@ -3,7 +3,7 @@
 PORTNAME=	lilyterm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.9.4
-CATEGORIES=	x11
+CATEGORIES=	wip x11
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Lightweight, but functional terminal emulator
@@ -25,11 +25,12 @@ GH_PROJECT=	LilyTerm
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_DESC=	"Native Language Support via gettext utilities"
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lilyterm
+	${MV} ${STAGEDIR}${PREFIX}/etc/xdg/lilyterm.conf \
+		${STAGEDIR}${PREFIX}/etc/xdg/lilyterm.conf.sample
 
 .include <bsd.port.mk>
