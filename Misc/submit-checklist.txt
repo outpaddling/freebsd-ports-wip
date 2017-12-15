@@ -85,13 +85,17 @@ Makefile:
     
     OPTIONS
 	All non-options macros before bsd.options.mk
-	Add DOCS to OPTIONS_DEFINE if needed
+	Add DOCS and EXAMPLES to OPTIONS_DEFINE if needed
+            If installing to PORTDOCS or PORTEXAMPLES, there must be an option
 	Remove PORT_OPTIONS:MDOCS checks (automatic with staging)
 	Check OPTIONS_DEFINE for standards like MYSQL, etc.
     
-    If installing config files in PREFIX/etc:
+    If installing config files (usually .conf):
 	suffix with .sample
-	delete real config file on deinstall if identical to .sample
+	    may need to hack install
+	plist entry: @sample path/file.conf.sample
+	This will automatically install/deinstall .conf file if not different
+	from sample
     
     Man pages
 	Remove MANx macros from Makefile (obsolete with staging)
@@ -103,10 +107,11 @@ Makefile:
     Add PORT_EPOCH if downgrading
 
     Remove MAKE_JOBS_UNSAFE if possible
-    
+
     Replace NOPORTDOCS, etc. with PORT_OPTIONS:MDOC
     
-    Check need for USES vars like pkgconfig, localbase, gettext
+    Check need for USES vars like pkgconfig, localbase, gettext,
+	desktop-file-utils (installs a .desktop file)
 
     CMAKE_ARGS format VAR:BOOL=ON, not VAR=1
     
