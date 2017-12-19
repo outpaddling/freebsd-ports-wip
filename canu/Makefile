@@ -29,7 +29,7 @@ MAKE_ENV+=	DESTDIR=${BUILD_WRKSRC}
 
 post-patch:
 	${REINPLACE_CMD} \
-		-e 's|-O4|-O2|g' \
+		-e 's|-O4||g' \
 		-e 's|-funroll-loops||g' \
 		-e 's|-fexpensive-optimizations||g' \
 		-e 's|amd64|${ARCH}|g' \
@@ -39,6 +39,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|RealBin/lib|RealBin/../${SITE_PERL_REL}/canu|g' \
 		${BUILD_WRKSRC}/pipelines/canu.pl
 
+# Reorganize according to filesystem hierarchy standard
 post-build:
 	${MKDIR} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/${SITE_PERL_REL}
 	${MV} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/lib/canu \
