@@ -10,8 +10,8 @@ Makefile:
     Replace PORTVERSION with DISTVERSION wherever possible
 	DISTVERSION must match upstream version
 	PORTVERSION is derived from DISTVERSION
-	Use PORTVERSION directly if DISTVERSION is incompatibly with
-	FreeBSD version rules
+	Use PORTVERSION directly if DISTVERSION is incompatible with
+	    FreeBSD version rules
 	See porter's handbook "Configuring the Makefile" for details
 
     Check all installed scripts for proper shebang line
@@ -25,11 +25,6 @@ Makefile:
 	portsnap fetch update
 	Merge latest changes in committed port into development port
 
-    Remove # Created by: First-name Last-name <email>
-    # $FreeBSD$
-    
-    Try to make PKGNAME match port directory name
-    
     PKGNAMEPREFIX
 	p5-, ${PYTHON_PKGNAMEPREFIX}, etc.
     
@@ -41,7 +36,7 @@ Makefile:
 	Remove MASTER_SITE_SUBDIR if present (deprecated)
     
     Check use of each LOCALBASE and PREFIX
-    Remove /usr/wip and ../..
+    Remove references to wip category
     Use ${PORTNAME}, ${DISTVERSION}, etc in body wherever possible
     Check categories
 	Add java, perl5, python, etc. for ports that use them
@@ -68,7 +63,6 @@ Makefile:
 	    See /usr/ports/Mk/Uses
 	    USE_TEX instead of tex-* depends
 	    pathfix for pkgconfig lib/libdata
-	New LIB_DEPENDS format: libname.so
 	USE_XORG= instead of LIB_DEPENDS where possible
 
     Python
@@ -86,7 +80,7 @@ Makefile:
     OPTIONS
 	All non-options macros before bsd.options.mk
 	Add DOCS and EXAMPLES to OPTIONS_DEFINE if needed
-            If installing to PORTDOCS or PORTEXAMPLES, there must be an option
+	    If installing to PORTDOCS or PORTEXAMPLES, there must be an option
 	Remove PORT_OPTIONS:MDOCS checks (automatic with staging)
 	Check OPTIONS_DEFINE for standards like MYSQL, etc.
     
@@ -108,8 +102,6 @@ Makefile:
 
     Remove MAKE_JOBS_UNSAFE if possible
 
-    Replace NOPORTDOCS, etc. with PORT_OPTIONS:MDOC
-    
     Check need for USES vars like pkgconfig, localbase, gettext,
 	desktop-file-utils (installs a .desktop file)
 
@@ -119,11 +111,11 @@ Makefile:
 	Combine dirs going to the same destination:
 	    cd ${WRKSRC} && COPYTREE_SHARE "A B C" ${STAGEDIR}...
     
-Carefully check REINPLACE_CMDS and patches
-    Patching should be done at the earliest possible stage, e.g. don't
-    patch in post-stage if the same effect can be achieved in post-patch
-
-Carefully inspect pkg-plist
+    Carefully check REINPLACE_CMDS and patches
+	Patching should be done at the earliest possible stage, e.g. don't
+	patch in post-stage if the same effect can be achieved in post-patch
+    
+pkg-plist
     pkgconfig files should be in libdata/pkgconfig
 	configure may support --with-pkgconfigdir= even if not advertised
     Use EXAMPLESDIR, DOCSDIR, DATADIR where possible
@@ -132,7 +124,7 @@ Carefully inspect pkg-plist
     Perl modules (*.pm) ${PREFIX}/${SITE_PERL_REL}
     Java .jar files in ${JAVAJARDIR}
 
-Check pkg-descr
+pkg-descr
     spell-check
     space, not tab after WWW
 
