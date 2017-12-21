@@ -53,12 +53,13 @@ post-build:
 	@${RM} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/canu.defaults
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}
 	cd ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH} && ${COPYTREE_BIN} bin \
 		${STAGEDIR}${PREFIX}
-	cd ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH} && ${COPYTREE_SHARE} "lib share" \
-		${STAGEDIR}${PREFIX}
+	# STRIP_CMD fails without this on 11.1 under poudriere
+	@${CHMOD} u+w ${STAGEDIR}${PREFIX}/bin/*
 	${STRIP_CMD} \
 		`file ${STAGEDIR}${PREFIX}/bin/* | ${GREP} ELF | cut -d : -f 1`
+	cd ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH} && ${COPYTREE_SHARE} "lib share" \
+		${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>
