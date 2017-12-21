@@ -1,6 +1,0 @@
-SHA256 (rpm/i386/fedora/10/ncurses-base-5.6-20.20080927.fc10.i386.rpm) = 9177e296cf572c74f3037356c010a899ae73d0944b9cc94cd6541a2e038399f1
-SIZE (rpm/i386/fedora/10/ncurses-base-5.6-20.20080927.fc10.i386.rpm) = 64159
-SHA256 (rpm/i386/fedora/10/ncurses-devel-5.6-20.20080927.fc10.i386.rpm) = d1299839c54a2a07625955a8e97d0748ca4abaac733929b0cf282b6bb962ffe8
-SIZE (rpm/i386/fedora/10/ncurses-devel-5.6-20.20080927.fc10.i386.rpm) = 692433
-SHA256 (rpm/i386/fedora/10/ncurses-libs-5.6-20.20080927.fc10.i386.rpm) = 1a4dd12a7272a207270cd5d59bb6ddbbce62c7a65f97241dcd08b4cfabb53c7c
-SIZE (rpm/i386/fedora/10/ncurses-libs-5.6-20.20080927.fc10.i386.rpm) = 334108
