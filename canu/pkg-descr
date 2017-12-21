@@ -1,3 +1,4 @@
-A single molecule sequence assembler for genomes large and small.
+Canu is a fork of the Celera Assembler designed for high-noise single-molecule
+sequencing (such as the PacBio RSII or Oxford Nanopore MinION).
 
 WWW: http://canu.readthedocs.io/

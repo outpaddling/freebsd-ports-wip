@@ -2,7 +2,6 @@ bin/alignGFA
 bin/bogart
 bin/bogus
 bin/canu
-bin/canu.defaults
 bin/correctOverlaps
 bin/createFalconSenseInputs
 bin/erateEstimate

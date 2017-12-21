@@ -3,10 +3,10 @@
 PORTNAME=	canu
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.6
-CATEGORIES=	wip biology java
+CATEGORIES=	wip biology java perl5
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Single molecule sequence assembler for genomes large and small
+COMMENT=	Single molecule sequence assembler
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/README.license.GPL
@@ -41,18 +41,19 @@ post-patch:
 
 # Reorganize according to filesystem hierarchy standard
 post-build:
-	${MKDIR} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/${SITE_PERL_REL}
-	${MV} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/lib/canu \
+	@${MKDIR} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/${SITE_PERL_REL}
+	@${MV} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/lib/canu \
 		${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/${SITE_PERL_REL}
-	${RMDIR} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/lib
-	${MV} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/*.a \
+	@${RMDIR} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/lib
+	@${MV} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/*.a \
 		${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/lib
-	${MKDIR} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/${JAVAJARDIR:S,^${PREFIX}/,,}
-	${MV} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/*.jar \
+	@${MKDIR} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/${JAVAJARDIR:S,^${PREFIX}/,,}
+	@${MV} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/*.jar \
 		${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/${JAVAJARDIR:S,^${PREFIX}/,,}
+	@${RM} ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH}/bin/canu.defaults
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}
+	@${MKDIR} ${STAGEDIR}${PREFIX}
 	cd ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH} && ${COPYTREE_BIN} bin \
 		${STAGEDIR}${PREFIX}
 	cd ${BUILD_WRKSRC}${PREFIX}/FreeBSD-${ARCH} && ${COPYTREE_SHARE} "lib share" \
