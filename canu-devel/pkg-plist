@@ -74,7 +74,6 @@ lib/libleaff.a
 %%SITE_PERL%%/canu/Grid_PBSTorque.pm
 %%SITE_PERL%%/canu/Grid_SGE.pm
 %%SITE_PERL%%/canu/Grid_Slurm.pm
-%%SITE_PERL%%/canu/HTML.pm
 %%SITE_PERL%%/canu/Meryl.pm
 %%SITE_PERL%%/canu/Output.pm
 %%SITE_PERL%%/canu/OverlapBasedTrimming.pm

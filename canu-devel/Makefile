@@ -10,10 +10,10 @@ MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Single molecule sequence assembler for genomes large and small
 
 LICENSE=	GPLv2
-# LICENSE_FILE=	${WRKSRC}/../README.license.GPL
+LICENSE_FILE=	${WRKSRC}/../README.license.GPL
 
-LIB_DEPENDS+=	libboost_regex.so:devel/boost-libs
-# RUN_DEPENDS+=	gnuplot:math/gnuplot
+LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
+RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		compiler:openmp gmake perl5
 USE_JAVA=	yes
@@ -22,11 +22,11 @@ JAVA_VERSION=	1.8+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	marbl
-GH_TAGNAME=	e2196699031b7f1e4257a78600eca3988c6a9a45
+GH_TAGNAME=	f9284f864d075b678022f8971e36b8d894631e3d
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}/src
+WRKSRC_SUBDIR=	src
 
-# Screwy Makefile compiles directly into ${DESTDIR}${PREFIX}
+# Makefile compiles directly into ${DESTDIR}${PREFIX}
 MAKE_ENV+=	DESTDIR=${WRKSRC}
 
 post-patch:
@@ -51,6 +51,10 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}
 	cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && ${COPYTREE_BIN} bin \
 		${STAGEDIR}${PREFIX}
+	# STRIP_CMD fails without this on 11.1 under poudriere
+	@${CHMOD} u+w ${STAGEDIR}${PREFIX}/bin/*
+	${STRIP_CMD} \
+		`file ${STAGEDIR}${PREFIX}/bin/* | ${GREP} ELF | cut -d : -f 1`
 	cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && ${COPYTREE_SHARE} "lib share" \
 		${STAGEDIR}${PREFIX}
 
