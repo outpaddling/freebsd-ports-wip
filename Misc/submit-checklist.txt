@@ -19,6 +19,8 @@ Makefile:
 	USES=shebangfix
 	SHEBANG_FILES=path ...
 
+    Tab after every =
+    
     Use @ to silence most commands, except in install stage
     
     If updating a port
