@@ -21,6 +21,8 @@ Makefile:
 
     Tab after every =
     
+    Check = vs +=
+    
     Use @ to silence most commands, except in install stage
     
     If updating a port
