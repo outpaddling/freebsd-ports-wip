@@ -54,6 +54,7 @@ man/man1/auto-replace-file.1.gz
 man/man1/auto-restore-pw.1.gz
 man/man1/auto-restore-user.1.gz
 man/man1/auto-service-enabled.1.gz
+man/man1/auto-set-hostname.1.gz
 man/man1/auto-set-lid-switch-mode.1.gz
 man/man1/auto-set-sysctl.1.gz
 man/man1/auto-set-umask.1.gz
@@ -122,6 +123,7 @@ sbin/auto-replace-file
 sbin/auto-restore-pw
 sbin/auto-restore-user
 sbin/auto-service-enabled
+sbin/auto-set-hostname
 sbin/auto-set-lid-switch-mode
 sbin/auto-set-sysctl
 sbin/auto-set-umask
