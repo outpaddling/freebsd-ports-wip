@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ape
-PORTVERSION=	3.5.2
+PORTVERSION=	3.5.3
 CATEGORIES=	wip editors
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
