@@ -1,7 +1,7 @@
-# $FreeBSD: head/devel/hwloc/Makefile 439554 2017-04-27 14:48:02Z sunpoet $
+# $FreeBSD: head/devel/hwloc/Makefile 401565 2015-11-14 11:09:35Z tijl $
 
 PORTNAME=	hwloc
-PORTVERSION=	1.11.7
+PORTVERSION=	1.11.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.open-mpi.org/software/hwloc/v${PORTVERSION:R}/downloads/ \
 		http://icl.cs.utk.edu/open-mpi/software/hwloc/v${PORTVERSION:R}/downloads/
@@ -12,7 +12,7 @@ COMMENT=	Portable Hardware Locality software package
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess
+LIB_DEPENDS=	libpciaccess.so:${PORTSDIR}/devel/libpciaccess
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \
@@ -35,11 +35,11 @@ OPTIONS_SUB=	yes
 
 CAIRO_CONFIGURE_OFF=	--disable-cairo --without-x
 CAIRO_CONFIGURE_ON=	--enable-cairo --with-x
-CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
+CAIRO_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
 CAIRO_USE=		XORG=x11
 
-post-install-DOCS-on:
+post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKSRC}/doc/doxygen-doc/html/* ${STAGEDIR}${DOCSDIR}/html/
+	${INSTALL_DATA} ${WRKSRC}/doc/doxygen-doc/html/* ${STAGEDIR}${DOCSDIR}/html/.
 
 .include <bsd.port.mk>
