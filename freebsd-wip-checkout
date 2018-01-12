@@ -40,7 +40,7 @@ if [ $rcs = svn ]; then
 	svn=/usr/local/bin/svn
     fi
     $svn co \
-	https://outpaddling@github.com/outpaddling/freebsd-ports-wip/trunk \
+	https://github.com/outpaddling/freebsd-ports-wip/trunk \
 	$PORTSDIR/wip
 elif [ $rcs = git ]; then
     if which git; then
@@ -49,7 +49,7 @@ elif [ $rcs = git ]; then
 	git=/usr/local/bin/git
     fi
     $git clone \
-	https://outpaddling@github.com/outpaddling/freebsd-ports-wip \
+	https://github.com/outpaddling/freebsd-ports-wip \
 	$PORTSDIR/wip
 else
     printf "Invalid RCS: $rcs\n"
