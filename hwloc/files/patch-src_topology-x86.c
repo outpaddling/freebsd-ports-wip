@@ -1,5 +1,5 @@
 --- src/topology-x86.c.orig	2017-04-19 10:19:38.000000000 -0500
-+++ src/topology-x86.c	2018-01-14 10:41:20.065541000 -0600
++++ src/topology-x86.c	2018-01-14 11:19:18.712933000 -0600
 @@ -248,6 +248,9 @@ static void look_proc(struct hwloc_backe
    if (cpuid_type != intel && has_topoext(features)) {
      unsigned apic_id, node_id, nodes_per_proc;
@@ -34,10 +34,10 @@
    eax = 0x00;
    hwloc_x86_cpuid(&eax, &ebx, &ecx, &edx);
    highest_cpuid = eax;
-+  printf("got vendor %c%c%c%c%c%c%c%c%c%c%c%c\n",
++  /* printf("got vendor %c%c%c%c%c%c%c%c%c%c%c%c\n",
 +	 ebx&0xff, (ebx>>8)&0xff, (ebx>>16)&0xff, (ebx>>24)&0xff,
 +	 edx&0xff, (edx>>8)&0xff, (edx>>16)&0xff, (edx>>24)&0xff,
-+	 ecx&0xff, (ecx>>8)&0xff, (ecx>>16)&0xff, (ecx>>24)&0xff);
++	 ecx&0xff, (ecx>>8)&0xff, (ecx>>16)&0xff, (ecx>>24)&0xff); */
    if (ebx == INTEL_EBX && ecx == INTEL_ECX && edx == INTEL_EDX)
      cpuid_type = intel;
    if (ebx == AMD_EBX && ecx == AMD_ECX && edx == AMD_EDX)
