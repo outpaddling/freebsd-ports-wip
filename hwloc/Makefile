@@ -38,6 +38,8 @@ CAIRO_CONFIGURE_ON=	--enable-cairo --with-x
 CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
 CAIRO_USE=		XORG=x11
 
+CFLAGS+=	-O0
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/doxygen-doc/html/* ${STAGEDIR}${DOCSDIR}/html/
