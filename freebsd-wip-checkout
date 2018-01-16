@@ -33,6 +33,7 @@ if [ -z $PORTSDIR ]; then
 fi
 
 rcs=$1
+
 if [ $rcs = svn ]; then
     if which svn; then
 	svn=`which svn`
@@ -66,8 +67,8 @@ USE_LOCAL_MK=yes
 EOM
 fi
 
-if ! fgrep 'VALID_CATEGORIES+=wip' /usr/ports/Mk/bsd.local.mk > /dev/null; then
-    cat << EOM >> /usr/ports/Mk/bsd.local.mk
+if ! fgrep 'VALID_CATEGORIES+=wip' $PORTSDIR/Mk/bsd.local.mk > /dev/null; then
+    cat << EOM >> $PORTSDIR/Mk/bsd.local.mk
 
 # Added by freebsd-wip-checkout
 VALID_CATEGORIES+=wip
@@ -81,6 +82,6 @@ cat << EOM
 
 Run wip-update frequently to keep up with the latest WIP ports.
 
-See /usr/ports/wip/README for basic info.
+See $PORTSDIR/wip/README for basic info.
 
 EOM
