@@ -1,7 +1,12 @@
 # $FreeBSD: head/wip devel/hwloc/Makefile 451721 2017-10-10 21:31:30Z linimon $
+#
+# WARNING: hwloc >= 1.11.3 has known issues when compiled with clang.
+# It will work fine on some systems and crash on other identical systems.
+# Do not upgrade this port before verifying that these issues are fixed.
 
 PORTNAME=	hwloc
-PORTVERSION=	1.11.7
+PORTVERSION=	1.11.2
+PORTEPOCH=	1
 CATEGORIES=	wip devel
 MASTER_SITES=	http://www.open-mpi.org/software/hwloc/v${PORTVERSION:R}/downloads/ \
 		http://icl.cs.utk.edu/open-mpi/software/hwloc/v${PORTVERSION:R}/downloads/
@@ -12,7 +17,10 @@ COMMENT=	Portable Hardware Locality software package
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpciaccess.so:wip devel/libpciaccess
+ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS_REASON=	has not been ported to this architecture
+
+LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \
@@ -25,12 +33,7 @@ USES=		iconv libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 
-CFLAGS+=	-O0
-
 PORTDOCS=	*
-
-ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
-ONLY_FOR_ARCHS_REASON=	has not been ported to this architecture
 
 OPTIONS_DEFINE=	CAIRO DOCS
 OPTIONS_SUB=	yes
