@@ -1,6 +1,6 @@
 --- Makefile.orig	2016-10-28 16:39:09 UTC
 +++ Makefile
-@@ -1,16 +1,25 @@
+@@ -1,17 +1,26 @@
 -CC=g++
 +CXX ?=	g++
  TARGET := snpfinder
@@ -13,6 +13,7 @@
 +PREFIX ?=	/usr/local
 +MKDIR ?=	mkdir
 +INSTALL ?=	install
++RM ?=		rm
  
  all: $(TARGET)
  
@@ -29,4 +30,6 @@
 +	$(INSTALL) -c $(TARGET) $(DESTDIR)$(PREFIX)/bin
  
  clean:
- 	$(RM) $(TARGET)
+-	$(RM) $(TARGET)
+-	$(RM) $(CXX_OBJS)
++	$(RM) -f $(TARGET) $(CXX_OBJS)
