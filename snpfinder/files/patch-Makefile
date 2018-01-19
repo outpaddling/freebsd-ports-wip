@@ -1,6 +1,6 @@
 --- Makefile.orig	2016-10-28 16:39:09 UTC
 +++ Makefile
-@@ -1,17 +1,26 @@
+@@ -1,17 +1,30 @@
 -CC=g++
 +CXX ?=	g++
  TARGET := snpfinder
@@ -14,6 +14,7 @@
 +MKDIR ?=	mkdir
 +INSTALL ?=	install
 +RM ?=		rm
++STRIP ?=	strip
  
  all: $(TARGET)
  
@@ -28,6 +29,9 @@
 +install:
 +	$(MKDIR) -p $(DESTDIR)$(PREFIX)/bin
 +	$(INSTALL) -c $(TARGET) $(DESTDIR)$(PREFIX)/bin
++
++install-strip: install
++	$(STRIP) $(DESTDIR)$(PREFIX)/bin/$(TARGET)
  
  clean:
 -	$(RM) $(TARGET)

@@ -15,6 +15,8 @@ USES=		gmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	cdeanj
 
+INSTALL_TARGET=	install-strip
+
 PLIST_FILES=	bin/snpfinder
 
 .include <bsd.port.mk>
