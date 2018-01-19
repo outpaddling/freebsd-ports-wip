@@ -1,0 +1,39 @@
+--- Makefile.orig	2017-07-25 19:51:16 UTC
++++ Makefile
+@@ -1,17 +1,30 @@
+-CC=g++
++CXX ?=	g++
+ TARGET := rarefaction
+ CXX_SRCS := $(wildcard *.cpp)
+ CXX_OBJS := ${CXX_SRCS:.cpp=.o}
+-CFLAGS := -c -std=c++11
++CXXFLAGS += -c -std=c++11
++
++DESTDIR ?=	.
++PREFIX ?=	/usr/local
++MKDIR ?=	mkdir
++INSTALL ?=	install
++RM ?=		rm
++STRIP ?=	strip
+ 
+ all: $(TARGET)
+ 
+ $(TARGET): $(CXX_OBJS)
+-	$(CC) $(CXX_OBJS) -o $(TARGET)
++	$(CXX) $(CXX_OBJS) -o $(TARGET)
+ 
+ %.o: %.cpp
+-	$(CC) $(CFLAGS) $<
++	$(CXX) $(CXXFLAGS) $<
++
++install:
++	$(MKDIR) -p $(DESTDIR)$(PREFIX)/bin
++	$(INSTALL) -c $(TARGET) $(DESTDIR)$(PREFIX)/bin
++
++install-strip: install
++	$(STRIP) $(DESTDIR)$(PREFIX)/bin/$(TARGET)
+ 
+ clean:
+-	$(RM) $(TARGET)
+-	$(RM) $(CXX_OBJS)
++	$(RM) -f $(TARGET) $(CXX_OBJS)
