@@ -7,7 +7,8 @@ CATEGORIES=	wip
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tool for analyzing the resistome of large metagenomic datasets
 
-LICENSE=	NONE
+# Actually unspecified, just pretending for poudriere
+LICENSE=	PD
 
 USES=		gmake compiler:c++11-lang
 USE_GITHUB=	yes

@@ -9,7 +9,8 @@ CATEGORIES=	wip biology
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Simple alignment-based haplotype variant caller
 
-LICENSE=	NONE
+# Actually unspecified, just pretending for poudriere
+LICENSE=	PD
 
 USES=		gmake compiler:c++11-lang
 USE_GITHUB=	yes

@@ -7,7 +7,8 @@ CATEGORIES=	wip
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Simple program that can be used to perform rarefaction analysis
 
-LICENSE=	NONE
+# Actually unspecified, just pretending for poudriere
+LICENSE=	PD
 
 USES=		gmake compiler:c++11-lang
 USE_GITHUB=	yes
