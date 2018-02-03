@@ -1,7 +1,16 @@
 
 
-Add your name next to any port you're working on, e.g.
+Check both the committed and wip versions of each port listed below and
+decide if it needs to be implemented or upgraded.
+
+The one problem a version control system doesn't mitigate is duplicated
+effort, so keep the rest of us informed about what you're working on.
+
+Send us an email before beginning new work and add your name or initials
+next to any port you're working on, e.g.
+
 bwa             JB
+
 
 UWM Genomics
 ------------
