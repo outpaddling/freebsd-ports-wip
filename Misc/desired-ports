@@ -1,24 +1,28 @@
-PA
+
+
+Add your name next to any port you're working on, e.g.
+bwa             JB
+
+UWM Genomics
+------------
+Paul A.
 
 x bedtools2
-bolt-lmm
 bowtie
 bowtie2
 bwa
 epacts
-htslib
 macs2
 metal
 plink
 py-htseq
 py-instant
-samtools
 tabixpp
 tophat
 vcflib
 vcftools
 
-AM
+Aurash M.
 
 bedtools2
 blasr
@@ -37,13 +41,14 @@ samtools
 unanimity
 vcftools
 vsearch
-canu
 illumina_utils
 gast (part of vsearch?)
 
-Unlisted tools I would like to see in the future:
+Future:
 
-kallisto
 sleuth
 sailfish
 
+UWM Math
+--------
+FEniCS
