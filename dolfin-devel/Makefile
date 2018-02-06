@@ -12,45 +12,43 @@ COMMENT=	C++/Python interface of FEniCS
 LICENSE=	LGPL3
 
 # Note: Currently can't tell if parmetis was built with openmpi or mpich2
-# Leave paths as ../../ instead of ${PORTSDIR} until committed for
-# development purposes
 # PETSc 3.4 fails PETSC_TEST_RUNS.  3.1 is rejected.  Use 3.2 or 3.3.
-COMMON_DEPENDS=	${PYTHON_SITELIBDIR}/ufc_utils:../../math/ufc \
-		${PYTHON_SITELIBDIR}/ffc:../../math/py-ffc \
-		${PYTHON_SITELIBDIR}/FIAT:../../math/py-fiat \
-		${PYTHON_SITELIBDIR}/instant:../../devel/py-instant \
-		${PYTHON_SITELIBDIR}/ufl:../../math/py-ufl \
-		${PYTHON_SITELIBDIR}/viper:../../math/py-viper \
+COMMON_DEPENDS=	${PYTHON_SITELIBDIR}/ufc_utils:math/ufc \
+		${PYTHON_SITELIBDIR}/ffc:math/py-ffc \
+		${PYTHON_SITELIBDIR}/FIAT:math/py-fiat \
+		${PYTHON_SITELIBDIR}/instant:devel/py-instant \
+		${PYTHON_SITELIBDIR}/ufl:math/py-ufl \
+		${PYTHON_SITELIBDIR}/viper:math/py-viper \
 		${PYTHON_SITELIBDIR}/numpy:math/py-numpy \
 		${PYTHON_SITELIBDIR}/ply:devel/py-ply \
-		swig2.0:../../devel/swig20 \
+		swig3.0:devel/swig30 \
 		sphinx-build:textproc/py-sphinx
 
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 
 # Require MPI
-#		${LOCALBASE}/lib/libscotch.a:../../cad/scotch
+#		${LOCALBASE}/lib/libscotch.a:wip/scotch
 #		${LOCALBASE}/lib/parmetis/libparmetis.a:math/parmetis
 
-LIB_DEPENDS=	blas:math/blas \
-		lapack:math/lapack \
-		amd:math/suitesparse \
-		umfpack:math/suitesparse \
-		cholmod:math/suitesparse \
-		boost_math_c99:devel/boost-libs \
-		CGAL:math/cgal \
-		xml2:textproc/libxml2 \
-		cppunit:devel/cppunit \
-		armadillo:../../math/armadillo \
-		petsc:../../math/petsc33
+LIB_DEPENDS=	libblas.so:math/blas \
+		liblapack.so:math/lapack \
+		libamd.so:math/suitesparse \
+		libumfpack.so:math/suitesparse \
+		libcholmod.so:math/suitesparse \
+		libboost_math_c99.so:devel/boost-libs \
+		libCGAL.so:math/cgal \
+		libxml2.so:textproc/libxml2 \
+		libcppunit.so:devel/cppunit \
+		libarmadillo.so:math/armadillo \
+		libpetsc.so:science/PETSc
 
 # Dolfin requires MPI if Trilinos is enabled
-#		amesos:../../math/trilinos
+#		amesos:wip/trilinos
 # Need better depend rule to ensure vtk5 is installed
 RUN_DEPENDS=	${COMMON_DEPENDS}
 
-USE_CMAKE=	yes
-USE_PYTHON=	-2.7
+USES=		cmake python:-2.7
+USE_GCC=	any
 PYDISTUTILS_PKGNAME=	dolfin
 USE_LDCONFIG=	yes
 
@@ -86,12 +84,6 @@ CMAKE_ARGS+=	-DDOLFIN_ENABLE_MPI:BOOL=OFF \
 #		-DEpetra_DIR:PATH=${LOCALBASE}/trilinos/lib/cmake/Epetra \
 
 FETCH_ARGS=	-F
-
-MAN1=		dolfin-convert.1 \
-		dolfin-order.1 \
-		dolfin-plot.1 \
-		dolfin-version.1
-MANCOMPRESSED=	yes
 
 MMVERSION=	1.2
 
