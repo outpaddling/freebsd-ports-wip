@@ -60,4 +60,12 @@ sailfish
 
 UWM Math
 --------
-FEniCS
+D. Xie
+
+FEniCS 2017.1 (all on pypi)
+    ffc
+    fenics-fiat
+    ufl
+    dijitso
+    instant
+f2py
