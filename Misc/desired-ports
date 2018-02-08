@@ -68,4 +68,4 @@ FEniCS 2017.1 (all on pypi)
     ufl
     dijitso
     instant
-f2py
+f2py (probably part of numpy)
