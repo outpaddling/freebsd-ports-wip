@@ -64,7 +64,7 @@ D. Xie
 
 FEniCS 2017.1 (all on pypi)
     ffc			JB
-    fenics-fiat
+    fenics-fiat		JB
     ufl
     dijitso
     instant
