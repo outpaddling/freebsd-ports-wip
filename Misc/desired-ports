@@ -11,6 +11,8 @@ next to any port you're working on, e.g.
 
 bwa             JB
 
+Commit IMMEDIATELY after changing this file.
+
 
 UWM Genomics
 ------------
@@ -65,7 +67,7 @@ D. Xie
 FEniCS 2017.1 (all on pypi)
     ffc			JB
     fenics-fiat		JB
-    ufl
+    ufl			JB
     dijitso
     instant
 f2py (probably part of numpy)
