@@ -68,6 +68,6 @@ FEniCS 2017.1 (all on pypi)
     ffc			JB
     fenics-fiat		JB
     ufl			JB
-    dijitso
-    instant
+    dijitso		JB
+    instant		JB
 f2py (probably part of numpy)
