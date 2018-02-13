@@ -5,4 +5,4 @@ bilinear form may be assembled into a matrix and a linear form may be assembled
 into a vector. FFC may be used either from the command line (by invoking the ffc
 command) or as a Python module (import ffc).
 
-WWW: https://pypi.python.org/pypi/FFC
+WWW: https://fenicsproject.org/
