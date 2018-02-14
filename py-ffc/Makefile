@@ -13,7 +13,10 @@ COMMENT=	Compiler for finite element variational forms
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ufl>0:wip/py-ufl@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fiat>0:wip/py-fiat@${FLAVOR}
+
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

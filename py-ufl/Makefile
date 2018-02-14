@@ -12,7 +12,9 @@ COMMENT=	Unified Form Language for finite element discretizations
 
 LICENSE=	LGPL3
 
-USES=		python
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${FLAVOR}
+
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

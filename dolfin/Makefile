@@ -20,6 +20,6 @@ BUILD_DEPENDS=	eigen>0:math/eigen3 \
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libboost_math_c99.so:devel/boost-libs
 
-USES=		cmake:outsource pkgconfig python
+USES=		cmake:outsource pkgconfig python:3.6+
 
 .include <bsd.port.mk>

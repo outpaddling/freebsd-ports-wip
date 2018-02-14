@@ -12,8 +12,8 @@ COMMENT=	FInite element Automatic Tabulator
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scientific>=0:math/py-scientific@${FLAVOR}
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+# BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scientific>=0:math/py-scientific@${FLAVOR}
+# RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

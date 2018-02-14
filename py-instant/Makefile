@@ -15,7 +15,7 @@ LICENSE=	LGPL3
 
 RUN_DEPENDS=	swig3.0:devel/swig30
 
-USES=			python
+USES=			python:3.6+
 USE_PYTHON=		autoplist distutils
 
 .include <bsd.port.mk>
