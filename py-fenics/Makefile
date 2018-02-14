@@ -5,7 +5,7 @@ PORTVERSION=	2017.2.0
 CATEGORIES=	wip math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bacon@manatee.acadix.biz
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Computing platform for solving partial differential equations
 
 LICENSE=	LGPL3
@@ -16,6 +16,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dijitso>0:wip/py-dijitso \
 		${PYTHON_PKGNAMEPREFIX}instant>0:wip/py-instant \
 		${PYTHON_PKGNAMEPREFIX}ufl>0:wip/py-ufl
 
-USES=		python metaport
+USES=		metaport python
 
 .include <bsd.port.mk>
