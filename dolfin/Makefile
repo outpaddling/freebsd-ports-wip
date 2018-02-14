@@ -12,14 +12,47 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	eigen>0:math/eigen3 \
-		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ffc>0:wip/py-ffc@${FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ffc>0:wip/py-ffc@${PY_FLAVOR} \
 		swig30>0:devel/swig30
-LIB_DEPENDS=	libhdf5.so:science/hdf5 \
-		libboost_math_c99.so:devel/boost-libs
+LIB_DEPENDS=	libboost_math_c99.so:devel/boost-libs \
+		libhdf5.so:science/hdf5 \
+
+# Optional
+#		libamd.so:math/suitesparse \
+		libblas.so:math/blas \
+		liblapack.so:math/lapack \
+		libumfpack.so:math/suitesparse \
+		libcholmod.so:math/suitesparse \
+		libCGAL.so:math/cgal \
+		libxml2.so:textproc/libxml2 \
+		libcppunit.so:devel/cppunit \
+		libarmadillo.so:math/armadillo
 
 USES=		cmake:outsource pkgconfig python:3.6+
+
+CMAKE_ARGS+=	-DDOLFIN_ENABLE_MPI:BOOL=OFF \
+		-DDOLFIN_AUTO_DETECT_MPI:BOOL=OFF \
+		-DDOLFIN_ENABLE_DOCS:BOOL=OFF \
+		-DDOLFIN_ENABLE_SLEPC:BOOL=OFF \
+		-DDOLFIN_ENABLE_SLEPC4PY:BOOL=OFF \
+		-DDOLFIN_ENABLE_TRILINOS:BOOL=OFF \
+		-DDOLFIN_ENABLE_PARMETIS:BOOL=OFF \
+		-DDOLFIN_ENABLE_SCOTCH:BOOL=OFF \
+		-DDOLFIN_ENABLE_MTL4:BOOL=OFF \
+		-DDOLFIN_ENABLE_PETSC:BOOL=OFF \
+		-DDOLFIN_ENABLE_PETSC4PY:BOOL=OFF \
+		-DDOLFIN_ENABLE_UMFPACK:BOOL=OFF \
+		-DDOLFIN_ENABLE_CHOLMOD:BOOL=OFF \
+		-DDOLFIN_ENABLE_SPHINX:BOOL=OFF \
+		-DDOLFIN_MAN_DIR:PATH=man \
+
+# Optional \
+		-DPETSC_DIR:PATH=${LOCALBASE} \
+		-DCHOLMOD_DIR:PATH=${LOCALBASE} \
+		-DUMFPACK_DIR:PATH=${LOCALBASE} \
+		-DDOLFIN_PKGCONFIG_DIR:PATH=${LOCALBASE}/libdata/pkgconfig
 
 .include <bsd.port.mk>
