@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+set +e
+# Delete lowest level dependency to force removal of of all FEniCS packages
+pkg delete -y py36-ufl py36-fiat py36-instant py36-dijitso
+pkg autoremove
+set -e
+pkg install -y cmake hdf5 py36-numpy
+wip-reinstall-port py-fenics
+
