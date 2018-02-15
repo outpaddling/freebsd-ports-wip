@@ -16,16 +16,16 @@ BUILD_DEPENDS=	eigen>0:math/eigen3 \
 		${COMMON_DEPENDS}
 LIB_DEPENDS=	libboost_math_c99.so:devel/boost-libs \
 		libhdf5.so:science/hdf5 \
+		libblas.so:math/blas \
+		liblapack.so:math/lapack \
+		libCGAL.so:math/cgal \
+		libamd.so:math/suitesparse \
+		libumfpack.so:math/suitesparse \
+		libcholmod.so:math/suitesparse \
 		libsz.so:science/szip
 RUN_DEPENDS=	${COMMON_DEPENDS}
 
-# Optional
-#		libamd.so:math/suitesparse \
-		libblas.so:math/blas \
-		liblapack.so:math/lapack \
-		libumfpack.so:math/suitesparse \
-		libcholmod.so:math/suitesparse \
-		libCGAL.so:math/cgal \
+# Optional \
 		libxml2.so:textproc/libxml2 \
 		libcppunit.so:devel/cppunit \
 		libarmadillo.so:math/armadillo

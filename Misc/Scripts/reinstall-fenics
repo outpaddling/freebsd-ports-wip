@@ -5,5 +5,5 @@ set +e
 pkg delete -y py\*-ufl py\*-fiat py\*-instant py\*-dijitso py\*-ffc ufc
 pkg autoremove -y
 set -e
-pkg install -y cmake hdf5 py36-numpy py36-matplotlib
+pkg install -y cmake hdf5 py36-numpy py36-matplotlib swig30
 wip-reinstall-port -nu -nr py-fenics
