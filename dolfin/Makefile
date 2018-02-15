@@ -30,7 +30,7 @@ RUN_DEPENDS=	${COMMON_DEPENDS}
 		libcppunit.so:devel/cppunit \
 		libarmadillo.so:math/armadillo
 
-USES=		cmake:outsource pkgconfig python:3.6+ shebangfix
+USES=		cmake:outsource,noninja pkgconfig python:3.6+ shebangfix
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	test/unit/python/scripts/run.sh \
 		test/unit/python/scripts/splitmpidebug.sh \
@@ -83,12 +83,13 @@ post-patch:
 	${REINPLACE_CMD} -e "s|'doxygen'|'hide-doxygen'|g" \
 		${WRKSRC}/cmake/scripts/generate-swig-docstrings.py
 
-post-configure:
-	${REINPLACE_CMD} -e 's| dolfin/swig/[a-z]*/pre\.i| ${WRKSRC}/&|g' \
-		${WRKDIR}/.build/build.ninja
-	${REINPLACE_CMD} -e 's| dolfin/swig/[a-z]*/post\.i| ${WRKSRC}/&|g' \
-		${WRKDIR}/.build/build.ninja
-	${REINPLACE_CMD} -e 's|${WRKSRC}/ |${WRKSRC}/|g' \
-		${WRKDIR}/.build/build.ninja
+# If building with ninja back-end
+#post-configure:
+#	${REINPLACE_CMD} -e 's| dolfin/swig/[a-z]*/pre\.i| ${WRKSRC}/&|g' \
+#		${WRKDIR}/.build/build.ninja
+#	${REINPLACE_CMD} -e 's| dolfin/swig/[a-z]*/post\.i| ${WRKSRC}/&|g' \
+#		${WRKDIR}/.build/build.ninja
+#	${REINPLACE_CMD} -e 's|${WRKSRC}/ |${WRKSRC}/|g' \
+#		${WRKDIR}/.build/build.ninja
 
 .include <bsd.port.mk>

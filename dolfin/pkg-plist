@@ -391,12 +391,6 @@ lib/libdolfin.so.2017.2.0
 %%PYTHON_SITELIBDIR%%/dolfin_utils/cppparser/__pycache__/utils.cpython-36.pyc
 %%PYTHON_SITELIBDIR%%/dolfin_utils/cppparser/utils.py
 %%PYTHON_SITELIBDIR%%/dolfin_utils/documentation/__init__.py
-%%PYTHON_SITELIBDIR%%/dolfin_utils/documentation/__pycache__/__init__.cpython-36.pyc
-%%PYTHON_SITELIBDIR%%/dolfin_utils/documentation/__pycache__/docstringutils.cpython-36.pyc
-%%PYTHON_SITELIBDIR%%/dolfin_utils/documentation/__pycache__/extractdocumentation.cpython-36.pyc
-%%PYTHON_SITELIBDIR%%/dolfin_utils/documentation/__pycache__/generatecpprst.cpython-36.pyc
-%%PYTHON_SITELIBDIR%%/dolfin_utils/documentation/__pycache__/generatepythonrst.cpython-36.pyc
-%%PYTHON_SITELIBDIR%%/dolfin_utils/documentation/__pycache__/indextemplates.cpython-36.pyc
 %%PYTHON_SITELIBDIR%%/dolfin_utils/documentation/docstringutils.py
 %%PYTHON_SITELIBDIR%%/dolfin_utils/documentation/extractdocumentation.py
 %%PYTHON_SITELIBDIR%%/dolfin_utils/documentation/generatecpprst.py
