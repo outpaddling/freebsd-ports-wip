@@ -19,6 +19,7 @@ BUILD_DEPENDS=	eigen>0:math/eigen3 \
 		swig30>0:devel/swig30
 LIB_DEPENDS=	libboost_math_c99.so:devel/boost-libs \
 		libhdf5.so:science/hdf5 \
+		libsz.so:science/szip
 
 # Optional
 #		libamd.so:math/suitesparse \
@@ -31,7 +32,24 @@ LIB_DEPENDS=	libboost_math_c99.so:devel/boost-libs \
 		libcppunit.so:devel/cppunit \
 		libarmadillo.so:math/armadillo
 
-USES=		cmake:outsource pkgconfig python:3.6+
+USES=		cmake:outsource pkgconfig python:3.6+ shebangfix
+USE_LDCONFIG=	yes
+SHEBANG_FILES=	test/unit/python/scripts/run.sh \
+		test/unit/python/scripts/splitmpidebug.sh \
+		test/unit/python/scripts/clean.sh \
+		test/unit/python/scripts/prun.sh \
+		test/unit/python/scripts/mpidebug.sh \
+		test/unit/python/scripts/mpirun.sh \
+		site-packages/dolfin_utils/pjobs/sge.py \
+		site-packages/dolfin_utils/pjobs/slurm.py \
+		site-packages/dolfin_utils/pjobs/torque.py \
+		utils/scripts/pdebug \
+		cmake/templates/fenics-version.in \
+		cmake/templates/dolfin-get-demos.in \
+		cmake/templates/dolfin-version.in \
+		scripts/dolfin-convert/dolfin-convert \
+		scripts/dolfin-order/dolfin-order \
+		scripts/dolfin-plot/dolfin-plot
 
 CMAKE_ARGS+=	-DDOLFIN_ENABLE_MPI:BOOL=OFF \
 		-DDOLFIN_AUTO_DETECT_MPI:BOOL=OFF \
@@ -58,8 +76,8 @@ CMAKE_ARGS+=	-DDOLFIN_ENABLE_MPI:BOOL=OFF \
 # Doxygen chokes, resulting in missing .i files, so disable it
 # Should dolfin build even be trying this with DOLFIN_ENABLE_DOCS=OFF?
 post-patch:
-	${REINPLACE_CMD} -e "s|'doxygen'|'hide-doxygen'|g' \
-		cmake/scripts/generate-swig-docstrings.p
+	${REINPLACE_CMD} -e "s|'doxygen'|'hide-doxygen'|g" \
+		${WRKSRC}/cmake/scripts/generate-swig-docstrings.py
 
 post-configure:
 	${REINPLACE_CMD} -e 's| dolfin/swig/[a-z]*/pre\.i| ${WRKSRC}/&|g' \
