@@ -10,12 +10,15 @@ COMMENT=	Computing platform for solving partial differential equations
 
 LICENSE=	LGPL3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dijitso>0:wip/py-dijitso \
-		${PYTHON_PKGNAMEPREFIX}ffc>0:wip/py-ffc \
-		${PYTHON_PKGNAMEPREFIX}fiat>0:wip/py-fiat \
-		${PYTHON_PKGNAMEPREFIX}instant>0:wip/py-instant \
-		${PYTHON_PKGNAMEPREFIX}ufl>0:wip/py-ufl
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dijitso==${PORTVERSION}:wip/py-dijitso \
+		${PYTHON_PKGNAMEPREFIX}ffc==${PORTVERSION}:wip/py-ffc \
+		${PYTHON_PKGNAMEPREFIX}fiat==${PORTVERSION}:wip/py-fiat \
+		${PYTHON_PKGNAMEPREFIX}instant==${PORTVERSION}:wip/py-instant \
+		${PYTHON_PKGNAMEPREFIX}ufl==${PORTVERSION}:wip/py-ufl \
+		dolfin==${PORTVERSION}:wip/dolfin \
 
-USES=		metaport python
+#		mshr==${PORTVERSION}:wip/mshr
+
+USES=		metaport python:3.6+
 
 .include <bsd.port.mk>
