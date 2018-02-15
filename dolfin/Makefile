@@ -55,6 +55,12 @@ CMAKE_ARGS+=	-DDOLFIN_ENABLE_MPI:BOOL=OFF \
 		-DUMFPACK_DIR:PATH=${LOCALBASE} \
 		-DDOLFIN_PKGCONFIG_DIR:PATH=${LOCALBASE}/libdata/pkgconfig
 
+# Doxygen chokes, resulting in missing .i files, so disable it
+# Should dolfin build even be trying this with DOLFIN_ENABLE_DOCS=OFF?
+post-patch:
+	${REINPLACE_CMD} -e "s|'doxygen'|'hide-doxygen'|g' \
+		cmake/scripts/generate-swig-docstrings.p
+
 post-configure:
 	${REINPLACE_CMD} -e 's| dolfin/swig/[a-z]*/pre\.i| ${WRKSRC}/&|g' \
 		${WRKDIR}/.build/build.ninja
