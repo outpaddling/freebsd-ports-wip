@@ -15,9 +15,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dijitso==${PORTVERSION}:wip/py-dijitso \
 		${PYTHON_PKGNAMEPREFIX}fiat==${PORTVERSION}:wip/py-fiat \
 		${PYTHON_PKGNAMEPREFIX}instant==${PORTVERSION}:wip/py-instant \
 		${PYTHON_PKGNAMEPREFIX}ufl==${PORTVERSION}:wip/py-ufl \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib \
 		dolfin==${PORTVERSION}:wip/dolfin \
+		mshr==${PORTVERSION}:wip/mshr
 
-#		mshr==${PORTVERSION}:wip/mshr
+USE_PYTHON=	flavors
 
 USES=		metaport python:3.6+
 
