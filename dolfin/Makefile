@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dolfin
-PORTVERSION=	2017.2.0
+DISTVERSION=	2017.2.0
 CATEGORIES=	wip
 MASTER_SITES=	https://bitbucket.org/fenics-project/dolfin/downloads/
 
@@ -12,14 +12,12 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	eigen>0:math/eigen3 \
-		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ffc>0:wip/py-ffc@${PY_FLAVOR} \
-		swig30>0:devel/swig30
+		swig30>0:devel/swig30 \
+		${COMMON_DEPENDS}
 LIB_DEPENDS=	libboost_math_c99.so:devel/boost-libs \
 		libhdf5.so:science/hdf5 \
 		libsz.so:science/szip
+RUN_DEPENDS=	${COMMON_DEPENDS}
 
 # Optional
 #		libamd.so:math/suitesparse \
@@ -72,6 +70,12 @@ CMAKE_ARGS+=	-DDOLFIN_ENABLE_MPI:BOOL=OFF \
 		-DCHOLMOD_DIR:PATH=${LOCALBASE} \
 		-DUMFPACK_DIR:PATH=${LOCALBASE} \
 		-DDOLFIN_PKGCONFIG_DIR:PATH=${LOCALBASE}/libdata/pkgconfig
+
+DV=		${DISTVERSION}
+COMMON_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ffc==${DV}:wip/py-ffc@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
 
 # Doxygen chokes, resulting in missing .i files, so disable it
 # Should dolfin build even be trying this with DOLFIN_ENABLE_DOCS=OFF?
