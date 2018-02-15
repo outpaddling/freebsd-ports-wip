@@ -13,10 +13,14 @@ COMMENT=	Compiler for finite element variational forms
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ufl>0:wip/py-ufl@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}fiat>0:wip/py-fiat@${PY_FLAVOR}
+RUN_DEPENDS=	${PKGNAMEPREFIX}dijitso==${DV}:wip/py-dijitso@${PY_FLAVOR} \
+		${PKGNAMEPREFIX}fiat==${DV}:wip/py-fiat@${PY_FLAVOR} \
+		${PKGNAMEPREFIX}instant==${DV}:wip/py-instant@${PY_FLAVOR} \
+		${PKGNAMEPREFIX}ufl==${DV}:wip/py-ufl@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
+
+DV=		${DISTVERSION}
 
 .include <bsd.port.mk>
