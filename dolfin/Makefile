@@ -55,4 +55,12 @@ CMAKE_ARGS+=	-DDOLFIN_ENABLE_MPI:BOOL=OFF \
 		-DUMFPACK_DIR:PATH=${LOCALBASE} \
 		-DDOLFIN_PKGCONFIG_DIR:PATH=${LOCALBASE}/libdata/pkgconfig
 
+post-configure:
+	${REINPLACE_CMD} -e 's| dolfin/swig/[a-z]*/pre\.i| ${WRKSRC}/&|g' \
+		${WRKDIR}/.build/build.ninja
+	${REINPLACE_CMD} -e 's| dolfin/swig/[a-z]*/post\.i| ${WRKSRC}/&|g' \
+		${WRKDIR}/.build/build.ninja
+	${REINPLACE_CMD} -e 's|${WRKSRC}/ |${WRKSRC}/|g' \
+		${WRKDIR}/.build/build.ninja
+
 .include <bsd.port.mk>
