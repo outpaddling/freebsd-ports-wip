@@ -22,6 +22,9 @@ LIB_DEPENDS=	libboost_math_c99.so:devel/boost-libs \
 		libamd.so:math/suitesparse \
 		libumfpack.so:math/suitesparse \
 		libcholmod.so:math/suitesparse \
+		libpetsc.so:science/PETSc \
+		libparmetis.so:math/parmetis \
+		libscotch.so:cad/scotch \
 		libsz.so:science/szip
 RUN_DEPENDS=	${COMMON_DEPENDS}
 
@@ -55,9 +58,9 @@ CMAKE_ARGS+=	-DDOLFIN_ENABLE_MPI:BOOL=OFF \
 		-DDOLFIN_ENABLE_SLEPC:BOOL=OFF \
 		-DDOLFIN_ENABLE_SLEPC4PY:BOOL=OFF \
 		-DDOLFIN_ENABLE_TRILINOS:BOOL=OFF \
-		-DDOLFIN_ENABLE_PARMETIS:BOOL=OFF \
-		-DDOLFIN_ENABLE_SCOTCH:BOOL=OFF \
-		-DDOLFIN_ENABLE_PETSC:BOOL=OFF \
+		-DDOLFIN_ENABLE_PARMETIS:BOOL=ON \
+		-DDOLFIN_ENABLE_SCOTCH:BOOL=ON \
+		-DDOLFIN_ENABLE_PETSC:BOOL=ON \
 		-DDOLFIN_ENABLE_PETSC4PY:BOOL=OFF \
 		-DDOLFIN_ENABLE_UMFPACK:BOOL=ON \
 		-DDOLFIN_ENABLE_CHOLMOD:BOOL=ON \
