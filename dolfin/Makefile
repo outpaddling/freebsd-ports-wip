@@ -22,9 +22,6 @@ LIB_DEPENDS=	libboost_math_c99.so:devel/boost-libs \
 		libamd.so:math/suitesparse \
 		libumfpack.so:math/suitesparse \
 		libcholmod.so:math/suitesparse \
-		libpetsc.so:science/PETSc \
-		libparmetis.so:math/parmetis \
-		libscotch.so:cad/scotch \
 		libsz.so:science/szip
 RUN_DEPENDS=	${COMMON_DEPENDS}
 
@@ -58,9 +55,9 @@ CMAKE_ARGS+=	-DDOLFIN_ENABLE_MPI:BOOL=OFF \
 		-DDOLFIN_ENABLE_SLEPC:BOOL=OFF \
 		-DDOLFIN_ENABLE_SLEPC4PY:BOOL=OFF \
 		-DDOLFIN_ENABLE_TRILINOS:BOOL=OFF \
-		-DDOLFIN_ENABLE_PARMETIS:BOOL=ON \
-		-DDOLFIN_ENABLE_SCOTCH:BOOL=ON \
-		-DDOLFIN_ENABLE_PETSC:BOOL=ON \
+		-DDOLFIN_ENABLE_PARMETIS:BOOL=OFF \
+		-DDOLFIN_ENABLE_SCOTCH:BOOL=OFF \
+		-DDOLFIN_ENABLE_PETSC:BOOL=OFF \
 		-DDOLFIN_ENABLE_PETSC4PY:BOOL=OFF \
 		-DDOLFIN_ENABLE_UMFPACK:BOOL=ON \
 		-DDOLFIN_ENABLE_CHOLMOD:BOOL=ON \
@@ -69,10 +66,6 @@ CMAKE_ARGS+=	-DDOLFIN_ENABLE_MPI:BOOL=OFF \
 		-DCHOLMOD_DIR:PATH=${LOCALBASE} \
 		-DUMFPACK_DIR:PATH=${LOCALBASE} \
 		-DBLAS_Accelerate_LIBRARY:PATH=${LOCALBASE}/lib/libopenblas.a
-
-# Optional \
-		-DPETSC_DIR:PATH=${LOCALBASE} \
-		-DDOLFIN_PKGCONFIG_DIR:PATH=${LOCALBASE}/libdata/pkgconfig \
 
 DV=		${DISTVERSION}
 COMMON_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ffc==${DV}:wip/py-ffc@${PY_FLAVOR} \
@@ -85,14 +78,5 @@ COMMON_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ffc==${DV}:wip/py-ffc@${PY_FLAVOR} \
 post-patch:
 	${REINPLACE_CMD} -e "s|'doxygen'|'hide-doxygen'|g" \
 		${WRKSRC}/cmake/scripts/generate-swig-docstrings.py
-
-# If building with ninja back-end
-#post-configure:
-#	${REINPLACE_CMD} -e 's| dolfin/swig/[a-z]*/pre\.i| ${WRKSRC}/&|g' \
-#		${WRKDIR}/.build/build.ninja
-#	${REINPLACE_CMD} -e 's| dolfin/swig/[a-z]*/post\.i| ${WRKSRC}/&|g' \
-#		${WRKDIR}/.build/build.ninja
-#	${REINPLACE_CMD} -e 's|${WRKSRC}/ |${WRKSRC}/|g' \
-#		${WRKDIR}/.build/build.ninja
 
 .include <bsd.port.mk>
