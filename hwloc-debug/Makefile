@@ -12,7 +12,7 @@ COMMENT=	Portable Hardware Locality software package
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpciaccess.so:wip devel/libpciaccess
+LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \
@@ -21,12 +21,15 @@ CONFIGURE_ARGS=	--enable-static \
 		--disable-nvml \
 		--disable-gl \
 		--enable-debug
-#INSTALL_TARGET=	install-strip
+#INSTALL_TARGET=	install
 USES=		iconv libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 
-CFLAGS+=	-O0
+# WITH_DEBUG turns off optimizations, which eliminates the crash on
+# many systems.  Force debugsymbols to be included while keeping optimizations
+CFLAGS+=	-O -g
+MAKE_ENV+=	DONTSTRIP=1
 
 PORTDOCS=	*
 
