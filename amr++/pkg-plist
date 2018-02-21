@@ -1,1 +1,11 @@
-@comment $FreeBSD$
+bin/amr_long_to_wide.py
+bin/kraken_long_to_wide.py
+bin/samtools_idxstats.py
+bin/trimmomatic_stats.py
+%%DATADIR%%/adapters/nextera.fa
+%%DATADIR%%/amr/megares_annotations_v1.01.csv
+%%DATADIR%%/amr/megares_database_v1.01.fasta
+%%DATADIR%%/amr/megares_to_external_header_mappings_v1.01.tsv
+%%DATADIR%%/host/chr21.fasta
+%%DATADIR%%/raw/SRR532663_1.fastq
+%%DATADIR%%/raw/SRR532663_2.fastq
