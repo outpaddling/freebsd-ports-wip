@@ -21,14 +21,14 @@ CONFIGURE_ARGS=	--enable-static \
 		--disable-nvml \
 		--disable-gl \
 		--enable-debug
-#INSTALL_TARGET=	install
+# INSTALL_TARGET=	install-strip
 USES=		iconv libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 
 # WITH_DEBUG turns off optimizations, which eliminates the crash on
 # many systems.  Force debugsymbols to be included while keeping optimizations
-CFLAGS+=	-O -g
+# CFLAGS+=	-O0
 MAKE_ENV+=	DONTSTRIP=1
 
 PORTDOCS=	*
