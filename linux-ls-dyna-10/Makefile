@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=	ls-dyna
+PORTNAME=	ls-dyna10
 DISTVERSION=	10.0.0
 CATEGORIES=	wip science linux
 MASTER_SITES=	http://ftp.lstc.com/user/ls-dyna/R${DISTVERSION}/linux.64/

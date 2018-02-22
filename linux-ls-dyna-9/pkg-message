@@ -1,0 +1,9 @@
+===
+
+To run LS-DYNA, you must have the environment variable LSTC_FILE set to
+the pathname of a file containing license info.  Example file content:
+
+#LICENSE_TYPE: network
+#LICENSE_SERVER: license.server.domain
+
+===
