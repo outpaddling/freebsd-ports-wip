@@ -1,6 +1,5 @@
 # Created by: Dan Siercks <dsiercks@uwm.edu>
-# $FreeBSD$
-# Test new versions with Trinity before upgrading
+# $FreeBSD: head/biology/trimmomatic/Makefile 460452 2018-01-31 01:07:07Z jwb $
 
 PORTNAME=	trimmomatic
 PORTVERSION=	0.36
@@ -19,8 +18,6 @@ JAVA_VERSION=	1.6+
 JAVA_RUN=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
-
-WRKSRC=		${WRKDIR}/Trimmomatic-${PORTVERSION}
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/trimmomatic-${PORTVERSION}.jar \
