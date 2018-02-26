@@ -2,7 +2,7 @@
 
 PORTNAME=	blast+
 PORTVERSION=	2.7.1
-CATEGORIES=	biology
+CATEGORIES=	wip biology
 MASTER_SITES=	http://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/ \
 		http://acadix.biz/Ports/distfiles/
 PKGNAMEPREFIX=	ncbi-
