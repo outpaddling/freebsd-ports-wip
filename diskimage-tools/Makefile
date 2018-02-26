@@ -1,7 +1,7 @@
 # $FreeBSD: head/sysutils/diskimage-tools/Makefile 460452 2018-01-31 01:07:07Z jwb $
 
 PORTNAME=	diskimage-tools
-PORTVERSION=	0.2
+DISTVERSION=	0.2
 CATEGORIES=	wip sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
