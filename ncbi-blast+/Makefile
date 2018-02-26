@@ -1,9 +1,8 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/biology/ncbi-blast+/Makefile 460452 2018-01-31 01:07:07Z jwb $
 
 PORTNAME=	blast+
-PORTVERSION=	2.5.0
-CATEGORIES=	wip biology
+PORTVERSION=	2.7.1
+CATEGORIES=	biology
 MASTER_SITES=	http://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/ \
 		http://acadix.biz/Ports/distfiles/
 PKGNAMEPREFIX=	ncbi-
@@ -16,17 +15,21 @@ LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/scripts/projects/blast/LICENSE
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libbz2.so:archivers/bzip2
+		liblmdb.so:databases/lmdb
 RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/c++
 
 GNU_CONFIGURE=	yes
-USES=		compiler:openmp gmake shebangfix perl5 python
+USES=		gmake shebangfix perl5 python
 SHEBANG_FILES=	src/app/blast/legacy_blast.pl \
 		src/app/blast/update_blastdb.pl \
 		src/app/winmasker/windowmasker_2.2.22_adapter.py
 
+MAKE_JOBS_UNSAFE=	yes
+
+# Requires openmp
+USE_GCC=	yes
 USE_LDCONFIG=	yes
 
 # The test for amq can hang, but amq is not needed so just avoid the test
