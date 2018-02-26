@@ -1,5 +1,4 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/sysutils/diskimage-tools/Makefile 460452 2018-01-31 01:07:07Z jwb $
 
 PORTNAME=	diskimage-tools
 PORTVERSION=	0.2
@@ -15,7 +14,7 @@ NO_BUILD=	yes
 USES=		tar:xz
 
 do-install:
-	${MKDIR} ${PREFIX}/sbin
+	@${MKDIR} ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/mount_image \
 		${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/umount_image \
