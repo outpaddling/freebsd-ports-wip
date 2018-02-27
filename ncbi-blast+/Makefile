@@ -15,8 +15,20 @@ LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/scripts/projects/blast/LICENSE
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
-		liblmdb.so:databases/lmdb
-RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
+		liblmdb.so:databases/lmdb \
+		liblzo2.so:archivers/lzo2 \
+		libgnutls.so:security/gnutls \
+		libtspi.so:security/trousers \
+		libgmp.so:math/gmp \
+		libidn2.so:dns/libidn2 \
+		libnettle.so:security/nettle \
+		libhogweed.so:security/nettle \
+		libtasn1.so:security/libtasn1 \
+		libp11-kit.so:security/p11-kit \
+		libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error
+RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
+		p5-Module-CoreList:devel/p5-Module-CoreList
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/c++
 
