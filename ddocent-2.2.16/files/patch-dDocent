@@ -1,0 +1,30 @@
+--- dDocent.orig	2018-02-27 21:36:02 UTC
++++ dDocent
+@@ -27,15 +27,15 @@ do
+ 	fi
+ done
+ 
+-if find ${PATH//:/ } -maxdepth 1 -name trimmomatic*jar 2> /dev/null| grep -q 'trim' ; then
+-	TRIMMOMATIC=$(find ${PATH//:/ } -maxdepth 1 -name trimmomatic*jar 2> /dev/null | head -1)
++if [ -e %%JAVAJARDIR%%/trimmomatic.jar ]; then
++	TRIMMOMATIC=%%JAVAJARDIR%%/trimmomatic.jar
+ 	else
+     echo "The dependency trimmomatic is not installed or is not in your" '$PATH'"."
+     NUMDEP=$((NUMDEP + 1))
+ 	fi
+ 
+-if find ${PATH//:/ } -maxdepth 1 -name TruSeq2-PE.fa 2> /dev/null | grep -q 'Tru' ; then
+-	ADAPTERS=$(find ${PATH//:/ } -maxdepth 1 -name TruSeq2-PE.fa 2> /dev/null | head -1)
++if [ -e %%PREFIX%%/share/trimmomatic/adapters ]; then
++	ADAPTERS=%%PREFIX%%/share/trimmomatic/adapters
+ 	else
+     echo "The file listing adapters (included with trimmomatic) is not installed or is not in your" '$PATH'"."
+     NUMDEP=$((NUMDEP + 1))
+@@ -80,6 +80,7 @@ FREEB=(`freebayes | grep -oh 'v[0-9].*' 
+         	exit 1
+         fi         	
+ VCFTV=$(vcftools | grep VCF | grep -oh '[0-9]*[a-z]*)$' | sed 's/[a-z)]//')
++	echo $VCFTV
+ 	if [ "$VCFTV" -lt "10" ]; then
+         	echo "The version of VCFtools installed in your" '$PATH' "is not optimized for dDocent."
+         	echo "Please install at least version 0.1.11"
