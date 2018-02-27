@@ -1,10 +1,10 @@
 # $FreeBSD: head/biology/ncbi-blast+/Makefile 460452 2018-01-31 01:07:07Z jwb $
 
 PORTNAME=	blast+
-PORTVERSION=	2.7.1
+DISTVERSION=	2.7.1
 CATEGORIES=	wip biology
-MASTER_SITES=	http://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/ \
-		http://acadix.biz/Ports/distfiles/
+MASTER_SITES=	https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ \
+		https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/
 PKGNAMEPREFIX=	ncbi-
 DISTNAME=	ncbi-blast-${PORTVERSION}+-src
 
@@ -21,19 +21,17 @@ RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
 WRKSRC=		${WRKDIR}/${DISTNAME}/c++
 
 GNU_CONFIGURE=	yes
-USES=		gmake shebangfix perl5 python
+USES=		compiler:openmp gmake shebangfix perl5 python
 SHEBANG_FILES=	src/app/blast/legacy_blast.pl \
 		src/app/blast/update_blastdb.pl \
 		src/app/winmasker/windowmasker_2.2.22_adapter.py
 
-MAKE_JOBS_UNSAFE=	yes
+# MAKE_JOBS_UNSAFE=	yes
 
-# Requires openmp
-USE_GCC=	yes
 USE_LDCONFIG=	yes
 
 # The test for amq can hang, but amq is not needed so just avoid the test
-CONFIGURE_ENV=	ncbi_cv_prog_amq_w=no
+# CONFIGURE_ENV=	ncbi_cv_prog_amq_w=no
 
 # configure chooses /usr/local/bin/ar with no flags
 # FreeBSD boost port flagged by configure as untested version

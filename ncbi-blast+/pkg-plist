@@ -530,7 +530,6 @@ include/ncbi-tools++/ncbi_random_macro.h
 include/ncbi-tools++/ncbi_source_ver.h
 include/ncbi-tools++/ncbiconf.h
 include/ncbi-tools++/ncbiconf_unix.h
-include/ncbi-tools++/objects/access/.cvsignore
 include/ncbi-tools++/objects/access/Link_set.hpp
 include/ncbi-tools++/objects/access/Link_set_.hpp
 include/ncbi-tools++/objects/access/NCBI_Access_module.hpp
@@ -3962,6 +3961,8 @@ lib/libseqtest-static.a
 lib/libseqtest.a
 lib/libsequtil-static.a
 lib/libsequtil.a
+lib/libsqlitewrapp-static.a
+lib/libsqlitewrapp.a
 lib/libsubmit-static.a
 lib/libsubmit.a
 lib/libtables-static.a
@@ -3978,6 +3979,8 @@ lib/libtrackmgr-static.a
 lib/libtrackmgr.a
 lib/libtrackmgrcli-static.a
 lib/libtrackmgrcli.a
+lib/libtrackmgrgridcli-static.a
+lib/libtrackmgrgridcli.a
 lib/libvalerr-static.a
 lib/libvalerr.a
 lib/libvalid-static.a
