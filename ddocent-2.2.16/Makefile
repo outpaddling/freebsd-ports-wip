@@ -25,7 +25,7 @@ RUN_DEPENDS=    mawk>=0:lang/mawk \
 		stacks>=0:wip/stacks \
 		trimmomatic>=0:biology/trimmomatic \
 		seqtk>=0:wip/seqtk \
-		bedtools>=2:biology/bedtools \
+		bedtools>=2.26.0:wip/bedtools \
 		pear-merger>=0:wip/pear
 
 USES=		shebangfix tar:xz
