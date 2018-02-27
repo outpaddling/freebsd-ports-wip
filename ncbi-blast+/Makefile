@@ -27,8 +27,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libp11-kit.so:security/p11-kit \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
-RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
-		p5-Module-CoreList:devel/p5-Module-CoreList
+RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/c++
 
@@ -47,7 +46,10 @@ USE_LDCONFIG=	yes
 
 # configure chooses /usr/local/bin/ar with no flags
 # FreeBSD boost port flagged by configure as untested version
-CONFIGURE_ARGS+=AR="ar cr" --without-boost
+# Conflict with graphics/proj on lib/libproj.a
+# --libdir=${PREFIX}/lib/ncbi-tools++ doesn't respect DESTDIR
+CONFIGURE_ARGS+=	AR="ar cr" \
+			--without-boost
 
 # Fix "undefined _ThreadRuneLocale" error on 10.0
 # Fix unknown options in configure
@@ -62,6 +64,12 @@ post-patch:
 		${WRKSRC}/src/build-system/Makefile.in.top
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+	@${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/*/*/.cvsignore.extra
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ncbi-tools++
+	@${MV} ${STAGEDIR}${PREFIX}/lib/lib* \
+		${STAGEDIR}${PREFIX}/lib/X11 \
+		${STAGEDIR}${PREFIX}/lib/debug \
+		${STAGEDIR}${PREFIX}/lib/ncbi-tools++
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ncbi-tools++/*.so
 
 .include <bsd.port.mk>
