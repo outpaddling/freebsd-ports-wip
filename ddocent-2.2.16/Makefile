@@ -3,7 +3,7 @@
 PORTNAME=	dDocent
 PORTVERSION=	2.2.16
 DISTVERSIONPREFIX=	v
-CATEGORIES=	biology java
+CATEGORIES=	wip biology java
 
 MAINTAINER=	dsiercks@uwm.edu
 COMMENT=	Bash pipeline for RAD sequencing

@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 #
 # Do not uprade this port beyond 1.x before testing with biology/py-qiime

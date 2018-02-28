@@ -1,4 +1,3 @@
-# Created by: Dan Siercks
 # $FreeBSD$
 
 PORTNAME=	trimadap

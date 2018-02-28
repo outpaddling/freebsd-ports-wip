@@ -1,6 +1,3 @@
-# New ports collection makefile for:	libFFMap
-# Date created:		3 jan 2007
-# Whom:			Jason W. Bacon
 #
 # $FreeBSD$
 #

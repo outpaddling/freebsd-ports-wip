@@ -1,4 +1,3 @@
-# Created by: J.R. Oldroyd <fbsd@opal.com>
 # $FreeBSD: head/net/boinc-client/Makefile 421387 2016-09-05 19:23:42Z tijl $
 
 PORTNAME=	boinc-client

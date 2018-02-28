@@ -1,6 +1,3 @@
-# New ports collection makefile for:	TLv
-# Date created:		4 jan 2007
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

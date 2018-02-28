@@ -1,7 +1,4 @@
 ############################################################################
-# New ports collection Makefile for:   nonmritools
-# Date created:        30 jan 2007
-# Whom:                Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

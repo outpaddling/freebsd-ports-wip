@@ -1,6 +1,3 @@
-# New ports collection makefile for:	bench
-# Date created:		2011-08-28
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

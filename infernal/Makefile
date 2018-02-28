@@ -1,4 +1,3 @@
-# Created by: Jason Wayne Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 #
 # 1.1.1 does not work with qiime 1.9.1

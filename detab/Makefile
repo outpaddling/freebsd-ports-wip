@@ -1,6 +1,3 @@
-# New ports collection makefile for:	detab
-# Date created:		2011-01-04
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

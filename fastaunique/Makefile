@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 # FIXME: Is there a way to use USE_GITHUB with gist repos?
 

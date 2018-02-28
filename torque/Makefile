@@ -1,4 +1,3 @@
-# Created by: trasz
 # $FreeBSD$
 
 PORTNAME=	torque

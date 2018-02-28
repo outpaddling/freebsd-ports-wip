@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 #
 # This is a stopgap measure.  Bedops is open source and portable and will

@@ -1,6 +1,3 @@
-# New ports collection makefile for:	app
-# Date created:		18 September 2009
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD: ports/devel/papp/Makefile,v 1.2 2012/11/17 05:56:37 svnexp Exp $
 #

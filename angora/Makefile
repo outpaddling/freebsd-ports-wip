@@ -1,6 +1,3 @@
-# New ports collection makefile for:	angora
-# Date created:		2012-06-02
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

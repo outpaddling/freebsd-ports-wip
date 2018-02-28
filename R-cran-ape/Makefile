@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <bacon@imacbsd.acadix.biz>
 # $FreeBSD$
 
 PORTNAME=	ape

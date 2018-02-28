@@ -1,6 +1,3 @@
-# New ports collection makefile for:    plasm
-# Date created:         2010-07-21
-# Whom:                 Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

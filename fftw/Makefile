@@ -1,6 +1,3 @@
-# New ports collection makefile for: fftw
-# Date created:		Dec 28 1998
-# Whom:			Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 #
 # $FreeBSD: ports/math/fftw/Makefile,v 1.48 2012/11/17 05:59:20 svnexp Exp $
 #

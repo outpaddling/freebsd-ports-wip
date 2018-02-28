@@ -1,6 +1,3 @@
-# New ports collection makefile for:	remountnfs
-# Date created:		2008-05-23
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

@@ -1,6 +1,3 @@
-# New ports collection makefile for:	1Dmean
-# Date created:		4 jan 2007
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

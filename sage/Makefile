@@ -1,6 +1,3 @@
-# New ports collection makefile for:	sage
-# Date created:		2013-01-06
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

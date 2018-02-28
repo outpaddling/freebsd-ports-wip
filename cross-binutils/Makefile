@@ -1,6 +1,3 @@
-# New ports collection makefile for:	cross-binutils
-# Date created:		8 August 2006
-# Whom:			Stanislav Sedov <stas@FreeBSD.org>
 #
 # $FreeBSD: ports/devel/cross-binutils/Makefile,v 1.17 2011/04/03 01:03:00 stas Exp $
 #

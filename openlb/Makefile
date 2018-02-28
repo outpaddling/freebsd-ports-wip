@@ -1,6 +1,3 @@
-# New ports collection makefile for:	openlb
-# Date created:		2012-02-25
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

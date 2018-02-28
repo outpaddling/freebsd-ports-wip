@@ -1,6 +1,3 @@
-# New ports collection makefile for:	hilbplug2ffmap
-# Date created:		4 jan 2007
-# Whom:			Jason W. Bacon
 #
 # $FreeBSD$
 #

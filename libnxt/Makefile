@@ -1,6 +1,3 @@
-# New ports collection makefile for:	libnxt
-# Date created:		2007-05-05
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

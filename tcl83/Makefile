@@ -1,6 +1,3 @@
-# New ports collection makefile for:	tcl8.3
-# Date created:		19 August 1997
-# Whom:			jkh
 #
 # $FreeBSD: ports/lang/tcl83/Makefile,v 1.80 2009/08/22 00:24:35 amdmi3 Exp $
 #

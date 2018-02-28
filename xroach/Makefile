@@ -1,4 +1,3 @@
-# Created by: markm
 # $FreeBSD: head/games/xroach/Makefile 429499 2016-12-26 11:59:12Z rene $
 
 PORTNAME=	xroach

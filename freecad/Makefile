@@ -1,6 +1,3 @@
-# New ports collection makefile for:	freecad
-# Date created:		2010-02-27
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

@@ -1,6 +1,3 @@
-# New ports collection makefile for:	tk
-# Date created:		19 August 1997
-# Whom:			jkh
 #
 # $FreeBSD: ports/x11-toolkits/tk83/Makefile,v 1.81 2011/09/03 16:13:25 dinoex Exp $
 #

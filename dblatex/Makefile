@@ -1,4 +1,3 @@
-# Created by: Peter Johnson <johnson.peter@gmail.com>
 # $FreeBSD: head/textproc/dblatex/Makefile 407344 2016-01-27 09:23:42Z miwi $
 
 PORTNAME=	dblatex

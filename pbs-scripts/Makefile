@@ -1,6 +1,3 @@
-# New ports collection makefile for:	pbs-scripts
-# Date created:		2012-01-27
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

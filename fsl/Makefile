@@ -1,7 +1,4 @@
 ############################################################################
-# New ports collection Makefile for:   fsl
-# Date created:        20 Apr 2006
-# Whom:                Jason W. Bacon
 #
 # $FreeBSD$
 #

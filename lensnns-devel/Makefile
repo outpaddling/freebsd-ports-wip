@@ -1,6 +1,3 @@
-# New ports collection makefile for:	lensnns
-# Date created:		9 jan 2007
-# Whom:			Jason W. Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD: ports/math/lensnns/Makefile,v 1.2 2008/02/07 12:49:17 tabthorpe Exp $
 #

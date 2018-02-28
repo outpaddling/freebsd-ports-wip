@@ -1,6 +1,3 @@
-# New ports collection makefile for:	trilinos
-# Date created:		2012-04-13
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

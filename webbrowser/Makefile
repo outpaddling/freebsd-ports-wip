@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD: www/runsomebrowser/Makefile 327776 2013-09-20 23:36:50Z bapt $
 
 PORTNAME=	webbrowser

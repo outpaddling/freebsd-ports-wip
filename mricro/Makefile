@@ -1,6 +1,3 @@
-# New ports collection Makefile for:   MRICRO
-# Date created:        6 Feb 2007
-# Whom:                Jason W. Bacon
 #
 # $FreeBSD$
 #

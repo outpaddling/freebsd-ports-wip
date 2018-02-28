@@ -1,6 +1,3 @@
-# New ports collection makefile for:	slepc
-# Date created:		2012-05-22
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

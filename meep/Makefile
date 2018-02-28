@@ -1,4 +1,3 @@
-# Created by: Stas Timokhin <devel@stasyan.com>
 # $FreeBSD: head/science/meep/Makefile 369434 2014-09-28 03:41:24Z danilo $
 
 PORTNAME=	meep

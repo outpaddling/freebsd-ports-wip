@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/devel/roboctl/Makefile 327726 2013-09-20 17:17:44Z bapt $
 
 PORTNAME=	roboctl

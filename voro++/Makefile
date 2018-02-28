@@ -1,4 +1,3 @@
-# Created by: Jason Bacon
 # $FreeBSD: head/science/voro++/Makefile 345363 2014-02-21 10:29:52Z jhale $
 
 PORTNAME=	voro++

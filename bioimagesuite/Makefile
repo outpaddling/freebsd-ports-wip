@@ -1,7 +1,4 @@
 ############################################################################
-# New ports collection Makefile for:   bioimagesuite
-# Date created:        2 jan 2007
-# Whom:                Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

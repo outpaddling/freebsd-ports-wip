@@ -1,6 +1,3 @@
-# New ports collection makefile for:	torque
-# Date created:			20 Jul 2006
-# Whom:				trasz
 #
 # $FreeBSD: ports/sysutils/torque/Makefile,v 1.24 2010/12/04 07:33:41 ade Exp $
 #

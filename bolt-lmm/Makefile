@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 #
 # Tables are huge and may not be necessary for bolt to function.

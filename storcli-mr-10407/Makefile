@@ -1,4 +1,3 @@
-# Created by: Hiroshi Fujishima <h-fujishima@sakura.ad.jp>
 # $FreeBSD$
 
 PORTNAME=	storcli

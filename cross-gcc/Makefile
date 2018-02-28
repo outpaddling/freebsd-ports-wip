@@ -1,6 +1,3 @@
-# New ports collection makefile for:	cross-gcc
-# Date created:		2006-08-10
-# Whom:			Stanislav Sedov <stas@FreeBSD.org>
 #
 # $FreeBSD: ports/devel/cross-gcc/Makefile,v 1.18 2011/04/03 01:03:00 stas Exp $
 #

@@ -1,4 +1,3 @@
-# Created by: Bob Zimmermann <rpz@cse.wustl.edu>
 # $FreeBSD: head/biology/gmap/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	gmap

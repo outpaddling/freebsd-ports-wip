@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 #
 # FIXME: Not performing as well as it should.  Profile the code.  Problem

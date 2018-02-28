@@ -1,4 +1,3 @@
-# Created by: Jason Wayne Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 # FIXME: Can we download the jar file using github tools?
 

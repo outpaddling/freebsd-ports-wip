@@ -1,4 +1,3 @@
-# Created by: Jason W. Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/sysutils/endian/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	endian

@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <bacon@zebra.acadix.biz>
 # $FreeBSD$
 
 PORTNAME=	linux-birdsuite

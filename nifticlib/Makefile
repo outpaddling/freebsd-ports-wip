@@ -1,4 +1,3 @@
-# Created by: Jason W. Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/science/nifticlib/Makefile 403506 2015-12-11 08:48:56Z miwi $
 
 PORTNAME=	nifticlib

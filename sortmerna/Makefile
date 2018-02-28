@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 # Only 2.0 is compatible with qiime 1.9.1

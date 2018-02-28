@@ -1,6 +1,3 @@
-# New ports collection makefile for:    blacs
-# Date created:                 5 May 2003
-# Whom:                         NAKATA, Maho <maho@FreeBSD.org>
 #
 # $FreeBSD: ports/math/blacs/Makefile,v 1.27 2011/02/26 09:56:48 thierry Exp $
 #

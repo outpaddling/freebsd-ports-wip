@@ -1,6 +1,3 @@
-# New ports collection makefile for:	gsflow
-# Date created:		2010-05-14
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

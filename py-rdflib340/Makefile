@@ -1,4 +1,3 @@
-# Created by: ijliao
 # $FreeBSD: head/textproc/py-rdflib/Makefile 374183 2014-12-07 10:01:36Z mva $
 
 PORTNAME=	rdflib

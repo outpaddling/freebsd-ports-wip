@@ -1,6 +1,3 @@
-# New ports collection makefile for:	mkcolor3_caret_fim
-# Date created:		5 jan 2007
-# Whom:			Jason W. Bacon
 #
 # $FreeBSD$
 #

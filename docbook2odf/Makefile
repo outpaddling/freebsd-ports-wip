@@ -1,6 +1,3 @@
-# New ports collection makefile for:	docbook2odf
-# Date created:		2010-09-06
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

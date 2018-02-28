@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/biology/vcftools/Makefile 430483 2017-01-03 17:06:49Z jbeich $
 
 PORTNAME=	vcftools

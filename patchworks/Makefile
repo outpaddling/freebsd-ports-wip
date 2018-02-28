@@ -1,6 +1,3 @@
-# New ports collection makefile for:	patchworks
-# Date created:		5 jan 2007
-# Whom:			Jason W. Bacon
 #
 # $FreeBSD$
 #

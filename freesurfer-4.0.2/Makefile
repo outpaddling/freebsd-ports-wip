@@ -1,6 +1,3 @@
-# New ports collection Makefile for:   Linux FreeSurfer 3.0
-# Date created:        10 Mar 2006
-# Whom:                Jason W. Bacon
 #
 # $FreeBSD$
 #

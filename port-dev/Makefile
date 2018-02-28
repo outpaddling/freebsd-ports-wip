@@ -1,4 +1,3 @@
-# Created by: Jason W. Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	port-dev

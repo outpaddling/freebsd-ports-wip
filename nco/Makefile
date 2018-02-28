@@ -1,4 +1,3 @@
-# Created by: Administrator <admin@FreeBSD-VM-1.meadows>
 # $FreeBSD$
 
 PORTNAME=	nco

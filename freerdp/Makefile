@@ -1,4 +1,3 @@
-# Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD: head/net/freerdp/Makefile 441503 2017-05-23 05:03:14Z rezny $
 
 PORTNAME=	freerdp

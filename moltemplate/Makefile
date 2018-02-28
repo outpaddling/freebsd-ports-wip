@@ -1,4 +1,3 @@
-# Created by:	Jason Bacon
 # $FreeBSD$
 
 PORTNAME=	moltemplate

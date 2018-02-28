@@ -1,6 +1,3 @@
-# New ports collection makefile for:    arm-none-eabi-binutils
-# Date created:         28 May 2011
-# Whom:                 Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

@@ -1,6 +1,3 @@
-# New ports collection makefile for:	trialsto1d
-# Date created:		4 jan 2007
-# Whom:			Jason W. Bacon
 #
 # $FreeBSD$
 #

@@ -1,6 +1,3 @@
-# New ports collection makefile for:	mcc18_wrapper
-# Date created:		2008-11-25
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

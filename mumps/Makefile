@@ -1,4 +1,3 @@
-# Created by: Pedro Giffuni
 # $FreeBSD: head/math/mumps/Makefile 367888 2014-09-10 20:50:31Z gerald $
 
 PORTNAME=	mumps

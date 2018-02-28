@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 # FIXME: Need echo "backend: Agg" >> ~/.matplotlib/matplotlibrc
 # to avoid "no matplotlib found" errors

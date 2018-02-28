@@ -1,6 +1,3 @@
-# New ports collection makefile for:	R-studio
-# Date created:		2012-03-02
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

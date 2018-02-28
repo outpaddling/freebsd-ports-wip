@@ -1,4 +1,3 @@
-# Created by: Andy Pavlo
 # $FreeBSD: head/sysutils/condor/Makefile 413746 2016-04-21 16:43:14Z swills $
 #
 # Note: Make sure there are no older versions of HTCondor installed during

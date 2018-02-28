@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/biology/plinkseq/Makefile 425879 2016-11-11 09:31:02Z linimon $
 
 PORTNAME=	plinkseq

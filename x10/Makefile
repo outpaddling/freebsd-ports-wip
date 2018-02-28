@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/lang/x10/Makefile 386097 2015-05-11 18:34:57Z mat $
 
 PORTNAME=	x10

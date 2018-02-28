@@ -1,4 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	rstudio

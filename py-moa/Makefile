@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <bacon@manatee.acadix.biz>
 # $FreeBSD$
 
 PORTNAME=	moa

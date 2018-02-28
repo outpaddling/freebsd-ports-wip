@@ -1,4 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
 # $FreeBSD: head/graphics/dri/Makefile 378134 2015-01-30 01:03:22Z kwm $
 
 PORTNAME=	dri

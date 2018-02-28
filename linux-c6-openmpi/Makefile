@@ -1,4 +1,3 @@
-# Created by: Artyom Mirgorodskiy <artyom.mirgorodsky@gmail.com>
 # $FreeBSD: head/net/linux-c6-openldap/Makefile 421387 2016-09-05 19:23:42Z tijl $
 
 PORTNAME=	openmpi

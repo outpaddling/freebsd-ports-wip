@@ -1,6 +1,3 @@
-# New ports collection makefile for:	ascecho
-# Date created:		2008-08-24
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

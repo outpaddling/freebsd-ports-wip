@@ -1,4 +1,3 @@
-# Created by: Michael Danilov <mike.d.ft402@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	mpi4py

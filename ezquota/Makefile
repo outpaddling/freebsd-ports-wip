@@ -1,6 +1,3 @@
-# New ports collection makefile for:	ezquota
-# Date created:		2012-02-14
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

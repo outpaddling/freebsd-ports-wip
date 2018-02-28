@@ -1,6 +1,3 @@
-# New ports collection makefile for:	ginkgo
-# Date created:		2013-07-11
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

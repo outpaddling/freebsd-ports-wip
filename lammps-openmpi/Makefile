@@ -1,4 +1,3 @@
-# Created by:	Jason Bacon
 # $FreeBSD$
 #
 # FIXME: Picks up mpich2 if present

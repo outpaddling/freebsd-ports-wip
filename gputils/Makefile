@@ -1,4 +1,3 @@
-# Created by: Samuel Tardieu <sam@rfc1149.net>
 # $FreeBSD: head/devel/gputils/Makefile 370845 2014-10-14 11:23:47Z tijl $
 
 PORTNAME=	gputils

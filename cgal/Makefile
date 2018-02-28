@@ -1,4 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD: math/cgal/Makefile 315679 2013-04-02 15:38:48Z wen $
 
 PORTNAME=	cgal

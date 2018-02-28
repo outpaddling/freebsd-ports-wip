@@ -1,6 +1,3 @@
-# New ports collection makefile for:	complex
-# Date created:		2011-10-13
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/devel/yaggo/Makefile 411420 2016-03-19 18:17:50Z mat $
 
 PORTNAME=	yaggo

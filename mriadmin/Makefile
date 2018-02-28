@@ -1,6 +1,3 @@
-# New ports collection makefile for:	mriadmin
-# Date created:		2008-11-13
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

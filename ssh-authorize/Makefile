@@ -1,6 +1,3 @@
-# New ports collection makefile for:	ssh-authorize
-# Date created:		2009-04-13
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD: ports/ports-mgmt/genplist/Makefile,v 1.1 2007/04/20 12:40:28 miwi Exp $
 #

@@ -1,6 +1,3 @@
-# New ports collection makefile for:	domainmath
-# Date created:		2013-06-05
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

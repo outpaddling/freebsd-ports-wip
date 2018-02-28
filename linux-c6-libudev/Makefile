@@ -1,4 +1,3 @@
-# Created by: Artyom Mirgorodskiy <artyom.mirgorodsky@gmail.com>
 # $FreeBSD: head/graphics/linux-c6-dri/Makefile 372445 2014-11-11 13:06:39Z xmj $
 
 PORTNAME=	libudev

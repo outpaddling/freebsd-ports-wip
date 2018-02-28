@@ -1,4 +1,3 @@
-# Created by: Dan Siercks <dsiercks@uwm.edu>
 # $FreeBSD$
 
 PORTNAME=	openmvg

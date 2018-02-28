@@ -1,4 +1,3 @@
-# Created by: Hiroshi Fujishima <h-fujishima@sakura.ad.jp>
 # $FreeBSD$
 
 # This is the latest that seems to work with the PERC H700

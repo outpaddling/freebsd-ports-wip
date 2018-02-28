@@ -1,6 +1,3 @@
-# New ports collection makefile for:	alberta
-# Date created:		2012-03-20
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

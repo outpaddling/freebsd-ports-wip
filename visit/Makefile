@@ -1,6 +1,3 @@
-# New ports collection makefile for:	visit
-# Date created:		2010-12-29
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

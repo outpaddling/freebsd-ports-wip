@@ -1,4 +1,3 @@
-# Created by: Jason W. Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/science/afni/Makefile 427397 2016-11-29 21:15:41Z jrm $
 
 ############################################################################

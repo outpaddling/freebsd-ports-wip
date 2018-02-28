@@ -1,6 +1,3 @@
-# New ports collection makefile for:	kwwidgets
-# Date created:		2012-05-06
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

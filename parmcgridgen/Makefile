@@ -1,6 +1,3 @@
-# New ports collection makefile for:	libccmio
-# Date created:		2013-01-12
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

@@ -1,7 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:	mpb
-# Date created:			Apr 4, 2003
-# Whom:				ijliao
 #
 # $FreeBSD: ports/science/mpb/Makefile,v 1.20 2011/11/22 11:14:09 bf Exp $
 #

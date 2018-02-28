@@ -1,4 +1,3 @@
-# Created by: Jacob Sonnenberg <jacobsonnenberg0@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	pypeflow

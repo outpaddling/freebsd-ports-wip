@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 # Deps: http://ceres-solver.org/building.html
 # eigen 3.2.2+, cmake 2.8.0+, Google Log 0.3.1+, Google Flags, SuiteSparse,

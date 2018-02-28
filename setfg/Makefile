@@ -1,6 +1,3 @@
-# New ports collection makefile for:	setfg
-# Date created:		2007-05-04
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

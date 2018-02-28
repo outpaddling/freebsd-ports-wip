@@ -1,6 +1,3 @@
-# New ports collection makefile for:	fvcom
-# Date created:		2012-03-13
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

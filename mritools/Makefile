@@ -1,7 +1,4 @@
 ############################################################################
-# New ports collection Makefile for:   mritools
-# Date created:        30 jan 2007
-# Whom:                Jason W. Bacon
 #
 # $FreeBSD$
 #

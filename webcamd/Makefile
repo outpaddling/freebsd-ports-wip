@@ -1,4 +1,3 @@
-# Created by: Andrew Thompson <thompsa@FreeBSD.org>
 # $FreeBSD: head/multimedia/webcamd/Makefile 412348 2016-04-01 14:17:44Z mat $
 
 PORTNAME=	webcamd

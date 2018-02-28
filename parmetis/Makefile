@@ -1,6 +1,3 @@
-# New ports collection makefile for:	ParMETIS
-# Date created:         19 May 99
-# Whom:                 Eoin Lawless (eoin@maths.tcd.ie)
 #
 # $FreeBSD: ports/math/parmetis/Makefile,v 1.19 2011/11/19 09:04:39 bf Exp $
 #

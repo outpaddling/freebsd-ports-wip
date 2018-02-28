@@ -1,6 +1,3 @@
-# New ports collection makefile for:	brainvox
-# Date created:		2007-08-02
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

@@ -1,7 +1,4 @@
 ############################################################################
-# New ports collection Makefile for:   mcwscripts
-# Date created:        26 Jan 2007
-# Whom:                Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

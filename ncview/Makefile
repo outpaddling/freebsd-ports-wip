@@ -1,6 +1,3 @@
-# New ports collection makefile for:	ncview
-# Date created:		2013-02-26
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

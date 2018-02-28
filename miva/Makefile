@@ -1,6 +1,3 @@
-# New ports collection makefile for:	miva
-# Date created:		2007-12-10
-# Whom:			Jason W. Bacon
 #
 # $FreeBSD$
 #

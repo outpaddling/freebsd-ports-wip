@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD: head/science/fvcom/Makefile 351162 2014-04-12 23:58:02Z danilo $
 
 PORTNAME=	fvcom

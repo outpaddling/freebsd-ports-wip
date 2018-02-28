@@ -1,4 +1,3 @@
-# Created by: Alan Eldridge <alane@FreeBSD.org>
 # $FreeBSD: head/www/firefox/Makefile 440211 2017-05-06 02:30:30Z jbeich $
 
 PORTNAME=	firefox

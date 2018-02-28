@@ -1,7 +1,4 @@
 ############################################################################
-# New ports collection Makefile for:   caret
-# Date created:        8 Mar 2005
-# Whom:                Jason W. Bacon
 #
 # $FreeBSD$
 #

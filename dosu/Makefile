@@ -1,6 +1,3 @@
-# New ports collection makefile for:	dosu
-# Date created:		3 Jan 2006
-# Whom:			Jason W. Bacon
 #
 # $FreeBSD$
 #

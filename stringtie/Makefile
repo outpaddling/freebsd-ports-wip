@@ -1,4 +1,3 @@
-# Created by: Jason Wayne Bacon <bacon@sciprog.ceas.uwm.edu>
 # $FreeBSD$
 
 PORTNAME=	stringtie

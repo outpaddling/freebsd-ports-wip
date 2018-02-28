@@ -1,4 +1,3 @@
-# Created by: Joseph Mignrone <jrm@ftfl.ca>
 # $FreeBSD$
 
 PORTNAME=	picrust

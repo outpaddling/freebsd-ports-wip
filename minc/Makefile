@@ -1,7 +1,4 @@
 ############################################################################
-# New ports collection Makefile for:   minc 1.x (Medical Imaging NetCDF)
-# Date created:        21 Dec 2005
-# Whom:                jbacon
 #
 # $FreeBSD: ports/science/minc/Makefile,v 1.13 2011/09/23 22:25:07 amdmi3 Exp $
 #

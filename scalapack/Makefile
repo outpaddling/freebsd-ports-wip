@@ -1,4 +1,3 @@
-# Created by: NAKATA, Maho <maho@FreeBSD.org>
 # $FreeBSD: head/math/scalapack/Makefile 412348 2016-04-01 14:17:44Z mat $
 
 PORTNAME=	scalapack

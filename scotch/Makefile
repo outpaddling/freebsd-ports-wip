@@ -1,4 +1,3 @@
-# Created by: thierry@pompo.net
 # $FreeBSD: head/cad/scotch/Makefile 394778 2015-08-19 13:29:59Z mat $
 
 PORTNAME=	scotch

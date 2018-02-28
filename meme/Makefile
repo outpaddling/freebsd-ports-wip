@@ -1,4 +1,3 @@
-# Created by: Charlie %%FULLNAME%% <root@freebsd-10.1.local>
 # $FreeBSD$
 
 PORTNAME=	meme

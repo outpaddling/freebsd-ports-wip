@@ -1,4 +1,3 @@
-# Created by: Scott Cheloha <scottcheloha@gmail.com>
 # $FreeBSD: head/biology/bedtools/Makefile 456976 2017-12-22 12:27:14Z amdmi3 $
 
 PORTNAME=	bedtools

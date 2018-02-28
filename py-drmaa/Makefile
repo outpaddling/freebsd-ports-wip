@@ -1,4 +1,3 @@
-# Created by: Mykola Dzham <i@levsha.me>
 # $FreeBSD: head/sysutils/py-drmaa/Makefile 422140 2016-09-14 15:59:34Z mat $
 
 PORTNAME=	drmaa

@@ -1,6 +1,3 @@
-# New ports collection makefile for:	dvdformat
-# Date created:		8 Nov 2007
-# Whom:			Jason W. Bacon
 #
 # $FreeBSD$
 #

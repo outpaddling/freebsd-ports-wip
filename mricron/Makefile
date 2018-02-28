@@ -1,6 +1,3 @@
-# New ports collection makefile for:	mricron
-# Date created:		2007-12-18
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

@@ -1,6 +1,3 @@
-# New ports collection makefile for:	fvcom-spherical
-# Date created:			31 Mar 2012
-# Whom:				Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #

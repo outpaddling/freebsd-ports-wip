@@ -1,6 +1,3 @@
-# New ports collection Makefile for:	mcweject
-# Date created:				11 Jan 2005
-# Whom:					Jason W. Bacon
 #
 # $FreeBSD$
 #

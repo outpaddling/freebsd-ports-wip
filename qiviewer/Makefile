@@ -1,4 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD: head/graphics/qiviewer/Makefile 393008 2015-07-27 19:01:06Z vg $
 
 PORTNAME=	qiviewer

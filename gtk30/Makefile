@@ -1,4 +1,3 @@
-# Created by: Vanilla I. Shu <vanilla@MinJe.com.TW>
 # $FreeBSD: head/x11-toolkits/gtk30/Makefile 386312 2015-05-14 10:15:04Z mat $
 #   $MCom: ports/trunk/x11-toolkits/gtk30/Makefile 20051 2014-11-10 09:39:43Z gusi $
 # Please keep gtk30 and x11-themes/gnome-themes-standard minor version in sync

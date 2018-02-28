@@ -1,4 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
 # $FreeBSD$
 
 # Note: pthreads performance on FreeBSD 10.1 is lacking compared to

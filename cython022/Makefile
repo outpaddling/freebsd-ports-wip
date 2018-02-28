@@ -1,4 +1,3 @@
-# Created by: Wen Heping <wenhping@gmail.com>
 # $FreeBSD: head/lang/cython/Makefile 379335 2015-02-19 09:28:42Z jbeich $
 
 PORTNAME=	cython

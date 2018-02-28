@@ -1,6 +1,3 @@
-# New ports collection makefile for:	flair
-# Date created:		13 Dec 2011
-# Whom:			Jason Bacon <jwb@FreeBSD.org>
 #
 # $FreeBSD$
 #
