@@ -32,7 +32,7 @@ RUN_DEPENDS=	mawk>=0:lang/mawk \
 		trimmomatic>=0:biology/trimmomatic \
 		seqtk>=0:wip/seqtk \
 		bedtools2==2.23.0:wip/bedtools2 \
-		pear-merger>=0:wip/pear
+		pear-merger>=0:wip/pear-merger
 
 USES=		shebangfix tar:xz
 USE_JAVA=	yes

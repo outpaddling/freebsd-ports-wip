@@ -37,7 +37,7 @@ RUN_DEPENDS=	unzip>=0:archivers/unzip \
 		seqtk>=0:wip/seqtk \
 		trimadap>=0:wip/trimadap \
 		bedtools>=2.26.0:wip/bedtools \
-		pear-merger>=0:wip/pear
+		pear-merger>=0:wip/pear-merger
 
 USES=		shebangfix tar:xz
 USE_JAVA=	yes

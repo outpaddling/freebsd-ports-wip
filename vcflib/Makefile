@@ -9,6 +9,7 @@ COMMENT=	C++ library and CLI tools for parsing and manipulating VCF files
 
 LICENSE=	MIT
 
+# FIXME: Make filevercmp install a shared lib and add to LIB_DEPENDS
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libtabix.so:wip/tabixpp \
 		libsw.so:wip/smithwaterman
@@ -17,6 +18,7 @@ BUILD_DEPENDS=	fastahack>=0:wip/fastahack \
 		fsom>=0:wip/fsom \
 		multichoose:wip/multichoose \
 		intervaltree>=0:wip/intervaltree
+RUN_DEPENDS=	filevercmp>=0:wip/filevercmp
 
 # FIXME: compiler:openmp causes link error
 USES=		gmake shebangfix
