@@ -61,6 +61,7 @@ do-install:
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/dDocent \
 		${FILESDIR}/ddocent-test \
+		${FILESDIR}/ddocent-test-cleanup \
 		${WRKSRC}/scripts/*.sh \
 		${WRKSRC}/scripts/*.pl \
 		${WRKSRC}/scripts/dDocent_filters \
