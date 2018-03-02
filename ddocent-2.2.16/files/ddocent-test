@@ -223,6 +223,5 @@ bash remake_reference.sh 4 4 0.90 PE 2
 if [ ! -e ReferenceOpt.sh ]; then
     curl --insecure -L -O https://github.com/jpuritz/dDocent/raw/master/scripts/ReferenceOpt.sh
     fix_bash_path ReferenceOpt.sh
-    fix_echo ReferenceOpt.sh
 fi
 bash ReferenceOpt.sh 4 8 4 8 PE 16
