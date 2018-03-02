@@ -20,7 +20,9 @@ pause()
 
 ##########################################################################
 #   Not necessary if invoking scripts with "bash script-name" as shown
-#   in the dDocent tutorial, but supplied for completeness.
+#   in the dDocent tutorial, but supplied for completeness.  Tutorial
+#   scripts have also been patched upstream to usr /usr/bin/env, but
+#   we won't assume they'll all stay that way.
 ##########################################################################
 
 fix_bash_path()
@@ -45,29 +47,31 @@ fix_bash_path()
 #   Include this section in any scripts running dDocent commands.
 ##########################################################################
 
+if [ `uname` = FreeBSD ] && [ `which unzip` = /usr/bin/unzip ]; then
+    printf "You must run 'pkg install unzip' first.\n"
+    exit 1
+fi
+
 # Hack to allow remake_reference.sh, etc. to find trimmomatic.
 # trimmomatic.jar and adapter files are not an executables and should not
 # be in PATH according to filesystem hierarchy standards, but the dDocent
 # scripts are coded to look for them there, because that's how dDocent
 # installs the bundled Trimmomatic.
 if [ -e /usr/local/share/java/classes/trimmomatic.jar ]; then
-    export PATH=${PATH}:/usr/local/share/java/classes:/usr/local/share/Trimmomatic/adapters
+    export PATH=${PATH}:/usr/local/share/java/classes:/usr/local/share/trimmomatic/adapters
 elif [ -e $PKGSRC/lib/java/trimmomatic.jar ]; then
-    export PATH=${PATH}:$PKGSRC/lib/java:$PKGSRC/share/Trimmomatic/adapters
+    export PATH=${PATH}:$PKGSRC/lib/java:$PKGSRC/share/trimmomatic/adapters
 else
     printf "Error: Trimmomatic is not installed in a known location.\n" >> /dev/stderr
 fi
-
-mkdir dDocent-test
-cd dDocent-test
 
 # remake_reference.sh and some other scripts use GNU extensions in awk
 # commands.  Trick systems into using gawk to get around this without
 # having to patch every script.
 mkdir -p bin
 ln -sf `which gawk` bin/awk
-export PATH=`pwd`/bin:${PATH}
-
+ln -sf `which python2.7` bin/python
+export PATH=`pwd`/bin:$PATH
 
 ##########################################################################
 #   Actual dDocent commands below
@@ -92,11 +96,13 @@ mkdir -p Data
 cd Data
 
 if [ ! -e data.zip ]; then
-    curl --insecure -L -o data.zip 'https://www.dropbox.com/sh/nh2km7n2k8egmge/AABWKxCXww4BKMZIcQXV6Vxma?dl=1'
+    curl --insecure -L -o data.zip \
+	'https://www.dropbox.com/s/t09xjuudev4de72/data.zip?dl=0'
 fi
 
+# Hack: current data.zip contains data.zip.  ??!
 if [ ! -e simRRLs2.py ]; then
-    unzip data.zip || true
+    yes | unzip data.zip || true
 fi
 
 head SimRAD.barcodes
@@ -190,7 +196,10 @@ rainbow div -i rcluster -o rbdiv.out -f 0.5 -K 10
 rainbow merge -o rbasm.out -a -i rbdiv.out
 rainbow merge -o rbasm.out -a -i rbdiv.out -r 2
 
-cat rbasm.out <(echo "E") |sed 's/[0-9]*:[0-9]*://g' | mawk ' {
+# If missing fdesc mount for bash, <(echo "E") will not work
+# cat rbasm.out <(echo "E") |sed 's/[0-9]*:[0-9]*://g' | mawk ' {
+echo "E" > endfile
+cat rbasm.out endfile |sed 's/[0-9]*:[0-9]*://g' | mawk ' {
 if (NR == 1) e=$2;
 else if ($1 ~/E/ && lenp > len1) {c=c+1; print ">dDocent_Contig_" e "\n" seq2 "NNNNNNNNNN" seq1; seq1=0; seq2=0;lenp=0;e=$2;fclus=0;len1=0;freqp=0;lenf=0}
 else if ($1 ~/E/ && lenp <= len1) {c=c+1; print ">dDocent_Contig_" e "\n" seq1; seq1=0; seq2=0;lenp=0;e=$2;fclus=0;len1=0;freqp=0;lenf=0}
@@ -214,7 +223,6 @@ bash remake_reference.sh 4 4 0.90 PE 2
 if [ ! -e ReferenceOpt.sh ]; then
     curl --insecure -L -O https://github.com/jpuritz/dDocent/raw/master/scripts/ReferenceOpt.sh
     fix_bash_path ReferenceOpt.sh
-    # fix_echo ReferenceOpt.sh
+    fix_echo ReferenceOpt.sh
 fi
 bash ReferenceOpt.sh 4 8 4 8 PE 16
-
