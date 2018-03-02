@@ -21,19 +21,19 @@ LICENSE=	MIT
 # ddocent test data do not unpack with FreeBSD 11.1 /usr/bin/unzip
 RUN_DEPENDS=	unzip>=0:archivers/unzip \
 		mawk>=0:lang/mawk \
-		bwa>=0.7.13:biology/bwa \
-		samtools>=1.3:biology/samtools \
-		cd-hit>=0:biology/cd-hit \
+		gawk>=0:lang/gawk \
 		gnuplot>=0:math/gnuplot \
 		parallel>=0:sysutils/parallel \
-		gawk>=0:lang/gawk \
+		bwa>=0.7.13:biology/bwa \
+		cd-hit>=0:biology/cd-hit \
+		samtools>=1.3:biology/samtools \
 		vcftools>=0.1.15:biology/vcftools \
+		trimmomatic>=0:biology/trimmomatic \
 		vcflib>=0:wip/vcflib \
 		rainbow>=0:wip/rainbow \
 		bamtools>=0:wip/bamtools \
 		freebayes:wip/freebayes \
 		stacks>=0:wip/stacks \
-		trimmomatic>=0:biology/trimmomatic \
 		seqtk>=0:wip/seqtk \
 		trimadap>=0:wip/trimadap \
 		bedtools>=2.26.0:wip/bedtools \

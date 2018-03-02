@@ -9,7 +9,7 @@ if [ 0$remove = 0y ]; then
 	seqtk trimadap bedtools2 pear-merger vcftools ddocent || true
 fi
 
-pkg install -y samtools cd-hit openjdk cmake gnuplot parallel texinfo \
-    gawk mawk htslib help2man trimmomatic
+pkg install -y unzip bwa samtools cd-hit openjdk cmake gnuplot parallel \
+    texinfo gawk mawk htslib help2man trimmomatic unzip bwa vcftools \
+    trimmomatic
 wip-reinstall-port ddocent
-
