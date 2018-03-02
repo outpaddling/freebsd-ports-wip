@@ -1,4 +1,4 @@
---- dDocent.orig	2018-03-01 16:26:03 UTC
+--- dDocent.orig	2018-03-02 02:10:34 UTC
 +++ dDocent
 @@ -27,15 +27,15 @@ do
  	fi
@@ -28,6 +28,15 @@
  	if [ "$VCFTV" -lt "10" ]; then
          	echo "The version of VCFtools installed in your" '$PATH' "is not optimized for dDocent."
          	echo "Please install at least version 0.1.11"
+@@ -89,7 +90,7 @@ VCFTV=$(vcftools | grep VCF | grep -oh '
+         elif [ "$VCFTV" -ge "12" ]; then
+                 VCFGTFLAG="--max-missing"
+ 	fi
+-BWAV=$(bwa 2>&1 | mawk '/Versi/' | sed 's/Version: //g' | sed 's/0.7.//g' | sed 's/-.*//g')
++BWAV=$(bwa 2>&1 | mawk '/Versi/' | sed 's/Version: //g' | sed 's/0.7.//g' | sed 's/a*-.*//g')
+ 	if [ "$BWAV" -lt "13" ]; then
+         	echo "The version of bwa installed in your" '$PATH' "is not optimized for dDocent."
+         	echo "Please install at least version 0.7.13"
 @@ -733,7 +734,14 @@ else
  fi
  
