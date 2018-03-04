@@ -1,5 +1,4 @@
 bin/bamtools
-bin/bamtools-2.4.0
 include/bamtools/api/BamAlgorithms.h
 include/bamtools/api/BamAlignment.h
 include/bamtools/api/BamAux.h
@@ -21,5 +20,4 @@ include/bamtools/api/algorithms/Sort.h
 include/bamtools/api/api_global.h
 include/bamtools/shared/bamtools_global.h
 lib/libbamtools.a
-lib/libbamtools.so
-lib/libbamtools.so.2.4.0
+libdata/pkgconfig/bamtools-1.pc
