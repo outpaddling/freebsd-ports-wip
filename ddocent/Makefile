@@ -2,7 +2,7 @@
 
 PORTNAME=	dDocent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.16
+DISTVERSION=	2.2.25
 CATEGORIES=	wip biology java
 
 MAINTAINER=	dsiercks@uwm.edu
@@ -60,6 +60,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/dDocent \
+		${WRKSRC}/*.sh \
 		${FILESDIR}/ddocent-test \
 		${FILESDIR}/ddocent-test-cleanup \
 		${WRKSRC}/scripts/*.sh \
