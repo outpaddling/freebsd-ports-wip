@@ -2,11 +2,9 @@ bin/clone_filter
 bin/count_fixed_catalog_snps.py
 bin/cstacks
 bin/denovo_map.pl
-bin/estacks
 bin/exec_velvet.pl
 bin/export_sql.pl
 bin/genotypes
-bin/hstacks
 bin/index_radtags.pl
 bin/integrate_alignments.py
 bin/kmer_filter
