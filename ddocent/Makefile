@@ -29,15 +29,15 @@ RUN_DEPENDS=	unzip>=0:archivers/unzip \
 		samtools>=1.3:biology/samtools \
 		vcftools>=0.1.15:biology/vcftools \
 		trimmomatic>=0:biology/trimmomatic \
-		vcflib>=0:wip/vcflib \
-		rainbow>=0:wip/rainbow \
 		bamtools>=0:wip/bamtools \
-		freebayes:wip/freebayes \
 		stacks>=0:wip/stacks \
-		seqtk>=0:wip/seqtk \
+		rainbow>=0:wip/rainbow \
 		trimadap>=0:wip/trimadap \
+		seqtk>=0:wip/seqtk \
 		bedtools>=2.26.0:wip/bedtools \
-		pear-merger>=0:wip/pear-merger
+		pear-merger>=0:wip/pear-merger \
+		freebayes:wip/freebayes \
+		vcflib>=0:wip/vcflib
 
 USES=		perl5 shebangfix tar:xz
 USE_JAVA=	yes
