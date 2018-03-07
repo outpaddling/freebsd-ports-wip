@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	filevercmp
-PORTVERSION=	2015.11.21
+PORTVERSION=	0.0.0.p2015.11.17
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,9 +10,12 @@ COMMENT=	Filevercmp function as in sort --version-sort
 LICENSE=	GPLv3
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	74d1ced2c6b3a932fe8a9a16b637b1bfdea7c3b3
+GH_ACCOUNT=	ekg
+GH_TAGNAME=	cccb6ba1fffa2898718b0a96c63279e0979e002b
 
 PLIST_FILES=	bin/filevercmp include/filevercmp.h lib/libfilevercmp.a
+
+post-patch:
+	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 .include <bsd.port.mk>
