@@ -12,14 +12,14 @@ LICENSE=	MIT
 
 USES=		cmake:outsource
 
-# Now uses a static lib
-#USE_LDCONFIG=	yes
+USE_LDCONFIG=	yes
 
 LIB_DEPENDS+=	libjsoncpp.so:devel/jsoncpp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pezmaster31
 
+CMAKE_ON+=	BUILD_SHARED_LIBS
 CMAKE_ARGS+=	-DLIB_DIR=${PREFIX}/lib
 
 .include <bsd.port.pre.mk>
