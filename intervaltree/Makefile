@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	intervaltree
-PORTVERSION=	0.0.0.p2015.12.13
+PORTVERSION=	0.0.0p20151213
 CATEGORIES=	wip math
 
 MAINTAINER=	jwb@FreeBSD.org
