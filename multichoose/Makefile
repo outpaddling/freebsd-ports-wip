@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	multichoose
-PORTVERSION=	2015.11.22
+PORTVERSION=	1.0.3.p2015.11.17
 CATEGORIES=	wip math
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -13,11 +13,12 @@ USES=		python shebangfix
 SHEBANG_FILES=	*.py
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	a35c94abd1b312fdcc10455f90b6e527c271bb35
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
+GH_ACCOUNT=	ekg
+GH_TAGNAME=	3b8d14e616c719de88261614f0e78195d8ed49e9
 
 INSTALL_TARGET=	install-strip
+
+post-patch:
+	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 .include <bsd.port.mk>
