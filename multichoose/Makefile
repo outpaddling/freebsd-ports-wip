@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	multichoose
-PORTVERSION=	1.0.3.p2015.11.17
+PORTVERSION=	1.0.3p20151117
 CATEGORIES=	wip math
 
 MAINTAINER=	jwb@FreeBSD.org
