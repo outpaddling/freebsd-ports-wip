@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vcflib
-PORTVERSION=	2016.01.05
+PORTVERSION=	1.0.0p20160208
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -22,10 +22,11 @@ RUN_DEPENDS=	filevercmp>=0:wip/filevercmp
 
 # FIXME: compiler:openmp causes link error
 USES=		gmake shebangfix
+# USE_GCC=	yes
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
-GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	790904320065e603c6af5b8a32f635134354467c
+GH_ACCOUNT=	ekg
+GH_TAGNAME=	7e3d8066a6c6c0f22191a70d050ead23f9c453b3
 
 CXXFLAGS+=	-I${LOCALBASE}/include/smithwaterman \
 		-I${LOCALBASE}/include/multichoose \
@@ -47,6 +48,9 @@ CFLAGS+=	-msse2
 # MAKE_JOBS_UNSAFE=	yes
 MAKEFILE=		Makefile.external-libs
 INSTALL_TARGET=		install-strip
+
+post-patch:
+	${CP} ${FILESDIR}/Makefile.external-libs ${WRKSRC}
 
 post-install:
 	${CP} ${STAGEDIR}${PREFIX}/lib/libvcflib.so.1 \
