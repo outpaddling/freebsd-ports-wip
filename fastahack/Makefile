@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fastahack
-PORTVERSION=	2015.11.21
+PORTVERSION=	0.0.0.p2016.07.02
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,9 +10,12 @@ COMMENT=	Utilities for indexing and sequence extraction from FASTA files
 LICENSE=	GPLv2
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	20cba9157fa0d8e8938f76ff3c9f8437adddd58a
+GH_ACCOUNT=	ekg
+GH_TAGNAME=	bbc645f2f7966cb7b44446200c02627c3168b399
 
 INSTALL_TARGET=	install-strip
+
+post-patch:
+	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 .include <bsd.port.mk>
