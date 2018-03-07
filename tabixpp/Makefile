@@ -1,24 +1,22 @@
 # $FreeBSD$
 
 PORTNAME=	tabixpp
-PORTVERSION=	2015.11.23
+PORTVERSION=	1.0.0.p2017.11.16
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	C++ wrapper to tabix indexer
 
-# Unspecified
-LICENSE=	PD
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libhts.so:biology/htslib
 
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	38607a5128b4e61828d4961f588e7a185bf396b7
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
+GH_ACCOUNT=	ekg
+GH_TAGNAME=	6bbe6907d0d4b63e9c00e130a9a66d509bdcd29d
 
 CXXFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	HTS_HEADERS='' LIBPATH=-L${LOCALBASE}/lib HTS_LIB=''
@@ -30,6 +28,9 @@ PLIST_FILES=	bin/tabix++ \
 		lib/libtabix.a \
 		lib/libtabix.so \
 		lib/libtabix.so.1
+
+post-patch:
+	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 post-install:
 	${CP} ${STAGEDIR}${PREFIX}/lib/libtabix.so.1 \
