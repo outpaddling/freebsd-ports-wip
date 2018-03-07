@@ -63,3 +63,13 @@ o   Adopt an existing port:
     PLEASE inquire about adopting it by contacting the maintainer (see the
     port Makefile for contact info).  There are many ports here and they will
     move beyond WIP faster if more people sign up as maintainers.
+
+o   Commit messages should use the following format if possible:
+
+    portname: Brief description of change
+
+e.g.
+
+    bamtools: Update to 2.5.1, static only
+
+This makes it easier to scan the commit history at a glance.
