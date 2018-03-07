@@ -9,7 +9,7 @@ DISTNAME=	rainbow_${PORTVERSION}
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Short reads clustering and local assembly
 
-# LICENSE=	unspecified
+LICENSE=	GPLv3+
 
 USES=		gmake
 
