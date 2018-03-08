@@ -10,21 +10,13 @@ COMMENT=	API and toolkit for handling BAM files
 
 LICENSE=	MIT
 
-USES=		cmake:outsource
-
-USE_LDCONFIG=	yes
-
 LIB_DEPENDS+=	libjsoncpp.so:devel/jsoncpp
 
+USES=		cmake:outsource compiler:c++11-lang
+USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	pezmaster31
 
 CMAKE_ON+=	BUILD_SHARED_LIBS
-CMAKE_ARGS+=	-DLIB_DIR=${PREFIX}/lib
 
-.include <bsd.port.pre.mk>
-
-# Just for speed: Recent compilers have better optimizers
-USES=		compiler:c++11-lang
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
