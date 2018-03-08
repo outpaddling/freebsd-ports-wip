@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seqtk
-PORTVERSION=	2017.11.07
+DISTVERION=	2017.11.07
 CATEGORIES=	wip biology
 
 MAINTAINER=	dsiercks@uwm.edu
@@ -14,6 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lh3
 GH_TAGNAME=	d210c57d2ffa33da147e50f04f5aaaab1c160c8c
 
+# Removed between 2017.02.11 and 2017.11.07
 #WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
 
 PLIST_FILES=	bin/seqtk
