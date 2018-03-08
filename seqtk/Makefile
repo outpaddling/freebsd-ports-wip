@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seqtk
-DISTVERION=	2017.11.07
+DISTVERSION=	2017.11.07
 CATEGORIES=	wip biology
 
 MAINTAINER=	dsiercks@uwm.edu
