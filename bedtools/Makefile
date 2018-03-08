@@ -21,4 +21,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|g' \
 		${WRKSRC}/Makefile
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bedtools
+
 .include <bsd.port.mk>
