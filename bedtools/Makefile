@@ -1,10 +1,9 @@
 # $FreeBSD: head/biology/bedtools/Makefile 456976 2017-12-22 12:27:14Z amdmi3 $
 
 PORTNAME=	bedtools
-PORTVERSION=	2.27.1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.27.1
 CATEGORIES=	wip biology
-MASTER_SITES=	GITHUB
 
 MAINTAINER=	scottcheloha@gmail.com
 COMMENT=	Toolset for genome arithmetic
