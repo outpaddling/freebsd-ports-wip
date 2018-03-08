@@ -14,8 +14,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_src_all
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Memory-efficient and highly accurate pair-end read merger
 
-# Not sure about the specific flavor of Creative Commons
-LICENSE=	CC0-1.0
+LICENSE=	CC-BY-NC-SA-3.0
 
 GNU_CONFIGURE=	yes
 

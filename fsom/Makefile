@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fsom
-PORTVERSION=	2015.11.21
+PORTVERSION=	0.0.0p20151117
 CATEGORIES=	wip science
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,16 +11,20 @@ LICENSE=	GPLv3
 
 USES=		compiler:c++0x
 USE_GITHUB=	yes
-GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	a83b4e82837a5fbe50788792e4f3bd1b69082417
+GH_ACCOUNT=	ekg
+GH_TAGNAME=	56695e1611d824cda97f08e932d25d08419170cd
 
 CXXFLAGS+=	-fomit-frame-pointer -ffast-math
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
-
-PLIST_FILES=	bin/fsom lib/libfsom.a \
-		include/fsom/convert.h include/fsom/fsom.h include/fsom/split.h
-
 INSTALL_TARGET=	install-strip
+
+PLIST_FILES=	bin/fsom \
+		include/fsom/convert.h \
+		include/fsom/fsom.h \
+		include/fsom/split.h \
+		lib/libfsom.a
+
+post-patch:
+	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 .include <bsd.port.mk>
