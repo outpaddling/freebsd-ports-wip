@@ -1,0 +1,795 @@
+build started at Fri Mar  9 08:16:10 CST 2018
+port directory: /usr/ports/wip/stacks
+package name: stacks-1.48
+building for: FreeBSD 11-1-amd64-default 11.1-RELEASE-p1 FreeBSD 11.1-RELEASE-p1 amd64
+maintained by: dsiercks@uwm.edu
+Makefile ident: 
+Poudriere version: 3.2.4
+Host OSVERSION: 1101001
+Jail OSVERSION: 1101001
+Job Id: 
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1101001
+UNAME_v=FreeBSD 11.1-RELEASE-p1
+UNAME_r=11.1-RELEASE-p1
+BLOCKSIZE=K
+MAIL=/var/mail/root
+STATUS=1
+WARNING_WAIT=0
+SAVED_TERM=xterm
+NO_WARNING_PKG_INSTALL_EOL=yes
+MASTERMNT=/usr/local/poudriere/data/.m/11-1-amd64-default/ref
+UID=0
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+POUDRIERE_BUILD_TYPE=bulk
+OLDPWD=/usr/local/poudriere/data/.m/11-1-amd64-default/ref/.p
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+PWD=/usr/local/poudriere/data/.m/11-1-amd64-default/ref/.p
+MASTERNAME=11-1-amd64-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+USER=root
+HOME=/root
+P_PYTHON_MAJOR_VER=2
+POUDRIERE_VERSION=3.2.4
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+GID=0
+TRYBROKEN=yes
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+LOCALBASE=/usr/local
+DEV_WARNING_WAIT=0
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=PACKAGES=/tmp/pkgs PKGREPOSITORY=/tmp/pkgs
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+dsiercks@uwm.edu
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+MAKE=gmake PYTHON="/usr/local/bin/python2.7" XDG_DATA_HOME=/wrkdirs/usr/ports/wip/stacks/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/stacks/work  HOME=/wrkdirs/usr/ports/wip/stacks/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/stacks/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=262144
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/wip/stacks/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/stacks/work  HOME=/wrkdirs/usr/ports/wip/stacks/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/stacks/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  LIBDIR="/usr/lib"  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector -fno-strict-aliasing"  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -lpthread -fstack-protector" LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector -fno-strict-aliasing "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="" PORTEXAMPLES="" PYTHON_INCLUDEDIR=include/python2.7  PYTHON_LIBDIR=lib/python2.7  PYTHON_PLATFORM=freebsd11  PYTHON_PYOEXTENSION=pyo  PYTHON_SITELIBDIR=lib/python2.7/site-packages  PYTHON_SUFFIX=27  PYTHON_VER=2.7  PYTHON_VERSION=python2.7 PYTHON2="" PYTHON3="@comment " OSREL=11.1 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/stacks"  EXAMPLESDIR="share/examples/stacks"  DATADIR="share/stacks"  WWWDIR="www/stacks"  ETCDIR="etc/stacks"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/stacks DOCSDIR=/usr/local/share/doc/stacks EXAMPLESDIR=/usr/local/share/examples/stacks  WWWDIR=/usr/local/www/stacks ETCDIR=/usr/local/etc/stacks
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/ports/Mk/Scripts/ports_env.sh ####
+_CCVERSION_921dbbb2=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: x86_64-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin
+_ALTCCVERSION_921dbbb2=none
+_CXXINTERNAL_acaad9ca=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: x86_64-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin "/usr/bin/ld" "--eh-frame-hdr" "-dynamic-linker" "/libexec/ld-elf.so.1" "--hash-style=both" "--enable-new-dtags" "-o" "a.out" "/usr/lib/crt1.o" "/usr/lib/crti.o" "/usr/lib/crtbegin.o" "-L/usr/lib" "/dev/null" "-lc++" "-lm" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "-lc" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "/usr/lib/crtend.o" "/usr/lib/crtn.o"
+OUTPUT_58173849_921dbbb2=yes
+OUTPUT_9bdba57c_921dbbb2=yes
+OUTPUT_6a4fe7f5_921dbbb2=yes
+OUTPUT_6bcac02b_921dbbb2=yes
+OUTPUT_67d20829_921dbbb2=yes
+OUTPUT_bfa62e83_921dbbb2=yes
+OUTPUT_f0b4d593_921dbbb2=yes
+OUTPUT_308abb44_921dbbb2=yes
+OUTPUT_f00456e5_921dbbb2=yes
+OUTPUT_65ad290d_921dbbb2=yes
+OUTPUT_b2657cc3_921dbbb2=yes
+OUTPUT_380987f7_921dbbb2=yes
+ARCH=amd64
+OPSYS=FreeBSD
+_OSRELEASE=11.1-RELEASE-p1
+OSREL=11.1
+OSVERSION=1101001
+PYTHONBASE=/usr/local
+HAVE_COMPAT_IA32_KERN=YES
+_SMP_CPUS=4
+CONFIGURE_MAX_CMD_LEN=262144
+HAVE_PORTS_ENV=1
+#### Misc Poudriere ####
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19558
+open files                      (-n)  1024
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===>  License GPLv2 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   stacks-1.48 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.10.5.txz
+[11-1-amd64-default] Installing pkg-1.10.5...
+[11-1-amd64-default] Extracting pkg-1.10.5: .......... done
+===>   stacks-1.48 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of stacks-1.48
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License GPLv2 accepted by the user
+===>   stacks-1.48 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by stacks-1.48 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License GPLv2 accepted by the user
+===>   stacks-1.48 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by stacks-1.48 for building
+=> SHA256 Checksum OK for stacks-1.48.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License GPLv2 accepted by the user
+===>   stacks-1.48 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by stacks-1.48 for building
+===>  Extracting for stacks-1.48
+=> SHA256 Checksum OK for stacks-1.48.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for stacks-1.48
+===>  Applying FreeBSD patches for stacks-1.48
+===========================================================================
+=======================<phase: build-depends  >============================
+===>   stacks-1.48 depends on executable: gmake - not found
+===>   Installing existing package /packages/All/gmake-4.2.1_2.txz
+[11-1-amd64-default] Installing gmake-4.2.1_2...
+[11-1-amd64-default] `-- Installing gettext-runtime-0.19.8.1_1...
+[11-1-amd64-default] |   `-- Installing indexinfo-0.3.1...
+[11-1-amd64-default] |   `-- Extracting indexinfo-0.3.1: .... done
+[11-1-amd64-default] `-- Extracting gettext-runtime-0.19.8.1_1: .......... done
+[11-1-amd64-default] Extracting gmake-4.2.1_2: .......... done
+===>   stacks-1.48 depends on executable: gmake - found
+===>   Returning to build of stacks-1.48
+===>   stacks-1.48 depends on file: /usr/local/bin/python2.7 - not found
+===>   Installing existing package /packages/All/python27-2.7.14_1.txz
+[11-1-amd64-default] Installing python27-2.7.14_1...
+[11-1-amd64-default] `-- Installing libffi-3.2.1_2...
+[11-1-amd64-default] `-- Extracting libffi-3.2.1_2: .......... done
+[11-1-amd64-default] `-- Installing readline-7.0.3_1...
+[11-1-amd64-default] `-- Extracting readline-7.0.3_1: .......... done
+[11-1-amd64-default] Extracting python27-2.7.14_1: .......... done
+Message from python27-2.7.14_1:
+
+===========================================================================
+
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+bsddb           databases/py-bsddb
+gdbm            databases/py-gdbm
+sqlite3         databases/py-sqlite3
+tkinter         x11-toolkits/py-tkinter
+
+===========================================================================
+===>   stacks-1.48 depends on file: /usr/local/bin/python2.7 - found
+===>   Returning to build of stacks-1.48
+===========================================================================
+=======================<phase: lib-depends    >============================
+===========================================================================
+=>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>   stacks-1.48 depends on executable: gmake - found
+===>   stacks-1.48 depends on file: /usr/local/bin/python2.7 - found
+===>  Configuring for stacks-1.48
+configure: loading site script /usr/ports/Templates/config.site
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether gmake sets $(MAKE)... yes
+checking for C++ compiler default output file name... a.out
+checking whether the C++ compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether c++ accepts -g... yes
+checking for style of include used by gmake... GNU
+checking dependency style of c++... gcc3
+checking for gcc... cc
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking dependency style of cc... gcc3
+checking whether cc understands -c and -o together... yes
+checking whether c++ supports C++11 features by default... no
+checking whether c++ supports C++11 features with -std=gnu++11... yes
+checking for omp_set_num_threads in -lgomp... no
+configure: WARNING: Unable to locate OpenMP library, you should probably specify '--disable-openmp'.
+checking for gzread in -lz... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking how to run the C preprocessor... cpp
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for float.h... (cached) yes
+checking for limits.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for cc option to support OpenMP... unsupported
+checking for stdbool.h that conforms to C99... (cached) yes
+checking for _Bool... (cached) yes
+checking for an ANSI C-conforming const... yes
+checking for size_t... (cached) yes
+checking whether closedir returns void... no
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible realloc... yes
+checking for floor... no
+checking for memset... (cached) yes
+checking for pow... no
+checking for sqrt... no
+checking for functional regular expressions... yes
+checking for gawk... (cached) /usr/bin/awk
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for stacks-1.48
+gmake[1]: Entering directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-1.48'
+gmake  all-recursive
+gmake[2]: Entering directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-1.48'
+Making all in htslib
+gmake[3]: Entering directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-1.48/htslib'
+echo '/* Empty config.h generated by Makefile */' > config.h
+echo '#define HTS_VERSION "1.3.1"' > version.h
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o kfunc.o kfunc.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o knetfile.o knetfile.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o kstring.o kstring.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o bgzf.o bgzf.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o faidx.o faidx.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o hfile.o hfile.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o hfile_net.o hfile_net.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o hts.o hts.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o md5.o md5.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o regidx.o regidx.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o sam.o sam.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o synced_bcf_reader.o synced_bcf_reader.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o vcf_sweep.o vcf_sweep.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o tbx.o tbx.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o vcf.o vcf.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o vcfutils.o vcfutils.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o cram/cram_codecs.o cram/cram_codecs.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o cram/cram_decode.o cram/cram_decode.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o cram/cram_encode.o cram/cram_encode.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o cram/cram_external.o cram/cram_external.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o cram/cram_index.o cram/cram_index.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o cram/cram_io.o cram/cram_io.c
+cram/cram_io.c:3096:8: warning: implicit conversion from 'int' to 'char' changes value from 255 to -1 [-Wconstant-conversion]
+        cp += itf8_put(cp, -2);
+              ^~~~~~~~~~~~~~~~
+cram/cram_io.h:97:311: note: expanded from macro 'itf8_put'
+#define itf8_put(c,v) ((!((v)&~0x7f))?((c)[0]=(v),1):(!((v)&~0x3fff))?((c)[0]=((v)>>8)|0x80,(c)[1]=(v)&0xff,2):(!((v)&~0x1fffff))?((c)[0]=((v)>>16)|0xc0,(c)[1]=((v)>>8)&0xff,(c)[2]=(v)&0xff,3):(!((v)&~0xfffffff))?((c)[0]=((v)>>24)|0xe0,(c)[1]=((v)>>16)&0xff,(c)[2]=((v)>>8)&0xff,(c)[3]=(v)&0xff,4):((c)[0]=0xf0|(((v)>>28)&0xff),(c)[1]=((v)>>20)&0xff,(c)[2]=((v)>>12)&0xff,(c)[3]=((v)>>4)&0xff,(c)[4]=(v)&0xf,5))
+                                                                                                                                                                                                                                                                                                                 ~~~~~^~~~~~~~~~~~~~~~~
+cram/cram_io.c:3096:8: warning: implicit conversion from 'int' to 'char' changes value from 255 to -1 [-Wconstant-conversion]
+        cp += itf8_put(cp, -2);
+              ^~~~~~~~~~~~~~~~
+cram/cram_io.h:97:345: note: expanded from macro 'itf8_put'
+#define itf8_put(c,v) ((!((v)&~0x7f))?((c)[0]=(v),1):(!((v)&~0x3fff))?((c)[0]=((v)>>8)|0x80,(c)[1]=(v)&0xff,2):(!((v)&~0x1fffff))?((c)[0]=((v)>>16)|0xc0,(c)[1]=((v)>>8)&0xff,(c)[2]=(v)&0xff,3):(!((v)&~0xfffffff))?((c)[0]=((v)>>24)|0xe0,(c)[1]=((v)>>16)&0xff,(c)[2]=((v)>>8)&0xff,(c)[3]=(v)&0xff,4):((c)[0]=0xf0|(((v)>>28)&0xff),(c)[1]=((v)>>20)&0xff,(c)[2]=((v)>>12)&0xff,(c)[3]=((v)>>4)&0xff,(c)[4]=(v)&0xf,5))
+                                                                                                                                                                                                                                                                                                                                              ~~~~~~~~~~^~~~~
+cram/cram_io.c:3096:8: warning: implicit conversion from 'int' to 'char' changes value from 255 to -1 [-Wconstant-conversion]
+        cp += itf8_put(cp, -2);
+              ^~~~~~~~~~~~~~~~
+cram/cram_io.h:97:367: note: expanded from macro 'itf8_put'
+#define itf8_put(c,v) ((!((v)&~0x7f))?((c)[0]=(v),1):(!((v)&~0x3fff))?((c)[0]=((v)>>8)|0x80,(c)[1]=(v)&0xff,2):(!((v)&~0x1fffff))?((c)[0]=((v)>>16)|0xc0,(c)[1]=((v)>>8)&0xff,(c)[2]=(v)&0xff,3):(!((v)&~0xfffffff))?((c)[0]=((v)>>24)|0xe0,(c)[1]=((v)>>16)&0xff,(c)[2]=((v)>>8)&0xff,(c)[3]=(v)&0xff,4):((c)[0]=0xf0|(((v)>>28)&0xff),(c)[1]=((v)>>20)&0xff,(c)[2]=((v)>>12)&0xff,(c)[3]=((v)>>4)&0xff,(c)[4]=(v)&0xf,5))
+                                                                                                                                                                                                                                                                                                                                                                    ~~~~~~~~~~^~~~~
+cram/cram_io.c:3096:8: warning: implicit conversion from 'int' to 'char' changes value from 255 to -1 [-Wconstant-conversion]
+        cp += itf8_put(cp, -2);
+              ^~~~~~~~~~~~~~~~
+cram/cram_io.h:97:388: note: expanded from macro 'itf8_put'
+#define itf8_put(c,v) ((!((v)&~0x7f))?((c)[0]=(v),1):(!((v)&~0x3fff))?((c)[0]=((v)>>8)|0x80,(c)[1]=(v)&0xff,2):(!((v)&~0x1fffff))?((c)[0]=((v)>>16)|0xc0,(c)[1]=((v)>>8)&0xff,(c)[2]=(v)&0xff,3):(!((v)&~0xfffffff))?((c)[0]=((v)>>24)|0xe0,(c)[1]=((v)>>16)&0xff,(c)[2]=((v)>>8)&0xff,(c)[3]=(v)&0xff,4):((c)[0]=0xf0|(((v)>>28)&0xff),(c)[1]=((v)>>20)&0xff,(c)[2]=((v)>>12)&0xff,(c)[3]=((v)>>4)&0xff,(c)[4]=(v)&0xf,5))
+                                                                                                                                                                                                                                                                                                                                                                                          ~~~~~~~~~^~~~~
+cram/cram_io.c:3154:8: warning: implicit conversion from 'int' to 'char' changes value from 255 to -1 [-Wconstant-conversion]
+        cp += itf8_put(cp, -2);
+              ^~~~~~~~~~~~~~~~
+cram/cram_io.h:97:311: note: expanded from macro 'itf8_put'
+#define itf8_put(c,v) ((!((v)&~0x7f))?((c)[0]=(v),1):(!((v)&~0x3fff))?((c)[0]=((v)>>8)|0x80,(c)[1]=(v)&0xff,2):(!((v)&~0x1fffff))?((c)[0]=((v)>>16)|0xc0,(c)[1]=((v)>>8)&0xff,(c)[2]=(v)&0xff,3):(!((v)&~0xfffffff))?((c)[0]=((v)>>24)|0xe0,(c)[1]=((v)>>16)&0xff,(c)[2]=((v)>>8)&0xff,(c)[3]=(v)&0xff,4):((c)[0]=0xf0|(((v)>>28)&0xff),(c)[1]=((v)>>20)&0xff,(c)[2]=((v)>>12)&0xff,(c)[3]=((v)>>4)&0xff,(c)[4]=(v)&0xf,5))
+                                                                                                                                                                                                                                                                                                                 ~~~~~^~~~~~~~~~~~~~~~~
+cram/cram_io.c:3154:8: warning: implicit conversion from 'int' to 'char' changes value from 255 to -1 [-Wconstant-conversion]
+        cp += itf8_put(cp, -2);
+              ^~~~~~~~~~~~~~~~
+cram/cram_io.h:97:345: note: expanded from macro 'itf8_put'
+#define itf8_put(c,v) ((!((v)&~0x7f))?((c)[0]=(v),1):(!((v)&~0x3fff))?((c)[0]=((v)>>8)|0x80,(c)[1]=(v)&0xff,2):(!((v)&~0x1fffff))?((c)[0]=((v)>>16)|0xc0,(c)[1]=((v)>>8)&0xff,(c)[2]=(v)&0xff,3):(!((v)&~0xfffffff))?((c)[0]=((v)>>24)|0xe0,(c)[1]=((v)>>16)&0xff,(c)[2]=((v)>>8)&0xff,(c)[3]=(v)&0xff,4):((c)[0]=0xf0|(((v)>>28)&0xff),(c)[1]=((v)>>20)&0xff,(c)[2]=((v)>>12)&0xff,(c)[3]=((v)>>4)&0xff,(c)[4]=(v)&0xf,5))
+                                                                                                                                                                                                                                                                                                                                              ~~~~~~~~~~^~~~~
+cram/cram_io.c:3154:8: warning: implicit conversion from 'int' to 'char' changes value from 255 to -1 [-Wconstant-conversion]
+        cp += itf8_put(cp, -2);
+              ^~~~~~~~~~~~~~~~
+cram/cram_io.h:97:367: note: expanded from macro 'itf8_put'
+#define itf8_put(c,v) ((!((v)&~0x7f))?((c)[0]=(v),1):(!((v)&~0x3fff))?((c)[0]=((v)>>8)|0x80,(c)[1]=(v)&0xff,2):(!((v)&~0x1fffff))?((c)[0]=((v)>>16)|0xc0,(c)[1]=((v)>>8)&0xff,(c)[2]=(v)&0xff,3):(!((v)&~0xfffffff))?((c)[0]=((v)>>24)|0xe0,(c)[1]=((v)>>16)&0xff,(c)[2]=((v)>>8)&0xff,(c)[3]=(v)&0xff,4):((c)[0]=0xf0|(((v)>>28)&0xff),(c)[1]=((v)>>20)&0xff,(c)[2]=((v)>>12)&0xff,(c)[3]=((v)>>4)&0xff,(c)[4]=(v)&0xf,5))
+                                                                                                                                                                                                                                                                                                                                                                    ~~~~~~~~~~^~~~~
+cram/cram_io.c:3154:8: warning: implicit conversion from 'int' to 'char' changes value from 255 to -1 [-Wconstant-conversion]
+        cp += itf8_put(cp, -2);
+              ^~~~~~~~~~~~~~~~
+cram/cram_io.h:97:388: note: expanded from macro 'itf8_put'
+#define itf8_put(c,v) ((!((v)&~0x7f))?((c)[0]=(v),1):(!((v)&~0x3fff))?((c)[0]=((v)>>8)|0x80,(c)[1]=(v)&0xff,2):(!((v)&~0x1fffff))?((c)[0]=((v)>>16)|0xc0,(c)[1]=((v)>>8)&0xff,(c)[2]=(v)&0xff,3):(!((v)&~0xfffffff))?((c)[0]=((v)>>24)|0xe0,(c)[1]=((v)>>16)&0xff,(c)[2]=((v)>>8)&0xff,(c)[3]=(v)&0xff,4):((c)[0]=0xf0|(((v)>>28)&0xff),(c)[1]=((v)>>20)&0xff,(c)[2]=((v)>>12)&0xff,(c)[3]=((v)>>4)&0xff,(c)[4]=(v)&0xf,5))
+                                                                                                                                                                                                                                                                                                                                                                                          ~~~~~~~~~^~~~~
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o cram/cram_samtools.o cram/cram_samtools.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o cram/cram_stats.o cram/cram_stats.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o cram/files.o cram/files.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o cram/mFILE.o cram/mFILE.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o cram/open_trace_file.o cram/open_trace_file.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o cram/pooled_alloc.o cram/pooled_alloc.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o cram/rANS_static.o cram/rANS_static.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o cram/sam_header.o cram/sam_header.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o cram/string_alloc.o cram/string_alloc.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o cram/thread_pool.o cram/thread_pool.c
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o cram/vlen.o cram/vlen.c
+8 warnings generated.
+cc -O2 -pipe  -fstack-protector -fno-strict-aliasing -I.  -c -o cram/zfio.o cram/zfio.c
+ar -rc libhts.a kfunc.o knetfile.o kstring.o bgzf.o faidx.o hfile.o hfile_net.o hts.o md5.o regidx.o sam.o synced_bcf_reader.o vcf_sweep.o tbx.o vcf.o vcfutils.o cram/cram_codecs.o cram/cram_decode.o cram/cram_encode.o cram/cram_external.o cram/cram_index.o cram/cram_io.o cram/cram_samtools.o cram/cram_stats.o cram/files.o cram/mFILE.o cram/open_trace_file.o cram/pooled_alloc.o cram/rANS_static.o cram/sam_header.o cram/string_alloc.o cram/thread_pool.o cram/vlen.o cram/zfio.o
+ranlib libhts.a
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-1.48/htslib'
+Making all in .
+gmake[3]: Entering directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-1.48'
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/ustacks-ustacks.o -MD -MP -MF src/.deps/ustacks-ustacks.Tpo -c -o src/ustacks-ustacks.o `test -f 'src/ustacks.cc' || echo './'`src/ustacks.cc
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/ustacks-stacks.o -MD -MP -MF src/.deps/ustacks-stacks.Tpo -c -o src/ustacks-stacks.o `test -f 'src/stacks.cc' || echo './'`src/stacks.cc
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/ustacks-constants.o -MD -MP -MF src/.deps/ustacks-constants.Tpo -c -o src/ustacks-constants.o `test -f 'src/constants.cc' || echo './'`src/constants.cc
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/ustacks-mstack.o -MD -MP -MF src/.deps/ustacks-mstack.Tpo -c -o src/ustacks-mstack.o `test -f 'src/mstack.cc' || echo './'`src/mstack.cc
+mv -f src/.deps/ustacks-stacks.Tpo src/.deps/ustacks-stacks.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/ustacks-mst.o -MD -MP -MF src/.deps/ustacks-mst.Tpo -c -o src/ustacks-mst.o `test -f 'src/mst.cc' || echo './'`src/mst.cc
+mv -f src/.deps/ustacks-mstack.Tpo src/.deps/ustacks-mstack.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/ustacks-cmb.o -MD -MP -MF src/.deps/ustacks-cmb.Tpo -c -o src/ustacks-cmb.o `test -f 'src/cmb.cc' || echo './'`src/cmb.cc
+mv -f src/.deps/ustacks-mst.Tpo src/.deps/ustacks-mst.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/ustacks-DNASeq.o -MD -MP -MF src/.deps/ustacks-DNASeq.Tpo -c -o src/ustacks-DNASeq.o `test -f 'src/DNASeq.cc' || echo './'`src/DNASeq.cc
+mv -f src/.deps/ustacks-DNASeq.Tpo src/.deps/ustacks-DNASeq.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/ustacks-DNANSeq.o -MD -MP -MF src/.deps/ustacks-DNANSeq.Tpo -c -o src/ustacks-DNANSeq.o `test -f 'src/DNANSeq.cc' || echo './'`src/DNANSeq.cc
+mv -f src/.deps/ustacks-constants.Tpo src/.deps/ustacks-constants.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/ustacks-models.o -MD -MP -MF src/.deps/ustacks-models.Tpo -c -o src/ustacks-models.o `test -f 'src/models.cc' || echo './'`src/models.cc
+mv -f src/.deps/ustacks-cmb.Tpo src/.deps/ustacks-cmb.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/ustacks-utils.o -MD -MP -MF src/.deps/ustacks-utils.Tpo -c -o src/ustacks-utils.o `test -f 'src/utils.cc' || echo './'`src/utils.cc
+mv -f src/.deps/ustacks-DNANSeq.Tpo src/.deps/ustacks-DNANSeq.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/ustacks-kmers.o -MD -MP -MF src/.deps/ustacks-kmers.Tpo -c -o src/ustacks-kmers.o `test -f 'src/kmers.cc' || echo './'`src/kmers.cc
+mv -f src/.deps/ustacks-utils.Tpo src/.deps/ustacks-utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/ustacks-aln_utils.o -MD -MP -MF src/.deps/ustacks-aln_utils.Tpo -c -o src/ustacks-aln_utils.o `test -f 'src/aln_utils.cc' || echo './'`src/aln_utils.cc
+mv -f src/.deps/ustacks-models.Tpo src/.deps/ustacks-models.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/ustacks-input.o -MD -MP -MF src/.deps/ustacks-input.Tpo -c -o src/ustacks-input.o `test -f 'src/input.cc' || echo './'`src/input.cc
+mv -f src/.deps/ustacks-aln_utils.Tpo src/.deps/ustacks-aln_utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.     -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/pstacks-pstacks.o -MD -MP -MF src/.deps/pstacks-pstacks.Tpo -c -o src/pstacks-pstacks.o `test -f 'src/pstacks.cc' || echo './'`src/pstacks.cc
+mv -f src/.deps/ustacks-input.Tpo src/.deps/ustacks-input.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.     -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/pstacks-stacks.o -MD -MP -MF src/.deps/pstacks-stacks.Tpo -c -o src/pstacks-stacks.o `test -f 'src/stacks.cc' || echo './'`src/stacks.cc
+mv -f src/.deps/ustacks-kmers.Tpo src/.deps/ustacks-kmers.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.     -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/pstacks-constants.o -MD -MP -MF src/.deps/pstacks-constants.Tpo -c -o src/pstacks-constants.o `test -f 'src/constants.cc' || echo './'`src/constants.cc
+mv -f src/.deps/pstacks-stacks.Tpo src/.deps/pstacks-stacks.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.     -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/pstacks-mstack.o -MD -MP -MF src/.deps/pstacks-mstack.Tpo -c -o src/pstacks-mstack.o `test -f 'src/mstack.cc' || echo './'`src/mstack.cc
+mv -f src/.deps/ustacks-ustacks.Tpo src/.deps/ustacks-ustacks.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.     -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/pstacks-log_utils.o -MD -MP -MF src/.deps/pstacks-log_utils.Tpo -c -o src/pstacks-log_utils.o `test -f 'src/log_utils.cc' || echo './'`src/log_utils.cc
+mv -f src/.deps/pstacks-log_utils.Tpo src/.deps/pstacks-log_utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.     -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/pstacks-DNANSeq.o -MD -MP -MF src/.deps/pstacks-DNANSeq.Tpo -c -o src/pstacks-DNANSeq.o `test -f 'src/DNANSeq.cc' || echo './'`src/DNANSeq.cc
+mv -f src/.deps/pstacks-mstack.Tpo src/.deps/pstacks-mstack.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.     -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/pstacks-DNASeq.o -MD -MP -MF src/.deps/pstacks-DNASeq.Tpo -c -o src/pstacks-DNASeq.o `test -f 'src/DNASeq.cc' || echo './'`src/DNASeq.cc
+mv -f src/.deps/pstacks-DNANSeq.Tpo src/.deps/pstacks-DNANSeq.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.     -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/pstacks-models.o -MD -MP -MF src/.deps/pstacks-models.Tpo -c -o src/pstacks-models.o `test -f 'src/models.cc' || echo './'`src/models.cc
+mv -f src/.deps/pstacks-DNASeq.Tpo src/.deps/pstacks-DNASeq.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.     -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/pstacks-utils.o -MD -MP -MF src/.deps/pstacks-utils.Tpo -c -o src/pstacks-utils.o `test -f 'src/utils.cc' || echo './'`src/utils.cc
+mv -f src/.deps/pstacks-pstacks.Tpo src/.deps/pstacks-pstacks.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.     -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/pstacks-aln_utils.o -MD -MP -MF src/.deps/pstacks-aln_utils.Tpo -c -o src/pstacks-aln_utils.o `test -f 'src/aln_utils.cc' || echo './'`src/aln_utils.cc
+mv -f src/.deps/pstacks-constants.Tpo src/.deps/pstacks-constants.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.     -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/pstacks-input.o -MD -MP -MF src/.deps/pstacks-input.Tpo -c -o src/pstacks-input.o `test -f 'src/input.cc' || echo './'`src/input.cc
+mv -f src/.deps/pstacks-models.Tpo src/.deps/pstacks-models.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/cstacks-cstacks.o -MD -MP -MF src/.deps/cstacks-cstacks.Tpo -c -o src/cstacks-cstacks.o `test -f 'src/cstacks.cc' || echo './'`src/cstacks.cc
+mv -f src/.deps/pstacks-utils.Tpo src/.deps/pstacks-utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/cstacks-constants.o -MD -MP -MF src/.deps/cstacks-constants.Tpo -c -o src/cstacks-constants.o `test -f 'src/constants.cc' || echo './'`src/constants.cc
+mv -f src/.deps/pstacks-aln_utils.Tpo src/.deps/pstacks-aln_utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/cstacks-stacks.o -MD -MP -MF src/.deps/cstacks-stacks.Tpo -c -o src/cstacks-stacks.o `test -f 'src/stacks.cc' || echo './'`src/stacks.cc
+mv -f src/.deps/pstacks-input.Tpo src/.deps/pstacks-input.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/cstacks-locus.o -MD -MP -MF src/.deps/cstacks-locus.Tpo -c -o src/cstacks-locus.o `test -f 'src/locus.cc' || echo './'`src/locus.cc
+mv -f src/.deps/cstacks-stacks.Tpo src/.deps/cstacks-stacks.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/cstacks-kmers.o -MD -MP -MF src/.deps/cstacks-kmers.Tpo -c -o src/cstacks-kmers.o `test -f 'src/kmers.cc' || echo './'`src/kmers.cc
+mv -f src/.deps/cstacks-locus.Tpo src/.deps/cstacks-locus.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/cstacks-utils.o -MD -MP -MF src/.deps/cstacks-utils.Tpo -c -o src/cstacks-utils.o `test -f 'src/utils.cc' || echo './'`src/utils.cc
+mv -f src/.deps/cstacks-utils.Tpo src/.deps/cstacks-utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/cstacks-aln_utils.o -MD -MP -MF src/.deps/cstacks-aln_utils.Tpo -c -o src/cstacks-aln_utils.o `test -f 'src/aln_utils.cc' || echo './'`src/aln_utils.cc
+mv -f src/.deps/cstacks-constants.Tpo src/.deps/cstacks-constants.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/cstacks-DNASeq.o -MD -MP -MF src/.deps/cstacks-DNASeq.Tpo -c -o src/cstacks-DNASeq.o `test -f 'src/DNASeq.cc' || echo './'`src/DNASeq.cc
+mv -f src/.deps/cstacks-kmers.Tpo src/.deps/cstacks-kmers.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/cstacks-DNANSeq.o -MD -MP -MF src/.deps/cstacks-DNANSeq.Tpo -c -o src/cstacks-DNANSeq.o `test -f 'src/DNANSeq.cc' || echo './'`src/DNANSeq.cc
+mv -f src/.deps/cstacks-aln_utils.Tpo src/.deps/cstacks-aln_utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/cstacks-input.o -MD -MP -MF src/.deps/cstacks-input.Tpo -c -o src/cstacks-input.o `test -f 'src/input.cc' || echo './'`src/input.cc
+mv -f src/.deps/cstacks-DNASeq.Tpo src/.deps/cstacks-DNASeq.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/cstacks-sql_utilities.o -MD -MP -MF src/.deps/cstacks-sql_utilities.Tpo -c -o src/cstacks-sql_utilities.o `test -f 'src/sql_utilities.cc' || echo './'`src/sql_utilities.cc
+mv -f src/.deps/cstacks-DNANSeq.Tpo src/.deps/cstacks-DNANSeq.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/cstacks-MetaPopInfo.o -MD -MP -MF src/.deps/cstacks-MetaPopInfo.Tpo -c -o src/cstacks-MetaPopInfo.o `test -f 'src/MetaPopInfo.cc' || echo './'`src/MetaPopInfo.cc
+mv -f src/.deps/cstacks-input.Tpo src/.deps/cstacks-input.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/sstacks-sstacks.o -MD -MP -MF src/.deps/sstacks-sstacks.Tpo -c -o src/sstacks-sstacks.o `test -f 'src/sstacks.cc' || echo './'`src/sstacks.cc
+mv -f src/.deps/cstacks-sql_utilities.Tpo src/.deps/cstacks-sql_utilities.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/sstacks-constants.o -MD -MP -MF src/.deps/sstacks-constants.Tpo -c -o src/sstacks-constants.o `test -f 'src/constants.cc' || echo './'`src/constants.cc
+mv -f src/.deps/cstacks-cstacks.Tpo src/.deps/cstacks-cstacks.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/sstacks-stacks.o -MD -MP -MF src/.deps/sstacks-stacks.Tpo -c -o src/sstacks-stacks.o `test -f 'src/stacks.cc' || echo './'`src/stacks.cc
+mv -f src/.deps/cstacks-MetaPopInfo.Tpo src/.deps/cstacks-MetaPopInfo.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/sstacks-locus.o -MD -MP -MF src/.deps/sstacks-locus.Tpo -c -o src/sstacks-locus.o `test -f 'src/locus.cc' || echo './'`src/locus.cc
+mv -f src/.deps/sstacks-stacks.Tpo src/.deps/sstacks-stacks.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/sstacks-kmers.o -MD -MP -MF src/.deps/sstacks-kmers.Tpo -c -o src/sstacks-kmers.o `test -f 'src/kmers.cc' || echo './'`src/kmers.cc
+mv -f src/.deps/sstacks-locus.Tpo src/.deps/sstacks-locus.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/sstacks-aln_utils.o -MD -MP -MF src/.deps/sstacks-aln_utils.Tpo -c -o src/sstacks-aln_utils.o `test -f 'src/aln_utils.cc' || echo './'`src/aln_utils.cc
+mv -f src/.deps/sstacks-constants.Tpo src/.deps/sstacks-constants.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/sstacks-DNASeq.o -MD -MP -MF src/.deps/sstacks-DNASeq.Tpo -c -o src/sstacks-DNASeq.o `test -f 'src/DNASeq.cc' || echo './'`src/DNASeq.cc
+mv -f src/.deps/sstacks-kmers.Tpo src/.deps/sstacks-kmers.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/sstacks-DNANSeq.o -MD -MP -MF src/.deps/sstacks-DNANSeq.Tpo -c -o src/sstacks-DNANSeq.o `test -f 'src/DNANSeq.cc' || echo './'`src/DNANSeq.cc
+mv -f src/.deps/sstacks-aln_utils.Tpo src/.deps/sstacks-aln_utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/sstacks-utils.o -MD -MP -MF src/.deps/sstacks-utils.Tpo -c -o src/sstacks-utils.o `test -f 'src/utils.cc' || echo './'`src/utils.cc
+mv -f src/.deps/sstacks-DNASeq.Tpo src/.deps/sstacks-DNASeq.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/sstacks-input.o -MD -MP -MF src/.deps/sstacks-input.Tpo -c -o src/sstacks-input.o `test -f 'src/input.cc' || echo './'`src/input.cc
+mv -f src/.deps/sstacks-DNANSeq.Tpo src/.deps/sstacks-DNANSeq.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/sstacks-sql_utilities.o -MD -MP -MF src/.deps/sstacks-sql_utilities.Tpo -c -o src/sstacks-sql_utilities.o `test -f 'src/sql_utilities.cc' || echo './'`src/sql_utilities.cc
+mv -f src/.deps/sstacks-utils.Tpo src/.deps/sstacks-utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/sstacks-catalog_utils.o -MD -MP -MF src/.deps/sstacks-catalog_utils.Tpo -c -o src/sstacks-catalog_utils.o `test -f 'src/catalog_utils.cc' || echo './'`src/catalog_utils.cc
+mv -f src/.deps/sstacks-input.Tpo src/.deps/sstacks-input.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/sstacks-MetaPopInfo.o -MD -MP -MF src/.deps/sstacks-MetaPopInfo.Tpo -c -o src/sstacks-MetaPopInfo.o `test -f 'src/MetaPopInfo.cc' || echo './'`src/MetaPopInfo.cc
+mv -f src/.deps/sstacks-sql_utilities.Tpo src/.deps/sstacks-sql_utilities.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/rxstacks-rxstacks.o -MD -MP -MF src/.deps/rxstacks-rxstacks.Tpo -c -o src/rxstacks-rxstacks.o `test -f 'src/rxstacks.cc' || echo './'`src/rxstacks.cc
+mv -f src/.deps/sstacks-MetaPopInfo.Tpo src/.deps/sstacks-MetaPopInfo.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/rxstacks-constants.o -MD -MP -MF src/.deps/rxstacks-constants.Tpo -c -o src/rxstacks-constants.o `test -f 'src/constants.cc' || echo './'`src/constants.cc
+mv -f src/.deps/sstacks-sstacks.Tpo src/.deps/sstacks-sstacks.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/rxstacks-stacks.o -MD -MP -MF src/.deps/rxstacks-stacks.Tpo -c -o src/rxstacks-stacks.o `test -f 'src/stacks.cc' || echo './'`src/stacks.cc
+mv -f src/.deps/rxstacks-stacks.Tpo src/.deps/rxstacks-stacks.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/rxstacks-locus.o -MD -MP -MF src/.deps/rxstacks-locus.Tpo -c -o src/rxstacks-locus.o `test -f 'src/locus.cc' || echo './'`src/locus.cc
+mv -f src/.deps/sstacks-catalog_utils.Tpo src/.deps/sstacks-catalog_utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/rxstacks-DNANSeq.o -MD -MP -MF src/.deps/rxstacks-DNANSeq.Tpo -c -o src/rxstacks-DNANSeq.o `test -f 'src/DNANSeq.cc' || echo './'`src/DNANSeq.cc
+mv -f src/.deps/rxstacks-locus.Tpo src/.deps/rxstacks-locus.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/rxstacks-DNASeq.o -MD -MP -MF src/.deps/rxstacks-DNASeq.Tpo -c -o src/rxstacks-DNASeq.o `test -f 'src/DNASeq.cc' || echo './'`src/DNASeq.cc
+mv -f src/.deps/rxstacks-DNANSeq.Tpo src/.deps/rxstacks-DNANSeq.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/rxstacks-mst.o -MD -MP -MF src/.deps/rxstacks-mst.Tpo -c -o src/rxstacks-mst.o `test -f 'src/mst.cc' || echo './'`src/mst.cc
+mv -f src/.deps/rxstacks-DNASeq.Tpo src/.deps/rxstacks-DNASeq.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/rxstacks-models.o -MD -MP -MF src/.deps/rxstacks-models.Tpo -c -o src/rxstacks-models.o `test -f 'src/models.cc' || echo './'`src/models.cc
+mv -f src/.deps/rxstacks-constants.Tpo src/.deps/rxstacks-constants.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/rxstacks-aln_utils.o -MD -MP -MF src/.deps/rxstacks-aln_utils.Tpo -c -o src/rxstacks-aln_utils.o `test -f 'src/aln_utils.cc' || echo './'`src/aln_utils.cc
+mv -f src/.deps/rxstacks-models.Tpo src/.deps/rxstacks-models.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/rxstacks-utils.o -MD -MP -MF src/.deps/rxstacks-utils.Tpo -c -o src/rxstacks-utils.o `test -f 'src/utils.cc' || echo './'`src/utils.cc
+mv -f src/.deps/rxstacks-mst.Tpo src/.deps/rxstacks-mst.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/rxstacks-input.o -MD -MP -MF src/.deps/rxstacks-input.Tpo -c -o src/rxstacks-input.o `test -f 'src/input.cc' || echo './'`src/input.cc
+mv -f src/.deps/rxstacks-rxstacks.Tpo src/.deps/rxstacks-rxstacks.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/rxstacks-sql_utilities.o -MD -MP -MF src/.deps/rxstacks-sql_utilities.Tpo -c -o src/rxstacks-sql_utilities.o `test -f 'src/sql_utilities.cc' || echo './'`src/sql_utilities.cc
+mv -f src/.deps/rxstacks-aln_utils.Tpo src/.deps/rxstacks-aln_utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/rxstacks-catalog_utils.o -MD -MP -MF src/.deps/rxstacks-catalog_utils.Tpo -c -o src/rxstacks-catalog_utils.o `test -f 'src/catalog_utils.cc' || echo './'`src/catalog_utils.cc
+mv -f src/.deps/rxstacks-utils.Tpo src/.deps/rxstacks-utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/rxstacks-MetaPopInfo.o -MD -MP -MF src/.deps/rxstacks-MetaPopInfo.Tpo -c -o src/rxstacks-MetaPopInfo.o `test -f 'src/MetaPopInfo.cc' || echo './'`src/MetaPopInfo.cc
+mv -f src/.deps/rxstacks-input.Tpo src/.deps/rxstacks-input.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/process_radtags-process_radtags.o -MD -MP -MF src/.deps/process_radtags-process_radtags.Tpo -c -o src/process_radtags-process_radtags.o `test -f 'src/process_radtags.cc' || echo './'`src/process_radtags.cc
+mv -f src/.deps/rxstacks-sql_utilities.Tpo src/.deps/rxstacks-sql_utilities.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/process_radtags-constants.o -MD -MP -MF src/.deps/process_radtags-constants.Tpo -c -o src/process_radtags-constants.o `test -f 'src/constants.cc' || echo './'`src/constants.cc
+mv -f src/.deps/rxstacks-MetaPopInfo.Tpo src/.deps/rxstacks-MetaPopInfo.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/process_radtags-utils.o -MD -MP -MF src/.deps/process_radtags-utils.Tpo -c -o src/process_radtags-utils.o `test -f 'src/utils.cc' || echo './'`src/utils.cc
+mv -f src/.deps/process_radtags-utils.Tpo src/.deps/process_radtags-utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/process_radtags-log_utils.o -MD -MP -MF src/.deps/process_radtags-log_utils.Tpo -c -o src/process_radtags-log_utils.o `test -f 'src/log_utils.cc' || echo './'`src/log_utils.cc
+mv -f src/.deps/process_radtags-log_utils.Tpo src/.deps/process_radtags-log_utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/process_radtags-write.o -MD -MP -MF src/.deps/process_radtags-write.Tpo -c -o src/process_radtags-write.o `test -f 'src/write.cc' || echo './'`src/write.cc
+mv -f src/.deps/process_radtags-constants.Tpo src/.deps/process_radtags-constants.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/process_radtags-clean.o -MD -MP -MF src/.deps/process_radtags-clean.Tpo -c -o src/process_radtags-clean.o `test -f 'src/clean.cc' || echo './'`src/clean.cc
+mv -f src/.deps/rxstacks-catalog_utils.Tpo src/.deps/rxstacks-catalog_utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/process_radtags-file_io.o -MD -MP -MF src/.deps/process_radtags-file_io.Tpo -c -o src/process_radtags-file_io.o `test -f 'src/file_io.cc' || echo './'`src/file_io.cc
+mv -f src/.deps/process_radtags-process_radtags.Tpo src/.deps/process_radtags-process_radtags.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/process_radtags-input.o -MD -MP -MF src/.deps/process_radtags-input.Tpo -c -o src/process_radtags-input.o `test -f 'src/input.cc' || echo './'`src/input.cc
+mv -f src/.deps/process_radtags-write.Tpo src/.deps/process_radtags-write.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/process_radtags-renz.o -MD -MP -MF src/.deps/process_radtags-renz.Tpo -c -o src/process_radtags-renz.o `test -f 'src/renz.cc' || echo './'`src/renz.cc
+mv -f src/.deps/process_radtags-clean.Tpo src/.deps/process_radtags-clean.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/process_shortreads-process_shortreads.o -MD -MP -MF src/.deps/process_shortreads-process_shortreads.Tpo -c -o src/process_shortreads-process_shortreads.o `test -f 'src/process_shortreads.cc' || echo './'`src/process_shortreads.cc
+mv -f src/.deps/process_radtags-input.Tpo src/.deps/process_radtags-input.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/process_shortreads-constants.o -MD -MP -MF src/.deps/process_shortreads-constants.Tpo -c -o src/process_shortreads-constants.o `test -f 'src/constants.cc' || echo './'`src/constants.cc
+mv -f src/.deps/process_radtags-renz.Tpo src/.deps/process_radtags-renz.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/process_shortreads-clean.o -MD -MP -MF src/.deps/process_shortreads-clean.Tpo -c -o src/process_shortreads-clean.o `test -f 'src/clean.cc' || echo './'`src/clean.cc
+mv -f src/.deps/process_radtags-file_io.Tpo src/.deps/process_radtags-file_io.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/process_shortreads-file_io.o -MD -MP -MF src/.deps/process_shortreads-file_io.Tpo -c -o src/process_shortreads-file_io.o `test -f 'src/file_io.cc' || echo './'`src/file_io.cc
+mv -f src/.deps/process_shortreads-clean.Tpo src/.deps/process_shortreads-clean.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/process_shortreads-utils.o -MD -MP -MF src/.deps/process_shortreads-utils.Tpo -c -o src/process_shortreads-utils.o `test -f 'src/utils.cc' || echo './'`src/utils.cc
+mv -f src/.deps/process_shortreads-utils.Tpo src/.deps/process_shortreads-utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/process_shortreads-log_utils.o -MD -MP -MF src/.deps/process_shortreads-log_utils.Tpo -c -o src/process_shortreads-log_utils.o `test -f 'src/log_utils.cc' || echo './'`src/log_utils.cc
+mv -f src/.deps/process_shortreads-constants.Tpo src/.deps/process_shortreads-constants.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/process_shortreads-write.o -MD -MP -MF src/.deps/process_shortreads-write.Tpo -c -o src/process_shortreads-write.o `test -f 'src/write.cc' || echo './'`src/write.cc
+mv -f src/.deps/process_shortreads-log_utils.Tpo src/.deps/process_shortreads-log_utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/process_shortreads-kmers.o -MD -MP -MF src/.deps/process_shortreads-kmers.Tpo -c -o src/process_shortreads-kmers.o `test -f 'src/kmers.cc' || echo './'`src/kmers.cc
+mv -f src/.deps/process_shortreads-process_shortreads.Tpo src/.deps/process_shortreads-process_shortreads.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/process_shortreads-input.o -MD -MP -MF src/.deps/process_shortreads-input.Tpo -c -o src/process_shortreads-input.o `test -f 'src/input.cc' || echo './'`src/input.cc
+mv -f src/.deps/process_shortreads-file_io.Tpo src/.deps/process_shortreads-file_io.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/kmer_filter-kmer_filter.o -MD -MP -MF src/.deps/kmer_filter-kmer_filter.Tpo -c -o src/kmer_filter-kmer_filter.o `test -f 'src/kmer_filter.cc' || echo './'`src/kmer_filter.cc
+mv -f src/.deps/process_shortreads-write.Tpo src/.deps/process_shortreads-write.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/kmer_filter-constants.o -MD -MP -MF src/.deps/kmer_filter-constants.Tpo -c -o src/kmer_filter-constants.o `test -f 'src/constants.cc' || echo './'`src/constants.cc
+mv -f src/.deps/process_shortreads-input.Tpo src/.deps/process_shortreads-input.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/kmer_filter-utils.o -MD -MP -MF src/.deps/kmer_filter-utils.Tpo -c -o src/kmer_filter-utils.o `test -f 'src/utils.cc' || echo './'`src/utils.cc
+mv -f src/.deps/process_shortreads-kmers.Tpo src/.deps/process_shortreads-kmers.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/kmer_filter-write.o -MD -MP -MF src/.deps/kmer_filter-write.Tpo -c -o src/kmer_filter-write.o `test -f 'src/write.cc' || echo './'`src/write.cc
+mv -f src/.deps/kmer_filter-utils.Tpo src/.deps/kmer_filter-utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/kmer_filter-kmers.o -MD -MP -MF src/.deps/kmer_filter-kmers.Tpo -c -o src/kmer_filter-kmers.o `test -f 'src/kmers.cc' || echo './'`src/kmers.cc
+mv -f src/.deps/kmer_filter-write.Tpo src/.deps/kmer_filter-write.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/kmer_filter-input.o -MD -MP -MF src/.deps/kmer_filter-input.Tpo -c -o src/kmer_filter-input.o `test -f 'src/input.cc' || echo './'`src/input.cc
+mv -f src/.deps/kmer_filter-kmers.Tpo src/.deps/kmer_filter-kmers.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/clone_filter-clone_filter.o -MD -MP -MF src/.deps/clone_filter-clone_filter.Tpo -c -o src/clone_filter-clone_filter.o `test -f 'src/clone_filter.cc' || echo './'`src/clone_filter.cc
+mv -f src/.deps/kmer_filter-input.Tpo src/.deps/kmer_filter-input.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/clone_filter-constants.o -MD -MP -MF src/.deps/clone_filter-constants.Tpo -c -o src/clone_filter-constants.o `test -f 'src/constants.cc' || echo './'`src/constants.cc
+mv -f src/.deps/kmer_filter-constants.Tpo src/.deps/kmer_filter-constants.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/clone_filter-kmers.o -MD -MP -MF src/.deps/clone_filter-kmers.Tpo -c -o src/clone_filter-kmers.o `test -f 'src/kmers.cc' || echo './'`src/kmers.cc
+mv -f src/.deps/kmer_filter-kmer_filter.Tpo src/.deps/kmer_filter-kmer_filter.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/clone_filter-utils.o -MD -MP -MF src/.deps/clone_filter-utils.Tpo -c -o src/clone_filter-utils.o `test -f 'src/utils.cc' || echo './'`src/utils.cc
+mv -f src/.deps/clone_filter-utils.Tpo src/.deps/clone_filter-utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/clone_filter-write.o -MD -MP -MF src/.deps/clone_filter-write.Tpo -c -o src/clone_filter-write.o `test -f 'src/write.cc' || echo './'`src/write.cc
+mv -f src/.deps/clone_filter-kmers.Tpo src/.deps/clone_filter-kmers.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/clone_filter-clean.o -MD -MP -MF src/.deps/clone_filter-clean.Tpo -c -o src/clone_filter-clean.o `test -f 'src/clean.cc' || echo './'`src/clean.cc
+mv -f src/.deps/clone_filter-write.Tpo src/.deps/clone_filter-write.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/clone_filter-file_io.o -MD -MP -MF src/.deps/clone_filter-file_io.Tpo -c -o src/clone_filter-file_io.o `test -f 'src/file_io.cc' || echo './'`src/file_io.cc
+mv -f src/.deps/clone_filter-constants.Tpo src/.deps/clone_filter-constants.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -I./htslib/htslib -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/clone_filter-input.o -MD -MP -MF src/.deps/clone_filter-input.Tpo -c -o src/clone_filter-input.o `test -f 'src/input.cc' || echo './'`src/input.cc
+mv -f src/.deps/clone_filter-clean.Tpo src/.deps/clone_filter-clean.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/genotypes-genotypes.o -MD -MP -MF src/.deps/genotypes-genotypes.Tpo -c -o src/genotypes-genotypes.o `test -f 'src/genotypes.cc' || echo './'`src/genotypes.cc
+mv -f src/.deps/clone_filter-clone_filter.Tpo src/.deps/clone_filter-clone_filter.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/genotypes-constants.o -MD -MP -MF src/.deps/genotypes-constants.Tpo -c -o src/genotypes-constants.o `test -f 'src/constants.cc' || echo './'`src/constants.cc
+mv -f src/.deps/clone_filter-input.Tpo src/.deps/clone_filter-input.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/genotypes-utils.o -MD -MP -MF src/.deps/genotypes-utils.Tpo -c -o src/genotypes-utils.o `test -f 'src/utils.cc' || echo './'`src/utils.cc
+mv -f src/.deps/clone_filter-file_io.Tpo src/.deps/clone_filter-file_io.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/genotypes-catalog_utils.o -MD -MP -MF src/.deps/genotypes-catalog_utils.Tpo -c -o src/genotypes-catalog_utils.o `test -f 'src/catalog_utils.cc' || echo './'`src/catalog_utils.cc
+mv -f src/.deps/genotypes-utils.Tpo src/.deps/genotypes-utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/genotypes-log_utils.o -MD -MP -MF src/.deps/genotypes-log_utils.Tpo -c -o src/genotypes-log_utils.o `test -f 'src/log_utils.cc' || echo './'`src/log_utils.cc
+mv -f src/.deps/genotypes-log_utils.Tpo src/.deps/genotypes-log_utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/genotypes-stacks.o -MD -MP -MF src/.deps/genotypes-stacks.Tpo -c -o src/genotypes-stacks.o `test -f 'src/stacks.cc' || echo './'`src/stacks.cc
+mv -f src/.deps/genotypes-constants.Tpo src/.deps/genotypes-constants.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/genotypes-locus.o -MD -MP -MF src/.deps/genotypes-locus.Tpo -c -o src/genotypes-locus.o `test -f 'src/locus.cc' || echo './'`src/locus.cc
+mv -f src/.deps/genotypes-stacks.Tpo src/.deps/genotypes-stacks.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/genotypes-DNASeq.o -MD -MP -MF src/.deps/genotypes-DNASeq.Tpo -c -o src/genotypes-DNASeq.o `test -f 'src/DNASeq.cc' || echo './'`src/DNASeq.cc
+mv -f src/.deps/genotypes-DNASeq.Tpo src/.deps/genotypes-DNASeq.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/genotypes-DNANSeq.o -MD -MP -MF src/.deps/genotypes-DNANSeq.Tpo -c -o src/genotypes-DNANSeq.o `test -f 'src/DNANSeq.cc' || echo './'`src/DNANSeq.cc
+mv -f src/.deps/genotypes-locus.Tpo src/.deps/genotypes-locus.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/genotypes-aln_utils.o -MD -MP -MF src/.deps/genotypes-aln_utils.Tpo -c -o src/genotypes-aln_utils.o `test -f 'src/aln_utils.cc' || echo './'`src/aln_utils.cc
+mv -f src/.deps/genotypes-DNANSeq.Tpo src/.deps/genotypes-DNANSeq.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/genotypes-genotype_dictionaries.o -MD -MP -MF src/.deps/genotypes-genotype_dictionaries.Tpo -c -o src/genotypes-genotype_dictionaries.o `test -f 'src/genotype_dictionaries.cc' || echo './'`src/genotype_dictionaries.cc
+mv -f src/.deps/genotypes-aln_utils.Tpo src/.deps/genotypes-aln_utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/genotypes-input.o -MD -MP -MF src/.deps/genotypes-input.Tpo -c -o src/genotypes-input.o `test -f 'src/input.cc' || echo './'`src/input.cc
+mv -f src/.deps/genotypes-catalog_utils.Tpo src/.deps/genotypes-catalog_utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/genotypes-sql_utilities.o -MD -MP -MF src/.deps/genotypes-sql_utilities.Tpo -c -o src/genotypes-sql_utilities.o `test -f 'src/sql_utilities.cc' || echo './'`src/sql_utilities.cc
+mv -f src/.deps/genotypes-input.Tpo src/.deps/genotypes-input.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/genotypes-renz.o -MD -MP -MF src/.deps/genotypes-renz.Tpo -c -o src/genotypes-renz.o `test -f 'src/renz.cc' || echo './'`src/renz.cc
+mv -f src/.deps/genotypes-genotypes.Tpo src/.deps/genotypes-genotypes.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/genotypes-MetaPopInfo.o -MD -MP -MF src/.deps/genotypes-MetaPopInfo.Tpo -c -o src/genotypes-MetaPopInfo.o `test -f 'src/MetaPopInfo.cc' || echo './'`src/MetaPopInfo.cc
+mv -f src/.deps/genotypes-sql_utilities.Tpo src/.deps/genotypes-sql_utilities.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/populations-populations.o -MD -MP -MF src/.deps/populations-populations.Tpo -c -o src/populations-populations.o `test -f 'src/populations.cc' || echo './'`src/populations.cc
+mv -f src/.deps/genotypes-renz.Tpo src/.deps/genotypes-renz.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/populations-constants.o -MD -MP -MF src/.deps/populations-constants.Tpo -c -o src/populations-constants.o `test -f 'src/constants.cc' || echo './'`src/constants.cc
+mv -f src/.deps/genotypes-genotype_dictionaries.Tpo src/.deps/genotypes-genotype_dictionaries.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/populations-utils.o -MD -MP -MF src/.deps/populations-utils.Tpo -c -o src/populations-utils.o `test -f 'src/utils.cc' || echo './'`src/utils.cc
+mv -f src/.deps/populations-utils.Tpo src/.deps/populations-utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/populations-catalog_utils.o -MD -MP -MF src/.deps/populations-catalog_utils.Tpo -c -o src/populations-catalog_utils.o `test -f 'src/catalog_utils.cc' || echo './'`src/catalog_utils.cc
+mv -f src/.deps/genotypes-MetaPopInfo.Tpo src/.deps/genotypes-MetaPopInfo.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/populations-log_utils.o -MD -MP -MF src/.deps/populations-log_utils.Tpo -c -o src/populations-log_utils.o `test -f 'src/log_utils.cc' || echo './'`src/log_utils.cc
+mv -f src/.deps/populations-log_utils.Tpo src/.deps/populations-log_utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/populations-stacks.o -MD -MP -MF src/.deps/populations-stacks.Tpo -c -o src/populations-stacks.o `test -f 'src/stacks.cc' || echo './'`src/stacks.cc
+mv -f src/.deps/populations-constants.Tpo src/.deps/populations-constants.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/populations-locus.o -MD -MP -MF src/.deps/populations-locus.Tpo -c -o src/populations-locus.o `test -f 'src/locus.cc' || echo './'`src/locus.cc
+mv -f src/.deps/populations-stacks.Tpo src/.deps/populations-stacks.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/populations-DNASeq.o -MD -MP -MF src/.deps/populations-DNASeq.Tpo -c -o src/populations-DNASeq.o `test -f 'src/DNASeq.cc' || echo './'`src/DNASeq.cc
+mv -f src/.deps/populations-DNASeq.Tpo src/.deps/populations-DNASeq.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/populations-DNANSeq.o -MD -MP -MF src/.deps/populations-DNANSeq.Tpo -c -o src/populations-DNANSeq.o `test -f 'src/DNANSeq.cc' || echo './'`src/DNANSeq.cc
+mv -f src/.deps/populations-locus.Tpo src/.deps/populations-locus.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/populations-aln_utils.o -MD -MP -MF src/.deps/populations-aln_utils.Tpo -c -o src/populations-aln_utils.o `test -f 'src/aln_utils.cc' || echo './'`src/aln_utils.cc
+mv -f src/.deps/populations-DNANSeq.Tpo src/.deps/populations-DNANSeq.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/populations-genotype_dictionaries.o -MD -MP -MF src/.deps/populations-genotype_dictionaries.Tpo -c -o src/populations-genotype_dictionaries.o `test -f 'src/genotype_dictionaries.cc' || echo './'`src/genotype_dictionaries.cc
+mv -f src/.deps/populations-aln_utils.Tpo src/.deps/populations-aln_utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/populations-input.o -MD -MP -MF src/.deps/populations-input.Tpo -c -o src/populations-input.o `test -f 'src/input.cc' || echo './'`src/input.cc
+mv -f src/.deps/populations-catalog_utils.Tpo src/.deps/populations-catalog_utils.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/populations-sql_utilities.o -MD -MP -MF src/.deps/populations-sql_utilities.Tpo -c -o src/populations-sql_utilities.o `test -f 'src/sql_utilities.cc' || echo './'`src/sql_utilities.cc
+mv -f src/.deps/populations-input.Tpo src/.deps/populations-input.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/populations-renz.o -MD -MP -MF src/.deps/populations-renz.Tpo -c -o src/populations-renz.o `test -f 'src/renz.cc' || echo './'`src/renz.cc
+mv -f src/.deps/populations-sql_utilities.Tpo src/.deps/populations-sql_utilities.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/populations-export_formats.o -MD -MP -MF src/.deps/populations-export_formats.Tpo -c -o src/populations-export_formats.o `test -f 'src/export_formats.cc' || echo './'`src/export_formats.cc
+mv -f src/.deps/populations-renz.Tpo src/.deps/populations-renz.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/populations-MetaPopInfo.o -MD -MP -MF src/.deps/populations-MetaPopInfo.Tpo -c -o src/populations-MetaPopInfo.o `test -f 'src/MetaPopInfo.cc' || echo './'`src/MetaPopInfo.cc
+mv -f src/.deps/populations-genotype_dictionaries.Tpo src/.deps/populations-genotype_dictionaries.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/populations-Vcf.o -MD -MP -MF src/.deps/populations-Vcf.Tpo -c -o src/populations-Vcf.o `test -f 'src/Vcf.cc' || echo './'`src/Vcf.cc
+mv -f src/.deps/populations-MetaPopInfo.Tpo src/.deps/populations-MetaPopInfo.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/phasedstacks-phasedstacks.o -MD -MP -MF src/.deps/phasedstacks-phasedstacks.Tpo -c -o src/phasedstacks-phasedstacks.o `test -f 'src/phasedstacks.cc' || echo './'`src/phasedstacks.cc
+mv -f src/.deps/populations-Vcf.Tpo src/.deps/populations-Vcf.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/phasedstacks-constants.o -MD -MP -MF src/.deps/phasedstacks-constants.Tpo -c -o src/phasedstacks-constants.o `test -f 'src/constants.cc' || echo './'`src/constants.cc
+mv -f src/.deps/populations-populations.Tpo src/.deps/populations-populations.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/phasedstacks-locus.o -MD -MP -MF src/.deps/phasedstacks-locus.Tpo -c -o src/phasedstacks-locus.o `test -f 'src/locus.cc' || echo './'`src/locus.cc
+mv -f src/.deps/phasedstacks-locus.Tpo src/.deps/phasedstacks-locus.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/phasedstacks-input.o -MD -MP -MF src/.deps/phasedstacks-input.Tpo -c -o src/phasedstacks-input.o `test -f 'src/input.cc' || echo './'`src/input.cc
+mv -f src/.deps/phasedstacks-constants.Tpo src/.deps/phasedstacks-constants.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/phasedstacks-sql_utilities.o -MD -MP -MF src/.deps/phasedstacks-sql_utilities.Tpo -c -o src/phasedstacks-sql_utilities.o `test -f 'src/sql_utilities.cc' || echo './'`src/sql_utilities.cc
+mv -f src/.deps/phasedstacks-phasedstacks.Tpo src/.deps/phasedstacks-phasedstacks.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/phasedstacks-log_utils.o -MD -MP -MF src/.deps/phasedstacks-log_utils.Tpo -c -o src/phasedstacks-log_utils.o `test -f 'src/log_utils.cc' || echo './'`src/log_utils.cc
+mv -f src/.deps/populations-export_formats.Tpo src/.deps/populations-export_formats.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/phasedstacks-utils.o -MD -MP -MF src/.deps/phasedstacks-utils.Tpo -c -o src/phasedstacks-utils.o `test -f 'src/utils.cc' || echo './'`src/utils.cc
+mv -f src/.deps/phasedstacks-input.Tpo src/.deps/phasedstacks-input.Po
+c++ -std=gnu++11 -DHAVE_CONFIG_H -I.      -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT src/phasedstacks-catalog_utils.o -MD -MP -MF src/.deps/phasedstacks-catalog_utils.Tpo -c -o src/phasedstacks-catalog_utils.o `test -f 'src/catalog_utils.cc' || echo './'`src/catalog_utils.cc
+mv -f src/.deps/phasedstacks-utils.Tpo src/.deps/phasedstacks-utils.Po
+c++ -std=gnu++11   -O2 -pipe -fstack-protector -fno-strict-aliasing   -lpthread -fstack-protector -o ustacks src/ustacks-ustacks.o src/ustacks-stacks.o src/ustacks-constants.o src/ustacks-mstack.o src/ustacks-mst.o src/ustacks-cmb.o src/ustacks-DNASeq.o src/ustacks-DNANSeq.o src/ustacks-models.o src/ustacks-utils.o src/ustacks-kmers.o src/ustacks-aln_utils.o src/ustacks-input.o  -lz 
+mv -f src/.deps/phasedstacks-log_utils.Tpo src/.deps/phasedstacks-log_utils.Po
+c++ -std=gnu++11  -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing   -lpthread -fstack-protector -o pstacks src/pstacks-pstacks.o src/pstacks-stacks.o src/pstacks-constants.o src/pstacks-mstack.o src/pstacks-log_utils.o src/pstacks-DNANSeq.o src/pstacks-DNASeq.o src/pstacks-models.o src/pstacks-utils.o src/pstacks-aln_utils.o src/pstacks-input.o ./htslib/libhts.a -lz 
+c++ -std=gnu++11   -O2 -pipe -fstack-protector -fno-strict-aliasing   -lpthread -fstack-protector -o cstacks src/cstacks-cstacks.o src/cstacks-constants.o src/cstacks-stacks.o src/cstacks-locus.o src/cstacks-kmers.o src/cstacks-utils.o src/cstacks-aln_utils.o src/cstacks-DNASeq.o src/cstacks-DNANSeq.o src/cstacks-input.o src/cstacks-sql_utilities.o src/cstacks-MetaPopInfo.o  -lz 
+c++ -std=gnu++11   -O2 -pipe -fstack-protector -fno-strict-aliasing   -lpthread -fstack-protector -o sstacks src/sstacks-sstacks.o src/sstacks-constants.o src/sstacks-stacks.o src/sstacks-locus.o src/sstacks-kmers.o src/sstacks-aln_utils.o src/sstacks-DNASeq.o src/sstacks-DNANSeq.o src/sstacks-utils.o src/sstacks-input.o src/sstacks-sql_utilities.o src/sstacks-catalog_utils.o src/sstacks-MetaPopInfo.o  -lz 
+c++ -std=gnu++11   -O2 -pipe -fstack-protector -fno-strict-aliasing   -lpthread -fstack-protector -o rxstacks src/rxstacks-rxstacks.o src/rxstacks-constants.o src/rxstacks-stacks.o src/rxstacks-locus.o src/rxstacks-DNANSeq.o src/rxstacks-DNASeq.o src/rxstacks-mst.o src/rxstacks-models.o src/rxstacks-aln_utils.o src/rxstacks-utils.o src/rxstacks-input.o src/rxstacks-sql_utilities.o src/rxstacks-catalog_utils.o src/rxstacks-MetaPopInfo.o  -lz 
+c++ -std=gnu++11   -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing   -lpthread -fstack-protector -o process_radtags src/process_radtags-process_radtags.o src/process_radtags-constants.o src/process_radtags-utils.o src/process_radtags-log_utils.o src/process_radtags-write.o src/process_radtags-clean.o src/process_radtags-file_io.o src/process_radtags-input.o src/process_radtags-renz.o ./htslib/libhts.a -lz 
+c++ -std=gnu++11   -I./htslib/htslib  -O2 -pipe -fstack-protector -fno-strict-aliasing   -lpthread -fstack-protector -o process_shortreads src/process_shortreads-process_shortreads.o src/process_shortreads-constants.o src/process_shortreads-clean.o src/process_shortreads-file_io.o src/process_shortreads-utils.o src/process_shortreads-log_utils.o src/process_shortreads-write.o src/process_shortreads-kmers.o src/process_shortreads-input.o ./htslib/libhts.a -lz 
+c++ -std=gnu++11   -O2 -pipe -fstack-protector -fno-strict-aliasing   -lpthread -fstack-protector -o kmer_filter src/kmer_filter-kmer_filter.o src/kmer_filter-constants.o src/kmer_filter-utils.o src/kmer_filter-write.o src/kmer_filter-kmers.o src/kmer_filter-input.o  -lz 
+c++ -std=gnu++11   -I./htslib/htslib -O2 -pipe -fstack-protector -fno-strict-aliasing   -lpthread -fstack-protector -o clone_filter src/clone_filter-clone_filter.o src/clone_filter-constants.o src/clone_filter-kmers.o src/clone_filter-utils.o src/clone_filter-write.o src/clone_filter-clean.o src/clone_filter-file_io.o src/clone_filter-input.o ./htslib/libhts.a -lz 
+c++ -std=gnu++11   -O2 -pipe -fstack-protector -fno-strict-aliasing   -lpthread -fstack-protector -o genotypes src/genotypes-genotypes.o src/genotypes-constants.o src/genotypes-utils.o src/genotypes-catalog_utils.o src/genotypes-log_utils.o src/genotypes-stacks.o src/genotypes-locus.o src/genotypes-DNASeq.o src/genotypes-DNANSeq.o src/genotypes-aln_utils.o src/genotypes-genotype_dictionaries.o src/genotypes-input.o src/genotypes-sql_utilities.o src/genotypes-renz.o src/genotypes-MetaPopInfo.o  -lz 
+c++ -std=gnu++11   -O2 -pipe -fstack-protector -fno-strict-aliasing   -lpthread -fstack-protector -o populations src/populations-populations.o src/populations-constants.o src/populations-utils.o src/populations-catalog_utils.o src/populations-log_utils.o src/populations-stacks.o src/populations-locus.o src/populations-DNASeq.o src/populations-DNANSeq.o src/populations-aln_utils.o src/populations-genotype_dictionaries.o src/populations-input.o src/populations-sql_utilities.o src/populations-renz.o src/populations-export_formats.o src/populations-MetaPopInfo.o src/populations-Vcf.o  -lz 
+mv -f src/.deps/phasedstacks-sql_utilities.Tpo src/.deps/phasedstacks-sql_utilities.Po
+mv -f src/.deps/phasedstacks-catalog_utils.Tpo src/.deps/phasedstacks-catalog_utils.Po
+c++ -std=gnu++11   -O2 -pipe -fstack-protector -fno-strict-aliasing   -lpthread -fstack-protector -o phasedstacks src/phasedstacks-phasedstacks.o src/phasedstacks-constants.o src/phasedstacks-locus.o src/phasedstacks-input.o src/phasedstacks-sql_utilities.o src/phasedstacks-log_utils.o src/phasedstacks-utils.o src/phasedstacks-catalog_utils.o  -lz 
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-1.48'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-1.48'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-1.48'
+===========================================================================
+=>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===>   stacks-1.48 depends on file: /usr/local/bin/python2.7 - found
+===========================================================================
+=>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for stacks-1.48
+===>   stacks-1.48 depends on file: /usr/local/bin/python2.7 - found
+===>   Generating temporary packing list
+gmake[1]: Entering directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-1.48'
+Making install in htslib
+gmake[2]: Entering directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-1.48/htslib'
+gmake[2]: Nothing to be done for 'install'.
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-1.48/htslib'
+Making install in .
+gmake[2]: Entering directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-1.48'
+gmake[3]: Entering directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-1.48'
+test -z "/usr/local/bin" || /bin/mkdir -p "/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin"
+  install  -s -m 555 ustacks pstacks cstacks sstacks rxstacks process_radtags process_shortreads kmer_filter clone_filter genotypes populations phasedstacks '/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin'
+test -z "/usr/local/bin" || /bin/mkdir -p "/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin"
+ install  -m 555 scripts/denovo_map.pl scripts/ref_map.pl scripts/export_sql.pl scripts/sort_read_pairs.pl scripts/exec_velvet.pl scripts/load_sequences.pl scripts/index_radtags.pl scripts/load_radtags.pl scripts/stacks_export_notify.pl scripts/integrate_alignments.py scripts/count_fixed_catalog_snps.py '/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin'
+test -z "/usr/local/share/stacks" || /bin/mkdir -p "/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks"
+/bin/mkdir -p '/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php'
+ install  -m 0644  php/CatalogClass.php php/annotate_marker.php php/constants.php.dist php/index.php php/tags.php php/tag.php php/Locus.php php/catalog.php php/correct_genotypes.php php/correct_genotype.php php/export_batch.php php/last_modified.php php/version.php php/catalog_genotypes.php php/db_functions.php php/header.php php/samples.php php/stacks_functions.php php/view_sequence.php php/sequence_blast.php php/pop_view.php php/sumstat_view.php php/hapstat_view.php php/fst_view.php php/phist_view.php php/stack_view.php php/population_view.js php/ajax.js php/annotate.js php/stacks.js php/export.js php/stacks.css '/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php'
+/bin/mkdir -p '/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/sql'
+ install  -m 0644  sql/mysql.cnf.dist sql/catalog_index.sql sql/stacks.sql sql/tag_index.sql sql/chr_index.sql '/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/sql'
+/bin/mkdir -p '/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php/images'
+ install  -m 0644  php/images/caret-d.png php/images/caret-u.png php/images/excel_icon.png php/images/l-arrow-disabled.png php/images/l-arrow.png php/images/r-arrow-disabled.png php/images/r-arrow.png php/images/stacks_bg.png php/images/stacks_logo_rev_small.png '/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php/images'
+gmake  install-data-hook
+gmake[4]: Entering directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-1.48'
+sed -e 's,_VERSION_,1.48,' -e 's,_BINDIR_,/usr/local/bin/,g' -e 's,_PKGDATADIR_,/usr/local/share/stacks/,g' /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/denovo_map.pl > /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/denovo_map.pl.subst
+mv /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/denovo_map.pl.subst /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/denovo_map.pl
+chmod +x /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/denovo_map.pl
+sed -e 's,_VERSION_,1.48,' -e 's,_BINDIR_,/usr/local/bin/,g' -e 's,_PKGDATADIR_,/usr/local/share/stacks/,g' /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/ref_map.pl > /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/ref_map.pl.subst
+mv /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/ref_map.pl.subst /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/ref_map.pl
+chmod +x /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/ref_map.pl
+sed -e 's,_VERSION_,1.48,' -e 's,_PKGDATADIR_,/usr/local/share/stacks/,g' /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/export_sql.pl > /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/export_sql.pl.subst
+mv /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/export_sql.pl.subst /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/export_sql.pl
+chmod +x /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/export_sql.pl
+sed -e 's,_VERSION_,1.48,' -e 's,_PKGDATADIR_,/usr/local/share/stacks/,g' /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/index_radtags.pl > /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/index_radtags.pl.subst
+mv /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/index_radtags.pl.subst /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/index_radtags.pl
+chmod +x /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/index_radtags.pl
+sed -e 's,_VERSION_,1.48,' -e 's,_PKGDATADIR_,/usr/local/share/stacks/,g' /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/load_radtags.pl > /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/load_radtags.pl.subst
+mv /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/load_radtags.pl.subst /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/load_radtags.pl
+chmod +x /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/load_radtags.pl
+sed -e 's,_VERSION_,1.48,' /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/sort_read_pairs.pl > /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/sort_read_pairs.pl.subst
+mv /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/sort_read_pairs.pl.subst /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/sort_read_pairs.pl
+chmod +x /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/sort_read_pairs.pl
+sed -e 's,_VERSION_,1.48,' /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/exec_velvet.pl > /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/exec_velvet.pl.subst
+mv /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/exec_velvet.pl.subst /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/exec_velvet.pl
+chmod +x /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/exec_velvet.pl
+sed -e 's,_VERSION_,1.48,' -e 's,_PKGDATADIR_,/usr/local/share/stacks/,g' /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/load_sequences.pl > /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/load_sequences.pl.subst
+mv /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/load_sequences.pl.subst /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/load_sequences.pl
+chmod +x /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/load_sequences.pl
+sed -e 's,_VERSION_,1.48,' -e 's,_PKGDATADIR_,/usr/local/share/stacks/,g' -e 's,_BINDIR_,/usr/local/bin/,g' \
+	/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/stacks_export_notify.pl > /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/stacks_export_notify.pl.subst
+mv /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/stacks_export_notify.pl.subst /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/stacks_export_notify.pl
+chmod +x /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/stacks_export_notify.pl
+sed -e 's,_PKGDATADIR_,/usr/local/share/stacks/,g' -e 's,_BINDIR_,/usr/local/bin/,g' \
+	/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php/constants.php.dist > /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php/constants.php.dist.subst
+mv /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php/constants.php.dist.subst /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php/constants.php.dist
+echo 1.48 > /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php/version.php
+/bin/sh /wrkdirs/usr/ports/wip/stacks/work/stacks-1.48/config/install-sh -d -m 755 /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php/export
+gmake[4]: Leaving directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-1.48'
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-1.48'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-1.48'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-1.48'
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+=>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for stacks-1.48
+===========================================================================
+=>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for stacks-1.48
+===>  Checking if stacks already installed
+===>   Registering installation for stacks-1.48
+[11-1-amd64-default] Installing stacks-1.48...
+===========================================================================
+=>> Checking shared library dependencies
+ 0x0000000000000001 NEEDED               Shared library: [libc++.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libc.so.7]
+ 0x0000000000000001 NEEDED               Shared library: [libcxxrt.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libm.so.5]
+ 0x0000000000000001 NEEDED               Shared library: [libthr.so.3]
+ 0x0000000000000001 NEEDED               Shared library: [libz.so.6]
+=======================<phase: deinstall      >============================
+===>  Deinstalling for stacks
+===>   Deinstalling stacks-1.48
+Updating database digests format: ........ done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	stacks-1.48
+
+Number of packages to be removed: 1
+
+The operation will free 7 MiB.
+[11-1-amd64-default] [1/1] Deinstalling stacks-1.48...
+[11-1-amd64-default] [1/1] Deleting files for stacks-1.48: .......... done
+===========================================================================
+=>> Checking for extra files and directories
+[00:02:04] Installing from package
+[11-1-amd64-default] Installing stacks-1.48...
+[11-1-amd64-default] Extracting stacks-1.48: .......... done
+[00:02:04] Cleaning up
+===>  Cleaning for stacks-1.48
+[00:02:04] Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	stacks-1.48
+
+Number of packages to be removed: 1
+
+The operation will free 7 MiB.
+[11-1-amd64-default] [1/1] Deinstalling stacks-1.48...
+[11-1-amd64-default] [1/1] Deleting files for stacks-1.48: .......... done
+build of wip/stacks | stacks-1.48 ended at Fri Mar  9 08:18:10 CST 2018
+build time: 00:02:00
