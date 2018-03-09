@@ -9,7 +9,6 @@ COMMENT=	C++ library and CLI tools for parsing and manipulating VCF files
 
 LICENSE=	MIT
 
-# FIXME: Make filevercmp install a shared lib and add to LIB_DEPENDS
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libtabix.so:wip/tabixpp \
 		libsw.so:wip/smithwaterman
@@ -20,9 +19,8 @@ BUILD_DEPENDS=	fastahack>=0:wip/fastahack \
 		intervaltree>=0:wip/intervaltree
 RUN_DEPENDS=	filevercmp>=0:wip/filevercmp
 
-# FIXME: compiler:openmp causes link error
+# FIXME: compiler:openmp causes link errors
 USES=		gmake shebangfix
-# USE_GCC=	yes
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	ekg
@@ -33,8 +31,6 @@ CXXFLAGS+=	-I${LOCALBASE}/include/smithwaterman \
 		-I${LOCALBASE}/include/filevercmp \
 		-I${LOCALBASE}/include/fastahack \
 		-I${LOCALBASE}/include/intervaltree
-# Hack for X120e
-CFLAGS+=	-I/usr/include/clang/3.3
 
 INSTALL_TARGET=	install-strip
 
@@ -45,7 +41,6 @@ INSTALL_TARGET=	install-strip
 CFLAGS+=	-msse2
 .endif
 
-# MAKE_JOBS_UNSAFE=	yes
 MAKEFILE=		Makefile.external-libs
 INSTALL_TARGET=		install-strip
 

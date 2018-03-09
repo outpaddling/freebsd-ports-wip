@@ -29,6 +29,27 @@ SLIB =		libvcflib.so.$(SOVERSION)
 #vcfstats.cpp
 
 BIN_SOURCES = src/vcfecho.cpp \
+			  src/vcfnormalizesvs.cpp \
+			  src/dumpContigsFromHeader.cpp \
+			  src/bFst.cpp \
+			  src/pVst.cpp \
+			  src/hapLrt.cpp \
+			  src/popStats.cpp \
+			  src/wcFst.cpp \
+			  src/iHS.cpp \
+			  src/segmentFst.cpp \
+			  src/segmentIhs.cpp \
+			  src/genotypeSummary.cpp \
+			  src/sequenceDiversity.cpp \
+			  src/pFst.cpp \
+			  src/smoother.cpp \
+			  src/LD.cpp \
+			  src/plotHaps.cpp \
+			  src/abba-baba.cpp \
+			  src/permuteGPAT++.cpp \
+			  src/permuteSmooth.cpp \
+			  src/normalize-iHS.cpp \
+			  src/meltEHH.cpp \
 			  src/vcfaltcount.cpp \
 			  src/vcfhetcount.cpp \
 			  src/vcfhethomratio.cpp \
@@ -90,6 +111,8 @@ BIN_SOURCES = src/vcfecho.cpp \
 			  src/vcfqual2info.cpp \
 			  src/vcfinfo2qual.cpp \
 			  src/vcfglbound.cpp \
+			  src/vcfunphase.cpp \
+			  src/vcfnull2ref.cpp \
 			  src/vcfinfosummarize.cpp
 
 # when we can figure out how to build on mac
@@ -108,7 +131,7 @@ CC ?=		cc
 CXX ?=		c++
 CXXFLAGS ?=	-O3
 CFLAGS +=	-D_FILE_OFFSET_BITS=64 -fPIC
-CXXFLAGS +=	-D_FILE_OFFSET_BITS=64 -fPIC
+CXXFLAGS +=	$(CFLAGS) --std=c++11
 #CXXFLAGS +=	-pedantic -Wall -Wshadow -Wpointer-arith -Wcast-qual
 
 DESTDIR ?=	stage
