@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	stacks
-PORTVERSION=	1.48
+DISTVERSION=	1.48
 CATEGORIES=	wip biology
 MASTER_SITES=	http://catchenlab.life.illinois.edu/stacks/source/
 
