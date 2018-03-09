@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vcflib
-PORTVERSION=	1.0.0p20160208
+PORTVERSION=	1.0.0p20180208
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -30,7 +30,8 @@ CXXFLAGS+=	-I${LOCALBASE}/include/smithwaterman \
 		-I${LOCALBASE}/include/multichoose \
 		-I${LOCALBASE}/include/filevercmp \
 		-I${LOCALBASE}/include/fastahack \
-		-I${LOCALBASE}/include/intervaltree
+		-I${LOCALBASE}/include/intervaltree \
+		-DVERSION='\"${PORTVERSION}\"'
 
 INSTALL_TARGET=	install-strip
 
