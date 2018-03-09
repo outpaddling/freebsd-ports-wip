@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rarefactionanalyzer
-DISTVERSION=	0.0.0p20170111
+PORTVERSION=	0.0.0p20170111
 CATEGORIES=	wip
 
 MAINTAINER=	jwb@FreeBSD.org
