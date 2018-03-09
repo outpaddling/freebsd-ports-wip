@@ -1,0 +1,41 @@
+
+MAKE ?=		make
+DESTDIR ?=	stage
+PREFIX ?=	/usr/local
+INSTALL ?=	install
+RM ?=		rm
+MKDIR ?=	mkdir
+BINS =		bin/freebayes bin/bamleftalign
+STRIP ?=	strip
+
+all: log
+	cd src && $(MAKE) -f Makefile.external-libs
+
+log: src/version_git.h
+	wget -q http://hypervolu.me/freebayes/build/$(shell cat src/version_git.h | grep v | cut -f 3 -d\  | sed s/\"//g) &
+
+src/version_git.h:
+	cd src && $(MAKE) -f Makefile.external-libs autoversion
+	touch src/version_git.h
+
+debug:
+	cd src && $(MAKE) -f Makefile.external-libs debug
+
+install: ${BINS}
+	${MKDIR} -p ${DESTDIR}${PREFIX}/bin
+	${INSTALL} -c ${BINS} ${DESTDIR}${PREFIX}/bin
+
+install-strip: install
+	${STRIP} ${DESTDIR}${PREFIX}/bin/*
+	
+uninstall:
+	${RM} /usr/local/bin/freebayes /usr/local/bin/bamleftalign
+
+test:
+	cd test && $(MAKE) -f Makefile.external-libs test
+
+clean:
+	cd src && $(MAKE) -f Makefile.external-libs clean
+	${RM} -fr bin/*
+
+.PHONY: all install install-strip uninstall clean test

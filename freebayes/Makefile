@@ -2,7 +2,7 @@
 
 PORTNAME=	freebayes
 # FIXME: Do we need a version >= the submodules bamtools and vcflib?
-PORTVERSION=	2015.12.15
+PORTVERSION=	1.1.0p20180214
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -21,8 +21,8 @@ LIB_DEPENDS=	libbamtools.so:wip/bamtools \
 USES=		compiler:c++11-lang gmake
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	65c4880d09ec21f7f2755eac9476b607011522f3
+GH_ACCOUNT=	ekg
+GH_TAGNAME=	c15b070639d54d112988946a6902d945357e40f0
 
 CFLAGS+=	-I${LOCALBASE}/include/bamtools \
 		-I${LOCALBASE}/include/intervaltree \
@@ -35,5 +35,10 @@ MAKEFILE=	Makefile.external-libs
 INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	bin/bamleftalign bin/freebayes
+
+post-patch:
+	@${CP} ${FILESDIR}/Makefile.external-libs ${WRKSRC}
+	@${CP} ${FILESDIR}/Makefile.external-libs-src \
+		${WRKSRC}/src/Makefile.external-libs
 
 .include <bsd.port.mk>
