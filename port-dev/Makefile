@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	portlint:ports-mgmt/portlint \
 		port:ports-mgmt/porttools \
-		auto-admin:sysutils/auto-admin
+		auto-admin:wip/auto-admin
 
 USES+=		tar:xz
 
