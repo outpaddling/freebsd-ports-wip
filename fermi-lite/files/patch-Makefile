@@ -1,0 +1,64 @@
+--- Makefile.orig	2016-08-24 01:44:40 UTC
++++ Makefile
+@@ -1,32 +1,45 @@
+-CC=			gcc
+-CFLAGS=		-g -Wall -O2 -Wno-unused-function #-fno-inline-functions -fno-inline-functions-called-once
+-CPPFLAGS=
+-INCLUDES=	
++CC ?=		gcc
++CFLAGS ?=	-g -Wall -O2 -Wno-unused-function #-fno-inline-functions -fno-inline-functions-called-once
++CPPFLAGS ?=
++INCLUDES ?=	
+ OBJS=		kthread.o misc.o \
+-			bseq.o htab.o bfc.o \
+-			rle.o rope.o mrope.o rld0.o \
+-			unitig.o mag.o bubble.o ksw.o
++		bseq.o htab.o bfc.o \
++		rle.o rope.o mrope.o rld0.o \
++		unitig.o mag.o bubble.o ksw.o example.o
+ PROG=		fml-asm
+-LIBS=		-lm -lz -lpthread
++LIB=		libfml.a
++LDFLAGS +=	-lm -lz -lpthread
++
++MKDIR ?=	mkdir
++INSTALL ?=	install
++STRIP ?=	strip
+ 
+ .SUFFIXES:.c .o
+ 
+ .c.o:
+-		$(CC) -c $(CFLAGS) $(CPPFLAGS) $(INCLUDES) $< -o $@
++	$(CC) -c $(CFLAGS) $(CPPFLAGS) $(INCLUDES) $< -o $@
+ 
+-all:$(PROG)
++all: $(PROG)
+ 
+-fml-asm:libfml.a example.o
+-		$(CC) $(CFLAGS) $^ -o $@ -L. -lfml $(LIBS)
++$(PROG): $(LIB) example.o
++	$(CC) $(CFLAGS) $(OBJS) -o $(PROG) -L. -lfml $(LDFLAGS)
+ 
+-libfml.a:$(OBJS)
+-		$(AR) -csru $@ $(OBJS)
++$(LIB): $(OBJS)
++	$(AR) -csru $@ $(OBJS)
++
++install:
++	$(MKDIR) -p $(DESTDIR)$(PREFIX)/bin $(DESTDIR)$(PREFIX)/lib
++	$(INSTALL) -c $(PROG) $(DESTDIR)$(PREFIX)/bin
++	$(INSTALL) -c $(LIB) $(DESTDIR)$(PREFIX)/lib
++
++install-strip: install
++	$(STRIP) $(DESTDIR)$(PREFIX)/bin/fml-asm
+ 
+ clean:
+-		rm -fr gmon.out *.o ext/*.o a.out $(PROG) *~ *.a *.dSYM session*
++	rm -fr gmon.out *.o ext/*.o a.out $(PROG) *~ *.a *.dSYM session*
+ 
+ depend:
+-		(LC_ALL=C; export LC_ALL; makedepend -Y -- $(CFLAGS) $(DFLAGS) -- *.c)
++	(LC_ALL=C; export LC_ALL; makedepend -Y -- $(CFLAGS) $(DFLAGS) -- *.c)
+ 
+ # DO NOT DELETE
+ 
