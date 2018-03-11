@@ -17,6 +17,4 @@ GH_TAGNAME=	562638112b7992f4d7a243ccd9ab2b3bd08c6b08
 
 INSTALL_TARGET=	install-strip
 
-PLIST_FILES=	bin/fml-asm lib/libfml.a
-
 .include <bsd.port.mk>
