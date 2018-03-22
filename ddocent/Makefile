@@ -39,7 +39,7 @@ RUN_DEPENDS=	unzip>=0:archivers/unzip \
 		freebayes:wip/freebayes \
 		vcflib>=0:wip/vcflib
 
-USES=		perl5 shebangfix tar:xz
+USES=		perl5 shebangfix
 USE_JAVA=	yes
 SHEBANG_FILES=	dDocent scripts/*.sh scripts/*.pl scripts/dDocent_filters
 
