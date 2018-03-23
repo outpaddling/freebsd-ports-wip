@@ -1,0 +1,797 @@
+build started at Fri Mar 23 15:26:44 CDT 2018
+port directory: /usr/ports/wip/vcflib
+package name: vcflib-1.0.0p20180208
+building for: FreeBSD 11-1-amd64-default 11.1-RELEASE-p1 FreeBSD 11.1-RELEASE-p1 amd64
+maintained by: jwb@FreeBSD.org
+Makefile ident: 
+Poudriere version: 3.2.5
+Host OSVERSION: 1101001
+Jail OSVERSION: 1101001
+Job Id: 
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1101001
+UNAME_v=FreeBSD 11.1-RELEASE-p1
+UNAME_r=11.1-RELEASE-p1
+BLOCKSIZE=K
+MAIL=/var/mail/root
+WARNING_WAIT=0
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+TRYBROKEN=yes
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.2.5
+MASTERMNT=/usr/local/poudriere/data/.m/11-1-amd64-default/ref
+DEV_WARNING_WAIT=0
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm
+GID=0
+UID=0
+PWD=/usr/local/poudriere/data/.m/11-1-amd64-default/ref/.p
+NO_WARNING_PKG_INSTALL_EOL=yes
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=11-1-amd64-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+OLDPWD=/usr/local/poudriere/data/.m/11-1-amd64-default/ref/.p/pool
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=PACKAGES=/tmp/pkgs PKGREPOSITORY=/tmp/pkgs
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+jwb@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+MAKE=gmake XDG_DATA_HOME=/wrkdirs/usr/ports/wip/vcflib/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/vcflib/work  HOME=/wrkdirs/usr/ports/wip/vcflib/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/vcflib/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/wip/vcflib/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/vcflib/work  HOME=/wrkdirs/usr/ports/wip/vcflib/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/vcflib/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  LIBDIR="/usr/lib"  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector -fno-strict-aliasing"  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector" LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='\"1.0.0p20180208\"'"  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="" PORTEXAMPLES="" OSREL=11.1 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/vcflib"  EXAMPLESDIR="share/examples/vcflib"  DATADIR="share/vcflib"  WWWDIR="www/vcflib"  ETCDIR="etc/vcflib"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/vcflib DOCSDIR=/usr/local/share/doc/vcflib EXAMPLESDIR=/usr/local/share/examples/vcflib  WWWDIR=/usr/local/www/vcflib ETCDIR=/usr/local/etc/vcflib
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/ports/Mk/Scripts/ports_env.sh ####
+_CCVERSION_921dbbb2=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: x86_64-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin
+_ALTCCVERSION_921dbbb2=none
+_CXXINTERNAL_acaad9ca=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: x86_64-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin "/usr/bin/ld" "--eh-frame-hdr" "-dynamic-linker" "/libexec/ld-elf.so.1" "--hash-style=both" "--enable-new-dtags" "-o" "a.out" "/usr/lib/crt1.o" "/usr/lib/crti.o" "/usr/lib/crtbegin.o" "-L/usr/lib" "/dev/null" "-lc++" "-lm" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "-lc" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "/usr/lib/crtend.o" "/usr/lib/crtn.o"
+OUTPUT_58173849_921dbbb2=yes
+OUTPUT_9bdba57c_921dbbb2=yes
+OUTPUT_6a4fe7f5_921dbbb2=yes
+OUTPUT_6bcac02b_921dbbb2=yes
+OUTPUT_67d20829_921dbbb2=yes
+OUTPUT_bfa62e83_921dbbb2=yes
+OUTPUT_f0b4d593_921dbbb2=yes
+OUTPUT_308abb44_921dbbb2=yes
+OUTPUT_f00456e5_921dbbb2=yes
+OUTPUT_65ad290d_921dbbb2=yes
+OUTPUT_b2657cc3_921dbbb2=yes
+OUTPUT_380987f7_921dbbb2=yes
+ARCH=amd64
+OPSYS=FreeBSD
+_OSRELEASE=11.1-RELEASE-p1
+OSREL=11.1
+OSVERSION=1101001
+PYTHONBASE=/usr/local
+HAVE_COMPAT_IA32_KERN=YES
+_SMP_CPUS=4
+CONFIGURE_MAX_CMD_LEN=262144
+HAVE_PORTS_ENV=1
+#### Misc Poudriere ####
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19558
+open files                      (-n)  1024
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===>  License MIT accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   vcflib-1.0.0p20180208 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.10.5.txz
+[11-1-amd64-default] Installing pkg-1.10.5...
+[11-1-amd64-default] Extracting pkg-1.10.5: .......... done
+===>   vcflib-1.0.0p20180208 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of vcflib-1.0.0p20180208
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License MIT accepted by the user
+===>   vcflib-1.0.0p20180208 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by vcflib-1.0.0p20180208 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License MIT accepted by the user
+===>   vcflib-1.0.0p20180208 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by vcflib-1.0.0p20180208 for building
+=> SHA256 Checksum OK for ekg-vcflib-1.0.0p20180208-7e3d8066a6c6c0f22191a70d050ead23f9c453b3_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License MIT accepted by the user
+===>   vcflib-1.0.0p20180208 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by vcflib-1.0.0p20180208 for building
+===>  Extracting for vcflib-1.0.0p20180208
+=> SHA256 Checksum OK for ekg-vcflib-1.0.0p20180208-7e3d8066a6c6c0f22191a70d050ead23f9c453b3_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for vcflib-1.0.0p20180208
+===>  Applying FreeBSD patches for vcflib-1.0.0p20180208
+cp -f /usr/ports/wip/vcflib/files/Makefile.external-libs /wrkdirs/usr/ports/wip/vcflib/work/vcflib-7e3d8066a6c6c0f22191a70d050ead23f9c453b3
+===========================================================================
+=======================<phase: build-depends  >============================
+===>   vcflib-1.0.0p20180208 depends on package: fastahack>=0 - not found
+===>   Installing existing package /packages/All/fastahack-0.0.0p20160702.txz
+[11-1-amd64-default] Installing fastahack-0.0.0p20160702...
+[11-1-amd64-default] Extracting fastahack-0.0.0p20160702: .......... done
+===>   vcflib-1.0.0p20180208 depends on package: fastahack>=0 - found
+===>   Returning to build of vcflib-1.0.0p20180208
+===>   vcflib-1.0.0p20180208 depends on package: filevercmp>=0 - not found
+===>   Installing existing package /packages/All/filevercmp-0.0.0p20151117.txz
+[11-1-amd64-default] Installing filevercmp-0.0.0p20151117...
+[11-1-amd64-default] Extracting filevercmp-0.0.0p20151117: ...... done
+===>   vcflib-1.0.0p20180208 depends on package: filevercmp>=0 - found
+===>   Returning to build of vcflib-1.0.0p20180208
+===>   vcflib-1.0.0p20180208 depends on package: fsom>=0 - not found
+===>   Installing existing package /packages/All/fsom-0.0.0p20151117.txz
+[11-1-amd64-default] Installing fsom-0.0.0p20151117...
+[11-1-amd64-default] Extracting fsom-0.0.0p20151117: ........ done
+===>   vcflib-1.0.0p20180208 depends on package: fsom>=0 - found
+===>   Returning to build of vcflib-1.0.0p20180208
+===>   vcflib-1.0.0p20180208 depends on executable: multichoose - not found
+===>   Installing existing package /packages/All/multichoose-1.0.3p20151117.txz
+[11-1-amd64-default] Installing multichoose-1.0.3p20151117...
+[11-1-amd64-default] `-- Installing python27-2.7.14_1...
+[11-1-amd64-default] |   `-- Installing gettext-runtime-0.19.8.1_1...
+[11-1-amd64-default] |   | `-- Installing indexinfo-0.3.1...
+[11-1-amd64-default] |   | `-- Extracting indexinfo-0.3.1: .... done
+[11-1-amd64-default] |   `-- Extracting gettext-runtime-0.19.8.1_1: .......... done
+[11-1-amd64-default] |   `-- Installing libffi-3.2.1_2...
+[11-1-amd64-default] |   `-- Extracting libffi-3.2.1_2: .......... done
+[11-1-amd64-default] |   `-- Installing readline-7.0.3_1...
+[11-1-amd64-default] |   `-- Extracting readline-7.0.3_1: .......... done
+[11-1-amd64-default] `-- Extracting python27-2.7.14_1: .......... done
+[11-1-amd64-default] Extracting multichoose-1.0.3p20151117: .......... done
+Message from python27-2.7.14_1:
+
+===========================================================================
+
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+bsddb           databases/py-bsddb
+gdbm            databases/py-gdbm
+sqlite3         databases/py-sqlite3
+tkinter         x11-toolkits/py-tkinter
+
+===========================================================================
+===>   vcflib-1.0.0p20180208 depends on executable: multichoose - found
+===>   Returning to build of vcflib-1.0.0p20180208
+===>   vcflib-1.0.0p20180208 depends on package: intervaltree>=0 - not found
+===>   Installing existing package /packages/All/intervaltree-0.0.0p20151213.txz
+[11-1-amd64-default] Installing intervaltree-0.0.0p20151213...
+[11-1-amd64-default] Extracting intervaltree-0.0.0p20151213: ..... done
+===>   vcflib-1.0.0p20180208 depends on package: intervaltree>=0 - found
+===>   Returning to build of vcflib-1.0.0p20180208
+===>   vcflib-1.0.0p20180208 depends on executable: gmake - not found
+===>   Installing existing package /packages/All/gmake-4.2.1_2.txz
+[11-1-amd64-default] Installing gmake-4.2.1_2...
+[11-1-amd64-default] Extracting gmake-4.2.1_2: .......... done
+===>   vcflib-1.0.0p20180208 depends on executable: gmake - found
+===>   Returning to build of vcflib-1.0.0p20180208
+===========================================================================
+=======================<phase: lib-depends    >============================
+===>   vcflib-1.0.0p20180208 depends on shared library: libhts.so - not found
+===>   Installing existing package /packages/All/htslib-1.6.txz
+[11-1-amd64-default] Installing htslib-1.6...
+[11-1-amd64-default] `-- Installing curl-7.58.0_3...
+[11-1-amd64-default] |   `-- Installing ca_root_nss-3.36...
+[11-1-amd64-default] |   `-- Extracting ca_root_nss-3.36: ........ done
+[11-1-amd64-default] |   `-- Installing libnghttp2-1.31.0...
+[11-1-amd64-default] |   `-- Extracting libnghttp2-1.31.0: .......... done
+[11-1-amd64-default] `-- Extracting curl-7.58.0_3: .......... done
+[11-1-amd64-default] Extracting htslib-1.6: .......... done
+Message from ca_root_nss-3.36:
+
+********************************* WARNING *********************************
+
+FreeBSD does not, and can not warrant that the certification authorities
+whose certificates are included in this package have in any way been
+audited for trustworthiness or RFC 3647 compliance.
+
+Assessment and verification of trust is the complete responsibility of the
+system administrator.
+
+*********************************** NOTE **********************************
+
+This package installs symlinks to support root certificates discovery by
+default for software that uses OpenSSL.
+
+This enables SSL Certificate Verification by client software without manual
+intervention.
+
+If you prefer to do this manually, replace the following symlinks with
+either an empty file or your site-local certificate bundle.
+
+  * /etc/ssl/cert.pem
+  * /usr/local/etc/ssl/cert.pem
+  * /usr/local/openssl/cert.pem
+
+***************************************************************************
+===>   vcflib-1.0.0p20180208 depends on shared library: libhts.so - found (/usr/local/lib/libhts.so)
+===>   Returning to build of vcflib-1.0.0p20180208
+===>   vcflib-1.0.0p20180208 depends on shared library: libtabix.so - not found
+===>   Installing existing package /packages/All/tabixpp-1.0.0p20171116.txz
+[11-1-amd64-default] Installing tabixpp-1.0.0p20171116...
+[11-1-amd64-default] Extracting tabixpp-1.0.0p20171116: ........ done
+===>   vcflib-1.0.0p20180208 depends on shared library: libtabix.so - found (/usr/local/lib/libtabix.so)
+===>   Returning to build of vcflib-1.0.0p20180208
+===>   vcflib-1.0.0p20180208 depends on shared library: libsw.so - not found
+===>   Installing existing package /packages/All/smithwaterman-0.0.0p20160702.txz
+[11-1-amd64-default] Installing smithwaterman-0.0.0p20160702...
+[11-1-amd64-default] Extracting smithwaterman-0.0.0p20160702: .......... done
+===>   vcflib-1.0.0p20180208 depends on shared library: libsw.so - found (/usr/local/lib/libsw.so)
+===>   Returning to build of vcflib-1.0.0p20180208
+===========================================================================
+=>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>   vcflib-1.0.0p20180208 depends on package: fastahack>=0 - found
+===>   vcflib-1.0.0p20180208 depends on package: filevercmp>=0 - found
+===>   vcflib-1.0.0p20180208 depends on package: fsom>=0 - found
+===>   vcflib-1.0.0p20180208 depends on executable: multichoose - found
+===>   vcflib-1.0.0p20180208 depends on package: intervaltree>=0 - found
+===>   vcflib-1.0.0p20180208 depends on executable: gmake - found
+===>   vcflib-1.0.0p20180208 depends on shared library: libhts.so - found (/usr/local/lib/libhts.so)
+===>   vcflib-1.0.0p20180208 depends on shared library: libtabix.so - found (/usr/local/lib/libtabix.so)
+===>   vcflib-1.0.0p20180208 depends on shared library: libsw.so - found (/usr/local/lib/libsw.so)
+===>  Configuring for vcflib-1.0.0p20180208
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for vcflib-1.0.0p20180208
+gmake[1]: Entering directory '/wrkdirs/usr/ports/wip/vcflib/work/vcflib-7e3d8066a6c6c0f22191a70d050ead23f9c453b3'
+c++ -c -o src/Variant.o src/Variant.cpp -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11
+c++ -c -o src/rnglib.o src/rnglib.cpp -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11
+c++ -c -o src/var.o src/var.cpp -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11
+c++ -c -o src/pdflib.o src/pdflib.cpp -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11
+c++ -c -o src/cdflib.o src/cdflib.cpp -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11
+src/Variant.cpp:174:1: warning: control may reach end of non-void function [-Wreturn-type]
+};
+^
+c++ -c -o src/split.o src/split.cpp -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11
+src/Variant.cpp:502:5: warning: control may reach end of non-void function [-Wreturn-type]
+    }
+    ^
+src/Variant.cpp:627:5: warning: control may reach end of non-void function [-Wreturn-type]
+    }
+    ^
+src/Variant.cpp:661:5: warning: control may reach end of non-void function [-Wreturn-type]
+    }
+    ^
+src/Variant.cpp:699:5: warning: control may reach end of non-void function [-Wreturn-type]
+    }
+    ^
+c++ -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11   -c -o src/ssw.o src/ssw.cpp
+src/cdflib.cpp:2223:36: warning: '&&' within '||' [-Wlogical-op-parentheses]
+    if(!(*s < 0.0e0 || *which != 3 && *s > *xn)) goto S160;
+                    ~~ ~~~~~~~~~~~~^~~~~~~~~~~
+src/cdflib.cpp:2223:36: note: place parentheses around the '&&' expression to silence this warning
+    if(!(*s < 0.0e0 || *which != 3 && *s > *xn)) goto S160;
+                                   ^
+                       (                      )
+src/cdflib.cpp:3909:20: warning: '&&' within '||' [-Wlogical-op-parentheses]
+        if(!(qporq && cum > 1.5e0 || !qporq && ccum > 1.5e0)) goto S280;
+             ~~~~~~^~~~~~~~~~~~~~ ~~
+src/cdflib.cpp:3909:20: note: place parentheses around the '&&' expression to silence this warning
+        if(!(qporq && cum > 1.5e0 || !qporq && ccum > 1.5e0)) goto S280;
+                   ^
+             (                   )
+src/cdflib.cpp:3909:45: warning: '&&' within '||' [-Wlogical-op-parentheses]
+        if(!(qporq && cum > 1.5e0 || !qporq && ccum > 1.5e0)) goto S280;
+                                  ~~ ~~~~~~~^~~~~~~~~~~~~~~
+src/cdflib.cpp:3909:45: note: place parentheses around the '&&' expression to silence this warning
+        if(!(qporq && cum > 1.5e0 || !qporq && ccum > 1.5e0)) goto S280;
+                                            ^
+                                     (                     )
+src/cdflib.cpp:6924:17: warning: '&&' within '||' [-Wlogical-op-parentheses]
+    qup = qincr && yy < 0.0e0 || !qincr && yy > 0.0e0;
+          ~~~~~~^~~~~~~~~~~~~ ~~
+src/cdflib.cpp:6924:17: note: place parentheses around the '&&' expression to silence this warning
+    qup = qincr && yy < 0.0e0 || !qincr && yy > 0.0e0;
+                ^
+          (                  )
+src/cdflib.cpp:6924:41: warning: '&&' within '||' [-Wlogical-op-parentheses]
+    qup = qincr && yy < 0.0e0 || !qincr && yy > 0.0e0;
+                              ~~ ~~~~~~~^~~~~~~~~~~~~
+src/cdflib.cpp:6924:41: note: place parentheses around the '&&' expression to silence this warning
+    qup = qincr && yy < 0.0e0 || !qincr && yy > 0.0e0;
+                                        ^
+                                 (                   )
+src/cdflib.cpp:6946:18: warning: '&&' within '||' [-Wlogical-op-parentheses]
+    qbdd = qincr && yy >= 0.0e0 || !qincr && yy <= 0.0e0;
+           ~~~~~~^~~~~~~~~~~~~~ ~~
+src/cdflib.cpp:6946:18: note: place parentheses around the '&&' expression to silence this warning
+    qbdd = qincr && yy >= 0.0e0 || !qincr && yy <= 0.0e0;
+                 ^
+           (                   )
+src/cdflib.cpp:6946:43: warning: '&&' within '||' [-Wlogical-op-parentheses]
+    qbdd = qincr && yy >= 0.0e0 || !qincr && yy <= 0.0e0;
+                                ~~ ~~~~~~~^~~~~~~~~~~~~~
+src/cdflib.cpp:6946:43: note: place parentheses around the '&&' expression to silence this warning
+    qbdd = qincr && yy >= 0.0e0 || !qincr && yy <= 0.0e0;
+                                          ^
+                                   (                    )
+src/cdflib.cpp:6985:18: warning: '&&' within '||' [-Wlogical-op-parentheses]
+    qbdd = qincr && yy <= 0.0e0 || !qincr && yy >= 0.0e0;
+           ~~~~~~^~~~~~~~~~~~~~ ~~
+src/cdflib.cpp:6985:18: note: place parentheses around the '&&' expression to silence this warning
+    qbdd = qincr && yy <= 0.0e0 || !qincr && yy >= 0.0e0;
+                 ^
+           (                   )
+src/cdflib.cpp:6985:43: warning: '&&' within '||' [-Wlogical-op-parentheses]
+    qbdd = qincr && yy <= 0.0e0 || !qincr && yy >= 0.0e0;
+                                ~~ ~~~~~~~^~~~~~~~~~~~~~
+src/cdflib.cpp:6985:43: note: place parentheses around the '&&' expression to silence this warning
+    qbdd = qincr && yy <= 0.0e0 || !qincr && yy >= 0.0e0;
+                                          ^
+                                   (                    )
+src/cdflib.cpp:7190:26: warning: '&&' within '||' [-Wlogical-op-parentheses]
+    qrzero = fc >= 0.0e0 && fb <= 0.0e0 || fc < 0.0e0 && fb >= 0.0e0;
+             ~~~~~~~~~~~~^~~~~~~~~~~~~~ ~~
+src/cdflib.cpp:7190:26: note: place parentheses around the '&&' expression to silence this warning
+    qrzero = fc >= 0.0e0 && fb <= 0.0e0 || fc < 0.0e0 && fb >= 0.0e0;
+                         ^
+             (                         )
+src/cdflib.cpp:7190:55: warning: '&&' within '||' [-Wlogical-op-parentheses]
+    qrzero = fc >= 0.0e0 && fb <= 0.0e0 || fc < 0.0e0 && fb >= 0.0e0;
+                                        ~~ ~~~~~~~~~~~^~~~~~~~~~~~~~
+src/cdflib.cpp:7190:55: note: place parentheses around the '&&' expression to silence this warning
+    qrzero = fc >= 0.0e0 && fb <= 0.0e0 || fc < 0.0e0 && fb >= 0.0e0;
+                                                      ^
+                                           (                        )
+c++ -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11   -c -o src/ssw_cpp.o src/ssw_cpp.cpp
+mkdir -p bin
+11 warnings generated.
+5 warnings generated.
+ar rs libvcflib.a src/Variant.o src/rnglib.o src/var.o src/pdflib.o src/cdflib.o src/split.o src/ssw.o src/ssw_cpp.o
+c++ -shared -Wl,-soname,libvcflib.so.1 -o libvcflib.so.1 src/Variant.o src/rnglib.o src/var.o src/pdflib.o src/cdflib.o src/split.o src/ssw.o src/ssw_cpp.o
+ar: warning: creating libvcflib.a
+c++ src/vcfecho.cpp -o bin/vcfecho -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfnormalizesvs.cpp -o bin/vcfnormalizesvs -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/dumpContigsFromHeader.cpp -o bin/dumpContigsFromHeader -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/bFst.cpp -o bin/bFst -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/pVst.cpp -o bin/pVst -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/hapLrt.cpp -o bin/hapLrt -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/popStats.cpp -o bin/popStats -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/wcFst.cpp -o bin/wcFst -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/iHS.cpp -o bin/iHS -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/segmentFst.cpp -o bin/segmentFst -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/segmentIhs.cpp -o bin/segmentIhs -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/genotypeSummary.cpp -o bin/genotypeSummary -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/sequenceDiversity.cpp -o bin/sequenceDiversity -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/pFst.cpp -o bin/pFst -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+src/sequenceDiversity.cpp:282:16: warning: equality comparison result unused [-Wunused-comparison]
+              derived == 1;
+              ~~~~~~~~^~~~
+src/sequenceDiversity.cpp:282:16: note: use '=' to turn this equality comparison into an assignment
+              derived == 1;
+                      ^~
+                      =
+c++ src/smoother.cpp -o bin/smoother -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/LD.cpp -o bin/LD -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/plotHaps.cpp -o bin/plotHaps -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+1 warning generated.
+c++ src/abba-baba.cpp -o bin/abba-baba -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/permuteGPAT++.cpp -o bin/permuteGPAT++ -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+src/LD.cpp:253:16: warning: equality comparison result unused [-Wunused-comparison]
+              derived == 1;
+              ~~~~~~~~^~~~
+src/LD.cpp:253:16: note: use '=' to turn this equality comparison into an assignment
+              derived == 1;
+                      ^~
+                      =
+src/abba-baba.cpp:74:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+c++ src/permuteSmooth.cpp -o bin/permuteSmooth -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+1 warning generated.
+1 warning generated.
+c++ src/normalize-iHS.cpp -o bin/normalize-iHS -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/meltEHH.cpp -o bin/meltEHH -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfaltcount.cpp -o bin/vcfaltcount -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfhetcount.cpp -o bin/vcfhetcount -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfhethomratio.cpp -o bin/vcfhethomratio -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+src/vcfhetcount.cpp:12:31: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+    if (argc == 2 && (argv[1] == "-h" || argv[1] == "--help")) {
+                              ^  ~~~~
+src/vcfhetcount.cpp:12:50: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+    if (argc == 2 && (argv[1] == "-h" || argv[1] == "--help")) {
+                                                 ^  ~~~~~~~~
+c++ src/vcffilter.cpp -o bin/vcffilter -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+2 warnings generated.
+c++ src/vcf2tsv.cpp -o bin/vcf2tsv -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfgenotypes.cpp -o bin/vcfgenotypes -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfannotategenotypes.cpp -o bin/vcfannotategenotypes -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfcommonsamples.cpp -o bin/vcfcommonsamples -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfremovesamples.cpp -o bin/vcfremovesamples -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfkeepsamples.cpp -o bin/vcfkeepsamples -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfsamplenames.cpp -o bin/vcfsamplenames -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfgenotypecompare.cpp -o bin/vcfgenotypecompare -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcffixup.cpp -o bin/vcffixup -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfclassify.cpp -o bin/vcfclassify -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfsamplediff.cpp -o bin/vcfsamplediff -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+src/vcfsamplediff.cpp:171:39: warning: '&&' within '||' [-Wlogical-op-parentheses]
+                if (isHet(gtGermline) && isHomNonRef(gtSomatic) ||
+                    ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~ ~~
+src/vcfsamplediff.cpp:171:39: note: place parentheses around the '&&' expression to silence this warning
+                if (isHet(gtGermline) && isHomNonRef(gtSomatic) ||
+                                      ^
+                    (                                          )
+src/vcfsamplediff.cpp:172:42: warning: '&&' within '||' [-Wlogical-op-parentheses]
+                    isHomRef(gtGermline) && (isHet(gtSomatic) || isHomNonRef(gtSomatic))) {
+                    ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/vcfsamplediff.cpp:172:42: note: place parentheses around the '&&' expression to silence this warning
+                    isHomRef(gtGermline) && (isHet(gtSomatic) || isHomNonRef(gtSomatic))) {
+                                         ^
+                    (                                                                   )
+src/vcfsamplediff.cpp:173:43: warning: '&&' within '||' [-Wlogical-op-parentheses]
+                    if (!strict || strict && germlineAltCount == 0) {
+                                ~~ ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+src/vcfsamplediff.cpp:173:43: note: place parentheses around the '&&' expression to silence this warning
+                    if (!strict || strict && germlineAltCount == 0) {
+                                          ^
+                                   (                              )
+c++ src/vcfremoveaberrantgenotypes.cpp -o bin/vcfremoveaberrantgenotypes -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfrandom.cpp -o bin/vcfrandom -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+3 warnings generated.
+c++ src/vcfparsealts.cpp -o bin/vcfparsealts -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfstats.cpp -o bin/vcfstats -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfflatten.cpp -o bin/vcfflatten -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfprimers.cpp -o bin/vcfprimers -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfnumalt.cpp -o bin/vcfnumalt -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfcleancomplex.cpp -o bin/vcfcleancomplex -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfintersect.cpp -o bin/vcfintersect -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfannotate.cpp -o bin/vcfannotate -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfallelicprimitives.cpp -o bin/vcfallelicprimitives -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfoverlay.cpp -o bin/vcfoverlay -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfaddinfo.cpp -o bin/vcfaddinfo -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfkeepinfo.cpp -o bin/vcfkeepinfo -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfkeepgeno.cpp -o bin/vcfkeepgeno -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfafpath.cpp -o bin/vcfafpath -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfcountalleles.cpp -o bin/vcfcountalleles -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcflength.cpp -o bin/vcflength -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfdistance.cpp -o bin/vcfdistance -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfrandomsample.cpp -o bin/vcfrandomsample -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfentropy.cpp -o bin/vcfentropy -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfglxgt.cpp -o bin/vcfglxgt -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfroc.cpp -o bin/vcfroc -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfcheck.cpp -o bin/vcfcheck -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfstreamsort.cpp -o bin/vcfstreamsort -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfuniq.cpp -o bin/vcfuniq -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfuniqalleles.cpp -o bin/vcfuniqalleles -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfremap.cpp -o bin/vcfremap -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcf2fasta.cpp -o bin/vcf2fasta -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfsitesummarize.cpp -o bin/vcfsitesummarize -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfbreakmulti.cpp -o bin/vcfbreakmulti -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfcreatemulti.cpp -o bin/vcfcreatemulti -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfevenregions.cpp -o bin/vcfevenregions -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfcat.cpp -o bin/vcfcat -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfgenosummarize.cpp -o bin/vcfgenosummarize -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfgenosamplenames.cpp -o bin/vcfgenosamplenames -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfgeno2haplo.cpp -o bin/vcfgeno2haplo -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+src/vcfgenosummarize.cpp:14:30: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+    if (argc > 1 && (argv[1] == "-h" || argv[1] == "--help")) {
+                             ^  ~~~~
+src/vcfgenosummarize.cpp:14:49: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+    if (argc > 1 && (argv[1] == "-h" || argv[1] == "--help")) {
+                                                ^  ~~~~~~~~
+c++ src/vcfleftalign.cpp -o bin/vcfleftalign -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+src/vcfgeno2haplo.cpp:164:17: warning: '&&' within '||' [-Wlogical-op-parentheses]
+                && var.position - cluster.back().position + cluster.back().ref.size() - 1 <= windowsize) {
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/vcfgeno2haplo.cpp:164:17: note: place parentheses around the '&&' expression to silence this warning
+                && var.position - cluster.back().position + cluster.back().ref.size() - 1 <= windowsize) {
+                ^
+2 warnings generated.
+c++ src/vcfcombine.cpp -o bin/vcfcombine -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfgeno2alleles.cpp -o bin/vcfgeno2alleles -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfindex.cpp -o bin/vcfindex -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcf2dag.cpp -o bin/vcf2dag -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+1 warning generated.
+c++ src/vcfsample2info.cpp -o bin/vcfsample2info -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfqual2info.cpp -o bin/vcfqual2info -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfinfo2qual.cpp -o bin/vcfinfo2qual -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfglbound.cpp -o bin/vcfglbound -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfunphase.cpp -o bin/vcfunphase -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfnull2ref.cpp -o bin/vcfnull2ref -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfinfosummarize.cpp -o bin/vcfinfosummarize -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/wip/vcflib/work/vcflib-7e3d8066a6c6c0f22191a70d050ead23f9c453b3'
+===========================================================================
+=>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===>   vcflib-1.0.0p20180208 depends on package: filevercmp>=0 - found
+===========================================================================
+=>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for vcflib-1.0.0p20180208
+===>   vcflib-1.0.0p20180208 depends on package: filevercmp>=0 - found
+===>   Generating temporary packing list
+gmake[1]: Entering directory '/wrkdirs/usr/ports/wip/vcflib/work/vcflib-7e3d8066a6c6c0f22191a70d050ead23f9c453b3'
+mkdir -p bin
+c++ src/vcfecho.cpp -o bin/vcfecho -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfnormalizesvs.cpp -o bin/vcfnormalizesvs -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/dumpContigsFromHeader.cpp -o bin/dumpContigsFromHeader -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/bFst.cpp -o bin/bFst -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/pVst.cpp -o bin/pVst -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/hapLrt.cpp -o bin/hapLrt -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/popStats.cpp -o bin/popStats -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/wcFst.cpp -o bin/wcFst -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/iHS.cpp -o bin/iHS -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/segmentFst.cpp -o bin/segmentFst -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/segmentIhs.cpp -o bin/segmentIhs -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/genotypeSummary.cpp -o bin/genotypeSummary -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/sequenceDiversity.cpp -o bin/sequenceDiversity -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+src/sequenceDiversity.cpp:282:16: warning: equality comparison result unused [-Wunused-comparison]
+              derived == 1;
+              ~~~~~~~~^~~~
+src/sequenceDiversity.cpp:282:16: note: use '=' to turn this equality comparison into an assignment
+              derived == 1;
+                      ^~
+                      =
+1 warning generated.
+c++ src/pFst.cpp -o bin/pFst -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/smoother.cpp -o bin/smoother -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/LD.cpp -o bin/LD -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+src/LD.cpp:253:16: warning: equality comparison result unused [-Wunused-comparison]
+              derived == 1;
+              ~~~~~~~~^~~~
+src/LD.cpp:253:16: note: use '=' to turn this equality comparison into an assignment
+              derived == 1;
+                      ^~
+                      =
+1 warning generated.
+c++ src/plotHaps.cpp -o bin/plotHaps -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/abba-baba.cpp -o bin/abba-baba -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+src/abba-baba.cpp:74:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+c++ src/permuteGPAT++.cpp -o bin/permuteGPAT++ -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/permuteSmooth.cpp -o bin/permuteSmooth -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/normalize-iHS.cpp -o bin/normalize-iHS -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/meltEHH.cpp -o bin/meltEHH -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfaltcount.cpp -o bin/vcfaltcount -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfhetcount.cpp -o bin/vcfhetcount -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+src/vcfhetcount.cpp:12:31: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+    if (argc == 2 && (argv[1] == "-h" || argv[1] == "--help")) {
+                              ^  ~~~~
+src/vcfhetcount.cpp:12:50: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+    if (argc == 2 && (argv[1] == "-h" || argv[1] == "--help")) {
+                                                 ^  ~~~~~~~~
+2 warnings generated.
+c++ src/vcfhethomratio.cpp -o bin/vcfhethomratio -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcffilter.cpp -o bin/vcffilter -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcf2tsv.cpp -o bin/vcf2tsv -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfgenotypes.cpp -o bin/vcfgenotypes -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfannotategenotypes.cpp -o bin/vcfannotategenotypes -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfcommonsamples.cpp -o bin/vcfcommonsamples -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfremovesamples.cpp -o bin/vcfremovesamples -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfkeepsamples.cpp -o bin/vcfkeepsamples -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfsamplenames.cpp -o bin/vcfsamplenames -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfgenotypecompare.cpp -o bin/vcfgenotypecompare -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcffixup.cpp -o bin/vcffixup -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfclassify.cpp -o bin/vcfclassify -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfsamplediff.cpp -o bin/vcfsamplediff -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+src/vcfsamplediff.cpp:171:39: warning: '&&' within '||' [-Wlogical-op-parentheses]
+                if (isHet(gtGermline) && isHomNonRef(gtSomatic) ||
+                    ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~ ~~
+src/vcfsamplediff.cpp:171:39: note: place parentheses around the '&&' expression to silence this warning
+                if (isHet(gtGermline) && isHomNonRef(gtSomatic) ||
+                                      ^
+                    (                                          )
+src/vcfsamplediff.cpp:172:42: warning: '&&' within '||' [-Wlogical-op-parentheses]
+                    isHomRef(gtGermline) && (isHet(gtSomatic) || isHomNonRef(gtSomatic))) {
+                    ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/vcfsamplediff.cpp:172:42: note: place parentheses around the '&&' expression to silence this warning
+                    isHomRef(gtGermline) && (isHet(gtSomatic) || isHomNonRef(gtSomatic))) {
+                                         ^
+                    (                                                                   )
+src/vcfsamplediff.cpp:173:43: warning: '&&' within '||' [-Wlogical-op-parentheses]
+                    if (!strict || strict && germlineAltCount == 0) {
+                                ~~ ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+src/vcfsamplediff.cpp:173:43: note: place parentheses around the '&&' expression to silence this warning
+                    if (!strict || strict && germlineAltCount == 0) {
+                                          ^
+                                   (                              )
+3 warnings generated.
+c++ src/vcfremoveaberrantgenotypes.cpp -o bin/vcfremoveaberrantgenotypes -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfrandom.cpp -o bin/vcfrandom -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfparsealts.cpp -o bin/vcfparsealts -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfstats.cpp -o bin/vcfstats -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfflatten.cpp -o bin/vcfflatten -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfprimers.cpp -o bin/vcfprimers -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfnumalt.cpp -o bin/vcfnumalt -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfcleancomplex.cpp -o bin/vcfcleancomplex -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfintersect.cpp -o bin/vcfintersect -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfannotate.cpp -o bin/vcfannotate -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfallelicprimitives.cpp -o bin/vcfallelicprimitives -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfoverlay.cpp -o bin/vcfoverlay -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfaddinfo.cpp -o bin/vcfaddinfo -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfkeepinfo.cpp -o bin/vcfkeepinfo -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfkeepgeno.cpp -o bin/vcfkeepgeno -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfafpath.cpp -o bin/vcfafpath -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfcountalleles.cpp -o bin/vcfcountalleles -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcflength.cpp -o bin/vcflength -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfdistance.cpp -o bin/vcfdistance -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfrandomsample.cpp -o bin/vcfrandomsample -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfentropy.cpp -o bin/vcfentropy -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfglxgt.cpp -o bin/vcfglxgt -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfroc.cpp -o bin/vcfroc -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfcheck.cpp -o bin/vcfcheck -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfstreamsort.cpp -o bin/vcfstreamsort -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfuniq.cpp -o bin/vcfuniq -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfuniqalleles.cpp -o bin/vcfuniqalleles -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfremap.cpp -o bin/vcfremap -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcf2fasta.cpp -o bin/vcf2fasta -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfsitesummarize.cpp -o bin/vcfsitesummarize -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfbreakmulti.cpp -o bin/vcfbreakmulti -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfcreatemulti.cpp -o bin/vcfcreatemulti -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfevenregions.cpp -o bin/vcfevenregions -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfcat.cpp -o bin/vcfcat -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfgenosummarize.cpp -o bin/vcfgenosummarize -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+src/vcfgenosummarize.cpp:14:30: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+    if (argc > 1 && (argv[1] == "-h" || argv[1] == "--help")) {
+                             ^  ~~~~
+src/vcfgenosummarize.cpp:14:49: warning: result of comparison against a string literal is unspecified (use strncmp instead) [-Wstring-compare]
+    if (argc > 1 && (argv[1] == "-h" || argv[1] == "--help")) {
+                                                ^  ~~~~~~~~
+2 warnings generated.
+c++ src/vcfgenosamplenames.cpp -o bin/vcfgenosamplenames -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfgeno2haplo.cpp -o bin/vcfgeno2haplo -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+src/vcfgeno2haplo.cpp:164:17: warning: '&&' within '||' [-Wlogical-op-parentheses]
+                && var.position - cluster.back().position + cluster.back().ref.size() - 1 <= windowsize) {
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/vcfgeno2haplo.cpp:164:17: note: place parentheses around the '&&' expression to silence this warning
+                && var.position - cluster.back().position + cluster.back().ref.size() - 1 <= windowsize) {
+                ^
+1 warning generated.
+c++ src/vcfleftalign.cpp -o bin/vcfleftalign -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfcombine.cpp -o bin/vcfcombine -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfgeno2alleles.cpp -o bin/vcfgeno2alleles -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfindex.cpp -o bin/vcfindex -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcf2dag.cpp -o bin/vcf2dag -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfsample2info.cpp -o bin/vcfsample2info -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfqual2info.cpp -o bin/vcfqual2info -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfinfo2qual.cpp -o bin/vcfinfo2qual -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfglbound.cpp -o bin/vcfglbound -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfunphase.cpp -o bin/vcfunphase -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfnull2ref.cpp -o bin/vcfnull2ref -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+c++ src/vcfinfosummarize.cpp -o bin/vcfinfosummarize -I/usr/local/include -I/usr/local/include/smithwaterman -I/usr/local/include/multichoose -I/usr/local/include/fastahack -I/usr/local/include/intervaltree -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/smithwaterman  -I/usr/local/include/multichoose  -I/usr/local/include/filevercmp  -I/usr/local/include/fastahack  -I/usr/local/include/intervaltree  -DVERSION='"1.0.0p20180208"' -O2 -pipe  -fstack-protector -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -fPIC --std=c++11  -fstack-protector -L. -lvcflib -L/usr/local/lib -lsw -ltabix -lhts -lfastahack -lfilevercmp -lpthread -lz -lm
+mkdir -p /wrkdirs/usr/ports/wip/vcflib/work/stage/usr/local/bin
+mkdir -p /wrkdirs/usr/ports/wip/vcflib/work/stage/usr/local/include/vcflib
+mkdir -p /wrkdirs/usr/ports/wip/vcflib/work/stage/usr/local/lib
+install -c bin/* /wrkdirs/usr/ports/wip/vcflib/work/stage/usr/local/bin
+install -c src/*.h src/*.hpp /wrkdirs/usr/ports/wip/vcflib/work/stage/usr/local/include/vcflib
+install -c libvcflib.a libvcflib.so.1 /wrkdirs/usr/ports/wip/vcflib/work/stage/usr/local/lib
+strip /wrkdirs/usr/ports/wip/vcflib/work/stage/usr/local/bin/* /wrkdirs/usr/ports/wip/vcflib/work/stage/usr/local/lib/libvcflib.so.1
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/wip/vcflib/work/vcflib-7e3d8066a6c6c0f22191a70d050ead23f9c453b3'
+cp -f /wrkdirs/usr/ports/wip/vcflib/work/stage/usr/local/lib/libvcflib.so.1  /wrkdirs/usr/ports/wip/vcflib/work/stage/usr/local/lib/libvcflib.so
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+=>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for vcflib-1.0.0p20180208
+===========================================================================
+=>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for vcflib-1.0.0p20180208
+===>  Checking if vcflib already installed
+===>   Registering installation for vcflib-1.0.0p20180208
+[11-1-amd64-default] Installing vcflib-1.0.0p20180208...
+===========================================================================
+=>> Checking shared library dependencies
+ 0x0000000000000001 NEEDED               Shared library: [libc++.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libc.so.7]
+ 0x0000000000000001 NEEDED               Shared library: [libcxxrt.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libhts.so.2]
+ 0x0000000000000001 NEEDED               Shared library: [libm.so.5]
+ 0x0000000000000001 NEEDED               Shared library: [libsw.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libtabix.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libthr.so.3]
+ 0x0000000000000001 NEEDED               Shared library: [libz.so.6]
+=======================<phase: deinstall      >============================
+===>  Deinstalling for vcflib
+===>   Deinstalling vcflib-1.0.0p20180208
+Updating database digests format: .......... done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	vcflib-1.0.0p20180208
+
+Number of packages to be removed: 1
+
+The operation will free 24 MiB.
+[11-1-amd64-default] [1/1] Deinstalling vcflib-1.0.0p20180208...
+[11-1-amd64-default] [1/1] Deleting files for vcflib-1.0.0p20180208: .......... done
+===========================================================================
+=>> Checking for extra files and directories
+[00:05:26] Installing from package
+[11-1-amd64-default] Installing vcflib-1.0.0p20180208...
+[11-1-amd64-default] Extracting vcflib-1.0.0p20180208: .......... done
+[00:05:26] Cleaning up
+===>  Cleaning for vcflib-1.0.0p20180208
+[00:05:26] Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	vcflib-1.0.0p20180208
+
+Number of packages to be removed: 1
+
+The operation will free 24 MiB.
+[11-1-amd64-default] [1/1] Deinstalling vcflib-1.0.0p20180208...
+[11-1-amd64-default] [1/1] Deleting files for vcflib-1.0.0p20180208: .......... done
+build of wip/vcflib | vcflib-1.0.0p20180208 ended at Fri Mar 23 15:31:34 CDT 2018
+build time: 00:04:50
