@@ -19,6 +19,7 @@ LICENSE=	MIT
 # 0.1.15 reports version properly.
 # Do we really need trimadap?  It used to be part of seqtk.
 # ddocent test data do not unpack with FreeBSD 11.1 /usr/bin/unzip
+#		freebayes:wip/freebayes
 RUN_DEPENDS=	unzip>=0:archivers/unzip \
 		mawk>=0:lang/mawk \
 		gawk>=0:lang/gawk \
@@ -36,7 +37,6 @@ RUN_DEPENDS=	unzip>=0:archivers/unzip \
 		seqtk>=0:wip/seqtk \
 		bedtools>=2.26.0:wip/bedtools \
 		pear-merger>=0:wip/pear-merger \
-		freebayes:wip/freebayes \
 		vcflib>=0:wip/vcflib
 
 USES=		perl5 shebangfix

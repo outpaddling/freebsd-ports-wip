@@ -86,10 +86,17 @@ bin/vcfunphase
 bin/wcFst
 include/vcflib/BedReader.h
 include/vcflib/Variant.h
+include/vcflib/cdflib.hpp
 include/vcflib/convert.h
+include/vcflib/gpatInfo.hpp
 include/vcflib/join.h
 include/vcflib/mt19937ar.h
+include/vcflib/pdflib.hpp
+include/vcflib/rnglib.hpp
 include/vcflib/split.h
+include/vcflib/ssw.hpp
+include/vcflib/ssw_cpp.hpp
+include/vcflib/var.hpp
 include/vcflib/vec128int.h
 include/vcflib/veclib_types.h
 lib/libvcflib.a

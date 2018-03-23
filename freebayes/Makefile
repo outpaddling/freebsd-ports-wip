@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	freebayes
-# FIXME: Do we need a version >= the submodules bamtools and vcflib?
-PORTVERSION=	1.1.0p20180214
+PORTVERSION=	2018.03.23
 CATEGORIES=	wip biology
+MASTER_SITES=	https://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Bayesian haplotype-based polymorphism discovery and genotyping
@@ -18,11 +18,7 @@ LIB_DEPENDS=	libbamtools.so:wip/bamtools \
 		libsw.so:wip/smithwaterman \
 		libhts.so:biology/htslib
 
-USES=		compiler:c++11-lang gmake
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	ekg
-GH_TAGNAME=	c15b070639d54d112988946a6902d945357e40f0
+USES=		compiler:openmp gmake tar:xz
 
 CFLAGS+=	-I${LOCALBASE}/include/bamtools \
 		-I${LOCALBASE}/include/intervaltree \
@@ -30,15 +26,12 @@ CFLAGS+=	-I${LOCALBASE}/include/bamtools \
 		-I${LOCALBASE}/include/multichoose \
 		-I${LOCALBASE}/include/smithwaterman
 
-MAKEFILE=	Makefile.external-libs
+# MAKEFILE=	Makefile.external-libs
 
-INSTALL_TARGET=	install-strip
+# INSTALL_TARGET=	install-strip
+
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/bamleftalign bin/freebayes
-
-post-patch:
-	@${CP} ${FILESDIR}/Makefile.external-libs ${WRKSRC}
-	@${CP} ${FILESDIR}/Makefile.external-libs-src \
-		${WRKSRC}/src/Makefile.external-libs
 
 .include <bsd.port.mk>

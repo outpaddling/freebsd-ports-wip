@@ -186,7 +186,7 @@ install: all
 	$(MKDIR) $(DESTDIR)$(PREFIX)/include/vcflib
 	$(MKDIR) $(DESTDIR)$(PREFIX)/lib
 	$(INSTALL) bin/* $(DESTDIR)$(PREFIX)/bin
-	$(INSTALL) src/*.h $(DESTDIR)$(PREFIX)/include/vcflib
+	$(INSTALL) src/*.h src/*.hpp $(DESTDIR)$(PREFIX)/include/vcflib
 	$(INSTALL) $(LIB) $(SLIB) $(DESTDIR)$(PREFIX)/lib
 
 install-strip: install
