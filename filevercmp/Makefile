@@ -13,6 +13,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ekg
 GH_TAGNAME=	cccb6ba1fffa2898718b0a96c63279e0979e002b
 
+INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/filevercmp include/filevercmp.h lib/libfilevercmp.a
 
 post-patch:
