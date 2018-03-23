@@ -17,10 +17,12 @@ BUILD_DEPENDS=	fastahack>=0:wip/fastahack \
 		fsom>=0:wip/fsom \
 		multichoose:wip/multichoose \
 		intervaltree>=0:wip/intervaltree
-RUN_DEPENDS=	filevercmp>=0:wip/filevercmp
+RUN_DEPENDS=	fastahack>=0:wip/fastahack \
+		filevercmp>=0:wip/filevercmp \
+		fsom>=0:wip/fsom \
+		multichoose:wip/multichoose \
+		intervaltree>=0:wip/intervaltree
 
-# FIXME: compiler:openmp causes link errors.  compiler:gcc-c++11-lib works,
-# but openmp is not enabled by default in the upstream makefile, so is it ok?
 USES=		gmake shebangfix
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
@@ -38,7 +40,7 @@ INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 
-# GCC disables sse2 by default on i386, but it's required for vcflib
+# Clang and GCC disable sse2 by default on i386, but it's required for vcflib
 .if ${ARCH} == i386
 CFLAGS+=	-msse2
 .endif
