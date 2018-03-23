@@ -11,11 +11,9 @@ COMMENT=	Bayesian haplotype-based polymorphism discovery and genotyping
 LICENSE=	MIT
 
 USES=		gmake tar:xz
-# SeqLib does not build with clang
-USE_GCC=	yes
 
+CXXFLAGS+=	--std=c++11
 MAKE_JOBS_UNSAFE=	yes
-
 PLIST_FILES=	bin/bamleftalign bin/freebayes
 
 do-install:
