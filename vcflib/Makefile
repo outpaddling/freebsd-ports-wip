@@ -19,7 +19,8 @@ BUILD_DEPENDS=	fastahack>=0:wip/fastahack \
 		intervaltree>=0:wip/intervaltree
 RUN_DEPENDS=	filevercmp>=0:wip/filevercmp
 
-# FIXME: compiler:openmp causes link errors
+# FIXME: compiler:openmp causes link errors.  compiler:gcc-c++11-lib works,
+# but openmp is not enabled by default in the upstream makefile, so is it ok?
 USES=		gmake shebangfix
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
