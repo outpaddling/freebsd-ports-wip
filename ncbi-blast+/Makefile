@@ -1,11 +1,10 @@
 # $FreeBSD: head/biology/ncbi-blast+/Makefile 460452 2018-01-31 01:07:07Z jwb $
 
-PORTNAME=	blast+
+PORTNAME=	ncbi-blast+
 DISTVERSION=	2.7.1
 CATEGORIES=	wip biology
 MASTER_SITES=	https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ \
 		https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/
-PKGNAMEPREFIX=	ncbi-
 DISTNAME=	ncbi-blast-${PORTVERSION}+-src
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -37,8 +36,6 @@ SHEBANG_FILES=	src/app/blast/legacy_blast.pl \
 		src/app/blast/update_blastdb.pl \
 		src/app/winmasker/windowmasker_2.2.22_adapter.py
 
-# MAKE_JOBS_UNSAFE=	yes
-
 USE_LDCONFIG=	yes
 
 # The test for amq can hang, but amq is not needed so just avoid the test
@@ -46,8 +43,8 @@ USE_LDCONFIG=	yes
 
 # configure chooses /usr/local/bin/ar with no flags
 # FreeBSD boost port flagged by configure as untested version
-# Conflict with graphics/proj on lib/libproj.a
-# --libdir=${PREFIX}/lib/ncbi-tools++ doesn't respect DESTDIR
+# --libdir=${PREFIX}/lib/ncbi-tools++ doesn't respect DESTDIR, so do
+# a postinstall mv.
 CONFIGURE_ARGS+=	AR="ar cr" \
 			--without-boost
 
