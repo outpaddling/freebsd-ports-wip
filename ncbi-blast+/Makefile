@@ -2,7 +2,7 @@
 
 PORTNAME=	ncbi-blast+
 DISTVERSION=	2.7.1
-CATEGORIES=	wip biology
+CATEGORIES=	wip biology perl5 python
 MASTER_SITES=	https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ \
 		https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/
 DISTNAME=	ncbi-blast-${PORTVERSION}+-src
@@ -29,15 +29,12 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libsqlite3.so:databases/sqlite3
 RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/c++
-
-GNU_CONFIGURE=	yes
 USES=		compiler:openmp gmake shebangfix perl5 python
 SHEBANG_FILES=	src/app/blast/legacy_blast.pl \
 		src/app/blast/update_blastdb.pl \
 		src/app/winmasker/windowmasker_2.2.22_adapter.py
-
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 
 # The test for amq can hang, but amq is not needed so just avoid the test
 # CONFIGURE_ENV=	ncbi_cv_prog_amq_w=no
@@ -48,17 +45,18 @@ USE_LDCONFIG=	yes
 # a postinstall mv.
 CONFIGURE_ARGS+=	AR="ar cr" \
 			--without-boost
+WRKSRC=			${WRKDIR}/${DISTNAME}/c++
 
 # Fix "undefined _ThreadRuneLocale" error on 10.0
 # Fix unknown options in configure
 # Add staging support to configure-generated Makefile
 post-patch:
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e 's|-D_THREAD_SAFE|-D_THREAD_SAFE -D__RUNETYPE_INTERNAL|' \
 		-e '/--infodir=DIR/d' \
 		-e '/--mandir=DIR/d' \
 		${WRKSRC}/src/build-system/configure
-	${REINPLACE_CMD} -e 's|@prefix@|${STAGEDIR}@prefix@|g' \
+	@${REINPLACE_CMD} -e 's|@prefix@|${STAGEDIR}@prefix@|g' \
 		${WRKSRC}/src/build-system/Makefile.in.top
 
 post-install:
