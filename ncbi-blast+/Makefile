@@ -25,7 +25,8 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libtasn1.so:security/libtasn1 \
 		libp11-kit.so:security/p11-kit \
 		libgcrypt.so:security/libgcrypt \
-		libgpg-error.so:security/libgpg-error
+		libgpg-error.so:security/libgpg-error \
+		libsqlite3.so:databases/sqlite3
 RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/c++
