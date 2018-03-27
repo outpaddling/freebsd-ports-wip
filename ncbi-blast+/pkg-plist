@@ -3986,5 +3986,3 @@ lib/ncbi-tools++/libxutil-static.a
 lib/ncbi-tools++/libxutil.a
 lib/ncbi-tools++/libxxconnect-static.a
 lib/ncbi-tools++/libxxconnect.a
-@dir lib/ncbi-tools++/X11/app-defaults
-@dir lib/ncbi-tools++/debug

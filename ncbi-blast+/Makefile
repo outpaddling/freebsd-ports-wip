@@ -37,35 +37,31 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 # The test for amq can hang, but amq is not needed so just avoid the test
-# CONFIGURE_ENV=	ncbi_cv_prog_amq_w=no
+CONFIGURE_ENV=	ncbi_cv_prog_amq_w=no
 
 # configure chooses /usr/local/bin/ar with no flags
 # FreeBSD boost port flagged by configure as untested version
 # --libdir=${PREFIX}/lib/ncbi-tools++ doesn't respect DESTDIR, so do
 # a postinstall mv.
-CONFIGURE_ARGS+=	AR="ar cr" \
-			--without-boost
+CONFIGURE_ARGS+=	AR="ar cr" --without-boost --libdir=${PREFIX}/lib/ncbi-tools++
+
 WRKSRC=			${WRKDIR}/${DISTNAME}/c++
+
+MAKE_JOBS_UNSAFE=	yes
 
 # Fix "undefined _ThreadRuneLocale" error on 10.0
 # Fix unknown options in configure
-# Add staging support to configure-generated Makefile
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|-D_THREAD_SAFE|-D_THREAD_SAFE -D__RUNETYPE_INTERNAL|' \
 		-e '/--infodir=DIR/d' \
 		-e '/--mandir=DIR/d' \
 		${WRKSRC}/src/build-system/configure
-	@${REINPLACE_CMD} -e 's|@prefix@|${STAGEDIR}@prefix@|g' \
-		${WRKSRC}/src/build-system/Makefile.in.top
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/*/*/.cvsignore.extra
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ncbi-tools++
-	@${MV} ${STAGEDIR}${PREFIX}/lib/lib* \
-		${STAGEDIR}${PREFIX}/lib/X11 \
-		${STAGEDIR}${PREFIX}/lib/debug \
-		${STAGEDIR}${PREFIX}/lib/ncbi-tools++
+	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/X11
+	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/debug
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ncbi-tools++/*.so
 
 .include <bsd.port.mk>
