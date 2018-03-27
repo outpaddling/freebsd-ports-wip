@@ -1,4 +1,4 @@
-# $FreeBSD: head/biology/ncbi-blast+/Makefile 460452 2018-01-31 01:07:07Z jwb $
+# $FreeBSD: head/wip biology/ncbi-blast+/Makefile 465726 2018-03-27 18:04:21Z jwb $
 
 PORTNAME=	ncbi-blast+
 DISTVERSION=	2.7.1
@@ -45,7 +45,7 @@ CONFIGURE_ENV=	ncbi_cv_prog_amq_w=no
 # a postinstall mv.
 CONFIGURE_ARGS+=	AR="ar cr" --without-boost --libdir=${PREFIX}/lib/ncbi-tools++
 
-WRKSRC=			${WRKDIR}/${DISTNAME}/c++
+WRKSRC_SUBDIR=		c++
 
 MAKE_JOBS_UNSAFE=	yes
 
