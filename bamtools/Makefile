@@ -1,18 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	bamtools
-PORTVERSION=	2.5.1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.5.1
 CATEGORIES=	wip biology
 
-MAINTAINER=	dsiercks@uwm.edu
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	API and toolkit for handling BAM files
 
 LICENSE=	MIT
 
 LIB_DEPENDS+=	libjsoncpp.so:devel/jsoncpp
 
-USES=		cmake:outsource compiler:c++11-lang
+USES=		cmake:outsource # compiler:c++11-lang
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	pezmaster31
