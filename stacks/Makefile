@@ -5,10 +5,11 @@ DISTVERSION=	1.48
 CATEGORIES=	wip biology
 MASTER_SITES=	http://catchenlab.life.illinois.edu/stacks/source/
 
-MAINTAINER=	dsiercks@uwm.edu
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Software pipeline for building loci from short-read sequences
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake python shebangfix
 SHEBANG_FILES=	scripts/*.pl scripts/*.py
