@@ -29,7 +29,7 @@ RUN_DEPENDS=	unzip>=0:archivers/unzip \
 		samtools>=1.3:biology/samtools \
 		vcftools>=0.1.15:biology/vcftools \
 		trimmomatic>=0:biology/trimmomatic \
-		bamtools>=0:wip/bamtools \
+		bamtools>=0:biology/bamtools \
 		stacks>=0:wip/stacks \
 		rainbow>=0:wip/rainbow \
 		trimadap>=0:wip/trimadap \
