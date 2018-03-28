@@ -1,8 +1,8 @@
 # $FreeBSD$
-# Test new versions with Trinity before upgrading
 
 PORTNAME=	transdecoder
-PORTVERSION=	2.0.1
+DISTVERSIONPREFIX=	TransDecoder-v
+DISTVERSION=	5.1.0
 CATEGORIES=	wip biology perl5
 PKGNAMEPREFIX=	p5-
 
@@ -17,27 +17,31 @@ RUN_DEPENDS=	cd-hit>=4.6.1:biology/cd-hit \
 NO_BUILD=	yes
 NO_ARCH=	yes
 USES=		perl5 shebangfix
-SHEBANG_FILES=	sample_data/runMe.sh util/pfam_mpi.pbs
+SHEBANG_FILES=	sample_data/cufflinks_example/runMe.sh \
+		sample_data/pasa_example/runMe.sh \
+		sample_data/simple_transcriptome_target/runMe.sh \
+		util/pfam_mpi.pbs
 
 USE_GITHUB=	yes
 GH_PROJECT=	TransDecoder
 
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${PORTVERSION}
-
 PERL_MOD_DIR=	${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
 PERL_UTIL_DIR=	${PREFIX}/libexec/${PORTNAME}
+SCRIPTS=	${WRKSRC}/TransDecoder.LongOrfs \
+		${WRKSRC}/TransDecoder.Predict
 
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's|$$FindBin::RealBin/PerlLib|${PERL_MOD_DIR}|g' \
 		-e 's|$$FindBin::Bin/../PerlLib|${PERL_MOD_DIR}|g' \
 		-e 's|$$FindBin::RealBin/util|${PERL_UTIL_DIR}|g' \
-		${WRKSRC}/TransDecoder* ${WRKSRC}/util/*.pl
+		${SCRIPTS} \
+		${WRKSRC}/util/*.pl
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PERL_MOD_DIR} ${STAGEDIR}${PERL_UTIL_DIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/PerlLib/* ${STAGEDIR}${PERL_MOD_DIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/TransDecoder* ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/util/*.pl ${STAGEDIR}${PERL_UTIL_DIR}
 
 .include <bsd.port.mk>
