@@ -1,5 +1,5 @@
---- build/cmake/macros/SystemSpecificInformations.cmake.orig	2016-10-19 22:27:09.555151000 -0500
-+++ build/cmake/macros/SystemSpecificInformations.cmake	2016-10-19 22:28:10.217670000 -0500
+--- build/cmake/macros/SystemSpecificInformations.cmake.orig	2016-09-29 11:34:28 UTC
++++ build/cmake/macros/SystemSpecificInformations.cmake
 @@ -265,6 +265,7 @@ if(UNIX)
      set( SYSTEM_NAME "freebsd_${FREEBSD_RELEASE}" )
      set( CONDOR_FREEBSD ON )

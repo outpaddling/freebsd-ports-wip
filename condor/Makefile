@@ -1,10 +1,12 @@
-# $FreeBSD: head/sysutils/condor/Makefile 413746 2016-04-21 16:43:14Z swills $
+# $FreeBSD$
+
 #
 # Note: Make sure there are no older versions of HTCondor installed during
 #       build.  The build system may pick up incompatible headers and libs.
 
 PORTNAME=	condor
-PORTVERSION=	8.4.9
+DISTVERSION=	8.4.9
+PORTREVISION=	9
 CATEGORIES=	wip sysutils net
 MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 DISTNAME=	condor_src-${PORTVERSION}-all-all
@@ -23,17 +25,18 @@ LIB_DEPENDS+=	libkrb5support.so:security/krb5 \
 		libboost_python.so:devel/boost-python-libs \
 		libexpat.so:textproc/expat2
 
-WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
-USE_LDCONFIG=	yes
 # Does not build with Python 3
-USES=		cmake cpe gmake perl5 pgsql python:2 shebangfix ssl
+USES=		cmake:noninja cpe perl5 pgsql python:2.7 shebangfix ssl
+USE_LDCONFIG=	yes
 CPE_VENDOR=	condor_project
 SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 		src/condor_gridmanager/remote_gahp \
 		src/condor_examples/condor_limits_wrapper.sh \
 		src/condor_examples/condor_schedd.init \
-		src/condor_starter.V6.1/condor_ssh_to_job_shell_setup
+		src/condor_starter.V6.1/condor_ssh_to_job_shell_setup \
+		src/condor_job_router/condor_router_history
 
+WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 WANT_PGSQL=	server
 CXXFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-Wl,-rpath=${_GCC_RUNTIME}:${LOCALBASE}/lib:/usr/lib:/lib -fPIC
@@ -44,6 +47,7 @@ CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
 		-DPYTHON_LIBRARY:FILEPATH=${LOCALBASE}/lib/lib${PYTHON_VERSION}.so
 
 SUB_FILES=	condor-config condor_config.local pkg-message
+PLIST_SUB+=	CONDOR_UVER=${PORTVERSION:S/./_/g}
 
 USERS=		condor
 GROUPS=		${USERS}
