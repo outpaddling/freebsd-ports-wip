@@ -22,8 +22,8 @@ BROKEN_powerpc64=	Does not build
 LIB_DEPENDS+=	libkrb5support.so:security/krb5 \
 		libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl \
-		libboost_python.so:devel/boost-python-libs \
-		libexpat.so:textproc/expat2
+		libexpat.so:textproc/expat2 \
+		${PY_BOOST}
 
 # Does not build with Python 3
 USES=		cmake:noninja cpe perl5 pgsql python:2.7 shebangfix ssl
