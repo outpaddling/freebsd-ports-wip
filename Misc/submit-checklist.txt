@@ -8,6 +8,7 @@ Makefile:
 	Ports that install only one binary can use the binary name
 
     Replace PORTVERSION with DISTVERSION wherever possible
+	* Only when changing version - breaks svn annotate / git blame
 	DISTVERSION must match upstream version
 	PORTVERSION is derived from DISTVERSION
 	Use PORTVERSION directly if DISTVERSION is incompatible with
@@ -26,7 +27,8 @@ Makefile:
 
     Tab after every =
     
-    Check = vs +=
+    Use = instead of += wherever possible
+	Use += only for vars commonly set in make.conf, like CFLAGS.
     
     Use @ to silence most commands, except in install stage
     
