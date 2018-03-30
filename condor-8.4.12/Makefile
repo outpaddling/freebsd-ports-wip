@@ -1,7 +1,6 @@
 # $FreeBSD$
 
-#
-# Note: Make sure there are no older versions of HTCondor installed during
+# Note: Make sure there are no other versions of HTCondor installed during
 #       build.  The build system may pick up incompatible headers and libs.
 
 PORTNAME=	condor
@@ -24,7 +23,7 @@ LIB_DEPENDS+=	libkrb5support.so:security/krb5 \
 		libexpat.so:textproc/expat2 \
 		${PY_BOOST}
 
-# Does not build with Python 3
+# Does not work with Python 3
 USES=		cmake:noninja cpe perl5 pgsql python:2.7 shebangfix ssl
 USE_LDCONFIG=	yes
 CPE_VENDOR=	condor_project
@@ -39,7 +38,6 @@ WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 WANT_PGSQL=	server
 CXXFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-Wl,-rpath=${_GCC_RUNTIME}:${LOCALBASE}/lib:/usr/lib:/lib -fPIC
-# Does not build with Python 3
 CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING=${LDFLAGS} \
 		-DPYTHON_INCLUDE_DIR:PATH=${LOCALBASE}/include/${PYTHON_VERSION} \
@@ -60,7 +58,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 pre-everything::
 	@( ${PRINTF} "\nWARNING: Condor needs approximately 3GB to build!"; \
-	   ${PRINTF} "         Please make sure your build environment has that much before continuing.\n" )
+	   ${PRINTF} "         Please make sure your build environment has that much space before continuing.\n" )
 
 post-patch:
 	@${REINPLACE_CMD} \
