@@ -20,6 +20,9 @@ Makefile:
     
     Add PORT_EPOCH if downgrading
 
+    Check categories
+	Add java, perl5, python, etc. for ports that use them
+
     Check all installed scripts for proper shebang line
 	(DEVELOPER=yes in /etc/make.conf will enable QA tests to detect this)
 	USES=shebangfix
@@ -30,7 +33,7 @@ Makefile:
     Use = instead of += wherever possible
 	Use += only for vars commonly set in make.conf, like CFLAGS.
     
-    Use @ to silence most commands, except in install stage
+    Use @ to silence most commands, except commands that affect installed files
     
     If updating a port
 	portsnap fetch update
@@ -49,8 +52,6 @@ Makefile:
     Check use of each LOCALBASE and PREFIX
     Remove references to wip category
     Use ${PORTNAME}, ${DISTVERSION}, etc in body wherever possible
-    Check categories
-	Add java, perl5, python, etc. for ports that use them
     
     MAINTAINER=     email
     
@@ -61,21 +62,22 @@ Makefile:
 
     Add NO_ARCH=yes if the port is architecture free
 	e.g. Only installs scripts or Java byte code
-    Keep NO_BUILD with NO_ARCH
     
     Remove WITH_DEBUG if present
 
     Replace pre and post with <bsd.port.mk> if possible
 
-    Check order of blocks: https://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/porting-order.html
-
     Check versions of all depends
 	Be as generic as possible
-	Use USES or USE_* variables wherever possible
-	    USES before USE_*
-	    See /usr/ports/Mk/Uses
-	    USE_TEX instead of tex-* depends
-	    pathfix for pkgconfig lib/libdata
+
+    Check order of blocks:
+	https://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/porting-order.html
+
+    Use USES or USE_* variables wherever possible
+	USES before USE_*
+	See /usr/ports/Mk/Uses
+	USE_TEX instead of tex-* depends
+	pathfix for pkgconfig lib/libdata
 	USE_XORG= instead of LIB_DEPENDS where possible
 
     Python
@@ -112,6 +114,7 @@ Makefile:
 	desktop-file-utils (installs a .desktop file)
 
     CMAKE_ARGS format VAR:BOOL=ON, not VAR=1
+	CMAKE_ON and CMAKE_OFF where possible
     
     Use COPYTREE_* instead of ${CP} -r
 	Combine dirs going to the same destination:
@@ -133,6 +136,7 @@ pkg-plist
 pkg-descr
     spell-check
     space, not tab after WWW
+    fmt -w 79
 
 Remove any extraneous files from port framework and add a post-extract ${RM}
 for any preexisting .orig files that cause makepatch to generate an extraneous
