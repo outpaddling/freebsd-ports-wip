@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pbcopper
-DISTVERSION=	5.0.1p20180316
+PORTVERSION=	5.0.1p20180316
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -20,5 +20,7 @@ GH_TAGNAME=	89304a3323bf920796edae1aadff5e2181dd5b1c
 do-install:
 	${INSTALL_DATA} ${BUILD_WRKSRC}/lib/*.a ${STAGEDIR}${PREFIX}/lib
 	cd ${WRKSRC}/include && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include
+	${MV} ${STAGEDIR}${PREFIX}/include/meson.build \
+		${STAGEDIR}${PREFIX}/include/pbcopper
 
 .include <bsd.port.mk>

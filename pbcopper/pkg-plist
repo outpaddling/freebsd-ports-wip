@@ -1,4 +1,4 @@
-include/meson.build
+include/pbcopper/meson.build
 include/pbcopper/PbcopperConfig.h
 include/pbcopper/align/Seed.h
 include/pbcopper/align/Seeds.h
