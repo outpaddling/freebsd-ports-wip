@@ -1,9 +1,9 @@
---- CMakeLists.txt.orig	2016-09-12 19:55:43 UTC
+--- CMakeLists.txt.orig	2018-03-07 23:10:34 UTC
 +++ CMakeLists.txt
-@@ -35,7 +35,7 @@ include(uny-ccache)
- include(uny-compilerflags)
+@@ -37,7 +37,7 @@ include(uny-ccache)
  include(uny-releasewithassert)
  include(uny-dependencies)
+ include(uny-compilerflags)
 -include(uny-gitsha1)
 +# include(uny-gitsha1)
  include(uny-config)
