@@ -1,5 +1,5 @@
---- cmake/pbcopper-gitsha1.cmake.orig	2016-09-06 10:19:02.000000000 -0500
-+++ cmake/pbcopper-gitsha1.cmake	2016-09-14 08:50:13.398229212 -0500
+--- cmake/pbcopper-gitsha1.cmake.orig	2018-03-16 16:16:38 UTC
++++ cmake/pbcopper-gitsha1.cmake
 @@ -5,16 +5,15 @@ endif()
  set(__find_git_sha1 YES)
  
