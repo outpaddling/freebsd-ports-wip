@@ -33,5 +33,7 @@ do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${BUILD_WRKSRC}/lib/* ${STAGEDIR}${PREFIX}/lib
 	cd ${WRKSRC}/include && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include
+	${MV} ${STAGEDIR}${PREFIX}/include/meson.build \
+		${STAGEDIR}${PREFIX}/include/pbbam
 
 .include <bsd.port.mk>

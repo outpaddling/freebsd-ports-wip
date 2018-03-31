@@ -3,7 +3,7 @@ bin/pbbamify
 bin/pbindex
 bin/pbindexdump
 bin/pbmerge
-include/meson.build
+include/pbbam/meson.build
 include/pbbam/Accuracy.h
 include/pbbam/AlignmentPrinter.h
 include/pbbam/BaiIndexedBamReader.h
