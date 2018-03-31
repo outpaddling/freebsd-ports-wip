@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pbbam
-PORTVERSION=	2016.09.13
+PORTVERSION=	0.0.0p20180322
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -17,12 +17,9 @@ LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so:devel/boost-libs
 
 USES=		cmake:outsource compiler:c++11-lang ssl
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
-GH_TAGNAME=	e46654e0e0b816230c16f4a6132c1feff633a62a
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
+GH_TAGNAME=	9f170446053144a2d4efe0a870e98bc41057e568
 
 # FIXME: Disable tests for now.  Bound to bundled googletest.
 CMAKE_ARGS+=	-DHTSLIB_INCLUDE_DIRS:STRING=${LOCALBASE}/include/htslib \
@@ -32,15 +29,9 @@ CMAKE_ARGS+=	-DHTSLIB_INCLUDE_DIRS:STRING=${LOCALBASE}/include/htslib \
 
 LDFLAGS+=	-L/usr/lib -lcrypto -lssl
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} <= 1000000
-IGNORE=	unsupported on FreeBSD 9 or older
-.endif
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/lib/* ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${BUILD_WRKSRC}/lib/* ${STAGEDIR}${PREFIX}/lib
 	cd ${WRKSRC}/include && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
