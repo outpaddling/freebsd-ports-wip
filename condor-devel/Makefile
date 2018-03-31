@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-2.0.txt
 
 BROKEN_powerpc64=	Does not build
 
-LIB_DEPENDS+=	libkrb5support.so:security/krb5 \
+LIB_DEPENDS=	libkrb5support.so:security/krb5 \
 		libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
@@ -40,12 +40,13 @@ WANT_PGSQL=	server
 CXXFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-Wl,-rpath=${_GCC_RUNTIME}:${LOCALBASE}/lib:/usr/lib:/lib -fPIC
 # Does not build with Python 3
-CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
+CMAKE_ARGS=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING=${LDFLAGS} \
 		-DPYTHON_INCLUDE_DIR:PATH=${LOCALBASE}/include/${PYTHON_VERSION} \
 		-DPYTHON_LIBRARY:FILEPATH=${LOCALBASE}/lib/lib${PYTHON_VERSION}.so
 
 SUB_FILES=	condor-config condor_config.local pkg-message
+PLIST_SUB=	CONDOR_UVER=${PORTVERSION:S/./_/g}
 
 USERS=		condor
 GROUPS=		${USERS}
