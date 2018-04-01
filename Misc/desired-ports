@@ -30,25 +30,28 @@ plink           2018-04-01
 py-htseq        
 py-instant      Xie
 tabixpp         2018-04-01
-tophat
+tophat		2018-04-01
 vcflib          2018-04-01
 vcftools        2018-04-01
 
 Aurash M.
 
 bedtools2       Auer
-blasr
-blasr_libcpp
-daligner
-dazz_db
+pbdagcon
+    daligner
+    dazz_db
+    blasr
+    blasr_libcpp
+py-pbfalcon
+    daligner
+    dazz_db
+    py-pypeflow
 fastaunique
 ncbi-blast      2018-03-31
 pbbam           2018-03-31
 pbcopper        2018-03-31
 pbseqan         2018-03-31
 pear-merger     2018-03
-py-pbfalcon
-py-pypeflow
 samtools        Other maaintainer
 unanimity       2018-03-31
 vcftools        Auer
