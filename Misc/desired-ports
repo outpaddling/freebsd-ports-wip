@@ -46,18 +46,18 @@ py-pbfalcon
     daligner
     dazz_db
     py-pypeflow
-fastaunique
+fastaunique	2018-03-31
 ncbi-blast      2018-03-31
 pbbam           2018-03-31
 pbcopper        2018-03-31
 pbseqan         2018-03-31
 pear-merger     2018-03
-samtools        Other maaintainer
+samtools        Other maintainer
 unanimity       2018-03-31
 vcftools        Auer
 vsearch
-illumina_utils
 gast (part of vsearch?)
+illumina_utils	2018-03-31
 
 Future:
 
