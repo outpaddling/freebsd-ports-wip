@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	2016-02-23 21:08:32.568707000 -0600
-+++ src/Makefile.in	2016-11-23 20:05:38.206924207 -0600
+--- src/Makefile.in.orig	2016-02-24 03:08:32 UTC
++++ src/Makefile.in
 @@ -1207,10 +1207,16 @@ libgc.a: $(libgc_a_OBJECTS) $(libgc_a_DE
  	-rm -f libgc.a
  	$(libgc_a_AR) libgc.a $(libgc_a_OBJECTS) $(libgc_a_LIBADD)
