@@ -3,7 +3,7 @@
 # Bugs: Conflicts with bgzip, tabix, epstopdf
 
 PORTNAME=	epacts
-PORTVERSION=	2017.08.15
+PORTVERSION=	0.0.0p20170222
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
