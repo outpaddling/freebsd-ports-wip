@@ -7,7 +7,7 @@ MASTER_SITES=	SF/bio-rainbow
 DISTNAME=	rainbow_${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Short reads clustering and local assembly
+COMMENT=	Efficient clustering and assembling of short reads, especially for RAD
 
 LICENSE=	GPLv3+
 
