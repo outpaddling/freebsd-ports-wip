@@ -1,9 +1,10 @@
 # $FreeBSD$
+
 # FIXME: Need echo "backend: Agg" >> ~/.matplotlib/matplotlibrc
 # to avoid "no matplotlib found" errors
 
 PORTNAME=	illumina-utils
-PORTVERSION=	1.4.4
+PORTVERSION=	2.3
 CATEGORIES=	wip biology python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +19,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib \
 		${PYTHON_PKGNAMEPREFIX}levenshtein>0:devel/py-levenshtein
 
 USES=		python
-USE_PYTHON=	distutils
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
