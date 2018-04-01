@@ -13,44 +13,45 @@ bwa             JB
 
 Commit IMMEDIATELY after changing this file.
 
+Program         Date last verified up-to-date
 
 UWM Genomics
 ------------
 Paul A.
 
-x bedtools2
-bowtie
-bowtie2
-bwa
-epacts
-macs2
-metal
-plink
-py-htseq
-py-instant
-tabixpp
+bedtools2       2018-04-01
+bowtie          Leave at 1.1.2: 1.2.1 crashes
+bowtie2         2018-04-01
+bwa             2018-04-01
+epacts          2018-04-01
+macs2           2018-04-01
+metal           2018-04-01
+plink           2018-04-01
+py-htseq        
+py-instant      Xie
+tabixpp         2018-04-01
 tophat
-vcflib
-vcftools
+vcflib          2018-04-01
+vcftools        2018-04-01
 
 Aurash M.
 
-bedtools2
+bedtools2       Auer
 blasr
 blasr_libcpp
 daligner
 dazz_db
 fastaunique
-ncbi-blast
-pbbam
-pbcopper
-pbseqan
-pear
+ncbi-blast      2018-03-31
+pbbam           2018-03-31
+pbcopper        2018-03-31
+pbseqan         2018-03-31
+pear-merger     2018-03
 py-pbfalcon
 py-pypeflow
-samtools
-unanimity
-vcftools
+samtools        Other maaintainer
+unanimity       2018-03-31
+vcftools        Auer
 vsearch
 illumina_utils
 gast (part of vsearch?)
@@ -62,12 +63,13 @@ sailfish
 
 UWM Math
 --------
-D. Xie
+Dexuan Xie
 
-FEniCS 2017.1 (all on pypi)
-    ffc			JB
-    fenics-fiat		JB
-    ufl			JB
-    dijitso		JB
-    instant		JB
-f2py (probably part of numpy)
+py-fenics       2018-02
+    py-ffc      2018-02
+    py-fiat     2018-02
+    py-ufl      2018-02
+    py-dijitso  2018-02
+    py-instant  2018-02
+    dolfin      2018-02
+    mshr        2018-02
