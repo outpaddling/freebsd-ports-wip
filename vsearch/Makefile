@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	vsearch
-PORTVERSION=	2.7.1
 DISTVERSIONPREFIX=v
+DISTVERSION=	2.7.1
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -13,21 +13,24 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
 
 USES=		autoreconf gmake
-GNU_CONFIGURE=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	torognes
+GNU_CONFIGURE=	yes
 
-# sse2 required to compile on 32-bit archs
 CPPFLAGS+=	-I${LOCALBASE}/include
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
 .include <bsd.port.pre.mk>
 
-#.if ${ARCH} == i386 || ${ARCH} == amd64
-#CXXFLAGS+=	-msse2
-#.endif
+.if ${ARCH} == i386
+# sse2 required to compile on non-ppc archs, off by default for i386
+# configure script doesn't respect CXXFLAGS - report to upstream
+CPPFLAGS+=	-msse2
+.endif
+
+PLIST_FILES=	bin/vsearch man/man1/vsearch.1.gz
 
 .include <bsd.port.post.mk>

@@ -1,3 +1,11 @@
-Versatile open-source tool for metagenomics.
+The aim of this project is to create an alternative to the USEARCH tool
+developed by Robert C. Edgar (2010). The new tool should:
+
+    o have open source code with an appropriate open source license
+    o be free of charge, gratis
+    o have a 64-bit design that handles very large databases and much more
+      than 4GB of memory
+    o be as accurate as or more accurate than usearch
+    o be as fast as or faster than usearch
 
 WWW: https://github.com/torognes/vsearch

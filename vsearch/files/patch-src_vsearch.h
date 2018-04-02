@@ -1,59 +1,43 @@
 --- src/vsearch.h.orig	2018-02-16 17:08:01 UTC
 +++ src/vsearch.h
-@@ -119,30 +119,40 @@
- 
- #ifdef _WIN32
- 
--#define PROG_OS "win"
--#include <windows.h>
--#include <psapi.h>
-+# define PROG_OS "win"
-+# include <windows.h>
-+# include <psapi.h>
+@@ -123,29 +123,29 @@
+ #include <windows.h>
+ #include <psapi.h>
  
 -#else
-+#else	// Any Unix
- 
+-
 -#ifdef __APPLE__
-+# ifdef __APPLE__
++#elif defined __APPLE__
  
--#define PROG_OS "macos"
--#include <sys/sysctl.h>
-+#  define PROG_OS "macos"
-+#  include <sys/sysctl.h>
+ #define PROG_OS "macos"
+ #include <sys/sysctl.h>
++#include <sys/resource.h>
  
 -#else
-+# else	// Not Apple
++#elif defined __linux__
  
 -#ifdef __linux__
--#define PROG_OS "linux"
+ #define PROG_OS "linux"
 -#else
 -#define PROG_OS "unknown"
 -#endif
-+#  ifdef __linux__
-+#   define PROG_OS "linux"
- 
--#include <sys/sysinfo.h>
-+#  else	// Not Apple or Linux
+-
+ #include <sys/sysinfo.h>
++#include <sys/resource.h>
  
 -#endif
-+#   ifdef __FreeBSD__
-+#    define PROG_OS "freebsd"
++#elif defined __FreeBSD__
  
--#include <sys/resource.h>
-+#   else	// None of the above
-+
-+#    define PROG_OS "unknown"
-+
-+#   endif
-+
-+#   include <sys/sysinfo.h>
-+ 
-+#  endif
-+
-+# endif
-+
-+# include <sys/resource.h>
++#define PROG_OS "freebsd"
++#include <sys/sysinfo.h>
+ #include <sys/resource.h>
  
- #endif
+-#endif
++#else
+ 
++#define PROG_OS "unknown"
++
++#endif
+ 
+ #define PROG_ARCH PROG_OS "_" PROG_CPU
  
