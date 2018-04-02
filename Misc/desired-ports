@@ -13,11 +13,11 @@ bwa             JB
 
 Commit IMMEDIATELY after changing this file.
 
-Program         Date last verified up-to-date
+Program         Date last verified up-to-date   Assigned to
 
 UWM Genomics
 ------------
-Paul A.
+Paul A
 
 bedtools2       2018-04-01
 bowtie          Leave at 1.1.2: 1.2.1 crashes
@@ -27,14 +27,14 @@ epacts          2018-04-01
 macs2           2018-04-01
 metal           2018-04-01
 plink           2018-04-01
-py-htseq        
+py-htseq                                        Winston
 py-instant      2018-02
 tabixpp         2018-04-01
 tophat          2018-04-01
 vcflib          2018-04-01
 vcftools        2018-04-01
 
-Aurash M.
+Aurash M
 
 bedtools2       2018-04-01
 pbdagcon
@@ -65,7 +65,7 @@ sailfish
 
 UWM Math
 --------
-Dexuan Xie
+Dexuan X
 
 py-fenics       2018-02
     py-ffc      2018-02
@@ -75,3 +75,9 @@ py-fenics       2018-02
     py-instant  2018-02
     dolfin      2018-02
     mshr        2018-02
+
+Mechanical Engineering
+----------------------
+Alexandria M
+
+OpenFOAM 5                                      Winston
