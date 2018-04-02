@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vsearch
-PORTVERSION=	2.4.2
+PORTVERSION=	2.7.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	wip biology
 
@@ -19,16 +19,15 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	torognes
 
 # sse2 required to compile on 32-bit archs
-CXXFLAGS+=	-I${LOCALBASE}/include -msse2
+CPPFLAGS+=	-I${LOCALBASE}/include
 
-OPTIONS_DEFINE=	USEARCH
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
-# If emulating usearch and usearch61 with vsearch works well, enable this
-# OPTIONS_DEFAULT=USEARCH
-USEARCH_DESC=	Install usearch wrapper scripts that call vsearch
-USEARCH_PLIST_FILES=	bin/usearch bin/usearch61
 
-do-install-USEARCH-on:
-	${INSTALL_SCRIPT} ${FILESDIR}/usearch* ${STAGEDIR}${PREFIX}/bin
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+#.if ${ARCH} == i386 || ${ARCH} == amd64
+#CXXFLAGS+=	-msse2
+#.endif
+
+.include <bsd.port.post.mk>
