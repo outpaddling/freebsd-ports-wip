@@ -28,15 +28,15 @@ macs2           2018-04-01
 metal           2018-04-01
 plink           2018-04-01
 py-htseq        
-py-instant      Xie
+py-instant      2018-02
 tabixpp         2018-04-01
-tophat		2018-04-01
+tophat          2018-04-01
 vcflib          2018-04-01
 vcftools        2018-04-01
 
 Aurash M.
 
-bedtools2       Auer
+bedtools2       2018-04-01
 pbdagcon
     daligner
     dazz_db
@@ -46,18 +46,17 @@ py-pbfalcon
     daligner
     dazz_db
     py-pypeflow
-fastaunique	2018-03-31
+fastaunique     2018-03-31
 ncbi-blast      2018-03-31
 pbbam           2018-03-31
 pbcopper        2018-03-31
 pbseqan         2018-03-31
 pear-merger     2018-03
-samtools        Other maintainer
+samtools        2018-04-01
 unanimity       2018-03-31
-vcftools        Auer
+vcftools        2018-04-01
 vsearch
-gast (part of vsearch?)
-illumina_utils	2018-03-31
+illumina_utils  2018-03-31
 
 Future:
 
