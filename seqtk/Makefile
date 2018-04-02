@@ -4,7 +4,7 @@ PORTNAME=	seqtk
 PORTVERSION=	1.2p20171107
 CATEGORIES=	wip biology
 
-MAINTAINER=	dsiercks@uwm.edu
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tool for processing sequences in FASTA/FASTQ format
 
 LICENSE=	GPLv2
