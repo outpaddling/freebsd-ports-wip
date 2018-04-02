@@ -4,7 +4,7 @@ PORTNAME=	trimadap
 PORTVERSION=	0.1p20170211
 CATEGORIES=	wip biology
 
-MAINTAINER=	dsiercks@uwm.edu
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tool for processing sequences in FASTA/FASTQ format
 
 LICENSE=	GPLv2
