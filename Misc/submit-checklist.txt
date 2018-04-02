@@ -134,6 +134,7 @@ pkg-plist
     Java .jar files in ${JAVAJARDIR}
 
 pkg-descr
+    Find a good description more than once sentence long
     spell-check
     space, not tab after WWW
     fmt -w 79

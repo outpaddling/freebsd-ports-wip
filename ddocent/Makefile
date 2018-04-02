@@ -30,7 +30,7 @@ RUN_DEPENDS=	unzip>=0:archivers/unzip \
 		vcftools>=0.1.15:biology/vcftools \
 		trimmomatic>=0:biology/trimmomatic \
 		bamtools>=0:biology/bamtools \
-		stacks>=0:wip/stacks \
+		stacks>=0:biology/stacks \
 		rainbow>=0:wip/rainbow \
 		trimadap>=0:wip/trimadap \
 		seqtk>=0:wip/seqtk \
