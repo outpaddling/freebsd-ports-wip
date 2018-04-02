@@ -7,17 +7,16 @@ The one problem a version control system doesn't mitigate is duplicated
 effort, so keep the rest of us informed about what you're working on.
 
 Send us an email before beginning new work and add your name or initials
-next to any port you're working on, e.g.
-
-bwa             JB
+next to any port you're working on.
 
 Commit IMMEDIATELY after changing this file.
 
-Program         Date last verified up-to-date   Assigned to
 
-UWM Genomics
-------------
-Paul A
+---------------------------------------------------------------------------
+Program         Date last verified up-to-date   Assigned to
+---------------------------------------------------------------------------
+
+SPH Paul A
 
 bedtools2       2018-04-01
 bowtie          Leave at 1.1.2: 1.2.1 crashes
@@ -34,7 +33,7 @@ tophat          2018-04-01
 vcflib          2018-04-01
 vcftools        2018-04-01
 
-Aurash M
+SFS Aurash M
 
 bedtools2       2018-04-01
 pbdagcon
@@ -63,9 +62,7 @@ Future:
 sleuth
 sailfish
 
-UWM Math
---------
-Dexuan X
+MATH Dexuan X
 
 py-fenics       2018-02
     py-ffc      2018-02
@@ -76,8 +73,6 @@ py-fenics       2018-02
     dolfin      2018-02
     mshr        2018-02
 
-Mechanical Engineering
-----------------------
-Alexandria M
+CEAS Alexandria M
 
 OpenFOAM 5                                      Winston
