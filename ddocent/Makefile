@@ -31,7 +31,7 @@ RUN_DEPENDS=	unzip>=0:archivers/unzip \
 		trimmomatic>=0:biology/trimmomatic \
 		bamtools>=0:biology/bamtools \
 		stacks>=0:biology/stacks \
-		rainbow>=0:wip/rainbow \
+		rainbow>=0:biology/rainbow \
 		trimadap>=0:wip/trimadap \
 		seqtk>=0:wip/seqtk \
 		bedtools>=2.26.0:wip/bedtools \
