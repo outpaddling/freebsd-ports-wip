@@ -5,7 +5,7 @@ PORTVERSION=	0.1p20170211
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Tool for processing sequences in FASTA/FASTQ format
+COMMENT=	Trim adapter sequences from Illumina data using heuristic rules
 
 LICENSE=	GPLv2
 
@@ -15,13 +15,11 @@ GH_TAGNAME=	ddfef210563830d9193b40949da3523b6fb93003
 
 PLIST_FILES=	bin/trimadap-mt
 
-.include <bsd.port.pre.mk>
+#.include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386
-CFLAGS+=	-msse2
-.endif
+CFLAGS_i386+=	-msse2
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/trimadap-mt ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
