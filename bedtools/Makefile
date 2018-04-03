@@ -6,7 +6,7 @@ DISTVERSION=	2.27.1
 CATEGORIES=	wip biology
 
 MAINTAINER=	scottcheloha@gmail.com
-COMMENT=	Toolset for genome arithmetic
+COMMENT=	Toolset for genome set arithmetic such as intersect, union
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -17,8 +17,7 @@ GH_ACCOUNT=	arq5x
 GH_PROJECT=	bedtools2
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|g' \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|g' ${WRKSRC}/Makefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bedtools
