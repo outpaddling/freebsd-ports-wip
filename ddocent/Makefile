@@ -32,8 +32,8 @@ RUN_DEPENDS=	unzip>=0:archivers/unzip \
 		bamtools>=0:biology/bamtools \
 		stacks>=0:biology/stacks \
 		rainbow>=0:biology/rainbow \
-		trimadap>=0:wip/trimadap \
-		seqtk>=0:wip/seqtk \
+		trimadap>=0:biology/trimadap \
+		seqtk>=0:biology/seqtk \
 		bedtools>=2.26.0:wip/bedtools \
 		pear-merger>=0:wip/pear-merger \
 		vcflib>=0:wip/vcflib \

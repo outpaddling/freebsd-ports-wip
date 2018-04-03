@@ -46,6 +46,9 @@ Makefile:
 	DISTVERSIONPREFIX=v preferred over GH_TAGNAME=v${DISTVERSION}
 	No need to manually set WRKSRC if using USE_GITHUB
 	Remove MASTER_SITE_SUBDIR if present (deprecated)
+
+    GITHUB
+	See USE_GITHUB in guide for versioning between releases, etc.
     
     Check use of each LOCALBASE and PREFIX
     Remove references to wip category
