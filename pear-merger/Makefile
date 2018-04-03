@@ -1,5 +1,8 @@
 # $FreeBSD$
 
+# Note: Newer versions are not freely distributable and require registration
+# to download.
+
 PORTNAME=	pear
 DISTVERSION=	0.9.6
 CATEGORIES=	wip biology
@@ -8,7 +11,7 @@ PKGNAMESUFFIX=	-merger
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src_all
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Memory-efficient and highly accurate pair-end read merger
+COMMENT=	Memory-efficient and highly accurate paired-end read merger
 
 LICENSE=	CC-BY-NC-SA-3.0
 
