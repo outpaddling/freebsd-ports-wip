@@ -33,8 +33,6 @@ Makefile:
     Use = instead of += wherever possible
 	Use += only for vars commonly set in make.conf, like CFLAGS.
     
-    Use @ to silence most commands, except commands that affect installed files
-    
     If updating a port
 	portsnap fetch update
 	Merge latest changes in committed port into development port
@@ -115,10 +113,14 @@ Makefile:
 
     CMAKE_ARGS format VAR:BOOL=ON, not VAR=1
 	CMAKE_ON and CMAKE_OFF where possible
+
+    Use CFLAGS_i386, CFLAGS_amd64, etc.
     
     Use COPYTREE_* instead of ${CP} -r
 	Combine dirs going to the same destination:
 	    cd ${WRKSRC} && COPYTREE_SHARE "A B C" ${STAGEDIR}...
+    
+    Use @ to silence most commands, except commands that affect installed files
     
     Carefully check REINPLACE_CMDS and patches
 	Patching should be done at the earliest possible stage, e.g. don't
