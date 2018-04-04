@@ -1,7 +1,6 @@
 # $FreeBSD$
 
-# Note: Newer versions are not freely distributable and require registration
-# to download.
+# Newer versions require registration to download and the site is unreliable.
 
 PORTNAME=	pear
 DISTVERSION=	0.9.6
