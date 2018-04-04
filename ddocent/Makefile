@@ -35,7 +35,7 @@ RUN_DEPENDS=	unzip>=0:archivers/unzip \
 		trimadap>=0:biology/trimadap \
 		seqtk>=0:biology/seqtk \
 		bedtools>=2.26.0:wip/bedtools \
-		pear-merger>=0:wip/pear-merger \
+		pear-merger>=0:biology/pear-merger \
 		vcflib>=0:wip/vcflib \
 		freebayes:wip/freebayes
 
