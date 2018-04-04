@@ -32,7 +32,8 @@ tabixpp         2018-04-01
 tophat          2018-04-01
 vcflib          2018-04-01
 vcftools        2018-04-01
-snptest						Winston (Use static binary)
+snptest                                         Winston
+    http://www.well.ox.ac.uk/~gav/resources/snptest_v2.5.2_linux_x86_64_static.tgz
 
 SFS Aurash M
 
@@ -55,7 +56,7 @@ pear-merger     2018-03
 samtools        2018-04-01
 unanimity       2018-03-31
 vcftools        2018-04-01
-vsearch		2018-04-01
+vsearch         2018-04-01
 illumina_utils  2018-03-31
 
 Future:
