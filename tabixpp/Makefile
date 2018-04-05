@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	tabixpp
-PORTVERSION=	1.0.0p20171116
+DISTVERSION=	v1.0.0-10
+DISTVERSIONSUFFIX=	-g6bbe690
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -16,10 +17,11 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ekg
-GH_TAGNAME=	6bbe6907d0d4b63e9c00e130a9a66d509bdcd29d
 
 CXXFLAGS+=	-I${LOCALBASE}/include
-MAKE_ENV+=	HTS_HEADERS='' LIBPATH=-L${LOCALBASE}/lib HTS_LIB=''
+LDFLAGS+=	-L${LOCALBASE}/lib
+# Disable bundled htslib
+MAKE_ENV=	HTS_HEADERS='' HTS_LIB=''
 
 INSTALL_TARGET=	install-strip
 
@@ -33,7 +35,6 @@ post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 post-install:
-	${CP} ${STAGEDIR}${PREFIX}/lib/libtabix.so.1 \
-		${STAGEDIR}${PREFIX}/lib/libtabix.so
+	(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -s libtabix.so.1 libtabix.so)
 
 .include <bsd.port.mk>

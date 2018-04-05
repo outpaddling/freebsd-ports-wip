@@ -14,7 +14,8 @@ CXXFLAGS +=	-fPIC
 INCLUDES ?=	-Ihtslib
 HTS_HEADERS ?=	htslib/htslib/bgzf.h htslib/htslib/tbx.h
 HTS_LIB ?=	htslib/libhts.a
-LIBPATH ?=	-L. -Lhtslib
+LDFLAGS ?=	-Lhtslib
+LDFLAGS +=	-L.
 
 DESTDIR ?=	stage
 PREFIX ?=	/usr/local
@@ -42,7 +43,7 @@ all-recur lib-recur clean-recur cleanlocal-recur install-recur:
 	list='$(SUBDIRS)'; for subdir in $$list; do \
 		cd $$subdir; \
 		$(MAKE) CC="$(CC)" DFLAGS="$(DFLAGS)" CXXFLAGS="$(CXXFLAGS)" \
-			INCLUDES="$(INCLUDES)" LIBPATH="$(LIBPATH)" $$target \
+			INCLUDES="$(INCLUDES)" LDFLAGS="$(LDFLAGS)" $$target \
 			|| exit 1; \
 		cd $$wdir; \
 	done;
@@ -62,7 +63,7 @@ $(SLIB): $(OBJS)
 	$(CXX) -shared -Wl,-soname,$(SLIB) -o $(SLIB) $(OBJS)
 
 tabix++: $(OBJS) main.cpp $(HTS_LIB)
-	$(CXX) $(CXXFLAGS) -o $@ main.cpp $(OBJS) $(INCLUDES) $(LIBPATH) \
+	$(CXX) $(CXXFLAGS) -o $@ main.cpp $(OBJS) $(INCLUDES) $(LDFLAGS) \
 		-lhts -lpthread -lm -lz
 
 install: all
