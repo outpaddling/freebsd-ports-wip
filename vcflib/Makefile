@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	vcflib
-PORTVERSION=	1.0.0p20180208
+DISTVERSION=	v1.0.0-rc1-130
+DISTVERSIONSUFFIX=	-g7e3d806
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -27,7 +28,6 @@ USES=		gmake shebangfix
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	ekg
-GH_TAGNAME=	7e3d8066a6c6c0f22191a70d050ead23f9c453b3
 
 CXXFLAGS+=	-I${LOCALBASE}/include/smithwaterman \
 		-I${LOCALBASE}/include/multichoose \
@@ -38,12 +38,8 @@ CXXFLAGS+=	-I${LOCALBASE}/include/smithwaterman \
 
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.pre.mk>
-
 # Clang and GCC disable sse2 by default on i386, but it's required for vcflib
-.if ${ARCH} == i386
-CFLAGS+=	-msse2
-.endif
+CFLAGS_i386=	-msse2
 
 MAKEFILE=		Makefile.external-libs
 INSTALL_TARGET=		install-strip
@@ -52,7 +48,7 @@ post-patch:
 	${CP} ${FILESDIR}/Makefile.external-libs ${WRKSRC}
 
 post-install:
-	${CP} ${STAGEDIR}${PREFIX}/lib/libvcflib.so.1 \
+	${LN} -s ${STAGEDIR}${PREFIX}/lib/libvcflib.so.1 \
 		${STAGEDIR}${PREFIX}/lib/libvcflib.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
