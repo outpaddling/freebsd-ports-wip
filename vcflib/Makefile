@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	vcflib
-DISTVERSION=	v1.0.0-rc1-130
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.0-rc1-130
 DISTVERSIONSUFFIX=	-g7e3d806
 CATEGORIES=	wip biology
 
@@ -48,7 +49,7 @@ post-patch:
 	${CP} ${FILESDIR}/Makefile.external-libs ${WRKSRC}
 
 post-install:
-	${LN} -s ${STAGEDIR}${PREFIX}/lib/libvcflib.so.1 \
-		${STAGEDIR}${PREFIX}/lib/libvcflib.so
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libvcflib.so.1 \
+		${STAGEDIR}${PREFIX}/liblibvcflib.so
 
 .include <bsd.port.mk>
