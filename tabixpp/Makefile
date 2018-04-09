@@ -4,7 +4,7 @@ PORTNAME=	tabixpp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0-10
 DISTVERSIONSUFFIX=	-g6bbe690
-CATEGORIES=	biology
+CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	C++ wrapper to tabix indexer
