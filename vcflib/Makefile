@@ -50,6 +50,6 @@ post-patch:
 
 post-install:
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libvcflib.so.1 \
-		${STAGEDIR}${PREFIX}/liblibvcflib.so
+		${STAGEDIR}${PREFIX}/lib/libvcflib.so
 
 .include <bsd.port.mk>
