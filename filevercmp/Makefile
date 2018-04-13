@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	filevercmp
-PORTVERSION=	0.0.0p20151117
+DISTVERSION=	g20151117
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
