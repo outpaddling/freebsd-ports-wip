@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	smithwaterman
-PORTVERSION=	0.0.0p20160702
+DISTVERSION=	g20160702
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
