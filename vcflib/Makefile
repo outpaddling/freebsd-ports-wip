@@ -1,10 +1,10 @@
 # $FreeBSD$
 
-PORTNAME=	vcflib
+PORTNAME=		vcflib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0-rc1-130
+DISTVERSION=		1.0.0-rc1-130
 DISTVERSIONSUFFIX=	-g7e3d806
-CATEGORIES=	wip biology
+CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	C++ library and CLI tools for parsing and manipulating VCF files
@@ -14,16 +14,13 @@ LICENSE=	MIT
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libtabix.so:wip/tabixpp \
 		libsw.so:wip/smithwaterman
-BUILD_DEPENDS=	fastahack>=0:wip/fastahack \
-		filevercmp>=0:wip/filevercmp \
-		fsom>=0:wip/fsom \
-		multichoose:wip/multichoose \
-		intervaltree>=0:wip/intervaltree
-RUN_DEPENDS=	fastahack>=0:wip/fastahack \
-		filevercmp>=0:wip/filevercmp \
-		fsom>=0:wip/fsom \
-		multichoose:wip/multichoose \
-		intervaltree>=0:wip/intervaltree
+COMMON_DEPENDS=	fastahack:wip/fastahack \
+		filevercmp:wip/filevercmp \
+		fsom:wip/fsom \
+		multichoose>=1.0.3:wip/multichoose \
+		interval_tree_test:wip/intervaltree
+BUILD_DEPENDS=	${COMMON_DEPENDS}
+RUN_DEPENDS=	${COMMON_DEPENDS}
 
 USES=		gmake shebangfix
 USE_LDCONFIG=	yes
