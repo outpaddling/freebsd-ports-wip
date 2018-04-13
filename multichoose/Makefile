@@ -1,8 +1,10 @@
 # $FreeBSD$
 
-PORTNAME=	multichoose
-PORTVERSION=	1.0.3p20151117
-CATEGORIES=	wip math
+PORTNAME=		multichoose
+DISTVERSIONPREFIX=	v
+DISTVERSION=		1.0.3-2
+DISTVERSIONSUFFIX=	-g3b8d14e
+CATEGORIES=		wip math
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Generate multiset combinations (n multichoose k)
@@ -14,7 +16,6 @@ SHEBANG_FILES=	*.py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ekg
-GH_TAGNAME=	3b8d14e616c719de88261614f0e78195d8ed49e9
 
 INSTALL_TARGET=	install-strip
 
