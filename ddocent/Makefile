@@ -24,6 +24,7 @@ RUN_DEPENDS=	unzip>=0:archivers/unzip \
 		gawk>=0:lang/gawk \
 		gnuplot>=0:math/gnuplot \
 		parallel>=0:sysutils/parallel \
+		bash:shells/bash \
 		bwa>=0.7.13:biology/bwa \
 		cd-hit>=0:biology/cd-hit \
 		samtools>=1.3:biology/samtools \
