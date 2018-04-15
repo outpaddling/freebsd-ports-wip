@@ -22,6 +22,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	unzip>=0:archivers/unzip \
 		mawk>=0:lang/mawk \
 		gawk>=0:lang/gawk \
+		coreutils>=0:sysutils/coreutils \
 		gnuplot>=0:math/gnuplot \
 		parallel>=0:sysutils/parallel \
 		bash:shells/bash \
