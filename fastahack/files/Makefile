@@ -31,7 +31,7 @@ $(BIN): $(OBJS) $(MAIN)
 	$(CXX) $(CXXFLAGS) $(OBJS) $(MAIN) -o $(BIN)
 
 $(LIB): $(OBJS)
-	$(AR) -rs $(LIB) $(OBJS)
+	${AR} -rs $(LIB) $(OBJS)
 
 FastaHack.o: Fasta.h FastaHack.cpp
 	$(CXX) $(CXXFLAGS) -c FastaHack.cpp

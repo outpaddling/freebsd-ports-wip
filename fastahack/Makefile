@@ -13,9 +13,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ekg
 GH_TAGNAME=	bbc645f2f7966cb7b44446200c02627c3168b399
 
+MAKEFILE=	${FILESDIR}/Makefile
 INSTALL_TARGET=	install-strip
-
-post-patch:
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 .include <bsd.port.mk>
