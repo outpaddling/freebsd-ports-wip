@@ -11,5 +11,6 @@ fi
 
 pkg install -y unzip bwa samtools cd-hit openjdk cmake gnuplot parallel \
     texinfo gawk mawk htslib help2man trimmomatic unzip bwa vcftools \
-    trimmomatic
+    trimmomatic coreutils ninja bamtools stacks rainbow trimadap seqtk \
+    pear-merger
 wip-reinstall-port ddocent
