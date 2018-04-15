@@ -12,7 +12,7 @@ COMMENT=	C++ library and CLI tools for parsing and manipulating VCF files
 LICENSE=	MIT
 
 LIB_DEPENDS=	libhts.so:biology/htslib \
-		libtabix.so:wip/tabixpp \
+		libtabix.so:biology/tabixpp \
 		libsw.so:wip/smithwaterman
 COMMON_DEPENDS=	fastahack:wip/fastahack \
 		filevercmp:wip/filevercmp \
