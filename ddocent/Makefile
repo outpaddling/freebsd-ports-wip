@@ -41,7 +41,7 @@ RUN_DEPENDS=	unzip>=0:archivers/unzip \
 		vcflib>=0:wip/vcflib \
 		freebayes:wip/freebayes
 
-USES=		perl5 shebangfix
+USES=		perl5 python shebangfix
 USE_JAVA=	yes
 SHEBANG_FILES=	dDocent scripts/*.sh scripts/*.pl scripts/dDocent_filters
 
@@ -56,6 +56,7 @@ post-stage:
 	${REINPLACE_CMD} -i '' \
 		-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g' \
+		-e 's|python|${PYTHON_CMD}|g' \
 		${STAGEDIR}${PREFIX}/bin/dDocent
 
 do-install:

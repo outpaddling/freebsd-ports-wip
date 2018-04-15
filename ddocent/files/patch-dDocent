@@ -1,4 +1,4 @@
---- dDocent.orig	2018-04-15 12:32:26 UTC
+--- dDocent.orig	2018-04-15 14:03:37 UTC
 +++ dDocent
 @@ -1,6 +1,9 @@
  #!/usr/local/bin/bash
@@ -47,7 +47,22 @@
  	if [ "$BWAV" -lt "13" ]; then
          	echo "The version of bwa installed in your" '$PATH' "is not optimized for dDocent."
          	echo "Please install at least version 0.7.13"
-@@ -388,10 +392,10 @@ if [ "$SNP" != "no" ]; then
+@@ -107,13 +111,12 @@ BTC=$( bedtools --version | mawk '{print
+ 		exit 1	
+ 	fi
+ 		
+-if ! awk --version | fgrep -v GNU &>/dev/null; then
++if ! awk --version | fgrep GNU &>/dev/null; then
+          awk=gawk
+     else
+          awk=awk
+ fi
+ 
+-
+ if [ $NUMDEP -gt 0 ]; then
+ 	echo -e "\nPlease install all required software before running dDocent again."
+ 	exit 1
+@@ -388,10 +391,10 @@ if [ "$SNP" != "no" ]; then
  	}
  	export -f call_genos
  
@@ -61,7 +76,7 @@
  
  
  	rm mapped.*.bed 
-@@ -447,8 +451,8 @@ fi
+@@ -447,8 +450,8 @@ fi
  
  #Function for trimming reads using trimmomatic
  trim_reads(){
@@ -72,7 +87,7 @@
  
  	if [ -f $1.R.fq.gz ]; then	
  		java -Xmx2g -jar $TRIMMOMATIC PE -threads 2 -phred33 $1.F.fq.gz $1.R.fq.gz $1.R1.fq.gz $1.unpairedF.fq.gz $1.R2.fq.gz $1.unpairedR.fq.gz ILLUMINACLIP:$ADAPTERS:2:30:10 LEADING:20 TRAILING:20 SLIDINGWINDOW:5:10 $TW &> $1.trim.log
-@@ -747,7 +751,14 @@ else
+@@ -747,7 +750,14 @@ else
  fi
  
  #Tries to get number of processors, if not asks user
@@ -88,7 +103,7 @@
  NUMProc=$(($NUMProc + 0)) 
  
  echo "dDocent detects $NUMProc processors available on this system."
-@@ -764,7 +775,15 @@ if [ $NUMProc -lt 1 ]; then
+@@ -764,7 +774,15 @@ if [ $NUMProc -lt 1 ]; then
  fi
  
  #Tries to get maximum system memory, if not asks user
