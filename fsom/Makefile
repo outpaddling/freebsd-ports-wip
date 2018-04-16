@@ -14,8 +14,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ekg
 GH_TAGNAME=	56695e1611d824cda97f08e932d25d08419170cd
 
-# CXXFLAGS+=	-fomit-frame-pointer -ffast-math
-
 INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	bin/fsom \
@@ -24,7 +22,6 @@ PLIST_FILES=	bin/fsom \
 		include/fsom/split.h \
 		lib/libfsom.a
 
-post-patch:
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}
+MAKEFILE=	${FILESDIR}/Makefile
 
 .include <bsd.port.mk>
