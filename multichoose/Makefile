@@ -13,13 +13,10 @@ LICENSE=	MIT
 
 USES=		python shebangfix
 SHEBANG_FILES=	*.py
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	ekg
 
+MAKEFILE=	${FILESDIR}/Makefile
 INSTALL_TARGET=	install-strip
-
-post-patch:
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 .include <bsd.port.mk>
