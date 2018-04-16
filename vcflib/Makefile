@@ -18,7 +18,7 @@ COMMON_DEPENDS=	fastahack:biology/fastahack \
 		filevercmp:sysutils/filevercmp \
 		fsom:science/fsom \
 		multichoose>=1.0.3:math/multichoose \
-		interval_tree_test:wip/intervaltree
+		interval_tree_test:math/intervaltree
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 RUN_DEPENDS=	${COMMON_DEPENDS}
 
