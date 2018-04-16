@@ -14,7 +14,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libtabix.so:biology/tabixpp \
 		libsw.so:biology/smithwaterman
-COMMON_DEPENDS=	fastahack:wip/fastahack \
+COMMON_DEPENDS=	fastahack:biology/fastahack \
 		filevercmp:wip/filevercmp \
 		fsom:wip/fsom \
 		multichoose>=1.0.3:wip/multichoose \
