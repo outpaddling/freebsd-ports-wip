@@ -34,8 +34,6 @@ CXXFLAGS+=	-I${LOCALBASE}/include/smithwaterman \
 		-I${LOCALBASE}/include/intervaltree \
 		-DVERSION='\"${PORTVERSION}\"'
 
-INSTALL_TARGET=	install-strip
-
 # Clang and GCC disable sse2 by default on i386, but it's required for vcflib
 CFLAGS_i386=	-msse2
 
