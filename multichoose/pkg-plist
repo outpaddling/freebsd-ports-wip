@@ -1,7 +1,0 @@
-bin/cmultichoose
-bin/multichoose
-bin/multichoose.py
-bin/multipermute
-bin/multipermute.py
-include/multichoose/multichoose.h
-include/multichoose/multipermute.h
