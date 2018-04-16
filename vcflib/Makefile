@@ -16,7 +16,7 @@ LIB_DEPENDS=	libhts.so:biology/htslib \
 		libsw.so:biology/smithwaterman
 COMMON_DEPENDS=	fastahack:biology/fastahack \
 		filevercmp:sysutils/filevercmp \
-		fsom:wip/fsom \
+		fsom:science/fsom \
 		multichoose>=1.0.3:wip/multichoose \
 		interval_tree_test:wip/intervaltree
 BUILD_DEPENDS=	${COMMON_DEPENDS}
