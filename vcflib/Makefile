@@ -39,11 +39,8 @@ INSTALL_TARGET=	install-strip
 # Clang and GCC disable sse2 by default on i386, but it's required for vcflib
 CFLAGS_i386=	-msse2
 
-MAKEFILE=		Makefile.external-libs
-INSTALL_TARGET=		install-strip
-
-post-patch:
-	${CP} ${FILESDIR}/Makefile.external-libs ${WRKSRC}
+MAKEFILE=	${FILESDIR}/Makefile.external-libs
+INSTALL_TARGET=	install-strip
 
 post-install:
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libvcflib.so.1 \
