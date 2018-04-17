@@ -28,6 +28,7 @@ if [ $# != 2 ]; then
 fi
 
 PORTSDIR=${PORTSDIR:-/usr/ports}
+EDITOR=${EDITOR:-vi}
 
 port=$1
 category=$2
@@ -46,12 +47,12 @@ rsync -av --delete $PORTSDIR/wip/$port $PORTSDIR/$category
 
 sed -i '' '/^CATEGORIES/s|wip ||' $PORTSDIR/$category/$port/Makefile
 cd $PORTSDIR/$category/$port
-vi Makefile pkg-descr
+$EDITOR Makefile pkg-descr
 port-check
 printf "Add port? y/[n] "
 read add
 if [ 0$add = 0y ]; then
     cd ..
     svn add $port
-    vi Makefile
+    $EDITOR Makefile
 fi
