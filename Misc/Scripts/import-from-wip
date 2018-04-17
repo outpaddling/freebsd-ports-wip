@@ -1,0 +1,57 @@
+#!/bin/sh -e
+
+##########################################################################
+#   Script description:
+#       
+#   Arguments:
+#       
+#   Returns:
+#       
+#   History:
+#   Date        Name        Modification
+#   2018-04-17  Charlie &   Begin
+##########################################################################
+
+usage()
+{
+    printf "Usage: $0 port category\n"
+    exit 1
+}
+
+
+##########################################################################
+#   Main
+##########################################################################
+
+if [ $# != 2 ]; then
+    usage
+fi
+
+PORTSDIR=${PORTSDIR:-/usr/ports}
+
+port=$1
+category=$2
+
+port=`echo $port | sed -e 's|/$||'`
+
+if [ -e $PORTSDIR/$category/$port ]; then
+    printf "$PORTSDIR/$category/$port already exists.  Overwrite? y/[n] \n"
+    read overwrite
+    if [ 0$overwrite != 0y ]; then
+	exit
+    fi
+fi
+
+rsync -av --delete $PORTSDIR/wip/$port $PORTSDIR/$category
+
+sed -i '' '/^CATEGORIES/s|wip ||' $PORTSDIR/$category/$port/Makefile
+cd $PORTSDIR/$category/$port
+vi Makefile pkg-descr
+port-check
+printf "Add port? y/[n] "
+read add
+if [ 0$add = 0y ]; then
+    cd ..
+    svn add $port
+    vi Makefile
+fi
