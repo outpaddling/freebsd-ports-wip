@@ -39,7 +39,7 @@ RUN_DEPENDS=	unzip>=0:archivers/unzip \
 		bedtools>=2.26.0:wip/bedtools \
 		pear-merger>=0:biology/pear-merger \
 		vcflib>=0:wip/vcflib \
-		freebayes:wip/freebayes
+		freebayes:wip/freebayes-rolled
 
 USES=		perl5 python shebangfix
 USE_JAVA=	yes
