@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.27.1
 CATEGORIES=	wip biology
 
-MAINTAINER=	scottcheloha@gmail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Toolset for genome set arithmetic such as intersect, union
 
 LICENSE=	GPLv2
@@ -16,8 +16,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	arq5x
 GH_PROJECT=	bedtools2
 
-post-patch:
+pre-build:
 	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|@\$$(CXX)|$$(CXX)|g' \
+		${WRKSRC}/*/Makefile \
+		${WRKSRC}/*/*/Makefile \
+		${WRKSRC}/*/*/*/Makefile \
+		${WRKSRC}/*/*/*/*/Makefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bedtools
