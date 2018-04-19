@@ -49,10 +49,13 @@ sed -i '' '/^CATEGORIES/s|wip ||' $PORTSDIR/$category/$port/Makefile
 cd $PORTSDIR/$category/$port
 $EDITOR Makefile pkg-descr
 port-check
-printf "Add port? y/[n] "
-read add
-if [ 0$add = 0y ]; then
-    cd ..
-    svn add $port
-    $EDITOR Makefile
+
+if [ 0$overwrite != 0y ]; then
+    printf "Add port? y/[n] "
+    read add
+    if [ 0$add = 0y ]; then
+	cd ..
+	svn add $port
+	$EDITOR Makefile
+    fi
 fi
