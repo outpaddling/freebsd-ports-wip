@@ -5,7 +5,7 @@ read remove
 if [ 0$remove = 0y ]; then
     pkg_delete='pkg delete'
     $pkg_delete tabixpp smithwaterman fastahack filevercmp fsom multichoose \
-	intervaltree vcflib rainbow bamtools freebayes stacks \
+	intervaltree vcflib rainbow bamtools freebayes stacks bwa \
 	seqtk trimadap bedtools2 pear-merger vcftools ddocent || true
 fi
 

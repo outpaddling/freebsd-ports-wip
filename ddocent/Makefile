@@ -38,7 +38,7 @@ RUN_DEPENDS=	unzip>=0:archivers/unzip \
 		seqtk>=0:biology/seqtk \
 		bedtools>=2.26.0:wip/bedtools \
 		pear-merger>=0:biology/pear-merger \
-		vcflib>=0:wip/vcflib \
+		vcflib>=0:biology/vcflib \
 		freebayes:wip/freebayes
 
 USES=		perl5 python shebangfix
