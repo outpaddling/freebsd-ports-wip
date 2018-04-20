@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if [ $# != 1 ]; then
-    echo "Usage: $0 license-file"
-    exit 1
-fi
-
-cp $1 %%PREFIX%%/freesurfer/.license
-

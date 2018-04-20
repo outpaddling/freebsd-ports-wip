@@ -1,4 +1,0 @@
-FREESURFER_HOME=%%PREFIX%%/freesurfer
-export FREESURFER_HOME
-alias freesurfer_env='. %%PREFIX%%/freesurfer/FreeSurferEnv.sh; cat %%PREFIX%%/freesurfer/env_warning'
-
