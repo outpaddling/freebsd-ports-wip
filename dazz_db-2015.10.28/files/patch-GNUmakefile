@@ -1,9 +1,0 @@
---- GNUmakefile.orig	2015-10-31 08:12:35.213768885 -0500
-+++ GNUmakefile	2015-10-31 08:12:39.011773784 -0500
-@@ -1,5 +1,5 @@
- THISDIR:=$(abspath $(dir $(realpath $(lastword ${MAKEFILE_LIST}))))
--CFLAGS+= -O3 -Wall -Wextra -fno-strict-aliasing -Wno-unused-result
-+CFLAGS+= -Wall -Wextra -fno-strict-aliasing -Wno-unused-result
- CPPFLAGS+= -MMD -MP
- LDLIBS+= -lm
- LDFLAGS+=
