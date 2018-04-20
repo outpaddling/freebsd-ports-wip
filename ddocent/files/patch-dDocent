@@ -1,11 +1,11 @@
---- dDocent.orig	2018-04-19 22:29:32 UTC
+--- dDocent.orig	2018-04-20 00:10:34 UTC
 +++ dDocent
 @@ -1,6 +1,9 @@
  #!/usr/local/bin/bash
  export LC_ALL=en_US.UTF-8
  
 +# GNU Parallel uses $SHELL and has issues with [t]csh
-+export SHELL=/usr/local/bin/bash
++export SHELL=%%BASH%%
 +
  ##########dDocent##########
  VERSION='2.2.25'
