@@ -1,3 +1,8 @@
-Pacific Biosciences Consensus library and applications
+Unanimity is a C++ library and applications to generate and process accurate
+consensus sequences from Pacific Biosciences sequence data.
+
+CCS (circular consensus calling) takes multiple reads of the same SMRTbell
+sequence and combines them, employing a statistical model, to produce one high
+quality consensus sequence.
 
 WWW: https://github.com/PacificBiosciences/unanimity
