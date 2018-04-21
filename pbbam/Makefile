@@ -24,7 +24,7 @@ CMAKE_ARGS+=	-DHTSLIB_INCLUDE_DIRS:STRING=${LOCALBASE}/include/htslib \
 		-DHTSLIB_LIBRARIES:STRING="-L${LOCALBASE}/lib -lhts" \
 		-DPacBioBAM_build_tests:BOOL=OFF \
 		-DPacBioBAM_build_docs:BOOL=OFF
-LDFLAGS+=	-L/usr/lib -lcrypto -lssl
+LDFLAGS+=	-lcrypto -lssl
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
