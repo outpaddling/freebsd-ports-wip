@@ -14,7 +14,7 @@ BUILD_DEPENDS=	boost-libs>=1.60.0:devel/boost-libs
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so:devel/boost-libs
 
-USES=		cmake:outsource ssl
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
 GH_TAGNAME=	c6b8113adb5104948879e9ff69f739121f12a09f
@@ -24,7 +24,7 @@ CMAKE_ARGS+=	-DHTSLIB_INCLUDE_DIRS:STRING=${LOCALBASE}/include/htslib \
 		-DHTSLIB_LIBRARIES:STRING="-L${LOCALBASE}/lib -lhts" \
 		-DPacBioBAM_build_tests:BOOL=OFF \
 		-DPacBioBAM_build_docs:BOOL=OFF
-LDFLAGS+=	-lcrypto -lssl
+# LDFLAGS+=	-lcrypto -lssl
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
