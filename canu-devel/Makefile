@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	canu
-PORTVERSION=	2017.10.16
 DISTVERSIONPREFIX=v
+DISTVERSION=	1.7
 CATEGORIES=	wip biology java
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -18,13 +18,10 @@ USES=		compiler:openmp gmake perl5
 USE_JAVA=	yes
 JAVA_RUN=	yes
 JAVA_VERSION=	1.8+
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	marbl
-GH_TAGNAME=	f9284f864d075b678022f8971e36b8d894631e3d
 
 WRKSRC_SUBDIR=	src
-
 # Makefile compiles directly into ${DESTDIR}${PREFIX}
 MAKE_ENV+=	DESTDIR=${WRKSRC}
 

@@ -6,6 +6,7 @@ bin/canu.defaults
 bin/correctOverlaps
 bin/createFalconSenseInputs
 bin/dumpBlob
+bin/edalign
 bin/erateEstimate
 bin/errorEstimate
 bin/estimate-mer-threshold
@@ -47,8 +48,10 @@ bin/overlapPair
 bin/positionDB
 bin/prefixEditDistance-matchLimitGenerate
 bin/readConsensus
+bin/sequence
 bin/simple
 bin/simple-dump
+bin/splitHaplotype
 bin/splitReads
 bin/tgStoreCompress
 bin/tgStoreCoverageStat
@@ -57,6 +60,7 @@ bin/tgStoreFilter
 bin/tgStoreLoad
 bin/tgTigDisplay
 bin/trimReads
+bin/trioCanu
 bin/utgcns
 lib/libcanu.a
 lib/libleaff.a
@@ -74,6 +78,7 @@ lib/libleaff.a
 %%SITE_PERL%%/canu/Grid_PBSTorque.pm
 %%SITE_PERL%%/canu/Grid_SGE.pm
 %%SITE_PERL%%/canu/Grid_Slurm.pm
+%%SITE_PERL%%/canu/HaplotypeReads.pm
 %%SITE_PERL%%/canu/Meryl.pm
 %%SITE_PERL%%/canu/Output.pm
 %%SITE_PERL%%/canu/OverlapBasedTrimming.pm
