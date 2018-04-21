@@ -11,7 +11,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	boost-libs>=1.60.0:devel/boost-libs
-LIB_DEPENDS=	libhts.so:wip biology/htslib \
+LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so:devel/boost-libs
 
 USES=		cmake pkgconfig
