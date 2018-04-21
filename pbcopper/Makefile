@@ -1,5 +1,6 @@
 # $FreeBSD$
 
+# Although there are a couple releases, git describe --tags does not work
 PORTNAME=	pbcopper
 PORTVERSION=	5.0.1p20180413
 CATEGORIES=	wip biology
