@@ -11,8 +11,7 @@ COMMENT=	Tools for port development
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	portlint:ports-mgmt/portlint \
-		port:ports-mgmt/porttools \
-		auto-admin:wip/auto-admin
+		port:ports-mgmt/porttools
 
 USES+=		tar:xz
 
