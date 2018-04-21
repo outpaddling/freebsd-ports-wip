@@ -5,12 +5,10 @@ DISTVERSION=	g20171002
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	PacBio patched and stripped down seqan
+COMMENT=	Pacific Biosciences patched and stripped down SeqAn
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-USES=		compiler:c++11-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
