@@ -3,7 +3,6 @@ bin/pbbamify
 bin/pbindex
 bin/pbindexdump
 bin/pbmerge
-include/pbbam/meson.build
 include/pbbam/Accuracy.h
 include/pbbam/AlignmentPrinter.h
 include/pbbam/BaiIndexedBamReader.h
@@ -119,6 +118,7 @@ include/pbbam/internal/ReadGroupInfo.inl
 include/pbbam/internal/SequenceInfo.inl
 include/pbbam/internal/Tag.inl
 include/pbbam/internal/Validator.inl
+include/pbbam/meson.build
 include/pbbam/virtual/VirtualPolymeraseBamRecord.h
 include/pbbam/virtual/VirtualPolymeraseCompositeReader.h
 include/pbbam/virtual/VirtualPolymeraseReader.h
