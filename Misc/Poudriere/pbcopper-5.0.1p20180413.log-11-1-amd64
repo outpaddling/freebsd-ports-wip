@@ -1,0 +1,409 @@
+build started at Sat Apr 21 15:57:57 CDT 2018
+port directory: /usr/ports/wip/pbcopper
+package name: pbcopper-5.0.1p20180413
+building for: FreeBSD 11-1-amd64-default 11.1-RELEASE-p9 FreeBSD 11.1-RELEASE-p9 amd64
+maintained by: jwb@FreeBSD.org
+Makefile ident: 
+Poudriere version: 3.2.6
+Host OSVERSION: 1101001
+Jail OSVERSION: 1101001
+Job Id: 
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1101001
+UNAME_v=FreeBSD 11.1-RELEASE-p9
+UNAME_r=11.1-RELEASE-p9
+BLOCKSIZE=K
+MAIL=/var/mail/root
+WARNING_WAIT=0
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+TRYBROKEN=yes
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.2.6
+MASTERMNT=/usr/local/poudriere/data/.m/11-1-amd64-default/ref
+DEV_WARNING_WAIT=0
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm
+GID=0
+UID=0
+PWD=/usr/local/poudriere/data/.m/11-1-amd64-default/ref/.p
+NO_WARNING_PKG_INSTALL_EOL=yes
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=11-1-amd64-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+OLDPWD=/usr/local/poudriere/data/.m/11-1-amd64-default/ref/.p/pool
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=PACKAGES=/tmp/pkgs PKGREPOSITORY=/tmp/pkgs
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+jwb@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/wip/pbcopper/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/pbcopper/work  HOME=/wrkdirs/usr/ports/wip/pbcopper/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/pbcopper/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/wip/pbcopper/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/pbcopper/work  HOME=/wrkdirs/usr/ports/wip/pbcopper/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/pbcopper/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES DESTDIR=/wrkdirs/usr/ports/wip/pbcopper/work/stage PREFIX=/usr/local  LOCALBASE=/usr/local  LIBDIR="/usr/lib"  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector -fno-strict-aliasing"  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector" LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector -fno-strict-aliasing "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="" PORTEXAMPLES="" CMAKE_BUILD_TYPE="release" OSREL=11.1 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/pbcopper"  EXAMPLESDIR="share/examples/pbcopper"  DATADIR="share/pbcopper"  WWWDIR="www/pbcopper"  ETCDIR="etc/pbcopper"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/pbcopper DOCSDIR=/usr/local/share/doc/pbcopper EXAMPLESDIR=/usr/local/share/examples/pbcopper  WWWDIR=/usr/local/www/pbcopper ETCDIR=/usr/local/etc/pbcopper
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/ports/Mk/Scripts/ports_env.sh ####
+_CCVERSION_921dbbb2=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: x86_64-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin
+_ALTCCVERSION_921dbbb2=none
+_CXXINTERNAL_acaad9ca=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: x86_64-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin "/usr/bin/ld" "--eh-frame-hdr" "-dynamic-linker" "/libexec/ld-elf.so.1" "--hash-style=both" "--enable-new-dtags" "-o" "a.out" "/usr/lib/crt1.o" "/usr/lib/crti.o" "/usr/lib/crtbegin.o" "-L/usr/lib" "/dev/null" "-lc++" "-lm" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "-lc" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "/usr/lib/crtend.o" "/usr/lib/crtn.o"
+CC_OUTPUT_921dbbb2_58173849=yes
+CC_OUTPUT_921dbbb2_9bdba57c=yes
+CC_OUTPUT_921dbbb2_6a4fe7f5=yes
+CC_OUTPUT_921dbbb2_6bcac02b=yes
+CC_OUTPUT_921dbbb2_67d20829=yes
+CC_OUTPUT_921dbbb2_bfa62e83=yes
+CC_OUTPUT_921dbbb2_f0b4d593=yes
+CC_OUTPUT_921dbbb2_308abb44=yes
+CC_OUTPUT_921dbbb2_f00456e5=yes
+CC_OUTPUT_921dbbb2_65ad290d=yes
+CC_OUTPUT_921dbbb2_b2657cc3=yes
+CC_OUTPUT_921dbbb2_380987f7=yes
+_OBJC_CCVERSION_921dbbb2=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: x86_64-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin
+_OBJC_ALTCCVERSION_921dbbb2=none
+ARCH=amd64
+OPSYS=FreeBSD
+_OSRELEASE=11.1-RELEASE-p9
+OSREL=11.1
+OSVERSION=1101001
+PYTHONBASE=/usr/local
+HAVE_COMPAT_IA32_KERN=YES
+_SMP_CPUS=32
+CONFIGURE_MAX_CMD_LEN=262144
+HAVE_PORTS_ENV=1
+#### Misc Poudriere ####
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  63766
+open files                      (-n)  1024
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===>  License BSD3CLAUSE accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   pbcopper-5.0.1p20180413 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.10.5.txz
+[11-1-amd64-default] Installing pkg-1.10.5...
+[11-1-amd64-default] Extracting pkg-1.10.5: .......... done
+===>   pbcopper-5.0.1p20180413 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of pbcopper-5.0.1p20180413
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License BSD3CLAUSE accepted by the user
+===>   pbcopper-5.0.1p20180413 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by pbcopper-5.0.1p20180413 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License BSD3CLAUSE accepted by the user
+===>   pbcopper-5.0.1p20180413 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by pbcopper-5.0.1p20180413 for building
+=> SHA256 Checksum OK for PacificBiosciences-pbcopper-5.0.1p20180413-17ef457a0dbe1894a8d17af7ddba01a6261bf117_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License BSD3CLAUSE accepted by the user
+===>   pbcopper-5.0.1p20180413 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by pbcopper-5.0.1p20180413 for building
+===>  Extracting for pbcopper-5.0.1p20180413
+=> SHA256 Checksum OK for PacificBiosciences-pbcopper-5.0.1p20180413-17ef457a0dbe1894a8d17af7ddba01a6261bf117_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for pbcopper-5.0.1p20180413
+===>  Applying FreeBSD patches for pbcopper-5.0.1p20180413
+===========================================================================
+=======================<phase: build-depends  >============================
+===>   pbcopper-5.0.1p20180413 depends on file: /usr/local/bin/cmake - not found
+===>   Installing existing package /packages/All/cmake-3.11.0_2.txz
+[11-1-amd64-default] Installing cmake-3.11.0_2...
+[11-1-amd64-default] `-- Installing curl-7.59.0...
+[11-1-amd64-default] |   `-- Installing ca_root_nss-3.36.1...
+[11-1-amd64-default] |   `-- Extracting ca_root_nss-3.36.1: ........ done
+[11-1-amd64-default] |   `-- Installing libnghttp2-1.31.1...
+[11-1-amd64-default] |   `-- Extracting libnghttp2-1.31.1: .......... done
+[11-1-amd64-default] `-- Extracting curl-7.59.0: .......... done
+[11-1-amd64-default] `-- Installing expat-2.2.5...
+[11-1-amd64-default] `-- Extracting expat-2.2.5: .......... done
+[11-1-amd64-default] `-- Installing jsoncpp-1.8.1_3...
+[11-1-amd64-default] `-- Extracting jsoncpp-1.8.1_3: .......... done
+[11-1-amd64-default] `-- Installing libarchive-3.3.2,1...
+[11-1-amd64-default] |   `-- Installing liblz4-1.8.1.2,1...
+[11-1-amd64-default] |   `-- Extracting liblz4-1.8.1.2,1: .......... done
+[11-1-amd64-default] |   `-- Installing lzo2-2.10_1...
+[11-1-amd64-default] |   `-- Extracting lzo2-2.10_1: .......... done
+[11-1-amd64-default] `-- Extracting libarchive-3.3.2,1: .......... done
+[11-1-amd64-default] `-- Installing libuv-1.20.1...
+[11-1-amd64-default] `-- Extracting libuv-1.20.1: .......... done
+[11-1-amd64-default] `-- Installing rhash-1.3.5...
+[11-1-amd64-default] `-- Extracting rhash-1.3.5: .......... done
+[11-1-amd64-default] Extracting cmake-3.11.0_2: .......... done
+Message from ca_root_nss-3.36.1:
+
+********************************* WARNING *********************************
+
+FreeBSD does not, and can not warrant that the certification authorities
+whose certificates are included in this package have in any way been
+audited for trustworthiness or RFC 3647 compliance.
+
+Assessment and verification of trust is the complete responsibility of the
+system administrator.
+
+*********************************** NOTE **********************************
+
+This package installs symlinks to support root certificates discovery by
+default for software that uses OpenSSL.
+
+This enables SSL Certificate Verification by client software without manual
+intervention.
+
+If you prefer to do this manually, replace the following symlinks with
+either an empty file or your site-local certificate bundle.
+
+  * /etc/ssl/cert.pem
+  * /usr/local/etc/ssl/cert.pem
+  * /usr/local/openssl/cert.pem
+
+***************************************************************************
+===>   pbcopper-5.0.1p20180413 depends on file: /usr/local/bin/cmake - found
+===>   Returning to build of pbcopper-5.0.1p20180413
+===>   pbcopper-5.0.1p20180413 depends on executable: ninja - not found
+===>   Installing existing package /packages/All/ninja-1.8.2,2.txz
+[11-1-amd64-default] Installing ninja-1.8.2,2...
+[11-1-amd64-default] `-- Installing python27-2.7.14_1...
+[11-1-amd64-default] |   `-- Installing gettext-runtime-0.19.8.1_1...
+[11-1-amd64-default] |   | `-- Installing indexinfo-0.3.1...
+[11-1-amd64-default] |   | `-- Extracting indexinfo-0.3.1: .... done
+[11-1-amd64-default] |   `-- Extracting gettext-runtime-0.19.8.1_1: .......... done
+[11-1-amd64-default] |   `-- Installing libffi-3.2.1_2...
+[11-1-amd64-default] |   `-- Extracting libffi-3.2.1_2: .......... done
+[11-1-amd64-default] |   `-- Installing readline-7.0.3_1...
+[11-1-amd64-default] |   `-- Extracting readline-7.0.3_1: .......... done
+[11-1-amd64-default] `-- Extracting python27-2.7.14_1: .......... done
+[11-1-amd64-default] Extracting ninja-1.8.2,2: ....... done
+Message from python27-2.7.14_1:
+
+===========================================================================
+
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+bsddb           databases/py-bsddb
+gdbm            databases/py-gdbm
+sqlite3         databases/py-sqlite3
+tkinter         x11-toolkits/py-tkinter
+
+===========================================================================
+===>   pbcopper-5.0.1p20180413 depends on executable: ninja - found
+===>   Returning to build of pbcopper-5.0.1p20180413
+===========================================================================
+=======================<phase: lib-depends    >============================
+===>   pbcopper-5.0.1p20180413 depends on shared library: libboost_regex.so - not found
+===>   Installing existing package /packages/All/boost-libs-1.67.0_1.txz
+[11-1-amd64-default] Installing boost-libs-1.67.0_1...
+[11-1-amd64-default] `-- Installing icu-61.1,1...
+[11-1-amd64-default] `-- Extracting icu-61.1,1: .......... done
+[11-1-amd64-default] Extracting boost-libs-1.67.0_1: .......... done
+Message from boost-libs-1.67.0_1:
+
+You have built the Boost library with thread support.
+
+Don't forget to add -pthread to your linker options when
+linking your code.
+===>   pbcopper-5.0.1p20180413 depends on shared library: libboost_regex.so - found (/usr/local/lib/libboost_regex.so)
+===>   Returning to build of pbcopper-5.0.1p20180413
+===========================================================================
+=>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>   pbcopper-5.0.1p20180413 depends on file: /usr/local/bin/cmake - found
+===>   pbcopper-5.0.1p20180413 depends on executable: ninja - found
+===>   pbcopper-5.0.1p20180413 depends on shared library: libboost_regex.so - found (/usr/local/lib/libboost_regex.so)
+===>  Configuring for pbcopper-5.0.1p20180413
+===>  Performing in-source build
+/bin/mkdir -p /wrkdirs/usr/ports/wip/pbcopper/work/pbcopper-17ef457a0dbe1894a8d17af7ddba01a6261bf117
+-- The CXX compiler identification is Clang 4.0.0
+-- The C compiler identification is Clang 4.0.0
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Performing Test HAS_NO_UNUSED_LOCAL_TYPEDEFS
+-- Performing Test HAS_NO_UNUSED_LOCAL_TYPEDEFS - Success
+-- Boost version: 1.67.0
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+Doxygen not found. 'make doc' will not be available. Install Doxygen and re-run cmake if you would like to be able to build API documentation locally.
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Found Threads: TRUE  
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_COLOR_MAKEFILE
+    CMAKE_CXX_FLAGS_DEBUG
+    CMAKE_C_FLAGS_DEBUG
+    CMAKE_C_FLAGS_RELEASE
+    CMAKE_MODULE_LINKER_FLAGS
+    CMAKE_SHARED_LINKER_FLAGS
+    CMAKE_VERBOSE_MAKEFILE
+
+
+-- Build files have been written to: /wrkdirs/usr/ports/wip/pbcopper/work/pbcopper-17ef457a0dbe1894a8d17af7ddba01a6261bf117
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for pbcopper-5.0.1p20180413
+[1/18] /usr/bin/c++   -isystem /usr/local/include -Iinclude -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++14 -MD -MT src/CMakeFiles/pbcopper.dir/__/generated/utility/PbcopperGitHash.cpp.o -MF src/CMakeFiles/pbcopper.dir/__/generated/utility/PbcopperGitHash.cpp.o.d -o src/CMakeFiles/pbcopper.dir/__/generated/utility/PbcopperGitHash.cpp.o -c generated/utility/PbcopperGitHash.cpp
+[2/18] /usr/bin/c++   -isystem /usr/local/include -Iinclude -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++14 -MD -MT src/CMakeFiles/pbcopper.dir/__/generated/utility/PbcopperVersion.cpp.o -MF src/CMakeFiles/pbcopper.dir/__/generated/utility/PbcopperVersion.cpp.o.d -o src/CMakeFiles/pbcopper.dir/__/generated/utility/PbcopperVersion.cpp.o -c generated/utility/PbcopperVersion.cpp
+[3/18] /usr/bin/c++   -isystem /usr/local/include -Iinclude -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++14 -MD -MT src/CMakeFiles/pbcopper.dir/data/RSMovieName.cpp.o -MF src/CMakeFiles/pbcopper.dir/data/RSMovieName.cpp.o.d -o src/CMakeFiles/pbcopper.dir/data/RSMovieName.cpp.o -c src/data/RSMovieName.cpp
+[4/18] /usr/bin/c++   -isystem /usr/local/include -Iinclude -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++14 -MD -MT src/CMakeFiles/pbcopper.dir/utility/CallbackTimer.cpp.o -MF src/CMakeFiles/pbcopper.dir/utility/CallbackTimer.cpp.o.d -o src/CMakeFiles/pbcopper.dir/utility/CallbackTimer.cpp.o -c src/utility/CallbackTimer.cpp
+[5/18] /usr/bin/c++   -isystem /usr/local/include -Iinclude -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++14 -MD -MT src/CMakeFiles/pbcopper.dir/data/MovieName.cpp.o -MF src/CMakeFiles/pbcopper.dir/data/MovieName.cpp.o.d -o src/CMakeFiles/pbcopper.dir/data/MovieName.cpp.o -c src/data/MovieName.cpp
+[6/18] /usr/bin/c++   -isystem /usr/local/include -Iinclude -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++14 -MD -MT src/CMakeFiles/pbcopper.dir/data/Cigar.cpp.o -MF src/CMakeFiles/pbcopper.dir/data/Cigar.cpp.o.d -o src/CMakeFiles/pbcopper.dir/data/Cigar.cpp.o -c src/data/Cigar.cpp
+[7/18] /usr/bin/c++   -isystem /usr/local/include -Iinclude -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++14 -MD -MT src/CMakeFiles/pbcopper.dir/logging/Logging.cpp.o -MF src/CMakeFiles/pbcopper.dir/logging/Logging.cpp.o.d -o src/CMakeFiles/pbcopper.dir/logging/Logging.cpp.o -c src/logging/Logging.cpp
+[8/18] /usr/bin/c++   -isystem /usr/local/include -Iinclude -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++14 -MD -MT src/CMakeFiles/pbcopper.dir/data/CigarOperation.cpp.o -MF src/CMakeFiles/pbcopper.dir/data/CigarOperation.cpp.o.d -o src/CMakeFiles/pbcopper.dir/data/CigarOperation.cpp.o -c src/data/CigarOperation.cpp
+[9/18] /usr/bin/c++   -isystem /usr/local/include -Iinclude -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++14 -MD -MT src/CMakeFiles/pbcopper.dir/cli/VersionPrinter.cpp.o -MF src/CMakeFiles/pbcopper.dir/cli/VersionPrinter.cpp.o.d -o src/CMakeFiles/pbcopper.dir/cli/VersionPrinter.cpp.o -c src/cli/VersionPrinter.cpp
+[10/18] /usr/bin/c++   -isystem /usr/local/include -Iinclude -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++14 -MD -MT src/CMakeFiles/pbcopper.dir/cli/Option.cpp.o -MF src/CMakeFiles/pbcopper.dir/cli/Option.cpp.o.d -o src/CMakeFiles/pbcopper.dir/cli/Option.cpp.o -c src/cli/Option.cpp
+[11/18] /usr/bin/c++   -isystem /usr/local/include -Iinclude -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++14 -MD -MT src/CMakeFiles/pbcopper.dir/cli/CLI.cpp.o -MF src/CMakeFiles/pbcopper.dir/cli/CLI.cpp.o.d -o src/CMakeFiles/pbcopper.dir/cli/CLI.cpp.o -c src/cli/CLI.cpp
+[12/18] /usr/bin/c++   -isystem /usr/local/include -Iinclude -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++14 -MD -MT src/CMakeFiles/pbcopper.dir/cli/Parser.cpp.o -MF src/CMakeFiles/pbcopper.dir/cli/Parser.cpp.o.d -o src/CMakeFiles/pbcopper.dir/cli/Parser.cpp.o -c src/cli/Parser.cpp
+[13/18] /usr/bin/c++   -isystem /usr/local/include -Iinclude -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++14 -MD -MT src/CMakeFiles/pbcopper.dir/cli/HelpPrinter.cpp.o -MF src/CMakeFiles/pbcopper.dir/cli/HelpPrinter.cpp.o.d -o src/CMakeFiles/pbcopper.dir/cli/HelpPrinter.cpp.o -c src/cli/HelpPrinter.cpp
+[14/18] /usr/bin/c++   -isystem /usr/local/include -Iinclude -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++14 -MD -MT src/CMakeFiles/pbcopper.dir/cli/toolcontract/ResolvedToolContract.cpp.o -MF src/CMakeFiles/pbcopper.dir/cli/toolcontract/ResolvedToolContract.cpp.o.d -o src/CMakeFiles/pbcopper.dir/cli/toolcontract/ResolvedToolContract.cpp.o -c src/cli/toolcontract/ResolvedToolContract.cpp
+[15/18] /usr/bin/c++   -isystem /usr/local/include -Iinclude -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++14 -MD -MT src/CMakeFiles/pbcopper.dir/cli/Interface.cpp.o -MF src/CMakeFiles/pbcopper.dir/cli/Interface.cpp.o.d -o src/CMakeFiles/pbcopper.dir/cli/Interface.cpp.o -c src/cli/Interface.cpp
+[16/18] /usr/bin/c++   -isystem /usr/local/include -Iinclude -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++14 -MD -MT src/CMakeFiles/pbcopper.dir/cli/Results.cpp.o -MF src/CMakeFiles/pbcopper.dir/cli/Results.cpp.o.d -o src/CMakeFiles/pbcopper.dir/cli/Results.cpp.o -c src/cli/Results.cpp
+[17/18] /usr/bin/c++   -isystem /usr/local/include -Iinclude -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++14 -MD -MT src/CMakeFiles/pbcopper.dir/cli/toolcontract/JsonPrinter.cpp.o -MF src/CMakeFiles/pbcopper.dir/cli/toolcontract/JsonPrinter.cpp.o.d -o src/CMakeFiles/pbcopper.dir/cli/toolcontract/JsonPrinter.cpp.o -c src/cli/toolcontract/JsonPrinter.cpp
+[18/18] : && /usr/local/bin/cmake -E remove lib/libpbcopper.a && /usr/bin/ar qc lib/libpbcopper.a  src/CMakeFiles/pbcopper.dir/cli/CLI.cpp.o src/CMakeFiles/pbcopper.dir/cli/HelpPrinter.cpp.o src/CMakeFiles/pbcopper.dir/cli/Interface.cpp.o src/CMakeFiles/pbcopper.dir/cli/Option.cpp.o src/CMakeFiles/pbcopper.dir/cli/Parser.cpp.o src/CMakeFiles/pbcopper.dir/cli/Results.cpp.o src/CMakeFiles/pbcopper.dir/cli/VersionPrinter.cpp.o src/CMakeFiles/pbcopper.dir/cli/toolcontract/JsonPrinter.cpp.o src/CMakeFiles/pbcopper.dir/cli/toolcontract/ResolvedToolContract.cpp.o src/CMakeFiles/pbcopper.dir/data/Cigar.cpp.o src/CMakeFiles/pbcopper.dir/data/CigarOperation.cpp.o src/CMakeFiles/pbcopper.dir/data/MovieName.cpp.o src/CMakeFiles/pbcopper.dir/data/RSMovieName.cpp.o src/CMakeFiles/pbcopper.dir/logging/Logging.cpp.o src/CMakeFiles/pbcopper.dir/utility/CallbackTimer.cpp.o src/CMakeFiles/pbcopper.dir/__/generated/utility/PbcopperVersion.cpp.o src/CMakeFiles/pbcopper.dir/__/generated/utility/PbcopperGitHash.cpp.o && /usr/bin/ranlib lib/libpbcopper.a && :
+===========================================================================
+=>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===========================================================================
+=>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for pbcopper-5.0.1p20180413
+===>   Generating temporary packing list
+install  -m 0644 /wrkdirs/usr/ports/wip/pbcopper/work/pbcopper-17ef457a0dbe1894a8d17af7ddba01a6261bf117/lib/*.a /wrkdirs/usr/ports/wip/pbcopper/work/stage/usr/local/lib
+cd /wrkdirs/usr/ports/wip/pbcopper/work/pbcopper-17ef457a0dbe1894a8d17af7ddba01a6261bf117/include && /bin/sh -c '(/usr/bin/find -Ed $1 $3 | /usr/bin/cpio -dumpl $2 >/dev/null 2>&1) &&  /usr/bin/find -Ed $1 $3 \(   -type d -exec /bin/sh -c '\''cd '\''$2'\'' && chmod 755 "$@"'\'' . {} +  -o -type f -exec /bin/sh -c '\''cd '\''$2'\'' && chmod 0644 "$@"'\'' . {} + \)' COPYTREE_SHARE . /wrkdirs/usr/ports/wip/pbcopper/work/stage/usr/local/include
+/bin/mv /wrkdirs/usr/ports/wip/pbcopper/work/stage/usr/local/include/meson.build  /wrkdirs/usr/ports/wip/pbcopper/work/stage/usr/local/include/pbcopper
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+=>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for pbcopper-5.0.1p20180413
+===========================================================================
+=>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for pbcopper-5.0.1p20180413
+===>  Checking if pbcopper already installed
+===>   Registering installation for pbcopper-5.0.1p20180413
+[11-1-amd64-default] Installing pbcopper-5.0.1p20180413...
+===========================================================================
+=>> Checking shared library dependencies
+=======================<phase: deinstall      >============================
+===>  Deinstalling for pbcopper
+===>   Deinstalling pbcopper-5.0.1p20180413
+Updating database digests format: .......... done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	pbcopper-5.0.1p20180413
+
+Number of packages to be removed: 1
+
+The operation will free 1 MiB.
+[11-1-amd64-default] [1/1] Deinstalling pbcopper-5.0.1p20180413...
+[11-1-amd64-default] [1/1] Deleting files for pbcopper-5.0.1p20180413: .......... done
+===========================================================================
+=>> Checking for extra files and directories
+[00:42:59] Installing from package
+[11-1-amd64-default] Installing pbcopper-5.0.1p20180413...
+[11-1-amd64-default] Extracting pbcopper-5.0.1p20180413: .......... done
+[00:42:59] Cleaning up
+===>  Cleaning for pbcopper-5.0.1p20180413
+[00:42:59] Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	pbcopper-5.0.1p20180413
+
+Number of packages to be removed: 1
+
+The operation will free 1 MiB.
+[11-1-amd64-default] [1/1] Deinstalling pbcopper-5.0.1p20180413...
+[11-1-amd64-default] [1/1] Deleting files for pbcopper-5.0.1p20180413: .......... done
+build of wip/pbcopper | pbcopper-5.0.1p20180413 ended at Sat Apr 21 15:58:25 CDT 2018
+build time: 00:00:28
