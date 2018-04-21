@@ -11,7 +11,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	boost-libs>=1.60.0:devel/boost-libs
-LIB_DEPENDS=	libhts.so:biology/htslib \
+LIB_DEPENDS=	libhts.so:wip biology/htslib \
 		libboost_regex.so:devel/boost-libs
 
 USES=		cmake pkgconfig
@@ -24,7 +24,6 @@ CMAKE_ARGS+=	-DHTSLIB_INCLUDE_DIRS:STRING=${LOCALBASE}/include/htslib \
 		-DHTSLIB_LIBRARIES:STRING="-L${LOCALBASE}/lib -lhts" \
 		-DPacBioBAM_build_tests:BOOL=OFF \
 		-DPacBioBAM_build_docs:BOOL=OFF
-# LDFLAGS+=	-lcrypto -lssl
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
