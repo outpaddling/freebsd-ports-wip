@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
-USES=		cmake:outsource
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
 GH_TAGNAME=	17ef457a0dbe1894a8d17af7ddba01a6261bf117
