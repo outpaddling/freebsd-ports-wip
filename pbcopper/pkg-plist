@@ -1,4 +1,3 @@
-include/pbcopper/meson.build
 include/pbcopper/PbcopperConfig.h
 include/pbcopper/align/Seed.h
 include/pbcopper/align/Seeds.h
@@ -49,6 +48,7 @@ include/pbcopper/json/JSON.h
 include/pbcopper/json/internal/json.hpp
 include/pbcopper/logging/Logging.h
 include/pbcopper/logging/internal/Logging-inl.h
+include/pbcopper/meson.build
 include/pbcopper/parallel/FireAndForget.h
 include/pbcopper/parallel/WorkQueue.h
 include/pbcopper/qgram/Index.h

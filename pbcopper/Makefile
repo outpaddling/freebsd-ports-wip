@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pbcopper
-PORTVERSION=	5.0.1p20180316
+PORTVERSION=	5.0.1p20180413
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,10 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
-USES=		cmake:outsource compiler:c++11-lang
+USES=		cmake:outsource
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
-GH_TAGNAME=	89304a3323bf920796edae1aadff5e2181dd5b1c
+GH_TAGNAME=	17ef457a0dbe1894a8d17af7ddba01a6261bf117
 
 do-install:
 	${INSTALL_DATA} ${BUILD_WRKSRC}/lib/*.a ${STAGEDIR}${PREFIX}/lib
