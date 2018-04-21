@@ -7,7 +7,7 @@
 # unixdev.
 
 PORTNAME=	unanimity
-PORTVERSION=	0.0.0p20180307
+DISTVERSION=	g20180307
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
