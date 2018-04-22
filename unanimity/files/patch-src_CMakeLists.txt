@@ -1,8 +1,5 @@
---- src/CMakeLists.txt.orig	2018-03-31 18:33:04 UTC
+--- src/CMakeLists.txt.orig	2018-03-07 23:10:34 UTC
 +++ src/CMakeLists.txt
-
-# Make sure we use biology/pbseqan headers, not those from biology/seqan
-
 @@ -53,11 +53,11 @@ configure_file(
  
  # includes

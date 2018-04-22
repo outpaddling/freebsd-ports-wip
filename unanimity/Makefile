@@ -24,7 +24,6 @@ LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so:devel/boost-libs
 
 USES=		cmake pkgconfig python
-USES+=		compiler:c++14-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
 GH_TAGNAME=	6f11a13e1472b8c00337ba8c5e94bf83bdab31d6
@@ -40,11 +39,4 @@ CFLAGS_i386=	-msse2 -Wno-c++11-narrowing
 
 PLIST_FILES=	bin/arrow bin/ccs bin/gcpp
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-# Causes an llvm5 dep, even on 11.1-RELEASE where it isn't needed
-USES+=		compiler:c++14-lang
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
