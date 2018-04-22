@@ -1,0 +1,587 @@
+build started at Sat Apr 21 19:42:48 CDT 2018
+port directory: /usr/ports/wip/unanimity
+package name: unanimity-g20180307
+building for: FreeBSD 11-1-i386-default 11.1-RELEASE-p9 FreeBSD 11.1-RELEASE-p9 i386
+maintained by: jwb@FreeBSD.org
+Makefile ident: 
+Poudriere version: 3.2.6
+Host OSVERSION: 1101001
+Jail OSVERSION: 1101001
+Job Id: 
+
+---Begin Environment---
+SHELL=/bin/csh
+UNAME_p=i386
+UNAME_m=i386
+OSVERSION=1101001
+UNAME_v=FreeBSD 11.1-RELEASE-p9
+UNAME_r=11.1-RELEASE-p9
+BLOCKSIZE=K
+MAIL=/var/mail/root
+WARNING_WAIT=0
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+TRYBROKEN=yes
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.2.6
+MASTERMNT=/usr/local/poudriere/data/.m/11-1-i386-default/ref
+DEV_WARNING_WAIT=0
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm
+GID=0
+UID=0
+PWD=/usr/local/poudriere/data/.m/11-1-i386-default/ref/.p
+NO_WARNING_PKG_INSTALL_EOL=yes
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=11-1-i386-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+OLDPWD=/usr/local/poudriere/data/.m/11-1-i386-default/ref/.p
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=PACKAGES=/tmp/pkgs PKGREPOSITORY=/tmp/pkgs
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+jwb@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+PKG_CONFIG=pkgconf PYTHON="/usr/local/bin/python2.7" XDG_DATA_HOME=/wrkdirs/usr/ports/wip/unanimity/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/unanimity/work  HOME=/wrkdirs/usr/ports/wip/unanimity/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/unanimity/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/wip/unanimity/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/unanimity/work  HOME=/wrkdirs/usr/ports/wip/unanimity/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/unanimity/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES DESTDIR=/wrkdirs/usr/ports/wip/unanimity/work/stage PREFIX=/usr/local  LOCALBASE=/usr/local  LIBDIR="/usr/lib"  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing"  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector" LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="" PORTEXAMPLES="" CMAKE_BUILD_TYPE="release" PYTHON_INCLUDEDIR=include/python2.7  PYTHON_LIBDIR=lib/python2.7  PYTHON_PLATFORM=freebsd11  PYTHON_PYOEXTENSION=pyo  PYTHON_SITELIBDIR=lib/python2.7/site-packages  PYTHON_SUFFIX=27  PYTHON_VER=2.7  PYTHON_VERSION=python2.7 PYTHON2="" PYTHON3="@comment " OSREL=11.1 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/unanimity"  EXAMPLESDIR="share/examples/unanimity"  DATADIR="share/unanimity"  WWWDIR="www/unanimity"  ETCDIR="etc/unanimity"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/unanimity DOCSDIR=/usr/local/share/doc/unanimity EXAMPLESDIR=/usr/local/share/examples/unanimity  WWWDIR=/usr/local/www/unanimity ETCDIR=/usr/local/etc/unanimity
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+MACHINE=i386
+MACHINE_ARCH=i386
+ARCH=${MACHINE_ARCH}
+#### /usr/ports/Mk/Scripts/ports_env.sh ####
+_CCVERSION_921dbbb2=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: i386-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin
+_ALTCCVERSION_921dbbb2=none
+_CXXINTERNAL_acaad9ca=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: i386-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin "/usr/bin/ld" "--eh-frame-hdr" "-dynamic-linker" "/libexec/ld-elf.so.1" "--hash-style=both" "--enable-new-dtags" "-m" "elf_i386_fbsd" "-o" "a.out" "/usr/lib/crt1.o" "/usr/lib/crti.o" "/usr/lib/crtbegin.o" "-L/usr/lib" "/dev/null" "-lc++" "-lm" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "-lc" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "/usr/lib/crtend.o" "/usr/lib/crtn.o"
+CC_OUTPUT_921dbbb2_58173849=yes
+CC_OUTPUT_921dbbb2_9bdba57c=yes
+CC_OUTPUT_921dbbb2_6a4fe7f5=yes
+CC_OUTPUT_921dbbb2_6bcac02b=yes
+CC_OUTPUT_921dbbb2_67d20829=yes
+CC_OUTPUT_921dbbb2_bfa62e83=yes
+CC_OUTPUT_921dbbb2_f0b4d593=yes
+CC_OUTPUT_921dbbb2_308abb44=yes
+CC_OUTPUT_921dbbb2_f00456e5=yes
+CC_OUTPUT_921dbbb2_65ad290d=yes
+CC_OUTPUT_921dbbb2_b2657cc3=yes
+CC_OUTPUT_921dbbb2_380987f7=yes
+_OBJC_CCVERSION_921dbbb2=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: i386-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin
+_OBJC_ALTCCVERSION_921dbbb2=none
+ARCH=i386
+OPSYS=FreeBSD
+_OSRELEASE=11.1-RELEASE-p9
+OSREL=11.1
+OSVERSION=1101001
+PYTHONBASE=/usr/local
+_SMP_CPUS=4
+CONFIGURE_MAX_CMD_LEN=262144
+HAVE_PORTS_ENV=1
+#### Misc Poudriere ####
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  524288
+stack size              (kbytes, -s)  65536
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19558
+open files                      (-n)  1024
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===>  License BSD3CLAUSE accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   unanimity-g20180307 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.10.5.txz
+[11-1-i386-default] Installing pkg-1.10.5...
+[11-1-i386-default] Extracting pkg-1.10.5: .......... done
+===>   unanimity-g20180307 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of unanimity-g20180307
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License BSD3CLAUSE accepted by the user
+===>   unanimity-g20180307 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by unanimity-g20180307 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License BSD3CLAUSE accepted by the user
+===>   unanimity-g20180307 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by unanimity-g20180307 for building
+=> SHA256 Checksum OK for PacificBiosciences-unanimity-g20180307-6f11a13e1472b8c00337ba8c5e94bf83bdab31d6_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License BSD3CLAUSE accepted by the user
+===>   unanimity-g20180307 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by unanimity-g20180307 for building
+===>  Extracting for unanimity-g20180307
+=> SHA256 Checksum OK for PacificBiosciences-unanimity-g20180307-6f11a13e1472b8c00337ba8c5e94bf83bdab31d6_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for unanimity-g20180307
+===>  Applying FreeBSD patches for unanimity-g20180307
+===========================================================================
+=======================<phase: build-depends  >============================
+===>   unanimity-g20180307 depends on package: pbseqan==g20171002 - not found
+===>   Installing existing package /packages/All/pbseqan-g20171002.txz
+[11-1-i386-default] Installing pbseqan-g20171002...
+[11-1-i386-default] Extracting pbseqan-g20171002: .......... done
+===>   unanimity-g20180307 depends on package: pbseqan==g20171002 - found
+===>   Returning to build of unanimity-g20180307
+===>   unanimity-g20180307 depends on package: pbbam==g20180416 - not found
+===>   Installing existing package /packages/All/pbbam-g20180416.txz
+[11-1-i386-default] Installing pbbam-g20180416...
+[11-1-i386-default] `-- Installing boost-libs-1.67.0_1...
+[11-1-i386-default] |   `-- Installing icu-61.1,1...
+[11-1-i386-default] |   `-- Extracting icu-61.1,1: .......... done
+[11-1-i386-default] `-- Extracting boost-libs-1.67.0_1: .......... done
+[11-1-i386-default] `-- Installing htslib-1.6...
+[11-1-i386-default] |   `-- Installing curl-7.59.0...
+[11-1-i386-default] |   | `-- Installing ca_root_nss-3.36.1...
+[11-1-i386-default] |   | `-- Extracting ca_root_nss-3.36.1: ........ done
+[11-1-i386-default] |   | `-- Installing libnghttp2-1.31.1...
+[11-1-i386-default] |   | `-- Extracting libnghttp2-1.31.1: .......... done
+[11-1-i386-default] |   `-- Extracting curl-7.59.0: .......... done
+[11-1-i386-default] `-- Extracting htslib-1.6: .......... done
+[11-1-i386-default] Extracting pbbam-g20180416: .......... done
+Message from boost-libs-1.67.0_1:
+
+You have built the Boost library with thread support.
+
+Don't forget to add -pthread to your linker options when
+linking your code.
+Message from ca_root_nss-3.36.1:
+
+********************************* WARNING *********************************
+
+FreeBSD does not, and can not warrant that the certification authorities
+whose certificates are included in this package have in any way been
+audited for trustworthiness or RFC 3647 compliance.
+
+Assessment and verification of trust is the complete responsibility of the
+system administrator.
+
+*********************************** NOTE **********************************
+
+This package installs symlinks to support root certificates discovery by
+default for software that uses OpenSSL.
+
+This enables SSL Certificate Verification by client software without manual
+intervention.
+
+If you prefer to do this manually, replace the following symlinks with
+either an empty file or your site-local certificate bundle.
+
+  * /etc/ssl/cert.pem
+  * /usr/local/etc/ssl/cert.pem
+  * /usr/local/openssl/cert.pem
+
+***************************************************************************
+===>   unanimity-g20180307 depends on package: pbbam==g20180416 - found
+===>   Returning to build of unanimity-g20180307
+===>   unanimity-g20180307 depends on package: pbcopper==5.0.1p20180413 - not found
+===>   Installing existing package /packages/All/pbcopper-5.0.1p20180413.txz
+[11-1-i386-default] Installing pbcopper-5.0.1p20180413...
+[11-1-i386-default] Extracting pbcopper-5.0.1p20180413: .......... done
+===>   unanimity-g20180307 depends on package: pbcopper==5.0.1p20180413 - found
+===>   Returning to build of unanimity-g20180307
+===>   unanimity-g20180307 depends on file: /usr/local/bin/cmake - not found
+===>   Installing existing package /packages/All/cmake-3.11.0_2.txz
+[11-1-i386-default] Installing cmake-3.11.0_2...
+[11-1-i386-default] `-- Installing expat-2.2.5...
+[11-1-i386-default] `-- Extracting expat-2.2.5: .......... done
+[11-1-i386-default] `-- Installing jsoncpp-1.8.1_3...
+[11-1-i386-default] `-- Extracting jsoncpp-1.8.1_3: .......... done
+[11-1-i386-default] `-- Installing libarchive-3.3.2,1...
+[11-1-i386-default] |   `-- Installing liblz4-1.8.1.2,1...
+[11-1-i386-default] |   `-- Extracting liblz4-1.8.1.2,1: .......... done
+[11-1-i386-default] |   `-- Installing lzo2-2.10_1...
+[11-1-i386-default] |   `-- Extracting lzo2-2.10_1: .......... done
+[11-1-i386-default] `-- Extracting libarchive-3.3.2,1: .......... done
+[11-1-i386-default] `-- Installing libuv-1.20.1...
+[11-1-i386-default] `-- Extracting libuv-1.20.1: .......... done
+[11-1-i386-default] `-- Installing rhash-1.3.5...
+[11-1-i386-default] `-- Extracting rhash-1.3.5: .......... done
+[11-1-i386-default] Extracting cmake-3.11.0_2: .......... done
+===>   unanimity-g20180307 depends on file: /usr/local/bin/cmake - found
+===>   Returning to build of unanimity-g20180307
+===>   unanimity-g20180307 depends on executable: ninja - not found
+===>   Installing existing package /packages/All/ninja-1.8.2,2.txz
+[11-1-i386-default] Installing ninja-1.8.2,2...
+[11-1-i386-default] `-- Installing python27-2.7.14_1...
+[11-1-i386-default] |   `-- Installing gettext-runtime-0.19.8.1_1...
+[11-1-i386-default] |   | `-- Installing indexinfo-0.3.1...
+[11-1-i386-default] |   | `-- Extracting indexinfo-0.3.1: .... done
+[11-1-i386-default] |   `-- Extracting gettext-runtime-0.19.8.1_1: .......... done
+[11-1-i386-default] |   `-- Installing libffi-3.2.1_2...
+[11-1-i386-default] |   `-- Extracting libffi-3.2.1_2: .......... done
+[11-1-i386-default] |   `-- Installing readline-7.0.3_1...
+[11-1-i386-default] |   `-- Extracting readline-7.0.3_1: .......... done
+[11-1-i386-default] `-- Extracting python27-2.7.14_1: .......... done
+[11-1-i386-default] Extracting ninja-1.8.2,2: ....... done
+Message from python27-2.7.14_1:
+
+===========================================================================
+
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+bsddb           databases/py-bsddb
+gdbm            databases/py-gdbm
+sqlite3         databases/py-sqlite3
+tkinter         x11-toolkits/py-tkinter
+
+===========================================================================
+===>   unanimity-g20180307 depends on executable: ninja - found
+===>   Returning to build of unanimity-g20180307
+===>   unanimity-g20180307 depends on package: pkgconf>=1.3.0_1 - not found
+===>   Installing existing package /packages/All/pkgconf-1.4.2,1.txz
+[11-1-i386-default] Installing pkgconf-1.4.2,1...
+[11-1-i386-default] Extracting pkgconf-1.4.2,1: .......... done
+===>   unanimity-g20180307 depends on package: pkgconf>=1.3.0_1 - found
+===>   Returning to build of unanimity-g20180307
+===>   unanimity-g20180307 depends on file: /usr/local/bin/python2.7 - found
+===========================================================================
+=======================<phase: lib-depends    >============================
+===>   unanimity-g20180307 depends on shared library: libhts.so - found (/usr/local/lib/libhts.so)
+===>   unanimity-g20180307 depends on shared library: libboost_regex.so - found (/usr/local/lib/libboost_regex.so)
+===========================================================================
+=>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>   unanimity-g20180307 depends on package: pbseqan==g20171002 - found
+===>   unanimity-g20180307 depends on package: pbbam==g20180416 - found
+===>   unanimity-g20180307 depends on package: pbcopper==5.0.1p20180413 - found
+===>   unanimity-g20180307 depends on file: /usr/local/bin/cmake - found
+===>   unanimity-g20180307 depends on executable: ninja - found
+===>   unanimity-g20180307 depends on package: pkgconf>=1.3.0_1 - found
+===>   unanimity-g20180307 depends on file: /usr/local/bin/python2.7 - found
+===>   unanimity-g20180307 depends on shared library: libhts.so - found (/usr/local/lib/libhts.so)
+===>   unanimity-g20180307 depends on shared library: libboost_regex.so - found (/usr/local/lib/libboost_regex.so)
+===>  Configuring for unanimity-g20180307
+===>  Performing in-source build
+/bin/mkdir -p /wrkdirs/usr/ports/wip/unanimity/work/unanimity-6f11a13e1472b8c00337ba8c5e94bf83bdab31d6
+-- The CXX compiler identification is Clang 4.0.0
+-- The C compiler identification is Clang 4.0.0
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Boost version: 1.67.0
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Found Threads: TRUE  
+-- Found PkgConfig: pkgconf (found version "1.4.2") 
+-- Checking for module 'zlib'
+--   Found zlib, version 1.2.10
+-- Performing Test HAS_NO_UNUSED_LOCAL_TYPEDEFS
+-- Performing Test HAS_NO_UNUSED_LOCAL_TYPEDEFS - Success
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    BOOST_PYTHON_SUFFIX
+    CMAKE_COLOR_MAKEFILE
+    CMAKE_C_FLAGS_DEBUG
+    CMAKE_MODULE_LINKER_FLAGS
+    CMAKE_SHARED_LINKER_FLAGS
+    CMAKE_VERBOSE_MAKEFILE
+    Python_ADDITIONAL_VERSIONS
+
+
+-- Build files have been written to: /wrkdirs/usr/ports/wip/unanimity/work/unanimity-6f11a13e1472b8c00337ba8c5e94bf83bdab31d6
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for unanimity-g20180307
+[1/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Consensus.cpp.o -MF src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Consensus.cpp.o.d -o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Consensus.cpp.o -c src/genomicconsensus/experimental/Consensus.cpp
+[2/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/__/third-party/cpp-optparse/OptionParser.cpp.o -MF src/CMakeFiles/unanimity.dir/__/third-party/cpp-optparse/OptionParser.cpp.o.d -o src/CMakeFiles/unanimity.dir/__/third-party/cpp-optparse/OptionParser.cpp.o -c third-party/cpp-optparse/OptionParser.cpp
+[3/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/gcpp.dir/main/gcpp.cpp.o -MF src/CMakeFiles/gcpp.dir/main/gcpp.cpp.o.d -o src/CMakeFiles/gcpp.dir/main/gcpp.cpp.o -c src/main/gcpp.cpp
+[4/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/GenomicConsensus.cpp.o -MF src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/GenomicConsensus.cpp.o.d -o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/GenomicConsensus.cpp.o -c src/genomicconsensus/experimental/GenomicConsensus.cpp
+[5/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/ConsensusModelFactory.cpp.o -MF src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/ConsensusModelFactory.cpp.o.d -o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/ConsensusModelFactory.cpp.o -c src/genomicconsensus/experimental/ConsensusModelFactory.cpp
+[6/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Filters.cpp.o -MF src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Filters.cpp.o.d -o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Filters.cpp.o -c src/genomicconsensus/experimental/Filters.cpp
+[7/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/IPoaModel.cpp.o -MF src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/IPoaModel.cpp.o.d -o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/IPoaModel.cpp.o -c src/genomicconsensus/experimental/IPoaModel.cpp
+[8/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Input.cpp.o -MF src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Input.cpp.o.d -o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Input.cpp.o -c src/genomicconsensus/experimental/Input.cpp
+[9/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/ccs.dir/main/ccs.cpp.o -MF src/CMakeFiles/ccs.dir/main/ccs.cpp.o.d -o src/CMakeFiles/ccs.dir/main/ccs.cpp.o -c src/main/ccs.cpp
+[10/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/arrow/ArrowModel.cpp.o -MF src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/arrow/ArrowModel.cpp.o.d -o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/arrow/ArrowModel.cpp.o -c src/genomicconsensus/experimental/arrow/ArrowModel.cpp
+[11/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Intervals.cpp.o -MF src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Intervals.cpp.o.d -o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Intervals.cpp.o -c src/genomicconsensus/experimental/Intervals.cpp
+[12/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Settings.cpp.o -MF src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Settings.cpp.o.d -o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Settings.cpp.o -c src/genomicconsensus/experimental/Settings.cpp
+[13/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Output.cpp.o -MF src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Output.cpp.o.d -o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Output.cpp.o -c src/genomicconsensus/experimental/Output.cpp
+[14/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Sorting.cpp.o -MF src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Sorting.cpp.o.d -o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Sorting.cpp.o -c src/genomicconsensus/experimental/Sorting.cpp
+[15/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/io/FastaWriter.cpp.o -MF src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/io/FastaWriter.cpp.o.d -o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/io/FastaWriter.cpp.o -c src/genomicconsensus/experimental/io/FastaWriter.cpp
+[16/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/io/FastqWriter.cpp.o -MF src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/io/FastqWriter.cpp.o.d -o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/io/FastqWriter.cpp.o -c src/genomicconsensus/experimental/io/FastqWriter.cpp
+[17/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/io/GffWriter.cpp.o -MF src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/io/GffWriter.cpp.o.d -o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/io/GffWriter.cpp.o -c src/genomicconsensus/experimental/io/GffWriter.cpp
+[18/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/io/VcfWriter.cpp.o -MF src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/io/VcfWriter.cpp.o.d -o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/io/VcfWriter.cpp.o -c src/genomicconsensus/experimental/io/VcfWriter.cpp
+[19/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/Interval.cpp.o -MF src/CMakeFiles/unanimity.dir/Interval.cpp.o.d -o src/CMakeFiles/unanimity.dir/Interval.cpp.o -c src/Interval.cpp
+[20/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Workflow.cpp.o -MF src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Workflow.cpp.o.d -o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Workflow.cpp.o -c src/genomicconsensus/experimental/Workflow.cpp
+[21/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/plurality/PluralityModel.cpp.o -MF src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/plurality/PluralityModel.cpp.o.d -o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/plurality/PluralityModel.cpp.o -c src/genomicconsensus/experimental/plurality/PluralityModel.cpp
+In file included from src/genomicconsensus/experimental/plurality/PluralityModel.cpp:9:
+include/pacbio/genomicconsensus/experimental/plurality/Plurality.h:129:31: warning: field 'bases' is uninitialized when used here [-Wuninitialized]
+            : bases{std::move(bases)}, frequency{frequency_}
+                              ^
+1 warning generated.
+[22/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/ReadId.cpp.o -MF src/CMakeFiles/unanimity.dir/ReadId.cpp.o.d -o src/CMakeFiles/unanimity.dir/ReadId.cpp.o -c src/ReadId.cpp
+[23/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/ChemistryMapping.cpp.o -MF src/CMakeFiles/unanimity.dir/ChemistryMapping.cpp.o.d -o src/CMakeFiles/unanimity.dir/ChemistryMapping.cpp.o -c src/ChemistryMapping.cpp
+[24/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/Timer.cpp.o -MF src/CMakeFiles/unanimity.dir/Timer.cpp.o.d -o src/CMakeFiles/unanimity.dir/Timer.cpp.o -c src/Timer.cpp
+[25/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/poa/PoaModel.cpp.o -MF src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/poa/PoaModel.cpp.o.d -o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/poa/PoaModel.cpp.o -c src/genomicconsensus/experimental/poa/PoaModel.cpp
+[26/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/SubreadResultCounter.cpp.o -MF src/CMakeFiles/unanimity.dir/SubreadResultCounter.cpp.o.d -o src/CMakeFiles/unanimity.dir/SubreadResultCounter.cpp.o -c src/SubreadResultCounter.cpp
+[27/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/ChemistryTriple.cpp.o -MF src/CMakeFiles/unanimity.dir/ChemistryTriple.cpp.o.d -o src/CMakeFiles/unanimity.dir/ChemistryTriple.cpp.o -c src/ChemistryTriple.cpp
+[28/82] /usr/bin/cc  -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe  -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -O2 -pipe  -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -MD -MT src/CMakeFiles/unanimity.dir/__/third-party/cssw/ssw.c.o -MF src/CMakeFiles/unanimity.dir/__/third-party/cssw/ssw.c.o.d -o src/CMakeFiles/unanimity.dir/__/third-party/cssw/ssw.c.o   -c third-party/cssw/ssw.c
+[29/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/__/third-party/cssw/ssw_cpp.cpp.o -MF src/CMakeFiles/unanimity.dir/__/third-party/cssw/ssw_cpp.cpp.o.d -o src/CMakeFiles/unanimity.dir/__/third-party/cssw/ssw_cpp.cpp.o -c third-party/cssw/ssw_cpp.cpp
+[30/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/Utility.cpp.o -MF src/CMakeFiles/unanimity.dir/Utility.cpp.o.d -o src/CMakeFiles/unanimity.dir/Utility.cpp.o -c src/Utility.cpp
+[31/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/LocalAlignment.cpp.o -MF src/CMakeFiles/unanimity.dir/LocalAlignment.cpp.o.d -o src/CMakeFiles/unanimity.dir/LocalAlignment.cpp.o -c src/LocalAlignment.cpp
+[32/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/__/generated/ModelInternalInitializer.cpp.o -MF src/CMakeFiles/cc2.dir/__/generated/ModelInternalInitializer.cpp.o.d -o src/CMakeFiles/cc2.dir/__/generated/ModelInternalInitializer.cpp.o -c generated/ModelInternalInitializer.cpp
+[33/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/__/generated/UnanimityGitHash.cpp.o -MF src/CMakeFiles/cc2.dir/__/generated/UnanimityGitHash.cpp.o.d -o src/CMakeFiles/cc2.dir/__/generated/UnanimityGitHash.cpp.o -c generated/UnanimityGitHash.cpp
+[34/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/SparsePoa.cpp.o -MF src/CMakeFiles/unanimity.dir/SparsePoa.cpp.o.d -o src/CMakeFiles/unanimity.dir/SparsePoa.cpp.o -c src/SparsePoa.cpp
+[35/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/poa/PoaConsensus.cpp.o -MF src/CMakeFiles/cc2.dir/poa/PoaConsensus.cpp.o.d -o src/CMakeFiles/cc2.dir/poa/PoaConsensus.cpp.o -c src/poa/PoaConsensus.cpp
+[36/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/__/generated/UnanimityVersion.cpp.o -MF src/CMakeFiles/cc2.dir/__/generated/UnanimityVersion.cpp.o.d -o src/CMakeFiles/cc2.dir/__/generated/UnanimityVersion.cpp.o -c generated/UnanimityVersion.cpp
+[37/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/align/AlignConfig.cpp.o -MF src/CMakeFiles/cc2.dir/align/AlignConfig.cpp.o.d -o src/CMakeFiles/cc2.dir/align/AlignConfig.cpp.o -c src/align/AlignConfig.cpp
+[38/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/unanimity.dir/ConsensusSettings.cpp.o -MF src/CMakeFiles/unanimity.dir/ConsensusSettings.cpp.o.d -o src/CMakeFiles/unanimity.dir/ConsensusSettings.cpp.o -c src/ConsensusSettings.cpp
+[39/82] : && /usr/local/bin/cmake -E remove src/libunanimity.a && /usr/bin/ar qc src/libunanimity.a  src/CMakeFiles/unanimity.dir/__/third-party/cpp-optparse/OptionParser.cpp.o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Consensus.cpp.o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/ConsensusModelFactory.cpp.o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Filters.cpp.o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/GenomicConsensus.cpp.o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/IPoaModel.cpp.o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Input.cpp.o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Intervals.cpp.o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Output.cpp.o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Settings.cpp.o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Sorting.cpp.o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/Workflow.cpp.o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/arrow/ArrowModel.cpp.o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/io/FastaWriter.cpp.o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/io/FastqWriter.cpp.o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/io/GffWriter.cpp.o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/io/VcfWriter.cpp.o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/plurality/PluralityModel.cpp.o src/CMakeFiles/unanimity.dir/genomicconsensus/experimental/poa/PoaModel.cpp.o src/CMakeFiles/unanimity.dir/ChemistryMapping.cpp.o src/CMakeFiles/unanimity.dir/ChemistryTriple.cpp.o src/CMakeFiles/unanimity.dir/Interval.cpp.o src/CMakeFiles/unanimity.dir/ReadId.cpp.o src/CMakeFiles/unanimity.dir/SparsePoa.cpp.o src/CMakeFiles/unanimity.dir/SubreadResultCounter.cpp.o src/CMakeFiles/unanimity.dir/Timer.cpp.o src/CMakeFiles/unanimity.dir/Utility.cpp.o src/CMakeFiles/unanimity.dir/__/third-party/cssw/ssw_cpp.cpp.o src/CMakeFiles/unanimity.dir/__/third-party/cssw/ssw.c.o src/CMakeFiles/unanimity.dir/ConsensusSettings.cpp.o src/CMakeFiles/unanimity.dir/LocalAlignment.cpp.o && /usr/bin/ranlib src/libunanimity.a && :
+[40/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/align/BandedChainAlignment.cpp.o -MF src/CMakeFiles/cc2.dir/align/BandedChainAlignment.cpp.o.d -o src/CMakeFiles/cc2.dir/align/BandedChainAlignment.cpp.o -c src/align/BandedChainAlignment.cpp
+[41/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/align/LinearAlignment.cpp.o -MF src/CMakeFiles/cc2.dir/align/LinearAlignment.cpp.o.d -o src/CMakeFiles/cc2.dir/align/LinearAlignment.cpp.o -c src/align/LinearAlignment.cpp
+[42/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/align/AffineAlignment.cpp.o -MF src/CMakeFiles/cc2.dir/align/AffineAlignment.cpp.o.d -o src/CMakeFiles/cc2.dir/align/AffineAlignment.cpp.o -c src/align/AffineAlignment.cpp
+[43/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/matrix/BasicDenseMatrix.cpp.o -MF src/CMakeFiles/cc2.dir/matrix/BasicDenseMatrix.cpp.o.d -o src/CMakeFiles/cc2.dir/matrix/BasicDenseMatrix.cpp.o -c src/matrix/BasicDenseMatrix.cpp
+[44/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/matrix/SparseMatrix.cpp.o -MF src/CMakeFiles/cc2.dir/matrix/SparseMatrix.cpp.o.d -o src/CMakeFiles/cc2.dir/matrix/SparseMatrix.cpp.o -c src/matrix/SparseMatrix.cpp
+[45/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/matrix/ScaledMatrix.cpp.o -MF src/CMakeFiles/cc2.dir/matrix/ScaledMatrix.cpp.o.d -o src/CMakeFiles/cc2.dir/matrix/ScaledMatrix.cpp.o -c src/matrix/ScaledMatrix.cpp
+[46/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/align/PairwiseAlignment.cpp.o -MF src/CMakeFiles/cc2.dir/align/PairwiseAlignment.cpp.o.d -o src/CMakeFiles/cc2.dir/align/PairwiseAlignment.cpp.o -c src/align/PairwiseAlignment.cpp
+[47/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/models/P6C4NoCov_Model.cpp.o -MF src/CMakeFiles/cc2.dir/models/P6C4NoCov_Model.cpp.o.d -o src/CMakeFiles/cc2.dir/models/P6C4NoCov_Model.cpp.o -c src/models/P6C4NoCov_Model.cpp
+[48/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/models/MarginalModelForm.cpp.o -MF src/CMakeFiles/cc2.dir/models/MarginalModelForm.cpp.o.d -o src/CMakeFiles/cc2.dir/models/MarginalModelForm.cpp.o -c src/models/MarginalModelForm.cpp
+[49/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/arrow.dir/main/arrow.cpp.o -MF src/CMakeFiles/arrow.dir/main/arrow.cpp.o.d -o src/CMakeFiles/arrow.dir/main/arrow.cpp.o -c src/main/arrow.cpp
+[50/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/models/PwSnrAModelForm.cpp.o -MF src/CMakeFiles/cc2.dir/models/PwSnrAModelForm.cpp.o.d -o src/CMakeFiles/cc2.dir/models/PwSnrAModelForm.cpp.o -c src/models/PwSnrAModelForm.cpp
+[51/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/models/S_P1C1v1_Model.cpp.o -MF src/CMakeFiles/cc2.dir/models/S_P1C1v1_Model.cpp.o.d -o src/CMakeFiles/cc2.dir/models/S_P1C1v1_Model.cpp.o -c src/models/S_P1C1v1_Model.cpp
+[52/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/models/S_P1C1Beta_Model.cpp.o -MF src/CMakeFiles/cc2.dir/models/S_P1C1Beta_Model.cpp.o.d -o src/CMakeFiles/cc2.dir/models/S_P1C1Beta_Model.cpp.o -c src/models/S_P1C1Beta_Model.cpp
+[53/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/models/PwSnrModelForm.cpp.o -MF src/CMakeFiles/cc2.dir/models/PwSnrModelForm.cpp.o.d -o src/CMakeFiles/cc2.dir/models/PwSnrModelForm.cpp.o -c src/models/PwSnrModelForm.cpp
+[54/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/models/S_P1C1v2_Model.cpp.o -MF src/CMakeFiles/cc2.dir/models/S_P1C1v2_Model.cpp.o.d -o src/CMakeFiles/cc2.dir/models/S_P1C1v2_Model.cpp.o -c src/models/S_P1C1v2_Model.cpp
+[55/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/poa/PoaGraph.cpp.o -MF src/CMakeFiles/cc2.dir/poa/PoaGraph.cpp.o.d -o src/CMakeFiles/cc2.dir/poa/PoaGraph.cpp.o -c src/poa/PoaGraph.cpp
+[56/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/models/S_P2C2v5_Model.cpp.o -MF src/CMakeFiles/cc2.dir/models/S_P2C2v5_Model.cpp.o.d -o src/CMakeFiles/cc2.dir/models/S_P2C2v5_Model.cpp.o -c src/models/S_P2C2v5_Model.cpp
+[57/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/models/SnrModelForm.cpp.o -MF src/CMakeFiles/cc2.dir/models/SnrModelForm.cpp.o.d -o src/CMakeFiles/cc2.dir/models/SnrModelForm.cpp.o -c src/models/SnrModelForm.cpp
+[58/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/poa/PoaAlignmentMatrix.cpp.o -MF src/CMakeFiles/cc2.dir/poa/PoaAlignmentMatrix.cpp.o.d -o src/CMakeFiles/cc2.dir/poa/PoaAlignmentMatrix.cpp.o -c src/poa/PoaAlignmentMatrix.cpp
+[59/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/Coverage.cpp.o -MF src/CMakeFiles/cc2.dir/Coverage.cpp.o.d -o src/CMakeFiles/cc2.dir/Coverage.cpp.o -c src/Coverage.cpp
+[60/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/EasyReadScorer.cpp.o -MF src/CMakeFiles/cc2.dir/EasyReadScorer.cpp.o.d -o src/CMakeFiles/cc2.dir/EasyReadScorer.cpp.o -c src/EasyReadScorer.cpp
+[61/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/poa/RangeFinder.cpp.o -MF src/CMakeFiles/cc2.dir/poa/RangeFinder.cpp.o.d -o src/CMakeFiles/cc2.dir/poa/RangeFinder.cpp.o -c src/poa/RangeFinder.cpp
+[62/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/Evaluator.cpp.o -MF src/CMakeFiles/cc2.dir/Evaluator.cpp.o.d -o src/CMakeFiles/cc2.dir/Evaluator.cpp.o -c src/Evaluator.cpp
+[63/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/poa/PoaGraphTraversals.cpp.o -MF src/CMakeFiles/cc2.dir/poa/PoaGraphTraversals.cpp.o.d -o src/CMakeFiles/cc2.dir/poa/PoaGraphTraversals.cpp.o -c src/poa/PoaGraphTraversals.cpp
+[64/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/EvaluatorImpl.cpp.o -MF src/CMakeFiles/cc2.dir/EvaluatorImpl.cpp.o.d -o src/CMakeFiles/cc2.dir/EvaluatorImpl.cpp.o -c src/EvaluatorImpl.cpp
+[65/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/ModelConfig.cpp.o -MF src/CMakeFiles/cc2.dir/ModelConfig.cpp.o.d -o src/CMakeFiles/cc2.dir/ModelConfig.cpp.o -c src/ModelConfig.cpp
+[66/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/Integrator.cpp.o -MF src/CMakeFiles/cc2.dir/Integrator.cpp.o.d -o src/CMakeFiles/cc2.dir/Integrator.cpp.o -c src/Integrator.cpp
+[67/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/IntervalMask.cpp.o -MF src/CMakeFiles/cc2.dir/IntervalMask.cpp.o.d -o src/CMakeFiles/cc2.dir/IntervalMask.cpp.o -c src/IntervalMask.cpp
+[68/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/ModelFactory.cpp.o -MF src/CMakeFiles/cc2.dir/ModelFactory.cpp.o.d -o src/CMakeFiles/cc2.dir/ModelFactory.cpp.o -c src/ModelFactory.cpp
+[69/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/poa/PoaGraphImpl.cpp.o -MF src/CMakeFiles/cc2.dir/poa/PoaGraphImpl.cpp.o.d -o src/CMakeFiles/cc2.dir/poa/PoaGraphImpl.cpp.o -c src/poa/PoaGraphImpl.cpp
+[70/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/ModelSelection.cpp.o -MF src/CMakeFiles/cc2.dir/ModelSelection.cpp.o.d -o src/CMakeFiles/cc2.dir/ModelSelection.cpp.o -c src/ModelSelection.cpp
+[71/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/Mutation.cpp.o -MF src/CMakeFiles/cc2.dir/Mutation.cpp.o.d -o src/CMakeFiles/cc2.dir/Mutation.cpp.o -c src/Mutation.cpp
+In file included from src/Mutation.cpp:9:
+In file included from include/pacbio/consensus/Mutation.h:14:
+In file included from /usr/local/include/boost/optional.hpp:15:
+In file included from /usr/local/include/boost/optional/optional.hpp:45:
+In file included from /usr/local/include/boost/type_traits/is_constructible.hpp:17:
+/usr/local/include/boost/type_traits/is_destructible.hpp:29:51: warning: destructor called on non-final 'PacBio::Consensus::Mutation' that has virtual functions but non-virtual destructor [-Wdelete-non-virtual-dtor]
+         template<typename T, typename = decltype(boost::declval<T&>().~T())>
+                                                  ^
+/usr/local/include/boost/type_traits/is_constructible.hpp:54:99: note: in instantiation of template class 'boost::is_destructible<PacBio::Consensus::Mutation>' requested here
+   template <class T, class Arg> struct is_constructible<T, Arg> : public integral_constant<bool, is_destructible<T>::value && sizeof(detail::is_constructible_imp::test1<T, Arg>(0)) == sizeof(boost::type_traits::yes_type)>
+                                                                                                  ^
+/usr/local/include/boost/optional/optional.hpp:785:36: note: in instantiation of template class 'boost::is_constructible<PacBio::Consensus::Mutation, const PacBio::Consensus::Mutation &>' requested here
+struct is_optional_constructible : boost::is_constructible<T, U>
+                                   ^
+/usr/local/include/boost/core/enable_if.hpp:41:41: note: in instantiation of template class 'boost::optional_detail::is_optional_constructible<PacBio::Consensus::Mutation, const PacBio::Consensus::Mutation &>' requested here
+  struct enable_if : public enable_if_c<Cond::value, T> {};
+                                        ^
+/usr/local/include/boost/optional/optional.hpp:887:56: note: in instantiation of template class 'boost::enable_if<boost::optional_detail::is_optional_constructible<PacBio::Consensus::Mutation, const PacBio::Consensus::Mutation &>, bool>' requested here
+                        ,BOOST_DEDUCED_TYPENAME boost::enable_if< optional_detail::is_optional_constructible<T, U const&>, bool>::type = true
+                                                       ^
+src/Mutation.cpp:47:9: note: while substituting deduced template arguments into function template 'optional' [with U = PacBio::Consensus::Mutation]
+        return boost::none;
+        ^
+/usr/local/include/boost/type_traits/is_destructible.hpp:29:73: note: qualify call to silence this warning
+         template<typename T, typename = decltype(boost::declval<T&>().~T())>
+                                                                        ^
+                                                                        PacBio::Consensus::Mutation::
+1 warning generated.
+[72/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/PolishResult.cpp.o -MF src/CMakeFiles/cc2.dir/PolishResult.cpp.o.d -o src/CMakeFiles/cc2.dir/PolishResult.cpp.o -c src/PolishResult.cpp
+[73/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/Read.cpp.o -MF src/CMakeFiles/cc2.dir/Read.cpp.o.d -o src/CMakeFiles/cc2.dir/Read.cpp.o -c src/Read.cpp
+[74/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/Sequence.cpp.o -MF src/CMakeFiles/cc2.dir/Sequence.cpp.o.d -o src/CMakeFiles/cc2.dir/Sequence.cpp.o -c src/Sequence.cpp
+[75/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/ModelFormFactory.cpp.o -MF src/CMakeFiles/cc2.dir/ModelFormFactory.cpp.o.d -o src/CMakeFiles/cc2.dir/ModelFormFactory.cpp.o -c src/ModelFormFactory.cpp
+[76/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/Recursor.cpp.o -MF src/CMakeFiles/cc2.dir/Recursor.cpp.o.d -o src/CMakeFiles/cc2.dir/Recursor.cpp.o -c src/Recursor.cpp
+[77/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/Template.cpp.o -MF src/CMakeFiles/cc2.dir/Template.cpp.o.d -o src/CMakeFiles/cc2.dir/Template.cpp.o -c src/Template.cpp
+[78/82] /usr/bin/c++   -I/usr/local/include/PacBio -Iinclude -Igenerated -I/usr/local/include -I/usr/local/include/htslib -Ithird-party/cpp-optparse -I/usr/local/include/pbbam -Ithird-party/cssw -Isrc -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing   -std=c++14 -MD -MT src/CMakeFiles/cc2.dir/Polish.cpp.o -MF src/CMakeFiles/cc2.dir/Polish.cpp.o.d -o src/CMakeFiles/cc2.dir/Polish.cpp.o -c src/Polish.cpp
+In file included from src/Polish.cpp:14:
+In file included from /usr/local/include/boost/math/distributions/chi_squared.hpp:13:
+In file included from /usr/local/include/boost/math/special_functions/gamma.hpp:24:
+In file included from /usr/local/include/boost/math/constants/constants.hpp:13:
+In file included from /usr/local/include/boost/math/tools/convert_from_string.hpp:13:
+In file included from /usr/local/include/boost/type_traits/is_constructible.hpp:17:
+/usr/local/include/boost/type_traits/is_destructible.hpp:29:51: warning: destructor called on non-final 'PacBio::Consensus::ScoredMutation' that has virtual functions but non-virtual destructor [-Wdelete-non-virtual-dtor]
+         template<typename T, typename = decltype(boost::declval<T&>().~T())>
+                                                  ^
+/usr/local/include/boost/type_traits/is_constructible.hpp:54:99: note: in instantiation of template class 'boost::is_destructible<PacBio::Consensus::ScoredMutation>' requested here
+   template <class T, class Arg> struct is_constructible<T, Arg> : public integral_constant<bool, is_destructible<T>::value && sizeof(detail::is_constructible_imp::test1<T, Arg>(0)) == sizeof(boost::type_traits::yes_type)>
+                                                                                                  ^
+/usr/local/include/boost/optional/optional.hpp:785:36: note: in instantiation of template class 'boost::is_constructible<PacBio::Consensus::ScoredMutation, const PacBio::Consensus::ScoredMutation &>' requested here
+struct is_optional_constructible : boost::is_constructible<T, U>
+                                   ^
+/usr/local/include/boost/core/enable_if.hpp:41:41: note: in instantiation of template class 'boost::optional_detail::is_optional_constructible<PacBio::Consensus::ScoredMutation, const PacBio::Consensus::ScoredMutation &>' requested here
+  struct enable_if : public enable_if_c<Cond::value, T> {};
+                                        ^
+/usr/local/include/boost/optional/optional.hpp:887:56: note: in instantiation of template class 'boost::enable_if<boost::optional_detail::is_optional_constructible<PacBio::Consensus::ScoredMutation, const PacBio::Consensus::ScoredMutation &>, bool>' requested here
+                        ,BOOST_DEDUCED_TYPENAME boost::enable_if< optional_detail::is_optional_constructible<T, U const&>, bool>::type = true
+                                                       ^
+src/Polish.cpp:395:41: note: while substituting deduced template arguments into function template 'optional' [with U = PacBio::Consensus::ScoredMutation]
+        boost::optional<ScoredMutation> bestMut = boost::none;
+                                        ^
+/usr/local/include/boost/type_traits/is_destructible.hpp:29:73: note: qualify call to silence this warning
+         template<typename T, typename = decltype(boost::declval<T&>().~T())>
+                                                                        ^
+                                                                        PacBio::Consensus::ScoredMutation::
+1 warning generated.
+[79/82] : && /usr/local/bin/cmake -E remove src/libcc2.a && /usr/bin/ar qc src/libcc2.a  src/CMakeFiles/cc2.dir/__/generated/UnanimityGitHash.cpp.o src/CMakeFiles/cc2.dir/__/generated/UnanimityVersion.cpp.o src/CMakeFiles/cc2.dir/__/generated/ModelInternalInitializer.cpp.o src/CMakeFiles/cc2.dir/align/AffineAlignment.cpp.o src/CMakeFiles/cc2.dir/align/AlignConfig.cpp.o src/CMakeFiles/cc2.dir/align/BandedChainAlignment.cpp.o src/CMakeFiles/cc2.dir/align/LinearAlignment.cpp.o src/CMakeFiles/cc2.dir/align/PairwiseAlignment.cpp.o src/CMakeFiles/cc2.dir/matrix/BasicDenseMatrix.cpp.o src/CMakeFiles/cc2.dir/matrix/ScaledMatrix.cpp.o src/CMakeFiles/cc2.dir/matrix/SparseMatrix.cpp.o src/CMakeFiles/cc2.dir/models/MarginalModelForm.cpp.o src/CMakeFiles/cc2.dir/models/P6C4NoCov_Model.cpp.o src/CMakeFiles/cc2.dir/models/PwSnrAModelForm.cpp.o src/CMakeFiles/cc2.dir/models/PwSnrModelForm.cpp.o src/CMakeFiles/cc2.dir/models/S_P1C1Beta_Model.cpp.o src/CMakeFiles/cc2.dir/models/S_P1C1v1_Model.cpp.o src/CMakeFiles/cc2.dir/models/S_P1C1v2_Model.cpp.o src/CMakeFiles/cc2.dir/models/S_P2C2v5_Model.cpp.o src/CMakeFiles/cc2.dir/models/SnrModelForm.cpp.o src/CMakeFiles/cc2.dir/poa/PoaAlignmentMatrix.cpp.o src/CMakeFiles/cc2.dir/poa/PoaConsensus.cpp.o src/CMakeFiles/cc2.dir/poa/PoaGraph.cpp.o src/CMakeFiles/cc2.dir/poa/PoaGraphImpl.cpp.o src/CMakeFiles/cc2.dir/poa/PoaGraphTraversals.cpp.o src/CMakeFiles/cc2.dir/poa/RangeFinder.cpp.o src/CMakeFiles/cc2.dir/Coverage.cpp.o src/CMakeFiles/cc2.dir/EasyReadScorer.cpp.o src/CMakeFiles/cc2.dir/Evaluator.cpp.o src/CMakeFiles/cc2.dir/EvaluatorImpl.cpp.o src/CMakeFiles/cc2.dir/Integrator.cpp.o src/CMakeFiles/cc2.dir/IntervalMask.cpp.o src/CMakeFiles/cc2.dir/ModelConfig.cpp.o src/CMakeFiles/cc2.dir/ModelFactory.cpp.o src/CMakeFiles/cc2.dir/ModelFormFactory.cpp.o src/CMakeFiles/cc2.dir/ModelSelection.cpp.o src/CMakeFiles/cc2.dir/Mutation.cpp.o src/CMakeFiles/cc2.dir/Polish.cpp.o src/CMakeFiles/cc2.dir/PolishResult.cpp.o src/CMakeFiles/cc2.dir/Read.cpp.o src/CMakeFiles/cc2.dir/Recursor.cpp.o src/CMakeFiles/cc2.dir/Sequence.cpp.o src/CMakeFiles/cc2.dir/Template.cpp.o && /usr/bin/ranlib src/libcc2.a && :
+[80/82] : && /usr/bin/c++  -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing  -fstack-protector src/CMakeFiles/arrow.dir/main/arrow.cpp.o  -o arrow  -pthread src/libunanimity.a src/libcc2.a -lz -L/usr/local/lib -lhts -L/usr/local/lib -lpbbam -L/usr/local/lib -lpbcopper && :
+src/libcc2.a(Polish.cpp.o): In function `long double boost::math::detail::gamma_imp<long double, boost::math::policies::policy<boost::math::policies::promote_float<false>, boost::math::policies::promote_double<false>, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy>, boost::math::lanczos::lanczos17m64>(long double, boost::math::policies::policy<boost::math::policies::promote_float<false>, boost::math::policies::promote_double<false>, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy> const&, boost::math::lanczos::lanczos17m64 const&)':
+src/Polish.cpp:(.text._ZN5boost4math6detail9gamma_impIeNS0_8policies6policyINS3_13promote_floatILb0EEENS3_14promote_doubleILb0EEENS3_14default_policyES9_S9_S9_S9_S9_S9_S9_S9_S9_S9_EENS0_7lanczos12lanczos17m64EEET_SD_RKT0_RKT1_[_ZN5boost4math6detail9gamma_impIeNS0_8policies6policyINS3_13promote_floatILb0EEENS3_14promote_doubleILb0EEENS3_14default_policyES9_S9_S9_S9_S9_S9_S9_S9_S9_S9_EENS0_7lanczos12lanczos17m64EEET_SD_RKT0_RKT1_]+0x506): warning: powl has lower than advertised precision
+[81/82] : && /usr/bin/c++  -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing  -fstack-protector src/CMakeFiles/gcpp.dir/main/gcpp.cpp.o  -o gcpp  -pthread src/libunanimity.a src/libcc2.a -lz -L/usr/local/lib -lhts -L/usr/local/lib -lpbbam -L/usr/local/lib -lpbcopper && :
+[82/82] : && /usr/bin/c++  -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-local-typedefs -O2 -pipe -fstack-protector -fno-strict-aliasing -msse2 -Wno-c++11-narrowing  -fstack-protector src/CMakeFiles/ccs.dir/main/ccs.cpp.o  -o ccs  -pthread src/libunanimity.a src/libcc2.a -lz -L/usr/local/lib -lhts -L/usr/local/lib -lpbbam -L/usr/local/lib -lpbcopper && :
+src/libcc2.a(Polish.cpp.o): In function `long double boost::math::detail::gamma_imp<long double, boost::math::policies::policy<boost::math::policies::promote_float<false>, boost::math::policies::promote_double<false>, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy>, boost::math::lanczos::lanczos17m64>(long double, boost::math::policies::policy<boost::math::policies::promote_float<false>, boost::math::policies::promote_double<false>, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy, boost::math::policies::default_policy> const&, boost::math::lanczos::lanczos17m64 const&)':
+src/Polish.cpp:(.text._ZN5boost4math6detail9gamma_impIeNS0_8policies6policyINS3_13promote_floatILb0EEENS3_14promote_doubleILb0EEENS3_14default_policyES9_S9_S9_S9_S9_S9_S9_S9_S9_S9_EENS0_7lanczos12lanczos17m64EEET_SD_RKT0_RKT1_[_ZN5boost4math6detail9gamma_impIeNS0_8policies6policyINS3_13promote_floatILb0EEENS3_14promote_doubleILb0EEENS3_14default_policyES9_S9_S9_S9_S9_S9_S9_S9_S9_S9_EENS0_7lanczos12lanczos17m64EEET_SD_RKT0_RKT1_]+0x506): warning: powl has lower than advertised precision
+===========================================================================
+=>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===>   unanimity-g20180307 depends on file: /usr/local/bin/python2.7 - found
+===========================================================================
+=>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for unanimity-g20180307
+===>   unanimity-g20180307 depends on file: /usr/local/bin/python2.7 - found
+===>   Generating temporary packing list
+[0/1] cd /wrkdirs/usr/ports/wip/unanimity/work/unanimity-6f11a13e1472b8c00337ba8c5e94bf83bdab31d6 && /usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+-- Install configuration: "Release"
+-- Installing: /wrkdirs/usr/ports/wip/unanimity/work/stage/usr/local/bin/ccs
+-- Installing: /wrkdirs/usr/ports/wip/unanimity/work/stage/usr/local/bin/arrow
+-- Installing: /wrkdirs/usr/ports/wip/unanimity/work/stage/usr/local/bin/gcpp
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+=>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for unanimity-g20180307
+===========================================================================
+=>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for unanimity-g20180307
+===>  Checking if unanimity already installed
+===>   Registering installation for unanimity-g20180307
+[11-1-i386-default] Installing unanimity-g20180307...
+===========================================================================
+=>> Checking shared library dependencies
+ 0x00000001 NEEDED               Shared library: [libc++.so.1]
+ 0x00000001 NEEDED               Shared library: [libc.so.7]
+ 0x00000001 NEEDED               Shared library: [libcxxrt.so.1]
+ 0x00000001 NEEDED               Shared library: [libgcc_s.so.1]
+ 0x00000001 NEEDED               Shared library: [libhts.so.2]
+ 0x00000001 NEEDED               Shared library: [libm.so.5]
+ 0x00000001 NEEDED               Shared library: [libthr.so.3]
+ 0x00000001 NEEDED               Shared library: [libz.so.6]
+=======================<phase: deinstall      >============================
+===>  Deinstalling for unanimity
+===>   Deinstalling unanimity-g20180307
+Updating database digests format: .......... done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	unanimity-g20180307
+
+Number of packages to be removed: 1
+
+The operation will free 6 MiB.
+[11-1-i386-default] [1/1] Deinstalling unanimity-g20180307...
+[11-1-i386-default] [1/1] Deleting files for unanimity-g20180307: ...... done
+===========================================================================
+=>> Checking for extra files and directories
+[00:01:56] Installing from package
+[11-1-i386-default] Installing unanimity-g20180307...
+[11-1-i386-default] Extracting unanimity-g20180307: ...... done
+[00:01:56] Cleaning up
+===>  Cleaning for unanimity-g20180307
+[00:01:56] Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	unanimity-g20180307
+
+Number of packages to be removed: 1
+
+The operation will free 6 MiB.
+[11-1-i386-default] [1/1] Deinstalling unanimity-g20180307...
+[11-1-i386-default] [1/1] Deleting files for unanimity-g20180307: ...... done
+build of wip/unanimity | unanimity-g20180307 ended at Sat Apr 21 19:44:36 CDT 2018
+build time: 00:01:48
