@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	metal
-PORTVERSION=	2011.03.25
+DISTVERSION=	2011.03.25
 CATEGORIES=	wip biology
 MASTER_SITES=	http://csg.sph.umich.edu/abecasis/Metal/download/
 DISTNAME=	generic-metal-2011-03-25
