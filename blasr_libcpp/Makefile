@@ -1,9 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	blasr_libcpp
-PORTVERSION=	2015.08.17
+#PORTVERSION=	2015.08.17
+DISTVERSION=	g20180329
 CATEGORIES=	wip biology
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
+#MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Library for analyzing PacBio sequences
@@ -13,6 +14,9 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libhdf5.so:science/hdf5
 
 USES=		gmake tar:xz
+USE_GITUB=	yes
+GH_ACCOUNT=	PacificBiosciences
+GH_TAGNAME=	b038971c97eb5403b982c177eb44e488d25e9994
 
 MAKEFILE=	makefile
 
