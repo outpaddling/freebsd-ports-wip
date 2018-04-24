@@ -13,6 +13,7 @@ man/man1/auto-change-group-ownership.1.gz
 man/man1/auto-change-primary-group.1.gz
 man/man1/auto-change-uid.1.gz
 man/man1/auto-clean-disk.1.gz
+man/man1/auto-clean-pkgsrc.1.gz
 man/man1/auto-clean-ports.1.gz
 man/man1/auto-clean-tmp.1.gz
 man/man1/auto-config-snd-driver.1.gz
@@ -41,6 +42,8 @@ man/man1/auto-mount-any.1.gz
 man/man1/auto-ostype.1.gz
 man/man1/auto-package-installed.1.gz
 man/man1/auto-passwd-user-expiration.1.gz
+man/man1/auto-pkgsrc-dir.1.gz
+man/man1/auto-pkgsrc-prefix.1.gz
 man/man1/auto-pkgsrc-setup.1.gz
 man/man1/auto-ports-checkout.1.gz
 man/man1/auto-ports-setup.1.gz
@@ -79,6 +82,7 @@ sbin/auto-change-group-ownership
 sbin/auto-change-primary-group
 sbin/auto-change-uid
 sbin/auto-clean-disk
+sbin/auto-clean-pkgsrc
 sbin/auto-clean-ports
 sbin/auto-clean-tmp
 sbin/auto-config-snd-driver
@@ -107,6 +111,8 @@ sbin/auto-mount-any
 sbin/auto-ostype
 sbin/auto-package-installed
 sbin/auto-passwd-user-expiration
+sbin/auto-pkgsrc-dir
+sbin/auto-pkgsrc-prefix
 sbin/auto-pkgsrc-setup
 sbin/auto-ports-checkout
 sbin/auto-ports-setup
