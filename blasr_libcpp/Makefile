@@ -11,10 +11,12 @@ COMMENT=	Library for analyzing PacBio sequences
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	pbbam>=g20180416:biology/pbbam
 LIB_DEPENDS=	libhdf5.so:science/hdf5
 
-USES=		gmake tar:xz
-USE_GITUB=	yes
+USES=		gmake python shebangfix tar:xz
+SHEBANG_FILES=	configure.py
+USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
 GH_TAGNAME=	b038971c97eb5403b982c177eb44e488d25e9994
 
@@ -25,13 +27,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 # MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.pre.mk>
-
-# Uses C++11 syntax
-.if ${OSVERSION} < 1000000
-USE_GCC=	yes
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's|SAIndex, UINT_MAX|SAIndex, INT_MAX|g' \
 		${WRKSRC}/alignment/suffixarray/SuffixArray.hpp
@@ -39,11 +34,13 @@ post-patch:
 		${WRKSRC}/makefile
 
 do-configure:
-	cd ${WRKSRC} && ./configure.py --no-pbbam \
-		HDF5_INCLUDE=${LOCALBASE}/include HDF5_LIB=${LOCALBASE}/lib
+	(cd ${WRKSRC} && ./configure.py --no-pbbam \
+		HDF5_INCLUDE=${LOCALBASE}/include \
+		HDF5_LIB=${LOCALBASE}/lib \
+		PBBAM_INCLUDE=${LOCALBASE}/include)
 
-post-configure:
-	${REINPLACE_CMD} -e 's|define|undef|' ${WRKSRC}/libconfig.h
+#post-configure:
+#	${REINPLACE_CMD} -e 's|define|undef|' ${WRKSRC}/libconfig.h
 
 do-install:
 	for fn in `find ${WRKSRC} -name '*.h' -o -name '*.hpp'`; do \
@@ -55,4 +52,4 @@ do-install:
 		${INSTALL_DATA} $$fn ${STAGEDIR}${PREFIX}/lib; \
 	done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
