@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	pbdagcon
-PORTVERSION=	2015.08.19
+#DISTVERSION=	p4-mainline-134-gc14c422
+DISTVERSION=	g20180411
 CATEGORIES=	wip biology
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Consensus algorithm implementation based on directed acyclic graphs
@@ -23,6 +23,9 @@ RUN_DEPENDS+=	dazz_db>=2015.08.17:wip/dazz_db \
 
 USES=		gmake shebangfix tar:xz
 SHEBANG_FILES=	src/cpp/pbdagcon_wf.sh
+USE_GITHUB=	yes
+GH_ACCOUNT=	PacificBiosciences
+GH_TAGNAME=	c14c422e609a914f0139f7222202ac1bce7e3ef1
 
 MAKEFILE=	makefile
 
