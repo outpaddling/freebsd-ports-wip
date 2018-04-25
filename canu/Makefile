@@ -1,15 +1,15 @@
 # $FreeBSD$
 
-PORTNAME=	canu
-DISTVERSIONPREFIX=v
-DISTVERSION=	1.7
-CATEGORIES=	wip biology java
+PORTNAME=		canu
+DISTVERSIONPREFIX=	v
+DISTVERSION=		1.7
+CATEGORIES=		wip biology java perl
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Single molecule sequence assembler for genomes large and small
+COMMENT=	Single molecule sequence assembler
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/../README.license.GPL
+LICENSE_FILE=	${WRKSRC}/README.license.GPL
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 RUN_DEPENDS=	gnuplot:math/gnuplot
@@ -27,7 +27,7 @@ MAKE_ENV+=	DESTDIR=${WRKSRC}
 
 post-patch:
 	${REINPLACE_CMD} \
-		-e 's|-O4|-O2|g' \
+		-e 's|-O4||g' \
 		-e 's|-funroll-loops||g' \
 		-e 's|-fexpensive-optimizations||g' \
 		-e 's|amd64|${ARCH}|g' \
@@ -45,13 +45,13 @@ post-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}
-	cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && ${COPYTREE_BIN} bin \
-		${STAGEDIR}${PREFIX}
+	(cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && \
+		${COPYTREE_BIN} bin ${STAGEDIR}${PREFIX})
 	# STRIP_CMD fails without this on 11.1 under poudriere
 	@${CHMOD} u+w ${STAGEDIR}${PREFIX}/bin/*
 	${STRIP_CMD} \
 		`file ${STAGEDIR}${PREFIX}/bin/* | ${GREP} ELF | cut -d : -f 1`
-	cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && ${COPYTREE_SHARE} "lib share" \
-		${STAGEDIR}${PREFIX}
+	(cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && \
+		${COPYTREE_SHARE} "lib share" ${STAGEDIR}${PREFIX})
 
 .include <bsd.port.mk>
