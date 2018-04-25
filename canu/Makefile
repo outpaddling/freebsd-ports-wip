@@ -3,13 +3,13 @@
 PORTNAME=		canu
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.7
-CATEGORIES=		wip biology java perl
+CATEGORIES=		wip biology java perl5
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Single molecule sequence assembler
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/README.license.GPL
+LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/README.license.GPL
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 RUN_DEPENDS=	gnuplot:math/gnuplot
