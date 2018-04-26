@@ -128,6 +128,8 @@ Makefile:
     Carefully check REINPLACE_CMDS and patches
 	Patching should be done at the earliest possible stage, e.g. don't
 	patch in post-stage if the same effect can be achieved in post-patch
+
+    $() preferred over ``
     
 pkg-plist
     pkgconfig files should be in libdata/pkgconfig
