@@ -1,0 +1,10 @@
+Sailfish, a software tool that implements a novel, alignment-free algorithm for
+the estimation of isoform abundances directly from a set of reference sequences
+and RNA-seq reads. Rather than working at the read level, the fundamental unit
+of transcript coverage in Sailfish is the k-mer. Implementing this alternative,
+lightweight, approach allows Sailfish to dispense with many of the complexities
+of read mapping while remaining robust to sequencing errors. By replacing read
+mapping with intelligent k-mer indexing and counting, Sailfish is able to
+quantify isoform abundance orders of magnitude faster than existing tools.
+
+WWW: http://www.cs.cmu.edu/~ckingsf/software/sailfish/index.html
