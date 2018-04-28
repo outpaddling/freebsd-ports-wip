@@ -12,7 +12,7 @@ COMMENT=	Library for analyzing PacBio sequences
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	pbbam>=g20180416:biology/pbbam
-LIB_DEPENDS=	libhdf5.so:science/hdf5
+LIB_DEPENDS=	libhdf5-18.so:science/hdf5-18
 
 USES=		gmake python shebangfix tar:xz
 SHEBANG_FILES=	configure.py
@@ -22,10 +22,11 @@ GH_TAGNAME=	b038971c97eb5403b982c177eb44e488d25e9994
 
 MAKEFILE=	makefile
 
-CXXFLAGS+=	-I${LOCALBASE}/include
+# FIXME: Link to libhdf5-18
+CXXFLAGS+=	-I${LOCALBASE}/include/hdf5-18 -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-# MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's|SAIndex, UINT_MAX|SAIndex, INT_MAX|g' \
