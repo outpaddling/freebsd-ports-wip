@@ -29,10 +29,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's|SAIndex, UINT_MAX|SAIndex, INT_MAX|g' \
+	@${REINPLACE_CMD} -e 's|SAIndex, UINT_MAX|SAIndex, INT_MAX|g' \
 		${WRKSRC}/alignment/suffixarray/SuffixArray.hpp
-	${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|g' \
+	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|g' \
 		${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e 's|-lhdf5|-lhdf5-18|g' \
+		${WRKSRC}/hdf/makefile \
+		${WRKSRC}/unittest/makefile
 
 do-configure:
 	(cd ${WRKSRC} && ./configure.py --no-pbbam \
@@ -40,17 +43,14 @@ do-configure:
 		HDF5_LIB=${LOCALBASE}/lib \
 		PBBAM_INCLUDE=${LOCALBASE}/include)
 
-#post-configure:
-#	${REINPLACE_CMD} -e 's|define|undef|' ${WRKSRC}/libconfig.h
-
-do-install:
-	for fn in `find ${WRKSRC} -name '*.h' -o -name '*.hpp'`; do \
-		dir=`dirname $$fn | cut -d / -f 8-`; \
-		${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}/$$dir; \
-		${INSTALL_DATA} $$fn ${STAGEDIR}${PREFIX}/include/${PORTNAME}/$$dir; \
-	done
-	for fn in `find ${WRKSRC} -name '*.a'`; do \
-		${INSTALL_DATA} $$fn ${STAGEDIR}${PREFIX}/lib; \
-	done
+#do-install:
+#	for fn in `find ${WRKSRC} -name '*.h' -o -name '*.hpp'`; do \
+#		dir=`dirname $$fn | cut -d / -f 8-`; \
+#		${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}/$$dir; \
+#		${INSTALL_DATA} $$fn ${STAGEDIR}${PREFIX}/include/${PORTNAME}/$$dir; \
+#	done
+#	for fn in `find ${WRKSRC} -name '*.a'`; do \
+#		${INSTALL_DATA} $$fn ${STAGEDIR}${PREFIX}/lib; \
+#	done
 
 .include <bsd.port.mk>
