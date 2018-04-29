@@ -1,10 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	blasr_libcpp
-#PORTVERSION=	2015.08.17
 DISTVERSION=	g20180329
 CATEGORIES=	wip biology
-#MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Library for analyzing PacBio sequences
@@ -16,17 +14,14 @@ LIB_DEPENDS=	libhdf5-18.so:science/hdf5-18
 
 USES=		gmake python shebangfix tar:xz
 SHEBANG_FILES=	configure.py
+USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
 GH_TAGNAME=	b038971c97eb5403b982c177eb44e488d25e9994
 
 MAKEFILE=	makefile
-
-# FIXME: Link to libhdf5-18
 CXXFLAGS+=	-I${LOCALBASE}/include/hdf5-18 -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|SAIndex, UINT_MAX|SAIndex, INT_MAX|g' \
@@ -34,8 +29,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|g' \
 		${WRKSRC}/makefile
 	@${REINPLACE_CMD} -e 's|-lhdf5|-lhdf5-18|g' \
-		${WRKSRC}/hdf/makefile \
-		${WRKSRC}/unittest/makefile
+		${WRKSRC}/hdf/makefile ${WRKSRC}/unittest/makefile
 
 do-configure:
 	(cd ${WRKSRC} && ./configure.py --no-pbbam \
@@ -43,14 +37,17 @@ do-configure:
 		HDF5_LIB=${LOCALBASE}/lib \
 		PBBAM_INCLUDE=${LOCALBASE}/include)
 
-#do-install:
-#	for fn in `find ${WRKSRC} -name '*.h' -o -name '*.hpp'`; do \
-#		dir=`dirname $$fn | cut -d / -f 8-`; \
-#		${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}/$$dir; \
-#		${INSTALL_DATA} $$fn ${STAGEDIR}${PREFIX}/include/${PORTNAME}/$$dir; \
-#	done
-#	for fn in `find ${WRKSRC} -name '*.a'`; do \
-#		${INSTALL_DATA} $$fn ${STAGEDIR}${PREFIX}/lib; \
-#	done
+do-install:
+	for fn in `find ${WRKSRC} -name '*.h' -o -name '*.hpp'`; do \
+		dir=`dirname $$fn | cut -d / -f 8-`; \
+		${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}/$$dir; \
+		${INSTALL_DATA} $$fn \
+			${STAGEDIR}${PREFIX}/include/${PORTNAME}/$$dir; \
+	done
+	for lib in pbdata/libpbdata hdf/libpbihdf alignment/libblasr; do \
+		${INSTALL_DATA} ${WRKSRC}/$$lib.a ${STAGEDIR}${PREFIX}/lib; \
+		${INSTALL_DATA} ${WRKSRC}/$$lib.so ${STAGEDIR}${PREFIX}/lib; \
+	done
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include <bsd.port.mk>

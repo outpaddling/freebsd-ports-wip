@@ -300,5 +300,8 @@ include/blasr_libcpp/pbdata/utils/TimeUtils.hpp
 include/blasr_libcpp/pbdata/utilsImpl.hpp
 include/blasr_libcpp/unittest/pbdata/testdata.h
 lib/libblasr.a
+lib/libblasr.so
 lib/libpbdata.a
+lib/libpbdata.so
 lib/libpbihdf.a
+lib/libpbihdf.so
