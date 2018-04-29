@@ -1,9 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	blasr
-PORTVERSION=	2015.08.17
+DISTVERSION=	g20180411
+#DISTNAME=smrtanalysis
+#DISTVERSION=	4.0.0
+#DISTVERSIONSUFFIX=	-121-geab53fd
 CATEGORIES=	wip biology
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	PacBio(R) long read aligner
@@ -11,10 +13,13 @@ COMMENT=	PacBio(R) long read aligner
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
-		libsz.so:science/szip
-BUILD_DEPENDS=	${LOCALBASE}/lib/libblasr.a:wip/blasr_libcpp
+		libsz.so:science/szip \
+		libblasr.so:wip/blasr_libcpp
 
 USES=		gmake tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	PacificBiosciences
+GH_TAGNAME=	eab53fd220a05dfd7290962360a6ccce55be9c7c
 
 MAKEFILE=	makefile
 
