@@ -34,6 +34,12 @@ post-patch:
 		${WRKSRC}/makefile
 	@${REINPLACE_CMD} -e 's|-lhdf5|-lhdf5-18|g' \
 		${WRKSRC}/hdf/makefile ${WRKSRC}/unittest/makefile
+	@${REINPLACE_CMD} -e 's|-std=c++14|-std=c++1y|g' \
+		${WRKSRC}/alignment/makefile \
+		${WRKSRC}/pbdata/makefile \
+		${WRKSRC}/meson.build \
+		${WRKSRC}/hdf/makefile \
+		${WRKSRC}/unittest/makefile
 
 do-configure:
 	(cd ${WRKSRC} && ./configure.py --no-pbbam \
@@ -43,7 +49,8 @@ do-configure:
 
 do-install:
 	for fn in `find ${WRKSRC} -name '*.h' -o -name '*.hpp'`; do \
-		dir=`dirname $$fn | cut -d / -f 8-`; \
+		relpath=$${fn#${WRKSRC}/}; \
+		dir=`dirname $$relpath`; \
 		${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}/$$dir; \
 		${INSTALL_DATA} $$fn \
 			${STAGEDIR}${PREFIX}/include/${PORTNAME}/$$dir; \
