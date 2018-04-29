@@ -1,0 +1,694 @@
+build started at Sun Apr 29 13:18:20 CDT 2018
+port directory: /usr/ports/wip/blasr_libcpp
+package name: blasr_libcpp-g20180329
+building for: FreeBSD 10-4-amd64-default 10.4-RELEASE-p8 FreeBSD 10.4-RELEASE-p8 amd64
+maintained by: jwb@FreeBSD.org
+Makefile ident: 
+Poudriere version: 3.2.6
+Host OSVERSION: 1101001
+Jail OSVERSION: 1004000
+Job Id: 
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1004000
+UNAME_v=FreeBSD 10.4-RELEASE-p8
+UNAME_r=10.4-RELEASE-p8
+BLOCKSIZE=K
+MAIL=/var/mail/root
+WARNING_WAIT=0
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+TRYBROKEN=yes
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.2.6
+MASTERMNT=/usr/local/poudriere/data/.m/10-4-amd64-default/ref
+DEV_WARNING_WAIT=0
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm
+GID=0
+UID=0
+PWD=/usr/local/poudriere/data/.m/10-4-amd64-default/ref/.p
+NO_WARNING_PKG_INSTALL_EOL=yes
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=10-4-amd64-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+OLDPWD=/usr/local/poudriere/data/.m/10-4-amd64-default/ref/.p/pool
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=PACKAGES=/tmp/pkgs PKGREPOSITORY=/tmp/pkgs
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+jwb@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+MAKE=gmake PYTHON="/usr/local/bin/python2.7" XDG_DATA_HOME=/wrkdirs/usr/ports/wip/blasr_libcpp/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/blasr_libcpp/work  HOME=/wrkdirs/usr/ports/wip/blasr_libcpp/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/blasr_libcpp/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/wip/blasr_libcpp/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/blasr_libcpp/work  HOME=/wrkdirs/usr/ports/wip/blasr_libcpp/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/blasr_libcpp/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  LIBDIR="/usr/lib"  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector -fno-strict-aliasing"  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -L/usr/local/lib -fstack-protector" LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include"  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="" PORTEXAMPLES="" PYTHON_INCLUDEDIR=include/python2.7  PYTHON_LIBDIR=lib/python2.7  PYTHON_PLATFORM=freebsd10  PYTHON_PYOEXTENSION=pyo  PYTHON_SITELIBDIR=lib/python2.7/site-packages  PYTHON_SUFFIX=27  PYTHON_VER=2.7  PYTHON_VERSION=python2.7 PYTHON2="" PYTHON3="@comment " OSREL=10.4 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/blasr_libcpp"  EXAMPLESDIR="share/examples/blasr_libcpp"  DATADIR="share/blasr_libcpp"  WWWDIR="www/blasr_libcpp"  ETCDIR="etc/blasr_libcpp"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/blasr_libcpp DOCSDIR=/usr/local/share/doc/blasr_libcpp EXAMPLESDIR=/usr/local/share/examples/blasr_libcpp  WWWDIR=/usr/local/www/blasr_libcpp ETCDIR=/usr/local/etc/blasr_libcpp
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/ports/Mk/Scripts/ports_env.sh ####
+_CCVERSION_921dbbb2=FreeBSD clang version 3.4.1 (tags/RELEASE_34/dot1-final 208032) 20140512 Target: x86_64-unknown-freebsd10.4 Thread model: posix
+_ALTCCVERSION_921dbbb2=none
+_CXXINTERNAL_acaad9ca=FreeBSD clang version 3.4.1 (tags/RELEASE_34/dot1-final 208032) 20140512 Target: x86_64-unknown-freebsd10.4 Thread model: posix "/usr/bin/ld" "--eh-frame-hdr" "-dynamic-linker" "/libexec/ld-elf.so.1" "--hash-style=both" "--enable-new-dtags" "-o" "a.out" "/usr/lib/crt1.o" "/usr/lib/crti.o" "/usr/lib/crtbegin.o" "-L/usr/lib" "/dev/null" "-lc++" "-lm" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "-lc" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "/usr/lib/crtend.o" "/usr/lib/crtn.o"
+CC_OUTPUT_921dbbb2_58173849=yes
+CC_OUTPUT_921dbbb2_9bdba57c=yes
+CC_OUTPUT_921dbbb2_6a4fe7f5=yes
+CC_OUTPUT_921dbbb2_6bcac02b=yes
+CC_OUTPUT_921dbbb2_67d20829=yes
+CC_OUTPUT_921dbbb2_bfa62e83=yes
+CC_OUTPUT_921dbbb2_f0b4d593=yes
+CC_OUTPUT_921dbbb2_308abb44=yes
+CC_OUTPUT_921dbbb2_f00456e5=yes
+CC_OUTPUT_921dbbb2_65ad290d=error: invalid value 'c++14' in '-std=c++14'
+CC_OUTPUT_921dbbb2_b2657cc3=yes
+CC_OUTPUT_921dbbb2_380987f7=yes
+_OBJC_CCVERSION_921dbbb2=FreeBSD clang version 3.4.1 (tags/RELEASE_34/dot1-final 208032) 20140512 Target: x86_64-unknown-freebsd10.4 Thread model: posix
+_OBJC_ALTCCVERSION_921dbbb2=none
+ARCH=amd64
+OPSYS=FreeBSD
+_OSRELEASE=10.4-RELEASE-p8
+OSREL=10.4
+OSVERSION=1004000
+PYTHONBASE=/usr/local
+HAVE_COMPAT_IA32_KERN=YES
+_SMP_CPUS=4
+CONFIGURE_MAX_CMD_LEN=262144
+HAVE_PORTS_ENV=1
+#### Misc Poudriere ####
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19558
+open files                      (-n)  1024
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+sbsize                   (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===>  License BSD3CLAUSE accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   blasr_libcpp-g20180329 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.10.5.txz
+[10-4-amd64-default] Installing pkg-1.10.5...
+[10-4-amd64-default] Extracting pkg-1.10.5: .......... done
+===>   blasr_libcpp-g20180329 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of blasr_libcpp-g20180329
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License BSD3CLAUSE accepted by the user
+===>   blasr_libcpp-g20180329 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by blasr_libcpp-g20180329 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License BSD3CLAUSE accepted by the user
+===>   blasr_libcpp-g20180329 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by blasr_libcpp-g20180329 for building
+=> SHA256 Checksum OK for PacificBiosciences-blasr_libcpp-g20180329-b038971c97eb5403b982c177eb44e488d25e9994_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License BSD3CLAUSE accepted by the user
+===>   blasr_libcpp-g20180329 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by blasr_libcpp-g20180329 for building
+===>  Extracting for blasr_libcpp-g20180329
+=> SHA256 Checksum OK for PacificBiosciences-blasr_libcpp-g20180329-b038971c97eb5403b982c177eb44e488d25e9994_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for blasr_libcpp-g20180329
+===>  Applying FreeBSD patches for blasr_libcpp-g20180329
+===========================================================================
+=======================<phase: build-depends  >============================
+===>   blasr_libcpp-g20180329 depends on package: pbbam>=g20180416 - not found
+===>   Installing existing package /packages/All/pbbam-g20180416.txz
+[10-4-amd64-default] Installing pbbam-g20180416...
+[10-4-amd64-default] `-- Installing boost-libs-1.67.0_1...
+[10-4-amd64-default] |   `-- Installing icu-61.1,1...
+[10-4-amd64-default] |   `-- Extracting icu-61.1,1: .......... done
+[10-4-amd64-default] `-- Extracting boost-libs-1.67.0_1: .......... done
+[10-4-amd64-default] `-- Installing htslib-1.6...
+[10-4-amd64-default] |   `-- Installing curl-7.59.0...
+[10-4-amd64-default] |   | `-- Installing ca_root_nss-3.36.1...
+[10-4-amd64-default] |   | `-- Extracting ca_root_nss-3.36.1: ........ done
+[10-4-amd64-default] |   | `-- Installing libnghttp2-1.31.1...
+[10-4-amd64-default] |   | `-- Extracting libnghttp2-1.31.1: .......... done
+[10-4-amd64-default] |   `-- Extracting curl-7.59.0: .......... done
+[10-4-amd64-default] `-- Extracting htslib-1.6: .......... done
+[10-4-amd64-default] Extracting pbbam-g20180416: .......... done
+Message from boost-libs-1.67.0_1:
+
+You have built the Boost library with thread support.
+
+Don't forget to add -pthread to your linker options when
+linking your code.
+Message from ca_root_nss-3.36.1:
+
+********************************* WARNING *********************************
+
+FreeBSD does not, and can not warrant that the certification authorities
+whose certificates are included in this package have in any way been
+audited for trustworthiness or RFC 3647 compliance.
+
+Assessment and verification of trust is the complete responsibility of the
+system administrator.
+
+*********************************** NOTE **********************************
+
+This package installs symlinks to support root certificates discovery by
+default for software that uses OpenSSL.
+
+This enables SSL Certificate Verification by client software without manual
+intervention.
+
+If you prefer to do this manually, replace the following symlinks with
+either an empty file or your site-local certificate bundle.
+
+  * /etc/ssl/cert.pem
+  * /usr/local/etc/ssl/cert.pem
+  * /usr/local/openssl/cert.pem
+
+***************************************************************************
+===>   blasr_libcpp-g20180329 depends on package: pbbam>=g20180416 - found
+===>   Returning to build of blasr_libcpp-g20180329
+===>   blasr_libcpp-g20180329 depends on executable: bash - not found
+===>   Installing existing package /packages/All/bash-4.4.19.txz
+[10-4-amd64-default] Installing bash-4.4.19...
+[10-4-amd64-default] `-- Installing gettext-runtime-0.19.8.1_1...
+[10-4-amd64-default] |   `-- Installing indexinfo-0.3.1...
+[10-4-amd64-default] |   `-- Extracting indexinfo-0.3.1: .... done
+[10-4-amd64-default] `-- Extracting gettext-runtime-0.19.8.1_1: .......... done
+[10-4-amd64-default] Extracting bash-4.4.19: .......... done
+===>   blasr_libcpp-g20180329 depends on executable: bash - found
+===>   Returning to build of blasr_libcpp-g20180329
+===>   blasr_libcpp-g20180329 depends on executable: gmake - not found
+===>   Installing existing package /packages/All/gmake-4.2.1_2.txz
+[10-4-amd64-default] Installing gmake-4.2.1_2...
+[10-4-amd64-default] Extracting gmake-4.2.1_2: .......... done
+===>   blasr_libcpp-g20180329 depends on executable: gmake - found
+===>   Returning to build of blasr_libcpp-g20180329
+===>   blasr_libcpp-g20180329 depends on file: /usr/local/bin/python2.7 - not found
+===>   Installing existing package /packages/All/python27-2.7.14_1.txz
+[10-4-amd64-default] Installing python27-2.7.14_1...
+[10-4-amd64-default] `-- Installing libffi-3.2.1_2...
+[10-4-amd64-default] `-- Extracting libffi-3.2.1_2: .......... done
+[10-4-amd64-default] `-- Installing readline-7.0.3_1...
+[10-4-amd64-default] `-- Extracting readline-7.0.3_1: .......... done
+[10-4-amd64-default] Extracting python27-2.7.14_1: .......... done
+Message from python27-2.7.14_1:
+
+===========================================================================
+
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+bsddb           databases/py-bsddb
+gdbm            databases/py-gdbm
+sqlite3         databases/py-sqlite3
+tkinter         x11-toolkits/py-tkinter
+
+===========================================================================
+===>   blasr_libcpp-g20180329 depends on file: /usr/local/bin/python2.7 - found
+===>   Returning to build of blasr_libcpp-g20180329
+===========================================================================
+=======================<phase: lib-depends    >============================
+===>   blasr_libcpp-g20180329 depends on shared library: libhdf5-18.so - not found
+===>   Installing existing package /packages/All/hdf5-18-1.8.20.txz
+[10-4-amd64-default] Installing hdf5-18-1.8.20...
+[10-4-amd64-default] Extracting hdf5-18-1.8.20: .......... done
+===>   blasr_libcpp-g20180329 depends on shared library: libhdf5-18.so - found (/usr/local/lib/libhdf5-18.so)
+===>   Returning to build of blasr_libcpp-g20180329
+===========================================================================
+=>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>   blasr_libcpp-g20180329 depends on package: pbbam>=g20180416 - found
+===>   blasr_libcpp-g20180329 depends on executable: bash - found
+===>   blasr_libcpp-g20180329 depends on executable: gmake - found
+===>   blasr_libcpp-g20180329 depends on file: /usr/local/bin/python2.7 - found
+===>   blasr_libcpp-g20180329 depends on shared library: libhdf5-18.so - found (/usr/local/lib/libhdf5-18.so)
+===>  Configuring for blasr_libcpp-g20180329
+(cd /wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994 && ./configure.py --no-pbbam  HDF5_INCLUDE=/usr/local/include  HDF5_LIB=/usr/local/lib  PBBAM_INCLUDE=/usr/local/include)
+uname -s
+uname='FreeBSD'
+writing to '/wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994/pbdata/LibBlasrConfig.h'
+"""
+
+#define USE_PBBAM
+"""
+writing to 'defines.mk'
+"""
+
+SH_LIB_EXT           := .so
+HDF5_LIB             ?= /usr/local/lib
+LIBBLASR_INC         ?= ../alignment
+LIBBLASR_LIB         ?= ../alignment/
+LIBPBDATA_INC        ?= ../pbdata
+LIBPBDATA_LIB        ?= ../pbdata/
+LIBPBIHDF_INC        ?= ../hdf
+LIBPBIHDF_LIB        ?= ../hdf/
+SHELL                ?= bash
+
+# Use PREFIX dir, if available.
+INCLUDES      += ${PREFIX_INC} ../pbdata
+LIBS          += ${PREFIX_LIB}
+"""
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for blasr_libcpp-g20180329
+gmake[1]: Entering directory '/wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994'
+gmake libpbdata
+gmake[2]: Entering directory '/wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994'
+gmake -C /wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994//pbdata LibBlasrConfig.h
+gmake[3]: Entering directory '/wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994/pbdata'
+gmake[3]: 'LibBlasrConfig.h' is up to date.
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994/pbdata'
+gmake -C /wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994//pbdata all
+gmake[3]: Entering directory '/wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994/pbdata'
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c qvs/BlasrQualityValue.cpp -o BlasrQualityValue.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c qvs/QualityTransform.cpp -o QualityTransform.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c PackedDNASequence.cpp -o PackedDNASequence.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c FASTASequence.cpp -o FASTASequence.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c NucConversion.cpp -o NucConversion.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c metagenome/TitleTable.cpp -o TitleTable.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c DNASequence.cpp -o DNASequence.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c BlasrFASTQReader.cpp -o BlasrFASTQReader.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c alignment/CmpAlignment.cpp -o CmpAlignment.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c CommandLineParser.cpp -o CommandLineParser.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c ReverseCompressIndex.cpp -o ReverseCompressIndex.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c sam/SAMAlignment.cpp -o SAMAlignment.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c sam/SAMKeywordValuePair.cpp -o SAMKeywordValuePair.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c sam/SAMHeader.cpp -o SAMHeader.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c sam/ReferenceSequence.cpp -o ReferenceSequence.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c sam/ReadGroup.cpp -o ReadGroup.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c GFFFile.cpp -o GFFFile.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c ChangeListID.cpp -o ChangeListID.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c BlasrFASTAReader.cpp -o BlasrFASTAReader.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c StringUtils.cpp -o StringUtils.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c amos/AfgBasWriter.cpp -o AfgBasWriter.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c saf/RefGroup.cpp -o RefGroup.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c saf/MovieInfo.cpp -o MovieInfo.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c saf/RefInfo.cpp -o RefInfo.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c saf/AlnGroup.cpp -o AlnGroup.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c utils/BitUtils.cpp -o BitUtils.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c utils/TimeUtils.cpp -o TimeUtils.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c utils/SMRTTitle.cpp -o SMRTTitle.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c utils/SMRTReadUtils.cpp -o SMRTReadUtils.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c loadpulses/MetricField.cpp -o MetricField.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c loadpulses/MovieAlnIndexLookupTable.cpp -o MovieAlnIndexLookupTable.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c FASTQSequence.cpp -o FASTQSequence.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c reads/AcqParams.cpp -o AcqParams.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c reads/ReadType.cpp -o ReadType.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c reads/BaseFile.cpp -o BaseFile.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c reads/RegionAnnotations.cpp -o RegionAnnotations.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c reads/ZMWGroupEntry.cpp -o ZMWGroupEntry.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c reads/ScanData.cpp -o ScanData.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c reads/HoleXY.cpp -o HoleXY.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c reads/RegionTable.cpp -o RegionTable.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c reads/RegionTypeMap.cpp -o RegionTypeMap.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c reads/RegionAnnotation.cpp -o RegionAnnotation.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c reads/PulseFile.cpp -o PulseFile.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c reads/PulseBaseCommon.cpp -o PulseBaseCommon.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c SMRTSequence.cpp -o SMRTSequence.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c MD5Utils.cpp -o MD5Utils.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c CCSSequence.cpp -o CCSSequence.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c qvs/BlasrQualityValue.cpp -o BlasrQualityValue.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c qvs/QualityTransform.cpp -o QualityTransform.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c PackedDNASequence.cpp -o PackedDNASequence.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c FASTASequence.cpp -o FASTASequence.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c NucConversion.cpp -o NucConversion.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c metagenome/TitleTable.cpp -o TitleTable.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c DNASequence.cpp -o DNASequence.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c BlasrFASTQReader.cpp -o BlasrFASTQReader.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c alignment/CmpAlignment.cpp -o CmpAlignment.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c CommandLineParser.cpp -o CommandLineParser.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c ReverseCompressIndex.cpp -o ReverseCompressIndex.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c sam/SAMAlignment.cpp -o SAMAlignment.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c sam/SAMKeywordValuePair.cpp -o SAMKeywordValuePair.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c sam/SAMHeader.cpp -o SAMHeader.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c sam/ReferenceSequence.cpp -o ReferenceSequence.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c sam/ReadGroup.cpp -o ReadGroup.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c GFFFile.cpp -o GFFFile.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c ChangeListID.cpp -o ChangeListID.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c BlasrFASTAReader.cpp -o BlasrFASTAReader.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c StringUtils.cpp -o StringUtils.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c amos/AfgBasWriter.cpp -o AfgBasWriter.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c saf/RefGroup.cpp -o RefGroup.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c saf/MovieInfo.cpp -o MovieInfo.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c saf/RefInfo.cpp -o RefInfo.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c saf/AlnGroup.cpp -o AlnGroup.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c utils/BitUtils.cpp -o BitUtils.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c utils/TimeUtils.cpp -o TimeUtils.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c utils/SMRTTitle.cpp -o SMRTTitle.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c utils/SMRTReadUtils.cpp -o SMRTReadUtils.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c loadpulses/MetricField.cpp -o MetricField.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c loadpulses/MovieAlnIndexLookupTable.cpp -o MovieAlnIndexLookupTable.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c FASTQSequence.cpp -o FASTQSequence.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c reads/AcqParams.cpp -o AcqParams.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c reads/ReadType.cpp -o ReadType.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c reads/BaseFile.cpp -o BaseFile.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c reads/RegionAnnotations.cpp -o RegionAnnotations.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c reads/ZMWGroupEntry.cpp -o ZMWGroupEntry.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c reads/ScanData.cpp -o ScanData.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c reads/HoleXY.cpp -o HoleXY.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c reads/RegionTable.cpp -o RegionTable.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c reads/RegionTypeMap.cpp -o RegionTypeMap.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c reads/RegionAnnotation.cpp -o RegionAnnotation.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c reads/PulseFile.cpp -o PulseFile.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c reads/PulseBaseCommon.cpp -o PulseBaseCommon.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c SMRTSequence.cpp -o SMRTSequence.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c MD5Utils.cpp -o MD5Utils.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c CCSSequence.cpp -o CCSSequence.shared.o
+ar rc libpbdata.a BlasrQualityValue.o QualityTransform.o PackedDNASequence.o FASTASequence.o NucConversion.o TitleTable.o DNASequence.o BlasrFASTQReader.o CmpAlignment.o CommandLineParser.o ReverseCompressIndex.o SAMAlignment.o SAMKeywordValuePair.o SAMHeader.o ReferenceSequence.o ReadGroup.o GFFFile.o ChangeListID.o BlasrFASTAReader.o StringUtils.o AfgBasWriter.o RefGroup.o MovieInfo.o RefInfo.o AlnGroup.o BitUtils.o TimeUtils.o SMRTTitle.o SMRTReadUtils.o MetricField.o MovieAlnIndexLookupTable.o FASTQSequence.o AcqParams.o ReadType.o BaseFile.o RegionAnnotations.o ZMWGroupEntry.o ScanData.o HoleXY.o RegionTable.o RegionTypeMap.o RegionAnnotation.o PulseFile.o PulseBaseCommon.o SMRTSequence.o MD5Utils.o CCSSequence.o
+c++ -shared  -L/usr/local/lib -fstack-protector    -o libpbdata.so -Wl,-soname,libpbdata.so BlasrQualityValue.shared.o QualityTransform.shared.o PackedDNASequence.shared.o FASTASequence.shared.o NucConversion.shared.o TitleTable.shared.o DNASequence.shared.o BlasrFASTQReader.shared.o CmpAlignment.shared.o CommandLineParser.shared.o ReverseCompressIndex.shared.o SAMAlignment.shared.o SAMKeywordValuePair.shared.o SAMHeader.shared.o ReferenceSequence.shared.o ReadGroup.shared.o GFFFile.shared.o ChangeListID.shared.o BlasrFASTAReader.shared.o StringUtils.shared.o AfgBasWriter.shared.o RefGroup.shared.o MovieInfo.shared.o RefInfo.shared.o AlnGroup.shared.o BitUtils.shared.o TimeUtils.shared.o SMRTTitle.shared.o SMRTReadUtils.shared.o MetricField.shared.o MovieAlnIndexLookupTable.shared.o FASTQSequence.shared.o AcqParams.shared.o ReadType.shared.o BaseFile.shared.o RegionAnnotations.shared.o ZMWGroupEntry.shared.o ScanData.shared.o HoleXY.shared.o RegionTable.shared.o RegionTypeMap.shared.o RegionAnnotation.shared.o PulseFile.shared.o PulseBaseCommon.shared.o SMRTSequence.shared.o MD5Utils.shared.o CCSSequence.shared.o 
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994/pbdata'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994'
+gmake libpbihdf
+gmake[2]: Entering directory '/wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994'
+gmake -C /wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994//hdf all
+gmake[3]: Entering directory '/wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994/hdf'
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c BufferedHDF2DArray.cpp -o BufferedHDF2DArray.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFAtom.cpp -o HDFAtom.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFPulseH5Writer.cpp -o HDFPulseH5Writer.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFScanDataWriter.cpp -o HDFScanDataWriter.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFZMWWriter.cpp -o HDFZMWWriter.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFUtils.cpp -o HDFUtils.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFGroup.cpp -o HDFGroup.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFPulseWriter.cpp -o HDFPulseWriter.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFRegionsWriter.cpp -o HDFRegionsWriter.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFAlnInfoGroup.cpp -o HDFAlnInfoGroup.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFFile.cpp -o HDFFile.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFAlnGroupGroup.cpp -o HDFAlnGroupGroup.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFCmpSupportedFields.cpp -o HDFCmpSupportedFields.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFZMWReader.cpp -o HDFZMWReader.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFBaseCallsWriter.cpp -o HDFBaseCallsWriter.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFPulseCallsWriter.cpp -o HDFPulseCallsWriter.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFPulseDataFile.cpp -o HDFPulseDataFile.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFCmpExperimentGroup.cpp -o HDFCmpExperimentGroup.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFBaxWriter.cpp -o HDFBaxWriter.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFNewBasReader.cpp -o HDFNewBasReader.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFRegionTableReader.cpp -o HDFRegionTableReader.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c DatasetCollection.cpp -o DatasetCollection.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFData.cpp -o HDFData.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFWriterBase.cpp -o HDFWriterBase.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFZMWMetricsWriter.cpp -o HDFZMWMetricsWriter.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFScanDataReader.cpp -o HDFScanDataReader.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c BufferedHDFArray.cpp -o BufferedHDFArray.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c HDFAttributable.cpp -o HDFAttributable.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c BufferedHDF2DArray.cpp -o BufferedHDF2DArray.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFAtom.cpp -o HDFAtom.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFPulseH5Writer.cpp -o HDFPulseH5Writer.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFScanDataWriter.cpp -o HDFScanDataWriter.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFZMWWriter.cpp -o HDFZMWWriter.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFUtils.cpp -o HDFUtils.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFGroup.cpp -o HDFGroup.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFPulseWriter.cpp -o HDFPulseWriter.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFRegionsWriter.cpp -o HDFRegionsWriter.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFAlnInfoGroup.cpp -o HDFAlnInfoGroup.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFFile.cpp -o HDFFile.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFAlnGroupGroup.cpp -o HDFAlnGroupGroup.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFCmpSupportedFields.cpp -o HDFCmpSupportedFields.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFZMWReader.cpp -o HDFZMWReader.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFBaseCallsWriter.cpp -o HDFBaseCallsWriter.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFPulseCallsWriter.cpp -o HDFPulseCallsWriter.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFPulseDataFile.cpp -o HDFPulseDataFile.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFCmpExperimentGroup.cpp -o HDFCmpExperimentGroup.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFBaxWriter.cpp -o HDFBaxWriter.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFNewBasReader.cpp -o HDFNewBasReader.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFRegionTableReader.cpp -o HDFRegionTableReader.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c DatasetCollection.cpp -o DatasetCollection.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFData.cpp -o HDFData.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFWriterBase.cpp -o HDFWriterBase.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFZMWMetricsWriter.cpp -o HDFZMWMetricsWriter.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFScanDataReader.cpp -o HDFScanDataReader.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c BufferedHDFArray.cpp -o BufferedHDFArray.shared.o
+c++ -std=c++1y -pedantic -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c HDFAttributable.cpp -o HDFAttributable.shared.o
+ar rc libpbihdf.a BufferedHDF2DArray.o HDFAtom.o HDFPulseH5Writer.o HDFScanDataWriter.o HDFZMWWriter.o HDFUtils.o HDFGroup.o HDFPulseWriter.o HDFRegionsWriter.o HDFAlnInfoGroup.o HDFFile.o HDFAlnGroupGroup.o HDFCmpSupportedFields.o HDFZMWReader.o HDFBaseCallsWriter.o HDFPulseCallsWriter.o HDFPulseDataFile.o HDFCmpExperimentGroup.o HDFBaxWriter.o HDFNewBasReader.o HDFRegionTableReader.o DatasetCollection.o HDFData.o HDFWriterBase.o HDFZMWMetricsWriter.o HDFScanDataReader.o BufferedHDFArray.o HDFAttributable.o
+c++ -shared  -L/usr/local/lib -fstack-protector  -L../pbdata/ -L/usr/local/lib -o libpbihdf.so -Wl,-soname,libpbihdf.so BufferedHDF2DArray.shared.o HDFAtom.shared.o HDFPulseH5Writer.shared.o HDFScanDataWriter.shared.o HDFZMWWriter.shared.o HDFUtils.shared.o HDFGroup.shared.o HDFPulseWriter.shared.o HDFRegionsWriter.shared.o HDFAlnInfoGroup.shared.o HDFFile.shared.o HDFAlnGroupGroup.shared.o HDFCmpSupportedFields.shared.o HDFZMWReader.shared.o HDFBaseCallsWriter.shared.o HDFPulseCallsWriter.shared.o HDFPulseDataFile.shared.o HDFCmpExperimentGroup.shared.o HDFBaxWriter.shared.o HDFNewBasReader.shared.o HDFRegionTableReader.shared.o DatasetCollection.shared.o HDFData.shared.o HDFWriterBase.shared.o HDFZMWMetricsWriter.shared.o HDFScanDataReader.shared.o BufferedHDFArray.shared.o HDFAttributable.shared.o -lpbdata -lhdf5-18 -lhdf5-18_cpp 
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994/hdf'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994'
+gmake libblasr
+gmake[2]: Entering directory '/wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994'
+gmake -C /wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994//alignment all
+gmake[3]: Entering directory '/wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994/alignment'
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c utils/PhredUtils.cpp -o PhredUtils.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c utils/RegionUtils.cpp -o RegionUtils.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c utils/FileOfFileNames.cpp -o FileOfFileNames.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c utils/BlasrFileUtils.cpp -o BlasrFileUtils.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c utils/LogUtils.cpp -o LogUtils.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c utils/RangeUtils.cpp -o RangeUtils.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c files/BaseSequenceIO.cpp -o BaseSequenceIO.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c files/CCSIterator.cpp -o CCSIterator.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c files/ReaderAgglomerate.cpp -o ReaderAgglomerate.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c files/FragmentCCSIterator.cpp -o FragmentCCSIterator.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c tuples/DNATuple.cpp -o DNATuple.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c tuples/BaseTuple.cpp -o BaseTuple.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c tuples/TupleMetrics.cpp -o TupleMetrics.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c query/PbiFilterZmwGroupQuery.cpp -o PbiFilterZmwGroupQuery.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c query/SequentialZmwGroupQuery.cpp -o SequentialZmwGroupQuery.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c format/CompareSequencesPrinter.cpp -o CompareSequencesPrinter.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c format/SAMPrinter.cpp -o SAMPrinter.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c format/SAMHeaderPrinter.cpp -o SAMHeaderPrinter.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c format/IntervalPrinter.cpp -o IntervalPrinter.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c format/SummaryPrinter.cpp -o SummaryPrinter.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c MappingMetrics.cpp -o MappingMetrics.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c qvs/QualityValueProfile.cpp -o QualityValueProfile.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c algorithms/anchoring/ClusterProbability.cpp -o ClusterProbability.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c algorithms/anchoring/FindMaxInterval.cpp -o FindMaxInterval.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c algorithms/anchoring/Coordinate.cpp -o Coordinate.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c algorithms/anchoring/BWTSearch.cpp -o BWTSearch.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c algorithms/alignment/GuidedAlign.cpp -o GuidedAlign.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c algorithms/alignment/ExtendAlign.cpp -o ExtendAlign.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c algorithms/alignment/sdp/SDPFragment.cpp -o SDPFragment.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c algorithms/alignment/sdp/SparseDynamicProgramming.cpp -o SparseDynamicProgramming.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c algorithms/alignment/IDSScoreFunction.cpp -o IDSScoreFunction.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c algorithms/alignment/AlignmentUtils.cpp -o AlignmentUtils.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c algorithms/alignment/BaseScoreFunction.cpp -o BaseScoreFunction.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c algorithms/alignment/StringToScoreMatrix.cpp -o StringToScoreMatrix.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c algorithms/alignment/ScoreMatrices.cpp -o ScoreMatrices.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c algorithms/alignment/QualityValueScoreFunction.cpp -o QualityValueScoreFunction.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c algorithms/alignment/KBandAlign.cpp -o KBandAlign.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c algorithms/sorting/LightweightSuffixArray.cpp -o LightweightSuffixArray.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c algorithms/sorting/qsufsort.cpp -o qsufsort.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c algorithms/sorting/MultikeyQuicksort.cpp -o MultikeyQuicksort.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c algorithms/sorting/DifferenceCovers.cpp -o DifferenceCovers.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c datastructures/alignment/SAMToAlignmentCandidateAdapter.cpp -o SAMToAlignmentCandidateAdapter.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c datastructures/alignment/AlignmentContext.cpp -o AlignmentContext.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c datastructures/alignment/FilterCriteria.cpp -o FilterCriteria.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c datastructures/alignment/AlignmentCandidate.cpp -o AlignmentCandidate.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c datastructures/alignment/AlignmentStats.cpp -o AlignmentStats.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c datastructures/alignment/Alignment.cpp -o Alignment.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c datastructures/alignment/AlignmentMap.cpp -o AlignmentMap.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c datastructures/alignment/CmpFile.cpp -o CmpFile.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c datastructures/anchoring/ClusterList.cpp -o ClusterList.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c datastructures/anchoring/WeightedInterval.cpp -o WeightedInterval.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c datastructures/anchoring/AnchorParameters.cpp -o AnchorParameters.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c datastructures/anchoring/MatchPos.cpp -o MatchPos.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c datastructures/alignmentset/SAMSupplementalQVList.cpp -o SAMSupplementalQVList.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c datastructures/alignmentset/SAMQVConversion.cpp -o SAMQVConversion.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c simulator/ContextSample.cpp -o ContextSample.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c simulator/QualitySample.cpp -o QualitySample.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c simulator/ContextSet.cpp -o ContextSet.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c simulator/LengthHistogram.cpp -o LengthHistogram.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c statistics/StatUtils.cpp -o StatUtils.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c statistics/LookupAnchorDistribution.cpp -o LookupAnchorDistribution.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c statistics/cdfs.cpp -o cdfs.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -c statistics/pdfs.cpp -o pdfs.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c utils/PhredUtils.cpp -o PhredUtils.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c utils/RegionUtils.cpp -o RegionUtils.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c utils/FileOfFileNames.cpp -o FileOfFileNames.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c utils/BlasrFileUtils.cpp -o BlasrFileUtils.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c utils/LogUtils.cpp -o LogUtils.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c utils/RangeUtils.cpp -o RangeUtils.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c files/BaseSequenceIO.cpp -o BaseSequenceIO.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c files/CCSIterator.cpp -o CCSIterator.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c files/ReaderAgglomerate.cpp -o ReaderAgglomerate.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c files/FragmentCCSIterator.cpp -o FragmentCCSIterator.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c tuples/DNATuple.cpp -o DNATuple.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c tuples/BaseTuple.cpp -o BaseTuple.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c tuples/TupleMetrics.cpp -o TupleMetrics.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c query/PbiFilterZmwGroupQuery.cpp -o PbiFilterZmwGroupQuery.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c query/SequentialZmwGroupQuery.cpp -o SequentialZmwGroupQuery.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c format/CompareSequencesPrinter.cpp -o CompareSequencesPrinter.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c format/SAMPrinter.cpp -o SAMPrinter.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c format/SAMHeaderPrinter.cpp -o SAMHeaderPrinter.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c format/IntervalPrinter.cpp -o IntervalPrinter.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c format/SummaryPrinter.cpp -o SummaryPrinter.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c MappingMetrics.cpp -o MappingMetrics.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c qvs/QualityValueProfile.cpp -o QualityValueProfile.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c algorithms/anchoring/ClusterProbability.cpp -o ClusterProbability.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c algorithms/anchoring/FindMaxInterval.cpp -o FindMaxInterval.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c algorithms/anchoring/Coordinate.cpp -o Coordinate.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c algorithms/anchoring/BWTSearch.cpp -o BWTSearch.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c algorithms/alignment/GuidedAlign.cpp -o GuidedAlign.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c algorithms/alignment/ExtendAlign.cpp -o ExtendAlign.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c algorithms/alignment/sdp/SDPFragment.cpp -o SDPFragment.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c algorithms/alignment/sdp/SparseDynamicProgramming.cpp -o SparseDynamicProgramming.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c algorithms/alignment/IDSScoreFunction.cpp -o IDSScoreFunction.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c algorithms/alignment/AlignmentUtils.cpp -o AlignmentUtils.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c algorithms/alignment/BaseScoreFunction.cpp -o BaseScoreFunction.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c algorithms/alignment/StringToScoreMatrix.cpp -o StringToScoreMatrix.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c algorithms/alignment/ScoreMatrices.cpp -o ScoreMatrices.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c algorithms/alignment/QualityValueScoreFunction.cpp -o QualityValueScoreFunction.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c algorithms/alignment/KBandAlign.cpp -o KBandAlign.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c algorithms/sorting/LightweightSuffixArray.cpp -o LightweightSuffixArray.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c algorithms/sorting/qsufsort.cpp -o qsufsort.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c algorithms/sorting/MultikeyQuicksort.cpp -o MultikeyQuicksort.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c algorithms/sorting/DifferenceCovers.cpp -o DifferenceCovers.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c datastructures/alignment/SAMToAlignmentCandidateAdapter.cpp -o SAMToAlignmentCandidateAdapter.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c datastructures/alignment/AlignmentContext.cpp -o AlignmentContext.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c datastructures/alignment/FilterCriteria.cpp -o FilterCriteria.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c datastructures/alignment/AlignmentCandidate.cpp -o AlignmentCandidate.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c datastructures/alignment/AlignmentStats.cpp -o AlignmentStats.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c datastructures/alignment/Alignment.cpp -o Alignment.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c datastructures/alignment/AlignmentMap.cpp -o AlignmentMap.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c datastructures/alignment/CmpFile.cpp -o CmpFile.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c datastructures/anchoring/ClusterList.cpp -o ClusterList.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c datastructures/anchoring/WeightedInterval.cpp -o WeightedInterval.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c datastructures/anchoring/AnchorParameters.cpp -o AnchorParameters.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c datastructures/anchoring/MatchPos.cpp -o MatchPos.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c datastructures/alignmentset/SAMSupplementalQVList.cpp -o SAMSupplementalQVList.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c datastructures/alignmentset/SAMQVConversion.cpp -o SAMQVConversion.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c simulator/ContextSample.cpp -o ContextSample.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c simulator/QualitySample.cpp -o QualitySample.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c simulator/ContextSet.cpp -o ContextSet.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c simulator/LengthHistogram.cpp -o LengthHistogram.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c statistics/StatUtils.cpp -o StatUtils.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c statistics/LookupAnchorDistribution.cpp -o LookupAnchorDistribution.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c statistics/cdfs.cpp -o cdfs.shared.o
+c++ -std=c++1y -pedantic -Wno-long-long -Wall -Wextra -Wno-overloaded-virtual -O2 -pipe -fstack-protector -fno-strict-aliasing  -I/usr/local/include/hdf5-18 -I/usr/local/include  -I../pbdata    -fPIC -c statistics/pdfs.cpp -o pdfs.shared.o
+ar rc libblasr.a PhredUtils.o RegionUtils.o FileOfFileNames.o BlasrFileUtils.o LogUtils.o RangeUtils.o BaseSequenceIO.o CCSIterator.o ReaderAgglomerate.o FragmentCCSIterator.o DNATuple.o BaseTuple.o TupleMetrics.o PbiFilterZmwGroupQuery.o SequentialZmwGroupQuery.o CompareSequencesPrinter.o SAMPrinter.o SAMHeaderPrinter.o IntervalPrinter.o SummaryPrinter.o MappingMetrics.o QualityValueProfile.o ClusterProbability.o FindMaxInterval.o Coordinate.o BWTSearch.o GuidedAlign.o ExtendAlign.o SDPFragment.o SparseDynamicProgramming.o IDSScoreFunction.o AlignmentUtils.o BaseScoreFunction.o StringToScoreMatrix.o ScoreMatrices.o QualityValueScoreFunction.o KBandAlign.o LightweightSuffixArray.o qsufsort.o MultikeyQuicksort.o DifferenceCovers.o SAMToAlignmentCandidateAdapter.o AlignmentContext.o FilterCriteria.o AlignmentCandidate.o AlignmentStats.o Alignment.o AlignmentMap.o CmpFile.o ClusterList.o WeightedInterval.o AnchorParameters.o MatchPos.o SAMSupplementalQVList.o SAMQVConversion.o ContextSample.o QualitySample.o ContextSet.o LengthHistogram.o StatUtils.o LookupAnchorDistribution.o cdfs.o pdfs.o
+c++ -shared  -L/usr/local/lib -fstack-protector  -L../pbdata/ -L../hdf/ -L/usr/local/lib -o libblasr.so -Wl,-soname,libblasr.so PhredUtils.shared.o RegionUtils.shared.o FileOfFileNames.shared.o BlasrFileUtils.shared.o LogUtils.shared.o RangeUtils.shared.o BaseSequenceIO.shared.o CCSIterator.shared.o ReaderAgglomerate.shared.o FragmentCCSIterator.shared.o DNATuple.shared.o BaseTuple.shared.o TupleMetrics.shared.o PbiFilterZmwGroupQuery.shared.o SequentialZmwGroupQuery.shared.o CompareSequencesPrinter.shared.o SAMPrinter.shared.o SAMHeaderPrinter.shared.o IntervalPrinter.shared.o SummaryPrinter.shared.o MappingMetrics.shared.o QualityValueProfile.shared.o ClusterProbability.shared.o FindMaxInterval.shared.o Coordinate.shared.o BWTSearch.shared.o GuidedAlign.shared.o ExtendAlign.shared.o SDPFragment.shared.o SparseDynamicProgramming.shared.o IDSScoreFunction.shared.o AlignmentUtils.shared.o BaseScoreFunction.shared.o StringToScoreMatrix.shared.o ScoreMatrices.shared.o QualityValueScoreFunction.shared.o KBandAlign.shared.o LightweightSuffixArray.shared.o qsufsort.shared.o MultikeyQuicksort.shared.o DifferenceCovers.shared.o SAMToAlignmentCandidateAdapter.shared.o AlignmentContext.shared.o FilterCriteria.shared.o AlignmentCandidate.shared.o AlignmentStats.shared.o Alignment.shared.o AlignmentMap.shared.o CmpFile.shared.o ClusterList.shared.o WeightedInterval.shared.o AnchorParameters.shared.o MatchPos.shared.o SAMSupplementalQVList.shared.o SAMQVConversion.shared.o ContextSample.shared.o QualitySample.shared.o ContextSet.shared.o LengthHistogram.shared.o StatUtils.shared.o LookupAnchorDistribution.shared.o cdfs.shared.o pdfs.shared.o -lpbdata  -lpbihdf
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994/alignment'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994'
+===========================================================================
+=>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===>   blasr_libcpp-g20180329 depends on file: /usr/local/bin/python2.7 - found
+===========================================================================
+=>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for blasr_libcpp-g20180329
+===>   blasr_libcpp-g20180329 depends on file: /usr/local/bin/python2.7 - found
+===>   Generating temporary packing list
+for fn in `find /wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994 -name '*.h' -o -name '*.hpp'`; do  relpath=${fn#/wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994/};  dir=`dirname $relpath`;  /bin/mkdir -p /wrkdirs/usr/ports/wip/blasr_libcpp/work/stage/usr/local/include/blasr_libcpp/$dir;  install  -m 0644 $fn  /wrkdirs/usr/ports/wip/blasr_libcpp/work/stage/usr/local/include/blasr_libcpp/$dir;  done
+for lib in pbdata/libpbdata hdf/libpbihdf alignment/libblasr; do  install  -m 0644 /wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994/$lib.a /wrkdirs/usr/ports/wip/blasr_libcpp/work/stage/usr/local/lib;  install  -m 0644 /wrkdirs/usr/ports/wip/blasr_libcpp/work/blasr_libcpp-b038971c97eb5403b982c177eb44e488d25e9994/$lib.so /wrkdirs/usr/ports/wip/blasr_libcpp/work/stage/usr/local/lib;  done
+/usr/bin/strip /wrkdirs/usr/ports/wip/blasr_libcpp/work/stage/usr/local/lib/*.so
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+=>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for blasr_libcpp-g20180329
+===========================================================================
+=>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for blasr_libcpp-g20180329
+===>  Checking if blasr_libcpp already installed
+===>   Registering installation for blasr_libcpp-g20180329
+[10-4-amd64-default] Installing blasr_libcpp-g20180329...
+===========================================================================
+=>> Checking shared library dependencies
+ 0x0000000000000001 (NEEDED)             Shared library: [libc++.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.7]
+ 0x0000000000000001 (NEEDED)             Shared library: [libcxxrt.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libhdf5-18.so.10]
+ 0x0000000000000001 (NEEDED)             Shared library: [libhdf5-18_cpp.so.15]
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.5]
+ 0x0000000000000001 (NEEDED)             Shared library: [libpbdata.so]
+ 0x0000000000000001 (NEEDED)             Shared library: [libpbihdf.so]
+=======================<phase: deinstall      >============================
+===>  Deinstalling for blasr_libcpp
+===>   Deinstalling blasr_libcpp-g20180329
+Updating database digests format: .......... done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	blasr_libcpp-g20180329
+
+Number of packages to be removed: 1
+
+The operation will free 15 MiB.
+[10-4-amd64-default] [1/1] Deinstalling blasr_libcpp-g20180329...
+[10-4-amd64-default] [1/1] Deleting files for blasr_libcpp-g20180329: .......... done
+===========================================================================
+=>> Checking for extra files and directories
+[00:09:37] Installing from package
+[10-4-amd64-default] Installing blasr_libcpp-g20180329...
+[10-4-amd64-default] Extracting blasr_libcpp-g20180329: .......... done
+[00:09:37] Cleaning up
+===>  Cleaning for blasr_libcpp-g20180329
+[00:09:38] Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	blasr_libcpp-g20180329
+
+Number of packages to be removed: 1
+
+The operation will free 15 MiB.
+[10-4-amd64-default] [1/1] Deinstalling blasr_libcpp-g20180329...
+[10-4-amd64-default] [1/1] Deleting files for blasr_libcpp-g20180329: .......... done
+build of wip/blasr_libcpp | blasr_libcpp-g20180329 ended at Sun Apr 29 13:21:57 CDT 2018
+build time: 00:03:37
