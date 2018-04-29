@@ -1,9 +1,0 @@
---- utils/bax2bam/src/CMakeLists.txt.orig	2016-08-31 15:02:56 UTC
-+++ utils/bax2bam/src/CMakeLists.txt
-@@ -55,5 +55,5 @@ target_link_libraries(bax2bam 
-     ${ZLIB_LIBRARIES}
-     ${CMAKE_THREAD_LIBS_INIT}
-     ${MY_LIBRT}
--    "-ldl"
-+    "-lcrypto -lssl"
- )

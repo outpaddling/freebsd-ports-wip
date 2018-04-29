@@ -9,11 +9,15 @@ COMMENT=	Library for analyzing PacBio sequences
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	pbbam>=g20180416:biology/pbbam
+BUILD_DEPENDS=	pbbam>=g20180416:biology/pbbam \
+		bash:shells/bash
 LIB_DEPENDS=	libhdf5-18.so:science/hdf5-18
 
 USES=		gmake python shebangfix tar:xz
-SHEBANG_FILES=	configure.py
+SHEBANG_FILES=	configure.py \
+		tools/check-formatting tools/format-all \
+		bamboo_build.sh travis.sh DEVELOPER.md \
+		scripts/ci/checkout-submodules.sh scripts/ci/build.sh
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
