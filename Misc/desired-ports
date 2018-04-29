@@ -42,7 +42,7 @@ pbdagcon
     daligner
     dazz_db
     blasr
-    blasr_libcpp
+    blasr_libcpp 2018-04-29
 py-pbfalcon
     daligner
     dazz_db
