@@ -12,41 +12,34 @@ COMMENT=	PacBio(R) long read aligner
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libhdf5.so:science/hdf5 \
+BUILD_DEPENDS=	git:devel/git	# Get tag with git describe
+LIB_DEPENDS=	libhdf5-18.so:science/hdf5-18 \
 		libsz.so:science/szip \
-		libblasr.so:wip/blasr_libcpp
+		libblasr.so:wip/blasr_libcpp \
+		libcurl.so:ftp/curl
 
 USES=		gmake tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
-GH_TAGNAME=	eab53fd220a05dfd7290962360a6ccce55be9c7c
+GH_TAGNAME=	eab53fd
 
 MAKEFILE=	makefile
 
-CXXFLAGS+=	-I${LOCALBASE}/include/blasr_libcpp \
-		-I${LOCALBASE}/include/blasr_libcpp/hdf \
-		-I${LOCALBASE}/include/blasr_libcpp/pbdata \
-		-I${LOCALBASE}/include/blasr_libcpp/alignment \
-		-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-MAKE_JOBS_UNSAFE=	yes
-
-post-patch:
-	${REINPLACE_CMD} \
-		-e 's|/bin/bash|${LOCALBASE}/bin/bash|g' \
-		-e 's|-ldl||g' \
-		${WRKSRC}/makefile
-
 do-configure:
-	cd ${WRKSRC} && ./configure.py --no-pbbam \
-		NOPBBAM=1 HDF5_INCLUDE=${LOCALBASE}/include HDF5_LIB=${LOCALBASE}/lib
-
-post-configure:
-	${REINPLACE_CMD} \
-		-e 's|-lhdf5$$|-lhdf5 -lsz|g' \
-		-e 's|-ldl||g' \
-		${WRKSRC}/makefile ${WRKSRC}/defines.mk
+	cd ${WRKSRC} && ./configure.py --shared \
+		HDF5_INCLUDE=${LOCALBASE}/include/hdf5-18 \
+		HDF5_LIB=${LOCALBASE}/lib \
+		HDF5_LIBFLAGS="-lhdf5-18_cpp -lhdf5-18" \
+		LIBPBDATA_INC=${LOCALBASE}/include/blasr_libcpp/pbdata \
+		LIBPBDATA_LIB=${LOCALBASE}/lib \
+		LIBPBIHDF_INC=${LOCALBASE}/include/blasr_libcpp/hdf \
+		LIBPBIHDF_LIB=${LOCALBASE}/lib \
+		LIBBLASR_INC=${LOCALBASE}/include/blasr_libcpp/alignment \
+		LIBBLASR_LIB=${LOCALBASE}/lib \
+		PBBAM_INC=${LOCALBASE}/include \
+		PBBAM_LIB=${LOCALBASE}/lib \
+		HTSLIB_LIBS="-lhts -llzma -lcurl" \
+		DL_LIBFLAGS=""
 
 do-install:
 	${INSTALL_PROGRAM} \
