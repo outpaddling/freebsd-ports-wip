@@ -1,7 +1,8 @@
 # $FreeBSD$
 
+# Use compatible versions of dazz_db, daligner, pbdagcon, pypeflow, and falcon!
+
 PORTNAME=		DAZZ_DB
-# Must use the same version of dazz_db, daligner, pypeflow, and falcon!
 DISTVERSIONPREFIX=	V
 DISTVERSION=		1.0-14
 DISTVERSIONSUFFIX=	-g7104852

@@ -18,3 +18,5 @@ bin/fasta2DB
 bin/quiva2DB
 bin/rangen
 bin/simulator
+include/dazz_db/DB.h
+include/dazz_db/QV.h
