@@ -20,3 +20,4 @@ bin/rangen
 bin/simulator
 include/dazz_db/DB.h
 include/dazz_db/QV.h
+lib/libdazz_db.a
