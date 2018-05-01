@@ -39,9 +39,9 @@ SFS Aurash M
 
 bedtools2       2018-04-01
 pbdagcon
-    daligner
-    dazz_db
-    blasr
+    daligner    2018-05-01
+    dazz_db     2018-05-01
+    blasr       2018-04-30
     blasr_libcpp 2018-04-29
 py-pbfalcon
     daligner
@@ -65,7 +65,7 @@ sleuth
 sailfish
 
 SFS Ryan Bartelme
-IQTree		jrm@FreeBSD.org
+IQTree                                          jrm@FreeBSD.org
 
 MATH Dexuan X
 
