@@ -13,7 +13,6 @@ COMMENT=	Dresden assembler for long read DNA projects
 
 LICENSE=	BSD3CLAUSE
 
-USES=		gmake tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
 
