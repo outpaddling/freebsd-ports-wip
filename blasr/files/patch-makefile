@@ -1,0 +1,11 @@
+--- makefile.orig	2018-05-01 00:15:02 UTC
++++ makefile
+@@ -9,7 +9,7 @@ foo:
+ 	echo $(MAKEFILE_LIST)
+ 	echo ${SRCDIR}
+ 
+-GET_SHA1 := $(shell git -C ${SRCDIR} describe --always --dirty='*')
++GET_SHA1 = ${GH_TAGNAME}
+ CXXFLAGS += -O3 -g -DSHA1_7=\"${GET_SHA1}\"
+ CXXOPTS += \
+ 		   -std=c++14 -pedantic \

@@ -12,10 +12,10 @@ COMMENT=	PacBio(R) long read aligner
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	git:devel/git	# Get tag with git describe
 LIB_DEPENDS=	libhdf5-18.so:science/hdf5-18 \
 		libsz.so:science/szip \
 		libblasr.so:wip/blasr_libcpp \
+		libhts.so:biology/htslib \
 		libcurl.so:ftp/curl
 
 USES=		gmake tar:xz
@@ -24,6 +24,7 @@ GH_ACCOUNT=	PacificBiosciences
 GH_TAGNAME=	eab53fd
 
 MAKEFILE=	makefile
+MAKE_ENV=	GH_TAGNAME=${GH_TAGNAME}
 
 do-configure:
 	cd ${WRKSRC} && ./configure.py --shared \
