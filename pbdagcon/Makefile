@@ -18,8 +18,8 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libhts.so:biology/htslib
 RUN_DEPENDS=	${COMMON_DEPENDS}
 
-USES=		gmake shebangfix tar:xz
-SHEBANG_FILES=	src/cpp/pbdagcon_wf.sh
+USES=		gmake python shebangfix tar:xz
+SHEBANG_FILES=	src/cpp/pbdagcon_wf.sh configure.py
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
 GH_TAGNAME=	c14c422e609a914f0139f7222202ac1bce7e3ef1
