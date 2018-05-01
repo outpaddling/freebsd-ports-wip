@@ -3,8 +3,8 @@
 PORTNAME=		DAZZ_DB
 # Must use the same version of dazz_db, daligner, pypeflow, and falcon!
 DISTVERSIONPREFIX=	V
-DISTVERSION=		1.0
-DISTVERSIONSUFFIX=	-41-g7104852
+DISTVERSION=		1.0-14
+DISTVERSIONSUFFIX=	-g7104852
 CATEGORIES=		wip biology databases
 
 MAINTAINER=	jwb@FreeBSD.org
