@@ -8,3 +8,8 @@ bin/LAshow
 bin/LAsort
 bin/LAsplit
 bin/daligner
+include/daligner/DB.h
+include/daligner/QV.h
+include/daligner/align.h
+include/daligner/filter.h
+lib/libdaligner.a

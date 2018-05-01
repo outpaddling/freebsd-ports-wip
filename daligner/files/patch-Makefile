@@ -1,6 +1,6 @@
---- Makefile.orig	2018-05-01 21:06:53 UTC
+--- Makefile.orig	2018-01-08 11:23:17 UTC
 +++ Makefile
-@@ -1,43 +1,48 @@
+@@ -1,52 +1,81 @@
 -DEST_DIR = ~/bin
 +DESTDIR	?=
 +PREFIX	?= ~/
@@ -8,13 +8,29 @@
 -CFLAGS = -O3 -Wall -Wextra -Wno-unused-result -fno-strict-aliasing
 +CC	?= gcc
 +CFLAGS	+= -Wall -Wextra -Wno-unused-result -fno-strict-aliasing
+ 
+-ALL = daligner HPC.daligner LAsort LAmerge LAsplit LAcat LAshow LAdump LAcheck LAindex
++INSTALL 	?= install
++MKDIR		?= mkdir
++STRIP_CMD	?= strip
++AR		?= ar
+ 
+-all: $(ALL)
++BINS 	= daligner HPC.daligner LAsort LAmerge LAsplit LAcat LAshow LAdump \
++	LAcheck LAindex
++LIB	= libdaligner.a
++OBJS	= daligner.o align.o
 +
-+INSTALL ?= install
-+MKDIR	?= mkdir
- 
- ALL = daligner HPC.daligner LAsort LAmerge LAsplit LAcat LAshow LAdump LAcheck LAindex
- 
- all: $(ALL)
++all: $(BINS) $(LIB)
++
++$(LIB): $(OBJS)
++	$(AR) rs $(LIB) $(OBJS)
++
++daligner.o: daligner.c
++	$(CC) -c $(CFLAGS) daligner.c
++
++align.o: align.c
++	$(CC) -c $(CFLAGS) align.c
  
  daligner: daligner.c filter.c filter.h align.c align.h DB.c DB.h QV.c QV.h
 -	gcc $(CFLAGS) -o daligner daligner.c filter.c align.c DB.c QV.c -lpthread -lm
@@ -61,13 +77,25 @@
 +	$(CC) $(CFLAGS) -o LAindex LAindex.c align.c DB.c QV.c -lm
  
  clean:
- 	rm -f $(ALL)
-@@ -46,7 +51,7 @@ clean:
+-	rm -f $(ALL)
++	rm -f $(BINS)
+ 	rm -fr *.dSYM
+ 	rm -f LAupgrade.Dec.31.2014
  	rm -f daligner.tar.gz
  
++install-strip: install
++	for f in $(BINS); do \
++		$(STRIP_CMD) $(DESTDIR)$(PREFIX)/bin/$$f; \
++	done
++
  install:
 -	cp $(ALL) $(DEST_DIR)
-+	$(INSTALL) -c $(ALL) $(DESTDIR)$(PREFIX)/bin
++	$(MKDIR) -p $(DESTDIR)$(PREFIX)/bin
++	$(INSTALL) -c $(BINS) $(DESTDIR)$(PREFIX)/bin
++	$(MKDIR) -p $(DESTDIR)$(PREFIX)/include/daligner
++	$(INSTALL) -c *.h $(DESTDIR)$(PREFIX)/include/daligner
++	$(MKDIR) -p $(DESTDIR)$(PREFIX)/lib
++	$(INSTALL) -c $(LIB) $(DESTDIR)$(PREFIX)/lib
  
  package:
  	make clean
