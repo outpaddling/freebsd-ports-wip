@@ -61,7 +61,7 @@ illumina_utils  2018-03-31
 
 Future:
 
-sleuth
+sleuth          Follow bioconductor instructions within R
 sailfish
 
 SFS Ryan Bartelme
