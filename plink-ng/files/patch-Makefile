@@ -1,13 +1,13 @@
---- Makefile.orig	2018-04-28 18:49:38 UTC
+--- Makefile.orig	2018-05-03 04:10:05 UTC
 +++ Makefile
-@@ -1,43 +1,68 @@
+@@ -1,44 +1,68 @@
 +
- BASEFLAGS=-Wall -Wextra -Wshadow -Wformat-security -mavx2 -mbmi -mbmi2 -mlzcnt -DNDEBUG -DZSTD_MULTITHREAD
- # BASEFLAGS=-Wall -Wextra -Wshadow -Wformat-security -mavx2 -mbmi -mbmi2 -mlzcnt -DZSTD_MULTITHREAD
- # BASEFLAGS=-Wall -Wextra -Wshadow -Wformat-security -msse4.2 -DNDEBUG -DZSTD_MULTITHREAD
+ BASEFLAGS=-mavx2 -mbmi -mbmi2 -mlzcnt -DNDEBUG -DZSTD_MULTITHREAD
+ # BASEFLAGS=-mavx2 -mbmi -mbmi2 -mlzcnt -DZSTD_MULTITHREAD
+ # BASEFLAGS=-msse4.2 -DNDEBUG -DZSTD_MULTITHREAD
 -CFLAGS=-O3 -std=gnu99
 -# this actually needs to be named "CXXFLAGS"
--CXXFLAGS=-O2 -std=c++14 -Wold-style-cast
+-CXXFLAGS=-O2 -std=c++14
  
 -CFLAGS += ${BASEFLAGS}
 -CXXFLAGS += ${BASEFLAGS}
@@ -28,8 +28,8 @@
 +ARCH32		?=
 +
 +# Mandatory flags added to defaults or env settings
-+CFLAGS		+= -std=gnu99 $(BASEFLAGS) $(CINCLUDE) $(ZSTD_INCLUDE)
-+CXXFLAGS	+= -std=c++14 -Wold-style-cast $(BASEFLAGS)
++CFLAGS		+= -std=gnu99 $(BASEFLAGS) $(CWARN) $(CINCLUDE) $(ZSTD_INCLUDE)
++CXXFLAGS	+= -std=c++14 $(BASEFLAGS) $(CXXWARN)
 +LDFLAGS		+= -lm -lpthread -L. $(ZLIB)
 +
 +# Installation defaults
@@ -48,7 +48,8 @@
  endif
  
 -include Makefile.src
--CFLAGS += ${CINCLUDE} ${ZSTD_INCLUDE}
+-CFLAGS += ${CWARN} ${CINCLUDE} ${ZSTD_INCLUDE}
+-CXXFLAGS += ${CXXWARN}
 -
  %.o: %.c
 -	gcc -c $(CFLAGS) $(ARCH32) -o $@ $<
