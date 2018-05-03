@@ -25,14 +25,9 @@ WRKSRC_SUBDIR=	2.0
 CFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include
 CXXFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include
 LDFLAGS+=	-lpthread
-MAKE_ARGS+=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -llapack -lcblas -lopenblas"
+MAKE_ARGS+=	ZLIB=-lz BLASFLAGS64="-L${LOCALBASE}/lib -lopenblas"
 INSTALL_TARGET=	install-strip
 
-PLIST_FILES=	bin/plink19
-
-# Override install target and install as plink1 to allow coexistence with
-# plink 1.07
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/plink ${STAGEDIR}${PREFIX}/bin/plink2
+PLIST_FILES=	bin/plink2 bin/pgen_compress
 
 .include <bsd.port.mk>
