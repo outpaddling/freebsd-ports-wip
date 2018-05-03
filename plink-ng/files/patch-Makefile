@@ -1,6 +1,6 @@
 --- Makefile.orig	2018-04-28 18:49:38 UTC
 +++ Makefile
-@@ -1,43 +1,66 @@
+@@ -1,43 +1,68 @@
 +
  BASEFLAGS=-Wall -Wextra -Wshadow -Wformat-security -mavx2 -mbmi -mbmi2 -mlzcnt -DNDEBUG -DZSTD_MULTITHREAD
  # BASEFLAGS=-Wall -Wextra -Wshadow -Wformat-security -mavx2 -mbmi -mbmi2 -mlzcnt -DZSTD_MULTITHREAD
@@ -16,28 +16,29 @@
 -ZLIB=../zlib-1.2.11/libz-64.a
 -BLASFLAGS64=-llapack -lf77blas -latlas
 -LINKFLAGS=-lm -lpthread -L. ${ZLIB}
-+# Defaults if not set in env
+-ARCH32=
++# Respect the environment:
++# Use defaults below only if not set in env or make arguments
 +CC		?= gcc
 +CXX		?= g++
 +CFLAGS		?= -O3
 +CXXFLAGS	?= -O2
-+
-+# Mandatory additions
-+CFLAGS		+= -std=gnu99 $(BASEFLAGS) $(CINCLUDE) $(ZSTD_INCLUDE)
-+CXXFLAGS	+= -std=c++14 -Wold-style-cast $(BASEFLAGS)
-+
 +ZLIB		?= ../zlib-1.2.11/libz-64.a
 +BLASFLAGS64	?= -llapack -lf77blas -latlas
++ARCH32		?=
++
++# Mandatory flags added to defaults or env settings
++CFLAGS		+= -std=gnu99 $(BASEFLAGS) $(CINCLUDE) $(ZSTD_INCLUDE)
++CXXFLAGS	+= -std=c++14 -Wold-style-cast $(BASEFLAGS)
 +LDFLAGS		+= -lm -lpthread -L. $(ZLIB)
- ARCH32=
- 
++
++# Installation defaults
 +MKDIR		?= mkdir
 +INSTALL		?= install
 +STRIP_CMD	?= strip
-+
 +PREFIX		?= /usr/local
 +DESTDIR		?= .
-+
+ 
  UNAME := $(shell uname)
  ifeq ($(UNAME), Darwin)
    BLASFLAGS=-framework Accelerate
@@ -60,6 +61,8 @@
  all: plink2 pgen_compress
  
  # for clean build, "make clean" first
++# Run mkdir for both plink2 and pgen_compress as we don't know which
++# target will run first
  plink2: $(OBJ)
 -	g++ $(ARCH32) $(OBJ) -o bin/plink2 $(BLASFLAGS64) $(LINKFLAGS)
 +	$(MKDIR) -p bin
