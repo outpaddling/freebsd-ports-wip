@@ -10,8 +10,7 @@ COMMENT=	Whole genome association analysis toolset
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	liblapack.so:math/lapack \
-		libcblas.so:math/cblas \
+LIB_DEPENDS=	libcblas.so:math/cblas \
 		libopenblas.so:math/openblas
 
 # We need Fortran LDFLAGS to link with Lapack.
