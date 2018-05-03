@@ -1,20 +1,16 @@
-# $FreeBSD: head/biology/plink/Makefile 437439 2017-04-01 15:23:30Z gerald $
-#
-# TODO: Patch source to allow compiling C files with cc instead of c++
+# $FreeBSD$
 
-PORTNAME=	plink
-PORTVERSION=	1.90b4
-DISTVERSIONPREFIX=v
-CATEGORIES=	wip biology science
+PORTNAME=		plink
+DISTVERSIONPREFIX=	v
+DISTVERSION=		1.90b4
+CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Whole genome association analysis toolset
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	liblapack.so:math/lapack \
-		libcblas.so:math/cblas \
-		libopenblas.so:math/openblas
+LIB_DEPENDS=	libopenblas.so:math/openblas
 
 # We need Fortran LDFLAGS to link with Lapack.
 USES=		fortran gmake
@@ -24,15 +20,11 @@ GH_ACCOUNT=	chrchang
 GH_PROJECT=	plink-ng
 GH_TAGNAME=	cbcf442c176036138419b14d6b46a3d57e8325d4
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-ng-${GH_TAGNAME}/1.9
-
+WRKSRC_SUBDIR=	1.9
 CFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include
 CXXFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include
 LDFLAGS+=	-lpthread
-
-# Override defaults in Makefile.generic
-MAKE_ARGS+=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -llapack -lcblas -lopenblas"
-
+MAKE_ARGS+=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -lopenblas"
 INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	bin/plink19
