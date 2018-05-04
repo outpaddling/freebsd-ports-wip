@@ -14,7 +14,8 @@ LIB_DEPENDS=	libcblas.so:math/cblas \
 		libopenblas.so:math/openblas
 
 # We need Fortran LDFLAGS to link with Lapack.
-USES=		fortran gmake
+USES=		fortran gmake shebangfix
+SHEBANG_FILES=	Tests/*.sh Tests/*/*.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	chrchang
 GH_PROJECT=	plink-ng
