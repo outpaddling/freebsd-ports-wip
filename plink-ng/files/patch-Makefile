@@ -1,0 +1,16 @@
+--- Makefile.orig	2018-05-03 22:24:28 UTC
++++ Makefile
+@@ -1,4 +1,12 @@
+-BASEFLAGS=-mavx2 -mbmi -mbmi2 -mlzcnt -DNDEBUG -DZSTD_MULTITHREAD
++
++###########################################################################
++# Note: This Makefile is intended for development.  For production
++# builds, use build_dynamic/Makefile or edit out assumptions such as
++# -mavx2.
++###########################################################################
++
++BASEFLAGS=-DNDEBUG -DZSTD_MULTITHREAD
++# BASEFLAGS=-mavx2 -mbmi -mbmi2 -mlzcnt -DNDEBUG -DZSTD_MULTITHREAD
+ # BASEFLAGS=-mavx2 -mbmi -mbmi2 -mlzcnt -DZSTD_MULTITHREAD
+ # BASEFLAGS=-msse4.2 -DNDEBUG -DZSTD_MULTITHREAD
+ 

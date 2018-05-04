@@ -21,11 +21,11 @@ GH_PROJECT=	plink-ng
 GH_TAGNAME=	e81056a32d67cd73a69579e2dbb374d16196f305
 
 WRKSRC_SUBDIR=	2.0
-CFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include -g
-CXXFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include -g
+CFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include
+CXXFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include
 LDFLAGS+=	-lpthread
 MAKE_ARGS+=	ZLIB=-lz BLASFLAGS64="-L${LOCALBASE}/lib -lopenblas -lgfortran"
-# INSTALL_TARGET=	install-strip
+INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	bin/plink2 bin/pgen_compress
 
