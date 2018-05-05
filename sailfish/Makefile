@@ -11,6 +11,8 @@ COMMENT=	Rapid Mapping-based Isoform Quantification from RNA-Seq Reads
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libjellyfish-2.0.so:biology/jellyfish
+
 USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	kingsfordgroup
