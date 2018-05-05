@@ -28,14 +28,9 @@ LDFLAGS+=	-lpthread
 MAKE_ARGS+=	ZLIB=-lz BLASFLAGS64="-L${LOCALBASE}/lib -lopenblas -lgfortran"
 INSTALL_TARGET=	install-strip
 
-OPTIONS_RADIO=		OPT
-OPTIONS_RADIO_OPT=	SSE42 AVX2
-
-SSE42_DESC=		Build for CPUs with SSE 4.2
-AVX2_DESC=		Build for CPUs with AVX 2
-
-SSE42_CFLAGS=		-msse4.2
-AVX2_CFLAGS=		-mavx2 -mbmi -mbmi2 -mlzcnt
+OPTIONS_DEFINE=		NATIVE_CPU
+NATIVE_CPU_DESC=	Optimize for this CPU (create non-porable binaries)
+NATIVE_CPU_CFLAGS=	-march=native
 
 PLIST_FILES=	bin/plink2 bin/pgen_compress
 
