@@ -29,7 +29,7 @@ MAKE_ARGS+=	ZLIB=-lz BLASFLAGS64="-L${LOCALBASE}/lib -lopenblas -lgfortran"
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		NATIVE_CPU
-NATIVE_CPU_DESC=	Optimize for this CPU (create non-porable binaries)
+NATIVE_CPU_DESC=	Optimize for this CPU (build non-portable binaries)
 NATIVE_CPU_CFLAGS=	-march=native
 
 PLIST_FILES=	bin/plink2 bin/pgen_compress
