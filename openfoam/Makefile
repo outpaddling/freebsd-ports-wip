@@ -29,13 +29,14 @@ USES=		bison gmake ncurses readline shebangfix tar:tgz
 USE_GCC=	yes
 QT4_USE=	opengl webkit
 USE_GL=		glut
-SHEBANG_FILES=	${WRKSRC}/wmake/wmakeSchedulerUptime \
-		${WRKSRC}/wmake/wmakeScheduler \
-		${WRKSRC}/bin/tools/pre-receive-hook \
-		${WRKSRC}/bin/tools/pre-commit-hook \
-		${WRKSRC}/bin/tools/doxyFilter \
-		${WRKSRC}/bin/foamExec \
-		${WRKSRC}/doc/tools/find-trailingspace
+SHEBANG_FILES=	wmake/wmakeSchedulerUptime \
+		wmake/wmakeScheduler \
+		bin/tools/pre-receive-hook \
+		bin/tools/pre-commit-hook \
+		bin/tools/doxyFilter \
+		bin/foamExec \
+		bin/tools/replaceAllShellSun \
+		doc/tools/find-trailingspace
 
 # This should probably be made to work on at least i386 as well
 # with a few additional changes.
@@ -109,5 +110,6 @@ post-stage:
 		-e 's|${WRKDIR}|${PREFIX}|g' \
 		${STAGEDIR}${INSTALL_DIR}/etc/bashrc \
 		${STAGEDIR}${INSTALL_DIR}/etc/cshrc
+	@${RM} ${STAGEDIR}${INSTALL_DIR}/bin/*.bak
 
 .include <bsd.port.mk>
