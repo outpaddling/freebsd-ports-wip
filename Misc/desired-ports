@@ -13,16 +13,16 @@ Commit IMMEDIATELY after changing this file.
 
 
 ---------------------------------------------------------------------------
-Program         Date last verified up-to-date   Assigned to
+Program         Date last verified up-to-date   Assigned to Committed
 ---------------------------------------------------------------------------
 
 SPH Paul A
 
-bedtools2       2018-04-01
+bedtools2       2018-04-01                                  2018-04-19
 bowtie          Leave at 1.1.2: 1.2.1 crashes
-bowtie2         2018-04-01
-bwa             2018-04-01
-epacts          2018-04-01
+bowtie2         2018-04-01                                  2017-11-30
+bwa             2018-04-01                                  2018-01-31
+epacts          2018-04-01                                  
 macs2           2018-04-01
 metal           2018-04-01
 plink           2018-04-01
