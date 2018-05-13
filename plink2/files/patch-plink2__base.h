@@ -1,6 +1,6 @@
---- plink2_base.h.orig	2018-05-03 04:10:05 UTC
+--- plink2_base.h.orig	2018-05-11 05:21:46 UTC
 +++ plink2_base.h
-@@ -435,7 +435,7 @@ typedef uint32_t BoolErr;
+@@ -444,7 +444,7 @@ typedef uint32_t BoolErr;
  #  define FOPEN_RB "r"
  #  define FOPEN_WB "w"
  #  define FOPEN_AB "a"
