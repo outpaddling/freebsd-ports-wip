@@ -1,3 +1,4 @@
+man/man1/auto-ad-adduser.1.gz
 man/man1/auto-add-fdesc-mount.1.gz
 man/man1/auto-add-linproc-mount.1.gz
 man/man1/auto-add-proc-mount.1.gz
@@ -36,6 +37,7 @@ man/man1/auto-insert-line.1.gz
 man/man1/auto-install-packages.1.gz
 man/man1/auto-ipfw-gateway-setup.1.gz
 man/man1/auto-kdm3-toggle.1.gz
+man/man1/auto-krb-auth-setup.1.gz
 man/man1/auto-ldap-adduser.1.gz
 man/man1/auto-ldap-client-setup.1.gz
 man/man1/auto-mount-any.1.gz
@@ -67,6 +69,7 @@ man/man1/auto-using-pkgng.1.gz
 man/man1/auto-using-pkgsrc.1.gz
 man/man1/auto-wifi-failover.1.gz
 man/man1/auto-xdm-toggle.1.gz
+sbin/auto-ad-adduser
 sbin/auto-add-fdesc-mount
 sbin/auto-add-linproc-mount
 sbin/auto-add-proc-mount
@@ -105,6 +108,7 @@ sbin/auto-insert-line
 sbin/auto-install-packages
 sbin/auto-ipfw-gateway-setup
 sbin/auto-kdm3-toggle
+sbin/auto-krb-auth-setup
 sbin/auto-ldap-adduser
 sbin/auto-ldap-client-setup
 sbin/auto-mount-any
