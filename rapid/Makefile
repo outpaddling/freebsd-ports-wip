@@ -3,8 +3,7 @@
 PORTNAME=	rapid
 PORTVERSION=	2.01
 CATEGORIES=	wip math science graphics
-MASTER_SITES=	http://www.cs.sunysb.edu/~algorith/implement/RAPID/distrib/ \
-		http://www.neuro.mcw.edu/Ports/distfiles/
+MASTER_SITES=	http://www.cs.sunysb.edu/~algorith/implement/RAPID/distrib/
 DISTNAME=	RAPID_v2_01
 
 MAINTAINER=	jwb@FreeBSD.org
