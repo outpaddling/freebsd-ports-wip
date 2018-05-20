@@ -3,7 +3,8 @@
 PORTNAME=	clustalx
 PORTVERSION=	2.1
 CATEGORIES=	wip
-MASTER_SITES=	http://www.clustal.org/download/current/
+MASTER_SITES=	http://www.clustal.org/download/current/ \
+		ftp://ftp.ebi.ac.uk/pub/software/clustalw2/2.1/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Multiple alignment of nucleic acid and protein sequences
