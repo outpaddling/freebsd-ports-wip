@@ -9,12 +9,14 @@ MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Multiple alignment of nucleic acid and protein sequences
 
 LICENSE=	LGPL3
-#LICENSE_FILE=	
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		qmake
-USE_QT4=	qmake_build
+USE_QT4=	corelib gui qmake_build xml
 
-MAKE_JOBS_UNSAFE=	yes
-CXXFLAGS+=		--std=c++11
+PLIST_FILES=	bin/clustalx
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/clustalx ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
