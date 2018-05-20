@@ -12,11 +12,20 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		qmake
-USE_QT4=	corelib gui qmake_build xml
+USE_QT4=	corelib gui moc qmake_build xml
 
-PLIST_FILES=	bin/clustalx
+PLIST_FILES=	bin/clustalx \
+		${DATADIR}/colprot.xml \
+		${DATADIR}/coldna.xml \
+		${DATADIR}/colprint.xml
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|col.*.xml|${DATADIR}/&|' \
+		${WRKSRC}/ClustalQtParams.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/clustalx ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/col*.xml ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
