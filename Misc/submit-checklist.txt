@@ -75,6 +75,8 @@ Makefile:
 	https://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/porting-order.html
 
     Use USES or USE_* variables wherever possible
+	Check need for USES vars like pkgconfig, localbase, gettext,
+	    desktop-file-utils (installs a .desktop file)
 	USES before USE_*
 	See /usr/ports/Mk/Uses
 	USE_TEX instead of tex-* depends
@@ -110,9 +112,6 @@ Makefile:
     Remove MAKE_JOBS_UNSAFE if possible
     
     WRKSRC_SUBDIR instead of WRKSRC if possible
-
-    Check need for USES vars like pkgconfig, localbase, gettext,
-	desktop-file-utils (installs a .desktop file)
 
     CMAKE_ARGS format VAR:BOOL=ON, not VAR=1
 	CMAKE_ON and CMAKE_OFF where possible
@@ -197,7 +196,7 @@ Follow porter's handbook to submit new port or update.
     testport: OK (poudriere: {9.3, 10.3, 11.0}, {i386, amd64}, options tested)
     unittest: OK (test suite summary output)
 
-Update /usr/wip/upstream
+Update /usr/wip/Misc/upstream
 
 
 After commit
