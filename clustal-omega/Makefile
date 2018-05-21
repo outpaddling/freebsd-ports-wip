@@ -6,7 +6,7 @@ CATEGORIES=	wip biology
 MASTER_SITES=	http://www.clustal.org/omega/
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Multiple alignment of DNA or proteins, replaces clustalw
+COMMENT=	Multiple alignment of nucleic acid and protein, replaces clustalw
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
