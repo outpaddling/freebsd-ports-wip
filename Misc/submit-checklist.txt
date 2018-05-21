@@ -73,7 +73,8 @@ Makefile
 
     Use USES or USE_* variables wherever possible
 	USES before USE_*
-	See /usr/ports/Mk/Uses
+	    USES=localbase = CFLAGS+=-I${LOCALBASE}/include, etc.
+	    See /usr/ports/Mk/Uses
 	USE_TEX instead of tex-* depends
 	pathfix for pkgconfig lib/libdata
 	USE_XORG= instead of LIB_DEPENDS where possible
