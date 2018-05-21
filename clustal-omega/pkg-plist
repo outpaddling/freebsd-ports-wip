@@ -29,4 +29,4 @@ include/clustalo/squid/vectorops.h
 include/clustalo/squid/version.h
 lib/libclustalo.a
 libdata/pkgconfig/clustalo.pc
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%DOCSDIR%%/README

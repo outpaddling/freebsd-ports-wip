@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clustal-omega
-PORTVERSION=	1.2.4
+DISTVERSION=	1.2.4
 CATEGORIES=	wip biology
 MASTER_SITES=	http://www.clustal.org/omega/
 
