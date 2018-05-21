@@ -1,0 +1,958 @@
+build started at Sun May 20 14:41:02 CDT 2018
+port directory: /usr/ports/biology/clustalw
+package name: clustalw-2.1_1
+building for: FreeBSD 11-1-i386-default 11.1-RELEASE-p9 FreeBSD 11.1-RELEASE-p9 i386
+maintained by: ports@FreeBSD.org
+Makefile ident:      $FreeBSD: head/biology/clustalw/Makefile 415839 2016-05-25 15:43:34Z mat $
+Poudriere version: 3.2.6_1
+Host OSVERSION: 1101001
+Jail OSVERSION: 1101001
+Job Id: 
+
+---Begin Environment---
+SHELL=/bin/csh
+UNAME_p=i386
+UNAME_m=i386
+OSVERSION=1101001
+UNAME_v=FreeBSD 11.1-RELEASE-p9
+UNAME_r=11.1-RELEASE-p9
+BLOCKSIZE=K
+MAIL=/var/mail/root
+WARNING_WAIT=0
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+TRYBROKEN=yes
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.2.6_1
+MASTERMNT=/usr/local/poudriere/data/.m/11-1-i386-default/ref
+DEV_WARNING_WAIT=0
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm
+GID=0
+UID=0
+PWD=/usr/local/poudriere/data/.m/11-1-i386-default/ref/.p
+NO_WARNING_PKG_INSTALL_EOL=yes
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=11-1-i386-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+OLDPWD=/usr/local/poudriere/data/.m/11-1-i386-default/ref/.p
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=PACKAGES=/tmp/pkgs PKGREPOSITORY=/tmp/pkgs
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+ports@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/biology/clustalw/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/biology/clustalw/work  HOME=/wrkdirs/usr/ports/biology/clustalw/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/biology/clustalw/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=262144
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/biology/clustalw/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/biology/clustalw/work  HOME=/wrkdirs/usr/ports/biology/clustalw/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/biology/clustalw/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  LIBDIR="/usr/lib"  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector -fno-strict-aliasing"  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector" LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector -fno-strict-aliasing "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="" PORTEXAMPLES="" OSREL=11.1 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/clustalw"  EXAMPLESDIR="share/examples/clustalw"  DATADIR="share/clustalw"  WWWDIR="www/clustalw"  ETCDIR="etc/clustalw"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/clustalw DOCSDIR=/usr/local/share/doc/clustalw EXAMPLESDIR=/usr/local/share/examples/clustalw  WWWDIR=/usr/local/www/clustalw ETCDIR=/usr/local/etc/clustalw
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+MACHINE=i386
+MACHINE_ARCH=i386
+ARCH=${MACHINE_ARCH}
+#### /usr/ports/Mk/Scripts/ports_env.sh ####
+_CCVERSION_921dbbb2=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: i386-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin
+_ALTCCVERSION_921dbbb2=none
+_CXXINTERNAL_acaad9ca=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: i386-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin "/usr/bin/ld" "--eh-frame-hdr" "-dynamic-linker" "/libexec/ld-elf.so.1" "--hash-style=both" "--enable-new-dtags" "-m" "elf_i386_fbsd" "-o" "a.out" "/usr/lib/crt1.o" "/usr/lib/crti.o" "/usr/lib/crtbegin.o" "-L/usr/lib" "/dev/null" "-lc++" "-lm" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "-lc" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "/usr/lib/crtend.o" "/usr/lib/crtn.o"
+CC_OUTPUT_921dbbb2_58173849=yes
+CC_OUTPUT_921dbbb2_9bdba57c=yes
+CC_OUTPUT_921dbbb2_6a4fe7f5=yes
+CC_OUTPUT_921dbbb2_6bcac02b=yes
+CC_OUTPUT_921dbbb2_67d20829=yes
+CC_OUTPUT_921dbbb2_bfa62e83=yes
+CC_OUTPUT_921dbbb2_f0b4d593=yes
+CC_OUTPUT_921dbbb2_308abb44=yes
+CC_OUTPUT_921dbbb2_f00456e5=yes
+CC_OUTPUT_921dbbb2_65ad290d=yes
+CC_OUTPUT_921dbbb2_b2657cc3=yes
+CC_OUTPUT_921dbbb2_380987f7=yes
+_OBJC_CCVERSION_921dbbb2=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: i386-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin
+_OBJC_ALTCCVERSION_921dbbb2=none
+ARCH=i386
+OPSYS=FreeBSD
+_OSRELEASE=11.1-RELEASE-p9
+OSREL=11.1
+OSVERSION=1101001
+PYTHONBASE=/usr/local
+_SMP_CPUS=4
+CONFIGURE_MAX_CMD_LEN=262144
+HAVE_PORTS_ENV=1
+#### Misc Poudriere ####
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  524288
+stack size              (kbytes, -s)  65536
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19558
+open files                      (-n)  1024
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+/!\ clustalw-2.1_1: Makefile warnings, please consider fixing /!\
+
+Please set LICENSE for this port
+
+===>   NOTICE:
+
+The clustalw port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://www.freebsd.org/doc/en/articles/contributing/ports-contributing.html#maintain-port
+
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   clustalw-2.1_1 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.10.5.txz
+[11-1-i386-default] Installing pkg-1.10.5...
+[11-1-i386-default] Extracting pkg-1.10.5: .......... done
+===>   clustalw-2.1_1 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of clustalw-2.1_1
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>   NOTICE:
+
+The clustalw port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://www.freebsd.org/doc/en/articles/contributing/ports-contributing.html#maintain-port
+
+===>   clustalw-2.1_1 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by clustalw-2.1_1 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>   NOTICE:
+
+The clustalw port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://www.freebsd.org/doc/en/articles/contributing/ports-contributing.html#maintain-port
+
+===>   clustalw-2.1_1 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by clustalw-2.1_1 for building
+=> SHA256 Checksum OK for clustalw-2.1.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>   NOTICE:
+
+The clustalw port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://www.freebsd.org/doc/en/articles/contributing/ports-contributing.html#maintain-port
+
+===>   clustalw-2.1_1 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by clustalw-2.1_1 for building
+===>  Extracting for clustalw-2.1_1
+=> SHA256 Checksum OK for clustalw-2.1.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for clustalw-2.1_1
+===>  Applying FreeBSD patches for clustalw-2.1_1
+===========================================================================
+=======================<phase: build-depends  >============================
+===========================================================================
+=======================<phase: lib-depends    >============================
+===========================================================================
+=>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>  Configuring for clustalw-2.1_1
+configure: loading site script /usr/ports/Templates/config.site
+checking build system type... i386-portbld-freebsd11.1
+checking host system type... i386-portbld-freebsd11.1
+checking target system type... i386-portbld-freebsd11.1
+building for freebsd11.1
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether make sets $(MAKE)... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of cc... gcc3
+checking whether we are using the GNU C++ compiler... yes
+checking whether c++ accepts -g... yes
+checking dependency style of c++... gcc3
+checking for ranlib... ranlib
+checking how to run the C++ preprocessor... c++ -E
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for stdbool.h that conforms to C99... (cached) yes
+checking for _Bool... (cached) yes
+checking for an ANSI C-conforming const... yes
+checking for size_t... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... (cached) yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating m4/Makefile
+config.status: creating src/Makefile
+config.status: creating src/clustalw_version.h
+config.status: creating src/config.h
+config.status: executing depfiles commands
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for clustalw-2.1_1
+--- all-recursive ---
+Making all in m4
+Making all in src
+--- all ---
+/usr/bin/make  all-recursive
+--- all-recursive ---
+--- FullPairwiseAlign.o ---
+--- FastPairwiseAlign.o ---
+--- MSFFileParser.o ---
+--- FileReader.o ---
+--- FullPairwiseAlign.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT FullPairwiseAlign.o -MD -MP -MF .deps/FullPairwiseAlign.Tpo -c -o FullPairwiseAlign.o `test -f './pairwise/FullPairwiseAlign.cpp' || echo './'`./pairwise/FullPairwiseAlign.cpp
+--- FastPairwiseAlign.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT FastPairwiseAlign.o -MD -MP -MF .deps/FastPairwiseAlign.Tpo -c -o FastPairwiseAlign.o `test -f './pairwise/FastPairwiseAlign.cpp' || echo './'`./pairwise/FastPairwiseAlign.cpp
+--- MSFFileParser.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT MSFFileParser.o -MD -MP -MF .deps/MSFFileParser.Tpo -c -o MSFFileParser.o `test -f './fileInput/MSFFileParser.cpp' || echo './'`./fileInput/MSFFileParser.cpp
+--- FileReader.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT FileReader.o -MD -MP -MF .deps/FileReader.Tpo -c -o FileReader.o `test -f './fileInput/FileReader.cpp' || echo './'`./fileInput/FileReader.cpp
+--- FastPairwiseAlign.o ---
+In file included from ./pairwise/FastPairwiseAlign.cpp:10:
+In file included from ./pairwise/FastPairwiseAlign.h:9:
+In file included from ./pairwise/PairwiseAlignBase.h:10:
+In file included from ./pairwise/../alignment/Alignment.h:42:
+In file included from ./pairwise/../alignment/../substitutionMatrix/globalmatrix.h:8:
+./pairwise/../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./pairwise/../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- FullPairwiseAlign.o ---
+In file included from ./pairwise/FullPairwiseAlign.cpp:9:
+In file included from ./pairwise/FullPairwiseAlign.h:9:
+In file included from ./pairwise/PairwiseAlignBase.h:10:
+In file included from ./pairwise/../alignment/Alignment.h:42:
+In file included from ./pairwise/../alignment/../substitutionMatrix/globalmatrix.h:8:
+--- FileReader.o ---
+In file included from ./fileInput/FileReader.cpp:29:
+In file included from ./fileInput/FileReader.h:12:
+In file included from ./fileInput/../alignment/Alignment.h:42:
+In file included from ./fileInput/../alignment/../substitutionMatrix/globalmatrix.h:8:
+./fileInput/../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+--- FullPairwiseAlign.o ---
+./pairwise/../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+--- FileReader.o ---
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+--- FullPairwiseAlign.o ---
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+--- FileReader.o ---
+                                                             ^
+./fileInput/../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- FullPairwiseAlign.o ---
+./pairwise/../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- MSFFileParser.o ---
+mv -f .deps/MSFFileParser.Tpo .deps/MSFFileParser.Po
+--- PIRFileParser.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT PIRFileParser.o -MD -MP -MF .deps/PIRFileParser.Tpo -c -o PIRFileParser.o `test -f './fileInput/PIRFileParser.cpp' || echo './'`./fileInput/PIRFileParser.cpp
+--- FullPairwiseAlign.o ---
+2 warnings generated.
+mv -f .deps/FullPairwiseAlign.Tpo .deps/FullPairwiseAlign.Po
+--- RSFFileParser.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT RSFFileParser.o -MD -MP -MF .deps/RSFFileParser.Tpo -c -o RSFFileParser.o `test -f './fileInput/RSFFileParser.cpp' || echo './'`./fileInput/RSFFileParser.cpp
+--- FastPairwiseAlign.o ---
+2 warnings generated.
+mv -f .deps/FastPairwiseAlign.Tpo .deps/FastPairwiseAlign.Po
+--- GDEFileParser.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT GDEFileParser.o -MD -MP -MF .deps/GDEFileParser.Tpo -c -o GDEFileParser.o `test -f './fileInput/GDEFileParser.cpp' || echo './'`./fileInput/GDEFileParser.cpp
+--- FileReader.o ---
+2 warnings generated.
+mv -f .deps/FileReader.Tpo .deps/FileReader.Po
+--- InFileStream.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT InFileStream.o -MD -MP -MF .deps/InFileStream.Tpo -c -o InFileStream.o `test -f './fileInput/InFileStream.cpp' || echo './'`./fileInput/InFileStream.cpp
+--- PIRFileParser.o ---
+mv -f .deps/PIRFileParser.Tpo .deps/PIRFileParser.Po
+--- ClustalFileParser.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT ClustalFileParser.o -MD -MP -MF .deps/ClustalFileParser.Tpo -c -o ClustalFileParser.o `test -f './fileInput/ClustalFileParser.cpp' || echo './'`./fileInput/ClustalFileParser.cpp
+--- RSFFileParser.o ---
+mv -f .deps/RSFFileParser.Tpo .deps/RSFFileParser.Po
+--- PearsonFileParser.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT PearsonFileParser.o -MD -MP -MF .deps/PearsonFileParser.Tpo -c -o PearsonFileParser.o `test -f './fileInput/PearsonFileParser.cpp' || echo './'`./fileInput/PearsonFileParser.cpp
+--- InFileStream.o ---
+mv -f .deps/InFileStream.Tpo .deps/InFileStream.Po
+--- FileParser.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT FileParser.o -MD -MP -MF .deps/FileParser.Tpo -c -o FileParser.o `test -f './fileInput/FileParser.cpp' || echo './'`./fileInput/FileParser.cpp
+--- GDEFileParser.o ---
+mv -f .deps/GDEFileParser.Tpo .deps/GDEFileParser.Po
+--- EMBLFileParser.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT EMBLFileParser.o -MD -MP -MF .deps/EMBLFileParser.Tpo -c -o EMBLFileParser.o `test -f './fileInput/EMBLFileParser.cpp' || echo './'`./fileInput/EMBLFileParser.cpp
+--- FileParser.o ---
+mv -f .deps/FileParser.Tpo .deps/FileParser.Po
+--- RootedClusterTree.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT RootedClusterTree.o -MD -MP -MF .deps/RootedClusterTree.Tpo -c -o RootedClusterTree.o `test -f './tree/UPGMA/RootedClusterTree.cpp' || echo './'`./tree/UPGMA/RootedClusterTree.cpp
+--- ClustalFileParser.o ---
+mv -f .deps/ClustalFileParser.Tpo .deps/ClustalFileParser.Po
+--- UPGMAAlgorithm.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT UPGMAAlgorithm.o -MD -MP -MF .deps/UPGMAAlgorithm.Tpo -c -o UPGMAAlgorithm.o `test -f './tree/UPGMA/UPGMAAlgorithm.cpp' || echo './'`./tree/UPGMA/UPGMAAlgorithm.cpp
+--- EMBLFileParser.o ---
+mv -f .deps/EMBLFileParser.Tpo .deps/EMBLFileParser.Po
+--- Node.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT Node.o -MD -MP -MF .deps/Node.Tpo -c -o Node.o `test -f './tree/UPGMA/Node.cpp' || echo './'`./tree/UPGMA/Node.cpp
+--- PearsonFileParser.o ---
+mv -f .deps/PearsonFileParser.Tpo .deps/PearsonFileParser.Po
+--- RootedGuideTree.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT RootedGuideTree.o -MD -MP -MF .deps/RootedGuideTree.Tpo -c -o RootedGuideTree.o `test -f './tree/UPGMA/RootedGuideTree.cpp' || echo './'`./tree/UPGMA/RootedGuideTree.cpp
+--- RootedClusterTree.o ---
+In file included from ./tree/UPGMA/RootedClusterTree.cpp:9:
+In file included from ./tree/UPGMA/RootedClusterTree.h:8:
+In file included from ./tree/UPGMA/../ClusterTree.h:20:
+In file included from ./tree/UPGMA/../../alignment/Alignment.h:42:
+In file included from ./tree/UPGMA/../../alignment/../substitutionMatrix/globalmatrix.h:8:
+./tree/UPGMA/../../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./tree/UPGMA/../../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- UPGMAAlgorithm.o ---
+In file included from ./tree/UPGMA/UPGMAAlgorithm.cpp:4:
+In file included from ./tree/UPGMA/UPGMAAlgorithm.h:8:
+In file included from ./tree/UPGMA/RootedGuideTree.h:17:
+In file included from ./tree/UPGMA/../../alignment/Alignment.h:42:
+In file included from ./tree/UPGMA/../../alignment/../substitutionMatrix/globalmatrix.h:8:
+./tree/UPGMA/../../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./tree/UPGMA/../../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- RootedGuideTree.o ---
+In file included from ./tree/UPGMA/RootedGuideTree.cpp:10:
+In file included from ./tree/UPGMA/RootedGuideTree.h:17:
+In file included from ./tree/UPGMA/../../alignment/Alignment.h:42:
+In file included from ./tree/UPGMA/../../alignment/../substitutionMatrix/globalmatrix.h:8:
+./tree/UPGMA/../../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./tree/UPGMA/../../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- RootedClusterTree.o ---
+2 warnings generated.
+mv -f .deps/RootedClusterTree.Tpo .deps/RootedClusterTree.Po
+--- RootedTreeOutput.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT RootedTreeOutput.o -MD -MP -MF .deps/RootedTreeOutput.Tpo -c -o RootedTreeOutput.o `test -f './tree/UPGMA/RootedTreeOutput.cpp' || echo './'`./tree/UPGMA/RootedTreeOutput.cpp
+--- UPGMAAlgorithm.o ---
+2 warnings generated.
+mv -f .deps/UPGMAAlgorithm.Tpo .deps/UPGMAAlgorithm.Po
+--- Tree.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT Tree.o -MD -MP -MF .deps/Tree.Tpo -c -o Tree.o `test -f './tree/Tree.cpp' || echo './'`./tree/Tree.cpp
+--- RootedGuideTree.o ---
+2 warnings generated.
+mv -f .deps/RootedGuideTree.Tpo .deps/RootedGuideTree.Po
+--- ClusterTree.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT ClusterTree.o -MD -MP -MF .deps/ClusterTree.Tpo -c -o ClusterTree.o `test -f './tree/ClusterTree.cpp' || echo './'`./tree/ClusterTree.cpp
+--- Node.o ---
+mv -f .deps/Node.Tpo .deps/Node.Po
+--- TreeInterface.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT TreeInterface.o -MD -MP -MF .deps/TreeInterface.Tpo -c -o TreeInterface.o `test -f './tree/TreeInterface.cpp' || echo './'`./tree/TreeInterface.cpp
+--- RootedTreeOutput.o ---
+In file included from ./tree/UPGMA/RootedTreeOutput.cpp:9:
+In file included from ./tree/UPGMA/RootedTreeOutput.h:15:
+In file included from ./tree/UPGMA/RootedGuideTree.h:17:
+In file included from ./tree/UPGMA/../../alignment/Alignment.h:42:
+In file included from ./tree/UPGMA/../../alignment/../substitutionMatrix/globalmatrix.h:8:
+./tree/UPGMA/../../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./tree/UPGMA/../../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- Tree.o ---
+In file included from ./tree/Tree.cpp:10:
+In file included from ./tree/Tree.h:13:
+In file included from ./tree/../alignment/Alignment.h:42:
+In file included from ./tree/../alignment/../substitutionMatrix/globalmatrix.h:8:
+./tree/../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./tree/../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- ClusterTree.o ---
+In file included from ./tree/ClusterTree.cpp:9:
+In file included from ./tree/ClusterTree.h:20:
+In file included from ./tree/../alignment/Alignment.h:42:
+In file included from ./tree/../alignment/../substitutionMatrix/globalmatrix.h:8:
+./tree/../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./tree/../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- TreeInterface.o ---
+In file included from ./tree/TreeInterface.cpp:15:
+In file included from ./tree/TreeInterface.h:19:
+In file included from ./tree/../alignment/Alignment.h:42:
+In file included from ./tree/../alignment/../substitutionMatrix/globalmatrix.h:8:
+./tree/../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./tree/../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- RootedTreeOutput.o ---
+2 warnings generated.
+mv -f .deps/RootedTreeOutput.Tpo .deps/RootedTreeOutput.Po
+--- UnRootedClusterTree.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT UnRootedClusterTree.o -MD -MP -MF .deps/UnRootedClusterTree.Tpo -c -o UnRootedClusterTree.o `test -f './tree/UnRootedClusterTree.cpp' || echo './'`./tree/UnRootedClusterTree.cpp
+--- TreeInterface.o ---
+2 warnings generated.
+mv -f .deps/TreeInterface.Tpo .deps/TreeInterface.Po
+--- ClusterTreeOutput.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT ClusterTreeOutput.o -MD -MP -MF .deps/ClusterTreeOutput.Tpo -c -o ClusterTreeOutput.o `test -f './tree/ClusterTreeOutput.cpp' || echo './'`./tree/ClusterTreeOutput.cpp
+--- Tree.o ---
+2 warnings generated.
+mv -f .deps/Tree.Tpo .deps/Tree.Po
+--- RandomGenerator.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT RandomGenerator.o -MD -MP -MF .deps/RandomGenerator.Tpo -c -o RandomGenerator.o `test -f './tree/RandomGenerator.cpp' || echo './'`./tree/RandomGenerator.cpp
+--- ClusterTree.o ---
+2 warnings generated.
+mv -f .deps/ClusterTree.Tpo .deps/ClusterTree.Po
+--- RandomGenerator.o ---
+mv -f .deps/RandomGenerator.Tpo .deps/RandomGenerator.Po
+--- NJTree.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT NJTree.o -MD -MP -MF .deps/NJTree.Tpo -c -o NJTree.o `test -f './tree/NJTree.cpp' || echo './'`./tree/NJTree.cpp
+--- AlignmentSteps.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT AlignmentSteps.o -MD -MP -MF .deps/AlignmentSteps.Tpo -c -o AlignmentSteps.o `test -f './tree/AlignmentSteps.cpp' || echo './'`./tree/AlignmentSteps.cpp
+--- UnRootedClusterTree.o ---
+In file included from ./tree/UnRootedClusterTree.cpp:9:
+In file included from ./tree/UnRootedClusterTree.h:8:
+In file included from ./tree/ClusterTree.h:20:
+In file included from ./tree/../alignment/Alignment.h:42:
+In file included from ./tree/../alignment/../substitutionMatrix/globalmatrix.h:8:
+./tree/../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./tree/../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- ClusterTreeOutput.o ---
+In file included from ./tree/ClusterTreeOutput.cpp:9:
+In file included from ./tree/ClusterTreeOutput.h:11:
+In file included from ./tree/../alignment/Alignment.h:42:
+In file included from ./tree/../alignment/../substitutionMatrix/globalmatrix.h:8:
+./tree/../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./tree/../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- UnRootedClusterTree.o ---
+2 warnings generated.
+mv -f .deps/UnRootedClusterTree.Tpo .deps/UnRootedClusterTree.Po
+--- InteractiveMenu.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT InteractiveMenu.o -MD -MP -MF .deps/InteractiveMenu.Tpo -c -o InteractiveMenu.o `test -f './interface/InteractiveMenu.cpp' || echo './'`./interface/InteractiveMenu.cpp
+--- AlignmentSteps.o ---
+mv -f .deps/AlignmentSteps.Tpo .deps/AlignmentSteps.Po
+--- CommandLineParser.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT CommandLineParser.o -MD -MP -MF .deps/CommandLineParser.Tpo -c -o CommandLineParser.o `test -f './interface/CommandLineParser.cpp' || echo './'`./interface/CommandLineParser.cpp
+--- ClusterTreeOutput.o ---
+2 warnings generated.
+mv -f .deps/ClusterTreeOutput.Tpo .deps/ClusterTreeOutput.Po
+--- SubMatrix.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT SubMatrix.o -MD -MP -MF .deps/SubMatrix.Tpo -c -o SubMatrix.o `test -f './substitutionMatrix/SubMatrix.cpp' || echo './'`./substitutionMatrix/SubMatrix.cpp
+--- NJTree.o ---
+mv -f .deps/NJTree.Tpo .deps/NJTree.Po
+--- Iteration.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT Iteration.o -MD -MP -MF .deps/Iteration.Tpo -c -o Iteration.o `test -f './multipleAlign/Iteration.cpp' || echo './'`./multipleAlign/Iteration.cpp
+--- InteractiveMenu.o ---
+In file included from ./interface/InteractiveMenu.cpp:23:
+In file included from ./interface/InteractiveMenu.h:15:
+In file included from ./interface/../Clustal.h:18:
+In file included from ./fileInput/FileReader.h:12:
+In file included from ./fileInput/../alignment/Alignment.h:42:
+In file included from ./fileInput/../alignment/../substitutionMatrix/globalmatrix.h:8:
+./fileInput/../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./fileInput/../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- CommandLineParser.o ---
+In file included from ./interface/CommandLineParser.cpp:13:
+In file included from ./interface/CommandLineParser.h:18:
+In file included from ./interface/../Clustal.h:18:
+In file included from ./fileInput/FileReader.h:12:
+In file included from ./fileInput/../alignment/Alignment.h:42:
+In file included from ./fileInput/../alignment/../substitutionMatrix/globalmatrix.h:8:
+./fileInput/../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./fileInput/../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- SubMatrix.o ---
+In file included from ./substitutionMatrix/SubMatrix.cpp:15:
+./substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- Iteration.o ---
+In file included from ./multipleAlign/Iteration.cpp:13:
+In file included from ./multipleAlign/Iteration.h:8:
+In file included from ./multipleAlign/../alignment/Alignment.h:42:
+In file included from ./multipleAlign/../alignment/../substitutionMatrix/globalmatrix.h:8:
+./multipleAlign/../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./multipleAlign/../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- InteractiveMenu.o ---
+2 warnings generated.
+mv -f .deps/InteractiveMenu.Tpo .deps/InteractiveMenu.Po
+--- MSA.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT MSA.o -MD -MP -MF .deps/MSA.Tpo -c -o MSA.o `test -f './multipleAlign/MSA.cpp' || echo './'`./multipleAlign/MSA.cpp
+--- Iteration.o ---
+2 warnings generated.
+mv -f .deps/Iteration.Tpo .deps/Iteration.Po
+--- MyersMillerProfileAlign.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT MyersMillerProfileAlign.o -MD -MP -MF .deps/MyersMillerProfileAlign.Tpo -c -o MyersMillerProfileAlign.o `test -f './multipleAlign/MyersMillerProfileAlign.cpp' || echo './'`./multipleAlign/MyersMillerProfileAlign.cpp
+--- SubMatrix.o ---
+2 warnings generated.
+mv -f .deps/SubMatrix.Tpo .deps/SubMatrix.Po
+--- ProfileStandard.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT ProfileStandard.o -MD -MP -MF .deps/ProfileStandard.Tpo -c -o ProfileStandard.o `test -f './multipleAlign/ProfileStandard.cpp' || echo './'`./multipleAlign/ProfileStandard.cpp
+--- MSA.o ---
+In file included from ./multipleAlign/MSA.cpp:16:
+In file included from ./multipleAlign/MSA.h:10:
+In file included from ./multipleAlign/ProfileBase.h:14:
+In file included from ./multipleAlign/../alignment/Alignment.h:42:
+In file included from ./multipleAlign/../alignment/../substitutionMatrix/globalmatrix.h:8:
+./multipleAlign/../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./multipleAlign/../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- CommandLineParser.o ---
+2 warnings generated.
+mv -f .deps/CommandLineParser.Tpo .deps/CommandLineParser.Po
+--- ProfileWithSub.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT ProfileWithSub.o -MD -MP -MF .deps/ProfileWithSub.Tpo -c -o ProfileWithSub.o `test -f './multipleAlign/ProfileWithSub.cpp' || echo './'`./multipleAlign/ProfileWithSub.cpp
+--- MyersMillerProfileAlign.o ---
+In file included from ./multipleAlign/MyersMillerProfileAlign.cpp:10:
+In file included from ./multipleAlign/MyersMillerProfileAlign.h:10:
+In file included from ./multipleAlign/ProfileAlignAlgorithm.h:10:
+In file included from ./multipleAlign/../alignment/Alignment.h:42:
+In file included from ./multipleAlign/../alignment/../substitutionMatrix/globalmatrix.h:8:
+./multipleAlign/../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./multipleAlign/../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- MSA.o ---
+2 warnings generated.
+mv -f .deps/MSA.Tpo .deps/MSA.Po
+--- ProfileBase.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT ProfileBase.o -MD -MP -MF .deps/ProfileBase.Tpo -c -o ProfileBase.o `test -f './multipleAlign/ProfileBase.cpp' || echo './'`./multipleAlign/ProfileBase.cpp
+--- ProfileStandard.o ---
+In file included from ./multipleAlign/ProfileStandard.cpp:9:
+In file included from ./multipleAlign/ProfileStandard.h:9:
+In file included from ./multipleAlign/../alignment/Alignment.h:42:
+In file included from ./multipleAlign/../alignment/../substitutionMatrix/globalmatrix.h:8:
+./multipleAlign/../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./multipleAlign/../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+2 warnings generated.
+mv -f .deps/ProfileStandard.Tpo .deps/ProfileStandard.Po
+--- LowScoreSegProfile.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT LowScoreSegProfile.o -MD -MP -MF .deps/LowScoreSegProfile.Tpo -c -o LowScoreSegProfile.o `test -f './multipleAlign/LowScoreSegProfile.cpp' || echo './'`./multipleAlign/LowScoreSegProfile.cpp
+--- ProfileWithSub.o ---
+In file included from ./multipleAlign/ProfileWithSub.cpp:9:
+In file included from ./multipleAlign/ProfileWithSub.h:9:
+In file included from ./multipleAlign/../alignment/Alignment.h:42:
+In file included from ./multipleAlign/../alignment/../substitutionMatrix/globalmatrix.h:8:
+./multipleAlign/../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./multipleAlign/../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- ProfileBase.o ---
+In file included from ./multipleAlign/ProfileBase.cpp:9:
+In file included from ./multipleAlign/ProfileBase.h:14:
+In file included from ./multipleAlign/../alignment/Alignment.h:42:
+In file included from ./multipleAlign/../alignment/../substitutionMatrix/globalmatrix.h:8:
+./multipleAlign/../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./multipleAlign/../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- ProfileWithSub.o ---
+2 warnings generated.
+mv -f .deps/ProfileWithSub.Tpo .deps/ProfileWithSub.Po
+--- OutputFile.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT OutputFile.o -MD -MP -MF .deps/OutputFile.Tpo -c -o OutputFile.o `test -f './general/OutputFile.cpp' || echo './'`./general/OutputFile.cpp
+--- MyersMillerProfileAlign.o ---
+2 warnings generated.
+mv -f .deps/MyersMillerProfileAlign.Tpo .deps/MyersMillerProfileAlign.Po
+--- UserParameters.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT UserParameters.o -MD -MP -MF .deps/UserParameters.Tpo -c -o UserParameters.o `test -f './general/UserParameters.cpp' || echo './'`./general/UserParameters.cpp
+--- LowScoreSegProfile.o ---
+In file included from ./multipleAlign/LowScoreSegProfile.cpp:9:
+In file included from ./multipleAlign/LowScoreSegProfile.h:13:
+In file included from ./multipleAlign/../alignment/Alignment.h:42:
+In file included from ./multipleAlign/../alignment/../substitutionMatrix/globalmatrix.h:8:
+./multipleAlign/../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./multipleAlign/../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- ProfileBase.o ---
+2 warnings generated.
+mv -f .deps/ProfileBase.Tpo .deps/ProfileBase.Po
+--- Utility.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT Utility.o -MD -MP -MF .deps/Utility.Tpo -c -o Utility.o `test -f './general/Utility.cpp' || echo './'`./general/Utility.cpp
+--- LowScoreSegProfile.o ---
+2 warnings generated.
+mv -f .deps/LowScoreSegProfile.Tpo .deps/LowScoreSegProfile.Po
+--- InvalidCombination.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT InvalidCombination.o -MD -MP -MF .deps/InvalidCombination.Tpo -c -o InvalidCombination.o `test -f './general/InvalidCombination.cpp' || echo './'`./general/InvalidCombination.cpp
+--- OutputFile.o ---
+mv -f .deps/OutputFile.Tpo .deps/OutputFile.Po
+--- DebugLog.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT DebugLog.o -MD -MP -MF .deps/DebugLog.Tpo -c -o DebugLog.o `test -f './general/DebugLog.cpp' || echo './'`./general/DebugLog.cpp
+--- InvalidCombination.o ---
+mv -f .deps/InvalidCombination.Tpo .deps/InvalidCombination.Po
+--- ClustalWResources.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT ClustalWResources.o -MD -MP -MF .deps/ClustalWResources.Tpo -c -o ClustalWResources.o `test -f './general/ClustalWResources.cpp' || echo './'`./general/ClustalWResources.cpp
+--- Utility.o ---
+mv -f .deps/Utility.Tpo .deps/Utility.Po
+--- VectorOutOfRange.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT VectorOutOfRange.o -MD -MP -MF .deps/VectorOutOfRange.Tpo -c -o VectorOutOfRange.o `test -f './general/VectorOutOfRange.cpp' || echo './'`./general/VectorOutOfRange.cpp
+--- UserParameters.o ---
+mv -f .deps/UserParameters.Tpo .deps/UserParameters.Po
+--- SymMatrix.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT SymMatrix.o -MD -MP -MF .deps/SymMatrix.Tpo -c -o SymMatrix.o `test -f './general/SymMatrix.cpp' || echo './'`./general/SymMatrix.cpp
+--- ClustalWResources.o ---
+./general/ClustalWResources.cpp:106:5: warning: array index 1 is past the end of the array (which contains 1 element) [-Warray-bounds]
+    delim[1] = 0;
+    ^     ~
+./general/ClustalWResources.cpp:104:5: note: array 'delim' declared here
+    char delim[1];
+    ^
+--- SymMatrix.o ---
+mv -f .deps/SymMatrix.Tpo .deps/SymMatrix.Po
+--- Stats.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT Stats.o -MD -MP -MF .deps/Stats.Tpo -c -o Stats.o `test -f './general/Stats.cpp' || echo './'`./general/Stats.cpp
+--- DebugLog.o ---
+mv -f .deps/DebugLog.Tpo .deps/DebugLog.Po
+--- Help.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT Help.o -MD -MP -MF .deps/Help.Tpo -c -o Help.o `test -f './Help.cpp' || echo './'`./Help.cpp
+--- ClustalWResources.o ---
+1 warning generated.
+mv -f .deps/ClustalWResources.Tpo .deps/ClustalWResources.Po
+--- VectorOutOfRange.o ---
+mv -f .deps/VectorOutOfRange.Tpo .deps/VectorOutOfRange.Po
+--- Alignment.o ---
+--- AlignmentOutput.o ---
+--- Alignment.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT Alignment.o -MD -MP -MF .deps/Alignment.Tpo -c -o Alignment.o `test -f './alignment/Alignment.cpp' || echo './'`./alignment/Alignment.cpp
+--- AlignmentOutput.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT AlignmentOutput.o -MD -MP -MF .deps/AlignmentOutput.Tpo -c -o AlignmentOutput.o `test -f './alignment/AlignmentOutput.cpp' || echo './'`./alignment/AlignmentOutput.cpp
+--- Stats.o ---
+In file included from ./general/Stats.cpp:15:
+In file included from ./general/../alignment/Alignment.h:42:
+In file included from ./general/../alignment/../substitutionMatrix/globalmatrix.h:8:
+./general/../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./general/../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- Alignment.o ---
+In file included from ./alignment/Alignment.cpp:25:
+In file included from ./alignment/Alignment.h:42:
+In file included from ./alignment/../substitutionMatrix/globalmatrix.h:8:
+./alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- AlignmentOutput.o ---
+In file included from ./alignment/AlignmentOutput.cpp:27:
+In file included from ./alignment/AlignmentOutput.h:24:
+In file included from ./alignment/Alignment.h:42:
+In file included from ./alignment/../substitutionMatrix/globalmatrix.h:8:
+./alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- Stats.o ---
+2 warnings generated.
+mv -f .deps/Stats.Tpo .deps/Stats.Po
+--- ObjectiveScore.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT ObjectiveScore.o -MD -MP -MF .deps/ObjectiveScore.Tpo -c -o ObjectiveScore.o `test -f './alignment/ObjectiveScore.cpp' || echo './'`./alignment/ObjectiveScore.cpp
+--- Help.o ---
+mv -f .deps/Help.Tpo .deps/Help.Po
+--- Sequence.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT Sequence.o -MD -MP -MF .deps/Sequence.Tpo -c -o Sequence.o `test -f './alignment/Sequence.cpp' || echo './'`./alignment/Sequence.cpp
+--- ObjectiveScore.o ---
+In file included from ./alignment/ObjectiveScore.cpp:10:
+In file included from ./alignment/ObjectiveScore.h:15:
+In file included from ./alignment/../substitutionMatrix/globalmatrix.h:8:
+./alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+2 warnings generated.
+mv -f .deps/ObjectiveScore.Tpo .deps/ObjectiveScore.Po
+--- Clustal.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT Clustal.o -MD -MP -MF .deps/Clustal.Tpo -c -o Clustal.o `test -f './Clustal.cpp' || echo './'`./Clustal.cpp
+--- Sequence.o ---
+mv -f .deps/Sequence.Tpo .deps/Sequence.Po
+--- main.o ---
+c++ -DHAVE_CONFIG_H -I.     -O2 -pipe -fstack-protector -fno-strict-aliasing -MT main.o -MD -MP -MF .deps/main.Tpo -c -o main.o `test -f './main.cpp' || echo './'`./main.cpp
+--- Clustal.o ---
+In file included from ./Clustal.cpp:27:
+In file included from ./Clustal.h:18:
+In file included from ./fileInput/FileReader.h:12:
+In file included from ./fileInput/../alignment/Alignment.h:42:
+In file included from ./fileInput/../alignment/../substitutionMatrix/globalmatrix.h:8:
+./fileInput/../alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./fileInput/../alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+--- main.o ---
+In file included from ./main.cpp:10:
+In file included from ./alignment/Alignment.h:42:
+In file included from ./alignment/../substitutionMatrix/globalmatrix.h:8:
+./alignment/../substitutionMatrix/SubMatrix.h:96:62: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printInFormat(vector<short>& temp, char* name = "tempfile.out");
+                                                             ^
+./alignment/../substitutionMatrix/SubMatrix.h:97:66: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        void printVectorToFile(vector<short>& temp, char* name = "tempfile.out");
+                                                                 ^
+2 warnings generated.
+mv -f .deps/main.Tpo .deps/main.Po
+--- Alignment.o ---
+2 warnings generated.
+mv -f .deps/Alignment.Tpo .deps/Alignment.Po
+--- AlignmentOutput.o ---
+2 warnings generated.
+mv -f .deps/AlignmentOutput.Tpo .deps/AlignmentOutput.Po
+--- Clustal.o ---
+2 warnings generated.
+mv -f .deps/Clustal.Tpo .deps/Clustal.Po
+--- clustalw2 ---
+c++  -O2 -pipe -fstack-protector -fno-strict-aliasing  -fstack-protector  -o clustalw2 FullPairwiseAlign.o  FastPairwiseAlign.o MSFFileParser.o  FileReader.o PIRFileParser.o  RSFFileParser.o GDEFileParser.o  InFileStream.o ClustalFileParser.o  PearsonFileParser.o FileParser.o  EMBLFileParser.o RootedClusterTree.o  UPGMAAlgorithm.o Node.o  RootedGuideTree.o RootedTreeOutput.o  Tree.o ClusterTree.o TreeInterface.o  UnRootedClusterTree.o ClusterTreeOutput.o  RandomGenerator.o NJTree.o  AlignmentSteps.o InteractiveMenu.o  CommandLineParser.o SubMatrix.o  Iteration.o MSA.o  MyersMillerProfileAlign.o ProfileStandard.o  ProfileWithSub.o ProfileBase.o  LowScoreSegProfile.o OutputFile.o  UserParameters.o Utility.o  InvalidCombination.o DebugLog.o  ClustalWResources.o VectorOutOfRange.o  SymMatrix.o Stats.o Help.o  Alignment.o AlignmentOutput.o  ObjectiveScore.o Sequence.o Clustal.o  main.o  
+Iteration.o: In function `clustalw::Iteration::removeFirstIterate(clustalw::Alignment*)':
+./multipleAlign/Iteration.cpp:(.text+0x906): warning: warning: tmpnam() possibly used unsafely; consider using mkstemp()
+===========================================================================
+=>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===========================================================================
+=>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for clustalw-2.1_1
+===>   Generating temporary packing list
+Making install in m4
+test -z "/usr/local/share/aclocal" || /bin/mkdir -p "/wrkdirs/usr/ports/biology/clustalw/work/stage/usr/local/share/aclocal"
+Making install in src
+test -z "/usr/local/bin" || /bin/mkdir -p "/wrkdirs/usr/ports/biology/clustalw/work/stage/usr/local/bin"
+  install  -s -m 555 clustalw2 '/wrkdirs/usr/ports/biology/clustalw/work/stage/usr/local/bin'
+/bin/ln -sf clustalw2 /wrkdirs/usr/ports/biology/clustalw/work/stage/usr/local/bin/clustalw
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+=>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for clustalw-2.1_1
+===========================================================================
+=>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for clustalw-2.1_1
+===>  Checking if clustalw already installed
+===>   Registering installation for clustalw-2.1_1
+[11-1-i386-default] Installing clustalw-2.1_1...
+===>   NOTICE:
+
+The clustalw port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://www.freebsd.org/doc/en/articles/contributing/ports-contributing.html#maintain-port
+
+===========================================================================
+=>> Checking shared library dependencies
+ 0x00000001 NEEDED               Shared library: [libc++.so.1]
+ 0x00000001 NEEDED               Shared library: [libc.so.7]
+ 0x00000001 NEEDED               Shared library: [libcxxrt.so.1]
+ 0x00000001 NEEDED               Shared library: [libgcc_s.so.1]
+ 0x00000001 NEEDED               Shared library: [libm.so.5]
+=======================<phase: deinstall      >============================
+===>  Deinstalling for clustalw
+===>   Deinstalling clustalw-2.1_1
+Updating database digests format: .. done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	clustalw-2.1_1
+
+Number of packages to be removed: 1
+[11-1-i386-default] [1/1] Deinstalling clustalw-2.1_1...
+[11-1-i386-default] [1/1] Deleting files for clustalw-2.1_1: .. done
+===========================================================================
+=>> Checking for extra files and directories
+[00:00:32] Installing from package
+[11-1-i386-default] Installing clustalw-2.1_1...
+[11-1-i386-default] Extracting clustalw-2.1_1: .. done
+Message from clustalw-2.1_1:
+
+===>   NOTICE:
+
+The clustalw port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://www.freebsd.org/doc/en/articles/contributing/ports-contributing.html#maintain-port
+[00:00:32] Cleaning up
+===>  Cleaning for clustalw-2.1_1
+[00:00:32] Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	clustalw-2.1_1
+
+Number of packages to be removed: 1
+[11-1-i386-default] [1/1] Deinstalling clustalw-2.1_1...
+[11-1-i386-default] [1/1] Deleting files for clustalw-2.1_1: .. done
+build of biology/clustalw | clustalw-2.1_1 ended at Sun May 20 14:41:26 CDT 2018
+build time: 00:00:24
