@@ -15,8 +15,8 @@
  
      $opt =~ s/ARRAY_NAME/$name/g;        #  Replace ARRAY_NAME with 'job name'
      $opt =~ s/ARRAY_JOBS/$bgn-$end/g;    #  Replace ARRAY_JOBS with 'bgn-end'
-+    if ( defined(getGlobal("slurmArrayConcurrentTasks")) ) {
-+        $opt = $opt . '%' . getGlobal("slurmArrayConcurrentTasks");
++    if ( defined(getGlobal("slurmArrayTaskLimit")) ) {
++        $opt = $opt . '%' . getGlobal("slurmArrayTaskLimit");
 +    }
  
      return($opt, $off);
