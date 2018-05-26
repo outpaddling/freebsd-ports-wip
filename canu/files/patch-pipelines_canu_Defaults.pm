@@ -4,8 +4,8 @@
      my $tag         = shift @_;
      my $name        = shift @_;
  
-+    $global{"slurmArrayJobLimit"}  = undef;
-+    $synops{"slurmArrayJobLimit"}  = "Max jobs that can run at once";
++    $global{"slurmArrayConcurrentTasks"}  = undef;
++    $synops{"slurmArrayConcurrentTasks"}  = "Max tasks that can run at once";
 +
      $global{"gridOptions${tag}"}   = undef;
      $synops{"gridOptions${tag}"}   = "Grid engine options applied to $name jobs";
