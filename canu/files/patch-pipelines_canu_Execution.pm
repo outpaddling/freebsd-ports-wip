@@ -15,8 +15,8 @@
  
      $opt =~ s/ARRAY_NAME/$name/g;        #  Replace ARRAY_NAME with 'job name'
      $opt =~ s/ARRAY_JOBS/$bgn-$end/g;    #  Replace ARRAY_JOBS with 'bgn-end'
-+    if ( $name =~ m/cormhap/i && defined getGlobal("cormhapConcurrency") ) {
-+        $opt .= '%' . getGlobal("cormhapConcurrency");
++    if ( $name =~ m/cormhap/i && defined getGlobal("slurmCormhapTaskLimit") ) {
++        $opt .= '%' . getGlobal("slurmCormhapTaskLimit");
 +    }
 +    elsif ( defined(getGlobal("slurmArrayTaskLimit")) ) {
 +        $opt .= '%' . getGlobal("slurmArrayTaskLimit");
