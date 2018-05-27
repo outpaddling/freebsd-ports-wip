@@ -11,12 +11,15 @@
      return($installDir);
  }
  
-@@ -727,6 +723,9 @@ sub buildGridArray ($$$$) {
+@@ -727,6 +723,12 @@ sub buildGridArray ($$$$) {
  
      $opt =~ s/ARRAY_NAME/$name/g;        #  Replace ARRAY_NAME with 'job name'
      $opt =~ s/ARRAY_JOBS/$bgn-$end/g;    #  Replace ARRAY_JOBS with 'bgn-end'
-+    if ( defined(getGlobal("slurmArrayTaskLimit")) ) {
-+        $opt = $opt . '%' . getGlobal("slurmArrayTaskLimit");
++    if ( $name =~ m/cormhap/i && defined getGlobal("cormhapConcurrency") ) {
++        $opt .= '%' . getGlobal("cormhapConcurrency");
++    }
++    elsif ( defined(getGlobal("slurmArrayTaskLimit")) ) {
++        $opt .= '%' . getGlobal("slurmArrayTaskLimit");
 +    }
  
      return($opt, $off);
