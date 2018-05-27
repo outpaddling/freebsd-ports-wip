@@ -1,4 +1,4 @@
-# $FreeBSD: branches/2018Q2/security/ca_root_nss/Makefile 470841 2018-05-25 14:01:47Z jbeich $
+# $FreeBSD: head/security/ca_root_nss/Makefile 469333 2018-05-07 20:31:26Z jbeich $
 
 PORTNAME=	ca_root_nss
 PORTVERSION=	${VERSION_NSS}
@@ -10,8 +10,6 @@ MAINTAINER=	ports-secteam@FreeBSD.org
 COMMENT=	Root certificate bundle from the Mozilla Project
 
 LICENSE=	MPL20
-
-BUILD_USER!=	whoami
 
 OPTIONS_DEFINE=		ETCSYMLINK
 .if ${BUILD_USER} == "root"
@@ -36,13 +34,15 @@ PLIST_SUB+=	CERTDIR=${CERTDIR}
 # !!!  Please DO NOT submit patches for new version until it has !!!
 # !!!  been committed there first.                               !!!
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-VERSION_NSS=	3.37.1
+VERSION_NSS=	3.37
 #NSS_SUFFIX=	-with-ckbi-1.98
 CERTDATA_TXT_PATH=	nss-${VERSION_NSS}/nss/lib/ckfw/builtins/certdata.txt
 BUNDLE_PROCESSOR=	MAca-bundle.pl
 
 SUB_FILES=	MAca-bundle.pl pkg-message
 SUB_LIST=	VERSION_NSS=${VERSION_NSS}
+
+BUILD_USER!=	whoami
 
 .include <bsd.port.options.mk>
 
