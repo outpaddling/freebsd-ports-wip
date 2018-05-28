@@ -12,7 +12,7 @@ COMMENT=	Root certificate bundle from the Mozilla Project
 LICENSE=	MPL20
 
 OPTIONS_DEFINE=		ETCSYMLINK
-.if ${BUILD_USER} == "root"
+.if !defined(INSTALL_AS_USER)
 OPTIONS_DEFAULT=	ETCSYMLINK
 .endif
 
@@ -41,8 +41,6 @@ BUNDLE_PROCESSOR=	MAca-bundle.pl
 
 SUB_FILES=	MAca-bundle.pl pkg-message
 SUB_LIST=	VERSION_NSS=${VERSION_NSS}
-
-BUILD_USER!=	whoami
 
 .include <bsd.port.options.mk>
 
