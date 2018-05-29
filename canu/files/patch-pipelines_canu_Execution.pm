@@ -11,11 +11,13 @@
      return($installDir);
  }
  
-@@ -695,7 +691,7 @@ sub submitScript ($$) {
+@@ -694,8 +690,8 @@ sub submitScript ($$) {
  
  
- sub buildGridArray ($$$$) {
+ 
+-sub buildGridArray ($$$$) {
 -    my ($name, $bgn, $end, $opt) = @_;
++sub buildGridArray (@) {
 +    my ( $name, $bgn, $end, $opt, $thr ) = @_;
      my  $off = 0;
  
