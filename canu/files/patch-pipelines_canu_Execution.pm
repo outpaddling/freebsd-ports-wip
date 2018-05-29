@@ -38,9 +38,9 @@
 +
 +       if( lc( getGlobal( 'gridEngine' ) ) eq 'slurm' && $end > 1 )
 +       {
-+           if( $name =~ m/mhap/i && defined getGlobal( 'slurmMhapTaskLimit' ) )
++           if( $name =~ m/mhap/i && defined getGlobal( 'slurmCormhapTaskLimit' ) )
 +           {
-+               $opt .= '%' . getGlobal( 'slurmMhapTaskLimit' );
++               $opt .= '%' . getGlobal( 'slurmCormhapTaskLimit' );
 +           }
 +           elsif( defined getGlobal( 'slurmArrayTaskLimit' ) )
 +           {
