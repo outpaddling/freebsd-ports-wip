@@ -62,7 +62,7 @@ post-patch:
 	@${REINPLACE_CMD} '/^SUBDIRS =/s|test||' ${WRKSRC}/Makefile.in
 
 post-install:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${MV} ${STAGEDIR}${DOCSDIR}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 	${RM} -r ${STAGEDIR}${DOCSDIR}
 

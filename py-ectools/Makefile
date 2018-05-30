@@ -24,9 +24,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC} && for script in schtats *.py *.sh; do ${INSTALL_SCRIPT} $$script ${STAGEDIR}${PREFIX}/bin/ec-$$script; done)
-	${MKDIR} ${STAGEDIR}${DATADIR}/test
+	@${MKDIR} ${STAGEDIR}${DATADIR}/test
 	cd ${WRKSRC}/test && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/test
 
 .include <bsd.port.mk>

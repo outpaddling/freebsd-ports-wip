@@ -29,7 +29,7 @@ PLIST_FILES=	bin/mcc18 \
 MAN1=		mcc18.1 mpasm.1 mplib.1 mplink.1
 
 do-install:
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/mcc18 ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/mpasm ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/mplib ${PREFIX}/bin

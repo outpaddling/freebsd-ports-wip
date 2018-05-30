@@ -25,7 +25,7 @@ GH_ACCOUNT=	BenLangmead
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/scripts
+	@${MKDIR} ${STAGEDIR}${DATADIR}/scripts
 	${INSTALL_PROGRAM} \
 		${WRKSRC}/bowtie2*-s \
 		${WRKSRC}/bowtie2*-l \

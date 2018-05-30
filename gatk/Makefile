@@ -34,7 +34,7 @@ IGNORE=	may not be redistributed due to licensing reasons.\
 .endif
 
 do-install:
-	${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKDIR}/GenomeAnalysisTK.jar \
 		${STAGEDIR}${JAVAJARDIR}
 	cd ${WRKDIR}/resources && ${COPYTREE_SHARE} \* \

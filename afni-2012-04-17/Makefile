@@ -88,7 +88,7 @@ post-extract:
 	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" ${WRKDIR}/afni.1
 
 post-build:
-	${MKDIR} ${PRESTAGE}/bin \
+	@${MKDIR} ${PRESTAGE}/bin \
 		${PRESTAGE}/scripts \
 		${PRESTAGE}/lib \
 		${PRESTAGE}/include \
@@ -116,7 +116,7 @@ post-build:
 		${PRESTAGE}/scripts
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR} \
+	@${MKDIR} ${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${PREFIX}/lib/afni \
 		${STAGEDIR}${PREFIX}/include/afni
 	${INSTALL_DATA} ${PRESTAGE}/lib/* ${STAGEDIR}${PREFIX}/lib/afni
@@ -128,7 +128,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/CA_EZ_v1.5-July3107/* ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKDIR}/afni.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${PREFIX}/etc/mri
+	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${PREFIX}/etc/mri
 	${INSTALL_DATA} ${PRESTAGE}/doc/* ${STAGEDIR}${DOCSDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/afni.cshrc ${WRKDIR}/afni.profile \
 		${STAGEDIR}${PREFIX}/etc/mri

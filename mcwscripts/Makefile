@@ -21,7 +21,7 @@ PREFIX=		${LOCALBASE}/mri
 NO_BUILD=	yes
 
 do-install:
-	${MKDIR}		${PREFIX}/scripts
+	@${MKDIR}		${PREFIX}/scripts
 	${INSTALL_SCRIPT}	${WRKSRC}/* ${PREFIX}/scripts
 
 .include <bsd.port.mk>

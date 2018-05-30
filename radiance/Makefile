@@ -133,7 +133,7 @@ post-patch:
 		${FILESDIR}/responses.txt > ${WRKSRC}/responses.txt
 
 do-build:
-	${MKDIR} ${WRKSRC}/install/bin ${WRKSRC}/install/lib/ray
+	@${MKDIR} ${WRKSRC}/install/bin ${WRKSRC}/install/lib/ray
 	(cd ${WRKSRC} && ./makeall install < ${WRKSRC}/responses.txt)
 
 # Temporary hack

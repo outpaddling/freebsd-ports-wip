@@ -25,7 +25,7 @@ CXXFLAGS+=	-I${LOCALBASE}/include/eigen3
 # -I${LOCALBASE}/include/lapackpp
 
 do-extract:
-	${MKDIR} ${WRKSRC}
+	@${MKDIR} ${WRKSRC}
 	cd ${WRKSRC} && ${UNZIP_CMD} ${DISTDIR}/${DISTFILES}
 
 .include <bsd.port.mk>

@@ -28,7 +28,7 @@ post-patch:
 		${WRKSRC}/sdk/build/bamboo-build.post.sh
 
 do-build:
-	${MKDIR} ${WRKSRC}/release/bioinformatics/apt/master-dev/sdk/release
+	@${MKDIR} ${WRKSRC}/release/bioinformatics/apt/master-dev/sdk/release
 	cd ${WRKSRC} && bash ./run-build.sh
 
 .include <bsd.port.mk>

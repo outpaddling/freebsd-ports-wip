@@ -110,7 +110,7 @@ post-patch:
 		${WRKDIR}/mritools.1
 
 do-install:
-	${MKDIR} ${PREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKDIR}/mritools.1 ${PREFIX}/man/man1
 
 .include <bsd.port.post.mk>

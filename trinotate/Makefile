@@ -62,8 +62,8 @@ post-patch:
 		`find ${WRKSRC} -type f -exec fgrep -l PerlLib '{}' \;`
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/trinotate/util
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/trinotate/util
 	${INSTALL_SCRIPT} ${WRKSRC}/Trinotate ${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC}/util && \
 		${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/libexec/trinotate/util)

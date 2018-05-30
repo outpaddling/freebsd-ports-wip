@@ -38,7 +38,7 @@ MAN1=			cgal_create_cmake_script.1
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 .for i in AUTHORS CHANGES LICENSE LICENSE.FREE_USE LICENSE.GPL LICENSE.LGPL
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor

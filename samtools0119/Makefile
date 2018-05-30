@@ -31,7 +31,7 @@ post-patch:
 .endif
 
 do-install:
-	${MKDIR} \
+	@${MKDIR} \
 		${STAGEDIR}${SAMPREFIX}/bin \
 		${STAGEDIR}${SAMPREFIX}/lib \
 		${STAGEDIR}${SAMPREFIX}/man/man1 \

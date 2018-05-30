@@ -131,7 +131,7 @@ post-build:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Trinity ${STAGEDIR}${PREFIX}/bin
 
-	${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}/Chrysalis
+	@${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}/Chrysalis
 	cd ${WRKSRC}/Chrysalis && \
 		${INSTALL_PROGRAM} BreakTransByPairs Chrysalis \
 			CreateIwormFastaBundle \
@@ -144,11 +144,11 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Chrysalis/ReadsToComponents.pl \
 		${STAGEDIR}${LIBEXEC_DIR}/Chrysalis
 
-	${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}/Inchworm/bin
+	@${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}/Inchworm/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/Inchworm/bin/* \
 		${STAGEDIR}${LIBEXEC_DIR}/Inchworm/bin
 
-	${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}/Butterfly
+	@${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}/Butterfly
 	${INSTALL_SCRIPT} ${WRKSRC}/Butterfly/Butterfly.jar \
 		${STAGEDIR}${LIBEXEC_DIR}/Butterfly
 
@@ -158,7 +158,7 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_BIN} util \
 		${STAGEDIR}${LIBEXEC_DIR}
 
-	${MKDIR} \
+	@${MKDIR} \
 		${STAGEDIR}${PLUGINS_DIR}/collectl \
 		${STAGEDIR}${PLUGINS_DIR}/scaffold_iworm_contigs
 	cd ${WRKSRC}/trinity-plugins/collectl && \

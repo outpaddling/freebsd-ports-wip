@@ -86,7 +86,7 @@ do-build:
 
 post-build:
 	${RM} -rf ${WRKDIR}/tmp_shared
-	${MKDIR} ${WRKDIR}/tmp_shared
+	@${MKDIR} ${WRKDIR}/tmp_shared
 	${MV} ${WRKSRC_SHARED}/LIB/blacs_MPI-FreeBSD-${DEBUG_LEVEL}.a          ${WRKSRC_SHARED}/LIB/libblacsc.a
 	${MV} ${WRKSRC_SHARED}/LIB/blacsF77init_MPI-FreeBSD-${DEBUG_LEVEL}.a   ${WRKSRC_SHARED}/LIB/libblacsf77.a
 	${MV} ${WRKSRC_SHARED}/LIB/blacsCinit_MPI-FreeBSD-${DEBUG_LEVEL}.a     ${WRKSRC_SHARED}/LIB/libblacs.a
@@ -109,7 +109,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacsf77.so ${PREFIX}/lib/libblacsf77.so
 	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacs.so    ${PREFIX}/lib/libblacs.so
 
-	${MKDIR} ${PREFIX}/share/BLACS/TESTING
+	@${MKDIR} ${PREFIX}/share/BLACS/TESTING
 	( cd ${WRKSRC_SHARED}/TESTING/EXE ; \
 	  ${INSTALL_PROGRAM} xCbtest_MPI-FreeBSD-${DEBUG_LEVEL} ${PREFIX}/share/BLACS/TESTING/xCbtest_MPI-FreeBSD; \
 	  ${INSTALL_PROGRAM} xFbtest_MPI-FreeBSD-${DEBUG_LEVEL} ${PREFIX}/share/BLACS/TESTING/xFbtest_MPI-FreeBSD; \

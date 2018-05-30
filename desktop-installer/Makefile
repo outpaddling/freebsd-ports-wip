@@ -21,9 +21,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/Doc/${PORTNAME}.man \
 		${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/Data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
-	${MKDIR} ${STAGEDIR}${DATADIR}/Scripts
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Scripts
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${STAGEDIR}${DATADIR}/Scripts
 
 .include <bsd.port.mk>

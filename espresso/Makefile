@@ -85,11 +85,11 @@ post-configure:
 		${WRKSRC}/make.sys
 
 post-build:
-	${MKDIR} ${WRKSRC}/scripts
+	@${MKDIR} ${WRKSRC}/scripts
 	${MV} ${WRKSRC}/bin/iotk ${WRKSRC}/scripts
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/iotk ${STAGEDIR}${PREFIX}/bin
 	for p in ${WRKSRC}/bin/*; do \
 		${INSTALL_PROGRAM} $${p} \

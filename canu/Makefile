@@ -39,12 +39,12 @@ post-patch:
 
 # Upstream does not want to use lib/perl5/site_perl
 post-build:
-	${MKDIR} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/lib/perl5
+	@${MKDIR} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/lib/perl5
 	${MV} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/lib/site_perl \
 		${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/lib/perl5
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}
+	@${MKDIR} ${STAGEDIR}${PREFIX}
 	(cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && \
 		${COPYTREE_BIN} bin ${STAGEDIR}${PREFIX})
 	# STRIP_CMD fails without this on 11.1 under poudriere

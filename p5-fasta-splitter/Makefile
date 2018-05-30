@@ -27,7 +27,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/fasta-splitter.pl
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/fasta-splitter.pl \
 		${STAGEDIR}${PREFIX}/bin
 

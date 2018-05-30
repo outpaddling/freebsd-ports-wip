@@ -23,7 +23,7 @@ post-extract:
 	${REINPLACE_CMD} -E "s/friend RAPID_Collide/friend int RAPID_Collide/" ${WRKSRC}/RAPID_private.H
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/RAPID
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/RAPID
 	${INSTALL_DATA}	${WRKSRC}/*.H ${STAGEDIR}${PREFIX}/include/RAPID
 	${INSTALL_DATA}	${WRKSRC}/libRAPID.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_MAN} ${FILESDIR}/rapid.1 ${STAGEDIR}${MANPREFIX}/man/man1

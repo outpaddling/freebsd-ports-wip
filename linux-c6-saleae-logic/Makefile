@@ -24,7 +24,7 @@ NO_BUILD=	yes
 do-install:
 	brandelf -t Linux ${WRKSRC}/Logic
 	${INSTALL_PROGRAM} ${WRKSRC}/Logic ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/Saleae
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/Saleae
 	${INSTALL_DATA} ${WRKSRC}/libAnalyzer.so ${STAGEDIR}${PREFIX}/lib/Saleae
 	${INSTALL_DATA} ${WRKSRC}/Analyzers/* ${STAGEDIR}${PREFIX}/lib/Saleae
 

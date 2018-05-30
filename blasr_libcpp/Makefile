@@ -51,7 +51,7 @@ do-install:
 	for fn in `find ${WRKSRC} -name '*.h' -o -name '*.hpp'`; do \
 		relpath=$${fn#${WRKSRC}/}; \
 		dir=`dirname $$relpath`; \
-		${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}/$$dir; \
+		@${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}/$$dir; \
 		${INSTALL_DATA} $$fn \
 			${STAGEDIR}${PREFIX}/include/${PORTNAME}/$$dir; \
 	done

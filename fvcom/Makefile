@@ -48,7 +48,7 @@ pre-build:
 	(cd ${WRKSRC}/../METIS_source && make)
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${MPIPREFIX}bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${MPIPREFIX}bin
 	${INSTALL_PROGRAM} ${WRKSRC}/fvcom \
 		${STAGEDIR}${PREFIX}/${MPIPREFIX}bin/${PORTNAME}${PKGNAMESUFFIX}
 

@@ -118,12 +118,12 @@ do-build:
 	(cd ${WRKSRC}/tools/msi2lmp/src && ${GMAKE} ${MAKE_ARGS})
 
 do-install:
-	${MKDIR} ${STAGEDIR}${INSTALL_PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${INSTALL_PREFIX}/bin
 	${INSTALL_PROGRAM} \
 		${BUILD_WRKSRC}/lmp_${ALL_TARGET} \
 		${STAGEDIR}${INSTALL_PREFIX}/bin/lmp${PKGNAMESUFFIX}
 .if ${ALL_TARGET} == "FreeBSD-serial"
-	${MKDIR} ${DATADIR} ${EXAMPLESDIR} ${DOCSDIR}
+	@${MKDIR} ${DATADIR} ${EXAMPLESDIR} ${DOCSDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/binary2txt \
 		${STAGEDIR}${INSTALL_PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/chain \

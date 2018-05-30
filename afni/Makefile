@@ -110,7 +110,7 @@ post-patch:
 
 # FIXME: Merge this into do-install or the Makefile?
 post-build:
-	${MKDIR} ${PRESTAGE}/bin \
+	@${MKDIR} ${PRESTAGE}/bin \
 		${PRESTAGE}/scripts \
 		${PRESTAGE}/lib \
 		${PRESTAGE}/include \
@@ -138,7 +138,7 @@ post-build:
 	${MV}	${PRESTAGE}/scripts/meica.libs ${PRESTAGE}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR} \
+	@${MKDIR} ${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${PREFIX}/lib/afni \
 		${STAGEDIR}${PREFIX}/include/afni
 	for f in ${PRESTAGE}/lib/*; do \
@@ -153,7 +153,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_DATA} ${WRKSRC}/Atlases/* ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/afni.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${PREFIX}/etc/mri
+	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${PREFIX}/etc/mri
 	${INSTALL_DATA} ${PRESTAGE}/doc/* ${STAGEDIR}${DOCSDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/afni.cshrc ${WRKDIR}/afni.profile \
 		${STAGEDIR}${PREFIX}/etc/mri

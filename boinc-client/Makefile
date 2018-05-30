@@ -131,7 +131,7 @@ post-install:
 .endfor
 
 post-install-MANAGER-on:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/boinc
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/boinc
 .for name in 16 32 48
 	${INSTALL_DATA} ${WRKSRC}/clientgui/res/boincmgr.${name}x${name}.png \
 	    ${STAGEDIR}${PREFIX}/share/pixmaps
@@ -140,7 +140,7 @@ post-install-MANAGER-on:
 	(cd ${WRKSRC}/clientgui && \
 	${COPYTREE_SHARE} skins ${STAGEDIR}${PREFIX}/share/boinc/ )
 .else
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/boinc/skins
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/boinc/skins
 	(cd ${WRKSRC}/clientgui/skins && \
 	${COPYTREE_SHARE} Default ${STAGEDIR}${PREFIX}/share/boinc/skins/ )
 .endif
@@ -150,7 +150,7 @@ post-install-X11-on:
 	api/ttfont.h
 	${INSTALL_DATA} ${WRKSRC}/${name} ${STAGEDIR}${PREFIX}/include/boinc
 .endfor
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/boinc/ttf
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/boinc/ttf
 	(cd ${WRKSRC}/api/ttf/liberation-fonts-ttf-2.00.0 && \
 	    ${COPYTREE_SHARE} \*.ttf ${STAGEDIR}${PREFIX}/share/boinc/ttf/ )
 

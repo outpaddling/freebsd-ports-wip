@@ -37,7 +37,7 @@ post-patch:
 do-install:
 	${CP} ${WRKSRC}/bin/nnhowplayer.Linux_i686 \
 		${STAGEDIR}${PREFIX}/bin/nnhowplayer
-	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/SignalP
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/SignalP
 	${CP} ${WRKSRC}/lib/* ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/SignalP
 	${INSTALL_SCRIPT} ${WRKSRC}/signalp ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/signalp.1 ${STAGEDIR}${PREFIX}/man/man1

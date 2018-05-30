@@ -25,7 +25,7 @@ do-build:
 # May need apt-probeset-summarize.64 for birdsuite
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} \
 		${WRKSRC}/*.txt \
 		${WRKSRC}/*.config \

@@ -17,7 +17,7 @@ USES=		linux
 NO_BUILD=	yes
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/sratoolkit-${PORTVERSION}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/sratoolkit-${PORTVERSION}/bin
 	cd ${WRKSRC}/bin && ${COPYTREE_BIN} \
 		. ${STAGEDIR}${PREFIX}/sratoolkit-${PORTVERSION}/bin
 	cd ${WRKSRC} && ${COPYTREE_BIN} \

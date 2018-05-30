@@ -68,6 +68,6 @@ MAKE_JOBS_UNSAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
 
 pre-install:
-	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 
 .include <bsd.port.mk>

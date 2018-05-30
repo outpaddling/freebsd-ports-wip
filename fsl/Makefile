@@ -64,7 +64,7 @@ MAN1=		fsl.1
 # fslmachtype.sh requires a patch before being used in the build process,
 # so don't try to run it under post-extract.
 post-patch:
-	${MKDIR} ${WRKSRC}/config/`${WRKSRC}/etc/fslconf/fslmachtype.sh`
+	@${MKDIR} ${WRKSRC}/config/`${WRKSRC}/etc/fslconf/fslmachtype.sh`
 	${CP} ${FILESDIR}/*.mk \
 		${WRKSRC}/config/`${WRKSRC}/etc/fslconf/fslmachtype.sh`
 	${REINPLACE_CMD} 's/-lqwt/-lqwt4/g' ${WRKSRC}/src/fslview/src/fslview/fslview.pro
@@ -77,7 +77,7 @@ post-patch:
 do-build:
 	(cd ${WRKSRC} && ./build)
 .if defined(WITH_FSLVIEW)
-	${MKDIR} ${WRKDIR}/fslview-release
+	@${MKDIR} ${WRKDIR}/fslview-release
 	(cd ${WRKDIR}/fslview-release && \
 	cmake ../fsl/src/fslview \
 		-DCMAKE_INSTALL_PREFIX=${LOCALBASE} \
@@ -119,7 +119,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/fslview-release/bin/fslview ${PREFIX}/bin
 .endif
 	${INSTALL_MAN} ${FILESDIR}/fsl.1 ${PREFIX}/man/man1
-	${MKDIR} ${PREFIX}/etc/mri
+	@${MKDIR} ${PREFIX}/etc/mri
 	${INSTALL_SCRIPT} ${WRKDIR}/fsl.cshrc ${PREFIX}/etc/mri
 	${INSTALL_SCRIPT} ${WRKDIR}/fsl.profile ${PREFIX}/etc/mri
 

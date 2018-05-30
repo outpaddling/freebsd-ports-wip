@@ -25,7 +25,7 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rtax ${WRKSRC}/scripts/*.pl \
 		${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${PERL_MOD_DIR}
+	@${MKDIR} ${STAGEDIR}${PERL_MOD_DIR}
 	${INSTALL_DATA} ${WRKSRC}/scripts/*.pm \
 		${STAGEDIR}${PERL_MOD_DIR}
 

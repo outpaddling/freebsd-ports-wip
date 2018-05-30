@@ -54,7 +54,7 @@ pre-build:
 		cd ${WRKSRC}/../external_daligner && unzip DAZZ_DB-40bb7e4b2041cdfd3c50b22201301b8df06342fa.zip && cd DAZZ_DB-40bb7e4b2041cdfd3c50b22201301b8df06342fa && ${REINPLACE_CMD} -e 's|gcc|${CC}|g' Makefile && ${GMAKE} clean && ${GMAKE}
 
 post-stage:
-		${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin
+		@${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin
 		${MV} ${STAGEDIR}${PREFIX}/bin/pbtranscript.py \
 			${STAGEDIR}${PREFIX}/${PORTNAME}/bin
 		cd ${WRKSRC}/../external_daligner/DALIGNER-d4aa4871122b35ac92e2cc13d9b1b1e9c5b5dc5c-ICEmod && ${INSTALL_PROGRAM} HPCdaligner HPCmapper LA4Ice LAcat LAcheck LAmerge LAshow LAsort LAsplit daligner ${STAGEDIR}${PREFIX}/${PORTNAME}/bin

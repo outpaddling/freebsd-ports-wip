@@ -26,7 +26,7 @@ RUN_DEPENDS+=	${BUILD_DEPENDS} \
 NO_BUILD=	yes
 
 do-install:
-		${MKDIR} ${STAGEDIR}${PREFIX}/bin
+		@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 		${INSTALL_SCRIPT} ${WRKSRC}/pfam_scan.pl \
 			${STAGEDIR}${PREFIX}/bin
 		(cd ${WRKSRC} && ${COPYTREE_SHARE} Bio \

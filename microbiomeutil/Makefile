@@ -22,8 +22,8 @@ post-patch:
 		-e 's|gcc|$${CC}|g' \
 		${WRKSRC}/NAST-iEr/Makefile
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/modulefiles/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/modulefiles/${PORTNAME}
 	${INSTALL_SCRIPT} ${FILESDIR}/modulefile \
 		${STAGEDIR}${LOCALBASE}/${MODULE_PATH}
 	cd ${WRKSRC} && ${COPYTREE_BIN} \

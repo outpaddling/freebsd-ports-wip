@@ -58,15 +58,15 @@ do-build:	apply-slist
 	    ${WRKDIR}/ca-root-nss.crt
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${CERTDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${CERTDIR}
 	${INSTALL_DATA} ${WRKDIR}/ca-root-nss.crt ${STAGEDIR}${PREFIX}/${CERTDIR}
 .if ${PORT_OPTIONS:METCSYMLINK}
-	${MKDIR} ${STAGEDIR}/etc/ssl
+	@${MKDIR} ${STAGEDIR}/etc/ssl
 	${LN} -sf ${PREFIX}/${CERTDIR}/ca-root-nss.crt ${STAGEDIR}/etc/ssl/cert.pem
 .endif
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/ssl
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/ssl
 	${LN} -sf ${PREFIX}/${CERTDIR}/ca-root-nss.crt ${STAGEDIR}${PREFIX}/etc/ssl/cert.pem.sample
-	${MKDIR} ${STAGEDIR}${PREFIX}/openssl
+	@${MKDIR} ${STAGEDIR}${PREFIX}/openssl
 	${LN} -sf ${PREFIX}/${CERTDIR}/ca-root-nss.crt ${STAGEDIR}${PREFIX}/openssl/cert.pem.sample
 
 .include <bsd.port.mk>

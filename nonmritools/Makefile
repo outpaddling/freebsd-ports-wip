@@ -192,7 +192,7 @@ post-patch:
 		${WRKDIR}/nonmritools.1
 
 do-install:
-	${MKDIR} ${PREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKDIR}/nonmritools.1 ${PREFIX}/man/man1
 
 .include <bsd.port.post.mk>

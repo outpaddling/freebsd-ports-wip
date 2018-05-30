@@ -26,7 +26,7 @@ WEB_BROWSER?=	webbrowser
 MAKE_FLAGS+=	HOSTTYPE="FreeBSD" TCL_VER=${TCL_VER} USE_TCL=${USE_TCL}
 
 post-extract:
-	${MKDIR} ${WRKDIR}/lens
+	@${MKDIR} ${WRKDIR}/lens
 	${MV} ${WRKDIR}/[A-Z]* ${WRKDIR}/lens
 	${REINPLACE_CMD} 's|netscape|${WEB_BROWSER}|g' ${WRKSRC}/Src/lensrc.tcl
 
@@ -36,9 +36,9 @@ do-install:
 	${LN} -s ${PREFIX}/bin/alens-2.63 ${PREFIX}/bin/alensnns
 	${LN} -s ${PREFIX}/bin/lens-2.63 ${PREFIX}/bin/lensnns
 	${INSTALL_MAN} ${WRKDIR}/lensnns.1 ${MAN1PREFIX}/man/man1
-	${MKDIR} ${PREFIX}/share/${PORTNAME}/Src/Images
-	${MKDIR} ${PREFIX}/share/${PORTNAME}/Examples
-	${MKDIR} ${PREFIX}/share/${PORTNAME}/Commands
+	@${MKDIR} ${PREFIX}/share/${PORTNAME}/Src/Images
+	@${MKDIR} ${PREFIX}/share/${PORTNAME}/Examples
+	@${MKDIR} ${PREFIX}/share/${PORTNAME}/Commands
 	${INSTALL_DATA} ${WRKSRC}/Src/*.tcl \
 		${PREFIX}/share/${PORTNAME}/Src
 	${INSTALL_DATA} ${WRKSRC}/Src/Images/* \
@@ -47,7 +47,7 @@ do-install:
 		${PREFIX}/share/${PORTNAME}/Examples
 	${INSTALL_DATA} ${WRKSRC}/Commands/* \
 		${PREFIX}/share/${PORTNAME}/Commands
-	${MKDIR} ${PREFIX}/etc/mri
+	@${MKDIR} ${PREFIX}/etc/mri
 	${INSTALL_SCRIPT} ${WRKDIR}/lensnns.cshrc ${WRKDIR}/lensnns.profile \
 		${PREFIX}/etc/mri
 

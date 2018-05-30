@@ -31,7 +31,7 @@ GH_ACCOUNT=	BenLangmead
 MAKE_ENV+=	RELEASE_BIN=1
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/scripts
+	@${MKDIR} ${STAGEDIR}${DATADIR}/scripts
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/bowtie \
 		${WRKSRC}/bowtie-build \

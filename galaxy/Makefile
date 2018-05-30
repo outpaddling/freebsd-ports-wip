@@ -19,7 +19,7 @@ NO_BUILD=	yes
 # This is going to be a mess.  Galaxy is meant to be run out of the source
 # directory.  Just dumping to libexec for deelopment and testing.
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/galaxy
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/galaxy
 	${CP} -R ${WRKSRC}/ ${STAGEDIR}${PREFIX}/libexec/galaxy
 
 .include <bsd.port.mk>

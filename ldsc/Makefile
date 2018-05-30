@@ -28,7 +28,7 @@ NO_ARCH=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/ldsc
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/ldsc
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "ldscore ContinuousAnnotations" \
 		${STAGEDIR}${PREFIX}/libexec/ldsc)
 

@@ -18,7 +18,7 @@ NO_BUILD=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/*.pl ${WRKSRC}/*.sh ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

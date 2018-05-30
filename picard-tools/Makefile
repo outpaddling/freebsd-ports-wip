@@ -27,7 +27,7 @@ do-extract:
 	# No extract
 
 do-install:
-	${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		${STAGEDIR}${JAVAJARDIR}
 

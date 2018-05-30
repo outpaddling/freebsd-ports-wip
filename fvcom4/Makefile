@@ -42,7 +42,7 @@ pre-build:
 	cp ${FILESDIR}/make.inc ${WRKSRC}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${MPIPREFIX}bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${MPIPREFIX}bin
 	${INSTALL_PROGRAM} ${WRKSRC}/fvcom \
 		${STAGEDIR}${PREFIX}/${MPIPREFIX}bin/${PORTNAME}${PKGNAMESUFFIX}
 

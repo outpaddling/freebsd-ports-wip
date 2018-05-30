@@ -20,12 +20,12 @@ NO_BUILD=	yes
 
 # ${UNZIP_CMD} looking for /usr/local/bin/unzip for some reason
 do-extract:
-	${MKDIR} ${WRKSRC}
+	@${MKDIR} ${WRKSRC}
 	cd ${WRKSRC} && unzip ${DISTDIR}/${DISTFILES}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gcta64 ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/test.* ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

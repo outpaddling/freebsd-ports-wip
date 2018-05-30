@@ -53,7 +53,7 @@ do-install:
 		 ${STAGEDIR}${PREFIX}/bin
 	${CP} ${WRKSRC}/bin/decodeanhmm.Linux_i686 \
 		${STAGEDIR}${PREFIX}/bin/decodeanhmm
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${CP} ${WRKSRC}/lib/* ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.post.mk>

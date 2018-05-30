@@ -83,7 +83,7 @@ post-build:
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/bin ${DATADIR}
+	@${MKDIR} ${PREFIX}/bin ${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/caret/caret5 ${PREFIX}/bin
 .for f in command edit
 	${INSTALL_PROGRAM} ${WRKSRC}/caret_${f}/caret_${f} ${PREFIX}/bin
@@ -93,7 +93,7 @@ do-install:
 .endif
 	(cd ${WRKDIR}/caret_distfiles && ${COPYTREE_SHARE} \* ${DATADIR})
 	${LN} -s ${DATADIR}/caret_help ${DOCSDIR}
-	${MKDIR} ${PREFIX}/etc/mri
+	@${MKDIR} ${PREFIX}/etc/mri
 	${INSTALL_SCRIPT} ${WRKDIR}/caret.cshrc ${PREFIX}/etc/mri
 	${INSTALL_SCRIPT} ${WRKDIR}/caret.profile ${PREFIX}/etc/mri
 	${INSTALL_MAN} ${WRKDIR}/caret.1 ${MAN1PREFIX}/man/man1

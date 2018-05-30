@@ -23,9 +23,9 @@ post-patch:
 		${WRKSRC}/src/moltemplate.sh
 
 do-install:
-	${MKDIR} ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/* ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}
 	${CP} -R ${WRKSRC}/common ${DATADIR}
 	@${CAT} ${WRKDIR}/pkg-message
 

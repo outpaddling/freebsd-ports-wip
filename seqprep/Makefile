@@ -24,7 +24,7 @@ post-patch:
 		-e 's|../SeqPrep|SeqPrep|g' \
 		-e 's|/bin/bash|/bin/sh|g' \
 		${WRKSRC}/Test/RUNTEST.sh
-	${MKDIR} ${WRKSRC}/Test/out ${WRKSRC}/Test/info
+	@${MKDIR} ${WRKSRC}/Test/out ${WRKSRC}/Test/info
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/SeqPrep ${STAGEDIR}${PREFIX}/bin

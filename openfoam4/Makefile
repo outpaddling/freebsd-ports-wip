@@ -88,7 +88,7 @@ do-build:
 # No world perms on peregrine, where installed via pkg add.  The the
 # chmod not sufficient?
 do-install:
-	${MKDIR} \
+	@${MKDIR} \
 		${STAGEDIR}${INSTALL_DIR}/${PLATFORM} \
 		${STAGEDIR}${INSTALL_DIR}/ThirdParty
 	${CP} -R \

@@ -194,7 +194,7 @@ post-extract:
 	@${LN} -sf ${WRKSRC}/newlib-${NEWLIB_VERSION}/newlib ${WRKSRC}/newlib
 	@${LN} -sf ${WRKSRC}/newlib-${NEWLIB_VERSION}/libgloss \
 		${WRKSRC}/libgloss
-	${MKDIR} ${CONFIGURE_WRKSRC}/
+	@${MKDIR} ${CONFIGURE_WRKSRC}/
 
 post-patch:
 #

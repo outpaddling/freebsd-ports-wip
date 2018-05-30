@@ -26,7 +26,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/amr-cli bin/amr-cleanup
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/amr-* ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

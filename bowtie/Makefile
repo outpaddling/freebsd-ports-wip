@@ -25,7 +25,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	BenLangmead
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/scripts
+	@${MKDIR} ${STAGEDIR}${DATADIR}/scripts
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/bowtie \
 		${WRKSRC}/bowtie-build \

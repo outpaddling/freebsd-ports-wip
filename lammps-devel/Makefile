@@ -126,12 +126,12 @@ do-build:
 # Users must set MOLTEMPLATE_PATH to "$DATADIR/moltemplate_common"
 # FIXME: Replace CP with COPYTREE for proper permissions
 do-install:
-	${MKDIR} ${STAGEDIR}${INSTALL_PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${INSTALL_PREFIX}/bin
 	${INSTALL_PROGRAM} \
 		${BUILD_WRKSRC}/lmp_${ALL_TARGET} \
 		${STAGEDIR}${INSTALL_PREFIX}/bin/lmp${PKGNAMESUFFIX}
 .if ${ALL_TARGET} == "FreeBSD-serial"
-	${MKDIR} \
+	@${MKDIR} \
 		${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${EXAMPLESDIR} \
 		${STAGEDIR}${DOCSDIR}

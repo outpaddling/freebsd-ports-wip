@@ -41,7 +41,7 @@ pre-build:
 	(cd ${WRKSRC} && ${MAKE_CMD} KIM_DIR=${WRKSRC} examples)
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib ${STAGEDIR}${PREFIX}/include/KIM_API
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib ${STAGEDIR}${PREFIX}/include/KIM_API
 	${INSTALL_DATA} ${WRKSRC}/KIM_API/libkim.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/KIM_API/*.h ${STAGEDIR}${PREFIX}/include/KIM_API
 

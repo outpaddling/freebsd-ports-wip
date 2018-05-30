@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Getopt-Long>=2:devel/p5-Getopt-Long \
 NO_BUILD=	yes
 
 do-extract:
-	${MKDIR} ${WRKSRC}
+	@${MKDIR} ${WRKSRC}
 	cd ${WRKSRC} && tar zxvf ${DISTDIR}/${DISTFILES}
 
 post-patch:

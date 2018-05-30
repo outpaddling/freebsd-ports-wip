@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 
 # use a native openldap configuration directories/files
 #post-install:
-	#${MKDIR} ${STAGEDIR}${PREFIX}/etc
+	#@${MKDIR} ${STAGEDIR}${PREFIX}/etc
 	#${LN} -sf ${LOCALBASE}/etc/openldap ${STAGEDIR}${PREFIX}/etc/openldap
 
 .include <bsd.port.mk>

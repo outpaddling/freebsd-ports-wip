@@ -19,7 +19,7 @@ NO_BUILD=	yes
 # FIXME: Does not conform to filesystem hierarchy
 # FIXME: Should eigenlib be replaced by a math/eigen dep?
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/vcg
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/vcg
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "apps eigenlib img vcg wrap" ${STAGEDIR}${PREFIX}/include/vcg
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
