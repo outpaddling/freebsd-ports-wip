@@ -1,7 +1,7 @@
-# $FreeBSD: head/wip sysutils/auto-admin/Makefile 452526 2017-10-20 14:18:01Z swills $
+# $FreeBSD: head/sysutils/auto-admin/Makefile 471149 2018-05-30 18:48:22Z jwb $
 
 PORTNAME=	auto-admin
-DISTVERSION=	0.4.3
+DISTVERSION=	0.4.4
 CATEGORIES=	wip sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
@@ -22,9 +22,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Data/* ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/Doc/auto-admin.man \
 		${STAGEDIR}${MANPREFIX}/man/man1/auto-admin.1
-	for name in ${WRKSRC}/Common/Scripts/* ${WRKSRC}/FreeBSD/Scripts/*; do \
-		${INSTALL_MAN} ${WRKSRC}/Doc/auto-admin.man \
-			${STAGEDIR}${MANPREFIX}/man/man1/`basename $${name}`.1; \
-	done
 
 .include <bsd.port.mk>
