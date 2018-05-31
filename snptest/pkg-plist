@@ -1,0 +1,16 @@
+bin/snptest
+%%PORTDOCS%%%%DOCSDIR%%/html/images/manhattan.png
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/js/jquery-1.9.1.min.js
+%%PORTDOCS%%%%DOCSDIR%%/html/js/jquery-migrate-1.2.1.min.js
+%%PORTDOCS%%%%DOCSDIR%%/html/js/jquery.ba-hashchange.min.js
+%%PORTDOCS%%%%DOCSDIR%%/html/js/local.js
+%%PORTDOCS%%%%DOCSDIR%%/html/style/css/default.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cohort1.bgen
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cohort1.gen
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cohort1.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cohort1.vcf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cohort1_0X.gen
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cohort2.gen
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cohort2.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cohort2_partial.gen
