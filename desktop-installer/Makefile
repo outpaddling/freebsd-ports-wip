@@ -1,7 +1,7 @@
 # $FreeBSD: head/wip sysutils/desktop-installer/Makefile 452527 2017-10-20 14:21:36Z swills $
 
 PORTNAME=	desktop-installer
-DISTVERSION=	0.6.1
+DISTVERSION=	0.6.2
 CATEGORIES=	wip sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
