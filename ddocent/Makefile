@@ -2,8 +2,8 @@
 
 PORTNAME=	dDocent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.25
-CATEGORIES=	biology java
+DISTVERSION=	2.3.8
+CATEGORIES=	wip biology java
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Bash pipeline for RAD sequencing
