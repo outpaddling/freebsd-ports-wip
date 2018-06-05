@@ -19,6 +19,10 @@ USES=		linux tar:tgz
 
 NO_BUILD=	yes
 
+# FIXME: unexpected reloc type in static binarySegmentation fault (core dumped)
+# on some systems.  Both linux-c6 and linux-c7 may exhibit the issue.
+# Not yet seeing a key difference between systems where it works and those
+# where it does not.
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}_v${PORTVERSION} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
