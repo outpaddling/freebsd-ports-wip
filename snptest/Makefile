@@ -4,6 +4,7 @@ PORTNAME=	snptest
 PORTVERSION=	2.5.2
 CATEGORIES=	wip biology
 MASTER_SITES=	http://www.well.ox.ac.uk/~gav/resources/
+PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}_v${PORTVERSION}_CentOS6.5_x86_64_static
 
 MAINTAINER=	weinertw@uwm.edu
@@ -14,7 +15,7 @@ LICENSE_NAME=	Oxford Non-free
 LICENSE_FILE=	${WRKSRC}/LICENCE
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
-USES=		tar:tgz linux:c6
+USES=		linux tar:tgz
 
 NO_BUILD=	yes
 
