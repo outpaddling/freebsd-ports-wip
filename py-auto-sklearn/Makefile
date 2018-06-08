@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	auto-sklearn
-PORTVERSION=	0.3.0
+# DISTVERSIONPREFIX=	v.
+DISTVERSION=	0.3.0
 CATEGORIES=	wip python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,5 +16,7 @@ LICENSE=	BSD3CLAUSE
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+# USE_GITHUB=	yes
+# GH_ACCOUNT=	automl
 
 .include <bsd.port.mk>
