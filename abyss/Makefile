@@ -10,9 +10,21 @@ COMMENT=	Assemble large genomes using short reads
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# Dependencies for linked reads
+#    ARCS to scaffold
+#    Tigmint to correct assembly errors
+# Optional dependencies
+#    pigz for parallel gzip
+#    samtools for reading BAM files
+#    zsh for reporting time and memory usage
+
 BUILD_DEPENDS=	sparsehash>0:devel/sparsehash
 LIB_DEPENDS=	libmpi.so:net/openmpi \
 		libboost_system.so:devel/boost-libs
+RUN_DEPENDS=	pigz>0:archivers/pigz \
+		samtools>0:biology/samtools \
+		zsh>0:shells/zsh
+
 USES=		autoreconf compiler:openmp shebangfix sqlite
 SHEBANG_FILES=	bin/abyss-bowtie bin/abyss-bowtie2 bin/abyss-bwa \
 		bin/abyss-bwasw bin/abyss-bwamem bin/abyss-kaligner \
