@@ -34,6 +34,7 @@ GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	bcgsc
 
+CONFIGURE_ENV=	GHC=/nonexistent	# ghc build fails
 CXXFLAGS+=	-DHAVE_LIBDL=1
 MAKE_JOBS_UNSAFE=	yes
 
