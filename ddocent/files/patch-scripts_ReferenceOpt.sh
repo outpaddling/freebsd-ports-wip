@@ -1,4 +1,4 @@
---- scripts/ReferenceOpt.sh.orig	2018-06-15 14:56:17 UTC
+--- scripts/ReferenceOpt.sh.orig	2018-06-15 15:50:38 UTC
 +++ scripts/ReferenceOpt.sh
 @@ -1,5 +1,7 @@
  #!/usr/local/bin/bash
@@ -102,7 +102,16 @@
  		#CD-hit output is converted to rainbow format
  		rainbow div -i rcluster.ua -o rbdiv.ua.out -f 0.5 -K 10
  		if [ "$ATYPE" == "PE" ]; then
-@@ -337,7 +344,7 @@ unset label
+@@ -330,14 +337,14 @@ for ((P = $1; P <= $2; P++))
+ done
+ 
+ cut -f4 -d " " kopt.data > plot.kopt.data
+-gnuplot << \EOF
+-set terminal dumb size 120, 30
++gnuplot << EOF
++set terminal dumb size 80, 30
+ set autoscale
+ unset label
  set title "Histogram of number of reference contigs"
  set ylabel "Number of Occurrences"
  set xlabel "Number of reference contigs"
