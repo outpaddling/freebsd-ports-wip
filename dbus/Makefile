@@ -4,7 +4,7 @@
 PORTNAME=	dbus
 PORTVERSION=	1.10.16
 PORTREVISION=	1
-CATEGORIES=	devel gnome
+CATEGORIES=	wip devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
 MAINTAINER=	gnome@FreeBSD.org
