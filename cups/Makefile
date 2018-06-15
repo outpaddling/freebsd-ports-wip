@@ -4,7 +4,7 @@
 PORTNAME=	cups
 PORTVERSION=	2.2.6
 DISTVERSIONPREFIX=v
-CATEGORIES=	print
+CATEGORIES=	wip print
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Common UNIX Printing System
