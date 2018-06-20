@@ -1,0 +1,27 @@
+--- Makefile.orig	2018-06-20 19:50:24 UTC
++++ Makefile
+@@ -1,14 +1,15 @@
+-CC=gcc
+-CFLAGS=-g -Wall -O2 -Wno-unused-function
+-BINDIR=/usr/local/bin
++CC	?= gcc
++CFLAGS	?= -g -Wall -O2 -Wno-unused-function
++LDFLAGS	?= -lz -lm
++BINDIR	= /usr/local/bin
+ 
+-all:seqtk
++all: seqtk
+ 
+-seqtk:seqtk.c khash.h kseq.h
+-		$(CC) $(CFLAGS) seqtk.c -o $@ -lz -lm
++seqtk: seqtk.c khash.h kseq.h
++	$(CC) $(CFLAGS) seqtk.c -o $@ $(LDFLAGS)
+ 
+-install:all
+-		install seqtk $(BINDIR)
++install: all
++	install seqtk $(BINDIR)
+ 
+ clean:
+-		rm -fr gmon.out *.o ext/*.o a.out seqtk trimadap *~ *.a *.dSYM session*
++	rm -fr gmon.out *.o ext/*.o a.out seqtk trimadap *~ *.a *.dSYM session*
