@@ -1,0 +1,11 @@
+--- CommandLineExecutables/CMakeLists.txt.orig	2018-06-02 02:23:15.000000000 +0700
++++ CommandLineExecutables/CMakeLists.txt	2018-06-21 22:24:37.568997000 +0700
+@@ -67,7 +67,7 @@
+       if (vtk_module_library STREQUAL "optimized" OR
+           vtk_module_library STREQUAL "debug")
+         unset(vtk_module_library_name)
+-      elseif (vtk_module_library MATCHES "^-l")
++      elseif (vtk_module_library MATCHES "^-l|^-p")
+         string(SUBSTRING "${vtk_module_library}" 2 -1 vtk_module_library)
+         find_library(vtk_module_library_name "${vtk_module_library}")
+       elseif (IS_ABSOLUTE "${vtk_module_library}")
