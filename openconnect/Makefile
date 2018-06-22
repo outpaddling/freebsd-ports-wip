@@ -1,9 +1,10 @@
 # Created by: Damian Gerow <dgerow@afflictions.org>
 # $FreeBSD: head/security/openconnect/Makefile 458641 2018-01-10 14:01:49Z zi $
 
-PORTNAME=	openconnect
-DISTVERSION=	7.08
-CATEGORIES=	wip security
+PORTNAME=		openconnect
+DISTVERSION=		7.08-92
+DISTVERSIONSUFFIX=	-g292eb3e
+CATEGORIES=		wip security
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Client for Cisco's AnyConnect SSL VPN
