@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	lsz:comms/lrzsz
 
 USES=		cmake
-USE_QT5=	core gui serialport widgets
+USE_QT5=	core gui qmake_build serialport widgets
 USE_GITHUB=	yes
 GH_ACCOUNT=	neundorf
 
