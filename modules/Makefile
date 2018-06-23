@@ -1,10 +1,9 @@
 # $FreeBSD: head/sysutils/modules/Makefile 420510 2016-08-20 13:23:00Z pawel $
 
-PORTNAME=	modules
-PORTVERSION=	3.2.10
-PORTREVISION=	2
-CATEGORIES=	wip sysutils tcl
-MASTER_SITES=	SF/${PORTNAME}/Modules/${PORTNAME}-${PORTVERSION}
+PORTNAME=		modules
+DISTVERSIONPREFIX=	v
+DISTVERSION=		4.1.3
+CATEGORIES=		wip sysutils tcl
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic modification of a user environment
@@ -12,6 +11,8 @@ COMMENT=	Dynamic modification of a user environment
 LICENSE=	GPLv2
 
 USES=		tcl
+USE_GITHUB=	yes
+GH_ACCOUNT=	cea-hpc
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-x \
 		--with-version-path=${PREFIX}/Modules/versions \
@@ -22,9 +23,6 @@ CONFIGURE_ARGS=	--without-x \
 		--with-tclx-ver=${TCL_VER:S/.//}
 
 PLIST_SUB=	MODULES_VERSION=${PORTVERSION}
-
-post-extract:
-	${MV} ${WRKSRC}/doc/modulefile.4.in ${WRKSRC}/doc/modulefile.5.in
 
 post-install:
 	${CP} -R ${STAGEDIR}${PREFIX}/Modules/${PORTVERSION}/init \
