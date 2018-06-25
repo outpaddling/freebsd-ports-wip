@@ -1,5 +1,5 @@
 # Created by: anholt@FreeBSD.org
-# $FreeBSD: head/science/paraview/Makefile 472044 2018-06-09 08:03:54Z yuri $
+# $FreeBSD: head/wip science/paraview/Makefile 472044 2018-06-09 08:03:54Z yuri $
 
 PORTNAME=	paraview
 DISTVERSION=	5.5.1
@@ -16,7 +16,7 @@ LICENSE_FILE=	${PATCH_WRKSRC}/License_v1.2.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:math/py-matplotlib@${PY_FLAVOR}
-LIB_DEPENDS=	libhdf5.so:science/hdf5 \
+LIB_DEPENDS=	libhdf5.so:wip science/hdf5 \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libfreetype.so:print/freetype2 \
@@ -59,6 +59,7 @@ SHEBANG_FILES=	Catalyst/catalyze.py VTK/Examples/SearchScript.sh \
 		VTK/Utilities/Maintenance/*.sh
 
 OPTIONS_DEFINE=	OSMESA GL2PS DOCS
+OPTIONS_SUB=	yes
 OSMESA_DESC=	Use Mesa for off-screen rendering
 GL2PS_DESC=	Install support conversion OpenGL to PostScript
 #		VTKMPEG2	"Install patented MPEG2 encoder module" Off \
@@ -67,20 +68,13 @@ VERMAJORMINOR=	${PORTVERSION:R}
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MOSMESA}
-LIB_DEPENDS+=	libOSMesa.so:graphics/libosmesa
-CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
-		-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
-		-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa.so
-.endif
+OSMESA_LIB_DEPENDS+=	libOSMesa.so:graphics/libosmesa
+OSMESA_CMAKE_BOOL=	VTK_OPENGL_HAS_OSMESA
+OSMESA_CMAKE_ON=	-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
+                	-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa.so
 
-.if ${PORT_OPTIONS:MGL2PS}
-LIB_DEPENDS+=	libgl2ps.so:print/gl2ps
-CMAKE_ARGS+=	-DVTK_USE_GL2PS:BOOL=ON
-PLIST_SUB+=	GL2PS=""
-.else
-PLIST_SUB+=	GL2PS="@comment "
-.endif
+GL2PS_LIB_DEPENDS+=	libgl2ps.so:print/gl2ps
+GL2PS_CMAKE_BOOL=	VTK_USE_GL2PS
 
 PLIST_SUB+=	VERMAJORMINOR=${VERMAJORMINOR}
 CMAKE2INST=	ParaViewConfig.cmake \
