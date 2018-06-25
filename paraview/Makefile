@@ -68,12 +68,12 @@ VERMAJORMINOR=	${PORTVERSION:R}
 
 .include <bsd.port.options.mk>
 
-OSMESA_LIB_DEPENDS+=	libOSMesa.so:graphics/libosmesa
+OSMESA_LIB_DEPENDS=	libOSMesa.so:graphics/libosmesa
 OSMESA_CMAKE_BOOL=	VTK_OPENGL_HAS_OSMESA
 OSMESA_CMAKE_ON=	-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
                 	-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa.so
 
-GL2PS_LIB_DEPENDS+=	libgl2ps.so:print/gl2ps
+GL2PS_LIB_DEPENDS=	libgl2ps.so:print/gl2ps
 GL2PS_CMAKE_BOOL=	VTK_USE_GL2PS
 
 PLIST_SUB+=	VERMAJORMINOR=${VERMAJORMINOR}
