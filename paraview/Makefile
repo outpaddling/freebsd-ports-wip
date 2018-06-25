@@ -1,5 +1,5 @@
 # Created by: anholt@FreeBSD.org
-# $FreeBSD: head/wip science/paraview/Makefile 472044 2018-06-09 08:03:54Z yuri $
+# $FreeBSD: head/science/paraview/Makefile 472044 2018-06-09 08:03:54Z yuri $
 
 PORTNAME=	paraview
 DISTVERSION=	5.5.1
@@ -16,7 +16,7 @@ LICENSE_FILE=	${PATCH_WRKSRC}/License_v1.2.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:math/py-matplotlib@${PY_FLAVOR}
-LIB_DEPENDS=	libhdf5.so:wip science/hdf5 \
+LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libfreetype.so:print/freetype2 \
