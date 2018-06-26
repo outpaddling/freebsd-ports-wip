@@ -1,7 +1,7 @@
 # Created by: Markus Brueffer <markus@FreeBSD.org>
-# $FreeBSD: head/wip comms/cutecom/Makefile 460452 2018-01-31 01:07:07Z jwb $
+# $FreeBSD: head/wip comms/cutecom/Makefile 473198 2018-06-24 13:18:08Z jwb $
 
-PORTNAME=		CuteCom
+PORTNAME=		cutecom
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.45.0
 CATEGORIES=		wip comms
