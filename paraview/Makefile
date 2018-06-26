@@ -66,8 +66,6 @@ GL2PS_DESC=	Install support conversion OpenGL to PostScript
 
 VERMAJORMINOR=	${PORTVERSION:R}
 
-.include <bsd.port.options.mk>
-
 OSMESA_LIB_DEPENDS=	libOSMesa.so:graphics/libosmesa
 OSMESA_CMAKE_BOOL=	VTK_OPENGL_HAS_OSMESA
 OSMESA_CMAKE_ON=	-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
