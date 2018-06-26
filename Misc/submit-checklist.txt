@@ -92,6 +92,7 @@ Makefile
     BROKEN_${OPSYS}_${REL}_${ARCH}
     
     OPTIONS
+        options.mk should not be needed anymore
 	All non-options macros before bsd.options.mk
 	Add DOCS and EXAMPLES to OPTIONS_DEFINE if needed
 	    If installing to PORTDOCS or PORTEXAMPLES:
