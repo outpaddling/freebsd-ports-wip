@@ -6,6 +6,7 @@ Distfile
 Makefile
 --------
     PORTNAME should match the upstream dist, including case
+	except when only one binary is installed, then use the binary name
 	pkg is case-insensitive
 	Ports that install only one binary can use the binary name
 
@@ -92,7 +93,7 @@ Makefile
     BROKEN_${OPSYS}_${REL}_${ARCH}
     
     OPTIONS
-        options.mk should not be needed anymore
+	options.mk only needed when using the PORT_OPTIONS variable
 	All non-options macros before bsd.options.mk
 	Add DOCS and EXAMPLES to OPTIONS_DEFINE if needed
 	    If installing to PORTDOCS or PORTEXAMPLES:
