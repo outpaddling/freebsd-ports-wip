@@ -1,4 +1,12 @@
 
+##############################################################################
+# This Makefile is meant to remain generic and receive any platform-specifics
+# from the environment or command-line arguments.  It is intended for use by
+# package managers or the build.sh script in this directory.  Do not add
+# platform-specific checks or build options inside the Makefile. Such changes
+# or overrides should be provided by the package manager or build.sh.
+##############################################################################
+
 BASEFLAGS=-DNDEBUG -DZSTD_MULTITHREAD
 
 include Makefile.src
