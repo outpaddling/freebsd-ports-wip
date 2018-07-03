@@ -24,11 +24,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/mothur
 
 post-extract:
-#        @${REINPLACE_CMD} -i '' -e "s|thread[*]|<std::thread*|g" \
-#		`find ${WRKSRC} -name '*.cpp'`
-#        ${REINPLACE_CMD} -i '' -e "s| thread\\(| std::thread\\(|g" \
-#                `find ${WRKSRC} -name '*.cpp'`
-
+	@${REINPLACE_CMD} -e "s|thread[*]|std::thread*|g" \
+		`find ${WRKSRC} -name '*.cpp'`
+	${REINPLACE_CMD} -e 's|new thread(|new std::thread(|g' \
+                `find ${WRKSRC} -name '*.cpp'`
 
 # Builds after:
 #make clean
