@@ -10,6 +10,7 @@ sbin/auto-append-line
 sbin/auto-ask
 sbin/auto-autofs-nfs-setup
 sbin/auto-backup-file
+sbin/auto-binary-pkgsrc-setup
 sbin/auto-change-group-gid
 sbin/auto-change-group-ownership
 sbin/auto-change-primary-group
@@ -42,6 +43,7 @@ sbin/auto-krb-auth-setup
 sbin/auto-ldap-adduser
 sbin/auto-ldap-client-setup
 sbin/auto-mount-any
+sbin/auto-os-release
 sbin/auto-ostype
 sbin/auto-package-installed
 sbin/auto-passwd-user-expiration
