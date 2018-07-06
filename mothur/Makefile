@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mothur
-PORTVERSION=	1.36.1
+PORTVERSION=	1.40.5
 DISTVERSIONPREFIX=v
 CATEGORIES=	wip biology
 
@@ -17,10 +17,22 @@ USES=		gmake ncurses readline
 
 USE_GITHUB=	yes
 
-MAKEFILE=	makefile
+#MAKEFILE=	makefile
 ALL_TARGET=	mothur
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/mothur
 
+post-extract:
+	@${REINPLACE_CMD} -e "s|thread[*]|std::thread*|g" \
+		`find ${WRKSRC} -name '*.cpp'`
+	${REINPLACE_CMD} -e 's|new thread(|new std::thread(|g' \
+                `find ${WRKSRC} -name '*.cpp'`
+
+# Builds after:
+#make clean
+#make extract
+#root@freebsd11:/usr/ports/wip/mothur-1.40.5 # sed -i '' -e "s|thread[*]|std::thread*|g" `find work -name '*.cpp'`
+#root@freebsd11:/usr/ports/wip/mothur-1.40.5 # sed -i '' -e "s| thread(| std::thread(|g" `find work -name '*.cpp'`
+#make
 .include <bsd.port.mk>
