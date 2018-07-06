@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	edirect
-PORTVERSION=	2017.06.15
+PORTVERSION=	0.0.0p20180706
 CATEGORIES=	wip biology
 MASTER_SITES=	ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/
 DISTNAME=	${PORTNAME}
@@ -15,8 +15,8 @@ LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS+=	bash:shells/bash
 
-USES=		shebangfix zip
-SHEBANG_FILES=	setup.sh nquire edirect.pl xtract.pl
+USES=		shebangfix
+SHEBANG_FILES=	setup.sh nquire edirect.pl
 
 SCRIPTS=	esearch elink efilter efetch xtract edirect-einfo epost
 
@@ -30,7 +30,6 @@ do-build:
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} \
-		${SCRIPTS} nquire edirect.pl xtract.pl \
-		${STAGEDIR}${PREFIX}/bin
+		${SCRIPTS} nquire edirect.pl ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

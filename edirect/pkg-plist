@@ -7,4 +7,3 @@ bin/epost
 bin/esearch
 bin/nquire
 bin/xtract
-bin/xtract.pl
