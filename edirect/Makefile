@@ -13,7 +13,8 @@ COMMENT=	Access to the NCBI's suite of interconnected databases
 LICENSE=	BSD2CLAUSE
 #LICENSE_FILE=
 
-BUILD_DEPENDS+=	bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww
 
 USES=		shebangfix
 SHEBANG_FILES=	setup.sh nquire edirect.pl
