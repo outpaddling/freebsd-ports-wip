@@ -21,6 +21,7 @@ LIB_DEPENDS=	libkrb5support.so:security/krb5 \
 		libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
+		libmunge.so:security/munge \
 		${PY_BOOST}
 
 # Does not build with Python 3
@@ -33,7 +34,8 @@ SHEBANG_FILES=	src/condor_scripts/condor_qsub \
 		src/condor_examples/condor_schedd.init \
 		src/condor_starter.V6.1/condor_ssh_to_job_shell_setup \
 		src/condor_job_router/condor_router_history \
-		src/condor_scripts/condor_top.pl
+		src/condor_scripts/condor_top \
+		src/azure_gahp/AzureGAHPServer.py
 
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 WANT_PGSQL=	server
@@ -44,6 +46,7 @@ CMAKE_ARGS=	-DCMAKE_CXX_FLAGS:STRING=${CXXFLAGS} \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING=${LDFLAGS} \
 		-DPYTHON_INCLUDE_DIR:PATH=${LOCALBASE}/include/${PYTHON_VERSION} \
 		-DPYTHON_LIBRARY:FILEPATH=${LOCALBASE}/lib/lib${PYTHON_VERSION}.so
+# MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	condor-config condor_config.local pkg-message
 PLIST_SUB=	CONDOR_UVER=${PORTVERSION:S/./_/g}

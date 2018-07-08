@@ -33,7 +33,7 @@ bin/condor_submit_dag
 bin/condor_suspend
 bin/condor_tail
 bin/condor_test_match
-bin/condor_top.pl
+bin/condor_top
 bin/condor_transfer_data
 bin/condor_transform_ads
 bin/condor_update_machine_ad
@@ -49,6 +49,8 @@ etc/bash_completion.d/condor
 %%ETCDIR%%/condor
 %%ETCDIR%%/condor_config
 %%ETCDIR%%/examples/README
+%%ETCDIR%%/examples/condor-annex-ec2
+%%ETCDIR%%/examples/condor-annex-ec2.service
 %%ETCDIR%%/examples/condor-tmpfiles.conf
 %%ETCDIR%%/examples/condor.boot.generic
 %%ETCDIR%%/examples/condor.boot.rpm
@@ -73,8 +75,8 @@ etc/bash_completion.d/condor
 %%ETCDIR%%/examples/mp2script
 %%ETCDIR%%/examples/openmpiscript
 %%ETCDIR%%/sysconfig/condor
-%%ETCDIR%%_config.local.sample
-%%ETCDIR%%_config.sample
+etc/condor_config.local.sample
+etc/condor_config.sample
 include/MyString.h
 include/chirp_client.h
 include/classad/attrrefs.h
@@ -161,9 +163,12 @@ libexec/condor_transferer
 libexec/condor_urlfetch
 libexec/curl_plugin
 libexec/data_plugin
+libexec/get_orted_cmd.sh
 libexec/interactive.sub
 libexec/libclassad_python_user.so
 libexec/libvirt_simple_script.awk
+libexec/multifile_curl_plugin
+libexec/orted_launcher.sh
 libexec/sshd.sh
 man/man1/bosco_cluster.1.gz
 man/man1/bosco_findplatform.1.gz
@@ -173,6 +178,7 @@ man/man1/bosco_start.1.gz
 man/man1/bosco_stop.1.gz
 man/man1/bosco_uninstall.1.gz
 man/man1/condor_advertise.1.gz
+man/man1/condor_annex.1.gz
 man/man1/condor_check_userlogs.1.gz
 man/man1/condor_checkpoint.1.gz
 man/man1/condor_chirp.1.gz
@@ -225,6 +231,7 @@ man/man1/condor_submit.1.gz
 man/man1/condor_submit_dag.1.gz
 man/man1/condor_suspend.1.gz
 man/man1/condor_tail.1.gz
+man/man1/condor_top.1.gz
 man/man1/condor_transfer_data.1.gz
 man/man1/condor_transform_ads.1.gz
 man/man1/condor_update_machine_ad.1.gz
@@ -239,6 +246,7 @@ man/man1/condor_wait.1.gz
 man/man1/condor_who.1.gz
 man/man1/gidd_alloc.1.gz
 man/man1/procd_ctl.1.gz
+sbin/AzureGAHPServer
 sbin/bosco_install
 sbin/condor-config
 sbin/condor_advertise
@@ -263,7 +271,6 @@ sbin/condor_procd
 sbin/condor_reconfig
 sbin/condor_replication
 sbin/condor_restart
-sbin/condor_root_switchboard
 sbin/condor_schedd
 sbin/condor_set_shutdown
 sbin/condor_shadow
