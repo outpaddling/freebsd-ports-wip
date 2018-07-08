@@ -4,7 +4,7 @@
 #       build.  The build system may pick up incompatible headers and libs.
 
 PORTNAME=	condor
-PORTVERSION=	8.6.10
+PORTVERSION=	8.7.8
 CATEGORIES=	wip sysutils net
 MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 DISTNAME=	condor_src-${PORTVERSION}-all-all
@@ -77,6 +77,9 @@ post-patch:
 		-e 's|^CONDOR_HOST|##  CONDOR_HOST|' \
 		-e 's|#CONDOR_IDS=x.x|CONDOR_IDS=466.466|' \
 		${WRKSRC}/src/condor_examples/condor_config.annotated
+	@${REINPLACE_CMD} \
+		-e 's|boost_python |boost_python27 |g' \
+		${WRKSRC}/src/python-bindings/CMakeLists.txt
 
 post-install:
 	${INSTALL_DATA} \
