@@ -35,5 +35,6 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} \
 		${SCRIPTS} nquire edirect.pl ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/*.FreeBSD ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/edirect-test.sh ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
