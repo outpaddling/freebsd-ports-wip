@@ -23,6 +23,7 @@ SHEBANG_FILES=	src/contig_to_chr_coords src/bed_to_juncs \
 		src/tophat.py src/tophat2.sh
 
 CFLAGS+=	-Wno-unused
+INSTALL_TARGET=	install-strip
 
 MAKE_JOBS_UNSAFE=yes
 

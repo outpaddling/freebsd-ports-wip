@@ -1,0 +1,11 @@
+--- configure.orig	2018-07-11 18:37:33 UTC
++++ configure
+@@ -6923,7 +6923,7 @@ fi
+ 
+ CFLAGS="${generic_CFLAGS} ${ext_CFLAGS} ${user_CFLAGS} ${debug_CFLAGS}"
+ CXXFLAGS="$CFLAGS"
+-CXXFLAGS="$CXXFLAGS $BAM_CPPFLAGS $BOOST_CPPFLAGS -I./SeqAn-1.4.2"
++CXXFLAGS="-I./SeqAn-1.4.2 $CXXFLAGS $BAM_CPPFLAGS $BOOST_CPPFLAGS"
+ LDFLAGS="$BAM_LDFLAGS $BOOST_LDFLAGS $user_LDFLAGS"
+ 
+ if test "`cd $srcdir && pwd`" != "`pwd`"; then
