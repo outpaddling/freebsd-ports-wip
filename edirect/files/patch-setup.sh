@@ -1,6 +1,6 @@
---- setup.sh.orig	2018-07-06 20:21:06 UTC
+--- setup.sh.orig	2018-07-11 18:06:32 UTC
 +++ setup.sh
-@@ -2,36 +2,8 @@
+@@ -2,45 +2,12 @@
  
  DIR="$( cd "$( dirname "$0" )" && pwd )"
  
@@ -34,24 +34,16 @@
 -fi
 -rm -rf _cpan
 -
- if ! perl -Iaux/lib/perl5 -MMozilla::CA -e '1;' 2>/dev/null
- then
-   gzip -cd Mozilla-CA.tar.gz | tar xvf -
-@@ -56,8 +28,6 @@ fi
- if [ -f xtract."$platform" ]
- then
-   chmod +x xtract."$platform"
--else
--  echo "Unable to download xtract executable."
- fi
- 
- if [ -n "$platform" ]
-@@ -69,8 +39,6 @@ fi
- if [ -f rchive."$platform" ]
- then
-   chmod +x rchive."$platform"
--else
--  echo "Unable to download rchive executable."
- fi
- 
- echo ""
+-if ! perl -Iaux/lib/perl5 -MMozilla::CA -e '1;' 2>/dev/null
+-then
+-  gzip -cd Mozilla-CA.tar.gz | tar xvf -
+-fi
+-
+ osname=`uname -s`
+ cputype=`uname -m`
+ case "$osname-$cputype" in
+-  Linux-x86_64 )           platform=Linux ;;
++  Linux-x86_64|FreeBSD-amd64 )           platform=Linux ;;
+   Darwin-x86_64 )          platform=Darwin ;;
+   CYGWIN_NT-* | MINGW*-* ) platform=CYGWIN_NT ;;
+   Linux-*arm* )            platform=ARM ;;

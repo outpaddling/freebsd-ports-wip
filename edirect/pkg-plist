@@ -6,4 +6,7 @@ bin/elink
 bin/epost
 bin/esearch
 bin/nquire
+bin/rchive
+bin/rchive.Linux
 bin/xtract
+bin/xtract.Linux

@@ -1,0 +1,11 @@
+--- xtract.orig	2018-07-11 18:01:45 UTC
++++ xtract
+@@ -4,7 +4,7 @@ export PATH
+ osname=`uname -s`
+ cputype=`uname -m`
+ case "$osname-$cputype" in
+-  Linux-x86_64 )           platform=Linux ;;
++  Linux-x86_64|FreeBSD-amd64 )           platform=Linux ;;
+   Darwin-x86_64 )          platform=Darwin ;;
+   CYGWIN_NT-* | MINGW*-* ) platform=CYGWIN_NT ;;
+   Linux-*arm* )            platform=ARM ;;
