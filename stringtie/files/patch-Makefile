@@ -1,17 +1,21 @@
---- Makefile.orig	2017-03-26 12:54:28 UTC
+--- Makefile.orig	2018-02-25 17:01:08 UTC
 +++ Makefile
-@@ -6,8 +6,8 @@ GDIR :=./gclib
+@@ -6,13 +6,11 @@ GDIR      :=./gclib
  
- INCDIRS := -I. -I${GDIR} -I${BAM}
+ INCDIRS   := -I. -I${GDIR} -I${BAM}
  
--#CC := clang++
--CC      := g++
-+#CXX := clang++
-+CXX      ?= g++
+-CC        := g++
++CXX       ?= g++
  
+ BASEFLAGS := -Wall -Wextra ${INCDIRS} -fsigned-char -D_FILE_OFFSET_BITS=64 \
+ -D_LARGEFILE_SOURCE -fno-strict-aliasing -fno-exceptions -fno-rtti
  
- ifneq (,$(findstring nothreads,$(MAKECMDGOALS)))
-@@ -15,7 +15,7 @@ ifneq (,$(findstring nothreads,$(MAKECMD
+-LINKER    := g++
+-
+ LDFLAGS   := -g -L${BAM} $(LDFLAGS)
+ 
+ LIBS      := -lbam -lz
+@@ -22,7 +20,7 @@ ifneq (,$(findstring nothreads,$(MAKECMD
  endif
  
  #detect MinGW (Windows environment)
@@ -20,36 +24,70 @@
   WINDOWS=1
  endif
  
-@@ -47,8 +47,8 @@ BASEFLAGS  := -Wall -Wextra ${INCDIRS} $
- 
- # C/C++ linker
- 
--#LINKER := clang++
--LINKER  := g++
-+#LD := clang++
-+LD  = ${CXX}
- 
- LIBS := -lbam -lz
- 
-@@ -75,7 +75,7 @@ ifneq (,$(filter %release %static, $(MAK
-   endif
+@@ -63,7 +61,7 @@ endif
+ ifneq (,$(filter %release %static, $(MAKECMDGOALS)))
+   # -- release build
+   RELEASE_BUILD=1
+-  CFLAGS := -DNDEBUG -g $(BASEFLAGS) $(CFLAGS) -O3
++  CXXFLAGS := -DNDEBUG -g $(BASEFLAGS) $(CXXFLAGS) -O3
  else
    ifneq (,$(filter %memcheck %memdebug, $(MAKECMDGOALS)))
--     #make memcheck : use the statically linked address sanitizer in gcc 4.9.x
-+     #${MAKE} memcheck : use the statically linked address sanitizer in gcc 4.9.x
-      GCCVER49 := $(shell expr `g++ -dumpversion | cut -f1,2 -d.` \>= 4.9)
+      #use sanitizer in gcc 4.9+
+@@ -72,20 +70,20 @@ else
       ifeq "$(GCCVER49)" "0"
         $(error gcc version 4.9 or greater is required for this build target)
-@@ -103,7 +103,7 @@ else
+      endif
+-     CFLAGS := -fno-omit-frame-pointer -fsanitize=undefined -fsanitize=address $(BASEFLAGS)
++     CXXFLAGS := -fno-omit-frame-pointer -fsanitize=undefined -fsanitize=address $(BASEFLAGS)
+      GCCVER5 := $(shell expr `g++ -dumpversion | cut -f1 -d.` \>= 5)
+      ifeq "$(GCCVER5)" "1"
+-       CFLAGS += -fsanitize=bounds -fsanitize=float-divide-by-zero -fsanitize=vptr
+-       CFLAGS += -fsanitize=float-cast-overflow -fsanitize=object-size
+-       #CFLAGS += -fcheck-pointer-bounds -mmpx
++       CXXFLAGS += -fsanitize=bounds -fsanitize=float-divide-by-zero -fsanitize=vptr
++       CXXFLAGS += -fsanitize=float-cast-overflow -fsanitize=object-size
++       #CXXFLAGS += -fcheck-pointer-bounds -mmpx
+      endif
+-     CFLAGS := -g -DDEBUG -D_DEBUG -DGDEBUG -fno-common -fstack-protector $(CFLAGS)
++     CXXFLAGS := -g -DDEBUG -D_DEBUG -DGDEBUG -fno-common -fstack-protector $(CXXFLAGS)
+      LIBS := -lasan -lubsan -ldl $(LIBS)
+   else
+     ifeq (,$(findstring clean,$(MAKECMDGOALS)))
+      #just plain debug build
+      DEBUG_BUILD=1
+-     CFLAGS := -g -DDEBUG -D_DEBUG -DGDEBUG $(BASEFLAGS)
++     CXXFLAGS := -g -DDEBUG -D_DEBUG -DGDEBUG $(BASEFLAGS)
+     endif
+   endif
  endif
+@@ -103,7 +101,7 @@ endif
+ ifdef DEBUG_BUILD
+   #$(warning Building DEBUG version of stringtie.. )
+   DBG_WARN=@echo
+-  DBG_WARN+='WARNING: built DEBUG version [much slower], use "make clean release" for a faster, optimized version of the program.'
++  DBG_WARN+='WARNING: built DEBUG version [much slower], use "${MAKE} clean release" for a faster, optimized version of the program.'
+ endif
+ 
+ 
+@@ -112,7 +110,7 @@ OBJS := ${GDIR}/GBase.o ${GDIR}/GArgs.o 
+ 
+ 
+ ifneq (,$(filter %memtrace %memusage %memuse, $(MAKECMDGOALS)))
+-    CFLAGS += -DGMEMTRACE
++    CXXFLAGS += -DGMEMTRACE
+     OBJS += ${GDIR}/proc_mem.o
+ endif
+ 
+@@ -122,7 +120,7 @@ endif
+ 
  
  %.o : %.cpp
 -	${CC} ${CFLAGS} -c $< -o $@
-+	${CXX} ${CFLAGS} -c $< -o $@
++	${CXX} ${CXXFLAGS} -c $< -o $@
  
- OBJS := ${GDIR}/GBase.o ${GDIR}/GArgs.o ${GDIR}/GStr.o ${GDIR}/GBam.o \
-  ${GDIR}/gdna.o ${GDIR}/codons.o ${GDIR}/GFaSeqGet.o ${GDIR}/gff.o 
-@@ -131,9 +131,9 @@ rlink.o : rlink.h tablemaker.h $(GDIR)/G
+ OBJS += rlink.o tablemaker.o tmerge.o
+ 
+@@ -137,9 +135,9 @@ rlink.o : rlink.h tablemaker.h $(GDIR)/G
  tmerge.o : rlink.h tmerge.h
  tablemaker.o : tablemaker.h rlink.h
  ${BAM}/libbam.a: 
@@ -57,16 +95,15 @@
 +	cd ${BAM} && ${MAKE} lib
  stringtie: ${BAM}/libbam.a $(OBJS) stringtie.o
 -	${LINKER} ${LDFLAGS} -o $@ ${filter-out %.a %.so, $^} ${LIBS}
-+	${LD} ${LDFLAGS} -o $@ ${filter-out %.a %.so, $^} ${LIBS}
++	${CXX} ${LDFLAGS} -o $@ ${filter-out %.a %.so, $^} ${LIBS}
+ 	@echo
+ 	${DBG_WARN}
  
- .PHONY : clean cleanall cleanAll allclean
- 
-@@ -143,7 +143,7 @@ clean:
- 	@${RM} stringtie stringtie.o* stringtie.exe $(OBJS)
- 	@${RM} core.*
+@@ -151,6 +149,6 @@ clean:
+ 	${RM} stringtie${EXE} stringtie.o*  $(OBJS)
+ 	${RM} core.*
  allclean cleanAll cleanall:
 -	cd ${BAM} && make clean
 +	cd ${BAM} && ${MAKE} clean
- 	@${RM} stringtie stringtie.o* stringtie.exe $(OBJS)
- 	@${RM} core.*
- 
+ 	${RM} stringtie${EXE} stringtie.o* $(OBJS)
+ 	${RM} core.*

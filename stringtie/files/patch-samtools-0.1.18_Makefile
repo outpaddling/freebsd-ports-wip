@@ -1,8 +1,8 @@
---- samtools-0.1.18/Makefile.orig	2017-03-26 12:54:28 UTC
+--- samtools-0.1.18/Makefile.orig	2018-02-25 17:01:08 UTC
 +++ samtools-0.1.18/Makefile
 @@ -1,5 +1,5 @@
 -CC=			gcc
--CFLAGS=		-g -Wall -O2 #-m64 #-arch ppc
+-CFLAGS=		-g -Wall -fsigned-char -O2 #-m64 #-arch ppc
 +CC ?=			gcc
 +CFLAGS ?=		-g -Wall -O2 #-m64 #-arch ppc
  DFLAGS=		-D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=0 #-D_USE_KNETFILE 
