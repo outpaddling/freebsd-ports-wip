@@ -1,6 +1,6 @@
 --- Makefile.orig	2018-02-25 17:01:08 UTC
 +++ Makefile
-@@ -6,13 +6,11 @@ GDIR      :=./gclib
+@@ -6,23 +6,23 @@ GDIR      :=./gclib
  
  INCDIRS   := -I. -I${GDIR} -I${BAM}
  
@@ -15,7 +15,11 @@
  LDFLAGS   := -g -L${BAM} $(LDFLAGS)
  
  LIBS      := -lbam -lz
-@@ -22,7 +20,7 @@ ifneq (,$(findstring nothreads,$(MAKECMD
+ 
++MAKE      ?= make
++
+ ifneq (,$(findstring nothreads,$(MAKECMDGOALS)))
+  NOTHREADS=1
  endif
  
  #detect MinGW (Windows environment)
@@ -24,7 +28,7 @@
   WINDOWS=1
  endif
  
-@@ -63,7 +61,7 @@ endif
+@@ -63,7 +63,7 @@ endif
  ifneq (,$(filter %release %static, $(MAKECMDGOALS)))
    # -- release build
    RELEASE_BUILD=1
@@ -33,7 +37,7 @@
  else
    ifneq (,$(filter %memcheck %memdebug, $(MAKECMDGOALS)))
       #use sanitizer in gcc 4.9+
-@@ -72,20 +70,20 @@ else
+@@ -72,20 +72,20 @@ else
       ifeq "$(GCCVER49)" "0"
         $(error gcc version 4.9 or greater is required for this build target)
       endif
@@ -60,7 +64,7 @@
      endif
    endif
  endif
-@@ -103,7 +101,7 @@ endif
+@@ -103,7 +103,7 @@ endif
  ifdef DEBUG_BUILD
    #$(warning Building DEBUG version of stringtie.. )
    DBG_WARN=@echo
@@ -69,7 +73,7 @@
  endif
  
  
-@@ -112,7 +110,7 @@ OBJS := ${GDIR}/GBase.o ${GDIR}/GArgs.o 
+@@ -112,7 +112,7 @@ OBJS := ${GDIR}/GBase.o ${GDIR}/GArgs.o 
  
  
  ifneq (,$(filter %memtrace %memusage %memuse, $(MAKECMDGOALS)))
@@ -78,7 +82,7 @@
      OBJS += ${GDIR}/proc_mem.o
  endif
  
-@@ -122,7 +120,7 @@ endif
+@@ -122,7 +122,7 @@ endif
  
  
  %.o : %.cpp
@@ -87,7 +91,7 @@
  
  OBJS += rlink.o tablemaker.o tmerge.o
  
-@@ -137,9 +135,9 @@ rlink.o : rlink.h tablemaker.h $(GDIR)/G
+@@ -137,9 +137,9 @@ rlink.o : rlink.h tablemaker.h $(GDIR)/G
  tmerge.o : rlink.h tmerge.h
  tablemaker.o : tablemaker.h rlink.h
  ${BAM}/libbam.a: 
@@ -99,7 +103,7 @@
  	@echo
  	${DBG_WARN}
  
-@@ -151,6 +149,6 @@ clean:
+@@ -151,6 +151,6 @@ clean:
  	${RM} stringtie${EXE} stringtie.o*  $(OBJS)
  	${RM} core.*
  allclean cleanAll cleanall:
