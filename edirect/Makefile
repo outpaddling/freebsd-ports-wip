@@ -14,7 +14,8 @@ LICENSE=	BSD2CLAUSE
 #LICENSE_FILE=
 
 BUILD_DEPENDS=	bash:shells/bash
-RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww
+RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
+		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https
 
 USES=		go shebangfix
 SHEBANG_FILES=	setup.sh nquire edirect.pl
