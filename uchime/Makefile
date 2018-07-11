@@ -11,6 +11,8 @@ COMMENT=	Algorithm for detecting chimeric sequences
 
 LICENSE=	PD
 
+BUILD_DEPENDS=	bash:shells/bash
+
 USES=		shebangfix
 SHEBANG_FILES=	mk
 
