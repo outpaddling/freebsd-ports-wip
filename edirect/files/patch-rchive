@@ -1,11 +1,10 @@
---- rchive.orig	2018-07-11 18:02:17 UTC
+--- rchive.orig	2018-04-02 18:50:22 UTC
 +++ rchive
-@@ -4,7 +4,7 @@ export PATH
- osname=`uname -s`
- cputype=`uname -m`
- case "$osname-$cputype" in
--  Linux-x86_64 )           platform=Linux ;;
-+  Linux-x86_64|FreeBSD-amd64 )           platform=Linux ;;
+@@ -8,6 +8,7 @@ case "$osname-$cputype" in
    Darwin-x86_64 )          platform=Darwin ;;
    CYGWIN_NT-* | MINGW*-* ) platform=CYGWIN_NT ;;
    Linux-*arm* )            platform=ARM ;;
++  FreeBSD-* )              platform=FreeBSD ;;
+   * )                      platform=UNSUPPORTED ;;
+ esac
+ compiled=$0."$platform"
