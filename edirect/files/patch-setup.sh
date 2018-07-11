@@ -1,4 +1,4 @@
---- setup.sh.orig	2018-07-11 19:36:20 UTC
+--- setup.sh.orig	2018-07-11 20:55:17 UTC
 +++ setup.sh
 @@ -2,41 +2,8 @@
  
@@ -42,7 +42,7 @@
  osname=`uname -s`
  cputype=`uname -m`
  case "$osname-$cputype" in
-@@ -44,34 +11,17 @@ case "$osname-$cputype" in
+@@ -44,35 +11,10 @@ case "$osname-$cputype" in
    Darwin-x86_64 )          platform=Darwin ;;
    CYGWIN_NT-* | MINGW*-* ) platform=CYGWIN_NT ;;
    Linux-*arm* )            platform=ARM ;;
@@ -68,19 +68,14 @@
 -  ./ftp-cp ftp.ncbi.nlm.nih.gov /entrez/entrezdirect rchive."$platform".gz
 -  gunzip -f rchive."$platform".gz
 -fi
-+# Temporary hack.  Install as a dep?
-+go get -u github.com/fiam/gounidecode/unidecode
-+go get -u github.com/surgebase/porter2
- 
+-
 -if [ -f rchive."$platform" ]
 -then
 -  chmod +x rchive."$platform"
 -else
 -  echo "Unable to download rchive executable."
 -fi
-+# Build rchive.FreeBSD and xtract.FreeBSD from go source
-+go build -o rchive.$platform rchive.go
-+go build -o xtract.$platform xtract.go
- 
+-
  echo ""
  echo "Entrez Direct has been successfully downloaded and installed."
+ echo ""

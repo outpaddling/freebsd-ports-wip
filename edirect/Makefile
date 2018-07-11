@@ -16,11 +16,7 @@ LICENSE=	BSD2CLAUSE
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww
 
-# FIXME: Using Linux binaries is a hack until I learn how to
-# Use go properly in a port
-# Build rchive and xtract from go sources instead of using Linux binaries
 USES=		go shebangfix
-# USES=		linux shebangfix
 SHEBANG_FILES=	setup.sh nquire edirect.pl
 
 SCRIPTS=	esearch elink efilter efetch rchive xtract edirect-einfo epost
@@ -31,7 +27,8 @@ post-patch:
 		-e 's|\`dirname "$$0"\`|${PREFIX}/bin|g' ${SCRIPTS}
 
 do-build:
-	cd ${WRKSRC} && ./setup.sh
+	(cd ${WRKSRC} && ${SETENV} GOPATH=${WRKSRC} ${FILESDIR}/go-build)
+	(cd ${WRKSRC} && ./setup.sh)
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} \
