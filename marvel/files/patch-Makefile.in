@@ -1,0 +1,15 @@
+--- Makefile.in.orig	2018-03-08 10:04:51 UTC
++++ Makefile.in
+@@ -34,9 +34,9 @@ clean:
+ 
+ .PHONY: install
+ install:
+-	$(INSTALL_PROGRAM) -d $(install_bin)
+-	$(INSTALL_PROGRAM) -d $(install_scripts)
+-	$(INSTALL_PROGRAM) -d $(install_python)
++	$(MKDIR) -p $(DESTDIR)$(install_bin)
++	$(MKDIR) -p $(DESTDIR)$(install_scripts)
++	$(MKDIR) -p $(DESTDIR)$(install_python)
+ 	for dir in $(MODULES); do \
+ 		if [ -d ./$$dir ]; then \
+ 			$(MAKE) -C $$dir $@ ; \

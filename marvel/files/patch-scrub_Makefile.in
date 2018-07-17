@@ -1,0 +1,11 @@
+--- scrub/Makefile.in.orig	2018-07-17 00:27:53 UTC
++++ scrub/Makefile.in
+@@ -14,7 +14,7 @@ clean:
+ 	rm -rf *.dSYM
+ 
+ install: all
+-	$(INSTALL_PROGRAM) -m 0755 $(ALL) $(install_bin)
++	$(INSTALL_PROGRAM) -m 0755 $(ALL) $(DESTDIR)$(install_bin)
+ 
+ LAanalyzejunctions: LAanalyzejunctions.c $(PATH_LIBE)/types.h $(PATH_LIB)/borders.h $(PATH_LIB)/borders.c $(PATH_LIB)/pass.c $(PATH_LIB)/pass.h $(PATH_DALIGN)/align.c $(PATH_DALIGN)/align.h $(PATH_DB)/DB.c $(PATH_DB)/DB.h
+ 	$(CC) $(CFLAGS) -o LAanalyzejunctions LAanalyzejunctions.c $(PATH_LIB)/utils.c $(PATH_LIB)/pass.c $(PATH_LIB)/borders.c $(PATH_DB)/QV.c $(PATH_DALIGN)/align.c $(PATH_DB)/DB.c $(CLIBS)

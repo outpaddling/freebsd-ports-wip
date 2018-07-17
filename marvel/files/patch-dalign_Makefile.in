@@ -1,0 +1,11 @@
+--- dalign/Makefile.in.orig	2018-07-17 00:25:21 UTC
++++ dalign/Makefile.in
+@@ -9,7 +9,7 @@ ALL = daligner HPCdaligner \
+ all: $(ALL)
+ 
+ install: all
+-	$(INSTALL_PROGRAM) -m 0755 $(ALL) $(install_bin)
++	$(INSTALL_PROGRAM) -m 0755 $(ALL) $(DESTDIR)$(install_bin)
+ 
+ DMctl: DMctl.c $(PATH_LIB)/dmask.h $(PATH_LIB)/dmask.c $(PATH_DB)/DB.c $(PATH_DB)/QV.c
+ 	$(CC) $(CFLAGS) -o DMctl DMctl.c $(PATH_DB)/DB.c $(PATH_DB)/QV.c $(PATH_LIB)/dmask.c -lpthread $(CLIBS)

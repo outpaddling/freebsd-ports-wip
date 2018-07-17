@@ -1,0 +1,13 @@
+--- lib.python/Makefile.in.orig	2018-03-08 10:04:51 UTC
++++ lib.python/Makefile.in
+@@ -7,8 +7,8 @@ SCRIPTS = marvel/oflags.py marvel/rawque
+ all: $(ALL)
+ 
+ install: all
+-	$(INSTALL_PROGRAM) -d $(install_python)/marvel
+-	$(INSTALL_PROGRAM) -m 0555 $(SCRIPTS) $(install_python)/marvel
++	$(MKDIR) -d $(DESTDIR)$(install_python)/marvel
++	$(INSTALL_PROGRAM) -m 0555 $(SCRIPTS) $(DESTDIR)$(install_python)/marvel
+ 
+ clean:
+ 	rm -f oflags.py

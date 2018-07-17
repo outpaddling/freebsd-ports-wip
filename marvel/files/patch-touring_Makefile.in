@@ -1,0 +1,13 @@
+--- touring/Makefile.in.orig	2018-07-17 00:29:02 UTC
++++ touring/Makefile.in
+@@ -7,8 +7,8 @@ SCRIPTS = OGtour.py tour2fasta.py consta
+ all: $(ALL)
+ 
+ install: all
+-	$(INSTALL_PROGRAM) -m 0755 $(ALL) $(install_bin)
+-	$(INSTALL_PROGRAM) -m 0755 $(SCRIPTS) $(install_scripts)
++	$(INSTALL_PROGRAM) -m 0755 $(ALL) $(DESTDIR)$(install_bin)
++	$(INSTALL_PROGRAM) -m 0755 $(SCRIPTS) $(DESTDIR)$(install_scripts)
+ 
+ clean:
+ 	rm -rf $(ALL) *.dSYM colorramp.py

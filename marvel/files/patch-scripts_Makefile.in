@@ -1,0 +1,11 @@
+--- scripts/Makefile.in.orig	2018-07-17 00:28:22 UTC
++++ scripts/Makefile.in
+@@ -7,7 +7,7 @@ SCRIPTS = rid2bid.py DBprepare.py paths2
+ all: $(ALL)
+ 
+ install: all
+-	$(INSTALL_PROGRAM) -m 0755 $(SCRIPTS) $(install_scripts)
++	$(INSTALL_PROGRAM) -m 0755 $(SCRIPTS) $(DESTDIR)$(install_scripts)
+ 
+ clean:
+ 

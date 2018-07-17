@@ -1,0 +1,11 @@
+--- corrector/Makefile.in.orig	2018-07-17 00:26:40 UTC
++++ corrector/Makefile.in
+@@ -10,7 +10,7 @@ ALL = LAcorrect 
+ all: $(ALL)
+ 
+ install: all
+-	$(INSTALL_PROGRAM) -m 0755 $(ALL) $(install_bin)
++	$(INSTALL_PROGRAM) -m 0755 $(ALL) $(DESTDIR)$(install_bin)
+ 
+ clean:
+ 	rm -rf $(ALL) *.dSYM

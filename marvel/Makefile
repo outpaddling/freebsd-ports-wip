@@ -13,10 +13,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}networkx>=2.1:math/py-networkx@${PY_FLAVOR}
 
-USES=		autoreconf python:3.6+
+USES=		autoreconf gmake python:3.6+
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	schloi
 GH_TAGNAME=	1f693baf8420c2121cc40d18ed2088c6e81a713b
+
+CFLAGS+=	-D_WITH_GETLINE
+# MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
