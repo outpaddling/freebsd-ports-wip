@@ -21,6 +21,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		hmmer>=0:biology/hmmer \
 		FastTree>=0:biology/fasttree \
 		muscle>=0:biology/muscle \
+		R>=0:math/R \
 		${PYTHON_PKGNAMEPREFIX}ete3>=0:wip/py-ete3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}snakemake>=0:wip/py-snakemake@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-bio>=0:wip/py-scikit-bio@${PY_FLAVOR} \
