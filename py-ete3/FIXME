@@ -1,0 +1,55 @@
+
+If pyqt installed:
+
+FreeBSD unixdev1.hpc bacon ~ 1003: /usr/ports/wip/py-anvio/files/anvio-dep-check|&more
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/ete3/treeview/qt.py", line 24, in <module>
+    from PyQt4.QtOpenGL import QGLFormat, QGLWidget
+ModuleNotFoundError: No module named 'PyQt4.QtOpenGL'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/anvi-cluster-with-concoct", line 8, in <module>
+    import anvio.utils as utils
+  File "/usr/local/lib/python3.6/site-packages/anvio/utils.py", line 29, in <module>
+    import anvio.db as db
+  File "/usr/local/lib/python3.6/site-packages/anvio/db.py", line 13, in <module>
+    import anvio.filesnpaths as filesnpaths
+  File "/usr/local/lib/python3.6/site-packages/anvio/filesnpaths.py", line 21, in <module>
+    from ete3 import Tree
+  File "/usr/local/lib/python3.6/site-packages/ete3/__init__.py", line 52, in <module>
+    from .coretype.tree import *
+  File "/usr/local/lib/python3.6/site-packages/ete3/coretype/tree.py", line 57, in <module>
+    from ..treeview.main import NodeStyle, _FaceAreas, FaceContainer, FACE_POSITIONS
+  File "/usr/local/lib/python3.6/site-packages/ete3/treeview/__init__.py", line FreeBSD unixdev1.hpc bacon ~ 1004: /usr/ports/wip/py-anvio/files/anvio-dep-check | & more
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/ete3/treeview/qt.py", line 24, in <module>
+    from PyQt4.QtOpenGL import QGLFormat, QGLWidget
+ModuleNotFoundError: No module named 'PyQt4.QtOpenGL'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/anvi-cluster-with-concoct", line 8, in <module>
+    import anvio.utils as utils
+  File "/usr/local/lib/python3.6/site-packages/anvio/utils.py", line 29, in <module>
+    import anvio.db as db
+  File "/usr/local/lib/python3.6/site-packages/anvio/db.py", line 13, in <module>
+    import anvio.filesnpaths as filesnpaths
+  File "/usr/local/lib/python3.6/site-packages/anvio/filesnpaths.py", line 21, in <module>
+    from ete3 import Tree
+  File "/usr/local/lib/python3.6/site-packages/ete3/__init__.py", line 52, in <module>
+    from .coretype.tree import *
+  File "/usr/local/lib/python3.6/site-packages/ete3/coretype/tree.py", line 57, in <module>
+    from ..treeview.main import NodeStyle, _FaceAreas, FaceContainer, FACE_POSITIONS
+  File "/usr/local/lib/python3.6/site-packages/ete3/treeview/__init__.py", line 42, in <module>
+    from .main import *
+  File "/usr/local/lib/python3.6/site-packages/ete3/treeview/main.py", line 48, in <module>
+    from .qt import *
+  File "/usr/local/lib/python3.6/site-packages/ete3/treeview/qt.py", line 27, in <module>
+    from PyQt5 import QtGui, QtCore
+RuntimeError: the PyQt5.QtCore and PyQt4.QtCore modules both wrap the QObject class
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/ete3/treeview/qt.py", line 24, in^C
+
