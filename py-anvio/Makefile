@@ -13,17 +13,31 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 # 3rd-party: http://merenlab.org/2016/06/18/installing-third-party-software/
-LIB_DEPENDS=	libgsl.so:math/gsl
-RUN_DEPENDS=	bash:shells/bash
+# Need: prodigal, centrifuge, mcl, egnogg, famsa, dssp, modeller
+LIB_DEPENDS=	libgsl.so:math/gsl \
+		libhdf5.so:science/hdf5
+RUN_DEPENDS=	bash:shells/bash \
+		samtools>=0:biology/samtools \
+		hmmer>=0:biology/hmmer \
+		FastTree>=0:biology/fasttree \
+		muscle>=0:biology/muscle \
+		${PYTHON_PKGNAMEPREFIX}ete3>=0:wip/py-ete3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-bio>=0:wip/py-scikit-bio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mistune>=0:textproc/py-mistune@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=0:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pandas>=0:math/py-pandas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django>=0:www/py-django@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-learn>=0:science/py-scikit-learn@${PY_FLAVOR}
 
-USES=		python:3.6+ shebangfix
+USES=		python:3.6+ shebangfix sqlite
 SHEBANG_FILES=	anvio/workflows/metagenomics/test/*.sh \
 		tests/*.sh \
 		tests/*/*.sh \
 		tests/server/run_server_tests.py \
 		sandbox/anvi-script-FASTA-to-contigs-db \
 		sandbox/*.sh
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist cython distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	merenlab
 
