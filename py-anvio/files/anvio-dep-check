@@ -15,7 +15,5 @@ pause()
 }
 
 for prog in /usr/local/bin/anvi-*; do
-    clear
     $prog
-    pause
 done
