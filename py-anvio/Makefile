@@ -1,0 +1,30 @@
+# $FreeBSD$
+
+PORTNAME=		anvio
+DISTVERSIONPREFIX=	v
+DISTVERSION=		5.1
+CATEGORIES=		wip python
+PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	jwb@FreeBSD.org
+COMMENT=	Analysis and visualization platform for 'omics data
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+# 3rd-party: http://merenlab.org/2016/06/18/installing-third-party-software/
+LIB_DEPENDS=	libgsl.so:math/gsl
+RUN_DEPENDS=	bash:shells/bash
+
+USES=		python:3.6+ shebangfix
+SHEBANG_FILES=	anvio/workflows/metagenomics/test/*.sh \
+		tests/*.sh \
+		tests/*/*.sh \
+		tests/server/run_server_tests.py \
+		sandbox/anvi-script-FASTA-to-contigs-db \
+		sandbox/*.sh
+USE_PYTHON=	autoplist distutils
+USE_GITHUB=	yes
+GH_ACCOUNT=	merenlab
+
+.include <bsd.port.mk>
