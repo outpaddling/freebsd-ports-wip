@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 # No license file on pypi, maybe use Github?
 # LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 # USE_GITHUB=	yes
 # GH_ACCOUNT=	automl
