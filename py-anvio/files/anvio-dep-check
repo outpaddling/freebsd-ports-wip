@@ -15,5 +15,7 @@ pause()
 }
 
 for prog in /usr/local/bin/anvi-*; do
+    echo $prog
     $prog
+    echo '================================='
 done

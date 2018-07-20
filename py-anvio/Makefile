@@ -13,30 +13,32 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 # 3rd-party: http://merenlab.org/2016/06/18/installing-third-party-software/
-# Need: prodigal, centrifuge, mcl, egnogg, famsa, dssp, modeller, py-snakemake
+# Need: prodigal, centrifuge, mcl, egnogg, famsa, dssp, modeller
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5
 RUN_DEPENDS=	bash:shells/bash \
-		samtools>=0:biology/samtools \
-		hmmer>=0:biology/hmmer \
-		FastTree>=0:biology/fasttree \
-		muscle>=0:biology/muscle \
-		R>=0:math/R \
-		${PYTHON_PKGNAMEPREFIX}ete3>=0:wip/py-ete3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}snakemake>=0:wip/py-snakemake@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scikit-bio>=0:wip/py-scikit-bio@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mistune>=0:textproc/py-mistune@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=0:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pandas>=0:math/py-pandas@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django>=0:www/py-django@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}bottle>=0:www/py-bottle@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scikit-learn>=0:science/py-scikit-learn@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}h5py>=0:science/py-h5py@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}biopython>=0:biology/py-biopython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pysam>=0:biology/py-pysam@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}biopython>=0:biology/py-biopython@${PY_FLAVOR}
+		samtools>0:biology/samtools \
+		hmmer>0:biology/hmmer \
+		FastTree>0:biology/fasttree \
+		muscle>0:biology/muscle \
+		R-cran-gridExtra>0:graphics/R-cran-gridExtra \
+		R-cran-optparse>0:wip/R-cran-optparse \
+		R>0:math/R \
+		${PYTHON_PKGNAMEPREFIX}ete3>0:wip/py-ete3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}snakemake>0:wip/py-snakemake@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-bio>0:wip/py-scikit-bio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mistune>0:textproc/py-mistune@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django>0:www/py-django@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}bottle>0:www/py-bottle@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-learn>0:science/py-scikit-learn@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}biopython>0:biology/py-biopython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pysam>0:biology/py-pysam@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}biopython>0:biology/py-biopython@${PY_FLAVOR}
 
 USES=		python:3.6+ shebangfix sqlite
 SHEBANG_FILES=	anvio/workflows/metagenomics/test/*.sh \
