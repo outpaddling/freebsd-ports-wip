@@ -22,11 +22,12 @@ RUN_DEPENDS=	bash:shells/bash \
 		FastTree>0:biology/fasttree \
 		muscle>0:biology/muscle \
 		R-cran-gridExtra>0:graphics/R-cran-gridExtra \
+		R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
 		R-cran-optparse>0:wip/R-cran-optparse \
+		R-cran-gtools>0:devel/R-cran-gtools \
 		R>0:math/R \
 		${PYTHON_PKGNAMEPREFIX}ete3>0:wip/py-ete3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}snakemake>0:wip/py-snakemake@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scikit-bio>0:wip/py-scikit-bio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mistune>0:textproc/py-mistune@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
