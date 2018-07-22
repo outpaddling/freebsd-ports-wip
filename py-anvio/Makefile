@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 # 3rd-party: http://merenlab.org/2016/06/18/installing-third-party-software/
-# Need: egnogg, famsa, dssp, modeller
+# Need: famsa, dssp, modeller
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5
 RUN_DEPENDS=	bash:shells/bash \
@@ -30,6 +30,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		R-cran-gtools>0:devel/R-cran-gtools \
 		R>0:math/R \
 		${PYTHON_PKGNAMEPREFIX}ete3>0:wip/py-ete3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}eggnog-mapper>0:wip/py-eggnog-mapper@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}snakemake>0:wip/py-snakemake@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mistune>0:textproc/py-mistune@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
