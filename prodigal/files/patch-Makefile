@@ -1,0 +1,39 @@
+--- Makefile.orig	2016-02-12 00:28:35 UTC
++++ Makefile
+@@ -19,16 +19,18 @@
+ ##############################################################################
+ 
+ SHELL   = /bin/sh
+-CC      = gcc
++CC      ?= gcc
+ 
+-CFLAGS  += -pedantic -Wall -O3
+-LFLAGS = -lm $(LDFLAGS)
++CFLAGS	?= -O3
++CFLAGS  += -pedantic -Wall
++LFLAGS  += -lm
+ 
+ TARGET  = prodigal
+ SOURCES = $(shell echo *.c)
+ HEADERS = $(shell echo *.h)
+ OBJECTS = $(SOURCES:.c=.o)
+ 
++DESTDIR	?=
+ INSTALLDIR  = /usr/local/bin
+ 
+ all: $(TARGET)
+@@ -40,11 +42,11 @@ $(TARGET): $(OBJECTS)
+ 	$(CC) $(CFLAGS) -c -o $@ $<
+ 
+ install: $(TARGET)
+-	install -d -m 0755 $(INSTALLDIR)
+-	install -m 0755 $(TARGET) $(INSTALLDIR)
++	install -d -m 0755 $(DESTDIR)$(INSTALLDIR)
++	install -m 0755 $(TARGET) $(DESTDIR)$(INSTALLDIR)
+  
+ uninstall:
+-	-rm $(INSTALLDIR)/$(TARGET)
++	-rm $(DESTDIR)$(INSTALLDIR)/$(TARGET)
+ 
+ clean:
+ 	-rm -f $(OBJECTS)

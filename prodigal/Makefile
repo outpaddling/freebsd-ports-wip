@@ -11,7 +11,10 @@ COMMENT=	Gene prediction software
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyattpd
+
+PLIST_FILES=	bin/prodigal
 
 .include <bsd.port.mk>
