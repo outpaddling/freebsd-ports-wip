@@ -21,7 +21,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		hmmer>0:biology/hmmer \
 		FastTree>0:biology/fasttree \
 		muscle>0:biology/muscle \
-		prodigal>0:wip/prodigal \
+		Prodigal>0:wip/prodigal \
 		R-cran-gridExtra>0:graphics/R-cran-gridExtra \
 		R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
 		R-cran-optparse>0:wip/R-cran-optparse \
