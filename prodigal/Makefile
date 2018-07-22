@@ -3,7 +3,7 @@
 PORTNAME=	Prodigal
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.3
-CATEGORIES=	wip
+CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Gene prediction software
