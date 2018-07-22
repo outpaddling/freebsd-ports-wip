@@ -1,0 +1,17 @@
+# $FreeBSD$
+
+PORTNAME=	mcl
+DISTVERSION=	14
+DISTVERSIONSUFFIX=	-137
+CATEGORIES=	wip math
+MASTER_SITES=	https://www.micans.org/mcl/src/
+
+MAINTAINER=	jwb@FreeBSD.org
+COMMENT=	Fast and scalable unsupervised cluster algorithm for graphs
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+GNU_CONFIGURE=	yes
+
+.include <bsd.port.mk>
