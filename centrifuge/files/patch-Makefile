@@ -1,4 +1,4 @@
---- Makefile.orig	2017-11-30 18:19:30 UTC
+--- Makefile.orig	2018-06-08 21:24:17 UTC
 +++ Makefile
 @@ -23,9 +23,9 @@
  INC =
@@ -13,3 +13,47 @@
  HEADERS = $(wildcard *.h)
  BOWTIE_MM = 1
  BOWTIE_SHARED_MEM = 0
+@@ -409,24 +409,34 @@ doc/manual.inc.html: MANUAL.markdown
+ MANUAL: MANUAL.markdown
+ 	perl doc/strip_markdown.pl < $^ > $@
+ 
+-prefix=/usr/local
++PREFIX		?= /usr/local
++DESTDIR		?=
++STRIP_CMD	?= strip
++DOCSDIR		?= $(PREFIX)/share/centrifuge/doc
++
++.PHONY: install-strip
++install-strip: install
++	for file in $(CENTRIFUGE_BIN_LIST); do \
++		$(STRIP_CMD) $(DESTDIR)$(PREFIX)/bin/$$file; \
++	done
+ 
+ .PHONY: install
+ install: all
+-	mkdir -p $(prefix)/bin
+-	mkdir -p $(prefix)/share/centrifuge/indices
+-	install -m 0644 indices/Makefile $(prefix)/share/centrifuge/indices
+-	install -d -m 0755 $(prefix)/share/centrifuge/doc
+-	install -m 0644 doc/* $(prefix)/share/centrifuge/doc
++	mkdir -p $(DESTDIR)$(PREFIX)/bin
++	mkdir -p $(DESTDIR)$(PREFIX)/share/centrifuge/indices
++	install -m 0644 indices/Makefile \
++		$(DESTDIR)$(PREFIX)/share/centrifuge/indices
++	install -d -m 0755 $(DESTDIR)$(DOCSDIR)
++	install -m 0644 doc/* $(DESTDIR)$(DOCSDIR)
+ 	for file in $(CENTRIFUGE_BIN_LIST) $(CENTRIFUGE_SCRIPT_LIST); do \
+-		install -m 0755 $$file $(prefix)/bin ; \
++		install -m 0755 $$file $(DESTDIR)$(PREFIX)/bin ; \
+ 	done
+ 
+ .PHONY: uninstall
+ uninstall: all
+ 	for file in $(CENTRIFUGE_BIN_LIST) $(CENTRIFUGE_SCRIPT_LIST); do \
+-		rm -v $(prefix)/bin/$$file ; \
+-		rm -v $(prefix)/share/centrifuge; \
++		rm -v $(DESTDIR)$(PREFIX)/bin/$$file ; \
++		rm -v $(DESTDIR)$(PREFIX)/share/centrifuge; \
+ 	done
+ 
+ 

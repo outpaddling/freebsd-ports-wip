@@ -1,1 +1,26 @@
-@comment $FreeBSD$
+bin/centrifuge
+bin/centrifuge-BuildSharedSequence.pl
+bin/centrifuge-RemoveEmptySequence.pl
+bin/centrifuge-RemoveN.pl
+bin/centrifuge-build
+bin/centrifuge-build-bin
+bin/centrifuge-class
+bin/centrifuge-compress.pl
+bin/centrifuge-download
+bin/centrifuge-inspect
+bin/centrifuge-inspect-bin
+bin/centrifuge-kreport
+bin/centrifuge-sort-nt.pl
+%%DATADIR%%/indices/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/add.css
+%%PORTDOCS%%%%DOCSDIR%%/faq.shtml
+%%PORTDOCS%%%%DOCSDIR%%/footer.inc.html
+%%PORTDOCS%%%%DOCSDIR%%/index.shtml
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/manual.inc.html
+%%PORTDOCS%%%%DOCSDIR%%/manual.inc.html.old
+%%PORTDOCS%%%%DOCSDIR%%/manual.shtml
+%%PORTDOCS%%%%DOCSDIR%%/sidebar.inc.shtml
+%%PORTDOCS%%%%DOCSDIR%%/strip_markdown.pl
+%%PORTDOCS%%%%DOCSDIR%%/style.css
