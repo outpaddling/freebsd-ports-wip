@@ -15,4 +15,7 @@ GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	cmbi
 
+# CXXFLAGS+=	-std=gnu++11
+USE_GCC=	any
+
 .include <bsd.port.mk>
