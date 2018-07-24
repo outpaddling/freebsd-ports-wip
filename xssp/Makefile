@@ -2,7 +2,7 @@
 
 PORTNAME=	xssp
 PORTVERSION=	3.0.1
-CATEGORIES=	wip
+CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Software for creating DSSP and HSSP files
@@ -10,7 +10,6 @@ COMMENT=	Software for creating DSSP and HSSP files
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-# Need: libzeep
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libzeep.so:wip/libzeep
 
@@ -21,10 +20,6 @@ GH_ACCOUNT=	cmbi
 
 CXXFLAGS+=	-Wno-unused-const-variable
 LDFLAGS+=	-L${PREFIX}/lib
-
-# USE_GCC=	any
-
-MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|tr1/tuple.hpp|tuple/tuple.hpp|g' \
