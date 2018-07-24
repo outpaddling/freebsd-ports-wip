@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 # 3rd-party: http://merenlab.org/2016/06/18/installing-third-party-software/
-# Need: famsa, dssp, modeller
+# Need: modeller
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5
 RUN_DEPENDS=	bash:shells/bash \
@@ -25,6 +25,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		centrifuge>0:wip/centrifuge \
 		mcl>0:wip/mcl \
 		xssp>0:wip/xssp \
+		FAMSA>0:wip/famsa \
 		R-cran-gridExtra>0:graphics/R-cran-gridExtra \
 		R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
 		R-cran-optparse>0:wip/R-cran-optparse \
