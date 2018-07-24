@@ -8,6 +8,9 @@ CATEGORIES=		wip www
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Make it easy to create SOAP servers
 
+BUILD_DEPENDS=	bjam:devel/boost-jam
+LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
+
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
@@ -16,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mhekkel
 
 MAKEFILE=	makefile
-ALL_TARGET=	lib
+ALL_TARGET=	libzeep.so
 MAKE_ENV=	BOOST=${PREFIX}
 
 .include <bsd.port.mk>
