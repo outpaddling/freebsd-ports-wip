@@ -10,6 +10,9 @@ COMMENT=	Software for creating DSSP and HSSP files
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+# Need: libzeep
+LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
+
 USES=		autoreconf
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
