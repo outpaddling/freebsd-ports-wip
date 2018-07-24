@@ -14,6 +14,8 @@ COMMENT=	Algorithm for large-scale multiple sequence alignments
 # Check this
 LICENSE=	PD
 
+LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
+
 USES=		gmake
 USE_GCC=	yes		# Eliminate this
 USE_GITHUB=	yes
