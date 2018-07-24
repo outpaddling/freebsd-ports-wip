@@ -1,4 +1,4 @@
---- makefile.orig	2018-07-24 14:34:13 UTC
+--- makefile.orig	2016-01-15 07:56:19 UTC
 +++ makefile
 @@ -18,6 +18,7 @@ LIBDIR              ?= $(PREFIX)/lib
  INCDIR              ?= $(PREFIX)/include
@@ -8,7 +8,7 @@
  
  BOOST_LIBS          = system thread filesystem regex math_c99 random
  BOOST_LIBS          := $(BOOST_LIBS:%=boost_%$(BOOST_LIB_SUFFIX))
-@@ -81,45 +82,45 @@ zeep-test: obj/zeep-test.o libzeep.a
+@@ -81,45 +82,42 @@ zeep-test: obj/zeep-test.o libzeep.a
  	$(CXX) $(BOOST_INC_DIR:%=-I%) -o $@ -I. $^ $(LDFLAGS) -lboost_date_time -lboost_regex
  
  install-libs: libzeep.so
@@ -50,6 +50,12 @@
 -	install zeep/xml/writer.hpp $(INCDIR)/zeep/xml/writer.hpp
 -	install zeep/xml/xpath.hpp $(INCDIR)/zeep/xml/xpath.hpp
 -	install doc/libzeep.3 $(MANDIR)/libzeep.3
+-	for d in . images libzeep zeep zeep/http zeep/http/preforked_server_base zeep/http/el \
+-		zeep/http/el/object zeep/xml zeep/xml/doctype zeep/xml/container zeep/xml/element \
+-		index; do install -d $(DOCDIR)/$$d; install doc/html/$$d/*.* $(DOCDIR)/$$d; done;
+-	install ./libzeep.a $(LIBDIR)/libzeep.a
+-	strip -SX $(LIBDIR)/libzeep.a
+-	ln -Tfs $(LIB_NAME) $(LIBDIR)/libzeep.so
 +	install zeep/config.hpp $(DESTDIR)$(INCDIR)/zeep/config.hpp
 +	install zeep/dispatcher.hpp $(DESTDIR)$(INCDIR)/zeep/dispatcher.hpp
 +	install zeep/envelope.hpp $(DESTDIR)$(INCDIR)/zeep/envelope.hpp
@@ -75,16 +81,18 @@
 +	install zeep/xml/writer.hpp $(DESTDIR)$(INCDIR)/zeep/xml/writer.hpp
 +	install zeep/xml/xpath.hpp $(DESTDIR)$(INCDIR)/zeep/xml/xpath.hpp
 +	install doc/libzeep.3 $(DESTDIR)$(MANDIR)/libzeep.3
- 	for d in . images libzeep zeep zeep/http zeep/http/preforked_server_base zeep/http/el \
- 		zeep/http/el/object zeep/xml zeep/xml/doctype zeep/xml/container zeep/xml/element \
--		index; do install -d $(DOCDIR)/$$d; install doc/html/$$d/*.* $(DOCDIR)/$$d; done;
--	install ./libzeep.a $(LIBDIR)/libzeep.a
--	strip -SX $(LIBDIR)/libzeep.a
--	ln -Tfs $(LIB_NAME) $(LIBDIR)/libzeep.so
-+		index; do install -d $(DESTDIR)$(DOCDIR)/$$d; install doc/html/$$d/*.* $(DESTDIR)$(DOCDIR)/$$d; done;
 +	install ./libzeep.a $(DESTDIR)$(LIBDIR)/libzeep.a
 +	strip -SX $(DESTDIR)$(LIBDIR)/libzeep.a
-+	ln -Tfs $(DESTDIR)$(LIB_NAME) $(DESTDIR)$(LIBDIR)/libzeep.so
++	(cd $(DESTDIR)$(LIBDIR) && ln -fs $(LIB_NAME) libzeep.so)
  
  install: install-libs install-dev
  
+@@ -133,7 +131,7 @@ dist: lib
+ 	cp $(DIST_NAME).tgz ../ppa/libzeep_$(VERSION).orig.tar.gz
+ 
+ doc: FORCE
+-	cd doc; bjam
++	# cd doc; bjam
+ 
+ obj/%.o: %.cpp | obj
+ 	$(CXX) -MD -c -o $@ $< $(CFLAGS)
