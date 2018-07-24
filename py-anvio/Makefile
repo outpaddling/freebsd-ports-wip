@@ -24,6 +24,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		Prodigal>0:wip/prodigal \
 		centrifuge>0:wip/centrifuge \
 		mcl>0:wip/mcl \
+		xssp>0:wip/xssp \
 		R-cran-gridExtra>0:graphics/R-cran-gridExtra \
 		R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
 		R-cran-optparse>0:wip/R-cran-optparse \
