@@ -1,12 +1,12 @@
 # $FreeBSD$
 
-PORTNAME=	Prodigal
+PORTNAME=		Prodigal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.3
-CATEGORIES=	wip biology
+DISTVERSION=		2.6.3
+CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Gene prediction software
+COMMENT=	Prokaryotic Dynamic Programming Genefinding Algorithm
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
