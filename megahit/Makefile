@@ -16,6 +16,7 @@ SHEBANG_FILES=	megahit
 USE_GITHUB=	yes
 GH_ACCOUNT=	voutcn
 
+INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/megahit \
 		bin/megahit_asm_core \
 		bin/megahit_sdbg_build \
