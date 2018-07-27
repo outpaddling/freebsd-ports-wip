@@ -1,0 +1,1958 @@
+build started at Tue Jul 24 20:46:17 CDT 2018
+port directory: /usr/ports/wip/centrifuge
+package name: centrifuge-1.0.4
+building for: FreeBSD 10-4-i386-default 10.4-RELEASE-p8 FreeBSD 10.4-RELEASE-p8 i386
+maintained by: jwb@FreeBSD.org
+Makefile ident: 
+Poudriere version: 3.2.7
+Host OSVERSION: 1101001
+Jail OSVERSION: 1004000
+Job Id: 
+
+---Begin Environment---
+SHELL=/bin/csh
+UNAME_p=i386
+UNAME_m=i386
+OSVERSION=1004000
+UNAME_v=FreeBSD 10.4-RELEASE-p8
+UNAME_r=10.4-RELEASE-p8
+BLOCKSIZE=K
+MAIL=/var/mail/root
+WARNING_WAIT=0
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+TRYBROKEN=yes
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.2.7
+MASTERMNT=/usr/local/poudriere/data/.m/10-4-i386-default/ref
+DEV_WARNING_WAIT=0
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm
+GID=0
+UID=0
+PWD=/usr/local/poudriere/data/.m/10-4-i386-default/ref/.p
+NO_WARNING_PKG_INSTALL_EOL=yes
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=10-4-i386-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+OLDPWD=/usr/local/poudriere/data/.m/10-4-i386-default/ref/.p
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=PACKAGES=/tmp/pkgs PKGREPOSITORY=/tmp/pkgs
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+jwb@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+MAKE=gmake PYTHON="/usr/local/bin/python2.7" XDG_DATA_HOME=/wrkdirs/usr/ports/wip/centrifuge/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/centrifuge/work  HOME=/wrkdirs/usr/ports/wip/centrifuge/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/centrifuge/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+POPCNT_CAPABILITY=0 DOCSDIR=/usr/local/share/doc/centrifuge XDG_DATA_HOME=/wrkdirs/usr/ports/wip/centrifuge/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/centrifuge/work  HOME=/wrkdirs/usr/ports/wip/centrifuge/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/centrifuge/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector -fno-strict-aliasing"  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector" LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector -fno-strict-aliasing "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="" PORTEXAMPLES="" PYTHON_INCLUDEDIR=include/python2.7  PYTHON_LIBDIR=lib/python2.7  PYTHON_PLATFORM=freebsd10  PYTHON_PYOEXTENSION=pyo  PYTHON_SITELIBDIR=lib/python2.7/site-packages  PYTHON_SUFFIX=27  PYTHON_VER=2.7  PYTHON_VERSION=python2.7 PYTHON2="" PYTHON3="@comment " OSREL=10.4 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/centrifuge"  EXAMPLESDIR="share/examples/centrifuge"  DATADIR="share/centrifuge"  WWWDIR="www/centrifuge"  ETCDIR="etc/centrifuge"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/centrifuge DOCSDIR=/usr/local/share/doc/centrifuge EXAMPLESDIR=/usr/local/share/examples/centrifuge  WWWDIR=/usr/local/www/centrifuge ETCDIR=/usr/local/etc/centrifuge
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+MACHINE=i386
+MACHINE_ARCH=i386
+ARCH=${MACHINE_ARCH}
+#### /usr/ports/Mk/Scripts/ports_env.sh ####
+_CCVERSION_921dbbb2=FreeBSD clang version 3.4.1 (tags/RELEASE_34/dot1-final 208032) 20140512 Target: i386-unknown-freebsd10.4 Thread model: posix
+_ALTCCVERSION_921dbbb2=none
+_CXXINTERNAL_acaad9ca=FreeBSD clang version 3.4.1 (tags/RELEASE_34/dot1-final 208032) 20140512 Target: i386-unknown-freebsd10.4 Thread model: posix "/usr/bin/ld" "--eh-frame-hdr" "-dynamic-linker" "/libexec/ld-elf.so.1" "--hash-style=both" "--enable-new-dtags" "-m" "elf_i386_fbsd" "-o" "a.out" "/usr/lib/crt1.o" "/usr/lib/crti.o" "/usr/lib/crtbegin.o" "-L/usr/lib" "/dev/null" "-lc++" "-lm" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "-lc" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "/usr/lib/crtend.o" "/usr/lib/crtn.o"
+CC_OUTPUT_921dbbb2_58173849=yes
+CC_OUTPUT_921dbbb2_9bdba57c=yes
+CC_OUTPUT_921dbbb2_6a4fe7f5=yes
+CC_OUTPUT_921dbbb2_6bcac02b=yes
+CC_OUTPUT_921dbbb2_67d20829=yes
+CC_OUTPUT_921dbbb2_bfa62e83=yes
+CC_OUTPUT_921dbbb2_f0b4d593=yes
+CC_OUTPUT_921dbbb2_308abb44=yes
+CC_OUTPUT_921dbbb2_f00456e5=yes
+CC_OUTPUT_921dbbb2_65ad290d=error: invalid value 'c++14' in '-std=c++14'
+CC_OUTPUT_921dbbb2_f2776b26=error: invalid value 'c++17' in '-std=c++17'
+CC_OUTPUT_921dbbb2_b2657cc3=yes
+CC_OUTPUT_921dbbb2_380987f7=yes
+CC_OUTPUT_921dbbb2_160933ec=error: invalid value 'gnu++14' in '-std=gnu++14'
+CC_OUTPUT_921dbbb2_fb62803b=error: invalid value 'gnu++17' in '-std=gnu++17'
+_OBJC_CCVERSION_921dbbb2=FreeBSD clang version 3.4.1 (tags/RELEASE_34/dot1-final 208032) 20140512 Target: i386-unknown-freebsd10.4 Thread model: posix
+_OBJC_ALTCCVERSION_921dbbb2=none
+ARCH=i386
+OPSYS=FreeBSD
+_OSRELEASE=10.4-RELEASE-p8
+OSREL=10.4
+OSVERSION=1004000
+PYTHONBASE=/usr/local
+_SMP_CPUS=4
+CONFIGURE_MAX_CMD_LEN=262144
+HAVE_PORTS_ENV=1
+#### Misc Poudriere ####
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  524288
+stack size              (kbytes, -s)  65536
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19558
+open files                      (-n)  1024
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+sbsize                   (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===>  License GPLv3 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   centrifuge-1.0.4 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.10.5_1.txz
+[10-4-i386-default] Installing pkg-1.10.5_1...
+[10-4-i386-default] Extracting pkg-1.10.5_1: .......... done
+===>   centrifuge-1.0.4 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of centrifuge-1.0.4
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License GPLv3 accepted by the user
+===>   centrifuge-1.0.4 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by centrifuge-1.0.4 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License GPLv3 accepted by the user
+===>   centrifuge-1.0.4 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by centrifuge-1.0.4 for building
+=> SHA256 Checksum OK for infphilo-centrifuge-v1.0.4-beta_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License GPLv3 accepted by the user
+===>   centrifuge-1.0.4 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by centrifuge-1.0.4 for building
+===>  Extracting for centrifuge-1.0.4
+=> SHA256 Checksum OK for infphilo-centrifuge-v1.0.4-beta_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for centrifuge-1.0.4
+===>  Applying FreeBSD patches for centrifuge-1.0.4
+===========================================================================
+=======================<phase: build-depends  >============================
+===>   centrifuge-1.0.4 depends on executable: gmake - not found
+===>   Installing existing package /packages/All/gmake-4.2.1_2.txz
+[10-4-i386-default] Installing gmake-4.2.1_2...
+[10-4-i386-default] `-- Installing gettext-runtime-0.19.8.1_1...
+[10-4-i386-default] |   `-- Installing indexinfo-0.3.1...
+[10-4-i386-default] |   `-- Extracting indexinfo-0.3.1: .... done
+[10-4-i386-default] `-- Extracting gettext-runtime-0.19.8.1_1: .......... done
+[10-4-i386-default] Extracting gmake-4.2.1_2: .......... done
+===>   centrifuge-1.0.4 depends on executable: gmake - found
+===>   Returning to build of centrifuge-1.0.4
+===========================================================================
+=======================<phase: lib-depends    >============================
+===========================================================================
+=>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>   centrifuge-1.0.4 depends on executable: gmake - found
+===>  Configuring for centrifuge-1.0.4
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for centrifuge-1.0.4
+gmake[1]: Entering directory '/wrkdirs/usr/ports/wip/centrifuge/work/centrifuge-1.0.4-beta'
+c++ -O3 -m32 -msse2 -funroll-loops -g3 -std=c++11 -DCOMPILER_OPTIONS="\"-O3 -m32 -msse2 -funroll-loops -g3 -std=c++11 \""  \
+-fno-strict-aliasing -DCENTRIFUGE_VERSION="\"1.0.4\"" -DBUILD_HOST="\"`hostname`\"" -DBUILD_TIME="\"`date`\"" -DCOMPILER_VERSION="\"`c++ -v 2>&1 | tail -1`\"" -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE   -DBOWTIE_MM  -DCENTRIFUGE -DBOWTIE2 -DBOWTIE_64BIT_INDEX -DNDEBUG -Wall \
+ \
+-o centrifuge-build-bin centrifuge_build.cpp \
+ccnt_lut.cpp ref_read.cpp alphabet.cpp shmem.cpp edit.cpp bt2_idx.cpp reference.cpp ds.cpp limit.cpp random_source.cpp tinythread.cpp diff_sample.cpp centrifuge_build_main.cpp \
+-lpthread 
+c++ -O3 -m32 -msse2 -funroll-loops -g3 -std=c++11 -DCOMPILER_OPTIONS="\"-O3 -m32 -msse2 -funroll-loops -g3 -std=c++11 \""  \
+-fno-strict-aliasing -DCENTRIFUGE_VERSION="\"1.0.4\"" -DBUILD_HOST="\"`hostname`\"" -DBUILD_TIME="\"`date`\"" -DCOMPILER_VERSION="\"`c++ -v 2>&1 | tail -1`\"" -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE   -DBOWTIE_MM   -DCENTRIFUGE -DBOWTIE2 -DBOWTIE_64BIT_INDEX -DNDEBUG -Wall \
+  \
+-o centrifuge-class centrifuge.cpp \
+ccnt_lut.cpp ref_read.cpp alphabet.cpp shmem.cpp edit.cpp bt2_idx.cpp reference.cpp ds.cpp limit.cpp random_source.cpp tinythread.cpp qual.cpp pat.cpp read_qseq.cpp ref_coord.cpp mask.cpp pe.cpp aligner_seed_policy.cpp scoring.cpp presets.cpp simple_func.cpp random_util.cpp outq.cpp centrifuge_main.cpp \
+-lpthread  
+c++ -O3 -m32 -msse2 -funroll-loops -g3 -std=c++11 \
+-DCOMPILER_OPTIONS="\"-O3 -m32 -msse2 -funroll-loops -g3 -std=c++11 \""  \
+-fno-strict-aliasing -DCENTRIFUGE_VERSION="\"1.0.4\"" -DBUILD_HOST="\"`hostname`\"" -DBUILD_TIME="\"`date`\"" -DCOMPILER_VERSION="\"`c++ -v 2>&1 | tail -1`\"" -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE   -DBOWTIE_MM  -DCENTRIFUGE -DBOWTIE2 -DBOWTIE_64BIT_INDEX -Wall \
+ -I . \
+-o centrifuge-inspect-bin centrifuge_inspect.cpp \
+ccnt_lut.cpp ref_read.cpp alphabet.cpp shmem.cpp edit.cpp bt2_idx.cpp reference.cpp ds.cpp limit.cpp random_source.cpp tinythread.cpp \
+-lpthread 
+In file included from centrifuge.cpp:34:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+                     ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge.cpp:34:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:402:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+                    ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge.cpp:34:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:490:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+                    ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge.cpp:34:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:522:34: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                   size_t upto = OFF_MASK,
+                               ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge.cpp:34:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:649:34: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                   size_t upto = OFF_MASK,
+                               ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge.cpp:34:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:916:10: warning: comparison of constant 18446744073709551615 with expression of type 'size_t' (aka 'unsigned int') is always true [-Wtautological-constant-out-of-range-compare]
+                if(off != OFF_MASK) {
+                   ~~~ ^  ~~~~~~~~
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+                     ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:402:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+                    ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:914:10: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        off = OFF_MASK;
+                            ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:490:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+                    ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:522:34: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                   size_t upto = OFF_MASK,
+                               ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:649:34: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                   size_t upto = OFF_MASK,
+                               ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:916:10: warning: comparison of constant 18446744073709551615 with expression of type 'size_t' (aka 'unsigned int') is always true [-Wtautological-constant-out-of-range-compare]
+                if(off != OFF_MASK) {
+                   ~~~ ^  ~~~~~~~~
+./multikey_qsort.h:914:10: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        off = OFF_MASK;
+                            ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge.cpp:34:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+./diff_sample.h:865:20: warning: comparison of constant 72057594037927936 with expression of type 'size_t' (aka 'unsigned int') is always false [-Wtautological-constant-out-of-range-compare]
+                if(sPrime.size() >= LS_SIZE) {
+                   ~~~~~~~~~~~~~ ^  ~~~~~~~
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+./diff_sample.h:865:20: warning: comparison of constant 72057594037927936 with expression of type 'size_t' (aka 'unsigned int') is always false [-Wtautological-constant-out-of-range-compare]
+                if(sPrime.size() >= LS_SIZE) {
+                   ~~~~~~~~~~~~~ ^  ~~~~~~~
+In file included from centrifuge.cpp:34:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:490:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+        ~~~~~~        ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:490:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+        ~~~~~~        ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+        ~~~~~~         ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:764:63: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        if(sanityCheck) sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1155:49: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1164:49: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1066:40: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                                       OFF_MASK, begin, end);
+                                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:1161:3: note: in instantiation of function template specialization 'bucketSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                bucketSortSufDcU8(host1, host, hlen, s, slen, dc,
+                ^
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:914:10: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        off = OFF_MASK;
+                            ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:1062:13: note: in instantiation of function template specialization 'selectionSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+            selectionSortSufDcU8(host1, host, hlen, s, slen, dc, hi,
+            ^
+./multikey_qsort.h:1161:3: note: in instantiation of function template specialization 'bucketSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                bucketSortSufDcU8(host1, host, hlen, s, slen, dc,
+                ^
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:923:29: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                                                               OFF_MASK, begin, end);
+                                                               ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1007:48: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+        ~~~~~~         ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./blockwise_sa.h:490:3: note: in instantiation of function template specialization 'mkeyQSortSuf<S2bDnaString>' requested here
+                mkeyQSortSuf(t, s, slen, 4,
+                ^
+In file included from centrifuge_inspect.cpp:28:
+In file included from ./hier_idx.h:24:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+                     ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_inspect.cpp:28:
+In file included from ./hier_idx.h:24:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:357:11: warning: comparison of constant 18446744073709551615 with expression of type 'size_t' (aka 'unsigned int') is always false [-Wtautological-constant-out-of-range-compare]
+                if(upto == OFF_MASK) {
+                   ~~~~ ^  ~~~~~~~~
+./multikey_qsort.h:402:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+                    ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_inspect.cpp:28:
+In file included from ./hier_idx.h:24:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:490:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+                    ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_inspect.cpp:28:
+In file included from ./hier_idx.h:24:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:522:34: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                   size_t upto = OFF_MASK,
+                               ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_inspect.cpp:28:
+In file included from ./hier_idx.h:24:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:649:34: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                   size_t upto = OFF_MASK,
+                               ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+        ~~~~~~         ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./blockwise_sa.h:383:15: note: in instantiation of member function 'DifferenceCoverSample<SString<char> >::build' requested here
+                        _dc.get()->build(this->_nthreads);
+                                   ^
+./blockwise_sa.h:362:4: note: in instantiation of member function 'KarkkainenBlockwiseSA<SString<char> >::build' requested here
+                        build();
+                        ^
+./bt2_idx.h:1557:33: note: in instantiation of member function 'KarkkainenBlockwiseSA<SString<char> >::reset' requested here
+                                KarkkainenBlockwiseSA<TStr> bsa(s, bmax, nthreads, dcv, seed, _sanity, _passMemExc, _verbose, base_fname);
+                                                            ^
+./bt2_idx.h:948:3: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::initFromVector<SString<char> >' requested here
+                initFromVector<TStr>(
+                ^
+centrifuge_build.cpp:472:19: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::Ebwt<SString<char> >' requested here
+        Ebwt<TIndexOffU> ebwt(
+                         ^
+centrifuge_build.cpp:677:6: note: in instantiation of function template specialization 'driver<SString<char> >' requested here
+                                        driver<SString<char> >(
+                                        ^
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+        ~~~~~~         ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./diff_sample.h:776:17: note: in instantiation of function template specialization 'mkeyQSortSuf2<SString<char> >' requested here
+                mkeyQSortSuf2(t, sPrimeArr, sPrimeSz, sPrimeOrderArr, 4,
+                ^
+./blockwise_sa.h:383:15: note: in instantiation of member function 'DifferenceCoverSample<SString<char> >::build' requested here
+                        _dc.get()->build(this->_nthreads);
+                                   ^
+./blockwise_sa.h:362:4: note: in instantiation of member function 'KarkkainenBlockwiseSA<SString<char> >::build' requested here
+                        build();
+                        ^
+./bt2_idx.h:1557:33: note: in instantiation of member function 'KarkkainenBlockwiseSA<SString<char> >::reset' requested here
+                                KarkkainenBlockwiseSA<TStr> bsa(s, bmax, nthreads, dcv, seed, _sanity, _passMemExc, _verbose, base_fname);
+                                                            ^
+./bt2_idx.h:948:3: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::initFromVector<SString<char> >' requested here
+                initFromVector<TStr>(
+                ^
+centrifuge_build.cpp:472:19: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::Ebwt<SString<char> >' requested here
+        Ebwt<TIndexOffU> ebwt(
+                         ^
+centrifuge_build.cpp:677:6: note: in instantiation of function template specialization 'driver<SString<char> >' requested here
+                                        driver<SString<char> >(
+                                        ^
+In file included from centrifuge_inspect.cpp:28:
+In file included from ./hier_idx.h:24:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:916:10: warning: comparison of constant 18446744073709551615 with expression of type 'size_t' (aka 'unsigned int') is always true [-Wtautological-constant-out-of-range-compare]
+                if(off != OFF_MASK) {
+                   ~~~ ^  ~~~~~~~~
+./multikey_qsort.h:914:10: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        off = OFF_MASK;
+                            ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:490:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+        ~~~~~~        ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./bt2_idx.h:1557:33: note: in instantiation of member function 'KarkkainenBlockwiseSA<SString<char> >::qsort' requested here
+                                KarkkainenBlockwiseSA<TStr> bsa(s, bmax, nthreads, dcv, seed, _sanity, _passMemExc, _verbose, base_fname);
+                                                            ^
+./bt2_idx.h:948:3: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::initFromVector<SString<char> >' requested here
+                initFromVector<TStr>(
+                ^
+centrifuge_build.cpp:472:19: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::Ebwt<SString<char> >' requested here
+        Ebwt<TIndexOffU> ebwt(
+                         ^
+centrifuge_build.cpp:677:6: note: in instantiation of function template specialization 'driver<SString<char> >' requested here
+                                        driver<SString<char> >(
+                                        ^
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+        ~~~~~~         ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./blockwise_sa.h:454:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<SString<char>, const unsigned char *>' requested here
+                mkeyQSortSufDcU8(t, host, len, s, slen, *_dc.get(), 4,
+                ^
+./bt2_idx.h:1557:33: note: in instantiation of member function 'KarkkainenBlockwiseSA<SString<char> >::qsort' requested here
+                                KarkkainenBlockwiseSA<TStr> bsa(s, bmax, nthreads, dcv, seed, _sanity, _passMemExc, _verbose, base_fname);
+                                                            ^
+./bt2_idx.h:948:3: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::initFromVector<SString<char> >' requested here
+                initFromVector<TStr>(
+                ^
+centrifuge_build.cpp:472:19: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::Ebwt<SString<char> >' requested here
+        Ebwt<TIndexOffU> ebwt(
+                         ^
+centrifuge_build.cpp:677:6: note: in instantiation of function template specialization 'driver<SString<char> >' requested here
+                                        driver<SString<char> >(
+                                        ^
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:764:63: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        if(sanityCheck) sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1155:49: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<SString<char>, const unsigned char *>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:454:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<SString<char>, const unsigned char *>' requested here
+                mkeyQSortSufDcU8(t, host, len, s, slen, *_dc.get(), 4,
+                ^
+./bt2_idx.h:1557:33: note: in instantiation of member function 'KarkkainenBlockwiseSA<SString<char> >::qsort' requested here
+                                KarkkainenBlockwiseSA<TStr> bsa(s, bmax, nthreads, dcv, seed, _sanity, _passMemExc, _verbose, base_fname);
+                                                            ^
+./bt2_idx.h:948:3: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::initFromVector<SString<char> >' requested here
+                initFromVector<TStr>(
+                ^
+centrifuge_build.cpp:472:19: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::Ebwt<SString<char> >' requested here
+        Ebwt<TIndexOffU> ebwt(
+                         ^
+centrifuge_build.cpp:677:6: note: in instantiation of function template specialization 'driver<SString<char> >' requested here
+                                        driver<SString<char> >(
+                                        ^
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1164:49: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1066:40: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                                       OFF_MASK, begin, end);
+                                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:1161:3: note: in instantiation of function template specialization 'bucketSortSufDcU8<SString<char>, const unsigned char *>' requested here
+                bucketSortSufDcU8(host1, host, hlen, s, slen, dc,
+                ^
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<SString<char>, const unsigned char *>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:454:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<SString<char>, const unsigned char *>' requested here
+                mkeyQSortSufDcU8(t, host, len, s, slen, *_dc.get(), 4,
+                ^
+./bt2_idx.h:1557:33: note: in instantiation of member function 'KarkkainenBlockwiseSA<SString<char> >::qsort' requested here
+                                KarkkainenBlockwiseSA<TStr> bsa(s, bmax, nthreads, dcv, seed, _sanity, _passMemExc, _verbose, base_fname);
+                                                            ^
+./bt2_idx.h:948:3: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::initFromVector<SString<char> >' requested here
+                initFromVector<TStr>(
+                ^
+centrifuge_build.cpp:472:19: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::Ebwt<SString<char> >' requested here
+        Ebwt<TIndexOffU> ebwt(
+                         ^
+centrifuge_build.cpp:677:6: note: in instantiation of function template specialization 'driver<SString<char> >' requested here
+                                        driver<SString<char> >(
+                                        ^
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:914:10: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        off = OFF_MASK;
+                            ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:1062:13: note: in instantiation of function template specialization 'selectionSortSufDcU8<SString<char>, const unsigned char *>' requested here
+            selectionSortSufDcU8(host1, host, hlen, s, slen, dc, hi,
+            ^
+./multikey_qsort.h:1161:3: note: in instantiation of function template specialization 'bucketSortSufDcU8<SString<char>, const unsigned char *>' requested here
+                bucketSortSufDcU8(host1, host, hlen, s, slen, dc,
+                ^
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<SString<char>, const unsigned char *>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:454:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<SString<char>, const unsigned char *>' requested here
+                mkeyQSortSufDcU8(t, host, len, s, slen, *_dc.get(), 4,
+                ^
+./bt2_idx.h:1557:33: note: in instantiation of member function 'KarkkainenBlockwiseSA<SString<char> >::qsort' requested here
+                                KarkkainenBlockwiseSA<TStr> bsa(s, bmax, nthreads, dcv, seed, _sanity, _passMemExc, _verbose, base_fname);
+                                                            ^
+./bt2_idx.h:948:3: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::initFromVector<SString<char> >' requested here
+                initFromVector<TStr>(
+                ^
+centrifuge_build.cpp:472:19: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::Ebwt<SString<char> >' requested here
+        Ebwt<TIndexOffU> ebwt(
+                         ^
+centrifuge_build.cpp:677:6: note: in instantiation of function template specialization 'driver<SString<char> >' requested here
+                                        driver<SString<char> >(
+                                        ^
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:923:29: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                                                               OFF_MASK, begin, end);
+                                                               ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1007:48: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+        ~~~~~~         ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./blockwise_sa.h:460:3: note: in instantiation of function template specialization 'mkeyQSortSuf<SString<char> >' requested here
+                mkeyQSortSuf(t, s, slen, 4,
+                ^
+./bt2_idx.h:1557:33: note: in instantiation of member function 'KarkkainenBlockwiseSA<SString<char> >::qsort' requested here
+                                KarkkainenBlockwiseSA<TStr> bsa(s, bmax, nthreads, dcv, seed, _sanity, _passMemExc, _verbose, base_fname);
+                                                            ^
+./bt2_idx.h:948:3: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::initFromVector<SString<char> >' requested here
+                initFromVector<TStr>(
+                ^
+centrifuge_build.cpp:472:19: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::Ebwt<SString<char> >' requested here
+        Ebwt<TIndexOffU> ebwt(
+                         ^
+centrifuge_build.cpp:677:6: note: in instantiation of function template specialization 'driver<SString<char> >' requested here
+                                        driver<SString<char> >(
+                                        ^
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+        ~~~~~~         ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./blockwise_sa.h:383:15: note: in instantiation of member function 'DifferenceCoverSample<S2bDnaString>::build' requested here
+                        _dc.get()->build(this->_nthreads);
+                                   ^
+./blockwise_sa.h:362:4: note: in instantiation of member function 'KarkkainenBlockwiseSA<S2bDnaString>::build' requested here
+                        build();
+                        ^
+./bt2_idx.h:1557:33: note: in instantiation of member function 'KarkkainenBlockwiseSA<S2bDnaString>::reset' requested here
+                                KarkkainenBlockwiseSA<TStr> bsa(s, bmax, nthreads, dcv, seed, _sanity, _passMemExc, _verbose, base_fname);
+                                                            ^
+./bt2_idx.h:948:3: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::initFromVector<S2bDnaString>' requested here
+                initFromVector<TStr>(
+                ^
+centrifuge_build.cpp:472:19: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::Ebwt<S2bDnaString>' requested here
+        Ebwt<TIndexOffU> ebwt(
+                         ^
+centrifuge_build.cpp:697:5: note: in instantiation of function template specialization 'driver<S2bDnaString>' requested here
+                                driver<S2bDnaString>(
+                                ^
+In file included from centrifuge_build.cpp:27:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+        ~~~~~~         ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./diff_sample.h:776:17: note: in instantiation of function template specialization 'mkeyQSortSuf2<S2bDnaString>' requested here
+                mkeyQSortSuf2(t, sPrimeArr, sPrimeSz, sPrimeOrderArr, 4,
+                ^
+./blockwise_sa.h:383:15: note: in instantiation of member function 'DifferenceCoverSample<S2bDnaString>::build' requested here
+                        _dc.get()->build(this->_nthreads);
+                                   ^
+./blockwise_sa.h:362:4: note: in instantiation of member function 'KarkkainenBlockwiseSA<S2bDnaString>::build' requested here
+                        build();
+                        ^
+./bt2_idx.h:1557:33: note: in instantiation of member function 'KarkkainenBlockwiseSA<S2bDnaString>::reset' requested here
+                                KarkkainenBlockwiseSA<TStr> bsa(s, bmax, nthreads, dcv, seed, _sanity, _passMemExc, _verbose, base_fname);
+                                                            ^
+./bt2_idx.h:948:3: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::initFromVector<S2bDnaString>' requested here
+                initFromVector<TStr>(
+                ^
+centrifuge_build.cpp:472:19: note: in instantiation of function template specialization 'Ebwt<unsigned long long>::Ebwt<S2bDnaString>' requested here
+        Ebwt<TIndexOffU> ebwt(
+                         ^
+centrifuge_build.cpp:697:5: note: in instantiation of function template specialization 'driver<S2bDnaString>' requested here
+                                driver<S2bDnaString>(
+                                ^
+In file included from centrifuge_inspect.cpp:28:
+In file included from ./hier_idx.h:24:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+./diff_sample.h:865:20: warning: comparison of constant 72057594037927936 with expression of type 'size_t' (aka 'unsigned int') is always false [-Wtautological-constant-out-of-range-compare]
+                if(sPrime.size() >= LS_SIZE) {
+                   ~~~~~~~~~~~~~ ^  ~~~~~~~
+In file included from centrifuge_inspect.cpp:28:
+In file included from ./hier_idx.h:24:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:490:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+        ~~~~~~        ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge.cpp:34:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+        ~~~~~~         ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from centrifuge.cpp:34:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:764:63: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        if(sanityCheck) sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge.cpp:34:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1155:49: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from centrifuge.cpp:34:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1164:49: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge.cpp:34:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1066:40: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                                       OFF_MASK, begin, end);
+                                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:1161:3: note: in instantiation of function template specialization 'bucketSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                bucketSortSufDcU8(host1, host, hlen, s, slen, dc,
+                ^
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from centrifuge.cpp:34:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:914:10: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        off = OFF_MASK;
+                            ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:1062:13: note: in instantiation of function template specialization 'selectionSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+            selectionSortSufDcU8(host1, host, hlen, s, slen, dc, hi,
+            ^
+./multikey_qsort.h:1161:3: note: in instantiation of function template specialization 'bucketSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                bucketSortSufDcU8(host1, host, hlen, s, slen, dc,
+                ^
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from centrifuge.cpp:34:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:923:29: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                                                               OFF_MASK, begin, end);
+                                                               ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge.cpp:34:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1007:48: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge.cpp:34:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+        ~~~~~~         ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./blockwise_sa.h:490:3: note: in instantiation of function template specialization 'mkeyQSortSuf<S2bDnaString>' requested here
+                mkeyQSortSuf(t, s, slen, 4,
+                ^
+In file included from centrifuge_inspect.cpp:28:
+In file included from ./hier_idx.h:24:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+        ~~~~~~         ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from centrifuge_inspect.cpp:28:
+In file included from ./hier_idx.h:24:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:764:63: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        if(sanityCheck) sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_inspect.cpp:28:
+In file included from ./hier_idx.h:24:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1155:49: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from centrifuge_inspect.cpp:28:
+In file included from ./hier_idx.h:24:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1164:49: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_inspect.cpp:28:
+In file included from ./hier_idx.h:24:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1066:40: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                                       OFF_MASK, begin, end);
+                                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:1161:3: note: in instantiation of function template specialization 'bucketSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                bucketSortSufDcU8(host1, host, hlen, s, slen, dc,
+                ^
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from centrifuge_inspect.cpp:28:
+In file included from ./hier_idx.h:24:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:914:10: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        off = OFF_MASK;
+                            ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:1062:13: note: in instantiation of function template specialization 'selectionSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+            selectionSortSufDcU8(host1, host, hlen, s, slen, dc, hi,
+            ^
+./multikey_qsort.h:1161:3: note: in instantiation of function template specialization 'bucketSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                bucketSortSufDcU8(host1, host, hlen, s, slen, dc,
+                ^
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from centrifuge_inspect.cpp:28:
+In file included from ./hier_idx.h:24:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:923:29: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                                                               OFF_MASK, begin, end);
+                                                               ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_inspect.cpp:28:
+In file included from ./hier_idx.h:24:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1007:48: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from centrifuge_inspect.cpp:28:
+In file included from ./hier_idx.h:24:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+        ~~~~~~         ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./blockwise_sa.h:490:3: note: in instantiation of function template specialization 'mkeyQSortSuf<S2bDnaString>' requested here
+                mkeyQSortSuf(t, s, slen, 4,
+                ^
+19 warnings generated.
+18 warnings generated.
+32 warnings generated.
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+                     ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:357:11: warning: comparison of constant 18446744073709551615 with expression of type 'size_t' (aka 'unsigned int') is always false [-Wtautological-constant-out-of-range-compare]
+                if(upto == OFF_MASK) {
+                   ~~~~ ^  ~~~~~~~~
+./multikey_qsort.h:402:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+                    ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:490:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+                    ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:522:34: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                   size_t upto = OFF_MASK,
+                               ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:649:34: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                   size_t upto = OFF_MASK,
+                               ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:916:10: warning: comparison of constant 18446744073709551615 with expression of type 'size_t' (aka 'unsigned int') is always true [-Wtautological-constant-out-of-range-compare]
+                if(off != OFF_MASK) {
+                   ~~~ ^  ~~~~~~~~
+./multikey_qsort.h:914:10: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        off = OFF_MASK;
+                            ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+./diff_sample.h:865:20: warning: comparison of constant 72057594037927936 with expression of type 'size_t' (aka 'unsigned int') is always false [-Wtautological-constant-out-of-range-compare]
+                if(sPrime.size() >= LS_SIZE) {
+                   ~~~~~~~~~~~~~ ^  ~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:490:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+        ~~~~~~        ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+                     ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:402:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+                    ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:490:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+                    ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:522:34: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                   size_t upto = OFF_MASK,
+                               ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:649:34: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                   size_t upto = OFF_MASK,
+                               ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:916:10: warning: comparison of constant 18446744073709551615 with expression of type 'size_t' (aka 'unsigned int') is always true [-Wtautological-constant-out-of-range-compare]
+                if(off != OFF_MASK) {
+                   ~~~ ^  ~~~~~~~~
+./multikey_qsort.h:914:10: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        off = OFF_MASK;
+                            ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+./diff_sample.h:865:20: warning: comparison of constant 72057594037927936 with expression of type 'size_t' (aka 'unsigned int') is always false [-Wtautological-constant-out-of-range-compare]
+                if(sPrime.size() >= LS_SIZE) {
+                   ~~~~~~~~~~~~~ ^  ~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:490:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+        ~~~~~~        ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+        ~~~~~~         ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:764:63: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        if(sanityCheck) sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1155:49: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1164:49: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+                     ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:402:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+                    ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:490:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+                    ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:522:34: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                   size_t upto = OFF_MASK,
+                               ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:649:34: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                   size_t upto = OFF_MASK,
+                               ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:916:10: warning: comparison of constant 18446744073709551615 with expression of type 'size_t' (aka 'unsigned int') is always true [-Wtautological-constant-out-of-range-compare]
+                if(off != OFF_MASK) {
+                   ~~~ ^  ~~~~~~~~
+./multikey_qsort.h:914:10: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        off = OFF_MASK;
+                            ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+        ~~~~~~         ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:764:63: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        if(sanityCheck) sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1155:49: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+./diff_sample.h:865:20: warning: comparison of constant 72057594037927936 with expression of type 'size_t' (aka 'unsigned int') is always false [-Wtautological-constant-out-of-range-compare]
+                if(sPrime.size() >= LS_SIZE) {
+                   ~~~~~~~~~~~~~ ^  ~~~~~~~
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1164:49: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1066:40: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                                       OFF_MASK, begin, end);
+                                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:1161:3: note: in instantiation of function template specialization 'bucketSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                bucketSortSufDcU8(host1, host, hlen, s, slen, dc,
+                ^
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:914:10: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        off = OFF_MASK;
+                            ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:1062:13: note: in instantiation of function template specialization 'selectionSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+            selectionSortSufDcU8(host1, host, hlen, s, slen, dc, hi,
+            ^
+./multikey_qsort.h:1161:3: note: in instantiation of function template specialization 'bucketSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                bucketSortSufDcU8(host1, host, hlen, s, slen, dc,
+                ^
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:923:29: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                                                               OFF_MASK, begin, end);
+                                                               ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1007:48: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+        ~~~~~~         ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./blockwise_sa.h:490:3: note: in instantiation of function template specialization 'mkeyQSortSuf<S2bDnaString>' requested here
+                mkeyQSortSuf(t, s, slen, 4,
+                ^
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:490:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+        ~~~~~~        ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1066:40: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                                       OFF_MASK, begin, end);
+                                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:1161:3: note: in instantiation of function template specialization 'bucketSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                bucketSortSufDcU8(host1, host, hlen, s, slen, dc,
+                ^
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:914:10: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        off = OFF_MASK;
+                            ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:1062:13: note: in instantiation of function template specialization 'selectionSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+            selectionSortSufDcU8(host1, host, hlen, s, slen, dc, hi,
+            ^
+./multikey_qsort.h:1161:3: note: in instantiation of function template specialization 'bucketSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                bucketSortSufDcU8(host1, host, hlen, s, slen, dc,
+                ^
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:923:29: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                                                               OFF_MASK, begin, end);
+                                                               ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1007:48: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+        ~~~~~~         ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./blockwise_sa.h:490:3: note: in instantiation of function template specialization 'mkeyQSortSuf<S2bDnaString>' requested here
+                mkeyQSortSuf(t, s, slen, 4,
+                ^
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+        ~~~~~~         ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:764:63: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        if(sanityCheck) sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1155:49: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1164:49: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                        ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1066:40: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                                       OFF_MASK, begin, end);
+                                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:1161:3: note: in instantiation of function template specialization 'bucketSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                bucketSortSufDcU8(host1, host, hlen, s, slen, dc,
+                ^
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:914:10: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        off = OFF_MASK;
+                            ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./multikey_qsort.h:1062:13: note: in instantiation of function template specialization 'selectionSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+            selectionSortSufDcU8(host1, host, hlen, s, slen, dc, hi,
+            ^
+./multikey_qsort.h:1161:3: note: in instantiation of function template specialization 'bucketSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                bucketSortSufDcU8(host1, host, hlen, s, slen, dc,
+                ^
+./multikey_qsort.h:763:2: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+        mkeyQSortSufDcU8(host1, host, hlen, s, slen, dc, hi, 0, slen, 0, sanityCheck);
+        ^
+./blockwise_sa.h:484:3: note: in instantiation of function template specialization 'mkeyQSortSufDcU8<S2bDnaString, S2bDnaString>' requested here
+                mkeyQSortSufDcU8(t, t, len, s, slen, *_dc.get(), 4,
+                ^
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:923:29: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                                                               OFF_MASK, begin, end);
+                                                               ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:1007:48: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                sanityCheckOrderedSufs(host1, hlen, s, slen, OFF_MASK, begin, end);
+                ~~~~~~~~~~~~~~~~~~~~~~                       ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from bt2_idx.cpp:25:
+In file included from ./bt2_idx.h:44:
+In file included from ./blockwise_sa.h:29:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+        ~~~~~~         ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+./blockwise_sa.h:490:3: note: in instantiation of function template specialization 'mkeyQSortSuf<S2bDnaString>' requested here
+                mkeyQSortSuf(t, s, slen, 4,
+                ^
+18 warnings generated.
+19 warnings generated.
+18 warnings generated.
+In file included from diff_sample.cpp:20:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:348:17: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upper = OFF_MASK)
+                     ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from diff_sample.cpp:20:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:402:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+                    ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from diff_sample.cpp:20:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:490:16: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+        size_t upto = OFF_MASK)
+                    ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from diff_sample.cpp:20:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:522:34: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                   size_t upto = OFF_MASK,
+                               ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from diff_sample.cpp:20:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:649:34: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                   size_t upto = OFF_MASK,
+                               ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from diff_sample.cpp:20:
+In file included from ./diff_sample.h:26:
+./multikey_qsort.h:916:10: warning: comparison of constant 18446744073709551615 with expression of type 'size_t' (aka 'unsigned int') is always true [-Wtautological-constant-out-of-range-compare]
+                if(off != OFF_MASK) {
+                   ~~~ ^  ~~~~~~~~
+./multikey_qsort.h:914:10: warning: implicit conversion from 'unsigned long long' to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295 [-Wconstant-conversion]
+                        off = OFF_MASK;
+                            ~ ^~~~~~~~
+./btypes.h:25:18: note: expanded from macro 'OFF_MASK'
+#define OFF_MASK 0xffffffffffffffff
+                 ^~~~~~~~~~~~~~~~~~
+In file included from diff_sample.cpp:20:
+./diff_sample.h:865:20: warning: comparison of constant 72057594037927936 with expression of type 'size_t' (aka 'unsigned int') is always false [-Wtautological-constant-out-of-range-compare]
+                if(sPrime.size() >= LS_SIZE) {
+                   ~~~~~~~~~~~~~ ^  ~~~~~~~
+8 warnings generated.
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/wip/centrifuge/work/centrifuge-1.0.4-beta'
+===========================================================================
+=>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===>   centrifuge-1.0.4 depends on package: bash>0 - not found
+===>   Installing existing package /packages/All/bash-4.4.23.txz
+[10-4-i386-default] Installing bash-4.4.23...
+[10-4-i386-default] Extracting bash-4.4.23: .......... done
+===>   centrifuge-1.0.4 depends on package: bash>0 - found
+===>   Returning to build of centrifuge-1.0.4
+===>   centrifuge-1.0.4 depends on file: /usr/local/bin/python2.7 - not found
+===>   Installing existing package /packages/All/python27-2.7.15.txz
+[10-4-i386-default] Installing python27-2.7.15...
+[10-4-i386-default] `-- Installing libffi-3.2.1_2...
+[10-4-i386-default] `-- Extracting libffi-3.2.1_2: .......... done
+[10-4-i386-default] `-- Installing readline-7.0.3_1...
+[10-4-i386-default] `-- Extracting readline-7.0.3_1: .......... done
+[10-4-i386-default] Extracting python27-2.7.15: .......... done
+Message from python27-2.7.15:
+
+===========================================================================
+
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+bsddb           databases/py-bsddb
+gdbm            databases/py-gdbm
+sqlite3         databases/py-sqlite3
+tkinter         x11-toolkits/py-tkinter
+
+===========================================================================
+===>   centrifuge-1.0.4 depends on file: /usr/local/bin/python2.7 - found
+===>   Returning to build of centrifuge-1.0.4
+===========================================================================
+=>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for centrifuge-1.0.4
+===>   centrifuge-1.0.4 depends on package: bash>0 - found
+===>   centrifuge-1.0.4 depends on file: /usr/local/bin/python2.7 - found
+===>   Generating temporary packing list
+gmake[1]: Entering directory '/wrkdirs/usr/ports/wip/centrifuge/work/centrifuge-1.0.4-beta'
+mkdir -p /wrkdirs/usr/ports/wip/centrifuge/work/stage/usr/local/bin
+mkdir -p /wrkdirs/usr/ports/wip/centrifuge/work/stage/usr/local/share/centrifuge/indices
+install -m 0644 indices/Makefile \
+	/wrkdirs/usr/ports/wip/centrifuge/work/stage/usr/local/share/centrifuge/indices
+install -d -m 0755 /wrkdirs/usr/ports/wip/centrifuge/work/stage/usr/local/share/doc/centrifuge
+install -m 0644 doc/* /wrkdirs/usr/ports/wip/centrifuge/work/stage/usr/local/share/doc/centrifuge
+for file in centrifuge-build-bin centrifuge-class centrifuge-inspect-bin centrifuge centrifuge-build centrifuge-inspect centrifuge-download centrifuge-kreport centrifuge-RemoveEmptySequence.pl centrifuge-sort-nt.pl centrifuge-BuildSharedSequence.pl centrifuge-RemoveN.pl centrifuge-compress.pl; do \
+	install -m 0755 $file /wrkdirs/usr/ports/wip/centrifuge/work/stage/usr/local/bin ; \
+done
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/wip/centrifuge/work/centrifuge-1.0.4-beta'
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+Warning: 'bin/centrifuge-class' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'bin/centrifuge-build-bin' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+Warning: 'bin/centrifuge-inspect-bin' is not stripped consider trying INSTALL_TARGET=install-strip or using ${STRIP_CMD}
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+=>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for centrifuge-1.0.4
+===========================================================================
+=>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for centrifuge-1.0.4
+===>  Checking if centrifuge already installed
+===>   Registering installation for centrifuge-1.0.4
+[10-4-i386-default] Installing centrifuge-1.0.4...
+===========================================================================
+=>> Checking shared library dependencies
+ 0x00000001 (NEEDED)                     Shared library: [libc++.so.1]
+ 0x00000001 (NEEDED)                     Shared library: [libc.so.7]
+ 0x00000001 (NEEDED)                     Shared library: [libcxxrt.so.1]
+ 0x00000001 (NEEDED)                     Shared library: [libgcc_s.so.1]
+ 0x00000001 (NEEDED)                     Shared library: [libm.so.5]
+ 0x00000001 (NEEDED)                     Shared library: [libthr.so.3]
+=======================<phase: deinstall      >============================
+===>  Deinstalling for centrifuge
+===>   Deinstalling centrifuge-1.0.4
+Updating database digests format: ......... done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	centrifuge-1.0.4
+
+Number of packages to be removed: 1
+
+The operation will free 9 MiB.
+[10-4-i386-default] [1/1] Deinstalling centrifuge-1.0.4...
+[10-4-i386-default] [1/1] Deleting files for centrifuge-1.0.4: .......... done
+===========================================================================
+=>> Checking for extra files and directories
+[00:00:50] Installing from package
+[10-4-i386-default] Installing centrifuge-1.0.4...
+[10-4-i386-default] Extracting centrifuge-1.0.4: .......... done
+[00:00:50] Cleaning up
+===>  Cleaning for centrifuge-1.0.4
+[00:00:50] Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	centrifuge-1.0.4
+
+Number of packages to be removed: 1
+
+The operation will free 9 MiB.
+[10-4-i386-default] [1/1] Deinstalling centrifuge-1.0.4...
+[10-4-i386-default] [1/1] Deleting files for centrifuge-1.0.4: .......... done
+build of wip/centrifuge | centrifuge-1.0.4 ended at Tue Jul 24 20:46:58 CDT 2018
+build time: 00:00:41
