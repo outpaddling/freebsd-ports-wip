@@ -16,8 +16,9 @@ SHEBANG_FILES=	megahit
 USE_GITHUB=	yes
 GH_ACCOUNT=	voutcn
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/megahit ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/megahit_* ${STAGEDIR}${PREFIX}/bin
+PLIST_FILES=	bin/megahit \
+		bin/megahit_asm_core \
+		bin/megahit_sdbg_build \
+		bin/megahit_toolkit
 
 .include <bsd.port.mk>
