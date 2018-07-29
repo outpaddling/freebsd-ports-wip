@@ -16,6 +16,9 @@ SHEBANG_FILES=	megahit
 USE_GITHUB=	yes
 GH_ACCOUNT=	voutcn
 
+ONLY_FOR_ARCHS=	amd64 powerpc64
+ONLY_FOR_ARCHS_REASON=	"Uses specific 64-bit CPU features"
+MAKE_ENV=	CPU_ARCH_SUFFIX=${ARCH}
 INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/megahit \
 		bin/megahit_asm_core \
