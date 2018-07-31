@@ -1,0 +1,1202 @@
+build started at Tue Jul 31 15:05:10 CDT 2018
+port directory: /usr/ports/wip/famsa
+package name: FAMSA-1.2.4
+building for: FreeBSD 11-1-i386-default 11.1-RELEASE-p9 FreeBSD 11.1-RELEASE-p9 i386
+maintained by: jwb@FreeBSD.org
+Makefile ident: 
+Poudriere version: 3.2.7
+Host OSVERSION: 1101001
+Jail OSVERSION: 1101001
+Job Id: 
+
+---Begin Environment---
+SHELL=/bin/csh
+UNAME_p=i386
+UNAME_m=i386
+OSVERSION=1101001
+UNAME_v=FreeBSD 11.1-RELEASE-p9
+UNAME_r=11.1-RELEASE-p9
+BLOCKSIZE=K
+MAIL=/var/mail/root
+WARNING_WAIT=0
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+TRYBROKEN=yes
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.2.7
+MASTERMNT=/usr/local/poudriere/data/.m/11-1-i386-default/ref
+DEV_WARNING_WAIT=0
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm
+GID=0
+UID=0
+PWD=/usr/local/poudriere/data/.m/11-1-i386-default/ref/.p
+NO_WARNING_PKG_INSTALL_EOL=yes
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=11-1-i386-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+OLDPWD=/usr/local/poudriere/data/.m/11-1-i386-default/ref/.p
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=PACKAGES=/tmp/pkgs PKGREPOSITORY=/tmp/pkgs
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+jwb@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+MAKE=gmake XDG_DATA_HOME=/wrkdirs/usr/ports/wip/famsa/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/famsa/work  HOME=/wrkdirs/usr/ports/wip/famsa/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/famsa/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/wip/famsa/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/famsa/work  HOME=/wrkdirs/usr/ports/wip/famsa/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/famsa/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES ADDR2LINE="/usr/local/bin/addr2line" AR="/usr/local/bin/ar" AS="/usr/local/bin/as" CPPFILT="/usr/local/bin/c++filt" GPROF="/usr/local/bin/gprof" LD="/usr/local/bin/ld" NM="/usr/local/bin/nm" OBJCOPY="/usr/local/bin/objcopy" OBJDUMP="/usr/local/bin/objdump" RANLIB="/usr/local/bin/ranlib" READELF="/usr/local/bin/readelf" SIZE="/usr/local/bin/size" STRINGS="/usr/local/bin/strings" PREFIX=/usr/local  LOCALBASE=/usr/local  CC="gcc7" CFLAGS="-O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing"  CPP="cpp7" CPPFLAGS=""  LDFLAGS=" -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -L/usr/local/lib/gcc7" LIBS=""  CXX="g++7" CXXFLAGS="-O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7"  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="" PORTEXAMPLES="" OSREL=11.1 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/FAMSA"  EXAMPLESDIR="share/examples/FAMSA"  DATADIR="share/FAMSA"  WWWDIR="www/FAMSA"  ETCDIR="etc/FAMSA"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/FAMSA DOCSDIR=/usr/local/share/doc/FAMSA EXAMPLESDIR=/usr/local/share/examples/FAMSA  WWWDIR=/usr/local/www/FAMSA ETCDIR=/usr/local/etc/FAMSA
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+MACHINE=i386
+MACHINE_ARCH=i386
+ARCH=${MACHINE_ARCH}
+#### /usr/ports/Mk/Scripts/ports_env.sh ####
+_CCVERSION_921dbbb2=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: i386-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin
+_ALTCCVERSION_921dbbb2=none
+_CXXINTERNAL_acaad9ca=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: i386-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin "/usr/bin/ld" "--eh-frame-hdr" "-dynamic-linker" "/libexec/ld-elf.so.1" "--hash-style=both" "--enable-new-dtags" "-m" "elf_i386_fbsd" "-o" "a.out" "/usr/lib/crt1.o" "/usr/lib/crti.o" "/usr/lib/crtbegin.o" "-L/usr/lib" "/dev/null" "-lc++" "-lm" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "-lc" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "/usr/lib/crtend.o" "/usr/lib/crtn.o"
+CC_OUTPUT_921dbbb2_58173849=yes
+CC_OUTPUT_921dbbb2_9bdba57c=yes
+CC_OUTPUT_921dbbb2_6a4fe7f5=yes
+CC_OUTPUT_921dbbb2_6bcac02b=yes
+CC_OUTPUT_921dbbb2_67d20829=yes
+CC_OUTPUT_921dbbb2_bfa62e83=yes
+CC_OUTPUT_921dbbb2_f0b4d593=yes
+CC_OUTPUT_921dbbb2_308abb44=yes
+CC_OUTPUT_921dbbb2_f00456e5=yes
+CC_OUTPUT_921dbbb2_65ad290d=yes
+CC_OUTPUT_921dbbb2_f2776b26=error: invalid value 'c++17' in '-std=c++17'
+CC_OUTPUT_921dbbb2_b2657cc3=yes
+CC_OUTPUT_921dbbb2_380987f7=yes
+CC_OUTPUT_921dbbb2_160933ec=yes
+CC_OUTPUT_921dbbb2_fb62803b=error: invalid value 'gnu++17' in '-std=gnu++17'
+_OBJC_CCVERSION_921dbbb2=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: i386-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin
+_OBJC_ALTCCVERSION_921dbbb2=none
+ARCH=i386
+OPSYS=FreeBSD
+_OSRELEASE=11.1-RELEASE-p9
+OSREL=11.1
+OSVERSION=1101001
+PYTHONBASE=/usr/local
+_SMP_CPUS=32
+CONFIGURE_MAX_CMD_LEN=262144
+HAVE_PORTS_ENV=1
+#### Misc Poudriere ####
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  524288
+stack size              (kbytes, -s)  65536
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  63766
+open files                      (-n)  1024
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===>  License PD accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   FAMSA-1.2.4 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.10.5_1.txz
+[11-1-i386-default] Installing pkg-1.10.5_1...
+[11-1-i386-default] Extracting pkg-1.10.5_1: .......... done
+===>   FAMSA-1.2.4 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of FAMSA-1.2.4
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License PD accepted by the user
+===>   FAMSA-1.2.4 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by FAMSA-1.2.4 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License PD accepted by the user
+===>   FAMSA-1.2.4 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by FAMSA-1.2.4 for building
+=> SHA256 Checksum OK for refresh-bio-FAMSA-v1.2.4_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License PD accepted by the user
+===>   FAMSA-1.2.4 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by FAMSA-1.2.4 for building
+===>  Extracting for FAMSA-1.2.4
+=> SHA256 Checksum OK for refresh-bio-FAMSA-v1.2.4_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for FAMSA-1.2.4
+===>  Applying FreeBSD patches for FAMSA-1.2.4
+===========================================================================
+=======================<phase: build-depends  >============================
+===>   FAMSA-1.2.4 depends on executable: gmake - not found
+===>   Installing existing package /packages/All/gmake-4.2.1_2.txz
+[11-1-i386-default] Installing gmake-4.2.1_2...
+[11-1-i386-default] `-- Installing gettext-runtime-0.19.8.1_1...
+[11-1-i386-default] |   `-- Installing indexinfo-0.3.1...
+[11-1-i386-default] |   `-- Extracting indexinfo-0.3.1: .... done
+[11-1-i386-default] `-- Extracting gettext-runtime-0.19.8.1_1: .......... done
+[11-1-i386-default] Extracting gmake-4.2.1_2: .......... done
+===>   FAMSA-1.2.4 depends on executable: gmake - found
+===>   Returning to build of FAMSA-1.2.4
+===>   FAMSA-1.2.4 depends on executable: gcc7 - not found
+===>   Installing existing package /packages/All/gcc7-7.3.0_5.txz
+[11-1-i386-default] Installing gcc7-7.3.0_5...
+[11-1-i386-default] `-- Installing binutils-2.30_4,1...
+[11-1-i386-default] `-- Extracting binutils-2.30_4,1: .......... done
+[11-1-i386-default] `-- Installing gmp-6.1.2...
+[11-1-i386-default] `-- Extracting gmp-6.1.2: .......... done
+[11-1-i386-default] `-- Installing mpc-1.1.0_1...
+[11-1-i386-default] |   `-- Installing mpfr-4.0.1...
+[11-1-i386-default] |   `-- Extracting mpfr-4.0.1: .......... done
+[11-1-i386-default] `-- Extracting mpc-1.1.0_1: ...... done
+[11-1-i386-default] Extracting gcc7-7.3.0_5: .......... done
+Message from gcc7-7.3.0_5:
+
+To ensure binaries built with this toolchain find appropriate versions
+of the necessary run-time libraries, you may want to link using
+
+  -Wl,-rpath=/usr/local/lib/gcc7
+
+For ports leveraging USE_GCC, USES=compiler, or USES=fortran this happens
+transparently.
+===>   FAMSA-1.2.4 depends on executable: gcc7 - found
+===>   Returning to build of FAMSA-1.2.4
+===>   FAMSA-1.2.4 depends on file: /usr/local/bin/as - found
+===========================================================================
+=======================<phase: lib-depends    >============================
+===>   FAMSA-1.2.4 depends on shared library: libOpenCL.so - not found
+===>   Installing existing package /packages/All/ocl-icd-2.2.12.txz
+[11-1-i386-default] Installing ocl-icd-2.2.12...
+[11-1-i386-default] Extracting ocl-icd-2.2.12: .......... done
+===>   FAMSA-1.2.4 depends on shared library: libOpenCL.so - found (/usr/local/lib/libOpenCL.so)
+===>   Returning to build of FAMSA-1.2.4
+===========================================================================
+=>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>   FAMSA-1.2.4 depends on executable: gmake - found
+===>   FAMSA-1.2.4 depends on executable: gcc7 - found
+===>   FAMSA-1.2.4 depends on file: /usr/local/bin/as - found
+===>   FAMSA-1.2.4 depends on shared library: libOpenCL.so - found (/usr/local/lib/libOpenCL.so)
+===>  Configuring for FAMSA-1.2.4
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for FAMSA-1.2.4
+/bin/rm -f /wrkdirs/usr/ports/wip/famsa/work/FAMSA-1.2.4/libs-linux/*.a
+gmake[1]: Entering directory '/wrkdirs/usr/ports/wip/famsa/work/FAMSA-1.2.4'
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c famsa_cpu/famsa_cpu.cpp -o famsa_cpu/famsa_cpu.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c core/input_file.cpp -o core/input_file.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c core/msa.cpp -o core/msa.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c core/output_file.cpp -o core/output_file.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c core/profile.cpp -o core/profile.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c core/sequence.cpp -o core/sequence.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c core/queues.cpp -o core/queues.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c core/timer.cpp -o core/timer.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c core/upgma.cpp -o core/upgma.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c core/NewickTree.cpp -o core/NewickTree.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c libs/instrset_detect.cpp -o libs/instrset_detect.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c opencl_utils/common/Log.cpp -o opencl_utils/common/Log.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c opencl_utils/common/mathex.cpp -o opencl_utils/common/mathex.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c opencl_utils/common/StatisticsProvider.cpp -o opencl_utils/common/StatisticsProvider.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -DNO_AVX -c core/lcsbp.cpp -o core/lcsbp.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c core/lcsbp_classic.cpp -o core/lcsbp_classic.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c famsa_gpu/famsa_gpu.cpp -o famsa_gpu/famsa_gpu.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c core_gpu/gpumsa.cpp -o core_gpu/gpumsa.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c opencl_utils/hardware/Buffer.cpp -o opencl_utils/hardware/Buffer.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c opencl_utils/hardware/DeviceInfo.cpp -o opencl_utils/hardware/DeviceInfo.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c opencl_utils/hardware/DeviceWrapper.cpp -o opencl_utils/hardware/DeviceWrapper.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c opencl_utils/hardware/OpenCl.cpp -o opencl_utils/hardware/OpenCl.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c opencl_utils/hardware/OwnProgram.cpp -o opencl_utils/hardware/OwnProgram.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c opencl_utils/kernel_repository/KernelFactory.cpp -o opencl_utils/kernel_repository/KernelFactory.o
+g++7 -O2 -pipe -fstack-protector -Wl,-rpath=/usr/local/lib/gcc7 -fno-strict-aliasing  -msse2 -Wl,-rpath=/usr/local/lib/gcc7 -Wall -std=c++11 -pthread -I libs -I libs-linux -c opencl_utils/kernel_repository/KernelRepository.cpp -o opencl_utils/kernel_repository/KernelRepository.o
+opencl_utils/kernel_repository/KernelRepository.cpp:142:1: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+ };
+ ^
+opencl_utils/kernel_repository/KernelRepository.cpp:142:1: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+In file included from libs-linux/CL/opencl.h:44:0,
+                 from libs-linux/CL/cl.hpp:161,
+                 from opencl_utils/hardware/Buffer.h:2,
+                 from opencl_utils/hardware/Buffer.cpp:4:
+libs-linux/CL/cl_gl_ext.h:44:4: warning: "/*" within comment [-Wcomment]
+  * /* cl_VEN_extname extension  */
+     
+In file included from libs-linux/CL/opencl.h:44:0,
+                 from libs-linux/CL/cl.hpp:161,
+                 from opencl_utils/hardware/DeviceWrapper.h:4,
+                 from opencl_utils/hardware/DeviceWrapper.cpp:1:
+libs-linux/CL/cl_gl_ext.h:44:4: warning: "/*" within comment [-Wcomment]
+  * /* cl_VEN_extname extension  */
+     
+In file included from libs-linux/CL/opencl.h:44:0,
+                 from libs-linux/CL/cl.hpp:161,
+                 from opencl_utils/hardware/DeviceInfo.h:3,
+                 from opencl_utils/hardware/DeviceInfo.cpp:2:
+libs-linux/CL/cl_gl_ext.h:44:4: warning: "/*" within comment [-Wcomment]
+  * /* cl_VEN_extname extension  */
+     
+In file included from libs-linux/CL/opencl.h:44:0,
+                 from libs-linux/CL/cl.hpp:161,
+                 from core_gpu/../core_gpu/../opencl_utils/hardware/OpenCl.h:8,
+                 from core_gpu/../core_gpu/gpumsa.h:13,
+                 from core_gpu/gpumsa.cpp:9:
+libs-linux/CL/cl_gl_ext.h:44:4: warning: "/*" within comment [-Wcomment]
+  * /* cl_VEN_extname extension  */
+     
+In file included from libs-linux/CL/opencl.h:44:0,
+                 from libs-linux/CL/cl.hpp:161,
+                 from opencl_utils/hardware/OpenCl.h:8,
+                 from opencl_utils/hardware/OpenCl.cpp:5:
+libs-linux/CL/cl_gl_ext.h:44:4: warning: "/*" within comment [-Wcomment]
+  * /* cl_VEN_extname extension  */
+     
+In file included from libs-linux/CL/opencl.h:44:0,
+                 from libs-linux/CL/cl.hpp:161,
+                 from libs/../opencl_utils/hardware/Kernel.h:6,
+                 from opencl_utils/kernel_repository/KernelFactory.h:4,
+                 from opencl_utils/kernel_repository/KernelFactory.cpp:8:
+libs-linux/CL/cl_gl_ext.h:44:4: warning: "/*" within comment [-Wcomment]
+  * /* cl_VEN_extname extension  */
+     
+In file included from libs-linux/CL/opencl.h:44:0,
+                 from libs-linux/CL/cl.hpp:161,
+                 from famsa_gpu/../core_gpu/../opencl_utils/hardware/OpenCl.h:8,
+                 from famsa_gpu/../core_gpu/gpumsa.h:13,
+                 from famsa_gpu/famsa_gpu.cpp:15:
+libs-linux/CL/cl_gl_ext.h:44:4: warning: "/*" within comment [-Wcomment]
+  * /* cl_VEN_extname extension  */
+     
+core/sequence.cpp: In constructor 'CSequence::CSequence(CSequence&&)':
+core/sequence.cpp:87:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < bit_masks.size(); ++i) {
+                  ~~^~~~~~~~~~~~~~~~~~
+core/sequence.cpp: In member function 'CSequence& CSequence::operator=(CSequence&&)':
+core/sequence.cpp:101:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < bit_masks.size(); ++i) {
+                  ~~^~~~~~~~~~~~~~~~~~
+core/sequence.cpp: In member function 'CSequence& CSequence::operator=(const CSequence&)':
+core/sequence.cpp:117:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < bit_masks.size(); ++i) {
+                  ~~^~~~~~~~~~~~~~~~~~
+core/sequence.cpp: In member function 'std::__cxx11::string CSequence::DecodeSequence()':
+core/sequence.cpp:141:24: warning: array subscript has type 'char' [-Wchar-subscripts]
+    s += mapping_table[p];
+                        ^
+core/sequence.cpp: In member function 'std::__cxx11::string CGappedSequence::Decode()':
+core/sequence.cpp:254:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = 1; i <= size; ++i)
+                    ~~^~~~~~~
+core/sequence.cpp:256:41: warning: array subscript has type 'char' [-Wchar-subscripts]
+   char symbol = mapping_table[symbols[i]];
+                                         ^
+core/sequence.cpp: In member function 'void CGappedSequence::DecodeRaw(symbol_t*)':
+core/sequence.cpp:279:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = 1; i <= size; ++i)
+                    ~~^~~~~~~
+core/sequence.cpp: In member function 'void CGappedSequence::InsertGap(size_t)':
+core/sequence.cpp:296:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if(dps[2 * x] >= pos)
+core/sequence.cpp: In member function 'void CGappedSequence::InsertGaps(size_t, uint32_t)':
+core/sequence.cpp:323:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if(dps[2 * x] >= pos)
+core/sequence.cpp: In member function 'void CGappedSequence::RemoveGap(size_t)':
+core/sequence.cpp:350:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if(dps[2 * x] >= pos)
+core/sequence.cpp: In member function 'void CGappedSequence::RemoveGaps(size_t, uint32_t)':
+core/sequence.cpp:377:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if(dps[2 * x] >= pos)
+core/sequence.cpp: In member function 'symbol_t CGappedSequence::GetSymbol(size_t)':
+core/sequence.cpp:405:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if(dps[2 * x] >= pos)
+core/sequence.cpp:414:9: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if(pos == dps[x])
+core/sequence.cpp:401:9: warning: unused variable 'orig_pos' [-Wunused-variable]
+  size_t orig_pos = pos;
+         ^~~~~~~~
+core/profile.cpp: In member function 'void CProfile::CalculateCounters(CGappedSequence*)':
+core/profile.cpp:126:7: warning: unused variable 'was_gap' [-Wunused-variable]
+  bool was_gap = false;
+       ^~~~~~~
+In file included from core/lcsbp.cpp:3:0:
+core/../core/lcsbp_classic.h: In static member function 'static void CLCSBP_Classic_Impl<BV_LEN>::CalculateOld(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*)':
+core/../core/lcsbp_classic.h:62:23: warning: array subscript has type 'char' [-Wchar-subscripts]
+    auto s0b = s0bm[*pc];
+                       ^
+core/../core/lcsbp_classic.h: In static member function 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*)':
+core/../core/lcsbp_classic.h:145:23: warning: array subscript has type 'char' [-Wchar-subscripts]
+    auto s0b = s0bm[*pc];
+                       ^
+core/profile.cpp: In member function 'void CProfile::AlignProfProf(CProfile*, CProfile*, std::vector<int>*, std::vector<int>*)':
+core/profile.cpp:874:76: warning: array subscript has type 'char' [-Wchar-subscripts]
+     score_t delta_t = n_gaps_prof1_to_change      * (scores2_column[GAP_EXT] - scores2_column[GAP_OPEN]) +
+                                                                            ^
+core/profile.cpp:874:103: warning: array subscript has type 'char' [-Wchar-subscripts]
+     score_t delta_t = n_gaps_prof1_to_change      * (scores2_column[GAP_EXT] - scores2_column[GAP_OPEN]) +
+                                                                                                       ^
+core/profile.cpp:875:64: warning: array subscript has type 'char' [-Wchar-subscripts]
+      n_gaps_prof1_term_to_change * (scores2_column[GAP_TERM_EXT] - scores2_column[GAP_TERM_OPEN]);
+                                                                ^
+core/profile.cpp:875:96: warning: array subscript has type 'char' [-Wchar-subscripts]
+      n_gaps_prof1_term_to_change * (scores2_column[GAP_TERM_EXT] - scores2_column[GAP_TERM_OPEN]);
+                                                                                                ^
+core/profile.cpp:765:11: warning: unused variable 'prof1_gap_open_prev' [-Wunused-variable]
+   score_t prof1_gap_open_prev = scores1.get_value(i - 1, GAP_OPEN);
+           ^~~~~~~~~~~~~~~~~~~
+core/profile.cpp:767:11: warning: unused variable 'prof1_gap_term_open_prev' [-Wunused-variable]
+   score_t prof1_gap_term_open_prev = scores1.get_value(i - 1, GAP_TERM_OPEN);
+           ^~~~~~~~~~~~~~~~~~~~~~~~
+core/profile.cpp:689:9: warning: variable 'n_gap_open' set but not used [-Wunused-but-set-variable]
+  size_t n_gap_open, n_gap_ext, n_gap_term_open, n_gap_term_ext;
+         ^~~~~~~~~~
+In file included from core/lcsbp_classic.cpp:9:0:
+core/../core/lcsbp_classic.h: In static member function 'static void CLCSBP_Classic_Impl<BV_LEN>::CalculateOld(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*)':
+core/../core/lcsbp_classic.h:62:23: warning: array subscript has type 'char' [-Wchar-subscripts]
+    auto s0b = s0bm[*pc];
+                       ^
+core/profile.cpp: In member function 'void CProfile::InsertColumn(size_t, CProfile*, size_t)':
+core/profile.cpp:1494:10: warning: unused variable 'gap_open' [-Wunused-variable]
+  score_t gap_open    = params->gap_open;
+          ^~~~~~~~
+core/profile.cpp:1495:10: warning: unused variable 'gap_ext' [-Wunused-variable]
+  score_t gap_ext     = params->gap_ext;
+          ^~~~~~~
+core/profile.cpp:1496:10: warning: unused variable 'gap_term_open' [-Wunused-variable]
+  score_t gap_term_open  = params->gap_term_open;
+          ^~~~~~~~~~~~~
+core/profile.cpp:1497:10: warning: unused variable 'gap_term_ext' [-Wunused-variable]
+  score_t gap_term_ext   = params->gap_term_ext;
+          ^~~~~~~~~~~~
+core/profile.cpp: In member function 'void CProfile::DP_SolveGapsProblemWhenStarting(size_t, size_t, size_t, CProfile*, size_t&, size_t&, size_t&, size_t&)':
+core/profile.cpp:1627:43: warning: array subscript has type 'char' [-Wchar-subscripts]
+   counter_t cnt = source_col[GAP_TERM_OPEN] + source_col[GAP_TERM_EXT];
+                                           ^
+core/profile.cpp:1627:70: warning: array subscript has type 'char' [-Wchar-subscripts]
+   counter_t cnt = source_col[GAP_TERM_OPEN] + source_col[GAP_TERM_EXT];
+                                                                      ^
+core/profile.cpp:1647:45: warning: array subscript has type 'char' [-Wchar-subscripts]
+   n_gap_term_ext += source_col[GAP_TERM_OPEN];
+                                             ^
+core/profile.cpp:1650:44: warning: array subscript has type 'char' [-Wchar-subscripts]
+   n_gap_term_ext += source_col[GAP_TERM_EXT];
+                                            ^
+core/profile.cpp:1653:34: warning: array subscript has type 'char' [-Wchar-subscripts]
+   n_gap_ext = source_col[GAP_OPEN];
+                                  ^
+core/profile.cpp:1656:34: warning: array subscript has type 'char' [-Wchar-subscripts]
+   n_gap_ext += source_col[GAP_EXT];
+                                  ^
+core/profile.cpp: In member function 'void CProfile::DP_SolveGapsProblemWhenContinuing(size_t, size_t, size_t, CProfile*, size_t&, size_t&)':
+core/profile.cpp:1691:45: warning: array subscript has type 'char' [-Wchar-subscripts]
+   n_gap_term_ext += source_col[GAP_TERM_OPEN];
+                                             ^
+core/output_file.cpp: In member function 'bool COutputFile::SaveFile(std::__cxx11::string)':
+core/output_file.cpp:40:7: warning: unused variable 'is_id' [-Wunused-variable]
+  bool is_id = false;
+       ^~~~~
+core/profile.cpp:1694:44: warning: array subscript has type 'char' [-Wchar-subscripts]
+   n_gap_term_ext += source_col[GAP_TERM_EXT];
+                                            ^
+core/../core/lcsbp_classic.h: In static member function 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*)':
+core/../core/lcsbp_classic.h:145:23: warning: array subscript has type 'char' [-Wchar-subscripts]
+    auto s0b = s0bm[*pc];
+                       ^
+core/profile.cpp: In member function 'void CProfile::AlignSeqProf(CProfile*, CProfile*, std::vector<int>*, std::vector<int>*)':
+core/profile.cpp:1907:38: warning: array subscript has type 'char' [-Wchar-subscripts]
+    score_t t = scores2_column[seq1[i]];
+                                      ^
+core/profile.cpp:1865:11: warning: unused variable 'prof1_gap_open_prev' [-Wunused-variable]
+   score_t prof1_gap_open_prev = scores1.get_value(i - 1, GAP_OPEN);
+           ^~~~~~~~~~~~~~~~~~~
+core/profile.cpp:1867:11: warning: unused variable 'prof1_gap_term_open_prev' [-Wunused-variable]
+   score_t prof1_gap_term_open_prev = scores1.get_value(i - 1, GAP_TERM_OPEN);
+           ^~~~~~~~~~~~~~~~~~~~~~~~
+core/profile.cpp:1761:9: warning: unused variable 'prof1_card' [-Wunused-variable]
+  size_t prof1_card = 1;
+         ^~~~~~~~~~
+core/profile.cpp: In member function 'score_t CProfile::CalculateTotalScore()':
+core/profile.cpp:2100:33: warning: array subscript has type 'char' [-Wchar-subscripts]
+    auto cnt_c1 = counters_col[c1];
+                                 ^
+core/profile.cpp:2105:24: warning: array subscript has type 'char' [-Wchar-subscripts]
+      if(counters_col[c2])
+                        ^
+core/profile.cpp:2106:63: warning: array subscript has type 'char' [-Wchar-subscripts]
+       score += score_matrix[c1][c2] * cnt_c1 * counters_col[c2];
+                                                               ^
+core/profile.cpp:2111:41: warning: array subscript has type 'char' [-Wchar-subscripts]
+   int64_t n_gaps = counters_col[GAP_OPEN] + counters_col[GAP_EXT];
+                                         ^
+core/profile.cpp:2111:65: warning: array subscript has type 'char' [-Wchar-subscripts]
+   int64_t n_gaps = counters_col[GAP_OPEN] + counters_col[GAP_EXT];
+                                                                 ^
+core/profile.cpp:2112:51: warning: array subscript has type 'char' [-Wchar-subscripts]
+   int64_t n_gaps_term = counters_col[GAP_TERM_OPEN] + counters_col[GAP_TERM_EXT];
+                                                   ^
+core/profile.cpp:2112:80: warning: array subscript has type 'char' [-Wchar-subscripts]
+   int64_t n_gaps_term = counters_col[GAP_TERM_OPEN] + counters_col[GAP_TERM_EXT];
+                                                                                ^
+core/profile.cpp:2227:24: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if(i == 1 || i+len-1 == width)
+                ~~~~~~~~^~~~~~~~
+core/queues.cpp: In constructor 'CProfileQueue::CProfileQueue(std::vector<CGappedSequence>*, std::map<unsigned int, CProfile*>*, std::vector<std::pair<int, int> >*)':
+core/queues.cpp:58:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < gapped_sequences->size(); ++i)
+                  ~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from core/../core/msa.h:27:0,
+                 from core/msa.cpp:9:
+core/../core/../core/lcsbp_classic.h: In static member function 'static void CLCSBP_Classic_Impl<BV_LEN>::CalculateOld(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*)':
+core/../core/../core/lcsbp_classic.h:62:23: warning: array subscript has type 'char' [-Wchar-subscripts]
+    auto s0b = s0bm[*pc];
+                       ^
+core/../core/../core/lcsbp_classic.h: In static member function 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*)':
+core/../core/../core/lcsbp_classic.h:145:23: warning: array subscript has type 'char' [-Wchar-subscripts]
+    auto s0b = s0bm[*pc];
+                       ^
+core/queues.cpp: In constructor 'CSingleLinkageQueue::CSingleLinkageQueue(std::vector<CSequence>*, uint32_t, uint32_t)':
+core/queues.cpp:148:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < max_buffered_rows; ++i)
+                  ~~^~~~~~~~~~~~~~~~~~~
+In file included from famsa_cpu/../core/msa.h:27:0,
+                 from famsa_cpu/famsa_cpu.cpp:14:
+famsa_cpu/../core/../core/lcsbp_classic.h: In static member function 'static void CLCSBP_Classic_Impl<BV_LEN>::CalculateOld(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*)':
+famsa_cpu/../core/../core/lcsbp_classic.h:62:23: warning: array subscript has type 'char' [-Wchar-subscripts]
+    auto s0b = s0bm[*pc];
+                       ^
+In file included from core/../libs/vectorclass.h:42:0,
+                 from core/lcsbp_classic.cpp:10:
+core/../libs/vectorf128.h: At global scope:
+core/../libs/vectorf128.h:935:103: warning: optimization attribute on 'Vec4f round(const Vec4f&)' follows definition but the attribute doesn't match [-Wattributes]
+ static inline Vec4f round(Vec4f const & a) __attribute__ ((optimize("-fno-unsafe-math-optimizations")));
+                                                                                                       ^
+In file included from /usr/local/lib/gcc7/include/c++/math.h:36:0,
+                 from core/../core/../core/../core/params.h:13,
+                 from core/../core/../core/sequence.h:13,
+                 from core/../core/lcsbp_classic.h:12,
+                 from core/lcsbp_classic.cpp:9:
+/usr/local/lib/gcc7/include/c++/cmath:1775:3: note: previous definition of 'constexpr long double std::round(long double)' was here
+   round(long double __x)
+   ^~~~~
+In file included from core/../libs/vectorclass.h:42:0,
+                 from core/lcsbp_classic.cpp:10:
+core/../libs/vectorf128.h:935:103: warning: optimization attribute on 'Vec4f round(const Vec4f&)' follows definition but the attribute doesn't match [-Wattributes]
+ static inline Vec4f round(Vec4f const & a) __attribute__ ((optimize("-fno-unsafe-math-optimizations")));
+                                                                                                       ^
+In file included from /usr/local/lib/gcc7/include/c++/math.h:36:0,
+                 from core/../core/../core/../core/params.h:13,
+                 from core/../core/../core/sequence.h:13,
+                 from core/../core/lcsbp_classic.h:12,
+                 from core/lcsbp_classic.cpp:9:
+/usr/local/lib/gcc7/include/c++/cmath:1771:3: note: previous definition of 'constexpr float std::round(float)' was here
+   round(float __x)
+   ^~~~~
+famsa_cpu/../core/../core/lcsbp_classic.h: In static member function 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*)':
+famsa_cpu/../core/../core/lcsbp_classic.h:145:23: warning: array subscript has type 'char' [-Wchar-subscripts]
+    auto s0b = s0bm[*pc];
+                       ^
+In file included from opencl_utils/hardware/DeviceWrapper.h:4:0,
+                 from opencl_utils/hardware/DeviceWrapper.cpp:1:
+libs-linux/CL/cl.hpp:2421:28: warning: ignoring attributes on template argument 'cl_int {aka int}' [-Wignored-attributes]
+         VECTOR_CLASS<cl_int>* binaryStatus = NULL,
+                            ^
+In file included from core_gpu/../core_gpu/../core/msa.h:27:0,
+                 from core_gpu/../core_gpu/gpumsa.h:12,
+                 from core_gpu/gpumsa.cpp:9:
+core_gpu/../core_gpu/../core/../core/lcsbp_classic.h: In static member function 'static void CLCSBP_Classic_Impl<BV_LEN>::CalculateOld(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*)':
+core_gpu/../core_gpu/../core/../core/lcsbp_classic.h:62:23: warning: array subscript has type 'char' [-Wchar-subscripts]
+    auto s0b = s0bm[*pc];
+                       ^
+core_gpu/../core_gpu/../core/../core/lcsbp_classic.h: In static member function 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*)':
+core_gpu/../core_gpu/../core/../core/lcsbp_classic.h:145:23: warning: array subscript has type 'char' [-Wchar-subscripts]
+    auto s0b = s0bm[*pc];
+                       ^
+In file included from opencl_utils/hardware/Buffer.h:2:0,
+                 from opencl_utils/hardware/Buffer.cpp:4:
+libs-linux/CL/cl.hpp:2421:28: warning: ignoring attributes on template argument 'cl_int {aka int}' [-Wignored-attributes]
+         VECTOR_CLASS<cl_int>* binaryStatus = NULL,
+                            ^
+In file included from opencl_utils/hardware/DeviceInfo.h:3:0,
+                 from opencl_utils/hardware/DeviceInfo.cpp:2:
+libs-linux/CL/cl.hpp:2421:28: warning: ignoring attributes on template argument 'cl_int {aka int}' [-Wignored-attributes]
+         VECTOR_CLASS<cl_int>* binaryStatus = NULL,
+                            ^
+In file included from famsa_gpu/../core/msa.h:27:0,
+                 from famsa_gpu/famsa_gpu.cpp:14:
+famsa_gpu/../core/../core/lcsbp_classic.h: In static member function 'static void CLCSBP_Classic_Impl<BV_LEN>::CalculateOld(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*)':
+famsa_gpu/../core/../core/lcsbp_classic.h:62:23: warning: array subscript has type 'char' [-Wchar-subscripts]
+    auto s0b = s0bm[*pc];
+                       ^
+famsa_gpu/../core/../core/lcsbp_classic.h: In static member function 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*)':
+famsa_gpu/../core/../core/lcsbp_classic.h:145:23: warning: array subscript has type 'char' [-Wchar-subscripts]
+    auto s0b = s0bm[*pc];
+                       ^
+In file included from core_gpu/../core_gpu/../opencl_utils/hardware/OpenCl.h:8:0,
+                 from core_gpu/../core_gpu/gpumsa.h:13,
+                 from core_gpu/gpumsa.cpp:9:
+libs-linux/CL/cl.hpp: At global scope:
+libs-linux/CL/cl.hpp:2421:28: warning: ignoring attributes on template argument 'cl_int {aka int}' [-Wignored-attributes]
+         VECTOR_CLASS<cl_int>* binaryStatus = NULL,
+                            ^
+In file included from libs/../opencl_utils/hardware/Kernel.h:6:0,
+                 from opencl_utils/kernel_repository/KernelFactory.h:4,
+                 from opencl_utils/kernel_repository/KernelFactory.cpp:8:
+libs-linux/CL/cl.hpp:2421:28: warning: ignoring attributes on template argument 'cl_int {aka int}' [-Wignored-attributes]
+         VECTOR_CLASS<cl_int>* binaryStatus = NULL,
+                            ^
+In file included from opencl_utils/hardware/DeviceInfo.cpp:2:0:
+opencl_utils/hardware/DeviceInfo.h:86:31: warning: ignoring attributes on template argument 'cl_uint {aka unsigned int}' [-Wignored-attributes]
+  std::map<cl_uint, std::string> cacheTypes;
+                               ^
+opencl_utils/hardware/DeviceInfo.h:87:31: warning: ignoring attributes on template argument 'cl_uint {aka unsigned int}' [-Wignored-attributes]
+  std::map<cl_uint, std::string> localMemTypes;
+                               ^
+In file included from libs/../opencl_utils/hardware/DeviceWrapper.h:6:0,
+                 from libs/../opencl_utils/hardware/OpenCl.h:12,
+                 from libs/../opencl_utils/hardware/Kernel.h:8,
+                 from opencl_utils/kernel_repository/KernelFactory.h:4,
+                 from opencl_utils/kernel_repository/KernelFactory.cpp:8:
+libs/../opencl_utils/hardware/DeviceInfo.h:86:31: warning: ignoring attributes on template argument 'cl_uint {aka unsigned int}' [-Wignored-attributes]
+  std::map<cl_uint, std::string> cacheTypes;
+                               ^
+In file included from famsa_gpu/../core_gpu/../opencl_utils/hardware/OpenCl.h:8:0,
+                 from famsa_gpu/../core_gpu/gpumsa.h:13,
+                 from famsa_gpu/famsa_gpu.cpp:15:
+libs-linux/CL/cl.hpp: At global scope:
+libs-linux/CL/cl.hpp:2421:28: warning: ignoring attributes on template argument 'cl_int {aka int}' [-Wignored-attributes]
+         VECTOR_CLASS<cl_int>* binaryStatus = NULL,
+                            ^
+libs/../opencl_utils/hardware/DeviceInfo.h:87:31: warning: ignoring attributes on template argument 'cl_uint {aka unsigned int}' [-Wignored-attributes]
+  std::map<cl_uint, std::string> localMemTypes;
+                               ^
+In file included from core/../libs/vectorclass.h:42:0,
+                 from core/msa.cpp:29:
+core/../libs/vectorf128.h: At global scope:
+core/../libs/vectorf128.h:935:103: warning: optimization attribute on 'Vec4f round(const Vec4f&)' follows definition but the attribute doesn't match [-Wattributes]
+ static inline Vec4f round(Vec4f const & a) __attribute__ ((optimize("-fno-unsafe-math-optimizations")));
+                                                                                                       ^
+In file included from /usr/local/lib/gcc7/include/c++/random:38:0,
+                 from core/../core/msa.h:15,
+                 from core/msa.cpp:9:
+/usr/local/lib/gcc7/include/c++/cmath:1775:3: note: previous definition of 'constexpr long double std::round(long double)' was here
+   round(long double __x)
+   ^~~~~
+In file included from core/../libs/vectorclass.h:42:0,
+                 from core/msa.cpp:29:
+core/../libs/vectorf128.h:935:103: warning: optimization attribute on 'Vec4f round(const Vec4f&)' follows definition but the attribute doesn't match [-Wattributes]
+ static inline Vec4f round(Vec4f const & a) __attribute__ ((optimize("-fno-unsafe-math-optimizations")));
+                                                                                                       ^
+In file included from /usr/local/lib/gcc7/include/c++/random:38:0,
+                 from core/../core/msa.h:15,
+                 from core/msa.cpp:9:
+/usr/local/lib/gcc7/include/c++/cmath:1771:3: note: previous definition of 'constexpr float std::round(float)' was here
+   round(float __x)
+   ^~~~~
+In file included from libs/../opencl_utils/hardware/OpenCl.h:13:0,
+                 from libs/../opencl_utils/hardware/Kernel.h:8,
+                 from opencl_utils/kernel_repository/KernelFactory.h:4,
+                 from opencl_utils/kernel_repository/KernelFactory.cpp:8:
+libs/../opencl_utils/hardware/EventHandler.h: In constructor 'clex::EventHandler::EventHandler(cl::Event&, std::__cxx11::string)':
+libs/../opencl_utils/hardware/EventHandler.h:14:8: warning: unused variable 'code' [-Wunused-variable]
+    int code = event.setCallback(CL_COMPLETE, handle, this);
+        ^~~~
+In file included from opencl_utils/hardware/OpenCl.h:8:0,
+                 from opencl_utils/hardware/OpenCl.cpp:5:
+libs-linux/CL/cl.hpp:2421:28: warning: ignoring attributes on template argument 'cl_int {aka int}' [-Wignored-attributes]
+         VECTOR_CLASS<cl_int>* binaryStatus = NULL,
+                            ^
+In file included from opencl_utils/hardware/DeviceWrapper.h:6:0,
+                 from opencl_utils/hardware/DeviceWrapper.cpp:1:
+opencl_utils/hardware/DeviceInfo.h:86:31: warning: ignoring attributes on template argument 'cl_uint {aka unsigned int}' [-Wignored-attributes]
+  std::map<cl_uint, std::string> cacheTypes;
+                               ^
+In file included from opencl_utils/kernel_repository/KernelFactory.h:4:0,
+                 from opencl_utils/kernel_repository/KernelFactory.cpp:8:
+libs/../opencl_utils/hardware/Kernel.h: In constructor 'clex::Kernel::Kernel(std::shared_ptr<clex::OpenCL>, const cl::Program&, const char*)':
+libs/../opencl_utils/hardware/Kernel.h:90:32: warning: 'clex::Kernel::cl' will be initialized after [-Wreorder]
+  std::shared_ptr<clex::OpenCL> cl;
+                                ^~
+libs/../opencl_utils/hardware/Kernel.h:17:14: warning:   'std::__cxx11::string clex::Kernel::name' [-Wreorder]
+  std::string name;
+              ^~~~
+libs/../opencl_utils/hardware/Kernel.h:33:2: warning:   when initialized here [-Wreorder]
+  Kernel(std::shared_ptr<clex::OpenCL> cl, const cl::Program& program, const char* name)
+  ^~~~~~
+libs/../opencl_utils/hardware/Kernel.h: In copy constructor 'clex::Kernel::Kernel(const clex::Kernel&)':
+libs/../opencl_utils/hardware/Kernel.h:90:32: warning: 'clex::Kernel::cl' will be initialized after [-Wreorder]
+  std::shared_ptr<clex::OpenCL> cl;
+                                ^~
+libs/../opencl_utils/hardware/Kernel.h:17:14: warning:   'std::__cxx11::string clex::Kernel::name' [-Wreorder]
+  std::string name;
+              ^~~~
+libs/../opencl_utils/hardware/Kernel.h:43:2: warning:   when initialized here [-Wreorder]
+  Kernel(const Kernel& ref) : cl::Kernel(ref), cl(ref.cl), name(ref.name)
+  ^~~~~~
+opencl_utils/hardware/DeviceInfo.h:87:31: warning: ignoring attributes on template argument 'cl_uint {aka unsigned int}' [-Wignored-attributes]
+  std::map<cl_uint, std::string> localMemTypes;
+                               ^
+In file included from core_gpu/../core_gpu/../opencl_utils/hardware/DeviceWrapper.h:6:0,
+                 from core_gpu/../core_gpu/../opencl_utils/hardware/OpenCl.h:12,
+                 from core_gpu/../core_gpu/gpumsa.h:13,
+                 from core_gpu/gpumsa.cpp:9:
+core_gpu/../core_gpu/../opencl_utils/hardware/DeviceInfo.h:86:31: warning: ignoring attributes on template argument 'cl_uint {aka unsigned int}' [-Wignored-attributes]
+  std::map<cl_uint, std::string> cacheTypes;
+                               ^
+In file included from core/../core/msa.h:27:0,
+                 from core/upgma.cpp:13:
+core/../core/../core/lcsbp_classic.h: In static member function 'static void CLCSBP_Classic_Impl<BV_LEN>::CalculateOld(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*)':
+core/../core/../core/lcsbp_classic.h:62:23: warning: array subscript has type 'char' [-Wchar-subscripts]
+    auto s0b = s0bm[*pc];
+                       ^
+In file included from famsa_gpu/../core_gpu/../opencl_utils/hardware/DeviceWrapper.h:6:0,
+                 from famsa_gpu/../core_gpu/../opencl_utils/hardware/OpenCl.h:12,
+                 from famsa_gpu/../core_gpu/gpumsa.h:13,
+                 from famsa_gpu/famsa_gpu.cpp:15:
+famsa_gpu/../core_gpu/../opencl_utils/hardware/DeviceInfo.h:86:31: warning: ignoring attributes on template argument 'cl_uint {aka unsigned int}' [-Wignored-attributes]
+  std::map<cl_uint, std::string> cacheTypes;
+                               ^
+core_gpu/../core_gpu/../opencl_utils/hardware/DeviceInfo.h:87:31: warning: ignoring attributes on template argument 'cl_uint {aka unsigned int}' [-Wignored-attributes]
+  std::map<cl_uint, std::string> localMemTypes;
+                               ^
+core/../core/../core/lcsbp_classic.h: In static member function 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*)':
+core/../core/../core/lcsbp_classic.h:145:23: warning: array subscript has type 'char' [-Wchar-subscripts]
+    auto s0b = s0bm[*pc];
+                       ^
+famsa_gpu/../core_gpu/../opencl_utils/hardware/DeviceInfo.h:87:31: warning: ignoring attributes on template argument 'cl_uint {aka unsigned int}' [-Wignored-attributes]
+  std::map<cl_uint, std::string> localMemTypes;
+                               ^
+In file included from core_gpu/../core_gpu/../opencl_utils/hardware/OpenCl.h:13:0,
+                 from core_gpu/../core_gpu/gpumsa.h:13,
+                 from core_gpu/gpumsa.cpp:9:
+core_gpu/../core_gpu/../opencl_utils/hardware/EventHandler.h: In constructor 'clex::EventHandler::EventHandler(cl::Event&, std::__cxx11::string)':
+core_gpu/../core_gpu/../opencl_utils/hardware/EventHandler.h:14:8: warning: unused variable 'code' [-Wunused-variable]
+    int code = event.setCallback(CL_COMPLETE, handle, this);
+        ^~~~
+In file included from famsa_gpu/../core_gpu/../opencl_utils/hardware/OpenCl.h:13:0,
+                 from famsa_gpu/../core_gpu/gpumsa.h:13,
+                 from famsa_gpu/famsa_gpu.cpp:15:
+famsa_gpu/../core_gpu/../opencl_utils/hardware/EventHandler.h: In constructor 'clex::EventHandler::EventHandler(cl::Event&, std::__cxx11::string)':
+famsa_gpu/../core_gpu/../opencl_utils/hardware/EventHandler.h:14:8: warning: unused variable 'code' [-Wunused-variable]
+    int code = event.setCallback(CL_COMPLETE, handle, this);
+        ^~~~
+In file included from opencl_utils/hardware/DeviceWrapper.h:6:0,
+                 from opencl_utils/hardware/OpenCl.h:12,
+                 from opencl_utils/hardware/Buffer.h:5,
+                 from opencl_utils/hardware/Buffer.cpp:4:
+opencl_utils/hardware/DeviceInfo.h:86:31: warning: ignoring attributes on template argument 'cl_uint {aka unsigned int}' [-Wignored-attributes]
+  std::map<cl_uint, std::string> cacheTypes;
+                               ^
+In file included from core_gpu/../core_gpu/gpumsa.h:14:0,
+                 from core_gpu/gpumsa.cpp:9:
+core_gpu/../core_gpu/../opencl_utils/hardware/Kernel.h: In constructor 'clex::Kernel::Kernel(std::shared_ptr<clex::OpenCL>, const cl::Program&, const char*)':
+core_gpu/../core_gpu/../opencl_utils/hardware/Kernel.h:90:32: warning: 'clex::Kernel::cl' will be initialized after [-Wreorder]
+  std::shared_ptr<clex::OpenCL> cl;
+                                ^~
+core_gpu/../core_gpu/../opencl_utils/hardware/Kernel.h:17:14: warning:   'std::__cxx11::string clex::Kernel::name' [-Wreorder]
+  std::string name;
+              ^~~~
+core_gpu/../core_gpu/../opencl_utils/hardware/Kernel.h:33:2: warning:   when initialized here [-Wreorder]
+  Kernel(std::shared_ptr<clex::OpenCL> cl, const cl::Program& program, const char* name)
+  ^~~~~~
+opencl_utils/hardware/DeviceInfo.h:87:31: warning: ignoring attributes on template argument 'cl_uint {aka unsigned int}' [-Wignored-attributes]
+  std::map<cl_uint, std::string> localMemTypes;
+                               ^
+core_gpu/../core_gpu/../opencl_utils/hardware/Kernel.h: In copy constructor 'clex::Kernel::Kernel(const clex::Kernel&)':
+core_gpu/../core_gpu/../opencl_utils/hardware/Kernel.h:90:32: warning: 'clex::Kernel::cl' will be initialized after [-Wreorder]
+  std::shared_ptr<clex::OpenCL> cl;
+                                ^~
+core_gpu/../core_gpu/../opencl_utils/hardware/Kernel.h:17:14: warning:   'std::__cxx11::string clex::Kernel::name' [-Wreorder]
+  std::string name;
+              ^~~~
+core_gpu/../core_gpu/../opencl_utils/hardware/Kernel.h:43:2: warning:   when initialized here [-Wreorder]
+  Kernel(const Kernel& ref) : cl::Kernel(ref), cl(ref.cl), name(ref.name)
+  ^~~~~~
+In file included from famsa_gpu/../core_gpu/gpumsa.h:14:0,
+                 from famsa_gpu/famsa_gpu.cpp:15:
+famsa_gpu/../core_gpu/../opencl_utils/hardware/Kernel.h: In constructor 'clex::Kernel::Kernel(std::shared_ptr<clex::OpenCL>, const cl::Program&, const char*)':
+famsa_gpu/../core_gpu/../opencl_utils/hardware/Kernel.h:90:32: warning: 'clex::Kernel::cl' will be initialized after [-Wreorder]
+  std::shared_ptr<clex::OpenCL> cl;
+                                ^~
+famsa_gpu/../core_gpu/../opencl_utils/hardware/Kernel.h:17:14: warning:   'std::__cxx11::string clex::Kernel::name' [-Wreorder]
+  std::string name;
+              ^~~~
+famsa_gpu/../core_gpu/../opencl_utils/hardware/Kernel.h:33:2: warning:   when initialized here [-Wreorder]
+  Kernel(std::shared_ptr<clex::OpenCL> cl, const cl::Program& program, const char* name)
+  ^~~~~~
+famsa_gpu/../core_gpu/../opencl_utils/hardware/Kernel.h: In copy constructor 'clex::Kernel::Kernel(const clex::Kernel&)':
+famsa_gpu/../core_gpu/../opencl_utils/hardware/Kernel.h:90:32: warning: 'clex::Kernel::cl' will be initialized after [-Wreorder]
+  std::shared_ptr<clex::OpenCL> cl;
+                                ^~
+famsa_gpu/../core_gpu/../opencl_utils/hardware/Kernel.h:17:14: warning:   'std::__cxx11::string clex::Kernel::name' [-Wreorder]
+  std::string name;
+              ^~~~
+famsa_gpu/../core_gpu/../opencl_utils/hardware/Kernel.h:43:2: warning:   when initialized here [-Wreorder]
+  Kernel(const Kernel& ref) : cl::Kernel(ref), cl(ref.cl), name(ref.name)
+  ^~~~~~
+In file included from core_gpu/gpumsa.cpp:9:0:
+core_gpu/../core_gpu/gpumsa.h: At global scope:
+core_gpu/../core_gpu/gpumsa.h:54:20: warning: ignoring attributes on template argument 'cl_int {aka int}' [-Wignored-attributes]
+  std::vector<cl_int> lengths;
+                    ^
+core_gpu/../core_gpu/gpumsa.h:55:20: warning: ignoring attributes on template argument 'cl_int {aka int}' [-Wignored-attributes]
+  std::vector<cl_int> offsets;
+                    ^
+core_gpu/../core_gpu/gpumsa.h:57:21: warning: ignoring attributes on template argument 'cl_uint {aka unsigned int}' [-Wignored-attributes]
+  std::vector<cl_uint> bitVectors;
+                     ^
+In file included from famsa_gpu/famsa_gpu.cpp:15:0:
+famsa_gpu/../core_gpu/gpumsa.h: At global scope:
+famsa_gpu/../core_gpu/gpumsa.h:54:20: warning: ignoring attributes on template argument 'cl_int {aka int}' [-Wignored-attributes]
+  std::vector<cl_int> lengths;
+                    ^
+famsa_gpu/../core_gpu/gpumsa.h:55:20: warning: ignoring attributes on template argument 'cl_int {aka int}' [-Wignored-attributes]
+  std::vector<cl_int> offsets;
+                    ^
+famsa_gpu/../core_gpu/gpumsa.h:57:21: warning: ignoring attributes on template argument 'cl_uint {aka unsigned int}' [-Wignored-attributes]
+  std::vector<cl_uint> bitVectors;
+                     ^
+opencl_utils/kernel_repository/KernelFactory.cpp: In member function 'void KernelFactory::saveProgram(const cl::Program&, std::__cxx11::string)':
+opencl_utils/kernel_repository/KernelFactory.cpp:96:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < binaries.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~~~
+opencl_utils/kernel_repository/KernelFactory.cpp: In member function 'std::unique_ptr<cl::Program> KernelFactory::loadProgram(std::vector<std::__cxx11::basic_string<char> >, std::vector<std::__cxx11::basic_string<char> >, int)':
+opencl_utils/kernel_repository/KernelFactory.cpp:117:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < sourceFilenames.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from opencl_utils/hardware/OpenCl.h:13:0,
+                 from opencl_utils/hardware/Buffer.h:5,
+                 from opencl_utils/hardware/Buffer.cpp:4:
+opencl_utils/hardware/EventHandler.h: In constructor 'clex::EventHandler::EventHandler(cl::Event&, std::__cxx11::string)':
+opencl_utils/hardware/EventHandler.h:14:8: warning: unused variable 'code' [-Wunused-variable]
+    int code = event.setCallback(CL_COMPLETE, handle, this);
+        ^~~~
+core/lcsbp_classic.cpp: In member function 'void CLCSBP_Classic::prefetch_bitmasks(CSequence*)':
+core/lcsbp_classic.cpp:34:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < NO_SYMBOLS; ++i)
+                  ~~^~~~~~~~~~~~
+core/lcsbp_classic.cpp: In member function 'void CLCSBP_Classic::calculate(CSequence*, CSequence*, uint32_t*, uint32_t)':
+core/lcsbp_classic.cpp:51:22: warning: array subscript has type 'char' [-Wchar-subscripts]
+   auto s0b = s0bm[*pc];
+                      ^
+opencl_utils/kernel_repository/KernelFactory.cpp: In member function 'std::unique_ptr<cl::Program> KernelFactory::loadProgram(std::vector<int>, std::vector<std::__cxx11::basic_string<char> >, int)':
+opencl_utils/kernel_repository/KernelFactory.cpp:158:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < resourceIds.size(); i++)
+                  ~~^~~~~~~~~~~~~~~~~~~~
+opencl_utils/kernel_repository/KernelFactory.cpp: In member function 'std::unique_ptr<cl::Program> KernelFactory::loadProgram(std::__cxx11::string, std::vector<std::__cxx11::basic_string<char> >, int)':
+opencl_utils/kernel_repository/KernelFactory.cpp:198:20: warning: ignoring attributes on template argument 'cl_int {aka int}' [-Wignored-attributes]
+  std::vector<cl_int> stats(binaries.size());
+                    ^
+opencl_utils/kernel_repository/KernelFactory.cpp: In member function 'void KernelFactory::compileProgram(cl::Program&, std::vector<std::__cxx11::basic_string<char> >, int)':
+opencl_utils/kernel_repository/KernelFactory.cpp:254:6: warning: unused variable 'status' [-Wunused-variable]
+  int status = program.getBuildInfo<CL_PROGRAM_BUILD_STATUS>(openCl->mainDevice->device);
+      ^~~~~~
+In file included from core/lcsbp_classic.cpp:9:0:
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 1; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:85:34:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+    auto s0b = s0bm[*pc];
+         ^~~
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 2; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:86:34:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core_gpu/../core_gpu/gpumsa.h: In constructor 'CGpuFAMSA::CGpuFAMSA(int, int, int, int, int)':
+core_gpu/../core_gpu/gpumsa.h:41:12: warning: 'CGpuFAMSA::pairsPerTask' will be initialized after [-Wreorder]
+  const int pairsPerTask;
+            ^~~~~~~~~~~~
+core_gpu/../core_gpu/gpumsa.h:40:12: warning:   'const int CGpuFAMSA::threadsPerPair' [-Wreorder]
+  const int threadsPerPair;
+            ^~~~~~~~~~~~~~
+core_gpu/gpumsa.cpp:32:1: warning:   when initialized here [-Wreorder]
+ CGpuFAMSA::CGpuFAMSA(int platform, int device, int pairsPerWave, int pairsPerTask, int threadsPerPair)
+ ^~~~~~~~~
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 3; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:87:34:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 4; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:88:34:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+In file included from opencl_utils/hardware/DeviceWrapper.h:6:0,
+                 from opencl_utils/hardware/OpenCl.h:12,
+                 from opencl_utils/hardware/OpenCl.cpp:5:
+opencl_utils/hardware/DeviceInfo.h:86:31: warning: ignoring attributes on template argument 'cl_uint {aka unsigned int}' [-Wignored-attributes]
+  std::map<cl_uint, std::string> cacheTypes;
+                               ^
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 5; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:89:34:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+opencl_utils/hardware/DeviceInfo.h:87:31: warning: ignoring attributes on template argument 'cl_uint {aka unsigned int}' [-Wignored-attributes]
+  std::map<cl_uint, std::string> localMemTypes;
+                               ^
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 6; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:90:34:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 7; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:91:34:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core_gpu/gpumsa.cpp: In lambda function:
+core_gpu/gpumsa.cpp:96:33: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for (int i = cpuLo, j = 0; i < cpuHi; ++i, ++j) {
+                               ~~^~~~~~~
+core_gpu/gpumsa.cpp: In member function 'virtual void CGpuFAMSA::UPGMA_CalculateDistances(UPGMA_dist_t*)':
+core_gpu/gpumsa.cpp:86:11: warning: unused variable 'gpuLo' [-Wunused-variable]
+  ::size_t gpuLo = cpuHi;
+           ^~~~~
+core_gpu/gpumsa.cpp:87:11: warning: unused variable 'gpuHi' [-Wunused-variable]
+  ::size_t gpuHi = n_seq;
+           ^~~~~
+core_gpu/gpumsa.cpp: In member function 'virtual void CGpuFAMSA::SingleLinkage()':
+core_gpu/gpumsa.cpp:222:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (i = 0; i < n_seq - 1; ++i)
+              ~~^~~~~~~~~~~
+core_gpu/gpumsa.cpp:230:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (i = 0; i < n_seq; ++i)
+              ~~^~~~~~~
+core_gpu/gpumsa.cpp:233:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (i = 0; i < n_seq - 1; ++i) {
+              ~~^~~~~~~~~~~
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 8; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:92:34:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core_gpu/gpumsa.cpp: In member function 'virtual void CGpuFAMSA::preprocess()':
+core_gpu/gpumsa.cpp:280:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i != sequences.size(); ++i) {
+                  ~~^~~~~~~~~~~~~~~~~~~
+core_gpu/gpumsa.cpp:293:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int s = 0; s < sequences.size(); ++s) {
+                  ~~^~~~~~~~~~~~~~~~~~
+core_gpu/gpumsa.cpp:297:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i = 0; i < seq.bit_masks.size(); ++i) {
+                   ~~^~~~~~~~~~~~~~~~~~~~~~
+core_gpu/gpumsa.cpp:299:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for (int j = 0; j < mask.size(); ++j) {
+                    ~~^~~~~~~~~~~~~
+In file included from /usr/local/lib/gcc7/include/c++/cassert:44:0,
+                 from core_gpu/gpumsa.cpp:21:
+core_gpu/gpumsa.cpp:307:13: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  assert(vid == bitVectors.size());
+         ~~~~^~~~~~~~~~~~~~~~~~~~
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 9; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:93:34:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+In file included from opencl_utils/hardware/OpenCl.h:13:0,
+                 from opencl_utils/hardware/OpenCl.cpp:5:
+opencl_utils/hardware/EventHandler.h: In constructor 'clex::EventHandler::EventHandler(cl::Event&, std::__cxx11::string)':
+opencl_utils/hardware/EventHandler.h:14:8: warning: unused variable 'code' [-Wunused-variable]
+    int code = event.setCallback(CL_COMPLETE, handle, this);
+        ^~~~
+core_gpu/gpumsa.cpp: In member function 'virtual void CGpuFAMSA::calculateLCSs(size_t, size_t, std::vector<int>&, std::thread&, cl::Event&)':
+core_gpu/gpumsa.cpp:337:6: warning: unused variable 'numSeqs' [-Wunused-variable]
+  int numSeqs = sequences.size();
+      ^~~~~~~
+core_gpu/gpumsa.cpp:346:6: warning: unused variable 'taskId' [-Wunused-variable]
+  int taskId = 0;
+      ^~~~~~
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 10; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:94:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core_gpu/gpumsa.cpp: In lambda function:
+core_gpu/gpumsa.cpp:541:47: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    while ((taskId = currentTask.fetch_add(1)) < tasks.size()) {
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 11; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:95:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 12; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:96:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 13; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:97:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 14; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:98:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 15; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:99:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 16; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:100:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 17; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:101:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 18; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:102:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 19; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:103:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+opencl_utils/hardware/OpenCl.cpp: In static member function 'static std::__cxx11::string clex::OpenCL::listDevices(int)':
+opencl_utils/hardware/OpenCl.cpp:33:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < platforms.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~~~~
+opencl_utils/hardware/OpenCl.cpp:38:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int j = 0; j < devices.size(); j++) {
+                   ~~^~~~~~~~~~~~~~~~
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 20; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:104:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 21; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:105:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 22; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:106:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 23; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:107:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+In file included from core/../libs/vectorclass.h:42:0,
+                 from core/upgma.cpp:16:
+core/../libs/vectorf128.h: At global scope:
+core/../libs/vectorf128.h:935:103: warning: optimization attribute on 'Vec4f round(const Vec4f&)' follows definition but the attribute doesn't match [-Wattributes]
+ static inline Vec4f round(Vec4f const & a) __attribute__ ((optimize("-fno-unsafe-math-optimizations")));
+                                                                                                       ^
+In file included from /usr/local/lib/gcc7/include/c++/random:38:0,
+                 from core/../core/msa.h:15,
+                 from core/upgma.cpp:13:
+/usr/local/lib/gcc7/include/c++/cmath:1775:3: note: previous definition of 'constexpr long double std::round(long double)' was here
+   round(long double __x)
+   ^~~~~
+In file included from core/../libs/vectorclass.h:42:0,
+                 from core/upgma.cpp:16:
+core/../libs/vectorf128.h:935:103: warning: optimization attribute on 'Vec4f round(const Vec4f&)' follows definition but the attribute doesn't match [-Wattributes]
+ static inline Vec4f round(Vec4f const & a) __attribute__ ((optimize("-fno-unsafe-math-optimizations")));
+                                                                                                       ^
+In file included from /usr/local/lib/gcc7/include/c++/random:38:0,
+                 from core/../core/msa.h:15,
+                 from core/upgma.cpp:13:
+/usr/local/lib/gcc7/include/c++/cmath:1771:3: note: previous definition of 'constexpr float std::round(float)' was here
+   round(float __x)
+   ^~~~~
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 24; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:108:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 25; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:109:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 26; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:110:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 27; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:111:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 28; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:112:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 29; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:113:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 30; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:114:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 31; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:115:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+core/../core/lcsbp_classic.h: In instantiation of 'static void CLCSBP_Classic_Impl<BV_LEN>::Calculate(CSequence*, CSequence*, uint32_t*, bit_vec_t*, std::vector<long long unsigned int>::const_iterator*) [with unsigned int BV_LEN = 32; uint32_t = unsigned int; bit_vec_t = long long unsigned int; std::vector<long long unsigned int>::const_iterator = __gnu_cxx::__normal_iterator<const long long unsigned int*, std::vector<long long unsigned int> >]':
+core/lcsbp_classic.cpp:116:36:   required from here
+core/../core/lcsbp_classic.h:145:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+In file included from libs/boost/spirit/home/classic/core/non_terminal/grammar.hpp:21:0,
+                 from libs/boost/spirit/home/classic/core.hpp:42,
+                 from libs/boost/spirit/home/classic.hpp:24,
+                 from core/NewickTree.cpp:13:
+libs/boost/spirit/home/classic/core/non_terminal/impl/grammar.ipp: In member function 'boost::spirit::classic::impl::grammar_helper<GrammarT, DerivedT, ScannerT>::definition_t& boost::spirit::classic::impl::grammar_helper<GrammarT, DerivedT, ScannerT>::define(const grammar_t*)':
+libs/boost/spirit/home/classic/core/non_terminal/impl/grammar.ipp:159:18: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
+             std::auto_ptr<definition_t>
+                  ^~~~~~~~
+In file included from /usr/local/lib/gcc7/include/c++/memory:80:0,
+                 from libs/boost/smart_ptr/scoped_ptr.hpp:22,
+                 from libs/boost/scoped_ptr.hpp:14,
+                 from libs/boost/spirit/home/classic/core/non_terminal/rule.hpp:31,
+                 from libs/boost/spirit/home/classic/core.hpp:41,
+                 from libs/boost/spirit/home/classic.hpp:24,
+                 from core/NewickTree.cpp:13:
+/usr/local/lib/gcc7/include/c++/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from libs/boost/spirit/home/classic/core/non_terminal/grammar.hpp:21:0,
+                 from libs/boost/spirit/home/classic/core.hpp:42,
+                 from libs/boost/spirit/home/classic.hpp:24,
+                 from core/NewickTree.cpp:13:
+libs/boost/spirit/home/classic/core/non_terminal/impl/grammar.ipp: In function 'void boost::spirit::classic::impl::grammar_destruct(GrammarT*)':
+libs/boost/spirit/home/classic/core/non_terminal/impl/grammar.ipp:286:68: warning: typedef 'iterator_t' locally defined but not used [-Wunused-local-typedefs]
+         typedef typename helper_list_t::vector_t::reverse_iterator iterator_t;
+                                                                    ^~~~~~~~~~
+In file included from libs/boost/spirit/home/classic/error_handling.hpp:19:0,
+                 from libs/boost/spirit/home/classic.hpp:26,
+                 from core/NewickTree.cpp:13:
+libs/boost/spirit/home/classic/error_handling/exceptions.hpp: In member function 'typename boost::spirit::classic::parser_result<boost::spirit::classic::assertive_parser<ErrorDescrT, ParserT>, ScannerT>::type boost::spirit::classic::assertive_parser<ErrorDescrT, ParserT>::parse(const ScannerT&) const':
+libs/boost/spirit/home/classic/error_handling/exceptions.hpp:143:51: warning: typedef 'iterator_t' locally defined but not used [-Wunused-local-typedefs]
+             typedef typename ScannerT::iterator_t iterator_t;
+                                                   ^~~~~~~~~~
+In file included from libs/boost/spirit/home/classic/symbols/impl/symbols.ipp:13:0,
+                 from libs/boost/spirit/home/classic/symbols/symbols.hpp:228,
+                 from libs/boost/spirit/home/classic/symbols.hpp:19,
+                 from libs/boost/spirit/home/classic.hpp:28,
+                 from core/NewickTree.cpp:13:
+libs/boost/spirit/home/classic/symbols/impl/tst.ipp: In member function 'boost::spirit::classic::impl::tst_node<T, CharT>* boost::spirit::classic::impl::tst_node<T, CharT>::clone() const':
+libs/boost/spirit/home/classic/symbols/impl/tst.ipp:65:18: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
+             std::auto_ptr<tst_node> copy(new tst_node(value));
+                  ^~~~~~~~
+In file included from /usr/local/lib/gcc7/include/c++/memory:80:0,
+                 from libs/boost/smart_ptr/scoped_ptr.hpp:22,
+                 from libs/boost/scoped_ptr.hpp:14,
+                 from libs/boost/spirit/home/classic/core/non_terminal/rule.hpp:31,
+                 from libs/boost/spirit/home/classic/core.hpp:41,
+                 from libs/boost/spirit/home/classic.hpp:24,
+                 from core/NewickTree.cpp:13:
+/usr/local/lib/gcc7/include/c++/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+In file included from libs/boost/spirit/home/classic/symbols/impl/symbols.ipp:13:0,
+                 from libs/boost/spirit/home/classic/symbols/symbols.hpp:228,
+                 from libs/boost/spirit/home/classic/symbols.hpp:19,
+                 from libs/boost/spirit/home/classic.hpp:28,
+                 from core/NewickTree.cpp:13:
+libs/boost/spirit/home/classic/symbols/impl/tst.ipp:78:22: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
+                 std::auto_ptr<T> mid_data(new T(*middle.data));
+                      ^~~~~~~~
+In file included from /usr/local/lib/gcc7/include/c++/memory:80:0,
+                 from libs/boost/smart_ptr/scoped_ptr.hpp:22,
+                 from libs/boost/scoped_ptr.hpp:14,
+                 from libs/boost/spirit/home/classic/core/non_terminal/rule.hpp:31,
+                 from libs/boost/spirit/home/classic/core.hpp:41,
+                 from libs/boost/spirit/home/classic.hpp:24,
+                 from core/NewickTree.cpp:13:
+/usr/local/lib/gcc7/include/c++/bits/unique_ptr.h:51:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+core/upgma.cpp: In member function 'virtual void CFAMSA::UPGMA_CalculateDistances(UPGMA_dist_t*)':
+core/upgma.cpp:34:6: warning: unused variable 'next' [-Wunused-variable]
+  int next;
+      ^~~~
+core/upgma.cpp:48:11: warning: unused variable 'computed_prof' [-Wunused-variable]
+  uint32_t computed_prof = 0;
+           ^~~~~~~~~~~~~
+In file included from core/NewickTree.cpp:16:0:
+core/TreeGrammar.h: In constructor 'quickprobs::TreeWrapper::TreeWrapper(const std::vector<CSequence>&)':
+core/TreeGrammar.h:48:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i = 0; i < sequences.size(); ++i) {
+                   ~~^~~~~~~~~~~~~~~~~~
+g++7 -lm -std=c++11 -pthread  -o famsa famsa_cpu/famsa_cpu.o core/input_file.o core/msa.o core/output_file.o core/profile.o core/sequence.o core/queues.o core/timer.o core/upgma.o core/NewickTree.o libs/instrset_detect.o opencl_utils/common/Log.o opencl_utils/common/mathex.o opencl_utils/common/StatisticsProvider.o  core/lcsbp.o core/lcsbp_classic.o
+g++7 -lm -std=c++11 -pthread  -o famsa-gpu famsa_gpu/famsa_gpu.o core/input_file.o core/msa.o core/output_file.o core/profile.o core/sequence.o core/queues.o core/timer.o core/upgma.o core/NewickTree.o libs/instrset_detect.o opencl_utils/common/Log.o opencl_utils/common/mathex.o opencl_utils/common/StatisticsProvider.o  core/lcsbp.o core/lcsbp_classic.o core_gpu/gpumsa.o opencl_utils/hardware/Buffer.o opencl_utils/hardware/DeviceInfo.o opencl_utils/hardware/DeviceWrapper.o opencl_utils/hardware/OpenCl.o opencl_utils/hardware/OwnProgram.o opencl_utils/kernel_repository/KernelFactory.o opencl_utils/kernel_repository/KernelRepository.o  -lOpenCL
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/wip/famsa/work/FAMSA-1.2.4'
+===========================================================================
+=>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===>   FAMSA-1.2.4 depends on executable: gcc7 - found
+===========================================================================
+=>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for FAMSA-1.2.4
+===>   FAMSA-1.2.4 depends on executable: gcc7 - found
+===>   Generating temporary packing list
+gmake[1]: Entering directory '/wrkdirs/usr/ports/wip/famsa/work/FAMSA-1.2.4'
+install -d /wrkdirs/usr/ports/wip/famsa/work/stage/usr/local/bin
+install -c famsa /wrkdirs/usr/ports/wip/famsa/work/stage/usr/local/bin
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/wip/famsa/work/FAMSA-1.2.4'
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+=>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for FAMSA-1.2.4
+===========================================================================
+=>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for FAMSA-1.2.4
+===>  Checking if FAMSA already installed
+===>   Registering installation for FAMSA-1.2.4
+[11-1-i386-default] Installing FAMSA-1.2.4...
+===========================================================================
+=>> Checking shared library dependencies
+ 0x00000001 NEEDED               Shared library: [libc.so.7]
+ 0x00000001 NEEDED               Shared library: [libgcc_s.so.1]
+ 0x00000001 NEEDED               Shared library: [libm.so.5]
+ 0x00000001 NEEDED               Shared library: [libstdc++.so.6]
+ 0x00000001 NEEDED               Shared library: [libthr.so.3]
+=======================<phase: deinstall      >============================
+===>  Deinstalling for FAMSA
+===>   Deinstalling FAMSA-1.2.4
+Updating database digests format: .......... done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	FAMSA-1.2.4
+
+Number of packages to be removed: 1
+[11-1-i386-default] [1/1] Deinstalling FAMSA-1.2.4...
+[11-1-i386-default] [1/1] Deleting files for FAMSA-1.2.4: .... done
+===========================================================================
+=>> Checking for extra files and directories
+[00:00:30] Installing from package
+[11-1-i386-default] Installing FAMSA-1.2.4...
+[11-1-i386-default] Extracting FAMSA-1.2.4: .... done
+[00:00:30] Cleaning up
+===>  Cleaning for FAMSA-1.2.4
+[00:00:30] Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	FAMSA-1.2.4
+
+Number of packages to be removed: 1
+[11-1-i386-default] [1/1] Deinstalling FAMSA-1.2.4...
+[11-1-i386-default] [1/1] Deleting files for FAMSA-1.2.4: .... done
+build of wip/famsa | FAMSA-1.2.4 ended at Tue Jul 31 15:05:33 CDT 2018
+build time: 00:00:23
