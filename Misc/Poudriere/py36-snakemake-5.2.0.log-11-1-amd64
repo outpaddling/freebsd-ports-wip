@@ -1,0 +1,475 @@
+build started at Tue Jul 31 16:20:22 CDT 2018
+port directory: /usr/ports/wip/py-snakemake
+package name: py36-snakemake-5.2.0
+building for: FreeBSD 11-1-amd64-default 11.1-RELEASE-p9 FreeBSD 11.1-RELEASE-p9 amd64
+maintained by: jwb@FreeBSD.org
+Makefile ident: 
+Poudriere version: 3.2.7
+Host OSVERSION: 1101001
+Jail OSVERSION: 1101001
+Job Id: 
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1101001
+UNAME_v=FreeBSD 11.1-RELEASE-p9
+UNAME_r=11.1-RELEASE-p9
+BLOCKSIZE=K
+MAIL=/var/mail/root
+WARNING_WAIT=0
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+TRYBROKEN=yes
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.2.7
+MASTERMNT=/usr/local/poudriere/data/.m/11-1-amd64-default/ref
+DEV_WARNING_WAIT=0
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm
+GID=0
+UID=0
+PWD=/usr/local/poudriere/data/.m/11-1-amd64-default/ref/.p
+NO_WARNING_PKG_INSTALL_EOL=yes
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=11-1-amd64-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+OLDPWD=/usr/local/poudriere/data/.m/11-1-amd64-default/ref/.p/pool
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=PACKAGES=/tmp/pkgs PKGREPOSITORY=/tmp/pkgs
+FLAVOR=py36
+DEPENDS_ARGS=
+MAKE_ARGS= FLAVOR=py36
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+jwb@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+PYTHON="/usr/local/bin/python3.6" XDG_DATA_HOME=/wrkdirs/usr/ports/wip/py-snakemake/work-py36  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/py-snakemake/work-py36  HOME=/wrkdirs/usr/ports/wip/py-snakemake/work-py36 TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/py-snakemake/work-py36/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/wip/py-snakemake/work-py36  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/py-snakemake/work-py36  HOME=/wrkdirs/usr/ports/wip/py-snakemake/work-py36 TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/py-snakemake/work-py36/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES LDSHARED="cc -shared" PYTHONDONTWRITEBYTECODE= PYTHONOPTIMIZE= PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector -fno-strict-aliasing"  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector" LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector -fno-strict-aliasing "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="" PORTEXAMPLES="" PYTHON_INCLUDEDIR=include/python3.6m  PYTHON_LIBDIR=lib/python3.6  PYTHON_PLATFORM=freebsd11  PYTHON_PYOEXTENSION=opt-1.pyc  PYTHON_SITELIBDIR=lib/python3.6/site-packages  PYTHON_SUFFIX=36  PYTHON_VER=3.6  PYTHON_VERSION=python3.6 PYTHON2="@comment " PYTHON3="" OSREL=11.1 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/snakemake"  EXAMPLESDIR="share/examples/snakemake"  DATADIR="share/snakemake"  WWWDIR="www/snakemake"  ETCDIR="etc/snakemake"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/snakemake DOCSDIR=/usr/local/share/doc/snakemake EXAMPLESDIR=/usr/local/share/examples/snakemake  WWWDIR=/usr/local/www/snakemake ETCDIR=/usr/local/etc/snakemake
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/ports/Mk/Scripts/ports_env.sh ####
+_CCVERSION_921dbbb2=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: x86_64-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin
+_ALTCCVERSION_921dbbb2=none
+_CXXINTERNAL_acaad9ca=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: x86_64-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin "/usr/bin/ld" "--eh-frame-hdr" "-dynamic-linker" "/libexec/ld-elf.so.1" "--hash-style=both" "--enable-new-dtags" "-o" "a.out" "/usr/lib/crt1.o" "/usr/lib/crti.o" "/usr/lib/crtbegin.o" "-L/usr/lib" "/dev/null" "-lc++" "-lm" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "-lc" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "/usr/lib/crtend.o" "/usr/lib/crtn.o"
+CC_OUTPUT_921dbbb2_58173849=yes
+CC_OUTPUT_921dbbb2_9bdba57c=yes
+CC_OUTPUT_921dbbb2_6a4fe7f5=yes
+CC_OUTPUT_921dbbb2_6bcac02b=yes
+CC_OUTPUT_921dbbb2_67d20829=yes
+CC_OUTPUT_921dbbb2_bfa62e83=yes
+CC_OUTPUT_921dbbb2_f0b4d593=yes
+CC_OUTPUT_921dbbb2_308abb44=yes
+CC_OUTPUT_921dbbb2_f00456e5=yes
+CC_OUTPUT_921dbbb2_65ad290d=yes
+CC_OUTPUT_921dbbb2_f2776b26=error: invalid value 'c++17' in '-std=c++17'
+CC_OUTPUT_921dbbb2_b2657cc3=yes
+CC_OUTPUT_921dbbb2_380987f7=yes
+CC_OUTPUT_921dbbb2_160933ec=yes
+CC_OUTPUT_921dbbb2_fb62803b=error: invalid value 'gnu++17' in '-std=gnu++17'
+_OBJC_CCVERSION_921dbbb2=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: x86_64-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin
+_OBJC_ALTCCVERSION_921dbbb2=none
+ARCH=amd64
+OPSYS=FreeBSD
+_OSRELEASE=11.1-RELEASE-p9
+OSREL=11.1
+OSVERSION=1101001
+PYTHONBASE=/usr/local
+HAVE_COMPAT_IA32_KERN=YES
+_SMP_CPUS=32
+CONFIGURE_MAX_CMD_LEN=262144
+HAVE_PORTS_ENV=1
+#### Misc Poudriere ####
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  63766
+open files                      (-n)  1024
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===>  License MIT accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   py36-snakemake-5.2.0 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.10.5_1.txz
+[11-1-amd64-default] Installing pkg-1.10.5_1...
+[11-1-amd64-default] Extracting pkg-1.10.5_1: .......... done
+===>   py36-snakemake-5.2.0 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of py36-snakemake-5.2.0
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License MIT accepted by the user
+===>   py36-snakemake-5.2.0 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by py36-snakemake-5.2.0 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License MIT accepted by the user
+===>   py36-snakemake-5.2.0 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by py36-snakemake-5.2.0 for building
+=> SHA256 Checksum OK for snakemake-5.2.0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License MIT accepted by the user
+===>   py36-snakemake-5.2.0 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by py36-snakemake-5.2.0 for building
+===>  Extracting for py36-snakemake-5.2.0
+=> SHA256 Checksum OK for snakemake-5.2.0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for py36-snakemake-5.2.0
+===========================================================================
+=======================<phase: build-depends  >============================
+===>   py36-snakemake-5.2.0 depends on package: py36-setuptools>0 - not found
+===>   Installing existing package /packages/All/py36-setuptools-40.0.0.txz
+[11-1-amd64-default] Installing py36-setuptools-40.0.0...
+[11-1-amd64-default] `-- Installing python36-3.6.6_1...
+[11-1-amd64-default] |   `-- Installing gettext-runtime-0.19.8.1_1...
+[11-1-amd64-default] |   | `-- Installing indexinfo-0.3.1...
+[11-1-amd64-default] |   | `-- Extracting indexinfo-0.3.1: .... done
+[11-1-amd64-default] |   `-- Extracting gettext-runtime-0.19.8.1_1: .......... done
+[11-1-amd64-default] |   `-- Installing libffi-3.2.1_2...
+[11-1-amd64-default] |   `-- Extracting libffi-3.2.1_2: .......... done
+[11-1-amd64-default] |   `-- Installing readline-7.0.3_1...
+[11-1-amd64-default] |   `-- Extracting readline-7.0.3_1: .......... done
+[11-1-amd64-default] `-- Extracting python36-3.6.6_1: .......... done
+[11-1-amd64-default] Extracting py36-setuptools-40.0.0: .......... done
+Message from python36-3.6.6_1:
+
+===========================================================================
+
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+py36-gdbm       databases/py-gdbm@py36
+py36-sqlite3    databases/py-sqlite3@py36
+py36-tkinter    x11-toolkits/py-tkinter@py36
+
+===========================================================================
+Message from py36-setuptools-40.0.0:
+
+*******************************************************************
+
+  Only /usr/local/bin/easy_install-3.6 script has been installed
+  since Python 3.6 is not the default Python version.
+
+*******************************************************************
+===>   py36-snakemake-5.2.0 depends on package: py36-setuptools>0 - found
+===>   Returning to build of py36-snakemake-5.2.0
+===>   py36-snakemake-5.2.0 depends on file: /usr/local/bin/python3.6 - found
+===========================================================================
+=======================<phase: lib-depends    >============================
+===========================================================================
+=>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>   py36-snakemake-5.2.0 depends on package: py36-setuptools>0 - found
+===>   py36-snakemake-5.2.0 depends on file: /usr/local/bin/python3.6 - found
+===>  Configuring for py36-snakemake-5.2.0
+running config
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for py36-snakemake-5.2.0
+running build
+running build_py
+creating build
+creating build/lib
+creating build/lib/snakemake
+copying snakemake/rules.py -> build/lib/snakemake
+copying snakemake/exceptions.py -> build/lib/snakemake
+copying snakemake/_version.py -> build/lib/snakemake
+copying snakemake/io.py -> build/lib/snakemake
+copying snakemake/dag.py -> build/lib/snakemake
+copying snakemake/decorators.py -> build/lib/snakemake
+copying snakemake/script.py -> build/lib/snakemake
+copying snakemake/parser.py -> build/lib/snakemake
+copying snakemake/scheduler.py -> build/lib/snakemake
+copying snakemake/benchmark.py -> build/lib/snakemake
+copying snakemake/__init__.py -> build/lib/snakemake
+copying snakemake/stats.py -> build/lib/snakemake
+copying snakemake/gui.py -> build/lib/snakemake
+copying snakemake/common.py -> build/lib/snakemake
+copying snakemake/workflow.py -> build/lib/snakemake
+copying snakemake/executors.py -> build/lib/snakemake
+copying snakemake/cwl.py -> build/lib/snakemake
+copying snakemake/wrapper.py -> build/lib/snakemake
+copying snakemake/__main__.py -> build/lib/snakemake
+copying snakemake/conda.py -> build/lib/snakemake
+copying snakemake/output_index.py -> build/lib/snakemake
+copying snakemake/shell.py -> build/lib/snakemake
+copying snakemake/logging.py -> build/lib/snakemake
+copying snakemake/jobs.py -> build/lib/snakemake
+copying snakemake/singularity.py -> build/lib/snakemake
+copying snakemake/utils.py -> build/lib/snakemake
+copying snakemake/persistence.py -> build/lib/snakemake
+creating build/lib/snakemake/remote
+copying snakemake/remote/HTTP.py -> build/lib/snakemake/remote
+copying snakemake/remote/__init__.py -> build/lib/snakemake/remote
+copying snakemake/remote/dropbox.py -> build/lib/snakemake/remote
+copying snakemake/remote/GS.py -> build/lib/snakemake/remote
+copying snakemake/remote/S3.py -> build/lib/snakemake/remote
+copying snakemake/remote/FTP.py -> build/lib/snakemake/remote
+copying snakemake/remote/NCBI.py -> build/lib/snakemake/remote
+copying snakemake/remote/gfal.py -> build/lib/snakemake/remote
+copying snakemake/remote/gridftp.py -> build/lib/snakemake/remote
+copying snakemake/remote/XRootD.py -> build/lib/snakemake/remote
+copying snakemake/remote/iRODS.py -> build/lib/snakemake/remote
+copying snakemake/remote/webdav.py -> build/lib/snakemake/remote
+copying snakemake/remote/S3Mocked.py -> build/lib/snakemake/remote
+copying snakemake/remote/SFTP.py -> build/lib/snakemake/remote
+copying snakemake/remote/EGA.py -> build/lib/snakemake/remote
+creating build/lib/snakemake/report
+copying snakemake/report/__init__.py -> build/lib/snakemake/report
+copying snakemake/report.css -> build/lib/snakemake
+copying snakemake/jobscript.sh -> build/lib/snakemake
+copying snakemake/gui.html -> build/lib/snakemake
+copying snakemake/report/report.html -> build/lib/snakemake/report
+UPDATING build/lib/snakemake/_version.py
+set build/lib/snakemake/_version.py to '5.2.0'
+===========================================================================
+=>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===>   py36-snakemake-5.2.0 depends on package: py36-setuptools>0 - found
+===>   py36-snakemake-5.2.0 depends on file: /usr/local/bin/python3.6 - found
+===========================================================================
+=>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for py36-snakemake-5.2.0
+===>   py36-snakemake-5.2.0 depends on package: py36-setuptools>0 - found
+===>   py36-snakemake-5.2.0 depends on file: /usr/local/bin/python3.6 - found
+===>   Generating temporary packing list
+running install
+running build
+running build_py
+UPDATING build/lib/snakemake/_version.py
+set build/lib/snakemake/_version.py to '5.2.0'
+running install_lib
+creating /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6
+creating /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages
+creating /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/parser.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/executors.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/jobscript.sh -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/__main__.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/report.css -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/gui.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/common.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/gui.html -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/shell.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/conda.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/script.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/dag.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/utils.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/logging.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/workflow.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/output_index.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/rules.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/decorators.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/io.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/jobs.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/__init__.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/exceptions.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+creating /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote
+copying build/lib/snakemake/remote/HTTP.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote
+copying build/lib/snakemake/remote/EGA.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote
+copying build/lib/snakemake/remote/gridftp.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote
+copying build/lib/snakemake/remote/GS.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote
+copying build/lib/snakemake/remote/dropbox.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote
+copying build/lib/snakemake/remote/S3.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote
+copying build/lib/snakemake/remote/__init__.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote
+copying build/lib/snakemake/remote/NCBI.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote
+copying build/lib/snakemake/remote/gfal.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote
+copying build/lib/snakemake/remote/XRootD.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote
+copying build/lib/snakemake/remote/FTP.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote
+copying build/lib/snakemake/remote/webdav.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote
+copying build/lib/snakemake/remote/iRODS.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote
+copying build/lib/snakemake/remote/S3Mocked.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote
+copying build/lib/snakemake/remote/SFTP.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote
+copying build/lib/snakemake/stats.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/singularity.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+creating /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/report
+copying build/lib/snakemake/report/report.html -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/report
+copying build/lib/snakemake/report/__init__.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/report
+copying build/lib/snakemake/persistence.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/wrapper.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/benchmark.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/_version.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/scheduler.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+copying build/lib/snakemake/cwl.py -> /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/parser.py to parser.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/executors.py to executors.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/__main__.py to __main__.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/gui.py to gui.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/common.py to common.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/shell.py to shell.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/conda.py to conda.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/script.py to script.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/dag.py to dag.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/utils.py to utils.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/logging.py to logging.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/workflow.py to workflow.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/output_index.py to output_index.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/rules.py to rules.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/decorators.py to decorators.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/io.py to io.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/jobs.py to jobs.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/__init__.py to __init__.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/exceptions.py to exceptions.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote/HTTP.py to HTTP.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote/EGA.py to EGA.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote/gridftp.py to gridftp.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote/GS.py to GS.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote/dropbox.py to dropbox.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote/S3.py to S3.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote/__init__.py to __init__.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote/NCBI.py to NCBI.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote/gfal.py to gfal.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote/XRootD.py to XRootD.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote/FTP.py to FTP.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote/webdav.py to webdav.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote/iRODS.py to iRODS.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote/S3Mocked.py to S3Mocked.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/remote/SFTP.py to SFTP.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/stats.py to stats.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/singularity.py to singularity.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/report/__init__.py to __init__.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/persistence.py to persistence.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/wrapper.py to wrapper.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/benchmark.py to benchmark.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/_version.py to _version.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/scheduler.py to scheduler.cpython-36.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake/cwl.py to cwl.cpython-36.pyc
+writing byte-compilation script '/tmp/tmp_sy4_6p4.py'
+/usr/local/bin/python3.6 /tmp/tmp_sy4_6p4.py
+removing /tmp/tmp_sy4_6p4.py
+running install_egg_info
+running egg_info
+writing snakemake.egg-info/PKG-INFO
+writing dependency_links to snakemake.egg-info/dependency_links.txt
+writing entry points to snakemake.egg-info/entry_points.txt
+writing requirements to snakemake.egg-info/requires.txt
+writing top-level names to snakemake.egg-info/top_level.txt
+reading manifest file 'snakemake.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'snakemake.egg-info/SOURCES.txt'
+Copying snakemake.egg-info to /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/lib/python3.6/site-packages/snakemake-5.2.0-py3.6.egg-info
+running install_scripts
+Installing snakemake script to /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/bin
+Installing snakemake-bash-completion script to /wrkdirs/usr/ports/wip/py-snakemake/work-py36/stage/usr/local/bin
+writing list of installed files to '/wrkdirs/usr/ports/wip/py-snakemake/work-py36/.PLIST.pymodtmp'
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+=>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for py36-snakemake-5.2.0
+pkg-static: DEVELOPER_MODE: Notice: arch "FreeBSD:11:amd64" -- no architecture specific files found:
+**** could this package use a wildcard architecture?
+===========================================================================
+=>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for py36-snakemake-5.2.0
+===>  Checking if py36-snakemake already installed
+===>   Registering installation for py36-snakemake-5.2.0
+pkg-static: DEVELOPER_MODE: Notice: arch "FreeBSD:11:amd64" -- no architecture specific files found:
+**** could this package use a wildcard architecture?
+[11-1-amd64-default] Installing py36-snakemake-5.2.0...
+===========================================================================
+=>> Checking shared library dependencies
+=======================<phase: deinstall      >============================
+===>  Deinstalling for py36-snakemake
+===>   Deinstalling py36-snakemake-5.2.0
+Updating database digests format: ........ done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	py36-snakemake-5.2.0
+
+Number of packages to be removed: 1
+
+The operation will free 2 MiB.
+[11-1-amd64-default] [1/1] Deinstalling py36-snakemake-5.2.0...
+[11-1-amd64-default] [1/1] Deleting files for py36-snakemake-5.2.0: .......... done
+===========================================================================
+=>> Checking for extra files and directories
+[00:05:09] Installing from package
+[11-1-amd64-default] Installing py36-snakemake-5.2.0...
+[11-1-amd64-default] Extracting py36-snakemake-5.2.0: .......... done
+[00:05:09] Cleaning up
+===>  Cleaning for py36-snakemake-5.2.0
+[00:05:10] Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	py36-snakemake-5.2.0
+
+Number of packages to be removed: 1
+
+The operation will free 2 MiB.
+[11-1-amd64-default] [1/1] Deinstalling py36-snakemake-5.2.0...
+[11-1-amd64-default] [1/1] Deleting files for py36-snakemake-5.2.0: .......... done
+build of wip/py-snakemake | py36-snakemake-5.2.0 ended at Tue Jul 31 16:20:41 CDT 2018
+build time: 00:00:19
