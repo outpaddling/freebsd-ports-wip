@@ -1,0 +1,498 @@
+build started at Mon Jul 30 23:40:59 CDT 2018
+port directory: /usr/ports/wip/xssp
+package name: xssp-3.0.1
+building for: FreeBSD 11-1-i386-default 11.1-RELEASE-p9 FreeBSD 11.1-RELEASE-p9 i386
+maintained by: jwb@FreeBSD.org
+Makefile ident: 
+Poudriere version: 3.2.7
+Host OSVERSION: 1101001
+Jail OSVERSION: 1101001
+Job Id: 
+
+---Begin Environment---
+SHELL=/bin/csh
+UNAME_p=i386
+UNAME_m=i386
+OSVERSION=1101001
+UNAME_v=FreeBSD 11.1-RELEASE-p9
+UNAME_r=11.1-RELEASE-p9
+BLOCKSIZE=K
+MAIL=/var/mail/root
+WARNING_WAIT=0
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+TRYBROKEN=yes
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.2.7
+MASTERMNT=/usr/local/poudriere/data/.m/11-1-i386-default/ref
+DEV_WARNING_WAIT=0
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm
+GID=0
+UID=0
+PWD=/usr/local/poudriere/data/.m/11-1-i386-default/ref/.p
+NO_WARNING_PKG_INSTALL_EOL=yes
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=11-1-i386-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+OLDPWD=/usr/local/poudriere/data/.m/11-1-i386-default/ref/.p/pool
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=PACKAGES=/tmp/pkgs PKGREPOSITORY=/tmp/pkgs
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+jwb@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/wip/xssp/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/xssp/work  HOME=/wrkdirs/usr/ports/wip/xssp/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/xssp/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=262144
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/wip/xssp/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/xssp/work  HOME=/wrkdirs/usr/ports/wip/xssp/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/xssp/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector -fno-strict-aliasing"  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -L/usr/local/lib -fstack-protector" LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable"  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="" PORTEXAMPLES="" OSREL=11.1 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/xssp"  EXAMPLESDIR="share/examples/xssp"  DATADIR="share/xssp"  WWWDIR="www/xssp"  ETCDIR="etc/xssp"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/xssp DOCSDIR=/usr/local/share/doc/xssp EXAMPLESDIR=/usr/local/share/examples/xssp  WWWDIR=/usr/local/www/xssp ETCDIR=/usr/local/etc/xssp
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+MACHINE=i386
+MACHINE_ARCH=i386
+ARCH=${MACHINE_ARCH}
+#### /usr/ports/Mk/Scripts/ports_env.sh ####
+_CCVERSION_921dbbb2=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: i386-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin
+_ALTCCVERSION_921dbbb2=none
+_CXXINTERNAL_acaad9ca=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: i386-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin "/usr/bin/ld" "--eh-frame-hdr" "-dynamic-linker" "/libexec/ld-elf.so.1" "--hash-style=both" "--enable-new-dtags" "-m" "elf_i386_fbsd" "-o" "a.out" "/usr/lib/crt1.o" "/usr/lib/crti.o" "/usr/lib/crtbegin.o" "-L/usr/lib" "/dev/null" "-lc++" "-lm" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "-lc" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "/usr/lib/crtend.o" "/usr/lib/crtn.o"
+CC_OUTPUT_921dbbb2_58173849=yes
+CC_OUTPUT_921dbbb2_9bdba57c=yes
+CC_OUTPUT_921dbbb2_6a4fe7f5=yes
+CC_OUTPUT_921dbbb2_6bcac02b=yes
+CC_OUTPUT_921dbbb2_67d20829=yes
+CC_OUTPUT_921dbbb2_bfa62e83=yes
+CC_OUTPUT_921dbbb2_f0b4d593=yes
+CC_OUTPUT_921dbbb2_308abb44=yes
+CC_OUTPUT_921dbbb2_f00456e5=yes
+CC_OUTPUT_921dbbb2_65ad290d=yes
+CC_OUTPUT_921dbbb2_f2776b26=error: invalid value 'c++17' in '-std=c++17'
+CC_OUTPUT_921dbbb2_b2657cc3=yes
+CC_OUTPUT_921dbbb2_380987f7=yes
+CC_OUTPUT_921dbbb2_160933ec=yes
+CC_OUTPUT_921dbbb2_fb62803b=error: invalid value 'gnu++17' in '-std=gnu++17'
+_OBJC_CCVERSION_921dbbb2=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: i386-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin
+_OBJC_ALTCCVERSION_921dbbb2=none
+ARCH=i386
+OPSYS=FreeBSD
+_OSRELEASE=11.1-RELEASE-p9
+OSREL=11.1
+OSVERSION=1101001
+PYTHONBASE=/usr/local
+_SMP_CPUS=4
+CONFIGURE_MAX_CMD_LEN=262144
+HAVE_PORTS_ENV=1
+#### Misc Poudriere ####
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  524288
+stack size              (kbytes, -s)  65536
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19558
+open files                      (-n)  1024
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===>  License GPLv3 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   xssp-3.0.1 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.10.5_1.txz
+[11-1-i386-default] Installing pkg-1.10.5_1...
+[11-1-i386-default] Extracting pkg-1.10.5_1: .......... done
+===>   xssp-3.0.1 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of xssp-3.0.1
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License GPLv3 accepted by the user
+===>   xssp-3.0.1 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by xssp-3.0.1 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License GPLv3 accepted by the user
+===>   xssp-3.0.1 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by xssp-3.0.1 for building
+=> SHA256 Checksum OK for cmbi-xssp-3.0.1_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License GPLv3 accepted by the user
+===>   xssp-3.0.1 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by xssp-3.0.1 for building
+===>  Extracting for xssp-3.0.1
+=> SHA256 Checksum OK for cmbi-xssp-3.0.1_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for xssp-3.0.1
+===>  Applying FreeBSD patches for xssp-3.0.1
+===========================================================================
+=======================<phase: build-depends  >============================
+===>   xssp-3.0.1 depends on package: autoconf>=2.69 - not found
+===>   Installing existing package /packages/All/autoconf-2.69_1.txz
+[11-1-i386-default] Installing autoconf-2.69_1...
+[11-1-i386-default] `-- Installing autoconf-wrapper-20131203...
+[11-1-i386-default] `-- Extracting autoconf-wrapper-20131203: .......... done
+[11-1-i386-default] `-- Installing indexinfo-0.3.1...
+[11-1-i386-default] `-- Extracting indexinfo-0.3.1: .... done
+[11-1-i386-default] `-- Installing m4-1.4.18,1...
+[11-1-i386-default] `-- Extracting m4-1.4.18,1: .......... done
+[11-1-i386-default] `-- Installing perl5-5.26.2...
+[11-1-i386-default] `-- Extracting perl5-5.26.2: .......... done
+[11-1-i386-default] Extracting autoconf-2.69_1: .......... done
+Message from perl5-5.26.2:
+
+The /usr/bin/perl symlink has been removed starting with Perl 5.20.
+For shebangs, you should either use:
+
+#!/usr/local/bin/perl
+
+or
+
+#!/usr/bin/env perl
+
+The first one will only work if you have a /usr/local/bin/perl,
+the second will work as long as perl is in PATH.
+===>   xssp-3.0.1 depends on package: autoconf>=2.69 - found
+===>   Returning to build of xssp-3.0.1
+===>   xssp-3.0.1 depends on package: automake>=1.16.1 - not found
+===>   Installing existing package /packages/All/automake-1.16.1.txz
+[11-1-i386-default] Installing automake-1.16.1...
+[11-1-i386-default] Extracting automake-1.16.1: .......... done
+===>   xssp-3.0.1 depends on package: automake>=1.16.1 - found
+===>   Returning to build of xssp-3.0.1
+===========================================================================
+=======================<phase: lib-depends    >============================
+===>   xssp-3.0.1 depends on shared library: libboost_filesystem.so - not found
+===>   Installing existing package /packages/All/boost-libs-1.67.0_3.txz
+[11-1-i386-default] Installing boost-libs-1.67.0_3...
+[11-1-i386-default] `-- Installing icu-62.1_1,1...
+[11-1-i386-default] `-- Extracting icu-62.1_1,1: .......... done
+[11-1-i386-default] Extracting boost-libs-1.67.0_3: .......... done
+Message from boost-libs-1.67.0_3:
+
+You have built the Boost library with thread support.
+
+Don't forget to add -pthread to your linker options when
+linking your code.
+===>   xssp-3.0.1 depends on shared library: libboost_filesystem.so - found (/usr/local/lib/libboost_filesystem.so)
+===>   Returning to build of xssp-3.0.1
+===>   xssp-3.0.1 depends on shared library: libzeep.so - not found
+===>   Installing existing package /packages/All/libzeep-3.0.3.txz
+[11-1-i386-default] Installing libzeep-3.0.3...
+[11-1-i386-default] Extracting libzeep-3.0.3: .......... done
+===>   xssp-3.0.1 depends on shared library: libzeep.so - found (/usr/local/lib/libzeep.so)
+===>   Returning to build of xssp-3.0.1
+===========================================================================
+=>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>   xssp-3.0.1 depends on package: autoconf>=2.69 - found
+===>   xssp-3.0.1 depends on package: automake>=1.16.1 - found
+===>   xssp-3.0.1 depends on shared library: libboost_filesystem.so - found (/usr/local/lib/libboost_filesystem.so)
+===>   xssp-3.0.1 depends on shared library: libzeep.so - found (/usr/local/lib/libzeep.so)
+===>  Configuring for xssp-3.0.1
+configure.ac:13: installing './compile'
+configure.ac:25: installing './config.guess'
+configure.ac:25: installing './config.sub'
+configure.ac:6: installing './install-sh'
+configure.ac:6: installing './missing'
+Makefile.am: installing './depcomp'
+configure: loading site script /usr/ports/Templates/config.site
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether c++ accepts -g... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of c++... gcc3
+checking for gcc... cc
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking whether cc understands -c and -o together... yes
+checking dependency style of cc... gcc3
+checking for perl... perl
+checking for cppcheck... no
+checking build system type... i386-portbld-freebsd11.1
+checking host system type... i386-portbld-freebsd11.1
+checking for boostlib >= 1.48... yes
+checking whether the Boost::Date_Time library is available... yes
+checking for exit in -lboost_date_time... yes
+checking whether the Boost::Filesystem library is available... yes
+checking for exit in -lboost_filesystem... yes
+checking whether the Boost::IOStreams library is available... yes
+checking for exit in -lboost_iostreams... yes
+checking whether the Boost::Program_Options library is available... yes
+checking for exit in -lboost_program_options... yes
+checking whether the Boost::Regex library is available... yes
+checking for exit in -lboost_regex... yes
+checking whether the Boost::System library is available... yes
+checking for exit in -lboost_system... yes
+checking whether the Boost::Thread library is available... yes
+checking for exit in -lboost_thread... yes
+checking whether the Boost::Unit_Test_Framework library is available... yes
+checking for main in -lzeep... yes
+checking how to run the C preprocessor... cpp
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking bzlib.h usability... yes
+checking bzlib.h presence... yes
+checking for bzlib.h... yes
+checking for main in -lbz2... yes
+checking for zlib.h... (cached) yes
+checking for main in -lz... yes
+checking for sys/ioctl.h... (cached) yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking for stdbool.h that conforms to C99... (cached) yes
+checking for _Bool... (cached) yes
+checking for inline... inline
+checking for int16_t... (cached) yes
+checking for int32_t... (cached) yes
+checking for int64_t... (cached) yes
+checking for int8_t... (cached) yes
+checking for size_t... (cached) yes
+checking for uint16_t... (cached) yes
+checking for uint32_t... (cached) yes
+checking for uint64_t... (cached) yes
+checking for uint8_t... (cached) yes
+checking for error_at_line... no
+checking for pid_t... (cached) yes
+checking for vfork.h... (cached) no
+checking for fork... (cached) yes
+checking for vfork... (cached) yes
+checking for working fork... yes
+checking for working vfork... (cached) yes
+checking for dup2... (cached) yes
+checking for floor... no
+checking for pow... no
+checking for socket... yes
+checking for sqrt... no
+checking for strchr... (cached) yes
+checking for strerror... (cached) yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for xssp-3.0.1
+--- mtrx/matrices.h ---
+perl mtrx/mkmat_h.pl mtrx/
+--- all ---
+/usr/bin/make  all-am
+--- src/.dirstamp ---
+--- src/.deps/.dirstamp ---
+--- tests/.dirstamp ---
+--- tests/.deps/.dirstamp ---
+--- src/hssp-convert-3to1.o ---
+--- src/hsspconv.o ---
+--- src/utils.o ---
+--- src/dssp.o ---
+--- src/hssp-convert-3to1.o ---
+depbase=`echo src/hssp-convert-3to1.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; c++ -DHAVE_CONFIG_H -I.   -std=c++11  -pedantic  -Wall  -Werror  -Wno-reorder  -pthread -I/usr/local/include  -I./src/   -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable -MT src/hssp-convert-3to1.o -MD -MP -MF $depbase.Tpo -c -o src/hssp-convert-3to1.o src/hssp-convert-3to1.cpp && mv -f $depbase.Tpo $depbase.Po
+--- src/hsspconv.o ---
+depbase=`echo src/hsspconv.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; c++ -DHAVE_CONFIG_H -I.   -std=c++11  -pedantic  -Wall  -Werror  -Wno-reorder  -pthread -I/usr/local/include  -I./src/   -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable -MT src/hsspconv.o -MD -MP -MF $depbase.Tpo -c -o src/hsspconv.o src/hsspconv.cpp && mv -f $depbase.Tpo $depbase.Po
+--- src/utils.o ---
+depbase=`echo src/utils.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; c++ -DHAVE_CONFIG_H -I.   -std=c++11  -pedantic  -Wall  -Werror  -Wno-reorder  -pthread -I/usr/local/include  -I./src/   -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable -MT src/utils.o -MD -MP -MF $depbase.Tpo -c -o src/utils.o src/utils.cpp && mv -f $depbase.Tpo $depbase.Po
+--- src/dssp.o ---
+depbase=`echo src/dssp.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; c++ -DHAVE_CONFIG_H -I.   -std=c++11  -pedantic  -Wall  -Werror  -Wno-reorder  -pthread -I/usr/local/include  -I./src/   -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable -MT src/dssp.o -MD -MP -MF $depbase.Tpo -c -o src/dssp.o src/dssp.cpp && mv -f $depbase.Tpo $depbase.Po
+--- src/iocif.o ---
+depbase=`echo src/iocif.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; c++ -DHAVE_CONFIG_H -I.   -std=c++11  -pedantic  -Wall  -Werror  -Wno-reorder  -pthread -I/usr/local/include  -I./src/   -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable -MT src/iocif.o -MD -MP -MF $depbase.Tpo -c -o src/iocif.o src/iocif.cpp && mv -f $depbase.Tpo $depbase.Po
+--- src/mas.o ---
+depbase=`echo src/mas.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; c++ -DHAVE_CONFIG_H -I.   -std=c++11  -pedantic  -Wall  -Werror  -Wno-reorder  -pthread -I/usr/local/include  -I./src/   -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable -MT src/mas.o -MD -MP -MF $depbase.Tpo -c -o src/mas.o src/mas.cpp && mv -f $depbase.Tpo $depbase.Po
+--- src/mkdssp.o ---
+depbase=`echo src/mkdssp.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; c++ -DHAVE_CONFIG_H -I.   -std=c++11  -pedantic  -Wall  -Werror  -Wno-reorder  -pthread -I/usr/local/include  -I./src/   -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable -MT src/mkdssp.o -MD -MP -MF $depbase.Tpo -c -o src/mkdssp.o src/mkdssp.cpp && mv -f $depbase.Tpo $depbase.Po
+--- src/primitives-3d.o ---
+depbase=`echo src/primitives-3d.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; c++ -DHAVE_CONFIG_H -I.   -std=c++11  -pedantic  -Wall  -Werror  -Wno-reorder  -pthread -I/usr/local/include  -I./src/   -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable -MT src/primitives-3d.o -MD -MP -MF $depbase.Tpo -c -o src/primitives-3d.o src/primitives-3d.cpp && mv -f $depbase.Tpo $depbase.Po
+--- src/structure.o ---
+depbase=`echo src/structure.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; c++ -DHAVE_CONFIG_H -I.   -std=c++11  -pedantic  -Wall  -Werror  -Wno-reorder  -pthread -I/usr/local/include  -I./src/   -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable -MT src/structure.o -MD -MP -MF $depbase.Tpo -c -o src/structure.o src/structure.cpp && mv -f $depbase.Tpo $depbase.Po
+--- src/blast.o ---
+depbase=`echo src/blast.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; c++ -DHAVE_CONFIG_H -I.   -std=c++11  -pedantic  -Wall  -Werror  -Wno-reorder  -pthread -I/usr/local/include  -I./src/   -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable -MT src/blast.o -MD -MP -MF $depbase.Tpo -c -o src/blast.o src/blast.cpp && mv -f $depbase.Tpo $depbase.Po
+--- src/fasta.o ---
+depbase=`echo src/fasta.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; c++ -DHAVE_CONFIG_H -I.   -std=c++11  -pedantic  -Wall  -Werror  -Wno-reorder  -pthread -I/usr/local/include  -I./src/   -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable -MT src/fasta.o -MD -MP -MF $depbase.Tpo -c -o src/fasta.o src/fasta.cpp && mv -f $depbase.Tpo $depbase.Po
+--- src/fetchdbrefs.o ---
+depbase=`echo src/fetchdbrefs.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; c++ -DHAVE_CONFIG_H -I.   -std=c++11  -pedantic  -Wall  -Werror  -Wno-reorder  -pthread -I/usr/local/include  -I./src/   -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable -MT src/fetchdbrefs.o -MD -MP -MF $depbase.Tpo -c -o src/fetchdbrefs.o src/fetchdbrefs.cpp && mv -f $depbase.Tpo $depbase.Po
+--- src/hssp-nt.o ---
+depbase=`echo src/hssp-nt.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; c++ -DHAVE_CONFIG_H -I.   -std=c++11  -pedantic  -Wall  -Werror  -Wno-reorder  -pthread -I/usr/local/include  -I./src/   -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable -MT src/hssp-nt.o -MD -MP -MF $depbase.Tpo -c -o src/hssp-nt.o src/hssp-nt.cpp && mv -f $depbase.Tpo $depbase.Po
+--- src/matrix.o ---
+depbase=`echo src/matrix.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; c++ -DHAVE_CONFIG_H -I.   -std=c++11  -pedantic  -Wall  -Werror  -Wno-reorder  -pthread -I/usr/local/include  -I./src/   -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable -MT src/matrix.o -MD -MP -MF $depbase.Tpo -c -o src/matrix.o src/matrix.cpp && mv -f $depbase.Tpo $depbase.Po
+--- src/mkhssp.o ---
+depbase=`echo src/mkhssp.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; c++ -DHAVE_CONFIG_H -I.   -std=c++11  -pedantic  -Wall  -Werror  -Wno-reorder  -pthread -I/usr/local/include  -I./src/   -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable -MT src/mkhssp.o -MD -MP -MF $depbase.Tpo -c -o src/mkhssp.o src/mkhssp.cpp && mv -f $depbase.Tpo $depbase.Po
+--- src/progress.o ---
+depbase=`echo src/progress.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; c++ -DHAVE_CONFIG_H -I.   -std=c++11  -pedantic  -Wall  -Werror  -Wno-reorder  -pthread -I/usr/local/include  -I./src/   -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable -MT src/progress.o -MD -MP -MF $depbase.Tpo -c -o src/progress.o src/progress.cpp && mv -f $depbase.Tpo $depbase.Po
+--- tests/test_conv.o ---
+depbase=`echo tests/test_conv.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; c++ -DHAVE_CONFIG_H -I.   -std=c++11  -pedantic  -Wall  -Werror  -Wno-reorder  -pthread -I/usr/local/include  -I./src/   -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable -MT tests/test_conv.o -MD -MP -MF $depbase.Tpo -c -o tests/test_conv.o tests/test_conv.cpp && mv -f $depbase.Tpo $depbase.Po
+--- tests/test_fasta.o ---
+depbase=`echo tests/test_fasta.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; c++ -DHAVE_CONFIG_H -I.   -std=c++11  -pedantic  -Wall  -Werror  -Wno-reorder  -pthread -I/usr/local/include  -I./src/   -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable -MT tests/test_fasta.o -MD -MP -MF $depbase.Tpo -c -o tests/test_fasta.o tests/test_fasta.cpp && mv -f $depbase.Tpo $depbase.Po
+--- tests/test_readpdb.o ---
+depbase=`echo tests/test_readpdb.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; c++ -DHAVE_CONFIG_H -I.   -std=c++11  -pedantic  -Wall  -Werror  -Wno-reorder  -pthread -I/usr/local/include  -I./src/   -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable -MT tests/test_readpdb.o -MD -MP -MF $depbase.Tpo -c -o tests/test_readpdb.o tests/test_readpdb.cpp && mv -f $depbase.Tpo $depbase.Po
+--- hsspconv ---
+c++  -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable  -L/usr/local/lib -fstack-protector  -o hsspconv src/hssp-convert-3to1.o  src/hsspconv.o src/utils.o -lboost_date_time  -lboost_filesystem  -lboost_iostreams  -lboost_program_options  -lboost_regex  -lboost_system  -lboost_thread  -lpthread 
+--- mkdssp ---
+c++  -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable  -L/usr/local/lib -fstack-protector  -o mkdssp src/dssp.o src/iocif.o  src/mas.o src/mkdssp.o  src/primitives-3d.o src/structure.o  src/utils.o -lboost_date_time  -lboost_filesystem  -lboost_iostreams  -lboost_program_options  -lboost_regex  -lboost_system  -lboost_thread  -lpthread 
+--- test_conv ---
+c++  -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable  -L/usr/local/lib -fstack-protector  -o test_conv src/hssp-convert-3to1.o  src/utils.o src/mas.o  tests/test_conv.o -lboost_date_time  -lboost_filesystem  -lboost_iostreams  -lboost_program_options  -lboost_regex  -lboost_system  -lboost_thread  -lpthread -lboost_unit_test_framework 
+--- test_fasta ---
+c++  -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable  -L/usr/local/lib -fstack-protector  -o test_fasta src/fasta.o src/iocif.o  src/mas.o src/primitives-3d.o  src/structure.o src/utils.o  tests/test_fasta.o -lboost_date_time  -lboost_filesystem  -lboost_iostreams  -lboost_program_options  -lboost_regex  -lboost_system  -lboost_thread  -lpthread  -lboost_unit_test_framework 
+--- test_readpdb ---
+c++  -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable  -L/usr/local/lib -fstack-protector  -o test_readpdb src/fasta.o src/iocif.o  src/mas.o src/primitives-3d.o  src/structure.o src/utils.o  tests/test_readpdb.o -lboost_date_time  -lboost_filesystem  -lboost_iostreams  -lboost_program_options  -lboost_regex  -lboost_system  -lboost_thread  -lpthread  -lboost_unit_test_framework 
+--- mkhssp ---
+c++  -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wno-unused-const-variable  -L/usr/local/lib -fstack-protector  -o mkhssp src/blast.o src/dssp.o  src/fasta.o src/fetchdbrefs.o  src/hssp-nt.o src/iocif.o src/mas.o  src/matrix.o src/mkhssp.o  src/primitives-3d.o src/progress.o  src/structure.o src/utils.o -lboost_date_time  -lboost_filesystem  -lboost_iostreams  -lboost_program_options  -lboost_regex  -lboost_system  -lboost_thread  -lpthread  -lboost_timer  -lzeep 
+===========================================================================
+=>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===========================================================================
+=>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for xssp-3.0.1
+===>   Generating temporary packing list
+/usr/bin/make  install-am
+ /bin/mkdir -p '/wrkdirs/usr/ports/wip/xssp/work/stage/usr/local/bin'
+  install  -s -m 555 mkdssp mkhssp hsspconv test_fasta test_conv test_readpdb '/wrkdirs/usr/ports/wip/xssp/work/stage/usr/local/bin'
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+=>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for xssp-3.0.1
+===========================================================================
+=>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for xssp-3.0.1
+===>  Checking if xssp already installed
+===>   Registering installation for xssp-3.0.1
+[11-1-i386-default] Installing xssp-3.0.1...
+===========================================================================
+=>> Checking shared library dependencies
+ 0x00000001 NEEDED               Shared library: [libboost_date_time.so.1.67.0]
+ 0x00000001 NEEDED               Shared library: [libboost_filesystem.so.1.67.0]
+ 0x00000001 NEEDED               Shared library: [libboost_iostreams.so.1.67.0]
+ 0x00000001 NEEDED               Shared library: [libboost_program_options.so.1.67.0]
+ 0x00000001 NEEDED               Shared library: [libboost_regex.so.1.67.0]
+ 0x00000001 NEEDED               Shared library: [libboost_system.so.1.67.0]
+ 0x00000001 NEEDED               Shared library: [libboost_thread.so.1.67.0]
+ 0x00000001 NEEDED               Shared library: [libboost_timer.so.1.67.0]
+ 0x00000001 NEEDED               Shared library: [libboost_unit_test_framework.so.1.67.0]
+ 0x00000001 NEEDED               Shared library: [libc++.so.1]
+ 0x00000001 NEEDED               Shared library: [libc.so.7]
+ 0x00000001 NEEDED               Shared library: [libcxxrt.so.1]
+ 0x00000001 NEEDED               Shared library: [libgcc_s.so.1]
+ 0x00000001 NEEDED               Shared library: [libm.so.5]
+ 0x00000001 NEEDED               Shared library: [libthr.so.3]
+ 0x00000001 NEEDED               Shared library: [libzeep.so.3.0]
+=======================<phase: deinstall      >============================
+===>  Deinstalling for xssp
+===>   Deinstalling xssp-3.0.1
+Updating database digests format: .......... done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	xssp-3.0.1
+
+Number of packages to be removed: 1
+
+The operation will free 3 MiB.
+[11-1-i386-default] [1/1] Deinstalling xssp-3.0.1...
+[11-1-i386-default] [1/1] Deleting files for xssp-3.0.1: ......... done
+===========================================================================
+=>> Checking for extra files and directories
+[00:43:47] Installing from package
+[11-1-i386-default] Installing xssp-3.0.1...
+[11-1-i386-default] Extracting xssp-3.0.1: ......... done
+[00:43:47] Cleaning up
+===>  Cleaning for xssp-3.0.1
+[00:43:47] Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	xssp-3.0.1
+
+Number of packages to be removed: 1
+
+The operation will free 3 MiB.
+[11-1-i386-default] [1/1] Deinstalling xssp-3.0.1...
+[11-1-i386-default] [1/1] Deleting files for xssp-3.0.1: ......... done
+build of wip/xssp | xssp-3.0.1 ended at Mon Jul 30 23:42:15 CDT 2018
+build time: 00:01:16
