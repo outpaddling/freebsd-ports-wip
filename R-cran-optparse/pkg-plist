@@ -2,6 +2,7 @@
 %%R_MOD_DIR%%/DESCRIPTION
 %%R_MOD_DIR%%/INDEX
 %%R_MOD_DIR%%/Meta/Rd.rds
+%%R_MOD_DIR%%/Meta/features.rds
 %%R_MOD_DIR%%/Meta/hsearch.rds
 %%R_MOD_DIR%%/Meta/links.rds
 %%R_MOD_DIR%%/Meta/nsInfo.rds
