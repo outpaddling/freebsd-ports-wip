@@ -21,7 +21,12 @@ USE_GCC=	yes		# Eliminate this
 USE_GITHUB=	yes
 GH_ACCOUNT=	refresh-bio
 
+CXXFLAGS+=	-msse2
 MAKEFILE=	makefile
+# MAKE_JOBS_UNSAFE=	yes
 PLIST_FILES=	bin/famsa
+
+pre-build:
+	${RM} ${WRKSRC}/libs-linux/*.a
 
 .include <bsd.port.mk>

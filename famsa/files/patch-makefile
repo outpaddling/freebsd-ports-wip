@@ -9,8 +9,8 @@
 -NO_GPU = false
 +# Determined at runtime, so no reason to disable unless building
 +# on a system without AVX
-+NO_AVX ?= false
-+NO_AVX2 ?= false
++NO_AVX ?= true
++NO_AVX2 ?= true
 +NO_GPU ?= false
 +
 +DESTDIR	?=
@@ -28,12 +28,14 @@
  
  ifeq ($(STATIC_LINK), true) 
 -	CFLAGS	= -Wall -O3 -m64 -static -Wl,--whole-archive -lpthread -Wl,--no-whole-archive -std=c++11 -I $(LIBS_DIR) -I $(LIBS_LINUX_DIR) 
-+	CXXFLAGS	= -Wall -O3 -m64 -static -Wl,--whole-archive -lpthread -Wl,--no-whole-archive -std=c++11 -I $(LIBS_DIR) -I $(LIBS_LINUX_DIR) 
- 	CLINK	= -lm -static -O3 -Wl,--whole-archive -lpthread -Wl,--no-whole-archive -std=c++11 
+-	CLINK	= -lm -static -O3 -Wl,--whole-archive -lpthread -Wl,--no-whole-archive -std=c++11 
++	CXXFLAGS	+= -Wall -static -Wl,--whole-archive -lpthread -Wl,--no-whole-archive -std=c++11 -I $(LIBS_DIR) -I $(LIBS_LINUX_DIR) 
++	CLINK	= -lm -static -Wl,--whole-archive -lpthread -Wl,--no-whole-archive -std=c++11 
  else
 -	CFLAGS	= -Wall -O3 -m64 -std=c++11 -pthread -I $(LIBS_DIR) -I $(LIBS_LINUX_DIR)
-+	CXXFLAGS	= -Wall -O3 -m64 -std=c++11 -pthread -I $(LIBS_DIR) -I $(LIBS_LINUX_DIR)
- 	CLINK	= -lm -O3 -std=c++11 -pthread 
+-	CLINK	= -lm -O3 -std=c++11 -pthread 
++	CXXFLAGS	+= -Wall -std=c++11 -pthread -I $(LIBS_DIR) -I $(LIBS_LINUX_DIR)
++	CLINK	= -lm -std=c++11 -pthread 
  endif
   
 -CFLAGS_AVX = $(CFLAGS) -mavx ${ABI_FLAG} -mpopcnt -funroll-loops
@@ -95,12 +97,12 @@
  ifeq ($(NO_GPU),false)
  famsa-gpu: famsa_gpu/famsa_gpu.o $(COMMON_OBJS) $(LCS_OBJS) $(OPENCL_OBJS) 
 -	$(CC) $(CLINK) -o $@ famsa_gpu/famsa_gpu.o $(COMMON_OBJS) $(LCS_OBJS) $(OPENCL_OBJS) $(LIBS_LINUX_DIR)/${ASM_LIB} -lOpenCL
-+	$(CXX) $(CLINK) -o $@ famsa_gpu/famsa_gpu.o $(COMMON_OBJS) $(LCS_OBJS) $(OPENCL_OBJS) $(LIBS_LINUX_DIR)/${ASM_LIB} -lOpenCL
++	$(CXX) $(CLINK) -o $@ famsa_gpu/famsa_gpu.o $(COMMON_OBJS) $(LCS_OBJS) $(OPENCL_OBJS) -lOpenCL
  endif
  
  famsa: famsa_cpu/famsa_cpu.o $(COMMON_OBJS) $(LCS_OBJS)
 -	$(CC) $(CLINK) -o $@ famsa_cpu/famsa_cpu.o $(COMMON_OBJS) $(LCS_OBJS) $(LIBS_LINUX_DIR)/${ASM_LIB}
-+	$(CXX) $(CLINK) -o $@ famsa_cpu/famsa_cpu.o $(COMMON_OBJS) $(LCS_OBJS) $(LIBS_LINUX_DIR)/${ASM_LIB}
++	$(CXX) $(CLINK) -o $@ famsa_cpu/famsa_cpu.o $(COMMON_OBJS) $(LCS_OBJS)
  
  clean:
  	-rm core/*.o
