@@ -21,9 +21,8 @@ USE_GCC=	yes		# Eliminate this
 USE_GITHUB=	yes
 GH_ACCOUNT=	refresh-bio
 
-CXXFLAGS+=	-msse2
+CFLAGS_i386+=	-msse2
 MAKEFILE=	makefile
-# MAKE_JOBS_UNSAFE=	yes
 PLIST_FILES=	bin/famsa
 
 pre-build:
