@@ -1,0 +1,510 @@
+build started at Thu Aug  2 14:32:46 CDT 2018
+port directory: /usr/ports/wip/vcftools
+package name: vcftools-0.1.16
+building for: FreeBSD 11-1-i386-default 11.1-RELEASE-p9 FreeBSD 11.1-RELEASE-p9 i386
+maintained by: jwb@FreeBSD.org
+Makefile ident:      $FreeBSD: head/biology/vcftools/Makefile 460452 2018-01-31 01:07:07Z jwb $
+Poudriere version: 3.2.7
+Host OSVERSION: 1101001
+Jail OSVERSION: 1101001
+Job Id: 
+
+---Begin Environment---
+SHELL=/bin/csh
+UNAME_p=i386
+UNAME_m=i386
+OSVERSION=1101001
+UNAME_v=FreeBSD 11.1-RELEASE-p9
+UNAME_r=11.1-RELEASE-p9
+BLOCKSIZE=K
+MAIL=/var/mail/root
+WARNING_WAIT=0
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+TRYBROKEN=yes
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.2.7
+MASTERMNT=/usr/local/poudriere/data/.m/11-1-i386-default/ref
+DEV_WARNING_WAIT=0
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm
+GID=0
+UID=0
+PWD=/usr/local/poudriere/data/.m/11-1-i386-default/ref/.p
+NO_WARNING_PKG_INSTALL_EOL=yes
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=11-1-i386-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+OLDPWD=/usr/local/poudriere/data/.m/11-1-i386-default/ref/.p
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=PACKAGES=/tmp/pkgs PKGREPOSITORY=/tmp/pkgs
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+jwb@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+MAKE=gmake ac_cv_path_PERL=/usr/local/bin/perl ac_cv_path_PERL_PATH=/usr/local/bin/perl  PERL_USE_UNSAFE_INC=1 PKG_CONFIG=pkgconf XDG_DATA_HOME=/wrkdirs/usr/ports/wip/vcftools/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/vcftools/work  HOME=/wrkdirs/usr/ports/wip/vcftools/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/vcftools/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=262144
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+PERL_USE_UNSAFE_INC=1 XDG_DATA_HOME=/wrkdirs/usr/ports/wip/vcftools/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/vcftools/work  HOME=/wrkdirs/usr/ports/wip/vcftools/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/vcftools/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector -fno-strict-aliasing"  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector" LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector -fno-strict-aliasing "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="" PORTEXAMPLES="" OSREL=11.1 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib PERL_VERSION=5.26.2  PERL_VER=5.26  PERL5_MAN1=lib/perl5/site_perl/man/man1  PERL5_MAN3=lib/perl5/site_perl/man/man3  SITE_PERL=lib/perl5/site_perl  SITE_ARCH=lib/perl5/site_perl/mach/5.26 DOCSDIR="share/doc/vcftools"  EXAMPLESDIR="share/examples/vcftools"  DATADIR="share/vcftools"  WWWDIR="www/vcftools"  ETCDIR="etc/vcftools"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/vcftools DOCSDIR=/usr/local/share/doc/vcftools EXAMPLESDIR=/usr/local/share/examples/vcftools  WWWDIR=/usr/local/www/vcftools ETCDIR=/usr/local/etc/vcftools
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+MACHINE=i386
+MACHINE_ARCH=i386
+ARCH=${MACHINE_ARCH}
+#### /usr/ports/Mk/Scripts/ports_env.sh ####
+_CCVERSION_921dbbb2=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: i386-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin
+_ALTCCVERSION_921dbbb2=none
+_CXXINTERNAL_acaad9ca=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: i386-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin "/usr/bin/ld" "--eh-frame-hdr" "-dynamic-linker" "/libexec/ld-elf.so.1" "--hash-style=both" "--enable-new-dtags" "-m" "elf_i386_fbsd" "-o" "a.out" "/usr/lib/crt1.o" "/usr/lib/crti.o" "/usr/lib/crtbegin.o" "-L/usr/lib" "/dev/null" "-lc++" "-lm" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "-lc" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "/usr/lib/crtend.o" "/usr/lib/crtn.o"
+CC_OUTPUT_921dbbb2_58173849=yes
+CC_OUTPUT_921dbbb2_9bdba57c=yes
+CC_OUTPUT_921dbbb2_6a4fe7f5=yes
+CC_OUTPUT_921dbbb2_6bcac02b=yes
+CC_OUTPUT_921dbbb2_67d20829=yes
+CC_OUTPUT_921dbbb2_bfa62e83=yes
+CC_OUTPUT_921dbbb2_f0b4d593=yes
+CC_OUTPUT_921dbbb2_308abb44=yes
+CC_OUTPUT_921dbbb2_f00456e5=yes
+CC_OUTPUT_921dbbb2_65ad290d=yes
+CC_OUTPUT_921dbbb2_f2776b26=error: invalid value 'c++17' in '-std=c++17'
+CC_OUTPUT_921dbbb2_b2657cc3=yes
+CC_OUTPUT_921dbbb2_380987f7=yes
+CC_OUTPUT_921dbbb2_160933ec=yes
+CC_OUTPUT_921dbbb2_fb62803b=error: invalid value 'gnu++17' in '-std=gnu++17'
+_OBJC_CCVERSION_921dbbb2=FreeBSD clang version 4.0.0 (tags/RELEASE_400/final 297347) (based on LLVM 4.0.0) Target: i386-unknown-freebsd11.1 Thread model: posix InstalledDir: /usr/bin
+_OBJC_ALTCCVERSION_921dbbb2=none
+ARCH=i386
+OPSYS=FreeBSD
+_OSRELEASE=11.1-RELEASE-p9
+OSREL=11.1
+OSVERSION=1101001
+PYTHONBASE=/usr/local
+_SMP_CPUS=4
+CONFIGURE_MAX_CMD_LEN=262144
+HAVE_PORTS_ENV=1
+#### Misc Poudriere ####
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  524288
+stack size              (kbytes, -s)  65536
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19558
+open files                      (-n)  1024
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===>  License LGPL3 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   vcftools-0.1.16 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.10.5_1.txz
+[11-1-i386-default] Installing pkg-1.10.5_1...
+[11-1-i386-default] Extracting pkg-1.10.5_1: .......... done
+===>   vcftools-0.1.16 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of vcftools-0.1.16
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License LGPL3 accepted by the user
+===>   vcftools-0.1.16 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by vcftools-0.1.16 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License LGPL3 accepted by the user
+===>   vcftools-0.1.16 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by vcftools-0.1.16 for building
+=> SHA256 Checksum OK for vcftools-vcftools-v0.1.16_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License LGPL3 accepted by the user
+===>   vcftools-0.1.16 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by vcftools-0.1.16 for building
+===>  Extracting for vcftools-0.1.16
+=> SHA256 Checksum OK for vcftools-vcftools-v0.1.16_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for vcftools-0.1.16
+===========================================================================
+=======================<phase: build-depends  >============================
+===>   vcftools-0.1.16 depends on package: autoconf>=2.69 - not found
+===>   Installing existing package /packages/All/autoconf-2.69_1.txz
+[11-1-i386-default] Installing autoconf-2.69_1...
+[11-1-i386-default] `-- Installing autoconf-wrapper-20131203...
+[11-1-i386-default] `-- Extracting autoconf-wrapper-20131203: .......... done
+[11-1-i386-default] `-- Installing indexinfo-0.3.1...
+[11-1-i386-default] `-- Extracting indexinfo-0.3.1: .... done
+[11-1-i386-default] `-- Installing m4-1.4.18,1...
+[11-1-i386-default] `-- Extracting m4-1.4.18,1: .......... done
+[11-1-i386-default] `-- Installing perl5-5.26.2...
+[11-1-i386-default] `-- Extracting perl5-5.26.2: .......... done
+[11-1-i386-default] Extracting autoconf-2.69_1: .......... done
+Message from perl5-5.26.2:
+
+The /usr/bin/perl symlink has been removed starting with Perl 5.20.
+For shebangs, you should either use:
+
+#!/usr/local/bin/perl
+
+or
+
+#!/usr/bin/env perl
+
+The first one will only work if you have a /usr/local/bin/perl,
+the second will work as long as perl is in PATH.
+===>   vcftools-0.1.16 depends on package: autoconf>=2.69 - found
+===>   Returning to build of vcftools-0.1.16
+===>   vcftools-0.1.16 depends on package: automake>=1.16.1 - not found
+===>   Installing existing package /packages/All/automake-1.16.1.txz
+[11-1-i386-default] Installing automake-1.16.1...
+[11-1-i386-default] Extracting automake-1.16.1: .......... done
+===>   vcftools-0.1.16 depends on package: automake>=1.16.1 - found
+===>   Returning to build of vcftools-0.1.16
+===>   vcftools-0.1.16 depends on executable: gmake - not found
+===>   Installing existing package /packages/All/gmake-4.2.1_2.txz
+[11-1-i386-default] Installing gmake-4.2.1_2...
+[11-1-i386-default] `-- Installing gettext-runtime-0.19.8.1_1...
+[11-1-i386-default] `-- Extracting gettext-runtime-0.19.8.1_1: .......... done
+[11-1-i386-default] Extracting gmake-4.2.1_2: .......... done
+===>   vcftools-0.1.16 depends on executable: gmake - found
+===>   Returning to build of vcftools-0.1.16
+===>   vcftools-0.1.16 depends on package: pkgconf>=1.3.0_1 - not found
+===>   Installing existing package /packages/All/pkgconf-1.4.2,1.txz
+[11-1-i386-default] Installing pkgconf-1.4.2,1...
+[11-1-i386-default] Extracting pkgconf-1.4.2,1: .......... done
+===>   vcftools-0.1.16 depends on package: pkgconf>=1.3.0_1 - found
+===>   Returning to build of vcftools-0.1.16
+===>   vcftools-0.1.16 depends on package: perl5>=5.26<5.27 - found
+===========================================================================
+=======================<phase: lib-depends    >============================
+===========================================================================
+=>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>   vcftools-0.1.16 depends on package: autoconf>=2.69 - found
+===>   vcftools-0.1.16 depends on package: automake>=1.16.1 - found
+===>   vcftools-0.1.16 depends on executable: gmake - found
+===>   vcftools-0.1.16 depends on package: pkgconf>=1.3.0_1 - found
+===>   vcftools-0.1.16 depends on package: perl5>=5.26<5.27 - found
+===>  Configuring for vcftools-0.1.16
+configure.ac:16: installing './compile'
+configure.ac:12: installing './install-sh'
+configure.ac:12: installing './missing'
+src/cpp/Makefile.am: installing './depcomp'
+configure: loading site script /usr/ports/Templates/config.site
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether gmake sets $(MAKE)... yes
+checking whether gmake supports nested variables... yes
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether c++ accepts -g... yes
+checking whether gmake supports the include directive... yes (GNU style)
+checking dependency style of c++... gcc3
+checking for gcc... cc
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking whether cc understands -c and -o together... yes
+checking dependency style of cc... gcc3
+checking how to run the C preprocessor... cpp
+checking for perl... (cached) /usr/local/bin/perl
+checking pkg-config is at least version 0.9.0... yes
+checking for ZLIB... yes
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for arpa/inet.h... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for limits.h... (cached) yes
+checking for netdb.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for sys/socket.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for stdbool.h that conforms to C99... (cached) yes
+checking for _Bool... (cached) yes
+checking for inline... inline
+checking for int16_t... (cached) yes
+checking for int32_t... (cached) yes
+checking for int64_t... (cached) yes
+checking for int8_t... (cached) yes
+checking for off_t... (cached) yes
+checking for size_t... (cached) yes
+checking for ssize_t... (cached) yes
+checking for uint16_t... (cached) yes
+checking for uint32_t... (cached) yes
+checking for uint8_t... (cached) yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for error_at_line... no
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible realloc... yes
+checking for gethostbyaddr... yes
+checking for gethostbyname... (cached) yes
+checking for memset... (cached) yes
+checking for pow... no
+checking for select... (cached) yes
+checking for socket... yes
+checking for sqrt... no
+checking for strchr... (cached) yes
+checking for strdup... (cached) yes
+checking for strerror... (cached) yes
+checking for strstr... (cached) yes
+checking for strtol... (cached) yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating src/cpp/Makefile
+config.status: creating src/perl/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for vcftools-0.1.16
+gmake[1]: Entering directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16'
+gmake  all-recursive
+gmake[2]: Entering directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16'
+Making all in src
+gmake[3]: Entering directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src'
+Making all in cpp
+gmake[4]: Entering directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src/cpp'
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-bcf_entry.o -MD -MP -MF .deps/vcftools-bcf_entry.Tpo -c -o vcftools-bcf_entry.o `test -f 'bcf_entry.cpp' || echo './'`bcf_entry.cpp
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-bcf_entry_setters.o -MD -MP -MF .deps/vcftools-bcf_entry_setters.Tpo -c -o vcftools-bcf_entry_setters.o `test -f 'bcf_entry_setters.cpp' || echo './'`bcf_entry_setters.cpp
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-bcf_file.o -MD -MP -MF .deps/vcftools-bcf_file.Tpo -c -o vcftools-bcf_file.o `test -f 'bcf_file.cpp' || echo './'`bcf_file.cpp
+cc -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe  -fstack-protector -fno-strict-aliasing -MT vcftools-bgzf.o -MD -MP -MF .deps/vcftools-bgzf.Tpo -c -o vcftools-bgzf.o `test -f 'bgzf.c' || echo './'`bgzf.c
+mv -f .deps/vcftools-bgzf.Tpo .deps/vcftools-bgzf.Po
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-dgeev.o -MD -MP -MF .deps/vcftools-dgeev.Tpo -c -o vcftools-dgeev.o `test -f 'dgeev.cpp' || echo './'`dgeev.cpp
+mv -f .deps/vcftools-dgeev.Tpo .deps/vcftools-dgeev.Po
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-entry.o -MD -MP -MF .deps/vcftools-entry.Tpo -c -o vcftools-entry.o `test -f 'entry.cpp' || echo './'`entry.cpp
+mv -f .deps/vcftools-entry.Tpo .deps/vcftools-entry.Po
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-entry_filters.o -MD -MP -MF .deps/vcftools-entry_filters.Tpo -c -o vcftools-entry_filters.o `test -f 'entry_filters.cpp' || echo './'`entry_filters.cpp
+mv -f .deps/vcftools-bcf_file.Tpo .deps/vcftools-bcf_file.Po
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-entry_getters.o -MD -MP -MF .deps/vcftools-entry_getters.Tpo -c -o vcftools-entry_getters.o `test -f 'entry_getters.cpp' || echo './'`entry_getters.cpp
+mv -f .deps/vcftools-bcf_entry_setters.Tpo .deps/vcftools-bcf_entry_setters.Po
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-entry_setters.o -MD -MP -MF .deps/vcftools-entry_setters.Tpo -c -o vcftools-entry_setters.o `test -f 'entry_setters.cpp' || echo './'`entry_setters.cpp
+mv -f .deps/vcftools-bcf_entry.Tpo .deps/vcftools-bcf_entry.Po
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-gamma.o -MD -MP -MF .deps/vcftools-gamma.Tpo -c -o vcftools-gamma.o `test -f 'gamma.cpp' || echo './'`gamma.cpp
+mv -f .deps/vcftools-entry_setters.Tpo .deps/vcftools-entry_setters.Po
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-header.o -MD -MP -MF .deps/vcftools-header.Tpo -c -o vcftools-header.o `test -f 'header.cpp' || echo './'`header.cpp
+mv -f .deps/vcftools-gamma.Tpo .deps/vcftools-gamma.Po
+cc -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe  -fstack-protector -fno-strict-aliasing -MT vcftools-knetfile.o -MD -MP -MF .deps/vcftools-knetfile.Tpo -c -o vcftools-knetfile.o `test -f 'knetfile.c' || echo './'`knetfile.c
+mv -f .deps/vcftools-knetfile.Tpo .deps/vcftools-knetfile.Po
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-output_log.o -MD -MP -MF .deps/vcftools-output_log.Tpo -c -o vcftools-output_log.o `test -f 'output_log.cpp' || echo './'`output_log.cpp
+mv -f .deps/vcftools-entry_getters.Tpo .deps/vcftools-entry_getters.Po
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-parameters.o -MD -MP -MF .deps/vcftools-parameters.Tpo -c -o vcftools-parameters.o `test -f 'parameters.cpp' || echo './'`parameters.cpp
+mv -f .deps/vcftools-output_log.Tpo .deps/vcftools-output_log.Po
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-variant_file.o -MD -MP -MF .deps/vcftools-variant_file.Tpo -c -o vcftools-variant_file.o `test -f 'variant_file.cpp' || echo './'`variant_file.cpp
+mv -f .deps/vcftools-entry_filters.Tpo .deps/vcftools-entry_filters.Po
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-variant_file_diff.o -MD -MP -MF .deps/vcftools-variant_file_diff.Tpo -c -o vcftools-variant_file_diff.o `test -f 'variant_file_diff.cpp' || echo './'`variant_file_diff.cpp
+mv -f .deps/vcftools-header.Tpo .deps/vcftools-header.Po
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-variant_file_filters.o -MD -MP -MF .deps/vcftools-variant_file_filters.Tpo -c -o vcftools-variant_file_filters.o `test -f 'variant_file_filters.cpp' || echo './'`variant_file_filters.cpp
+mv -f .deps/vcftools-variant_file.Tpo .deps/vcftools-variant_file.Po
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-variant_file_format_convert.o -MD -MP -MF .deps/vcftools-variant_file_format_convert.Tpo -c -o vcftools-variant_file_format_convert.o `test -f 'variant_file_format_convert.cpp' || echo './'`variant_file_format_convert.cpp
+mv -f .deps/vcftools-variant_file_filters.Tpo .deps/vcftools-variant_file_filters.Po
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-variant_file_output.o -MD -MP -MF .deps/vcftools-variant_file_output.Tpo -c -o vcftools-variant_file_output.o `test -f 'variant_file_output.cpp' || echo './'`variant_file_output.cpp
+mv -f .deps/vcftools-parameters.Tpo .deps/vcftools-parameters.Po
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-vcf_entry.o -MD -MP -MF .deps/vcftools-vcf_entry.Tpo -c -o vcftools-vcf_entry.o `test -f 'vcf_entry.cpp' || echo './'`vcf_entry.cpp
+mv -f .deps/vcftools-variant_file_diff.Tpo .deps/vcftools-variant_file_diff.Po
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-vcf_entry_setters.o -MD -MP -MF .deps/vcftools-vcf_entry_setters.Tpo -c -o vcftools-vcf_entry_setters.o `test -f 'vcf_entry_setters.cpp' || echo './'`vcf_entry_setters.cpp
+mv -f .deps/vcftools-variant_file_format_convert.Tpo .deps/vcftools-variant_file_format_convert.Po
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-vcf_file.o -MD -MP -MF .deps/vcftools-vcf_file.Tpo -c -o vcftools-vcf_file.o `test -f 'vcf_file.cpp' || echo './'`vcf_file.cpp
+mv -f .deps/vcftools-vcf_entry.Tpo .deps/vcftools-vcf_entry.Po
+c++ -DHAVE_CONFIG_H -I. -I../..     -O2 -pipe -fstack-protector -fno-strict-aliasing  -MT vcftools-vcftools.o -MD -MP -MF .deps/vcftools-vcftools.Tpo -c -o vcftools-vcftools.o `test -f 'vcftools.cpp' || echo './'`vcftools.cpp
+mv -f .deps/vcftools-vcf_entry_setters.Tpo .deps/vcftools-vcf_entry_setters.Po
+mv -f .deps/vcftools-vcftools.Tpo .deps/vcftools-vcftools.Po
+mv -f .deps/vcftools-vcf_file.Tpo .deps/vcftools-vcf_file.Po
+mv -f .deps/vcftools-variant_file_output.Tpo .deps/vcftools-variant_file_output.Po
+c++  -O2 -pipe -fstack-protector -fno-strict-aliasing   -fstack-protector -o vcftools vcftools-bcf_entry.o vcftools-bcf_entry_setters.o vcftools-bcf_file.o vcftools-bgzf.o vcftools-dgeev.o vcftools-entry.o vcftools-entry_filters.o vcftools-entry_getters.o vcftools-entry_setters.o vcftools-gamma.o vcftools-header.o vcftools-knetfile.o vcftools-output_log.o vcftools-parameters.o vcftools-variant_file.o vcftools-variant_file_diff.o vcftools-variant_file_filters.o vcftools-variant_file_format_convert.o vcftools-variant_file_output.o vcftools-vcf_entry.o vcftools-vcf_entry_setters.o vcftools-vcf_file.o vcftools-vcftools.o -lz  
+gmake[4]: Leaving directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src/cpp'
+Making all in perl
+gmake[4]: Entering directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src/perl'
+gmake[4]: Nothing to be done for 'all'.
+gmake[4]: Leaving directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src/perl'
+gmake[4]: Entering directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src'
+gmake[4]: Nothing to be done for 'all-am'.
+gmake[4]: Leaving directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src'
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src'
+gmake[3]: Entering directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16'
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16'
+===========================================================================
+=>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===>   vcftools-0.1.16 depends on package: perl5>=5.26<5.27 - found
+===========================================================================
+=>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for vcftools-0.1.16
+===>   vcftools-0.1.16 depends on package: perl5>=5.26<5.27 - found
+===>   Generating temporary packing list
+gmake[1]: Entering directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16'
+Making install in src
+gmake[2]: Entering directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src'
+Making install in cpp
+gmake[3]: Entering directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src/cpp'
+gmake[4]: Entering directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src/cpp'
+ /bin/mkdir -p '/wrkdirs/usr/ports/wip/vcftools/work/stage/usr/local/bin'
+  install  -s -m 555 vcftools '/wrkdirs/usr/ports/wip/vcftools/work/stage/usr/local/bin'
+ /bin/mkdir -p '/wrkdirs/usr/ports/wip/vcftools/work/stage/usr/local/man/man1'
+ install  -m 0644 vcftools.1 '/wrkdirs/usr/ports/wip/vcftools/work/stage/usr/local/man/man1'
+gmake[4]: Leaving directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src/cpp'
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src/cpp'
+Making install in perl
+gmake[3]: Entering directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src/perl'
+gmake[4]: Entering directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src/perl'
+ /bin/mkdir -p '/wrkdirs/usr/ports/wip/vcftools/work/stage/usr/local/bin'
+ install  -m 555 fill-aa fill-an-ac fill-fs fill-ref-md5 vcf-annotate vcf-compare vcf-concat vcf-consensus vcf-contrast vcf-convert vcf-fix-newlines vcf-fix-ploidy vcf-indel-stats vcf-isec vcf-merge vcf-phased-join vcf-query vcf-shuffle-cols vcf-sort vcf-stats vcf-subset vcf-to-tab vcf-tstv vcf-validator '/wrkdirs/usr/ports/wip/vcftools/work/stage/usr/local/bin'
+ /bin/mkdir -p '/wrkdirs/usr/ports/wip/vcftools/work/stage/usr/local/lib/perl5/site_perl'
+ install  -m 0644 FaSlice.pm Vcf.pm VcfStats.pm '/wrkdirs/usr/ports/wip/vcftools/work/stage/usr/local/lib/perl5/site_perl'
+gmake[4]: Leaving directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src/perl'
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src/perl'
+gmake[3]: Entering directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src'
+gmake[4]: Entering directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src'
+gmake[4]: Nothing to be done for 'install-exec-am'.
+gmake[4]: Nothing to be done for 'install-data-am'.
+gmake[4]: Leaving directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src'
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16/src'
+gmake[2]: Entering directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16'
+gmake[3]: Entering directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16'
+gmake[3]: Nothing to be done for 'install-exec-am'.
+gmake[3]: Nothing to be done for 'install-data-am'.
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/wip/vcftools/work/vcftools-0.1.16'
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+=>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for vcftools-0.1.16
+===========================================================================
+=>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for vcftools-0.1.16
+===>  Checking if vcftools already installed
+===>   Registering installation for vcftools-0.1.16
+[11-1-i386-default] Installing vcftools-0.1.16...
+===========================================================================
+=>> Checking shared library dependencies
+ 0x00000001 NEEDED               Shared library: [libc++.so.1]
+ 0x00000001 NEEDED               Shared library: [libc.so.7]
+ 0x00000001 NEEDED               Shared library: [libcxxrt.so.1]
+ 0x00000001 NEEDED               Shared library: [libgcc_s.so.1]
+ 0x00000001 NEEDED               Shared library: [libm.so.5]
+ 0x00000001 NEEDED               Shared library: [libz.so.6]
+=======================<phase: deinstall      >============================
+===>  Deinstalling for vcftools
+===>   Deinstalling vcftools-0.1.16
+Updating database digests format: .......... done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	vcftools-0.1.16
+
+Number of packages to be removed: 1
+
+The operation will free 1 MiB.
+[11-1-i386-default] [1/1] Deinstalling vcftools-0.1.16...
+[11-1-i386-default] [1/1] Deleting files for vcftools-0.1.16: .......... done
+===========================================================================
+=>> Checking for extra files and directories
+[00:00:46] Installing from package
+[11-1-i386-default] Installing vcftools-0.1.16...
+[11-1-i386-default] Extracting vcftools-0.1.16: .......... done
+[00:00:46] Cleaning up
+===>  Cleaning for vcftools-0.1.16
+[00:00:47] Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	vcftools-0.1.16
+
+Number of packages to be removed: 1
+
+The operation will free 1 MiB.
+[11-1-i386-default] [1/1] Deinstalling vcftools-0.1.16...
+[11-1-i386-default] [1/1] Deleting files for vcftools-0.1.16: .......... done
+build of wip/vcftools | vcftools-0.1.16 ended at Thu Aug  2 14:33:21 CDT 2018
+build time: 00:00:35
