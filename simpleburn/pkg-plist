@@ -1,1 +1,24 @@
-@comment $FreeBSD$
+bin/mplayer-frontend.sh
+bin/simpleburn
+bin/simpleburn.sh
+doc/simpleburn-1.8.3.1/ChangeLog
+doc/simpleburn-1.8.3.1/I18N
+doc/simpleburn-1.8.3.1/INSTALL
+doc/simpleburn-1.8.3.1/LICENSE
+doc/simpleburn-1.8.3.1/TESTS
+doc/simpleburn-1.8.3.1/TODO
+doc/simpleburn-1.8.3.1/cdio.txt
+doc/simpleburn-1.8.3.1/dvdread.dia
+share/applications/simpleburn.desktop
+share/icons/hicolor/32x32/apps/simpleburn.png
+share/locale/cs/LC_MESSAGES/simpleburn.mo
+share/locale/de/LC_MESSAGES/simpleburn.mo
+share/locale/es/LC_MESSAGES/simpleburn.mo
+share/locale/fr/LC_MESSAGES/simpleburn.mo
+share/locale/hu/LC_MESSAGES/simpleburn.mo
+share/locale/it/LC_MESSAGES/simpleburn.mo
+share/locale/pl/LC_MESSAGES/simpleburn.mo
+share/locale/ru/LC_MESSAGES/simpleburn.mo
+share/locale/sr/LC_MESSAGES/simpleburn.mo
+share/locale/sv/LC_MESSAGES/simpleburn.mo
+%%DATADIR%%/simpleburn.ui

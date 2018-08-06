@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simpleburn
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.3.1
 CATEGORIES=	wip sysutils
 MASTER_SITES=	http://simpleburn.tuxfamily.org/IMG/gz/
 
