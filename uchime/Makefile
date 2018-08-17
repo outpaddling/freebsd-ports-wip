@@ -11,19 +11,7 @@ COMMENT=	Algorithm for detecting chimeric sequences
 
 LICENSE=	PD
 
-BUILD_DEPENDS=	bash:shells/bash
-
-USES=		shebangfix
-SHEBANG_FILES=	mk
-
-ALL_TARGET=	uchime
-
 PLIST_FILES=	bin/uchime
-
-post-patch:
-	${REINPLACE_CMD} -e 's|g++|${CXX}|g' ${WRKSRC}/mk
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/uchime ${STAGEDIR}${PREFIX}/bin
+MAKEFILE=	${FILESDIR}/Makefile
 
 .include <bsd.port.mk>
