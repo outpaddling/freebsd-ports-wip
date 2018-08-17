@@ -24,6 +24,7 @@ sbin/auto-db-dir
 sbin/auto-denyhosts-remove-ip
 sbin/auto-denyhosts-setup
 sbin/auto-detect-intel-gpu
+sbin/auto-disable-host-key-prompt
 sbin/auto-disable-service
 sbin/auto-disable-tcp-timestamps
 sbin/auto-enable-autologout
