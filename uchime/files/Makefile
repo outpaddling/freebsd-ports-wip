@@ -1,4 +1,9 @@
 
+# Generic uchime Makefile
+# Author: Jason W. Bacon, UW -- Milwaukee
+# Facilitates creation of clean packages (Debian, FreeBSD ports, MacPorts,
+# pkgsrc, etc.)
+
 BIN =	uchime
 OBJS =	addtargets2.o alignchime.o alignchimel.o alnparams.o alpha.o alpha2.o fractid.o getparents.o globalalign2.o make3way.o mx.o myutils.o path.o searchchime.o seqdb.o setnucmx.o sfasta.o tracebackbit.o uchime_main.o usort.o viterbifast.o writechhit.o
 
@@ -12,7 +17,7 @@ DESTDIR ?=	.
 STRIP ?=	strip
 
 clean:
-	rm -f *.o mk.stdout mk.stderr tmp.stderr
+	rm -f *.o ${BIN}
 
 all: ${BIN}
 
