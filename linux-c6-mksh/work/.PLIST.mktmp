@@ -1,0 +1,7 @@
+etc/mkshrc
+etc/skel/.mkshrc
+usr/bin/mksh
+usr/share/man/man1/mksh.1.gz
+@preexec [ -n "`/sbin/sysctl -q compat.linux.osrelease`" ] || ( echo "Cannot install package: kernel missing Linux support"; exit 1 )
+@postexec /compat/linux/sbin/ldconfig
+@postunexec /compat/linux/sbin/ldconfig
