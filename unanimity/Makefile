@@ -14,9 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_aarch64=		fails to compile: mmintrin.h:47:5: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
 
 # Sensitive to dependency versions, use latest commit for everything
-BUILD_DEPENDS=	pbseqan==g20171002:biology/pbseqan \
-		pbbam==g20180416:biology/pbbam \
-		pbcopper==g20180413_1:biology/pbcopper
+BUILD_DEPENDS=	pbseqan>=g20171002:biology/pbseqan \
+		pbbam>=g20180416:biology/pbbam \
+		pbcopper>=g20180413:biology/pbcopper
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so:devel/boost-libs
 
