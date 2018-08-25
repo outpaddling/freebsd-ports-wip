@@ -11,7 +11,8 @@ COMMENT=	Assembler for noisy long read genomic data
 LICENSE=	CC-BY-ND-4.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}networkx>=2.1:wip/py-networkx@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}networkx>=2.1:math/py-networkx@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}networkx>=2.1:math/py-networkx@${PY_FLAVOR}
 
 USES=		autoreconf gmake python:3.6+
 GNU_CONFIGURE=	yes
