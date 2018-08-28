@@ -8,12 +8,13 @@ CATEGORIES=	wip devel linux
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Terminfo database required by Linux ncurses programs
+LICENSE=	GPLv3
 
 DESCR=		${.CURDIR}/../../devel/${LINUX_NAME}/pkg-descr
-RPMVERSION=	14.20130511.el7
+RPMVERSION=	13.20130511.el7
 USES=		linux:c7
-USE_LINUX_RPM=	yes
-# LINUX_NAME=	ncurses
-# SRC_DISTFILES=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
+USE_LINUX_RPM=	noarch
+LINUX_NAME=	ncurses
+SRC_DISTFILES=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
 
 .include <bsd.port.mk>
