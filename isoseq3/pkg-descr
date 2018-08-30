@@ -1,0 +1,8 @@
+IsoSeq3 contains the newest tools to identify transcripts in PacBio
+single-molecule sequencing data. Starting in SMRT Link v6.0.0, those tools
+power the IsoSeq3 GUI-based analysis application. A composable workflow of
+existing tools and algorithms, combined with a new clustering technique, allows
+to process the ever-increasing yield of PacBio machines with similar
+performance to IsoSeq1 and IsoSeq2.
+
+WWW: https://github.com/PacificBiosciences/IsoSeq3

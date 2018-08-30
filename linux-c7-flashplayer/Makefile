@@ -3,9 +3,9 @@
 
 PORTNAME=	flashplayer
 PORTVERSION=	30.0.0.154
-CATEGORIES=	www multimedia linux
+CATEGORIES=	wip www multimedia linux
 MASTER_SITES=	https://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION}/
-PKGNAMEPREFIX=	linux-
+PKGNAMEPREFIX=	linux-c7-
 DISTFILES=	flash_player_npapi_linux.i386.tar.gz
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
@@ -13,11 +13,13 @@ MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Adobe Flash Player NPAPI Plugin
 
 ONLY_FOR_ARCHS=	amd64 i386
-USES=		cpe linux webplugin:linux
+USES=		cpe linux:c7 webplugin:linux
 CPE_VENDOR=	adobe
 CPE_PRODUCT=	flash_player
 USE_LINUX=	alsalib alsa-plugins-oss curl dri gtk2 nspr nss
 WEBPLUGIN_FILES=libflashplayer.so
+# Defaults to linux-c7-flashplayer
+WEBPLUGIN_DIR=	${PREFIX}/lib/browser_plugins/linux-flashplayer
 
 RESTRICTED=	Redistribution not allowed
 
