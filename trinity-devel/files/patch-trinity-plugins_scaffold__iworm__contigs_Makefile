@@ -1,0 +1,15 @@
+--- trinity-plugins/scaffold_iworm_contigs/Makefile.orig	2015-10-15 07:07:11.000000000 -0500
++++ trinity-plugins/scaffold_iworm_contigs/Makefile	2016-02-05 12:54:50.000000000 -0600
+@@ -1,10 +1,7 @@
+-CXX    = g++
+-prefix = ../htslib
++CXX    ?= g++
+ 
+ ScaffoldIwormContigs:
+-	$(CXX) -I$(prefix) -L$(prefix) ScaffoldIwormContigs.cpp error_checker.cpp -lhts -lz -o scaffold_iworm_contigs
++	$(CXX) -I${LOCALBASE}/include ScaffoldIwormContigs.cpp error_checker.cpp -L${LOCALBASE}/lib -lhts -lz -o scaffold_iworm_contigs
+ 
+ clean:
+ 	rm scaffold_iworm_contigs
+-
+-
