@@ -1,39 +1,16 @@
 # $FreeBSD$
 
-DISTNAME=	Trinity
-DISTVERSION=	2.8.3
-DISTVERSIONPREFIX=      v
-CATEGORIES=	wip biology java
+PORTNAME=		trinity
+DISTVERSIONPREFIX=	Trinity-v
+DISTVERSION=		2.8.3
+CATEGORIES=		wip biology java
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Trinity assembles transcript sequences from Illumina RNA-Seq data
 
-# Depends on bowtie and jellyfish2
-ONLY_FOR_ARCH=	amd64
-
 LICENSE=	BSD3CLAUSE
 
-USES=		gmake perl5 shebangfix dos2unix	compiler:openmp
-SHEBANG_FILES=	util/*/*.sh \
-		util/*/*.pl \
-		Chrysalis/*.pl \
-		trinity-plugins/collectl/build_collectl.sh
-DOS2UNIX_FILES=	PerlLib/HPC/GridRunner.pm \
-		PerlLib/HPC/SLURM_handler.pm
-USE_JAVA=	yes
-JAVA_VERSION=	1.7 1.6
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	trinityrnaseq
-GH_PROJECT=	trinityrnaseq
-
-ONLY_FOR_ARCHS=	amd64
-
-CFLAGS+=	-fopenmp
-LDFLAGS+=	-fopenmp -Wl,-rpath=${_GCC_RUNTIME}
-
 # Trinity core programs: Inchworm, Chrysalis, Butterfly
-
 # Bundled plugins: Trinity is very sensitive to having the correct versions
 # of some of these.  Test thoroughly if you change any of them.
 # collectl 3.7.4
@@ -59,8 +36,24 @@ RUN_DEPENDS+=	gsort:sysutils/coreutils \
 		slclust:biology/slclust \
 		trimmomatic>=0.32:biology/trimmomatic \
 		rsem>=1.2.27:wip/rsem
-LIB_DEPENDS+=	libexecinfo.so:devel/libexecinfo \
-		libhts.so:biology/htslib
+LIB_DEPENDS+=	libhts.so:biology/htslib
+
+USES=		gmake perl5 shebangfix dos2unix	compiler:openmp
+SHEBANG_FILES=	util/*/*.sh \
+		util/*/*.pl \
+		Chrysalis/analysis/*.pl
+USE_JAVA=	yes
+JAVA_VERSION=	1.7 1.6
+USE_GITHUB=	yes
+GH_ACCOUNT=	trinityrnaseq
+GH_PROJECT=	trinityrnaseq
+
+# Depends on bowtie and jellyfish2
+# Should work on other 64-bit archs, but untested
+ONLY_FOR_ARCH=	amd64
+
+CFLAGS+=	-fopenmp
+LDFLAGS+=	-fopenmp -Wl,-rpath=${_GCC_RUNTIME}
 
 LIBEXEC_DIR=	${PREFIX}/libexec/trinity
 PLUGINS_DIR=	${LIBEXEC_DIR}/trinity-plugins
@@ -68,12 +61,7 @@ PLUGINS_DIR=	${LIBEXEC_DIR}/trinity-plugins
 post-patch:
 	# General changes to respect env
 	${REINPLACE_CMD} -e "s|gcc|${CC}|g" -e "s|g++|${CXX}|g" \
-		${WRKSRC}/Chrysalis/Makefile* \
-		${WRKSRC}/trinity-plugins/fstrozzi-Fastool-7c3e034f05/Makefile \
-		${WRKSRC}/trinity-plugins/slclust/src/Makefile
-	${REINPLACE_CMD} \
-		-e 's|make |${MAKE} |g' \
-		${WRKSRC}/trinity-plugins/collectl/build_collectl.sh
+		${WRKSRC}/Chrysalis/Makefile*
 
 	# Change paths for plugins installed separately
 	${REINPLACE_CMD} \
@@ -103,23 +91,11 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e "s|-lm -pthread|-lm -pthread -Wl,-rpath=${_GCC_RUNTIME}|g" \
 		${WRKSRC}/Chrysalis/Makefile
-	${MV} ${WRKSRC}/Chrysalis/Makefile_g++ \
-		${WRKSRC}/Chrysalis/Makefile_${CXX}
-	${MV} ${WRKSRC}/Chrysalis/Makefile_g++_x86_64 \
-		${WRKSRC}/Chrysalis/Makefile_${CXX}_x86_64
-	${MV} ${WRKSRC}/Chrysalis/Makefile_g++_i386 \
-		${WRKSRC}/Chrysalis/Makefile_${CXX}_i386
 
 	# Remove absolute paths to Trinity command
-	${REINPLACE_CMD} \
-		-e 's|$$BASEDIR/Trinity|Trinity|g' \
-		${WRKSRC}/util/run_Trinity_edgeR_pipeline.pl
 	${REINPLACE_CMD} -i '' \
 		-e 's|$$FindBin::Bin/../../Trinity|Trinity|g' \
 		${WRKSRC}/util/support_scripts/write_partitioned_trinity_cmds.pl
-
-	# Prevent COPYTREE from installing patch precursors
-	${RM} ${WRKSRC}/PerlLib/HPC/SLURM_handler.pm.orig
 
 # Some scripts are not available during patch stage
 post-build:

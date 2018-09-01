@@ -1,6 +1,6 @@
---- Makefile.orig	2015-10-15 12:07:11 UTC
+--- Makefile.orig	2018-09-01 14:38:58 UTC
 +++ Makefile
-@@ -14,7 +14,7 @@ else
+@@ -17,7 +17,7 @@ else
  endif
  
  
@@ -8,4 +8,4 @@
 +all: inchworm_target chrysalis_target trinity_essentials plugins
  	sh ./util/support_scripts/trinity_install_tests.sh
  
- inchworm_target:
+ 
