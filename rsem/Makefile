@@ -1,4 +1,5 @@
 # $FreeBSD$
+
 # Test new versions with Trinity before upgrading
 
 PORTNAME=	rsem
@@ -29,13 +30,15 @@ SHEBANG_FILES=	convert-sam-for-rsem \
 		rsem-plot-transcript-wiggles \
 		rsem-prepare-reference \
 		rsem-run-ebseq \
-		rsem_perl_utils.pm
+		rsem_perl_utils.pm \
+		rsem-gff3-to-gtf \
+		rsem-refseq-extract-primary-assembly
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	deweylab
 GH_PROJECT=	RSEM
 
-WRKSRC=		${WRKDIR}/RSEM-${PORTVERSION}
+#WRKSRC=		${WRKDIR}/RSEM-${PORTVERSION}
 
 MAKE_ENV+=	libexecdir=${PREFIX}/libexec \
 		perl_mod_dir=${PREFIX}/${SITE_PERL_REL}/rsem \
