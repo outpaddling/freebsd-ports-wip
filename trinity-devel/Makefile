@@ -10,10 +10,11 @@ COMMENT=	Trinity assembles transcript sequences from Illumina RNA-Seq data
 
 LICENSE=	BSD3CLAUSE
 
+# FIXME: Update these versions
 # Trinity core programs: Inchworm, Chrysalis, Butterfly
 # Bundled plugins: Trinity is very sensitive to having the correct versions
 # of some of these.  Test thoroughly if you change any of them.
-# collectl 3.7.4
+# collectl 4.1.0
 # jellyfish 2.1.4 (2.2.0 seems OK)
 # parafly 0.1 (determined from config.h)
 # fastool 7c3e034f05 Nov 18 2013 commit on Github
@@ -24,7 +25,9 @@ LICENSE=	BSD3CLAUSE
 #	Unbundle collectl (low priority)
 
 BUILD_DEPENDS+=	gsort:sysutils/coreutils \
-		bash:shells/bash
+		bash:shells/bash \
+		cmake:devel/cmake \
+		slclust:biology/slclust
 RUN_DEPENDS+=	gsort:sysutils/coreutils \
 		bowtie:biology/bowtie \
 		bowtie2:biology/bowtie2 \
@@ -38,10 +41,15 @@ RUN_DEPENDS+=	gsort:sysutils/coreutils \
 		rsem>=1.2.27:wip/rsem
 LIB_DEPENDS+=	libhts.so:biology/htslib
 
-USES=		gmake perl5 shebangfix dos2unix	compiler:openmp
+USES=		compiler:openmp gmake perl5 python shebangfix
 SHEBANG_FILES=	util/*/*.sh \
 		util/*/*.pl \
-		Chrysalis/analysis/*.pl
+		Chrysalis/analysis/*.pl \
+		util/support_scripts/trinity_installer.py \
+		util/misc/alt_GG_read_partitioning_JCornish/genwig.sh \
+		util/misc/alt_GG_read_partitioning_JCornish/genwig2.py \
+		util/misc/sim_test_framework/run_Trinity_eval.sh \
+		util/misc/TPM_weighted_gene_length.py
 USE_JAVA=	yes
 JAVA_VERSION=	1.7 1.6
 USE_GITHUB=	yes
@@ -54,6 +62,7 @@ ONLY_FOR_ARCH=	amd64
 
 CFLAGS+=	-fopenmp
 LDFLAGS+=	-fopenmp -Wl,-rpath=${_GCC_RUNTIME}
+MAKE_JOBS_UNSAFE=	yes
 
 LIBEXEC_DIR=	${PREFIX}/libexec/trinity
 PLUGINS_DIR=	${LIBEXEC_DIR}/trinity-plugins
@@ -100,24 +109,17 @@ post-patch:
 # Some scripts are not available during patch stage
 post-build:
 	${REINPLACE_CMD} -i '' -e "s|/usr/bin/perl|${LOCALBASE}/bin/perl|g" \
-		${WRKSRC}/trinity-plugins/collectl/bin/collectl \
-		${WRKSRC}/trinity-plugins/collectl/bin/*.pl
+		${WRKSRC}/trinity-plugins/COLLECTL/collectl/collectl \
+		${WRKSRC}/trinity-plugins/COLLECTL/collectl/*.pl
 
 # FIXME: More may need to be installed
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Trinity ${STAGEDIR}${PREFIX}/bin
 
 	@${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}/Chrysalis
-	cd ${WRKSRC}/Chrysalis && \
-		${INSTALL_PROGRAM} BreakTransByPairs Chrysalis \
-			CreateIwormFastaBundle \
-			GraphFromFasta GraphFromFasta_MPI \
-			IsoformAugment JoinTransByPairs QuantifyGraph \
-			ReadsToTranscripts ReadsToTranscripts_MPI \
-			ReadsToTranscripts_MPI_chang RunButterfly \
-			TranscriptomeFromVaryK checkLock \
-			${STAGEDIR}${LIBEXEC_DIR}/Chrysalis
-	${INSTALL_SCRIPT} ${WRKSRC}/Chrysalis/ReadsToComponents.pl \
+	${INSTALL_PROGRAM} ${WRKSRC}/Chrysalis/bin/* \
+		${STAGEDIR}${LIBEXEC_DIR}/Chrysalis
+	${INSTALL_SCRIPT} ${WRKSRC}/Chrysalis/analysis/ReadsToComponents.pl \
 		${STAGEDIR}${LIBEXEC_DIR}/Chrysalis
 
 	@${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}/Inchworm/bin
@@ -135,12 +137,7 @@ do-install:
 		${STAGEDIR}${LIBEXEC_DIR}
 
 	@${MKDIR} \
-		${STAGEDIR}${PLUGINS_DIR}/collectl \
 		${STAGEDIR}${PLUGINS_DIR}/scaffold_iworm_contigs
-	cd ${WRKSRC}/trinity-plugins/collectl && \
-		${COPYTREE_BIN} bin ${STAGEDIR}${PLUGINS_DIR}/collectl
-	cd ${WRKSRC}/trinity-plugins && \
-		${COPYTREE_BIN} GAL_0.2.1 ${STAGEDIR}${PLUGINS_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/trinity-plugins/scaffold_iworm_contigs/scaffold_iworm_contigs \
 		${STAGEDIR}${PLUGINS_DIR}/scaffold_iworm_contigs
 
