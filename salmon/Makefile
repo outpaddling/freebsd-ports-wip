@@ -24,6 +24,7 @@ LIBS+=		-lthr
 
 post-configure:
 	${REINPLACE_CMD} -e 's|&& make|\&\& gmake|g' \
-		${WRKSRC}/CMakeFiles/libstadenio.dir/build.make
+		${WRKSRC}/CMakeFiles/libstadenio.dir/build.make \
+		${WRKSRC}/CMakeFiles/libtbb.dir/build.make
 
 .include <bsd.port.mk>
