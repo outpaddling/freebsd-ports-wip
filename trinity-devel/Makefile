@@ -27,7 +27,8 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS+=	gsort:sysutils/coreutils \
 		bash:shells/bash \
 		cmake:devel/cmake \
-		slclust:biology/slclust
+		slclust:biology/slclust \
+		salmon:wip/salmon
 RUN_DEPENDS+=	gsort:sysutils/coreutils \
 		bowtie:biology/bowtie \
 		bowtie2:biology/bowtie2 \
@@ -49,9 +50,13 @@ SHEBANG_FILES=	util/*/*.sh \
 		util/misc/alt_GG_read_partitioning_JCornish/genwig.sh \
 		util/misc/alt_GG_read_partitioning_JCornish/genwig2.py \
 		util/misc/sim_test_framework/run_Trinity_eval.sh \
-		util/misc/TPM_weighted_gene_length.py
+		util/misc/TPM_weighted_gene_length.py \
+		Analysis/SuperTranscripts/*.py \
+		Analysis/SuperTranscripts/*/*.py \
+		Analysis/DifferentialExpression/cluster_sample_data/runMe.sh
 USE_JAVA=	yes
-JAVA_VERSION=	1.7 1.6
+# Check this
+JAVA_VERSION=	1.8 1.7 1.6
 USE_GITHUB=	yes
 GH_ACCOUNT=	trinityrnaseq
 GH_PROJECT=	trinityrnaseq
@@ -69,31 +74,25 @@ PLUGINS_DIR=	${LIBEXEC_DIR}/trinity-plugins
 
 post-patch:
 	# General changes to respect env
-	${REINPLACE_CMD} -e "s|gcc|${CC}|g" -e "s|g++|${CXX}|g" \
+	${REINPLACE_CMD} \
+		-e "s|gcc|${CC}|g" \
+		-e "s|g++|${CXX}|g" \
 		${WRKSRC}/Chrysalis/Makefile*
 
-	# Change paths for plugins installed separately
 	${REINPLACE_CMD} \
 		-e 's|$$FindBin::Bin|$$FindBin::Bin/../libexec/trinity|g' \
 		-e 's|$$FindBin::RealBin|$$FindBin::RealBin/../libexec/trinity|g' \
-		-e 's|$$ROOTDIR/trinity-plugins/BIN|&:$$JELLYFISH_DIR/bin:$$FASTOOL_DIR|g' \
-		-e 's|$$JELLYFISH_DIR/bin/jellyfish|jellyfish|g' \
-		-e 's|$$FASTOOL_DIR/fastool|fastool|g' \
-		-e 's|$$ROOTDIR/trinity-plugins/parafly/bin/ParaFly|ParaFly|g' \
+		-e 's|$$ROOTDIR/trinity-plugins/BIN/ParaFly|ParaFly|g' \
 		-e 's|$$ROOTDIR/trinity-plugins/Trimmomatic/trimmomatic.jar|${JAVAJARDIR}/trimmomatic.jar|g' \
 		-e 's|$$ROOTDIR/trinity-plugins/Trimmomatic|${LOCALBASE}/share/Trimmomatic|g' \
 		${WRKSRC}/Trinity
 
-	# Utility scripts have some hard-coded paths as well
-	${REINPLACE_CMD} -i '' \
-		-e 's|$$JELLYFISH_DIR/bin/jellyfish|jellyfish|g' \
-		-e 's|$$FASTOOL_DIR/fastool|fastool|g' \
-		${WRKSRC}/util/insilico_read_normalization.pl
 	${REINPLACE_CMD} -i '' \
 		-e 's|$$JELLYFISH_DIR/bin/jellyfish|jellyfish|g' \
 		${WRKSRC}/util/misc/run_jellyfish.pl
+
 	${REINPLACE_CMD} -i '' \
-		-e 's|$$FindBin::Bin/../../trinity-plugins/Trimmomatic/trimmomatic.jar|${JAVAJARDIR}/trimmomatic.jar|g' \
+		-e 's|$$FindBin::RealBin/../../trinity-plugins/Trimmomatic/trimmomatic.jar|${JAVAJARDIR}/trimmomatic.jar|g' \
 		-e 's|/seq/regev_genome_portal/SOFTWARE/BIN/trimmomatic.jar|${JAVAJARDIR}/trimmomatic.jar|g' \
 		${WRKSRC}/util/misc/run_trimmomatic_qual_trimming.pl
 
@@ -116,11 +115,11 @@ post-build:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Trinity ${STAGEDIR}${PREFIX}/bin
 
-	@${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}/Chrysalis
+	@${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}/Chrysalis/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/Chrysalis/bin/* \
-		${STAGEDIR}${LIBEXEC_DIR}/Chrysalis
+		${STAGEDIR}${LIBEXEC_DIR}/Chrysalis/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/Chrysalis/analysis/ReadsToComponents.pl \
-		${STAGEDIR}${LIBEXEC_DIR}/Chrysalis
+		${STAGEDIR}${LIBEXEC_DIR}/Chrysalis/bin
 
 	@${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}/Inchworm/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/Inchworm/bin/* \
@@ -136,12 +135,21 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_BIN} util \
 		${STAGEDIR}${LIBEXEC_DIR}
 
-	@${MKDIR} \
-		${STAGEDIR}${PLUGINS_DIR}/scaffold_iworm_contigs
+	cd ${WRKSRC} && ${COPYTREE_BIN} Analysis \
+		${STAGEDIR}${LIBEXEC_DIR}
+
+	@${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/scaffold_iworm_contigs
 	${INSTALL_PROGRAM} ${WRKSRC}/trinity-plugins/scaffold_iworm_contigs/scaffold_iworm_contigs \
 		${STAGEDIR}${PLUGINS_DIR}/scaffold_iworm_contigs
 
+	@${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/BIN
+	${INSTALL_PROGRAM} ${WRKSRC}/trinity-plugins/BIN/seqtk-trinity \
+		${STAGEDIR}${PLUGINS_DIR}/BIN
+
 	cd ${WRKSRC}/sample_data && ${COPYTREE_SHARE} \* \
 		${STAGEDIR}${EXAMPLESDIR}
+
+	${RLN} ${STAGEDIR}${PREFIX}/bin/Trinity \
+		${STAGEDIR}${PREFIX}/libexec/trinity/Trinity
 
 .include <bsd.port.mk>
