@@ -3,7 +3,8 @@
 PORTNAME=	cluster-admin
 PORTVERSION=	0.3
 CATEGORIES=	wip sysutils
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
+		http://outpaddling.mooo.com/~bacon/Acadix/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for building and managing HPC clusters
