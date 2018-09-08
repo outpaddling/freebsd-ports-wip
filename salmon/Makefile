@@ -11,7 +11,8 @@ COMMENT=	Transcript-level quantification of RNA-seq from lightweight alignments
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash \
+		autoconf:devel/autoconf
 # LIB_DEPENDS=	libomp.so:devel/openmp	for clang
 LIB_DEPENDS=	libtbb.so:devel/tbb \
 		libboost_system.so:devel/boost-libs
