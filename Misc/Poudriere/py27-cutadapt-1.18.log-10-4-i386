@@ -1,0 +1,1027 @@
+build started at Sun Sep  9 11:01:55 CDT 2018
+port directory: /usr/ports/wip/py-cutadapt
+package name: py27-cutadapt-1.18
+building for: FreeBSD 10-4-i386-default 10.4-RELEASE-p8 FreeBSD 10.4-RELEASE-p8 i386
+maintained by: jwb@FreeBSD.org
+Makefile ident:      $FreeBSD: head/biology/py-cutadapt/Makefile 472884 2018-06-20 17:05:41Z mat $
+Poudriere version: 3.2.7
+Host OSVERSION: 1101001
+Jail OSVERSION: 1004000
+Job Id: 
+
+---Begin Environment---
+SHELL=/bin/csh
+UNAME_p=i386
+UNAME_m=i386
+OSVERSION=1004000
+UNAME_v=FreeBSD 10.4-RELEASE-p8
+UNAME_r=10.4-RELEASE-p8
+BLOCKSIZE=K
+MAIL=/var/mail/root
+WARNING_WAIT=0
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+TRYBROKEN=yes
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.2.7
+MASTERMNT=/usr/local/poudriere/data/.m/10-4-i386-default/ref
+DEV_WARNING_WAIT=0
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm
+GID=0
+UID=0
+PWD=/usr/local/poudriere/data/.m/10-4-i386-default/ref/.p
+NO_WARNING_PKG_INSTALL_EOL=yes
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=10-4-i386-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+OLDPWD=/usr/local/poudriere/data/.m/10-4-i386-default/ref/.p/pool
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=PACKAGES=/tmp/pkgs PKGREPOSITORY=/tmp/pkgs
+FLAVOR=py27
+DEPENDS_ARGS=
+MAKE_ARGS= FLAVOR=py27
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+jwb@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+PYTHON="/usr/local/bin/python2.7" XDG_DATA_HOME=/wrkdirs/usr/ports/wip/py-cutadapt/work-py27  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/py-cutadapt/work-py27  HOME=/wrkdirs/usr/ports/wip/py-cutadapt/work-py27 TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/py-cutadapt/work-py27/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/wip/py-cutadapt/work-py27  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/py-cutadapt/work-py27  HOME=/wrkdirs/usr/ports/wip/py-cutadapt/work-py27 TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/py-cutadapt/work-py27/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES LDSHARED="cc -shared" PYTHONDONTWRITEBYTECODE= PYTHONOPTIMIZE= PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector -fno-strict-aliasing"  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector" LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector -fno-strict-aliasing "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="" PORTEXAMPLES="" PYTHON_INCLUDEDIR=include/python2.7  PYTHON_LIBDIR=lib/python2.7  PYTHON_PLATFORM=freebsd10  PYTHON_PYOEXTENSION=pyo  PYTHON_SITELIBDIR=lib/python2.7/site-packages  PYTHON_SUFFIX=27  PYTHON_VER=2.7  PYTHON_VERSION=python2.7 PYTHON2="" PYTHON3="@comment " OSREL=10.4 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/cutadapt"  EXAMPLESDIR="share/examples/cutadapt"  DATADIR="share/cutadapt"  WWWDIR="www/cutadapt"  ETCDIR="etc/cutadapt"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/cutadapt DOCSDIR=/usr/local/share/doc/cutadapt EXAMPLESDIR=/usr/local/share/examples/cutadapt  WWWDIR=/usr/local/www/cutadapt ETCDIR=/usr/local/etc/cutadapt
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+MACHINE=i386
+MACHINE_ARCH=i386
+ARCH=${MACHINE_ARCH}
+#### /usr/ports/Mk/Scripts/ports_env.sh ####
+_CCVERSION_921dbbb2=FreeBSD clang version 3.4.1 (tags/RELEASE_34/dot1-final 208032) 20140512 Target: i386-unknown-freebsd10.4 Thread model: posix
+_ALTCCVERSION_921dbbb2=none
+_CXXINTERNAL_acaad9ca=FreeBSD clang version 3.4.1 (tags/RELEASE_34/dot1-final 208032) 20140512 Target: i386-unknown-freebsd10.4 Thread model: posix "/usr/bin/ld" "--eh-frame-hdr" "-dynamic-linker" "/libexec/ld-elf.so.1" "--hash-style=both" "--enable-new-dtags" "-m" "elf_i386_fbsd" "-o" "a.out" "/usr/lib/crt1.o" "/usr/lib/crti.o" "/usr/lib/crtbegin.o" "-L/usr/lib" "/dev/null" "-lc++" "-lm" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "-lc" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "/usr/lib/crtend.o" "/usr/lib/crtn.o"
+CC_OUTPUT_921dbbb2_58173849=yes
+CC_OUTPUT_921dbbb2_9bdba57c=yes
+CC_OUTPUT_921dbbb2_6a4fe7f5=yes
+CC_OUTPUT_921dbbb2_6bcac02b=yes
+CC_OUTPUT_921dbbb2_67d20829=yes
+CC_OUTPUT_921dbbb2_bfa62e83=yes
+CC_OUTPUT_921dbbb2_f0b4d593=yes
+CC_OUTPUT_921dbbb2_308abb44=yes
+CC_OUTPUT_921dbbb2_f00456e5=yes
+CC_OUTPUT_921dbbb2_65ad290d=error: invalid value 'c++14' in '-std=c++14'
+CC_OUTPUT_921dbbb2_f2776b26=error: invalid value 'c++17' in '-std=c++17'
+CC_OUTPUT_921dbbb2_b2657cc3=yes
+CC_OUTPUT_921dbbb2_380987f7=yes
+CC_OUTPUT_921dbbb2_160933ec=error: invalid value 'gnu++14' in '-std=gnu++14'
+CC_OUTPUT_921dbbb2_fb62803b=error: invalid value 'gnu++17' in '-std=gnu++17'
+_OBJC_CCVERSION_921dbbb2=FreeBSD clang version 3.4.1 (tags/RELEASE_34/dot1-final 208032) 20140512 Target: i386-unknown-freebsd10.4 Thread model: posix
+_OBJC_ALTCCVERSION_921dbbb2=none
+ARCH=i386
+OPSYS=FreeBSD
+_OSRELEASE=10.4-RELEASE-p8
+OSREL=10.4
+OSVERSION=1004000
+PYTHONBASE=/usr/local
+_SMP_CPUS=4
+CONFIGURE_MAX_CMD_LEN=262144
+HAVE_PORTS_ENV=1
+#### Misc Poudriere ####
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  524288
+stack size              (kbytes, -s)  65536
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19558
+open files                      (-n)  1024
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+sbsize                   (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===>  License MIT accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   py27-cutadapt-1.18 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.10.5_1.txz
+[10-4-i386-default] Installing pkg-1.10.5_1...
+[10-4-i386-default] Extracting pkg-1.10.5_1: .......... done
+===>   py27-cutadapt-1.18 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of py27-cutadapt-1.18
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License MIT accepted by the user
+===>   py27-cutadapt-1.18 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by py27-cutadapt-1.18 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License MIT accepted by the user
+===>   py27-cutadapt-1.18 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by py27-cutadapt-1.18 for building
+=> SHA256 Checksum OK for cutadapt-1.18.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License MIT accepted by the user
+===>   py27-cutadapt-1.18 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by py27-cutadapt-1.18 for building
+===>  Extracting for py27-cutadapt-1.18
+=> SHA256 Checksum OK for cutadapt-1.18.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for py27-cutadapt-1.18
+===========================================================================
+=======================<phase: build-depends  >============================
+===>   py27-cutadapt-1.18 depends on package: py27-setuptools>0 - not found
+===>   Installing existing package /packages/All/py27-setuptools-40.0.0.txz
+[10-4-i386-default] Installing py27-setuptools-40.0.0...
+[10-4-i386-default] `-- Installing python27-2.7.15...
+[10-4-i386-default] |   `-- Installing gettext-runtime-0.19.8.1_1...
+[10-4-i386-default] |   | `-- Installing indexinfo-0.3.1...
+[10-4-i386-default] |   | `-- Extracting indexinfo-0.3.1: .... done
+[10-4-i386-default] |   `-- Extracting gettext-runtime-0.19.8.1_1: .......... done
+[10-4-i386-default] |   `-- Installing libffi-3.2.1_2...
+[10-4-i386-default] |   `-- Extracting libffi-3.2.1_2: .......... done
+[10-4-i386-default] |   `-- Installing readline-7.0.3_1...
+[10-4-i386-default] |   `-- Extracting readline-7.0.3_1: .......... done
+[10-4-i386-default] `-- Extracting python27-2.7.15: .......... done
+[10-4-i386-default] Extracting py27-setuptools-40.0.0: .......... done
+Message from python27-2.7.15:
+
+===========================================================================
+
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+bsddb           databases/py-bsddb
+gdbm            databases/py-gdbm
+sqlite3         databases/py-sqlite3
+tkinter         x11-toolkits/py-tkinter
+
+===========================================================================
+===>   py27-cutadapt-1.18 depends on package: py27-setuptools>0 - found
+===>   Returning to build of py27-cutadapt-1.18
+===>   py27-cutadapt-1.18 depends on file: /usr/local/bin/python2.7 - found
+===========================================================================
+=======================<phase: lib-depends    >============================
+===========================================================================
+=>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>   py27-cutadapt-1.18 depends on package: py27-setuptools>0 - found
+===>   py27-cutadapt-1.18 depends on file: /usr/local/bin/python2.7 - found
+===>  Configuring for py27-cutadapt-1.18
+running config
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for py27-cutadapt-1.18
+running build
+running build_py
+creating build
+creating build/lib.freebsd-10.4-RELEASE-p8-i386-2.7
+creating build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt
+copying src/cutadapt/report.py -> build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt
+copying src/cutadapt/qualtrim.py -> build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt
+copying src/cutadapt/align.py -> build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt
+copying src/cutadapt/_version.py -> build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt
+copying src/cutadapt/colorspace.py -> build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt
+copying src/cutadapt/seqio.py -> build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt
+copying src/cutadapt/__init__.py -> build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt
+copying src/cutadapt/modifiers.py -> build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt
+copying src/cutadapt/utils.py -> build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt
+copying src/cutadapt/pipeline.py -> build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt
+copying src/cutadapt/filters.py -> build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt
+copying src/cutadapt/compat.py -> build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt
+copying src/cutadapt/adapters.py -> build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt
+copying src/cutadapt/__main__.py -> build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt
+UPDATING build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/_version.py
+set build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/_version.py to '1.18'
+running build_ext
+building 'cutadapt._align' extension
+creating build/temp.freebsd-10.4-RELEASE-p8-i386-2.7
+creating build/temp.freebsd-10.4-RELEASE-p8-i386-2.7/src
+creating build/temp.freebsd-10.4-RELEASE-p8-i386-2.7/src/cutadapt
+cc -DNDEBUG -O2 -pipe -fstack-protector -fno-strict-aliasing -fPIC -I/usr/local/include/python2.7 -c src/cutadapt/_align.c -o build/temp.freebsd-10.4-RELEASE-p8-i386-2.7/src/cutadapt/_align.o
+src/cutadapt/_align.c:2273:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:2275:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:2277:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:2286:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:2292:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:2468:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:2470:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:2472:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:2474:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:2483:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:2489:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:2495:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:3148:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:3150:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:3152:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:3154:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:3156:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:3165:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:3171:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:3177:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:3183:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:3196:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:3198:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:3200:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:4838:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:4840:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:4842:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:4844:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:4846:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:4848:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:4850:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:4859:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:4865:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:4871:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:4877:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:4883:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:4889:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:4902:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:4904:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:4906:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:4908:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:5096:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:5098:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:5100:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:5102:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:5111:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:5117:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:5123:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:5136:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:5138:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:7174:21: warning: declaration does not declare anything [-Wmissing-declarations]
+                    CYTHON_FALLTHROUGH;
+                    ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:7185:21: warning: declaration does not declare anything [-Wmissing-declarations]
+                    CYTHON_FALLTHROUGH;
+                    ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:7196:21: warning: declaration does not declare anything [-Wmissing-declarations]
+                    CYTHON_FALLTHROUGH;
+                    ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:7207:21: warning: declaration does not declare anything [-Wmissing-declarations]
+                    CYTHON_FALLTHROUGH;
+                    ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:7218:21: warning: declaration does not declare anything [-Wmissing-declarations]
+                    CYTHON_FALLTHROUGH;
+                    ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_align.c:7229:21: warning: declaration does not declare anything [-Wmissing-declarations]
+                    CYTHON_FALLTHROUGH;
+                    ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_align.c:269:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+56 warnings generated.
+cc -shared -fstack-protector -O2 -pipe -fstack-protector -fno-strict-aliasing build/temp.freebsd-10.4-RELEASE-p8-i386-2.7/src/cutadapt/_align.o -L/usr/local/lib -lpython2.7 -o build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/_align.so
+building 'cutadapt._qualtrim' extension
+cc -DNDEBUG -O2 -pipe -fstack-protector -fno-strict-aliasing -fPIC -I/usr/local/include/python2.7 -c src/cutadapt/_qualtrim.c -o build/temp.freebsd-10.4-RELEASE-p8-i386-2.7/src/cutadapt/_qualtrim.o
+src/cutadapt/_qualtrim.c:1110:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:1112:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:1114:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:1116:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:1125:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:1131:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:1137:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:1150:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:1337:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:1339:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:1341:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:1350:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:1356:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:1369:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_qualtrim.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+14 warnings generated.
+cc -shared -fstack-protector -O2 -pipe -fstack-protector -fno-strict-aliasing build/temp.freebsd-10.4-RELEASE-p8-i386-2.7/src/cutadapt/_qualtrim.o -L/usr/local/lib -lpython2.7 -o build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/_qualtrim.so
+building 'cutadapt._seqio' extension
+cc -DNDEBUG -O2 -pipe -fstack-protector -fno-strict-aliasing -fPIC -I/usr/local/include/python2.7 -c src/cutadapt/_seqio.c -o build/temp.freebsd-10.4-RELEASE-p8-i386-2.7/src/cutadapt/_seqio.o
+src/cutadapt/_seqio.c:1676:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:1678:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:1680:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:1682:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:1691:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:1697:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:1703:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2031:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2033:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2035:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2037:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2046:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2052:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2058:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2258:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2260:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2262:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2264:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2273:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2279:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2285:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2482:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2484:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2486:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2488:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2497:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2503:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2509:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2522:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:2524:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:3874:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:3876:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:3878:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:3887:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:3893:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+src/cutadapt/_seqio.c:3906:9: warning: declaration does not declare anything [-Wmissing-declarations]
+        CYTHON_FALLTHROUGH;
+        ^~~~~~~~~~~~~~~~~~
+src/cutadapt/_seqio.c:268:34: note: expanded from macro 'CYTHON_FALLTHROUGH'
+      #define CYTHON_FALLTHROUGH __attribute__((fallthrough))
+                                 ^~~~~~~~~~~~~
+36 warnings generated.
+cc -shared -fstack-protector -O2 -pipe -fstack-protector -fno-strict-aliasing build/temp.freebsd-10.4-RELEASE-p8-i386-2.7/src/cutadapt/_seqio.o -L/usr/local/lib -lpython2.7 -o build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/_seqio.so
+===========================================================================
+=>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===>   py27-cutadapt-1.18 depends on package: py27-xopen>0 - not found
+===>   Installing existing package /packages/All/py27-xopen-0.3.5.txz
+[10-4-i386-default] Installing py27-xopen-0.3.5...
+[10-4-i386-default] Extracting py27-xopen-0.3.5: .......... done
+===>   py27-cutadapt-1.18 depends on package: py27-xopen>0 - found
+===>   Returning to build of py27-cutadapt-1.18
+===>   py27-cutadapt-1.18 depends on package: py27-setuptools>0 - found
+===>   py27-cutadapt-1.18 depends on file: /usr/local/bin/python2.7 - found
+===========================================================================
+=>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for py27-cutadapt-1.18
+===>   py27-cutadapt-1.18 depends on package: py27-xopen>0 - found
+===>   py27-cutadapt-1.18 depends on package: py27-setuptools>0 - found
+===>   py27-cutadapt-1.18 depends on file: /usr/local/bin/python2.7 - found
+===>   Generating temporary packing list
+running install
+running build
+running build_py
+UPDATING build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/_version.py
+set build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/_version.py to '1.18'
+running build_ext
+running install_lib
+creating /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7
+creating /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages
+creating /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt
+copying build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/adapters.py -> /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt
+copying build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/__main__.py -> /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt
+copying build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/filters.py -> /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt
+copying build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/compat.py -> /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt
+copying build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/_align.so -> /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt
+copying build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/utils.py -> /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt
+copying build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/modifiers.py -> /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt
+copying build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/_qualtrim.so -> /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt
+copying build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/pipeline.py -> /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt
+copying build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/_seqio.so -> /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt
+copying build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/__init__.py -> /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt
+copying build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/align.py -> /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt
+copying build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/report.py -> /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt
+copying build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/_version.py -> /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt
+copying build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/qualtrim.py -> /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt
+copying build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/colorspace.py -> /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt
+copying build/lib.freebsd-10.4-RELEASE-p8-i386-2.7/cutadapt/seqio.py -> /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt
+byte-compiling /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt/adapters.py to adapters.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt/__main__.py to __main__.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt/filters.py to filters.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt/compat.py to compat.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt/utils.py to utils.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt/modifiers.py to modifiers.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt/pipeline.py to pipeline.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt/__init__.py to __init__.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt/align.py to align.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt/report.py to report.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt/_version.py to _version.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt/qualtrim.py to qualtrim.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt/colorspace.py to colorspace.pyc
+byte-compiling /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt/seqio.py to seqio.pyc
+writing byte-compilation script '/tmp/tmp9bzgnZ.py'
+/usr/local/bin/python2.7 -O /tmp/tmp9bzgnZ.py
+removing /tmp/tmp9bzgnZ.py
+running install_egg_info
+running egg_info
+writing requirements to src/cutadapt.egg-info/requires.txt
+writing src/cutadapt.egg-info/PKG-INFO
+writing top-level names to src/cutadapt.egg-info/top_level.txt
+writing dependency_links to src/cutadapt.egg-info/dependency_links.txt
+writing entry points to src/cutadapt.egg-info/entry_points.txt
+reading manifest file 'src/cutadapt.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'src/cutadapt.egg-info/SOURCES.txt'
+Copying src/cutadapt.egg-info to /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/lib/python2.7/site-packages/cutadapt-1.18-py2.7.egg-info
+running install_scripts
+Installing cutadapt script to /wrkdirs/usr/ports/wip/py-cutadapt/work-py27/stage/usr/local/bin
+writing list of installed files to '/wrkdirs/usr/ports/wip/py-cutadapt/work-py27/.PLIST.pymodtmp'
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+=>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for py27-cutadapt-1.18
+===========================================================================
+=>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for py27-cutadapt-1.18
+===>  Checking if py27-cutadapt already installed
+===>   Registering installation for py27-cutadapt-1.18
+[10-4-i386-default] Installing py27-cutadapt-1.18...
+===========================================================================
+=>> Checking shared library dependencies
+ 0x00000001 (NEEDED)                     Shared library: [libc.so.7]
+ 0x00000001 (NEEDED)                     Shared library: [libpython2.7.so.1]
+=======================<phase: deinstall      >============================
+===>  Deinstalling for py27-cutadapt
+===>   Deinstalling py27-cutadapt-1.18
+Updating database digests format: ......... done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	py27-cutadapt-1.18
+
+Number of packages to be removed: 1
+[10-4-i386-default] [1/1] Deinstalling py27-cutadapt-1.18...
+[10-4-i386-default] [1/1] Deleting files for py27-cutadapt-1.18: .......... done
+===========================================================================
+=>> Checking for extra files and directories
+[00:00:46] Installing from package
+[10-4-i386-default] Installing py27-cutadapt-1.18...
+[10-4-i386-default] Extracting py27-cutadapt-1.18: .......... done
+[00:00:46] Cleaning up
+===>  Cleaning for py27-cutadapt-1.18
+[00:00:46] Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	py27-cutadapt-1.18
+
+Number of packages to be removed: 1
+[10-4-i386-default] [1/1] Deinstalling py27-cutadapt-1.18...
+[10-4-i386-default] [1/1] Deleting files for py27-cutadapt-1.18: .......... done
+build of wip/py-cutadapt | py27-cutadapt-1.18 ended at Sun Sep  9 11:02:07 CDT 2018
+build time: 00:00:12
