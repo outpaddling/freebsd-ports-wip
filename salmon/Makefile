@@ -12,8 +12,9 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash \
-		autoconf:devel/autoconf
-# LIB_DEPENDS=	libomp.so:devel/openmp	for clang
+		autoconf:devel/autoconf \
+		cereal>=1.2.2:wip/cereal
+# clang LIB_DEPENDS=	libomp.so:devel/openmp	for clang
 LIB_DEPENDS=	libtbb.so:devel/tbb \
 		libboost_system.so:devel/boost-libs
 
@@ -23,7 +24,7 @@ SHEBANG_FILES=	scripts/*
 USE_GITHUB=	yes
 GH_ACCOUNT=	COMBINE-lab
 
-# LIBS+=		-L${LOCALBASE}/lib -lomp -lthr
+# clang LIBS+=		-L${LOCALBASE}/lib -lomp -lthr
 LIBS+=		-L${LOCALBASE}/lib -lthr
 PLIST_FILES=	bin/salmon lib/libsalmon_core.a
 

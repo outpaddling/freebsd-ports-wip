@@ -1,0 +1,62 @@
+--- CMakeLists.txt.orig	2018-08-29 22:38:43 UTC
++++ CMakeLists.txt
+@@ -499,14 +499,14 @@ ExternalProject_Add_Step(libdivsufsort m
+  
+ set(SUFFARRAY_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/external/install/include)
+ 
+-message("Build system will fetch and build the Cereal serialization library")
+-message("==================================================================")
+-include(ExternalProject)
+-ExternalProject_Add(libcereal
+-    DOWNLOAD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external
+-    DOWNLOAD_COMMAND curl -k -L https://github.com/USCiLab/cereal/archive/v1.2.2.tar.gz -o cereal-v1.2.2.tar.gz &&		 
+-                     ${SHASUM} 1921f26d2e1daf9132da3c432e2fd02093ecaedf846e65d7679ddf868c7289c4  cereal-v1.2.2.tar.gz &&
+-                     tar -xzvf cereal-v1.2.2.tar.gz
++#message("Build system will fetch and build the Cereal serialization library")
++#message("==================================================================")
++#include(ExternalProject)
++#ExternalProject_Add(libcereal
++    #DOWNLOAD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external
++    #DOWNLOAD_COMMAND curl -k -L https://github.com/USCiLab/cereal/archive/v1.2.2.tar.gz -o cereal-v1.2.2.tar.gz &&		 
++                     #${SHASUM} 1921f26d2e1daf9132da3c432e2fd02093ecaedf846e65d7679ddf868c7289c4  cereal-v1.2.2.tar.gz &&
++                     #tar -xzvf cereal-v1.2.2.tar.gz
+ 
+     ##
+     #URL https://github.com/USCiLab/cereal/archive/v1.2.2.tar.gz
+@@ -514,22 +514,23 @@ ExternalProject_Add(libcereal
+     #TLS_VERIFY FALSE
+     #URL_HASH SHA1=ffddf5fc5313cfbb893e07823ca8c473084eebca
+     ##
+-    SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/cereal-1.2.2
+-    INSTALL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/install
++    #SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/cereal-1.2.2
++    #INSTALL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/install
++    #INSTALL_DIR ${LOCALBASE}
+     #UPDATE_COMMAND sh -c "mkdir -p <SOURCE_DIR>/build"
+-    BINARY_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/cereal-1.2.2/build
+-    CONFIGURE_COMMAND ""
+-    BUILD_COMMAND ""
+-    INSTALL_COMMAND sh -c "mkdir -p <INSTALL_DIR>/include && cp -r <SOURCE_DIR>/include/cereal <INSTALL_DIR>/include"
+-)
+-ExternalProject_Add_Step(libcereal makedir
+-  COMMAND mkdir -p <SOURCE_DIR>/build 
+-  COMMENT "Make build directory"
+-  DEPENDEES download 
+-  DEPENDERS configure)
++    #BINARY_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/cereal-1.2.2/build
++    #CONFIGURE_COMMAND ""
++    #BUILD_COMMAND ""
++    #INSTALL_COMMAND sh -c "mkdir -p <INSTALL_DIR>/include && cp -r <SOURCE_DIR>/include/cereal <INSTALL_DIR>/include"
++#)
++#ExternalProject_Add_Step(libcereal makedir
++  #COMMAND mkdir -p <SOURCE_DIR>/build 
++  #COMMENT "Make build directory"
++  #DEPENDEES download 
++  #DEPENDERS configure)
+ 
+ ## Try and find TBB first
+-find_package(TBB 2018.0 COMPONENTS tbb tbbmalloc tbbmalloc_proxy )
++find_package(TBB 2018.0 COMPONENTS tbb tbbmalloc  )
+ 
+ ##
+ #
