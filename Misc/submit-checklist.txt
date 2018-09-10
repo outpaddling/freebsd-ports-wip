@@ -89,6 +89,7 @@ Makefile
 	Ports that depend on a python module should use USES=python:env or :run
 	${PYNUMPY} for numpy dep.  Check python.mk for other goodies
 	Deps should end in @${PY_FLAVOR}
+	Check dep version requirements in setup.py
 	Koobs: Python packages that provide end-user, console scripts, or
 	    other files in common/shared locations should tested to be, or
 	    made to be USE_PYTHON=concurrent safe
