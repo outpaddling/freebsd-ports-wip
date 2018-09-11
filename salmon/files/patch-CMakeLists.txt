@@ -60,7 +60,31 @@
  
  ##
  #
-@@ -681,58 +682,59 @@ ExternalProject_Add(libstadenio
+@@ -627,9 +628,7 @@ message("Build system will compile libgf
+ message("==================================================================")
+ ExternalProject_Add(libgff
+     DOWNLOAD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external
+-    DOWNLOAD_COMMAND curl -k -L https://github.com/COMBINE-lab/libgff/archive/v1.1.tar.gz -o libgff.tgz &&
+-                     ${SHASUM} 34597ecd3718e6d6e7a1dd4350220664be2c1cd992070d1218564a20d7aa5697  libgff.tgz &&
+-                     tar -xzvf libgff.tgz 
++    DOWNLOAD_COMMAND tar -xzf ${DISTDIR}/${DIST_SUBDIR}/v1.1.tar.gz
+     ##
+     #URL https://github.com/COMBINE-lab/libgff/archive/v1.1.tar.gz
+     #DOWNLOAD_NAME libff.tgz
+@@ -665,10 +664,8 @@ message("Build system will compile Stade
+ message("==================================================================")
+ ExternalProject_Add(libstadenio
+     DOWNLOAD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external
+-    DOWNLOAD_COMMAND curl -k -L https://github.com/COMBINE-lab/staden-io_lib/archive/v1.14.8.1.tar.gz -o staden-io_lib-v1.14.8.tar.gz &&
+-                     ${SHASUM} f6f30eefa478cfb708f3109a35fb6ffa0e24951d9d971985df2cef5919dd0bc3 staden-io_lib-v1.14.8.tar.gz &&
+-                     mkdir -p staden-io_lib-1.14.8 &&
+-                     tar -xzf staden-io_lib-v1.14.8.tar.gz --strip-components=1 -C staden-io_lib-1.14.8 &&
++    DOWNLOAD_COMMAND mkdir -p staden-io_lib-1.14.8 &&
++                     tar -xzf ${DISTDIR}/${DIST_SUBDIR}/v1.14.8.1.tar.gz --strip-components=1 -C staden-io_lib-1.14.8 &&
+                      rm -fr staden-io_lib &&
+                      mv -f staden-io_lib-1.14.8 staden-io_lib
+     SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/staden-io_lib
+@@ -681,58 +678,59 @@ ExternalProject_Add(libstadenio
      INSTALL_COMMAND make install
  )
  
