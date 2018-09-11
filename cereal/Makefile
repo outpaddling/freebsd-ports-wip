@@ -11,6 +11,8 @@ COMMENT=	C++11 library for serialization
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+
 USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	USCiLab
