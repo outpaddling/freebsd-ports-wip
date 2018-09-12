@@ -69,6 +69,9 @@ CFLAGS+=	-fopenmp
 LDFLAGS+=	-fopenmp -Wl,-rpath=${_GCC_RUNTIME}
 MAKE_JOBS_UNSAFE=	yes
 
+EXAMPLES=	*
+OPTIONS_DEFINE=	EXAMPLES
+
 LIBEXEC_DIR=	${PREFIX}/libexec/trinity
 PLUGINS_DIR=	${LIBEXEC_DIR}/trinity-plugins
 
