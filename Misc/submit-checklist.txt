@@ -95,6 +95,8 @@ Makefile
 	    made to be USE_PYTHON=concurrent safe
 	Match port atrributes to setup.py as closely as possible
 	    COMMENT to setup.py description
+	Add TEST_DEPENDS and do-test target if appropriate
+	    py-nose or py-pytest
     
     BROKEN_${OPSYS}_${REL}_${ARCH}
     
