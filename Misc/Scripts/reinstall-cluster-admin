@@ -1,8 +1,9 @@
 #!/bin/sh -e
 
 cluster-wip-update
-wip-reinstall-port -nu -r cluster-admin
+pkg remove -y cluster-admin
 wip-reinstall-port -nu -r auto-admin
 wip-reinstall-port -nu -r cluster-admin
+cluster-run 'pkg remove -y cluster-admin' all
 cluster-run 'wip-reinstall-port -nu -r auto-admin' all
 cluster-run 'wip-reinstall-port -nu -r cluster-admin' all
