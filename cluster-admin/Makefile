@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cluster-admin
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	wip sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://outpaddling.mooo.com/~bacon/Acadix/Ports/distfiles/

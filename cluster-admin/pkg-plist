@@ -69,14 +69,12 @@ sbin/cluster-sync-files
 sbin/cluster-sync-groups
 sbin/cluster-sync-node
 sbin/cluster-sync-packages
-sbin/cluster-sync-pkgsrc
 sbin/cluster-sync-pw
 sbin/cluster-sync-sysfiles
 sbin/cluster-sync-user
 sbin/cluster-update-all-ssh_config
 sbin/cluster-update-backup-nodes
 sbin/cluster-update-io-nodes
-sbin/cluster-update-ssh_config
 sbin/cluster-update-vis-nodes
 sbin/cluster-user-admin
 sbin/cluster-useradd
@@ -102,6 +100,7 @@ sbin/slurm-shutdown-idle-nodes
 sbin/slurm-spool-setup
 sbin/slurm-suspend-jobs
 sbin/slurm-sync-backup-login
+sbin/slurm-sync-config
 sbin/slurm-update-idle-nodes
 sbin/slurm-usage-report
 %%DATADIR%%/WWW/global_styles.css
