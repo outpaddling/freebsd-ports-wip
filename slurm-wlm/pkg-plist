@@ -1,7 +1,10 @@
 %%CURL%%lib/slurm/jobcomp_elasticsearch.a
 %%CURL%%lib/slurm/jobcomp_elasticsearch.so
+%%CURL%%lib/slurm/acct_gather_profile_influxdb.a
+%%CURL%%lib/slurm/acct_gather_profile_influxdb.so
 %%GUI%%bin/sview
 %%GUI%%man/man1/sview.1.gz
+%%HDF5%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sh5util.html
 %%HDF5%%bin/sh5util
 %%HDF5%%lib/slurm/acct_gather_profile_hdf5.a
 %%HDF5%%lib/slurm/acct_gather_profile_hdf5.so
@@ -10,8 +13,6 @@
 %%IPMI%%lib/slurm/acct_gather_energy_ipmi.so
 %%MYSQL%%lib/slurm/accounting_storage_mysql.a
 %%MYSQL%%lib/slurm/accounting_storage_mysql.so
-%%MYSQL%%lib/slurm/acct_gather_profile_influxdb.a
-%%MYSQL%%lib/slurm/acct_gather_profile_influxdb.so
 %%MYSQL%%lib/slurm/jobcomp_mysql.a
 %%MYSQL%%lib/slurm/jobcomp_mysql.so
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/Slurm_Entity.pdf
@@ -148,7 +149,6 @@
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sdiag.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/select_design.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/selectplugins.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sh5util.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sinfo.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurm.conf.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurm.css
