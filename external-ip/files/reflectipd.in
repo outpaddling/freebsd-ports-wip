@@ -19,9 +19,8 @@ rcvar=reflectipd_enable
 
 load_rc_config $name
 
-: ${reflect-ipd_enable:="NO"}
+: ${reflectipd_enable:="NO"}
 
 command=%%PREFIX%%/bin/${name}
-pidfile=/var/run/${name}.pid
 
 run_rc_command "$1"
