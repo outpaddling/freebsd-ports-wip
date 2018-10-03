@@ -122,12 +122,14 @@ post-patch-LINUX-on:
 		${WRKSRC}/src/plugins/jobacct_gather/common/common_jag.c \
 		${WRKSRC}/src/plugins/jobacct_gather/linux/jobacct_gather_linux.c \
 		${WRKSRC}/src/plugins/switch/cray/scaling.c \
+		${WRKSRC}/src/plugins/switch/cray/switch_cray.c \
 		${WRKSRC}/src/plugins/proctrack/cray/proctrack_cray.c \
 		${WRKSRC}/src/plugins/proctrack/cgroup/proctrack_cgroup.c \
 		${WRKSRC}/src/plugins/proctrack/pgid/proctrack_pgid.c \
 		${WRKSRC}/src/plugins/proctrack/linuxproc/kill_tree.c \
 		${WRKSRC}/src/plugins/proctrack/lua/proctrack_lua.c \
 		${WRKSRC}/src/plugins/acct_gather_filesystem/lustre/acct_gather_filesystem_lustre.c \
+		${WRKSRC}/src/plugins/node_features/knl_generic/node_features_knl_generic.c \
 		${WRKSRC}/contribs/cray/pam_job.c \
 		${WRKSRC}/contribs/lua/proctrack.lua
 
