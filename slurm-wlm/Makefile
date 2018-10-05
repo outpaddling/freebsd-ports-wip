@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-DISTVERSION=	18.08.0
+DISTVERSION=	18.08.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \
@@ -29,8 +29,6 @@ USERS=		slurm
 GROUPS=		${USERS}
 
 GNU_CONFIGURE=	yes
-#CONFIGURE_ARGS=	--bindir=${PREFIX}/bin
-CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --without-shared-libslurm
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 SHEBANG_FILES=	doc/html/shtml2html.py doc/man/man2html.py

@@ -46,7 +46,6 @@
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/cpu_management.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/cray.conf.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/cray.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/cray_alps.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/crypto_plugins.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/disclaimer.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/dist_plane.html
