@@ -2,7 +2,7 @@
 
 PORTNAME=	slurm
 DISTVERSION=	18.08.1
-CATEGORIES=	sysutils
+CATEGORIES=	wip sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \
 		http://www.schedmd.com/download/development/
