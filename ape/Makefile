@@ -28,6 +28,9 @@ MAKE_FLAGS+=	PREFIX=${PREFIX} \
 		DOCSDIR=${DOCSDIR} \
 		STAGEDIR=${STAGEDIR}
 
+OPTIONS_DEFINE=	DOCS
+PORTDOCS=	*
+
 pre-build:
 	(cd ${WRKSRC} && make depend)
 

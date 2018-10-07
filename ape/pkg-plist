@@ -172,6 +172,3 @@ man/man1/apekeys.1.gz
 %%DATADIR%%/Languages/syntax_highlighting
 %%DATADIR%%/custom_menu
 %%DATADIR%%/options.rc
-%%PORTDOCS%%%%DOCSDIR%%/ape.html
-%%PORTDOCS%%%%DOCSDIR%%/apeascii.html
-%%PORTDOCS%%%%DOCSDIR%%/apekeys.html
