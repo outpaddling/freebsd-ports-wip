@@ -1,0 +1,8 @@
+Eliminate download during build
+
+Patch out inlines?  Will eliminate portability issues and might
+actually improve performance.
+
+Support python 3.6?
+
+Eliminate pkg-plist?
