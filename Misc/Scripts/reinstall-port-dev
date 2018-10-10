@@ -2,4 +2,4 @@
 
 pkg delete -y port-dev
 pkg install -y portlint porttools
-wip-reinstall-port port-dev
+wip-reinstall-port -u -r port-dev
