@@ -18,7 +18,12 @@ USES=		compiler:openmp gmake python:2.7
 USE_GITHUB=	yes
 USE_PYTHON=	distutils
 
-post-patch:
-	${RM} ${WRKSRC}/distribute_setup.py
+pre-configure:
+	@${RM} ${WRKSRC}/distribute_setup.py
+	@${REINPLACE_CMD} -e 's|^inline||' -e 's|^static inline||' \
+		${WRKSRC}/GEMTools/src/gt_error.c \
+		${WRKSRC}/GEMTools/resources/src/bgzf.c \
+		${WRKSRC}/GEMTools/resources/src/json.c \
+		${WRKSRC}/GEMTools/include/gt_error.h
 
 .include <bsd.port.mk>
