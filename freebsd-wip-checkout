@@ -38,7 +38,7 @@ if [ $rcs = svn ]; then
     if which svn; then
 	svn=`which svn`
     else
-	svn=/usr/local/bin/svn
+	svn=/usr/bin/svnlite
     fi
     $svn co \
 	https://github.com/outpaddling/freebsd-ports-wip/trunk \
