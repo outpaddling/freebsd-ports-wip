@@ -131,6 +131,13 @@ post-patch-LINUX-on:
 		${WRKSRC}/contribs/cray/pam_job.c \
 		${WRKSRC}/contribs/lua/proctrack.lua
 
+pre-everything:
+	@if which sbatch > /dev/null; then \
+		${ECHO_CMD} "SLURM build may fail while slurm-wlm is installed."; \
+		${ECHO_CMD} "Deinstall slurm-wlm and run make again."; \
+		false; \
+	fi
+
 # Hack around nonfunctional --disable-gtktest flag
 post-patch-GUI-off:
 	@${REINPLACE_CMD} -e 's|min_gtk_version=.*|min_gtk_version=2000.0.0|' \
