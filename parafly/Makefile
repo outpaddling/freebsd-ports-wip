@@ -1,11 +1,10 @@
 # $FreeBSD$
-# Test new versions with Trinity before upgrading
 
-PORTNAME=	parafly
-PORTVERSION=	2013.01.21
+PORTNAME=	ParaFly
+# Test new versions with Trinity before upgrading
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.0
 CATEGORIES=	wip sysutils
-MASTER_SITES=	SF/${PORTNAME}/
-DISTNAME=	${PORTNAME}-r2013-01-21
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Process multiple commands in parallel on a single server
@@ -13,6 +12,7 @@ COMMENT=	Process multiple commands in parallel on a single server
 LICENSE=	BSD3CLAUSE
 
 USES=		compiler:openmp tar:tgz
+USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 
