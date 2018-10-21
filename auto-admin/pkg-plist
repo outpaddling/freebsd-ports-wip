@@ -39,6 +39,7 @@ sbin/auto-harden
 sbin/auto-insert-line
 sbin/auto-install-packages
 sbin/auto-ipfw-gateway-setup
+sbin/auto-ipmi-install
 sbin/auto-kdm3-toggle
 sbin/auto-krb-auth-setup
 sbin/auto-ldap-adduser
@@ -60,6 +61,7 @@ sbin/auto-pxe-node-discover
 sbin/auto-replace-file
 sbin/auto-restore-pw
 sbin/auto-restore-user
+sbin/auto-secure-directory
 sbin/auto-service-enabled
 sbin/auto-set-hostname
 sbin/auto-set-lid-switch-mode
