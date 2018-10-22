@@ -2,7 +2,7 @@
 
 PORTNAME=	transdecoder
 DISTVERSIONPREFIX=	TransDecoder-v
-DISTVERSION=	5.1.0
+DISTVERSION=	5.4.0
 CATEGORIES=	wip biology perl5
 PKGNAMEPREFIX=	p5-
 
@@ -14,16 +14,18 @@ LICENSE=	BSD3CLAUSE
 RUN_DEPENDS=	cd-hit>=4.6.1:biology/cd-hit \
 		p5-URI>0:net/p5-URI
 
-NO_BUILD=	yes
-NO_ARCH=	yes
 USES=		perl5 shebangfix
+
+USE_GITHUB=	yes
+GH_PROJECT=	TransDecoder
+
 SHEBANG_FILES=	sample_data/cufflinks_example/runMe.sh \
 		sample_data/pasa_example/runMe.sh \
 		sample_data/simple_transcriptome_target/runMe.sh \
 		util/pfam_mpi.pbs
 
-USE_GITHUB=	yes
-GH_PROJECT=	TransDecoder
+NO_BUILD=	yes
+NO_ARCH=	yes
 
 PERL_MOD_DIR=	${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
 PERL_UTIL_DIR=	${PREFIX}/libexec/${PORTNAME}
