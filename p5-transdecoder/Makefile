@@ -15,10 +15,9 @@ RUN_DEPENDS=	cd-hit>=4.6.1:biology/cd-hit \
 		p5-URI>0:net/p5-URI
 
 USES=		perl5 shebangfix
-
 USE_GITHUB=	yes
-GH_PROJECT=	TransDecoder
 
+GH_PROJECT=	TransDecoder
 SHEBANG_FILES=	sample_data/cufflinks_example/runMe.sh \
 		sample_data/pasa_example/runMe.sh \
 		sample_data/simple_transcriptome_target/runMe.sh \
