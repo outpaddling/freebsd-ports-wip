@@ -6,12 +6,12 @@ Distfile
 Makefile
 --------
     PORTNAME should match the upstream dist, including case
-	except when only one binary is installed, then use the binary name
-	pkg is case-insensitive
+	unless this means changing it, which would break pkg upgrade
+	pkg is case-insensitive (in some cases)
 	Ports that install only one binary can use the binary name
 
     Replace PORTVERSION with DISTVERSION wherever possible
-	* Only when changing version - breaks svn annotate / git blame
+	* Only when changing version, otherwise breaks svn annotate / git blame
 	DISTVERSION must match upstream version
 	PORTVERSION is derived from DISTVERSION
 	Use PORTVERSION directly if DISTVERSION is incompatible with
@@ -62,8 +62,6 @@ Makefile
     Add NO_ARCH=yes if the port is architecture free
 	e.g. Only installs scripts or Java byte code
     
-    Remove WITH_DEBUG if present
-
     Replace pre and post with <bsd.port.mk> if possible
 
     Check versions of all depends
@@ -118,6 +116,7 @@ Makefile
 	from sample
     
     Remove MAKE_JOBS_UNSAFE if possible
+	Verify on build host with many cores.  May work on 4 but not 16.
     
     WRKSRC_SUBDIR instead of WRKSRC if possible
 
@@ -134,13 +133,13 @@ Makefile
 	Combine dirs going to the same destination:
 	    cd ${WRKSRC} && COPYTREE_SHARE "A B C" ${STAGEDIR}...
     
-    Use @ to silence most commands, except commands that affect installed files
+    Use @ to silence most commands, except commands that contribute to plist
     
     Carefully check REINPLACE_CMDS and patches
 	Patching should be done at the earliest possible stage, e.g. don't
 	patch in post-stage if the same effect can be achieved in post-patch
 
-    $() preferred over ``
+    Prefer $() preferred over `` unless `` is more readable
 
 
 Testing
@@ -156,7 +155,7 @@ pkg-plist
     pkgconfig files should be in libdata/pkgconfig
 	configure may support --with-pkgconfigdir= even if not advertised
     Use EXAMPLESDIR, DOCSDIR, DATADIR where possible
-    Executables called by bin/* but not meant for users go in libexec
+    Executables called by bin/* but not meant for users go in prefix/libexec
     Optional scripts for users go in DATADIR or EXAMPLESDIR at your discretion
     Perl modules (*.pm) ${PREFIX}/${SITE_PERL_REL}
     Java .jar files in ${JAVAJARDIR}
