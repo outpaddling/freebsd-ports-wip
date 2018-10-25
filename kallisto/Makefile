@@ -17,6 +17,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 
 USES=		cmake:noninja compiler:c++11-lang
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	pachterlab
 
 SUB_FILES=	kallisto-test
