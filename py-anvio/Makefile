@@ -48,14 +48,15 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}biopython>0:biology/py-biopython@${PY_FLAVOR}
 
 USES=		python:3.6+ shebangfix sqlite
+USE_PYTHON=	autoplist cython distutils
+USE_GITHUB=	yes
+
 SHEBANG_FILES=	anvio/workflows/metagenomics/test/*.sh \
 		tests/*.sh \
 		tests/*/*.sh \
 		tests/server/run_server_tests.py \
 		sandbox/anvi-script-FASTA-to-contigs-db \
 		sandbox/*.sh
-USE_PYTHON=	autoplist cython distutils
-USE_GITHUB=	yes
 GH_ACCOUNT=	merenlab
 
 .include <bsd.port.mk>
