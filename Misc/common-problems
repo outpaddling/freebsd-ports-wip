@@ -1,4 +1,17 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Sourceforge uses redirects for all their downloads, obscuring the proper
+path for MASTER_SITES.
+
+To determine what to put after SF/, copy the link location from the download
+button and paste it after "fetch -v".  Fetch will display the actual
+URL it fetches from, e.g.
+
+requesting https://astuteinternet.dl.sourceforge.net/project/subread/subread-1.6.3/subread-1.6.3-source.tar.gzo
+
+Use the directory components following "project":
+
+MASTER_SITES=	SF/subread/subread-1.6.3/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 I've hit this issue a few times with programs using gcc -std=c++11
 E.g. gcc: stoul is not a member of std
 Also works for other "not a member of std" errors
