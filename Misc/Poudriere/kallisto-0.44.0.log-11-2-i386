@@ -1,0 +1,706 @@
+build started at Thu Oct 25 17:03:11 CDT 2018
+port directory: /usr/ports/wip/kallisto
+package name: kallisto-0.44.0
+building for: FreeBSD 11-2-i386-default 11.2-RELEASE-p4 FreeBSD 11.2-RELEASE-p4 i386
+maintained by: jwb@FreeBSD.org
+Makefile ident:      $FreeBSD: head/biology/kallisto/Makefile 479046 2018-09-05 22:05:23Z sunpoet $
+Poudriere version: 3.2.7
+Host OSVERSION: 1102000
+Jail OSVERSION: 1102000
+Job Id: 
+
+---Begin Environment---
+SHELL=/bin/csh
+UNAME_p=i386
+UNAME_m=i386
+OSVERSION=1102000
+UNAME_v=FreeBSD 11.2-RELEASE-p4
+UNAME_r=11.2-RELEASE-p4
+BLOCKSIZE=K
+MAIL=/var/mail/root
+WARNING_WAIT=0
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+TRYBROKEN=yes
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.2.7
+MASTERMNT=/usr/local/poudriere/data/.m/11-2-i386-default/ref
+DEV_WARNING_WAIT=0
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm
+GID=0
+UID=0
+PWD=/usr/local/poudriere/data/.m/11-2-i386-default/ref/.p
+NO_WARNING_PKG_INSTALL_EOL=yes
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=11-2-i386-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+OLDPWD=/usr/local/poudriere/data/.m/11-2-i386-default/ref/.p/pool
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=PACKAGES=/tmp/pkgs PKGREPOSITORY=/tmp/pkgs
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for kallisto-0.44.0:
+     EXAMPLES=on: Build and/or install examples
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+jwb@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/wip/kallisto/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/kallisto/work  HOME=/wrkdirs/usr/ports/wip/kallisto/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/kallisto/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/wip/kallisto/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/kallisto/work  HOME=/wrkdirs/usr/ports/wip/kallisto/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/kallisto/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -L/usr/local/lib -fstack-protector " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector -fno-strict-aliasing  "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTEXAMPLES="" CMAKE_BUILD_TYPE="release" OSREL=11.2 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/kallisto"  EXAMPLESDIR="share/examples/kallisto"  DATADIR="share/kallisto"  WWWDIR="www/kallisto"  ETCDIR="etc/kallisto"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/kallisto DOCSDIR=/usr/local/share/doc/kallisto EXAMPLESDIR=/usr/local/share/examples/kallisto  WWWDIR=/usr/local/www/kallisto ETCDIR=/usr/local/etc/kallisto
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+MACHINE=i386
+MACHINE_ARCH=i386
+ARCH=${MACHINE_ARCH}
+#### /usr/ports/Mk/Scripts/ports_env.sh ####
+_CCVERSION_921dbbb2=FreeBSD clang version 6.0.0 (tags/RELEASE_600/final 326565) (based on LLVM 6.0.0) Target: i386-unknown-freebsd11.2 Thread model: posix InstalledDir: /usr/bin
+_ALTCCVERSION_921dbbb2=none
+_CXXINTERNAL_acaad9ca=FreeBSD clang version 6.0.0 (tags/RELEASE_600/final 326565) (based on LLVM 6.0.0) Target: i386-unknown-freebsd11.2 Thread model: posix InstalledDir: /usr/bin "/usr/bin/ld" "--eh-frame-hdr" "-dynamic-linker" "/libexec/ld-elf.so.1" "--hash-style=both" "--enable-new-dtags" "-m" "elf_i386_fbsd" "-o" "a.out" "/usr/lib/crt1.o" "/usr/lib/crti.o" "/usr/lib/crtbegin.o" "-L/usr/lib" "/dev/null" "-lc++" "-lm" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "-lc" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "/usr/lib/crtend.o" "/usr/lib/crtn.o"
+CC_OUTPUT_921dbbb2_58173849=yes
+CC_OUTPUT_921dbbb2_9bdba57c=yes
+CC_OUTPUT_921dbbb2_6a4fe7f5=yes
+CC_OUTPUT_921dbbb2_6bcac02b=yes
+CC_OUTPUT_921dbbb2_67d20829=yes
+CC_OUTPUT_921dbbb2_bfa62e83=yes
+CC_OUTPUT_921dbbb2_f0b4d593=yes
+CC_OUTPUT_921dbbb2_308abb44=yes
+CC_OUTPUT_921dbbb2_f00456e5=yes
+CC_OUTPUT_921dbbb2_65ad290d=yes
+CC_OUTPUT_921dbbb2_f2776b26=yes
+CC_OUTPUT_921dbbb2_b2657cc3=yes
+CC_OUTPUT_921dbbb2_380987f7=yes
+CC_OUTPUT_921dbbb2_160933ec=yes
+CC_OUTPUT_921dbbb2_fb62803b=yes
+_OBJC_CCVERSION_921dbbb2=FreeBSD clang version 6.0.0 (tags/RELEASE_600/final 326565) (based on LLVM 6.0.0) Target: i386-unknown-freebsd11.2 Thread model: posix InstalledDir: /usr/bin
+_OBJC_ALTCCVERSION_921dbbb2=none
+ARCH=i386
+OPSYS=FreeBSD
+_OSRELEASE=11.2-RELEASE-p4
+OSREL=11.2
+OSVERSION=1102000
+PYTHONBASE=/usr/local
+_SMP_CPUS=4
+CONFIGURE_MAX_CMD_LEN=262144
+HAVE_PORTS_ENV=1
+#### Misc Poudriere ####
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  524288
+stack size              (kbytes, -s)  65536
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19558
+open files                      (-n)  1024
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===>  License BSD2CLAUSE accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   kallisto-0.44.0 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.10.5_5.txz
+[11-2-i386-default] Installing pkg-1.10.5_5...
+[11-2-i386-default] Extracting pkg-1.10.5_5: .......... done
+===>   kallisto-0.44.0 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of kallisto-0.44.0
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License BSD2CLAUSE accepted by the user
+===>   kallisto-0.44.0 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by kallisto-0.44.0 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License BSD2CLAUSE accepted by the user
+===>   kallisto-0.44.0 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by kallisto-0.44.0 for building
+=> SHA256 Checksum OK for pachterlab-kallisto-v0.44.0_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License BSD2CLAUSE accepted by the user
+===>   kallisto-0.44.0 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by kallisto-0.44.0 for building
+===>  Extracting for kallisto-0.44.0
+=> SHA256 Checksum OK for pachterlab-kallisto-v0.44.0_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for kallisto-0.44.0
+===>  Applying FreeBSD patches for kallisto-0.44.0
+===========================================================================
+=======================<phase: build-depends  >============================
+===>   kallisto-0.44.0 depends on file: /usr/local/bin/cmake - not found
+===>   Installing existing package /packages/All/cmake-3.12.3.txz
+[11-2-i386-default] Installing cmake-3.12.3...
+[11-2-i386-default] `-- Installing curl-7.61.1...
+[11-2-i386-default] |   `-- Installing ca_root_nss-3.39...
+[11-2-i386-default] |   `-- Extracting ca_root_nss-3.39: ........ done
+[11-2-i386-default] |   `-- Installing libnghttp2-1.34.0...
+[11-2-i386-default] |   `-- Extracting libnghttp2-1.34.0: .......... done
+[11-2-i386-default] `-- Extracting curl-7.61.1: .......... done
+[11-2-i386-default] `-- Installing expat-2.2.6_1...
+[11-2-i386-default] `-- Extracting expat-2.2.6_1: .......... done
+[11-2-i386-default] `-- Installing jsoncpp-1.8.1_4...
+[11-2-i386-default] `-- Extracting jsoncpp-1.8.1_4: .......... done
+[11-2-i386-default] `-- Installing libarchive-3.3.3,1...
+[11-2-i386-default] |   `-- Installing liblz4-1.8.3,1...
+[11-2-i386-default] |   `-- Extracting liblz4-1.8.3,1: .......... done
+[11-2-i386-default] |   `-- Installing lzo2-2.10_1...
+[11-2-i386-default] |   `-- Extracting lzo2-2.10_1: .......... done
+[11-2-i386-default] `-- Extracting libarchive-3.3.3,1: .......... done
+[11-2-i386-default] `-- Installing libuv-1.23.2...
+[11-2-i386-default] `-- Extracting libuv-1.23.2: .......... done
+[11-2-i386-default] `-- Installing rhash-1.3.5...
+[11-2-i386-default] `-- Extracting rhash-1.3.5: .......... done
+[11-2-i386-default] Extracting cmake-3.12.3: .......... done
+Message from ca_root_nss-3.39:
+
+********************************* WARNING *********************************
+
+FreeBSD does not, and can not warrant that the certification authorities
+whose certificates are included in this package have in any way been
+audited for trustworthiness or RFC 3647 compliance.
+
+Assessment and verification of trust is the complete responsibility of the
+system administrator.
+
+*********************************** NOTE **********************************
+
+This package installs symlinks to support root certificates discovery by
+default for software that uses OpenSSL.
+
+This enables SSL Certificate Verification by client software without manual
+intervention.
+
+If you prefer to do this manually, replace the following symlinks with
+either an empty file or your site-local certificate bundle.
+
+  * /etc/ssl/cert.pem
+  * /usr/local/etc/ssl/cert.pem
+  * /usr/local/openssl/cert.pem
+
+***************************************************************************
+===>   kallisto-0.44.0 depends on file: /usr/local/bin/cmake - found
+===>   Returning to build of kallisto-0.44.0
+===========================================================================
+=======================<phase: lib-depends    >============================
+===>   kallisto-0.44.0 depends on shared library: libhdf5.so - not found
+===>   Installing existing package /packages/All/hdf5-1.10.2.txz
+[11-2-i386-default] Installing hdf5-1.10.2...
+[11-2-i386-default] `-- Installing hdf-szip-2.1_2...
+[11-2-i386-default] `-- Extracting hdf-szip-2.1_2: .......... done
+[11-2-i386-default] Extracting hdf5-1.10.2: .......... done
+===>   kallisto-0.44.0 depends on shared library: libhdf5.so - found (/usr/local/lib/libhdf5.so)
+===>   Returning to build of kallisto-0.44.0
+===>   kallisto-0.44.0 depends on shared library: libsz.so - found (/usr/local/lib/libsz.so)
+===>   kallisto-0.44.0 depends on shared library: libhts.so - not found
+===>   Installing existing package /packages/All/htslib-1.9.txz
+[11-2-i386-default] Installing htslib-1.9...
+[11-2-i386-default] Extracting htslib-1.9: .......... done
+===>   kallisto-0.44.0 depends on shared library: libhts.so - found (/usr/local/lib/libhts.so)
+===>   Returning to build of kallisto-0.44.0
+===========================================================================
+=>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>   kallisto-0.44.0 depends on file: /usr/local/bin/cmake - found
+===>   kallisto-0.44.0 depends on shared library: libhdf5.so - found (/usr/local/lib/libhdf5.so)
+===>   kallisto-0.44.0 depends on shared library: libsz.so - found (/usr/local/lib/libsz.so)
+===>   kallisto-0.44.0 depends on shared library: libhts.so - found (/usr/local/lib/libhts.so)
+===>  Configuring for kallisto-0.44.0
+===>  Performing in-source build
+/bin/mkdir -p /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0
+-- The C compiler identification is Clang 6.0.0
+-- The CXX compiler identification is Clang 6.0.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+shared build
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Found Threads: TRUE  
+-- HDF5: Using hdf5 compiler wrapper to determine C configuration
+-- Found HDF5: /usr/local/lib/libhdf5.so;/usr/local/lib/libsz.so;/usr/lib/libz.so;/usr/lib/libdl.so;/usr/lib/libm.so (found version "1.10.2")  
+-- Found ZLIB: /usr/lib/libz.so (found version "1.2.11") 
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_CXX_FLAGS_DEBUG
+    CMAKE_C_FLAGS_DEBUG
+    CMAKE_C_FLAGS_RELEASE
+    CMAKE_MODULE_LINKER_FLAGS
+    CMAKE_SHARED_LINKER_FLAGS
+
+
+-- Build files have been written to: /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for kallisto-0.44.0
+/usr/local/bin/cmake -H/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0 -B/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0 --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/local/bin/cmake -E cmake_progress_start /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/CMakeFiles /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+--- src/CMakeFiles/kallisto_core.dir/all ---
+/usr/bin/make -f src/CMakeFiles/kallisto_core.dir/build.make src/CMakeFiles/kallisto_core.dir/depend
+--- src/CMakeFiles/kallisto_core.dir/depend ---
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0 && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0 /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0 /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/CMakeFiles/kallisto_core.dir/DependInfo.cmake
+Scanning dependencies of target kallisto_core
+/usr/bin/make -f src/CMakeFiles/kallisto_core.dir/build.make src/CMakeFiles/kallisto_core.dir/build
+--- src/CMakeFiles/kallisto_core.dir/Bootstrap.cpp.o ---
+--- src/CMakeFiles/kallisto_core.dir/GeneModel.cpp.o ---
+--- src/CMakeFiles/kallisto_core.dir/H5Writer.cpp.o ---
+--- src/CMakeFiles/kallisto_core.dir/Kmer.cpp.o ---
+--- src/CMakeFiles/kallisto_core.dir/Bootstrap.cpp.o ---
+[  5%] Building CXX object src/CMakeFiles/kallisto_core.dir/Bootstrap.cpp.o
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src && /usr/bin/c++   -I/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++11 -o CMakeFiles/kallisto_core.dir/Bootstrap.cpp.o -c /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/Bootstrap.cpp
+--- src/CMakeFiles/kallisto_core.dir/GeneModel.cpp.o ---
+[ 11%] Building CXX object src/CMakeFiles/kallisto_core.dir/GeneModel.cpp.o
+--- src/CMakeFiles/kallisto_core.dir/H5Writer.cpp.o ---
+[ 16%] Building CXX object src/CMakeFiles/kallisto_core.dir/H5Writer.cpp.o
+--- src/CMakeFiles/kallisto_core.dir/GeneModel.cpp.o ---
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src && /usr/bin/c++   -I/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++11 -o CMakeFiles/kallisto_core.dir/GeneModel.cpp.o -c /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/GeneModel.cpp
+--- src/CMakeFiles/kallisto_core.dir/Kmer.cpp.o ---
+[ 22%] Building CXX object src/CMakeFiles/kallisto_core.dir/Kmer.cpp.o
+--- src/CMakeFiles/kallisto_core.dir/H5Writer.cpp.o ---
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src && /usr/bin/c++   -I/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++11 -o CMakeFiles/kallisto_core.dir/H5Writer.cpp.o -c /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/H5Writer.cpp
+--- src/CMakeFiles/kallisto_core.dir/Kmer.cpp.o ---
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src && /usr/bin/c++   -I/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++11 -o CMakeFiles/kallisto_core.dir/Kmer.cpp.o -c /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/Kmer.cpp
+--- src/CMakeFiles/kallisto_core.dir/KmerIndex.cpp.o ---
+[ 27%] Building CXX object src/CMakeFiles/kallisto_core.dir/KmerIndex.cpp.o
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src && /usr/bin/c++   -I/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++11 -o CMakeFiles/kallisto_core.dir/KmerIndex.cpp.o -c /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.cpp
+--- src/CMakeFiles/kallisto_core.dir/GeneModel.cpp.o ---
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/GeneModel.cpp:1:
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/GeneModel.h:66:105: warning: shift count >= width of type [-Wshift-count-overflow]
+          return std::hash<TranscriptAlignment>()(x.first) ^ (std::hash<TranscriptAlignment>()(x.second)<<32);
+                                                                                                        ^ ~~
+--- src/CMakeFiles/kallisto_core.dir/H5Writer.cpp.o ---
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/H5Writer.cpp:1:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/H5Writer.h:4:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/EMAlgorithm.h:5:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:18:
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:240:12: warning: shift count >= width of type [-Wshift-count-overflow]
+    v |= v >> 32;
+           ^  ~~
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:125:13: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::rndup' requested here
+    size_ = rndup(sz);
+            ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:92:5: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::init_table' requested here
+    init_table(1024);
+    ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:96:3: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::KmerHashTable' requested here
+  KmerIndex(const ProgramOptions& opt) : k(opt.k), num_trans(0), skip(opt.skip), target_seqs_loaded(false) {
+  ^
+--- src/CMakeFiles/kallisto_core.dir/GeneModel.cpp.o ---
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/GeneModel.cpp:1:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/GeneModel.h:10:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:18:
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:240:12: warning: shift count >= width of type [-Wshift-count-overflow]
+    v |= v >> 32;
+           ^  ~~
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:125:13: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::rndup' requested here
+    size_ = rndup(sz);
+            ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:92:5: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::init_table' requested here
+    init_table(1024);
+    ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:96:3: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::KmerHashTable' requested here
+  KmerIndex(const ProgramOptions& opt) : k(opt.k), num_trans(0), skip(opt.skip), target_seqs_loaded(false) {
+  ^
+--- src/CMakeFiles/kallisto_core.dir/Bootstrap.cpp.o ---
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/Bootstrap.cpp:1:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/Bootstrap.h:7:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:18:
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:240:12: warning: shift count >= width of type [-Wshift-count-overflow]
+    v |= v >> 32;
+           ^  ~~
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:125:13: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::rndup' requested here
+    size_ = rndup(sz);
+            ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:92:5: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::init_table' requested here
+    init_table(1024);
+    ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:96:3: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::KmerHashTable' requested here
+  KmerIndex(const ProgramOptions& opt) : k(opt.k), num_trans(0), skip(opt.skip), target_seqs_loaded(false) {
+  ^
+--- src/CMakeFiles/kallisto_core.dir/H5Writer.cpp.o ---
+1 warning generated.
+--- src/CMakeFiles/kallisto_core.dir/KmerIterator.cpp.o ---
+[ 33%] Building CXX object src/CMakeFiles/kallisto_core.dir/KmerIterator.cpp.o
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src && /usr/bin/c++   -I/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++11 -o CMakeFiles/kallisto_core.dir/KmerIterator.cpp.o -c /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIterator.cpp
+--- src/CMakeFiles/kallisto_core.dir/Bootstrap.cpp.o ---
+1 warning generated.
+--- src/CMakeFiles/kallisto_core.dir/MinCollector.cpp.o ---
+[ 38%] Building CXX object src/CMakeFiles/kallisto_core.dir/MinCollector.cpp.o
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src && /usr/bin/c++   -I/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++11 -o CMakeFiles/kallisto_core.dir/MinCollector.cpp.o -c /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/MinCollector.cpp
+--- src/CMakeFiles/kallisto_core.dir/KmerIndex.cpp.o ---
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.cpp:1:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:18:
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:240:12: warning: shift count >= width of type [-Wshift-count-overflow]
+    v |= v >> 32;
+           ^  ~~
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:125:13: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::rndup' requested here
+    size_ = rndup(sz);
+            ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:92:5: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::init_table' requested here
+    init_table(1024);
+    ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:96:3: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::KmerHashTable' requested here
+  KmerIndex(const ProgramOptions& opt) : k(opt.k), num_trans(0), skip(opt.skip), target_seqs_loaded(false) {
+  ^
+--- src/CMakeFiles/kallisto_core.dir/PlaintextWriter.cpp.o ---
+[ 44%] Building CXX object src/CMakeFiles/kallisto_core.dir/PlaintextWriter.cpp.o
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src && /usr/bin/c++   -I/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++11 -o CMakeFiles/kallisto_core.dir/PlaintextWriter.cpp.o -c /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/PlaintextWriter.cpp
+--- src/CMakeFiles/kallisto_core.dir/GeneModel.cpp.o ---
+2 warnings generated.
+--- src/CMakeFiles/kallisto_core.dir/ProcessReads.cpp.o ---
+[ 50%] Building CXX object src/CMakeFiles/kallisto_core.dir/ProcessReads.cpp.o
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src && /usr/bin/c++   -I/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++11 -o CMakeFiles/kallisto_core.dir/ProcessReads.cpp.o -c /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/ProcessReads.cpp
+--- src/CMakeFiles/kallisto_core.dir/MinCollector.cpp.o ---
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/MinCollector.cpp:1:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/MinCollector.h:11:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:18:
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:240:12: warning: shift count >= width of type [-Wshift-count-overflow]
+    v |= v >> 32;
+           ^  ~~
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:125:13: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::rndup' requested here
+    size_ = rndup(sz);
+            ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:92:5: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::init_table' requested here
+    init_table(1024);
+    ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:96:3: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::KmerHashTable' requested here
+  KmerIndex(const ProgramOptions& opt) : k(opt.k), num_trans(0), skip(opt.skip), target_seqs_loaded(false) {
+  ^
+--- src/CMakeFiles/kallisto_core.dir/PlaintextWriter.cpp.o ---
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/PlaintextWriter.cpp:1:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/PlaintextWriter.h:12:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:18:
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:240:12: warning: shift count >= width of type [-Wshift-count-overflow]
+    v |= v >> 32;
+           ^  ~~
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:125:13: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::rndup' requested here
+    size_ = rndup(sz);
+            ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:92:5: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::init_table' requested here
+    init_table(1024);
+    ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:96:3: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::KmerHashTable' requested here
+  KmerIndex(const ProgramOptions& opt) : k(opt.k), num_trans(0), skip(opt.skip), target_seqs_loaded(false) {
+  ^
+--- src/CMakeFiles/kallisto_core.dir/ProcessReads.cpp.o ---
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/ProcessReads.cpp:22:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/ProcessReads.h:21:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/PseudoBam.h:13:
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/GeneModel.h:66:105: warning: shift count >= width of type [-Wshift-count-overflow]
+          return std::hash<TranscriptAlignment>()(x.first) ^ (std::hash<TranscriptAlignment>()(x.second)<<32);
+                                                                                                        ^ ~~
+--- src/CMakeFiles/kallisto_core.dir/PlaintextWriter.cpp.o ---
+1 warning generated.
+--- src/CMakeFiles/kallisto_core.dir/PseudoBam.cpp.o ---
+[ 55%] Building CXX object src/CMakeFiles/kallisto_core.dir/PseudoBam.cpp.o
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src && /usr/bin/c++   -I/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++11 -o CMakeFiles/kallisto_core.dir/PseudoBam.cpp.o -c /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/PseudoBam.cpp
+--- src/CMakeFiles/kallisto_core.dir/ProcessReads.cpp.o ---
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/ProcessReads.cpp:22:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/ProcessReads.h:18:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/MinCollector.h:11:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:18:
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:240:12: warning: shift count >= width of type [-Wshift-count-overflow]
+    v |= v >> 32;
+           ^  ~~
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:125:13: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::rndup' requested here
+    size_ = rndup(sz);
+            ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:92:5: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::init_table' requested here
+    init_table(1024);
+    ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:96:3: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::KmerHashTable' requested here
+  KmerIndex(const ProgramOptions& opt) : k(opt.k), num_trans(0), skip(opt.skip), target_seqs_loaded(false) {
+  ^
+--- src/CMakeFiles/kallisto_core.dir/MinCollector.cpp.o ---
+1 warning generated.
+--- src/CMakeFiles/kallisto_core.dir/common.cpp.o ---
+[ 61%] Building CXX object src/CMakeFiles/kallisto_core.dir/common.cpp.o
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src && /usr/bin/c++   -I/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++11 -o CMakeFiles/kallisto_core.dir/common.cpp.o -c /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/common.cpp
+--- src/CMakeFiles/kallisto_core.dir/h5utils.cpp.o ---
+[ 66%] Building CXX object src/CMakeFiles/kallisto_core.dir/h5utils.cpp.o
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src && /usr/bin/c++   -I/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++11 -o CMakeFiles/kallisto_core.dir/h5utils.cpp.o -c /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/h5utils.cpp
+--- src/CMakeFiles/kallisto_core.dir/PseudoBam.cpp.o ---
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/PseudoBam.cpp:3:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/PseudoBam.h:13:
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/GeneModel.h:66:105: warning: shift count >= width of type [-Wshift-count-overflow]
+          return std::hash<TranscriptAlignment>()(x.first) ^ (std::hash<TranscriptAlignment>()(x.second)<<32);
+                                                                                                        ^ ~~
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/PseudoBam.cpp:3:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/PseudoBam.h:12:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:18:
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:240:12: warning: shift count >= width of type [-Wshift-count-overflow]
+    v |= v >> 32;
+           ^  ~~
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:125:13: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::rndup' requested here
+    size_ = rndup(sz);
+            ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:92:5: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::init_table' requested here
+    init_table(1024);
+    ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:96:3: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::KmerHashTable' requested here
+  KmerIndex(const ProgramOptions& opt) : k(opt.k), num_trans(0), skip(opt.skip), target_seqs_loaded(false) {
+  ^
+2 warnings generated.
+--- src/CMakeFiles/kallisto_core.dir/hash.cpp.o ---
+[ 72%] Building CXX object src/CMakeFiles/kallisto_core.dir/hash.cpp.o
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src && /usr/bin/c++   -I/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++11 -o CMakeFiles/kallisto_core.dir/hash.cpp.o -c /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/hash.cpp
+--- src/CMakeFiles/kallisto_core.dir/main.cpp.o ---
+[ 77%] Building CXX object src/CMakeFiles/kallisto_core.dir/main.cpp.o
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src && /usr/bin/c++   -I/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++11 -o CMakeFiles/kallisto_core.dir/main.cpp.o -c /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/main.cpp
+--- src/CMakeFiles/kallisto_core.dir/KmerIndex.cpp.o ---
+1 warning generated.
+--- src/CMakeFiles/kallisto_core.dir/weights.cpp.o ---
+[ 83%] Building CXX object src/CMakeFiles/kallisto_core.dir/weights.cpp.o
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src && /usr/bin/c++   -I/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src -I/usr/local/include -O2 -pipe -fstack-protector -fno-strict-aliasing -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++11 -o CMakeFiles/kallisto_core.dir/weights.cpp.o -c /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/weights.cpp
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/weights.cpp:1:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/weights.h:4:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:18:
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:240:12: warning: shift count >= width of type [-Wshift-count-overflow]
+    v |= v >> 32;
+           ^  ~~
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:125:13: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::rndup' requested here
+    size_ = rndup(sz);
+            ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:92:5: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::init_table' requested here
+    init_table(1024);
+    ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:96:3: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::KmerHashTable' requested here
+  KmerIndex(const ProgramOptions& opt) : k(opt.k), num_trans(0), skip(opt.skip), target_seqs_loaded(false) {
+  ^
+--- src/CMakeFiles/kallisto_core.dir/main.cpp.o ---
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/main.cpp:16:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/ProcessReads.h:21:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/PseudoBam.h:13:
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/GeneModel.h:66:105: warning: shift count >= width of type [-Wshift-count-overflow]
+          return std::hash<TranscriptAlignment>()(x.first) ^ (std::hash<TranscriptAlignment>()(x.second)<<32);
+                                                                                                        ^ ~~
+--- src/CMakeFiles/kallisto_core.dir/weights.cpp.o ---
+1 warning generated.
+--- src/CMakeFiles/kallisto_core.dir/main.cpp.o ---
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/main.cpp:16:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/ProcessReads.h:18:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/MinCollector.h:11:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:18:
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:240:12: warning: shift count >= width of type [-Wshift-count-overflow]
+    v |= v >> 32;
+           ^  ~~
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:125:13: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::rndup' requested here
+    size_ = rndup(sz);
+            ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:92:5: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::init_table' requested here
+    init_table(1024);
+    ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:96:3: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::KmerHashTable' requested here
+  KmerIndex(const ProgramOptions& opt) : k(opt.k), num_trans(0), skip(opt.skip), target_seqs_loaded(false) {
+  ^
+--- src/CMakeFiles/kallisto_core.dir/ProcessReads.cpp.o ---
+2 warnings generated.
+--- src/CMakeFiles/kallisto_core.dir/main.cpp.o ---
+2 warnings generated.
+--- src/libkallisto_core.a ---
+[ 88%] Linking CXX static library libkallisto_core.a
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src && /usr/local/bin/cmake -P CMakeFiles/kallisto_core.dir/cmake_clean_target.cmake
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src && /usr/local/bin/cmake -E cmake_link_script CMakeFiles/kallisto_core.dir/link.txt --verbose=1
+/usr/bin/ar qc libkallisto_core.a  CMakeFiles/kallisto_core.dir/Bootstrap.cpp.o CMakeFiles/kallisto_core.dir/GeneModel.cpp.o CMakeFiles/kallisto_core.dir/H5Writer.cpp.o CMakeFiles/kallisto_core.dir/Kmer.cpp.o CMakeFiles/kallisto_core.dir/KmerIndex.cpp.o CMakeFiles/kallisto_core.dir/KmerIterator.cpp.o CMakeFiles/kallisto_core.dir/MinCollector.cpp.o CMakeFiles/kallisto_core.dir/PlaintextWriter.cpp.o CMakeFiles/kallisto_core.dir/ProcessReads.cpp.o CMakeFiles/kallisto_core.dir/PseudoBam.cpp.o CMakeFiles/kallisto_core.dir/common.cpp.o CMakeFiles/kallisto_core.dir/h5utils.cpp.o CMakeFiles/kallisto_core.dir/hash.cpp.o CMakeFiles/kallisto_core.dir/main.cpp.o CMakeFiles/kallisto_core.dir/weights.cpp.o
+/usr/bin/ranlib libkallisto_core.a
+[ 88%] Built target kallisto_core
+--- src/CMakeFiles/kallisto.dir/all ---
+/usr/bin/make -f src/CMakeFiles/kallisto.dir/build.make src/CMakeFiles/kallisto.dir/depend
+--- src/CMakeFiles/kallisto.dir/depend ---
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0 && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0 /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0 /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/CMakeFiles/kallisto.dir/DependInfo.cmake
+Scanning dependencies of target kallisto
+/usr/bin/make -f src/CMakeFiles/kallisto.dir/build.make src/CMakeFiles/kallisto.dir/build
+--- src/CMakeFiles/kallisto.dir/main.cpp.o ---
+[ 94%] Building CXX object src/CMakeFiles/kallisto.dir/main.cpp.o
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src && /usr/bin/c++   -I/usr/local/include -I/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src -O2 -pipe -fstack-protector -fno-strict-aliasing -O2 -pipe -fstack-protector -fno-strict-aliasing   -std=c++11 -o CMakeFiles/kallisto.dir/main.cpp.o -c /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/main.cpp
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/main.cpp:16:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/ProcessReads.h:21:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/PseudoBam.h:13:
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/GeneModel.h:66:105: warning: shift count >= width of type [-Wshift-count-overflow]
+          return std::hash<TranscriptAlignment>()(x.first) ^ (std::hash<TranscriptAlignment>()(x.second)<<32);
+                                                                                                        ^ ~~
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/main.cpp:16:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/ProcessReads.h:18:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/MinCollector.h:11:
+In file included from /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:18:
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:240:12: warning: shift count >= width of type [-Wshift-count-overflow]
+    v |= v >> 32;
+           ^  ~~
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:125:13: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::rndup' requested here
+    size_ = rndup(sz);
+            ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerHashTable.h:92:5: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::init_table' requested here
+    init_table(1024);
+    ^
+/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/KmerIndex.h:96:3: note: in instantiation of member function 'KmerHashTable<KmerEntry, KmerHash>::KmerHashTable' requested here
+  KmerIndex(const ProgramOptions& opt) : k(opt.k), num_trans(0), skip(opt.skip), target_seqs_loaded(false) {
+  ^
+2 warnings generated.
+--- src/kallisto ---
+[100%] Linking CXX executable kallisto
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src && /usr/local/bin/cmake -E cmake_link_script CMakeFiles/kallisto.dir/link.txt --verbose=1
+/usr/bin/c++  -O2 -pipe -fstack-protector -fno-strict-aliasing -O2 -pipe -fstack-protector -fno-strict-aliasing   -L/usr/local/lib -fstack-protector CMakeFiles/kallisto.dir/main.cpp.o  -o kallisto -Wl,-rpath,/usr/local/lib: libkallisto_core.a -lpthread -lhts /usr/local/lib/libhdf5.so /usr/local/lib/libsz.so -lz -ldl -lm -lrt 
+[100%] Built target kallisto
+/usr/local/bin/cmake -E cmake_progress_start /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/CMakeFiles 0
+===========================================================================
+=>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===========================================================================
+=>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for kallisto-0.44.0
+===>   Generating temporary packing list
+/usr/local/bin/cmake -H/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0 -B/wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0 --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/local/bin/cmake -E cmake_progress_start /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/CMakeFiles /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+/usr/bin/make -f src/CMakeFiles/kallisto_core.dir/build.make src/CMakeFiles/kallisto_core.dir/depend
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0 && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0 /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0 /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/CMakeFiles/kallisto_core.dir/DependInfo.cmake
+/usr/bin/make -f src/CMakeFiles/kallisto_core.dir/build.make src/CMakeFiles/kallisto_core.dir/build
+[ 88%] Built target kallisto_core
+/usr/bin/make -f src/CMakeFiles/kallisto.dir/build.make src/CMakeFiles/kallisto.dir/depend
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0 && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0 /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0 /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/src/CMakeFiles/kallisto.dir/DependInfo.cmake
+/usr/bin/make -f src/CMakeFiles/kallisto.dir/build.make src/CMakeFiles/kallisto.dir/build
+[100%] Built target kallisto
+/usr/local/bin/cmake -E cmake_progress_start /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/CMakeFiles 0
+/usr/bin/make -f CMakeFiles/Makefile2 preinstall
+Installing the project stripped...
+/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+-- Install configuration: "Release"
+-- Installing: /wrkdirs/usr/ports/wip/kallisto/work/stage/usr/local/bin/kallisto
+-- Set runtime path of "/wrkdirs/usr/ports/wip/kallisto/work/stage/usr/local/bin/kallisto" to "/usr/local/lib"
+install  -m 555 /wrkdirs/usr/ports/wip/kallisto/work/kallisto-test /wrkdirs/usr/ports/wip/kallisto/work/stage/usr/local/bin
+cd /wrkdirs/usr/ports/wip/kallisto/work/kallisto-0.44.0/test && /bin/sh -c '(/usr/bin/find -Ed $1 $3 | /usr/bin/cpio -dumpl $2 >/dev/null 2>&1) &&  /usr/bin/find -Ed $1 $3 \(   -type d -exec /bin/sh -c '\''cd '\''$2'\'' && chmod 755 "$@"'\'' . {} +  -o -type f -exec /bin/sh -c '\''cd '\''$2'\'' && chmod 0644 "$@"'\'' . {} + \)' COPYTREE_SHARE . /wrkdirs/usr/ports/wip/kallisto/work/stage/usr/local/share/examples/kallisto
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+=>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for kallisto-0.44.0
+===========================================================================
+=>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for kallisto-0.44.0
+===>  Checking if kallisto already installed
+===>   Registering installation for kallisto-0.44.0
+[11-2-i386-default] Installing kallisto-0.44.0...
+===========================================================================
+=>> Checking shared library dependencies
+ 0x00000001 NEEDED               Shared library: [libc++.so.1]
+ 0x00000001 NEEDED               Shared library: [libc.so.7]
+ 0x00000001 NEEDED               Shared library: [libcxxrt.so.1]
+ 0x00000001 NEEDED               Shared library: [libdl.so.1]
+ 0x00000001 NEEDED               Shared library: [libgcc_s.so.1]
+ 0x00000001 NEEDED               Shared library: [libhdf5.so.101]
+ 0x00000001 NEEDED               Shared library: [libhts.so.2]
+ 0x00000001 NEEDED               Shared library: [libm.so.5]
+ 0x00000001 NEEDED               Shared library: [librt.so.1]
+ 0x00000001 NEEDED               Shared library: [libsz.so.2]
+ 0x00000001 NEEDED               Shared library: [libthr.so.3]
+ 0x00000001 NEEDED               Shared library: [libz.so.6]
+=======================<phase: deinstall      >============================
+===>  Deinstalling for kallisto
+===>   Deinstalling kallisto-0.44.0
+Updating database digests format: .......... done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	kallisto-0.44.0
+
+Number of packages to be removed: 1
+[11-2-i386-default] [1/1] Deinstalling kallisto-0.44.0...
+[11-2-i386-default] [1/1] Deleting files for kallisto-0.44.0: .......... done
+===========================================================================
+=>> Checking for extra files and directories
+[00:31:05] Installing from package
+[11-2-i386-default] Installing kallisto-0.44.0...
+[11-2-i386-default] Extracting kallisto-0.44.0: .......... done
+[00:31:05] Cleaning up
+===>  Cleaning for kallisto-0.44.0
+[00:31:05] Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	kallisto-0.44.0
+
+Number of packages to be removed: 1
+[11-2-i386-default] [1/1] Deinstalling kallisto-0.44.0...
+[11-2-i386-default] [1/1] Deleting files for kallisto-0.44.0: .......... done
+build of wip/kallisto | kallisto-0.44.0 ended at Thu Oct 25 17:03:39 CDT 2018
+build time: 00:00:28
