@@ -259,8 +259,7 @@ Regards,
 
     [Your name]
 
-[Software name] can be installed on FreeBSD via the FreeBSD ports
-system.
+[Software name] can be installed on FreeBSD via the FreeBSD ports system.
 
 To install via the binary package, simply run:
 
@@ -270,8 +269,14 @@ To build and install from source code, run:
 
     cd /usr/ports/category/[put port name here] && make install
 
-Building from source allows installing to a different prefix and
-in some cases, building with non-default options.
+Building from source allows installing to a different prefix, building with
+additionaloptions (e.g. -march=native), and in some cases, building with
+non-default options such as different compilers or dependencies.
+
+We, the developers, do not directly support installation via FreeBSD ports.
+To report any issues with FreeBSD ports, please submit a PR at
+
+    https://bugs.freebsd.org/bugzilla/query.cgi?format=advanced.
 
 For more information, visit https://www.freebsd.org/ports/index.html.
 
