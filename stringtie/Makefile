@@ -14,10 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		gmake
 
 USE_GITHUB=	yes
+USE_GCC=	yes
 GH_ACCOUNT=	gpertea
 
 MAKE_JOBS_UNSAFE=	yes
-
+# FIXME: Other targets clobber CXXFLAGS
+ALL_TARGET=	release
 PLIST_FILES=	bin/stringtie
 
 do-install:
