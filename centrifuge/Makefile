@@ -15,12 +15,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	bash>0:shells/bash
 
 USES=		gmake shebangfix python:run
-SHEBANG_FILES=	centrifuge-build centrifuge-inspect centrifuge-download
 USE_GITHUB=	yes
+
+SHEBANG_FILES=	centrifuge-build centrifuge-inspect centrifuge-download
 GH_ACCOUNT=	infphilo
 
 # FIXME: Fix asm block errors
 MAKE_ENV=	POPCNT_CAPABILITY=0 DOCSDIR=${DOCSDIR}
 # INSTALL_TARGET=	install-strip
+
+OPTIONS_DEFINE=	DOCS
+PORTDOCS=	*
 
 .include <bsd.port.mk>
