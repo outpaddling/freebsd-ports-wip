@@ -14,4 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
 
+OPTIONS_DEFINE=	DOCS
+PORTDOCS=	*
+
 .include <bsd.port.mk>
