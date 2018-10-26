@@ -21,19 +21,10 @@ RUN_DEPENDS=	bash:shells/bash \
 		hmmer>0:biology/hmmer \
 		FastTree>0:biology/fasttree \
 		muscle>0:biology/muscle \
-		Prodigal>0:wip/prodigal \
-		centrifuge>0:wip/centrifuge \
-		mcl>0:wip/mcl \
-		xssp>0:wip/xssp \
-		FAMSA>0:wip/famsa \
+		R>0:math/R \
 		R-cran-gridExtra>0:graphics/R-cran-gridExtra \
 		R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
-		R-cran-optparse>0:wip/R-cran-optparse \
 		R-cran-gtools>0:devel/R-cran-gtools \
-		R>0:math/R \
-		${PYTHON_PKGNAMEPREFIX}ete3>0:wip/py-ete3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}eggnog-mapper>0:wip/py-eggnog-mapper@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}snakemake>0:wip/py-snakemake@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mistune>0:textproc/py-mistune@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
@@ -45,7 +36,16 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}biopython>0:biology/py-biopython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysam>0:biology/py-pysam@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}biopython>0:biology/py-biopython@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}biopython>0:biology/py-biopython@${PY_FLAVOR} \
+		Prodigal>0:wip/prodigal \
+		centrifuge>0:wip/centrifuge \
+		mcl>0:wip/mcl \
+		xssp>0:wip/xssp \
+		FAMSA>0:wip/famsa \
+		R-cran-optparse>0:wip/R-cran-optparse \
+		${PYTHON_PKGNAMEPREFIX}ete3>0:wip/py-ete3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}eggnog-mapper>0:wip/py-eggnog-mapper@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}snakemake>0:wip/py-snakemake@${PY_FLAVOR}
 
 USES=		python:3.6+ shebangfix sqlite
 USE_PYTHON=	autoplist cython distutils
