@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	hyattpd
 
 PLIST_FILES=	bin/prodigal
