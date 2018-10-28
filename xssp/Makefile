@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cmbi
 
 # unknown-pragmas for boost header on 10.4
-CXXFLAGS+=	-Wno-unused-const-variable -Wno-unknown-pragmas
+CXXFLAGS+=	-Wno-unused-const-variable -Wno-unknown-pragmas -I${LOCALBASE}/include
 LDFLAGS+=	-L${PREFIX}/lib
 
 post-patch:
