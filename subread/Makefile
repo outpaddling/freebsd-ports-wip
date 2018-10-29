@@ -10,7 +10,7 @@ MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	high-performance read alignment, quantification and mutation discovery
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
 
 MAKEFILE=	${WRKSRC}/Makefile.FreeBSD
 WRKSRC_SUBDIR=	src
