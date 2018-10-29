@@ -15,4 +15,6 @@ LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
 MAKEFILE=	${WRKSRC}/Makefile.FreeBSD
 WRKSRC_SUBDIR=	src
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.mk>
