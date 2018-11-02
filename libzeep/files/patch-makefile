@@ -8,6 +8,23 @@
  
  BOOST_LIBS          = system thread filesystem regex math_c99 random
  BOOST_LIBS          := $(BOOST_LIBS:%=boost_%$(BOOST_LIB_SUFFIX))
+@@ -32,11 +33,11 @@ SO_NAME             = libzeep.so.$(VERSI
+ LIB_NAME            = $(SO_NAME).$(VERSION_MINOR)
+ 
+ CXX                 ?= c++
+-#CFLAGS              += -O2 $(BOOST_INC_DIR:%=-I%) -I. -fPIC -pthread -std=c++11 -stdlib=libc++
+-CFLAGS              += -O2 $(BOOST_INC_DIR:%=-I%) -I. -fPIC -pthread -std=c++11 
+-#CFLAGS             += -g $(BOOST_INC_DIR:%=-I%) -I. -fPIC -pthread -shared # -std=c++0x
+-CFLAGS              += -Wall
+-CFLAGS              += -g
++#CXXFLAGS           += -O2 $(BOOST_INC_DIR:%=-I%) -I. -fPIC -pthread -std=c++11 -stdlib=libc++
++CXXFLAGS            += -O2 $(BOOST_INC_DIR:%=-I%) -I. -fPIC -pthread -std=c++11 
++#CXXFLAGS           += -g $(BOOST_INC_DIR:%=-I%) -I. -fPIC -pthread -shared # -std=c++0x
++CXXFLAGS            += -Wall
++CXXFLAGS            += -g
+ LD                  ?= ld
+ 
+ VPATH += src
 @@ -81,45 +82,42 @@ zeep-test: obj/zeep-test.o libzeep.a
  	$(CXX) $(BOOST_INC_DIR:%=-I%) -o $@ -I. $^ $(LDFLAGS) -lboost_date_time -lboost_regex
  
@@ -87,7 +104,7 @@
  
  install: install-libs install-dev
  
-@@ -133,7 +131,7 @@ dist: lib
+@@ -133,10 +131,10 @@ dist: lib
  	cp $(DIST_NAME).tgz ../ppa/libzeep_$(VERSION).orig.tar.gz
  
  doc: FORCE
@@ -95,4 +112,8 @@
 +	# cd doc; bjam
  
  obj/%.o: %.cpp | obj
- 	$(CXX) -MD -c -o $@ $< $(CFLAGS)
+-	$(CXX) -MD -c -o $@ $< $(CFLAGS)
++	$(CXX) -MD -c -o $@ $< $(CXXFLAGS)
+ 
+ obj:
+ 	mkdir -p obj
