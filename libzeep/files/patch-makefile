@@ -40,7 +40,7 @@
  
  install-dev: doc
 -	install -d $(MANDIR) $(LIBDIR) $(INCDIR)/zeep/xml $(INCDIR)/zeep/http $(INCDIR)/zeep/http/webapp
-+	install -d $(MANDIR) $(DESTDIR)$(LIBDIR) $(DESTDIR)$(INCDIR)/zeep/xml $(DESTDIR)$(INCDIR)/zeep/http $(DESTDIR)$(INCDIR)/zeep/http/webapp
++	install -d $(DESTDIR)$(MANDIR) $(DESTDIR)$(LIBDIR) $(DESTDIR)$(INCDIR)/zeep/xml $(DESTDIR)$(INCDIR)/zeep/http $(DESTDIR)$(INCDIR)/zeep/http/webapp
  
 -	install zeep/config.hpp $(INCDIR)/zeep/config.hpp
 -	install zeep/dispatcher.hpp $(INCDIR)/zeep/dispatcher.hpp
