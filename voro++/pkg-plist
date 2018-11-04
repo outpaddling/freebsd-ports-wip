@@ -13,6 +13,5 @@ include/voro++/v_compute.hh
 include/voro++/voro++.hh
 include/voro++/wall.hh
 include/voro++/worklist.hh
-lib/libvoro++.a
+lib/libvoro++.so
 man/man1/voro++.1.gz
-@dirrm include/voro++

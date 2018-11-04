@@ -1,0 +1,26 @@
+--- src/Makefile.orig	2018-11-01 03:59:04 UTC
++++ src/Makefile
+@@ -13,18 +13,18 @@ objs=cell.o common.o container.o unitcel
+ src=$(patsubst %.o,%.cc,$(objs))
+ 
+ # Makefile rules
+-all: libvoro++.a voro++
++all: libvoro++.so voro++
+ 
+ depend:
+ 	$(CXX) -MM $(src) >Makefile.dep
+ 
+ include Makefile.dep
+ 
+-libvoro++.a: $(objs)
+-	rm -f libvoro++.a
+-	ar rs libvoro++.a $^
++libvoro++.so: $(objs)
++	rm -f libvoro++.so
++	$(CXX) -shared $(LDFLAGS) -o libvoro++.so -Wl,-soname,libvoro++.so $^
+ 
+-voro++: libvoro++.a cmd_line.cc
++voro++: libvoro++.so cmd_line.cc
+ 	$(CXX) $(CFLAGS) -L. -o voro++ cmd_line.cc -lvoro++
+ 
+ %.o: %.cc
