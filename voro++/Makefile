@@ -1,7 +1,7 @@
 # $FreeBSD: head/science/voro++/Makefile 460452 2018-01-31 01:07:07Z jwb $
 
 PORTNAME=	voro++
-PORTVERSION=	0.4.6
+DISTVERSION=	0.4.6
 PORTREVISION=	1
 CATEGORIES=	wip science
 MASTER_SITES=	http://math.lbl.gov/voro++/download/dir/
