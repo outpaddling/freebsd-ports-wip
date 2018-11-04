@@ -3,7 +3,7 @@
 PORTNAME=	voro++
 PORTVERSION=	0.4.6
 PORTREVISION=	1
-CATEGORIES=	science
+CATEGORIES=	wip science
 MASTER_SITES=	http://math.lbl.gov/voro++/download/dir/
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -16,8 +16,6 @@ USES=		gmake
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-fPIC
-
-MAKE_ARGS=	CXX=${CXX} CFLAGS="${CFLAGS}" PREFIX=${PREFIX}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/voro++

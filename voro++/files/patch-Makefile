@@ -9,7 +9,7 @@
  
  # Build the help files (with Doxygen)
  help:
-@@ -26,47 +26,47 @@ clean:
+@@ -26,47 +26,48 @@ clean:
  # Install the executable, man page, and shared library
  install:
  	$(MAKE) -C src
@@ -44,6 +44,7 @@
 +	$(INSTALL) -d $(IFLAGS_EXEC) $(DESTDIR)$(PREFIX)/include/voro++
 +	$(INSTALL) $(IFLAGS_EXEC) src/voro++ $(DESTDIR)$(PREFIX)/bin
 +	$(INSTALL) $(IFLAGS) man/voro++.1 $(DESTDIR)$(PREFIX)/man/man1
++	$(INSTALL) $(IFLAGS) src/libvoro++.a $(DESTDIR)$(PREFIX)/lib
 +	$(INSTALL) $(IFLAGS) src/libvoro++.so $(DESTDIR)$(PREFIX)/lib
 +	$(INSTALL) $(IFLAGS) src/voro++.hh $(DESTDIR)$(PREFIX)/include/voro++
 +	$(INSTALL) $(IFLAGS) src/c_loops.hh $(DESTDIR)$(PREFIX)/include/voro++
