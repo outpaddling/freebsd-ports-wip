@@ -44,6 +44,7 @@ sbin/auto-kdm3-toggle
 sbin/auto-krb-auth-setup
 sbin/auto-ldap-adduser
 sbin/auto-ldap-client-setup
+sbin/auto-lock-user
 sbin/auto-mount-any
 sbin/auto-os-release
 sbin/auto-ostype
@@ -58,6 +59,7 @@ sbin/auto-ports-setup
 sbin/auto-print-make-variable
 sbin/auto-pxe-installer-setup
 sbin/auto-pxe-node-discover
+sbin/auto-remove-user
 sbin/auto-replace-file
 sbin/auto-restore-pw
 sbin/auto-restore-user
@@ -69,6 +71,7 @@ sbin/auto-set-sysctl
 sbin/auto-set-umask
 sbin/auto-ssh-authorize
 sbin/auto-ssh-reverse-authorize
+sbin/auto-unlock-user
 sbin/auto-update-port-framework
 sbin/auto-update-system
 sbin/auto-update-xorg.conf
