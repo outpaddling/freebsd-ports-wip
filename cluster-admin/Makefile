@@ -11,7 +11,7 @@ COMMENT=	Tools for building and managing HPC clusters
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	auto-admin>=0.4.4:wip/auto-admin
+RUN_DEPENDS=	auto-admin>=0.4.5:wip/auto-admin
 
 USES=		tar:xz
 
