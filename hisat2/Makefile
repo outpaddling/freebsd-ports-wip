@@ -12,13 +12,16 @@ COMMENT=	Alignment program for mapping next-generation sequencing reads
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
-
+USES=		gmake perl5 python shebangfix
 USE_GITHUB=	yes
-GH_ACCOUNT=	infphilo
-# GH_TAGNAME=	f34a56512ced8d84e035dbfb4312513bf36e32a2
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+SHEBANG_FILES=	hisat2 hisat2-build hisat2-inspect *.py \
+		scripts/*.sh scripts/*.pl \
+		hisatgenotype_modules/*.py \
+		hisatgenotype_scripts/*.py \
+		hisatgenotype_scripts/*.sh
+GH_ACCOUNT=	infphilo
+
+MAKEFILE=	${FILESDIR}/Makefile.pkg
 
 .include <bsd.port.mk>
