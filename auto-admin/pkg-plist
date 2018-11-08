@@ -50,6 +50,7 @@ sbin/auto-os-release
 sbin/auto-ostype
 sbin/auto-package-installed
 sbin/auto-passwd-user-expiration
+sbin/auto-password-status
 sbin/auto-pkg-latest
 sbin/auto-pkgsrc-dir
 sbin/auto-pkgsrc-prefix
