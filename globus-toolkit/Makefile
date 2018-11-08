@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	globus_toolkit
-PORTVERSION=	6.0.1453307864
+DISTVERSION=	6.0.1535473965
 CATEGORIES=	wip net java
-MASTER_SITES=	http://toolkit.globus.org/ftppub/gt6/installers/src/
+MASTER_SITES=	https://downloads.globus.org/toolkit/gt6/stable/installers/src/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Open source software toolkit used for building grids
@@ -14,14 +14,12 @@ LICENSE=	APACHE20
 # gtar? gsed? gmake? JDBC compliant database. For instance, PostgreSQL 7.1+
 # gpt-3.2autotools2004 (shipped with the installers, but required if building standalone GPT bundles/packages)
 LIB_DEPENDS=	libltdl.so:devel/libltdl
-BUILD_DEPENDS=	openssl>=1.0:security/openssl \
-		ant:devel/apache-ant
-RUN_DEPENDS=	openssl>=1.0:security/openssl
+BUILD_DEPENDS=	ant:devel/apache-ant \
+		openssl>=1.0:security/openssl
 
 # HAS_CONFIGURE allows overriding PREFIX
-# HAS_CONFIGURE=	yes
 HAS_CONFIGURE=	yes
-USES=		libtool perl5 shebangfix
+USES=		libtool perl5 pkgconfig shebangfix
 USE_JAVA=	yes
 USE_GCC=	yes
 SHEBANG_FILES=	io/compat/test/globus-io-authorization-test.pl \
@@ -52,8 +50,6 @@ SHEBANG_FILES=	io/compat/test/globus-io-authorization-test.pl \
 		gsi/gssapi/source/test/compare-name-test-rfc2818.pl \
 		gsi/gssapi/source/test/compare-name-test-gt2.pl \
 		gsi/cert_utils/source/programs/globus-update-certificate-dir.in \
-		gsi/openssl_error/source/test/TESTS.pl \
-		gsi/openssl_error/source/test/TESTS-junit.pl \
 		gsi/simple_ca/source/test/grid-ca-create-test \
 		gsi/simple_ca/source/test/grid-ca-sign-test \
 		gsi/gss_assist/source/test/gss-assist-auth-test.pl \
