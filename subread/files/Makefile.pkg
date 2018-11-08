@@ -1,6 +1,4 @@
 
-# Add -DMACOS or -DFREEBSD
-
 SUBREAD_VERSION_BASE=1.6.3
 SUBREAD_VERSION_DATE=$(SUBREAD_VERSION_BASE)-$(shell date +"%d%b%Y")
 SUBREAD_VERSION="$(SUBREAD_VERSION_DATE)"
@@ -8,34 +6,34 @@ SUBREAD_VERSION="$(SUBREAD_VERSION_BASE)"
 
 CC	?= cc
 CFLAGS	?= -O -Wall
-CFLAGS	+= -DMAKE_FOR_EXON  -DMAKE_STANDALONE -DSUBREAD_VERSION=\"${SUBREAD_VERSION}\"  -D_FILE_OFFSET_BITS=64 ${WARNING_LEVEL} 
-# Are these -Ds useful?
-LDFLAGS	+= -pthread -lz ${MACOS} -DMAKE_FOR_EXON -DMAKE_STANDALONE -lm
+CFLAGS	+= -DMAKE_FOR_EXON -DMAKE_STANDALONE \
+	-DSUBREAD_VERSION=\"${SUBREAD_VERSION}\" \
+	-D_FILE_OFFSET_BITS=64 ${WARNING_LEVEL} 
+
+LDFLAGS	+= ${CFLAGS} -pthread -lz ${MACOS} -lm
+
+LRM_LIBS=longread-one/LRMsorted-hashtable longread-one/LRMbase-index longread-one/LRMchro-event longread-one/LRMhelper longread-one/LRMseek-zlib longread-one/LRMfile-io longread-one/LRMhashtable
+LRM_OBJECTS=$(addsuffix .o, ${LRM_LIBS})
 
 ALL_LIBS= core core-junction core-indel sambam-file sublog gene-algorithms hashtable input-files sorted-hashtable gene-value-index exon-algorithms HelperFunctions interval_merge long-hashtable core-bigtable seek-zlib
 ALL_OBJECTS=$(addsuffix .o, ${ALL_LIBS})
-ALL_H=$(addsuffix .h, ${ALL_LIBS})
-ALL_C=$(addsuffix .c, ${ALL_LIBS})
+ALL_H=$(addsuffix .h, ${ALL_LIBS} ${LRM_LIBS})
+ALL_C=$(addsuffix .c, ${ALL_LIBS} ${LRM_LIBS})
 
-all: detectionCall sublong repair txUnique featureCounts removeDup exactSNP subread-buildindex subindel  subread-align subjunc qualityScores subread-fullscan propmapped flattenGTF # samMappedBases mergeVCF  testZlib
-	mkdir -p ../bin/utilities
-	mv longread-one/LRM longread-one/sublong
-	mv longread-one/sublong subread-align subjunc featureCounts  subindel exactSNP subread-buildindex ../bin/
-	mv detectionCall repair propmapped qualityScores removeDup subread-fullscan txUnique flattenGTF ../bin/utilities
-	@echo
-	@echo "###########################################################"
-	@echo "#                                                         #"
-	@echo "#  Installation successfully completed.                   #"
-	@echo "#                                                         #"
-	@echo "#  Generated executables were copied to directory ../bin/ #"
-	@echo "#                                                         #"
-	@echo "###########################################################"
-	@echo
+BINS	= detectionCall sublong repair txUnique featureCounts removeDup \
+	exactSNP subread-buildindex subindel  subread-align subjunc \
+	qualityScores subread-fullscan propmapped flattenGTF \
+	# samMappedBases mergeVCF  testZlib
 
-sublong: longread-one/longread-mapping.c  ${ALL_OBJECTS}
-	echo " " > longread-one/make.version
-	rm -f longread-one/*.o
-	cd longread-one && $(MAKE)
+MKDIR	?= mkdir
+INSTALL	?= install
+DESTDIR	?= .
+PREFIX	?= /usr/local
+MAKE	?= gmake
+
+.PHONY: all install clean
+
+all: ${BINS}
 
 flattenGTF: flattenAnnotations.c ${ALL_OBJECTS}
 	${CC} -o flattenGTF flattenAnnotations.c  ${ALL_OBJECTS} ${LDFLAGS}
@@ -85,5 +83,12 @@ qualityScores: qualityScores.c ${ALL_OBJECTS}
 subread-fullscan: fullscan.c  ${ALL_OBJECTS}
 	${CC} -o subread-fullscan fullscan.c  ${ALL_OBJECTS}  ${LDFLAGS}
 
+sublong: longread-one/longread-mapping.c  ${LRM_OBJECTS}
+	${CC} -o sublong longread-one/longread-mapping.c ${LRM_OBJECTS}  ${LDFLAGS}
+
 clean:
 	rm -f core featureCounts exactSNP removeDup subread-buildindex ${ALL_OBJECTS}
+
+install:
+	${MKDIR} -p ${DESTDIR}${PREFIX}/bin
+	${INSTALL} -c ${BINS} ${DESTDIR}${PREFIX}/bin

@@ -7,7 +7,7 @@ CATEGORIES=	wip biology
 MASTER_SITES=	SF/subread/subread-1.6.3/
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	high-performance read alignment, quantification and mutation discovery
+COMMENT=	High-performance read alignment, quantification and mutation discovery
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
