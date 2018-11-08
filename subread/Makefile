@@ -12,7 +12,9 @@ COMMENT=	high-performance read alignment, quantification and mutation discovery
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
 
-MAKEFILE=	${WRKSRC}/Makefile.FreeBSD
+USES=		gmake
+
+MAKEFILE=	${FILESDIR}/Makefile.pkg
 WRKSRC_SUBDIR=	src
 
 MAKE_JOBS_UNSAFE=	yes
