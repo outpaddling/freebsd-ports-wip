@@ -1,8 +1,10 @@
 man/man1/auto-admin.1.gz
 sbin/auto-ad-adduser
 sbin/auto-add-fdesc-mount
+sbin/auto-add-group
 sbin/auto-add-linproc-mount
 sbin/auto-add-proc-mount
+sbin/auto-add-to-group
 sbin/auto-adduser
 sbin/auto-admin
 sbin/auto-amd-nfs-setup
