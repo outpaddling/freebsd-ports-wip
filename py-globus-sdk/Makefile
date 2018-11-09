@@ -20,6 +20,8 @@ GH_ACCOUNT=	globus
 # pyjwt[crypto]<2.0.0,>=1.5.3
 RUN_DEPENDS=	${PP}pyjwt>=1.6.4:wip/py-pyjwt@${PY_FLAVOR}
 
+NO_ARCH=	yes
+
 PP=	${PYTHON_PKGNAMEPREFIX}
 
 .include <bsd.port.mk>

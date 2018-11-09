@@ -29,6 +29,8 @@ RUN_DEPENDS=	${PP}cryptography>=1.8.1:security/py-cryptography@${PY_FLAVOR} \
 		${PP}click>=6.6:devel/py-click@${PY_FLAVOR} \
 		${PP}globus-sdk-python==1.6.1:wip/py-globus-sdk@${PY_FLAVOR}
 
+NO_ARCH=	yes
+
 PP=	${PYTHON_PKGNAMEPREFIX}
 
 .include <bsd.port.mk>
