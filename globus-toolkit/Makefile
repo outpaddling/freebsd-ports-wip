@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-
 PORTNAME=	globus_toolkit
 DISTVERSION=	6.0.1535473965
 CATEGORIES=	wip net java
@@ -14,15 +13,20 @@ LICENSE=	APACHE20
 # http://toolkit.globus.org/toolkit/docs/4.0/admin/docbook/ch03.html#s-prereq-required
 # gtar? gsed? gmake? JDBC compliant database. For instance, PostgreSQL 7.1+
 # gpt-3.2autotools2004 (shipped with the installers, but required if building standalone GPT bundles/packages)
+# FIXME: Use base openssl.  Maybe create .pc file in FILESDIR and
+# add to pkgconf path?
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 BUILD_DEPENDS=	ant:devel/apache-ant \
 		openssl>=1.0:security/openssl
+RUN_DEPENDS=	openssl>=1.0:security/openssl
+
+USES=		libtool perl5 pkgconfig shebangfix ssl
+USE_JAVA=	yes
+USE_GCC=	yes
+USE_LDCONFIG=	${PREFIX}/globus-6/lib
 
 # HAS_CONFIGURE allows overriding PREFIX
 HAS_CONFIGURE=	yes
-USES=		libtool perl5 pkgconfig shebangfix
-USE_JAVA=	yes
-USE_GCC=	yes
 SHEBANG_FILES=	io/compat/test/globus-io-authorization-test.pl \
 		io/compat/test/globus-io-tcp-test.pl \
 		common/source/scripts/globus-makefile-header.in \
@@ -113,11 +117,23 @@ SHEBANG_FILES=	io/compat/test/globus-io-authorization-test.pl \
 		xio/src/test/http-put-test.pl \
 		xio/src/globus-vararg-enums-doxygen-filter.pl
 
-# FIXME: Fix --build
-CONFIGURE_ARGS+=--prefix=${PREFIX}/globus-6 --localstatedir=/var --build=amd64-portbld-freebsd10.1
+# FIXME: --build
+CONFIGURE_ARGS+=--prefix=${PREFIX}/globus-6 --localstatedir=/var \
+		--build=amd64-portbld-freebsd11.2 \
+		--mandir=${PREFIX}/globus-6/man \
+		--with-pkgconfigdir=${PREFIX}/globus-6/libdata/pkgconfig
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 INSTALL_TARGET=	install-strip
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|g' \
+		${WRKSRC}/gridftp/server/src/init/globus-gridftp-server \
+		${WRKSRC}/gridftp/server/src/init/globus-gridftp-sshftp
+
+# Remove suid
+post-install:
+	chmod 555 ${STAGEDIR}${PREFIX}/globus-6/libexec/ssh-keysign
 
 .include <bsd.port.mk>
