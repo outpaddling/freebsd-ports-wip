@@ -1,6 +1,6 @@
---- setup/konfigure.perl.orig	2016-12-01 14:08:53.318187808 -0600
-+++ setup/konfigure.perl	2016-12-01 14:27:27.387102433 -0600
-@@ -196,9 +196,9 @@ $OPT{'prefix'} = $package_default_prefix
+--- setup/konfigure.perl.orig	2018-07-24 17:46:27 UTC
++++ setup/konfigure.perl
+@@ -200,9 +200,9 @@ $OPT{'prefix'} = $package_default_prefix
  my $AUTORUN = $OPT{status};
  print "checking system type... " unless ($AUTORUN);
  my ($OS, $ARCH, $OSTYPE, $MARCH, @ARCHITECTURES) = OsArch();
@@ -12,7 +12,7 @@
      println "configure: error: unsupported system '$OSTYPE'";
      exit 1;
  }
-@@ -213,8 +213,8 @@ if ($OS eq 'linux') {
+@@ -223,8 +223,8 @@ if ($OS eq 'linux') {
  
  print "checking machine architecture... " unless ($AUTORUN);
  println $MARCH unless ($AUTORUN);
@@ -23,7 +23,7 @@
      exit 1;
  }
  
-@@ -298,7 +298,7 @@ print "checking for supported architectu
+@@ -308,7 +308,7 @@ print "checking for supported architectu
  
  my $BITS;
  
@@ -32,12 +32,19 @@
      $BITS = 64;
  } elsif ($MARCH eq 'fat86') {
      $BITS = '32_64';
-@@ -313,7 +313,7 @@ println "$MARCH ($BITS bits) is supporte
- my ($LPFX, $OBJX, $LOBX, $LIBX, $SHLX, $EXEX, $OSINC);
- 
- print "checking for supported OS... " unless ($AUTORUN);
--if ($OSTYPE =~ /linux/i) {
-+if ($OSTYPE =~ /linux/i || $OSTYPE eq 'FreeBSD') {
+@@ -332,6 +332,15 @@ if ($OSTYPE =~ /linux/i) {
+     $EXEX = '';
+     $OSINC = 'unix';
+     $TOOLS = 'gcc' unless ($TOOLS);
++} elsif ($OSTYPE eq 'FreeBSD') {
++    $LPFX = 'lib';
++    $OBJX = 'o';
++    $LOBX = 'pic.o';
++    $LIBX = 'a';
++    $SHLX = 'so';
++    $EXEX = '';
++    $OSINC = 'unix';
++    $TOOLS = 'clang' unless ($TOOLS);
+ } elsif ($OSTYPE =~ /darwin/i) {
      $LPFX = 'lib';
      $OBJX = 'o';
-     $LOBX = 'pic.o';
