@@ -19,6 +19,7 @@ NO_ARCH=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/battery_shutdown.sh ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/Doc/${PORTNAME}.man \
 		${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
