@@ -53,6 +53,8 @@ OPTIMIZED_CFLAGS_MAKE_ARGS_OFF=	OPT=""
 TEST_TEST_TARGET=	test
 TEST_USES=	python
 
+MAKE_JOBS_UNSAFE=	yes
+
 pre-patch:
 	@${CP} ${FILESDIR}/Makefile.bsd ${WRKSRC}/build/
 	@for f in ${WRKSRC}/build/ld.linux.*.sh; do ${CP} -p $${f} $${f%linux*}bsd$${f#*linux}; done
