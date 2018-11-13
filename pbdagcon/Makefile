@@ -41,7 +41,7 @@ PLIST_FILES=	bin/pbdagcon bin/dazcon bin/pbdagcon_wf.sh
 
 COMMON_DEPENDS=	DAZZ_DB==1.0.14:wip/dazz_db \
 		DALIGNER==1.0.52:wip/daligner \
-		pbbam==g20180416:biology/pbbam
+		pbbam>=g20180416:biology/pbbam
 
 post-patch:
 	${REINPLACE_CMD} \
