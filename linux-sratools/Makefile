@@ -12,7 +12,9 @@ COMMENT=	Tools and libraries for using data in the INSDC Sequence Read Archives
 
 LICENSE=	PD
 
-USES=		linux
+USES=		linux shebangfix
+
+SHEBANG_FILES=	example/perl/splitfastq.pl example/perl/simplefastq.pl
 
 NO_BUILD=	yes
 
