@@ -35,6 +35,11 @@ category=$2
 
 port=`echo $port | sed -e 's|/$||'`
 
+if grep -w wip $PORTSDIR/wip/$port/Makefile | grep -v '^CATEGORIES'; then
+    printf "$port contains references to wip.  Please fix and try again.\n"
+    exit 1
+fi
+
 if [ -e $PORTSDIR/$category/$port ]; then
     printf "$PORTSDIR/$category/$port already exists.  Overwrite? y/[n] \n"
     read overwrite
