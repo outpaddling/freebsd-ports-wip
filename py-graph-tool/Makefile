@@ -15,9 +15,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	${PY_BOOST}
 
 # Check python version requirement
-USES=		python:3.6+ tar:bz2
+USES=		python tar:bz2
 USE_PYTHON=	autoplist distutils
 
 GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS=	--with-boost-python=boost_python27
 
 .include <bsd.port.mk>
