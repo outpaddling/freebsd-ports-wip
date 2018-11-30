@@ -12,24 +12,26 @@ COMMENT=	Python module for manipulation and statistical analysis of graphs
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
-		${PY_BOOST} \
-		libexpat.so:textproc/expat2 \
-		libCGAL.so:math/cgal
-
 # https://git.skewed.de/count0/graph-tool/wikis/installation-instructions#manual-compilation
 # The sparsehash template library (optional, but recommended).
 # The GTK+ 3, cairomm, pycairo and matplotlib libraries, used for graph drawing (optional).
-
+LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
+		${PY_BOOST} \
+		libgmp.so:math/gmp \
+		libexpat.so:textproc/expat2 \
+		libCGAL.so:math/cgal
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0.7.0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=0.7.0:math/py-numpy@${PY_FLAVOR}
 
-# Check python version requirement
-USES=		python tar:bz2
-USE_PYTHON=	autoplist distutils
+USES=		gnome libtool python tar:bz2
+USE_GNOME=	cairo cairomm libsigc++20
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--with-boost-python=boost_python27
+# --with-cgal=${LOCALBASE}
+CONFIGURE_ARGS=	--with-boost-python=boost_python27 \
+		--with-boost-libdir=${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
