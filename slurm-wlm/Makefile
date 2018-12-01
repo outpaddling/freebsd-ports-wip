@@ -131,7 +131,7 @@ post-patch-LINUX-on:
 		${WRKSRC}/contribs/cray/pam_job.c \
 		${WRKSRC}/contribs/lua/proctrack.lua
 
-pre-everything:
+pre-configure:
 	@if which sbatch > /dev/null; then \
 		${ECHO_CMD} "SLURM build may fail while slurm-wlm is installed."; \
 		${ECHO_CMD} "Deinstall slurm-wlm and run make again."; \
