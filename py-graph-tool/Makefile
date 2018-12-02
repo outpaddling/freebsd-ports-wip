@@ -12,22 +12,22 @@ COMMENT=	Python module for manipulation and statistical analysis of graphs
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	sparsehash>=0:devel/sparsehash
+BUILD_DEPENDS=	sparsehash>=0:devel/sparsehash \
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.7.0:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.15.1:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.1.2:math/py-matplotlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cairo>=1.14.1:graphics/py-cairo@${PY_FLAVOR}
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		${PY_BOOST} \
 		libgmp.so:math/gmp \
 		libexpat.so:textproc/expat2 \
 		libCGAL.so:math/cgal
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0.7.0:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.15.1:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.1.2:math/py-matplotlib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cairo>=1.14.1:graphics/py-cairo@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0.7.0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.15.1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.1.2:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cairo>=1.14.1:graphics/py-cairo@${PY_FLAVOR}
 
-USES=		gnome libtool python tar:bz2
+USES=		gnome libtool pkgconfig python tar:bz2
 USE_GNOME=	cairo cairomm libsigc++20
 USE_LDCONFIG=	yes
 
