@@ -1,8 +1,7 @@
-# $FreeBSD: head/biology/stacks/Makefile 475857 2018-07-29 22:18:44Z gerald $
+# $FreeBSD: head/biology/stacks/Makefile 483245 2018-10-28 08:58:00Z linimon $
 
 PORTNAME=	stacks
-DISTVERSION=	1.48
-PORTREVISION=	1
+DISTVERSION=	2.2
 CATEGORIES=	wip biology
 MASTER_SITES=	http://catchenlab.life.illinois.edu/stacks/source/
 
@@ -13,9 +12,17 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:openmp gmake python shebangfix
-SHEBANG_FILES=	scripts/*.pl scripts/*.py
+
+SHEBANG_FILES=	scripts/*.pl scripts/*.py \
+		scripts/stacks-integrate-alignments scripts/stacks-gdb
 GNU_CONFIGURE=	yes
 
 LDFLAGS+=	-lpthread
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+USE_GCC=	yes
+.endif
+
+.include <bsd.port.post.mk>
