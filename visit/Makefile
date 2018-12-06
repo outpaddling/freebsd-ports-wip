@@ -18,7 +18,7 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyVTK>0:math/py-pyvtk \
 		${LOCALBASE}/include/vtk-6.2/QVTKWidget.h:math/vtk6
 # FIXME: Be less specific if possible to avoid breakage on vtk upgrade
-LIB_DEPENDS+=	libvtkFiltersTexture-6.2.so:math/vtk6 \
+LIB_DEPENDS+=	libvtkFiltersExtraction-pv5.5.so:math/vtk6 \
 		libqwt.so:x11-toolkits/qwt5
 
 USES=		cmake:noninja python
