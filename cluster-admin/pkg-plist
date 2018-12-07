@@ -32,6 +32,7 @@ sbin/cluster-change-primary-group
 sbin/cluster-change-uid
 sbin/cluster-diagnostics
 sbin/cluster-dist-file
+sbin/cluster-enable-autologout
 sbin/cluster-ganglia-restart
 sbin/cluster-generate-hosts.equiv
 sbin/cluster-generate-ssh_known_hosts
