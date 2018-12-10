@@ -2,10 +2,7 @@
 
 ##########################################################################
 #   Function description:
-#       
-#   Arguments:
-#       
-#   Returns:
+#       Walk user through port quality checks
 #       
 #   History:
 #   Date        Name        Modification
@@ -34,13 +31,16 @@ pause()
 }
 
 clear
+if ! fgrep -q DEVELOPER=yes /etc/make.conf; then
+    printf "Consider adding DEVELOPER=yes to /etc/make.conf.\n"
+    step
+fi
+
 cat << EOM
 
 If maintaining the source, clean up and reroll distfile
 
 EOM
-pause
-
 step
 cat << EOM
 
@@ -97,13 +97,6 @@ EOM
 step
 cat << EOM
 
-Tab after every =
-
-EOM
-
-step
-cat << EOM
-
 Use = instead of += wherever possible
     Use += only for vars commonly set in make.conf, like CFLAGS.
 
@@ -122,7 +115,7 @@ step
 cat << EOM
 
 PKGNAMEPREFIX
-    p5-, ${PYTHON_PKGNAMEPREFIX}, etc.
+    p5-, \${PYTHON_PKGNAMEPREFIX}, etc.
 
 EOM
 
@@ -132,7 +125,7 @@ cat << EOM
 Check/correct MASTER_SITES
     Use https if possible to protect download stream from hackers
     USE_GITHUB, SF, DISTVERSIONPREFIX, etc. if possible
-    DISTVERSIONPREFIX=v preferred over GH_TAGNAME=v${DISTVERSION}
+    DISTVERSIONPREFIX=v preferred over GH_TAGNAME=v\${DISTVERSION}
     No need to manually set WRKSRC if using USE_GITHUB
     Remove MASTER_SITE_SUBDIR if present (deprecated)
 
@@ -151,7 +144,7 @@ cat << EOM
 
 Check use of each LOCALBASE and PREFIX
 Remove references to wip category
-Use ${PORTNAME}, ${DISTVERSION}, etc in body wherever possible
+Use \${PORTNAME}, \${DISTVERSION}, etc in body wherever possible
 
 EOM
 
@@ -208,7 +201,7 @@ cat << EOM
 
 Use USES or USE_* variables wherever possible
     USES before USE_*
-	USES=localbase = CFLAGS+=-I${LOCALBASE}/include, etc.
+	USES=localbase = CFLAGS+=-I\${LOCALBASE}/include, etc.
 	See /usr/ports/Mk/Uses
     USE_TEX instead of tex-* depends
     pathfix for pkgconfig lib/libdata
@@ -226,8 +219,8 @@ Python
 	%%PYTHON_PYOEXTENSION%%->pyo? (antoine)
     USE_PYTHON=concurrent if multiple flavors install the same files
     Ports that depend on a python module should use USES=python:env or :run
-    ${PYNUMPY} for numpy dep.  Check python.mk for other goodies
-    Deps should end in @${PY_FLAVOR}
+    \${PYNUMPY} for numpy dep.  Check python.mk for other goodies
+    Deps should end in @\${PY_FLAVOR}
     Check dep version requirements in setup.py
     Koobs: Python packages that provide end-user, console scripts, or
 	other files in common/shared locations should tested to be, or
@@ -242,7 +235,7 @@ EOM
 step
 cat << EOM
 
-BROKEN_${OPSYS}_${REL}_${ARCH}
+BROKEN_\${OPSYS}_\${REL}_\${ARCH}
 
 EOM
 
@@ -315,9 +308,9 @@ EOM
 step
 cat << EOM
 
-Use COPYTREE_* instead of ${CP} -r
+Use COPYTREE_* instead of \${CP} -r
     Combine dirs going to the same destination:
-	cd ${WRKSRC} && COPYTREE_SHARE "A B C" ${STAGEDIR}...
+	cd \${WRKSRC} && COPYTREE_SHARE "A B C" \${STAGEDIR}...
 
 EOM
 
@@ -340,7 +333,7 @@ EOM
 step
 cat << EOM
 
-Prefer $() preferred over `` unless `` is more readable
+Prefer \$() preferred over \`\` unless \`\` is more readable
 
 EOM
 exit
@@ -361,8 +354,8 @@ pkg-plist
     Use EXAMPLESDIR, DOCSDIR, DATADIR where possible
     Executables called by bin/* but not meant for users go in prefix/libexec
     Optional scripts for users go in DATADIR or EXAMPLESDIR at your discretion
-    Perl modules (*.pm) ${PREFIX}/${SITE_PERL_REL}
-    Java .jar files in ${JAVAJARDIR}
+    Perl modules (*.pm) \${PREFIX}/\${SITE_PERL_REL}
+    Java .jar files in \${JAVAJARDIR}
 
 
 pkg-descr
@@ -372,7 +365,7 @@ pkg-descr
     space, not tab after WWW
     fmt -w 79
 
-Remove any extraneous files from port framework and add a post-extract ${RM}
+Remove any extraneous files from port framework and add a post-extract \${RM}
 for any preexisting .orig files that cause makepatch to generate an extraneous
 patch
 
@@ -490,4 +483,4 @@ For more information, visit https://www.freebsd.org/ports/index.html.
 
 ============================================================================
 
-Switch dependencies in other wip ports from /usr/wip to ${PORTSDIR}
+Switch dependencies in other wip ports from /usr/wip to \${PORTSDIR}
