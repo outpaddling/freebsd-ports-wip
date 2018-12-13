@@ -61,7 +61,6 @@ sbin/cluster-recreate-user
 sbin/cluster-remove-expired-ldap-users
 sbin/cluster-remove-from-known-hosts
 sbin/cluster-remove-user
-sbin/cluster-restore-pw
 sbin/cluster-restore-user
 sbin/cluster-run
 sbin/cluster-setup
@@ -76,6 +75,7 @@ sbin/cluster-sync-packages
 sbin/cluster-sync-pw
 sbin/cluster-sync-sysfiles
 sbin/cluster-sync-user
+sbin/cluster-transfer-pw
 sbin/cluster-unlock-user
 sbin/cluster-update-all-ssh_config
 sbin/cluster-update-backup-nodes
