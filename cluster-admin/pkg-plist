@@ -110,6 +110,7 @@ sbin/slurm-sync-backup-login
 sbin/slurm-sync-config
 sbin/slurm-update-idle-nodes
 sbin/slurm-usage-report
+sbin/update-cluster-admin-wip
 %%DATADIR%%/WWW/global_styles.css
 %%DATADIR%%/WWW/index.php
 %%DATADIR%%/WWW/powerlogo.gif
