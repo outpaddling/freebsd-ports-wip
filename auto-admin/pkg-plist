@@ -76,6 +76,7 @@ sbin/auto-set-sysctl
 sbin/auto-set-umask
 sbin/auto-ssh-authorize
 sbin/auto-ssh-reverse-authorize
+sbin/auto-transfer-pw
 sbin/auto-unlock-user
 sbin/auto-update-port-framework
 sbin/auto-update-system
