@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	visit
-PORTVERSION=	2.13.1
+PORTVERSION=	2.13.3
 CATEGORIES=	wip graphics science math
 MASTER_SITES=	http://portal.nersc.gov/project/visit/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -34,6 +34,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKE_JOBS_UNSAFE=	yes
 # XOPEN_SOURCE:isascii() BSD_VISIBLE:gethostbyname()
 CXXFLAGS+=	-D_XOPEN_SOURCE=700 -D__BSD_VISIBLE
+LDFLAGS+=	-lexecinfo
 
 # FIXME: Replace python2.7 with var
 post-patch:
