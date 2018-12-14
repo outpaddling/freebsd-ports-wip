@@ -21,6 +21,10 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyVTK>0:math/py-pyvtk \
 LIB_DEPENDS+=	libvtkFiltersExtraction-pv5.5.so:math/vtk6 \
 		libqwt.so:x11-toolkits/qwt5
 
+# Minimal build:
+# https://www.visitusers.org/index.php?title=Build_visit_overview#The_build_process
+# ./build_visit --no-thirdparty --cmake --vtk --qt --qwt --python --pyside --silo --hdf5 --szip
+
 USES=		cmake:noninja python
 USE_QT5=	qmake
 # USE_GCC=	yes
