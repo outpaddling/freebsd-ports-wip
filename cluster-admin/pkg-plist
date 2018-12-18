@@ -1,5 +1,5 @@
 bin/cluster-all-nodes
-bin/cluster-backup-login-nodes
+bin/cluster-backup-nodes
 bin/cluster-compute-nodes
 bin/cluster-down-nodes
 bin/cluster-io-nodes
@@ -88,7 +88,7 @@ sbin/slurm-restart
 sbin/slurm-resume-nodes
 sbin/slurm-resume-updated-nodes
 sbin/slurm-shutdown-idle-nodes
-sbin/slurm-sync-backup-login
+sbin/slurm-sync-backup
 sbin/slurm-sync-config
 sbin/slurm-update-idle-nodes
 sbin/slurm-usage-report
