@@ -4,10 +4,12 @@ bin/cluster-compute-nodes
 bin/cluster-down-nodes
 bin/cluster-io-nodes
 bin/cluster-passwd
+bin/cluster-pw-check
 bin/cluster-vis-nodes
 bin/condor-build-R-packages
 bin/condor-cpus
 bin/condor-list-packages
+bin/is-login-node
 bin/slurm-cluster-load
 bin/slurm-find-strays
 bin/slurm-job-hist
