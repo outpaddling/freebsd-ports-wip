@@ -1,5 +1,5 @@
---- src/util/checksum/farmhash/farmhash.h.orig	2018-09-26 07:38:06.000000000 -0500
-+++ src/util/checksum/farmhash/farmhash.h	2018-12-23 07:48:41.235724000 -0600
+--- src/util/checksum/farmhash/farmhash.h.orig	2018-09-26 07:38:06 UTC
++++ src/util/checksum/farmhash/farmhash.h	2018-12-23 07:48:41 UTC
 @@ -305,15 +305,18 @@ inline uint128_t Fingerprint128(const Str& s) {
    #if !defined(FARMHASH_BIG_ENDIAN)
      #define FARMHASH_BIG_ENDIAN

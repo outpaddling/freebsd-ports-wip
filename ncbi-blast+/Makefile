@@ -32,11 +32,12 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
 
 USES=		compiler:openmp gmake shebangfix perl5 python
+USE_LDCONFIG=	yes
+
 SHEBANG_FILES=	src/app/blast/legacy_blast.pl \
 		src/app/blast/update_blastdb.pl \
 		src/app/winmasker/windowmasker_2.2.22_adapter.py \
 		src/app/blast/get_species_taxids.sh
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 # The test for amq can hang, but amq is not needed so just avoid the test
@@ -49,7 +50,6 @@ CONFIGURE_ENV=	ncbi_cv_prog_amq_w=no
 CONFIGURE_ARGS+=	AR="ar cr" --without-boost --libdir=${PREFIX}/lib/ncbi-tools++
 
 WRKSRC_SUBDIR=		c++
-
 MAKE_JOBS_UNSAFE=	yes
 
 # Fix "undefined _ThreadRuneLocale" error on 10.0
