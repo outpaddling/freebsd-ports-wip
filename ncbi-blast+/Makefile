@@ -1,7 +1,7 @@
-# $FreeBSD: head/wip biology/ncbi-blast+/Makefile 465726 2018-03-27 18:04:21Z jwb $
+# $FreeBSD: head/biology/ncbi-blast+/Makefile 487272 2018-12-12 01:35:33Z gerald $
 
 PORTNAME=	ncbi-blast+
-DISTVERSION=	2.7.1
+DISTVERSION=	2.8.1
 CATEGORIES=	wip biology perl5 python
 MASTER_SITES=	https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ \
 		https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/
@@ -12,6 +12,8 @@ COMMENT=	NCBI implementation of Basic Local Alignment Search Tool
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/scripts/projects/blast/LICENSE
+
+BROKEN_powerpc64=	fails to build: Error 2
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		liblmdb.so:databases/lmdb \
@@ -32,7 +34,8 @@ RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
 USES=		compiler:openmp gmake shebangfix perl5 python
 SHEBANG_FILES=	src/app/blast/legacy_blast.pl \
 		src/app/blast/update_blastdb.pl \
-		src/app/winmasker/windowmasker_2.2.22_adapter.py
+		src/app/winmasker/windowmasker_2.2.22_adapter.py \
+		src/app/blast/get_species_taxids.sh
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
