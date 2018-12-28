@@ -336,38 +336,55 @@ cat << EOM
 Prefer \$() preferred over \`\` unless \`\` is more readable
 
 EOM
-exit
 
+step
+cat << EOM
 
-Testing
--------
-    Check all installed scripts for proper shebang line
-	(DEVELOPER=yes in /etc/make.conf will enable QA tests to detect this)
-	USES=shebangfix
-	SHEBANG_FILES=path ...
+Check all installed scripts for proper shebang line
+    (DEVELOPER=yes in /etc/make.conf will enable QA tests to detect this)
+    USES=shebangfix
+    SHEBANG_FILES=path ...
 
+EOM
 
-pkg-plist
----------
-    pkgconfig files should be in libdata/pkgconfig
-	configure may support --with-pkgconfigdir= even if not advertised
-    Use EXAMPLESDIR, DOCSDIR, DATADIR where possible
-    Executables called by bin/* but not meant for users go in prefix/libexec
-    Optional scripts for users go in DATADIR or EXAMPLESDIR at your discretion
-    Perl modules (*.pm) \${PREFIX}/\${SITE_PERL_REL}
-    Java .jar files in \${JAVAJARDIR}
+step
+cat << EOM
 
+pkg-plist:
+
+pkgconfig files should be in libdata/pkgconfig
+    configure may support --with-pkgconfigdir= even if not advertised
+Use EXAMPLESDIR, DOCSDIR, DATADIR where possible
+Executables called by bin/* but not meant for users go in prefix/libexec
+Optional scripts for users go in DATADIR or EXAMPLESDIR at your discretion
+Perl modules (*.pm) \${PREFIX}/\${SITE_PERL_REL}
+Java .jar files in \${JAVAJARDIR}
+
+EOM
+
+step
+cat << EOM
 
 pkg-descr
----------
-    Find a good description more than once sentence long
-    spell-check
-    space, not tab after WWW
-    fmt -w 79
+
+Find a good description more than once sentence long
+spell-check
+space, not tab after WWW
+fmt -w 79
+
+EOM
+
+step
+cat << EOM
 
 Remove any extraneous files from port framework and add a post-extract \${RM}
 for any preexisting .orig files that cause makepatch to generate an extraneous
 patch
+
+EOM
+
+step
+cat << EOM
 
 Test on all available platforms.  Do the following IN ORDER:
 
@@ -385,16 +402,36 @@ Test on all available platforms.  Do the following IN ORDER:
 
 	See /usr/ports/Mk/bsd.default-versions.mk
 
+EOM
+
+step
+cat << EOM
+
 Test with poudriere to ensure all depends are installed by the port
     If you've installed Poudriere with port-poudriere-setup:
 	wip-poudriere-test category/portname all
     Python flavors are not tested by default:
 	Also run testport cat/port@py36 or use poudriere bulk -t
 
+EOM
+
+step
+cat << EOM
+
 Generate unified diff for updates, shar file for new ports
     (port-diff or port-shar scripts from ports-mgmt/port-dev)
 
+EOM
+
+step
+cat << EOM
+
 Carefully inspect diff or shar
+
+EOM
+
+step
+cat << EOM
 
 Follow porter's handbook to submit new port or update.
     https://www.freebsd.org/doc/en/books/porters-handbook/
@@ -416,12 +453,24 @@ Follow porter's handbook to submit new port or update.
     testport: OK (poudriere: {9.3, 10.3, 11.0}, {i386, amd64}, options tested)
     unittest: OK (test suite summary output)
 
+EOM
+
+step
+cat << EOM
+
 Update /usr/wip/upstream
 
+EOM
 
-After commit
-------------
+
+step
+cat << EOM
+
+After commit:
+
 Remove poudriere logs if present
+
+Switch dependencies in other wip ports from /usr/wip to \${PORTSDIR}
 
 If maintaining source
 
@@ -483,4 +532,4 @@ For more information, visit https://www.freebsd.org/ports/index.html.
 
 ============================================================================
 
-Switch dependencies in other wip ports from /usr/wip to \${PORTSDIR}
+EOM
