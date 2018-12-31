@@ -35,6 +35,7 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--with-boost-python=boost_python27 \
 		--with-boost-libdir=${LOCALBASE}/lib
+# Without this: configure: error: GNU MP not found (CGAL dependency)
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DOCS
