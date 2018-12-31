@@ -9,10 +9,9 @@
 # you can download the latest sources and build manually.
 
 PORTNAME=	afni
-PORTVERSION=	2015.11.13
-PORTREVISION=	1
+DISTVERSIONPREFIX=	AFNI_
+DISTVERSION=	18.3.16
 CATEGORIES=	wip science biology graphics
-MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Advanced Functional Neuro Imaging
@@ -37,13 +36,14 @@ CONFLICTS=	im-[0-9]* \
 		nifticlib-[0-9]* \
 		open-usp-tukubai-[0-9]*
 
-USES=		gettext gmake iconv jpeg:run motif perl5 python shebangfix tar:xz
-SHEBANG_FILES=	suma_change_spec \
-		3dPAR2AFNI.pl \
-		python_scripts/afni_restproc.py \
-		python_scripts/lib_fat_Rfactor.py \
-		pkundu/meica.libs/siemens_me2nii.py
+USES=		cmake gettext gl gmake gnome iconv jpeg:run motif perl5 python shebangfix tar:xz
+SHEBANG_FILES=	src/suma_change_spec \
+		src/3dPAR2AFNI.pl \
+		src/python_scripts/afni_restproc.py \
+		src/python_scripts/lib_fat_Rfactor.py \
+		src/pkundu/meica.libs/siemens_me2nii.py
 USE_GNOME=	glib20
+USE_GITHUB=	yes
 
 .include <bsd.port.options.mk>
 
@@ -64,17 +64,17 @@ SUB_FILES=	pkg-message afni.cshrc afni.profile
 INSTALL_WRKSRC=	${WRKSRC}/BSD
 PRESTAGE=	${WRKSRC}/prestage
 
-X11R6_FILES=	coxplot/Makefile \
-		coxplot/Makefile.f2c \
-		3DEdge/src/Makefile \
-		SUMA/SUMA_Makefile \
-		edt_blur.c \
-		suma_datasets.c \
-		SUMA/SUMA_Load_Surface_Object.c \
-		SUMA/SUMA_MiscFunc.c \
-		SUMA/SUMA_ParseCommands.c \
-		SUMA/GLUT/libglut/glut_event.c \
-		SUMA/SUMA_Surface_IO.c
+X11R6_FILES=	src/coxplot/Makefile \
+		src/coxplot/Makefile.f2c \
+		src/3DEdge/src/Makefile \
+		src/SUMA/SUMA_Makefile \
+		src/edt_blur.c \
+		src/suma_datasets.c \
+		src/SUMA/SUMA_Load_Surface_Object.c \
+		src/SUMA/SUMA_MiscFunc.c \
+		src/SUMA/SUMA_ParseCommands.c \
+		src/SUMA/GLUT/libglut/glut_event.c \
+		src/SUMA/SUMA_Surface_IO.c
 
 post-extract:
 .for f in ${X11R6_FILES}
@@ -82,14 +82,11 @@ post-extract:
 		-e 's|/usr/X11R6|$${LOCALBASE}|g' ${WRKSRC}/${f}
 .endfor
 	@${REINPLACE_CMD} \
-		-E 's|AFNI_[0-9_]+|${PORTVERSION}|g' ${WRKSRC}/AFNI_label.h
-	@${REINPLACE_CMD} \
-		-e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/afni.1
-	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
+		-E 's|AFNI_[0-9_]+|${PORTVERSION}|g' ${WRKSRC}/src/AFNI_label.h
 	@${RM} ${WRKSRC}/3DEdge/src/Makefile.orig
 
 # shebangfix misses /bin/python on 10.1
-post-patch:
+pre-configure:
 	${REINPLACE_CMD} -e "s|-lglib|-lglib-2.0|g" \
 		${WRKSRC}/SUMA/SUMA_Makefile
 	${REINPLACE_CMD} -e "s|/bin/python|${PYTHON_CMD}|g" \
