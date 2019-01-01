@@ -40,9 +40,6 @@ SHEBANG_FILES=	src/app/blast/legacy_blast.pl \
 		src/app/blast/get_species_taxids.sh
 GNU_CONFIGURE=	yes
 
-# The test for amq can hang, but amq is not needed so just avoid the test
-#CONFIGURE_ENV=	ncbi_cv_prog_amq_w=no
-
 # configure chooses /usr/local/bin/ar with no flags
 # FreeBSD boost port flagged by configure as untested version
 # --libdir=${PREFIX}/lib/ncbi-tools++ doesn't respect DESTDIR, so do
@@ -50,15 +47,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	AR="ar cr" --without-boost --libdir=${PREFIX}/lib/ncbi-tools++
 
 WRKSRC_SUBDIR=		c++
-
-# Fix "undefined _ThreadRuneLocale" error on 10.0
-# Fix unknown options in configure
-#post-patch:
-#	@${REINPLACE_CMD} \
-#		-e 's|-D_THREAD_SAFE|-D_THREAD_SAFE -D__RUNETYPE_INTERNAL|' \
-#		-e '/--infodir=DIR/d' \
-#		-e '/--mandir=DIR/d' \
-#		${WRKSRC}/src/build-system/configure
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/*/*/.cvsignore.extra
