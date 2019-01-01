@@ -47,7 +47,7 @@ CONFIGURE_ENV=	ncbi_cv_prog_amq_w=no
 # FreeBSD boost port flagged by configure as untested version
 # --libdir=${PREFIX}/lib/ncbi-tools++ doesn't respect DESTDIR, so do
 # a postinstall mv.
-CONFIGURE_ARGS+=	AR="ar cr" --without-boost --libdir=${PREFIX}/lib/ncbi-tools++
+CONFIGURE_ARGS=	AR="ar cr" --without-boost --libdir=${PREFIX}/lib/ncbi-tools++
 
 WRKSRC_SUBDIR=		c++
 MAKE_JOBS_UNSAFE=	yes
