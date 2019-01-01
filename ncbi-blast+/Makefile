@@ -50,7 +50,6 @@ CONFIGURE_ENV=	ncbi_cv_prog_amq_w=no
 CONFIGURE_ARGS=	AR="ar cr" --without-boost --libdir=${PREFIX}/lib/ncbi-tools++
 
 WRKSRC_SUBDIR=		c++
-MAKE_JOBS_UNSAFE=	yes
 
 # Fix "undefined _ThreadRuneLocale" error on 10.0
 # Fix unknown options in configure
