@@ -1,4 +1,5 @@
 man/man1/wip-update.1.gz
+sbin/wip-audit
 sbin/wip-edit
 sbin/wip-new-port
 sbin/wip-poudriere-test
