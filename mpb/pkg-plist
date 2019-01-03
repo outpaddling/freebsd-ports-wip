@@ -1,5 +1,0 @@
-bin/mpb
-bin/mpb-split
-bin/mpb-data
-share/libctl/specs/mpb.scm
-@dirrmtry share/libctl/specs
