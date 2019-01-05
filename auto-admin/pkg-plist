@@ -8,6 +8,7 @@ sbin/auto-add-to-group
 sbin/auto-adduser
 sbin/auto-admin
 sbin/auto-amd-nfs-setup
+sbin/auto-amend-fstab
 sbin/auto-append-line
 sbin/auto-ask
 sbin/auto-autofs-nfs-setup
