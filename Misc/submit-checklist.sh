@@ -517,16 +517,19 @@ optimizations, much like apt-get, yum, etc.
 FreeBSD ports can just as easily be built and installed from source,
 although this will take more time:
 
-    cd /usr/ports/category/[put port name here] && make install
+    cd /usr/ports/category/[put port name here]
+    make install
 
 Building from source allows installing to a different prefix, compiling with
-additional options (e.g. -march=native), and in some cases, building with
-non-default options such as different compilers or dependencies.
+additional options, and in some cases, building with non-default options such
+as different compilers or dependencies, e.g.:
 
-We, the developers, do not directly support installation via FreeBSD ports.
-To report any issues, please submit a PR at:
+    make CFLAGS=-march=native install
 
-    https://bugs.freebsd.org/bugzilla/query.cgi?format=advanced.
+We, the [software name ] developers, do not directly support installation
+via FreeBSD ports. To report any issues, please submit a PR at:
+
+    https://www.freebsd.org/support/bugreports.html
 
 For more information, visit https://www.freebsd.org/ports/index.html.
 
