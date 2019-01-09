@@ -1,5 +1,5 @@
---- eigen_func.h.orig	2017-03-10 10:33:00.412167000 -0600
-+++ eigen_func.h	2017-03-10 10:33:17.483478000 -0600
+--- eigen_func.h.orig	2016-06-22 03:11:01 UTC
++++ eigen_func.h
 @@ -12,9 +12,9 @@
  #ifndef _EIGENFUNC_H
  #define _EIGENFUNC_H

@@ -1,5 +1,5 @@
---- gcta.h.orig	2016-06-21 22:11:01.000000000 -0500
-+++ gcta.h	2017-03-11 13:53:26.196740000 -0600
+--- gcta.h.orig	2016-06-22 03:11:01 UTC
++++ gcta.h
 @@ -17,9 +17,9 @@
  #define EIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET
  #endif
