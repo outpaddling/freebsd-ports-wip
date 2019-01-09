@@ -16,7 +16,7 @@ Program         Requested By    Committed   WIP
 ---------------------------------------------------------------------------
 
 canu            Aurash          1.8             -
-kallisto        "               1.43            -
+kallisto        "               0.43.0          0.45.0
 trinity         "               -               2.8.3
 samtools        Paul            1.9             -
 bwa             "               0.7.17          -
