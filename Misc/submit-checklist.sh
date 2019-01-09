@@ -317,6 +317,18 @@ EOM
 step
 cat << EOM
 
+If port requires a newer GCC than 4.2.1, add something like the following
+for 2nd tier platforms that still use GCC 4.2 for the base:
+
+.if \${ARCH} != amd64 && \${ARCH} != i386
+USE_GCC=        yes
+.endif
+
+EOM
+
+step
+cat << EOM
+
 Use @ to silence most commands, except commands that contribute to plist
 
 EOM
