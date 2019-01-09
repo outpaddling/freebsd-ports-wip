@@ -1,10 +1,9 @@
 # $FreeBSD$
 
-PORTNAME=	hisat2
-# DISTVERSION=	2.1.0p20180625
-DISTVERSION=	2.1.0-20
-DISTVERSIONSUFFIX=	-g5622808
-CATEGORIES=	wip biology
+PORTNAME=		hisat2
+DISTVERSION=		2.1.0-23
+DISTVERSIONSUFFIX=	-g20f333e
+CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Alignment program for mapping next-generation sequencing reads
