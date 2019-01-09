@@ -11,6 +11,10 @@ COMMENT=	Alignment program for mapping next-generation sequencing reads
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# May work on other 64-bit archs, untested
+ONLY_FOR_ARCHS=		amd64
+ONLY_FOR_ARCHS_REASON=	64-bit code
+
 USES=		gmake perl5 python shebangfix
 USE_GITHUB=	yes
 
