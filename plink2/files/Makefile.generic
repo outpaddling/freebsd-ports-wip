@@ -22,8 +22,8 @@ BLASFLAGS	?= -llapack -lf77blas -latlas
 ARCH32		?=
 
 # Mandatory flags added to defaults or env settings
-CFLAGS		+= -std=gnu99 $(BASEFLAGS) $(CWARN2) $(CINCLUDE) $(ZSTD_INCLUDE)
-CXXFLAGS	+= -std=c++1y $(BASEFLAGS) $(CXXWARN2)
+CFLAGS		+= -std=gnu99 $(BASEFLAGS) $(CWARN2) $(CINCLUDE) $(ZSTD_INCLUDE) -I${LOCALBASE}/include
+CXXFLAGS	+= -std=c++1y $(BASEFLAGS) $(CXXWARN2) -I${LOCALBASE}/include
 LDFLAGS		+= -lm -lpthread -L. $(ZLIB)
 
 # Installation defaults
