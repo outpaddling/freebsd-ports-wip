@@ -11,73 +11,22 @@ next to any port you're working on.
 
 Commit IMMEDIATELY after changing this file.
 
-
 ---------------------------------------------------------------------------
-Program         Date last verified up-to-date   Assigned to Committed
+Program         Requested By    Committed   WIP
 ---------------------------------------------------------------------------
 
-SPH Paul A
-
-bedtools2       2018-04-01                                  2018-04-19
-bowtie          Leave at 1.1.2: 1.2.1 crashes
-bowtie2         2018-04-01                                  2017-11-30
-bwa             2018-04-01                                  2018-01-31
-epacts          2018-04-01                                  
-macs2           2018-04-01
-metal           2018-04-01
-plink           2018-04-01
-py-htseq                                        Winston
-py-instant      2018-02
-tabixpp         2018-04-01
-tophat          2018-04-01
-vcflib          2018-04-01
-vcftools        2018-04-01
-snptest         2018-05-31                      Winston
-    http://www.well.ox.ac.uk/~gav/resources/snptest_v2.5.2_linux_x86_64_static.tgz
-
-SFS Aurash M
-
-bedtools2       2018-04-01
-pbdagcon        2018-05-01
-    daligner    2018-05-01
-    dazz_db     2018-05-01
-    blasr       2018-04-30
-    blasr_libcpp 2018-04-29
-py-pbfalcon
-    daligner
-    dazz_db
-    py-pypeflow
-fastaunique     2018-03-31
-ncbi-blast      2018-03-31
-pbbam           2018-03-31
-pbcopper        2018-03-31
-pbseqan         2018-03-31
-pear-merger     2018-03
-samtools        2018-04-01
-unanimity       2018-03-31
-vcftools        2018-04-01
-vsearch         2018-04-01
-illumina_utils  2018-03-31
-
-Future:
-
-sleuth          Follow bioconductor instructions within R
-sailfish
-
-SFS Ryan Bartelme
-IQTree                                          jrm@FreeBSD.org
-
-MATH Dexuan X
-
-py-fenics       2018-02
-    py-ffc      2018-02
-    py-fiat     2018-02
-    py-ufl      2018-02
-    py-dijitso  2018-02
-    py-instant  2018-02
-    dolfin      2018-02
-    mshr        2018-02
-
-CEAS Alexandria M
-
-OpenFOAM 5                                      Winston
+canu            Aurash          1.8             -
+kallisto        "               1.43            -
+trinity         "               -               2.8.3
+samtools        Paul            1.9             -
+bwa             "               0.7.17          -
+vcftools        "               0.1.16          -
+bcftools        "               1.9             -
+plink2          "               -               g20180521
+gcta64          "               -               1.26.0
+epacts          "               -               20170222
+macs2           "               2.1.0-p20170505 -
+stacks1         Emily           1.48            -
+stacks2         "               -               2.2
+ddocent         "               2.2.25          2.5.2
+hisat2          Peter           -               2.1.0-20
