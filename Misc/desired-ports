@@ -12,21 +12,21 @@ next to any port you're working on.
 Commit IMMEDIATELY after changing this file.
 
 ---------------------------------------------------------------------------
-Program         Requested By    Committed   WIP
+Program         Requested By    Committed       WIP         Notes
 ---------------------------------------------------------------------------
 
 canu            Aurash          1.8             -
 kallisto        "               0.43.0          0.45.0
-trinity         "               -               2.8.3
+trinity         "               -               2.8.3       Challenging
 samtools        Paul            1.9             -
 bwa             "               0.7.17          -
 vcftools        "               0.1.16          -
 bcftools        "               1.9             -
-plink2          "               -               g20180521
-gcta64          "               -               1.26.0
-epacts          "               -               20170222
+plink2          "               -               g20180521   Challenging
+gcta64          "               -               1.26.0      Challenging
+epacts          "               -               20170222    3.4-rc
 macs2           "               2.1.0-p20170505 -
 stacks1         Emily           1.48            -
-stacks2         "               -               2.2
+stacks2         "               -               2.2         Simple
 ddocent         "               2.2.25          2.5.2
-hisat2          Peter           -               2.1.0-20
+hisat2          Peter           -               2.1.0-20    Simple
