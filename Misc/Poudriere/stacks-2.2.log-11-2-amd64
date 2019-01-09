@@ -1,0 +1,770 @@
+build started at Tue Jan  8 22:00:30 CST 2019
+port directory: /usr/ports/wip/stacks
+package name: stacks-2.2
+building for: FreeBSD 11-2-amd64-default 11.2-RELEASE-p7 FreeBSD 11.2-RELEASE-p7 amd64
+maintained by: jwb@FreeBSD.org
+Makefile ident:      $FreeBSD: head/biology/stacks/Makefile 483245 2018-10-28 08:58:00Z linimon $
+Poudriere version: 3.2.8
+Host OSVERSION: 1200086
+Jail OSVERSION: 1102000
+Job Id: 
+
+---Begin Environment---
+SHELL=/bin/csh
+OSVERSION=1102000
+UNAME_v=FreeBSD 11.2-RELEASE-p7
+UNAME_r=11.2-RELEASE-p7
+BLOCKSIZE=K
+MAIL=/var/mail/root
+WARNING_WAIT=0
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+LOCALBASE=/usr/local
+USER=root
+TRYBROKEN=yes
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.2.8
+MASTERMNT=/usr/local/poudriere/data/.m/11-2-amd64-default/ref
+DEV_WARNING_WAIT=0
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm
+GID=0
+UID=0
+PWD=/usr/local/poudriere/data/.m/11-2-amd64-default/ref/.p
+NO_WARNING_PKG_INSTALL_EOL=yes
+P_PORTS_FEATURES=FLAVORS SELECTED_OPTIONS
+MASTERNAME=11-2-amd64-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+OLDPWD=/usr/local/poudriere/data/.m/11-2-amd64-default/ref/.p
+SCRIPTPATH=/usr/local/share/poudriere/testport.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=PACKAGES=/tmp/pkgs PKGREPOSITORY=/tmp/pkgs
+FLAVOR=
+DEPENDS_ARGS=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+jwb@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+MAKE=gmake PYTHON="/usr/local/bin/python2.7" XDG_DATA_HOME=/wrkdirs/usr/ports/wip/stacks/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/stacks/work  HOME=/wrkdirs/usr/ports/wip/stacks/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/stacks/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin SHELL=/bin/sh CONFIG_SHELL=/bin/sh ADDR2LINE="/usr/local/bin/addr2line" AR="/usr/local/bin/ar" AS="/usr/local/bin/as" CPPFILT="/usr/local/bin/c++filt" GPROF="/usr/local/bin/gprof" LD="/usr/local/bin/ld" NM="/usr/local/bin/nm" OBJCOPY="/usr/local/bin/objcopy" OBJDUMP="/usr/local/bin/objdump" RANLIB="/usr/local/bin/ranlib" READELF="/usr/local/bin/readelf" SIZE="/usr/local/bin/size" STRINGS="/usr/local/bin/strings" CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=262144
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/wip/stacks/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/wip/stacks/work  HOME=/wrkdirs/usr/ports/wip/stacks/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/wip/stacks/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin NO_PIE=yes MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES ADDR2LINE="/usr/local/bin/addr2line" AR="/usr/local/bin/ar" AS="/usr/local/bin/as" CPPFILT="/usr/local/bin/c++filt" GPROF="/usr/local/bin/gprof" LD="/usr/local/bin/ld" NM="/usr/local/bin/nm" OBJCOPY="/usr/local/bin/objcopy" OBJDUMP="/usr/local/bin/objdump" RANLIB="/usr/local/bin/ranlib" READELF="/usr/local/bin/readelf" SIZE="/usr/local/bin/size" STRINGS="/usr/local/bin/strings" PREFIX=/usr/local  LOCALBASE=/usr/local  CC="gcc8" CFLAGS="-O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing "  CPP="cpp8" CPPFLAGS=""  LDFLAGS=" -lpthread -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -L/usr/local/lib/gcc8 " LIBS=""  CXX="g++8" CXXFLAGS="-O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8 "  MANPREFIX="/usr/local" BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PYTHON_INCLUDEDIR=include/python2.7  PYTHON_LIBDIR=lib/python2.7  PYTHON_PLATFORM=freebsd11  PYTHON_PYOEXTENSION=pyo  PYTHON_SITELIBDIR=lib/python2.7/site-packages  PYTHON_SUFFIX=27  PYTHON_VER=2.7  PYTHON_VERSION=python2.7 PYTHON2="" PYTHON3="@comment " OSREL=11.2 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/stacks"  EXAMPLESDIR="share/examples/stacks"  DATADIR="share/stacks"  WWWDIR="www/stacks"  ETCDIR="etc/stacks"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/stacks DOCSDIR=/usr/local/share/doc/stacks EXAMPLESDIR=/usr/local/share/examples/stacks  WWWDIR=/usr/local/www/stacks ETCDIR=/usr/local/etc/stacks
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+#### /usr/ports/Mk/Scripts/ports_env.sh ####
+_CCVERSION_921dbbb2=FreeBSD clang version 6.0.0 (tags/RELEASE_600/final 326565) (based on LLVM 6.0.0) Target: x86_64-unknown-freebsd11.2 Thread model: posix InstalledDir: /usr/bin
+_ALTCCVERSION_921dbbb2=none
+_CXXINTERNAL_acaad9ca=FreeBSD clang version 6.0.0 (tags/RELEASE_600/final 326565) (based on LLVM 6.0.0) Target: x86_64-unknown-freebsd11.2 Thread model: posix InstalledDir: /usr/bin "/usr/bin/ld" "--eh-frame-hdr" "-dynamic-linker" "/libexec/ld-elf.so.1" "--hash-style=both" "--enable-new-dtags" "-o" "a.out" "/usr/lib/crt1.o" "/usr/lib/crti.o" "/usr/lib/crtbegin.o" "-L/usr/lib" "/dev/null" "-lc++" "-lm" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "-lc" "-lgcc" "--as-needed" "-lgcc_s" "--no-as-needed" "/usr/lib/crtend.o" "/usr/lib/crtn.o"
+CC_OUTPUT_921dbbb2_58173849=yes
+CC_OUTPUT_921dbbb2_9bdba57c=yes
+CC_OUTPUT_921dbbb2_6a4fe7f5=yes
+CC_OUTPUT_921dbbb2_6bcac02b=yes
+CC_OUTPUT_921dbbb2_67d20829=yes
+CC_OUTPUT_921dbbb2_bfa62e83=yes
+CC_OUTPUT_921dbbb2_f0b4d593=yes
+CC_OUTPUT_921dbbb2_308abb44=yes
+CC_OUTPUT_921dbbb2_f00456e5=yes
+CC_OUTPUT_921dbbb2_65ad290d=yes
+CC_OUTPUT_921dbbb2_f2776b26=yes
+CC_OUTPUT_921dbbb2_b2657cc3=yes
+CC_OUTPUT_921dbbb2_380987f7=yes
+CC_OUTPUT_921dbbb2_160933ec=yes
+CC_OUTPUT_921dbbb2_fb62803b=yes
+_OBJC_CCVERSION_921dbbb2=FreeBSD clang version 6.0.0 (tags/RELEASE_600/final 326565) (based on LLVM 6.0.0) Target: x86_64-unknown-freebsd11.2 Thread model: posix InstalledDir: /usr/bin
+_OBJC_ALTCCVERSION_921dbbb2=none
+ARCH=amd64
+OPSYS=FreeBSD
+_OSRELEASE=11.2-RELEASE-p7
+OSREL=11.2
+OSVERSION=1102000
+PYTHONBASE=/usr/local
+HAVE_COMPAT_IA32_KERN=YES
+_SMP_CPUS=4
+CONFIGURE_MAX_CMD_LEN=262144
+HAVE_PORTS_ENV=1
+#### Misc Poudriere ####
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  19558
+open files                      (-n)  1024
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===>  License GPLv2 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===>   stacks-2.2 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.10.5_5.txz
+[11-2-amd64-default] Installing pkg-1.10.5_5...
+[11-2-amd64-default] Extracting pkg-1.10.5_5: .......... done
+===>   stacks-2.2 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of stacks-2.2
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===========================================================================
+=======================<phase: fetch          >============================
+===>  License GPLv2 accepted by the user
+===>   stacks-2.2 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by stacks-2.2 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===>  License GPLv2 accepted by the user
+===>   stacks-2.2 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by stacks-2.2 for building
+=> SHA256 Checksum OK for stacks-2.2.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===========================================================================
+=======================<phase: extract        >============================
+===>  License GPLv2 accepted by the user
+===>   stacks-2.2 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by stacks-2.2 for building
+===>  Extracting for stacks-2.2
+=> SHA256 Checksum OK for stacks-2.2.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===========================================================================
+=======================<phase: patch          >============================
+===>  Patching for stacks-2.2
+===========================================================================
+=======================<phase: build-depends  >============================
+===>   stacks-2.2 depends on executable: gmake - not found
+===>   Installing existing package /packages/All/gmake-4.2.1_3.txz
+[11-2-amd64-default] Installing gmake-4.2.1_3...
+[11-2-amd64-default] `-- Installing gettext-runtime-0.19.8.1_2...
+[11-2-amd64-default] |   `-- Installing indexinfo-0.3.1...
+[11-2-amd64-default] |   `-- Extracting indexinfo-0.3.1: .... done
+[11-2-amd64-default] `-- Extracting gettext-runtime-0.19.8.1_2: .......... done
+[11-2-amd64-default] Extracting gmake-4.2.1_3: .......... done
+===>   stacks-2.2 depends on executable: gmake - found
+===>   Returning to build of stacks-2.2
+===>   stacks-2.2 depends on file: /usr/local/bin/python2.7 - not found
+===>   Installing existing package /packages/All/python27-2.7.15.txz
+[11-2-amd64-default] Installing python27-2.7.15...
+[11-2-amd64-default] `-- Installing libffi-3.2.1_3...
+[11-2-amd64-default] `-- Extracting libffi-3.2.1_3: .......... done
+[11-2-amd64-default] `-- Installing readline-7.0.5...
+[11-2-amd64-default] `-- Extracting readline-7.0.5: .......... done
+[11-2-amd64-default] Extracting python27-2.7.15: .......... done
+Message from python27-2.7.15:
+
+===========================================================================
+
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+bsddb           databases/py-bsddb
+gdbm            databases/py-gdbm
+sqlite3         databases/py-sqlite3
+tkinter         x11-toolkits/py-tkinter
+
+===========================================================================
+===>   stacks-2.2 depends on file: /usr/local/bin/python2.7 - found
+===>   Returning to build of stacks-2.2
+===>   stacks-2.2 depends on executable: gcc8 - not found
+===>   Installing existing package /packages/All/gcc8-8.2.0_4.txz
+[11-2-amd64-default] Installing gcc8-8.2.0_4...
+[11-2-amd64-default] `-- Installing binutils-2.30_7,1...
+[11-2-amd64-default] `-- Extracting binutils-2.30_7,1: .......... done
+[11-2-amd64-default] `-- Installing gmp-6.1.2_1...
+[11-2-amd64-default] `-- Extracting gmp-6.1.2_1: .......... done
+[11-2-amd64-default] `-- Installing mpc-1.1.0_2...
+[11-2-amd64-default] |   `-- Installing mpfr-4.0.1_2...
+[11-2-amd64-default] |   `-- Extracting mpfr-4.0.1_2: .......... done
+[11-2-amd64-default] `-- Extracting mpc-1.1.0_2: ......... done
+[11-2-amd64-default] Extracting gcc8-8.2.0_4: .......... done
+Message from gcc8-8.2.0_4:
+
+To ensure binaries built with this toolchain find appropriate versions
+of the necessary run-time libraries, you may want to link using
+
+  -Wl,-rpath=/usr/local/lib/gcc8
+
+For ports leveraging USE_GCC, USES=compiler, or USES=fortran this happens
+transparently.
+===>   stacks-2.2 depends on executable: gcc8 - found
+===>   Returning to build of stacks-2.2
+===>   stacks-2.2 depends on file: /usr/local/bin/as - found
+===========================================================================
+=======================<phase: lib-depends    >============================
+===========================================================================
+=>> Recording filesystem state for prebuild... done
+=======================<phase: configure      >============================
+===>   stacks-2.2 depends on executable: gmake - found
+===>   stacks-2.2 depends on file: /usr/local/bin/python2.7 - found
+===>   stacks-2.2 depends on executable: gcc8 - found
+===>   stacks-2.2 depends on file: /usr/local/bin/as - found
+===>  Configuring for stacks-2.2
+configure: loading site script /usr/ports/Templates/config.site
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether gmake sets $(MAKE)... yes
+checking whether gmake supports nested variables... yes
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++8 accepts -g... yes
+checking for style of include used by gmake... GNU
+checking dependency style of g++8... gcc3
+checking for gcc... gcc8
+checking whether we are using the GNU C compiler... yes
+checking whether gcc8 accepts -g... yes
+checking for gcc8 option to accept ISO C89... none needed
+checking whether gcc8 understands -c and -o together... yes
+checking dependency style of gcc8... gcc3
+checking whether g++8 supports C++11 features by default... yes
+checking for ranlib... /usr/local/bin/ranlib
+checking the archiver (/usr/local/bin/ar) interface... ar
+checking for omp_set_num_threads in -lgomp... yes
+checking for gzread in -lz... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking how to run the C preprocessor... cpp8
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for float.h... (cached) yes
+checking for limits.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for gcc8 option to support OpenMP... -fopenmp
+checking for stdbool.h that conforms to C99... (cached) yes
+checking for _Bool... (cached) yes
+checking for an ANSI C-conforming const... yes
+checking for size_t... (cached) yes
+checking whether closedir returns void... no
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible realloc... yes
+checking for floor... no
+checking for memset... (cached) yes
+checking for pow... no
+checking for sqrt... no
+checking for clock_gettime... (cached) yes
+checking for functional regular expressions... yes
+checking for gawk... (cached) /usr/bin/awk
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating htslib/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+===========================================================================
+=======================<phase: build          >============================
+===>  Building for stacks-2.2
+gmake[1]: Entering directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2'
+gmake  all-recursive
+gmake[2]: Entering directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2'
+Making all in htslib
+gmake[3]: Entering directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2/htslib'
+depbase=`echo bcf_sr_sort.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT bcf_sr_sort.o -MD -MP -MF $depbase.Tpo -c -o bcf_sr_sort.o bcf_sr_sort.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo bgzf.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT bgzf.o -MD -MP -MF $depbase.Tpo -c -o bgzf.o bgzf.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo bgzip.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT bgzip.o -MD -MP -MF $depbase.Tpo -c -o bgzip.o bgzip.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo errmod.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT errmod.o -MD -MP -MF $depbase.Tpo -c -o errmod.o errmod.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo faidx.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT faidx.o -MD -MP -MF $depbase.Tpo -c -o faidx.o faidx.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo hfile.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT hfile.o -MD -MP -MF $depbase.Tpo -c -o hfile.o hfile.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo hfile_net.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT hfile_net.o -MD -MP -MF $depbase.Tpo -c -o hfile_net.o hfile_net.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo hts.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT hts.o -MD -MP -MF $depbase.Tpo -c -o hts.o hts.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo hts_os.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT hts_os.o -MD -MP -MF $depbase.Tpo -c -o hts_os.o hts_os.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo htsfile.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT htsfile.o -MD -MP -MF $depbase.Tpo -c -o htsfile.o htsfile.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo kfunc.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT kfunc.o -MD -MP -MF $depbase.Tpo -c -o kfunc.o kfunc.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo knetfile.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT knetfile.o -MD -MP -MF $depbase.Tpo -c -o knetfile.o knetfile.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo kstring.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT kstring.o -MD -MP -MF $depbase.Tpo -c -o kstring.o kstring.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo md5.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT md5.o -MD -MP -MF $depbase.Tpo -c -o md5.o md5.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo multipart.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT multipart.o -MD -MP -MF $depbase.Tpo -c -o multipart.o multipart.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo probaln.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT probaln.o -MD -MP -MF $depbase.Tpo -c -o probaln.o probaln.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo realn.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT realn.o -MD -MP -MF $depbase.Tpo -c -o realn.o realn.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo regidx.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT regidx.o -MD -MP -MF $depbase.Tpo -c -o regidx.o regidx.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo sam.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT sam.o -MD -MP -MF $depbase.Tpo -c -o sam.o sam.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo synced_bcf_reader.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT synced_bcf_reader.o -MD -MP -MF $depbase.Tpo -c -o synced_bcf_reader.o synced_bcf_reader.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo tabix.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT tabix.o -MD -MP -MF $depbase.Tpo -c -o tabix.o tabix.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo tbx.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT tbx.o -MD -MP -MF $depbase.Tpo -c -o tbx.o tbx.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo textutils.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT textutils.o -MD -MP -MF $depbase.Tpo -c -o textutils.o textutils.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo thread_pool.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT thread_pool.o -MD -MP -MF $depbase.Tpo -c -o thread_pool.o thread_pool.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo vcf.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT vcf.o -MD -MP -MF $depbase.Tpo -c -o vcf.o vcf.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo vcf_sweep.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT vcf_sweep.o -MD -MP -MF $depbase.Tpo -c -o vcf_sweep.o vcf_sweep.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo vcfutils.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT vcfutils.o -MD -MP -MF $depbase.Tpo -c -o vcfutils.o vcfutils.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo cram/cram_codecs.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT cram/cram_codecs.o -MD -MP -MF $depbase.Tpo -c -o cram/cram_codecs.o cram/cram_codecs.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo cram/cram_decode.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT cram/cram_decode.o -MD -MP -MF $depbase.Tpo -c -o cram/cram_decode.o cram/cram_decode.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo cram/cram_encode.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT cram/cram_encode.o -MD -MP -MF $depbase.Tpo -c -o cram/cram_encode.o cram/cram_encode.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo cram/cram_external.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT cram/cram_external.o -MD -MP -MF $depbase.Tpo -c -o cram/cram_external.o cram/cram_external.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo cram/cram_index.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT cram/cram_index.o -MD -MP -MF $depbase.Tpo -c -o cram/cram_index.o cram/cram_index.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo cram/cram_io.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT cram/cram_io.o -MD -MP -MF $depbase.Tpo -c -o cram/cram_io.o cram/cram_io.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo cram/cram_samtools.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT cram/cram_samtools.o -MD -MP -MF $depbase.Tpo -c -o cram/cram_samtools.o cram/cram_samtools.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo cram/cram_stats.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT cram/cram_stats.o -MD -MP -MF $depbase.Tpo -c -o cram/cram_stats.o cram/cram_stats.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo cram/files.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT cram/files.o -MD -MP -MF $depbase.Tpo -c -o cram/files.o cram/files.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo cram/mFILE.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT cram/mFILE.o -MD -MP -MF $depbase.Tpo -c -o cram/mFILE.o cram/mFILE.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo cram/open_trace_file.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT cram/open_trace_file.o -MD -MP -MF $depbase.Tpo -c -o cram/open_trace_file.o cram/open_trace_file.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo cram/pooled_alloc.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT cram/pooled_alloc.o -MD -MP -MF $depbase.Tpo -c -o cram/pooled_alloc.o cram/pooled_alloc.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo cram/rANS_static.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT cram/rANS_static.o -MD -MP -MF $depbase.Tpo -c -o cram/rANS_static.o cram/rANS_static.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo cram/sam_header.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT cram/sam_header.o -MD -MP -MF $depbase.Tpo -c -o cram/sam_header.o cram/sam_header.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo cram/string_alloc.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT cram/string_alloc.o -MD -MP -MF $depbase.Tpo -c -o cram/string_alloc.o cram/string_alloc.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo os/rand.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc8 -DHAVE_CONFIG_H -I. -I..     -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -fno-strict-aliasing  -MT os/rand.o -MD -MP -MF $depbase.Tpo -c -o os/rand.o os/rand.c &&\
+mv -f $depbase.Tpo $depbase.Po
+rm -f libhts.a
+/usr/local/bin/ar cru libhts.a bcf_sr_sort.o bgzf.o bgzip.o cram/cram_codecs.o cram/cram_decode.o cram/cram_encode.o cram/cram_external.o cram/cram_index.o cram/cram_io.o cram/cram_samtools.o cram/cram_stats.o cram/files.o cram/mFILE.o cram/open_trace_file.o cram/pooled_alloc.o cram/rANS_static.o cram/sam_header.o cram/string_alloc.o errmod.o faidx.o hfile.o hfile_net.o hts.o hts_os.o htsfile.o kfunc.o knetfile.o kstring.o md5.o multipart.o os/rand.o probaln.o realn.o regidx.o sam.o synced_bcf_reader.o tabix.o tbx.o textutils.o thread_pool.o vcf.o vcf_sweep.o vcfutils.o 
+/usr/local/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+/usr/local/bin/ranlib libhts.a
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2/htslib'
+gmake[3]: Entering directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2'
+depbase=`echo src/aln_utils.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/aln_utils.o -MD -MP -MF $depbase.Tpo -c -o src/aln_utils.o src/aln_utils.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/BamI.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/BamI.o -MD -MP -MF $depbase.Tpo -c -o src/BamI.o src/BamI.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/catalog_utils.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/catalog_utils.o -MD -MP -MF $depbase.Tpo -c -o src/catalog_utils.o src/catalog_utils.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/cmb.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/cmb.o -MD -MP -MF $depbase.Tpo -c -o src/cmb.o src/cmb.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/constants.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/constants.o -MD -MP -MF $depbase.Tpo -c -o src/constants.o src/constants.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/DNANSeq.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/DNANSeq.o -MD -MP -MF $depbase.Tpo -c -o src/DNANSeq.o src/DNANSeq.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/DNASeq4.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/DNASeq4.o -MD -MP -MF $depbase.Tpo -c -o src/DNASeq4.o src/DNASeq4.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/DNASeq.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/DNASeq.o -MD -MP -MF $depbase.Tpo -c -o src/DNASeq.o src/DNASeq.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/gzFasta.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/gzFasta.o -MD -MP -MF $depbase.Tpo -c -o src/gzFasta.o src/gzFasta.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/input.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/input.o -MD -MP -MF $depbase.Tpo -c -o src/input.o src/input.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/kmers.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/kmers.o -MD -MP -MF $depbase.Tpo -c -o src/kmers.o src/kmers.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/locus.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/locus.o -MD -MP -MF $depbase.Tpo -c -o src/locus.o src/locus.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/log_utils.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/log_utils.o -MD -MP -MF $depbase.Tpo -c -o src/log_utils.o src/log_utils.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/MetaPopInfo.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/MetaPopInfo.o -MD -MP -MF $depbase.Tpo -c -o src/MetaPopInfo.o src/MetaPopInfo.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/models.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/models.o -MD -MP -MF $depbase.Tpo -c -o src/models.o src/models.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/mstack.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/mstack.o -MD -MP -MF $depbase.Tpo -c -o src/mstack.o src/mstack.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/mst.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/mst.o -MD -MP -MF $depbase.Tpo -c -o src/mst.o src/mst.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/nucleotides.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/nucleotides.o -MD -MP -MF $depbase.Tpo -c -o src/nucleotides.o src/nucleotides.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/renz.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/renz.o -MD -MP -MF $depbase.Tpo -c -o src/renz.o src/renz.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/Seq.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/Seq.o -MD -MP -MF $depbase.Tpo -c -o src/Seq.o src/Seq.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/sql_utilities.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/sql_utilities.o -MD -MP -MF $depbase.Tpo -c -o src/sql_utilities.o src/sql_utilities.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/stacks.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/stacks.o -MD -MP -MF $depbase.Tpo -c -o src/stacks.o src/stacks.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/utils.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/utils.o -MD -MP -MF $depbase.Tpo -c -o src/utils.o src/utils.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/Vcf.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/Vcf.o -MD -MP -MF $depbase.Tpo -c -o src/Vcf.o src/Vcf.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/clean.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/clean.o -MD -MP -MF $depbase.Tpo -c -o src/clean.o src/clean.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/file_io.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/file_io.o -MD -MP -MF $depbase.Tpo -c -o src/file_io.o src/file_io.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/write.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/write.o -MD -MP -MF $depbase.Tpo -c -o src/write.o src/write.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/export_formats.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/export_formats.o -MD -MP -MF $depbase.Tpo -c -o src/export_formats.o src/export_formats.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/genotype_dictionaries.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/genotype_dictionaries.o -MD -MP -MF $depbase.Tpo -c -o src/genotype_dictionaries.o src/genotype_dictionaries.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/PopSum.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/PopSum.o -MD -MP -MF $depbase.Tpo -c -o src/PopSum.o src/PopSum.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/Hwp.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/Hwp.o -MD -MP -MF $depbase.Tpo -c -o src/Hwp.o src/Hwp.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/ustacks.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/ustacks.o -MD -MP -MF $depbase.Tpo -c -o src/ustacks.o src/ustacks.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/cstacks.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/cstacks.o -MD -MP -MF $depbase.Tpo -c -o src/cstacks.o src/cstacks.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/sstacks.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/sstacks.o -MD -MP -MF $depbase.Tpo -c -o src/sstacks.o src/sstacks.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/process_radtags.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/process_radtags.o -MD -MP -MF $depbase.Tpo -c -o src/process_radtags.o src/process_radtags.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/process_shortreads.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/process_shortreads.o -MD -MP -MF $depbase.Tpo -c -o src/process_shortreads.o src/process_shortreads.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/kmer_filter.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/kmer_filter.o -MD -MP -MF $depbase.Tpo -c -o src/kmer_filter.o src/kmer_filter.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/clone_filter.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/clone_filter.o -MD -MP -MF $depbase.Tpo -c -o src/clone_filter.o src/clone_filter.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/populations.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/populations.o -MD -MP -MF $depbase.Tpo -c -o src/populations.o src/populations.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/phasedstacks.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/phasedstacks.o -MD -MP -MF $depbase.Tpo -c -o src/phasedstacks.o src/phasedstacks.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/tsv2bam.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/tsv2bam.o -MD -MP -MF $depbase.Tpo -c -o src/tsv2bam.o src/tsv2bam.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/gstacks.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/gstacks.o -MD -MP -MF $depbase.Tpo -c -o src/gstacks.o src/gstacks.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/debruijn.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/debruijn.o -MD -MP -MF $depbase.Tpo -c -o src/debruijn.o src/debruijn.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src/SuffixTree.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+g++8 -DHAVE_CONFIG_H -I.  -fopenmp -I./htslib   -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -MT src/SuffixTree.o -MD -MP -MF $depbase.Tpo -c -o src/SuffixTree.o src/SuffixTree.cc &&\
+mv -f $depbase.Tpo $depbase.Po
+rm -f libcore.a
+/usr/local/bin/ar cru libcore.a src/aln_utils.o src/BamI.o src/catalog_utils.o src/cmb.o src/constants.o src/DNANSeq.o src/DNASeq4.o src/DNASeq.o src/gzFasta.o src/input.o src/kmers.o src/locus.o src/log_utils.o src/MetaPopInfo.o src/models.o src/mstack.o src/mst.o src/nucleotides.o src/renz.o src/Seq.o src/sql_utilities.o src/stacks.o src/utils.o src/Vcf.o  
+/usr/local/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+/usr/local/bin/ranlib libcore.a
+rm -f libclean.a
+/usr/local/bin/ar cru libclean.a src/clean.o src/file_io.o src/write.o 
+/usr/local/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+/usr/local/bin/ranlib libclean.a
+rm -f libpop.a
+/usr/local/bin/ar cru libpop.a src/export_formats.o src/genotype_dictionaries.o src/PopSum.o src/Hwp.o 
+/usr/local/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+/usr/local/bin/ranlib libpop.a
+g++8  -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -fopenmp -lpthread -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -L/usr/local/lib/gcc8  -o ustacks src/ustacks.o htslib/libhts.a libcore.a -lz -lgomp 
+g++8  -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -fopenmp -lpthread -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -L/usr/local/lib/gcc8  -o cstacks src/cstacks.o htslib/libhts.a libcore.a -lz -lgomp 
+g++8  -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -fopenmp -lpthread -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -L/usr/local/lib/gcc8  -o sstacks src/sstacks.o htslib/libhts.a libcore.a -lz -lgomp 
+g++8  -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -fopenmp -lpthread -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -L/usr/local/lib/gcc8  -o process_radtags src/process_radtags.o htslib/libhts.a libcore.a libclean.a -lz -lgomp 
+g++8  -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -fopenmp -lpthread -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -L/usr/local/lib/gcc8  -o process_shortreads src/process_shortreads.o htslib/libhts.a libcore.a libclean.a -lz -lgomp 
+g++8  -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -fopenmp -lpthread -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -L/usr/local/lib/gcc8  -o kmer_filter src/kmer_filter.o htslib/libhts.a libcore.a libclean.a -lz -lgomp 
+g++8  -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -fopenmp -lpthread -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -L/usr/local/lib/gcc8  -o clone_filter src/clone_filter.o htslib/libhts.a libcore.a libclean.a -lz -lgomp 
+g++8  -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -fopenmp -lpthread -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -L/usr/local/lib/gcc8  -o populations src/populations.o htslib/libhts.a libcore.a libpop.a -lz -lgomp 
+g++8  -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -fopenmp -lpthread -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -L/usr/local/lib/gcc8  -o phasedstacks src/phasedstacks.o htslib/libhts.a libcore.a -lz -lgomp 
+g++8  -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -fopenmp -lpthread -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -L/usr/local/lib/gcc8  -o tsv2bam src/tsv2bam.o htslib/libhts.a libcore.a -lz -lgomp 
+g++8  -O2 -pipe  -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8  -Wl,-rpath=/usr/local/lib/gcc8  -fopenmp -lpthread -fstack-protector -Wl,-rpath=/usr/local/lib/gcc8 -L/usr/local/lib/gcc8  -o gstacks src/gstacks.o src/debruijn.o src/SuffixTree.o htslib/libhts.a libcore.a -lz -lgomp 
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2'
+===========================================================================
+=>> Checking for filesystem violations... done
+=======================<phase: run-depends    >============================
+===>   stacks-2.2 depends on file: /usr/local/bin/python2.7 - found
+===>   stacks-2.2 depends on executable: gcc8 - found
+===========================================================================
+=>> Recording filesystem state for prestage... done
+=======================<phase: stage          >============================
+===>  Staging for stacks-2.2
+===>   stacks-2.2 depends on file: /usr/local/bin/python2.7 - found
+===>   stacks-2.2 depends on executable: gcc8 - found
+===>   Generating temporary packing list
+gmake[1]: Entering directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2'
+Making install in htslib
+gmake[2]: Entering directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2/htslib'
+gmake[3]: Entering directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2/htslib'
+gmake[3]: Nothing to be done for 'install-exec-am'.
+gmake[3]: Nothing to be done for 'install-data-am'.
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2/htslib'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2/htslib'
+gmake[2]: Entering directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2'
+gmake[3]: Entering directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2'
+ /bin/mkdir -p '/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin'
+  install  -s -m 555 ustacks cstacks sstacks process_radtags process_shortreads kmer_filter clone_filter populations phasedstacks tsv2bam gstacks '/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin'
+ /bin/mkdir -p '/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin'
+ install  -m 555 scripts/denovo_map.pl scripts/ref_map.pl scripts/integrate_alignments.py scripts/count_fixed_catalog_snps.py scripts/stacks-integrate-alignments scripts/stacks-dist-extract scripts/stacks-gdb '/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin'
+ /bin/mkdir -p '/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks'
+ /bin/mkdir -p '/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php'
+ install  -m 0644  php/CatalogClass.php php/annotate_marker.php php/constants.php.dist php/index.php php/tags.php php/tag.php php/Locus.php php/catalog.php php/correct_genotypes.php php/correct_genotype.php php/export_batch.php php/last_modified.php php/version.php php/catalog_genotypes.php php/db_functions.php php/header.php php/samples.php php/stacks_functions.php php/view_sequence.php php/sequence_blast.php php/pop_view.php php/sumstat_view.php php/hapstat_view.php php/fst_view.php php/phist_view.php php/stack_view.php php/population_view.js php/ajax.js php/annotate.js php/stacks.js php/export.js php/stacks.css '/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php'
+ /bin/mkdir -p '/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/sql'
+ install  -m 0644  sql/mysql.cnf.dist sql/catalog_index.sql sql/stacks.sql sql/tag_index.sql sql/chr_index.sql '/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/sql'
+ /bin/mkdir -p '/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php/images'
+ install  -m 0644  php/images/caret-d.png php/images/caret-u.png php/images/excel_icon.png php/images/l-arrow-disabled.png php/images/l-arrow.png php/images/r-arrow-disabled.png php/images/r-arrow.png php/images/stacks_bg.png php/images/stacks_logo_rev_small.png '/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php/images'
+gmake  install-data-hook
+gmake[4]: Entering directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2'
+sed -e 's,_VERSION_,2.2,' -e 's,_BINDIR_,/usr/local/bin/,g' -e 's,_PKGDATADIR_,/usr/local/share/stacks/,g' /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/denovo_map.pl > /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/denovo_map.pl.subst
+mv /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/denovo_map.pl.subst /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/denovo_map.pl
+chmod +x /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/denovo_map.pl
+sed -e 's,_VERSION_,2.2,' -e 's,_BINDIR_,/usr/local/bin/,g' -e 's,_PKGDATADIR_,/usr/local/share/stacks/,g' /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/ref_map.pl > /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/ref_map.pl.subst
+mv /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/ref_map.pl.subst /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/ref_map.pl
+chmod +x /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/ref_map.pl
+sed -e 's,_PKGDATADIR_,/usr/local/share/stacks/,g' -e 's,_BINDIR_,/usr/local/bin/,g' \
+	/wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php/constants.php.dist > /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php/constants.php.dist.subst
+mv /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php/constants.php.dist.subst /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php/constants.php.dist
+echo 2.2 > /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php/version.php
+/bin/sh /wrkdirs/usr/ports/wip/stacks/work/stacks-2.2/config/install-sh -d -m 755 /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/share/stacks/php/export
+sed -i.bkp -e 's,_VERSION_,2.2,' /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/stacks-integrate-alignments
+rm -f /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/stacks-integrate-alignments.bkp
+chmod +x /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/stacks-integrate-alignments
+chmod +x /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/stacks-dist-extract
+chmod +x /wrkdirs/usr/ports/wip/stacks/work/stage/usr/local/bin/stacks-gdb
+gmake[4]: Leaving directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2'
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/wip/stacks/work/stacks-2.2'
+====> Compressing man pages (compress-man)
+===========================================================================
+====> Running Q/A tests (stage-qa)
+====> Checking for pkg-plist issues (check-plist)
+===> Parsing plist
+===> Checking for items in STAGEDIR missing from pkg-plist
+===> Checking for items in pkg-plist which are not in STAGEDIR
+===> No pkg-plist issues found (check-plist)
+=>> Checking for staging violations... done
+=======================<phase: package        >============================
+===>  Building package for stacks-2.2
+===========================================================================
+=>> Recording filesystem state for preinst... done
+=======================<phase: install        >============================
+===>  Installing for stacks-2.2
+===>  Checking if stacks already installed
+===>   Registering installation for stacks-2.2
+[11-2-amd64-default] Installing stacks-2.2...
+===
+
+If you would like to use the stacks web interface, follow the instructions at:
+
+    http://catchenlab.life.illinois.edu/stacks/manual-v1/#install
+
+You will need to install databases/p5-DBD-mysql to allow the optional
+wrapper scripts to interact with the database server.
+
+To set up the web server, you will need an apache server such as www/apache24,
+MySQL server and client packages such as databases/mysql56-client and 
+databases/mysql56-server, and PHP interface modules such as
+databases/php56-mysql (php56 will be automatically installed as a dependency),
+and lastly textproc/p5-Spreadsheet-WriteExcel.
+
+===
+
+===========================================================================
+=>> Checking shared library dependencies
+ 0x0000000000000001 NEEDED               Shared library: [libc.so.7]
+ 0x0000000000000001 NEEDED               Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libgomp.so.1]
+ 0x0000000000000001 NEEDED               Shared library: [libm.so.5]
+ 0x0000000000000001 NEEDED               Shared library: [libstdc++.so.6]
+ 0x0000000000000001 NEEDED               Shared library: [libthr.so.3]
+ 0x0000000000000001 NEEDED               Shared library: [libz.so.6]
+=======================<phase: deinstall      >============================
+===>  Deinstalling for stacks
+===>   Deinstalling stacks-2.2
+Updating database digests format: .......... done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	stacks-2.2
+
+Number of packages to be removed: 1
+
+The operation will free 6 MiB.
+[11-2-amd64-default] [1/1] Deinstalling stacks-2.2...
+[11-2-amd64-default] [1/1] Deleting files for stacks-2.2: .......... done
+===========================================================================
+=>> Checking for extra files and directories
+[00:01:52] Installing from package
+[11-2-amd64-default] Installing stacks-2.2...
+[11-2-amd64-default] Extracting stacks-2.2: .......... done
+Message from stacks-2.2:
+
+===
+
+If you would like to use the stacks web interface, follow the instructions at:
+
+    http://catchenlab.life.illinois.edu/stacks/manual-v1/#install
+
+You will need to install databases/p5-DBD-mysql to allow the optional
+wrapper scripts to interact with the database server.
+
+To set up the web server, you will need an apache server such as www/apache24,
+MySQL server and client packages such as databases/mysql56-client and 
+databases/mysql56-server, and PHP interface modules such as
+databases/php56-mysql (php56 will be automatically installed as a dependency),
+and lastly textproc/p5-Spreadsheet-WriteExcel.
+
+===
+[00:01:52] Cleaning up
+===>  Cleaning for stacks-2.2
+[00:01:53] Deinstalling package
+Updating database digests format: . done
+Checking integrity... done (0 conflicting)
+Deinstallation has been requested for the following 1 packages (of 0 packages in the universe):
+
+Installed packages to be REMOVED:
+	stacks-2.2
+
+Number of packages to be removed: 1
+
+The operation will free 6 MiB.
+[11-2-amd64-default] [1/1] Deinstalling stacks-2.2...
+[11-2-amd64-default] [1/1] Deleting files for stacks-2.2: .......... done
+build of wip/stacks | stacks-2.2 ended at Tue Jan  8 22:02:13 CST 2019
+build time: 00:01:43
