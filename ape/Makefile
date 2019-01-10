@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libpare.a:wip/libpare \
 		${LOCALBASE}/lib/libbacon.a:wip/libbacon \
 		${LOCALBASE}/lib/libtwintk.a:wip/twintk
 RUN_DEPENDS=	${LOCALBASE}/share/twintk/terminfo/README:wip/twintk \
-		webbrowser:wip/webbrowser \
+		webbrowser:www/webbrowser \
 		docviewer:wip/docviewer
 
 USES=		tar:xz
