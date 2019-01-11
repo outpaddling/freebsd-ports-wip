@@ -23,7 +23,7 @@ LIB_DEPENDS=	libdolfin.so.${DISTVERSION}:wip/dolfin \
 		libhdf5.so:science/hdf5 \
 		libsz.so:science/szip
 
-USES=		cmake:outsource,noninja python:3.6+
+USES=		cmake:noninja python:3.6+
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

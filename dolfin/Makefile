@@ -30,7 +30,7 @@ RUN_DEPENDS=	${COMMON_DEPENDS}
 		libcppunit.so:devel/cppunit \
 		libarmadillo.so:math/armadillo
 
-USES=		cmake:outsource,noninja pkgconfig python:3.6+ shebangfix
+USES=		cmake:noninja pkgconfig python:3.6+ shebangfix
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	test/unit/python/scripts/run.sh \
 		test/unit/python/scripts/splitmpidebug.sh \
