@@ -58,7 +58,7 @@ trimmomatic
 unanimity
 vcflib
 vcftools
-
+hisat2
 
 ------------------------------------------------
 Sent patches upstream but not confirmed accepted
