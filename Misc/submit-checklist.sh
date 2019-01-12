@@ -41,6 +41,14 @@ cat << EOM
 If maintaining the source, clean up and reroll distfile
 
 EOM
+
+step
+cat << EOM
+
+Make sure the port is on the latest upstream version.
+
+EOM
+
 step
 cat << EOM
 
@@ -363,6 +371,20 @@ step
 cat << EOM
 
 pkg-plist:
+
+Check for conflicts with other ports.
+
+EOM
+
+step
+cat << EOM
+
+@dir entries OK, unlike pkgsrc
+
+EOM
+
+step
+cat << EOM
 
 pkgconfig files should be in libdata/pkgconfig
     configure may support --with-pkgconfigdir= even if not advertised
