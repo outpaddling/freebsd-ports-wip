@@ -492,7 +492,7 @@ EOM
 step
 cat << EOM
 
-Update /usr/wip/upstream
+Update \$PORTSDIR/wip/Misc/upstream
 
 EOM
 
