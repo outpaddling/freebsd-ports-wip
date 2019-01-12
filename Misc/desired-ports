@@ -24,9 +24,8 @@ vcftools        "               0.1.16          -
 bcftools        "               1.9             -
 plink2          "               -               g20180521   Challenging
 gcta64          "               -               1.26.0      Challenging
-epacts          "               -               20170222    3.4-rc
+epacts          "               -               20170222    3.4-rc available
 macs2           "               2.1.0-p20170505 -
-stacks1         Emily           1.48            -
-stacks2         "               -               2.2         Simple
+stacks2         Emily           2.3             1.48        Simple
 ddocent         "               2.2.25          2.5.2
-hisat2          Peter           -               2.1.0-20    Simple
+hisat2          Peter           2.1.0-20        -           Simple
