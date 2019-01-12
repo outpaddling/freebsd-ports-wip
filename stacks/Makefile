@@ -1,8 +1,8 @@
 # $FreeBSD: head/biology/stacks/Makefile 483245 2018-10-28 08:58:00Z linimon $
 
 PORTNAME=	stacks
-DISTVERSION=	2.2
-CATEGORIES=	wip biology
+DISTVERSION=	2.3
+CATEGORIES=	wip biology perl5 python
 MASTER_SITES=	http://catchenlab.life.illinois.edu/stacks/source/
 
 MAINTAINER=	jwb@FreeBSD.org
