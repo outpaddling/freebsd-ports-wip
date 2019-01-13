@@ -370,6 +370,14 @@ EOM
 step
 cat << EOM
 
+Make sure build system respects CC, CXX, FC, LD, 
+CFLAGS, CXXFLAGS, FFLAGS, LDFLAGS, etc.
+
+EOM
+
+step
+cat << EOM
+
 pkg-plist:
 
 Check for conflicts with other ports.
