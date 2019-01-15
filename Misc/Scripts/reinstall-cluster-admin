@@ -1,5 +1,13 @@
 #!/bin/sh -e
 
+case $(auto-os-release) in
+FreeBSD*|RHEL7)
+    ;;
+*)
+    printf "Unsupported OS: $(auto-os-release)\n"
+    exit 1
+esac
+
 cluster-wip-update
 pkg remove -y cluster-admin
 wip-reinstall-port -nu -r auto-admin
