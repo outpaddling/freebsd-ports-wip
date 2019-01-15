@@ -1,2 +1,3 @@
 Bugs: Conflicts with bgzip, tabix, epstopdf
+Disabled install of epacts bgzip and tabix.  Are they compatible with htslib?
 Enable openmp
