@@ -1,6 +1,4 @@
 # $FreeBSD$
-#
-# Bugs: Conflicts with bgzip, tabix, epstopdf
 
 PORTNAME=		epacts
 DISTVERSIONPREFIX=	v
@@ -16,22 +14,25 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	Rscript:math/R \
 		gnuplot:math/gnuplot \
-		groff:textproc/groff
+		groff:textproc/groff \
+		savvy>=0:wip/savvy
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libhts.so:biology/htslib \
+		libzstd.so:archivers/zstd
 RUN_DEPENDS=	Rscript:math/R \
-		gnuplot:math/gnuplot
+		gnuplot:math/gnuplot \
+		bash:shells/bash
 
 USES=		cmake libtool shebangfix
-SHEBANG_FILES=	scripts/epacts* scripts/*.sh
+# USES=		cmake compiler:openmp libtool shebangfix
+
+SHEBANG_FILES=	scripts/epacts* scripts/*.sh epactsR/configure
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	statgen
 GH_PROJECT=	EPACTS
 
-INSTALL_TARGET=	install-strip
-
-post-install:
-	${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/lib/mmSKAT/libs/mmSKAT.so \
-		${STAGEDIR}${PREFIX}/lib/epactsR/libs/epactsR.so
+CFLAGS+=	-I${LOCALBASE}/include -fPIC
+LDFLAGS+=	-fPIC -lbz2 -llzma -L${LOCALBASE}/lib -lcurl -lcrypto -lm
 
 .include <bsd.port.mk>

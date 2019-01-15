@@ -18,8 +18,8 @@ bin/epacts-zoom
 bin/epacts.pm
 bin/epstopdf
 bin/pEmmax
+bin/parse-sample-ids
 bin/tabix
-bin/test_run_epacts.sh
 bin/vcfast
 bin/wGetOptions.pm
 lib/epactsR/DESCRIPTION
@@ -61,17 +61,21 @@ lib/mmSKAT/help/paths.rds
 lib/mmSKAT/html/00Index.html
 lib/mmSKAT/html/R.css
 lib/mmSKAT/libs/mmSKAT.so
+share/EPACTS/#_assh_bfan_b_ahome_ahmkang_acode_aworking_aEPACTS_adata_aMakefile.am#
 share/EPACTS/1000G_dummy_pheno.ped
 share/EPACTS/1000G_exome_chr20_example_softFiltered.calls.vcf.gz
 share/EPACTS/1000G_exome_chr20_example_softFiltered.calls.vcf.gz.tbi
 share/EPACTS/GillSansItalic.pfb
 share/EPACTS/GillSansMT.pfb
+share/EPACTS/Makefile.am
+share/EPACTS/Makefile.in
 share/EPACTS/arial.pfb
 share/EPACTS/calibri.pfb
 share/EPACTS/codon.txt
 share/EPACTS/epactsGroup.R
 share/EPACTS/epactsMulti.R
 share/EPACTS/epactsR_3.3.2.tar.gz
+share/EPACTS/epactsR_3.3.3.tar.gz
 share/EPACTS/epactsSingle.R
 share/EPACTS/genetic_map_GRCh37_wgs.txt.gz
 share/EPACTS/genetic_map_GRCh37_wgs.txt.gz.tbi
@@ -88,6 +92,7 @@ share/EPACTS/hg19_gencodeV7.txt.gz
 share/EPACTS/hg19_refFlat.txt.gz
 share/EPACTS/hg19_refGene.txt.gz
 share/EPACTS/mmSKAT_0.95.tar.gz
+share/EPACTS/multi.b.sna2.R
 share/EPACTS/multi.q.linear.R
 share/EPACTS/priority.txt
 share/EPACTS/prologue.ps
@@ -98,6 +103,7 @@ share/EPACTS/single.b.score.R
 share/EPACTS/single.b.sna0.R
 share/EPACTS/single.b.sna2.R
 share/EPACTS/single.b.spa2.R
+share/EPACTS/single.b.spa3.R
 share/EPACTS/single.b.wald.R
 share/EPACTS/single.q.emmaxR.R
 share/EPACTS/single.q.linear.R
