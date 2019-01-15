@@ -337,6 +337,13 @@ EOM
 step
 cat << EOM
 
+If building static libs, be sure to compile with -fPIC?
+
+EOM
+
+step
+cat << EOM
+
 Use @ to silence most commands, except commands that contribute to plist
 
 EOM
