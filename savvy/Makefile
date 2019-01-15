@@ -17,9 +17,11 @@ LIB_DEPENDS=	libzstd.so:archivers/zstd \
 
 USES=		cmake
 USE_GITHUB=	yes
+# USE_GCC=	yes	# Hack for compat with epacts
+
 GH_ACCOUNT=	statgen
 
-CXXFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-lbz2 -llzma -L${LOCALBASE}/lib -lcurl -lcrypto
 
 .include <bsd.port.mk>
