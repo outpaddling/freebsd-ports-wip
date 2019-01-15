@@ -2,9 +2,11 @@
 #
 # Bugs: Conflicts with bgzip, tabix, epstopdf
 
-PORTNAME=	epacts
-PORTVERSION=	0.0.0p20170222
-CATEGORIES=	wip biology
+PORTNAME=		epacts
+DISTVERSIONPREFIX=	v
+DISTVERSION=		3.4-rc-5
+DISTVERSIONSUFFIX=	-g019bc8b
+CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Efficient and Parallelizable Association Container Toolbox
@@ -13,21 +15,17 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	Rscript:math/R \
-		gnuplot:math/gnuplot
+		gnuplot:math/gnuplot \
+		groff:textproc/groff
 RUN_DEPENDS=	Rscript:math/R \
 		gnuplot:math/gnuplot
 
-GNU_CONFIGURE=	yes
-
-USES=		autoreconf libtool shebangfix
+USES=		cmake libtool shebangfix
 SHEBANG_FILES=	scripts/epacts* scripts/*.sh
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	statgen
 GH_PROJECT=	EPACTS
-GH_TAGNAME=	a5209db1b3929c4dd2f15f27ea085edf3a634ee7
-
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}
 
 INSTALL_TARGET=	install-strip
 
