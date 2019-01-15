@@ -1,7 +1,7 @@
---- epactsR/configure.orig	2019-01-15 23:02:22 UTC
+--- epactsR/configure.orig	2019-01-15 23:17:46 UTC
 +++ epactsR/configure
 @@ -1,5 +1,6 @@
- #!/bin/bash
+ #!/usr/local/bin/bash
  
 +echo "PKG_CXX=${CC}" >> src/Makevars
  echo 'PKG_CXXFLAGS=--std=c++11' > src/Makevars

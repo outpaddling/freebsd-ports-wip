@@ -1,0 +1,27 @@
+--- CMakeLists.txt.orig	2018-11-27 20:10:03 UTC
++++ CMakeLists.txt
+@@ -66,11 +66,11 @@ target_link_libraries(chaps libtabix savvy)
+ add_executable(anno src/Anno.cpp src/IO.cpp)
+ target_link_libraries(anno libtabix)
+ 
+-add_executable(bgzip src/bgzip.c src/bedidx.c src/knetfile.c src/kstring.c)
+-target_link_libraries(bgzip ${HTS_LIBRARY} ${ZLIB_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
++# add_executable(bgzip src/bgzip.c src/bedidx.c src/knetfile.c src/kstring.c)
++# target_link_libraries(bgzip ${HTS_LIBRARY} ${ZLIB_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+ 
+-add_executable(tabix src/tabix.c src/bedidx.c src/knetfile.c src/kstring.c src/index.c)
+-target_link_libraries(tabix ${HTS_LIBRARY} ${ZLIB_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
++# add_executable(tabix src/tabix.c src/bedidx.c src/knetfile.c src/kstring.c src/index.c)
++# target_link_libraries(tabix ${HTS_LIBRARY} ${ZLIB_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+ 
+ add_executable(parse-sample-ids src/parse_sample_ids.cpp)
+ target_link_libraries(parse-sample-ids savvy)
+@@ -83,7 +83,7 @@ install(FILES ${EPACTS_PERL_SCRIPTS}
+         PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
+         DESTINATION bin)
+ install(FILES ${EPACTS_DATA_FILES} DESTINATION share/EPACTS)
+-install(TARGETS pEmmax vcfast chaps anno bgzip tabix parse-sample-ids RUNTIME DESTINATION bin)
++install(TARGETS pEmmax vcfast chaps anno parse-sample-ids RUNTIME DESTINATION bin)
+ install(DIRECTORY ${CMAKE_BINARY_DIR}/epactsR DESTINATION lib) #install(DIRECTORY ${CMAKE_BINARY_DIR}/epactsR DESTINATION lib)
+ install(DIRECTORY ${CMAKE_BINARY_DIR}/mmSKAT DESTINATION lib) #install(DIRECTORY ${CMAKE_BINARY_DIR}/mmSKAT DESTINATION lib)
+ 

@@ -1,5 +1,4 @@
 bin/anno
-bin/bgzip
 bin/chaps
 bin/epacts
 bin/epacts-anno
@@ -19,7 +18,6 @@ bin/epacts.pm
 bin/epstopdf
 bin/pEmmax
 bin/parse-sample-ids
-bin/tabix
 bin/vcfast
 bin/wGetOptions.pm
 lib/epactsR/DESCRIPTION
