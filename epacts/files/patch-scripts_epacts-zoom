@@ -1,0 +1,11 @@
+--- scripts/epacts-zoom.orig	2019-01-15 23:51:42 UTC
++++ scripts/epacts-zoom
+@@ -549,7 +549,7 @@ foreach my $bpos (@apos) {
+     $cmd = "$setenv; $binepstopdf $outf.eps;"; # rm $outf.cmd; rm $outf.eps";
+     print STDERR "$cmd\n";
+     print STDERR `$cmd`;
+-    die "FATAL ERROR: Error occured while running epstopdf" if ( $? == -1 ); 
++    die "FATAL ERROR: Error occured while running epacts-epstopdf" if ( $? == -1 ); 
+ 
+     unlink("$outf.eps");
+     unlink("$outf.cmd");

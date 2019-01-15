@@ -1,0 +1,20 @@
+--- scripts/epacts-plot.orig	2019-01-15 23:50:32 UTC
++++ scripts/epacts-plot
+@@ -279,7 +279,7 @@ die "FATAL ERROR - epacts-plot: Error oc
+ $cmd = "$setenv; $binepstopdf $outf.qq.eps";
+ print "$cmd\n";
+ print `$cmd`;
+-die "FATAL ERROR - epacts-plot: Error occured while running epstopdf" if ( $? == -1 ); 
++die "FATAL ERROR - epacts-plot: Error occured while running epacts-epstopdf" if ( $? == -1 ); 
+ 
+ open(CMD,">$outf.cmd") || die "Cannot open file\n";
+ print CMD "set terminal postscript eps color enhanced dashed dashlength 3.0 linewidth 1.0 size 8,3 font 'Calibri,18' fontfile 'calibri.pfb' fontfile 'GillSansMT.pfb' fontfile 'GillSansItalic.pfb'\n";
+@@ -339,7 +339,7 @@ die "FATAL ERROR - epacts-plot: Error oc
+ $cmd = "$setenv; $binepstopdf $outf.mh.eps";
+ print "$cmd\n";
+ print `$cmd`;
+-die "FATAL ERROR - epacts-plot: Error occured while running epstopdf" if ( $? == -1 ); 
++die "FATAL ERROR - epacts-plot: Error occured while running epacts-epstopdf" if ( $? == -1 ); 
+ 
+ my @F = split(/\//,$outf);
+ my $outfn = $F[$#F];

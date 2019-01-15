@@ -1,0 +1,11 @@
+--- scripts/epacts-epstopdf.orig	2019-01-15 23:47:56 UTC
++++ scripts/epacts-epstopdf
+@@ -61,7 +61,7 @@ use strict;
+ #
+ 
+ ### program identification
+-my $program = "epstopdf";
++my $program = "epacts-epstopdf";
+ my $filedate="2003/04/20";
+ my $fileversion="2.9.3draft";
+ my $copyright = "Copyright 1998-2002 by Sebastian Rahtz et al.";

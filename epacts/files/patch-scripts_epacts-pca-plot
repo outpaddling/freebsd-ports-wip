@@ -1,0 +1,11 @@
+--- scripts/epacts-pca-plot.orig	2019-01-15 23:49:47 UTC
++++ scripts/epacts-pca-plot
+@@ -223,7 +223,7 @@ for(my $i=0; $i < @drawpcs; ++$i) {
+ 	
+ 	$cmd = "$setenv; $binepstopdf $outf.eps";
+ 	print "$cmd\n"; print `$cmd`;
+-	die "FATAL ERROR - epacts-pca-plot: Error occured while running epstopdf" if ( $? == -1 ); 
++	die "FATAL ERROR - epacts-pca-plot: Error occured while running epacts-epstopdf" if ( $? == -1 ); 
+ 	
+ 	print "Created $outf.pdf\n";
+ 

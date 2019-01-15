@@ -23,7 +23,7 @@ RUN_DEPENDS=	Rscript:math/R \
 		gnuplot:math/gnuplot \
 		bash:shells/bash
 
-USES=		cmake libtool shebangfix
+USES=		cmake libtool shebangfix ssl
 # USES=		cmake compiler:openmp libtool shebangfix
 
 SHEBANG_FILES=	scripts/epacts* scripts/*.sh epactsR/configure
@@ -34,5 +34,8 @@ GH_PROJECT=	EPACTS
 
 CFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-fPIC -lbz2 -llzma -L${LOCALBASE}/lib -lcurl -lcrypto -lm
+
+post-extract:
+	${MV} ${WRKSRC}/scripts/epstopdf ${WRKSRC}/scripts/epacts-epstopdf
 
 .include <bsd.port.mk>

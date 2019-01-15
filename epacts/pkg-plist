@@ -15,7 +15,7 @@ bin/epacts-plot
 bin/epacts-single
 bin/epacts-zoom
 bin/epacts.pm
-bin/epstopdf
+bin/epacts-epstopdf
 bin/pEmmax
 bin/parse-sample-ids
 bin/vcfast
