@@ -1,0 +1,6 @@
+include/shrinkwrap/gz.hpp
+include/shrinkwrap/istream.hpp
+include/shrinkwrap/xz.hpp
+include/shrinkwrap/zstd.hpp
+%%DATADIR%%/shrinkwrap-config-version.cmake
+%%DATADIR%%/shrinkwrap-config.cmake
