@@ -1,1 +1,26 @@
-@comment $FreeBSD$
+bin/sav
+include/savvy/allele_status.hpp
+include/savvy/armadillo_vector.hpp
+include/savvy/compressed_vector.hpp
+include/savvy/data_format.hpp
+include/savvy/eigen3_vector.hpp
+include/savvy/m3vcf_reader.hpp
+include/savvy/portable_endian.hpp
+include/savvy/portable_endian.hpp.orig
+include/savvy/reader.hpp
+include/savvy/region.hpp
+include/savvy/s1r.hpp
+include/savvy/sav_reader.hpp
+include/savvy/savvy.hpp
+include/savvy/site_info.hpp
+include/savvy/ublas_vector.hpp
+include/savvy/utility.hpp
+include/savvy/variant_group_iterator.hpp
+include/savvy/variant_iterator.hpp
+include/savvy/varint.hpp
+include/savvy/vcf_reader.hpp
+lib/libsavvy.a
+%%DATADIR%%/savvy-config-%%CMAKE_BUILD_TYPE%%.cmake
+%%DATADIR%%/savvy-config-version.cmake
+%%DATADIR%%/savvy-config.cmake
+@dir share/man/man1

@@ -11,8 +11,8 @@ COMMENT=	Interface to various variant calling formats
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	shrinkwrap>=0:wip/shrinkwrap
 LIB_DEPENDS=	libzstd.so:archivers/zstd \
-		libbz2.so:archivers/bzip2 \
 		libhts.so:biology/htslib
 
 USES=		cmake
@@ -20,6 +20,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	statgen
 
 CXXFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lbz2
+LDFLAGS+=	-lbz2 -llzma -L${LOCALBASE}/lib -lcurl -lcrypto
 
 .include <bsd.port.mk>
