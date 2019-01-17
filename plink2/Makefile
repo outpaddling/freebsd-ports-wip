@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=		plink-ng
+PORTNAME=		plink
 DISTVERSIONPREFIX=	v
 DISTVERSION=		g20190108
 CATEGORIES=		wip biology
@@ -9,6 +9,7 @@ MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Whole genome association analysis toolset
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcblas.so:math/cblas \
 		libopenblas.so:math/openblas
@@ -20,6 +21,7 @@ USE_GITHUB=	yes
 SHEBANG_FILES=	Tests/*.sh Tests/*/*.sh
 GH_ACCOUNT=	chrchang
 GH_TAGNAME=	04c8182
+GH_PROJECT=	plink-ng
 
 MAKEFILE=	${FILESDIR}/Makefile.generic
 WRKSRC_SUBDIR=	2.0
