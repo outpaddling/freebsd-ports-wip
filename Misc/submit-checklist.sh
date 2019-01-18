@@ -515,6 +515,13 @@ EOM
 step
 cat << EOM
 
+Make sure the port is copied to it's category directory, not just in wip.
+
+EOM
+read -p "category/port? " port_name
+pkg_name=$(auto-print-make-variable $port_name PKGBASE)
+cat << EOM
+
 After commit:
 
 Remove poudriere logs if present
@@ -546,7 +553,7 @@ else
 
 FYI:
 
-[Software name] has been committed to the FreeBSD ports collection.
+$pkg_name has been committed to the FreeBSD ports collection.
 It might be helpful to users if you could post a message like
 the following on your website:
 
@@ -554,11 +561,11 @@ Regards,
 
     [Your name]
 
-[Software name] can be installed on FreeBSD via the FreeBSD ports system.
+$pkg_name can be installed on FreeBSD via the FreeBSD ports system.
 
 To install via the binary package, simply run:
 
-    pkg install [put package name here]
+    pkg install $pkg_name
 
 This will very quickly install a binary using only highly-portable
 optimizations, much like apt-get, yum, etc.
@@ -566,7 +573,7 @@ optimizations, much like apt-get, yum, etc.
 FreeBSD ports can just as easily be built and installed from source,
 although this will take more time:
 
-    cd /usr/ports/category/[put port name here]
+    cd /usr/ports/$port_name
     make install
 
 Building from source allows installing to a different prefix, compiling with
