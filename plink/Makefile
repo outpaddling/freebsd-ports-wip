@@ -28,9 +28,9 @@ WRKSRC_SUBDIR=	2.0
 CFLAGS+=	-DDYNAMIC_ZLIB
 CXXFLAGS+=	-DDYNAMIC_ZLIB
 LDFLAGS+=	-lpthread
-MAKE_ARGS+=	ZLIB=-lz BLASFLAGS64="-L${LOCALBASE}/lib -lopenblas -lgfortran"
-INSTALL_TARGET=	install-strip
+MAKE_ARGS=	ZLIB=-lz BLASFLAGS64="-L${LOCALBASE}/lib -lopenblas -lgfortran"
 
+INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/plink2 bin/pgen_compress
 
 .include <bsd.port.mk>
