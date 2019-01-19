@@ -25,7 +25,7 @@ GH_PROJECT=	plink-ng
 
 MAKEFILE=	${FILESDIR}/Makefile.generic
 WRKSRC_SUBDIR=	2.0
-CFLAGS+=	-I${LOCALBASE}/include -DDYNAMIC_ZLIB
+CFLAGS+=	-DDYNAMIC_ZLIB
 LDFLAGS+=	-lpthread
 MAKE_ARGS=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -lopenblas -lgfortran"
 
