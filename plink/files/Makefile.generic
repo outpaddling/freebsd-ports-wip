@@ -22,8 +22,8 @@ BLASFLAGS	?= -llapack -lf77blas -latlas
 ARCH32		?=
 
 # Mandatory flags added to defaults or env settings
-CFLAGS		+= -std=gnu99 $(BASEFLAGS) $(CWARN2) $(CINCLUDE) $(ZSTD_INCLUDE) -I${LOCALBASE}/include
-CXXFLAGS	+= -std=c++1y $(BASEFLAGS) $(CXXWARN2) -I${LOCALBASE}/include
+CFLAGS		+= -std=gnu99 $(BASEFLAGS) $(CWARN) $(CINCLUDE) $(ZSTD_INCLUDE)
+CXXFLAGS	+= -std=c++1y $(BASEFLAGS) $(CXXWARN)
 LDFLAGS		+= -lm -lpthread -L. $(ZLIB)
 
 # Installation defaults
@@ -46,13 +46,13 @@ all: plink2 pgen_compress
 # target will run first
 plink2: $(OBJ)
 	$(MKDIR) -p bin
-	$(CXX) $(ARCH32) $(OBJ) -o bin/plink2 $(BLASFLAGS64) $(LDFLAGS)
+	$(CXX) $(ARCH32) $(OBJ) -o bin/plink2 $(BLASFLAGS) $(LDFLAGS)
 
 # basic pgenlib_internal.h usage example; also needed for tests
 pgen_compress: plink2_base.o pgenlib_internal.o pgen_compress.o
 	$(MKDIR) -p bin
 	$(CXX) plink2_base.o pgenlib_internal.o pgen_compress.o \
-		-o bin/pgen_compress $(BLASFLAGS64) $(LDFLAGS)
+		-o bin/pgen_compress $(BLASFLAGS) $(LDFLAGS)
 
 .PHONY: install-strip install clean
 

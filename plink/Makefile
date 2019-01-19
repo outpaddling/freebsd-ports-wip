@@ -25,10 +25,9 @@ GH_PROJECT=	plink-ng
 
 MAKEFILE=	${FILESDIR}/Makefile.generic
 WRKSRC_SUBDIR=	2.0
-CFLAGS+=	-DDYNAMIC_ZLIB
-CXXFLAGS+=	-DDYNAMIC_ZLIB
+CFLAGS+=	-I${LOCALBASE}/include -DDYNAMIC_ZLIB
 LDFLAGS+=	-lpthread
-MAKE_ARGS=	ZLIB=-lz BLASFLAGS64="-L${LOCALBASE}/lib -lopenblas -lgfortran"
+MAKE_ARGS=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -lopenblas -lgfortran"
 
 INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/plink2 bin/pgen_compress
