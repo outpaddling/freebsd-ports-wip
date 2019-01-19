@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=		plink
+PORTNAME=		plink19
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.90b4
 CATEGORIES=		wip biology
