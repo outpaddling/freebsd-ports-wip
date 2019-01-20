@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	lsz:comms/lrzsz
 
 USES=		cmake compiler:c++11-lang qt:5
-# USE_QT=		qt3support qmake_build moc_build rcc_build uic_build
 USE_QT=		buildtools_build core gui network qmake_build serialport widgets
 USE_GITHUB=	yes
 
