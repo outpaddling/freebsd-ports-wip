@@ -3,6 +3,7 @@
 No patches sent or citing requested
 -----------------------------------
 
+comms/cutecom
 devel/yaggo
 biology/vcftools
 biology/bowtie
@@ -34,7 +35,6 @@ biology/fastx-toolkit
 freebayes
 gmap
 jellyfish
-kallisto
 libgtextutils
 ncbi-blast+
 p5-TrimGalore
@@ -75,6 +75,8 @@ condor-admin@cs.wisc.edu
 ----------------------------------------------------------------------
 FreeBSD installation is cited on the upstream website
 ----------------------------------------------------------------------
+
+kallisto
 
 -----
 Notes
