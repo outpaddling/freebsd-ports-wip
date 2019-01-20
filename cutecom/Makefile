@@ -3,7 +3,7 @@
 
 PORTNAME=		cutecom
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.50.0
+DISTVERSION=		0.51.0
 CATEGORIES=		wip comms
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -16,10 +16,9 @@ RUN_DEPENDS=	lsz:comms/lrzsz
 
 USES=		cmake compiler:c++11-lang qt:5
 USE_QT=		buildtools_build core gui network qmake_build serialport widgets
-USE_GITHUB=	yes
+USE_GITLAB=	yes
 
-GH_ACCOUNT=	neundorf
-GH_PROJECT=	CuteCom
+GL_COMMIT=	cce2e5ec01df09ca4b05f055f21942e0de7eb7dd
 
 PLIST_FILES=	bin/cutecom
 
