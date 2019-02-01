@@ -20,7 +20,7 @@ LIB_DEPENDS=	liblapack.so:math/lapack \
 		libblas.so:math/blas
 
 # We need Fortran LDFLAGS to link with Lapack.
-USES=		fortran gmake shebangfix
+USES=		fortran gmake python:2.7 shebangfix
 USE_GITHUB=	yes
 
 SHEBANG_FILES=	Tests/*.sh Tests/*/*.sh
@@ -42,6 +42,8 @@ SUB_FILES=	plink2-test
 post-patch:
 	@${REINPLACE_CMD} -e 's|../../build_dynamic|${PREFIX}/bin|g' \
 		${WRKSRC}/Tests/run_tests.sh
+	@${REINPLACE_CMD} -e 's|^python|python2.7|g' \
+		${WRKSRC}/Tests/TEST_PHASED_VCF/run_tests.sh
 
 post-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} Tests ${STAGEDIR}${DATADIR})
