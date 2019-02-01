@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=		plink19
+PORTNAME=		plink
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.90b4
 CATEGORIES=		wip biology
@@ -18,7 +18,7 @@ USES=		fortran gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	chrchang
 GH_PROJECT=	plink-ng
-GH_TAGNAME=	cbcf442c176036138419b14d6b46a3d57e8325d4
+GH_TAGNAME=	39f82f78e0fde9c23b0fe6f20d4ce4f5ec7a89f3
 
 WRKSRC_SUBDIR=	1.9
 CFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include
@@ -27,7 +27,7 @@ LDFLAGS+=	-lpthread
 MAKE_ARGS+=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -lopenblas"
 INSTALL_TARGET=	install-strip
 
-PLIST_FILES=	bin/plink19
+PLIST_FILES=	bin/plink
 
 post-patch:
 	${CP} ${WRKSRC}/Makefile.std ${WRKSRC}/Makefile
@@ -35,6 +35,6 @@ post-patch:
 # Override install target and install as plink1 to allow coexistence with
 # plink 1.07
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/plink ${STAGEDIR}${PREFIX}/bin/plink19
+	${INSTALL_PROGRAM} ${WRKSRC}/plink ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
