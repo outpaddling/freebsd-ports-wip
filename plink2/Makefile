@@ -11,8 +11,13 @@ COMMENT=	Whole genome association analysis toolset
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcblas.so:math/cblas \
-		libopenblas.so:math/openblas
+# Seg faults with openblas
+# #0  0x0000000800eb66ef in dgemm_otcopy_CORE2 ()
+#   from /usr/local/lib/libopenblas.so.0
+#LIB_DEPENDS=	libcblas.so:math/cblas \
+#		libopenblas.so:math/openblas
+LIB_DEPENDS=	liblapack.so:math/lapack \
+		libblas.so:math/blas
 
 # We need Fortran LDFLAGS to link with Lapack.
 USES=		fortran gmake shebangfix
@@ -27,9 +32,10 @@ MAKEFILE=	${FILESDIR}/Makefile.generic
 WRKSRC_SUBDIR=	2.0
 CFLAGS+=	-DDYNAMIC_ZLIB
 LDFLAGS+=	-lpthread
-MAKE_ARGS=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -lopenblas -lgfortran"
+#MAKE_ARGS=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -lopenblas -lgfortran"
+MAKE_ARGS=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -llapack -lblas -lgfortran"
 
-INSTALL_TARGET=	install-strip
+# INSTALL_TARGET=	install-strip
 
 SUB_FILES=	plink2-test
 
