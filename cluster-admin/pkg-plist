@@ -27,6 +27,7 @@ sbin/cluster-adduser
 sbin/cluster-admin
 sbin/cluster-archive-user-dir
 sbin/cluster-change-group-gid
+sbin/cluster-change-nfsd-count
 sbin/cluster-change-primary-group
 sbin/cluster-change-uid
 sbin/cluster-diagnostics
