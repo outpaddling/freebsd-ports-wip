@@ -1,6 +1,7 @@
 bin/pgen_compress
 bin/plink2
 bin/plink2-test
+bin/plink2-bench
 %%DATADIR%%/Tests/TEST_DOSAGE_ROUND_TRIP/.gitignore
 %%DATADIR%%/Tests/TEST_DOSAGE_ROUND_TRIP/run_tests.sh
 %%DATADIR%%/Tests/TEST_EXTRACT_CHR/.gitignore

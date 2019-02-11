@@ -42,7 +42,7 @@ SUB_FILES=	plink2-test
 post-patch:
 	@${REINPLACE_CMD} -e 's|../../build_dynamic|${PREFIX}/bin|g' \
 		${WRKSRC}/Tests/run_tests.sh
-	@${REINPLACE_CMD} -e 's|^python|python2.7|g' \
+	@${REINPLACE_CMD} -e 's|^python|${PYTHON_CMD}|g' \
 		${WRKSRC}/Tests/TEST_PHASED_VCF/run_tests.sh
 
 post-install:
@@ -51,5 +51,6 @@ post-install:
 		${STAGEDIR}${DATADIR}/Tests/run_tests.sh \
 		${STAGEDIR}${DATADIR}/Tests/*/run_tests.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/plink2-test ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/plink2-bench ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
