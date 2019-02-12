@@ -25,8 +25,8 @@ USE_GITHUB=	yes
 
 SHEBANG_FILES=	Tests/*.sh Tests/*/*.sh
 GH_ACCOUNT=	chrchang
-GH_TAGNAME=	39f82f7
 GH_PROJECT=	plink-ng
+GH_TAGNAME=	00aaeb5
 
 MAKEFILE=	${FILESDIR}/Makefile.generic
 WRKSRC_SUBDIR=	2.0
