@@ -18,7 +18,7 @@ USES=		fortran gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	chrchang
 GH_PROJECT=	plink-ng
-GH_TAGNAME=	39f82f7
+GH_TAGNAME=	00aaeb5
 
 WRKSRC_SUBDIR=	1.9
 CFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include
