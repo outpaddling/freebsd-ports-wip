@@ -13,30 +13,24 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=		fails to compile: mmintrin.h:47:5: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
 
-# Sensitive to dependency versions, use latest commit for everything
-BUILD_DEPENDS=	pbseqan>=g20171011:biology/pbseqan \
-		pbcopper>=0.4.2:wip/pbcopper
+# Very sensitive to PacBio dependency versions
+BUILD_DEPENDS=	seqan>=2.4.0:biology/seqan \
+		swig30>=3.0:devel/swig30 \
+		${PYNUMPY}
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so:devel/boost-libs \
 		libpbbam.so.0.18.0:wip/pbbam \
+		libpbcopper.so.0.4.1:wip/pbcopper
 
-USES=		cmake:insource compiler:c++14-lang pkgconfig python
+USES=		compiler:c++14-lang meson pkgconfig python
+USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
 
-CMAKE_ARGS+=	-DHTSLIB_INCLUDE_DIRS:STRING=${LOCALBASE}/include/htslib \
-		-DHTSLIB_LIBRARIES:STRING="-L${LOCALBASE}/lib -lhts" \
-		-DPacBioBAM_INCLUDE_DIRS:STRING=${LOCALBASE}/include/pbbam \
-		-DPacBioBAM_LIBRARIES:STRING="-L${LOCALBASE}/lib -lpbbam" \
-		-DSEQAN_INCLUDE_DIRS:STRING=${LOCALBASE}/include/PacBio \
-		-Dpbcopper_INCLUDE_DIRS=${LOCALBASE}/include \
-		-Dpbcopper_LIBRARIES="-L${LOCALBASE}/lib -lpbcopper"
 CFLAGS_i386=	-msse2 -Wno-c++11-narrowing
+LDFLAGS+=	-lexecinfo
 
-PLIST_FILES=	bin/arrow bin/ccs bin/gcpp lib/libcc2.a lib/libunanimity.a
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/src/libcc2.a ${WRKSRC}/src/libunanimity.a \
-		${STAGEDIR}${PREFIX}/lib
+# https://github.com/mesonbuild/meson/issues/2239
+CONFIGURE_ENV=	BOOST_ROOT=${LOCALBASE}
 
 .include <bsd.port.mk>
