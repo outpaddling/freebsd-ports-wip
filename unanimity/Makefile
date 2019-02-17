@@ -15,10 +15,10 @@ BROKEN_aarch64=		fails to compile: mmintrin.h:47:5: use of undeclared identifier
 
 # Sensitive to dependency versions, use latest commit for everything
 BUILD_DEPENDS=	pbseqan>=g20171011:biology/pbseqan \
-		pbbam>=0.18.0:wip/pbbam \
 		pbcopper>=0.4.2:wip/pbcopper
 LIB_DEPENDS=	libhts.so:biology/htslib \
-		libboost_regex.so:devel/boost-libs
+		libboost_regex.so:devel/boost-libs \
+		libpbbam.so.0.18.0:wip/pbbam \
 
 USES=		cmake:insource compiler:c++14-lang pkgconfig python
 USE_GITHUB=	yes
