@@ -1,6 +1,7 @@
 # $FreeBSD: head/biology/pbbam/Makefile 487272 2018-12-12 01:35:33Z gerald $
 
 PORTNAME=		pbbam
+# Test new versions with biology/unanimity before upgrading!
 DISTVERSION=		0.18.0
 CATEGORIES=		wip biology
 
