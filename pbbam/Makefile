@@ -1,8 +1,7 @@
 # $FreeBSD: head/biology/pbbam/Makefile 487272 2018-12-12 01:35:33Z gerald $
 
 PORTNAME=		pbbam
-DISTVERSION=		0.18.0-238
-DISTVERSIONSUFFIX=	-ge3b84ee
+DISTVERSION=		0.18.0
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
