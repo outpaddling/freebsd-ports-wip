@@ -72,6 +72,8 @@ include/pacbio/parallel/WorkQueue.h
 include/pacbio/util/ExecUtils.h
 include/pacbio/util/Timer.h
 lib/libunanimity.so
+lib/libunanimity.so.3
+lib/libunanimity.so.3.0
 lib/libunanimity.so.3.0.0
 %%PYTHON_SITELIBDIR%%/ConsensusCore2.py
 %%PYTHON_SITELIBDIR%%/ConsensusCore2.pyc

@@ -19,8 +19,8 @@ BUILD_DEPENDS=	seqan>=2.4.0:biology/seqan \
 		${PYNUMPY}
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so:devel/boost-libs \
-		libpbbam.so.0.18.0:wip/pbbam \
-		libpbcopper.so.0.4.1:wip/pbcopper
+		libpbbam.so.0.18:wip/pbbam \
+		libpbcopper.so.0.4:wip/pbcopper
 
 USES=		compiler:c++14-lang meson pkgconfig python
 USE_LDCONFIG=	yes
@@ -32,5 +32,11 @@ LDFLAGS+=	-lexecinfo
 
 # https://github.com/mesonbuild/meson/issues/2239
 CONFIGURE_ENV=	BOOST_ROOT=${LOCALBASE}
+
+post-install:
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libunanimity.so.3.0.0 \
+		${STAGEDIR}${PREFIX}/lib/libunanimity.so.3.0
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libunanimity.so.3.0.0 \
+		${STAGEDIR}${PREFIX}/lib/libunanimity.so.3
 
 .include <bsd.port.mk>
