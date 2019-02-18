@@ -344,6 +344,14 @@ EOM
 step
 cat << EOM
 
+If upgrading a shared lib's major version, all ports that link to it
+must at least have PORTREVISION bumped to force rebuild.
+
+EOM
+
+step
+cat << EOM
+
 Use @ to silence most commands, except commands that contribute to plist
 
 EOM
