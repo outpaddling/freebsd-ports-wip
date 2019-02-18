@@ -344,7 +344,17 @@ EOM
 step
 cat << EOM
 
-If upgrading a shared lib's major version, all ports that link to it
+Shared libs:
+
+Make sure all levels of library versions are in pkg-plist, using ${RLN}
+if necessary:
+
+libname.so
+libname.so.x
+libname.so.x.y
+libname.so.x.y.z
+
+If upgrading major version, all ports that link to it
 must at least have PORTREVISION bumped to force rebuild.
 
 EOM
