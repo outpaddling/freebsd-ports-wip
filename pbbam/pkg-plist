@@ -142,5 +142,7 @@ include/pbbam/virtual/WhitelistedZmwReadStitcher.h
 include/pbbam/virtual/ZmwReadStitcher.h
 include/pbbam/virtual/ZmwWhitelistVirtualReader.h
 lib/libpbbam.so
+lib/libpbbam.so.0
+lib/libpbbam.so.0.18
 lib/libpbbam.so.0.18.0
 libdata/pkgconfig/pbbam.pc

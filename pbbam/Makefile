@@ -23,4 +23,10 @@ GH_ACCOUNT=	PacificBiosciences
 # https://github.com/mesonbuild/meson/issues/2239
 CONFIGURE_ENV=	BOOST_ROOT=${LOCALBASE}
 
+post-install:
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libpbbam.so.${PORTVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libpbbam.so.0.18
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libpbbam.so.${PORTVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libpbbam.so.0
+
 .include <bsd.port.mk>
