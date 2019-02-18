@@ -9,5 +9,4 @@ set +e
 pkg remove -y unanimity pbbam pbseqan pbcopper
 set -e
 pkg install -y meson htslib swig30 boost-libs py27-numpy
-wip-reinstall-port unanimity
-
+wip-reinstall-port -nu -nr unanimity

@@ -81,6 +81,13 @@ post-patch:
 		-e 's|boost_python |boost_python27 |g' \
 		${WRKSRC}/src/python-bindings/CMakeLists.txt
 
+pre-configure:
+	@if which condor_submit > /dev/null; then \
+		${ECHO_CMD} "condor build may fail while condor is installed."; \
+		${ECHO_CMD} "Deinstall condor and run make again."; \
+		false; \
+	fi
+
 post-install:
 	${INSTALL_DATA} \
 		${STAGEDIR}${ETCDIR}/examples/condor_config.annotated \
