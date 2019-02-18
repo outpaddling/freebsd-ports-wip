@@ -19,8 +19,8 @@ BUILD_DEPENDS=	seqan>=2.4.0:biology/seqan \
 		${PYNUMPY}
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so:devel/boost-libs \
-		libpbbam.so.0.18:wip/pbbam \
-		libpbcopper.so.0.4:wip/pbcopper
+		libpbbam.so.0.18.0:wip/pbbam \
+		libpbcopper.so.0.4.1:wip/pbcopper
 
 USES=		compiler:c++14-lang meson pkgconfig python
 USE_LDCONFIG=	yes
