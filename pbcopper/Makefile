@@ -21,4 +21,10 @@ GH_ACCOUNT=	PacificBiosciences
 # https://github.com/mesonbuild/meson/issues/2239
 CONFIGURE_ENV=	BOOST_ROOT=${LOCALBASE}
 
+post-install:
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libpbcopper.so.${PORTVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libpbcopper.so.0.4
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libpbcopper.so.${PORTVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libpbcopper.so.0
+
 .include <bsd.port.mk>

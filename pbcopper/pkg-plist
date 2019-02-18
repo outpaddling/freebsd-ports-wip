@@ -72,5 +72,7 @@ include/pbcopper/utility/internal/Stopwatch-inl.h
 include/pbcopper/utility/internal/StringUtils-inl.h
 include/pbcopper/utility/internal/SystemInfo-inl.h
 lib/libpbcopper.so
+lib/libpbcopper.so.0
+lib/libpbcopper.so.0.4
 lib/libpbcopper.so.0.4.1
 libdata/pkgconfig/pbcopper.pc
