@@ -6,8 +6,8 @@
 
 # FreeBSD ports
 set +e
-pkg delete unanimity pbbam pbseqan pbcopper
+pkg remove -y unanimity pbbam pbseqan pbcopper
 set -e
-pkg install -y cmake htslib
+pkg install -y meson htslib swig30 boost-libs py27-numpy
 wip-reinstall-port unanimity
 
