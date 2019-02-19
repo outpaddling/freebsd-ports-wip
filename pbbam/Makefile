@@ -13,13 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so:devel/boost-libs
 
+# Meson needs BOOST_ROOT=${LOCALBASE}
+# https://github.com/mesonbuild/meson/issues/2239
 USES=		compiler:c++14-lang localbase meson pkgconfig
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
-
-# https://github.com/mesonbuild/meson/issues/2239
-# CONFIGURE_ENV=	BOOST_ROOT=${LOCALBASE}
 
 post-install:
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libpbbam.so.${PORTVERSION} \
