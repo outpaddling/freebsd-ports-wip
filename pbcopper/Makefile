@@ -1,8 +1,7 @@
-# $FreeBSD: head/biology/pbcopper/Makefile 487272 2018-12-12 01:35:33Z gerald $
+# $FreeBSD$
 
 PORTNAME=		pbcopper
-# Test new versions with biology/unanimity before upgrading!
-DISTVERSION=		0.4.1
+DISTVERSION=		0.4.1 # Test with biology/unanimity before upgrading!
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
