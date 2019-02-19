@@ -1,0 +1,2 @@
+
+Meson downloads googletest if tests are enabled, even if preinstalled.
