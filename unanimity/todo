@@ -1,2 +1,4 @@
 
 Meson downloads googletest if tests are enabled, even if preinstalled.
+
+Avoid hard-coding swig3.0
