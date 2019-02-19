@@ -23,7 +23,7 @@ LIB_DEPENDS=	libhts.so:biology/htslib \
 		libpbbam.so.0.18.0:wip/pbbam \
 		libpbcopper.so.0.4.1:wip/pbcopper
 
-USES=		compiler:c++14-lang meson pkgconfig python
+USES=		compiler:c++14-lang localbase meson pkgconfig python
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
@@ -32,7 +32,7 @@ CFLAGS_i386=	-msse2 -Wno-c++11-narrowing
 LDFLAGS+=	-lexecinfo
 
 # https://github.com/mesonbuild/meson/issues/2239
-CONFIGURE_ENV=	BOOST_ROOT=${LOCALBASE}
+# CONFIGURE_ENV=	BOOST_ROOT=${LOCALBASE}
 
 post-install:
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libunanimity.so.3.0.0 \
