@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so:devel/boost-libs
 
-USES=		compiler:c++14-lang meson
+USES=		compiler:c++14-lang meson pkgconfig
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
