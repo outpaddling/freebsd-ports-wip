@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=		fails to compile: mmintrin.h:47:5: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
 
-# Very sensitive to PacBio dependency versions
+# Very sensitive to pbbam and pbcopper versions!
+# Fully test new combinations and upgrade them together.
 BUILD_DEPENDS=	seqan>=2.4.0:biology/seqan \
 		swig30>=3.0:devel/swig30 \
 		${PYNUMPY}
