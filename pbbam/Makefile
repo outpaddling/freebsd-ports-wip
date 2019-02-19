@@ -15,10 +15,14 @@ LIB_DEPENDS=	libhts.so:biology/htslib \
 
 # Meson needs BOOST_ROOT=${LOCALBASE}
 # https://github.com/mesonbuild/meson/issues/2239
-USES=		compiler:c++14-lang localbase meson pkgconfig
+USES=		compiler:c++14-lang localbase meson pkgconfig python
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
+
+pre-configure:
+	@${REINPLACE_CMD} -e "s|'python'|'${PYTHON_VERSION}'|g" \
+		${WRKSRC}/meson.build
 
 post-install:
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libpbbam.so.${PORTVERSION} \
