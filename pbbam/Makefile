@@ -1,8 +1,8 @@
 # $FreeBSD$
 
-PORTNAME=		pbbam
-DISTVERSION=		0.18.0 # Test with biology/unanimity before upgrading!
-CATEGORIES=		wip biology
+PORTNAME=	pbbam
+DISTVERSION=	0.18.0 # Test with biology/unanimity before upgrading!
+CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	PacBio BAM C++ library, with SWIG bindings
@@ -10,11 +10,10 @@ COMMENT=	PacBio BAM C++ library, with SWIG bindings
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	boost-libs>=1.60.0:devel/boost-libs
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so:devel/boost-libs
 
-USES=		compiler:c++14-lang meson pkgconfig
+USES=		compiler:c++14-lang meson
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
