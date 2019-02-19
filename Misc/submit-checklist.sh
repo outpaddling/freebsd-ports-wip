@@ -485,6 +485,13 @@ EOM
 step
 cat << EOM
 
+Check poudriere logs for hints from stage-qa.
+
+EOM
+
+step
+cat << EOM
+
 Generate unified diff for updates, shar file for new ports
     (port-diff or port-shar scripts from ports-mgmt/port-dev)
 
