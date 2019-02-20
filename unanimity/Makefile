@@ -20,8 +20,8 @@ BUILD_DEPENDS=	seqan>=2.4.0:biology/seqan \
 		${PYNUMPY}
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so:devel/boost-libs \
-		libpbbam.so.0.18.0:biology/pbbam \
-		libpbcopper.so.0.4.1:biology/pbcopper
+		libpbbam.so.0.18.0:wip/pbbam \
+		libpbcopper.so.0.4.1:wip/pbcopper
 RUN_DEPENDS=	${PYNUMPY}
 
 # Meson needs BOOST_ROOT=${LOCALBASE}
