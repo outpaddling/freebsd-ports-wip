@@ -4,7 +4,7 @@ PORTNAME=		canu
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.8
 PORTREVISION=		2
-CATEGORIES=		biology java perl5
+CATEGORIES=		wip biology java perl5
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Single molecule sequence assembler
