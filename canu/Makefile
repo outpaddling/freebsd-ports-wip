@@ -12,8 +12,9 @@ COMMENT=	Single molecule sequence assembler
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/README.license.GPL
 
-# These should be resolved, but this is untested.  The same issue was resolved
-# for aarch64 by patch-Makefile.
+# These should be resolved, but this is untested.  The same issue, due to
+# differences between ${ARCH} and $(uname -m), was resolved for aarch64 by
+# patch-Makefile.
 # BROKEN_armv6=		fails to install: mv: rename site_perl to /wrkdirs/usr/ports/biology/canu/work/canu-1.7/src/usr/local/FreeBSD-armv6/lib/perl5/site_perl: No such file or directory
 # BROKEN_armv7=		fails to install: mv: rename site_perl to /wrkdirs/usr/ports/biology/canu/work/canu-1.7/src/usr/local/FreeBSD-armv7/lib/perl5/site_perl: No such file or directory
 
