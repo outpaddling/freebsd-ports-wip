@@ -1,0 +1,140 @@
+--- Makefile.orig	2018-10-22 16:47:31 UTC
++++ Makefile
+@@ -394,7 +394,7 @@ ifeq (${OSTYPE}, Linux)
+ 
+   ifeq ($(BUILDDEBUG), 1)
+   else
+-    CXXFLAGS += -O4 -funroll-loops -fexpensive-optimizations -finline-functions -fomit-frame-pointer
++    CXXFLAGS +=    -finline-functions -fomit-frame-pointer
+   endif
+ endif
+ 
+@@ -475,12 +475,13 @@ ifeq (${OSTYPE}, Darwin)
+ 
+   ifeq ($(BUILDDEBUG), 1)
+   else
+-    CXXFLAGS += -O4 -funroll-loops -fexpensive-optimizations -finline-functions -fomit-frame-pointer
++    CXXFLAGS +=    -finline-functions -fomit-frame-pointer
+   endif
+ endif
+ 
+ 
+ ifeq (${OSTYPE}, FreeBSD)
++MACHINETYPE=${ARCH}
+ ifeq (${MACHINETYPE}, amd64)
+   CC       ?= gcc48
+   CXX      ?= g++48
+@@ -514,13 +515,84 @@ ifeq (${MACHINETYPE}, amd64)
+ 
+   ifeq ($(BUILDDEBUG), 1)
+   else
+-    CXXFLAGS += -O3 -funroll-loops -fexpensive-optimizations -finline-functions -fomit-frame-pointer
++    CXXFLAGS += -O3   -finline-functions -fomit-frame-pointer
+   endif
+ endif
++
++ifeq (${MACHINETYPE}, i386)
++  CC       ?= gcc48
++  CXX      ?= g++48
++
++  #  GCC
++  CXXFLAGS  += -I/usr/local/include -D_GLIBCXX_PARALLEL -pthread -fopenmp -fPIC
++  LDFLAGS   += -L/usr/local/lib     -D_GLIBCXX_PARALLEL -pthread -fopenmp -rpath /usr/local/lib/gcc48 -lm -lexecinfo
++
++  #  CLANG
++  #CXXFLAGS  += -I/usr/local/include -D_GLIBCXX_PARALLEL -pthread -fPIC
++  #LDFLAGS   += -L/usr/local/lib     -D_GLIBCXX_PARALLEL -pthread -lm -lexecinfo -lgomp
++
++  #CXXFLAGS  += -Wall -Wextra -Wformat  -Wno-unused   -Wno-parentheses
++  CXXFLAGS  += -Wall -Wextra -Wformat -Wno-unused-function -Wno-unused-parameter -Wno-unused-variable -Wno-char-subscripts -Wno-write-strings -Wno-sign-compare -Wno-format-truncation
++
++  #  Google Performance Tools malloc and heapchecker (HEAPCHECK=normal)
++  #CXXFLAGS  +=
++  #LDFLAGS   += -ltcmalloc
++
++  #  Google Performance Tools cpu profiler (CPUPROFILE=/path)
++  #CXXFLAGS  +=
++  #LDFLAGS   += -lprofiler
++
++  #  callgrind
++  #CXXFLAGS  += -g3 -Wa,--gstabs -save-temps
++
++  ifeq ($(BUILDOPTIMIZED), 1)
++  else
++    CXXFLAGS += -g3
++  endif
++
++  ifeq ($(BUILDDEBUG), 1)
++  else
++    CXXFLAGS += -O3   -finline-functions -fomit-frame-pointer
++  endif
+ endif
+ 
++ifeq (${MACHINETYPE}, aarch64)
++  CC       ?= gcc48
++  CXX      ?= g++48
+ 
+-ifeq (${OSTYPE}, FreeBSD)
++  #  GCC
++  CXXFLAGS  += -I/usr/local/include -D_GLIBCXX_PARALLEL -pthread -fopenmp -fPIC
++  LDFLAGS   += -L/usr/local/lib     -D_GLIBCXX_PARALLEL -pthread -fopenmp -rpath /usr/local/lib/gcc48 -lm -lexecinfo
++
++  #  CLANG
++  #CXXFLAGS  += -I/usr/local/include -D_GLIBCXX_PARALLEL -pthread -fPIC
++  #LDFLAGS   += -L/usr/local/lib     -D_GLIBCXX_PARALLEL -pthread -lm -lexecinfo -lgomp
++
++  #CXXFLAGS  += -Wall -Wextra -Wformat  -Wno-unused   -Wno-parentheses
++  CXXFLAGS  += -Wall -Wextra -Wformat -Wno-unused-function -Wno-unused-parameter -Wno-unused-variable -Wno-char-subscripts -Wno-write-strings -Wno-sign-compare -Wno-format-truncation
++
++  #  Google Performance Tools malloc and heapchecker (HEAPCHECK=normal)
++  #CXXFLAGS  +=
++  #LDFLAGS   += -ltcmalloc
++
++  #  Google Performance Tools cpu profiler (CPUPROFILE=/path)
++  #CXXFLAGS  +=
++  #LDFLAGS   += -lprofiler
++
++  #  callgrind
++  #CXXFLAGS  += -g3 -Wa,--gstabs -save-temps
++
++  ifeq ($(BUILDOPTIMIZED), 1)
++  else
++    CXXFLAGS += -g3
++  endif
++
++  ifeq ($(BUILDDEBUG), 1)
++  else
++    CXXFLAGS += -O3   -finline-functions -fomit-frame-pointer
++  endif
++endif
++
+ ifeq (${MACHINETYPE}, arm)
+   CC       ?= gcc48
+   CXX      ?= g++48
+@@ -529,7 +601,7 @@ ifeq (${MACHINETYPE}, arm)
+   LDFLAGS   += -L/usr/local/lib     -D_GLIBCXX_PARALLEL -pthread -fopenmp -rpath /usr/local/lib/gcc48 -lm
+ 
+   CXXFLAGS  += -Wall -Wextra -Wno-write-strings -Wno-unused -Wno-char-subscripts -Wno-sign-compare -Wformat -Wno-parentheses
+-  CXXFLAGS  += -funroll-loops -fomit-frame-pointer
++  CXXFLAGS  +=  -fomit-frame-pointer
+   LDFLAGS   += 
+ 
+   ifeq ($(BUILDOPTIMIZED), 1)
+@@ -539,7 +611,7 @@ ifeq (${MACHINETYPE}, arm)
+ 
+   ifeq ($(BUILDDEBUG), 1)
+   else
+-    CXXFLAGS += -O4 -funroll-loops -fexpensive-optimizations -finline-functions -fomit-frame-pointer
++    CXXFLAGS +=    -finline-functions -fomit-frame-pointer
+   endif
+ endif
+ endif
+@@ -561,7 +633,7 @@ ifneq (,$(findstring CYGWIN, ${OSTYPE}))
+ 
+   ifeq ($(BUILDDEBUG), 1)
+   else
+-    CXXFLAGS += -O4 -funroll-loops -fexpensive-optimizations -finline-functions -fomit-frame-pointer
++    CXXFLAGS +=    -finline-functions -fomit-frame-pointer
+   endif
+ endif
+ 
