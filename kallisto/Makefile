@@ -17,13 +17,12 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 
 USES=		cmake:noninja compiler:c++11-lang
 USE_GITHUB=	yes
-
 GH_ACCOUNT=	pachterlab
 
 SUB_FILES=	kallisto-test
 
-PORTEXAMPLES=	*
-PLIST_FILES=	bin/kallisto
+PORTEXAMPLES=		*
+PLIST_FILES=		bin/kallisto
 EXAMPLES_PLIST_FILES=	bin/kallisto-test
 
 OPTIONS_DEFINE=	EXAMPLES
