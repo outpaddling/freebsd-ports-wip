@@ -22,7 +22,7 @@
      my  $off = 0;
  
      #  In some grids (SGE)   this is the maximum size of an array job.
-@@ -823,8 +819,42 @@ sub buildGridArray ($$$$) {
+@@ -823,9 +819,43 @@ sub buildGridArray ($$$$) {
          $off = "-F \"$off\"";
      }
  
@@ -35,7 +35,7 @@
 +    elsif( $opt =~ m/(ARRAY_JOBS)/ )
 +    {
 +	$opt =~ s/$1/$bgn-$end/; # Replace ARRAY_JOBS with 'bgn-end'
-+
+ 
 +	if( lc( getGlobal( 'gridEngine' ) ) eq 'slurm' && $end > 1 )
 +	{
 +	    if( $name =~ m/^cormhap_/i && defined getGlobal( 'slurmCormhapCoreLimit' ) )
@@ -64,9 +64,10 @@
 +	    }
 +	}
 +    }
- 
++
      return($opt, $off);
  }
+ 
 @@ -973,7 +1003,7 @@ sub buildGridJob ($$$$$$$$$) {
      my $jobNameT               = makeUniqueJobName($jobType, $asm);
  
