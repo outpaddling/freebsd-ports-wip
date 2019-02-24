@@ -1,9 +1,9 @@
 # $FreeBSD: head/biology/kallisto/Makefile 479046 2018-09-05 22:05:23Z sunpoet $
 
-PORTNAME=	kallisto
+PORTNAME=		kallisto
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.45.1
-CATEGORIES=	wip biology
+DISTVERSION=		0.45.1
+CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Quantify abundances of transcripts from RNA-Seq data
