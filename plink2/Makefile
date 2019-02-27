@@ -2,7 +2,7 @@
 
 PORTNAME=		plink2
 DISTVERSIONPREFIX=	v
-DISTVERSION=		g20190108
+DISTVERSION=		g20190227
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -26,16 +26,15 @@ USE_GITHUB=	yes
 SHEBANG_FILES=	Tests/*.sh Tests/*/*.sh
 GH_ACCOUNT=	chrchang
 GH_PROJECT=	plink-ng
-GH_TAGNAME=	00aaeb5
+GH_TAGNAME=	464bfd4
 
 MAKEFILE=	${FILESDIR}/Makefile.generic
 WRKSRC_SUBDIR=	2.0
 CFLAGS+=	-DDYNAMIC_ZLIB
 LDFLAGS+=	-lpthread
-#MAKE_ARGS=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -lopenblas -lgfortran"
-MAKE_ARGS=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -llapack -lblas -lgfortran"
+MAKE_ARGS=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -llapack -lcblas -lblas -lgfortran"
 
-# INSTALL_TARGET=	install-strip
+INSTALL_TARGET=	install-strip
 
 SUB_FILES=	plink2-test
 
@@ -44,12 +43,12 @@ post-patch:
 		${WRKSRC}/Tests/run_tests.sh
 	@${REINPLACE_CMD} -e 's|^python|${PYTHON_CMD}|g' \
 		${WRKSRC}/Tests/TEST_PHASED_VCF/run_tests.sh
+	@${CHMOD} a+rx \
+		${WRKSRC}/Tests/run_tests.sh \
+		${WRKSRC}/Tests/*/run_tests.sh
 
 post-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} Tests ${STAGEDIR}${DATADIR})
-	${CHMOD} a+x \
-		${STAGEDIR}${DATADIR}/Tests/run_tests.sh \
-		${STAGEDIR}${DATADIR}/Tests/*/run_tests.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/plink2-test ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${FILESDIR}/plink2-bench ${STAGEDIR}${PREFIX}/bin
 
