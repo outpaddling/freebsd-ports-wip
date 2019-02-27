@@ -14,9 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # Seg faults with openblas
 # #0  0x0000000800eb66ef in dgemm_otcopy_CORE2 ()
 #   from /usr/local/lib/libopenblas.so.0
-#LIB_DEPENDS=	libcblas.so:math/cblas \
 #		libopenblas.so:math/openblas
-LIB_DEPENDS=	liblapack.so:math/lapack \
+LIB_DEPENDS=	libcblas.so:math/cblas \
+		liblapack.so:math/lapack \
 		libblas.so:math/blas
 
 # We need Fortran LDFLAGS to link with Lapack.

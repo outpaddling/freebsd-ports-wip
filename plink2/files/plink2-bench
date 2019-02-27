@@ -11,7 +11,7 @@
 
 usage()
 {
-    printf "Usage: $0 trials threads\n"
+    printf "Usage: $0 trials threads test-directory\n"
     exit 1
 }
 
@@ -20,13 +20,21 @@ usage()
 #   Main
 ##########################################################################
 
-if [ $# != 2 ]; then
+if [ $# != 3 ]; then
     usage
 fi
 
 trials=$1
 threads=$2
+dir="$3"
 
+if [ -e "$dir" ]; then
+    printf "$dir already exists.  Aborting...\n"
+    exit 1
+fi
+
+mkdir "$dir"
+cd "$dir"
 rm -f plink2.* testdata*
 
 printf "Generating test data...\n"

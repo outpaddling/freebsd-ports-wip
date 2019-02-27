@@ -11,7 +11,7 @@
 
 usage()
 {
-    printf "Usage: $0\n"
+    printf "Usage: $0 test-directory\n"
     exit 1
 }
 
@@ -20,7 +20,7 @@ usage()
 #   Main
 ##########################################################################
 
-if [ $# != 0 ]; then
+if [ $# != 1 ]; then
     usage
 fi
 
@@ -33,15 +33,16 @@ EOM
     exit 1
 fi
 
-if [ -e plink2-Tests ]; then
+test_dir="$1"
+if [ -e "$test_dir" ]; then
     cat << EOM
 
-plink2-Tests already exits.  Remove it first if you want to run $0.
+$test_dir already exits.  Remove it first if you want to run $0.
 
 EOM
     exit 1
 fi
 
-cp -R %%DATADIR%%/Tests plink2-Tests
-cd plink2-Tests
+cp -R %%DATADIR%%/Tests "$test_dir"
+cd "$test_dir"
 ./run_tests.sh
