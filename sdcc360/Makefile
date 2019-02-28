@@ -1,24 +1,22 @@
-# $FreeBSD: head/lang/sdcc/Makefile 487272 2018-12-12 01:35:33Z gerald $
+# $FreeBSD$
 
 PORTNAME=	sdcc
 PORTVERSION=	3.6.0
 DISTVERSIONPREFIX=	src-
 CATEGORIES=	wip lang
-PORTREVISION=	3
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Small Device C Compiler
 
 LICENSE=	GPLv3
 
-BROKEN_aarch64=		Fails to configure: BFD does not support target aarch64-portbld-freebsd11.0
-
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/adjacency_list.hpp:devel/boost-libs
+
+USES=		gmake readline:port python shebangfix tar:bzip2
 
 CONFLICTS_INSTALL=	sdcc-[0-9]* sdcc-devel-[0-9]*
 GNU_CONFIGURE=	yes
-USES=		gmake readline:port python shebangfix tar:bzip2
 SHEBANG_FILES=	support/scripts/as2gbmap.py support/valdiag/valdiag.py
 
 OPTIONS_DEFINE=		DEVLIB DOCS UCSIM
@@ -33,25 +31,27 @@ STM8_DESC=	STMicroelectronics STM8
 UCSIM_DESC=	The ucSim simulator
 Z80_DESC=	Zilog Z80/Z180/GBZ80, Rabbit 2000/3000, Toshiba TLCS-90
 
-CONFIGURE_ARGS=	--disable-install-libbfd --disable-werror \
-		docdir=${DOCSDIR} sdcc_cv_c_fms_extensions=no
+CONFIGURE_ARGS=	--disable-avr --disable-install-libbfd --disable-werror \
+		--disable-st7 docdir=${DOCSDIR} sdcc_cv_c_fms_extensions=no
 PORTDATA=	*
 PORTDOCS=	*
-WRKSRC=		${WRKDIR}/sdcc
+WRKSRC=		${WRKDIR}/sdcc-${DISTVERSION}
 
 OPTIONS_SUB=		yes
 DEVLIB_CONFIGURE_OFF=	--disable-device-lib
-HC08_CONFIGURE_OFF=	--disable-hc08-port --disable-s08-port
-MCS51_CONFIGURE_OFF=	--disable-ds390-port --disable-ds400-port	\
-			--disable-mcs51-port
+HC08_CONFIGURE_OFF=	--disable-hc08 --disable-hc08-port		\
+			--disable-s08-port
+MCS51_CONFIGURE_OFF=	--disable-51 --disable-mcs51-port		\
+			--disable-ds390-port --disable-ds400-port
 PIC_BUILD_DEPENDS=	gputils>=1.2.0:devel/gputils
 PIC_RUN_DEPENDS=	gpasm:devel/gputils
 PIC_CONFIGURE_OFF=	--disable-pic14-port --disable-pic16-port
-STM8_CONFIGURE_OFF=	--disable-stm8-port
+STM8_CONFIGURE_OFF=	--disable-stm8 --disable-stm8-port
 UCSIM_CONFIGURE_OFF=	--disable-ucsim
-Z80_CONFIGURE_OFF=	--disable-gbz80-port --disable-r2k-port		\
-			--disable-r3ka-port --disable-tlcs90-port	\
-			--disable-z180-port --disable-z80-port
+Z80_CONFIGURE_OFF=	--disable-z80 --disable-z80-port		\
+			--disable-z180-port --disable-gbz80-port	\
+			--disable-r2k-port --disable-r3ka-port		\
+			--disable-tlcs90-port
 
 .include <bsd.port.options.mk>
 
@@ -62,7 +62,6 @@ CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 post-patch:
 	@${REINPLACE_CMD} '/install:/s/:.*/:/' \
 		${WRKSRC}/Makefile.in \
-		${WRKSRC}/sdas/linksrc/Makefile.in \
 		${WRKSRC}/support/sdbinutils/libiberty/Makefile.in
 	@${REINPLACE_CMD} '/^SUBDIRS =/s/doc//' \
 		${WRKSRC}/support/sdbinutils/bfd/Makefile.in
@@ -87,16 +86,11 @@ post-patch:
 		${WRKSRC}/device/non-free/lib/pic16/Makefile.in \
 		${WRKSRC}/device/non-free/lib/pic16/configure \
 		${WRKSRC}/device/non-free/lib/pic16/libdev/Makefile.in
-# Upstream forgot to run some autotools in this release so make tries to run
-# them.  Change a timestamp so aclocal.m4 and Makefile.in no longer appear
-# out-of-date.
-	@${TOUCH} -r ${WRKSRC}/device/non-free/lib/pic16/configure.ac \
-		${WRKSRC}/device/non-free/lib/pic16/supported-devices.ac
-
-post-patch-DOCS-off:
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} 's, [a-z-]*doc,,' \
 		${WRKSRC}/Makefile.in \
 		${WRKSRC}/sim/ucsim/packages_in.mk
+.endif
 
 post-install:
 	${FIND} -d ${STAGEDIR}${DATADIR} -type d -empty -delete
