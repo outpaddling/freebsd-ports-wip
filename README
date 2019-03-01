@@ -5,6 +5,8 @@ To install ports from this collection:
 
 1)  Download and run the freebsd-wip-checkout script from the repository
     above.
+    
+    fetch https://github.com//outpaddling/freebsd-ports-wip/raw/master/freebsd-wip-checkout
 
     * Before running any script downloaded from the Internet, carefully
       inspect it for signs of tampering.  This is especially critical before
