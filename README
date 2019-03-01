@@ -11,6 +11,8 @@ To install ports from this collection:
     * Before running any script downloaded from the Internet, carefully
       inspect it for signs of tampering.  This is especially critical before
       running a script as root.
+    
+    sh ./freebsd-wip-checkout
 
 2)  Now you can install any port using
 
