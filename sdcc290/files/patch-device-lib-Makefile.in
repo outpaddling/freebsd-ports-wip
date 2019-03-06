@@ -1,6 +1,6 @@
 --- device/lib/Makefile.in.orig	2009-03-01 21:52:55 UTC
 +++ device/lib/Makefile.in
-@@ -391,25 +391,6 @@ clean_intermediate-pic14:
+@@ -391,26 +391,7 @@ clean_intermediate-pic14:
  # ---------------------------------------------------
  install: all installdirs
  	$(CP_U) -r $(BUILDDIR)/* $(sdcc_libdir)
@@ -8,7 +8,7 @@
 -	                     $(srcdir)/gbz80 $(srcdir)/z80 $(srcdir)/hc08 \
 -	                     $(srcdir)/pic $(srcdir)/pic16 $(srcdir)/*.c $(sdcc_libdir)/src
 -	$(CP_U) -r $(MODELS) mcs51 ds390 ds400 gbz80 z80 hc08 $(sdcc_libdir)/src
--
+ 
 -	for src in $(MODELS) ds390 ds400 gbz80 z80 hc08 pic pic16; do \
 -	  find $(sdcc_libdir)/src/$$src -depth \
 -	    \( -name '*.rel' -o -name '*.dump*' -o -name '*.sym' -o -name '*.o' -o -name '*.lib' -o \
@@ -23,9 +23,10 @@
 -	  -name '*.lst' -o -name '.svn' -o -name 'build' -o -name 'bin' -o \
 -	  -name 'Makefile*' \) \
 -	  -exec rm -rf {} +
- 
+-
  # Deleting all the installed files
  # --------------------------------
+ uninstall:
 @@ -430,14 +411,6 @@ installcheck:
  # ---------------------------------
  installdirs:
