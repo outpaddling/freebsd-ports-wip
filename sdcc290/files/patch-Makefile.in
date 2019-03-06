@@ -1,0 +1,13 @@
+--- Makefile.in.orig	2009-01-19 21:06:40 UTC
++++ Makefile.in
+@@ -30,6 +30,10 @@ endif
+ ifeq ($(OPT_DISABLE_MCS51), 0)
+ SDCC_ASLINK     += as/mcs51 as/link/mcs51
+ SDCC_MISC       += debugger/mcs51
++else
++ifeq ($(OPT_DISABLE_DS390), 0)
++SDCC_ASLINK     += as/mcs51 as/link/mcs51
++endif
+ endif
+ 
+ ifeq ($(OPT_DISABLE_Z80), 0)
