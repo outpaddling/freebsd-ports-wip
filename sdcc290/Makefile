@@ -11,6 +11,9 @@ COMMENT=	Small Device C Compiler
 
 LICENSE=	GPLv3
 
+BUILD_DEPENDS=	gputils==1.4.2.1:wip/gputils
+RUN_DEPENDS=	gputils==1.4.2.1:wip/gputils
+
 USES=		gmake localbase tar:bzip2
 
 GNU_CONFIGURE=	yes
