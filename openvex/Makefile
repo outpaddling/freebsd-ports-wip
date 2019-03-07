@@ -12,10 +12,10 @@ LICENSE=	GPLv3
 
 BROKEN_powerpc64=	Does not build
 
-BUILD_DEPENDS=	sdcc==2.9.0:wip/sdcc290 \
+BUILD_DEPENDS=	sdcc2==2.9.0:wip/sdcc290 \
 		gpasm:devel/gputils
 RUN_DEPENDS=	vexctl:devel/roboctl \
-		sdcc==2.9.0:wip/sdcc290 \
+		sdcc2==2.9.0:wip/sdcc290 \
 		gpasm:devel/gputils
 
 USES+=		tar:xz
