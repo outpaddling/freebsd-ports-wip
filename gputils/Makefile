@@ -5,6 +5,7 @@ PORTNAME=	gputils
 DISTVERSION=	1.4.2-1
 CATEGORIES=	wip devel
 MASTER_SITES=	SF/gputils/gputils/${PORTVERSION:R}
+PKGNAMESUFFIX=	14
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Utilities for Microchip PIC microcontrollers
