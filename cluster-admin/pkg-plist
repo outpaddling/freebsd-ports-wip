@@ -17,6 +17,7 @@ bin/slurm-job-stats
 bin/slurm-job-status
 bin/slurm-load-summary
 bin/slurm-memory-use
+bin/slurm-node-info
 bin/slurm-pending-jobs
 bin/slurm-shell
 bin/slurm-user-cores
