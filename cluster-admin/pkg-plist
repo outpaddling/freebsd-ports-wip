@@ -102,6 +102,6 @@ sbin/update-cluster-admin-wip
 %%DATADIR%%/csh.login
 %%DATADIR%%/patch-apache.awk
 %%DATADIR%%/profile
-%%DATADIR%%/profile.d/cluster.csh
-%%DATADIR%%/profile.d/cluster.sh
+%%DATADIR%%/profile.d/zzz-cluster.csh
+%%DATADIR%%/profile.d/zzz-cluster.sh
 %%DATADIR%%/sys-update.sbatch
