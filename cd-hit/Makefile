@@ -1,9 +1,9 @@
 # $FreeBSD: head/biology/cd-hit/Makefile 475857 2018-07-29 22:18:44Z gerald $
 
-PORTNAME=	cd-hit
+PORTNAME=		cd-hit
 DISTVERSIONPREFIX=	V
-DISTVERSION=	4.6.8
-CATEGORIES=	wip biology
+DISTVERSION=		4.8.1
+CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Clustering and comparing protein or nucleotide sequences
