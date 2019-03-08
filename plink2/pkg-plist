@@ -15,6 +15,7 @@ bin/plink2-bench
 %%DATADIR%%/Tests/TEST_PGEN_FREQ/simulate.txt
 %%DATADIR%%/Tests/TEST_PHASED_VCF/.gitignore
 %%DATADIR%%/Tests/TEST_PHASED_VCF/1kg_phase3_chr21_start.vcf.gz
+%%DATADIR%%/Tests/TEST_PHASED_VCF/glm_compare.py
 %%DATADIR%%/Tests/TEST_PHASED_VCF/pca_compare.py
 %%DATADIR%%/Tests/TEST_PHASED_VCF/run_tests.sh
 %%DATADIR%%/Tests/TEST_SAMPLE_SUBSET/.gitignore
