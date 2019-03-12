@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pbbam
-DISTVERSION=	0.18.0 # Test with biology/unanimity before upgrading!
+DISTVERSION=	0.23.0 # Test with biology/unanimity before upgrading!
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
