@@ -18,10 +18,11 @@ BROKEN_aarch64=		fails to compile: mmintrin.h:47:5: use of undeclared identifier
 BUILD_DEPENDS=	seqan>=2.4.0:biology/seqan \
 		swig30>=3.0:devel/swig30 \
 		${PYNUMPY}
+# 3.4.1 does not build with pbbam 0.23.0
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so:devel/boost-libs \
-		libpbbam.so.0.18.0:wip/pbbam \
-		libpbcopper.so.0.4.1:wip/pbcopper
+		libpbbam.so.0.18.0:biology/pbbam \
+		libpbcopper.so.0.4.1:biology/pbcopper
 RUN_DEPENDS=	${PYNUMPY}
 
 # Meson needs BOOST_ROOT=${LOCALBASE}
