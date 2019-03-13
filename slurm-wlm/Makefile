@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-DISTVERSION=	18.08.3
+DISTVERSION=	18.08.6-2
 CATEGORIES=	wip sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libmunge.so:security/munge \
 		liblz4.so:archivers/liblz4
 
-USES=		gmake gnome libtool pkgconfig python:build readline:port \
+USES=		gmake gnome libtool lua pkgconfig python:build readline:port \
 		shebangfix ssl tar:bz2
 USE_LDCONFIG=	yes
 USE_PERL5=	configure
@@ -78,6 +78,9 @@ RRD_CONFIGURE_WITH=	rrdtool
 
 LINUX_USES=		linux
 
+# --docdir is non-functional
+# CONFIGURE_ARGS=	--docdir=${DOCSDIR}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
 CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
 
@@ -132,7 +135,7 @@ post-patch-LINUX-on:
 		${WRKSRC}/contribs/lua/proctrack.lua
 
 pre-configure:
-	@if which sbatch > /dev/null; then \
+	@if ${WHICH} sbatch > /dev/null; then \
 		${ECHO_CMD} "SLURM build may fail while slurm-wlm is installed."; \
 		${ECHO_CMD} "Deinstall slurm-wlm and run make again."; \
 		false; \
