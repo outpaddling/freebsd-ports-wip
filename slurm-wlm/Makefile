@@ -3,9 +3,7 @@
 PORTNAME=	slurm
 DISTVERSION=	18.08.6-2
 CATEGORIES=	wip sysutils
-MASTER_SITES=	http://www.schedmd.com/download/latest/ \
-		http://www.schedmd.com/download/archive/ \
-		http://www.schedmd.com/download/development/
+MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
 
 MAINTAINER=	jrm@FreeBSD.org
