@@ -21,12 +21,9 @@ MAKE_FLAGS=	openmp=yes
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|g++|${CXX}|g' \
-		-e 's|\$$(PREFIX)|$${DESTDIR}$${PREFIX}/bin|g' \
-		${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} \
 		-e 's|/bin/bash|${LOCALBASE}/bin/bash|g' \
-		${WRKSRC}/*.pl
+		${WRKSRC}/cd-hit-2d-para.pl \
+		${WRKSRC}/cd-hit-para.pl
 
 post-install:
 	@cd ${STAGEDIR}${PREFIX}/bin && \
