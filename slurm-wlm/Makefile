@@ -80,6 +80,8 @@ LINUX_USES=		linux
 
 # --docdir is non-functional
 # CONFIGURE_ARGS=	--docdir=${DOCSDIR}
+# FreeBSD Infiniband support has not quite come of age yet
+CONFIGURE_ARGS=	--without-ofed
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
 CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm

@@ -244,8 +244,6 @@ lib/slurm/acct_gather_filesystem_none.a
 lib/slurm/acct_gather_filesystem_none.so
 lib/slurm/acct_gather_interconnect_none.a
 lib/slurm/acct_gather_interconnect_none.so
-lib/slurm/acct_gather_interconnect_ofed.a
-lib/slurm/acct_gather_interconnect_ofed.so
 lib/slurm/acct_gather_profile_none.a
 lib/slurm/acct_gather_profile_none.so
 lib/slurm/auth_munge.a
