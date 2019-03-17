@@ -24,6 +24,8 @@ GH_ACCOUNT=	BenLangmead
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+SUB_FILES=	bowtie2-test
+
 pre-configure:
 	@${REINPLACE_CMD} \
 		-e 's|^RELEASE_FLAGS|# RELEASE_FLAGS|' \
@@ -40,6 +42,7 @@ post-install:
 		${WRKSRC}/scripts/*.sh \
 		${WRKSRC}/scripts/*.pl \
 		${STAGEDIR}${DATADIR}/scripts
+	${INSTALL_SCRIPT} ${WRKDIR}/bowtie2-test ${STAGEDIR}${PREFIX}/bin
 
 post-install-DOCS-on:
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
