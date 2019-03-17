@@ -1,4 +1,4 @@
-# $FreeBSD: head/biology/bowtie2/Makefile 455161 2017-11-30 02:59:16Z jwb $
+# $FreeBSD$
 
 PORTNAME=	bowtie2
 PORTVERSION=	2.3.5
@@ -15,14 +15,20 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64
 LIB_DEPENDS=	libtbb.so:devel/tbb
 
-USES=		gmake perl5 python shebangfix
+USES=		gmake localbase:ldflags perl5 python shebangfix
 USE_PERL5=	run
-SHEBANG_FILES=	bowtie2-build bowtie2-inspect scripts/*.pl
-
 USE_GITHUB=	yes
+
+SHEBANG_FILES=	bowtie2-build bowtie2-inspect scripts/*.pl
 GH_ACCOUNT=	BenLangmead
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+pre-configure:
+	@${REINPLACE_CMD} \
+		-e 's|^RELEASE_FLAGS|# RELEASE_FLAGS|' \
+		-e 's|tbbmalloc_proxy|tbbmalloc|' \
+		${WRKSRC}/Makefile
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/scripts
