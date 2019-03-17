@@ -12,7 +12,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # May also work on other 64-bit platforms, but untested
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 aarch64
 LIB_DEPENDS=	libtbb.so:devel/tbb
 
 USES=		gmake localbase:ldflags perl5 python shebangfix
