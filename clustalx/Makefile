@@ -1,4 +1,4 @@
-# $FreeBSD: head/biology/clustalx/Makefile 486467 2018-12-02 15:41:47Z rene $
+# $FreeBSD$
 
 PORTNAME=	clustalx
 DISTVERSION=	2.1
@@ -12,11 +12,9 @@ COMMENT=	Multiple alignment of nucleic acid and protein sequences with GUI
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
-USES=		qmake qt
-USE_QT=		corelib gui moc qmake_build xml
+USES=		qmake qt:5
+USE_QT=		qmake_build core gui widgets xml
+USE_GL=		gl
 
 PLIST_FILES=	bin/clustalx \
 		${DATADIR}/colprot.xml \
@@ -24,11 +22,15 @@ PLIST_FILES=	bin/clustalx \
 		${DATADIR}/colprint.xml \
 		${DATADIR}/clustalx.hlp
 
-post-patch:
+pre-configure:
 	@${REINPLACE_CMD} -e 's|col.*.xml|${DATADIR}/&|' \
 		${WRKSRC}/ClustalQtParams.h
 	@${REINPLACE_CMD} -e 's|clustalx.hlp|${DATADIR}/&|' \
 		${WRKSRC}/HelpDisplayWidget.cpp
+	@${REINPLACE_CMD} \
+		-e 's|<QtGui>|<QtWidgets>|' \
+		-e 's|toAscii|toLatin1|' \
+		${WRKSRC}/*.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/clustalx ${STAGEDIR}${PREFIX}/bin
