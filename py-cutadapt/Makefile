@@ -12,6 +12,7 @@ COMMENT=	Trim adapters from high-throughput sequencing reads
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.15.0:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xopen>=0.5.0:wip/py-xopen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dnaio>=0.3:wip/py-dnaio@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
