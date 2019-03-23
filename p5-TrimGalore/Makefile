@@ -11,7 +11,7 @@ COMMENT=	Wrapper around Cutadapt and FastQC for adapter and quality trimming
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cutadapt>0:biology/py-cutadapt@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cutadapt>0:wip/py-cutadapt@${PY_FLAVOR} \
 		fastqc>0:biology/fastqc
 
 USES=		perl5 python:env shebangfix
