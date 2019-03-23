@@ -234,6 +234,7 @@ Python
 	COMMENT to setup.py description
     Add TEST_DEPENDS and do-test target if appropriate
 	py-nose or py-pytest
+	Examine setup.py to determine test requirements
 
 EOM
 
