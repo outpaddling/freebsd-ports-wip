@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cutadapt>0:wip/py-cutadapt@${PY_FLAVOR} \
 		fastqc>0:biology/fastqc
 
-USES=		perl5 python:env shebangfix
+USES=		perl5 python:env,3.4+ shebangfix
 USE_PERL5=	run
 USE_GITHUB=	yes
 
