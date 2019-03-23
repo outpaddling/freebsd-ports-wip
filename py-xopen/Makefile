@@ -1,4 +1,4 @@
-# $FreeBSD: head/archivers/py-xopen/Makefile 474083 2018-07-07 13:41:18Z jwb $
+# $FreeBSD$
 
 PORTNAME=	xopen
 DISTVERSION=	0.5.0
@@ -11,7 +11,8 @@ COMMENT=	Open compressed files transparently
 
 LICENSE=	MIT
 
-USES=		python
+# FIXME: Allow 2.7 as well?
+USES=		python:3.4+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
