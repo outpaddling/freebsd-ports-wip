@@ -1,10 +1,10 @@
-# $FreeBSD: head/biology/py-cutadapt/Makefile 480173 2018-09-20 14:10:52Z jwb $
+# $FreeBSD$
 
-PORTNAME=	cutadapt
-DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1
-CATEGORIES=	wip biology python
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PORTNAME=		cutadapt
+DISTVERSION=		2.1
+CATEGORIES=		wip biology python
+MASTER_SITES=		CHEESESHOP
+PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Trim adapters from high-throughput sequencing reads
@@ -17,8 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xopen>=0.3.2:archivers/py-xopen@${PY_FLAVOR}
 
 USES=		python:3.4+
 USE_PYTHON=	autoplist concurrent distutils
-USE_GITHUB=	yes
-GH_ACCOUNT=	marcelm
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cutadapt/*.so
