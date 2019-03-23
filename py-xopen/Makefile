@@ -11,6 +11,8 @@ COMMENT=	Open compressed files transparently
 
 LICENSE=	MIT
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bz2file>=0.98:archivers/py-bz2file@${PY_FLAVOR}
+
 # FIXME: Allow 2.7 as well?
 USES=		python:3.4+
 USE_PYTHON=	autoplist distutils
