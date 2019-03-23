@@ -230,9 +230,6 @@ Python
     \${PYNUMPY} for numpy dep.  Check python.mk for other goodies
     Deps should end in @\${PY_FLAVOR}
     Check dep version requirements in setup.py
-    Koobs: Python packages that provide end-user, console scripts, or
-	other files in common/shared locations should tested to be, or
-	made to be USE_PYTHON=concurrent safe
     Match port atrributes to setup.py as closely as possible
 	COMMENT to setup.py description
     Add TEST_DEPENDS and do-test target if appropriate
