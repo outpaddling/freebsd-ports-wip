@@ -1,4 +1,5 @@
 bin/trim_galore
+bin/trim_galore-test
 %%DATADIR%%/test_files/4_seqs_with_Ns.fastq.gz
 %%DATADIR%%/test_files/clock_10K_R1.fastq.gz
 %%DATADIR%%/test_files/clock_10K_R2.fastq.gz

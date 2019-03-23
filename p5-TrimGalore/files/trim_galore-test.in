@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+test_dir=%%DATADIR%%/test_files
+for file in $test_dir/illumina* $test_dir/nextera* $test_dir/small*; do
+    echo $file
+    trim_galore $file
+done

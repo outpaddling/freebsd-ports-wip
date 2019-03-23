@@ -1,8 +1,8 @@
-# $FreeBSD: head/biology/p5-TrimGalore/Makefile 455857 2017-12-09 13:23:32Z jwb $
+# $FreeBSD$
 
 PORTNAME=	TrimGalore
 DISTVERSION=	0.6.1
-CATEGORIES=	wip biology perl5
+CATEGORIES=	wip biology perl5 python
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,18 +14,20 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cutadapt>0:biology/py-cutadapt@${PY_FLAVOR} \
 		fastqc>0:biology/fastqc
 
+USES=		perl5 python:env shebangfix
+USE_PERL5=	run
+USE_GITHUB=	yes
+
+SHEBANG_FILES=	trim_galore
+GH_ACCOUNT=	FelixKrueger
+
 NO_ARCH=	yes
 NO_BUILD=	yes
-
-USES=		perl5 python:env shebangfix
-SHEBANG_FILES=	trim_galore
-USE_PERL5=	run
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	FelixKrueger
+SUB_FILES=	trim_galore-test
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/trim_galore ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/trim_galore-test ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC} && ${COPYTREE_SHARE} test_files ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
