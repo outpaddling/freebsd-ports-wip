@@ -1,0 +1,18 @@
+# $FreeBSD$
+
+PORTNAME=	dnaio
+PORTVERSION=	0.3
+CATEGORIES=	wip biology python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	jwb@FreeBSD.org
+COMMENT=	Read and write FASTQ and FASTA
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		python:3.4+
+USE_PYTHON=	autoplist distutils
+
+.include <bsd.port.mk>
