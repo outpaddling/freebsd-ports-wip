@@ -456,6 +456,8 @@ Test on all available platforms.  Do the following IN ORDER:
     Add DEVELOPER=yes to /etc/make.conf to enable QA tests
 
     wip-reinstall-port -u -r ports-mgmt/port-dev
+    make clean
+    make test
     port-check
 
     test with NOPORT* (whatever is in pkg-plist)
