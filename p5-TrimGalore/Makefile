@@ -11,10 +11,10 @@ COMMENT=	Wrapper around Cutadapt and FastQC for adapter and quality trimming
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cutadapt>0:wip/py-cutadapt@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cutadapt>0:biology/py-cutadapt@${PY_FLAVOR} \
 		fastqc>0:biology/fastqc
 
-# FIXME: Can 3.4+ be determined from cutadapt dep?
+# Future: Can 3.4+ be determined from cutadapt dep?
 USES=		perl5 python:env,3.4+ shebangfix
 USE_PERL5=	run
 USE_GITHUB=	yes
