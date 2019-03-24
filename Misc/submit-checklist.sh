@@ -594,19 +594,18 @@ This will very quickly install a binary using only highly-portable
 optimizations, much like apt-get, yum, etc.
 
 FreeBSD ports can just as easily be built and installed from source,
-although this will take more time:
+although it will take longer (for the computer, not for you):
 
     cd /usr/ports/$port_name
     make install
 
 Building from source allows installing to a different prefix, compiling with
-additional options, and in some cases, building with non-default options such
-as different compilers or dependencies, e.g.:
+native optimizations, and in some cases, building with non-default options
+such as different compilers or dependencies, e.g.:
 
-    make CFLAGS=-march=native install
+    make CFLAGS+=-march=native install
 
-We, the [software name ] developers, do not directly support installation
-via FreeBSD ports. To report any issues, please submit a PR at:
+To report issues with a FreeBSD port, please submit a PR at:
 
     https://www.freebsd.org/support/bugreports.html
 
