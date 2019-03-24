@@ -230,7 +230,7 @@ Python
     \${PYNUMPY} for numpy dep.  Check python.mk for other goodies
     Deps should end in @\${PY_FLAVOR}
     Check dep version requirements in setup.py
-    Match port atrributes to setup.py as closely as possible
+    Match port attributes to setup.py as closely as possible
 	COMMENT to setup.py description
     Add TEST_DEPENDS and do-test target if appropriate
 	py-nose or py-pytest
