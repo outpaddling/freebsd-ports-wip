@@ -11,14 +11,10 @@ COMMENT=	Toolset for genome set arithmetic such as intersect, union
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libgzstream.so:devel/gzstream
-
-USES=		compiler:c++11-lang gmake localbase:ldflags python
+USES=		compiler:c++11-lang gmake python
 USE_GITHUB=	yes
 GH_ACCOUNT=	arq5x
 GH_PROJECT=	bedtools2
-
-LDFLAGS+=	-lgzstream
 
 post-extract:
 # Avoid conflict with C++20 <version> by adding .txt suffix
