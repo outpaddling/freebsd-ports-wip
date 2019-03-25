@@ -1,4 +1,4 @@
-# $FreeBSD: head/biology/bedtools/Makefile 494554 2019-03-04 06:55:08Z jbeich $
+# $FreeBSD$
 
 PORTNAME=	bedtools
 DISTVERSIONPREFIX=	v
@@ -10,6 +10,8 @@ COMMENT=	Toolset for genome set arithmetic such as intersect, union
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+TEST_DEPENDS=	bash:shells/bash
 
 USES=		compiler:c++11-lang gmake python
 USE_GITHUB=	yes
@@ -28,13 +30,11 @@ pre-configure:
 		${WRKSRC}/*/*/Makefile \
 		${WRKSRC}/*/*/*/Makefile \
 		${WRKSRC}/*/*/*/*/Makefile
-	@${REINPLACE_CMD} -e 's|echo -e|printf|g' \
-		${WRKSRC}/test/*/*.sh
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bedtools
 
 do-test:
-	(cd ${WRKSRC}/test && sh test.sh)
+	(cd ${WRKSRC}/test && ${BASH} test.sh)
 
 .include <bsd.port.mk>

@@ -33,7 +33,7 @@
  
  SUBDIRS = $(SRC_DIR)/annotateBed \
  		  $(SRC_DIR)/bamToBed \
-@@ -172,9 +171,9 @@ all-static: print_banner $(OBJ_DIR) $(BI
+@@ -172,9 +171,9 @@ all-static: print_banner $(OBJ_DIR) $(BIN_DIR) autover
  .PHONY: all
  
  install: all
