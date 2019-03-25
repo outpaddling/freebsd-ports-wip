@@ -1,0 +1,56 @@
+--- Makefile.orig	2019-03-25 02:19:27 UTC
++++ Makefile
+@@ -4,7 +4,7 @@
+ # (c) 2009 Aaron Quinlan
+ # ==========================
+ 
+-SHELL := /bin/bash -e
++SHELL := /bin/sh -e
+ 
+ VERSION_FILE=./src/utils/version/version_git.h
+ RELEASED_VERSION_FILE=./src/utils/version/version_release.txt
+@@ -20,11 +20,10 @@ export OBJ_DIR	= obj
+ export BIN_DIR	= bin
+ export SRC_DIR	= src
+ export UTIL_DIR	= src/utils
+-export CXX		= g++
++export CXX	?= g++
++export CXXFLAGS += -D_FILE_OFFSET_BITS=64 -DWITH_HTS_CB_API $(INCLUDES)
+ ifeq ($(DEBUG),1)
+-export CXXFLAGS = -Wconversion -Wall -Wextra -DDEBUG -D_DEBUG -g -O0 -D_FILE_OFFSET_BITS=64 -DWITH_HTS_CB_API $(INCLUDES)
+-else
+-export CXXFLAGS = -g -Wall -O2 -D_FILE_OFFSET_BITS=64 -DWITH_HTS_CB_API $(INCLUDES)
++export CXXFLAGS += -Wconversion -Wall -Wextra -DDEBUG -D_DEBUG -g -O0
+ endif
+ 
+ # If the user has specified to do so, tell the compile to use rand() (instead of mt19937).
+@@ -37,7 +36,7 @@ endif 
+ export LIBS		= -lz -lm -lbz2 -llzma -lpthread
+ export BT_ROOT  = src/utils/BamTools/
+ 
+-prefix ?= /usr/local
++PREFIX ?= /usr/local
+ 
+ SUBDIRS = $(SRC_DIR)/annotateBed \
+ 		  $(SRC_DIR)/bamToBed \
+@@ -172,9 +171,9 @@ all-static: print_banner $(OBJ_DIR) $(BI
+ .PHONY: all
+ 
+ install: all
+-	mkdir -p $(DESTDIR)$(prefix)/bin
++	mkdir -p $(DESTDIR)$(PREFIX)/bin
+ 	for file in bin/* ; do \
+-		cp -f $$file $(DESTDIR)$(prefix)/bin; \
++		cp -f $$file $(DESTDIR)$(PREFIX)/bin; \
+ 	done
+ 
+ print_banner:
+@@ -203,7 +202,7 @@ clean:
+ .PHONY: clean
+ 
+ test: all
+-	@cd test; bash test.sh
++	@cd test; $(SHELL) test.sh
+ 
+ .PHONY: test
+ 
