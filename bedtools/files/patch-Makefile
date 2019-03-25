@@ -1,4 +1,4 @@
---- Makefile.orig	2019-03-25 02:19:27 UTC
+--- Makefile.orig	2019-03-23 18:32:19 UTC
 +++ Makefile
 @@ -4,7 +4,7 @@
  # (c) 2009 Aaron Quinlan
@@ -33,7 +33,7 @@
  
  SUBDIRS = $(SRC_DIR)/annotateBed \
  		  $(SRC_DIR)/bamToBed \
-@@ -172,9 +171,9 @@ all-static: print_banner $(OBJ_DIR) $(BI
+@@ -172,9 +171,9 @@ all-static: print_banner $(OBJ_DIR) $(BIN_DIR) autover
  .PHONY: all
  
  install: all

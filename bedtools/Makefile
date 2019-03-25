@@ -21,7 +21,7 @@ post-extract:
 	@${MV} ${WRKSRC}/src/utils/gzstream/version \
 		${WRKSRC}/src/utils/gzstream/version.txt
 
-pre-build:
+pre-configure:
 	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|@\$$(CXX)|$$(CXX)|g' \
 		${WRKSRC}/*/Makefile \
