@@ -28,6 +28,8 @@ pre-configure:
 		${WRKSRC}/*/*/Makefile \
 		${WRKSRC}/*/*/*/Makefile \
 		${WRKSRC}/*/*/*/*/Makefile
+	@${REINPLACE_CMD} -e 's|echo -e|printf|g' \
+		${WRKSRC}/test/*/*.sh
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bedtools
