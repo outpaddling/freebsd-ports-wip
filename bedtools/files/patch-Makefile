@@ -33,7 +33,25 @@
  
  SUBDIRS = $(SRC_DIR)/annotateBed \
  		  $(SRC_DIR)/bamToBed \
-@@ -172,9 +171,9 @@ all-static: print_banner $(OBJ_DIR) $(BIN_DIR) autover
+@@ -94,7 +93,6 @@ UTIL_SUBDIRS =	$(SRC_DIR)/utils/FileRecordTools \
+ 				$(SRC_DIR)/utils/chromsweep \
+ 				$(SRC_DIR)/utils/Contexts \
+ 				$(SRC_DIR)/utils/general \
+-				$(SRC_DIR)/utils/gzstream \
+ 				$(SRC_DIR)/utils/fileType \
+ 				$(SRC_DIR)/utils/bedFilePE \
+ 				$(SRC_DIR)/utils/KeyListOps \
+@@ -126,9 +124,7 @@ INCLUDES =	-I"$(REAL_SRC_DIR)/utils/bedFile" \
+ 				-I"$(REAL_SRC_DIR)/utils/FileRecordTools/FileReaders" \
+ 				-I"$(REAL_SRC_DIR)/utils/FileRecordTools/Records" \
+ 				-I"$(REAL_SRC_DIR)/utils/general" \
+-				-I"$(REAL_SRC_DIR)/utils/gzstream" \
+ 				-I"$(REAL_SRC_DIR)/utils/fileType" \
+-				-I"$(REAL_SRC_DIR)/utils/gzstream/" \
+ 				-I"$(REAL_SRC_DIR)/utils/lineFileUtilities" \
+ 				-I"$(REAL_SRC_DIR)/utils/KeyListOps" \
+ 				-I"$(REAL_SRC_DIR)/utils/NewChromsweep" \
+@@ -172,9 +168,9 @@ all-static: print_banner $(OBJ_DIR) $(BIN_DIR) autover
  .PHONY: all
  
  install: all
@@ -45,7 +63,7 @@
  	done
  
  print_banner:
-@@ -203,7 +202,7 @@ clean:
+@@ -203,7 +199,7 @@ clean:
  .PHONY: clean
  
  test: all
