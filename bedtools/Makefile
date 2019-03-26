@@ -35,6 +35,6 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bedtools
 
 do-test:
-	(cd ${WRKSRC}/test && ${BASH} test.sh)
+	(cd ${WRKSRC}/test && bash test.sh)
 
 .include <bsd.port.mk>
