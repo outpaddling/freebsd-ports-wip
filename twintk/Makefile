@@ -3,7 +3,8 @@
 PORTNAME=	twintk
 PORTVERSION=	0.9.4
 CATEGORIES=	wip devel
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
+		http://outpaddling.mooo.com/~bacon/Acadix/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Misc functions

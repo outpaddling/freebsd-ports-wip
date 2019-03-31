@@ -3,7 +3,8 @@
 PORTNAME=	docviewer
 PORTVERSION=	0.2
 CATEGORIES=	wip textproc
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
+		http://outpaddling.mooo.com/~bacon/Acadix/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Run the best available PDF viewer

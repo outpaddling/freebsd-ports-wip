@@ -3,7 +3,8 @@
 PORTNAME=	ape
 PORTVERSION=	3.5.3
 CATEGORIES=	wip editors
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
+		http://outpaddling.mooo.com/~bacon/Acadix/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Another Programmer's Editor
