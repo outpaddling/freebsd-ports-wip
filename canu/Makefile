@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/README.license.GPL
 # BROKEN_armv7=		fails to install: mv: rename site_perl to /wrkdirs/usr/ports/biology/canu/work/canu-1.7/src/usr/local/FreeBSD-armv7/lib/perl5/site_perl: No such file or directory
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
-RUN_DEPENDS=	gnuplot:math/gnuplot
+# RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		compiler:openmp gmake perl5
 USE_JAVA=	yes
@@ -32,6 +32,14 @@ GH_ACCOUNT=	marbl
 WRKSRC_SUBDIR=	src
 # Makefile compiles directly into ${DESTDIR}${PREFIX}
 MAKE_ENV+=	DESTDIR=${WRKSRC}
+
+.include <bsd.port.pre.mk>
+
+# FIXME: Check for gcc 4.2.1 base compiler
+.if ${ARCH} == powerpc64
+USE_GCC=	yes
+LDFLAGS+=	-lgomp -lpthread
+.endif
 
 pre-configure:
 	${REINPLACE_CMD} \
@@ -61,4 +69,4 @@ do-install:
 	(cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && \
 		${COPYTREE_SHARE} "lib share" ${STAGEDIR}${PREFIX})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
