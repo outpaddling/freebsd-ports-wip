@@ -14,11 +14,13 @@ LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/README.license.GPL
 
 # These should be resolved, but this is untested.  The same issue, due to
 # differences between ${ARCH} and $(uname -m), was resolved for aarch64 by
-# patch-Makefile.
+# patch-Makefile.  Not sure if we should use BROKEN or ONLY_FOR_ARCHS here
+# as canu is probably only useful on 64-bit processors.
 # BROKEN_armv6=		fails to install: mv: rename site_perl to /wrkdirs/usr/ports/biology/canu/work/canu-1.7/src/usr/local/FreeBSD-armv6/lib/perl5/site_perl: No such file or directory
 # BROKEN_armv7=		fails to install: mv: rename site_perl to /wrkdirs/usr/ports/biology/canu/work/canu-1.7/src/usr/local/FreeBSD-armv7/lib/perl5/site_perl: No such file or directory
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
+# Disable temporarily for testing.  No binary package on powerpc64
 # RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		compiler:openmp gmake perl5
@@ -30,15 +32,16 @@ JAVA_VERSION=	1.8+
 GH_ACCOUNT=	marbl
 
 WRKSRC_SUBDIR=	src
-# Makefile compiles directly into ${DESTDIR}${PREFIX}
+# Odd upstream Makefile compiles directly into ${DESTDIR}${PREFIX} rather than
+# using a separate install target.
 MAKE_ENV+=	DESTDIR=${WRKSRC}
 
 .include <bsd.port.pre.mk>
 
-# FIXME: Check for gcc 4.2.1 base compiler
-# .if ${ARCH} == powerpc64
+# GCC 4.2.1 (still base compiler on some 2nd tier platforms) cannot build canu
 .if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
 USE_GCC=	yes
+# Suggested for powerpc64.  Is it necessary for other archs?
 LDFLAGS+=	-lgomp -lpthread
 .endif
 
