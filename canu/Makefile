@@ -36,7 +36,8 @@ MAKE_ENV+=	DESTDIR=${WRKSRC}
 .include <bsd.port.pre.mk>
 
 # FIXME: Check for gcc 4.2.1 base compiler
-.if ${ARCH} == powerpc64
+# .if ${ARCH} == powerpc64
+.if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
 USE_GCC=	yes
 LDFLAGS+=	-lgomp -lpthread
 .endif
