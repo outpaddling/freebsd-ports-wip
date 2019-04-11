@@ -33,8 +33,6 @@ MAKE_ENV+=	DESTDIR=${WRKSRC}
 # GCC 4.2.1 (still base compiler on some 2nd tier platforms) cannot build canu
 .if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
 USE_GCC=	yes
-# Suggested for powerpc64.  Is it necessary for other archs?
-LDFLAGS+=	-lgomp -lpthread
 .endif
 
 pre-configure:
