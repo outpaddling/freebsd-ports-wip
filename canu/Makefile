@@ -1,9 +1,9 @@
-# $FreeBSD: head/biology/canu/Makefile 487272 2018-12-12 01:35:33Z gerald $
+# $FreeBSD$
 
 PORTNAME=		canu
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.8
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		wip biology java perl5
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,16 +12,8 @@ COMMENT=	Single molecule sequence assembler
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/README.license.GPL
 
-# These should be resolved, but this is untested.  The same issue, due to
-# differences between ${ARCH} and $(uname -m), was resolved for aarch64 by
-# patch-Makefile.  Not sure if we should use BROKEN or ONLY_FOR_ARCHS here
-# as canu is probably only useful on 64-bit processors.
-# BROKEN_armv6=		fails to install: mv: rename site_perl to /wrkdirs/usr/ports/biology/canu/work/canu-1.7/src/usr/local/FreeBSD-armv6/lib/perl5/site_perl: No such file or directory
-# BROKEN_armv7=		fails to install: mv: rename site_perl to /wrkdirs/usr/ports/biology/canu/work/canu-1.7/src/usr/local/FreeBSD-armv7/lib/perl5/site_perl: No such file or directory
-
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
-# Disable temporarily for testing.  No binary package on powerpc64
-# RUN_DEPENDS=	gnuplot:math/gnuplot
+RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		compiler:openmp gmake perl5
 USE_JAVA=	yes
