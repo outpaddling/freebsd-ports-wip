@@ -1,6 +1,6 @@
 --- Makefile.orig	2018-10-22 16:47:31 UTC
 +++ Makefile
-@@ -481,67 +481,55 @@ endif
+@@ -481,68 +481,61 @@ endif
  
  
  ifeq (${OSTYPE}, FreeBSD)
@@ -11,47 +11,45 @@
 -  #  GCC
 -  CXXFLAGS  += -I/usr/local/include -D_GLIBCXX_PARALLEL -pthread -fopenmp -fPIC
 -  LDFLAGS   += -L/usr/local/lib     -D_GLIBCXX_PARALLEL -pthread -fopenmp -rpath /usr/local/lib/gcc48 -lm -lexecinfo
-+  #################################################
-+  # If compiling within ports system (recommended)
-+  #################################################
++  ifeq (${CANU_BUILD_ENV}, ports)
  
 -  #  CLANG
 -  #CXXFLAGS  += -I/usr/local/include -D_GLIBCXX_PARALLEL -pthread -fPIC
 -  #LDFLAGS   += -L/usr/local/lib     -D_GLIBCXX_PARALLEL -pthread -lm -lexecinfo -lgomp
-+  # Use architecture as defined by ports rather than uname
-+  # ${ARCH} matches uname -p, not uname -m
-+  MACHINETYPE=${ARCH}
++    #################################################
++    # If compiling within ports system (recommended)
++    #################################################
  
 -  #CXXFLAGS  += -Wall -Wextra -Wformat  -Wno-unused   -Wno-parentheses
 -  CXXFLAGS  += -Wall -Wextra -Wformat -Wno-unused-function -Wno-unused-parameter -Wno-unused-variable -Wno-char-subscripts -Wno-write-strings -Wno-sign-compare -Wno-format-truncation
-+  # Take compiler and most flags from the env and make command line
-+  CXXFLAGS  += -D_GLIBCXX_PARALLEL -fPIC -pthread -fopenmp
-+  LDFLAGS   += -D_GLIBCXX_PARALLEL -pthread -fopenmp
++    # Use architecture as defined by ports rather than uname
++    # ${ARCH} matches uname -p, not uname -m
++    MACHINETYPE=${ARCH}
  
 -  #  Google Performance Tools malloc and heapchecker (HEAPCHECK=normal)
 -  #CXXFLAGS  +=
 -  #LDFLAGS   += -ltcmalloc
-+  ######################################################
-+  # If compiling outside ports system (not recommended)
-+  ######################################################
++    # Take compiler and most flags from the env and make command line
++    CXXFLAGS  += -D_GLIBCXX_PARALLEL -fPIC -pthread -fopenmp
++    LDFLAGS   += -D_GLIBCXX_PARALLEL -pthread -fopenmp
  
 -  #  Google Performance Tools cpu profiler (CPUPROFILE=/path)
 -  #CXXFLAGS  +=
 -  #LDFLAGS   += -lprofiler
-+  # CC	?= cc
-+  # CXX	?= c++
++  else
  
 -  #  callgrind
 -  #CXXFLAGS  += -g3 -Wa,--gstabs -save-temps
-+  # CXXFLAGS  += -Wall -I/usr/local/include -D_GLIBCXX_PARALLEL -pthread -fopenmpo -fPIC
-+  # LDFLAGS   += -L/usr/local/lib -D_GLIBCXX_PARALLEL -pthread -fopenmp -lm -lexecinfo
++    ######################################################
++    # If compiling outside ports system (not recommended)
++    ######################################################
  
 -  ifeq ($(BUILDOPTIMIZED), 1)
 -  else
 -    CXXFLAGS += -g3
 -  endif
-+  # GCC 8
-+  # LDFLAGS   += -Wl,-rpath /usr/local/lib/gcc8
++    CC	?= gcc
++    CXX	?= g++
  
 -  ifeq ($(BUILDDEBUG), 1)
 -  else
@@ -59,48 +57,54 @@
 -  endif
 -endif
 -endif
-+  # CLANG
-+  # LDFLAGS   += -lgomp
++    CXXFLAGS  += -Wall -I/usr/local/include -D_GLIBCXX_PARALLEL -pthread -fopenmpo -fPIC
++    LDFLAGS   += -L/usr/local/lib -D_GLIBCXX_PARALLEL -pthread -fopenmp -lm -lexecinfo
  
-+  #  Google Performance Tools malloc and heapchecker (HEAPCHECK=normal)
-+  # CXXFLAGS  +=
-+  # LDFLAGS   += -ltcmalloc
++    # GCC 8
++    LDFLAGS   += -Wl,-rpath /usr/local/lib/gcc8
  
 -ifeq (${OSTYPE}, FreeBSD)
 -ifeq (${MACHINETYPE}, arm)
 -  CC       ?= gcc48
 -  CXX      ?= g++48
-+  #  Google Performance Tools cpu profiler (CPUPROFILE=/path)
-+  # CXXFLAGS  +=
-+  # LDFLAGS   += -lprofiler
++    # CLANG
++    # LDFLAGS   += -lgomp
  
 -  CXXFLAGS  += -I/usr/local/include -D_GLIBCXX_PARALLEL -pthread -fopenmp -fPIC
 -  LDFLAGS   += -L/usr/local/lib     -D_GLIBCXX_PARALLEL -pthread -fopenmp -rpath /usr/local/lib/gcc48 -lm
-+  #  callgrind
-+  # CXXFLAGS  += -g3 -Wa,--gstabs -save-temps
++    #  Google Performance Tools malloc and heapchecker (HEAPCHECK=normal)
++    # CXXFLAGS  +=
++    # LDFLAGS   += -ltcmalloc
  
 -  CXXFLAGS  += -Wall -Wextra -Wno-write-strings -Wno-unused -Wno-char-subscripts -Wno-sign-compare -Wformat -Wno-parentheses
 -  CXXFLAGS  += -funroll-loops -fomit-frame-pointer
 -  LDFLAGS   += 
-+  # ifeq ($(BUILDOPTIMIZED), 1)
-+  # else
-+  #   CXXFLAGS += -g3
-+  # endif
++    #  Google Performance Tools cpu profiler (CPUPROFILE=/path)
++    # CXXFLAGS  +=
++    # LDFLAGS   += -lprofiler
  
 -  ifeq ($(BUILDOPTIMIZED), 1)
 -  else
 -    CXXFLAGS += -g3
 -  endif
--
++    #  callgrind
++    # CXXFLAGS  += -g3 -Wa,--gstabs -save-temps
+ 
 -  ifeq ($(BUILDDEBUG), 1)
 -  else
 -    CXXFLAGS += -O4 -funroll-loops -fexpensive-optimizations -finline-functions -fomit-frame-pointer
--  endif
--endif
-+  # ifeq ($(BUILDDEBUG), 1)
-+  # else
-+  #   CXXFLAGS += -O3   -finline-functions -fomit-frame-pointer
-+  # endif
++    # ifeq ($(BUILDOPTIMIZED), 1)
++    # else
++    #   CXXFLAGS += -g3
++    # endif
++
++    # ifeq ($(BUILDDEBUG), 1)
++    # else
++    #   CXXFLAGS += -O3   -finline-functions -fomit-frame-pointer
++    # endif
+   endif
  endif
+-endif
  
  
+ ifneq (,$(findstring CYGWIN, ${OSTYPE}))

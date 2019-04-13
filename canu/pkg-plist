@@ -53,7 +53,6 @@ bin/tgTigDisplay
 bin/trimReads
 bin/utgcns
 bin/wtdbgConvert
-lib/libcanu.a
 %%SITE_PERL%%/canu/Configure.pm
 %%SITE_PERL%%/canu/Consensus.pm
 %%SITE_PERL%%/canu/CorrectReads.pm

@@ -26,7 +26,7 @@ GH_ACCOUNT=	marbl
 WRKSRC_SUBDIR=	src
 # Odd upstream Makefile compiles directly into ${DESTDIR}${PREFIX} rather than
 # using a separate install target.
-MAKE_ENV+=	DESTDIR=${WRKSRC}
+MAKE_ENV+=	DESTDIR=${WRKSRC} CANU_BUILD_ENV=ports
 
 .include <bsd.port.pre.mk>
 
@@ -61,6 +61,6 @@ do-install:
 	${STRIP_CMD} \
 		`file ${STAGEDIR}${PREFIX}/bin/* | ${GREP} ELF | cut -d : -f 1`
 	(cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && \
-		${COPYTREE_SHARE} "lib share" ${STAGEDIR}${PREFIX})
+		${COPYTREE_SHARE} "share" ${STAGEDIR}${PREFIX})
 
 .include <bsd.port.post.mk>
