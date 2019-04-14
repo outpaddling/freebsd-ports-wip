@@ -12,6 +12,7 @@ bin/condor-list-packages
 bin/is-login-node
 bin/slurm-cluster-load
 bin/slurm-find-strays
+bin/slurm-gui-job
 bin/slurm-job-hist
 bin/slurm-job-stats
 bin/slurm-job-status
