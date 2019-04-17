@@ -24,9 +24,9 @@ JAVA_VERSION=	1.8+
 GH_ACCOUNT=	marbl
 
 WRKSRC_SUBDIR=	src
-# Odd upstream Makefile compiles directly into ${DESTDIR}${PREFIX} rather than
+# Upstream Makefile compiles directly into ${DESTDIR}${PREFIX} rather than
 # using a separate install target.
-MAKE_ENV+=	DESTDIR=${WRKSRC} CANU_BUILD_ENV=ports
+MAKE_ENV=	DESTDIR=${WRKSRC} CANU_BUILD_ENV=ports
 
 .include <bsd.port.pre.mk>
 
@@ -36,14 +36,16 @@ USE_GCC=	yes
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e 's|-O4||g' \
 		-e 's|-funroll-loops||g' \
 		-e 's|-fexpensive-optimizations||g' \
 		${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's|\\$$bin/mhap-|${JAVAJARDIR}/mhap-|g' \
+	@${REINPLACE_CMD} \
+		-e 's|\\$$bin/mhap-|${JAVAJARDIR}/mhap-|g' \
 		${WRKSRC}/pipelines/canu/OverlapMhap.pm
-	${REINPLACE_CMD} -e 's|RealBin/lib|RealBin/../${SITE_PERL_REL}/canu|g' \
+	@${REINPLACE_CMD} \
+		-e 's|RealBin/lib|RealBin/../${SITE_PERL_REL}/canu|g' \
 		${WRKSRC}/pipelines/canu.pl
 
 # Upstream does not want to use lib/perl5/site_perl
@@ -58,7 +60,7 @@ do-install:
 		${COPYTREE_BIN} bin ${STAGEDIR}${PREFIX})
 	# STRIP_CMD fails without this on 11.1 under poudriere
 	@${CHMOD} u+w ${STAGEDIR}${PREFIX}/bin/*
-	${STRIP_CMD} \
+	@${STRIP_CMD} \
 		`file ${STAGEDIR}${PREFIX}/bin/* | ${GREP} ELF | cut -d : -f 1`
 	(cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && \
 		${COPYTREE_SHARE} "lib share" ${STAGEDIR}${PREFIX})
