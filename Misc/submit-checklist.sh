@@ -568,6 +568,11 @@ else
     People often assume the only supported platforms are those listed on
     the software's home page and that they should follow the (usually
     inadequate) instructions on the developer's site to install the software.
+    
+    Example:
+    
+    "Currently, GEMMA is supported for 64-bit Mac OS X and Linux platforms."
+    
     A simple note about using a package manager and a link to the ports site
     can do a lot to raise awareness of the advantages of FreeBSD ports and
     other package managers.
