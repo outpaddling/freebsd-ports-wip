@@ -323,10 +323,11 @@ EOM
 step
 cat << EOM
 
-If port requires a newer GCC than 4.2.1, add something like the following
+If port requires a newer GCC than 4.2.1, add the following
 for 2nd tier platforms that still use GCC 4.2 for the base:
 
-.if \${ARCH} != amd64 && \${ARCH} != i386
+# GCC 4.2.1 (still base compiler on some 2nd tier platforms) cannot build canu
+.if \${COMPILER_TYPE} == gcc && \${COMPILER_VERSION} <= 42
 USE_GCC=        yes
 .endif
 
