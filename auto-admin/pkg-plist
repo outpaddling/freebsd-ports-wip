@@ -43,6 +43,7 @@ sbin/auto-fastest-mirror
 sbin/auto-file-secure
 sbin/auto-harden
 sbin/auto-insert-line
+sbin/auto-install-infiniband-modules
 sbin/auto-install-linux_base
 sbin/auto-install-packages
 sbin/auto-ipfw-gateway-setup
@@ -84,6 +85,7 @@ sbin/auto-ssh-authorize
 sbin/auto-ssh-reverse-authorize
 sbin/auto-transfer-pw
 sbin/auto-unlock-user
+sbin/auto-update-infiniband-modules
 sbin/auto-update-port-framework
 sbin/auto-update-system
 sbin/auto-update-xorg.conf
