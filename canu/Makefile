@@ -61,6 +61,6 @@ do-install:
 	${STRIP_CMD} \
 		`file ${STAGEDIR}${PREFIX}/bin/* | ${GREP} ELF | cut -d : -f 1`
 	(cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && \
-		${COPYTREE_SHARE} "share" ${STAGEDIR}${PREFIX})
+		${COPYTREE_SHARE} "lib share" ${STAGEDIR}${PREFIX})
 
 .include <bsd.port.post.mk>
