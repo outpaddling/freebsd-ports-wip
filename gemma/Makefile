@@ -10,8 +10,18 @@ COMMENT=	Genome-wide Efficient Mixed Model Association
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
+LIB_DEPENDS=	libcblas.so:math/cblas \
+		libgsl.so:math/gsl \
+		libopenblas.so:math/openblas
+
+USES=		eigen:3 gmake localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	genetics-statistics
+
+MAKEFILE=	${FILESDIR}/Makefile
+CXXFLAGS+=	-I${LOCALBASE}/include/eigen3 -DOPENBLAS -DOPENBLAS_LEGACY
+LDFLAGS+=	-lopenblas
+
+PLIST_FILES=	bin/gemma
 
 .include <bsd.port.mk>
