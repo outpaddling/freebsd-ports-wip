@@ -41,6 +41,7 @@ sbin/auto-enable-service
 sbin/auto-fastest-mirror
 sbin/auto-file-secure
 sbin/auto-harden
+sbin/auto-idrac-passwd
 sbin/auto-insert-line
 sbin/auto-install-infiniband-modules
 sbin/auto-install-linux_base
