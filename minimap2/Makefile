@@ -1,9 +1,9 @@
 # $FreeBSD$
 
-PORTNAME=	minimap2
+PORTNAME=		minimap2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.16
-CATEGORIES=	wip
+DISTVERSION=		2.16
+CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Pairwise aligner for genomic and spliced nucleotide sequences
@@ -16,7 +16,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lh3
 
 INSTALL_TARGET=	install-strip
-
 PLIST_FILES=	bin/minimap2 man/man1/minimap2.1.gz
 
 .include <bsd.port.mk>
