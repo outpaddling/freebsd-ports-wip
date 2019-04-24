@@ -11,6 +11,10 @@ COMMENT=	Pairwise aligner for genomic and spliced nucleotide sequences
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+# Depends on hard-coded SSE instructions
+# There appears to be some support for AARCH64 as well
+ONLY_FOR_ARCHS=	amd64 i386
+
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	lh3
