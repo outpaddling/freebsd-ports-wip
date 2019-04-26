@@ -1,0 +1,27 @@
+# $FreeBSD: head/archivers/py-xopen/Makefile 496774 2019-03-24 20:05:14Z jwb $
+
+PORTNAME=	xopen
+DISTVERSION=	0.5.1
+CATEGORIES=	wip archivers python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	jwb@FreeBSD.org
+COMMENT=	Open compressed files transparently
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bz2file>=0.98:archivers/py-bz2file@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
+
+USES=		python:3.4+
+USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
+
+.include <bsd.port.mk>
