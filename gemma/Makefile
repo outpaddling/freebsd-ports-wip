@@ -11,10 +11,9 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcblas.so:math/cblas \
-		libgsl.so:math/gsl \
-		libopenblas.so:math/openblas
+		libgsl.so:math/gsl
 
-USES=		eigen:3 gmake localbase:ldflags
+USES=		blaslapack:openblas eigen:3 gmake localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	genetics-statistics
 
