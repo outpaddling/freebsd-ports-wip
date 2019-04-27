@@ -11,9 +11,9 @@ COMMENT=	Update ports tree with work-in-progress ports
 
 LICENSE=	BSD3CLAUSE
 
-NO_BUILD=	yes
-
 USES=		tar:xz
+
+NO_BUILD=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${STAGEDIR}${PREFIX}/sbin
