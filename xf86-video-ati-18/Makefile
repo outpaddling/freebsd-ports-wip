@@ -3,7 +3,8 @@
 PORTNAME=	xf86-video-ati
 PORTVERSION=	18.1.0
 PORTEPOCH=	1
-CATEGORIES=	x11-drivers
+CATEGORIES=	wip x11-drivers
+PKGNAMESUFFIX=	-18
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org ati display driver
@@ -20,6 +21,7 @@ LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess \
 
 CONFLICTS_INSTALL=	xf86-video-ati-legacy
 
+USES=		gl
 USE_GL=		gl
 XORG_CAT=	driver
 USE_XORG=	pciaccess
