@@ -75,7 +75,7 @@ sbin/cluster-transfer-pw
 sbin/cluster-unlock-user
 sbin/cluster-update-all-ssh_config
 sbin/cluster-update-backup-nodes
-sbin/cluster-update-io-nodes
+sbin/cluster-update-file-servers
 sbin/cluster-update-vis-nodes
 sbin/cluster-user-admin
 sbin/cluster-user-cleanup
