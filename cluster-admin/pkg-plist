@@ -2,14 +2,18 @@ bin/cluster-all-nodes
 bin/cluster-backup-nodes
 bin/cluster-compute-nodes
 bin/cluster-down-nodes
-bin/cluster-io-nodes
+bin/cluster-file-servers
 bin/cluster-passwd
+bin/cluster-pfs-nodes
 bin/cluster-pw-check
+bin/cluster-raid-nodes
 bin/cluster-vis-nodes
+bin/cluster-zfs-nodes
 bin/condor-build-R-packages
 bin/condor-cpus
 bin/condor-list-packages
 bin/is-login-node
+bin/psnode
 bin/slurm-cluster-load
 bin/slurm-find-strays
 bin/slurm-gui-job
@@ -79,7 +83,6 @@ sbin/cluster-useradd
 sbin/cluster-usermod
 sbin/cluster-users
 sbin/cluster-wip-update
-sbin/cluster-zfs-nodes
 sbin/condor-build-R-packages
 sbin/condor-list-packages
 sbin/node-sync-all-users
