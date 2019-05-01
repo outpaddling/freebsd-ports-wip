@@ -326,7 +326,7 @@ cat << EOM
 If port requires a newer GCC than 4.2.1, add the following
 for 2nd tier platforms that still use GCC 4.2 for the base:
 
-# GCC 4.2.1 (still base compiler on some 2nd tier platforms) cannot build canu
+# Force newer GCC on platforms using GCC 4.2 as base
 .if \${CHOSEN_COMPILER_TYPE} == gcc && \${COMPILER_VERSION} <= 42
 USE_GCC=        yes
 .endif
