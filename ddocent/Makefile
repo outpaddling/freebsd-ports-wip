@@ -32,7 +32,7 @@ RUN_DEPENDS=	unzip>=0:archivers/unzip \
 		pear-merger>=0:biology/pear-merger \
 		vcflib>=0:biology/vcflib \
 		freebayes:biology/freebayes \
-		fastp:wip/fastp
+		fastp:biology/fastp
 
 USES=		perl5 python shebangfix
 SHEBANG_FILES=	dDocent scripts/*.sh scripts/*.pl scripts/dDocent_filters
