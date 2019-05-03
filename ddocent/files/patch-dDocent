@@ -1,4 +1,4 @@
---- dDocent.orig	2019-05-03 12:23:54 UTC
+--- dDocent.orig	2019-05-03 12:59:20 UTC
 +++ dDocent
 @@ -1,5 +1,6 @@
  #!/usr/local/bin/bash
@@ -56,7 +56,7 @@
  
  if [[ "$OSTYPE" == "darwin"* ]]; then
  	NUMProc=( `sysctl hw.ncpu | cut -f2 -d " " `)
-+elif [[ "$OSTYPE} == FreeBSD ]]; then
++elif [[ "$OSTYPE" == "FreeBSD" ]]; then
 +	NUMProc=( `sysctl -n hw.ncpu` )
  else
  	NUMProc=( `grep -c ^processor /proc/cpuinfo 2> /dev/null` ) 
