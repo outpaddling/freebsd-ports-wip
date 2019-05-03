@@ -1,9 +1,9 @@
 # $FreeBSD: head/biology/ddocent/Makefile 467808 2018-04-20 01:34:05Z jwb $
 
-PORTNAME=	dDocent
+PORTNAME=		dDocent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.2
-CATEGORIES=	wip biology java
+DISTVERSION=		2.7.8
+CATEGORIES=		wip biology java
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Bash pipeline for RAD sequencing
@@ -48,7 +48,7 @@ post-install:
 	${REINPLACE_CMD} -i '' \
 		-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g' \
-		-e 's|%%BASH%%|${LOCALBASE}/bin/bash|g' \
+		-e 's|SHELL=bash|SHELL=${LOCALBASE}/bin/bash|g' \
 		-e 's|python|${PYTHON_CMD}|g' \
 		${STAGEDIR}${PREFIX}/bin/dDocent
 
