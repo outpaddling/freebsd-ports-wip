@@ -1,0 +1,24 @@
+--- Makefile.orig	2019-04-17 03:23:22 UTC
++++ Makefile
+@@ -3,9 +3,11 @@ DIR_SRC := ./src
+ DIR_OBJ := ./obj
+ 
+ PREFIX ?= /usr/local
++DESTDIR ?=
+ BINDIR ?= $(PREFIX)/bin
+ INCLUDE_DIRS ?=
+ LIBRARY_DIRS ?=
++STRIP_CMD ?= strip
+ 
+ SRC := $(wildcard ${DIR_SRC}/*.cpp)
+ OBJ := $(patsubst %.cpp,${DIR_OBJ}/%.o,$(notdir ${SRC}))
+@@ -38,5 +40,8 @@ make_obj_dir:
+ 	fi
+ 
+ install:
+-	install $(TARGET) $(BINDIR)/$(TARGET)
++	install $(TARGET) $(DESTDIR)$(BINDIR)/$(TARGET)
+ 	@echo "Installed."
++
++install-strip: install
++	$(STRIP_CMD) $(DESTDIR)$(BINDIR)/$(TARGET)
