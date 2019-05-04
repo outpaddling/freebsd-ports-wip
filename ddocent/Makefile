@@ -3,7 +3,7 @@
 PORTNAME=		dDocent
 DISTVERSIONPREFIX=	v
 DISTVERSION=		2.7.8
-CATEGORIES=		wip biology java
+CATEGORIES=		wip biology java perl5 python
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Bash pipeline for RAD sequencing
@@ -44,18 +44,8 @@ GH_ACCOUNT=	jpuritz
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-# These are on top of patch-dDocent, so don't apply them within the source
-# tree, or they'll get picked up by patch generators, and hard-code PREFIX.
-post-install:
-	${REINPLACE_CMD} -i '' \
-		-e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g' \
-		-e 's|SHELL=bash|SHELL=${LOCALBASE}/bin/bash|g' \
-		-e 's|python|${PYTHON_CMD}|g' \
-		${STAGEDIR}${PREFIX}/bin/dDocent
-
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/dDocent \
 		${WRKSRC}/*.sh \
@@ -65,5 +55,13 @@ do-install:
 		${WRKSRC}/scripts/*.pl \
 		${WRKSRC}/scripts/dDocent_filters \
 		${STAGEDIR}${PREFIX}/bin
+
+# These are on top of patch-dDocent, so don't apply them within the source
+# tree, or they'll get picked up by patch generators, and hard-code PREFIX.
+post-install:
+	@${REINPLACE_CMD} -i '' \
+		-e 's|SHELL=bash|SHELL=${LOCALBASE}/bin/bash|g' \
+		-e 's|python|${PYTHON_CMD}|g' \
+		${STAGEDIR}${PREFIX}/bin/dDocent
 
 .include <bsd.port.mk>
