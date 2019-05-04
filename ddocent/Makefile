@@ -35,9 +35,10 @@ RUN_DEPENDS=	unzip>=0:archivers/unzip \
 		fastp:biology/fastp
 
 USES=		perl5 python shebangfix
-SHEBANG_FILES=	dDocent scripts/*.sh scripts/*.pl scripts/dDocent_filters
 USE_JAVA=	yes
 USE_GITHUB=	yes
+
+SHEBANG_FILES=	dDocent scripts/*.sh scripts/*.pl scripts/dDocent_filters
 GH_ACCOUNT=	jpuritz
 
 NO_BUILD=	yes
