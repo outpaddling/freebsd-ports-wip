@@ -402,6 +402,13 @@ EOM
 step
 cat << EOM
 
+Respect WITH_DEBUG: install target should not strip binaries.
+
+EOM
+
+step
+cat << EOM
+
 pkg-plist:
 
 Check for conflicts with other ports.
