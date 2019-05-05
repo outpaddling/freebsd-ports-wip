@@ -2,7 +2,7 @@
 
 PORTNAME=		minimap2
 DISTVERSIONPREFIX=	v
-DISTVERSION=		2.16
+DISTVERSION=		2.17
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -18,6 +18,8 @@ ONLY_FOR_ARCHS=	amd64 i386
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	lh3
+
+MAKE_ARGS+=	CFLAGS+=-Wextra
 
 INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/minimap2 man/man1/minimap2.1.gz
