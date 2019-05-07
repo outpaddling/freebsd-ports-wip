@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-DISTVERSION=	18.08.6-2
+DISTVERSION=	18.08.7
 CATEGORIES=	wip sysutils
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
@@ -81,8 +81,17 @@ LINUX_USES=		linux
 # FreeBSD Infiniband support has not quite come of age yet
 CONFIGURE_ARGS=	--without-ofed
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
+
 CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
+
+.include <bsd.port.pre.mk>
+
+.if ${OSREL:R} == "11"
+PLIST_SUB+=	OSREL11="@comment "
+.else
+PLIST_SUB+=	OSREL11=""
+.endif
 
 # SLURM's configure enables interactive jobs if pty.h exists.  Replacing
 # #include <pty.h> with appropriate headers will therefore not work, so instead
@@ -93,6 +102,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|sched_setaffinity|cpuset_setaffinity|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/bin/mail|/usr/bin/mail|g' \
+		${WRKSRC}/src/common/read_config.h \
 		${WRKSRC}/contribs/seff/smail \
 		${WRKSRC}/doc/html/configurator.easy.html.in \
 		${WRKSRC}/doc/html/configurator.html.in \
@@ -134,20 +144,22 @@ post-patch-LINUX-on:
 		${WRKSRC}/contribs/cray/pam_job.c \
 		${WRKSRC}/contribs/lua/proctrack.lua
 
-pre-configure:
-	@if ${WHICH} sbatch > /dev/null; then \
-		${ECHO_CMD} "SLURM build may fail while slurm-wlm is installed."; \
-		${ECHO_CMD} "Deinstall slurm-wlm and run make again."; \
-		false; \
-	fi
-
 # Hack around nonfunctional --disable-gtktest flag
 post-patch-GUI-off:
 	@${REINPLACE_CMD} -e 's|min_gtk_version=.*|min_gtk_version=2000.0.0|' \
 		${WRKSRC}/configure
 
+pre-configure:
+	@if ${WHICH} sbatch > /dev/null; then \
+		${ECHO_CMD} "********************************************"; \
+		${ECHO_CMD} "Build may fail while slurm-wlm is installed."; \
+		${ECHO_CMD} "Deinstall slurm-wlm and run make again."; \
+		${ECHO_CMD} "********************************************"; \
+		false; \
+	fi
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/slurm.conf.example \
 		${STAGEDIR}${PREFIX}/etc/slurm.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

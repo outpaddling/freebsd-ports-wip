@@ -11,6 +11,10 @@
 %%HDF5%%man/man1/sh5util.1.gz
 %%IPMI%%lib/slurm/acct_gather_energy_ipmi.a
 %%IPMI%%lib/slurm/acct_gather_energy_ipmi.so
+%%IPMI%%lib/slurm/acct_gather_energy_xcc.a
+%%IPMI%%lib/slurm/acct_gather_energy_xcc.so
+%%OSREL11%%lib/slurm/acct_gather_interconnect_ofed.a
+%%OSREL11%%lib/slurm/acct_gather_interconnect_ofed.so
 %%MYSQL%%lib/slurm/accounting_storage_mysql.a
 %%MYSQL%%lib/slurm/accounting_storage_mysql.so
 %%MYSQL%%lib/slurm/jobcomp_mysql.a
@@ -286,8 +290,6 @@ lib/slurm/job_submit_defaults.a
 lib/slurm/job_submit_defaults.so
 lib/slurm/job_submit_logging.a
 lib/slurm/job_submit_logging.so
-lib/slurm/job_submit_lua.a
-lib/slurm/job_submit_lua.so
 lib/slurm/job_submit_partition.a
 lib/slurm/job_submit_partition.so
 lib/slurm/job_submit_pbs.a
@@ -354,8 +356,6 @@ lib/slurm/proctrack_cgroup.a
 lib/slurm/proctrack_cgroup.so
 lib/slurm/proctrack_linuxproc.a
 lib/slurm/proctrack_linuxproc.so
-lib/slurm/proctrack_lua.a
-lib/slurm/proctrack_lua.so
 lib/slurm/proctrack_pgid.a
 lib/slurm/proctrack_pgid.so
 lib/slurm/route_default.a
@@ -408,6 +408,10 @@ lib/slurm/topology_none.a
 lib/slurm/topology_none.so
 lib/slurm/topology_tree.a
 lib/slurm/topology_tree.so
+%%LUA_LIBDIR%%/slurm/job_submit_lua.a
+%%LUA_LIBDIR%%/slurm/job_submit_lua.so
+%%LUA_LIBDIR%%/slurm/proctrack_lua.a
+%%LUA_LIBDIR%%/slurm/proctrack_lua.so
 man/man1/sacct.1.gz
 man/man1/sacctmgr.1.gz
 man/man1/salloc.1.gz
