@@ -1,20 +1,23 @@
---- src/vsearch.h.orig	2018-02-16 17:08:01 UTC
+--- src/vsearch.h.orig	2019-04-30 11:57:32 UTC
 +++ src/vsearch.h
-@@ -123,29 +123,29 @@
- #include <windows.h>
- #include <psapi.h>
+@@ -138,10 +138,8 @@
+ #define bswap_32(x) _byteswap_ulong(x)
+ #define bswap_64(x) _byteswap_uint64(x)
  
 -#else
--
--#ifdef __APPLE__
-+#elif defined __APPLE__
++#elif defined(__APPLE__)
  
+-#ifdef __APPLE__
+-
  #define PROG_OS "macos"
  #include <sys/sysctl.h>
-+#include <sys/resource.h>
+ #include <libkern/OSByteOrder.h>
+@@ -149,20 +147,28 @@
+ #define bswap_32(x) OSSwapInt32(x)
+ #define bswap_64(x) OSSwapInt64(x)
  
 -#else
-+#elif defined __linux__
++#elif defined(__linux__)
  
 -#ifdef __linux__
  #define PROG_OS "linux"
@@ -24,20 +27,24 @@
 -
  #include <sys/sysinfo.h>
 +#include <sys/resource.h>
+ #include <byteswap.h>
  
 -#endif
-+#elif defined __FreeBSD__
++#elif defined(__FreeBSD__)
  
 +#define PROG_OS "freebsd"
 +#include <sys/sysinfo.h>
  #include <sys/resource.h>
- 
--#endif
-+#else
- 
-+#define PROG_OS "unknown"
 +
-+#endif
++#define bswap_16(x) bswap16(x)
++#define bswap_32(x) bswap32(x)
++#define bswap_64(x) bswap64(x)
++
++#else
++
++#define PROG_OS "unknown"
++#include <sys/sysinfo.h>
++#include <byteswap.h>
  
- #define PROG_ARCH PROG_OS "_" PROG_CPU
+ #endif
  

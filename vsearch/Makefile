@@ -2,7 +2,7 @@
 
 PORTNAME=	vsearch
 DISTVERSIONPREFIX=v
-DISTVERSION=	2.7.1
+DISTVERSION=	2.13.3
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,6 +14,7 @@ LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
 
 USES=		autoreconf gmake
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	torognes
 GNU_CONFIGURE=	yes
 
