@@ -13,14 +13,29 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libcblas.so:math/cblas \
 		libgsl.so:math/gsl
 
-USES=		blaslapack:openblas eigen:3 gmake localbase:ldflags
+USES=		compiler:c++11-lang eigen:3 gmake localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	genetics-statistics
 
 MAKEFILE=	${FILESDIR}/Makefile
-CXXFLAGS+=	-I${LOCALBASE}/include/eigen3 -DOPENBLAS -DOPENBLAS_LEGACY
-LDFLAGS+=	-lopenblas
+CXXFLAGS+=	-I${LOCALBASE}/include/eigen3
 
 PLIST_FILES=	bin/gemma
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64 || ${ARCH} == i386
+USES+=		blaslapack:openblas
+CXXFLAGS+=	-DOPENBLAS -DOPENBLAS_LEGACY
+LDFLAGS+=	-lopenblas
+.else
+USES+=		blaslapack:netlib
+LDFLAGS+=	-llapack -lblas -lcblas
+.endif
+
+# Force newer GCC on platforms using GCC 4.2 as base
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+USE_GCC=	yes
+.endif
+
+.include <bsd.port.post.mk>
