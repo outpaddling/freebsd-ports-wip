@@ -10,6 +10,8 @@ COMMENT=	Versatile open-source tool for metagenomics
 
 LICENSE=	GPLv3
 
+# Note: For PPC need power8 or later, little endian
+
 LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
 
 USES=		autoreconf gmake
