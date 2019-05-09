@@ -1,41 +1,32 @@
 # $FreeBSD$
 
-PORTNAME=	vsearch
-DISTVERSIONPREFIX=v
-DISTVERSION=	2.13.3
-CATEGORIES=	wip biology
+PORTNAME=		vsearch
+DISTVERSIONPREFIX=	v
+DISTVERSION=		2.13.3
+CATEGORIES=		wip biology
 
-# Note: For PPC need power8 or later, little endian
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Versatile open-source tool for metagenomics
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+# Note: For PPC need power8 or later, little endian
 ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64
 ONLY_FOR_ARCHS_REASON=	Explicitly enumerated by upstream developers
 
 LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
 
-USES=		autoreconf gmake
+USES=		autoreconf gmake localbase
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	torognes
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+PLIST_FILES=	bin/vsearch man/man1/vsearch.1.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == i386
-# sse2 required to compile on non-ppc archs, off by default for i386
-# configure script doesn't respect CXXFLAGS - report to upstream
-CPPFLAGS+=	-msse2
-.endif
-
-PLIST_FILES=	bin/vsearch man/man1/vsearch.1.gz
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
