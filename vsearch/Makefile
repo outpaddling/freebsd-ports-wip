@@ -5,12 +5,11 @@ DISTVERSIONPREFIX=v
 DISTVERSION=	2.13.3
 CATEGORIES=	wip biology
 
+# Note: For PPC need power8 or later, little endian
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Versatile open-source tool for metagenomics
 
 LICENSE=	GPLv3
-
-# Note: For PPC need power8 or later, little endian
 
 LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
 

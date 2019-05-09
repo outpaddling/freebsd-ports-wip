@@ -1,3 +1,7 @@
+$NetBSD$
+
+# Portability
+
 --- src/city.cc.orig	2019-04-30 11:57:32 UTC
 +++ src/city.cc
 @@ -60,6 +60,13 @@ static uint32 UNALIGNED_LOAD32(const char *p) {
