@@ -63,12 +63,14 @@ hisat2
 Sent patches upstream but not confirmed accepted
 ------------------------------------------------
 
+https://github.com/torognes/vsearch/issues/361
 
 ----------------------------------------------------------------------
 Requested citing installation via FreeBSD ports on developer's website
 but not confirmed.
 ----------------------------------------------------------------------
 
+https://github.com/torognes/vsearch/issues/372
 http://hmmer.janelia.org/software
 condor-admin@cs.wisc.edu
 
