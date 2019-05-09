@@ -30,6 +30,7 @@ pause()
     read junk
 }
 
+: ${PORTSDIR:=/usr/ports}
 clear
 if ! fgrep -q DEVELOPER=yes /etc/make.conf; then
     printf "Consider adding DEVELOPER=yes to /etc/make.conf.\n"
