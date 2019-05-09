@@ -11,6 +11,9 @@ COMMENT=	Versatile open-source tool for metagenomics
 
 LICENSE=	GPLv3
 
+ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64
+ONLY_FOR_ARCHS_REASON=	Explicitly enumerated by upstream developers
+
 LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
 
 USES=		autoreconf gmake
