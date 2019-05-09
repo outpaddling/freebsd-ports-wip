@@ -1,11 +1,10 @@
-The aim of this project is to create an alternative to the USEARCH tool
-developed by Robert C. Edgar (2010). The new tool should:
+VSEARCH supports de novo and reference based chimera detection, clustering,
+full-length and prefix dereplication, rereplication, reverse complementation,
+masking, all-vs-all pairwise global alignment, exact and global alignment
+searching, shuffling, subsampling and sorting. It also supports FASTQ file
+analysis, filtering, conversion and merging of paired-end reads.
 
-    o have open source code with an appropriate open source license
-    o be free of charge, gratis
-    o have a 64-bit design that handles very large databases and much more
-      than 4GB of memory
-    o be as accurate as or more accurate than usearch
-    o be as fast as or faster than usearch
+The aim of this project is to create an alternative to the USEARCH tool
+developed by Robert C. Edgar (2010).
 
 WWW: https://github.com/torognes/vsearch
