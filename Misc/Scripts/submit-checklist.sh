@@ -192,6 +192,14 @@ EOM
 step
 cat << EOM
 
+Check developer website for optional dependencies not flagged by portlint
+or QA.
+
+EOM
+
+step
+cat << EOM
+
 Check versions of all depends
     Be as generic as possible
 
