@@ -104,8 +104,15 @@ pre-configure:
 		${WRKSRC}/to3d.c \
 		${WRKSRC}/mri_dicom_stuff.h
 
-# FIXME: Merge this into do-install or the Makefile?
-post-build:
+do-install:
+	# AFNI just dumps everything into one flat directory
+	# Preserve original install dir and make a copy to pick apart
+	${RM} -r ${INSTALL_WRKSRC}-temp
+	${CP} -R ${INSTALL_WRKSRC} ${INSTALL_WRKSRC}-temp
+
+	# Clean up and organize files into ${PRESTAGE}, destroying
+	# temp dir in the process
+	${RM} -rf ${PRESTAGE}
 	@${MKDIR} ${PRESTAGE}/bin \
 		${PRESTAGE}/scripts \
 		${PRESTAGE}/lib \
@@ -113,27 +120,25 @@ post-build:
 		${PRESTAGE}/trash \
 		${PRESTAGE}/doc \
 		${PRESTAGE}/share
-	${MV}	${INSTALL_WRKSRC}/libf2c.a \
-		${PRESTAGE}/trash
-	${MV}	${INSTALL_WRKSRC}/*.a \
-		${INSTALL_WRKSRC}/*.so \
+	${RM}	${INSTALL_WRKSRC}-temp/libf2c.a
+	${MV}	${INSTALL_WRKSRC}-temp/*.a \
+		${INSTALL_WRKSRC}-temp/*.so \
 		${PRESTAGE}/lib
-	${MV}	${INSTALL_WRKSRC}/funstuff \
-		${INSTALL_WRKSRC}/AFNI.*rc \
-		${INSTALL_WRKSRC}/afnigui* \
+	${MV}	${INSTALL_WRKSRC}-temp/funstuff \
+		${INSTALL_WRKSRC}-temp/AFNI.*rc \
+		${INSTALL_WRKSRC}-temp/afnigui* \
 		${PRESTAGE}/share
-	${MV}	${INSTALL_WRKSRC}/*.h \
-		${PRESTAGE}/include
-	${MV}	${INSTALL_WRKSRC}/README* \
-		${PRESTAGE}/doc
-	for binary in `${FILE} ${INSTALL_WRKSRC}/* | fgrep 'ELF' | ${AWK} -F ':' ' { print $$1 }'` ; do \
+	${MV}	${INSTALL_WRKSRC}-temp/*.h ${PRESTAGE}/include
+	${CP}	${WRKDIR}/afni-AFNI_${PORTVERSION}/doc/README* ${PRESTAGE}/doc
+	for binary in `${FILE} ${INSTALL_WRKSRC}-temp/* | fgrep 'ELF' | ${AWK} -F ':' ' { print $$1 }'` ; do \
 		${MV} $${binary} ${PRESTAGE}/bin ; \
 	done
-	${MV}	${INSTALL_WRKSRC}/* \
-		${PRESTAGE}/scripts
+	${MV}	${INSTALL_WRKSRC}-temp/* ${PRESTAGE}/scripts
 	${MV}	${PRESTAGE}/scripts/meica.libs ${PRESTAGE}
+	${MV}	${PRESTAGE}/scripts/lib_RetroTS ${PRESTAGE}
+	${MV}	${PRESTAGE}/scripts/shiny ${PRESTAGE}
 
-do-install:
+	# Proper installation to destdir
 	@${MKDIR} ${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${PREFIX}/lib/afni \
 		${STAGEDIR}${PREFIX}/include/afni
@@ -145,7 +150,7 @@ do-install:
 	cd ${PRESTAGE}/share && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${PRESTAGE}/bin/* ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${PRESTAGE}/scripts/* ${STAGEDIR}${PREFIX}/bin
-	cd ${PRESTAGE} && ${COPYTREE_BIN} meica.libs \
+	cd ${PRESTAGE} && ${COPYTREE_BIN} meica.libs lib_RetroTS shiny \
 		${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_DATA} ${WRKSRC}/Atlases/* ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/afni.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
