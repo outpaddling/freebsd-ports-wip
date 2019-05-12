@@ -10,7 +10,7 @@
 
 PORTNAME=	afni
 DISTVERSIONPREFIX=	AFNI_
-DISTVERSION=	18.3.16
+DISTVERSION=	19.1.08
 CATEGORIES=	wip science biology graphics
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -36,12 +36,9 @@ CONFLICTS=	im-[0-9]* \
 		nifticlib-[0-9]* \
 		open-usp-tukubai-[0-9]*
 
-USES=		cmake gettext gl gmake gnome iconv jpeg:run motif perl5 python shebangfix tar:xz
-SHEBANG_FILES=	src/suma_change_spec \
-		src/3dPAR2AFNI.pl \
-		src/python_scripts/afni_restproc.py \
-		src/python_scripts/lib_fat_Rfactor.py \
-		src/pkundu/meica.libs/siemens_me2nii.py
+USES=		gettext gl gmake gnome iconv jpeg:run motif perl5 python shebangfix tar:xz
+SHEBANG_FILES=	scripts_install/3dPAR2AFNI.pl \
+		python_scripts/afni_python/*.py
 USE_GNOME=	glib20
 USE_GITHUB=	yes
 
@@ -54,6 +51,7 @@ USE_XORG=	x11 xext xi xmu xp xt
 MAKE_ENV=	CC="${CC}" R_SHARE_DIR=${LOCALBASE}/lib/R/share
 MAKE_JOBS_UNSAFE=yes
 
+WRKSRC_SUBDIR=	src
 ALL_TARGET=	vastness suma
 
 ###########################################################################
@@ -64,17 +62,17 @@ SUB_FILES=	pkg-message afni.cshrc afni.profile
 INSTALL_WRKSRC=	${WRKSRC}/BSD
 PRESTAGE=	${WRKSRC}/prestage
 
-X11R6_FILES=	src/coxplot/Makefile \
-		src/coxplot/Makefile.f2c \
-		src/3DEdge/src/Makefile \
-		src/SUMA/SUMA_Makefile \
-		src/edt_blur.c \
-		src/suma_datasets.c \
-		src/SUMA/SUMA_Load_Surface_Object.c \
-		src/SUMA/SUMA_MiscFunc.c \
-		src/SUMA/SUMA_ParseCommands.c \
-		src/SUMA/GLUT/libglut/glut_event.c \
-		src/SUMA/SUMA_Surface_IO.c
+X11R6_FILES=	coxplot/Makefile \
+		coxplot/Makefile.f2c \
+		3DEdge/src/Makefile \
+		SUMA/SUMA_Makefile \
+		edt_blur.c \
+		suma_datasets.c \
+		SUMA/SUMA_Load_Surface_Object.c \
+		SUMA/SUMA_MiscFunc.c \
+		SUMA/SUMA_ParseCommands.c \
+		SUMA/GLUT/libglut/glut_event.c \
+		SUMA/SUMA_Surface_IO.c
 
 post-extract:
 .for f in ${X11R6_FILES}
@@ -82,7 +80,8 @@ post-extract:
 		-e 's|/usr/X11R6|$${LOCALBASE}|g' ${WRKSRC}/${f}
 .endfor
 	@${REINPLACE_CMD} \
-		-E 's|AFNI_[0-9_]+|${PORTVERSION}|g' ${WRKSRC}/src/AFNI_label.h
+		-E 's|AFNI_[0-9_]+|${PORTVERSION}|g' ${WRKSRC}/AFNI_label.h
+	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	@${RM} ${WRKSRC}/3DEdge/src/Makefile.orig
 
 # shebangfix misses /bin/python on 10.1
@@ -90,7 +89,7 @@ pre-configure:
 	${REINPLACE_CMD} -e "s|-lglib|-lglib-2.0|g" \
 		${WRKSRC}/SUMA/SUMA_Makefile
 	${REINPLACE_CMD} -e "s|/bin/python|${PYTHON_CMD}|g" \
-		${WRKSRC}/python_scripts/lib_fat_Rfactor.py
+		${WRKSRC}/python_scripts/afni_python/lib_fat_Rfactor.py
 	${REINPLACE_CMD} \
 		-e 's|os\.path\.dirname(sys\.argv\[0\])|"${PREFIX}/libexec"|g' \
 		${WRKSRC}/pkundu/meica.py
