@@ -1,22 +1,16 @@
-# $FreeBSD: head/science/afni/Makefile 427397 2016-11-29 21:15:41Z jrm $
+# $FreeBSD$
 
-############################################################################
-# http://www.neuro.mcw.edu/Ports has the latest source distribution from
-#  which this port is built.  It will be updated as time permits.
-#
-# afni.nimh.nih.gov is the ultimate source for AFNI, and will always
-# contain the latest source release.  If this port is not up to date,
-# you can download the latest sources and build manually.
-
-PORTNAME=	afni
+PORTNAME=		afni
 DISTVERSIONPREFIX=	AFNI_
-DISTVERSION=	19.1.08
-CATEGORIES=	wip science biology graphics
+DISTVERSION=		19.1.08
+CATEGORIES=		wip science biology graphics
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Advanced Functional Neuro Imaging
 
 LICENSE=	GPLv2
+
+BROKEN_sparc64=	Does not compile: "undefined reference to '_mcount'"
 
 BUILD_DEPENDS=	gm4:devel/m4 \
 		R:math/R
@@ -32,28 +26,22 @@ RUN_DEPENDS=	endian:sysutils/endian \
 		qhull:math/qhull5 \
 		R:math/R
 
-CONFLICTS=	im-[0-9]* \
-		nifticlib-[0-9]* \
-		open-usp-tukubai-[0-9]*
+USES=		gettext gl gmake gnome iconv jpeg:run motif perl5 python \
+		shebangfix tar:xz
+USE_GNOME=	glib20
+USE_GITHUB=	yes
 
-USES=		gettext gl gmake gnome iconv jpeg:run motif perl5 python shebangfix tar:xz
 SHEBANG_FILES=	scripts_install/* \
 		python_scripts/afni_python/*.py \
 		jzosky/*.py \
 		jzosky/lib_RetroTS/*.py \
 		discoraj/ClusterExplorer/*.py \
 		roopchansinghv/PsychoPy-NeuroFeedback-Demo/*.py \
-		roopchansinghv/PsychoPy-NeuroFeedback-Demo/afniInterfaceRT/*.py \
+		roopchansinghv/PsychoPy-NeuroFeedback-Demo/*/*.py \
 		pkundu/*.py \
 		pkundu/meica.libs/*.py \
 		pkundu/meica.libs/*/*.py \
 		pkundu/meica.libs/*/*/*.py
-USE_GNOME=	glib20
-USE_GITHUB=	yes
-
-.include <bsd.port.options.mk>
-
-BROKEN_sparc64=	Does not compile: "undefined reference to '_mcount'"
 
 USE_GL=		gl glu glw
 USE_XORG=	x11 xext xi xmu xp xt
@@ -83,6 +71,14 @@ X11R6_FILES=	coxplot/Makefile \
 		SUMA/SUMA_ParseCommands.c \
 		SUMA/GLUT/libglut/glut_event.c \
 		SUMA/SUMA_Surface_IO.c
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+CONFLICTS=	im-[0-9]* \
+		nifticlib-[0-9]* \
+		open-usp-tukubai-[0-9]*
 
 post-extract:
 .for f in ${X11R6_FILES}
@@ -161,8 +157,10 @@ do-install:
 	${INSTALL_DATA} ${PRESTAGE}/lib/* ${STAGEDIR}${PREFIX}/lib/afni
 	${INSTALL_DATA} ${PRESTAGE}/include/* ${STAGEDIR}${PREFIX}/include/afni
 	(cd ${PRESTAGE}/share && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
-	${INSTALL_DATA} ${PRESTAGE}/doc/* ${STAGEDIR}${DOCSDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/afni.cshrc ${WRKDIR}/afni.profile \
 		${STAGEDIR}${PREFIX}/etc/mri
+
+do-install-DOCS-on:
+	${INSTALL_DATA} ${PRESTAGE}/doc/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
