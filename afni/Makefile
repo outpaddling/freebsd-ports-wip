@@ -37,8 +37,17 @@ CONFLICTS=	im-[0-9]* \
 		open-usp-tukubai-[0-9]*
 
 USES=		gettext gl gmake gnome iconv jpeg:run motif perl5 python shebangfix tar:xz
-SHEBANG_FILES=	scripts_install/3dPAR2AFNI.pl \
-		python_scripts/afni_python/*.py
+SHEBANG_FILES=	scripts_install/* \
+		python_scripts/afni_python/*.py \
+		jzosky/*.py \
+		jzosky/lib_RetroTS/*.py \
+		discoraj/ClusterExplorer/*.py \
+		roopchansinghv/PsychoPy-NeuroFeedback-Demo/*.py \
+		roopchansinghv/PsychoPy-NeuroFeedback-Demo/afniInterfaceRT/*.py \
+		pkundu/*.py \
+		pkundu/meica.libs/*.py \
+		pkundu/meica.libs/*/*.py \
+		pkundu/meica.libs/*/*/*.py
 USE_GNOME=	glib20
 USE_GITHUB=	yes
 
@@ -60,6 +69,7 @@ ALL_TARGET=	vastness suma
 SUB_FILES=	pkg-message afni.cshrc afni.profile
 
 INSTALL_WRKSRC=	${WRKSRC}/BSD
+INSTALL_TMP=	${INSTALL_WRKSRC}-temp
 PRESTAGE=	${WRKSRC}/prestage
 
 X11R6_FILES=	coxplot/Makefile \
@@ -91,7 +101,7 @@ pre-configure:
 	${REINPLACE_CMD} -e "s|/bin/python|${PYTHON_CMD}|g" \
 		${WRKSRC}/python_scripts/afni_python/lib_fat_Rfactor.py
 	${REINPLACE_CMD} \
-		-e 's|os\.path\.dirname(sys\.argv\[0\])|"${PREFIX}/libexec"|g' \
+		-e 's|os\.path\.dirname(sys\.argv\[0\])|"${DATADIR}"|g' \
 		${WRKSRC}/pkundu/meica.py
 	${REINPLACE_CMD} \
 		-e 's|g_info|afni_g_info|g' \
@@ -106,12 +116,12 @@ pre-configure:
 
 do-install:
 	# AFNI just dumps everything into one flat directory
-	# Preserve original install dir and make a copy to pick apart
-	${RM} -r ${INSTALL_WRKSRC}-temp
-	${CP} -R ${INSTALL_WRKSRC} ${INSTALL_WRKSRC}-temp
+	# Preserve original install dir and make a sacrificial temp copy
+	${RM} -r ${INSTALL_TMP}
+	${CP} -R ${INSTALL_WRKSRC} ${INSTALL_TMP}
 
 	# Clean up and organize files into ${PRESTAGE}, destroying
-	# temp dir in the process
+	# temp copy in the process
 	${RM} -rf ${PRESTAGE}
 	@${MKDIR} ${PRESTAGE}/bin \
 		${PRESTAGE}/scripts \
@@ -120,41 +130,37 @@ do-install:
 		${PRESTAGE}/trash \
 		${PRESTAGE}/doc \
 		${PRESTAGE}/share
-	${RM}	${INSTALL_WRKSRC}-temp/libf2c.a
-	${MV}	${INSTALL_WRKSRC}-temp/*.a \
-		${INSTALL_WRKSRC}-temp/*.so \
-		${PRESTAGE}/lib
-	${MV}	${INSTALL_WRKSRC}-temp/funstuff \
-		${INSTALL_WRKSRC}-temp/AFNI.*rc \
-		${INSTALL_WRKSRC}-temp/afnigui* \
+	${RM}	${INSTALL_TMP}/libf2c.a
+	${MV}	${INSTALL_TMP}/meica.libs \
+		${INSTALL_TMP}/shiny \
+		${INSTALL_TMP}/lib_RetroTS \
+		${INSTALL_TMP}/afniInterfaceRT \
+		${INSTALL_TMP}/funstuff \
+		${INSTALL_TMP}/AFNI.*rc \
+		${INSTALL_TMP}/afnigui* \
 		${PRESTAGE}/share
-	${MV}	${INSTALL_WRKSRC}-temp/*.h ${PRESTAGE}/include
-	${CP}	${WRKDIR}/afni-AFNI_${PORTVERSION}/doc/README* ${PRESTAGE}/doc
-	for binary in `${FILE} ${INSTALL_WRKSRC}-temp/* | fgrep 'ELF' | ${AWK} -F ':' ' { print $$1 }'` ; do \
+	${MV}	${INSTALL_TMP}/*.a \
+		${INSTALL_TMP}/*.so \
+		${PRESTAGE}/lib
+	${MV}	${INSTALL_TMP}/*.h ${PRESTAGE}/include
+	${CP}	${WRKDIR}/afni-AFNI_${PORTVERSION}/doc/README/* ${PRESTAGE}/doc
+	for binary in `${FILE} ${INSTALL_TMP}/* | fgrep 'ELF' | ${AWK} -F ':' ' { print $$1 }'` ; do \
 		${MV} $${binary} ${PRESTAGE}/bin ; \
 	done
-	${MV}	${INSTALL_WRKSRC}-temp/* ${PRESTAGE}/scripts
-	${MV}	${PRESTAGE}/scripts/meica.libs ${PRESTAGE}
-	${MV}	${PRESTAGE}/scripts/lib_RetroTS ${PRESTAGE}
-	${MV}	${PRESTAGE}/scripts/shiny ${PRESTAGE}
+	${MV}	${INSTALL_TMP}/* ${PRESTAGE}/scripts
 
-	# Proper installation to destdir
-	@${MKDIR} ${STAGEDIR}${DATADIR} \
+	# Install to stagedir using proper tools
+	@${MKDIR} \
+		${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${PREFIX}/lib/afni \
-		${STAGEDIR}${PREFIX}/include/afni
-	for f in ${PRESTAGE}/lib/*; do \
-		${STRIP_CMD} $${f}; \
-	done
-	${INSTALL_DATA} ${PRESTAGE}/lib/* ${STAGEDIR}${PREFIX}/lib/afni
-	${INSTALL_DATA} ${PRESTAGE}/include/* ${STAGEDIR}${PREFIX}/include/afni
-	cd ${PRESTAGE}/share && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+		${STAGEDIR}${PREFIX}/include/afni \
+		${STAGEDIR}${DOCSDIR} \
+		${STAGEDIR}${PREFIX}/etc/mri
 	${INSTALL_PROGRAM} ${PRESTAGE}/bin/* ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${PRESTAGE}/scripts/* ${STAGEDIR}${PREFIX}/bin
-	cd ${PRESTAGE} && ${COPYTREE_BIN} meica.libs lib_RetroTS shiny \
-		${STAGEDIR}${PREFIX}/libexec
-	${INSTALL_DATA} ${WRKSRC}/Atlases/* ${STAGEDIR}${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/afni.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${PREFIX}/etc/mri
+	${INSTALL_DATA} ${PRESTAGE}/lib/* ${STAGEDIR}${PREFIX}/lib/afni
+	${INSTALL_DATA} ${PRESTAGE}/include/* ${STAGEDIR}${PREFIX}/include/afni
+	(cd ${PRESTAGE}/share && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	${INSTALL_DATA} ${PRESTAGE}/doc/* ${STAGEDIR}${DOCSDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/afni.cshrc ${WRKDIR}/afni.profile \
 		${STAGEDIR}${PREFIX}/etc/mri
