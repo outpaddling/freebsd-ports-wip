@@ -5,7 +5,7 @@
  ## them are Open Source programs, not from the AFNI group at all.
  
 -EXTRAS   = cjpeg djpeg whirlgif mpeg_encode myget Xphace rmz aiv mycat quotize $(EXPROGS)
-+EXTRAS   = 3dClustBust whirlgif myget Xphace rmz aiv mycat quotize $(EXPROGS)
++EXTRAS   = whirlgif myget Xphace rmz aiv mycat quotize $(EXPROGS)
  
  # mpegtoppm in above list
  
@@ -63,17 +63,16 @@
  	        | tr ' ' '\n' >> ___plist_bin.txt
  	cat ___plist_bin.txt | LC_COLLATE=C sort | uniq > prog_list_bin.txt
  	\rm -f ___plist_bin.txt
-@@ -413,6 +413,9 @@ byteorder:byteorder.o
- 3dbuc2fim:3dbuc2fim.o
- 	$(CC) -o 3dbuc2fim 3dbuc2fim.o $(LFLAGS) $(LLIBS)
+@@ -2884,7 +2884,7 @@ r_misc.o: rickr/r_misc.c rickr/r_misc.h
  
-+3dClustBust:3dClustBust.c
-+	$(CC) -o 3dClustBust 3dClustBust.c $(INFLAGS) $(LFLAGS) $(LLIBS)
-+
- mritopgm:mritopgm.c
- 	$(CC) -o mritopgm mritopgm.c $(INFLAGS) $(LFLAGS) $(LLIBS)
+ dcm2niix_afni:
+ 	( cd crorden/dcm2niix_console ;		\
+-	  make ;				\
++	  $(MAKE) ;				\
+ 	  $(MV) dcm2niix ../../dcm2niix_afni ; 	\
+ 	  cd ../../ ; )
  
-@@ -3108,8 +3111,8 @@ libjpeg.a:
+@@ -3108,8 +3108,8 @@ libjpeg.a:
            $(MAKE) clean ; $(RM) Makefile )
  
  libXmHTML.a:
@@ -84,7 +83,7 @@
  
  xutil_webber.o:xutil_webber.c
  	$(CC) -c xutil_webber.c -I./XmHTML/include $(INFLAGS)
-@@ -3920,9 +3923,10 @@ toyR: toyR.c AFNI_embeddedRCall.o
+@@ -3920,9 +3920,10 @@ toyR: toyR.c AFNI_embeddedRCall.o
  ####
  R_io.so:R_io.c $(LIBMRI_OBJ)
  	( if which R >/dev/null ; then \
