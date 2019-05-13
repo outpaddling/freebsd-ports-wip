@@ -47,9 +47,7 @@ $pkg_name has been committed to the FreeBSD ports collection.
 It might be helpful to users if you could post a message like
 the following on your website:
 
-Regards,
-
-    [Your name]
+Thanks!
 
 $pkg_name can be installed on FreeBSD via the FreeBSD ports system.
 
