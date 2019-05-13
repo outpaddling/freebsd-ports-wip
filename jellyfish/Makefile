@@ -1,7 +1,7 @@
-# $FreeBSD: head/biology/jellyfish/Makefile 500752 2019-05-03 21:06:51Z linimon $
+# $FreeBSD$
 
 PORTNAME=		jellyfish
-PORTVERSION=		2.2.6
+PORTVERSION=		2.2.10
 DISTVERSIONPREFIX=	v
 PORTREVISION=		5
 CATEGORIES=		wip biology
@@ -13,13 +13,13 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	yaggo:devel/yaggo
-
-GNU_CONFIGURE=	yes
+LIB_DEPENDS=	libhts.so:biology/htslib
 
 USES=		autoreconf compiler:c++11-lib gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-
 USE_GITHUB=	yes
+
+GNU_CONFIGURE=	yes
 GH_ACCOUNT=	gmarcais
 GH_PROJECT=	Jellyfish
 
