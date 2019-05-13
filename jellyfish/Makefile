@@ -1,8 +1,8 @@
 # $FreeBSD$
 
-PORTNAME=		jellyfish
-PORTVERSION=		2.2.10
+PORTNAME=		Jellyfish
 DISTVERSIONPREFIX=	v
+DISTVERSION=		2.2.10
 PORTREVISION=		5
 CATEGORIES=		wip biology
 
@@ -21,11 +21,15 @@ USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 GH_ACCOUNT=	gmarcais
-GH_PROJECT=	Jellyfish
 
 INSTALL_TARGET=	install-strip
-
 PLIST_SUB=	VER=${PORTVERSION}
+
+OPTIONS_DEFINE=		NLS
+OPTIONS_SUB=		yes
+
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.pre.mk>
 
