@@ -17,8 +17,8 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libmunge.so:security/munge \
 		liblz4.so:archivers/liblz4
 
-USES=		gmake gnome libtool lua pkgconfig python:build readline:port \
-		shebangfix ssl tar:bz2
+USES=		compiler:c11 gmake gnome libtool lua pkgconfig python:build \
+		readline:port shebangfix ssl tar:bz2
 USE_LDCONFIG=	yes
 USE_PERL5=	configure
 USE_RC_SUBR=	slurmctld slurmd
@@ -86,6 +86,11 @@ CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
 
 .include <bsd.port.pre.mk>
+
+# Force newer GCC on platforms using GCC 4.2 as base
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+USE_GCC=	yes
+.endif
 
 # Hack around nonfunctional --disable-gtktest flag
 pre-configure-GUI-off:
