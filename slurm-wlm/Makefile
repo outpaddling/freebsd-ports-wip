@@ -6,7 +6,7 @@ CATEGORIES=	wip sysutils
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Simple Linux Utility for Resource Management
 
 LICENSE=	GPLv2+
@@ -78,7 +78,7 @@ LINUX_USES=		linux
 
 # --docdir is non-functional
 # CONFIGURE_ARGS=	--docdir=${DOCSDIR}
-# FreeBSD Infiniband support has not quite come of age yet
+# FreeBSD Infiniband support is still experimental
 CONFIGURE_ARGS=	--without-ofed
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
 
@@ -86,12 +86,6 @@ CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
 
 .include <bsd.port.pre.mk>
-
-.if ${OSREL:R} == "11"
-PLIST_SUB+=	OSREL11="@comment "
-.else
-PLIST_SUB+=	OSREL11=""
-.endif
 
 # SLURM's configure enables interactive jobs if pty.h exists.  Replacing
 # #include <pty.h> with appropriate headers will therefore not work, so instead

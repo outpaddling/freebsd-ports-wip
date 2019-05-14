@@ -13,8 +13,6 @@
 %%IPMI%%lib/slurm/acct_gather_energy_ipmi.so
 %%IPMI%%lib/slurm/acct_gather_energy_xcc.a
 %%IPMI%%lib/slurm/acct_gather_energy_xcc.so
-%%OSREL11%%lib/slurm/acct_gather_interconnect_ofed.a
-%%OSREL11%%lib/slurm/acct_gather_interconnect_ofed.so
 %%MYSQL%%lib/slurm/accounting_storage_mysql.a
 %%MYSQL%%lib/slurm/accounting_storage_mysql.so
 %%MYSQL%%lib/slurm/jobcomp_mysql.a
