@@ -90,7 +90,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
 # SLURM's configure enables interactive jobs if pty.h exists.  Replacing
 # #include <pty.h> with appropriate headers will therefore not work, so instead
 # add a pty.h for the build.
-# Recheck mail patch.  Slurm now defines DEFAULT_MAIL and DEFAULT_MAIL_ALT
 post-patch:
 	@${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
 	@${REINPLACE_CMD} -e 's|sched_setaffinity|cpuset_setaffinity|g' \
