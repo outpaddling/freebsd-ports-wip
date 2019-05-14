@@ -87,10 +87,15 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
 
 .include <bsd.port.pre.mk>
 
+# Hack around nonfunctional --disable-gtktest flag
+pre-configure-GUI-off:
+	@${REINPLACE_CMD} -e 's|min_gtk_version=.*|min_gtk_version=2000.0.0|' \
+		${WRKSRC}/configure
+
 # SLURM's configure enables interactive jobs if pty.h exists.  Replacing
 # #include <pty.h> with appropriate headers will therefore not work, so instead
 # add a pty.h for the build.
-post-patch:
+pre-configure:
 	@${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
 	@${REINPLACE_CMD} -e 's|sched_setaffinity|cpuset_setaffinity|g' \
 		${WRKSRC}/configure
@@ -110,7 +115,6 @@ post-patch:
 		-e 's|StateSaveLocation=.*|StateSaveLocation=/var/run/slurm|' \
 		${WRKSRC}/etc/slurm.conf.example
 
-post-patch-LINUX-on:
 	@${REINPLACE_CMD} -e 's|"/proc|"/compat/linux/proc|g' \
 		${WRKSRC}/src/slurmd/slurmstepd/req.c \
 		${WRKSRC}/src/slurmd/slurmstepd/pdebug.c \
@@ -137,12 +141,6 @@ post-patch-LINUX-on:
 		${WRKSRC}/contribs/cray/pam_job.c \
 		${WRKSRC}/contribs/lua/proctrack.lua
 
-# Hack around nonfunctional --disable-gtktest flag
-post-patch-GUI-off:
-	@${REINPLACE_CMD} -e 's|min_gtk_version=.*|min_gtk_version=2000.0.0|' \
-		${WRKSRC}/configure
-
-pre-configure:
 	@if ${WHICH} sbatch > /dev/null; then \
 		${ECHO_CMD} "********************************************"; \
 		${ECHO_CMD} "Build may fail while slurm-wlm is installed."; \
