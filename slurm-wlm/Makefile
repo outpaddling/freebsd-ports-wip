@@ -2,7 +2,7 @@
 
 PORTNAME=	slurm
 DISTVERSION=	18.08.7
-CATEGORIES=	wip sysutils
+CATEGORIES=	wip sysutils python
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
 
@@ -26,6 +26,7 @@ USE_RC_SUBR=	slurmctld slurmd
 USERS=		slurm
 GROUPS=		${USERS}
 
+LINUX_USES=	linux
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
@@ -73,8 +74,6 @@ MYSQL_CONFIGURE_OFF=	--with-mysql_config=/nonexistent
 
 RRD_LIB_DEPENDS=	librrd.so:databases/rrdtool
 RRD_CONFIGURE_WITH=	rrdtool
-
-LINUX_USES=		linux
 
 # --docdir is non-functional
 # CONFIGURE_ARGS=	--docdir=${DOCSDIR}
