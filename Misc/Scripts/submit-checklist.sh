@@ -378,8 +378,12 @@ step
 cat << EOM
 
 Carefully check REINPLACE_CMDS and patches
-    Patching should be done at the earliest possible stage, e.g. don't
-    patch in post-stage if the same effect can be achieved in post-patch
+    
+    Do reinplaces in pre-configure rather than post-patch to avoid breaking
+    make makepatch.
+    
+    Otherwise should be done at the earliest possible stage, e.g. don't
+    patch in post-stage if the same effect can be achieved in pre-configure
 
 EOM
 
