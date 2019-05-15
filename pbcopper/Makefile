@@ -1,8 +1,9 @@
 # $FreeBSD$
 
-PORTNAME=	pbcopper
-DISTVERSION=	0.4.1 # Test with biology/unanimity before upgrading!
-CATEGORIES=	wip biology
+PORTNAME=		pbcopper
+DISTVERSIONPREFIX=	v
+DISTVERSION=		0.4.2 # Test with biology/unanimity before upgrading!
+CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Core C++ library for Pacific Biosciences tools
