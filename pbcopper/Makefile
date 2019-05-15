@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		pbcopper
-DISTVERSIONPREFIX=	v
-DISTVERSION=		0.4.2 # Test with biology/unanimity before upgrading!
+DISTVERSION=		0.4.1 # Test with biology/unanimity before upgrading!
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
