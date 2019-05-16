@@ -553,14 +553,6 @@ EOM
 step
 cat << EOM
 
-Update \$PORTSDIR/wip/Misc/upstream
-
-EOM
-
-
-step
-cat << EOM
-
 Make sure the port is copied to it's category directory, not just in wip.
 
 EOM
