@@ -25,11 +25,13 @@ PLIST_FILES=	bin/gemma
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64 || ${ARCH} == i386
-USES+=		blaslapack:openblas
+# USES+=blaslapack:openblas does not add openblas to depends here
+LIB_DEPENDS+=	libopenblas.so:math/openblas
 CXXFLAGS+=	-DOPENBLAS -DOPENBLAS_LEGACY
 LDFLAGS+=	-lopenblas
 .else
-USES+=		blaslapack:netlib
+# USES+=blaslapack:netlib does not add blas/lapack to depends here
+LIB_DEPENDS+=	liblapack.so:math/lapack
 LDFLAGS+=	-llapack -lblas -lcblas
 .endif
 
