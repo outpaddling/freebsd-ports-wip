@@ -31,4 +31,10 @@ PLIST_FILES=	bin/gemma
 USE_GCC=	yes
 .endif
 
+pre-configure:
+	@${REINPLACE_CMD} -e 's|../bin/gemma|../gemma|' ${WRKSRC}/test/*.sh
+
+do-test:
+	(cd ${WRKSRC}/test && ${SH} test_suite.sh)
+
 .include <bsd.port.post.mk>
