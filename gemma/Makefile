@@ -22,7 +22,7 @@ MAKEFILE=	${FILESDIR}/Makefile
 CXXFLAGS+=	-I${LOCALBASE}/include/eigen3 -DOPENBLAS -DOPENBLAS_LEGACY
 LDFLAGS+=	-lopenblas
 
-PLIST_FILES=	bin/gemma
+OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.pre.mk>
 
@@ -33,6 +33,10 @@ USE_GCC=	yes
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|../bin/gemma|../gemma|' ${WRKSRC}/test/*.sh
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 do-test:
 	(cd ${WRKSRC}/test && ${SH} test_suite.sh)
