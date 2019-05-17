@@ -66,9 +66,12 @@ although it will take longer (for the computer, not for you):
 
 Building from source allows installing to a different prefix, compiling with
 native optimizations, and in some cases, building with non-default options
-such as different compilers or dependencies, e.g.:
+such as different compilers or dependencies.  For example, adding
 
-    make CFLAGS+=-march=native install
+    CFLAGS+=-march=native
+
+to /etc/make.conf will cause all ports built from source to use full native
+for the local CPU, resulting in faster but less portable binaries.
 
 To report issues with a FreeBSD port, please submit a PR at:
 
