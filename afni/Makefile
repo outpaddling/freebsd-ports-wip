@@ -26,7 +26,7 @@ RUN_DEPENDS=	endian:sysutils/endian \
 		qhull:math/qhull5 \
 		R:math/R
 
-USES=		gettext gl gmake gnome iconv jpeg:run motif perl5 python \
+USES=		gl gmake gnome iconv jpeg:run motif perl5 python \
 		shebangfix tar:xz
 USE_GNOME=	glib20
 USE_GITHUB=	yes
@@ -60,7 +60,9 @@ INSTALL_WRKSRC=	${WRKSRC}/BSD
 INSTALL_TMP=	${INSTALL_WRKSRC}-temp
 PRESTAGE=	${WRKSRC}/prestage
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS NLS
+
+NLS_USES=	gettext
 
 .include <bsd.port.options.mk>
 
@@ -142,8 +144,8 @@ do-install:
 		${PRESTAGE}/lib
 	@${MV}	${INSTALL_TMP}/*.h ${PRESTAGE}/include
 	@${CP}	${WRKDIR}/afni-AFNI_${PORTVERSION}/doc/README/* ${PRESTAGE}/doc
-	for binary in `${FILE} ${INSTALL_TMP}/* | fgrep 'ELF' | ${AWK} -F ':' ' { print $$1 }'` ; do \
-		@${MV} $${binary} ${PRESTAGE}/bin ; \
+	@for binary in `${FILE} ${INSTALL_TMP}/* | fgrep 'ELF' | ${AWK} -F ':' ' { print $$1 }'` ; do \
+		${MV} $${binary} ${PRESTAGE}/bin ; \
 	done
 	@${MV}	${INSTALL_TMP}/* ${PRESTAGE}/scripts
 
