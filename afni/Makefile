@@ -26,8 +26,8 @@ RUN_DEPENDS=	endian:sysutils/endian \
 		qhull:math/qhull5 \
 		R:math/R
 
-USES=		gl gmake gnome iconv jpeg:run motif perl5 python \
-		shebangfix tar:xz
+USES=		compiler:openmp gettext gl gmake gnome iconv jpeg:run motif \
+		perl5 python shebangfix tar:xz
 USE_GNOME=	glib20
 USE_GITHUB=	yes
 
@@ -60,9 +60,7 @@ INSTALL_WRKSRC=	${WRKSRC}/BSD
 INSTALL_TMP=	${INSTALL_WRKSRC}-temp
 PRESTAGE=	${WRKSRC}/prestage
 
-OPTIONS_DEFINE=	DOCS NLS
-
-NLS_USES=	gettext
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
