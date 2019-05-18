@@ -60,10 +60,14 @@ EOM
 step
 cat << EOM
 
-PORTNAME should match the upstream dist, including case
-    unless this means changing it, which would break pkg upgrade
-    pkg is case-insensitive (in some cases)
-    Ports that install only one binary can use the binary name
+PORTNAME should match the upstream dist, including case for p5, cran, and
+possibly other special cases, otherwise use all lowercase.
+
+Do not change case for established ports as this would break pkg upgrade.
+
+pkg is case-insensitive for some subcommands, not others.
+
+Ports that install only one binary can use the binary name
 
 EOM
 
