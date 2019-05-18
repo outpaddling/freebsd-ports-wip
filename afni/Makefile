@@ -3,7 +3,7 @@
 PORTNAME=		afni
 DISTVERSIONPREFIX=	AFNI_
 DISTVERSION=		19.1.08
-CATEGORIES=		wip science biology graphics
+CATEGORIES=		wip science biology graphics perl5 python
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Advanced Functional Neuro Imaging
@@ -60,6 +60,14 @@ INSTALL_WRKSRC=	${WRKSRC}/BSD
 INSTALL_TMP=	${INSTALL_WRKSRC}-temp
 PRESTAGE=	${WRKSRC}/prestage
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+CONFLICTS=	im-[0-9]* \
+		nifticlib-[0-9]* \
+		open-usp-tukubai-[0-9]*
+
 X11R6_FILES=	coxplot/Makefile \
 		coxplot/Makefile.f2c \
 		3DEdge/src/Makefile \
@@ -72,14 +80,6 @@ X11R6_FILES=	coxplot/Makefile \
 		SUMA/GLUT/libglut/glut_event.c \
 		SUMA/SUMA_Surface_IO.c
 
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
-CONFLICTS=	im-[0-9]* \
-		nifticlib-[0-9]* \
-		open-usp-tukubai-[0-9]*
-
 post-extract:
 .for f in ${X11R6_FILES}
 	@${REINPLACE_CMD} \
@@ -91,15 +91,16 @@ post-extract:
 	@${RM} ${WRKSRC}/3DEdge/src/Makefile.orig
 
 # shebangfix misses /bin/python on 10.1
+#	@${REINPLACE_CMD} -e "s|/bin/python|${PYTHON_CMD}|g" \
+#		${WRKSRC}/python_scripts/afni_python/lib_fat_Rfactor.py
+
 pre-configure:
-	${REINPLACE_CMD} -e "s|-lglib|-lglib-2.0|g" \
+	@${REINPLACE_CMD} -e "s|-lglib|-lglib-2.0|g" \
 		${WRKSRC}/SUMA/SUMA_Makefile
-	${REINPLACE_CMD} -e "s|/bin/python|${PYTHON_CMD}|g" \
-		${WRKSRC}/python_scripts/afni_python/lib_fat_Rfactor.py
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e 's|os\.path\.dirname(sys\.argv\[0\])|"${DATADIR}"|g' \
 		${WRKSRC}/pkundu/meica.py
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e 's|g_info|afni_g_info|g' \
 		${WRKSRC}/rickr/Dimon.c \
 		${WRKSRC}/rickr/Dimon1.c \
@@ -111,14 +112,15 @@ pre-configure:
 		${WRKSRC}/mri_dicom_stuff.h
 
 do-install:
-	# AFNI just dumps everything into one flat directory
+	# AFNI install just dumps everything into one flat directory
 	# Preserve original install dir and make a sacrificial temp copy
-	${RM} -r ${INSTALL_TMP}
-	${CP} -R ${INSTALL_WRKSRC} ${INSTALL_TMP}
+	# to be pruned and rearranged for easy staging
+	@${RM} -r ${INSTALL_TMP}
+	@${CP} -R ${INSTALL_WRKSRC} ${INSTALL_TMP}
 
 	# Clean up and organize files into ${PRESTAGE}, destroying
 	# temp copy in the process
-	${RM} -rf ${PRESTAGE}
+	@${RM} -rf ${PRESTAGE}
 	@${MKDIR} ${PRESTAGE}/bin \
 		${PRESTAGE}/scripts \
 		${PRESTAGE}/lib \
@@ -126,8 +128,8 @@ do-install:
 		${PRESTAGE}/trash \
 		${PRESTAGE}/doc \
 		${PRESTAGE}/share
-	${RM}	${INSTALL_TMP}/libf2c.a
-	${MV}	${INSTALL_TMP}/meica.libs \
+	@${RM}	${INSTALL_TMP}/libf2c.a
+	@${MV}	${INSTALL_TMP}/meica.libs \
 		${INSTALL_TMP}/shiny \
 		${INSTALL_TMP}/lib_RetroTS \
 		${INSTALL_TMP}/afniInterfaceRT \
@@ -135,17 +137,17 @@ do-install:
 		${INSTALL_TMP}/AFNI.*rc \
 		${INSTALL_TMP}/afnigui* \
 		${PRESTAGE}/share
-	${MV}	${INSTALL_TMP}/*.a \
+	@${MV}	${INSTALL_TMP}/*.a \
 		${INSTALL_TMP}/*.so \
 		${PRESTAGE}/lib
-	${MV}	${INSTALL_TMP}/*.h ${PRESTAGE}/include
-	${CP}	${WRKDIR}/afni-AFNI_${PORTVERSION}/doc/README/* ${PRESTAGE}/doc
+	@${MV}	${INSTALL_TMP}/*.h ${PRESTAGE}/include
+	@${CP}	${WRKDIR}/afni-AFNI_${PORTVERSION}/doc/README/* ${PRESTAGE}/doc
 	for binary in `${FILE} ${INSTALL_TMP}/* | fgrep 'ELF' | ${AWK} -F ':' ' { print $$1 }'` ; do \
-		${MV} $${binary} ${PRESTAGE}/bin ; \
+		@${MV} $${binary} ${PRESTAGE}/bin ; \
 	done
-	${MV}	${INSTALL_TMP}/* ${PRESTAGE}/scripts
+	@${MV}	${INSTALL_TMP}/* ${PRESTAGE}/scripts
 
-	# Install to stagedir using proper tools
+	# Install to STAGEDIR using proper ports tools
 	@${MKDIR} \
 		${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${PREFIX}/lib/afni \
