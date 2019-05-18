@@ -332,8 +332,10 @@ EOM
 step
 cat << EOM
 
-If port requires a newer GCC than 4.2.1 (e.g. c++11 or later), add the
-following for 2nd tier platforms that still use GCC 4.2 for the base:
+If port requires a newer GCC than 4.2.1 (e.g. c++11 or later) and the
+USES=compiler:* setting does not already require USE_GCC (as is the case for
+compiler:openmp), add the following for 2nd tier platforms that still use
+GCC 4.2 for the base:
 
 # Force newer GCC on platforms using GCC 4.2 as base
 .if \${CHOSEN_COMPILER_TYPE} == gcc
