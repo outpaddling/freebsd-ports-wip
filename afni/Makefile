@@ -43,7 +43,7 @@ SHEBANG_FILES=	scripts_install/* \
 		pkundu/meica.libs/*/*.py \
 		pkundu/meica.libs/*/*/*.py
 
-USE_GL=		gl glu glw
+USE_GL=		gl glu
 USE_XORG=	x11 xext xi xmu xp xt
 MAKE_ENV=	CC="${CC}" R_SHARE_DIR=${LOCALBASE}/lib/R/share
 MAKE_JOBS_UNSAFE=yes
