@@ -5,9 +5,9 @@
     if( show_stats ) {
        fprintf(stderr,"\n----- malloc stats: %s\n", mesg);
 -#ifndef DARWIN
-+#ifdef __linux__
++#if defined(__linux__)
        malloc_stats();
-+#elifdef __FreeBSD__
++#elif defined(__FreeBSD__)
 +      #include <stdlib.h>
 +      #include <malloc_np.h>
 +      malloc_stats_print(NULL, NULL, "g");
