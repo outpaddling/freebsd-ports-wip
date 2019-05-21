@@ -1,4 +1,4 @@
---- Makefile.INCLUDE.orig	2019-05-17 22:56:12 UTC
+--- Makefile.INCLUDE.orig	2019-05-21 21:04:50 UTC
 +++ Makefile.INCLUDE
 @@ -64,7 +64,7 @@ MISC    = AFNI_atlas_spaces.niml AFNI.Xdefaults AFNI.a
  ## AFNI package, but included because they are useful.  Some of
@@ -36,15 +36,6 @@
             1dCorrelate 3dCountSpikes 3dNwarpCalc dicom_hinfo apsearch 1dBport   \
             3dNormalityTest 3dmask_tool FIRdesign help_format 2perm 3dClustCount \
             column_cat 3dUnifize 3dNwarpCat 3dQwarp 3dLocalHistog 3dNwarpAdjust  \
-@@ -121,7 +121,7 @@ PROGS_4  = 3dBlurInMask 3dRank 3dFFT 1dgenARMA11 3dPer
-            uniq_images tokens 3dLocalACF 3dXClustSim 3dtoXdataset 3dMultiThresh \
-            3dLFCD 3dDegreeCentrality 3dECM 3dMSE 3dsvm_linpredict 3dTfilter     \
-            3dTsplit4D 3dSharpen 3dExtractGroupInCorr dcm2niix_afni 3dTto1D      \
--           3dBrainSync 3dGrayplot 1dsound afni_check_omp 3dExchange             \
-+           3dBrainSync 3dGrayplot 1dsound afni_check_omp 3dExchange 3dPVmap     \
-            get_afni_model_PRF get_afni_model_PRF_6 get_afni_model_PRF_6_BAD     \
-            $(EXTRAS)
- 
 @@ -138,7 +138,7 @@ PROGRAMS = $(PROGS_1) $(PROGS_2) $(PROGS_3) $(PROGS_4)
  PROGRAMS_NOPLUG = afni to3d from3d abut 3dclust nsize 3dinfo 3dproject 3dmerge      \
                    sfim tfim ftosh 3dttest 3ddup imrotate imreg imstat 3dnoise count \

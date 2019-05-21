@@ -2,7 +2,7 @@
 
 PORTNAME=		afni
 DISTVERSIONPREFIX=	AFNI_
-DISTVERSION=		19.1.09
+DISTVERSION=		19.1.10
 CATEGORIES=		wip science biology graphics perl5 python
 
 MAINTAINER=	jwb@FreeBSD.org
