@@ -80,6 +80,7 @@ bin/3dECM
 bin/3dEmpty
 bin/3dEntropy
 bin/3dErrtsCormat
+bin/3dExchange
 bin/3dExtractGroupInCorr
 bin/3dExtrema
 bin/3dFDR
@@ -1415,6 +1416,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/splash_laworder.jpg
 %%DATADIR%%/funstuff/splash_leaves2018.jpg
 %%DATADIR%%/funstuff/splash_lightsaber.jpg
+%%DATADIR%%/funstuff/splash_lionsrock.jpg
 %%DATADIR%%/funstuff/splash_listerhill2017.jpg
 %%DATADIR%%/funstuff/splash_littlepetra.jpg
 %%DATADIR%%/funstuff/splash_lunchtime.jpg
