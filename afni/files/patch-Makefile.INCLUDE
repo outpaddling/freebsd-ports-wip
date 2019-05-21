@@ -1,4 +1,4 @@
---- Makefile.INCLUDE.orig	2019-05-10 21:23:56 UTC
+--- Makefile.INCLUDE.orig	2019-05-17 22:56:12 UTC
 +++ Makefile.INCLUDE
 @@ -64,7 +64,7 @@ MISC    = AFNI_atlas_spaces.niml AFNI.Xdefaults AFNI.a
  ## AFNI package, but included because they are useful.  Some of
@@ -63,7 +63,7 @@
  	        | tr ' ' '\n' >> ___plist_bin.txt
  	cat ___plist_bin.txt | LC_COLLATE=C sort | uniq > prog_list_bin.txt
  	\rm -f ___plist_bin.txt
-@@ -2884,7 +2884,7 @@ r_misc.o: rickr/r_misc.c rickr/r_misc.h
+@@ -2888,7 +2888,7 @@ r_misc.o: rickr/r_misc.c rickr/r_misc.h
  
  dcm2niix_afni:
  	( cd crorden/dcm2niix_console ;		\
@@ -72,7 +72,7 @@
  	  $(MV) dcm2niix ../../dcm2niix_afni ; 	\
  	  cd ../../ ; )
  
-@@ -3108,8 +3108,8 @@ libjpeg.a:
+@@ -3112,8 +3112,8 @@ libjpeg.a:
            $(MAKE) clean ; $(RM) Makefile )
  
  libXmHTML.a:
@@ -83,7 +83,7 @@
  
  xutil_webber.o:xutil_webber.c
  	$(CC) -c xutil_webber.c -I./XmHTML/include $(INFLAGS)
-@@ -3920,9 +3920,10 @@ toyR: toyR.c AFNI_embeddedRCall.o
+@@ -3924,9 +3924,10 @@ toyR: toyR.c AFNI_embeddedRCall.o
  ####
  R_io.so:R_io.c $(LIBMRI_OBJ)
  	( if which R >/dev/null ; then \

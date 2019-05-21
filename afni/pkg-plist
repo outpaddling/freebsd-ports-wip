@@ -76,6 +76,7 @@ bin/3dDeconvolve_f
 bin/3dDegreeCentrality
 bin/3dDespike
 bin/3dDetrend
+bin/3dDWUncert
 bin/3dECM
 bin/3dEmpty
 bin/3dEntropy

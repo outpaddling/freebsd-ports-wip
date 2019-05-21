@@ -19,10 +19,10 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libgsl.so:math/gsl \
 		libnetcdff.so:science/netcdf-fortran \
 		libxml2.so:textproc/libxml2 \
-		libXm.so:x11-toolkits/open-motif
+		libXm.so:x11-toolkits/open-motif \
+		libnetpbm.so:graphics/netpbm
 RUN_DEPENDS=	endian:sysutils/endian \
 		mpeg_encode:multimedia/mpeg_encode \
-		ppmtogif:graphics/netpbm \
 		qhull:math/qhull5 \
 		R:math/R
 
