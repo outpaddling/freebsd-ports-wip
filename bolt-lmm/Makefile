@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bolt-lmm
-PORTVERSION=	2.3.2
+DISTVERSION=	2.3.2
 CATEGORIES=	wip biology
 MASTER_SITES=	https://data.broadinstitute.org/alkesgroup/BOLT-LMM/downloads/
 DISTNAME=	BOLT-LMM_v${PORTVERSION}
@@ -18,7 +18,7 @@ LIB_DEPENDS+=	libnlopt.so:math/nlopt \
 		libboost_program_options.so:devel/boost-libs
 
 # gcc-c++11-lib needed to link with boost. Also requires openmp, but
-# gcc-c++11-lib is sufficient as compiler:openmp merely adds a GCC requirement.
+# both merely add a GCC requirement.
 USES=		compiler:gcc-c++11-lib gmake
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=219484
 # Required on 10.3-RELEASE
