@@ -1,4 +1,4 @@
---- example/run_example_reml2.sh.orig	2017-11-11 16:45:15 UTC
+--- example/run_example_reml2.sh.orig	2018-03-10 19:39:24 UTC
 +++ example/run_example_reml2.sh
 @@ -1,4 +1,6 @@
 -../bolt \
@@ -6,5 +6,5 @@
 +
 +bolt \
      --bfile=EUR_subset \
-     --phenoFile=EUR_subset.pheno.covars \
-     --phenoCol=PHENO \
+     --phenoFile=EUR_subset.pheno2.covars \
+     --exclude=EUR_subset.exclude2 \

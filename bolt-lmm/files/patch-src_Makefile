@@ -1,34 +1,29 @@
---- src/Makefile.orig	2017-08-03 00:14:08 UTC
+--- src/Makefile.orig	2018-03-13 02:44:52 UTC
 +++ src/Makefile
-@@ -1,29 +1,36 @@
+@@ -1,29 +1,29 @@
  ### modify these paths to local Boost and NLopt install directories
 -BOOST_INSTALL_DIR = /home/pl88/boost_1_58_0/install
--NLOPT_INSTALL_DIR = /groups/price/poru/HSPH_SVN/src/BOLT-LMM/nlopt-2.4.2
+-NLOPT_INSTALL_DIR = /n/groups/price/poru/HSPH_SVN/src/BOLT-LMM/nlopt-2.4.2
 +BOOST_INSTALL_DIR ?= ${LOCALBASE}
-+# Redundant on FreeBSD NLOPT_INSTALL_DIR ?= ${LOCALBASE}
++# Redundant on FreeBSD NLOPT_INSTALL_DIR = /n/groups/price/poru/HSPH_SVN/src/BOLT-LMM/nlopt-2.4.2
  
- MKLROOT = /groups/price/poru/external_software/intel/mkl
- INTELROOT = /groups/price/poru/external_software/intel
--ZLIB_STATIC_DIR = /opt/zlib-1.2.8/lib # probably unnecessary on most systems
+ INTELROOT = /n/groups/price/poru/external_software/intel_mkl_2018
+ MKLROOT = ${INTELROOT}/mkl
+-ZLIB_STATIC_DIR = /n/groups/price/poru/external_software/zlib/zlib-1.2.11 # probably unnecessary on most systems
+-LIBSTDCXX_STATIC_DIR = /n/groups/price/poru/external_software/libstdc++/usr/lib/gcc/x86_64-redhat-linux/4.8.5/
 -GLIBC_STATIC_DIR = /home/pl88/glibc-static/usr/lib64
 +ZLIB_STATIC_DIR ?= /usr/lib
-+GLIBC_STATIC_DIR ?= /home/pl88/glibc-static/usr/lib64
-+
-+# Standard install tools and targets for package managers
-+INSTALL ?=	install
-+MKDIR ?=	mkdir
-+PREFIX ?=	/usr/local
-+DESTDIR ?=	.
-+STRIP_CMD ?=	strip
++LIBSTDCXX_STATIC_DIR ?= /usr/lib
++GLIBC_STATIC_DIR ?= /usr/lib
  
  ifeq ($(strip ${linking}),)
  	linking = dynamic
  endif
  
 -# CC = g++
--CC = /groups/price/poru/external_software/intel/bin/icpc
+-CC = icpc
 +# CXX = g++
-+CXX ?= /groups/price/poru/external_software/intel/bin/icpc
++CXX ?= icpc
  
  ifeq (${debug},true)
 -	CFLAGS += -g
@@ -41,15 +36,13 @@
 -CFLAGS += -msse -msse2
 -CFLAGS += -DUSE_SSE -DMEASURE_DGEMM -DVERBOSE
 -CFLAGS += -Wall
--
 +CXXFLAGS += -msse -msse2
 +CXXFLAGS += -DUSE_SSE -DMEASURE_DGEMM -DVERBOSE
 +CXXFLAGS += -Wall
-+CXXFLAGS += -fPIC
+ 
  
  # add Boost include and lib paths
- ifneq ($(strip ${BOOST_INSTALL_DIR}),)
-@@ -37,9 +44,9 @@ endif
+@@ -38,9 +38,9 @@ endif
  # add NLopt include and lib paths
  ifneq ($(strip ${NLOPT_INSTALL_DIR}),)
  	CPATHS += -I${NLOPT_INSTALL_DIR}/api
@@ -61,7 +54,7 @@
  	endif
  endif
  
-@@ -51,7 +58,7 @@ ifneq ($(strip ${ZLIB_STATIC_DIR}),)
+@@ -52,7 +52,7 @@ ifneq ($(strip ${ZLIB_STATIC_DIR}),)
  endif
  
  # add MKL paths (if not compiling with g++, i.e., compiling with icpc)
@@ -70,7 +63,7 @@
  	CPATHS += -I${MKLROOT}/include
  	ifeq (${linking},dynamic)
  		LPATHS += -L${MKLROOT}/lib/intel64 -Wl,-rpath,${MKLROOT}/lib/intel64 # for libmkl*
-@@ -60,28 +67,28 @@ ifneq (${CC},g++)
+@@ -61,28 +61,28 @@ ifneq (${CC},g++)
  endif
  
  # add flags for static linking; build LAPACK/MKL component of link line
@@ -111,7 +104,7 @@
  		LPATHS += -L${ZLIB_STATIC_DIR}
  		LLAPACK = -Wl,--start-group ${MKLROOT}/lib/intel64/libmkl_intel_lp64.a ${MKLROOT}/lib/intel64/libmkl_core.a ${MKLROOT}/lib/intel64/libmkl_intel_thread.a -Wl,--end-group
  	else
-@@ -94,7 +101,8 @@ else
+@@ -95,7 +95,8 @@ else
  endif
  
  # build link line (minus flags)
@@ -119,17 +112,21 @@
 +LLIBS = -lnlopt -lboost_program_options -lboost_iostreams -lz
 +# LLIBS = /usr/local/lib/libboost_program_options.a -lnlopt -lboost_iostreams -lz
  ifeq (${linking},static-except-glibc)
- 	L = ${LPATHS} -Wl,-Bstatic ${LLIBS} ${LLAPACK} -Wl,-Bdynamic -lpthread -lm
+ 	L = -L${LIBSTDCXX_STATIC_DIR} ${LPATHS} -Wl,--wrap=memcpy -Wl,-Bstatic ${LLIBS} ${LLAPACK} -Wl,-Bdynamic -lpthread -lm
  else
-@@ -107,13 +115,22 @@ T = bolt
- O = Bolt.o BoltParams.o BoltParEstCV.o BoltReml.o CovariateBasis.o DataMatrix.o FileUtils.o Jackknife.o LDscoreCalibration.o MapInterpolater.o MatrixUtils.o MemoryUtils.o NonlinearOptMulti.o NumericUtils.o PhenoBuilder.o RestrictSnpSet.o SnpData.o SnpInfo.o SpectrumTools.o StatsUtils.o StringUtils.o Timer.o
+@@ -105,16 +106,18 @@ endif
+ 
+ 
+ T = bolt
+-O = Bolt.o BoltParams.o BoltParEstCV.o BoltReml.o CovariateBasis.o DataMatrix.o FileUtils.o Jackknife.o LDscoreCalibration.o MapInterpolater.o MatrixUtils.o MemoryUtils.o NonlinearOptMulti.o NumericUtils.o PhenoBuilder.o RestrictSnpSet.o SnpData.o SnpInfo.o SpectrumTools.o StatsUtils.o StringUtils.o Timer.o memcpy.o
++O = Bolt.o BoltParams.o BoltParEstCV.o BoltReml.o CovariateBasis.o DataMatrix.o FileUtils.o Jackknife.o LDscoreCalibration.o MapInterpolater.o MatrixUtils.o MemoryUtils.o NonlinearOptMulti.o NumericUtils.o PhenoBuilder.o RestrictSnpSet.o SnpData.o SnpInfo.o SpectrumTools.o StatsUtils.o StringUtils.o Timer.o
  OMAIN = BoltMain.o $O
  
 -.PHONY: clean
 +.PHONY: clean all
-+
-+all: $T
  
++all: $T
++
  %.o: %.cpp
 -	${CC} ${CFLAGS} ${CPATHS} -o $@ -c $<
 +	${CXX} ${CXXFLAGS} ${CPATHS} -o $@ -c $<
@@ -137,13 +134,6 @@
  $T: ${OMAIN}
 -	${CC} ${LFLAGS} -o $T ${OMAIN} $L
 +	${CXX} ${LDFLAGS} -o $T ${OMAIN} $L
-+
-+install:
-+	${MKDIR} -p ${DESTDIR}${PREFIX}/bin
-+	${INSTALL} -c $T ${DESTDIR}${PREFIX}/bin
-+
-+install-strip:
-+	${STRIP_CMD} ${DESTDIR}${PREFIX}/bin/bolt
  
  clean:
  	rm -f *.o

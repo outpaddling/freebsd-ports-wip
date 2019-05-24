@@ -1,11 +1,11 @@
 # $FreeBSD$
-#
+
 # Tables are huge and may not be necessary for bolt to function.
 # Maybe omit them from plist and add a message about where to get them?
 # Why isn't makeplist using EXAMPLESDIR and DATADIR?
 
 PORTNAME=	bolt-lmm
-PORTVERSION=	2.3
+PORTVERSION=	2.3.2
 CATEGORIES=	wip
 MASTER_SITES=	https://data.broadinstitute.org/alkesgroup/BOLT-LMM/downloads/
 DISTNAME=	BOLT-LMM_v${PORTVERSION}
@@ -32,10 +32,15 @@ USE_CXXSTD=	gnu++11
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 INSTALL_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	EXAMPLES
+
 post-patch:
 	${RM} ${WRKSRC}/example/*.orig
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/bolt ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} tables ${STAGEDIR}${DATADIR}
 
