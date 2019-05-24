@@ -416,6 +416,8 @@ cat << EOM
 Make sure build system respects CC, CXX, FC, LD, 
 CFLAGS, CXXFLAGS, FFLAGS, LDFLAGS, etc.
 
+USE_CXXSTD= rather than CXXFLAGS+=--std=
+
 EOM
 
 step
