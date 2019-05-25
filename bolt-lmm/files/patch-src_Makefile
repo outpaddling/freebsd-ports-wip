@@ -1,6 +1,6 @@
 --- src/Makefile.orig	2018-03-13 02:44:52 UTC
 +++ src/Makefile
-@@ -1,29 +1,29 @@
+@@ -1,29 +1,28 @@
  ### modify these paths to local Boost and NLopt install directories
 -BOOST_INSTALL_DIR = /home/pl88/boost_1_58_0/install
 -NLOPT_INSTALL_DIR = /n/groups/price/poru/HSPH_SVN/src/BOLT-LMM/nlopt-2.4.2
@@ -36,13 +36,12 @@
 -CFLAGS += -msse -msse2
 -CFLAGS += -DUSE_SSE -DMEASURE_DGEMM -DVERBOSE
 -CFLAGS += -Wall
-+CXXFLAGS += -msse -msse2
-+CXXFLAGS += -DUSE_SSE -DMEASURE_DGEMM -DVERBOSE
++CXXFLAGS += -DMEASURE_DGEMM -DVERBOSE
 +CXXFLAGS += -Wall
  
  
  # add Boost include and lib paths
-@@ -38,9 +38,9 @@ endif
+@@ -38,9 +37,9 @@ endif
  # add NLopt include and lib paths
  ifneq ($(strip ${NLOPT_INSTALL_DIR}),)
  	CPATHS += -I${NLOPT_INSTALL_DIR}/api
@@ -54,7 +53,7 @@
  	endif
  endif
  
-@@ -52,7 +52,7 @@ ifneq ($(strip ${ZLIB_STATIC_DIR}),)
+@@ -52,7 +51,7 @@ ifneq ($(strip ${ZLIB_STATIC_DIR}),)
  endif
  
  # add MKL paths (if not compiling with g++, i.e., compiling with icpc)
@@ -63,7 +62,7 @@
  	CPATHS += -I${MKLROOT}/include
  	ifeq (${linking},dynamic)
  		LPATHS += -L${MKLROOT}/lib/intel64 -Wl,-rpath,${MKLROOT}/lib/intel64 # for libmkl*
-@@ -61,28 +61,28 @@ ifneq (${CC},g++)
+@@ -61,28 +60,28 @@ ifneq (${CC},g++)
  endif
  
  # add flags for static linking; build LAPACK/MKL component of link line
@@ -74,7 +73,7 @@
 +ifeq (${CXX},${CXX})
 +	CXXFLAGS += -fopenmp
 +	LDFLAGS += -fopenmp
-+	LLAPACK = -llapack -lopenblas -lgfortran
++	LLAPACK = -lopenblas -lgfortran
  	ifeq (${linking},static)
 -		LFLAGS += -static
 +		LDFLAGS += -static
@@ -104,7 +103,7 @@
  		LPATHS += -L${ZLIB_STATIC_DIR}
  		LLAPACK = -Wl,--start-group ${MKLROOT}/lib/intel64/libmkl_intel_lp64.a ${MKLROOT}/lib/intel64/libmkl_core.a ${MKLROOT}/lib/intel64/libmkl_intel_thread.a -Wl,--end-group
  	else
-@@ -95,7 +95,8 @@ else
+@@ -95,7 +94,8 @@ else
  endif
  
  # build link line (minus flags)
@@ -114,7 +113,7 @@
  ifeq (${linking},static-except-glibc)
  	L = -L${LIBSTDCXX_STATIC_DIR} ${LPATHS} -Wl,--wrap=memcpy -Wl,-Bstatic ${LLIBS} ${LLAPACK} -Wl,-Bdynamic -lpthread -lm
  else
-@@ -105,16 +106,18 @@ endif
+@@ -105,16 +105,18 @@ endif
  
  
  T = bolt

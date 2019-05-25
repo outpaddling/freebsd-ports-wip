@@ -12,9 +12,8 @@ COMMENT=	Statistics for testing association between phenotype and genotypes
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-LIB_DEPENDS+=	libnlopt.so:math/nlopt \
+LIB_DEPENDS=	libnlopt.so:math/nlopt \
 		libopenblas.so:math/openblas \
-		liblapack.so:math/lapack \
 		libboost_program_options.so:devel/boost-libs
 
 # gcc-c++11-lib needed to link with boost. Also requires openmp, but
@@ -26,6 +25,8 @@ USES=		compiler:gcc-c++11-lib gmake
 
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 INSTALL_WRKSRC=	${WRKDIR}/${DISTNAME}/src
+CXXFLAGS_i386=	-DUSE_SSE -msse -msse2
+CXXFLAGS_amd64=	-DUSE_SSE
 
 PORTEXAMPLES=	*
 
@@ -39,7 +40,7 @@ pre-configure:
 		${WRKSRC}/example/run_example.sh
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bolt ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bolt ${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} tables ${STAGEDIR}${DATADIR})
 
