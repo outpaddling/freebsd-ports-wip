@@ -418,12 +418,16 @@ CFLAGS, CXXFLAGS, FFLAGS, LDFLAGS, etc.
 
 USE_CXXSTD= rather than CXXFLAGS+=--std=
 
+Disable non-portable flags like avx, sse, etc.
+If required, add *FLAGS_i386=-msse*
+
 EOM
 
 step
 cat << EOM
 
-Respect WITH_DEBUG: install target should not strip binaries.
+Respect WITH_DEBUG: install target should not strip binaries unconditionally.
+Using \${INSTALL_PROGRAM} will avoid this.
 
 EOM
 
