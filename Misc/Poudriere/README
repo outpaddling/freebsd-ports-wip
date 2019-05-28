@@ -1,5 +1,0 @@
-
-After setting up poudriere (e.g. using port-poudriere-setup), run
-wip-poudriere-test within this directory and svn add the logs you want to
-keep.
-
