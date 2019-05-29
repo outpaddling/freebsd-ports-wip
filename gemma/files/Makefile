@@ -15,7 +15,7 @@ BIN		= gemma
 HDR		= $(wildcard src/*.h) ./src/version.h
 SOURCES		= $(wildcard src/*.cpp)
 OBJS		= $(SOURCES:.cpp=.o)
-LDFLAGS		+= -lgsl -lz
+LDFLAGS		+= -lgsl -lz -pthread
 
 .PHONY: all test
 
