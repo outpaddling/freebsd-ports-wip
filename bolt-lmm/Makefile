@@ -16,12 +16,9 @@ LIB_DEPENDS=	libnlopt.so:math/nlopt \
 		libopenblas.so:math/openblas \
 		libboost_program_options.so:devel/boost-libs
 
-# gcc-c++11-lib needed to link with boost. Also requires openmp, but
+# gcc-c++11-lib needed to link with boost. Also requires compiler:openmp, but
 # both merely add a GCC requirement.
 USES=		compiler:gcc-c++11-lib gmake
-# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=219484
-# Required on 10.3-RELEASE
-# USE_CXXSTD=	gnu++11
 
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 INSTALL_WRKSRC=	${WRKDIR}/${DISTNAME}/src
