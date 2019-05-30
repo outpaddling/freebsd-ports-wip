@@ -20,8 +20,9 @@ GH_ACCOUNT=	genetics-statistics
 GH_PROJECT=	GEMMA
 
 MAKEFILE=	${FILESDIR}/Makefile
-CXXFLAGS+=	-I${LOCALBASE}/include/eigen3 -DOPENBLAS
-LDFLAGS+=	-lopenblasp
+# Assuming openblas is built with pthreads, not openmp
+CXXFLAGS+=	-I${LOCALBASE}/include/eigen3 -DOPENBLAS -pthread
+LDFLAGS+=	-lopenblasp -pthread
 
 OPTIONS_DEFINE=	EXAMPLES
 

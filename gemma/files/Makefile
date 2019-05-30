@@ -1,7 +1,7 @@
 
 GEMMA_VERSION = $(shell cat ./VERSION)
 VGEN		= scripts/gen_version_info.sh
-CXXFLAGS	+= -DHAVE_INLINE -pthread -Wall -std=gnu++11
+CXXFLAGS	+= -DHAVE_INLINE -Wall -std=gnu++11
 CXXFLAGS 	+= -DNDEBUG -Icontrib/catch-1.9.7 -Isrc
 
 SRC_DIR		= ./src
@@ -15,7 +15,7 @@ BIN		= gemma
 HDR		= $(wildcard src/*.h) ./src/version.h
 SOURCES		= $(wildcard src/*.cpp)
 OBJS		= $(SOURCES:.cpp=.o)
-LDFLAGS		+= -lgsl -lz -pthread
+LDFLAGS		+= -lgsl -lz
 
 .PHONY: all test
 
