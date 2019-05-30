@@ -1,4 +1,4 @@
---- etc/slurm.conf.example.orig	2019-05-28 17:23:14 UTC
+--- etc/slurm.conf.example.orig	2018-10-26 20:10:17 UTC
 +++ etc/slurm.conf.example
 @@ -8,8 +8,8 @@
  #
@@ -11,6 +11,23 @@
  #ControlAddr=
  #BackupController=
  #BackupAddr=
+@@ -21,12 +21,12 @@ SlurmdPort=6818
+ AuthType=auth/munge
+ #JobCredentialPrivateKey=
+ #JobCredentialPublicCertificate=
+-StateSaveLocation=/var/spool/slurm/ctld
+-SlurmdSpoolDir=/var/spool/slurm/d
++StateSaveLocation=/var/run/slurm
++SlurmdSpoolDir=/var/spool/slurmd
+ SwitchType=switch/none
+ MpiDefault=none
+-SlurmctldPidFile=/var/run/slurmctld.pid
+-SlurmdPidFile=/var/run/slurmd.pid
++SlurmctldPidFile=/var/run/slurm/slurmctld.pid
++SlurmdPidFile=/var/run/slurm/slurmd.pid
+ ProctrackType=proctrack/pgid
+ #PluginDir=
+ #FirstJobId=
 @@ -42,7 +42,7 @@ ReturnToService=0
  #SrunEpilog=
  #TaskProlog=
@@ -38,7 +55,7 @@
 +SlurmctldLogFile=/var/log/slurm/slurmctld.log
  SlurmdDebug=3
 -SlurmdLogFile=/var/log/slurmd.log
-+SlurmdLogFile=/var/log/slurm/slurmd.log
++SlurmdLogFile=/var/log/slurm/slurm_accounting.log
  JobCompType=jobcomp/none
  #JobCompLoc=
  #
@@ -48,7 +65,7 @@
  #JobAcctGatherFrequency=30
  #
 -#AccountingStorageType=accounting_storage/slurmdbd
-+AccountingStorageType=accounting_storage/filetext
++AccountingStorageType=accounting_storage/filetxt
  #AccountingStorageHost=
 -#AccountingStorageLoc=
 +AccountingStorageLoc=/var/log/slurm/slurm_accounting.log

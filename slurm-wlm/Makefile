@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-DISTVERSION=	18.08.7
+DISTVERSION=	19.05.0
 CATEGORIES=	wip sysutils python
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
@@ -126,17 +126,15 @@ pre-configure:
 		${WRKSRC}/src/plugins/jobacct_gather/cgroup/jobacct_gather_cgroup.c \
 		${WRKSRC}/src/plugins/jobacct_gather/common/common_jag.c \
 		${WRKSRC}/src/plugins/jobacct_gather/linux/jobacct_gather_linux.c \
-		${WRKSRC}/src/plugins/switch/cray/scaling.c \
-		${WRKSRC}/src/plugins/switch/cray/switch_cray.c \
-		${WRKSRC}/src/plugins/proctrack/cray/proctrack_cray.c \
+		${WRKSRC}/src/plugins/switch/cray_aries/scaling.c \
+		${WRKSRC}/src/plugins/switch/cray_aries/switch_cray_aries.c \
+		${WRKSRC}/src/plugins/proctrack/cray_aries/proctrack_cray_aries.c \
 		${WRKSRC}/src/plugins/proctrack/cgroup/proctrack_cgroup.c \
 		${WRKSRC}/src/plugins/proctrack/pgid/proctrack_pgid.c \
 		${WRKSRC}/src/plugins/proctrack/linuxproc/kill_tree.c \
-		${WRKSRC}/src/plugins/proctrack/lua/proctrack_lua.c \
 		${WRKSRC}/src/plugins/acct_gather_filesystem/lustre/acct_gather_filesystem_lustre.c \
 		${WRKSRC}/src/plugins/node_features/knl_generic/node_features_knl_generic.c \
-		${WRKSRC}/contribs/cray/pam_job.c \
-		${WRKSRC}/contribs/lua/proctrack.lua
+		${WRKSRC}/contribs/cray/pam_job.c
 
 	@if ${WHICH} sbatch > /dev/null; then \
 		${ECHO_CMD} "********************************************"; \
