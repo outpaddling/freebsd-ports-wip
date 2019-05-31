@@ -3,7 +3,7 @@
 PORTNAME=	stringtie
 PORTVERSION=	1.3.4d
 DISTVERSIONPREFIX=v
-CATEGORIES=	wip
+CATEGORIES=	wip biology
 
 MAINTAINER=	bacon@sciprog.ceas.uwm.edu
 COMMENT=	Transcript assembly and quantification for RNA-Seq
