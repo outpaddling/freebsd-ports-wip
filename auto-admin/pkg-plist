@@ -88,6 +88,8 @@ sbin/auto-update-infiniband-modules
 sbin/auto-update-port-framework
 sbin/auto-update-system
 sbin/auto-update-xorg.conf
+sbin/auto-user-admin
+sbin/auto-useradd
 sbin/auto-using-pkgsrc
 sbin/auto-wifi-failover
 sbin/auto-xdm-toggle
