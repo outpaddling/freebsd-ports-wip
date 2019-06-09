@@ -6,8 +6,8 @@
  #define DEFAULT_LAUNCH_TYPE         "launch/slurm"
 -#define DEFAULT_MAIL_PROG           "/bin/mail"
 -#define DEFAULT_MAIL_PROG_ALT       "/usr/bin/mail"
-+#define DEFAULT_MAIL_PROG           "/usr/bin/mail"
-+#define DEFAULT_MAIL_PROG_ALT       "/usr/usr/bin/mail"
++#define DEFAULT_MAIL_PROG           "/usr/usr/bin/mail"
++#define DEFAULT_MAIL_PROG_ALT       "/usr/usr/usr/bin/mail"
  #define DEFAULT_MAX_ARRAY_SIZE      1001
  #define DEFAULT_MAX_JOB_COUNT       10000
  #define DEFAULT_MAX_JOB_ID          0x03ff0000

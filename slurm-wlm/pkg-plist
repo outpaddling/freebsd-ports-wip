@@ -24,12 +24,12 @@ include/slurm/smd_ns.h
 include/slurm/spank.h
 lib/libslurm.a
 lib/libslurm.so
-lib/libslurm.so.33
-lib/libslurm.so.33.0.0
+lib/libslurm.so.34
+lib/libslurm.so.34.0.0
 lib/libslurmdb.a
 lib/libslurmdb.so
-lib/libslurmdb.so.33
-lib/libslurmdb.so.33.0.0
+lib/libslurmdb.so.34
+lib/libslurmdb.so.34.0.0
 lib/slurm/accounting_storage_filetxt.a
 lib/slurm/accounting_storage_filetxt.so
 lib/slurm/accounting_storage_none.a
