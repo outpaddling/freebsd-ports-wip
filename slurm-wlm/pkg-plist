@@ -432,7 +432,6 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%/html/burst_buffer.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cgroup.conf.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cgroups.html
-%%PORTDOCS%%%%DOCSDIR%%/html/checkpoint_blcr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/checkpoint_plugins.html
 %%PORTDOCS%%%%DOCSDIR%%/html/coding_style.pdf
 %%PORTDOCS%%%%DOCSDIR%%/html/configurator.easy.html
@@ -446,7 +445,6 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%/html/cpu_management.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cray.conf.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cray.html
-%%PORTDOCS%%%%DOCSDIR%%/html/crypto_plugins.html
 %%PORTDOCS%%%%DOCSDIR%%/html/disclaimer.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dist_plane.html
 %%PORTDOCS%%%%DOCSDIR%%/html/documentation.html
