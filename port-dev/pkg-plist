@@ -9,5 +9,6 @@ sbin/port-poudriere-setup
 sbin/port-poudriere-test
 sbin/port-reinstall
 sbin/port-remake
+sbin/port-restage
 sbin/port-shar
 sbin/port-which
