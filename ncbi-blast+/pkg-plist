@@ -29,6 +29,7 @@ bin/run_with_lock
 bin/seedtop
 bin/segmasker
 bin/seqdb_demo
+bin/seqdb_perf
 bin/tblastn
 bin/tblastx
 bin/update_blastdb.pl
