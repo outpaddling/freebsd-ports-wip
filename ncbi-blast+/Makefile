@@ -32,9 +32,6 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
 
 USES=		compiler:openmp gmake shebangfix perl5 python
-# Test with gcc9
-#USES=		gmake shebangfix perl5 python
-#USE_GCC=	9
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	src/app/blast/legacy_blast.pl \
