@@ -48,7 +48,8 @@ post-patch:
 		${WRKSRC}/Tests/*/run_tests.sh
 
 post-install:
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} Tests ${STAGEDIR}${DATADIR})
+	@(cd ${WRKSRC}/Tests && ${CHMOD} a+X run_tests.sh */run_tests.sh)
+	(cd ${WRKSRC} && ${COPYTREE_BIN} Tests ${STAGEDIR}${DATADIR})
 	${INSTALL_SCRIPT} ${WRKDIR}/plink2-test ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${FILESDIR}/plink2-bench ${STAGEDIR}${PREFIX}/bin
 

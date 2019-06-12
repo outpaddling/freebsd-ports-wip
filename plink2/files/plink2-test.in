@@ -45,4 +45,4 @@ fi
 
 cp -R %%DATADIR%%/Tests "$test_dir"
 cd "$test_dir"
-sh ./run_tests.sh
+./run_tests.sh
