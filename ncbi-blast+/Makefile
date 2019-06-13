@@ -29,7 +29,8 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
 		libsqlite3.so:databases/sqlite3
-RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
+RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
+		p5-JSON>=0:converters/p5-JSON
 
 USES=		compiler:openmp gmake shebangfix perl5 python
 USE_LDCONFIG=	yes
