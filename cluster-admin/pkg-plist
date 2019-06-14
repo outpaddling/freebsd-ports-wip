@@ -101,6 +101,8 @@ sbin/slurm-update-idle-nodes
 sbin/slurm-usage-report
 sbin/update-cluster-admin-wip
 %%DATADIR%%/WWW/global_styles.css
+%%DATADIR%%/WWW/gmetad.conf.template
+%%DATADIR%%/WWW/gmond.conf.template
 %%DATADIR%%/WWW/index.php
 %%DATADIR%%/WWW/powerlogo.gif
 %%DATADIR%%/WWW/sync-compute-docs.sh
