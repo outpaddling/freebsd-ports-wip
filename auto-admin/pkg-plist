@@ -39,6 +39,7 @@ sbin/auto-enable-passwdqc
 sbin/auto-enable-procfs
 sbin/auto-enable-service
 sbin/auto-fastest-mirror
+sbin/auto-fetch-install-media
 sbin/auto-file-secure
 sbin/auto-harden
 sbin/auto-idrac-passwd
