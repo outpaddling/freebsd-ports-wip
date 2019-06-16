@@ -104,10 +104,10 @@ sbin/update-cluster-admin-wip
 %%DATADIR%%/WWW/gmetad.conf.template
 %%DATADIR%%/WWW/gmond.conf.template
 %%DATADIR%%/WWW/index.php
+%%DATADIR%%/WWW/patch-apache.awk
 %%DATADIR%%/WWW/powerlogo.gif
 %%DATADIR%%/WWW/sync-compute-docs.sh
 %%DATADIR%%/csh.login
-%%DATADIR%%/patch-apache.awk
 %%DATADIR%%/profile
 %%DATADIR%%/profile.d/zzz-cluster.csh
 %%DATADIR%%/profile.d/zzz-cluster.sh
