@@ -7,6 +7,7 @@ sbin/port-mkpatch
 sbin/port-patch-vi
 sbin/port-poudriere-setup
 sbin/port-poudriere-test
+sbin/port-poudriere-update
 sbin/port-reinstall
 sbin/port-remake
 sbin/port-restage
