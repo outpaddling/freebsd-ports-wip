@@ -48,6 +48,7 @@ sbin/cluster-init-node
 sbin/cluster-local-pkg-install
 sbin/cluster-local-port_add
 sbin/cluster-local-sync-software
+sbin/cluster-lock-local-pw
 sbin/cluster-lock-user
 sbin/cluster-lowest-uid
 sbin/cluster-node-admin
@@ -73,6 +74,7 @@ sbin/cluster-sync-pw
 sbin/cluster-sync-sysfiles
 sbin/cluster-sync-user
 sbin/cluster-transfer-pw
+sbin/cluster-unlock-local-pw
 sbin/cluster-unlock-user
 sbin/cluster-update-backup-nodes
 sbin/cluster-update-file-servers
