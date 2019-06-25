@@ -52,6 +52,7 @@ sbin/auto-ipmi-install
 sbin/auto-krb-auth-setup
 sbin/auto-ldap-adduser
 sbin/auto-ldap-client-setup
+sbin/auto-lock-local-pw
 sbin/auto-lock-user
 sbin/auto-mount-any
 sbin/auto-nfs-restart
@@ -84,6 +85,7 @@ sbin/auto-set-umask
 sbin/auto-ssh-authorize
 sbin/auto-ssh-reverse-authorize
 sbin/auto-transfer-pw
+sbin/auto-unlock-local-pw
 sbin/auto-unlock-user
 sbin/auto-update-infiniband-modules
 sbin/auto-update-port-framework
