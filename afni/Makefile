@@ -21,6 +21,8 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libxml2.so:textproc/libxml2 \
 		libXm.so:x11-toolkits/open-motif \
 		libnetpbm.so:graphics/netpbm
+# Remote execution of suma.  Also needed for glxinfo.
+LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri
 RUN_DEPENDS=	endian:sysutils/endian \
 		mpeg_encode:multimedia/mpeg_encode \
 		qhull:math/qhull5 \
@@ -30,6 +32,7 @@ USES=		compiler:openmp gettext gl gmake gnome iconv jpeg:run motif \
 		perl5 python shebangfix tar:xz
 USE_GNOME=	glib20
 USE_GITHUB=	yes
+USE_GL=		gl
 
 SHEBANG_FILES=	scripts_install/* \
 		python_scripts/afni_python/*.py \
