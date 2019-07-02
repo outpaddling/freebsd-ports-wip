@@ -12,8 +12,14 @@ LICENSE=	GPLv2
 
 BROKEN_sparc64=	Does not compile: "undefined reference to '_mcount'"
 
+# Also afex, phia, paran, brms, corrplot
+# afni_system_check.py -check_all
+CRAN_DEPENDS=	R-cran-lme4>0:math/R-cran-lme4 \
+		R-cran-snow>0:science/R-cran-snow \
+		R-cran-psych>0:math/R-cran-psych
 BUILD_DEPENDS=	gm4:devel/m4 \
-		R:math/R
+		R:math/R \
+		${CRAN_DEPENDS}
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libf2c.so:lang/f2c \
 		libgsl.so:math/gsl \
@@ -26,7 +32,8 @@ LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri
 RUN_DEPENDS=	endian:sysutils/endian \
 		mpeg_encode:multimedia/mpeg_encode \
 		qhull:math/qhull5 \
-		R:math/R
+		R:math/R \
+		${CRAN_DEPENDS}
 
 USES=		compiler:openmp gettext gl gmake gnome iconv jpeg:run motif \
 		perl5 python shebangfix tar:xz
