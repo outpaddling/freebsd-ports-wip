@@ -11,12 +11,13 @@
  
  SEQAN_DIR = ./SeqAn-1.1
  # treat SeqAn as a sysdir to suppress warnings
- SEQAN_INC = -isystem $(SEQAN_DIR)
+-SEQAN_INC = -isystem $(SEQAN_DIR)
 -INC = $(if $(RELEASE_BUILD),-I$(CURDIR)/.include) $(SEQAN_INC) -I third_party
 -CPP = g++
 -CXX = $(CPP)
 -CC = gcc
 -LIBS = $(LDFLAGS) $(if $(RELEASE_BUILD),-L$(CURDIR)/.lib) -lz
++SEQAN_INC = -I $(SEQAN_DIR)
 +INC = $(if $(RELEASE_BUILD),-I$(CURDIR)/.include) $(SEQAN_INC) -I third_party -I ${LOCALBASE}/include
 +# Use ?= to allow environment CPP, CC, CXX to take precedence.  This avoids
 +# the need to modify the Makefile on different platforms.  Package managers

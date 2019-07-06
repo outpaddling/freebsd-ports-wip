@@ -19,7 +19,7 @@ LIB_DEPENDS+=	libtbb.so:devel/tbb
 
 # FIXME: bowtie-align 1.2.1 intermittently dumps core when compiled with clang
 USES=		gmake perl5 python:run shebangfix
-USE_GCC=	yes
+# USE_GCC=	yes
 USE_PERL5=	run
 USE_GITHUB=	yes
 
@@ -27,6 +27,7 @@ SHEBANG_FILES=	bowtie bowtie-build bowtie-inspect scripts/*.pl scripts/*.sh
 GH_ACCOUNT=	BenLangmead
 
 MAKE_ENV+=	RELEASE_BIN=1
+# MAKE_JOBS_UNSAFE=	yes
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/scripts
