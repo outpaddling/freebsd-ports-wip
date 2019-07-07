@@ -7,6 +7,7 @@ bin/bowtie-build-s
 bin/bowtie-inspect
 bin/bowtie-inspect-l
 bin/bowtie-inspect-s
+bin/bowtie-test
 %%DATADIR%%/genomes/.cvsignore
 %%DATADIR%%/genomes/NC_008253.fna
 %%DATADIR%%/indexes/e_coli.1.ebwt

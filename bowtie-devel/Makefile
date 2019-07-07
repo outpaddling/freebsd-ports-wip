@@ -28,6 +28,7 @@ GH_ACCOUNT=	BenLangmead
 
 MAKE_ENV+=	RELEASE_BIN=1
 # MAKE_JOBS_UNSAFE=	yes
+SUB_FILES=	bowtie-test
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/scripts
@@ -35,6 +36,7 @@ post-install:
 		${WRKSRC}/bowtie \
 		${WRKSRC}/bowtie-build \
 		${WRKSRC}/bowtie-inspect \
+		${WRKDIR}/bowtie-test \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/scripts/*.sh \
