@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-DISTVERSION=	19.05.0
+DISTVERSION=	19.05.1-2
 CATEGORIES=	wip sysutils python
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
@@ -26,13 +26,12 @@ USE_RC_SUBR=	slurmctld slurmd
 USERS=		slurm
 GROUPS=		${USERS}
 
-LINUX_USES=	linux
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 SHEBANG_FILES=	doc/html/shtml2html.py doc/man/man2html.py
 
-OPTIONS_DEFINE=		CURL DOCS GUI HDF5 HWLOC IPMI MYSQL RRD LINUX
+OPTIONS_DEFINE=		CURL DOCS GUI HDF5 HWLOC IPMI MYSQL RRD
 OPTIONS_DEFAULT=	HDF5 HWLOC
 OPTIONS_SUB=		yes
 
@@ -42,7 +41,6 @@ HDF5_DESC=	Job profiling using HDF5
 HWLOC_DESC=	Portable hardware locality
 IPMI_DESC=	IPMI energy consumption accounting
 RRD_DESC=	RRD external sensor data collection
-LINUX_DESC=	Support jobacct_gather/linux (requires linprocfs)
 
 DOCS_BUILD_DEPENDS=	man2html:textproc/man2html
 
