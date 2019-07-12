@@ -1,5 +1,5 @@
---- src/objtools/blast/seqdb_reader/test/seqdb_perf.cpp.orig	2019-07-12 16:40:28.310030000 UTC
-+++ src/objtools/blast/seqdb_reader/test/seqdb_perf.cpp	2019-07-12 16:40:58.664355000 UTC
+--- src/objtools/blast/seqdb_reader/test/seqdb_perf.cpp.orig	2018-10-23 19:28:52 UTC
++++ src/objtools/blast/seqdb_reader/test/seqdb_perf.cpp
 @@ -137,8 +137,13 @@ CSeqDBPerfApp::x_ScanDatabase()
      }
      LOG_POST(Info << "Will go over " << oids2iterate.size() << " sequences");
