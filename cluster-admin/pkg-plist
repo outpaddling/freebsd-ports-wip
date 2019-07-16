@@ -36,6 +36,7 @@ sbin/cluster-change-group-gid
 sbin/cluster-change-nfsd-count
 sbin/cluster-change-primary-group
 sbin/cluster-change-uid
+sbin/cluster-check-cron-updates
 sbin/cluster-create-pw-age
 sbin/cluster-diagnostics
 sbin/cluster-dist-file
