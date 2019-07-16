@@ -43,6 +43,7 @@ sbin/cluster-dist-file
 sbin/cluster-enable-autologout
 sbin/cluster-ganglia-restart
 sbin/cluster-get-sync-file
+sbin/cluster-head-check
 sbin/cluster-highest-uid
 sbin/cluster-idrac-config
 sbin/cluster-init-node
@@ -54,6 +55,7 @@ sbin/cluster-lock-local-pw
 sbin/cluster-lock-user
 sbin/cluster-lowest-uid
 sbin/cluster-node-admin
+sbin/cluster-node-type
 sbin/cluster-passwd-expiration
 sbin/cluster-passwd-user-expiration
 sbin/cluster-pkg-install
