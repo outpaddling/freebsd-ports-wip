@@ -1,0 +1,43 @@
+--- CMakeLists.txt.orig	2019-07-16 20:07:29 UTC
++++ CMakeLists.txt
+@@ -160,7 +160,7 @@ if( NOT ${CMAKEBOOSTROOT} STREQUAL "" )
+    message("BOOST_ROOT is set, Boost_NO_SYSTEM_PATHS is ${Boost_NO_SYSTEM_PATHS}")
+ endif( NOT ${CMAKEBOOSTROOT} STREQUAL "" )
+ 
+-set(BOOST_REDIST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../redist")
++# set(BOOST_REDIST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../redist")
+ 
+ # required boost libraries
+ set (BCL2FASTQ_BOOST_VERSION 1.54.0)
+@@ -180,14 +180,14 @@ set (Boost_USE_MULTITHREAD ON)
+ 
+ # required libxml2 and libxslt libraries
+ set (BCL2FASTQ_LIBXML2_VERSION 2.7.8)
+-set (LIBXML2_REDIST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../redist")
+-set (LIBXSLT_REDIST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../redist")
++# set (LIBXML2_REDIST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../redist")
++# set (LIBXSLT_REDIST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../redist")
+ 
+-set (LIBXML2_INSTAL_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../redist")
+-set (LIBXSLT_INSTAL_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../redist")
++# set (LIBXML2_INSTAL_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../redist")
++# set (LIBXSLT_INSTAL_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../redist")
+ 
+-set (BCL2FASTQ_LIBXSLT_VERSION 1.1.26)
+-set (LIBXSLT_REDIST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../redist")
++# set (BCL2FASTQ_LIBXSLT_VERSION 1.1.26)
++# set (LIBXSLT_REDIST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../redist")
+ 
+ # test
+ set (GOOGLE_TEST_MODULE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../modules/googletest/googletest")
+@@ -198,8 +198,8 @@ set (BCL2FASTQ_GLOBALS_CMAKE "${CMAKE_SOURCE_DIR}/cmak
+ set (BCL2FASTQ_MACROS_CMAKE "${CMAKE_SOURCE_DIR}/cmake/macros.cmake")
+ 
+ # redist includes
+-include ("${CMAKE_SOURCE_DIR}/cmake/boost.cmake")
+-include ("${CMAKE_SOURCE_DIR}/cmake/bcl2fastq_redist_macros.cmake")
++# include ("${CMAKE_SOURCE_DIR}/cmake/boost.cmake")
++# include ("${CMAKE_SOURCE_DIR}/cmake/bcl2fastq_redist_macros.cmake")
+ 
+ # subdirs
+ add_subdirectory (cmake/preInstall)
