@@ -1,6 +1,4 @@
-#
-# $FreeBSD: ports/devel/papp/Makefile,v 1.2 2012/11/17 05:56:37 svnexp Exp $
-#
+# $FreeBSD$
 
 PORTNAME=	papp
 PORTVERSION=	0.3.2
@@ -10,9 +8,9 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Assembly Preprocessor
 
-USES=		tar:xz
-
 LICENSE=	BSD3CLAUSE
+
+USES=		tar:xz
 
 MAKE_FLAGS+=	PREFIX=${PREFIX} \
 		MANPREFIX=${PREFIX} \
