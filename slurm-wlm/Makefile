@@ -12,6 +12,9 @@ COMMENT=	Simple Linux Utility for Resource Management
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+NOT_FOR_ARCHS=		armv6 armv7 i386 powerpc
+NOT_FOR_ARCHS_REASON=	32-bit support is deprecated
+
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libsysinfo.so:devel/libsysinfo \
 		libmunge.so:security/munge \
