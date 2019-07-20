@@ -1,4 +1,4 @@
---- etc/slurm.conf.example.orig	2019-05-28 17:23:14 UTC
+--- etc/slurm.conf.example.orig	2019-07-11 00:40:34 UTC
 +++ etc/slurm.conf.example
 @@ -8,8 +8,8 @@
  #
@@ -24,7 +24,7 @@
 -SlurmctldPidFile=/var/run/slurmctld.pid
 -SlurmdPidFile=/var/run/slurmd.pid
 +SlurmctldPidFile=/var/run/slurm/slurmctld.pid
-+SlurmdPidFile=/var/run/slurm/slurd.pid
++SlurmdPidFile=/var/run/slurm/slurmd.pid
  ProctrackType=proctrack/pgid
  #PluginDir=
  #FirstJobId=
@@ -65,7 +65,7 @@
  #JobAcctGatherFrequency=30
  #
 -#AccountingStorageType=accounting_storage/slurmdbd
-+AccountingStorageType=accounting_storage/filetext
++AccountingStorageType=accounting_storage/filetxt
  #AccountingStorageHost=
 -#AccountingStorageLoc=
 +AccountingStorageLoc=/var/log/slurm/slurm_accounting.log
