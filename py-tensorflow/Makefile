@@ -35,13 +35,14 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.11.2:math/py-numpy@${PY_FLAVOR} \
 		bash:shells/bash \
 		protobuf>=3.7.1:devel/protobuf \
 		cython:lang/cython \
-		swig3.0:devel/swig30 
+		swig3.0:devel/swig30 \
+		double-conversion>=3.1.5:wip/double-conversion
 
 
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-LIB_DEPENDS=	libdouble-conversion.so:devel/double-conversion \
+LIB_DEPENDS=	libdouble-conversion.so:wip/double-conversion \
 		libgpr.so:devel/grpc \
 		libnsync.so:devel/nsync \
 		libgoogle_cloud_cpp_common.so:devel/google-cloud-cpp \
