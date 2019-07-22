@@ -42,8 +42,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.11.2:math/py-numpy@${PY_FLAVOR} \
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-LIB_DEPENDS=	libdouble-conversion.so:wip/double-conversion \
-		libgpr.so:devel/grpc \
+LIB_DEPENDS=	libgpr.so:devel/grpc \
 		libnsync.so:devel/nsync \
 		libgoogle_cloud_cpp_common.so:devel/google-cloud-cpp \
 		libflatbuffers.so:devel/flatbuffers \
@@ -154,6 +153,7 @@ do-build:
 		--host_linkopt="-L${LOCALBASE}/lib" --linkopt="-L${LOCALBASE}/lib" --config=opt \
 		--incompatible_no_support_tools_in_action_inputs=false \
 		--verbose_failures \
+		--jobs=4 \
 		//tensorflow:libtensorflow.so \
 		//tensorflow:libtensorflow_cc.so \
 		//tensorflow:install_headers \
