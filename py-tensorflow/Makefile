@@ -69,7 +69,6 @@ DIST_SUBDIR=${PORTNAME}
 USE_PYTHON=	autoplist distutils
 
 BAZEL_BOOT=     --output_user_root=${WRKDIR}/bazel_out
-MAKE_JOBS_UNSAFE=	yes
 
 SHEBANG_GLOB=	*.py
 
@@ -153,7 +152,7 @@ do-build:
 		--host_linkopt="-L${LOCALBASE}/lib" --linkopt="-L${LOCALBASE}/lib" --config=opt \
 		--incompatible_no_support_tools_in_action_inputs=false \
 		--verbose_failures \
-		--jobs=4 \
+		--jobs=1 \
 		//tensorflow:libtensorflow.so \
 		//tensorflow:libtensorflow_cc.so \
 		//tensorflow:install_headers \
