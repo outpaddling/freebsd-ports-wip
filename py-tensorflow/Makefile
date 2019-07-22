@@ -152,7 +152,7 @@ do-build:
 		--host_linkopt="-L${LOCALBASE}/lib" --linkopt="-L${LOCALBASE}/lib" --config=opt \
 		--incompatible_no_support_tools_in_action_inputs=false \
 		--verbose_failures \
-		--jobs=1 \
+		--jobs=4 \
 		//tensorflow:libtensorflow.so \
 		//tensorflow:libtensorflow_cc.so \
 		//tensorflow:install_headers \
