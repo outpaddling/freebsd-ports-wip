@@ -4,7 +4,7 @@
 PORTNAME=	double-conversion
 PORTVERSION=	3.1.5
 DISTVERSIONPREFIX=	v
-CATEGORIES=	devel
+CATEGORIES=	wip devel
 
 MAINTAINER=	waitman@waitman.net
 COMMENT=	Binary-decimal and decimal-binary routines for IEEE doubles

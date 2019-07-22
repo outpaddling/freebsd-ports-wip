@@ -70,6 +70,7 @@ DIST_SUBDIR=${PORTNAME}
 USE_PYTHON=	autoplist distutils
 
 BAZEL_BOOT=     --output_user_root=${WRKDIR}/bazel_out
+MAKE_JOBS_UNSAFE=	yes
 
 SHEBANG_GLOB=	*.py
 
