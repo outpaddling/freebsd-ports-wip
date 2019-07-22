@@ -60,7 +60,7 @@ LIB_DEPENDS=	libgpr.so:devel/grpc \
 		
 
 
-USES=		python:3.6 shebangfix
+USES=		jpeg python:3.6 shebangfix ssl
 
 EXTRACT_ONLY=v${PORTVERSION}.tar.gz
 
