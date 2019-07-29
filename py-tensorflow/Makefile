@@ -15,46 +15,43 @@ COMMENT=	Computation using data flow graphs for scalable machine learning
 LICENSE=	APACHE20
 ONLY_FOR_ARCHS=	amd64
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.11.2:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}protobuf>=3.7.1:devel/py-protobuf@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.11.2:math/py-numpy@${PY_FLAVOR} \
-                ${PYTHON_PKGNAMEPREFIX}markdown>=2.6.8:textproc/py-markdown@${PY_FLAVOR} \
-                ${PYTHON_PKGNAMEPREFIX}bleach>=1.4.2:www/py-bleach@${PY_FLAVOR} \
-                ${PYTHON_PKGNAMEPREFIX}html5lib>=0.9999999:www/py-html5lib@${PY_FLAVOR} \
-                ${PYTHON_PKGNAMEPREFIX}protobuf>=3.2.0:devel/py-protobuf@${PY_FLAVOR} \
-                ${PYTHON_PKGNAMEPREFIX}wheel>=0.29.0:devel/py-wheel@${PY_FLAVOR} \
-                ${PYTHON_PKGNAMEPREFIX}mock>=1.3.0:devel/py-mock@${PY_FLAVOR} \
-                ${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
-                ${PYTHON_PKGNAMEPREFIX}werkzeug>=0.11.10:www/py-werkzeug@${PY_FLAVOR} \
-                ${PYTHON_PKGNAMEPREFIX}keras>=2.2.4:math/py-keras@${PY_FLAVOR} \
-                ${PYTHON_PKGNAMEPREFIX}absl>=0.7.1:devel/py-absl@${PY_FLAVOR} \
-                ${PYTHON_PKGNAMEPREFIX}gast>=0.2.2:devel/py-gast@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}absl>=0.7.1:devel/py-absl@${PY_FLAVOR} \
                 ${PYTHON_PKGNAMEPREFIX}astor>=0.5:devel/py-astor@${PY_FLAVOR} \
+                ${PYTHON_PKGNAMEPREFIX}gast>=0.2.2:devel/py-gast@${PY_FLAVOR} \
+                ${PYTHON_PKGNAMEPREFIX}numpy>=1.11.2:math/py-numpy@${PY_FLAVOR} \
+                ${PYTHON_PKGNAMEPREFIX}google-pasta>=0.1.7:devel/py-google-pasta@${PY_FLAVOR} \
+                ${PYTHON_PKGNAMEPREFIX}protobuf>=3.7.1:devel/py-protobuf@${PY_FLAVOR} \
+                ${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
                 ${PYTHON_PKGNAMEPREFIX}termcolor>=1.1.0:devel/py-termcolor@${PY_FLAVOR} \
-                ${PYTHON_PKGNAMEPREFIX}wrapt>=1.11.2:devel/py-wrapt@${PY_FLAVOR} \
+                ${PYTHON_PKGNAMEPREFIX}grpcio>=1.22.0:devel/py-grpcio@${PY_FLAVOR} \
+                ${PYTHON_PKGNAMEPREFIX}keras>=2.2.4:math/py-keras@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wrapt>=1.11.2:devel/py-wrapt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0.30.0:devel/py-wheel@${PY_FLAVOR} \
+
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		${PYTHON_PKGNAMEPREFIX}grpcio-tools>=1.22.0:devel/py-grpcio-tools@${PY_FLAVOR} \
 		bash:shells/bash \
-		protobuf>=3.7.1:devel/protobuf \
 		cython:lang/cython \
 		swig3.0:devel/swig30
 
 
 
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-LIB_DEPENDS=	libgpr.so:devel/grpc \
-		libnsync.so:devel/nsync \
-		libgoogle_cloud_cpp_common.so:devel/google-cloud-cpp \
-		libflatbuffers.so:devel/flatbuffers \
-		libsqlite3.so:databases/sqlite3 \
-		libsnappy.so:archivers/snappy \
+LIB_DEPENDS=	libsnappy.so:archivers/snappy \
 		liblmdb.so:databases/lmdb \
+		libsqlite3.so:databases/sqlite3 \
 		libicuio.so:devel/icu \
 		libjsoncpp.so:devel/jsoncpp \
 		libpcre.so:devel/pcre \
+		libnsync.so:devel/nsync \
+		libprotobuf.so:devel/protobuf \
+		libprotobuf-c.so:devel/protobuf-c \
 		libre2.so:devel/re2 \
 		libgif.so:graphics/giflib \
 		libpng.so:graphics/png \
+		libgpr.so:devel/grpc \
 		libcurl.so:ftp/curl \
+		libgoogle_cloud_cpp_common.so:devel/google-cloud-cpp \
+		libflatbuffers.so:devel/flatbuffers \
 		libdouble-conversion.so:wip/double-conversion
 		
 
@@ -140,7 +137,7 @@ do-configure:
 		TF_NEED_NCCL=0 \
 		TF_NEED_OPENCL=0 \
 		TF_IGNORE_MAX_BAZEL_VERSION=1 \
-		CC_OPT_FLAGS="-march=${CPU_TARGET}" \
+		CC_OPT_FLAGS="-march=${CPU_TARGET} -I${LOCALBASE}/include" \
 		PREFIX="${LOCALBASE}" \
 		TF_SYSTEM_LIBS="absl_py astor_archive boringssl com_github_googleapis_googleapis com_github_googlecloudplatform_google_cloud_cpp com_google_protobuf \
 				com_google_protobuf_cc com_googlesource_code_re2 curl cython double_conversion enum34_archive flatbuffers gast_archive gif_archive \
@@ -153,7 +150,7 @@ do-build:
 		bazel --bazelrc="${WRKDIR}/bazelrc" ${BAZEL_BOOT} build ${BAZEL_COPT} --host_copt="-I${LOCALBASE}/include" \
 		--host_linkopt="-L${LOCALBASE}/lib" --linkopt="-L${LOCALBASE}/lib" --config=opt \
 		--incompatible_no_support_tools_in_action_inputs=false \
-		--verbose_failures \
+		--verbose_failures -s \
 		//tensorflow:libtensorflow.so \
 		//tensorflow:libtensorflow_cc.so \
 		//tensorflow:install_headers \
