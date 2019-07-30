@@ -56,7 +56,7 @@ LIB_DEPENDS=	libsnappy.so:archivers/snappy \
 		
 
 
-USES=		python:3.6 shebangfix jpeg
+USES=		python:3.6 shebangfix jpeg ssl
 
 EXTRACT_ONLY=v${PORTVERSION}.tar.gz
 
