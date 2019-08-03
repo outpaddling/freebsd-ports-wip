@@ -1,13 +1,14 @@
-# $FreeBSD$
+# $FreeBSD: head/biology/bolt-lmm/Makefile 507372 2019-07-26 20:46:53Z gerald $
 
 PORTNAME=	bolt-lmm
 DISTVERSION=	2.3.2
+PORTREVISION=	2
 CATEGORIES=	wip biology
 MASTER_SITES=	https://data.broadinstitute.org/alkesgroup/BOLT-LMM/downloads/
 DISTNAME=	BOLT-LMM_v${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Statistics for testing association between phenotype and genotypes
+COMMENT=	Mixed model association testing and variance component analysis
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license.txt
@@ -24,6 +25,7 @@ BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 INSTALL_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 CXXFLAGS_i386=	-DUSE_SSE -msse -msse2
 CXXFLAGS_amd64=	-DUSE_SSE
+CXXFLAGS_powerpc64=	-DNO_WARN_X86_INTRINSICS -mvsx
 
 PORTEXAMPLES=	*
 
