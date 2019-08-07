@@ -65,7 +65,7 @@ BAZEL_BOOT=	--output_user_root=${WRKDIR}/bazel_out
 PLIST_SUB=	TF_PORT_VERSION=${PORTVERSION}
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV= \
+CONFIGURE_ENV=	\
 	PYTHON_BIN_PATH=${PYTHON_CMD} \
 	PYTHON_LIB_PATH="${PYTHON_SITELIBDIR}" \
 	TF_NEED_JEMALLOC=0 \
@@ -153,6 +153,6 @@ do-install:
 
 post-install: # autoplist: thousands of files, all under ${PYTHON_SITELIBDIR}
 	@cd ${STAGEDIR}${PREFIX} && \
-		${FIND} ${PYTHON_SITELIBDIR:C|^${LOCALBASE}/||} -type f -or -type l | grep -v "egg-info/" >> ${TMPPLIST}
+		${FIND} ${PYTHON_SITELIBDIR:C|^${LOCALBASE}/||} -type f -or -type l | ${GREP} -v "egg-info/" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
