@@ -20,10 +20,10 @@ LIB_DEPENDS=	libnlopt.so:math/nlopt \
 # both merely add a GCC requirement.
 USES=		compiler:gcc-c++11-lib gmake
 
-BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
-INSTALL_WRKSRC=	${WRKDIR}/${DISTNAME}/src
-CXXFLAGS_i386=	-DUSE_SSE -msse -msse2
-CXXFLAGS_amd64=	-DUSE_SSE
+BUILD_WRKSRC=		${WRKDIR}/${DISTNAME}/src
+INSTALL_WRKSRC=		${WRKDIR}/${DISTNAME}/src
+CXXFLAGS_i386=		-DUSE_SSE -msse -msse2
+CXXFLAGS_amd64=		-DUSE_SSE
 CXXFLAGS_powerpc64=	-DNO_WARN_X86_INTRINSICS -mvsx
 
 PORTEXAMPLES=	*
