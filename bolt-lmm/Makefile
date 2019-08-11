@@ -1,8 +1,7 @@
 # $FreeBSD: head/biology/bolt-lmm/Makefile 507372 2019-07-26 20:46:53Z gerald $
 
 PORTNAME=	bolt-lmm
-DISTVERSION=	2.3.2
-PORTREVISION=	2
+DISTVERSION=	2.3.4
 CATEGORIES=	wip biology
 MASTER_SITES=	https://data.broadinstitute.org/alkesgroup/BOLT-LMM/downloads/
 DISTNAME=	BOLT-LMM_v${PORTVERSION}
