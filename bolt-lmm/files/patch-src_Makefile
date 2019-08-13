@@ -1,21 +1,27 @@
 --- src/Makefile.orig	2019-08-11 03:05:04 UTC
 +++ src/Makefile
-@@ -1,29 +1,28 @@
+@@ -1,31 +1,35 @@
++
  ### modify these paths to local Boost and NLopt install directories
 -BOOST_INSTALL_DIR = /home/pl88/boost_1_58_0/install
 -NLOPT_INSTALL_DIR = /n/groups/price/poru/HSPH_SVN/src/BOLT-LMM/nlopt-2.4.2
-+BOOST_INSTALL_DIR ?= ${LOCALBASE}
-+# Redundant on FreeBSD NLOPT_INSTALL_DIR = /n/groups/price/poru/HSPH_SVN/src/BOLT-LMM/nlopt-2.4.2
++### by setting them in the environment or make command line args
++### which will override variables set with ?=
  
- INTELROOT = /n/groups/price/poru/external_software/intel_mkl_2019u4
- MKLROOT = ${INTELROOT}/mkl
+-INTELROOT = /n/groups/price/poru/external_software/intel_mkl_2019u4
+-MKLROOT = ${INTELROOT}/mkl
 -ZLIB_STATIC_DIR = /n/groups/price/poru/external_software/zlib/zlib-1.2.11 # probably unnecessary on most systems
 -LIBSTDCXX_STATIC_DIR = /n/groups/price/poru/external_software/libstdc++/usr/lib/gcc/x86_64-redhat-linux/4.8.5/
 -GLIBC_STATIC_DIR = /home/pl88/glibc-static/usr/lib64
-+ZLIB_STATIC_DIR ?= /usr/lib
-+LIBSTDCXX_STATIC_DIR ?= /usr/lib
-+GLIBC_STATIC_DIR ?= /usr/lib
++BOOST_INSTALL_DIR ?= /home/pl88/boost_1_58_0/install
++NLOPT_INSTALL_DIR ?= /n/groups/price/poru/HSPH_SVN/src/BOLT-LMM/nlopt-2.4.2
  
++INTELROOT ?= /n/groups/price/poru/external_software/intel_mkl_2019u4
++MKLROOT ?= ${INTELROOT}/mkl
++ZLIB_STATIC_DIR ?= /n/groups/price/poru/external_software/zlib/zlib-1.2.11 # probably unnecessary on most systems
++LIBSTDCXX_STATIC_DIR ?= /n/groups/price/poru/external_software/libstdc++/usr/lib/gcc/x86_64-redhat-linux/4.8.5/
++GLIBC_STATIC_DIR ?= /home/pl88/glibc-static/usr/lib64
++
  ifeq ($(strip ${linking}),)
  	linking = dynamic
  endif
@@ -36,24 +42,16 @@
 -CFLAGS += -msse -msse2
 -CFLAGS += -DUSE_SSE -DMEASURE_DGEMM -DVERBOSE
 -CFLAGS += -Wall
-+CXXFLAGS += -DMEASURE_DGEMM -DVERBOSE
-+CXXFLAGS += -Wall
++# Set SSEFLAGS to empty string in the env or make command line if building on
++# systems with no SSE such as PowerPC
++SSEFLAGS ?= -msse -msse2 -DUSE_SSE
++CXXFLAGS += ${SSEFLAGS} -DMEASURE_DGEMM -DVERBOSE -Wall
  
- 
+-
  # add Boost include and lib paths
-@@ -38,9 +37,9 @@ endif
- # add NLopt include and lib paths
- ifneq ($(strip ${NLOPT_INSTALL_DIR}),)
- 	CPATHS += -I${NLOPT_INSTALL_DIR}/api
--	LPATHS += -L${NLOPT_INSTALL_DIR}/.libs
-+	LPATHS += -L${NLOPT_INSTALL_DIR}/libs
- 	ifeq (${linking},dynamic)
--		LPATHS += -Wl,-rpath,${NLOPT_INSTALL_DIR}/.libs
-+		LPATHS += -Wl,-rpath,${NLOPT_INSTALL_DIR}/libs
- 	endif
- endif
- 
-@@ -52,7 +51,7 @@ ifneq ($(strip ${ZLIB_STATIC_DIR}),)
+ ifneq ($(strip ${BOOST_INSTALL_DIR}),)
+ 	CPATHS += -I${BOOST_INSTALL_DIR}/include
+@@ -52,7 +56,7 @@ ifneq ($(strip ${ZLIB_STATIC_DIR}),)
  endif
  
  # add MKL paths (if not compiling with g++, i.e., compiling with icpc)
@@ -62,7 +60,7 @@
  	CPATHS += -I${MKLROOT}/include
  	ifeq (${linking},static)
  		LPATHS += -L${INTELROOT}/lib/intel64 '-Wl,-rpath,$$ORIGIN/lib' # for libiomp5.so (now packaged with binary)
-@@ -65,34 +64,34 @@ ifneq (${CC},g++)
+@@ -65,34 +69,34 @@ ifneq (${CC},g++)
  endif
  
  # add flags for static linking; build LAPACK/MKL component of link line
@@ -73,7 +71,7 @@
 +ifneq (${CXX},icpc)
 +	CXXFLAGS += -fopenmp
 +	LDFLAGS += -fopenmp
-+	LLAPACK = -lopenblas -lgfortran
++	LLAPACK ?= -llapack -lgfortran
  	ifeq (${linking},static)
 -		LFLAGS += -static
 +		LDFLAGS += -static
@@ -110,7 +108,7 @@
  		LPATHS += -L${ZLIB_STATIC_DIR}
  		LLAPACK = -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core
  	else
-@@ -105,7 +104,7 @@ else
+@@ -105,7 +109,7 @@ else
  endif
  
  # build link line (minus flags)
@@ -119,12 +117,14 @@
  ifeq (${linking},static-except-glibc)
  	L = -L${LIBSTDCXX_STATIC_DIR} ${LPATHS} -Wl,--wrap=memcpy -Wl,-Bstatic ${LLIBS} ${LLAPACK} -Wl,-Bdynamic ${LIOMP5} -lpthread -lm ${LDL}
  else ifeq (${linking},static-except-glibc-intel)
-@@ -117,16 +116,18 @@ endif
+@@ -117,16 +121,20 @@ endif
  
  
  T = bolt
 -O = Bolt.o BoltParams.o BoltParEstCV.o BoltReml.o CovariateBasis.o DataMatrix.o FileUtils.o Jackknife.o LDscoreCalibration.o MapInterpolater.o MatrixUtils.o MemoryUtils.o NonlinearOptMulti.o NumericUtils.o PhenoBuilder.o RestrictSnpSet.o SnpData.o SnpInfo.o SpectrumTools.o StatsUtils.o StringUtils.o Timer.o memcpy.o
-+O = Bolt.o BoltParams.o BoltParEstCV.o BoltReml.o CovariateBasis.o DataMatrix.o FileUtils.o Jackknife.o LDscoreCalibration.o MapInterpolater.o MatrixUtils.o MemoryUtils.o NonlinearOptMulti.o NumericUtils.o PhenoBuilder.o RestrictSnpSet.o SnpData.o SnpInfo.o SpectrumTools.o StatsUtils.o StringUtils.o Timer.o
++# Set to empty string in env or make command line to use system memcpy
++MEMCPY ?= memcpy.o
++O = Bolt.o BoltParams.o BoltParEstCV.o BoltReml.o CovariateBasis.o DataMatrix.o FileUtils.o Jackknife.o LDscoreCalibration.o MapInterpolater.o MatrixUtils.o MemoryUtils.o NonlinearOptMulti.o NumericUtils.o PhenoBuilder.o RestrictSnpSet.o SnpData.o SnpInfo.o SpectrumTools.o StatsUtils.o StringUtils.o Timer.o ${MEMCPY}
  OMAIN = BoltMain.o $O
  
 -.PHONY: clean
