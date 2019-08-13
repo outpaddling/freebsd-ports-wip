@@ -58,7 +58,7 @@
  
  # add MKL paths (if not compiling with g++, i.e., compiling with icpc)
 -ifneq (${CC},g++)
-+ifneq (${CXX},${CXX})
++ifeq (${CXX},icpc)
  	CPATHS += -I${MKLROOT}/include
  	ifeq (${linking},static)
  		LPATHS += -L${INTELROOT}/lib/intel64 '-Wl,-rpath,$$ORIGIN/lib' # for libiomp5.so (now packaged with binary)
@@ -70,7 +70,7 @@
 -	CFLAGS += -fopenmp
 -	LFLAGS += -fopenmp
 -	LLAPACK = -llapack -lgfortran
-+ifeq (${CXX},${CXX})
++ifneq (${CXX},icpc)
 +	CXXFLAGS += -fopenmp
 +	LDFLAGS += -fopenmp
 +	LLAPACK = -lopenblas -lgfortran
