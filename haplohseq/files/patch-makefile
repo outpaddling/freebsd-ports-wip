@@ -1,0 +1,83 @@
+--- makefile.orig	2019-08-29 18:03:23 UTC
++++ makefile
+@@ -7,19 +7,19 @@
+ #
+ 
+ # Constants
+-CXX=g++
++CXX?=g++
+ #-O0 -g will turn on debugging
+ #The rule of thumb:
+ #When you need to debug, use -O0 (and -g to generate debugging symbols.)
+ #When you are preparing to ship it, use -O2.
+ #When you use gentoo, use -O3...!
+ #When you need to put it on an embedded system, use -Os (optimize for size, not for efficiency.)
+-CXX_FLAGS=-Wall -g -stdlib=libstdc++
++CXXFLAGS?=-Wall -g -stdlib=libstdc++
+ SRC=src
+ CONF=conf
+ HMM_SRC=$(SRC)/hmm
+ UTIL_SRC=$(SRC)/util
+-BOOST=/usr/local/boost_1_52_0
++BOOST=${LOCALBASE}
+ INCLUDES=-I./$(SRC) -I./$(HMM_SRC) -I./$(UTIL_SRC) -isystem$(BOOST)
+ LIBRARY_PATHS=-Llib/macosx 
+ LIBRARIES=-lm -lboost_program_options -lboost_system -lboost_filesystem -lboost_thread
+@@ -35,16 +35,16 @@ directories:
+ 
+ # Create object files into the OBJ directory from cpp files in the SRC directory.
+ $(OBJ)/%.o:	$(SRC)/%.cpp directories
+-	$(CXX) $(CXX_FLAGS) $(INCLUDES) -c -o $@ $<
++	$(CXX) $(CXXFLAGS) $(INCLUDES) -c -o $@ $<
+ $(OBJ)/%.o:	$(HMM_SRC)/%.cpp directories
+-	$(CXX) $(CXX_FLAGS) $(INCLUDES) -c -o $@ $<
++	$(CXX) $(CXXFLAGS) $(INCLUDES) -c -o $@ $<
+ $(OBJ)/%.o:	$(UTIL_SRC)/%.cpp directories
+-	$(CXX) $(CXX_FLAGS) $(INCLUDES) -c -o $@ $<
++	$(CXX) $(CXXFLAGS) $(INCLUDES) -c -o $@ $<
+ 
+ all: clean haplohseq
+ 
+ haplohseq: $(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(OBJ)/InputProcessor.o $(OBJ)/Reporter.o $(OBJ)/FreqPhase.o $(OBJ)/VcfUtil.o $(OBJ)/HaplohSeq.o
+-	$(CXX) -o $(BIN)/$@ $(CXX_FLAGS) $(INCLUDES) $(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(OBJ)/InputProcessor.o $(OBJ)/Reporter.o $(OBJ)/FreqPhase.o $(OBJ)/VcfUtil.o $(OBJ)/HaplohSeq.o $(LIBRARY_PATHS) $(LIBRARIES) 
++	$(CXX) -o $(BIN)/$@ $(CXXFLAGS) $(INCLUDES) $(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(OBJ)/InputProcessor.o $(OBJ)/Reporter.o $(OBJ)/FreqPhase.o $(OBJ)/VcfUtil.o $(OBJ)/HaplohSeq.o $(LIBRARY_PATHS) $(LIBRARIES) 
+ 	cp -r $(CONF) $(BIN)/.
+ 	
+ clean:
+@@ -74,28 +74,28 @@ test: FreqPhaseTest HaplohSeqTest HmmTes
+ 
+ # Create test object files into the OBJ directory from cpp files in the SRC directory.
+ $(TEST_BIN)/%.o:	$(TEST_SRC)/%.cpp directories test_directory
+-	$(CXX) $(CXX_FLAGS) $(INCLUDES) $(TEST_INCLUDES) -c -o $@ $<
++	$(CXX) $(CXXFLAGS) $(INCLUDES) $(TEST_INCLUDES) -c -o $@ $<
+ 
+ HaplohSeqTest:	$(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(OBJ)/InputProcessor.o $(TEST_BIN)/HaplohSeqTest.o
+-	$(CXX) -o $(TEST_BIN)/$@ $(CXX_FLAGS) $(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(OBJ)/InputProcessor.o $(TEST_BIN)/HaplohSeqTest.o $(LIBRARY_PATHS) $(LIBRARIES) 
++	$(CXX) -o $(TEST_BIN)/$@ $(CXXFLAGS) $(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(OBJ)/InputProcessor.o $(TEST_BIN)/HaplohSeqTest.o $(LIBRARY_PATHS) $(LIBRARIES) 
+ 
+ FreqPhaseTest:	$(OBJ)/StringUtil.o $(OBJ)/InputProcessor.o $(OBJ)/FreqPhase.o $(TEST_BIN)/FreqPhaseTest.o
+-	$(CXX) -o $(TEST_BIN)/$@ $(CXX_FLAGS) $(OBJ)/StringUtil.o $(OBJ)/InputProcessor.o $(OBJ)/FreqPhase.o $(TEST_BIN)/FreqPhaseTest.o $(LIBRARY_PATHS) $(LIBRARIES) 
++	$(CXX) -o $(TEST_BIN)/$@ $(CXXFLAGS) $(OBJ)/StringUtil.o $(OBJ)/InputProcessor.o $(OBJ)/FreqPhase.o $(TEST_BIN)/FreqPhaseTest.o $(LIBRARY_PATHS) $(LIBRARIES) 
+ 
+ HmmTest:	$(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(TEST_BIN)/HmmTest.o
+-	$(CXX) -o $(TEST_BIN)/$@ $(CXX_FLAGS) $(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(TEST_BIN)/HmmTest.o $(LIBRARY_PATHS) $(LIBRARIES) 
++	$(CXX) -o $(TEST_BIN)/$@ $(CXXFLAGS) $(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(TEST_BIN)/HmmTest.o $(LIBRARY_PATHS) $(LIBRARIES) 
+ 
+ InputProcessorTest:	$(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(OBJ)/InputProcessor.o $(TEST_BIN)/InputProcessorTest.o
+-	$(CXX) -o $(TEST_BIN)/$@ $(CXX_FLAGS) $(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(OBJ)/InputProcessor.o $(TEST_BIN)/InputProcessorTest.o $(LIBRARY_PATHS) $(LIBRARIES) 
++	$(CXX) -o $(TEST_BIN)/$@ $(CXXFLAGS) $(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(OBJ)/InputProcessor.o $(TEST_BIN)/InputProcessorTest.o $(LIBRARY_PATHS) $(LIBRARIES) 
+ 	
+ MathUtilTest:	$(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(TEST_BIN)/MathUtilTest.o
+-	$(CXX) -o $(TEST_BIN)/$@ $(CXX_FLAGS) $(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(TEST_BIN)/MathUtilTest.o $(LIBRARY_PATHS) $(LIBRARIES) 
++	$(CXX) -o $(TEST_BIN)/$@ $(CXXFLAGS) $(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(TEST_BIN)/MathUtilTest.o $(LIBRARY_PATHS) $(LIBRARIES) 
+ 	
+ ReporterTest:	$(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(TEST_BIN)/ReporterTest.o
+-	$(CXX) -o $(TEST_BIN)/$@ $(CXX_FLAGS) $(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(TEST_BIN)/ReporterTest.o $(LIBRARY_PATHS) $(LIBRARIES) 
++	$(CXX) -o $(TEST_BIN)/$@ $(CXXFLAGS) $(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(TEST_BIN)/ReporterTest.o $(LIBRARY_PATHS) $(LIBRARIES) 
+ 
+ ThreadPoolTest:	$(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(OBJ)/ThreadPool.o $(TEST_BIN)/ThreadPoolTest.o
+-	$(CXX) -o $(TEST_BIN)/$@ $(CXX_FLAGS) $(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(OBJ)/ThreadPool.o $(TEST_BIN)/ThreadPoolTest.o $(LIBRARY_PATHS) $(LIBRARIES)
++	$(CXX) -o $(TEST_BIN)/$@ $(CXXFLAGS) $(OBJ)/Hmm.o $(OBJ)/DataStructures.o $(OBJ)/MathUtil.o $(OBJ)/StringUtil.o $(OBJ)/ThreadPool.o $(TEST_BIN)/ThreadPoolTest.o $(LIBRARY_PATHS) $(LIBRARIES)
+ ############################## END TEST LOGIC ##############################
+ 
+ 
