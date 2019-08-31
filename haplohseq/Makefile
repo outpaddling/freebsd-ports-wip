@@ -17,7 +17,6 @@ USES=		gmake localbase:ldflags zip
 
 MAKEFILE=	makefile
 LDFLAGS+=	-lpthread
-LIBRARY_PATHS=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/haplohseq
 

@@ -1,10 +1,11 @@
 --- makefile.orig	2019-08-29 18:03:23 UTC
 +++ makefile
-@@ -7,22 +7,26 @@
+@@ -7,23 +7,31 @@
  #
  
  # Constants
 -CXX=g++
++# Default to g++ if not set by make args or environment
 +CXX?=g++
  #-O0 -g will turn on debugging
  #The rule of thumb:
@@ -13,26 +14,29 @@
  #When you use gentoo, use -O3...!
  #When you need to put it on an embedded system, use -Os (optimize for size, not for efficiency.)
 -CXX_FLAGS=-Wall -g -stdlib=libstdc++
++# Use canonincal compiler variables, which may be provided by build env
 +CXXFLAGS?=-Wall -g -stdlib=libstdc++
  SRC=src
  CONF=conf
  HMM_SRC=$(SRC)/hmm
  UTIL_SRC=$(SRC)/util
 -BOOST=/usr/local/boost_1_52_0
--INCLUDES=-I./$(SRC) -I./$(HMM_SRC) -I./$(UTIL_SRC) -isystem$(BOOST)
++BOOST?=/usr/local/boost_1_52_0
+ INCLUDES=-I./$(SRC) -I./$(HMM_SRC) -I./$(UTIL_SRC) -isystem$(BOOST)
 -LIBRARY_PATHS=-Llib/macosx 
-+BOOST=${LOCALBASE}
-+INCLUDES=-I./$(SRC) -I./$(HMM_SRC) -I./$(UTIL_SRC) -isystem$(BOOST)/include
 +LIBRARY_PATHS?=-Llib/macosx
  LIBRARIES=-lm -lboost_program_options -lboost_system -lboost_filesystem -lboost_thread
+ 
++# Installation target with destdir support
 +DESTDIR?=.
 +PREFIX?=/usr/local
 +MKDIR?=mkdir
 +INSTALL?=install
- 
++
  # Generated directories which are generated in this script and cleaned up with 'make clean'
  BUILD=build
-@@ -35,25 +39,28 @@ directories:
+ OBJ=$(BUILD)/obj
+@@ -35,18 +43,21 @@ directories:
  
  # Create object files into the OBJ directory from cpp files in the SRC directory.
  $(OBJ)/%.o:	$(SRC)/%.cpp directories
@@ -61,15 +65,7 @@
  clean:
  	rm -rf $(BUILD)
  
- ############################## BEGIN TEST LOGIC ##############################
- TEST_SRC=$(SRC)/test
- TEST_RESOURCES=$(TEST_SRC)/resources
--TEST_INCLUDES=-isystem$(BOOST)
-+TEST_INCLUDES=-isystem$(BOOST)/include
- TEST_LIBRARIES=-lcpptest
- TEST_BIN=$(BUILD)/test
- TEST_LOG_LEVEL=--log_level=all
-@@ -74,28 +81,28 @@ test: FreqPhaseTest HaplohSeqTest HmmTes
+@@ -74,28 +85,28 @@ test: FreqPhaseTest HaplohSeqTest HmmTes
  
  # Create test object files into the OBJ directory from cpp files in the SRC directory.
  $(TEST_BIN)/%.o:	$(TEST_SRC)/%.cpp directories test_directory
