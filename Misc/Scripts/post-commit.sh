@@ -55,8 +55,8 @@ To install via the binary package, simply run:
 
     pkg install $pkg_name
 
-This will very quickly install a binary using only highly-portable
-optimizations, much like apt-get, yum, etc.
+This will very quickly install a prebuilt binary using only highly-portable
+optimizations, much like apt, yum, etc.
 
 FreeBSD ports can just as easily be built and installed from source,
 although it will take longer (for the computer, not for you):
@@ -70,8 +70,9 @@ such as different compilers or dependencies.  For example, adding
 
     CFLAGS+=-march=native
 
-to /etc/make.conf will cause all ports built from source to use full native
-for the local CPU, resulting in faster but less portable binaries.
+to /etc/make.conf will cause ports built from source to use all native
+optimizations known to the compiler for the local CPU, resulting in faster
+but less portable binaries.
 
 To report issues with a FreeBSD port, please submit a PR at:
 
