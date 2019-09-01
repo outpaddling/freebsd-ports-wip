@@ -17,7 +17,11 @@ USES=		gmake localbase:ldflags zip
 
 MAKEFILE=	makefile
 LDFLAGS+=	-lpthread
+MAKE_ENV=	STRIP=${STRIP}
 
 PLIST_FILES=	bin/haplohseq
+
+do-test:
+	(cd ${WRKSRC}/build/test && ${FILESDIR}/run-tests)
 
 .include <bsd.port.mk>
