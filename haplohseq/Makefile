@@ -3,8 +3,9 @@
 PORTNAME=	haplohseq
 PORTVERSION=	0.0.2019.08.29
 CATEGORIES=	wip biology
-MASTER_SITES=	https://mirror1.hpc.uwm.edu/Distfiles/
-DISTNAME=	haplohseq_source
+MASTER_SITES=	https://mirror1.hpc.uwm.edu/Distfiles/ \
+		https://mirror2.hpc.uwm.edu/Distfiles/
+DISTNAME=	haplohseq_source-2019.08.29
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Identify regions of allelic imbalance
@@ -16,6 +17,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 USES=		gmake localbase:ldflags zip
 
 MAKEFILE=	makefile
+WRKSRC=		${WRKDIR}/haplohseq_source
 LDFLAGS+=	-lpthread
 MAKE_ENV=	STRIP=${STRIP}
 
