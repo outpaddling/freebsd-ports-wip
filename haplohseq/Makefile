@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	haplohseq
-PORTVERSION=	0.0.2019.08.29
+DISTVERSION=	0.1.2
 CATEGORIES=	wip biology
 MASTER_SITES=	https://mirror1.hpc.uwm.edu/Distfiles/ \
 		https://mirror2.hpc.uwm.edu/Distfiles/
-DISTNAME=	haplohseq_source-2019.08.29
+DISTNAME=	haplohseq_source-${DISTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Identify regions of allelic imbalance
