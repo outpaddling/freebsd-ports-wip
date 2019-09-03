@@ -525,6 +525,13 @@ EOM
 step
 cat << EOM
 
+If shared lib major version changed, bump PORTREVISION on all dependent ports.
+
+EOM
+
+step
+cat << EOM
+
 Generate unified diff for updates, shar file for new ports
     (port-diff or port-shar scripts from ports-mgmt/port-dev)
 
