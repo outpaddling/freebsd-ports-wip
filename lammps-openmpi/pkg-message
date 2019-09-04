@@ -1,7 +1,0 @@
-
-=============================================================
-This slave port installs *ONLY* the openmpi binary.
-
-For docs, examples, etc., install the serial port, ../lammps.
-=============================================================
-
