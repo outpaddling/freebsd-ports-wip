@@ -1,4 +1,4 @@
---- Makefile.orig	2019-03-23 18:32:19 UTC
+--- Makefile.orig	2019-09-07 21:14:56 UTC
 +++ Makefile
 @@ -4,7 +4,7 @@
  # (c) 2009 Aaron Quinlan
@@ -9,31 +9,25 @@
  
  VERSION_FILE=./src/utils/version/version_git.h
  RELEASED_VERSION_FILE=./src/utils/version/version_release.txt
-@@ -20,11 +20,10 @@ export OBJ_DIR	= obj
- export BIN_DIR	= bin
- export SRC_DIR	= src
- export UTIL_DIR	= src/utils
--export CXX		= g++
-+export CXX	?= g++
-+export CXXFLAGS += -D_FILE_OFFSET_BITS=64 -DWITH_HTS_CB_API $(INCLUDES)
- ifeq ($(DEBUG),1)
--export CXXFLAGS = -Wconversion -Wall -Wextra -DDEBUG -D_DEBUG -g -O0 -D_FILE_OFFSET_BITS=64 -DWITH_HTS_CB_API $(INCLUDES)
--else
--export CXXFLAGS = -g -Wall -O2 -D_FILE_OFFSET_BITS=64 -DWITH_HTS_CB_API $(INCLUDES)
-+export CXXFLAGS += -Wconversion -Wall -Wextra -DDEBUG -D_DEBUG -g -O0
- endif
+@@ -20,7 +20,7 @@ OBJ_DIR	= obj
+ BIN_DIR	= bin
+ SRC_DIR	= src
  
- # If the user has specified to do so, tell the compile to use rand() (instead of mt19937).
-@@ -37,7 +36,7 @@ endif 
- export LIBS		= -lz -lm -lbz2 -llzma -lpthread
- export BT_ROOT  = src/utils/BamTools/
+-CXX     = g++
++CXX     ?= g++
+ 
+ ifeq ($(DEBUG),1)
+ BT_CPPFLAGS = -DDEBUG -D_DEBUG -D_FILE_OFFSET_BITS=64 -DWITH_HTS_CB_API $(INCLUDES)
+@@ -40,7 +40,7 @@ endif
+ BT_LDFLAGS =
+ BT_LIBS    = -lz -lm -lbz2 -llzma -lpthread
  
 -prefix ?= /usr/local
 +PREFIX ?= /usr/local
  
  SUBDIRS = $(SRC_DIR)/annotateBed \
  		  $(SRC_DIR)/bamToBed \
-@@ -172,9 +171,9 @@ all-static: print_banner $(OBJ_DIR) $(BIN_DIR) autover
+@@ -183,9 +183,9 @@ $(BIN_DIR)/intersectBed: | $(BIN_DIR)
  .PHONY: all
  
  install: all
@@ -45,12 +39,3 @@
  	done
  
  print_banner:
-@@ -203,7 +202,7 @@ clean:
- .PHONY: clean
- 
- test: all
--	@cd test; bash test.sh
-+	@cd test; $(SHELL) test.sh
- 
- .PHONY: test
- 

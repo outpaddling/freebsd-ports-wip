@@ -2,7 +2,7 @@
 
 PORTNAME=	bedtools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.28.0
+DISTVERSION=	2.29.0
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -28,8 +28,7 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's|@\$$(CXX)|$$(CXX)|g' \
 		${WRKSRC}/*/Makefile \
 		${WRKSRC}/*/*/Makefile \
-		${WRKSRC}/*/*/*/Makefile \
-		${WRKSRC}/*/*/*/*/Makefile
+		${WRKSRC}/*/*/*/Makefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bedtools
