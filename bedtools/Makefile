@@ -1,9 +1,9 @@
 # $FreeBSD$
 
-PORTNAME=	bedtools
+PORTNAME=		bedtools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.29.0
-CATEGORIES=	wip biology
+DISTVERSION=		2.29.0
+CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Toolset for genome set arithmetic such as intersect, union
