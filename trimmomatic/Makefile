@@ -2,7 +2,7 @@
 # $FreeBSD: head/biology/trimmomatic/Makefile 460452 2018-01-31 01:07:07Z jwb $
 
 PORTNAME=	trimmomatic
-PORTVERSION=	0.35
+PORTVERSION=	0.39
 CATEGORIES=	wip biology java
 MASTER_SITES=	http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/
 DISTNAME=	Trimmomatic-${PORTVERSION}
