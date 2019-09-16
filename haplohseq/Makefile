@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=		gmake localbase:ldflags zip
+USES=		compiler:c++11-lang gmake localbase:ldflags zip
 
 MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}/haplohseq_source
