@@ -24,6 +24,6 @@ MAKE_ENV=	STRIP=${STRIP}
 PLIST_FILES=	bin/haplohseq
 
 do-test:
-	(cd ${WRKSRC}/build/test && ${FILESDIR}/run-tests)
+	@(cd ${WRKSRC}/build/test && ${FILESDIR}/run-tests)
 
 .include <bsd.port.mk>
