@@ -1,11 +1,10 @@
 # $FreeBSD: head/biology/fastqc/Makefile 455236 2017-11-30 22:54:29Z jwb $
 
 PORTNAME=	fastqc
-DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.8
 CATEGORIES=	wip biology java perl5
 MASTER_SITES=	https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
-DISTNAME=	${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION}
+DISTNAME=	${PORTNAME}_v${DISTVERSIONPREFIX}${DISTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Quality control tool for high throughput sequence data
