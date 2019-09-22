@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	multiqc
-PORTVERSION=	1.7
-CATEGORIES=	wip python
+DISTVERSION=	1.7
+CATEGORIES=	wip biology python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bacon@manatee.acadix.biz
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Aggregate results from bioinformatics analyses across many samples
 
 LICENSE=	GPLv3
