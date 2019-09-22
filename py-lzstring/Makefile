@@ -15,4 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 USES=		python
 USE_PYTHON=	autoplist distutils
 
+NO_BUILD=	yes
+
 .include <bsd.port.mk>
