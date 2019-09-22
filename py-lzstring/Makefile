@@ -1,16 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	lzstring
-PORTVERSION=	1.0.4
-CATEGORIES=	wip textproc python
+DISTVERSION=	1.0.4
+CATEGORIES=	wip archivers python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	lz-string for python
+COMMENT=	LZ-based in-memory string compression
 
 LICENSE=	MIT
-#LICENSE_FILE=	
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		python
 USE_PYTHON=	autoplist distutils
