@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	packmol
-PORTVERSION=	18.169
-CATEGORIES=	wip
+DISTVERSION=	18.169
+CATEGORIES=	wip science
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Pack molecules in defined regions of space
