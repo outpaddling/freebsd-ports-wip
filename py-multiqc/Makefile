@@ -7,7 +7,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Aggregate results from bioinformatics analyses across many samples
+COMMENT=	Aggregate bioinformatics analysis reports across samples and tools
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -21,14 +21,16 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}requests>:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}simplejson>0:devel/py-simplejson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.9:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lzstring>0:wip/py-lzstring@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}spectra>=0.0.10:wip/py-spectra@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lzstring>0:archivers/py-lzstring@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}spectra>=0.0.10:graphics/py-spectra@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colormath>0:math/py-colormath@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 post-patch:
-	${RM} ${WRKSRC}/multiqc/utils/config.py.orig
+	@${RM} ${WRKSRC}/multiqc/utils/config.py.orig
 
 .include <bsd.port.mk>
