@@ -20,6 +20,20 @@ usage()
 
 
 ##########################################################################
+#   Function description:
+#       Pause until user presses return
+##########################################################################
+
+pause()
+{
+    local junk
+    
+    printf "Press return to continue..."
+    read junk
+}
+
+
+##########################################################################
 #   Main
 ##########################################################################
 
@@ -61,6 +75,8 @@ if [ 0$overwrite != 0y ]; then
     if [ 0$add = 0y ]; then
 	cd ..
 	svn add $port
+	printf "Add $port to $category/Makefile.\n"
+	pause
 	$EDITOR Makefile
     fi
 fi
