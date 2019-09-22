@@ -28,4 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	autoplist distutils
 
+post-patch:
+	${RM} ${WRKSRC}/multiqc/utils/config.py.orig
+
 .include <bsd.port.mk>
