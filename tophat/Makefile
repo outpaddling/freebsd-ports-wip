@@ -19,9 +19,9 @@ SHEBANG_FILES=	src/contig_to_chr_coords src/bed_to_juncs \
 		src/sra_to_solid src/tophat-fusion-post \
 		src/tophat.py src/tophat2.sh
 
-GNU_CONFIGURE=	yes
-CFLAGS+=	-Wno-unused
-INSTALL_TARGET=	install-strip
-MAKE_JOBS_UNSAFE=yes
+GNU_CONFIGURE=		yes
+CFLAGS+=		-Wno-unused
+INSTALL_TARGET=		install-strip
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
