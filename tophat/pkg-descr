@@ -6,7 +6,6 @@ junctions between exons.
 Note:
 
 TopHat has been Superseded by HISAT2 and is no longer maintained upstream.
-This port is maintained primarily for revisiting old studies where tophat was
-used.
+This port is provided mainly for revisiting old studies where TopHat was used.
 
 WWW: http://ccb.jhu.edu/software/tophat/index.shtml
