@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 RUN_DEPENDS=	bowtie2:biology/bowtie2
 
-USES=		gmake python:2.7,run shebangfix
+USES=		gmake python:2.7 shebangfix
 
 SHEBANG_FILES=	src/contig_to_chr_coords \
 		src/bed_to_juncs \
