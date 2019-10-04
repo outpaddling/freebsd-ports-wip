@@ -20,8 +20,8 @@ RUN_DEPENDS+=	${PKGNAMEPREFIX}q2-vsearch>=0:wip/py-q2-vsearch \
 		${PKGNAMEPREFIX}q2-deblur>=0:wip/py-q2-deblur \
 		${PKGNAMEPREFIX}q2-feature-classifier>=0:wip/py-q2-feature-classifier
 
-USES=		iconv python:2
-USE_PYTHON=	distutils
+USES=		iconv python
+USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes
 

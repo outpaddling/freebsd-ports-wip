@@ -153,7 +153,7 @@ USE_JAVA=	yes	# rdp-classifier jar path
 USES=		iconv python:2 shebangfix
 SHEBANG_FILES=	setup.py qiime/*.py qiime/*/*.py scripts/*.py \
 		tests/*.py tests/*/*.py
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils autoplist
 
 # Does not work for uclust
 #USE_GITHUB=	yes
