@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	q2-deblur
-PORTVERSION=	2017.2.3
+DISTVERSION=	2019.7.0
 CATEGORIES=	wip biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,6 +15,6 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	wasade
+GH_ACCOUNT=	qiime2
 
 .include <bsd.port.mk>
