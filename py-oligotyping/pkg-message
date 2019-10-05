@@ -1,5 +1,11 @@
+[
+{ type: install
+  message: <<EOM
 
 If running in an environment without X11, such as on a cluster, add the
 following to ~/.matplotlib/matplotlibrc:
 
 backend: Agg
+EOM
+}
+]
