@@ -2,10 +2,12 @@
 
 PORTNAME=	lefse
 DISTVERSION=	1.0.8
+#DISTVERSION=	1.0.8.2019.08.09
 CATEGORIES=	wip python
 MASTER_SITES=	https://bitbucket.org/nsegata/lefse/get/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${DISTVERSION}
+#DISTNAME=	tip
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Linear discriminant analysis effect size
@@ -19,13 +21,20 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PKGNAMEPREFIX}rpy2>=2.1:math/py-rpy2@${PY_FLAVOR} \
 		${PKGNAMEPREFIX}argparse>=0:devel/py-argparse@${PY_FLAVOR}
 
-USES=		python:2.7 shebangfix tar:bz2
+USES=		python:3.6 shebangfix tar:bz2
 
 SHEBANG_FILES=	${WRKSRC}/*.py ${WRKSRC}/lefsebiom/*.py
 
 WRKSRC=		${WRKDIR}/nsegata-lefse-3ce86f78d59e
+#WRKSRC=		${WRKDIR}/nsegata-lefse-9adc3a62460e/
 NO_BUILD=	yes
 NO_ARCH=	yes
+
+pre-configure:
+	@${CP} ${WRKSRC}/lefse.py ${WRKSRC}/lefse.py.orig
+	@${PRINTF} "#!${PYTHON_CMD}\n\n" > ${WRKSRC}/lefse.py
+	@${CAT} ${WRKSRC}/lefse.py.orig >> ${WRKSRC}/lefse.py
+	@${REINPLACE_CMD} -e 's|	|        |g' ${WRKSRC}/*.py
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${STAGEDIR}${PREFIX}/bin
