@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	q2-feature-classifier
-PORTVERSION=	2017.2.0
+DISTVERSION=	2019.7.0
 CATEGORIES=	wip biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	qiime2
