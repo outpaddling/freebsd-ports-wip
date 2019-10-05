@@ -1,37 +1,32 @@
 # $FreeBSD$
 
 PORTNAME=	oligotyping
-PORTVERSION=	1.7
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTVERSION=	2.1
 CATEGORIES=	wip biology
-MASTER_SITES=	http://oligotyping.org/files/downloads/
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Minimum entrop decomposition
 
-# Deps:
-# http://oligotyping.org/2014/08/16/installing-the-oligotyping-pipeline/
-# py27-pip py27-scipy py27-matplotlib py27-biopython py27-django git
-# R: 'vegan', 'ggplot2', 'gplots', 'gtools', 'reshape', 'optparse', 'pheatmap', 'RColorBrewer', 'compute.es'
-# BLAST+
+LICENSE=	GPLv3
 
-USES=		python:2 shebangfix
-USE_PYTHON=	distutils
-#SHEBANG_FILES=	scripts/ec2Clean scripts/ec2Dispatch
-
-BUILD_DEPENDS=	${PKGNAMEPREFIX}pip>=6.0.6:devel/py-pip \
-		${PKGNAMEPREFIX}scipy>=0.14.0:science/py-scipy \
-		${PKGNAMEPREFIX}matplotlib>=0.14.0:math/py-matplotlib \
-		${PKGNAMEPREFIX}biopython>=1.60:biology/py-biopython \
-		${PKGNAMEPREFIX}django>=1.7:www/py-django \
-		${PKGNAMEPREFIX}mock>=1.0.1:devel/py-mock
-
-# No R-cran-vegan, gplots, optparse, pheatmap, compute-es
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+BUILD_DEPENDS=	${PKGNAMEPREFIX}scipy>=0.14.0:science/py-scipy@${PY_FLAVOR} \
+		${PKGNAMEPREFIX}matplotlib>=0.14.0:math/py-matplotlib@${PY_FLAVOR} \
+		${PKGNAMEPREFIX}biopython>=1.60:biology/py-biopython@${PY_FLAVOR} \
+		${PKGNAMEPREFIX}django>=1.7:www/py-django@${PY_FLAVOR} \
+		${PYNUMPY}
+RUN_DEPENDS=	${PKGNAMEPREFIX}scipy>=0.14.0:science/py-scipy@${PY_FLAVOR} \
+		${PKGNAMEPREFIX}matplotlib>=0.14.0:math/py-matplotlib@${PY_FLAVOR} \
+		${PKGNAMEPREFIX}biopython>=1.60:biology/py-biopython@${PY_FLAVOR} \
+		${PKGNAMEPREFIX}django>=1.7:www/py-django@${PY_FLAVOR} \
 		R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
 		R-cran-gtools>0:devel/R-cran-gtools \
 		R-cran-reshape>0:devel/R-cran-reshape \
 		R-cran-RColorBrewer>0:graphics/R-cran-RColorBrewer \
 		blastx:biology/ncbi-blast+
+
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
