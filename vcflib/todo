@@ -1,0 +1,2 @@
+
+Removed LD.cpp.  See if Makefile.externallibs targets are accurate.
