@@ -2,12 +2,10 @@
 
 PORTNAME=	lefse
 DISTVERSION=	1.0.8
-#DISTVERSION=	1.0.8.2019.08.09
 CATEGORIES=	wip python
 MASTER_SITES=	https://bitbucket.org/nsegata/lefse/get/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${DISTVERSION}
-#DISTNAME=	tip
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Linear discriminant analysis effect size
@@ -19,14 +17,14 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 RUN_DEPENDS=	${PYNUMPY} \
 		${PKGNAMEPREFIX}matplotlib>=1.0:math/py-matplotlib@${PY_FLAVOR} \
 		${PKGNAMEPREFIX}rpy2>=2.1:math/py-rpy2@${PY_FLAVOR} \
-		${PKGNAMEPREFIX}argparse>=0:devel/py-argparse@${PY_FLAVOR}
+		${PKGNAMEPREFIX}argparse>=0:devel/py-argparse@${PY_FLAVOR} \
+		R-cran-mvtnorm>0:math/R-cran-mvtnorm
 
 USES=		python:3.6 shebangfix tar:bz2
 
 SHEBANG_FILES=	${WRKSRC}/*.py ${WRKSRC}/lefsebiom/*.py
 
 WRKSRC=		${WRKDIR}/nsegata-lefse-3ce86f78d59e
-#WRKSRC=		${WRKDIR}/nsegata-lefse-9adc3a62460e/
 NO_BUILD=	yes
 NO_ARCH=	yes
 
