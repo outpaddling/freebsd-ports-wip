@@ -1,7 +1,7 @@
 # $FreeBSD: head/biology/star/Makefile 499763 2019-04-23 15:03:29Z jwb $
 
 PORTNAME=	STAR
-DISTVERSION=	2.7.0f
+DISTVERSION=	2.7.2d
 CATEGORIES=	wip biology
 PKGNAMEPREFIX=	rna-
 
