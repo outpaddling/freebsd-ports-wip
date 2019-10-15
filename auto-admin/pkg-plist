@@ -72,6 +72,7 @@ sbin/auto-ports-setup
 sbin/auto-print-make-variable
 sbin/auto-pxe-installer-setup
 sbin/auto-pxe-node-discover
+sbin/auto-remove-from-group
 sbin/auto-remove-user
 sbin/auto-replace-file
 sbin/auto-restore-ownership
