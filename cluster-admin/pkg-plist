@@ -64,6 +64,7 @@ sbin/cluster-pkgdir
 sbin/cluster-pkgsrc-admin
 sbin/cluster-portsnap
 sbin/cluster-recreate-user
+sbin/cluster-remove-from-group
 sbin/cluster-remove-from-known-hosts
 sbin/cluster-remove-user
 sbin/cluster-restore-user
