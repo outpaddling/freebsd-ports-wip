@@ -16,4 +16,6 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	mitre
 
+MAKE_ENV=	GOPATH="${WRKSRC}:${WRKSRC}/vendor"
+
 .include <bsd.port.mk>
