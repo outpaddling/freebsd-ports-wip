@@ -1,8 +1,8 @@
-# $FreeBSD: head/biology/kallisto/Makefile 493810 2019-02-24 20:32:19Z jwb $
+# $FreeBSD: head/biology/kallisto/Makefile 507372 2019-07-26 20:46:53Z gerald $
 
 PORTNAME=		kallisto
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.46.0
+DISTVERSION=		0.46.1
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
