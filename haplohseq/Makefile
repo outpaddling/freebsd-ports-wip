@@ -11,14 +11,23 @@ COMMENT=	Identify regions of allelic imbalance
 LICENSE=	MIT
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+RUN_DEPENDS=	R-cran-optparse>0:wip/R-cran-optparse
 
-USES=		compiler:c++11-lang gmake localbase:ldflags tar:xz
+USES=		compiler:c++11-lang gmake localbase:ldflags python:2.7 tar:xz
+
+OPTIONS_DEFINE=	EXAMPLES
 
 MAKEFILE=	makefile
 LDFLAGS+=	-lpthread
 MAKE_ENV=	STRIP=${STRIP}
 
-PLIST_FILES=	bin/haplohseq
+SUB_FILES=	haplohseq-example
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/haplohseq-example ${STAGEDIR}${PREFIX}/bin
+
+post-install-EXAMPLES-on:
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "example ldmap scripts" ${STAGEDIR}${EXAMPLESDIR})
 
 do-test:
 	@(cd ${WRKSRC}/build/test && ${FILESDIR}/run-tests)
