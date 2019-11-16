@@ -15,6 +15,6 @@ CRAN_DEPENDS=	R-cran-getopt>=1.20.2:wip/R-cran-getopt
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=		cran
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>

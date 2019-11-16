@@ -11,7 +11,7 @@ COMMENT=	Accept short and long flags in Rscript
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cran
+USES=		cran:auto-plist
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e \
