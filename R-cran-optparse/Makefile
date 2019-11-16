@@ -6,7 +6,7 @@ CATEGORIES=	wip devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Command line parser inspired by Python's optparse
+COMMENT=	Command line flag parser inspired by Python's optparse
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
