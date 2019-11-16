@@ -1,9 +1,3 @@
-TIMESTAMP = 1536678023
-SHA256 (salmon/salmon-v0.11.3.zip) = b863548383448c21a862cc568d648199401284d70aafce8d97e798da2033aec1
-SIZE (salmon/salmon-v0.11.3.zip) = 1163389
-SHA256 (salmon/v1.1.tar.gz) = 34597ecd3718e6d6e7a1dd4350220664be2c1cd992070d1218564a20d7aa5697
-SIZE (salmon/v1.1.tar.gz) = 79006
-SHA256 (salmon/v1.14.8.1.tar.gz) = f6f30eefa478cfb708f3109a35fb6ffa0e24951d9d971985df2cef5919dd0bc3
-SIZE (salmon/v1.14.8.1.tar.gz) = 2506985
-SHA256 (salmon/COMBINE-lab-salmon-v0.11.3_GH0.tar.gz) = 09ca0dc432299228eb004d62da7785a8fc4b0aac8211393c136fe44c0d8d0338
-SIZE (salmon/COMBINE-lab-salmon-v0.11.3_GH0.tar.gz) = 10945588
+TIMESTAMP = 1573867343
+SHA256 (COMBINE-lab-salmon-v1.0.0_GH0.tar.gz) = fd8443cd6ac0c8dd565d1341bea955753933336390c7caaead37a967d4aaa739
+SIZE (COMBINE-lab-salmon-v1.0.0_GH0.tar.gz) = 5985018
