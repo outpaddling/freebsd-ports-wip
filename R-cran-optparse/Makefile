@@ -1,18 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	optparse
-DISTVERSION=	1.3.2
+DISTVERSION=	1.6.4
 CATEGORIES=	wip devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Command line parser inspired by Python's optparse
 
-# 2 or 3
 LICENSE=	GPLv2
-#LICENSE_FILE=	
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-CRAN_DEPENDS=	R-cran-getopt>=1.19:wip/R-cran-getopt
+CRAN_DEPENDS=	R-cran-getopt>=1.20.2:wip/R-cran-getopt
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
