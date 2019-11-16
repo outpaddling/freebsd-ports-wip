@@ -1,9 +1,9 @@
 # $FreeBSD$
 
-PORTNAME=	cereal
+PORTNAME=		cereal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.2
-CATEGORIES=	wip biology
+DISTVERSION=		1.3.0
+CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	C++11 library for serialization
