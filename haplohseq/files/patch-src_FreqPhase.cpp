@@ -1,13 +1,21 @@
 --- src/FreqPhase.cpp.orig	2019-11-13 14:19:06 UTC
 +++ src/FreqPhase.cpp
-@@ -180,10 +180,16 @@ double FreqPhase::meanValue(const std::vector<double>&
+@@ -5,6 +5,7 @@
+  * Email:  sanlucas@gmail.com
+  */
+ 
++#include <sysexits.h>
+ #include "FreqPhase.h"
+ 
+ namespace haplohseq {
+@@ -180,10 +181,16 @@ double FreqPhase::meanValue(const std::vector<double>&
  double FreqPhase::medianValue(const std::vector<double>& values) {
  	double median;
  	size_t size = values.size();
 +
 +	if ( size == 0 ) {
-+		std::cerr << "FreqPhase::medianValue(): values vector is empty." << endl;
-+		std::cerr << "Make sure your VCF has all of GT:AD:DP." << endl;
++		std::cerr << "FreqPhase::medianValue(): values vector is empty." << std::endl;
++		std::cerr << "Make sure your VCF has all of GT:AD:DP." << std::endl;
 +		exit(EX_DATAERR);
 +	}
  	std::vector<double> tempFreqs(values);
