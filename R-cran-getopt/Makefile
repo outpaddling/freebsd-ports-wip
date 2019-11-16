@@ -6,11 +6,10 @@ CATEGORIES=	wip devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Used with Rscript to write scripts that accept short and long flags
+COMMENT=	Accept short and long flags in Rscript
 
-# 2 or 3
 LICENSE=	GPLv2
-#LICENSE_FILE=	
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cran
 
