@@ -11,7 +11,7 @@ COMMENT=	Identify regions of allelic imbalance
 LICENSE=	MIT
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
-RUN_DEPENDS=	R-cran-optparse>0:wip/R-cran-optparse
+RUN_DEPENDS=	R-cran-optparse>0:devel/R-cran-optparse
 
 USES=		compiler:c++11-lang gmake localbase:ldflags python:2.7 tar:xz
 
