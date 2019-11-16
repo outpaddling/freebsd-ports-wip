@@ -3,6 +3,7 @@
 PORTNAME=		salmon
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.0.0
+CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Transcript-level quantification of RNA-seq from lightweight alignments
@@ -10,16 +11,17 @@ COMMENT=	Transcript-level quantification of RNA-seq from lightweight alignments
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# Check cereal version
 BUILD_DEPENDS=	bash:shells/bash \
 		autoconf:devel/autoconf \
-		cereal>=1.2.2:wip/cereal
+		cereal>=1.3.0:wip/cereal
 LIB_DEPENDS=	libtbb.so:devel/tbb \
 		libboost_system.so:devel/boost-libs
 
 USES=		cmake:noninja compiler:gcc-c++11-lib gmake shebangfix
 USE_GITHUB=	yes
-GH_ACCOUNT=	COMBINE-lab
 
+GH_ACCOUNT=	COMBINE-lab
 SHEBANG_FILES=	scripts/*
 
 LIBS+=		-L${LOCALBASE}/lib -lthr
