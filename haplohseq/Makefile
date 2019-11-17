@@ -24,10 +24,8 @@ MAKE_ENV=	STRIP=${STRIP}
 
 SUB_FILES=	haplohseq-example
 
-post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/haplohseq-example ${STAGEDIR}${PREFIX}/bin
-
 post-install-EXAMPLES-on:
+	${INSTALL_SCRIPT} ${WRKDIR}/haplohseq-example ${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "example ldmap scripts" ${STAGEDIR}${EXAMPLESDIR})
 
 do-test:
