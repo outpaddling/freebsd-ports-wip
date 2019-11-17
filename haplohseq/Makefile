@@ -2,6 +2,7 @@
 
 PORTNAME=	haplohseq
 DISTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	wip biology
 MASTER_SITES=	https://acadix.biz/Ports/distfiles/
 
