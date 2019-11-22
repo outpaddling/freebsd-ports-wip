@@ -18,4 +18,10 @@ GH_ACCOUNT=	mitre
 
 MAKE_ENV=	GOPATH="${WRKSRC}:${WRKSRC}/vendor"
 
+post-patch:
+	${MKDIR} ${WRKSRC}/vendor/github.com/mitre/fusera
+.for f in cmd awsutil flags fuseralib sdl
+	${MV} ${WRKSRC}/${f} ${WRKSRC}/vendor/github.com/mitre/fusera
+.endfor
+
 .include <bsd.port.mk>
