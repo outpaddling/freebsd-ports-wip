@@ -1,7 +1,7 @@
 # $FreeBSD: head/biology/py-cutadapt/Makefile 500187 2019-04-27 01:26:17Z jwb $
 
 PORTNAME=	cutadapt
-DISTVERSION=	2.5
+DISTVERSION=	2.7
 CATEGORIES=	wip biology python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xopen>=0.8.1:wip/py-xopen@${PY_FLAVOR} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-timeout>0:devel/py-pytest-timeout@${PY_FLAVOR}
 
-USES=		python:3.4+
+USES=		python:3.5+
 USE_PYTHON=	autoplist concurrent cython distutils
 
 post-install:
