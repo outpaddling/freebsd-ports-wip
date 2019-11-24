@@ -9,6 +9,7 @@ sbin/auto-admin
 sbin/auto-amend-fstab
 sbin/auto-append-line
 sbin/auto-ask
+sbin/auto-autofs-media-setup
 sbin/auto-autofs-nfs-setup
 sbin/auto-backup-file
 sbin/auto-binary-pkgsrc-setup
