@@ -1,7 +1,7 @@
 # $FreeBSD: head/biology/p5-TrimGalore/Makefile 496785 2019-03-24 21:44:17Z jwb $
 
 PORTNAME=	TrimGalore
-DISTVERSION=	0.6.4
+DISTVERSION=	0.6.5
 CATEGORIES=	wip biology perl5 python
 PKGNAMEPREFIX=	p5-
 
