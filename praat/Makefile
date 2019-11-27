@@ -1,30 +1,27 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
-# $FreeBSD: audio/praat/Makefile 327706 2013-09-20 14:36:35Z bapt $
+# $FreeBSD: head/audio/praat/Makefile 517040 2019-11-08 09:27:56Z tobik $
 
-PORTNAME=	praat
-PORTVERSION=	6.1.07
-CATEGORIES=	wip audio science
-MASTER_SITES=	http://www.fon.hum.uva.nl/praat/
-DISTNAME=	praat5359_sources
+PORTNAME=		praat
+DISTVERSION=		6.1.07
+DISTVERSIONPREFIX=	v
+CATEGORIES=		wip audio science
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Phonetics by Computer
 
 LICENSE=	GPLv2
 
+USES=		compiler:c++11-lang dos2unix gnome iconv pkgconfig
+USE_GITHUB=	yes
 DOS2UNIX_REGEX=	.*Makefile
-USES=		dos2unix iconv motif
-WRKSRC=		${WRKDIR}/sources_5359
+USE_GNOME=	gtk20
 MAKEFILE=	makefile
 PLIST_FILES=	bin/praat man/man1/praat.1.gz
 
-LIB_DEPENDS+=	libasound.so:audio/alsa-lib
-
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile -exec \
-		${REINPLACE_CMD} -e 's|^CFLAGS =|CFLAGS +=|' "{}" \;
+		${REINPLACE_CMD} -e 's|^CFLAGS =|CFLAGS +=|' {} \;
 	@${FIND} ${WRKSRC} -name Makefile -exec \
-		${REINPLACE_CMD} -e 's|^CPPFLAGS =|CPPFLAGS +=|' "{}" \;
+		${REINPLACE_CMD} -e 's|^CPPFLAGS =|CPPFLAGS +=|' {} \;
 	@${CP} ${FILESDIR}/makefile.defs.freebsd.alsa \
 		${WRKSRC}/makefile.defs
 	@${REINPLACE_CMD} -e 's|%%WRKSRC%%|${WRKSRC}|g' \
