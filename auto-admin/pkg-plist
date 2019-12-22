@@ -29,6 +29,7 @@ sbin/auto-denyhosts-remove-ip
 sbin/auto-denyhosts-setup
 sbin/auto-detect-laptops
 sbin/auto-disable-host-key-prompt
+sbin/auto-disable-hyperthreading
 sbin/auto-disable-service
 sbin/auto-disable-tcp-timestamps
 sbin/auto-enable-autologout
@@ -56,7 +57,9 @@ sbin/auto-ldap-adduser
 sbin/auto-ldap-client-setup
 sbin/auto-lock-local-pw
 sbin/auto-lock-user
+sbin/auto-media-format
 sbin/auto-mount-any
+sbin/auto-network-restart
 sbin/auto-nfs-restart
 sbin/auto-os-release
 sbin/auto-ostype
@@ -64,6 +67,7 @@ sbin/auto-package-installed
 sbin/auto-passwd-user-expiration
 sbin/auto-password-status
 sbin/auto-pkg-latest
+sbin/auto-pkgsrc-delete-all
 sbin/auto-pkgsrc-dir
 sbin/auto-pkgsrc-prefix
 sbin/auto-pkgsrc-remote-x11
