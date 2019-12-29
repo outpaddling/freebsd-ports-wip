@@ -60,7 +60,9 @@ sbin/auto-lock-user
 sbin/auto-media-format
 sbin/auto-mount-any
 sbin/auto-network-restart
+sbin/auto-nfs-add-share
 sbin/auto-nfs-restart
+sbin/auto-nfs-server-setup
 sbin/auto-os-release
 sbin/auto-ostype
 sbin/auto-package-installed
