@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 
 SHEBANG_FILES=	bowtie2 bowtie2-build bowtie2-inspect scripts/*.pl
 GH_ACCOUNT=	BenLangmead
-GH_TAG=		1292cf8dec89555362f123ccdaf269f4af377cbc
+GH_TAGNAME=	1292cf8dec89555362f123ccdaf269f4af377cbc
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
