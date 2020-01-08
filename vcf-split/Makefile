@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
-GH_TAGNAME=	a80b9f6b
+GH_TAGNAME=	334bc883
 
 PLIST_FILES=	bin/vcf-split man/man1/vcf-split.1.gz
 
