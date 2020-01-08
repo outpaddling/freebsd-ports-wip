@@ -8,10 +8,12 @@ MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Split a multi-sample VCF into single-sample VCFs
 
 LICENSE=	BSD2CLAUSE
-# LICENSE_FILE=	
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
-GH_TAGNAME=	4882e9ab
+GH_TAGNAME=	b34bff61
+
+PLIST_FILES=	bin/vcf-split man/man1/vcf-split.1.gz
 
 .include <bsd.port.mk>
