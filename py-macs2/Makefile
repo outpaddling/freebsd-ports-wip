@@ -1,9 +1,10 @@
 # $FreeBSD$
 
-PORTNAME=	macs2
-PORTVERSION=	2017.05.05
-CATEGORIES=	wip biology python
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PORTNAME=		macs2
+DISTVERSIONPREFIX=	v
+DISTVERSION=		2.2.6
+CATEGORIES=		wip biology python
+PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Novel algorithm for identifying transcript factor binding sites
