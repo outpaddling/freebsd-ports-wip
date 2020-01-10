@@ -7,23 +7,21 @@ CATEGORIES=		wip biology python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Novel algorithm for identifying transcript factor binding sites
+COMMENT=	Identify transcription factor binding sites
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYNUMPY}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent cython distutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	taoliu
 GH_PROJECT=	MACS
-GH_TAGNAME=	6946b2f6571cd0a7cfbb882c79aaa25a05a5c48d
 
-post-patch:
-	${MV} -f ${WRKSRC}/setup_w_cython.py ${WRKSRC}/setup.py
+# PYSETUP=	setup_w_cython.py
 
 post-stage:
 	${STRIP_CMD} \
