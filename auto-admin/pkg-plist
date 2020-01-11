@@ -41,6 +41,7 @@ sbin/auto-enable-service
 sbin/auto-fastest-mirror
 sbin/auto-fetch-install-media
 sbin/auto-file-secure
+sbin/auto-fusefs-install
 sbin/auto-gpu-setup
 sbin/auto-harden
 sbin/auto-idrac-passwd
