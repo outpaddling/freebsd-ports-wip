@@ -21,8 +21,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	taoliu
 GH_PROJECT=	MACS
 
-# PYSETUP=	setup_w_cython.py
-
 post-stage:
 	${STRIP_CMD} \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/MACS2/*.so \
