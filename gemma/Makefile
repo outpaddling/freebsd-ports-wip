@@ -2,7 +2,7 @@
 
 PORTNAME=	gemma
 DISTVERSION=	0.98.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,8 +11,7 @@ COMMENT=	Genome-wide Efficient Mixed Model Association
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcblas.so:math/cblas \
-		libgsl.so:math/gsl
+LIB_DEPENDS=	libgsl.so:math/gsl
 
 USES=		blaslapack:openblas compiler:c++11-lang eigen:3 gmake \
 		localbase:ldflags
