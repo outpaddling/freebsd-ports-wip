@@ -526,6 +526,13 @@ EOM
 step
 cat << EOM
 
+Run make describe on port and entire tree
+
+EOM
+
+step
+cat << EOM
+
 If shared lib major version changed, bump PORTREVISION on all dependent ports.
 
 EOM
