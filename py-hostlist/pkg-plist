@@ -2,19 +2,14 @@ bin/dbuck
 bin/hostgrep
 bin/hostlist
 bin/pshbak
-lib/python2.7/site-packages/hostlist.py
-lib/python2.7/site-packages/hostlist.pyc
-lib/python2.7/site-packages/hostlist.pyo
-lib/python2.7/site-packages/python_hostlist-1.14-py2.7.egg-info/PKG-INFO
-lib/python2.7/site-packages/python_hostlist-1.14-py2.7.egg-info/SOURCES.txt
-lib/python2.7/site-packages/python_hostlist-1.14-py2.7.egg-info/dependency_links.txt
-lib/python2.7/site-packages/python_hostlist-1.14-py2.7.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/hostlist.py
+%%PYTHON_SITELIBDIR%%/hostlist.pyc
+%%PYTHON_SITELIBDIR%%/hostlist.pyo
+%%PYTHON_SITELIBDIR%%/python_hostlist-1.14-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/python_hostlist-1.14-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/python_hostlist-1.14-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/python_hostlist-1.14-py%%PYTHON_VER%%.egg-info/top_level.txt
 man/man1/dbuck.1.gz
 man/man1/hostgrep.1.gz
 man/man1/hostlist.1.gz
 man/man1/pshbak.1.gz
-@dirrmtry man/man1
-@dirrmtry man
-@dirrmtry lib/python2.7/site-packages/python_hostlist-1.14-py2.7.egg-info
-@dirrmtry lib/python2.7/site-packages
-@dirrmtry lib/python2.7

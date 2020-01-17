@@ -12,8 +12,8 @@ COMMENT=	Manage SLURM host lists
 
 LICENSE=	GPLv2
 
-USE_PYTHON=	-2.7
-USE_PYDISTUTILS=	yes
+USES=		python:2.7
+USE_PYTHON=	distutils
 
 post-patch:
 	${REINPLACE_CMD} -e 's|share/man|man|g' \
