@@ -85,8 +85,8 @@ lib/slurm/cred_none.a
 lib/slurm/cred_none.so
 lib/slurm/ext_sensors_none.a
 lib/slurm/ext_sensors_none.so
-lib/slurm/ext_sensors_rrd.a
-lib/slurm/ext_sensors_rrd.so
+%%RRD%%lib/slurm/ext_sensors_rrd.a
+%%RRD%%lib/slurm/ext_sensors_rrd.so
 lib/slurm/gpu_generic.a
 lib/slurm/gpu_generic.so
 lib/slurm/gres_gpu.a
@@ -567,7 +567,7 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%/html/sstat.html
 %%PORTDOCS%%%%DOCSDIR%%/html/strigger.html
 %%PORTDOCS%%%%DOCSDIR%%/html/style.css
-%%PORTDOCS%%%%DOCSDIR%%/html/sview.html
+%%GUI%%%%PORTDOCS%%%%DOCSDIR%%/html/sview.html
 %%PORTDOCS%%%%DOCSDIR%%/html/switchplugins.html
 %%PORTDOCS%%%%DOCSDIR%%/html/taskplugins.html
 %%PORTDOCS%%%%DOCSDIR%%/html/team.html
