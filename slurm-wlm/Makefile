@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-DISTVERSION=	19.05.1-2
-PORTREVISION=	2
+DISTVERSION=	19.05.5
 CATEGORIES=	wip sysutils python
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
@@ -71,7 +70,6 @@ IPMI_LIB_DEPENDS=	libfreeipmi.so:sysutils/freeipmi
 IPMI_CONFIGURE_WITH=	freeipmi
 
 MYSQL_USES=		mysql
-MYSQL_CONFIGURE_with=	mysql
 MYSQL_CONFIGURE_OFF=	--with-mysql_config=/nonexistent
 
 RRD_LIB_DEPENDS=	librrd.so:databases/rrdtool
