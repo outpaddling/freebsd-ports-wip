@@ -1,0 +1,4 @@
+vcfio is a small library of fast VCF input/output functions for processing
+streaming data.
+
+WWW: https://github.com/auerlab/vcfio

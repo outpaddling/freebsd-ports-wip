@@ -1,0 +1,17 @@
+# $FreeBSD$
+
+PORTNAME=	vcfio
+DISTVERSION=	g20200117
+CATEGORIES=	wip biology
+
+MAINTAINER=	jwb@FreeBSD.org
+COMMENT=	VCF input/output library
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	auerlab
+GH_TAGNAME=	4733bcf5
+
+.include <bsd.port.mk>
