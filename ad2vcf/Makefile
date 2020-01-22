@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ad2vcf
-DISTVERSION=	g20190107
+DISTVERSION=	g20200122
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libvcfio.a:wip/vcfio
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
-GH_TAGNAME=	6e307e39
+GH_TAGNAME=	a5dc4a9f
 
 PLIST_FILES=	bin/ad2vcf
 
