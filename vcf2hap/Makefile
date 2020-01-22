@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=		vcf2hap
-DISTVERSION=		0.1.1-5
-DISTVERSIONSUFFIX=	-g650ac3d
+DISTVERSION=		0.1.1-7
+DISTVERSIONSUFFIX=	-gdd07b7f
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -15,5 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
 
 PLIST_FILES=	bin/vcf2hap
+
+pre-build:
+	(cd ${WRKSRC} && ${MAKE} LOCALBASE=${LOCALBASE} depend)
 
 .include <bsd.port.mk>
