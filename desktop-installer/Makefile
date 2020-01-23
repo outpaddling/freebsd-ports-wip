@@ -1,7 +1,7 @@
 # $FreeBSD: sysutils/desktop-installer/Makefile 452527 2017-10-20 14:21:36Z swills $
 
 PORTNAME=	desktop-installer
-DISTVERSION=	0.6.11
+DISTVERSION=	0.6.12
 CATEGORIES=	wip sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
@@ -10,7 +10,7 @@ COMMENT=	Quickly configure a FreeBSD desktop system
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	auto-admin>=0.5.0:sysutils/auto-admin
+RUN_DEPENDS=	auto-admin>=0.5.1:sysutils/auto-admin
 
 USES=		tar:xz
 
