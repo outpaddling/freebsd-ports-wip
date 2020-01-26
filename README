@@ -29,7 +29,11 @@ To install ports from this collection:
 
 	wip-poudriere-test category/portname jail [jail ...] | all | pattern
 
-3)  Run wip-update frequently to retreive the latest commits.
+3)  Add the following to /etc/make.conf to enable QA checks:
+
+	DEVELOPER=yes
+
+4)  Run wip-update frequently to retreive the latest commits.
 
 ---
 
@@ -53,9 +57,14 @@ o   Contact the owner of the repository and ask to be added as a Github
 
 	Do not modify someone else's files without their consent.
 
-    There are no quality or security requirements for ports of your own.
     Ports in this collection are works-in-progress and may be in any stage
     of development from completely non-functional to ready-to-commit.
+
+    All ports must have a valid MAINTAINER email.
+
+    Ports here may not have undergone security review and are provided as-is.
+    However, ports found to cause security issues by merely being installed
+    will be removed from the collection.
 
     You can use either git or subversion to manage your working copy.
 
