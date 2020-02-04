@@ -25,6 +25,7 @@ bin/slurm-node-info
 bin/slurm-pending-jobs
 bin/slurm-shell
 bin/slurm-user-cores
+bin/topjob
 bin/topnode
 libexec/add-gecos.awk
 sbin/cluster-add-to-group
@@ -90,6 +91,7 @@ sbin/cluster-useradd
 sbin/cluster-usermod
 sbin/cluster-users
 sbin/cluster-wip-update
+sbin/compute-node-set-arc-max
 sbin/condor-build-R-packages
 sbin/condor-list-packages
 sbin/ganglia-web-setup
