@@ -46,6 +46,7 @@ sbin/auto-freebsd-wip-checkout
 sbin/auto-fusefs-install
 sbin/auto-gpu-setup
 sbin/auto-harden
+sbin/auto-hex-to-octet
 sbin/auto-idrac-passwd
 sbin/auto-insert-line
 sbin/auto-install-infiniband-modules
@@ -67,6 +68,7 @@ sbin/auto-network-restart
 sbin/auto-nfs-add-share
 sbin/auto-nfs-restart
 sbin/auto-nfs-server-setup
+sbin/auto-octet-to-hex
 sbin/auto-os-release
 sbin/auto-ostype
 sbin/auto-package-installed
