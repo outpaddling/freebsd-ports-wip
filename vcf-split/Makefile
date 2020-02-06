@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vcf-split
-DISTVERSION=	g20200122
+DISTVERSION=	g20200205
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libvcfio.a:wip/vcfio
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
-GH_TAGNAME=	3bdcd1da
+GH_TAGNAME=	f88b151d
 
 PLIST_FILES=	bin/vcf-split man/man1/vcf-split.1.gz
 
