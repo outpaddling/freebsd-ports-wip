@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/sysutils/slurm-wlm/Makefile 523858 2020-01-23 01:52:06Z jwb $
 
 PORTNAME=	slurm
 DISTVERSION=	19.05.5
@@ -106,6 +106,7 @@ pre-configure:
 		${WRKSRC}/doc/man/man5/slurm.conf.5
 
 	@${REINPLACE_CMD} -e 's|"/proc|"/compat/linux/proc|g' \
+		-e 's|(/proc)|(/compat/linux/proc)|g' \
 		${WRKSRC}/src/slurmd/slurmstepd/req.c \
 		${WRKSRC}/src/slurmd/slurmstepd/pdebug.c \
 		${WRKSRC}/src/slurmd/common/xcpuinfo.c \
