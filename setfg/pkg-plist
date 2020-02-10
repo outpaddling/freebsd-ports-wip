@@ -1,1 +1,4 @@
-@comment $FreeBSD$
+bin/setbg
+bin/setfg
+man/man1/setbg.1.gz
+man/man1/setfg.1.gz

@@ -1,16 +1,18 @@
-#
 # $FreeBSD$
-#
 
 PORTNAME=	setfg
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	wip misc
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libtwin.a:../../devel/twintk \
-		${LOCALBASE}/lib/libbacon.a:../../devel/libbacon
-
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Set foreground and background colors on ASCII terminals
+
+LICENSE=	BSD2CLAUSE
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libtwintk.a:wip/twintk \
+		${LOCALBASE}/lib/libbacon.a:wip/libbacon
+
+USES=		tar:xz
 
 .include <bsd.port.mk>
