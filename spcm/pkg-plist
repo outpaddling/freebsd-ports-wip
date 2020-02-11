@@ -69,6 +69,7 @@ sbin/cluster-remove-from-known-hosts
 sbin/cluster-remove-user
 sbin/cluster-restore-user
 sbin/cluster-run
+sbin/cluster-services-menu
 sbin/cluster-setup
 sbin/cluster-shutdown
 sbin/cluster-ssh-keygen
@@ -84,6 +85,7 @@ sbin/cluster-unlock-local-pw
 sbin/cluster-unlock-user
 sbin/cluster-update-backup-nodes
 sbin/cluster-update-file-servers
+sbin/cluster-update-menu
 sbin/cluster-update-vis-nodes
 sbin/cluster-user-admin
 sbin/cluster-user-cleanup
@@ -98,7 +100,6 @@ sbin/ganglia-web-setup
 sbin/node-sync-all-users
 sbin/node-sync-groups
 sbin/node-sync-users
-sbin/slurm-admin
 sbin/slurm-cron-updates
 sbin/slurm-drain-all
 sbin/slurm-restart
@@ -110,7 +111,7 @@ sbin/slurm-sync-config
 sbin/slurm-update-idle-nodes
 sbin/slurm-usage-report
 sbin/spcm-banner
-sbin/update-cluster-admin-wip
+sbin/spcm-update-from-wip
 %%DATADIR%%/WWW/global_styles.css
 %%DATADIR%%/WWW/gmetad.conf.template
 %%DATADIR%%/WWW/gmond.conf.template
