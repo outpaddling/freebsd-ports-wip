@@ -109,6 +109,7 @@ sbin/slurm-sync-backup
 sbin/slurm-sync-config
 sbin/slurm-update-idle-nodes
 sbin/slurm-usage-report
+sbin/spcm-banner
 sbin/update-cluster-admin-wip
 %%DATADIR%%/WWW/global_styles.css
 %%DATADIR%%/WWW/gmetad.conf.template
