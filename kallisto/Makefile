@@ -2,7 +2,7 @@
 
 PORTNAME=		kallisto
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.46.1
+DISTVERSION=		0.46.2
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libsz.so:science/szip \
 		libhts.so:biology/htslib
 
-USES=		cmake:noninja compiler:c++11-lang
+USES=		cmake:noninja compiler:c++11-lang localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	pachterlab
 
