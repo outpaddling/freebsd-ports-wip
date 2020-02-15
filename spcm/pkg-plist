@@ -3,6 +3,7 @@ bin/cluster-backup-nodes
 bin/cluster-compute-nodes
 bin/cluster-down-nodes
 bin/cluster-file-servers
+bin/cluster-head-check
 bin/cluster-passwd
 bin/cluster-pfs-nodes
 bin/cluster-pw-check
@@ -43,7 +44,6 @@ sbin/cluster-dist-file
 sbin/cluster-enable-autologout
 sbin/cluster-ganglia-restart
 sbin/cluster-get-sync-file
-sbin/cluster-head-check
 sbin/cluster-highest-uid
 sbin/cluster-idrac-config
 sbin/cluster-init-node
