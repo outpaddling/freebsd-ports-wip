@@ -47,6 +47,7 @@ sbin/auto-fusefs-install
 sbin/auto-gpu-setup
 sbin/auto-harden
 sbin/auto-hex-to-octet
+sbin/auto-idrac-config
 sbin/auto-idrac-passwd
 sbin/auto-insert-line
 sbin/auto-install-infiniband-modules
