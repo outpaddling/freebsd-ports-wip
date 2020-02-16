@@ -45,7 +45,6 @@ sbin/cluster-enable-autologout
 sbin/cluster-ganglia-restart
 sbin/cluster-get-sync-file
 sbin/cluster-highest-uid
-sbin/cluster-idrac-config
 sbin/cluster-init-node
 sbin/cluster-krb-auth-setup
 sbin/cluster-local-pkg-install
