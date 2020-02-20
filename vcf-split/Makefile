@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vcf-split
-DISTVERSION=	g20200205
+DISTVERSION=	g20200219
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,11 +10,11 @@ COMMENT=	Split a multi-sample VCF into single-sample VCFs
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libvcfio.a:wip/vcfio
+BUILD_DEPENDS=	vcfio>=g20200219:wip/vcfio
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
-GH_TAGNAME=	f88b151d
+GH_TAGNAME=	66e6c50d
 
 PLIST_FILES=	bin/vcf-split man/man1/vcf-split.1.gz
 
