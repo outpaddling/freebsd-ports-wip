@@ -14,16 +14,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # Seg faults with openblas
 # #0  0x0000000800eb66ef in dgemm_otcopy_CORE2 ()
 #   from /usr/local/lib/libopenblas.so.0
-#		libopenblas.so:math/openblas
-LIB_DEPENDS=	libcblas.so:math/cblas \
-		liblapack.so:math/lapack \
-		libblas.so:math/blas
+LIB_DEPENDS=	libopenblas.so:math/openblas
+# LIB_DEPENDS=	libcblas.so:math/cblas \
+# 		liblapack.so:math/lapack \
+# 		libblas.so:math/blas
 
 # We need Fortran LDFLAGS to link with Lapack.
 USES=		fortran gmake python:2.7 shebangfix
 USE_GITHUB=	yes
 
-SHEBANG_FILES=	Tests/*.sh Tests/*/*.sh
+SHEBANG_FILES=	Tests/*.sh Tests/*/*.sh \
+		Tests/TEST_PHASED_VCF/*.py
 GH_ACCOUNT=	chrchang
 GH_PROJECT=	plink-ng
 GH_TAGNAME=	189224a
@@ -32,7 +33,7 @@ MAKEFILE=	${FILESDIR}/Makefile.generic
 WRKSRC_SUBDIR=	2.0
 CFLAGS+=	-DDYNAMIC_ZLIB
 LDFLAGS+=	-lpthread
-MAKE_ARGS=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -llapack -lcblas -lblas -lgfortran"
+MAKE_ARGS=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -lopenblas -lgfortran"
 
 INSTALL_TARGET=	install-strip
 
