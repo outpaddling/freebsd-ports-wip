@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vcfio
-DISTVERSION=	g20200219
+DISTVERSION=	0.1.0
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,6 +12,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
-GH_TAGNAME=	83ae6556
 
 .include <bsd.port.mk>
