@@ -10,7 +10,8 @@ COMMENT=	Whole genome association analysis toolset
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcblas.so:math/cblas \
+# Use openblas only to provide cblas headers
+LIB_DEPENDS=	libopenblas.so:math/openblas \
 		liblapack.so:math/lapack \
 		libblas.so:math/blas
 
@@ -26,7 +27,7 @@ WRKSRC_SUBDIR=	1.9
 CFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include
 CXXFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include
 LDFLAGS+=	-lpthread
-MAKE_ARGS=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -llapack -lcblas -lblas -lgfortran"
+MAKE_ARGS=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -llapack -lblas -lopenblas -lgfortran"
 INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	bin/plink

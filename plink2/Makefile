@@ -14,10 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # Seg faults with openblas
 # #0  0x0000000800eb66ef in dgemm_otcopy_CORE2 ()
 #   from /usr/local/lib/libopenblas.so.0
-LIB_DEPENDS=	libopenblas.so:math/openblas
-# LIB_DEPENDS=	libcblas.so:math/cblas \
-# 		liblapack.so:math/lapack \
-# 		libblas.so:math/blas
+# Use openblas only for cblas functionality since it conflicts with math/cblas
+LIB_DEPENDS=	libopenblas.so:math/openblas \
+		liblapack.so:math/lapack \
+		libblas.so:math/blas
 
 # We need Fortran LDFLAGS to link with Lapack.
 USES=		fortran gmake python:2.7 shebangfix
@@ -33,7 +33,7 @@ MAKEFILE=	${FILESDIR}/Makefile.generic
 WRKSRC_SUBDIR=	2.0
 CFLAGS+=	-DDYNAMIC_ZLIB
 LDFLAGS+=	-lpthread
-MAKE_ARGS=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -lopenblas -lgfortran"
+MAKE_ARGS=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -llapack -lblas -lopenblas -lgfortran"
 
 INSTALL_TARGET=	install-strip
 
