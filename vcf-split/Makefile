@@ -10,7 +10,7 @@ COMMENT=	Split a multi-sample VCF into single-sample VCFs
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	vcfio>=g20200219:wip/vcfio
+BUILD_DEPENDS=	vcfio>=0.1.0:wip/vcfio
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
