@@ -11,7 +11,7 @@ COMMENT=	Generate .hap file from VCF for haplohseq
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libvcfio.a:wip/vcfio
+BUILD_DEPENDS=	vcfio>=0.1.0:wip/vcfio
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
