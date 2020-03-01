@@ -19,7 +19,7 @@ USES=		gmake localbase:ldflags perl5 python shebangfix
 USE_PERL5=	run
 USE_GITHUB=	yes
 
-SHEBANG_FILES=	bowtie2 bowtie2-build bowtie2-inspect scripts/*.pl
+SHEBANG_FILES=	bowtie2 bowtie2-build bowtie2-inspect scripts/*.pl scripts/*.sh
 GH_ACCOUNT=	BenLangmead
 GH_TAGNAME=	1292cf8dec89555362f123ccdaf269f4af377cbc
 
