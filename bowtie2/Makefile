@@ -11,7 +11,8 @@ COMMENT=	Ultrafast, memory-efficient short read aligner
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# May also work on other 64-bit platforms, but untested
+# Requires a 64-bit processor and depends on hard-coded SSE instructions
+# Experimental support for AARCH64 as of 2.3.5
 ONLY_FOR_ARCHS=	aarch64 amd64
 LIB_DEPENDS=	libtbb.so:devel/tbb
 
@@ -21,7 +22,6 @@ USE_GITHUB=	yes
 
 SHEBANG_FILES=	bowtie2 bowtie2-build bowtie2-inspect scripts/*.pl scripts/*.sh
 GH_ACCOUNT=	BenLangmead
-GH_TAGNAME=	1292cf8dec89555362f123ccdaf269f4af377cbc
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
