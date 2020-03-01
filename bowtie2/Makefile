@@ -15,12 +15,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # Experimental support for AARCH64 as of 2.3.5
 ONLY_FOR_ARCHS=	aarch64 amd64
 LIB_DEPENDS=	libtbb.so:devel/tbb
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake localbase:ldflags perl5 python shebangfix
 USE_PERL5=	run
 USE_GITHUB=	yes
 
-SHEBANG_FILES=	bowtie2 bowtie2-build bowtie2-inspect scripts/*.pl scripts/*.sh
+SHEBANG_FILES=	bowtie2 bowtie2-build bowtie2-inspect \
+		scripts/bowtie2-hbb.sh scripts/*.pl
 GH_ACCOUNT=	BenLangmead
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
