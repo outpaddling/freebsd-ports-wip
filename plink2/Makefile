@@ -2,7 +2,8 @@
 
 PORTNAME=		plink2
 DISTVERSIONPREFIX=	v
-DISTVERSION=		g20190227
+# DISTVERSION=		g20190227
+DISTVERSION=		2.00a2.3
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -17,17 +18,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # Use openblas only for cblas functionality since it conflicts with math/cblas
 LIB_DEPENDS=	libopenblas.so:math/openblas \
 		liblapack.so:math/lapack \
-		libblas.so:math/blas
+		libblas.so:math/blas \
+		libzstd.so:archivers/zstd
 
 # We need Fortran LDFLAGS to link with Lapack.
-USES=		fortran gmake python:2.7 shebangfix
+USES=		fortran gmake python:3.6+ shebangfix
 USE_GITHUB=	yes
 
 SHEBANG_FILES=	Tests/*.sh Tests/*/*.sh \
 		Tests/TEST_PHASED_VCF/*.py
 GH_ACCOUNT=	chrchang
 GH_PROJECT=	plink-ng
-GH_TAGNAME=	189224a
+# GH_TAGNAME=	189224a
 
 MAKEFILE=	${FILESDIR}/Makefile.generic
 WRKSRC_SUBDIR=	2.0
@@ -42,7 +44,7 @@ SUB_FILES=	plink2-test
 post-patch:
 	@${REINPLACE_CMD} -e 's|../../build_dynamic|${PREFIX}/bin|g' \
 		${WRKSRC}/Tests/run_tests.sh
-	@${REINPLACE_CMD} -e 's|^python|${PYTHON_CMD}|g' \
+	@${REINPLACE_CMD} -e 's|^python3|${PYTHON_CMD}|g' \
 		${WRKSRC}/Tests/TEST_PHASED_VCF/run_tests.sh
 	@${CHMOD} a+rx \
 		${WRKSRC}/Tests/run_tests.sh \

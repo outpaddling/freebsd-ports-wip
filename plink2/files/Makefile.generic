@@ -23,8 +23,8 @@ ARCH32		?=
 
 # Mandatory flags added to defaults or env settings
 CFLAGS		+= -std=gnu99 $(BASEFLAGS) $(CWARN) $(CINCLUDE) $(ZSTD_INCLUDE) -I${LOCALBASE}/include
-CXXFLAGS	+= -std=c++1y $(BASEFLAGS) $(CXXWARN) -I${LOCALBASE}/include
-LDFLAGS		+= -lm -lpthread -L. $(ZLIB)
+CXXFLAGS	+= -std=c++14 $(BASEFLAGS) $(CXXWARN) -I${LOCALBASE}/include
+LDFLAGS		+= -lm -lpthread -L. $(ZLIB) -lzstd
 
 # Installation defaults
 MKDIR		?= mkdir
@@ -49,9 +49,9 @@ plink2: $(OBJ)
 	$(CXX) $(ARCH32) $(OBJ) -o bin/plink2 $(BLASFLAGS) $(LDFLAGS)
 
 # basic pgenlib_internal.h usage example; also needed for tests
-pgen_compress: plink2_base.o pgenlib_internal.o pgen_compress.o
+pgen_compress: $(PGCOBJ)
 	$(MKDIR) -p bin
-	$(CXX) plink2_base.o pgenlib_internal.o pgen_compress.o \
+	$(CXX) $(PGCOBJ) \
 		-o bin/pgen_compress $(BLASFLAGS) $(LDFLAGS)
 
 .PHONY: install-strip install clean
