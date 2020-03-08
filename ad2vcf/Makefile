@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ad2vcf
-DISTVERSION=	0.1.0
+DISTVERSION=	0.1.1
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
