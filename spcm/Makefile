@@ -23,5 +23,6 @@ post-install:
 		mv /usr/local/cluster/* ${PREFIX}/etc/spcm; \
 		rmdir /usr/local/cluster; \
 	fi
+	${CHMOD} -R a+rX ${PREFIX}/etc/spcm
 
 .include <bsd.port.mk>
