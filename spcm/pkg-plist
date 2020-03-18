@@ -63,7 +63,6 @@ sbin/cluster-pkgdir
 sbin/cluster-pkgsrc-admin
 sbin/cluster-ports-update
 sbin/cluster-power-saver
-sbin/cluster-pw-check
 sbin/cluster-recreate-user
 sbin/cluster-remove-from-group
 sbin/cluster-remove-from-known-hosts
@@ -95,8 +94,6 @@ sbin/cluster-usermod
 sbin/cluster-users
 sbin/cluster-wip-update
 sbin/compute-node-set-arc-max
-sbin/condor-build-R-packages
-sbin/condor-list-packages
 sbin/ganglia-web-setup
 sbin/node-sync-all-users
 sbin/node-sync-groups
