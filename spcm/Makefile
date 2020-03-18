@@ -18,4 +18,10 @@ USES=		tar:xz
 
 MAKE_ENV+=	PREFIX=${PREFIX} DATADIR=${DATADIR}
 
+post-install:
+	if [ -e /usr/local/cluster ] && [ 0$(ls ${PREFIX}/etc/spcm) = 0 ]; then \
+		mv /usr/local/cluster/* ${PREFIX}/etc/spcm; \
+		rmdir /usr/local/cluster; \
+	fi
+
 .include <bsd.port.mk>
