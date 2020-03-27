@@ -12,7 +12,7 @@ COMMENT=	Tools for building and managing HPC clusters
 LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	auto-admin>=0.5.2:wip/auto-admin \
-		${PYTHON_PKGNAMEPREFIX}hostlist:wip/py-hostlist
+		${PYTHON_PKGNAMEPREFIX}hostlist:wip/py-hostlist@${PY_FLAVOR}
 
 USES=		tar:xz
 
