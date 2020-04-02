@@ -45,7 +45,7 @@
 +			pid_array[c] = proc_list[c].ki_pid;
 +	}
 +	else
-+		error("No PIDs found in group.");
++		error("No PIDs found in group %lu.", cont_id);
 +
 +	procstat_freeprocs(proc_info, proc_list);
 +	procstat_close(proc_info);
@@ -53,7 +53,23 @@
  	if ((dir = opendir("/proc")) == NULL) {
  		error("opendir(/proc): %m");
  		rc = SLURM_ERROR;
-@@ -214,6 +246,7 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
+@@ -201,24 +233,29 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
+ 	rbuf = xmalloc(4096);
+ 	while ((de = readdir(dir)) != NULL) {
+ 		num = de->d_name;
++		// Is this really sufficient to identify a procid directory?
+ 		if ((num[0] < '0') || (num[0] > '9'))
+ 			continue;
+ 		ret_l = strtol(num, &endptr, 10);
++		// Just ignore failures to read process info??
+ 		if ((ret_l == LONG_MIN) || (ret_l == LONG_MAX)) {
+ 			error("couldn't do a strtol on str %s(%ld): %m",
+ 			      num, ret_l);
+ 			continue;
+ 		}
++		// Use snprintf() here to protect against buffer overflow?
+ 		sprintf(path, "/proc/%s/stat", num);
+ 		if ((fd = open(path, O_RDONLY)) < 0) {
  			continue;
  		}
  		buf_used = read(fd, rbuf, 4096);
@@ -61,7 +77,13 @@
  		if ((buf_used <= 0) || (buf_used >= 4096)) {
  			close(fd);
  			continue;
-@@ -236,6 +269,7 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
+ 		}
+ 		close(fd);
++		// Just ignore failures to read process info??
+ 		if (sscanf(rbuf, "%ld %s %c %ld %ld",
+ 			   &pid, cmd, &state, &ppid, &pgid) != 5) {
+ 			continue;
+@@ -236,6 +273,7 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
  	}
  	xfree(rbuf);
  	closedir(dir);
