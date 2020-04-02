@@ -559,7 +559,7 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%/html/sstat.html
 %%PORTDOCS%%%%DOCSDIR%%/html/strigger.html
 %%PORTDOCS%%%%DOCSDIR%%/html/style.css
-%%PORTDOCS%%%%DOCSDIR%%/html/sview.html
+%%GUI%%%%PORTDOCS%%%%DOCSDIR%%/html/sview.html
 %%PORTDOCS%%%%DOCSDIR%%/html/switchplugins.html
 %%PORTDOCS%%%%DOCSDIR%%/html/taskplugins.html
 %%PORTDOCS%%%%DOCSDIR%%/html/team.html
