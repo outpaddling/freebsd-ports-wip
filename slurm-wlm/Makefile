@@ -1,8 +1,7 @@
 # $FreeBSD: head/sysutils/slurm-wlm/Makefile 523858 2020-01-23 01:52:06Z jwb $
 
 PORTNAME=	slurm
-DISTVERSION=	19.05.5
-PORTREVISION=	2
+DISTVERSION=	20.02.1
 CATEGORIES=	wip sysutils python
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
@@ -83,7 +82,7 @@ CONFIGURE_ARGS=	--without-ofed
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
 
 CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
+LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm -lprocstat
 
 # Hack around nonfunctional --disable-gtktest flag
 pre-configure-GUI-off:
