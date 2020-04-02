@@ -25,38 +25,35 @@
  extern int
  proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, int *npids)
  {
-@@ -193,8 +204,22 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
+@@ -193,6 +204,27 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
  	pid_t *pid_array = NULL;
  	int pid_count = 0;
  
--	if ((dir = opendir("/proc")) == NULL) {
--		error("opendir(/proc): %m");
 +#ifdef __FreeBSD__
-+	struct procstat		*procs; 
++	struct procstat		*proc_info; 
 +	struct kinfo_proc	*proc_list;
 +	size_t			c;
 +
-+	procs = procstat_open_sysctl();
-+	proc_list = procstat_getprocs(procs, KERN_PROC_PGRP, cont_id,
++	proc_info = procstat_open_sysctl();
++	proc_list = procstat_getprocs(proc_info, KERN_PROC_PGRP, cont_id,
 +					(unsigned *)&pid_count);
-+	procstat_close(procs);
 +
-+	xrealloc(pid_array, sizeof(pid_t) * pid_count);
-+	for (c = 0; c < pid_count; ++c)
-+		pid_array[c] = proc_list[c].ki_pid;
++	if ( pid_count > 0 )
++	{
++		xrealloc(pid_array, sizeof(pid_t) * pid_count);
++		for (c = 0; c < pid_count; ++c)
++			pid_array[c] = proc_list[c].ki_pid;
++	}
++	else
++		error("No PIDs found in group.");
++
++	procstat_freeprocs(proc_info, proc_list);
++	procstat_close(proc_info);
 +#else
-+	if ((dir = opendir("/compat/linux/proc")) == NULL) {
-+		error("opendir(/compat/linux/proc): %m");
+ 	if ((dir = opendir("/proc")) == NULL) {
+ 		error("opendir(/proc): %m");
  		rc = SLURM_ERROR;
- 		goto fini;
- 	}
-@@ -209,11 +234,12 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
- 			      num, ret_l);
- 			continue;
- 		}
--		sprintf(path, "/proc/%s/stat", num);
-+		sprintf(path, "/compat/linux/proc/%s/stat", num);
- 		if ((fd = open(path, O_RDONLY)) < 0) {
+@@ -214,6 +246,7 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
  			continue;
  		}
  		buf_used = read(fd, rbuf, 4096);
@@ -64,7 +61,7 @@
  		if ((buf_used <= 0) || (buf_used >= 4096)) {
  			close(fd);
  			continue;
-@@ -236,6 +262,7 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
+@@ -236,6 +269,7 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
  	}
  	xfree(rbuf);
  	closedir(dir);

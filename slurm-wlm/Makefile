@@ -82,7 +82,7 @@ CONFIGURE_ARGS=	--without-ofed
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
 
 CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm -lprocstat
+LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lprocstat
 
 # Hack around nonfunctional --disable-gtktest flag
 pre-configure-GUI-off:
