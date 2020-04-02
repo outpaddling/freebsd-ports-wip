@@ -1,4 +1,4 @@
---- src/plugins/proctrack/pgid/proctrack_pgid.c.orig	2020-04-02 14:21:47 UTC
+--- src/plugins/proctrack/pgid/proctrack_pgid.c.orig	2020-03-26 21:44:05 UTC
 +++ src/plugins/proctrack/pgid/proctrack_pgid.c
 @@ -49,6 +49,13 @@
  #include <sys/types.h>
@@ -37,7 +37,7 @@
 +	size_t			c;
 +
 +	procs = procstat_open_sysctl();
-+	proc_list = procstat_getprocs(procs, KERN_PROC_PGRP, 1392,
++	proc_list = procstat_getprocs(procs, KERN_PROC_PGRP, cont_id,
 +					(unsigned *)&pid_count);
 +	
 +	xrealloc(pid_array, sizeof(pid_t) * pid_count);
