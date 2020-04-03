@@ -25,29 +25,26 @@
  extern int
  proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, int *npids)
  {
-@@ -193,6 +204,51 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
+@@ -193,6 +204,40 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
  	pid_t *pid_array = NULL;
  	int pid_count = 0;
  
-+	// error("INFO: proctrack_p_get_pids() called.");
-+
 +#ifdef __FreeBSD__
 +	struct procstat		*proc_info; 
 +	struct kinfo_proc	*proc_list;
 +	size_t			c;
 +	FILE			*procstat_err;
 +
-+	proc_info = procstat_open_sysctl();
-+
 +	/* procstat_getprocs() prints an innocuous but annoying warning
 +	   to stderr by default when no matching processes are found:
 +
-+		kinfo_proc structure size mismatch (len = 0)
++	   https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=245318
 +
-+	   Silence by redirecting to /dev/null.
++	   Remove the redirect to /dev/null if this changes in the future.
 +	*/
 +	if ( (procstat_err = fopen("/dev/null", "w+")) != NULL )
 +		err_set_file(procstat_err);
++	proc_info = procstat_open_sysctl();
 +	proc_list = procstat_getprocs(proc_info, KERN_PROC_PGRP, cont_id,
 +					(unsigned *)&pid_count);
 +	if ( procstat_err != NULL )
@@ -59,15 +56,7 @@
 +		// FIXME: Do we need to filter zombies like the Linux code?
 +		// proc_list[c].ki_paddr->p_state == PRS_ZOMBIE
 +		for (c = 0; c < pid_count; ++c)
-+		{
-+			/* error("INFO: command=%s pid=%ld ppid=%ld pgid=%ld",
-+				proc_list[c].ki_comm,
-+				// srun hangs trying to access this
-+				//proc_list[c].ki_paddr->p_state,
-+				proc_list[c].ki_pid, proc_list[c].ki_ppid,
-+				proc_list[c].ki_pgid); */
 +			pid_array[c] = proc_list[c].ki_pid;
-+		}
 +	}
 +
 +	procstat_freeprocs(proc_info, proc_list);
@@ -77,21 +66,18 @@
  	if ((dir = opendir("/proc")) == NULL) {
  		error("opendir(/proc): %m");
  		rc = SLURM_ERROR;
-@@ -201,32 +257,56 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
+@@ -201,6 +246,10 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
  	rbuf = xmalloc(4096);
  	while ((de = readdir(dir)) != NULL) {
  		num = de->d_name;
 +
-+		// Is this sufficient to identify a PID directory?
-+		// Should verify that *endptr == '\0'.
++		// Is checking num[0] sufficient to identify a PID directory?
++		// Maybe should verify that *endptr == '\0' instead
++		// or use strspn(de->name, "0123456789")
  		if ((num[0] < '0') || (num[0] > '9'))
  			continue;
  		ret_l = strtol(num, &endptr, 10);
-+
-+		// Is this useful?  Existence of /proc/%s/stat
-+		// is what really matters.
- 		if ((ret_l == LONG_MIN) || (ret_l == LONG_MAX)) {
- 			error("couldn't do a strtol on str %s(%ld): %m",
+@@ -209,16 +258,28 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
  			      num, ret_l);
  			continue;
  		}
@@ -120,22 +106,7 @@
  		if (sscanf(rbuf, "%ld %s %c %ld %ld",
  			   &pid, cmd, &state, &ppid, &pgid) != 5) {
  			continue;
- 		}
-+		
- 		if (pgid != (long) cont_id)
- 			continue;
-+
-+		/* error("INFO: command=%s state=%c "
-+		       "pid=%ld ppid=%ld pgid=%ld",
-+		       cmd, state, pid, ppid, pgid); */
-+
- 		if (state == 'Z') {
--			debug3("Defunct process skipped: command=%s state=%c "
-+			error("Defunct process skipped: command=%s state=%c "
- 			       "pid=%ld ppid=%ld pgid=%ld",
- 			       cmd, state, pid, ppid, pgid);
- 			continue;	/* Defunct, don't try to kill */
-@@ -236,6 +316,7 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
+@@ -236,6 +297,7 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
  	}
  	xfree(rbuf);
  	closedir(dir);
