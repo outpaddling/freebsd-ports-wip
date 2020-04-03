@@ -25,10 +25,12 @@
  extern int
  proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, int *npids)
  {
-@@ -193,6 +204,27 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
+@@ -193,32 +204,66 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
  	pid_t *pid_array = NULL;
  	int pid_count = 0;
  
+-	if ((dir = opendir("/proc")) == NULL) {
+-		error("opendir(/proc): %m");
 +#ifdef __FreeBSD__
 +	struct procstat		*proc_info; 
 +	struct kinfo_proc	*proc_list;
@@ -42,7 +44,12 @@
 +	{
 +		xrealloc(pid_array, sizeof(pid_t) * pid_count);
 +		for (c = 0; c < pid_count; ++c)
++		{
++			error("pid=%ld ppid=%ld pgid=%ld",
++				proc_list[c].ki_pid, proc_list[c].ki_ppid,
++				proc_list[c].ki_pgid);
 +			pid_array[c] = proc_list[c].ki_pid;
++		}
 +	}
 +	else
 +		error("No PIDs found in group %lu.", cont_id);
@@ -50,10 +57,12 @@
 +	procstat_freeprocs(proc_info, proc_list);
 +	procstat_close(proc_info);
 +#else
- 	if ((dir = opendir("/proc")) == NULL) {
- 		error("opendir(/proc): %m");
++	// Is parsing files in /proc really the only way to get PIDs in Linux?
++	if ((dir = opendir("/compat/linux/proc")) == NULL) {
++		error("opendir(/compat/linux/proc): %m");
  		rc = SLURM_ERROR;
-@@ -201,24 +233,29 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
+ 		goto fini;
+ 	}
  	rbuf = xmalloc(4096);
  	while ((de = readdir(dir)) != NULL) {
  		num = de->d_name;
@@ -61,18 +70,21 @@
  		if ((num[0] < '0') || (num[0] > '9'))
  			continue;
  		ret_l = strtol(num, &endptr, 10);
++		// Should check *endptr.  Should be '\0'.
 +		// Just ignore failures to read process info??
  		if ((ret_l == LONG_MIN) || (ret_l == LONG_MAX)) {
  			error("couldn't do a strtol on str %s(%ld): %m",
  			      num, ret_l);
  			continue;
  		}
+-		sprintf(path, "/proc/%s/stat", num);
 +		// Use snprintf() here to protect against buffer overflow?
- 		sprintf(path, "/proc/%s/stat", num);
++		sprintf(path, "/compat/linux/proc/%s/stat", num);
  		if ((fd = open(path, O_RDONLY)) < 0) {
  			continue;
  		}
  		buf_used = read(fd, rbuf, 4096);
++		// Why not just read straight from stream with fscanf()?
 +		// Just ignore failures to read process info??
  		if ((buf_used <= 0) || (buf_used >= 4096)) {
  			close(fd);
@@ -83,7 +95,7 @@
  		if (sscanf(rbuf, "%ld %s %c %ld %ld",
  			   &pid, cmd, &state, &ppid, &pgid) != 5) {
  			continue;
-@@ -236,6 +273,7 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
+@@ -236,6 +281,7 @@ proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, i
  	}
  	xfree(rbuf);
  	closedir(dir);
