@@ -60,6 +60,7 @@ sbin/auto-ipfw-gateway-setup
 sbin/auto-ipmi-install
 sbin/auto-ipmi-remote-access
 sbin/auto-ipmi-remote-power
+sbin/auto-ipmi-remote-status
 sbin/auto-krb-auth-setup
 sbin/auto-ldap-adduser
 sbin/auto-ldap-client-setup
