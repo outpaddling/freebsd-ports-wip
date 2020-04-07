@@ -28,6 +28,8 @@ bin/slurm-shell
 bin/slurm-user-cores
 bin/topjob
 bin/topnode
+%%ETCDIR%%/slurm-node-resume
+%%ETCDIR%%/slurm-node-suspend
 libexec/add-gecos.awk
 sbin/cluster-add-to-group
 sbin/cluster-adduser
