@@ -11,14 +11,8 @@
  #ControlAddr=
  #BackupController=
  #BackupAddr=
-@@ -21,12 +21,12 @@ SlurmdPort=6818
- AuthType=auth/munge
- #JobCredentialPrivateKey=
- #JobCredentialPublicCertificate=
--StateSaveLocation=/var/spool/slurm/ctld
--SlurmdSpoolDir=/var/spool/slurm/d
-+StateSaveLocation=/var/run/slurm
-+SlurmdSpoolDir=/var/spool/slurmd
+@@ -25,8 +25,8 @@ StateSaveLocation=/var/spool/slurm/ctld
+ SlurmdSpoolDir=/var/spool/slurm/d
  SwitchType=switch/none
  MpiDefault=none
 -SlurmctldPidFile=/var/run/slurmctld.pid
