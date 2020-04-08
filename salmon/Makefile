@@ -2,7 +2,7 @@
 
 PORTNAME=		salmon
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.0.0
+DISTVERSION=		1.1.0
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,11 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # Check cereal version
 BUILD_DEPENDS=	bash:shells/bash \
 		autoconf:devel/autoconf \
-		cereal>=1.3.0:wip/cereal
+		cereal>=1.3.0:devel/cereal
 LIB_DEPENDS=	libtbb.so:devel/tbb \
 		libboost_system.so:devel/boost-libs
 
-USES=		cmake:noninja compiler:gcc-c++11-lib gmake shebangfix
+# USES=		cmake:noninja compiler:gcc-c++11-lib gmake shebangfix
+USES=		cmake:noninja gmake shebangfix
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	COMBINE-lab
@@ -34,6 +35,6 @@ post-patch:
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|&& make|\&\& gmake|g' \
-		${WRKSRC}/CMakeFiles/libstadenio.dir/build.make
+		${WRKDIR}/.build/CMakeFiles/libstadenio.dir/build.make
 
 .include <bsd.port.mk>
