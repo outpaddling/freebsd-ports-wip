@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2020-04-09 00:08:05 UTC
++++ CMakeLists.txt
+@@ -78,7 +78,7 @@ endif()
+ 
+ if (NOT BUILD_PUFF_FOR_SALMON)
+ ## Try and find TBB first
+-find_package(TBB 2018.0 COMPONENTS tbb tbbmalloc tbbmalloc_proxy)
++find_package(TBB 2018.0 COMPONENTS tbb tbbmalloc)
+ 
+ ##
+ #
