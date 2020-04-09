@@ -1,9 +1,9 @@
 # $FreeBSD$
 
-PORTNAME=	SeqLib
-PORTVERSION=	2018.03.23
-CATEGORIES=	wip biology
-MASTER_SITES=	https://acadix.biz/Ports/distfiles/
+PORTNAME=		SeqLib
+DISTVERSIONPREFIX=	v
+DISTVERSION=		1.1.2
+CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	C++ htslib/bwa-mem/fermi interface for interrogating sequence data
@@ -14,7 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libjsoncpp.so:devel/jsoncpp
 
 USES=		gmake tar:xz
-USE_GCC=	yes
+#USE_GCC=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	COMBINE-lab
 
 GNU_CONFIGURE=	yes
 
