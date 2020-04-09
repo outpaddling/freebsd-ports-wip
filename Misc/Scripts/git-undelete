@@ -1,0 +1,33 @@
+#!/bin/sh -e
+
+##########################################################################
+#   Script description:
+#       Restore a folder following removal and commit
+#       
+#   History:
+#   Date        Name        Modification
+#   2020-04-09  Jason Bacon Begin
+##########################################################################
+
+usage()
+{
+    printf "Usage: $0 port-name\n"
+    exit 1
+}
+
+
+##########################################################################
+#   Main
+##########################################################################
+
+if [ $0 != Misc/Scripts/git-undelete ]; then
+    printf 'Must be run from the wip directory as "Misc/Scripts/git-undelete port-name"\n'
+    exit 1
+fi
+if [ $# != 1 ]; then
+    usage
+fi
+port=$1
+
+last_rev=$(git rev-list -n 1 HEAD -- $port)
+git checkout ${last_rev}^ -- $port
