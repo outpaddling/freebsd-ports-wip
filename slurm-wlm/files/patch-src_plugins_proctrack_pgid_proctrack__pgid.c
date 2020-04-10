@@ -31,7 +31,7 @@
 +	struct procstat *proc_info;
 +	struct kinfo_proc *proc_list;
 +	FILE *procstat_err;
-+	unsigned int pid_count;
++	unsigned int pid_count = 0;
 +
 +	/*
 +	 * procstat_getprocs() prints an innocuous but annoying warning
