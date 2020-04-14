@@ -28,7 +28,7 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	SchedMD
 # Be sure to use commits form the 20.0.2 branch
-GH_TAGNAME=	1945d104
+GH_TAGNAME=	9fc68c85
 
 USERS=		slurm
 GROUPS=		${USERS}
