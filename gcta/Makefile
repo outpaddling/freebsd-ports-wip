@@ -3,7 +3,7 @@
 PORTNAME=	gcta
 PORTVERSION=	1.26.0
 CATEGORIES=	wip biology
-MASTER_SITES=	http://cnsgenomics.com/software/gcta/
+MASTER_SITES=	https://cnsgenomics.com/software/gcta/pre_gcta/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
 MAINTAINER=	jwb@FreeBSD.org
