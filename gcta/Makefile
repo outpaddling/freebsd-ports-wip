@@ -24,7 +24,6 @@ INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/gcta
 
 do-extract:
-	@${MKDIR} ${WRKSRC}
-	@(cd ${WRKSRC} && ${UNZIP_CMD} ${DISTDIR}/${DISTFILES})
+	${UNZIP_NATIVE_CMD} -d ${WRKSRC} ${DISTDIR}/${DISTFILES}
 
 .include <bsd.port.mk>
