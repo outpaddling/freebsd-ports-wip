@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcta
-PORTVERSION=	1.26.0
+DISTVERSION=	1.26.0
 CATEGORIES=	wip biology
 MASTER_SITES=	https://cnsgenomics.com/software/gcta/pre_gcta/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
@@ -25,6 +25,6 @@ PLIST_FILES=	bin/gcta
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	cd ${WRKSRC} && ${UNZIP_CMD} ${DISTDIR}/${DISTFILES}
+	@(cd ${WRKSRC} && ${UNZIP_CMD} ${DISTDIR}/${DISTFILES})
 
 .include <bsd.port.mk>
