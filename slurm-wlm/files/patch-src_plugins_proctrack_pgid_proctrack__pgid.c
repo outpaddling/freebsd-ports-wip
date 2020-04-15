@@ -48,7 +48,7 @@
 +				      (unsigned int *) &pid_count);
 +	if (procstat_err)
 +	{
-+		err_set_file(stderr);
++		err_set_file(NULL);
 +		fclose(procstat_err);
 +	}
 +
