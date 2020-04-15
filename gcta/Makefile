@@ -23,7 +23,13 @@ LDFLAGS+=	-lopenblas
 INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/gcta
 
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
+USE_GCC=	yes
+.endif
+
 do-extract:
 	${UNZIP_NATIVE_CMD} -d ${WRKSRC} ${DISTDIR}/${DISTFILES}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
