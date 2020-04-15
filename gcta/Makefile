@@ -20,6 +20,7 @@ USES=		compiler:openmp dos2unix gmake localbase zip
 CXXFLAGS+=	-I${LOCALBASE}/include/eigen3 -fopenmp
 LDFLAGS+=	-lopenblas
 
+INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/gcta
 
 do-extract:
