@@ -87,15 +87,15 @@ EOM
 step
 cat << EOM
 
-Bump PORT_REVISION if not changing VERSION
-    Otherwise, remove PORT_REVISION
+Bump PORTREVISION if not changing VERSION
+    Otherwise, remove PORTREVISION
 
 EOM
 
 step
 cat << EOM
 
-Add PORT_EPOCH if downgrading
+Add PORTEPOCH if downgrading
 
 EOM
 
