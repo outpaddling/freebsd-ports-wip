@@ -15,11 +15,12 @@ LICENSE_FILE=	${WRKSRC}/GNU_General_Public_License_v3.txt
 BUILD_DEPENDS=	eigen>=3:math/eigen3
 LIB_DEPENDS+=	libopenblas.so:math/openblas
 
-USES=		compiler:openmp dos2unix gmake zip
+USES=		compiler:openmp dos2unix gmake localbase zip
 
 CXXFLAGS+=	-I${LOCALBASE}/include/eigen3 -fopenmp
+LDFLAGS+=	-lopenblas
 
-# -I${LOCALBASE}/include/lapackpp
+PLIST_FILES=	bin/gcta
 
 do-extract:
 	@${MKDIR} ${WRKSRC}

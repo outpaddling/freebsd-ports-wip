@@ -1,6 +1,6 @@
---- Makefile.orig	2016-06-22 03:07:36 UTC
+--- Makefile.orig	2020-04-15 01:43:44 UTC
 +++ Makefile
-@@ -6,20 +6,20 @@
+@@ -6,21 +6,27 @@
  # ---------------------------------------------------------------------
  
  # Directory of the target
@@ -16,7 +16,8 @@
 +EIGEN_PATH ?= ../../../Lib/eigen
  
  # Intel MKL library
- MKL_PATH = /opt/intel/mkl
+-MKL_PATH = /opt/intel/mkl
++MKL_PATH ?= /opt/intel/mkl
  
  # Compiler flags
 -CXXFLAGS = -w -O3 -m64 -static -fopenmp -I $(EIGEN_PATH) -DEIGEN_NO_DEBUG -I $(MKL_PATH)/include
@@ -24,9 +25,16 @@
 +CXXFLAGS ?= -w -O3 -m64 -static -fopenmp -I $(EIGEN_PATH) -DEIGEN_NO_DEBUG -I $(MKL_PATH)/include
 +LDFLAGS += -lz -Wl,--start-group -lpthread -lm -ldl
  
++MKDIR ?=	mkdir
++DESTDIR ?=	.
++PREFIX ?=	/usr/local
++INSTALL ?=	install
++STRIP ?=	strip
++
  HDR += CommFunc.h \
             cdflib.h \
-@@ -58,7 +58,7 @@ OBJ = $(SRC:.cpp=.o)
+            dcdflib.h \
+@@ -58,7 +64,7 @@ OBJ = $(SRC:.cpp=.o)
  all : $(OUTPUT) 
  
  $(OUTPUT) :
@@ -35,3 +43,17 @@
  
  $(OBJ) : $(HDR)
  
+@@ -69,6 +75,13 @@ $(OBJ) : $(HDR)
+ $(OUTPUT) : $(OBJ)
+ 
+ FORCE:
++
++install:
++	${MKDIR} -p ${DESTDIR}${PREFIX}/bin
++	${INSTALL} -c ${OUTPUT} ${DESTDIR}${PREFIX}/bin
++
++install-strip: install
++	${STRIP} ${DESTDIR}${PREFIX}/bin/${OUTPUT}
+ 
+ clean: 
+ 	rm -f *.o
