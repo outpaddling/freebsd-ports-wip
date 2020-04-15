@@ -12,10 +12,7 @@ COMMENT=	Genome-wide Complex Trait Analysis
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/GNU_General_Public_License_v3.txt
 
-BUILD_DEPENDS=	eigen>=3:math/eigen3 \
-		lapack++>0:math/lapack++ \
-		cblas>0:math/cblas \
-		lapacke>0:math/lapacke
+BUILD_DEPENDS=	eigen>=3:math/eigen3
 LIB_DEPENDS+=	libopenblas.so:math/openblas
 
 USES=		compiler:openmp dos2unix gmake zip
