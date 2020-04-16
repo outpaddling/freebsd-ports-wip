@@ -20,6 +20,7 @@ sbin/auto-change-nfsd-count
 sbin/auto-change-ownership
 sbin/auto-change-primary-group
 sbin/auto-change-uid
+sbin/auto-check-ports-branch
 sbin/auto-clean-disk
 sbin/auto-clean-pkgsrc
 sbin/auto-clean-ports
@@ -79,12 +80,14 @@ sbin/auto-ostype
 sbin/auto-package-installed
 sbin/auto-passwd-user-expiration
 sbin/auto-password-status
+sbin/auto-pkg-branch
 sbin/auto-pkg-latest
 sbin/auto-pkgsrc-delete-all
 sbin/auto-pkgsrc-dir
 sbin/auto-pkgsrc-prefix
 sbin/auto-pkgsrc-remote-x11
 sbin/auto-pkgsrc-setup
+sbin/auto-ports-branch
 sbin/auto-ports-checkout
 sbin/auto-ports-setup
 sbin/auto-print-make-variable
