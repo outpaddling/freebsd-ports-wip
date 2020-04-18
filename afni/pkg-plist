@@ -594,7 +594,6 @@ bin/make_stim_times.py
 bin/map_TrackID
 bin/mayo_analyze
 bin/meica.py
-bin/mpeg_encode
 bin/mritopgm
 bin/mycat
 bin/myget
