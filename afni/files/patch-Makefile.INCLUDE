@@ -5,7 +5,7 @@
  ## them are Open Source programs, not from the AFNI group at all.
  
 -EXTRAS   = cjpeg djpeg whirlgif mpeg_encode myget Xphace rmz aiv mycat quotize $(EXPROGS)
-+EXTRAS   = whirlgif mpeg_encode myget Xphace rmz aiv mycat quotize $(EXPROGS)
++EXTRAS   = whirlgif myget Xphace rmz aiv mycat quotize $(EXPROGS)
  
  # mpegtoppm in above list
  

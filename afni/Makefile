@@ -80,16 +80,7 @@ CONFLICTS=	im-[0-9]* \
 		open-usp-tukubai-[0-9]*
 
 X11R6_FILES=	coxplot/Makefile \
-		coxplot/Makefile.f2c \
-		3DEdge/src/Makefile \
-		SUMA/SUMA_Makefile \
-		edt_blur.c \
-		suma_datasets.c \
-		SUMA/SUMA_Load_Surface_Object.c \
-		SUMA/SUMA_MiscFunc.c \
-		SUMA/SUMA_ParseCommands.c \
-		SUMA/GLUT/libglut/glut_event.c \
-		SUMA/SUMA_Surface_IO.c
+		coxplot/Makefile.f2c
 
 post-extract:
 .for f in ${X11R6_FILES}
@@ -105,7 +96,7 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s|-lglib|-lglib-2.0|g" \
 		${WRKSRC}/SUMA/SUMA_Makefile
 	@${REINPLACE_CMD} \
-		-e 's|os\.path\.dirname(sys\.argv\[0\])|"${DATADIR}"|g' \
+		-e 's|os\.path\.dirname(os\.path\.abspath(os\.path\.expanduser(sys\.argv\[0\])))|"${DATADIR}"|g' \
 		${WRKSRC}/pkundu/meica.py
 
 do-install:
