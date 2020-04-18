@@ -2,10 +2,10 @@
 
 PORTNAME=		afni
 DISTVERSIONPREFIX=	AFNI_
-DISTVERSION=		19.1.20
+DISTVERSION=		20.1.01
 CATEGORIES=		wip science biology graphics perl5 python
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced Functional Neuro Imaging
 
 LICENSE=	GPLv2
@@ -36,13 +36,14 @@ RUN_DEPENDS=	endian:sysutils/endian \
 		${CRAN_DEPENDS}
 
 USES=		compiler:openmp gettext gl gmake gnome iconv jpeg:run motif \
-		perl5 python shebangfix tar:xz
+		perl5 python shebangfix tar:xz xorg
 USE_GNOME=	glib20
 USE_GITHUB=	yes
 USE_GL=		gl
 
 SHEBANG_FILES=	scripts_install/* \
-		python_scripts/afni_python/*.py \
+		python_scripts/afnipy/*.py \
+		python_scripts/scripts/*.py \
 		jzosky/*.py \
 		jzosky/lib_RetroTS/*.py \
 		discoraj/ClusterExplorer/*.py \
@@ -54,7 +55,7 @@ SHEBANG_FILES=	scripts_install/* \
 		pkundu/meica.libs/*/*/*.py
 
 USE_GL=		gl glu
-USE_XORG=	x11 xext xi xmu xp xt
+USE_XORG=	x11 xext xi xmu xt
 MAKE_ENV=	CC="${CC}" R_SHARE_DIR=${LOCALBASE}/lib/R/share
 MAKE_JOBS_UNSAFE=yes
 
@@ -100,36 +101,23 @@ post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	@${RM} ${WRKSRC}/3DEdge/src/Makefile.orig
 
-# shebangfix misses /bin/python on 10.1
-#	@${REINPLACE_CMD} -e "s|/bin/python|${PYTHON_CMD}|g" \
-#		${WRKSRC}/python_scripts/afni_python/lib_fat_Rfactor.py
-
 pre-configure:
 	@${REINPLACE_CMD} -e "s|-lglib|-lglib-2.0|g" \
 		${WRKSRC}/SUMA/SUMA_Makefile
 	@${REINPLACE_CMD} \
 		-e 's|os\.path\.dirname(sys\.argv\[0\])|"${DATADIR}"|g' \
 		${WRKSRC}/pkundu/meica.py
-	@${REINPLACE_CMD} \
-		-e 's|g_info|afni_g_info|g' \
-		${WRKSRC}/rickr/Dimon.c \
-		${WRKSRC}/rickr/Dimon1.c \
-		${WRKSRC}/afni_history_rickr.c \
-		${WRKSRC}/mri_dicom_stuff.c \
-		${WRKSRC}/mri_process_siemens.c \
-		${WRKSRC}/mri_read_dicom.c \
-		${WRKSRC}/to3d.c \
-		${WRKSRC}/mri_dicom_stuff.h
 
 do-install:
 	# AFNI install just dumps everything into one flat directory
-	# Preserve original install dir and make a sacrificial temp copy
+	# ${WRKSRC}/BSD == ${INSTALL_WRKSRC}.
+	# Preserve ${INSTALL_WRKSRC} and make a sacrificial temp copy
 	# to be pruned and rearranged for easy staging
 	@${RM} -r ${INSTALL_TMP}
 	@${CP} -R ${INSTALL_WRKSRC} ${INSTALL_TMP}
 
 	# Clean up and organize files into ${PRESTAGE}, destroying
-	# temp copy in the process
+	# ${INSTALL_TMP} in the process
 	@${RM} -rf ${PRESTAGE}
 	@${MKDIR} ${PRESTAGE}/bin \
 		${PRESTAGE}/scripts \
@@ -137,12 +125,12 @@ do-install:
 		${PRESTAGE}/include \
 		${PRESTAGE}/trash \
 		${PRESTAGE}/doc \
-		${PRESTAGE}/share
+		${PRESTAGE}/share \
+		${PRESTAGE}/pylib
 	@${RM}	${INSTALL_TMP}/libf2c.a
 	@${MV}	${INSTALL_TMP}/meica.libs \
 		${INSTALL_TMP}/shiny \
 		${INSTALL_TMP}/lib_RetroTS \
-		${INSTALL_TMP}/afniInterfaceRT \
 		${INSTALL_TMP}/funstuff \
 		${INSTALL_TMP}/AFNI.*rc \
 		${INSTALL_TMP}/afnigui* \
@@ -151,6 +139,7 @@ do-install:
 		${INSTALL_TMP}/*.so \
 		${PRESTAGE}/lib
 	@${MV}	${INSTALL_TMP}/*.h ${PRESTAGE}/include
+	@${MV}	${INSTALL_TMP}/afnipy ${INSTALL_TMP}/afniRTI ${PRESTAGE}/pylib
 	@${CP}	${WRKDIR}/afni-AFNI_${PORTVERSION}/doc/README/* ${PRESTAGE}/doc
 	@for binary in `${FILE} ${INSTALL_TMP}/* | fgrep 'ELF' | ${AWK} -F ':' ' { print $$1 }'` ; do \
 		${MV} $${binary} ${PRESTAGE}/bin ; \
@@ -161,11 +150,14 @@ do-install:
 	@${MKDIR} \
 		${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${PREFIX}/lib/afni \
+		${STAGEDIR}${PYTHON_LIBDIR}/afni \
 		${STAGEDIR}${PREFIX}/include/afni \
 		${STAGEDIR}${DOCSDIR} \
 		${STAGEDIR}${PREFIX}/etc/mri
 	${INSTALL_PROGRAM} ${PRESTAGE}/bin/* ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${PRESTAGE}/scripts/* ${STAGEDIR}${PREFIX}/bin
+	(cd ${PRESTAGE}/pylib && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${PYTHON_LIBDIR}/afni)
 	${INSTALL_DATA} ${PRESTAGE}/lib/* ${STAGEDIR}${PREFIX}/lib/afni
 	${INSTALL_DATA} ${PRESTAGE}/include/* ${STAGEDIR}${PREFIX}/include/afni
 	(cd ${PRESTAGE}/share && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
