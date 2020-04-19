@@ -141,14 +141,13 @@ do-install:
 	@${MKDIR} \
 		${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${PREFIX}/lib/afni \
-		${STAGEDIR}${PYTHON_LIBDIR}/afni \
 		${STAGEDIR}${PREFIX}/include/afni \
 		${STAGEDIR}${DOCSDIR} \
 		${STAGEDIR}${PREFIX}/etc/mri
 	${INSTALL_PROGRAM} ${PRESTAGE}/bin/* ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${PRESTAGE}/scripts/* ${STAGEDIR}${PREFIX}/bin
 	(cd ${PRESTAGE}/pylib && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${PYTHON_LIBDIR}/afni)
+		${COPYTREE_SHARE} . ${STAGEDIR}${PYTHON_SITELIBDIR})
 	${INSTALL_DATA} ${PRESTAGE}/lib/* ${STAGEDIR}${PREFIX}/lib/afni
 	${INSTALL_DATA} ${PRESTAGE}/include/* ${STAGEDIR}${PREFIX}/include/afni
 	(cd ${PRESTAGE}/share && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
