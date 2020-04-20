@@ -1,27 +1,24 @@
 # $FreeBSD$
 
-PORTNAME=	gcta
-PORTVERSION=	1.26.0
-CATEGORIES=	wip biology
-MASTER_SITES=	http://cnsgenomics.com/software/gcta/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
-PKGNAMEPREFIX=	linux-
+PORTNAME=		gcta
+DISTVERSION=		1.93.1
+CATEGORIES=		wip biology
+MASTER_SITES=		https://cnsgenomics.com/software/gcta/bin/
+PKGNAMEPREFIX=		linux-
+DISTNAME=		${PORTNAME}_${DISTVERSION}beta
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	tool for Genome-wide Complex Trait Analysis
+COMMENT=	Genome-wide Complex Trait Analysis
 
 # Different from source (GPLv3)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT_License.txt
 
+ONLY_FOR_ARCHS=	amd64
+
 USES=		linux zip
 
 NO_BUILD=	yes
-
-# ${UNZIP_CMD} looking for /usr/local/bin/unzip for some reason
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	cd ${WRKSRC} && unzip ${DISTDIR}/${DISTFILES}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gcta64 ${STAGEDIR}${PREFIX}/bin
