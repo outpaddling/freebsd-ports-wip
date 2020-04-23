@@ -76,6 +76,7 @@ sbin/cluster-run
 sbin/cluster-services-menu
 sbin/cluster-setup
 sbin/cluster-shutdown
+sbin/cluster-spcm-update-from-wip
 sbin/cluster-ssh-keygen
 sbin/cluster-stay-down
 sbin/cluster-sync-files
