@@ -15,14 +15,13 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libjack.so:audio/jack \
 		libasound.so:audio/alsa-lib
 
-USES=		compiler:c++11-lang dos2unix gnome iconv pkgconfig
+USES=		compiler:c++11-lang gnome iconv pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_GITHUB=	yes
 
-DOS2UNIX_REGEX=	.*Makefile
 PLIST_FILES=	bin/praat man/man1/praat.1.gz
 
-HARDCPP=	${WRKSRC}/EEG/Makefile \
+HARDCPPFLAGS=	${WRKSRC}/EEG/Makefile \
 		${WRKSRC}/FFNet/Makefile \
 		${WRKSRC}/LPC/Makefile \
 		${WRKSRC}/artsynth/Makefile \
@@ -43,7 +42,7 @@ HARDCPP=	${WRKSRC}/EEG/Makefile \
 		${WRKSRC}/sys/Makefile
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^CPPFLAGS =|CPPFLAGS +=|' ${HARDCPP}
+	@${REINPLACE_CMD} -e 's|^CPPFLAGS =|CPPFLAGS +=|' ${HARDCPPFLAGS}
 	@${CP} ${FILESDIR}/makefile.defs.freebsd.alsa \
 		${WRKSRC}/makefile.defs
 	@${REINPLACE_CMD} -e 's|%%WRKSRC%%|${WRKSRC}|g' \
