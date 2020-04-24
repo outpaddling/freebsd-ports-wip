@@ -5,13 +5,14 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=		6.1.12
 CATEGORIES=		wip audio science
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Phonetics by Computer
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libjack.so:audio/jack
 
 USES=		compiler:c++11-lang dos2unix gnome iconv pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk20
@@ -50,8 +51,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| log2| NUMlog2|g' \
 			  -e 's|feof (f)|feof (f.get_ptr())|g' \
 			  -e 's|ferror (f)|ferror (f.get_ptr())|g' \
-		${WRKSRC}/dwtools/Sound_extensions.cpp \
-		${WRKSRC}/fon/Sound_files.cpp
+		${WRKSRC}/dwtools/Sound_extensions.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/praat ${STAGEDIR}${PREFIX}/bin
