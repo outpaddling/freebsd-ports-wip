@@ -10,18 +10,38 @@ COMMENT=	Phonetics by Computer
 
 LICENSE=	GPLv2
 
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
 USES=		compiler:c++11-lang dos2unix gnome iconv pkgconfig
-USE_GNOME=	gtk20
+USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_GITHUB=	yes
 
 DOS2UNIX_REGEX=	.*Makefile
 PLIST_FILES=	bin/praat man/man1/praat.1.gz
 
+HARDCPP=	${WRKSRC}/EEG/Makefile \
+		${WRKSRC}/FFNet/Makefile \
+		${WRKSRC}/LPC/Makefile \
+		${WRKSRC}/artsynth/Makefile \
+		${WRKSRC}/dwsys/Makefile \
+		${WRKSRC}/dwtools/Makefile \
+		${WRKSRC}/external/clapack/blas/Makefile \
+		${WRKSRC}/external/clapack/lapack/Makefile \
+		${WRKSRC}/external/espeak/Makefile \
+		${WRKSRC}/external/flac/Makefile \
+		${WRKSRC}/external/gsl/Makefile \
+		${WRKSRC}/external/mp3/Makefile \
+		${WRKSRC}/fon/Makefile \
+		${WRKSRC}/gram/Makefile \
+		${WRKSRC}/kar/Makefile \
+		${WRKSRC}/main/Makefile \
+		${WRKSRC}/melder/Makefile \
+		${WRKSRC}/stat/Makefile \
+		${WRKSRC}/sys/Makefile
+
 post-patch:
-	@${FIND} ${WRKSRC} -name Makefile -exec \
-		${REINPLACE_CMD} -e 's|^CFLAGS =|CFLAGS +=|' {} \;
-	@${FIND} ${WRKSRC} -name Makefile -exec \
-		${REINPLACE_CMD} -e 's|^CPPFLAGS =|CPPFLAGS +=|' {} \;
+	@${REINPLACE_CMD} -e 's|^CPPFLAGS =|CPPFLAGS +=|' ${HARDCPP}
 	@${CP} ${FILESDIR}/makefile.defs.freebsd.alsa \
 		${WRKSRC}/makefile.defs
 	@${REINPLACE_CMD} -e 's|%%WRKSRC%%|${WRKSRC}|g' \

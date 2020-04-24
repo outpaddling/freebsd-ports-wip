@@ -9,9 +9,9 @@ CC ?= gcc
 
 CXX ?= g++
 
-COMMONFLAGS = -DUNIX -Dlinux -DALSA -D_FILE_OFFSET_BITS=64 `pkg-config --cflags gtk+-2.0` -Wreturn-type -Wunused -Wunused-parameter -Wuninitialized -O1 -g1 -pthread
+COMMONFLAGS = -DUNIX -Dlinux -D_FILE_OFFSET_BITS=64 `pkg-config --cflags gtk+-2.0` -Wreturn-type -Wunused -Wunused-parameter -Wuninitialized -O1 -g1 -pthread
 
-CFLAGS = -DHAVE_SYS_SOUNDCARD_H -std=gnu99 $(COMMONFLAGS) -Werror=missing-prototypes -Werror=implicit
+CFLAGS = -DHAVE_SYS_SOUNDCARD_H -std=gnu99 $(COMMONFLAGS) -Werror=implicit
 
 CXXFLAGS = -std=c++17 $(COMMONFLAGS) -Wshadow -DHAVE_SYS_SOUNDCARD_H -Werror=implicit -I%%WRKSRC%%/sys -I%%WRKSRC%%/dwsys -I%%WRKSRC%%/num -I%%WRKSRC%%/stat -I%%WRKSRC%%/kar -I%%WRKSRC%%/dwtools -I%%WRKSRC%%/fon -I%%WRKSRC%%/LPC -I%%WRKSRC%%/EEG -I%%WRKSRC%%/melder -I%%WRKSRC%%/external/espeak -I%%WRKSRC%%/external/flac -I%%WRKSRC%%/external/mp3 -I%%WRKSRC%%/external/gsl -I%%WRKSRC%%/external/clapack -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/unicode
 
