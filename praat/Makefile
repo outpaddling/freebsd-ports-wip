@@ -12,7 +12,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libjack.so:audio/jack
+		libjack.so:audio/jack \
+		libasound.so:audio/alsa-lib
 
 USES=		compiler:c++11-lang dos2unix gnome iconv pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk20
