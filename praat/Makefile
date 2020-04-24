@@ -15,10 +15,11 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libjack.so:audio/jack \
 		libasound.so:audio/alsa-lib
 
-USES=		compiler:c++11-lang gnome iconv pkgconfig
+USES=		compiler:c++11-lang dos2unix gnome iconv pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_GITHUB=	yes
 
+DOS2UNIX_REGEX=	.*Makefile
 PLIST_FILES=	bin/praat man/man1/praat.1.gz
 
 HARDCPPFLAGS=	${WRKSRC}/EEG/Makefile \
