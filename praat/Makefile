@@ -1,8 +1,8 @@
 # $FreeBSD: head/audio/praat/Makefile 517040 2019-11-08 09:27:56Z tobik $
 
 PORTNAME=		praat
-DISTVERSION=		6.1.12
 DISTVERSIONPREFIX=	v
+DISTVERSION=		6.1.12
 CATEGORIES=		wip audio science
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,9 +11,10 @@ COMMENT=	Phonetics by Computer
 LICENSE=	GPLv2
 
 USES=		compiler:c++11-lang dos2unix gnome iconv pkgconfig
-USE_GITHUB=	yes
-DOS2UNIX_REGEX=	.*Makefile
 USE_GNOME=	gtk20
+USE_GITHUB=	yes
+
+DOS2UNIX_REGEX=	.*Makefile
 PLIST_FILES=	bin/praat man/man1/praat.1.gz
 
 post-patch:

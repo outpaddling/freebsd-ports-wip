@@ -2,15 +2,18 @@
 # File: makefile.defs.linux.alsa
 
 # System: Linux
-# Paul Boersma, 26 October 2013
+# Paul Boersma, 23 March 2020
+# Jason Bacon, 24 April 2020
 
 CC ?= gcc
 
 CXX ?= g++
 
-CFLAGS = -std=gnu99 -DUNIX -Dlinux -DHAVE_SYS_SOUNDCARD_H `pkg-config --cflags gtk+-2.0` -Werror=implicit -Wreturn-type -Wunused -Wunused-parameter -Wuninitialized -O1 -g1
+COMMONFLAGS = -DUNIX -Dlinux -DALSA -D_FILE_OFFSET_BITS=64 `pkg-config --cflags gtk+-2.0` -Wreturn-type -Wunused -Wunused-parameter -Wuninitialized -O1 -g1 -pthread
 
-CXXFLAGS = -std=gnu++11 -Wshadow -DUNIX -Dlinux -DHAVE_SYS_SOUNDCARD_H `pkg-config --cflags gtk+-2.0` -Werror=implicit -Wreturn-type -Wunused -Wunused-parameter -Wuninitialized -O1 -g1 -I%%WRKSRC%%/sys -I%%WRKSRC%%/dwsys -I%%WRKSRC%%/num -I%%WRKSRC%%/stat -I%%WRKSRC%%/kar -I%%WRKSRC%%/dwtools -I%%WRKSRC%%/fon -I%%WRKSRC%%/LPC -I%%WRKSRC%%/EEG -I%%WRKSRC%%/external/espeak -I%%WRKSRC%%/external/flac -I%%WRKSRC%%/external/mp3 -I%%WRKSRC%%/external/gsl -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/unicode
+CFLAGS = -DHAVE_SYS_SOUNDCARD_H -std=gnu99 $(COMMONFLAGS) -Werror=missing-prototypes -Werror=implicit
+
+CXXFLAGS = -std=c++17 $(COMMONFLAGS) -Wshadow -DHAVE_SYS_SOUNDCARD_H -Werror=implicit -I%%WRKSRC%%/sys -I%%WRKSRC%%/dwsys -I%%WRKSRC%%/num -I%%WRKSRC%%/stat -I%%WRKSRC%%/kar -I%%WRKSRC%%/dwtools -I%%WRKSRC%%/fon -I%%WRKSRC%%/LPC -I%%WRKSRC%%/EEG -I%%WRKSRC%%/melder -I%%WRKSRC%%/external/espeak -I%%WRKSRC%%/external/flac -I%%WRKSRC%%/external/mp3 -I%%WRKSRC%%/external/gsl -I%%WRKSRC%%/external/clapack -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/unicode
 
 LINK ?= $(CXX)
 
