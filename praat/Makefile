@@ -2,7 +2,7 @@
 
 PORTNAME=		praat
 DISTVERSIONPREFIX=	v
-DISTVERSION=		6.1.12
+DISTVERSION=		6.1.13
 CATEGORIES=		wip audio science
 
 MAINTAINER=	ports@FreeBSD.org
