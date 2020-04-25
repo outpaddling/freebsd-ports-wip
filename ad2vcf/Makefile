@@ -1,8 +1,9 @@
 # $FreeBSD$
 
-PORTNAME=	ad2vcf
-DISTVERSION=	0.1.1
-CATEGORIES=	wip biology
+PORTNAME=		ad2vcf
+DISTVERSION=		0.1.1-8
+DISTVERSIONSUFFIX=	-geaf53b6
+CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Add allelic depth info from a SAM stream to a VCF file
@@ -10,7 +11,7 @@ COMMENT=	Add allelic depth info from a SAM stream to a VCF file
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	vcfio>=0.1.0:wip/vcfio
+BUILD_DEPENDS=	biolibc>=0.1.0:wip/biolibc
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
