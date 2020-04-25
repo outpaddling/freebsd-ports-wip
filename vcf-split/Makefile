@@ -1,8 +1,9 @@
 # $FreeBSD$
 
-PORTNAME=	vcf-split
-DISTVERSION=	0.1.0
-CATEGORIES=	wip biology
+PORTNAME=		vcf-split
+DISTVERSION=		0.1.0-8
+DISTVERSIONSUFFIX=	-g8d2cec3
+CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Split a multi-sample VCF into single-sample VCFs
@@ -10,7 +11,7 @@ COMMENT=	Split a multi-sample VCF into single-sample VCFs
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	vcfio>=0.1.0:wip/vcfio
+BUILD_DEPENDS=	biolibc>=0.1.0:wip/biolibc
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
