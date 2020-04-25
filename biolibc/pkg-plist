@@ -1,5 +1,5 @@
-include/tsvio-protos.h
+include/biostring.h
+include/samio.h
 include/tsvio.h
-include/vcfio-protos.h
 include/vcfio.h
-lib/libvcfio.a
+lib/libbiolibc.a

@@ -1,8 +1,9 @@
 # $FreeBSD$
 
-PORTNAME=	vcfio
-DISTVERSION=	0.1.0
-CATEGORIES=	wip biology
+PORTNAME=		biolibc
+DISTVERSION=		0.1.0-15
+DISTVERSIONSUFFIX=	-g30e57ea
+CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	VCF input/output library
