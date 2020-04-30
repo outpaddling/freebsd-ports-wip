@@ -2,7 +2,7 @@
 
 PORTNAME=	coreterminal
 #DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.1
+DISTVERSION=	2.8.0
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -18,6 +18,6 @@ USE_QT=         buildtools_build core qmake_build
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	CuboCore
-GL_COMMIT=	f6612c51d643a8412e61c0aa6154561c4e6b642d
+GL_COMMIT=	fd82393c73bcd650f57a98e56eef2487713021a5
 
 .include <bsd.port.mk>
