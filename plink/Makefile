@@ -1,9 +1,9 @@
 # $FreeBSD$
 
-PORTNAME=	plink
+PORTNAME=		plink
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.90b5.20200502
-CATEGORIES=	wip biology
+DISTVERSION=		1.90b6.17
+CATEGORIES=		biology
 
 MAINTAINER=	mzaki@e-mail.ne.jp
 COMMENT=	Whole genome association analysis toolset
@@ -11,7 +11,7 @@ COMMENT=	Whole genome association analysis toolset
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	aarch64 mips64 powerpc64 sparc64
+NOT_FOR_ARCHS=		aarch64 mips64 powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	64bit code requires SSE2 instructions
 
 USES=		gmake fortran
@@ -19,7 +19,7 @@ USES=		gmake fortran
 USE_GITHUB=	yes
 GH_ACCOUNT=	chrchang
 GH_PROJECT=	plink-ng
-GH_TAGNAME=	a8b8cc50
+GH_TAGNAME=	79b2df8c
 
 WRKSRC_SUBDIR=	1.9
 MAKEFILE=	Makefile.std
@@ -37,10 +37,10 @@ BLAS_DESC=	BLAS/LAPACK implementation
 
 OPENBLAS_USES=	blaslapack:openblas
 
-NETLIB_DESC=	Netlib's reference
-NETLIB_USES=	blaslapack:netlib
+NETLIB_DESC=		Netlib's reference
+NETLIB_USES=		blaslapack:netlib
 NETLIB_LIB_DEPENDS=	libcblas.so:math/cblas
-NETLIB_LDFLAGS=	-lcblas
+NETLIB_LDFLAGS=		-lcblas
 
 EXAMPLES=	toy.map toy.ped
 
