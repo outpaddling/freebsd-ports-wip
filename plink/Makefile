@@ -1,41 +1,57 @@
 # $FreeBSD$
 
-PORTNAME=		plink
+PORTNAME=	plink
 DISTVERSIONPREFIX=	v
-DISTVERSION=		g20190227
-CATEGORIES=		wip biology
+DISTVERSION=	1.90b5.20200502
+CATEGORIES=	wip biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	mzaki@e-mail.ne.jp
 COMMENT=	Whole genome association analysis toolset
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# Use openblas only to provide cblas headers
-LIB_DEPENDS=	libopenblas.so:math/openblas \
-		liblapack.so:math/lapack \
-		libblas.so:math/blas
+NOT_FOR_ARCHS=	aarch64 mips64 powerpc64 sparc64
+NOT_FOR_ARCHS_REASON=	64bit code requires SSE2 instructions
 
-# We need Fortran LDFLAGS to link with Lapack.
-USES=		fortran gmake
+USES=		gmake fortran
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chrchang
 GH_PROJECT=	plink-ng
-GH_TAGNAME=	189224a
+GH_TAGNAME=	a8b8cc50
 
 WRKSRC_SUBDIR=	1.9
+MAKEFILE=	Makefile.std
+MAKE_ARGS=	ZLIB=-lz BLASFLAGS="${BLASLIB} ${LAPACKLIB}"
 CFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include
-CXXFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include
-LDFLAGS+=	-lpthread
-MAKE_ARGS=	ZLIB=-lz BLASFLAGS="-L${LOCALBASE}/lib -llapack -lblas -lopenblas -lgfortran"
+LDFLAGS+=	-lthr
 INSTALL_TARGET=	install-strip
 
-PLIST_FILES=	bin/plink
+OPTIONS_DEFINE=		EXAMPLES
+OPTIONS_SINGLE=		BLAS
+OPTIONS_SINGLE_BLAS=	NETLIB OPENBLAS
+OPTIONS_DEFAULT=	OPENBLAS
 
-post-patch:
-	${CP} ${WRKSRC}/Makefile.std ${WRKSRC}/Makefile
+BLAS_DESC=	BLAS/LAPACK implementation
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/plink ${STAGEDIR}${PREFIX}/bin
+OPENBLAS_USES=	blaslapack:openblas
+
+NETLIB_DESC=	Netlib's reference
+NETLIB_USES=	blaslapack:netlib
+NETLIB_LIB_DEPENDS=	libcblas.so:math/cblas
+NETLIB_LDFLAGS=	-lcblas
+
+EXAMPLES=	toy.map toy.ped
+
+post-build:
+	(cd ${WRKSRC}; ${CC} ${CFLAGS} prettify.c -o prettify)
+
+post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/prettify ${STAGEDIR}${PREFIX}/bin
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/,} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
