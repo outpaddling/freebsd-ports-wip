@@ -34,7 +34,6 @@ sbin/auto-disable-host-key-prompt
 sbin/auto-disable-hyperthreading
 sbin/auto-disable-service
 sbin/auto-disable-tcp-timestamps
-sbin/auto-disable-write-cache
 sbin/auto-enable-autologout
 sbin/auto-enable-compat32
 sbin/auto-enable-hal-mount
@@ -104,6 +103,7 @@ sbin/auto-restore-user
 sbin/auto-root-check
 sbin/auto-secure-directory
 sbin/auto-service-enabled
+sbin/auto-set-conf-var
 sbin/auto-set-hostname
 sbin/auto-set-lid-switch-mode
 sbin/auto-set-memory-limits
@@ -122,5 +122,6 @@ sbin/auto-useradd
 sbin/auto-using-pkgsrc
 sbin/auto-wheel-check
 sbin/auto-wifi-failover
+sbin/auto-write-cache-toggle
 sbin/auto-xdm-toggle
 %%DATADIR%%/ipfw-rules.sh
