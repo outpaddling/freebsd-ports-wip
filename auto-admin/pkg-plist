@@ -34,6 +34,7 @@ sbin/auto-disable-host-key-prompt
 sbin/auto-disable-hyperthreading
 sbin/auto-disable-service
 sbin/auto-disable-tcp-timestamps
+sbin/auto-disable-write-cache
 sbin/auto-enable-autologout
 sbin/auto-enable-compat32
 sbin/auto-enable-hal-mount
