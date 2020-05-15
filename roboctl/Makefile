@@ -1,9 +1,8 @@
 # $FreeBSD: head/devel/roboctl/Makefile 327726 2013-09-20 17:17:44Z bapt $
 
-PORTNAME=	roboctl
+PORTNAME=	RoboCTL
 PORTVERSION=	0.3.9
 CATEGORIES=	wip devel
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	API and tools for communicating with Lego and Vex robots
@@ -12,10 +11,13 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgamepad.a:devel/libgamepad
 
+USES=		tar:xz
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	outpaddling
+
 MAKE_ENV=	EXTRALIBS=-lbluetooth
 MAKE_JOBS_UNSAFE=	yes
-
-USES=		tar:xz
 
 OPTIONS_DEFINE=	CUTECOM
 CUTECOM_DESC=	Install cutecom for Vex debugging
