@@ -3,8 +3,6 @@
 PORTNAME=	auto-admin
 DISTVERSION=	0.6.3
 CATEGORIES=	wip sysutils
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://outpaddling.mooo.com/~bacon/Acadix/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Portable tools for automating systems management
@@ -12,6 +10,8 @@ COMMENT=	Portable tools for automating systems management
 LICENSE=	BSD2CLAUSE
 
 USES=		tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	outpaddling
 
 NO_BUILD=	yes
 NO_ARCH=	yes
