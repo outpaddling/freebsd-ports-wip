@@ -1,22 +1,20 @@
 # $FreeBSD$
 
 PORTNAME=	libbacon
-PORTVERSION=	1.2.2
+DISTVERSION=	1.2.2-1
+DISTVERSIONSUFFIX=	-g2e181aa
 CATEGORIES=	wip devel
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://outpaddling.mooo.com/~bacon/Acadix/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Misc functions
 
 LICENSE=	BSD2CLAUSE
 
-CONFLICTS=	libbacon-1.[023456789]
-
 PLIST_FILES=	lib/libbacon.a \
 		include/bacon.h
 
-USES=		tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	outpaddling
 
 MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
 		MANPREFIX=${STAGEDIR}${PREFIX}
