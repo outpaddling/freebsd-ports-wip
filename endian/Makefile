@@ -1,13 +1,15 @@
 # $FreeBSD: head/sysutils/endian/Makefile 460452 2018-01-31 01:07:07Z jwb $
 
 PORTNAME=	endian
-PORTVERSION=	1.1
+DISTVERSION=	1.1-2
+DISTVERSIONSUFFIX=	-g1e679d5
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Report endianness of a system
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 
