@@ -20,7 +20,7 @@ RUN_DEPENDS=	vexctl:devel/roboctl \
 
 USES+=		tar:xz
 
-MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
+MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX} \
 		MANPREFIX=${STAGEDIR}${PREFIX}
 
 post-patch:

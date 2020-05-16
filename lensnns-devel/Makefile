@@ -23,7 +23,7 @@ MAN1=		lensnns.1
 SUB_FILES=	pkg-message lensnns.1 lensnns.cshrc lensnns.profile
 PKGMESSAGE=	${WRKDIR}/pkg-message
 WEB_BROWSER?=	webbrowser
-MAKE_FLAGS+=	HOSTTYPE="FreeBSD" TCL_VER=${TCL_VER} USE_TCL=${USE_TCL}
+MAKE_ARGS+=	HOSTTYPE="FreeBSD" TCL_VER=${TCL_VER} USE_TCL=${USE_TCL}
 
 post-extract:
 	@${MKDIR} ${WRKDIR}/lens

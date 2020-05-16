@@ -22,7 +22,7 @@ MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE=	CUTECOM
 CUTECOM_DESC=	Install cutecom for Vex debugging
 
-MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
+MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX} \
 		MANPREFIX=${STAGEDIR}${PREFIX}
 
 .include <bsd.port.options.mk>

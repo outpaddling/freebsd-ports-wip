@@ -16,7 +16,7 @@ PLIST_FILES=	lib/libpare.a \
 		include/pare.h \
 		man/man3/pare.3.gz
 
-MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
+MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX} \
 		MANPREFIX=${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>

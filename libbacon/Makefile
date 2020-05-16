@@ -16,7 +16,7 @@ PLIST_FILES=	lib/libbacon.a \
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 
-MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
+MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX} \
 		MANPREFIX=${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>
