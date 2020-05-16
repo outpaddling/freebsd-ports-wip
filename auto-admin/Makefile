@@ -9,8 +9,8 @@ COMMENT=	Portable tools for automating systems management
 
 LICENSE=	BSD2CLAUSE
 
-USES=		tar:xz
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	outpaddling
 
 NO_BUILD=	yes
