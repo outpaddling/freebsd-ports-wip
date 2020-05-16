@@ -1,29 +1,30 @@
-#
 # $FreeBSD$
-#
 
-PORTNAME=	epc
-PORTVERSION=	0.1
+PORTNAME=	EPC
+DISTVERSION=	0.1.0-2
+DISTVERSIONSUFFIX=	-g131e116
 CATEGORIES=	wip emulators
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Educational Perrsonal Computer
 
-USES=		tar:xz
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtwintk.a:wip/twintk \
 		${LOCALBASE}/lib/libbacon.a:wip/libbacon \
 		${LOCALBASE}/include/plasm-epc-bits.h:wip/plasm
 RUN_DEPENDS=	plasm:wip/plasm
 
-MAKE_ARGS=	CFLAGS="-O -I${LOCALBASE}/include"
+#USES=		localbase
+USE_GITHUB=	yes
 
-INSTALL_TARGET=	PREFIX=${STAGEDIR}${PREFIX} \
-		MANPREFIX=${STAGEDIR}${PREFIX} \
-		install
+GH_ACCOUNT=	outpaddling
+
+MAKE_FLAGS=	PREFIX=${STAGEDIR}${PREFIX} \
+		MANPREFIX=${STAGEDIR}${PREFIX}
 
 pre-build:
-	make depend
+	${MAKE} depend
 
 .include <bsd.port.mk>
