@@ -1,13 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	SPCM
-PORTVERSION=	0.4.1
+DISTVERSION=	0.4.1-3
+DISTVERSIONSUFFIX=	-g1c45a0a
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for building and managing HPC clusters
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	auto-admin>=0.6.3:wip/auto-admin \
 		${PYTHON_PKGNAMEPREFIX}hostlist:wip/py-hostlist@${PY_FLAVOR}
