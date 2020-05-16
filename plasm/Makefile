@@ -1,19 +1,12 @@
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plasm
 PORTVERSION=	0.1
-CATEGORIES=	devel
+CATEGORIES=	wip devel
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Portable Assembler
-
-PLIST_FILES=	bin/plasm \
-		bin/plasm.bin \
-		include/plasm-epc-bits.h \
-		man/man1/plasm.1.gz
 
 RUN_DEPENDS=	papp:wip/papp
 
@@ -25,6 +18,11 @@ USE_GCC=	yes
 
 MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
 		MANPREFIX=${STAGEDIR}${PREFIX}
+
+PLIST_FILES=	bin/plasm \
+		bin/plasm.bin \
+		include/plasm-epc-bits.h \
+		man/man1/plasm.1.gz
 
 pre-build:
 	make depend
