@@ -1,13 +1,15 @@
 # $FreeBSD: head/sysutils/auto-admin/Makefile 471149 2018-05-30 18:48:22Z jwb $
 
 PORTNAME=	auto-admin
-DISTVERSION=	0.6.3
+DISTVERSION=	0.6.3-4
+DISTVERSIONSUFFIX=	-gb20ce57
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Portable tools for automating systems management
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 
