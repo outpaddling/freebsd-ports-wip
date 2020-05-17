@@ -4,7 +4,6 @@ PORTNAME=	haplohseq
 DISTVERSION=	0.1.2
 PORTREVISION=	1
 CATEGORIES=	wip biology
-MASTER_SITES=	https://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Identify regions of allelic imbalance
@@ -14,7 +13,10 @@ LICENSE=	MIT
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 RUN_DEPENDS=	R-cran-optparse>0:devel/R-cran-optparse
 
-USES=		compiler:c++11-lang gmake localbase:ldflags python:2.7 tar:xz
+USES=		compiler:c++11-lang gmake localbase:ldflags python
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	outpaddling
 
 OPTIONS_DEFINE=	EXAMPLES
 
