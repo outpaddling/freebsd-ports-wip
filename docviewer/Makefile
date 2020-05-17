@@ -1,18 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	docviewer
-PORTVERSION=	0.2
+PORTVERSION=	0.2.0
 CATEGORIES=	wip textproc
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://outpaddling.mooo.com/~bacon/Acadix/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Run the best available PDF viewer
 
 LICENSE=	BSD2CLAUSE
 
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	outpaddling
+
 NO_BUILD=	yes
-USES=		tar:xz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/docviewer ${STAGEDIR}${PREFIX}/bin
