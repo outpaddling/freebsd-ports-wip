@@ -1,10 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	port-dev
-PORTVERSION=	0.3
+DISTVERSION=	0.3.0
 CATEGORIES=	wip ports-mgmt
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://outpaddling.mooo.com/~bacon/Acadix/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for port development
@@ -14,7 +12,9 @@ LICENSE=	BSD3CLAUSE
 RUN_DEPENDS=	portlint:ports-mgmt/portlint \
 		port:ports-mgmt/porttools
 
-USES+=		tar:xz
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	outpaddling
 
 NO_BUILD=	yes
 
