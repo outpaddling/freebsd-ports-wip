@@ -6,7 +6,7 @@ DISTVERSIONSUFFIX=	-g695b4ac
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	VCF input/output library
+COMMENT=	Low-level high-performance bioinformatics library
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
