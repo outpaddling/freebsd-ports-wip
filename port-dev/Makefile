@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	port-dev
-DISTVERSION=	0.3.0
+DISTVERSION=	0.3.0-2
+DISTVERSIONSUFFIX=	-g0bc115a
 CATEGORIES=	wip ports-mgmt
 
 MAINTAINER=	jwb@FreeBSD.org
