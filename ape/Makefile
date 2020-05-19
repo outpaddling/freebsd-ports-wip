@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	APE
-DISTVERSION=	3.5.3
+DISTVERSION=	3.5.3-2
 CATEGORIES=	wip editors
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -22,6 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/twintk/terminfo/README:wip/twintk \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
+GH_TAGNAME=	8daa4cb073380bd1d6c05b340e3ce4115a91e9a5
 
 MAKE_ARGS+=	PREFIX=${PREFIX} \
 		MANPREFIX=${PREFIX} \
