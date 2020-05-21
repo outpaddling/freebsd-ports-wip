@@ -1,0 +1,5 @@
+TIMESTAMP = 1590025466
+SHA256 (centos/libcap-ng-0.7.5-4.el7.i686.rpm) = 2ed11d404aba39f3576c1a9258d295447d310c96d9c79b23e13dd3101d017ecd
+SIZE (centos/libcap-ng-0.7.5-4.el7.i686.rpm) = 24976
+SHA256 (centos/libcap-ng-0.7.5-4.el7.x86_64.rpm) = 0801fc61e4124a0295dada6850039edb515316cd55df176db1a3c8f26436825a
+SIZE (centos/libcap-ng-0.7.5-4.el7.x86_64.rpm) = 25244
