@@ -1,0 +1,26 @@
+usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-1.el7.i386/jre/bin/policytool
+usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-1.el7.i386/jre/lib/i386/libawt_xawt.so
+usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-1.el7.i386/jre/lib/i386/libjawt.so
+usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-1.el7.i386/jre/lib/i386/libjsoundalsa.so
+usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-1.el7.i386/jre/lib/i386/libsplashscreen.so
+usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-1.el7.x86_64/jre/bin/policytool
+usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-1.el7.x86_64/jre/lib/amd64/libawt_xawt.so
+usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-1.el7.x86_64/jre/lib/amd64/libjawt.so
+usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-1.el7.x86_64/jre/lib/amd64/libjsoundalsa.so
+usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-1.el7.x86_64/jre/lib/amd64/libsplashscreen.so
+usr/share/applications/java-1.8.0-openjdk-1.8.0.242.b08-1.el7.i386-policytool.desktop
+usr/share/applications/java-1.8.0-openjdk-1.8.0.242.b08-1.el7.x86_64-policytool.desktop
+/usr/local/share/icons/hicolor/16x16/apps/java-1.8.0-openjdk.png
+/usr/local/share/icons/hicolor/24x24/apps/java-1.8.0-openjdk.png
+/usr/local/share/icons/hicolor/32x32/apps/java-1.8.0-openjdk.png
+/usr/local/share/icons/hicolor/48x48/apps/java-1.8.0-openjdk.png
+@dir /usr/local/share/icons/hicolor/16x16/apps
+@dir /usr/local/share/icons/hicolor/16x16
+@dir /usr/local/share/icons/hicolor/24x24/apps
+@dir /usr/local/share/icons/hicolor/24x24
+@dir /usr/local/share/icons/hicolor/32x32/apps
+@dir /usr/local/share/icons/hicolor/32x32
+@dir /usr/local/share/icons/hicolor/48x48/apps
+@dir /usr/local/share/icons/hicolor/48x48
+@dir /usr/local/share/icons/hicolor
+@dir /usr/local/share/icons

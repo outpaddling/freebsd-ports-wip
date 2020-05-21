@@ -1,0 +1,7 @@
+TIMESTAMP = 1590021352
+SHA256 (centos/java-1.8.0-openjdk-1.8.0.242.b08-1.el7.i686.rpm) = 0410da567fcb975020c882b5b41bea9a0ffc994aee4e621d8982eb72cbd52808
+SIZE (centos/java-1.8.0-openjdk-1.8.0.242.b08-1.el7.i686.rpm) = 299932
+SHA256 (centos/java-1.8.0-openjdk-1.8.0.242.b08-1.el7.x86_64.rpm) = bca1134a30384f6c90fac86df4e7fa1a428a513fd702eaec1c587e008c1fb8c5
+SIZE (centos/java-1.8.0-openjdk-1.8.0.242.b08-1.el7.x86_64.rpm) = 300328
+SHA256 (centos/java-1.8.0-openjdk-1.8.0.242.b08-1.el7.src.rpm) = 6631e09a3307cc04243ee2601f8cb1313afbf499f4043613d100684fb85b8643
+SIZE (centos/java-1.8.0-openjdk-1.8.0.242.b08-1.el7.src.rpm) = 56668783
