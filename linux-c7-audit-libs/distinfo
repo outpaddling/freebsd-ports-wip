@@ -1,0 +1,5 @@
+TIMESTAMP = 1590025247
+SHA256 (centos/audit-libs-2.8.5-4.el7.i686.rpm) = 53624cacb5fb907f0dd6112044f9358f1245e81c07cee66ae76e1ed7362480b0
+SIZE (centos/audit-libs-2.8.5-4.el7.i686.rpm) = 104824
+SHA256 (centos/audit-libs-2.8.5-4.el7.x86_64.rpm) = 8531bf49043f146e7460e4f2bb898a7fa2ff1a07c70b9834d9cac60a3e3c57ed
+SIZE (centos/audit-libs-2.8.5-4.el7.x86_64.rpm) = 104408
