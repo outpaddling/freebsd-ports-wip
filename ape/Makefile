@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	APE
-DISTVERSION=	3.5.3-4
-DISTVERSIONSUFFIX=	-gb0af2ef
+DISTVERSION=	3.5.3-5
+DISTVERSIONSUFFIX=	-g1d1655e
 CATEGORIES=	wip editors
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -30,10 +30,7 @@ MAKE_ARGS+=	PREFIX=${PREFIX} \
 		DOCSDIR=${DOCSDIR} \
 		STAGEDIR=${STAGEDIR}
 
-OPTIONS_DEFINE=	DOCS
-PORTDOCS=	*
-
 pre-build:
-	(cd ${WRKSRC} && make depend)
+	(cd ${WRKSRC} && ${MAKE} depend)
 
 .include <bsd.port.mk>
