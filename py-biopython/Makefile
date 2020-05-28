@@ -3,7 +3,7 @@
 
 PORTNAME=	biopython
 DISTVERSION=	1.77
-CATEGORIES=	biology python
+CATEGORIES=	wip biology python
 MASTER_SITES=	http://www.biopython.org/DIST/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
