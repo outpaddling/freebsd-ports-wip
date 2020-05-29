@@ -25,4 +25,10 @@ OPTIONS_DEFAULT=	REPORTLAB
 REPORTLAB_DESC=		PDF support in Bio.Graphics module
 REPORTLAB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}reportlab>0:print/py-reportlab@${PY_FLAVOR}
 
+post-install:
+	@${STRIP_CMD} \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Bio/*.so \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Bio/*/*.so \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Bio/*/*/*.so \
+
 .include <bsd.port.mk>
