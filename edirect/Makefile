@@ -2,9 +2,9 @@
 
 PORTNAME=	edirect
 PORTVERSION=	9.30.20180706
+# PORTVERSION=	13.7.20200529
 CATEGORIES=	wip biology
 MASTER_SITES=	ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/${PORTVERSION}/
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Access to the NCBI's suite of interconnected databases
@@ -19,6 +19,8 @@ RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 
 USES=		go shebangfix
 SHEBANG_FILES=	setup.sh nquire edirect.pl
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 SCRIPTS=	esearch elink efilter efetch rchive xtract edirect-einfo epost
 

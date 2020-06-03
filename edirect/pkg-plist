@@ -1,6 +1,6 @@
-bin/%%GO_PKGNAME%%-einfo
-bin/%%GO_PKGNAME%%-test.sh
-bin/%%GO_PKGNAME%%.pl
+bin/edirect-einfo
+bin/edirect-test.sh
+bin/edirect.pl
 bin/efetch
 bin/efilter
 bin/elink
