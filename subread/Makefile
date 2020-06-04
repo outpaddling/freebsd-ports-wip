@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	subread
-DISTVERSION=	1.6.3
+DISTVERSION=	1.6.5
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	wip biology
-MASTER_SITES=	SF/subread/subread-1.6.3/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	High-performance read alignment, quantification and mutation discovery
@@ -12,11 +12,14 @@ COMMENT=	High-performance read alignment, quantification and mutation discovery
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
 
-USES=		gmake
+LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
+
+USES=		gmake localbase:ldflags
 
 MAKEFILE=	${FILESDIR}/Makefile.pkg
 WRKSRC_SUBDIR=	src
+LDFLAGS+=	-lsysinfo
 
-MAKE_JOBS_UNSAFE=	yes
+#MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
