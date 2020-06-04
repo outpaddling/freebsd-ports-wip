@@ -9,6 +9,7 @@ COMMENT=	Meta-port for Biostar Handbook tools
 
 # Deps from http://data.biostarhandbook.com/install/conda.txt
 RUN_DEPENDS=	wget>0:ftp/wget \
+		nano>0:editors/nano \
 		parallel>0:sysutils/parallel \
 		edirect>0:wip/edirect \
 		minimap2>0:biology/minimap2 \
