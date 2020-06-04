@@ -9,7 +9,6 @@ COMMENT=	Discovers short variants from Next Generation Sequencing data
 
 LICENSE=	MIT
 
-# Deps htslib, tclap, Rmath, pcre2 and libsvm
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libsvm.so:science/libsvm \
 		libdeflate.so:archivers/libdeflate \
