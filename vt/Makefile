@@ -2,7 +2,7 @@
 
 PORTNAME=	vt
 DISTVERSION=	0.57721
-CATEGORIES=	wip
+CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Discovers short variants from Next Generation Sequencing data
