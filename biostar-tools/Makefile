@@ -31,12 +31,12 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		${PYTHON_PKGNAMEPREFIX}biopython>0:biology/py-biopython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysam>0:biology/py-pysam@${PY_FLAVOR} \
 		freebayes>0:biology/freebayes \
-		seqkit>0:wip/seqkit
+		seqkit>0:wip/seqkit \
+		p5-Net-SSLeay>0:security/p5-Net-SSLeay \
+		bioawk>0:wip/bioawk
 
 USES=		metaport perl5 python
 
-#perl-net-ssleay
-#bioawk
 #bbmap
 #snpeff
 #vt
