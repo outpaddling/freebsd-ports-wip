@@ -7,6 +7,7 @@ CATEGORIES=	wip biology
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Meta-port for Biostar Handbook tools
 
+# Deps from http://data.biostarhandbook.com/install/conda.txt
 RUN_DEPENDS=	wget>0:ftp/wget \
 		parallel>0:sysutils/parallel \
 		edirect>0:wip/edirect \
@@ -33,13 +34,13 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		freebayes>0:biology/freebayes \
 		seqkit>0:wip/seqkit \
 		p5-Net-SSLeay>0:security/p5-Net-SSLeay \
-		bioawk>0:wip/bioawk
+		bioawk>0:wip/bioawk \
+		vt>0:wip/vt
 
-USES=		metaport perl5 python
+USES=		metaport python
 
 #bbmap
 #snpeff
-#vt
 #readseq
 #ucsc-bedgraphtobigwig
 
