@@ -29,13 +29,13 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		ncbi-blast+>0:biology/ncbi-blast+ \
 		cd-hit>0:biology/cd-hit \
 		${PYTHON_PKGNAMEPREFIX}biopython>0:biology/py-biopython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pysam>0:biology/py-pysam@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pysam>0:biology/py-pysam@${PY_FLAVOR} \
+		freebayes>0:biology/freebayes \
+		seqkit>0:wip/seqkit
 
 USES=		metaport perl5 python
 
-# golang		seqkit>0:wip/seqkit \
 #perl-net-ssleay
-#freebayes
 #bioawk
 #bbmap
 #snpeff
