@@ -2,6 +2,7 @@ bin/detectionCall
 bin/exactSNP
 bin/featureCounts
 bin/flattenGTF
+bin/genRandomReads
 bin/propmapped
 bin/qualityScores
 bin/removeDup

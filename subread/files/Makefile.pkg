@@ -1,103 +1,84 @@
 
-SUBREAD_VERSION_BASE=1.6.3
-SUBREAD_VERSION_DATE=$(SUBREAD_VERSION_BASE)-$(shell date +"%d%b%Y")
-SUBREAD_VERSION="$(SUBREAD_VERSION_DATE)"
-SUBREAD_VERSION="$(SUBREAD_VERSION_BASE)"
+MACOS = -D FREEBSD 
 
-CC	?= cc
-CFLAGS	?= -O -Wall
-CFLAGS	+= -DMAKE_FOR_EXON -DMAKE_STANDALONE \
-	-DSUBREAD_VERSION=\"${SUBREAD_VERSION}\" \
-	-D_FILE_OFFSET_BITS=64 ${WARNING_LEVEL} 
+include makefile.version
 
-LDFLAGS	+= -pthread -lz ${MACOS} -lm
-
-LRM_LIBS=longread-one/LRMsorted-hashtable longread-one/LRMbase-index longread-one/LRMchro-event longread-one/LRMhelper longread-one/LRMseek-zlib longread-one/LRMfile-io longread-one/LRMhashtable
-LRM_OBJECTS=$(addsuffix .o, ${LRM_LIBS})
-
-ALL_LIBS= core core-junction core-indel sambam-file sublog gene-algorithms hashtable input-files sorted-hashtable gene-value-index exon-algorithms HelperFunctions interval_merge long-hashtable core-bigtable seek-zlib
-ALL_OBJECTS=$(addsuffix .o, ${ALL_LIBS})
-ALL_H=$(addsuffix .h, ${ALL_LIBS} ${LRM_LIBS})
-ALL_C=$(addsuffix .c, ${ALL_LIBS} ${LRM_LIBS})
+CCFLAGS = $(MACOS) -DMAKE_FOR_EXON  -DMAKE_STANDALONE \
+	-DSUBREAD_VERSION=\"${SUBREAD_VERSION}\"  -D_FILE_OFFSET_BITS=64
+LDFLAGS += -DMAKE_FOR_EXON -DMAKE_STANDALONE -pthread -lz -lm
+CC ?= gcc
+CC += ${CCFLAGS}
 
 BINS	= detectionCall sublong repair txUnique featureCounts removeDup \
 	exactSNP subread-buildindex subindel  subread-align subjunc \
 	qualityScores subread-fullscan propmapped flattenGTF \
-	# samMappedBases mergeVCF  testZlib
 
-LIBS	= liblrm.a
+ALL_LIBS= core core-junction core-indel sambam-file sublog gene-algorithms hashtable input-files sorted-hashtable gene-value-index exon-algorithms HelperFunctions interval_merge long-hashtable core-bigtable seek-zlib input-blc
+ALL_OBJECTS=$(addsuffix .o, ${ALL_LIBS})
+ALL_H=$(addsuffix .h, ${ALL_LIBS})
+ALL_C=$(addsuffix .c, ${ALL_LIBS})
 
-MKDIR	?= mkdir
-INSTALL	?= install
-DESTDIR	?= .
-PREFIX	?= /usr/local
-MAKE	?= gmake
+all: genRandomReads detectionCall sublong repair txUnique featureCounts removeDup exactSNP subread-buildindex subindel  subread-align subjunc qualityScores subread-fullscan propmapped flattenGTF # samMappedBases mergeVCF  testZlib
+	mkdir -p ../bin/utilities
+	mv longread-one/LRM longread-one/sublong
+	mv longread-one/sublong subread-align subjunc featureCounts  subindel exactSNP subread-buildindex ../bin/
+	mv detectionCall genRandomReads repair propmapped qualityScores removeDup subread-fullscan txUnique flattenGTF ../bin/utilities
 
-.PHONY: all install clean
+sublong: longread-one/longread-mapping.c  ${ALL_OBJECTS}
+	echo "MACOS= -D FREEBSD  " > longread-one/make.version
+	rm -f longread-one/*.o
+	cd longread-one && $(MAKE)
 
-all: ${BINS} ${LIBS}
+genRandomReads: gen_rand_reads.c ${ALL_OBJECTS}
+	${CC} -o genRandomReads gen_rand_reads.c ${ALL_OBJECTS} ${LDFLAGS}
 
-liblrm.a: ${LRM_OBJECTS}
-	ar r liblrm.a ${LRM_OBJECTS}
+flattenGTF: flattenAnnotations.c ${ALL_OBJECTS}
+	${CC} -o flattenGTF flattenAnnotations.c  ${ALL_OBJECTS} ${LDFLAGS}
 
-libsubread.a: ${ALL_OBJECTS}
-	ar r libsubread.a ${ALL_OBJECTS}
+detectionCall: detection-calls.c	 ${ALL_OBJECTS}
+	${CC} -o detectionCall detection-calls.c  ${ALL_OBJECTS} ${LDFLAGS}
 
-flattenGTF: flattenAnnotations.c libsubread.a
-	${CC} -o flattenGTF flattenAnnotations.c ${CFLAGS} -L. -lsubread ${LDFLAGS}
+repair: read-repair.c	 ${ALL_OBJECTS}
+	${CC} -o repair read-repair.c  ${ALL_OBJECTS} ${LDFLAGS}
 
-detectionCall: detection-calls.c	 libsubread.a
-	${CC} -o detectionCall detection-calls.c  ${CFLAGS} -L. -lsubread ${LDFLAGS}
+txUnique: tx-unique.c tx-unique.h	 ${ALL_OBJECTS}
+	${CC} -o txUnique tx-unique.c  ${ALL_OBJECTS} ${LDFLAGS}
 
-repair: read-repair.c	 libsubread.a
-	${CC} -o repair read-repair.c  ${CFLAGS} -L. -lsubread ${LDFLAGS}
+globalReassembly: global-reassembly.c ${ALL_OBJECTS}
+	${CC} -o globalReassembly  global-reassembly.c ${ALL_OBJECTS} ${LDFLAGS}
 
-txUnique: tx-unique.c tx-unique.h	 libsubread.a
-	${CC} -o txUnique tx-unique.c  ${CFLAGS} -L. -lsubread ${LDFLAGS}
+propmapped: propmapped.c ${ALL_OBJECTS}
+	${CC} -o propmapped propmapped.c ${ALL_OBJECTS} ${LDFLAGS}
 
-globalReassembly: global-reassembly.c libsubread.a
-	${CC} -o globalReassembly  global-reassembly.c ${CFLAGS} -L. -lsubread ${LDFLAGS}
+exactSNP: SNPCalling.c SNPCalling.h  ${ALL_OBJECTS}
+	${CC}  -o exactSNP SNPCalling.c  ${ALL_OBJECTS} ${LDFLAGS}
 
-propmapped: propmapped.c libsubread.a
-	${CC} -o propmapped propmapped.c ${CFLAGS} -L. -lsubread ${LDFLAGS}
+subread-buildindex: index-builder.c subread.h ${ALL_OBJECTS}
+	${CC}  -o subread-buildindex  index-builder.c ${ALL_OBJECTS} ${LDFLAGS}
 
-exactSNP: SNPCalling.c SNPCalling.h  libsubread.a
-	${CC}  -o exactSNP SNPCalling.c  ${CFLAGS} -L. -lsubread ${LDFLAGS}
+removeDup: removeDupReads.c removeDupReads.h subread.h ${ALL_OBJECTS}
+	${CC} -o  removeDup removeDupReads.c  ${ALL_OBJECTS} ${LDFLAGS}
 
-subread-buildindex: index-builder.c subread.h libsubread.a
-	${CC}  -o subread-buildindex  index-builder.c ${CFLAGS} -L. -lsubread ${LDFLAGS}
+subindel: SUBindel.c core.h subread.h  ${ALL_OBJECTS}
+	${CC} -o subindel SUBindel.c ${ALL_OBJECTS} ${LDFLAGS}
 
-removeDup: removeDupReads.c removeDupReads.h subread.h libsubread.a
-	${CC} -o  removeDup removeDupReads.c  ${CFLAGS} -L. -lsubread ${LDFLAGS}
+featureCounts: readSummary.c subread.h  ${ALL_OBJECTS}
+	${CC} -o featureCounts readSummary.c ${ALL_OBJECTS} ${LDFLAGS}
 
-subindel: SUBindel.c core.h subread.h  libsubread.a
-	${CC} -o subindel SUBindel.c ${CFLAGS} -L. -lsubread ${LDFLAGS}
+subread-align: core-interface-aligner.c  ${ALL_OBJECTS}
+	${CC} -o subread-align core-interface-aligner.c  ${ALL_OBJECTS} ${LDFLAGS} 
 
-featureCounts: readSummary.c subread.h  libsubread.a
-	${CC} -o featureCounts readSummary.c ${CFLAGS} -L. -lsubread ${LDFLAGS}
+subjunc: core-interface-subjunc.c  ${ALL_OBJECTS}
+	${CC} -o subjunc core-interface-subjunc.c  ${ALL_OBJECTS} ${LDFLAGS} 
 
-subread-align: core-interface-aligner.c  libsubread.a
-	${CC} -o subread-align core-interface-aligner.c  ${CFLAGS} -L. -lsubread ${LDFLAGS} 
+subtools: subtools.c ${ALL_OBJECTS}
+	${CC} -o subtools subtools.c ${ALL_OBJECTS} ${LDFLAGS} 
 
-subjunc: core-interface-subjunc.c  libsubread.a
-	${CC} -o subjunc core-interface-subjunc.c  ${CFLAGS} -L. -lsubread ${LDFLAGS} 
+qualityScores: qualityScores.c ${ALL_OBJECTS}
+	${CC} -o qualityScores qualityScores.c  ${ALL_OBJECTS}  ${LDFLAGS}
 
-subtools: subtools.c libsubread.a
-	${CC} -o subtools subtools.c ${CFLAGS} -L. -lsubread ${LDFLAGS} 
-
-qualityScores: qualityScores.c libsubread.a
-	${CC} -o qualityScores qualityScores.c  ${CFLAGS} -L. -lsubread  ${LDFLAGS}
-
-subread-fullscan: fullscan.c  libsubread.a
-	${CC} -o subread-fullscan fullscan.c  ${CFLAGS} -L. -lsubread  ${LDFLAGS}
-
-sublong: longread-one/longread-mapping.c liblrm.a
-	${CC} -o sublong ${CFLAGS} longread-one/longread-mapping.c -L. -llrm ${LDFLAGS}
+subread-fullscan: fullscan.c  ${ALL_OBJECTS}
+	${CC} -o subread-fullscan fullscan.c  ${ALL_OBJECTS}  ${LDFLAGS}
 
 clean:
-	rm -f core featureCounts exactSNP removeDup subread-buildindex \
-		${ALL_OBJECTS} ${LRM_OBJECTS}
-
-install:
-	${MKDIR} -p ${DESTDIR}${PREFIX}/bin
-	${INSTALL} -c ${BINS} ${DESTDIR}${PREFIX}/bin
+	rm -f core featureCounts exactSNP removeDup subread-buildindex ${ALL_OBJECTS}

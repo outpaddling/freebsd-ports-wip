@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	subread
-DISTVERSION=	1.6.5
+DISTVERSION=	2.0.1
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	wip biology
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -20,6 +20,14 @@ MAKEFILE=	${FILESDIR}/Makefile.pkg
 WRKSRC_SUBDIR=	src
 LDFLAGS+=	-lsysinfo
 
-#MAKE_JOBS_UNSAFE=	yes
+# MAKE_JOBS_UNSAFE=	yes
+
+do-install:
+	${INSTALL_PROGRAM} \
+		${WRKSRC}/../bin/exactSNP \
+		${WRKSRC}/../bin/featureCounts \
+		${WRKSRC}/../bin/sub* \
+		${WRKSRC}/../bin/utilities/* \
+		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

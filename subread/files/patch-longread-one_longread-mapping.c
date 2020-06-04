@@ -1,15 +1,14 @@
---- longread-one/longread-mapping.c.orig	2018-11-08 14:56:26 UTC
+--- longread-one/longread-mapping.c.orig	2020-06-04 20:05:33 UTC
 +++ longread-one/longread-mapping.c
-@@ -28,7 +28,7 @@
- #include <sys/time.h>
- #include <sys/types.h>
+@@ -30,7 +30,6 @@
+ #ifndef __MINGW32__
  #include <sys/resource.h>
+ #endif
 -#include <sys/timeb.h>
-+#include <sys/time.h>
  #include <sys/stat.h>
  #include <locale.h>
  #include <ctype.h>
-@@ -220,11 +220,12 @@ int LRMvalidate_and_init_context(LRMcont
+@@ -222,12 +221,11 @@ int LRMvalidate_and_init_context(LRMcontext_t ** conte
  
  
  double LRMmiltime(){
@@ -18,12 +17,11 @@
 -	ftime(&trp);
 -	ret = trp.time*1.0+(trp.millitm*1.0/1000.0);
 -	return ret;
-+	//struct timeb trp;
-+	//ftime(&trp);
-+	//ret = trp.time*1.0+(trp.millitm*1.0/1000.0);
 +	struct timeval trp;
 +
 +	return trp.tv_sec + trp.tv_usec / 1000000.0;
  }
++
  
  
+ void LRMset_default_values_context(LRMcontext_t * context){
