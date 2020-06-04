@@ -6,7 +6,7 @@
 -CXXFLAGS = -pipe -std=c++0x $(OPTFLAG) $(INCLUDES) -D__STDC_LIMIT_MACROS
 -CXX = g++
 +# ${LOCALBASE}/include must come after bundled dirs
-+INCLUDES = -I. -Ilib/Rmath -Ilib/tclap -Ilib/pcre2 -I${LOCALBASE}/include
++INCLUDES = -I. -Ilib -Ilib/Rmath -Ilib/tclap -Ilib/pcre2 -I${LOCALBASE}/include
 +CXXFLAGS ?= -pipe -std=c++0x $(OPTFLAG) $(INCLUDES) -D__STDC_LIMIT_MACROS
 +CXXFLAGS += -std=c++0x $(INCLUDES) -D__STDC_LIMIT_MACROS
 +CXX ?= g++

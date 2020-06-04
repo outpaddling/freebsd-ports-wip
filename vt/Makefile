@@ -12,7 +12,8 @@ LICENSE=	MIT
 # Deps htslib, tclap, Rmath, pcre2 and libsvm
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libsvm.so:science/libsvm \
-		libdeflate.so:archivers/libdeflate
+		libdeflate.so:archivers/libdeflate \
+		libcurl.so:ftp/curl
 
 USES=		gmake ssl
 USE_GITHUB=	yes
