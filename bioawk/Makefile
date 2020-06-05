@@ -15,12 +15,10 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	lh3
 
-ALL_TARGET=		# empty
 MAKE_JOBS_UNSAFE=	yes
+ALL_TARGET=		# empty
+INSTALL_TARGET=		install-strip
 
 PLIST_FILES=	bin/bioawk
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bioawk ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
