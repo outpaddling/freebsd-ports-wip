@@ -1,9 +1,8 @@
 
-MACOS = -DFREEBSD 
 
 include makefile.version
 
-CCFLAGS = $(MACOS) -DMAKE_FOR_EXON  -DMAKE_STANDALONE \
+CCFLAGS = -DMAKE_FOR_EXON  -DMAKE_STANDALONE \
 	-DSUBREAD_VERSION=\"${SUBREAD_VERSION}\"  -D_FILE_OFFSET_BITS=64
 LDFLAGS += -DMAKE_FOR_EXON -DMAKE_STANDALONE -pthread -lz -lm
 CC ?= gcc
@@ -25,7 +24,7 @@ all: genRandomReads detectionCall sublong repair txUnique featureCounts removeDu
 	mv detectionCall genRandomReads repair propmapped qualityScores removeDup subread-fullscan txUnique flattenGTF ../bin/utilities
 
 sublong: longread-one/longread-mapping.c  ${ALL_OBJECTS}
-	echo "MACOS= -DFREEBSD  " > longread-one/make.version
+	echo " " > longread-one/make.version
 	rm -f longread-one/*.o
 	cd longread-one && $(MAKE)
 
