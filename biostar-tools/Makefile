@@ -23,7 +23,7 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		seqtk>0:biology/seqtk \
 		datamash>0:textproc/datamash \
 		bcftools>0:biology/bcftools \
-		subread>0:wip/subread \
+		subread>0:biology/subread \
 		hisat2>0:biology/hisat2 \
 		trimmomatic>0:biology/trimmomatic \
 		fastqc>0:biology/fastqc \
@@ -35,8 +35,8 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		freebayes>0:biology/freebayes \
 		seqkit>0:wip/seqkit \
 		p5-Net-SSLeay>0:security/p5-Net-SSLeay \
-		bioawk>0:wip/bioawk \
-		vt>0:wip/vt
+		bioawk>0:biology/bioawk \
+		vt>0:biology/vt
 
 USES=		metaport python
 
