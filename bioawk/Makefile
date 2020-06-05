@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lh3
 
 MAKE_JOBS_UNSAFE=	yes
-ALL_TARGET=		# empty
+ALL_TARGET=		bioawk
 INSTALL_TARGET=		install-strip
 
 PLIST_FILES=	bin/bioawk
