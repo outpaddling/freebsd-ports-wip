@@ -1,27 +1,28 @@
---- longread-one/longread-mapping.c.orig	2020-06-04 20:05:33 UTC
+--- longread-one/longread-mapping.c.orig	2019-09-04 04:22:49 UTC
 +++ longread-one/longread-mapping.c
-@@ -30,7 +30,6 @@
- #ifndef __MINGW32__
- #include <sys/resource.h>
- #endif
--#include <sys/timeb.h>
- #include <sys/stat.h>
- #include <locale.h>
- #include <ctype.h>
-@@ -222,12 +221,11 @@ int LRMvalidate_and_init_context(LRMcontext_t ** conte
- 
+@@ -223,10 +223,25 @@ int LRMvalidate_and_init_context(LRMcontext_t ** conte
  
  double LRMmiltime(){
--	double ret;
--	struct timeb trp;
--	ftime(&trp);
--	ret = trp.time*1.0+(trp.millitm*1.0/1000.0);
--	return ret;
-+	struct timeval trp;
+ 	double ret;
 +
-+	return trp.tv_sec + trp.tv_usec / 1000000.0;
++#ifdef __FreeBSD__
++
++	struct timeval tp;
++	struct timezone tz;
++	tz.tz_minuteswest=0;
++	tz.tz_dsttime=0;
++	gettimeofday(&tp,&tz);
++ 
++	ret = tp.tv_sec+ 0.001*0.001* tp.tv_usec; 
++
++#else
++
+ 	struct timeb trp;
+ 	ftime(&trp);
+ 	ret = trp.time*1.0+(trp.millitm*1.0/1000.0);
+ 	return ret;
++
++#endif
  }
-+
  
  
- void LRMset_default_values_context(LRMcontext_t * context){

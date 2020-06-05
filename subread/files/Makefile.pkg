@@ -1,5 +1,5 @@
 
-MACOS = -D FREEBSD 
+MACOS = -DFREEBSD 
 
 include makefile.version
 
@@ -25,7 +25,7 @@ all: genRandomReads detectionCall sublong repair txUnique featureCounts removeDu
 	mv detectionCall genRandomReads repair propmapped qualityScores removeDup subread-fullscan txUnique flattenGTF ../bin/utilities
 
 sublong: longread-one/longread-mapping.c  ${ALL_OBJECTS}
-	echo "MACOS= -D FREEBSD  " > longread-one/make.version
+	echo "MACOS= -DFREEBSD  " > longread-one/make.version
 	rm -f longread-one/*.o
 	cd longread-one && $(MAKE)
 
