@@ -18,9 +18,10 @@ RUN_DEPENDS=	samtools:biology/samtools
 USE_JAVA=	1.8+
 JAVA_RUN=	yes
 
+SUB_FILES=	picard
 NO_BUILD=	yes
 
-PLIST_FILES=	${JAVAJARDIR}/picard.jar
+PLIST_FILES=	bin/picard ${JAVAJARDIR}/picard.jar
 
 do-extract:
 	# No extract
@@ -29,5 +30,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/picard ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
