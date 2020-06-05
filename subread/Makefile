@@ -18,14 +18,6 @@ USES=		gmake localbase:ldflags
 
 MAKEFILE=	${FILESDIR}/Makefile.pkg
 WRKSRC_SUBDIR=	src
-LDFLAGS+=	-lsysinfo
-
-do-install:
-	${INSTALL_PROGRAM} \
-		${WRKSRC}/../bin/exactSNP \
-		${WRKSRC}/../bin/featureCounts \
-		${WRKSRC}/../bin/sub* \
-		${WRKSRC}/../bin/utilities/* \
-		${STAGEDIR}${PREFIX}/bin
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

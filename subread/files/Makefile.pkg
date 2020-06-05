@@ -4,13 +4,19 @@ include makefile.version
 
 CCFLAGS = -DMAKE_FOR_EXON  -DMAKE_STANDALONE \
 	-DSUBREAD_VERSION=\"${SUBREAD_VERSION}\"  -D_FILE_OFFSET_BITS=64
-LDFLAGS += -DMAKE_FOR_EXON -DMAKE_STANDALONE -pthread -lz -lm
+LDFLAGS += -DMAKE_FOR_EXON -DMAKE_STANDALONE -pthread -lsysinfo -lz -lm
 CC ?= gcc
 CC += ${CCFLAGS}
 
 BINS	= detectionCall sublong repair txUnique featureCounts removeDup \
 	exactSNP subread-buildindex subindel  subread-align subjunc \
 	qualityScores subread-fullscan propmapped flattenGTF \
+
+MKDIR	?= mkdir -p
+INSTALL	?= install
+DESTDIR	?= .
+PREFIX	?= local
+STRIP	?= strip
 
 ALL_LIBS= core core-junction core-indel sambam-file sublog gene-algorithms hashtable input-files sorted-hashtable gene-value-index exon-algorithms HelperFunctions interval_merge long-hashtable core-bigtable seek-zlib input-blc
 ALL_OBJECTS=$(addsuffix .o, ${ALL_LIBS})
@@ -79,5 +85,20 @@ qualityScores: qualityScores.c ${ALL_OBJECTS}
 subread-fullscan: fullscan.c  ${ALL_OBJECTS}
 	${CC} -o subread-fullscan fullscan.c  ${ALL_OBJECTS}  ${LDFLAGS}
 
+.PHONY:	clean install install-strip
+
+install-strip: install
+	${STRIP} ${DESTDIR}${PREFIX}/bin/*
+
+install:
+	${MKDIR} ${DESTDIR}${PREFIX}/bin
+	${INSTALL} -c \
+		../bin/exactSNP \
+		../bin/featureCounts \
+		../bin/sub* \
+		../bin/utilities/* \
+		${DESTDIR}${PREFIX}/bin
+
 clean:
-	rm -f core featureCounts exactSNP removeDup subread-buildindex ${ALL_OBJECTS}
+	rm -f core featureCounts exactSNP removeDup subread-buildindex \
+		${ALL_OBJECTS}
