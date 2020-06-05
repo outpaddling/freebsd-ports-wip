@@ -1,8 +1,7 @@
 # $FreeBSD$
-# FIXME: Can we download the jar file using github tools?
 
 PORTNAME=	picard
-PORTVERSION=	2.7.1
+PORTVERSION=	2.22.9
 CATEGORIES=	wip biology java
 MASTER_SITES=	http://github.com/broadinstitute/picard/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	-tools
@@ -21,7 +20,7 @@ JAVA_RUN=	yes
 
 NO_BUILD=	yes
 
-PLIST_FILES=	%%JAVAJARDIR%%/picard.jar
+PLIST_FILES=	${JAVAJARDIR}/picard.jar
 
 do-extract:
 	# No extract
