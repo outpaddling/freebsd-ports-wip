@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	picard
-PORTVERSION=	2.22.9
+DISTVERSION=	2.22.9
 CATEGORIES=	wip biology java
 MASTER_SITES=	http://github.com/broadinstitute/picard/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	-tools
@@ -27,7 +27,6 @@ do-extract:
 	# No extract
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/picard ${STAGEDIR}${PREFIX}/bin
