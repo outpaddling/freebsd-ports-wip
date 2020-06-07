@@ -20,6 +20,7 @@ JAVA_RUN=	yes
 
 SUB_FILES=	picard
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/picard ${JAVAJARDIR}/picard.jar
 
