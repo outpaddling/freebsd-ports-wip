@@ -27,7 +27,7 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		hisat2>0:biology/hisat2 \
 		trimmomatic>0:biology/trimmomatic \
 		fastqc>0:biology/fastqc \
-		picard-tools>0:wip/picard-tools \
+		picard-tools>0:biology/picard-tools \
 		ncbi-blast+>0:biology/ncbi-blast+ \
 		cd-hit>0:biology/cd-hit \
 		${PYTHON_PKGNAMEPREFIX}biopython>0:biology/py-biopython@${PY_FLAVOR} \
