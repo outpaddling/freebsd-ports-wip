@@ -1,9 +1,8 @@
 # Created by: siasia
-# $FreeBSD: head/lang/v8/Makefile 308733 2012-12-12 02:02:55Z vanilla $
+# $FreeBSD$
 
 PORTNAME=	v8
-PORTVERSION=	3.15.10
-PORTREVISION=	0
+DISTVERSION=	3.15.10
 CATEGORIES=	wip lang
 MASTER_SITES=	LOCAL/vanilla
 
@@ -12,7 +11,7 @@ COMMENT=	Google\'s open source JavaScript engine
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libexecinfo.so:devel/libexecinfo
+ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		gmake python:2.7 tar:xz
 USE_LDCONFIG=	yes
@@ -30,11 +29,10 @@ MAKE_ENV+=	LINK=clang++
 
 CFLAGS+=	-Wno-error
 
-ONLY_FOR_ARCHS=	i386 amd64
-
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/bin/env python|${PYTHON_CMD}|g' \
 		`fgrep -rl '/usr/bin/env python' work/v8-3.15.10`
+	@${REINPLACE_CMD} 's|python -c|${PYTHON_CMD} -c|g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/out/native/d8 ${STAGEDIR}${PREFIX}/bin/d8
