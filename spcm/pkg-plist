@@ -13,7 +13,10 @@ bin/cluster-zfs-nodes
 bin/condor-build-R-packages
 bin/condor-cpus
 bin/condor-list-packages
-bin/psnode
+bin/job-top
+bin/node-iostat
+bin/node-ps
+bin/node-top
 bin/slurm-cluster-load
 bin/slurm-find-strays
 bin/slurm-gui-job
@@ -26,8 +29,6 @@ bin/slurm-node-info
 bin/slurm-pending-jobs
 bin/slurm-shell
 bin/slurm-user-cores
-bin/topjob
-bin/topnode
 etc/spcm/slurm-node-resume
 etc/spcm/slurm-node-suspend
 libexec/add-gecos.awk
