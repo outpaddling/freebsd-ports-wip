@@ -17,6 +17,7 @@ bin/job-top
 bin/node-iostat
 bin/node-ps
 bin/node-top
+bin/psnode
 bin/slurm-cluster-load
 bin/slurm-find-strays
 bin/slurm-gui-job
@@ -29,6 +30,8 @@ bin/slurm-node-info
 bin/slurm-pending-jobs
 bin/slurm-shell
 bin/slurm-user-cores
+bin/topjob
+bin/topnode
 etc/spcm/slurm-node-resume
 etc/spcm/slurm-node-suspend
 libexec/add-gecos.awk
