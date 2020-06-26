@@ -1,0 +1,10 @@
+Over the years, I've written countless implementations of coloring and
+formatting utilities to output messages in our libraries like spaCy, Thinc and
+Prodigy. While there are many other great open-source options, I've always
+ended up wanting something slightly different or slightly custom.
+
+This package is still a work in progress and aims to bundle those utilities in
+a standardised way so they can be shared across our other projects. It's super
+lightweight, has zero dependencies and works across Python 2 and 3.
+
+WWW: https://pypi.python.org/pypi/wasabi
