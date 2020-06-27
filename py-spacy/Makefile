@@ -14,12 +14,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0.24.0:devel/py-wheel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}murmurhash>=0.28.0:devel/py-murmurhash@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cymem>=2.0.2:devel/py-cymem@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}preshed>=3.0.2:devel/py-preshed@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}thinc>=7.4.1:wip/py-thinc@${PY_FLAVOR}
 RUN_DEPENDS=	${NUMPY}\
 		${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0.24.0:devel/py-wheel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}murmurhash>=0.28.0:devel/py-murmurhash@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cymem>=2.0.2:devel/py-cymem@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}preshed>=3.0.2:devel/py-preshed@${PY_FLAVOR} \
