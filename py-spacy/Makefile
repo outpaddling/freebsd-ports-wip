@@ -13,11 +13,13 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	\
+		${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}murmurhash>=0.28.0:devel/py-murmurhash@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cymem>=2.0.2:devel/py-cymem@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}preshed>=3.0.2:devel/py-preshed@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}thinc>=7.4.1:wip/py-thinc@${PY_FLAVOR}
 RUN_DEPENDS=	${NUMPY}\
+		${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}murmurhash>=0.28.0:devel/py-murmurhash@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cymem>=2.0.2:devel/py-cymem@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}preshed>=3.0.2:devel/py-preshed@${PY_FLAVOR} \
@@ -31,8 +33,7 @@ RUN_DEPENDS=	${NUMPY}\
 		${PYTHON_PKGNAMEPREFIX}requests>=2.13.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pathlib==1.0.1:wip/py-pathlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cytoolz>=0:devel/py-cytoolz@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-metadata@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}cytoolz>=0:devel/py-cytoolz@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist cython distutils

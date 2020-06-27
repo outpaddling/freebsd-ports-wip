@@ -3,7 +3,7 @@
 printf "Cleaning...\n"
 cd /usr/ports/wip
 for dir in *; do
-    if [ -d $dir/work ] || [ -d $dir/work-py27 ] || [ -e $dir/work-py36 ]; then
+    if [ -d $dir/work ] || [ -e $dir/work-py* ]; then
 	cd $dir
 	pwd
 	make clean

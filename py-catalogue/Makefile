@@ -12,6 +12,8 @@ COMMENT=	Super lightweight function registries for your library
 
 LICENSE=	MIT
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-metadata@${PY_FLAVOR}
+
 USES=		python
 USE_PYTHON=	autoplist distutils
 
