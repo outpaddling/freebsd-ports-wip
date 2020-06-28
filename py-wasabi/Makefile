@@ -6,11 +6,11 @@ CATEGORIES=	wip python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight console printing and formatting toolkit
 
 LICENSE=	MIT
-#LICENSE_FILE=	
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
 USE_PYTHON=	autoplist distutils
