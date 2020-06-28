@@ -1,0 +1,4 @@
+Qbmon is a simple QT-based, desktop-independend tool for monitoring laptop
+battery status and shutting down when charge becomes critical.
+
+WWW: https://github.com/outpaddling/qbmon
