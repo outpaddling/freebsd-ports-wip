@@ -8,5 +8,6 @@ py=py37
 pkg remove -y $py-spacy $py-thinc $py-blis $py-cython-blis $py-wasabi \
     $py-srsly $py-catalogue $py-pathlib || true
 pkg install -Ay $py-murmurhash $py-cymem $py-preshed \
-    $py-tqdm $py-plac $py-requests $py-msgpack $py-cytoolz
+    $py-tqdm $py-plac $py-requests $py-msgpack $py-cytoolz \
+    $py-importlib-metadata $py-cython
 wip-reinstall-port py-spacy
