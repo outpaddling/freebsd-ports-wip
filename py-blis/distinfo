@@ -1,3 +1,3 @@
-TIMESTAMP = 1593199213
-SHA256 (explosion-cython-blis-v0.4.1_GH0.tar.gz) = 1ad49ba95d5230fe0ec8133f119c528f8c329abfd8a42f8c299e093ef6c19247
-SIZE (explosion-cython-blis-v0.4.1_GH0.tar.gz) = 1785350
+TIMESTAMP = 1593363594
+SHA256 (blis-0.4.1.tar.gz) = d69257d317e86f34a7f230a2fd1f021fd2a1b944137f40d8cdbb23bd334cd0c4
+SIZE (blis-0.4.1.tar.gz) = 1804800
