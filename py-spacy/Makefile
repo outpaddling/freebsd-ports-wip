@@ -1,10 +1,10 @@
 # $FreeBSD$
 
-PORTNAME=		spacy
-DISTVERSIONPREFIX=	v
-DISTVERSION=		2.3.0
-CATEGORIES=		wip textproc python
-PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
+PORTNAME=	spacy
+DISTVERSION=	2.3.0
+CATEGORIES=	wip textproc python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Industrial-strength Natural Language Processing (NLP)
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}cymem>=2.0.2:devel/py-cymem@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}preshed>=3.0.2:devel/py-preshed@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}thinc>=7.4.1:wip/py-thinc@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cython-blis>=0.4.0:wip/py-blis@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}blis>=0.4.0:wip/py-blis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wasabi>=0.4.0:wip/py-wasabi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}srsly>=1.0.2:wip/py-srsly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}catalogue>=0.0.7:wip/py-catalogue@${PY_FLAVOR} \
@@ -39,10 +39,6 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		python
 USE_PYTHON=	autoplist cython distutils
-USE_GITHUB=	yes
-
-GH_ACCOUNT=	explosion
-GH_PROJECT=	spaCy
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' ${WRKSRC}/bin/spacy
