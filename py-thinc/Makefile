@@ -14,6 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython-blis>=0.4.0:wip/py-blis@${PY_FLAVOR}
+RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
