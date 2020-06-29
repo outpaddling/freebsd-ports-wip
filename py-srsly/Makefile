@@ -2,16 +2,19 @@
 
 PORTNAME=	srsly
 DISTVERSION=	2.1.0
-CATEGORIES=	wip python
+CATEGORIES=	wip devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Modern high-performance serialization utilities for Python
 
 LICENSE=	MIT
 
 USES=		python
 USE_PYTHON=	autoplist cython distutils
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/srsly/*/*.so
 
 .include <bsd.port.mk>
