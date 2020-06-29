@@ -10,6 +10,9 @@ MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Modern high-performance serialization utilities for Python
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist cython distutils
