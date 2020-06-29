@@ -12,8 +12,10 @@ COMMENT=	SpaCy's Machine Learning library for NLP in Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blis>=0.4.0:wip/py-blis@${PY_FLAVOR}
-RUN_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}blis>=0.4.0:wip/py-blis@${PY_FLAVOR}
+RUN_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}blis>=0.4.0:wip/py-blis@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
