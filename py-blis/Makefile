@@ -12,8 +12,9 @@ COMMENT=	Fast BLAS-like operations from Python and Cython, without the tears
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=		armv6 armv7 i386 powerpc
-NOT_FOR_ARCHS_REASON=	32-bit support is deprecated
+# Works on i386 with BLIS_ARCH=generic
+# NOT_FOR_ARCHS=		armv6 armv7 i386 powerpc
+# NOT_FOR_ARCHS_REASON=	32-bit support is deprecated
 
 BUILD_DEPENDS=	${PYNUMPY}
 
