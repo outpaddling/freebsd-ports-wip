@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${PYNUMPY}
 USES=		python
 USE_PYTHON=	autoplist cython distutils
 
-CONFIGURE_ENV=	BLIS_COMPILER=${CC}
-MAKE_ENV=	BLIS_COMPILER=${CC}
+CONFIGURE_ENV=	BLIS_COMPILER=${CC} BLIS_ARCH="generic"
+MAKE_ENV=	BLIS_COMPILER=${CC} BLIS_ARCH="generic"
 
 .include <bsd.port.mk>
