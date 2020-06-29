@@ -6,8 +6,8 @@ CATEGORIES=	wip math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Fast matrix-multiplication as a self-contained Python library
+MAINTAINER=	jwb@FreeBSD.org
+COMMENT=	Fast BLAS-like operations from Python and Cython, without the tears
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -18,7 +18,7 @@ NOT_FOR_ARCHS_REASON=	32-bit support is deprecated
 BUILD_DEPENDS=	${PYNUMPY}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist cython distutils
 
 CONFIGURE_ENV=	BLIS_COMPILER=${CC}
 MAKE_ENV=	BLIS_COMPILER=${CC}
