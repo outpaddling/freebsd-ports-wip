@@ -1,7 +1,7 @@
-Cython-blis provides the Blis linear algebra routines as a self-contained
+Cython BLIS provides the BLIS linear algebra routines as a self-contained
 Python C-extension.
 
-Currently, we only supports single-threaded execution, as this is actually best
+Currently, we only support single-threaded execution, as this is actually best
 for our workloads (machine learning inference).
 
 WWW: https://github.com/explosion/cython-blis
