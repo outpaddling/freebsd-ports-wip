@@ -8,6 +8,10 @@ MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Meta-port for Biostar Handbook tools
 
 # Deps from http://data.biostarhandbook.com/install/conda.txt
+# bbmap
+# snpeff
+# readseq
+# ucsc-bedgraphtobigwig
 RUN_DEPENDS=	wget>0:ftp/wget \
 		nano>0:editors/nano \
 		parallel>0:sysutils/parallel \
@@ -39,10 +43,5 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		vt>0:biology/vt
 
 USES=		metaport python
-
-#bbmap
-#snpeff
-#readseq
-#ucsc-bedgraphtobigwig
 
 .include <bsd.port.mk>
