@@ -23,4 +23,7 @@ USE_PYTHON=	autoplist cython distutils
 CONFIGURE_ENV=	BLIS_COMPILER=${CC} BLIS_ARCH="generic"
 MAKE_ENV=	BLIS_COMPILER=${CC} BLIS_ARCH="generic"
 
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/blis/*.so
+
 .include <bsd.port.mk>
