@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${PYNUMPY}
 USES=		python
 USE_PYTHON=	autoplist cython distutils
 
+# BLIS_ARCH defaults to x86_64, which has hard-coded -mavx2, etc.
 CONFIGURE_ENV=	BLIS_COMPILER=${CC} BLIS_ARCH="generic"
 MAKE_ENV=	BLIS_COMPILER=${CC} BLIS_ARCH="generic"
 
