@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	catalogue
-DISTVERSION=	2.0.0
+# Do not use latest release.  See acceptable versions in py-spacy setup.cfg.
+DISTVERSION=	1.0.0
 CATEGORIES=	wip python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
