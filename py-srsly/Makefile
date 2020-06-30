@@ -1,7 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	srsly
-DISTVERSION=	2.1.0
+# Do not use the latest release.  Use versions from pip install spacy.
+DISTVERSION=	1.0.2
+PORTEPOCH=	1
 CATEGORIES=	wip devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
