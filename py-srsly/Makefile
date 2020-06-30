@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	srsly
-# Do not use the latest release.  Use versions from pip install spacy.
+# Do not use latest release.  See acceptable versions in py-spacy setup.cfg.
 DISTVERSION=	1.0.2
 PORTEPOCH=	1
 CATEGORIES=	wip devel python
