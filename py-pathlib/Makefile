@@ -12,6 +12,8 @@ COMMENT=	Python 3.4 pathlib backported to 3.3, 3.2, 3.1, 2.7, 2.6
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 
