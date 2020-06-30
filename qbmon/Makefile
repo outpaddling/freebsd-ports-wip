@@ -17,9 +17,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 GH_TAGNAME=	d9798f38
 
-PLIST_FILES=	bin/qbmon
+PLIST_FILES=	bin/qbmon etc/xdg/autostart/qbmon.desktop
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qbmon ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/autostart
+	${INSTALL_DATA} ${FILESDIR}/qbmon.desktop \
+		${STAGEDIR}${PREFIX}/etc/xdg/autostart
 
 .include <bsd.port.mk>
