@@ -234,6 +234,7 @@ step
 cat << EOM
 
 Python
+    Check required version on PYPI or developer site
     https://wiki.freebsd.org/Python/PortsPolicy
     Use autoplist unless there's a good reason not to
     If including a plist, USE_PYTHON+=py3kplist
