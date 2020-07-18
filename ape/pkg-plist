@@ -168,7 +168,6 @@ man/man1/apekeys.1.gz
 %%DATADIR%%/Languages/XML/Macros/menu.txt
 %%DATADIR%%/Languages/XML/language_opts
 %%DATADIR%%/Languages/XML/syntax_highlighting
-%%DATADIR%%/Languages/language_opts
 %%DATADIR%%/Languages/syntax_highlighting
 %%DATADIR%%/custom_menu
 %%DATADIR%%/options.rc
