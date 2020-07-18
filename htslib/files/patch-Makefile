@@ -1,4 +1,4 @@
---- Makefile.orig	2020-07-13 18:40:15 UTC
+--- Makefile.orig	2020-07-18 23:47:35 UTC
 +++ Makefile
 @@ -22,44 +22,43 @@
  # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
@@ -12,8 +12,7 @@
 +RANLIB ?= ranlib
  
  # Default libraries to link if configure is not used
--htslib_default_libs = -lz -lm -lbz2 -llzma -lcurl
-+# htslib_default_libs = -lz -lm -lbz2 -llzma -lcurl
+ htslib_default_libs = -lz -lm -lbz2 -llzma -lcurl
  
 -CPPFLAGS =
 +# CPPFLAGS =
@@ -39,9 +38,8 @@
  libdir      = $(exec_prefix)/lib
  libexecdir  = $(exec_prefix)/libexec
 -datarootdir = $(prefix)/share
--mandir      = $(datarootdir)/man
 +datarootdir = $(PREFIX)/share
-+mandir      = $(PREFIX)/man
+ mandir      = $(datarootdir)/man
  man1dir     = $(mandir)/man1
  man5dir     = $(mandir)/man5
  man7dir     = $(mandir)/man7
@@ -55,7 +53,7 @@
 -INSTALL_LIB     = $(INSTALL_DATA)
 -INSTALL_MAN     = $(INSTALL_DATA)
 -INSTALL_PROGRAM = $(INSTALL)
-+MKDIR_P 	= mkdir -p
++MKDIR_P         = mkdir -p
 +INSTALL_DATA    = ${BSD_INSTALL_DATA}
 +INSTALL_DIR     = $(MKDIR_P)
 +INSTALL_LIB     = ${BSD_INSTALL_LIB}
@@ -64,12 +62,12 @@
  
  # Set by config.mk if plugins are enabled
  plugindir =
-@@ -99,7 +98,7 @@ BUILT_THRASH_PROGRAMS = \
+@@ -98,7 +97,7 @@ BUILT_THRASH_PROGRAMS = \
  	test/thrash_threads6 \
  	test/thrash_threads7
  
--all: lib-static lib-shared $(BUILT_PROGRAMS) plugins $(BUILT_TEST_PROGRAMS) \
-+all: lib-static lib-shared $(BUILT_PROGRAMS) plugins \
-      htslib_static.mk htslib-uninstalled.pc
+-all: lib-static lib-shared $(BUILT_PROGRAMS) plugins $(BUILT_TEST_PROGRAMS)
++all: lib-static lib-shared $(BUILT_PROGRAMS) plugins
  
  HTSPREFIX =
+ include htslib_vars.mk
