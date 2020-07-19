@@ -1927,6 +1927,7 @@ lib/libtwintk.a
 %%DATADIR%%/terminfo/t/trs2
 %%DATADIR%%/terminfo/t/trs80II
 %%DATADIR%%/terminfo/t/trsII
+%%DATADIR%%/terminfo/t/truecolor
 %%DATADIR%%/terminfo/t/ts-1
 %%DATADIR%%/terminfo/t/ts-1p
 %%DATADIR%%/terminfo/t/ts1
