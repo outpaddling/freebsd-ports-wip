@@ -14,10 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # libtwintk is both a build and run depend.  Ape requires the library and
 # headers to build, and libtwintk's terminfo database to run.
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpare.a:wip/libpare \
-		${LOCALBASE}/lib/libbacon.a:wip/libbacon \
-		${LOCALBASE}/lib/libtwintk.a:wip/twintk
-RUN_DEPENDS=	${LOCALBASE}/share/twintk/terminfo/README:wip/twintk \
+BUILD_DEPENDS=	libpare>=1.1.1:wip/libpare \
+		libbacon>=1.2.2.1:wip/libbacon \
+		twintk>=0.9.4.2:wip/twintk
+RUN_DEPENDS=	twintk>=0.9.4.2:wip/twintk \
 		webbrowser:www/webbrowser \
 		docviewer:wip/docviewer
 
