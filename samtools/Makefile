@@ -2,8 +2,7 @@
 # $FreeBSD: head/biology/samtools/Makefile 476246 2018-08-02 19:28:36Z fernape $
 
 PORTNAME=		samtools
-DISTVERSION=		1.10-86
-DISTVERSIONSUFFIX=	-gba462f6
+DISTVERSION=		1.10
 CATEGORIES=		wip biology
 
 MAINTAINER=	cartwright@asu.edu
@@ -12,7 +11,7 @@ COMMENT=	Tools for manipulating next-generation sequencing data
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	htslib>=1.6:biology/htslib
+BUILD_DEPENDS=	htslib>=1.10.2:biology/htslib
 LIB_DEPENDS=	libhts.so:biology/htslib
 TEST_DEPENDS=	bash:shells/bash
 
