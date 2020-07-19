@@ -1,10 +1,9 @@
 # Created by: Reed A. Cartwright <cartwright@asu.edu>
 # $FreeBSD: head/biology/htslib/Makefile 476245 2018-08-02 19:27:13Z fernape $
 
-PORTNAME=		htslib
-DISTVERSION=		1.10.2
-#DISTVERSIONSUFFIX=	-g9c35744
-CATEGORIES=		wip biology devel
+PORTNAME=	htslib
+DISTVERSION=	1.10.2
+CATEGORIES=	wip biology devel
 
 MAINTAINER=	cartwright@asu.edu
 COMMENT=	C library for high-throughput sequencing data formats
@@ -16,16 +15,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libdeflate.so:archivers/libdeflate
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf gmake localbase \
-		pathfix perl5 shebangfix
+USES=		autoreconf gmake localbase pathfix perl5 shebangfix
 USE_GITHUB=	yes
-GH_ACCOUNT=	samtools
 USE_PERL5=	test
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
+
+GH_ACCOUNT=		samtools
+GNU_CONFIGURE=		yes
 PATHFIX_MAKEFILEIN=	Makefile
-SHEBANG_FILES=		test/compare_sam.pl \
-			test/test.pl
+SHEBANG_FILES=		test/*.pl
 
 OPTIONS_DEFINE=		CURL
 OPTIONS_DEFAULT=	CURL
