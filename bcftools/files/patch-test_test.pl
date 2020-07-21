@@ -1,4 +1,4 @@
---- test/test.pl.orig	2020-07-19 14:09:02 UTC
+--- test/test.pl.orig	2020-07-21 20:49:56 UTC
 +++ test/test.pl
 @@ -610,7 +610,7 @@ sub _cmd
      else
@@ -23,7 +23,7 @@
      my $commandpath = $$opts{bin}."/".$command;
      my ($ret,$out) = _cmd("$commandpath $args{redirection} 2>&1");
 -    if ( $out =~ m/\/bin\/bash.*no.*such/i ) { failed($opts,$test,"could not run $commandpath: $out"); return; }
-+    if ( $out =~ m/\/bash.*no.*such/i ) { failed($opts,$test,"could not run $commandpath: $out"); return; }
++    if ( $out =~ m/bash.*no.*such/i ) { failed($opts,$test,"could not run $commandpath: $out"); return; }
  
      my @sections = ($out =~ m/(^[A-Za-z]+.*?)(?:(?=^[A-Za-z]+:)|\z)/msg);
  
@@ -32,7 +32,7 @@
      my $commandpath = $$opts{bin}."/".$command;
      my ($ret,$out) = _cmd("$commandpath $subcommand $args{redirection} 2>&1");
 -    if ( $out =~ m/\/bin\/bash.*no.*such/i ) { failed($opts,$test,"could not run $commandpath $subcommand: $out"); return; }
-+    if ( $out =~ m/\/bash.*no.*such/i ) { failed($opts,$test,"could not run $commandpath $subcommand: $out"); return; }
++    if ( $out =~ m/bash.*no.*such/i ) { failed($opts,$test,"could not run $commandpath $subcommand: $out"); return; }
  
      my @sections = ($out =~ m/(^[A-Za-z]+.*?)(?:(?=^[A-Za-z]+:)|\z)/msg);
  
