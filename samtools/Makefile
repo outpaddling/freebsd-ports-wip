@@ -5,7 +5,7 @@ PORTNAME=		samtools
 DISTVERSION=		1.10
 CATEGORIES=		wip biology
 
-MAINTAINER=	cartwright@asu.edu
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for manipulating next-generation sequencing data
 
 LICENSE=	MIT

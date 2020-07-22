@@ -5,7 +5,7 @@ PORTNAME=	bcftools
 PORTVERSION=	1.10.2
 CATEGORIES=	wip biology
 
-MAINTAINER=	cartwright@asu.edu
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for manipulating next-generation sequencing data
 
 LICENSE=	MIT

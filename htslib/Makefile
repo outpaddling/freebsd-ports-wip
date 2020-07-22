@@ -5,7 +5,7 @@ PORTNAME=	htslib
 DISTVERSION=	1.10.2
 CATEGORIES=	wip biology devel
 
-MAINTAINER=	cartwright@asu.edu
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	C library for high-throughput sequencing data formats
 
 LICENSE=	BSD3CLAUSE MIT
