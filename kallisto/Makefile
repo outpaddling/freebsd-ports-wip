@@ -2,8 +2,8 @@
 
 PORTNAME=		kallisto
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.46.2
-# PORTEPOCH=		1
+DISTVERSION=		0.46.1
+PORTEPOCH=		1
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,11 +12,12 @@ COMMENT=	Quantify abundances of transcripts from RNA-Seq data
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+BUILD_DEPENDS=	autoconf>=0:devel/autoconf
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libsz.so:science/szip \
 		libhts.so:biology/htslib
 
-USES=		cmake:noninja compiler:c++11-lang localbase:ldflags
+USES=		cmake:noninja compiler:c++11-lang gmake localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	pachterlab
 
