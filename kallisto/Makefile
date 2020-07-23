@@ -30,7 +30,8 @@ EXAMPLES_PLIST_FILES=	bin/kallisto-test
 # hdf5 is being phased out and is no longer built in by default, but is still
 # required for Sleuth (requires kallisto bootstrap estimates) and other
 # downstream tools.  Remove this after Sleuth et all catch up.
-CMAKE_ARGS+=	-DUSE_HDF5:BOOL=ON
+CMAKE_ARGS+=		-DUSE_HDF5:BOOL=ON
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
 
