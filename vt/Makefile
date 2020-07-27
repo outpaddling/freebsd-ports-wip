@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/biology/vt/Makefile 537984 2020-06-05 03:49:53Z linimon $
 
 PORTNAME=	vt
 DISTVERSION=	0.57721
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libhts.so:biology/htslib \
 		libdeflate.so:archivers/libdeflate \
 		libcurl.so:ftp/curl
 
-USES=		gmake ssl
+USES=		compiler:c++0x gmake ssl
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	atks
