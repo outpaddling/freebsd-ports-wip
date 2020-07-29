@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sratools
-PORTVERSION=	2.8.1
+PORTVERSION=	2.10.8
 CATEGORIES=	wip biology
 MASTER_SITES=	http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/${PORTVERSION}/
 PKGNAMEPREFIX=	linux-
