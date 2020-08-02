@@ -1,6 +1,6 @@
---- Makefile.orig	2020-07-18 23:47:35 UTC
+--- Makefile.orig	2020-08-02 22:52:13 UTC
 +++ Makefile
-@@ -22,44 +22,43 @@
+@@ -22,25 +22,26 @@
  # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  # DEALINGS IN THE SOFTWARE.
  
@@ -29,22 +29,14 @@
  LIBS     = $(htslib_default_libs)
  
 -prefix      = /usr/local
--exec_prefix = $(prefix)
 +PREFIX      ?= /usr/local
-+exec_prefix = $(PREFIX)
++prefix      = $(PREFIX)
+ exec_prefix = $(prefix)
  bindir      = $(exec_prefix)/bin
--includedir  = $(prefix)/include
-+includedir  = $(PREFIX)/include
- libdir      = $(exec_prefix)/lib
- libexecdir  = $(exec_prefix)/libexec
--datarootdir = $(prefix)/share
-+datarootdir = $(PREFIX)/share
- mandir      = $(datarootdir)/man
- man1dir     = $(mandir)/man1
- man5dir     = $(mandir)/man5
+ includedir  = $(prefix)/include
+@@ -53,13 +54,13 @@ man5dir     = $(mandir)/man5
  man7dir     = $(mandir)/man7
--pkgconfigdir= $(prefix)/libdata/pkgconfig
-+pkgconfigdir= $(PREFIX)/libdata/pkgconfig
+ pkgconfigdir= $(prefix)/libdata/pkgconfig
  
 -MKDIR_P = mkdir -p
 -INSTALL = install -p
@@ -53,6 +45,7 @@
 -INSTALL_LIB     = $(INSTALL_DATA)
 -INSTALL_MAN     = $(INSTALL_DATA)
 -INSTALL_PROGRAM = $(INSTALL)
++# Use ports BSD_INSTALL_PROGRAM to strip if WITH_DEBUG is not set
 +MKDIR_P         = mkdir -p
 +INSTALL_DATA    = ${BSD_INSTALL_DATA}
 +INSTALL_DIR     = $(MKDIR_P)
@@ -62,7 +55,7 @@
  
  # Set by config.mk if plugins are enabled
  plugindir =
-@@ -98,7 +97,7 @@ BUILT_THRASH_PROGRAMS = \
+@@ -98,7 +99,7 @@ BUILT_THRASH_PROGRAMS = \
  	test/thrash_threads6 \
  	test/thrash_threads7
  
