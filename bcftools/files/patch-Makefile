@@ -1,4 +1,4 @@
---- Makefile.orig	2020-07-19 13:21:43 UTC
+--- Makefile.orig	2019-12-19 09:57:32 UTC
 +++ Makefile
 @@ -22,13 +22,12 @@
  # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
@@ -20,9 +20,21 @@
  
  DYNAMIC_FLAGS = -rdynamic
  PLUGINS_ENABLED = yes
-@@ -59,12 +58,11 @@ pluginpath  = $(plugindir)
+@@ -45,7 +44,8 @@ OBJS     = main.o vcfindex.o tabix.o \
+            ccall.o em.o prob1.o kmin.o # the original samtools calling
+ PLUGIN_OBJS = vcfplugin.o
+ 
+-prefix      = /usr/local
++PREFIX      ?= /usr/local
++prefix      = $(PREFIX)
+ exec_prefix = $(prefix)
+ bindir      = $(exec_prefix)/bin
+ libdir      = $(exec_prefix)/lib
+@@ -58,13 +58,13 @@ pluginpath  = $(plugindir)
+ # Installation location for $(MISC_PROGRAMS) and $(MISC_SCRIPTS)
  misc_bindir = $(bindir)
  
++# Use BSD_INSTALL_PROGRAM to strip when WITH_DEBUG not set
  MKDIR_P = mkdir -p
 -INSTALL = install -p
 -INSTALL_DATA    = $(INSTALL) -m 644
@@ -38,7 +50,7 @@
  
  PROGRAMS = bcftools
  MISC_SCRIPTS = \
-@@ -141,7 +139,7 @@ print-version:
+@@ -141,7 +141,7 @@ print-version:
  ifdef USE_GPL
      main.o : EXTRA_CPPFLAGS += -DUSE_GPL
      OBJS += polysomy.o peakfit.o
@@ -47,7 +59,7 @@
  endif
  
  print-%:
-@@ -320,7 +318,7 @@ docs: doc/bcftools.1 doc/bcftools.html
+@@ -320,7 +320,7 @@ docs: doc/bcftools.1 doc/bcftools.html
  # Since there is no make dependency, bcftools.1 can be out-of-date and
  # make docs can be run to update if asciidoc is available
  install: $(PROGRAMS) $(PLUGINS)
