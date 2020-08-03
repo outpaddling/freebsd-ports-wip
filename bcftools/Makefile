@@ -11,8 +11,7 @@ COMMENT=	Tools for manipulating next-generation sequencing data
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	htslib>=1.10.2:biology/htslib
-LIB_DEPENDS=	libhts.so:biology/htslib
+LIB_DEPENDS=	libhts.so.3:wip/htslib
 TEST_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf gmake localbase \
