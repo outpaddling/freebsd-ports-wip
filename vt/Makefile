@@ -9,7 +9,7 @@ COMMENT=	Discovers short variants from Next Generation Sequencing data
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libhts.so:biology/htslib \
+LIB_DEPENDS=	libhts.so.3:wip/htslib \
 		libsvm.so:science/libsvm \
 		libdeflate.so:archivers/libdeflate \
 		libcurl.so:ftp/curl
