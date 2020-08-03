@@ -11,11 +11,10 @@ COMMENT=	Tools for manipulating next-generation sequencing data
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libhts.so.3:wip/htslib
+LIB_DEPENDS=	libhts.so.3:biology/htslib
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf gmake localbase \
-		perl5 python:env shebangfix
+USES=		autoreconf gmake localbase perl5 python:env shebangfix
 
 USE_GITHUB=	yes
 USE_LDCONFIG=	${PREFIX}/libexec/${PORTNAME}
@@ -24,9 +23,6 @@ USE_PERL5=	test
 GH_ACCOUNT=	samtools
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	misc/* test/test.pl
-
-# Doesn't seem to be needed anymore
-# CONFLICTS_BUILD=openssl
 
 OPTIONS_DEFINE=		GPL
 GPL_DESC=		Enable modules that rely on GPL code
