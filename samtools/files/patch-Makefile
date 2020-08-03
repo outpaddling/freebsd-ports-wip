@@ -18,12 +18,13 @@
  LIBS     =
  
  LZ4DIR   = ./lz4
-@@ -47,23 +47,22 @@ AOBJS=      bam_index.o bam_plcmd.o sam_view.o bam_fas
+@@ -47,23 +47,24 @@ AOBJS=      bam_index.o bam_plcmd.o sam_view.o bam_fas
              bam_quickcheck.o bam_addrprg.o bam_markdup.o tmp_file.o
  LZ4OBJS  =  $(LZ4DIR)/lz4.o
  
 -prefix      = /usr/local
-+prefix      = ${PREFIX}
++PREFIX      ?= /usr/local
++prefix      = $(PREFIX)
  exec_prefix = $(prefix)
  bindir      = $(exec_prefix)/bin
  datarootdir = $(prefix)/share
@@ -35,6 +36,7 @@
 -misc_bindir = $(bindir)
 +misc_bindir = $(bindir)/samtools_misc
  
++# Use BSD_INSTALL_PROGRAM to strip when WITH_DEBUG not set
  MKDIR_P = mkdir -p
 -INSTALL = install -p
 -INSTALL_DATA    = $(INSTALL) -m 644
