@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 BUILD_DEPENDS=	autoconf>=0:devel/autoconf
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
-		libsz.so:science/szip \
-		libhts.so:biology/htslib
+		libsz.so:science/szip
 
 USES=		cmake:noninja compiler:c++11-lang gmake localbase:ldflags
 USE_GITHUB=	yes
