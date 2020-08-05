@@ -1,8 +1,8 @@
 # $FreeBSD: sysutils/desktop-installer/Makefile 452527 2017-10-20 14:21:36Z swills $
 
 PORTNAME=	desktop-installer
-DISTVERSION=	0.6.17-6
-DISTVERSIONSUFFIX=	-g19a04e7
+DISTVERSION=	0.6.17-7
+DISTVERSIONSUFFIX=	-g4223cb1
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
