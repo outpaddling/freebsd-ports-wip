@@ -17,9 +17,7 @@ USES=		eigen:3 localbase:ldflags waf
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libzstd.so:archivers/zstd
 
-CXXFLAGS+=	-I${LOCALBASE}/include/eigen3 \
-		-DBOOST_TEST_DYN_LINK \
-		-DBOOST_TEST_MAIN
+CXXFLAGS+=	-I${LOCALBASE}/include/eigen3
 LDFLAGS+=	-L${LOCALBASE}/lib \
 		-lboost_unit_test_framework \
 		-lboost_filesystem \
