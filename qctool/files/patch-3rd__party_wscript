@@ -1,0 +1,6 @@
+--- 3rd_party/wscript.orig	2020-05-28 16:14:46 UTC
++++ 3rd_party/wscript
+@@ -1,2 +1,2 @@
+ def build( bld ):
+-	bld.recurse( [ 'boost_1_55_0', 'sqlite3', 'zstd-1.1.0', 'eigen', 'catch' ] )
++	bld.recurse( [ 'catch', 'sqlite3' ] )

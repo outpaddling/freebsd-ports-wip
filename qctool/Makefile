@@ -12,4 +12,16 @@ COMMENT=	Manipulation and quality control of gwas datasets
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
+USES=		eigen:3 localbase:ldflags waf
+
+LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
+		libzstd.so:archivers/zstd
+
+CXXFLAGS+=	-I${LOCALBASE}/include/eigen3
+LDFLAGS+=	-lboost_unit_test_framework \
+		-lboost_filesystem \
+		-lboost_iostreams \
+		-lboost_thread \
+		-lzstd
+
 .include <bsd.port.mk>
