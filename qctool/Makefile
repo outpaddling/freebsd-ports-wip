@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	qctool
-DISTVERSION=	2.1.3
-CATEGORIES=	wip
+DISTVERSION=	2.0.8
+CATEGORIES=	wip biology
 MASTER_SITES=	https://enkre.net/cgi-bin/code/qctool/tarball/3d76073841/
 DISTNAME=	qctool-3d76073841
 
