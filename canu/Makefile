@@ -2,7 +2,7 @@
 
 PORTNAME=		canu
 DISTVERSIONPREFIX=	v
-DISTVERSION=		2.0
+DISTVERSION=		2.1
 CATEGORIES=		wip biology java perl5
 
 MAINTAINER=	jwb@FreeBSD.org
