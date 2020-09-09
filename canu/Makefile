@@ -1,9 +1,10 @@
 # $FreeBSD: head/biology/canu/Makefile 509290 2019-08-19 15:35:27Z jbeich $
 
 PORTNAME=		canu
-DISTVERSIONPREFIX=	v
 DISTVERSION=		2.1
 CATEGORIES=		wip biology java perl5
+# Github auto-generated tarballs lack submodules
+MASTER_SITES=		https://github.com/marbl/canu/releases/download/v2.1/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Single molecule sequence assembler
@@ -16,11 +17,9 @@ RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		compiler:openmp gmake perl5
 USE_JAVA=	yes
-USE_GITHUB=	yes
 
 JAVA_RUN=	yes
 JAVA_VERSION=	1.8+
-GH_ACCOUNT=	marbl
 
 WRKSRC_SUBDIR=	src
 # Upstream Makefile compiles directly into ${DESTDIR}${PREFIX} rather than
@@ -46,19 +45,17 @@ pre-configure:
 
 # Upstream does not want to use lib/perl5/site_perl
 post-build:
-	@${MKDIR} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/lib/perl5
-	${MV} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/lib/site_perl \
-		${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/lib/perl5
+	@${MKDIR} ${WRKSRC}/build/lib/perl5
+	${MV} ${WRKSRC}/build/lib/site_perl ${WRKSRC}/build/lib/perl5
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}
-	(cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && \
-		${COPYTREE_BIN} bin ${STAGEDIR}${PREFIX})
+	(cd ${WRKSRC}/build && ${COPYTREE_BIN} bin ${STAGEDIR}${PREFIX})
 	# STRIP_CMD fails without this on 11.1 under poudriere
 	@${CHMOD} u+w ${STAGEDIR}${PREFIX}/bin/*
 	@${STRIP_CMD} \
 		`file ${STAGEDIR}${PREFIX}/bin/* | ${GREP} ELF | cut -d : -f 1`
-	(cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && \
+	(cd ${WRKSRC}/build && \
 		${COPYTREE_SHARE} "lib share" ${STAGEDIR}${PREFIX})
 
 .include <bsd.port.post.mk>
