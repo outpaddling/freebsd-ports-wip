@@ -12,6 +12,9 @@ COMMENT=	Single molecule sequence assembler
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/README.license.GPL
 
+NOT_FOR_ARCHS=		armv6 armv7 i386 powerpc
+NOT_FOR_ARCHS_REASON=	__int128 is not supported on this target
+
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
@@ -40,7 +43,7 @@ pre-configure:
 		-e 's|-fexpensive-optimizations||g' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} \
-		-e 's|RealBin/lib|RealBin/../${SITE_PERL_REL}/canu|g' \
+		-e 's|RealBin/../lib/site_perl|RealBin/../${SITE_PERL_REL}/canu|g' \
 		${WRKSRC}/pipelines/canu.pl
 
 # Upstream does not want to use lib/perl5/site_perl
