@@ -55,7 +55,7 @@ post-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}
 	(cd ${WRKSRC}/build && ${COPYTREE_BIN} bin ${STAGEDIR}${PREFIX})
-	# STRIP_CMD fails without this on 11.1 under poudriere
+	# STRIP_CMD fails without this under poudriere
 	@${CHMOD} u+w ${STAGEDIR}${PREFIX}/bin/*
 	@${STRIP_CMD} \
 		`file ${STAGEDIR}${PREFIX}/bin/* | ${GREP} ELF | cut -d : -f 1`
