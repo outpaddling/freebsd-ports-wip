@@ -3,3 +3,5 @@ generally useful enough that they should be made available in a library.
 My hope is that many of them will someday be added to the existing C 
 libraries, such as libc, libm, etc.  ( A few, such as strlcpy(), and
 strlcat() already have on some systems. )
+
+WWW: https://github.com/outpaddling/libbacon
