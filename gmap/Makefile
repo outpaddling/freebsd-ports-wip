@@ -10,13 +10,13 @@ DISTNAME=	${PORTNAME}-gsnap-${PORTVERSION:C|\.|-|g}
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Genomic Mapping and Alignment Program for mRNA and EST Sequences
 
-ONLY_FOR_ARCHS=		amd64 i386
-ONLY_FOR_ARCHS_REASON=	Upstream supports only x86 and possibly POWER8
-
 LICENSE=	GMAP
 LICENSE_NAME=	GMAP License
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	Upstream supports only x86 and possibly POWER8
 
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
