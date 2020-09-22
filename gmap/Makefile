@@ -11,7 +11,7 @@ MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Genomic Mapping and Alignment Program for mRNA and EST Sequences
 
 ONLY_FOR_ARCHS=		amd64 i386
-ONLY_FOR_ARCHS_REASON=	invokes x86 assembler
+ONLY_FOR_ARCHS_REASON=	Upstream supports only x86 and possibly POWER8
 
 LICENSE=	GMAP
 LICENSE_NAME=	GMAP License
