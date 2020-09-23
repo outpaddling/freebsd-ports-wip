@@ -11,7 +11,7 @@ LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	c1d5277d
+GH_TAGNAME=	3a54273e
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/format-cols libexec/format-cols.awk
