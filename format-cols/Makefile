@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	format-cols
-DISTVERSION=	g20200924
+DISTVERSION=	g20200929
 CATEGORIES=	wip textproc
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	4328f395
+GH_TAGNAME=	1d533450
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/format-cols libexec/format-cols.awk
