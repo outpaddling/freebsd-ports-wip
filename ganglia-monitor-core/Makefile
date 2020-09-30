@@ -21,11 +21,11 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libpcre.so:devel/pcre \
 		libexpat.so:textproc/expat2
 
-USES=		libtool pkgconfig python:2.7
+USES=		libtool pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-setuid=ganglia --enable-setgid=ganglia \
-		--with-python=${PYTHON_CMD}
+		--disable-python
 CONFIGURE_ENV=	GANGLIA_ACK_SYSCONFDIR=1
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -70,7 +70,6 @@ MODULES=	modcpu.so \
 		modmulticpu.so \
 		modnet.so \
 		modproc.so \
-		modpython.so \
 		modsys.so
 
 # gmond.conf.5 and gmond.conf.html can be generated from conf.pod, but
@@ -109,6 +108,6 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/gmond/gmond.conf.5 \
 		${STAGEDIR}${MANPREFIX}/man/man5
 	${MKDIR} ${STAGEDIR}/var/db/ganglia/rrds
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/ganglia/python_modules
+	${CHMOD} -R a+rX ${STAGEDIR}/var/db/ganglia
 
 .include <bsd.port.mk>
