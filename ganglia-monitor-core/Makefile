@@ -75,19 +75,19 @@ MODULES=	modcpu.so \
 # gmond.conf.5 and gmond.conf.html can be generated from conf.pod, but
 # doing so requires perl installed in the build stage.
 pre-configure:
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e "s|/etc/ganglia/\(gm[a-z]*d.conf\)|${PREFIX}/etc/\1|g" \
 		${WRKSRC}/README \
 		${WRKSRC}/mans/gmetad.1 \
 		${WRKSRC}/mans/gmond.1
-	${REINPLACE_CMD} -e "s|nobody|ganglia|g" \
+	@${REINPLACE_CMD} -e "s|nobody|ganglia|g" \
 		${WRKSRC}/gmetad/gmetad.conf.in \
 		${WRKSRC}/gmond/conf.pod \
 		${WRKSRC}/gmond/gmond.conf.5 \
 		${WRKSRC}/gmond/gmond.conf.html
 
 post-build:
-	${WRKSRC}/gmond/gmond -t > ${WRKDIR}/gmond.conf
+	@${WRKSRC}/gmond/gmond -t > ${WRKDIR}/gmond.conf
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/gmond.conf \
@@ -108,6 +108,6 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/gmond/gmond.conf.5 \
 		${STAGEDIR}${MANPREFIX}/man/man5
 	${MKDIR} ${STAGEDIR}/var/db/ganglia/rrds
-	${CHMOD} -R a+rX ${STAGEDIR}/var/db/ganglia
+	@${CHMOD} -R a+rX ${STAGEDIR}/var/db/ganglia
 
 .include <bsd.port.mk>
