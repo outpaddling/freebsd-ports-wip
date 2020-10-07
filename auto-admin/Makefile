@@ -1,8 +1,8 @@
 # $FreeBSD: head/sysutils/auto-admin/Makefile 471149 2018-05-30 18:48:22Z jwb $
 
 PORTNAME=	auto-admin
-DISTVERSION=	0.6.7-14
-DISTVERSIONSUFFIX=	-g2aecaf3
+DISTVERSION=	0.6.7-15
+DISTVERSIONSUFFIX=	-g8678253
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
