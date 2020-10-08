@@ -12,6 +12,8 @@ man/man1/apekeys.1.gz
 %%DATADIR%%/Languages/AWK/Macros/menu.txt
 %%DATADIR%%/Languages/AWK/language_opts
 %%DATADIR%%/Languages/AWK/syntax_highlighting
+%%DATADIR%%/Languages/BC/Macros/macros
+%%DATADIR%%/Languages/BC/Macros/menu.txt
 %%DATADIR%%/Languages/BC/language_opts
 %%DATADIR%%/Languages/BC/syntax_highlighting
 %%DATADIR%%/Languages/Bash/Macros/macros
