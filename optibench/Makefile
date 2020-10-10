@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	OptiBench
-DISTVERSION=	0.2.0
+DISTVERSION=	0.2.0-1
+DISTVERSIONSUFFIX=	-g2879781
 CATEGORIES=	wip benchmarks
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -15,6 +16,6 @@ GH_ACCOUNT=	outpaddling
 
 MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX} MANPREFIX=${STAGEDIR}${MANPREFIX}
 
-PLIST_FILES=	bin/bench man/man1/bench.1.gz
+PLIST_FILES=	bin/optibench man/man1/optibench.1.gz
 
 .include <bsd.port.mk>
