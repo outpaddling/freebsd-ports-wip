@@ -24,4 +24,7 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/awka \
 		${STAGEDIR}${PREFIX}/lib/libawka.so
 
+do-test:
+	(cd ${WRKSRC} && ${MAKE} test)
+
 .include <bsd.port.mk>
