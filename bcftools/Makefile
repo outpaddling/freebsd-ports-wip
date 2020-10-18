@@ -2,7 +2,7 @@
 # $FreeBSD: head/biology/bcftools/Makefile 515671 2019-10-25 23:41:34Z tcberner $
 
 PORTNAME=	bcftools
-PORTVERSION=	1.10.2
+PORTVERSION=	1.11
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,8 +11,9 @@ COMMENT=	Tools for manipulating next-generation sequencing data
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libhts.so.3:biology/htslib
+LIB_DEPENDS=	libhts.so.3:wip/htslib
 TEST_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf gmake localbase perl5 python:env shebangfix
 
