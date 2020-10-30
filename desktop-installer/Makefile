@@ -1,8 +1,7 @@
 # $FreeBSD: sysutils/desktop-installer/Makefile 452527 2017-10-20 14:21:36Z swills $
 
 PORTNAME=	desktop-installer
-DISTVERSION=	0.6.17-14
-DISTVERSIONSUFFIX=	-g22751ae
+DISTVERSION=	0.6.18
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,7 +10,7 @@ COMMENT=	Quickly configure a FreeBSD desktop system
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	auto-admin>=0.6.7.13:sysutils/auto-admin
+RUN_DEPENDS=	auto-admin>=0.6.8:sysutils/auto-admin
 
 USES=		tar:xz
 USE_GITHUB=	yes
