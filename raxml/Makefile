@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	stamatak
 GH_PROJECT=	standard-RAxML
 
-MAKEFILE=	Makefile.gcc
+MAKEFILE=	${FILESDIR}/Makefile
 INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	bin/raxmlHPC
