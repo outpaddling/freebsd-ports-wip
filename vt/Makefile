@@ -9,7 +9,7 @@ COMMENT=	Discovers short variants from Next Generation Sequencing data
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libhts.so.3:wip/htslib \
+LIB_DEPENDS=	libhts.so:biology/htslib \
 		libsvm.so:science/libsvm \
 		libdeflate.so:archivers/libdeflate \
 		libcurl.so:ftp/curl
@@ -20,6 +20,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	atks
 
 PLIST_FILES=	bin/vt
+
+post-extract:
+	${RM} -rf ${WRKSRC}/lib/htslib \
+		${WRKSRC}/lib/libdeflate \
+		${WRKSRC}/lib/libsvm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vt ${STAGEDIR}${PREFIX}/bin
