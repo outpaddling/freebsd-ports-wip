@@ -9,6 +9,7 @@ COMMENT=	Discovers short variants from Next Generation Sequencing data
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/tclap.pc:devel/tclap
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libsvm.so:science/libsvm \
 		libdeflate.so:archivers/libdeflate \
@@ -22,9 +23,11 @@ GH_ACCOUNT=	atks
 PLIST_FILES=	bin/vt
 
 post-extract:
-	${RM} -rf ${WRKSRC}/lib/htslib \
+	${RM} -rf \
+		${WRKSRC}/lib/htslib \
 		${WRKSRC}/lib/libdeflate \
-		${WRKSRC}/lib/libsvm
+		${WRKSRC}/lib/libsvm \
+		${WRKSRC}/lib/tclap
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vt ${STAGEDIR}${PREFIX}/bin
