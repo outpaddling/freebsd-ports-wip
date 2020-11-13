@@ -1,16 +1,24 @@
 # $FreeBSD$
 
-PORTNAME=pooler
-CATEGORIES=wip biology
-USE_GITHUB=yes
-GH_ACCOUNT=ssb22
-GH_PROJECT=PrimerPooler
-DISTVERSION=1.73
-GH_TAGNAME=v1.73
-MAKE_FLAGS=-C pooler -f
-USES=gmake
-MAINTAINER=ssb22@cam.ac.uk
-COMMENT=PrimerPooler: optimise primer-set combinations
-LICENSE=APACHE20
+PORTNAME=		pooler
+DISTVERSIONPREFIX=	v
+DISTVERSION=		1.73
+CATEGORIES=		wip biology
+
+MAINTAINER=	ssb22@cam.ac.uk
+COMMENT=	PrimerPooler: optimise primer-set combinations
+
+LICENSE=	APACHE20
+
+USES=		gmake
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	ssb22
+GH_PROJECT=	PrimerPooler
+
+WRKSRC_SUBDIR=	pooler
+INSTALL_TARGET=	install-strip
+
+PLIST_FILES=	bin/pooler man/man1/pooler.1.gz
 
 .include <bsd.port.mk>
