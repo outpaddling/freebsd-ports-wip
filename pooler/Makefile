@@ -9,8 +9,7 @@ MAINTAINER=	ssb22@cam.ac.uk
 COMMENT=	PrimerPooler: optimise primer-set combinations
 
 LICENSE=	APACHE20
-
-USES=		gmake
+LICENSE_FILE=	${WRKDIR}/${GH_PROJECT}-${PORTVERSION}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ssb22

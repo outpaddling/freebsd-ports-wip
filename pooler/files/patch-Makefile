@@ -13,7 +13,7 @@
  # (this is for compiling for distribution on a Mac that is
  # higher than 10.7, to make sure the result will still run
  # on 10.7 (lower is rarely possible nowadays).  But 10.9's
-@@ -51,7 +51,8 @@ WinFlags=-Wall -Os -flto -static -fopenmp # TODO: comd
+@@ -51,18 +51,18 @@ WinFlags=-Wall -Os -flto -static -fopenmp # TODO: comd
  
  CC0=$(shell if gcc --version >/dev/null 2>/dev/null; then echo gcc; else echo cc; fi) # some Macs have both but only the gcc supports OpenMP, so prefer that
  CC1=$(shell echo 'int main(){}' > _test.c; if $(CC0) -mtune=native _test.c -o /dev/null 2>/dev/null; then echo -mtune=native; fi; if $(CC0) -fopenmp _test.c -o /dev/null 2>/dev/null; then echo -fopenmp; fi; rm _test.c) # -march=native inadvisable if distributing the binary (and on some setups -mtune=native is available but -march=native isn't)
@@ -23,7 +23,19 @@
  
  .PHONY: clean test-other
  clean:
-@@ -76,8 +77,8 @@ pooler.tgz: clean
+ 	rm -f 128.h 32.h 32-64.h *~
+ 
+ 128.h 32.h 32-64.h: 64.h 64-128.h
+-	chmod a+w 128.h 32.h 32-64.h 2>/dev/null || true
++	chmod u+w 128.h 32.h 32-64.h 2>/dev/null || true
+ 	sed -e s/64/128/g < 64.h > 128.h
+ 	sed -e s/64/32/g < 64.h > 32.h
+ 	sed -e s/64/32/g -e s/128/64/g < 64-128.h > 32-64.h
+-	chmod a-w 128.h 32.h 32-64.h
+ 
+ pooler.tgz: clean
+ 	! grep ^#define debug.h # error if any debug.h option is still enabled
+@@ -76,8 +76,8 @@ pooler.tgz: clean
  
  # check things still at least compile:
  test-other: 128.h 32.h 32-64.h
@@ -34,7 +46,7 @@
  
  # Use of UPX to reduce .exe size and save server space.
  # This won't give as good a compression as .zip or .7z,
-@@ -118,6 +119,11 @@ all: pooler
+@@ -118,6 +118,11 @@ all: pooler
  install: all
  	$(INSTALL_PROGRAM) pooler $(DESTDIR)/$(PREFIX)/bin/
  	$(INSTALL_MAN) pooler.1 $(DESTDIR)/$(PREFIX)/man/man1/
