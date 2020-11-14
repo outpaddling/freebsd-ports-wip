@@ -11,7 +11,9 @@ COMMENT=	PrimerPooler: optimise primer-set combinations
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKDIR}/${GH_PROJECT}-${PORTVERSION}/LICENSE
 
+USES=		compiler:openmp
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	ssb22
 GH_PROJECT=	PrimerPooler
 
