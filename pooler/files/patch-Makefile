@@ -1,0 +1,53 @@
+--- Makefile.orig	2020-11-14 00:37:16 UTC
++++ Makefile
+@@ -12,11 +12,18 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ 
+-unix: 128.h 32.h 32-64.h
++.PHONY: unix mac-portable
++
++unix: pooler
++
++pooler: 128.h 32.h 32-64.h
+ 	$(CC) $(CFLAGS) $(OpenMpFlag) *.c -o pooler -lm
+ 
+ mac-portable: 128.h 32.h 32-64.h
+-	$(CC) -mmacosx-version-min=10.7 $(CFLAGS) $(OpenMpFlag) *.c -o pooler -lm
++	$(CC) -mmacosx-version-min=10.7 $(CFLAGS) $(OpenMpFlag) *.c \
++		-o mac-portable -lm
++	cp -f mac-portable pooler
++
+ # (this is for compiling for distribution on a Mac that is
+ # higher than 10.7, to make sure the result will still run
+ # on 10.7 (lower is rarely possible nowadays).  But 10.9's
+@@ -31,7 +38,7 @@ mac-portable: 128.h 32.h 32-64.h
+ # (but need to check to what extent it does JIT first)
+ 
+ win-crosscompile: pooler.exe pooler64.exe
+-.PHONY: unix mac-portable win-crosscompile mingw publish
++.PHONY: win-crosscompile mingw publish
+ pooler.exe: 128.h 32.h 32-64.h mingw
+ 	i686-w64-mingw32-gcc $(WinFlags) *.c -l comdlg32 -o pooler.exe -lm
+ pooler64.exe: 128.h 32.h 32-64.h mingw
+@@ -131,14 +138,18 @@ publish-src: test-other
+ 	scp pooler.tgz ds:homepage/pooler/
+ 	ssh ds 'CommitMsg_PrimerPooler="$(M)" homepage/update'
+ 
++.PHONY: all install install-strip
++
+ # compatibility with bsd.port.mk:
+-pooler: unix
+-all: pooler
++all: unix
++
+ install: all
+ 	$(INSTALL_PROGRAM) pooler $(DESTDIR)/$(PREFIX)/bin/
+ 	$(INSTALL_MAN) pooler.1 $(DESTDIR)/$(PREFIX)/man/man1/
++
+ install-strip: install
+ 	$(STRIP) $(DESTDIR)/$(PREFIX)/bin/pooler
++
+ PREFIX          ?= usr/local
+ INSTALL_PROGRAM ?= cp
+ INSTALL_MAN     ?= cp
