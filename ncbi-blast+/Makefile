@@ -1,7 +1,7 @@
 # $FreeBSD: head/biology/ncbi-blast+/Makefile 507372 2019-07-26 20:46:53Z gerald $
 
 PORTNAME=	ncbi-blast+
-DISTVERSION=	2.10.0
+DISTVERSION=	2.11.0
 CATEGORIES=	wip biology perl5 python
 MASTER_SITES=	https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ \
 		https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/
@@ -56,6 +56,7 @@ WRKSRC_SUBDIR=		c++
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 USE_GCC=	yes
 .endif
+USE_GCC=	10
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/*/*/.cvsignore.extra
