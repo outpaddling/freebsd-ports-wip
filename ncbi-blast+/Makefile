@@ -56,7 +56,6 @@ WRKSRC_SUBDIR=		c++
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 USE_GCC=	yes
 .endif
-USE_GCC=	10
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/*/*/.cvsignore.extra
