@@ -47,6 +47,7 @@ GNU_CONFIGURE=	yes
 # --libdir=${PREFIX}/lib/ncbi-tools++ doesn't respect DESTDIR, so do
 # a postinstall mv.
 CONFIGURE_ARGS=	AR="ar cr" --without-boost --libdir=${PREFIX}/lib/ncbi-tools++
+LDFLAGS+=	-latomic
 
 WRKSRC_SUBDIR=		c++
 
