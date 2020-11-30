@@ -1,8 +1,9 @@
 # $FreeBSD: head/sysutils/slurm-wlm/Makefile 523858 2020-01-23 01:52:06Z jwb $
 
 PORTNAME=	slurm
-DISTVERSION=	20.02.1
+DISTVERSION=	20.11.0
 CATEGORIES=	wip sysutils python
+MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -24,11 +25,10 @@ USES=		compiler:c11 gmake gnome libtool lua pkgconfig python:build \
 USE_LDCONFIG=	yes
 USE_PERL5=	configure
 USE_RC_SUBR=	slurmctld slurmd
-USE_GITHUB=	yes
+# USE_GITHUB=	yes
 
-GH_ACCOUNT=	SchedMD
-# Be sure to use commits form the 20.0.2 branch
-GH_TAGNAME=	9fc68c85
+# GH_ACCOUNT=	SchedMD
+# GH_TAGNAME=	9fc68c85
 
 USERS=		slurm
 GROUPS=		${USERS}
