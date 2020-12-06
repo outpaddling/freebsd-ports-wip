@@ -4,6 +4,7 @@ bin/cluster-compute-nodes
 bin/cluster-down-nodes
 bin/cluster-file-servers
 bin/cluster-head-check
+bin/cluster-node-status
 bin/cluster-passwd
 bin/cluster-pfs-nodes
 bin/cluster-pw-check
