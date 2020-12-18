@@ -126,6 +126,7 @@ sbin/spcm-update-from-wip
 %%DATADIR%%/WWW/index.php
 %%DATADIR%%/WWW/patch-apache.awk
 %%DATADIR%%/WWW/pkgsrc.jpg
+%%DATADIR%%/WWW/powered-by.png
 %%DATADIR%%/WWW/powerlogo.gif
 %%DATADIR%%/WWW/sync-compute-docs.sh
 %%DATADIR%%/csh.login
