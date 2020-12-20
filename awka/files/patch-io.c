@@ -1,5 +1,5 @@
---- lib/io.c.orig	Mon May  6 17:32:36 2002
-+++ lib/io.c	Mon May  6 17:32:58 2002
+--- lib/io.c.orig	2020-12-20 12:06:46 UTC
++++ lib/io.c
 @@ -19,6 +19,7 @@
  #include <stdlib.h>
  #include <string.h>

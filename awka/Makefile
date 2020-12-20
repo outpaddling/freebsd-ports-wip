@@ -1,8 +1,8 @@
 # Created by: ijliao
-# $FreeBSD: head/lang/awka/Makefile 405891 2016-01-12 16:20:31Z amdmi3 $
+# $FreeBSD$
 
 PORTNAME=	awka
-PORTVERSION=	0.7.5.20
+PORTVERSION=	0.7.5.23
 CATEGORIES=	wip lang
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,14 +11,16 @@ COMMENT=	Converts the AWK script to C, then compiles it
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL.txt
 
-GNU_CONFIGURE=	yes
-
 USES=		desthack
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
+GNU_CONFIGURE=	yes
+
 GH_ACCOUNT=	noyesno
-GH_TAGNAME=	1337789
+GH_TAGNAME=	524a3fb
+
+CFLAGS+=	-Wno-pointer-sign
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/awka \
