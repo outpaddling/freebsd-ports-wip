@@ -6,6 +6,7 @@ sbin/auto-add-proc-mount
 sbin/auto-add-to-group
 sbin/auto-adduser
 sbin/auto-admin
+sbin/auto-admin-banner
 sbin/auto-amend-fstab
 sbin/auto-append-line
 sbin/auto-ask
