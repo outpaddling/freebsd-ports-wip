@@ -3,7 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.16
-CATEGORIES=	emulators
+CATEGORIES=	wip emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
 EXTRACT_ONLY=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX}
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	yasm:devel/yasm \
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libxslt.so:textproc/libxslt \
 		libcurl.so:ftp/curl
-RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:emulators/virtualbox-ose-kmod
+RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:wip/virtualbox-ose-kmod-devel
 
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
