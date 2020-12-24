@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	libbacon
-DISTVERSION=	1.2.2-1
-DISTVERSIONSUFFIX=	-g2e181aa
+DISTVERSION=	1.2.2-2
+DISTVERSIONSUFFIX=	-g4baa1e5
 CATEGORIES=	wip devel
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,8 +14,5 @@ PLIST_FILES=	lib/libbacon.a include/bacon.h
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
-
-MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX} \
-		MANPREFIX=${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>
