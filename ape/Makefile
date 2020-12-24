@@ -8,7 +8,6 @@ CATEGORIES=	wip editors
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Another Programmer's Editor
 
-# Match this to libs
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
