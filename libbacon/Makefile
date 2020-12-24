@@ -10,8 +10,7 @@ COMMENT=	Misc functions
 
 LICENSE=	BSD2CLAUSE
 
-PLIST_FILES=	lib/libbacon.a \
-		include/bacon.h
+PLIST_FILES=	lib/libbacon.a include/bacon.h
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
