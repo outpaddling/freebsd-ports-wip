@@ -49,6 +49,9 @@ elif [ $rcs = git ]; then
     else
 	git=/usr/local/bin/git
     fi
+    if [ ! -e $git ]; then
+	pkg install -y git
+    fi
     $git clone \
 	https://github.com/outpaddling/freebsd-ports-wip \
 	$PORTSDIR/wip
