@@ -114,6 +114,7 @@ sbin/auto-set-lid-switch-mode
 sbin/auto-set-memory-limits
 sbin/auto-set-sysctl
 sbin/auto-set-umask
+sbin/auto-software-manager
 sbin/auto-sound-driver-setup
 sbin/auto-ssh-authorize
 sbin/auto-ssh-reverse-authorize
