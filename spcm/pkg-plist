@@ -94,6 +94,7 @@ sbin/cluster-update-backup-nodes
 sbin/cluster-update-file-servers
 sbin/cluster-update-menu
 sbin/cluster-update-vis-nodes
+sbin/cluster-upgrade-node
 sbin/cluster-user-admin
 sbin/cluster-user-cleanup
 sbin/cluster-useradd
