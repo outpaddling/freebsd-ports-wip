@@ -94,7 +94,7 @@ sbin/cluster-update-backup-nodes
 sbin/cluster-update-file-servers
 sbin/cluster-update-menu
 sbin/cluster-update-vis-nodes
-sbin/cluster-upgrade-node
+sbin/cluster-upgrade
 sbin/cluster-user-admin
 sbin/cluster-user-cleanup
 sbin/cluster-useradd
@@ -108,6 +108,7 @@ sbin/node-sync-all-users
 sbin/node-sync-groups
 sbin/node-sync-pkgsrc
 sbin/node-sync-users
+sbin/node-upgrade
 sbin/slurm-cron-updates
 sbin/slurm-drain-all
 sbin/slurm-node-resume
