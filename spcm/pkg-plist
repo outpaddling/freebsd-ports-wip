@@ -16,6 +16,7 @@ bin/condor-cpus
 bin/condor-list-packages
 bin/job-top
 bin/node-iostat
+bin/node-netstat
 bin/node-ps
 bin/node-top
 bin/psnode
