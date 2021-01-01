@@ -1,8 +1,7 @@
 # $FreeBSD: head/biology/gemma/Makefile 501990 2019-05-18 22:41:15Z jwb $
 
 PORTNAME=	gemma
-DISTVERSION=	0.98.1
-PORTREVISION=	3
+DISTVERSION=	0.98.3
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -22,7 +21,7 @@ GH_PROJECT=	GEMMA
 MAKEFILE=	${FILESDIR}/Makefile
 # Assuming openblas is built with pthreads, not openmp
 CXXFLAGS+=	-I${LOCALBASE}/include/eigen3 -DOPENBLAS -pthread
-LDFLAGS+=	-lopenblasp -pthread
+LDFLAGS+=	-lopenblas -pthread
 
 OPTIONS_DEFINE=	EXAMPLES
 
