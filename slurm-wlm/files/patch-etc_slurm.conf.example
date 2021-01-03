@@ -27,7 +27,7 @@
  #PlugStackConfig=
  #PropagatePrioProcess=
 -#PropagateResourceLimits=
-+PropagateResourceLimits=none
++PropagateResourceLimits=NONE
  #PropagateResourceLimitsExcept=
  #Prolog=
  #Epilog=
