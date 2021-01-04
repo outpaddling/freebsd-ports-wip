@@ -1,17 +1,18 @@
---- etc/slurm.conf.example.orig	2020-03-26 21:44:05 UTC
+--- etc/slurm.conf.example.orig	2020-11-17 15:08:12 UTC
 +++ etc/slurm.conf.example
-@@ -8,8 +8,8 @@
+@@ -8,8 +8,9 @@
  #
  # See the slurm.conf man page for more information.
  #
 -ClusterName=linux
 -ControlMachine=linux0
 +ClusterName=beastie
++# Short hostname of the head node
 +ControlMachine=beastie0
  #ControlAddr=
  #BackupController=
  #BackupAddr=
-@@ -25,8 +25,8 @@ StateSaveLocation=/var/spool/slurm/ctld
+@@ -25,8 +26,8 @@ StateSaveLocation=/var/spool/slurm/ctld
  SlurmdSpoolDir=/var/spool/slurm/d
  SwitchType=switch/none
  MpiDefault=none
@@ -22,7 +23,7 @@
  ProctrackType=proctrack/pgid
  #PluginDir=
  #FirstJobId=
-@@ -34,7 +34,7 @@ ReturnToService=0
+@@ -34,7 +35,7 @@ ReturnToService=0
  #MaxJobCount=
  #PlugStackConfig=
  #PropagatePrioProcess=
@@ -31,7 +32,7 @@
  #PropagateResourceLimitsExcept=
  #Prolog=
  #Epilog=
-@@ -42,7 +42,9 @@ ReturnToService=0
+@@ -42,7 +43,9 @@ ReturnToService=0
  #SrunEpilog=
  #TaskProlog=
  #TaskEpilog=
@@ -42,7 +43,7 @@
  #TrackWCKey=no
  #TreeWidth=50
  #TmpFS=
-@@ -57,10 +59,11 @@ KillWait=30
+@@ -57,10 +60,11 @@ KillWait=30
  Waittime=0
  #
  # SCHEDULING
@@ -55,7 +56,7 @@
  #PriorityType=priority/multifactor
  #PriorityDecayHalfLife=14-0
  #PriorityUsageResetPeriod=14-0
-@@ -72,22 +75,58 @@ SelectTypeParameters=CR_Core
+@@ -72,22 +76,58 @@ SelectTypeParameters=CR_Core
  #
  # LOGGING
  SlurmctldDebug=info
