@@ -48,6 +48,9 @@ sbin/auto-firewall-setup
 sbin/auto-fix-date
 sbin/auto-freebsd-wip-checkout
 sbin/auto-fusefs-install
+sbin/auto-get-ip
+sbin/auto-get-netmask
+sbin/auto-get-network
 sbin/auto-gpu-setup
 sbin/auto-group-check
 sbin/auto-harden
