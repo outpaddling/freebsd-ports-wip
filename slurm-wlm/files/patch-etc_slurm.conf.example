@@ -6,9 +6,9 @@
  #
 -ClusterName=linux
 -ControlMachine=linux0
-+ClusterName=beastie
++ClusterName=Beastie
 +# Short hostname of the head node
-+ControlMachine=beastie0
++ControlMachine=head
  #ControlAddr=
  #BackupController=
  #BackupAddr=
@@ -116,8 +116,8 @@
 -PartitionName=debug Nodes=ALL Default=YES MaxTime=INFINITE State=UP
 +# Set RealMemory < avail memory in /var/run/dmesg.boot
 +# Note that it may change slightly following freebsd-update
-+# NodeName=compute-[001-032] Sockets=2 CoresPerSocket=6 RealMemory=30000 State=UNKNOWN
++NodeName=compute-[001-002] Sockets=2 CoresPerSocket=6 RealMemory=30000 State=UNKNOWN
 +# NodeName=compute-256g-[001-002] Sockets=2 CoresPerSocket=6 RealMemory=250000 State=UNKNOWN
 +# PartitionName=debug Nodes=ALL Default=NO MaxTime=INFINITE State=UP
-+# PartitionName=batch Nodes=compute-[001-032] Default=YES MaxTime=INFINITE State=UP
++PartitionName=batch Nodes=compute-[001-002] Default=YES MaxTime=INFINITE State=UP
 +# PartitionName=256g Nodes=compute-256g-[001-002] Default=NO MaxTime=INFINITE State=UP
