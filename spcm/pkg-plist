@@ -73,6 +73,7 @@ sbin/cluster-restore-user
 sbin/cluster-run
 sbin/cluster-services-menu
 sbin/cluster-set-compute-memory-limits
+sbin/cluster-set-default-nfs-mounts
 sbin/cluster-setup
 sbin/cluster-shutdown
 sbin/cluster-slurm-enable
