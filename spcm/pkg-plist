@@ -104,6 +104,7 @@ sbin/cluster-wip-update
 sbin/compute-node-set-arc-max
 sbin/ganglia-web-setup
 sbin/node-iftop
+sbin/node-set-type
 sbin/node-sync-all-users
 sbin/node-sync-groups
 sbin/node-sync-pkgsrc
