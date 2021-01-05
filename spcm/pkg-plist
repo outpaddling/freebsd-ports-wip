@@ -55,6 +55,7 @@ sbin/cluster-highest-uid
 sbin/cluster-init-node
 sbin/cluster-ipmi-power-on
 sbin/cluster-krb-auth-setup
+sbin/cluster-localbase
 sbin/cluster-lock-local-pw
 sbin/cluster-lock-user
 sbin/cluster-lowest-uid
