@@ -5,7 +5,9 @@ bin/cluster-down-nodes
 bin/cluster-file-servers
 bin/cluster-head-check
 bin/cluster-node-status
+@mode 6555
 bin/cluster-passwd
+@mode
 bin/cluster-pfs-nodes
 bin/cluster-pw-check
 bin/cluster-raid-nodes
