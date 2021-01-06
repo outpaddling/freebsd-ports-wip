@@ -10,7 +10,6 @@ bin/cluster-pfs-nodes
 bin/cluster-pw-check
 bin/cluster-raid-nodes
 bin/cluster-vis-nodes
-bin/cluster-zfs-nodes
 bin/condor-build-R-packages
 bin/condor-cpus
 bin/condor-list-packages
