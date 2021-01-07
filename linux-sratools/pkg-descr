@@ -1,4 +1,8 @@
 The SRA Toolkit and SDK from NCBI is a collection of tools and libraries for
 using data in the INSDC Sequence Read Archives.
 
+Native FreeBSD ports have been built, but the build system is complex and
+esoteric, so this port based on the Linux binaries is maintained for quick
+access to the latest versions.
+
 WWW: https://github.com/ncbi/sra-tools
