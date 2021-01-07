@@ -1,0 +1,10 @@
+--- Makefile.orig	2021-01-07 19:31:26 UTC
++++ Makefile
+@@ -66,7 +66,6 @@ clean:
+ 	sed -e s/64/128/g < 64.h > 128.h
+ 	sed -e s/64/32/g < 64.h > 32.h
+ 	sed -e s/64/32/g -e s/128/64/g < 64-128.h > 32-64.h
+-	chmod -w 128.h 32.h 32-64.h
+ 
+ # -----------------------------------------------------
+ # Rules you won't need unless releasing new versions:
