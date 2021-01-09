@@ -30,13 +30,6 @@ WRKSRC_SUBDIR=	src
 # using a separate install target.
 MAKE_ENV=	DESTDIR=${WRKSRC} CANU_BUILD_ENV=ports
 
-.include <bsd.port.pre.mk>
-
-# GCC 4.2.1 (still base compiler on some 2nd tier platforms) cannot build canu
-.if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
-USE_GCC=	yes
-.endif
-
 pre-configure:
 	@${REINPLACE_CMD} \
 		-e 's|-O4||g' \
@@ -62,4 +55,4 @@ do-install:
 	(cd ${WRKSRC}/build && \
 		${COPYTREE_SHARE} "lib share" ${STAGEDIR}${PREFIX})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
