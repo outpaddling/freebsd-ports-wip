@@ -32,7 +32,8 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-JSON>=0:converters/p5-JSON
 
-USES=		compiler:openmp gmake shebangfix perl5 python
+USES=		compiler:c++11-lang gmake localbase shebangfix perl5 python
+USE_GCC=	yes	# Configure fails with clang
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	src/app/blast/legacy_blast.pl \
@@ -51,13 +52,6 @@ LDFLAGS+=	-latomic
 
 WRKSRC_SUBDIR=		c++
 
-.include <bsd.port.pre.mk>
-
-# Force newer GCC on platforms using GCC 4.2 as base
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-USE_GCC=	yes
-.endif
-
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/*/*/.cvsignore.extra
 	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/X11
@@ -67,4 +61,4 @@ post-install:
 	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/debug
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ncbi-tools++/*.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
