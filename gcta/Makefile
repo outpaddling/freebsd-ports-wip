@@ -2,6 +2,7 @@
 
 PORTNAME=	gcta
 DISTVERSION=	1.26.0
+PORTREVISION=	3
 CATEGORIES=	wip biology
 MASTER_SITES=	https://cnsgenomics.com/software/gcta/pre_gcta/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
