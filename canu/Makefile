@@ -19,7 +19,7 @@ NOT_FOR_ARCHS_REASON=	__int128 is not supported on this target
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
-USES=		compiler:openmp gmake perl5
+USES=		compiler:c++11-lang gmake localbase perl5
 USE_JAVA=	yes
 
 JAVA_RUN=	yes
