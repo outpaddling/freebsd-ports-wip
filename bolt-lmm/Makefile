@@ -1,7 +1,8 @@
-# $FreeBSD: head/biology/bolt-lmm/Makefile 507372 2019-07-26 20:46:53Z gerald $
+# $FreeBSD: head/biology/bolt-lmm/Makefile 550247 2020-09-27 07:41:33Z linimon $
 
 PORTNAME=	bolt-lmm
 DISTVERSION=	2.3.4
+PORTREVISION=	5
 CATEGORIES=	wip biology
 MASTER_SITES=	https://data.broadinstitute.org/alkesgroup/BOLT-LMM/downloads/
 DISTNAME=	BOLT-LMM_v${PORTVERSION}
@@ -25,6 +26,7 @@ INSTALL_WRKSRC=		${WRKDIR}/${DISTNAME}/src
 CXXFLAGS_i386=		-DUSE_SSE -msse -msse2
 CXXFLAGS_amd64=		-DUSE_SSE
 CXXFLAGS_powerpc64=	-DNO_WARN_X86_INTRINSICS -mvsx
+CXXFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS -mvsx
 MAKE_ARGS=		BOOST_INSTALL_DIR=${LOCALBASE} \
 			NLOPT_INSTALL_DIR=${LOCALBASE} \
 			ZLIB_STATIC_DIR=/usr/lib \
