@@ -11,7 +11,7 @@ COMMENT=	Process multiple commands in parallel on a single server
 
 LICENSE=	BSD3CLAUSE
 
-USES=		compiler:openmp tar:tgz
+USES=		tar:tgz
 USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
