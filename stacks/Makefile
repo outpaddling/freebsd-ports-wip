@@ -20,4 +20,11 @@ GNU_CONFIGURE=	yes
 
 LDFLAGS+=	-lpthread
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# Temp workaround, see PR 230888
+.if ${ARCH} == i386
+USE_GCC=	yes
+.endif
+
+.include <bsd.port.post.mk>
