@@ -55,6 +55,8 @@ elif [ $rcs = git ]; then
     $git clone \
 	https://github.com/outpaddling/freebsd-ports-wip \
 	$PORTSDIR/wip
+    cd $PORTSDIR/wip
+    git config pull.rebase true
 else
     printf "Invalid RCS: $rcs\n"
     exit 1
