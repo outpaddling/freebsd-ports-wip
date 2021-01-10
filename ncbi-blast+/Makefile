@@ -32,8 +32,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-JSON>=0:converters/p5-JSON
 
-USES=		compiler:c++14-lang gmake localbase:ldflags shebangfix perl5 python
-# USE_GCC=	yes	# Configure fails with clang
+USES=		compiler:c++14-lang gmake shebangfix perl5 python
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	src/app/blast/legacy_blast.pl \
@@ -48,10 +47,15 @@ GNU_CONFIGURE=	yes
 # --libdir=${PREFIX}/lib/ncbi-tools++ doesn't respect DESTDIR, so do
 # a postinstall mv.
 CONFIGURE_ARGS=	AR="ar cr" --without-boost --libdir=${PREFIX}/lib/ncbi-tools++
-# LDFLAGS+=	-latomic # gcc only
-# In case of problems: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=220822
 
 WRKSRC_SUBDIR=		c++
+
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+# In case of problems: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=220822
+LDFLAGS+=	-latomic # Only exists in gcc libs
+.endif
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/*/*/.cvsignore.extra
@@ -62,4 +66,4 @@ post-install:
 	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/debug
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ncbi-tools++/*.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
