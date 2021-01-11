@@ -2,6 +2,7 @@
 
 PORTNAME=		canu
 DISTVERSION=		2.1
+PORTREVISION=		1
 CATEGORIES=		wip biology java perl5
 # Github auto-generated tarballs lack submodules
 MASTER_SITES=		https://github.com/marbl/canu/releases/download/v2.1/
