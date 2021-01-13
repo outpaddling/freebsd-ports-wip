@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	spcm
-DISTVERSION=	0.5.0-3
-DISTVERSIONSUFFIX=	-gbf1fb59
+DISTVERSION=	0.5.1
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,7 +10,7 @@ COMMENT=	Tools for building and managing HPC clusters
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	auto-admin>=0.6.11:wip/auto-admin
+RUN_DEPENDS=	auto-admin>=0.6.11:sysutils/auto-admin
 
 USE_GITHUB=	yes
 
