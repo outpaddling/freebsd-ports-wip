@@ -1,10 +1,7 @@
 # $FreeBSD$
 
-# TODO
-# Add core plugins
-
 PORTNAME=	qiime2
-DISTVERSION=	2019.7.0
+DISTVERSION=	2020.11.1
 CATEGORIES=	wip biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 #DISTNAME=	${PORTVERSION}
@@ -13,8 +10,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Quantitative Insights Into Microbial Ecology
 
-LICENSE=	GPLv2
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# TODO
+# Add core plugins
 # QIIME 2 plugins
 RUN_DEPENDS+=	${PKGNAMEPREFIX}q2-vsearch>=2019.7.0:wip/py-q2-vsearch@${PY_FLAVOR} \
 		${PKGNAMEPREFIX}q2-deblur>=2019.7.0:wip/py-q2-deblur@${PY_FLAVOR} \

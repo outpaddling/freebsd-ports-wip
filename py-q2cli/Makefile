@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	q2cli
-DISTVERSION=	2019.7.0
+DISTVERSION=	2020.11.1
 CATEGORIES=	wip biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -25,7 +25,10 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PKGNAMEPREFIX}q2-types>=2019.7.0:wip/py-q2-types@${PY_FLAVOR} \
 		${PKGNAMEPREFIX}ijson>0:devel/py-ijson@${PY_FLAVOR} \
 		${PKGNAMEPREFIX}joblib>0:devel/py-joblib@${PY_FLAVOR} \
-		${PKGNAMEPREFIX}q2templates>0:wip/py-q2templates@${PY_FLAVOR}
+		${PKGNAMEPREFIX}q2templates>0:wip/py-q2templates@${PY_FLAVOR} \
+		${PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
+		${PKGNAMEPREFIX}tzlocal>0:devel/py-tzlocal@${PY_FLAVOR} \
+		${PKGNAMEPREFIX}jinja2-cli>0:textproc/py-jinja2-cli@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
