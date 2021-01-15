@@ -1,7 +1,7 @@
 # $FreeBSD: head/sysutils/slurm-wlm/Makefile 523858 2020-01-23 01:52:06Z jwb $
 
 PORTNAME=	slurm
-DISTVERSION=	20.11.0
+DISTVERSION=	20.11.2
 CATEGORIES=	wip sysutils python
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
@@ -98,8 +98,6 @@ pre-configure-GUI-off:
 # add a pty.h for the build.
 pre-configure:
 	@${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
-	@${REINPLACE_CMD} -e 's|sched_setaffinity|cpuset_setaffinity|g' \
-		${WRKSRC}/configure
 
 	@${REINPLACE_CMD} -e 's|"/proc|"/compat/linux/proc|g' \
 		-e 's|(/proc)|(/compat/linux/proc)|g' \
