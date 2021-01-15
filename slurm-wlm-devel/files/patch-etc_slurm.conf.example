@@ -1,4 +1,4 @@
---- etc/slurm.conf.example.orig	2020-11-17 15:08:12 UTC
+--- etc/slurm.conf.example.orig	2020-12-18 21:40:09 UTC
 +++ etc/slurm.conf.example
 @@ -8,8 +8,9 @@
  #
@@ -7,7 +7,7 @@
 -ClusterName=linux
 -ControlMachine=linux0
 +ClusterName=Beastie
-+# Short hostname of the head node
++# Set this to the short hostname of the head node
 +ControlMachine=head
  #ControlAddr=
  #BackupController=
@@ -56,7 +56,7 @@
  #PriorityType=priority/multifactor
  #PriorityDecayHalfLife=14-0
  #PriorityUsageResetPeriod=14-0
-@@ -72,22 +76,58 @@ SelectTypeParameters=CR_Core
+@@ -72,22 +76,59 @@ SelectTypeParameters=CR_Core
  #
  # LOGGING
  SlurmctldDebug=info
@@ -73,10 +73,9 @@
 +JobAcctGatherType=jobacct_gather/none
  #JobAcctGatherFrequency=30
  #
--#AccountingStorageType=accounting_storage/slurmdbd
-+AccountingStorageType=accounting_storage/filetxt
-+AccountingStorageLoc=/home/slurm/Accounting
-+AccountingStoreJobComment=YES
+ #AccountingStorageType=accounting_storage/slurmdbd
++#AccountingStorageLoc=/home/slurm/Accounting
++#AccountingStoreJobComment=YES
  #AccountingStorageHost=
  #AccountingStorageLoc=
  #AccountingStoragePass=
@@ -116,7 +115,8 @@
 -PartitionName=debug Nodes=ALL Default=YES MaxTime=INFINITE State=UP
 +# Set RealMemory < avail memory in /var/run/dmesg.boot
 +# Note that it may change slightly following freebsd-update
-+NodeName=compute-[001-002] Sockets=2 CoresPerSocket=6 RealMemory=30000 State=UNKNOWN
++# Minimal node specs usable with VMs for testing
++NodeName=compute-[001-002] Sockets=1 CoresPerSocket=1 RealMemory=1000 State=UNKNOWN
 +# NodeName=compute-256g-[001-002] Sockets=2 CoresPerSocket=6 RealMemory=250000 State=UNKNOWN
 +# PartitionName=debug Nodes=ALL Default=NO MaxTime=INFINITE State=UP
 +PartitionName=batch Nodes=compute-[001-002] Default=YES MaxTime=INFINITE State=UP
