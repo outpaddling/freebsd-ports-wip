@@ -67,7 +67,7 @@ HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 			libsz.so:science/szip
 HDF5_CONFIGURE_WITH=	hdf5
 
-HWLOC_LIB_DEPENDS=	libhwloc.so:devel/hwloc
+HWLOC_LIB_DEPENDS=	libhwloc.so.15:devel/hwloc2
 HWLOC_CONFIGURE_WITH=	hwloc
 
 IPMI_LIB_DEPENDS=	libfreeipmi.so:sysutils/freeipmi
