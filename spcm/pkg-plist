@@ -80,6 +80,7 @@ sbin/cluster-set-default-nfs-mounts
 sbin/cluster-setup
 sbin/cluster-shutdown
 sbin/cluster-slurm-enable
+sbin/cluster-software-manager
 sbin/cluster-spcm-update-from-wip
 sbin/cluster-ssh-keygen
 sbin/cluster-stay-down
