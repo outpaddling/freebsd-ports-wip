@@ -12,13 +12,13 @@ COMMENT=	Simple Linux Utility for Resource Management
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NOT_FOR_ARCHS=		armv6 armv7 i386 powerpc
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc
 NOT_FOR_ARCHS_REASON=	32-bit support is deprecated
 
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
-		libsysinfo.so:devel/libsysinfo \
+		liblz4.so:archivers/liblz4 \
 		libmunge.so:security/munge \
-		liblz4.so:archivers/liblz4
+		libsysinfo.so:devel/libsysinfo
 
 USES=		compiler:c11 gmake gnome libtool lua pkgconfig python:build \
 		readline:port shebangfix ssl tar:bz2
@@ -26,17 +26,27 @@ USE_LDCONFIG=	yes
 USE_PERL5=	configure
 USE_RC_SUBR=	slurmctld slurmd
 # USE_GITHUB=	yes
-
 # GH_ACCOUNT=	SchedMD
 # GH_TAGNAME=	9fc68c85
+SHEBANG_FILES=	doc/html/shtml2html.py doc/man/man2html.py
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-ofed
+# --docdir is non-functional
+# CONFIGURE_ARGS=	--docdir=${DOCSDIR}
+# FreeBSD Infiniband support is still experimental
+
+INSTALL_TARGET=	install-strip
+
+CFLAGS+=	-I${LOCALBASE}/include -I${WRKSRC}/slurm
+LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lprocstat
+
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
 
 USERS=		slurm
 GROUPS=		${USERS}
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
-SHEBANG_FILES=	doc/html/shtml2html.py doc/man/man2html.py
 
 OPTIONS_DEFINE=		CURL DOCS GUI HDF5 HWLOC IPMI MYSQL RRD
 OPTIONS_DEFAULT=	HDF5 HWLOC
@@ -49,19 +59,20 @@ HWLOC_DESC=	Portable hardware locality
 IPMI_DESC=	IPMI energy consumption accounting
 RRD_DESC=	RRD external sensor data collection
 
-DOCS_BUILD_DEPENDS=	man2html:textproc/man2html
-
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_WITH=	libcurl
 
-GUI_USE=		GNOME=cairo,gdkpixbuf2,glib20,gtk20
-GUI_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-			libfreetype.so:print/freetype2
-GUI_USES=		gettext
-GUI_CONFIGURE_ENABLE=	glibtest gtktest x11
+DOCS_BUILD_DEPENDS=	man2html:textproc/man2html
+
 # Neither of these work.  See post-patch below.
 #GTK2_CONFIGURE_ENV_OFF=	ac_gtk_test=no
 #GTK2_CONFIGURE_OFF=	--disable-gtktest
+
+GUI_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+			libfreetype.so:print/freetype2
+GUI_USES=		gettext
+GUI_USE=		GNOME=cairo,gdkpixbuf2,glib20,gtk20
+GUI_CONFIGURE_ENABLE=	glibtest gtktest x11
 
 HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 			libsz.so:science/szip
@@ -78,20 +89,6 @@ MYSQL_CONFIGURE_OFF=	--with-mysql_config=/nonexistent
 
 RRD_LIB_DEPENDS=	librrd.so:databases/rrdtool
 RRD_CONFIGURE_WITH=	rrdtool
-
-# --docdir is non-functional
-# CONFIGURE_ARGS=	--docdir=${DOCSDIR}
-# FreeBSD Infiniband support is still experimental
-CONFIGURE_ARGS=	--without-ofed
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
-
-CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lprocstat
-
-# Hack around nonfunctional --disable-gtktest flag
-pre-configure-GUI-off:
-	@${REINPLACE_CMD} -e 's|min_gtk_version=.*|min_gtk_version=2000.0.0|' \
-		${WRKSRC}/configure
 
 # SLURM's configure enables interactive jobs if pty.h exists.  Replacing
 # #include <pty.h> with appropriate headers will therefore not work, so instead
@@ -129,6 +126,11 @@ pre-configure:
 		${ECHO_CMD} "********************************************"; \
 		false; \
 	fi
+
+# Hack around nonfunctional --disable-gtktest flag
+pre-configure-GUI-off:
+	@${REINPLACE_CMD} -e 's|min_gtk_version=.*|min_gtk_version=2000.0.0|' \
+		${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/slurm.conf.example \
