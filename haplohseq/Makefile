@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	haplohseq
-DISTVERSION=	0.1.2
-PORTREVISION=	3
+DISTVERSION=	0.1.2-2
+DISTVERSIONSUFFIX=	-ge489294
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -28,8 +28,7 @@ SUB_FILES=	haplohseq-example
 
 pre-configure:
 	@${REINPLACE_CMD} \
-		-e 's|/bin/bash|/bin/sh|' \
-		-e 's|python|mkdir example_output; ${PYTHON_CMD}|' \
+		-e 's|python|${PYTHON_CMD}|' \
 		-e 's|\.\./haplohseq|haplohseq|' \
 		${WRKSRC}/example/example_run.sh
 
@@ -38,6 +37,6 @@ post-install-EXAMPLES-on:
 	(cd ${WRKSRC} && ${RM} example/*.orig scripts/*.orig && ${COPYTREE_SHARE} "example ldmap scripts" ${STAGEDIR}${EXAMPLESDIR})
 
 do-test:
-	@(cd ${WRKSRC}/build/test && ${FILESDIR}/run-tests)
+	@(cd ${WRKSRC}/build/test && ${WRKSRC}/src/test/run-tests)
 
 .include <bsd.port.mk>
