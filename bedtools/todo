@@ -1,1 +1,0 @@
-complement -i does not accept process substitution args <(cmd)

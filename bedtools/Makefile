@@ -15,6 +15,7 @@ TEST_DEPENDS=	bash:shells/bash
 
 USES=		compiler:c++11-lang gmake python
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	arq5x
 GH_PROJECT=	bedtools2
 
