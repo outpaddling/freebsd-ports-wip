@@ -56,7 +56,25 @@ elif [ $rcs = git ]; then
 	https://github.com/outpaddling/freebsd-ports-wip \
 	$PORTSDIR/wip
     cd $PORTSDIR/wip
-    git config pull.rebase true
+    
+    printf "\nEditing .gitconfig.\n\n"
+    
+    printf "Full name? "
+    read name
+    
+    printf "Email? "
+    read email
+    
+    printf "Editor? [vi] "
+    read editor
+    if [ 0$editor = 0 ]; then
+	editor=vi
+    fi
+    git config user.name "$name"
+    git config user.email "$email"
+    git config core.editor "$editor"
+    git config pull.rebase false
+
 else
     printf "Invalid RCS: $rcs\n"
     exit 1
