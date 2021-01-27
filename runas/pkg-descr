@@ -1,0 +1,3 @@
+Simple wrapper around su to conveniently run a single command as another user.
+
+WWW: https://github.com/outpaddling/runas
