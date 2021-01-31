@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	runas
-DISTVERSION=	0.1.0-3
-DISTVERSIONSUFFIX=	-gc696290
+DISTVERSION=	0.1.0-4
+DISTVERSIONSUFFIX=	-g2fdbc1a
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	bacon@coral.acadix.biz
