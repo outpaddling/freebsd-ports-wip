@@ -1,3 +1,7 @@
-Simple wrapper around su to conveniently run a single command as another user.
+The su command is cumbersome to use for running a single command as another
+user.  The runas command is a simple wrapper around su to make its use more
+appealing.  It differs from sudo in that it requires the password of the
+target user rather than the calling user, and it requires no suid or
+configuration.
 
 WWW: https://github.com/outpaddling/runas
