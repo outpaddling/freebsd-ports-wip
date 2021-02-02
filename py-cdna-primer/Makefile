@@ -30,7 +30,7 @@ RUN_DEPENDS+=	${PYNUMPY} \
 # LA4Ice needs to use its own version.
 #		daligner>=${PORTVERSION}:wip/daligner \
 
-USES=		python shebangfix tar:xz
+USES=		python:3.6+ shebangfix tar:xz
 USE_PYTHON=	distutils
 SHEBANG_FILES=	pbtools/pbtranscript/cleanup_ice.py \
 		pbtools/pbtranscript/collapse_isoforms_by_sam.py \

@@ -12,7 +12,7 @@ COMMENT=	Cython hash tables that assume keys are pre-hashed
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 

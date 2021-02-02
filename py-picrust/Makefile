@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	picrust
 GH_TAGNAME=	2fafafc
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

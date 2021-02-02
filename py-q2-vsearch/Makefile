@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	vsearch>0:biology/vsearch
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 USE_GITHUB=	yes

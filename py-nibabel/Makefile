@@ -12,7 +12,7 @@ COMMENT=	Provides read write access to common medical and neuroimaging formats
 
 LICENSE=	MIT
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 # http://nipy.org/nibabel/installation.html#installation

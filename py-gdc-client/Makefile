@@ -17,7 +17,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}parcel>0:wip/py-parcel \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 USE_GITHUB=	yes

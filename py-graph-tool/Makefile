@@ -27,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0.7.0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.1.2:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cairo>=1.14.1:graphics/py-cairo@${PY_FLAVOR}
 
-USES=		gnome libtool pkgconfig python tar:bz2
+USES=		gnome libtool pkgconfig python:3.6+ tar:bz2
 USE_GNOME=	cairo cairomm libsigc++20
 USE_LDCONFIG=	yes
 

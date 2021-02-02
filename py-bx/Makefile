@@ -12,7 +12,7 @@ COMMENT=	Simple in-memory storage for Python
 LICENSE=	MIT
 #LICENSE_FILE=	
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

@@ -15,7 +15,7 @@ LICENSE=	PD
 #LICENSE=	CC BY-SA 3.0
 #LICENSE_FILE=	
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

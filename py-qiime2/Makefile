@@ -20,7 +20,7 @@ RUN_DEPENDS+=	${PKGNAMEPREFIX}q2-vsearch>=2019.7.0:wip/py-q2-vsearch@${PY_FLAVOR
 		${PKGNAMEPREFIX}q2-deblur>=2019.7.0:wip/py-q2-deblur@${PY_FLAVOR} \
 		${PKGNAMEPREFIX}q2-feature-classifier>=2019.7.0:wip/py-q2-feature-classifier@${PY_FLAVOR}
 
-USES=		iconv python
+USES=		iconv python:3.6+
 USE_PYTHON=	autoplist distutils
 
 USE_GITHUB=	yes

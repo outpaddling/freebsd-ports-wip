@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 CFLAGS+=	-I${PYTHON_SITELIBDIR}/numpy/core/include

@@ -17,7 +17,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.2:math/py-numpy \
 		${PKGNAMEPREFIX}matplotlib>=1.4.3:math/py-matplotlib
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist cython distutils
 
 .include <bsd.port.mk>

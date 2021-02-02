@@ -11,7 +11,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 BUILD_DEPENDS=	swig2.0:devel/swig20

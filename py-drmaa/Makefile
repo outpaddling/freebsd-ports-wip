@@ -11,7 +11,7 @@ COMMENT=	Interact with DRMAA-compliant distributed resource management systems
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

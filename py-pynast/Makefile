@@ -14,7 +14,7 @@ COMMENT=	Nearest Alignment Space Termination tool
 # Unknown
 LICENSE=	PD
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	pynast
 

@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYNUMPY}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist cython distutils
 
 # BLIS_ARCH defaults to x86_64, which has hard-coded -mavx2, etc.

@@ -12,7 +12,7 @@ COMMENT=	Lightweight and reusable make/flow data process library
 
 LICENSE=	MIT
 
-USES=		python tar:xz
+USES=		python:3.6+ tar:xz
 USE_PYTHON=	distutils
 
 WRKSRC=		${WRKDIR}/pypeFLOW-${GH_TAGNAME}

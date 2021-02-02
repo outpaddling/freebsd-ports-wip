@@ -13,7 +13,7 @@ COMMENT=	Tools for error correction and working with long read data
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python shebangfix
+USES=		python:3.6+ shebangfix
 SHEBANG_FILES=	*.sh
 SUB_FILES=	pkg-message
 

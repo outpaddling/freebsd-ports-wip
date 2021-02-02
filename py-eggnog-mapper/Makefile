@@ -11,7 +11,7 @@ COMMENT=	Fast functional annotation of novel DNA or protein sequences
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	jhcepas

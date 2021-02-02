@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:wip/py3-matplotlib
 
-USES=		python:3
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 USE_GITHUB=	yes

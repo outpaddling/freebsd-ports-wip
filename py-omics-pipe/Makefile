@@ -156,7 +156,7 @@ RUN_DEPENDS=	samtools>=0:biology/samtools \
 #    TOPHAT: 	http://tophat.cbcb.umd.edu/
 #    CUFFLINKS: 	http://cufflinks.cbcb.umd.edu/
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

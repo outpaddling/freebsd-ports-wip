@@ -12,7 +12,7 @@ COMMENT=	Management of large, hierarchical parameter sets for modelling and simu
 LICENSE=	GPLv2
 #LICENSE_FILE=	
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

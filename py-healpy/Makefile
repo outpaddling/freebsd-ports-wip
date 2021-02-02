@@ -13,7 +13,7 @@ COMMENT=	Python healpix maps tools
 LICENSE=	GPLv2
 
 # C++11 or USE_GCC is a hack to find emmintrin.h and xmmintrin.h
-USES=		compiler:c++11-lang pkgconfig python
+USES=		compiler:c++11-lang pkgconfig python:3.6+
 USE_PYTHON=	distutils
 
 BUILD_DEPENDS+=	cython:lang/cython

@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=0.24:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}multitasking>=0.0.7:wip/py-multitasking@${PY_FLAVOR} \
 		${NUMPY}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

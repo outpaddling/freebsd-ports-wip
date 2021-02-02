@@ -11,7 +11,7 @@ COMMENT=	High-dimensional cluster analysis with masked EM for Gaussian mixtures
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 USE_GITHUB=	yes

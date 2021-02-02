@@ -12,7 +12,7 @@ COMMENT=	Numpy data serialization using msgpack
 LICENSE=	BSD3CLAUSE
 # LICENSE_FILE=	
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

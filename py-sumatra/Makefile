@@ -20,7 +20,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pathlib>0:devel/py-pathlib \
 		${PYTHON_PKGNAMEPREFIX}django-tagging>0:www/py-django-tagging \
 		${PYTHON_PKGNAMEPREFIX}httplib2>0:www/py-httplib2 \
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

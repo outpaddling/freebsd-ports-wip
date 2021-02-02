@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	klustakwik>=0:wip/klustakwik
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 USE_GITHUB=	yes

@@ -12,7 +12,7 @@ COMMENT=	Cython memory pool for RAII-style memory management
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 

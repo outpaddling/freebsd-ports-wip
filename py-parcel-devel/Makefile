@@ -45,7 +45,7 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Flask>0:www/py-flask \
 # sortedcontainers-1.5.7-py2.7.egg
 # termcolor-1.1.0-py2.7.egg
 
-USES=		gmake python shebangfix
+USES=		gmake python:3.6+ shebangfix
 SHEBANG_FILES=	install uninstall
 USE_PYTHON=	distutils
 # Temporary hack

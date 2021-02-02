@@ -15,7 +15,7 @@ COMMENT=	Allows scripting of Meep-simulations with Python
 
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 # swig python-dev python-numpy python-scipy

@@ -17,7 +17,7 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:math/py-numpy
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	biom
 # --single-version-externally-managed not recognized on 9.x

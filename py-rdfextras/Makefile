@@ -11,7 +11,7 @@ DISTNAME=	v${PORTVERSION}
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}rdflib==3.4.0:wip/py-rdflib340

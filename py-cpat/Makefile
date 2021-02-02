@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/doc/COPYING
 #RUN_DEPENDS=	${PKGNAMEPREFIX}pysam>=0:wip/py-pysam
 # numpy, cython, R
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 post-extract:

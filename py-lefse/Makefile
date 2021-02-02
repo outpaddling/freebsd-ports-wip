@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PKGNAMEPREFIX}argparse>=0:devel/py-argparse@${PY_FLAVOR} \
 		R-cran-mvtnorm>0:math/R-cran-mvtnorm
 
-USES=		python:3.6 shebangfix tar:bz2
+USES=		python:3.6+ shebangfix tar:bz2
 
 SHEBANG_FILES=	${WRKSRC}/*.py ${WRKSRC}/lefsebiom/*.py
 

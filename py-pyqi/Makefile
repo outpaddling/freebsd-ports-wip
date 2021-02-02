@@ -11,7 +11,7 @@ COMMENT=	wrapping general commands in multiple types of interfaces
 
 LICENSE=	GPLv2	# From qiime install site.  Double check this.
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	pyqi
 

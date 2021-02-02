@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0:math/py-numpy \
 		${PYTHON_PKGNAMEPREFIX}avro>=0:devel/py-avro \
 		${PYTHON_PKGNAMEPREFIX}pbcore>=0:wip/py-pbcore091
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTNAME}

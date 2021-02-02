@@ -18,7 +18,7 @@ RUN_DEPENDS=	KlustaKwik:wip/klustakwik \
 		${PYTHON_PKGNAMEPREFIX}kwiklib==${PORTVERSION}:wip/py-kwiklib \
 		${PYTHON_PKGNAMEPREFIX}spikedetekt==${PORTVERSION}:wip/py-spikedetekt
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 USE_GITHUB=	yes

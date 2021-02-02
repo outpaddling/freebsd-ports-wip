@@ -12,7 +12,7 @@ COMMENT=	Python API to Mercurial using the command-line interface
 LICENSE=	BSD2CLAUSE
 #LICENSE_FILE=	
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

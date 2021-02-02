@@ -15,7 +15,7 @@ BUILD_DEPENDS+=	cython:lang/cython
 LIB_DEPENDS=	libtempo2.so:wip/tempo2
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 USE_LDCONFIG=	yes
 # Hack around compiler errors

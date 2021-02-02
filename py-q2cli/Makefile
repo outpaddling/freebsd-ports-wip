@@ -30,7 +30,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PKGNAMEPREFIX}tzlocal>0:devel/py-tzlocal@${PY_FLAVOR} \
 		${PKGNAMEPREFIX}jinja2-cli>0:textproc/py-jinja2-cli@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 

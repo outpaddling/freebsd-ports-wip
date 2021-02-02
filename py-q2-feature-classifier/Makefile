@@ -11,7 +11,7 @@ COMMENT=	QIIME 2 plugin supporting taxonomic classification
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 USE_GITHUB=	yes

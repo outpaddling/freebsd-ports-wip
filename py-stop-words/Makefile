@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 PATCH_DEPENDS=	stop-words>=0:wip/stop-words
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 USE_GITHUB=	yes

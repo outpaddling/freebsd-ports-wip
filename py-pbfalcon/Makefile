@@ -21,7 +21,7 @@ RUN_DEPENDS=	dazz_db==${PORTVERSION}:wip/dazz_db \
 		${PYTHON_PKGNAMEPREFIX}rdflib==3.4.0:wip/py-rdflib340 \
 		${PYTHON_PKGNAMEPREFIX}rdfextras==0.4:wip/py-rdfextras
 
-USES=		python tar:xz
+USES=		python:3.6+ tar:xz
 USE_PYTHON=	distutils
 
 USE_GITHUB=	yes

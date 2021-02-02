@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
 
-USES=		fortran python:3.4+
+USES=		fortran python:3.6+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

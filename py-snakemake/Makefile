@@ -11,7 +11,7 @@ COMMENT=	Reduce the complexity of creating workflows
 
 LICENSE=	MIT
 
-USES=		python:3.5+
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

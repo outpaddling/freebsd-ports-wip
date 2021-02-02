@@ -10,7 +10,7 @@ COMMENT=	Some Python tools for Qt
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 USE_GITHUB=	yes

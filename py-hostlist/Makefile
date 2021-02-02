@@ -12,7 +12,7 @@ COMMENT=	Manage SLURM host lists
 
 LICENSE=	GPLv2
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 post-patch:

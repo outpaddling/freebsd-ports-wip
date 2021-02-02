@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.7.1:math/py-numpy \
 		${PYTHON_PKGNAMEPREFIX}h5py>=2.0.1:science/py-h5py \
 		${PYTHON_PKGNAMEPREFIX}pysam>=0.8.1:wip/py-pysam
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

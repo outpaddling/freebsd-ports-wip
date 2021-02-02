@@ -13,7 +13,7 @@ COMMENT=	Classes and helper functions for Python web applications
 LICENSE=	GPLv2
 #LICENSE_FILE=	
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

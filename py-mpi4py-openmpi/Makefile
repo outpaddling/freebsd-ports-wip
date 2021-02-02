@@ -17,7 +17,7 @@ LIB_DEPENDS?=	libmpi.so:net/openmpi
 
 USE_GITHUB=	yes
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 NO_ARCH=	yes
 
