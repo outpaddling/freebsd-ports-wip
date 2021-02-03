@@ -1,7 +1,7 @@
 # $FreeBSD: head/biology/fastqc/Makefile 455236 2017-11-30 22:54:29Z jwb $
 
 PORTNAME=	fastqc
-DISTVERSION=	0.11.8
+DISTVERSION=	0.11.9
 CATEGORIES=	wip biology java perl5
 MASTER_SITES=	https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 DISTNAME=	${PORTNAME}_v${DISTVERSIONPREFIX}${DISTVERSION}
