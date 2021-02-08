@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+Linux compatibility must be enabled in order to use linux-sratools.
+For a quick and proper configuration, run the following:
+
+pkg install -y auto-admin
+auto-install-linux_base
+EOM
+}
+]
