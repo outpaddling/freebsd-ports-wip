@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2019-04-04 12:06:59 UTC
++++ CMakeLists.txt
+@@ -546,6 +546,9 @@ else()
+   set(HAVE_UTIME 0)
+ endif()
+ 
++include(CheckIncludeFiles)
++check_include_files("sys/types.h;sys/sysctl.h" HAVE_SYSCTL_H)
++
+ 
+ ######################################################################################
+ 
