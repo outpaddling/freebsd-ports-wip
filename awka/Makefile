@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	awka
-PORTVERSION=	0.7.5.25
+PORTVERSION=	0.7.5.26
 CATEGORIES=	wip lang
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Converts the AWK script to C, then compiles it
 
 LICENSE=	GPLv2+
@@ -13,12 +13,11 @@ LICENSE_FILE=	${WRKSRC}/GPL.txt
 
 USES=		desthack
 USE_GITHUB=	yes
-USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 
-GH_ACCOUNT=	noyesno
-GH_TAGNAME=	887b871
+GH_ACCOUNT=	outpaddling
+GH_TAGNAME=	e27b5be
 
 CFLAGS+=	-Wno-pointer-sign
 
