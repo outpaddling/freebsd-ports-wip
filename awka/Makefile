@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	awka
-PORTVERSION=	0.7.5.23
+PORTVERSION=	0.7.5.25
 CATEGORIES=	wip lang
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,7 +18,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 GH_ACCOUNT=	noyesno
-GH_TAGNAME=	524a3fb
+GH_TAGNAME=	887b871
 
 CFLAGS+=	-Wno-pointer-sign
 
