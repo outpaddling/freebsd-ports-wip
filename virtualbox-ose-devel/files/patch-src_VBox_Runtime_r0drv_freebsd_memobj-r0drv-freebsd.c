@@ -1,5 +1,5 @@
---- src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c.orig	2020-10-16 18:38:10.000000000 +0200
-+++ src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c	2020-12-14 18:32:02.751492000 +0100
+--- src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c.orig	2020-10-16 13:38:10.000000000 -0300
++++ src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c	2021-02-10 14:16:36.331990000 -0300
 @@ -129,6 +129,7 @@
  
  DECLHIDDEN(int) rtR0MemObjNativeFree(RTR0MEMOBJ pMem)
@@ -341,10 +341,12 @@
  
      if ((fProt & RTMEM_PROT_NONE) == RTMEM_PROT_NONE)
          ProtectionFlags = VM_PROT_NONE;
-@@ -820,6 +875,7 @@
+@@ -819,7 +874,8 @@
+     if ((fProt & RTMEM_PROT_EXEC) == RTMEM_PROT_EXEC)
          ProtectionFlags |= VM_PROT_EXECUTE;
  
-     int krc = vm_map_protect(pVmMap, AddrStart, AddrEnd, ProtectionFlags, FALSE);
+-    int krc = vm_map_protect(pVmMap, AddrStart, AddrEnd, ProtectionFlags, FALSE);
++    int krc = vm_map_protect(pVmMap, AddrStart, AddrEnd, ProtectionFlags, 0, VM_MAP_PROTECT_SET_PROT);
 +    IPRT_FREEBSD_RESTORE_EFL_AC();
      if (krc == KERN_SUCCESS)
          return VINF_SUCCESS;

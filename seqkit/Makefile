@@ -22,7 +22,7 @@ PLIST_FILES=	bin/seqkit
 do-build:
 	export GOPATH=${WRKSRC} && \
 		cd ${WRKSRC} && \
-		go get -u github.com/shenwei356/seqkit/seqkit
+		go get -u -v github.com/shenwei356/seqkit/seqkit
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/seqkit ${STAGEDIR}${PREFIX}/bin
