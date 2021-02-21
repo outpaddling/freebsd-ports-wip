@@ -2,7 +2,7 @@
 # $FreeBSD: head/emulators/virtualbox-ose/Makefile 501855 2019-05-17 11:56:47Z jkim $
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	6.1.16
+PORTVERSION=	6.1.18
 CATEGORIES=	wip emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
@@ -21,14 +21,14 @@ BUILD_DEPENDS=	yasm:devel/yasm \
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libxslt.so:textproc/libxslt \
 		libcurl.so:ftp/curl
-RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:emulators/virtualbox-ose-kmod-devel
+RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:wip/virtualbox-ose-kmod-devel
 
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		compiler:c++14-lang cpe gnome iconv pkgconfig ssl tar:bzip2
+USES=		compiler:c++14-lang cpe gnome iconv pkgconfig ssl tar:bzip2 xorg
 USE_GNOME=	libidl libxml2
 # USE_GCC=	yes
 
@@ -346,7 +346,7 @@ do-install:
 	    "*.fd *.r0 *.so components" ${STAGEDIR}${VBOX_DIR}
 
 	${FIND} ${STAGEDIR}${VBOX_DIR} -name '*.so' -exec ${STRIP_CMD} {} +
-	
+
 .if ${PORT_OPTIONS:MPYTHON} || ${PORT_OPTIONS:MWEBSERVICE}
 	${RLN} ${STAGEDIR}${DATADIR}/sdk ${STAGEDIR}${VBOX_DIR}
 .endif
