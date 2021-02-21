@@ -381,7 +381,7 @@ lib/virtualbox/VBoxDD.so
 lib/virtualbox/VBoxDD2.so
 lib/virtualbox/VBoxDDR0.r0
 lib/virtualbox/VBoxDDU.so
-lib/virtualbox/UICommon.so
+%%QT%%lib/virtualbox/UICommon.so
 %%QT%%lib/virtualbox/VBoxDbg.so
 %%QT%%lib/virtualbox/VBoxDragAndDropSvc.so
 lib/virtualbox/VBoxEFI32.fd
