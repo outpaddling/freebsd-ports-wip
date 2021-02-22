@@ -1,6 +1,6 @@
---- src/VBox/Devices/Graphics/DevVGA-SVGA3d-glLdr.h.orig	2019-05-13 13:30:56 UTC
+--- src/VBox/Devices/Graphics/DevVGA-SVGA3d-glLdr.h.orig	2021-01-07 15:39:17 UTC
 +++ src/VBox/Devices/Graphics/DevVGA-SVGA3d-glLdr.h
-@@ -317,7 +317,7 @@ GLPFN BOOL (WINAPI *pfn_wglMakeCurrent)(HDC, HGLRC);
+@@ -338,7 +338,7 @@ GLPFN BOOL (WINAPI *pfn_wglMakeCurrent)(HDC, HGLRC);
  GLPFN BOOL (WINAPI *pfn_wglShareLists)(HGLRC, HGLRC);
  #define wglShareLists pfn_wglShareLists
  

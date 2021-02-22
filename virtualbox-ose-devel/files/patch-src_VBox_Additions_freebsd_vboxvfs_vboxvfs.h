@@ -1,4 +1,4 @@
---- src/VBox/Additions/freebsd/vboxvfs/vboxvfs.h.orig	2019-04-16 10:09:14 UTC
+--- src/VBox/Additions/freebsd/vboxvfs/vboxvfs.h.orig	2021-01-07 15:34:22 UTC
 +++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs.h
 @@ -1,8 +1,3 @@
 -/* $Id: vboxvfs.h $ */
@@ -7,7 +7,7 @@
 - */
 -
  /*
-  * Copyright (C) 2010-2019 Oracle Corporation
+  * Copyright (C) 2010-2020 Oracle Corporation
   *
 @@ -24,72 +19,371 @@
  #define VBOXVFS_VFSNAME "vboxvfs"

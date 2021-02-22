@@ -1,4 +1,4 @@
---- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vfsops.c.orig	2019-01-25 18:12:34 UTC
+--- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vfsops.c.orig	2021-01-07 15:34:22 UTC
 +++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vfsops.c
 @@ -1,8 +1,3 @@
 -/* $Id: vboxvfs_vfsops.c $ */
@@ -7,7 +7,7 @@
 - */
 -
  /*
-  * Copyright (C) 2008-2019 Oracle Corporation
+  * Copyright (C) 2008-2020 Oracle Corporation
   *
 @@ -14,245 +9,478 @@
   * VirtualBox OSE distribution. VirtualBox OSE is distributed in the
@@ -451,8 +451,8 @@
 +
 +	MNT_ILOCK(mp);
 +	mp->mnt_data = vboxfsmp;
-+	/* f_fsid is int32_t but serial is uint32_t, convert */
-+	memcpy(&mp->mnt_stat.f_fsid, &fsinfo.serial, sizeof(mp->mnt_stat.f_fsid));
++	mp->mnt_stat.f_fsid.val[0] = fsinfo.serial;
++	mp->mnt_stat.f_fsid.val[1] = 0;
 +	mp->mnt_flag |= MNT_LOCAL;
 +	if (readonly != 0)
 +		mp->mnt_flag |= MNT_RDONLY;

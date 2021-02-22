@@ -1,5 +1,5 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD: head/emulators/virtualbox-ose-kmod/Makefile 560502 2021-01-06 11:54:14Z nc $
+# $FreeBSD: head/emulators/virtualbox-ose-kmod/Makefile 501807 2019-05-16 22:16:06Z jkim $
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.18
@@ -23,7 +23,9 @@ USES=		cpe kmod tar:bzip2
 PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxnet
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64
+IGNORE_FreeBSD_11=	Fails to run on FreeBSD <13
+IGNORE_FreeBSD_12=	Fails to run on FreeBSD <13
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--build-headless
