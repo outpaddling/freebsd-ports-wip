@@ -60,7 +60,6 @@ sbin/cluster-localbase
 sbin/cluster-lock-local-pw
 sbin/cluster-lock-user
 sbin/cluster-lowest-uid
-sbin/cluster-mount-noauto
 sbin/cluster-munge-enable
 sbin/cluster-node-manager
 sbin/cluster-passwd-expiration
