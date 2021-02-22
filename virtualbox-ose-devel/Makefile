@@ -1,5 +1,5 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD: head/emulators/virtualbox-ose/Makefile 552134 2020-10-12 15:31:44Z arrowd $
+# $FreeBSD: head/emulators/virtualbox-ose/Makefile 501855 2019-05-17 11:56:47Z jkim $
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.18
@@ -27,7 +27,9 @@ CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64
+IGNORE_FreeBSD_11=	Fails to run on FreeBSD <13
+IGNORE_FreeBSD_12=	Fails to run on FreeBSD <13
 USES=		compiler:c++14-lang cpe gnome iconv pkgconfig ssl tar:bzip2
 USE_GNOME=	libidl libxml2
 

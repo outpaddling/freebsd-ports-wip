@@ -1,4 +1,4 @@
---- include/VBox/com/array.h.orig	2019-11-21 13:51:32.000000000 -0300
+--- include/VBox/com/array.h.orig	2021-01-07 15:31:25 UTC
 +++ include/VBox/com/array.h
 @@ -171,7 +171,7 @@
  
@@ -9,7 +9,7 @@
  /** @def VBOX_WITH_TYPE_TRAITS
   * Type traits are a C++ 11 feature, so not available everywhere (yet).
   * Only GCC 4.6 or newer and MSVC++ 16.0 (Visual Studio 2010) or newer.
-@@ -960,12 +960,12 @@
+@@ -960,12 +960,12 @@ class SafeArray : public Traits (public)
      {
          /** @todo r=klaus should do this as a AssertCompile, but cannot find a way which works. */
          Assert(sizeof(T) <= sizeof(Zeroes));
@@ -25,7 +25,7 @@
          return m.raw[aIdx];
  #endif
      }
-@@ -980,7 +980,7 @@
+@@ -980,7 +980,7 @@ class SafeArray : public Traits (public)
  #ifdef VBOX_WITH_XPCOM
          return m.arr[aIdx];
  #else
