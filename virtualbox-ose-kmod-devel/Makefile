@@ -25,7 +25,8 @@ WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxnet
 ONLY_FOR_ARCHS=	amd64
 IGNORE_FreeBSD_11=	Fails to run on FreeBSD <13
-IGNORE_FreeBSD_12=	Fails to run on FreeBSD <13
+# Uncomment before commit if we don't get it working on 12.x
+# IGNORE_FreeBSD_12=	Fails to run on FreeBSD <13
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--build-headless
