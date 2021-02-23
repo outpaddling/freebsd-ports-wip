@@ -28,9 +28,6 @@ CPE_PRODUCT=	vm_virtualbox
 
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 ONLY_FOR_ARCHS=	amd64
-IGNORE_FreeBSD_11=	Fails to run on FreeBSD <13
-# Uncomment before commit if we don't get it working on 12.x
-# IGNORE_FreeBSD_12=	Fails to run on FreeBSD <13
 USES=		compiler:c++14-lang cpe gnome iconv pkgconfig ssl tar:bzip2
 USE_GNOME=	libidl libxml2
 
@@ -205,18 +202,17 @@ KMK_FLAGS+=	-j${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == clang
-.if ${COMPILER_VERSION} == 80
-# XXX PR236616: Clang 8.0 caused runtime problems.
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${VBOX_LLVM_VER}:devel/llvm${VBOX_LLVM_VER}
+.if ${CHOSEN_COMPILER_TYPE} == clang
+# llvm10 in FreeBSD before r364284 miscompiles virtualbox 6.1 causing errors.
+# force llvm11 from ports
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300109
+BUILD_DEPENDS+=	clang11:devel/llvm${VBOX_LLVM_VER}
 CC=		${LOCALBASE}/bin/clang${VBOX_LLVM_VER}
 CXX=		${LOCALBASE}/bin/clang++${VBOX_LLVM_VER}
-VBOX_LLVM_VER?=	80
+VBOX_LLVM_VER?=	11
 .endif
 PATCH_DEPENDS+=	${LOCALBASE}/share/kBuild/tools/GXX3.kmk:devel/kBuild
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Devices-PC-ipxe-Makefile.kmk
-#EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-Config.kmk \
-		${PATCHDIR}/extrapatch-src-VBox-Devices-PC-ipxe-Makefile.kmk
 .endif
 
 .if ${PYTHON_MAJOR_VER} >= 3
