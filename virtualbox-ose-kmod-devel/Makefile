@@ -19,14 +19,11 @@ BUILD_DEPENDS=	kmk:devel/kBuild
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 
-USES=		cpe kmod tar:bzip2
+USES=		cpe compiler:c++14-lang kmod tar:bzip2
 PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxnet
 ONLY_FOR_ARCHS=	amd64
-IGNORE_FreeBSD_11=	Fails to run on FreeBSD <13
-# Uncomment before commit if we don't get it working on 12.x
-# IGNORE_FreeBSD_12=	Fails to run on FreeBSD <13
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--build-headless
@@ -77,6 +74,15 @@ KMK_ARCH=	freebsd.${ARCH}
 .endif
 
 .include <bsd.port.pre.mk>
+
+# llvm10 in FreeBSD before r364284 miscompiles virtualbox 6.1 causing errors.
+# force llvm11 from ports
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && ${OSVERSION} < 1300109
+BUILD_DEPENDS+=	clang11:devel/llvm${VBOX_LLVM_VER}
+CC=		${LOCALBASE}/bin/clang${VBOX_LLVM_VER}
+CXX=		${LOCALBASE}/bin/clang++${VBOX_LLVM_VER}
+VBOX_LLVM_VER?=	11
+.endif
 
 SYMBOLSUFFIX=	debug
 PLIST_SUB+=	SYMBOLSUFFIX=${SYMBOLSUFFIX}
