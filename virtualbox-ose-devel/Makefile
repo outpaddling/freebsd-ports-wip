@@ -1,5 +1,5 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD: head/emulators/virtualbox-ose/Makefile 501855 2019-05-17 11:56:47Z jkim $
+# $FreeBSD: head/emulators/virtualbox-ose/Makefile 552134 2020-10-12 15:31:44Z arrowd $
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.18
@@ -291,7 +291,7 @@ post-patch:
 .if empty(PORT_OPTIONS:MX11)
 	@${ECHO} 'VBOX_WITH_VMSVGA3D =' >> ${WRKSRC}/LocalConfig.kmk
 .endif
-.if ${COMPILER_TYPE} == clang
+.if ${CHOSEN_COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's| -finline-limit=8000||' \
 	    -e 's| -mpreferred-stack-boundary=2||' ${WRKSRC}/Config.kmk
 	@${REINPLACE_CMD} -e 's| -fpermissive||' ${WRKSRC}/Config.kmk \

@@ -75,15 +75,6 @@ KMK_ARCH=	freebsd.${ARCH}
 
 .include <bsd.port.pre.mk>
 
-# llvm10 in FreeBSD before r364284 miscompiles virtualbox 6.1 causing errors.
-# force llvm11 from ports
-.if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && ${OSVERSION} < 1300109
-BUILD_DEPENDS+=	clang11:devel/llvm${VBOX_LLVM_VER}
-CC=		${LOCALBASE}/bin/clang${VBOX_LLVM_VER}
-CXX=		${LOCALBASE}/bin/clang++${VBOX_LLVM_VER}
-VBOX_LLVM_VER?=	11
-.endif
-
 SYMBOLSUFFIX=	debug
 PLIST_SUB+=	SYMBOLSUFFIX=${SYMBOLSUFFIX}
 
