@@ -124,7 +124,6 @@ sbin/slurm-node-suspend
 sbin/slurm-restart
 sbin/slurm-resume-nodes
 sbin/slurm-resume-updated-nodes
-sbin/slurm-shutdown-idle-nodes
 sbin/slurm-sync-backup
 sbin/slurm-sync-config
 sbin/slurm-update-idle-nodes
