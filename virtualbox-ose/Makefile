@@ -1,9 +1,9 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD: head/emulators/virtualbox-ose/Makefile 552134 2020-10-12 15:31:44Z arrowd $
+# $FreeBSD: madpilot-test/emulators/virtualbox-ose/Makefile 11344 2021-03-04 11:59:28Z mad $
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.18
-CATEGORIES=	wip emulators
+CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
 EXTRACT_ONLY=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX}
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	yasm:devel/yasm \
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libxslt.so:textproc/libxslt \
 		libcurl.so:ftp/curl
-RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:wip/virtualbox-ose-kmod-devel
+RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:emulators/virtualbox-ose-kmod
 
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
@@ -124,6 +124,7 @@ _ELF32!=	kldstat -q -m elf32 && echo yes || echo no
 .if ${PORT_OPTIONS:MDEBUG}
 KMK_BUILDTYPE=	debug
 KMK_FLAGS+=	BUILD_TYPE=debug
+WITH_DEBUG=	yes
 .else
 KMK_BUILDTYPE=	release
 .endif
@@ -152,7 +153,7 @@ USES+=		python:build
 .if ${PORT_OPTIONS:MQT5}
 CONFIGURE_ARGS+=	--enable-qt5
 PLIST_SUB+=	QT=""
-USES+=		gl qmake:no_env qt:5
+USES+=		gl qmake:no_env qt:5 xorg
 USE_GL=		gl glu
 USE_QT=		buildtools_build core dbus gui linguisttools_build opengl
 USE_QT+=	printsupport widgets x11extras
@@ -174,7 +175,7 @@ VBOX_UTILS+=	vboxwebsrv webtest
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-USES+=		sdl
+USES+=		sdl xorg
 USE_SDL=	sdl
 USE_XORG+=	xorgproto x11 xcursor xext xinerama xmu xt
 VBOX_PROGS+=	VBoxSDL
