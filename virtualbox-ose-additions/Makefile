@@ -3,7 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.18
-CATEGORIES=	emulators
+CATEGORIES=	wip emulators
 MASTER_SITES=	https://download.virtualbox.com/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX?=	-additions
 DISTNAME=	VirtualBox-${PORTVERSION}
