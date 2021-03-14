@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=		generand
-DISTVERSION=		0.1-5
-DISTVERSIONSUFFIX=	-gf16f6b3
+DISTVERSION=		0.1-6
+DISTVERSIONSUFFIX=	-gd08d727
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE=	BSD2CLAUSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
 
-PLIST_FILES=	bin/generand
+PLIST_FILES=	bin/generand man/man1/generand.1.gz
 
 pre-build:
 	(cd ${WRKSRC} && ${MAKE} LOCALBASE=${LOCALBASE} depend)
