@@ -2,8 +2,10 @@
 # $FreeBSD: head/biology/htslib/Makefile 476245 2018-08-02 19:27:13Z fernape $
 
 PORTNAME=	htslib
-DISTVERSION=	1.11.0
+DISTVERSION=	1.12
 CATEGORIES=	wip biology devel
+# Github generated distfiles are incomplete
+MASTER_SITES=	https://github.com/samtools/htslib/releases/download/${DISTVERSION}/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	C library for high-throughput sequencing data formats
@@ -15,12 +17,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libdeflate.so:archivers/libdeflate
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf gmake localbase pathfix perl5 shebangfix
-USE_GITHUB=	yes
+USES=		autoreconf gmake localbase pathfix perl5 shebangfix tar:bzip2
 USE_PERL5=	test
 USE_LDCONFIG=	yes
 
-GH_ACCOUNT=		samtools
 GNU_CONFIGURE=		yes
 PATHFIX_MAKEFILEIN=	Makefile
 SHEBANG_FILES=		test/*.pl
