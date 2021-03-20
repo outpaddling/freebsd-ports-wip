@@ -4,7 +4,7 @@
 PORTNAME=	htslib
 DISTVERSION=	1.12
 CATEGORIES=	wip biology devel
-# Github generated distfiles are incomplete
+# Github generated distfiles are incomplete, so use custom tarball
 MASTER_SITES=	https://github.com/samtools/htslib/releases/download/${DISTVERSION}/
 
 MAINTAINER=	jwb@FreeBSD.org
