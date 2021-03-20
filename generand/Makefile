@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	generand
-DISTVERSION=	0.1.1-5
-DISTVERSIONSUFFIX=	-gac0c57d
+DISTVERSION=	0.1.2
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
