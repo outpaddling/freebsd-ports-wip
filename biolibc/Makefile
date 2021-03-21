@@ -1,9 +1,8 @@
 # $FreeBSD$
 
-PORTNAME=		biolibc
-DISTVERSION=		0.1.0-40
-DISTVERSIONSUFFIX=	-g632eb8b
-CATEGORIES=		wip biology
+PORTNAME=	biolibc
+DISTVERSION=	0.1.1
+CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Low-level high-performance bioinformatics library
