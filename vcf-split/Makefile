@@ -1,9 +1,8 @@
 # $FreeBSD$
 
-PORTNAME=		vcf-split
-DISTVERSION=		0.1.0-20
-DISTVERSIONSUFFIX=	-g25247f8
-CATEGORIES=		wip biology
+PORTNAME=	vcf-split
+DISTVERSION=	0.1.1
+CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Split a multi-sample VCF into single-sample VCFs
