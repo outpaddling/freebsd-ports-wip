@@ -1,9 +1,8 @@
 # $FreeBSD$
 
-PORTNAME=		vcf2hap
-DISTVERSION=		0.1.1-21
-DISTVERSIONSUFFIX=	-gb15aa14
-CATEGORIES=		wip biology
+PORTNAME=	vcf2hap
+DISTVERSION=	0.1.2
+CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Generate .hap file from VCF for haplohseq
@@ -11,7 +10,7 @@ COMMENT=	Generate .hap file from VCF for haplohseq
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	biolibc>=0.1.0:wip/biolibc
+BUILD_DEPENDS=	biolibc>=0.1.1:biology/biolibc
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
