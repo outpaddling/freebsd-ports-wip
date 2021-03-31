@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	igv
-DISTVERSION=	2.9.2
+DISTVERSION=	2.9.4
 CATEGORIES=	wip biology java
 MASTER_SITES=	https://data.broadinstitute.org/igv/projects/downloads/${DISTVERSION:R}/
 DISTNAME=	IGV_${PORTVERSION}
