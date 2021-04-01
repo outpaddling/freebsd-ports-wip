@@ -1,0 +1,4 @@
+A python extension, written in C, for quick access to 2bit files for packed
+nucleotide sequences. The extension uses lib2bit for file access.
+
+WWW: https://pypi.org/project/py2bit/
