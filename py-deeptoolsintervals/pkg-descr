@@ -1,0 +1,4 @@
+Deeptools_intervals is an interval tree backend designed to interface with
+deepTools, that support metadata associated with each interval.
+
+WWW: https://pypi.python.org/pypi/deeptoolsintervals
