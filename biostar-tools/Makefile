@@ -12,6 +12,8 @@ COMMENT=	Meta-port for Biostar Handbook tools
 # snpeff
 # readseq
 # ucsc-bedgraphtobigwig
+# Other tools mentioned
+# crossmap (conda) for translating coordinates from old genome builds
 RUN_DEPENDS=	wget>0:ftp/wget \
 		nano>0:editors/nano \
 		parallel>0:sysutils/parallel \
