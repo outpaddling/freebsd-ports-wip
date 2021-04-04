@@ -15,5 +15,5 @@ platform=`uname -s`
 # GOARCH=x86-64
 # export GOOS GOARCH
 
-go build -o xtract."$platform" xtract.go common.go
-go build -o rchive."$platform" rchive.go common.go
+go build -o xtract."$platform" xtract.go
+go build -o rchive."$platform" rchive.go
