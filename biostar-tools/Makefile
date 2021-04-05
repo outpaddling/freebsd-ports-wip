@@ -7,13 +7,12 @@ CATEGORIES=	wip biology
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Meta-port for Biostar Handbook tools
 
-# Deps from http://data.biostarhandbook.com/install/conda.txt
+# Deps from http://data.biostarhandbook.com/install/conda.txt:
 # bbmap
 # snpeff
 # readseq
 # ucsc-bedgraphtobigwig
-# Other tools mentioned
-# crossmap (conda) for translating coordinates from old genome builds
+# Other tools mentioned:
 RUN_DEPENDS=	wget>0:ftp/wget \
 		nano>0:editors/nano \
 		parallel>0:sysutils/parallel \
@@ -39,10 +38,12 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		${PYTHON_PKGNAMEPREFIX}biopython>0:biology/py-biopython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysam>0:biology/py-pysam@${PY_FLAVOR} \
 		freebayes>0:biology/freebayes \
-		seqkit>0:wip/seqkit \
 		p5-Net-SSLeay>0:security/p5-Net-SSLeay \
 		bioawk>0:biology/bioawk \
-		vt>0:biology/vt
+		vt>0:biology/vt \
+		${PYTHON_PKGNAMEPREFIX}crossmap>0:wip/py-crossmap@${PY_FLAVOR}
+
+# Broken		seqkit>0:wip/seqkit \
 
 USES=		metaport python
 
