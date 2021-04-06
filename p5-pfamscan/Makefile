@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pfamscan
 PORTVERSION=	2013.10.15

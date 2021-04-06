@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	trinotate
 PORTVERSION=	2.0.1

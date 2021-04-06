@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	beast-mcmc
 PORTVERSION=	1.8.3

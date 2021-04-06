@@ -1,5 +1,4 @@
 # Created by: Damian Gerow <dgerow@afflictions.org>
-# $FreeBSD: head/security/openconnect/Makefile 458641 2018-01-10 14:01:49Z zi $
 
 PORTNAME=		openconnect
 DISTVERSION=		7.08-92

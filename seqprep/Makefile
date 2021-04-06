@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	seqprep
 PORTVERSION=	1.1

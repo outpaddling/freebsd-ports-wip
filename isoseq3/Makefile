@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		IsoSeq3
 DISTVERSION=		3.0.0

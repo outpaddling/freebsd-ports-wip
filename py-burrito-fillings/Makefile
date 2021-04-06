@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Do not upgrade this port beyond 0.1.x before testing with biology/py-qiime
 
 PORTNAME=	burrito-fillings

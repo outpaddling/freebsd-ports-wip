@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	parcel
 PORTVERSION=	0.2.2

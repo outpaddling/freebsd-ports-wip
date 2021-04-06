@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	edirect
 PORTVERSION=	14.8.20210329

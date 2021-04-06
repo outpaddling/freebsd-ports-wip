@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	u3-tool
 PORTVERSION=	0.3

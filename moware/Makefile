@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	moware
 PORTVERSION=	1.0

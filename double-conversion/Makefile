@@ -1,5 +1,4 @@
 # Created by: Waitman Gobble <waitman@waitman.net>
-# $FreeBSD: head/devel/double-conversion/Makefile 493133 2019-02-16 23:30:01Z yuri $
 
 PORTNAME=	double-conversion
 PORTVERSION=	3.1.5

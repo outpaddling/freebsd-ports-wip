@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pbcore
 # pbh5tools does not work with latest pbcore release, 1.2.x

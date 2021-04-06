@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/fastahack/Makefile 467485 2018-04-16 14:50:46Z jwb $
 
 PORTNAME=		fastahack
 DISTVERSIONPREFIX=	v

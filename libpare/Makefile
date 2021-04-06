@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libpare
 DISTVERSION=	1.1.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bcl2fastq
 DISTVERSION=	2.20.0

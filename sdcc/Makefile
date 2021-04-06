@@ -1,4 +1,3 @@
-# $FreeBSD: head/lang/sdcc/Makefile 487272 2018-12-12 01:35:33Z gerald $
 
 PORTNAME=	sdcc
 PORTVERSION=	3.8.0

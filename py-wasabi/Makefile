@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wasabi
 DISTVERSION=	0.7.0

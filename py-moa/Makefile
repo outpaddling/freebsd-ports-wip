@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	moa
 PORTVERSION=	0.11.24

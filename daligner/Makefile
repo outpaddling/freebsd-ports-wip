@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 # Note: pthreads performance on FreeBSD 10.1 is lacking compared to
 # CentOS 6 on identical hardware.  Investigate tuning options.

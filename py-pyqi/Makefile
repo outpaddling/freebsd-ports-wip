@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyqi
 PORTVERSION=	0.3.2

@@ -1,6 +1,3 @@
-#
-# $FreeBSD: ports/math/lensnns/Makefile,v 1.2 2008/02/07 12:49:17 tabthorpe Exp $
-#
 
 PORTNAME=	lensnns
 PORTVERSION=	2.63

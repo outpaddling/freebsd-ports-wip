@@ -1,4 +1,3 @@
-# $FreeBSD: head/archivers/py-xopen/Makefile 500186 2019-04-27 01:22:33Z jwb $
 
 PORTNAME=	xopen
 DISTVERSION=	1.1.0	# py-cutadapt 3.2 requires 1.1.x

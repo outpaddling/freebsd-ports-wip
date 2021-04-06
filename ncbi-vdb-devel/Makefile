@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ncbi-vdb
 DISTVERSION=	2.10.9

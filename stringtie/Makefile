@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stringtie
 PORTVERSION=	1.3.4d

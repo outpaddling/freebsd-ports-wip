@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mcl
 DISTVERSION=	14

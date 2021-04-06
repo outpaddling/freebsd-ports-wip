@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fusera
 DISTVERSIONPREFIX=	v

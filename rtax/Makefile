@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rtax
 PORTVERSION=	0.984

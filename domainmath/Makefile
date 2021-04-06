@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	domainmath
 PORTVERSION=	0.1.3

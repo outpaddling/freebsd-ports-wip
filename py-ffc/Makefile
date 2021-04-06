@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ffc
 # Caution: Must use version compatible with other FEniCS project ports

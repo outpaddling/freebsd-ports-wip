@@ -1,4 +1,3 @@
-# $FreeBSD: head/science/openkim/Makefile 345491 2014-02-21 15:39:56Z thierry $
 
 PORTNAME=	openkim
 PORTVERSION=	1.1.1

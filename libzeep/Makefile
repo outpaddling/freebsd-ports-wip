@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		libzeep
 DISTVERSIONPREFIX=	v

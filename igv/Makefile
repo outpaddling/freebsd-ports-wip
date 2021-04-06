@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/igv/Makefile 528706 2020-03-19 09:33:13Z tobik $
 
 PORTNAME=	igv
 DISTVERSIONPREFIX=	v

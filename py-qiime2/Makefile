@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qiime2
 DISTVERSION=	2020.11.1

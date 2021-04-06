@@ -1,4 +1,3 @@
-# $FreeBSD: head/sysutils/endian/Makefile 460452 2018-01-31 01:07:07Z jwb $
 
 PORTNAME=	endian
 DISTVERSION=	1.1-2

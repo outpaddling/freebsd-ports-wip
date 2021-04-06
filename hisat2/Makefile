@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/hisat2/Makefile 489981 2019-01-11 16:02:05Z jwb $
 
 PORTNAME=		hisat2
 DISTVERSION=		2.1.0-23

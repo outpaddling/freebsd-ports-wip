@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	flair
 PORTVERSION=	0.3.25

@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	alberta
 PORTVERSION=	2.0.1

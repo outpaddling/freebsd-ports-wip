@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	klustakwik
 PORTVERSION=	0.3.0.rc3

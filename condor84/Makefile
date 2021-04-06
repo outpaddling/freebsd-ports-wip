@@ -1,5 +1,4 @@
 # Created by: Andy Pavlo
-# $FreeBSD: head/sysutils/condor/Makefile 484374 2018-11-07 00:28:16Z linimon $
 
 # Note: Make sure there are no other versions of HTCondor installed during
 #       build.  The build system may pick up incompatible headers and libs.

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bam-readcount
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Johann Visagie <johann@egenetics.com>
-# $FreeBSD: head/biology/py-biopython/Makefile 507372 2019-07-26 20:46:53Z gerald $
 
 PORTNAME=	biopython
 DISTVERSION=	1.78

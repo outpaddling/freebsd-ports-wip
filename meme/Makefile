@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	meme
 PORTVERSION=	4.11.1

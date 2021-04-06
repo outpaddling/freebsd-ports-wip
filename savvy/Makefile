@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	savvy
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	collectl
 PORTVERSION=	4.0.2

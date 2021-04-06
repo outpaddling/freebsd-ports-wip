@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	coreterminal
 #DISTVERSIONPREFIX=	v

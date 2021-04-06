@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	logic
 PORTVERSION=	1.1.30

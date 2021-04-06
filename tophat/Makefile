@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tophat
 DISTVERSIONPREFIX=	v

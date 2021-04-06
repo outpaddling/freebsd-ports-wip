@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	q2studio
 DISTVERSION=	2019.7.0

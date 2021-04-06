@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		centrifuge
 DISTVERSIONPREFIX=	v

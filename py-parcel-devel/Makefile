@@ -1,4 +1,3 @@
-# $FreeBSD$
 # 
 # to do:
 # Unbundle udt

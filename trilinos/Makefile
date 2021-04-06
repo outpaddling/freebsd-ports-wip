@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	trilinos
 PORTVERSION=	10.10.2

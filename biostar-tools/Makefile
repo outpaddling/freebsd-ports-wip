@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	biostar-tools
 DISTVERSION=	0.1

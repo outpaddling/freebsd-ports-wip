@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	eggnog-mapper
 PORTVERSION=	1.0.3

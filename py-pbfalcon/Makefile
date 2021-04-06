@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pbfalcon
 PORTVERSION=	2016.07.21

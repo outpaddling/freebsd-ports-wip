@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	freesurfer
 DISTVERSIONPREFIX=	release_

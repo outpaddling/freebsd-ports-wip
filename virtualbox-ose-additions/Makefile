@@ -1,5 +1,4 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD: head/emulators/virtualbox-ose-additions/Makefile 561713 2021-01-16 08:10:08Z antoine $
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.18

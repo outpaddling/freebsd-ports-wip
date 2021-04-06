@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	htseq
 PORTVERSION=	0.6.1p1

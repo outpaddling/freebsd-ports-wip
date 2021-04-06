@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libstempo
 PORTVERSION=	2.2.5

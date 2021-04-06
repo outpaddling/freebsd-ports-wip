@@ -1,4 +1,3 @@
-# $FreeBSD$
 # http://www.openfoam.org/download/git.php
 
 PORTNAME=	openfoam

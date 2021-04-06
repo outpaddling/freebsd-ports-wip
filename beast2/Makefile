@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	beast2
 PORTVERSION=	2.4.3

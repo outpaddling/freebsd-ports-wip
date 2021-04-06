@@ -1,6 +1,3 @@
-#
-# $FreeBSD: ports/devel/cross-binutils/Makefile,v 1.17 2011/04/03 01:03:00 stas Exp $
-#
 
 PORTNAME=	binutils
 PORTVERSION=	2.21
@@ -87,9 +84,7 @@ PKGNAMEPREFIX=	cross-
 IGNORE=		you should define TGTARCH and TGTABI to build port
 .endif
 
-#
 # Macro to fix up info referencies
-#
 FIXREFS=	${SH} -c '${REINPLACE_CMD} -E \
 		-e "s,$$0\.(texi|info),${OURTARGET}-$$0.\1,g" \
 		-e "s,(@file)\{$$0\},\1\{${OURTARGET}-$$0\},g" \
@@ -98,9 +93,7 @@ FIXREFS=	${SH} -c '${REINPLACE_CMD} -E \
 .include <bsd.port.pre.mk>
 
 post-patch:
-#
 # Patch and rename info files
-#
 	@${FIXREFS} as ${WRKSRC}/gas/doc/as.texinfo \
 		${WRKSRC}/gas/doc/Makefile.in
 	@${FIXREFS} bfd ${WRKSRC}/bfd/doc/bfd.texinfo \
@@ -123,19 +116,15 @@ post-patch:
 	@${MV} ${WRKSRC}/gprof/gprof.texi \
 		${WRKSRC}/gprof/${OURTARGET}-gprof.texi
 
-#
 # Disable install target in some directories
-#
 	@${REINPLACE_CMD} -E -e 's,^(install:).*,\1,' \
 		${WRKSRC}/etc/Makefile.in \
 		${WRKSRC}/libiberty/Makefile.in \
 		${WRKSRC}/opcodes/Makefile.in
 
 post-install:
-#
 # Add some plist items (we don't list them directly, since the set vary
 # accross different targets
-#
 	@${FIND} -ds ${PREFIX}/${OURTARGET} ! -type d | \
 		${SED} -e 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} -ds ${PREFIX}/${OURTARGET} -type d | \

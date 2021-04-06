@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	espresso
 PORTVERSION=	5.0.2

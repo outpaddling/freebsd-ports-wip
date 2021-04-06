@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/fastp/Makefile 500737 2019-05-03 14:41:57Z jwb $
 
 PORTNAME=		fastp
 DISTVERSIONPREFIX=	v

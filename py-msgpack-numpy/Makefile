@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	msgpack-numpy
 DISTVERSION=	0.4.6.post0

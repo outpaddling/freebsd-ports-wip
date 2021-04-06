@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Do not upgrade this port beyond 0.1.x before testing with py-qiime
 
 PORTNAME=	qiime-default-reference

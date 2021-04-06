@@ -1,4 +1,3 @@
-# $FreeBSD: head/devel/linux-c6-ncurses-base/Makefile 392922 2015-07-26 13:35:29Z antoine $
 
 # http://vault.centos.org/centos/6.9/os/x86_64/Packages/
 

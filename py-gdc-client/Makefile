@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gdc-client
 PORTVERSION=	1.2.0

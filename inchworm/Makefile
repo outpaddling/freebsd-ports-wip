@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	inchworm
 PORTVERSION=	03132011

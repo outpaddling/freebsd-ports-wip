@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	hilbplug2ffmap
 PORTVERSION=	1.0

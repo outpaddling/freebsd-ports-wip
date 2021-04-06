@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Do not upgrade this port before testing the new version with biology/py-qiime
 # 1.1.1 does not work with qiime
 

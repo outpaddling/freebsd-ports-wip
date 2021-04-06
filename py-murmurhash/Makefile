@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		murmurhash
 DISTVERSIONPREFIX=	v

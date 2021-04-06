@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	classifier
 PORTVERSION=	2.2

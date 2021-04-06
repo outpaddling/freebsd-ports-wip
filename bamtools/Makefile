@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/bamtools/Makefile 465808 2018-03-28 13:26:31Z jwb $
 
 PORTNAME=	bamtools
 DISTVERSIONPREFIX=	v

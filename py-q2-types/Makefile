@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	q2-types
 DISTVERSION=	2020.11.1

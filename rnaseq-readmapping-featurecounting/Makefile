@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rna-pipeline1
 PORTVERSION=	0.1

@@ -1,4 +1,3 @@
-# $FreeBSD: head/graphics/dri/Makefile 378134 2015-01-30 01:03:22Z kwm $
 
 PORTNAME=	dri
 PORTVERSION=	${MESAVERSION}

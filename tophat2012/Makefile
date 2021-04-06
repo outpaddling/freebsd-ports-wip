@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tophat
 PORTVERSION=	2.0.12

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	virusseq
 PORTVERSION=	2016.06.10

@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/vcflib/Makefile 473010 2018-06-22 00:03:08Z linimon $
 
 PORTNAME=		vcflib
 DISTVERSIONPREFIX=	v

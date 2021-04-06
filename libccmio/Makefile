@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	libccmio
 PORTVERSION=	2.6.1

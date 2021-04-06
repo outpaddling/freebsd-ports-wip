@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fastphase
 PORTVERSION=	2015.09.17

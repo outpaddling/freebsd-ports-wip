@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dolfin
 DISTVERSION=	2017.2.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lattice
 DISTVERSION=	0.20-34

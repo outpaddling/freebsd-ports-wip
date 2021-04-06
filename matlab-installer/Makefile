@@ -1,4 +1,3 @@
-# $FreeBSD: head/math/matlab-installer/Makefile 460452 2018-01-31 01:07:07Z jwb $
 
 PORTNAME=	matlab-installer
 PORTVERSION=	0.2

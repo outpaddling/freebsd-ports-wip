@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	papp
 PORTVERSION=	0.3.2

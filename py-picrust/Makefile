@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	picrust
 PORTVERSION=	20151129

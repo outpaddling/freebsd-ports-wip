@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mclust
 DISTVERSION=	5.2.2

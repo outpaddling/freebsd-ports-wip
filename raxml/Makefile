@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		raxml
 DISTVERSIONPREFIX=	v

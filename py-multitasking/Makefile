@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	multitasking
 DISTVERSION=	0.0.9

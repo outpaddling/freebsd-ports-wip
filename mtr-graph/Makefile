@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mtr
 PORTVERSION=	0.85

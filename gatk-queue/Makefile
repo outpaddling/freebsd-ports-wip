@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	GenomeAnalysisTKQueue
 PORTVERSION=	3.1

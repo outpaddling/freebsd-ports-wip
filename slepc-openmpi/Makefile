@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	slepc
 PORTVERSION=	3.5.2

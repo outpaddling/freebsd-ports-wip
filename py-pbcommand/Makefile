@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pbcommand
 PORTVERSION=	0.1.14

@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/bolt-lmm/Makefile 550247 2020-09-27 07:41:33Z linimon $
 
 PORTNAME=	bolt-lmm
 DISTVERSION=	2.3.4

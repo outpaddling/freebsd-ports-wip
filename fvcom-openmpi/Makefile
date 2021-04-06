@@ -1,4 +1,3 @@
-# $FreeBSD: head/science/fvcom-mpi/Makefile 351165 2014-04-13 00:17:45Z danilo $
 
 PKGNAMESUFFIX=	-openmpi
 

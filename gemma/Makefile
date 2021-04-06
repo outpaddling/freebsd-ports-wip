@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/gemma/Makefile 501990 2019-05-18 22:41:15Z jwb $
 
 PORTNAME=	gemma
 DISTVERSION=	0.98.3

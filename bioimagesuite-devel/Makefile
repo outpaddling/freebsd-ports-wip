@@ -1,12 +1,7 @@
 ############################################################################
-#
-# $FreeBSD$
-#
-#
 ############################################################################
 # www.neuro.mcw.edu has the latest source distribution from which this port
 # is built.  It will be updated as time permits and necessiaty requires.
-#
 
 PORTNAME=	bioimagesuite
 PORTVERSION=	2.6

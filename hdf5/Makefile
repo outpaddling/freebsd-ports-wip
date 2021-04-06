@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD: head/science/hdf5/Makefile 529832 2020-03-29 20:41:45Z antoine $
 
 PORTNAME=	hdf5
 PORTVERSION=	1.12.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bpcscripts
 PORTVERSION=	2016.02.09

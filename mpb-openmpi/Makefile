@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 WITH_OPENMPI=	yes
 

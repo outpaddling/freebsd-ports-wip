@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	microbiomeutil
 PORTVERSION=	r20110519

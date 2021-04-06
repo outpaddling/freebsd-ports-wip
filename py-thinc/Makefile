@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		thinc
 DISTVERSION=		7.4.1

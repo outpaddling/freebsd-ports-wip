@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mshr
 DISTVERSION=	2017.2.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	metagenomeSeq
 DISTVERSION=	1.16.0

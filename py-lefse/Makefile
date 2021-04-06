@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lefse
 DISTVERSION=	1.0.8

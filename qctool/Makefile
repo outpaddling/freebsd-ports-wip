@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qctool
 DISTVERSION=	2.0.8

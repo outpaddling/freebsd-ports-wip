@@ -1,4 +1,3 @@
-# $FreeBSD: head/science/fvcom/Makefile 437439 2017-04-01 15:23:30Z gerald $
 
 PORTNAME=	fvcom
 PORTVERSION=	4.0

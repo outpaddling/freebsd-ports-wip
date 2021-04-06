@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	meep
 PKGNAMEPREFIX=	python-

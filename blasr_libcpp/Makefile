@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	blasr_libcpp
 DISTVERSION=	g20180329

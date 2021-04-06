@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	uchime
 PORTVERSION=	4.2.40

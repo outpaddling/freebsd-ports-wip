@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stop-words
 PORTVERSION=	2015.02.21

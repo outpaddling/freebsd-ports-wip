@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hdmedians
 DISTVERSION=	0.13

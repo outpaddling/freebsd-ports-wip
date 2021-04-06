@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	1Dmean
 PORTVERSION=	1.0

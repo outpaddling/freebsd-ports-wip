@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rnammer
 PORTVERSION=	1.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pedstats
 PORTVERSION=	0.6.12

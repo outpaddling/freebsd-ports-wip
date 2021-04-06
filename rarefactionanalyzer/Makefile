@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rarefactionanalyzer
 PORTVERSION=	0.0.0p20170111

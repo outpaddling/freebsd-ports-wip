@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	dvdformat
 PORTVERSION=	0.1

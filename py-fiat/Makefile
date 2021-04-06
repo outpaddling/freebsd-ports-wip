@@ -1,4 +1,3 @@
-# $FreeBSD: head/math/py-fiat/Makefile 460452 2018-01-31 01:07:07Z jwb $
 
 PORTNAME=	fiat
 # Caution: Must use version compatible with other FEniCS project ports

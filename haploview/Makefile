@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	haploview
 PORTVERSION=	4.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	eigensoft
 PORTVERSION=	2015.09.17

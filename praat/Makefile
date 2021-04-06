@@ -1,4 +1,3 @@
-# $FreeBSD: head/audio/praat/Makefile 517040 2019-11-08 09:27:56Z tobik $
 
 PORTNAME=		praat
 DISTVERSIONPREFIX=	v

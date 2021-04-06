@@ -1,5 +1,4 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD: head/emulators/virtualbox-ose-kmod/Makefile 501807 2019-05-16 22:16:06Z jkim $
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.18

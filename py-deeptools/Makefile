@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	deepTools
 DISTVERSION=	3.5.1

@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	ffnhfilter
 PORTVERSION=	1.0

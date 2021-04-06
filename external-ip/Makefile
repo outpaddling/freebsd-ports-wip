@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	external-ip
 PORTVERSION=	0.1

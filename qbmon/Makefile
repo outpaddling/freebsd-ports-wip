@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qbmon
 DISTVERSION=	g20200628

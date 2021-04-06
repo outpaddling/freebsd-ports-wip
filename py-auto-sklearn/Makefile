@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	auto-sklearn
 # DISTVERSIONPREFIX=	v.

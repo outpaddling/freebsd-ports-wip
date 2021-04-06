@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sdcc
 DISTVERSIONPREFIX=	src-

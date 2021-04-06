@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	consensuscore
 PORTVERSION=	2.3

@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/kallisto/Makefile 526244 2020-02-15 23:09:19Z jwb $
 
 PORTNAME=		kallisto
 DISTVERSIONPREFIX=	v

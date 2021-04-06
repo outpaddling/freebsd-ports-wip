@@ -1,4 +1,3 @@
-# $FreeBSD: head/devel/linux-c6-libglade2/Makefile 372445 2014-11-11 13:06:39Z xmj $
 
 PORTNAME=	ORBit2
 PORTVERSION=	2.14.17

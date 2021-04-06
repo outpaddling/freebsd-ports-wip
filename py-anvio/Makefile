@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		anvio
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	port-dev
 DISTVERSION=	0.3.0-11

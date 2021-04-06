@@ -1,5 +1,4 @@
 # Created by: Maurice Castro <maurice@serc.rmit.edu.au>
-# $FreeBSD: head/math/R/Makefile 532707 2020-04-23 20:14:49Z jbeich $
 
 PORTNAME=	R
 DISTVERSION=	4.0.0

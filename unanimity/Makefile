@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/unanimity/Makefile 488341 2018-12-25 20:25:39Z tcberner $
 
 PORTNAME=		unanimity
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	samtools
 PORTVERSION=	0.1.19

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	omics
 PORTVERSION=	1.1.3
@@ -31,67 +30,48 @@ RUN_DEPENDS=	samtools>=0:biology/samtools \
 		${PYTHON_PKGNAMEPREFIX}drmaa>0:wip/py-drmaa \
 		${PYTHON_PKGNAMEPREFIX}ruffus>0:wip/py-ruffus \
 
-#
 # R Packages Needed
-#
 # In R, you can cut and copy this to install all required packages:
-#
 # install.packages(c("bibtex",    "AnnotationDbi", "cluster", "cummeRbund", "data.table", "DBI", "DESeq2", "devtools",    "dplyr",        "gdata",
 # "ggplot2", "graphite", "igraph", "KEGGREST","knitr", "knitrBootstrap",  "lattice", "locfit",    "pamr", "pander",       "pathview",
 # "plyr","RColorBrewer","Rcpp",   "RcppArmadillo", "RCurl", "ReactomePA", "RefManageR","RJSONIO","RSQLite",
 # "stringr","survival", "XML", "xtable",  "yaml"))
-#
 # RNA-seq (Tuxedo)
-#
 #    FASTQC: 	http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 #    TOPHAT: 	http://tophat.cbcb.umd.edu/
 #    CUFFLINKS: 	http://cufflinks.cbcb.umd.edu/
-#
 # RNA-seq (Anders 2013)
-#
 #    FASTQC: 	http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 #    STAR: 	http://code.google.com/p/rna-star/
 #    SAMTOOLS: 	http://samtools.sourceforge.net/
 #    HTSEQ: 	http://www-huber.embl.de/users/anders/HTSeq/doc/index.html
-#
 # Whole Exome Sequencing (GATK)
-#
 #    FASTQC: 	http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 #    BWA: 	http://bio-bwa.sourceforge.net/
 #    PICARD: 	http://picard.sourceforge.net/
 #    GATK: 	https://www.broadinstitute.org/gatk/download
-#
 # Whole Genome Sequencing (GATK)
-#
 #    FASTQC: 	http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 #    BWA: 	http://bio-bwa.sourceforge.net/
 #    PICARD: 	http://picard.sourceforge.net/
 #    GATK: 	https://www.broadinstitute.org/gatk/download
-#
 # Whole Genome Sequencing (MUTECT)
-#
 #    FASTQC: 	http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 #    BWA: 	http://bio-bwa.sourceforge.net/
 #    MUTECT: 	http://www.broadinstitute.org/cancer/cga/mutect
-#
 # ChIP-seq (MACS)
-#
 #    FASTQC: 	http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 #    HOMER: 	http://homer.salk.edu/homer/ngs/index.html
 #    BOWTIE: 	http://bowtie-bio.sourceforge.net/index.shtml
 #    MACS: 	http://liulab.dfci.harvard.edu/MACS/
 #    BEDTOOLS: 	https://github.com/arq5x/bedtools2
 #    SAMTOOLS: 	http://samtools.sourceforge.net/
-#
 # ChIP-seq (HOMER)
-#
 #    FASTQC: 	http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 #    HOMER: 	http://homer.salk.edu/homer/ngs/index.html
 #    BOWTIE: 	http://bowtie-bio.sourceforge.net/index.shtml
 #    BEDTOOLS: 	https://github.com/arq5x/bedtools2
-#
 # Breast Cancer Personalized Genomics Report- RNAseq
-#
 #    FASTQC: 	http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 #    STAR: 	http://code.google.com/p/rna-star/
 #    SAMTOOLS: 	http://samtools.sourceforge.net/
@@ -109,10 +89,7 @@ RUN_DEPENDS=	samtools>=0:biology/samtools \
 #    SNPEFF: 	http://snpeff.sourceforge.net/
 #    SNPSIFT: 	http://snpeff.sourceforge.net/SnpSift.html
 #    VCFTOOLS: 	http://vcftools.sourceforge.net/
-#
-#
 # TCGA Reanalysis Pipeline - RNAseq
-#
 #    GeneTorrent: 	https://cghub.ucsc.edu/docs/user/software.html
 #    FASTQC: 	http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 #    STAR: 	http://code.google.com/p/rna-star/
@@ -131,26 +108,19 @@ RUN_DEPENDS=	samtools>=0:biology/samtools \
 #    SNPEFF: 	http://snpeff.sourceforge.net/
 #    SNPSIFT: 	http://snpeff.sourceforge.net/SnpSift.html
 #    VCFTOOLS: 	http://vcftools.sourceforge.net/
-#
-#
 # TCGA Reanalysis Pipeline - RNAseq Counts
-#
 #    GeneTorrent: 	https://cghub.ucsc.edu/docs/user/software.html
 #    FASTQC: 	http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 #    STAR: 	http://code.google.com/p/rna-star/
 #    SAMTOOLS: 	http://samtools.sourceforge.net/
 #    HTSEQ: 	http://www-huber.embl.de/users/anders/HTSeq/doc/index.html
-#
 # miRNAseq Counts (Anders 2013)
-#
 #    CutAdapt: 	http://code.google.com/p/cutadapt/
 #    FASTQC: 	http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 #    STAR: 	http://code.google.com/p/rna-star/
 #    SAMTOOLS: 	http://samtools.sourceforge.net/
 #    HTSEQ: 	http://www-huber.embl.de/users/anders/HTSeq/doc/index.html
-#
 # miRNAseq (Tuxedo)
-#
 #    CutAdapt: 	http://code.google.com/p/cutadapt/
 #    FASTQC: 	http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 #    TOPHAT: 	http://tophat.cbcb.umd.edu/

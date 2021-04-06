@@ -1,5 +1,4 @@
 # Created by: Artyom Mirgorodskiy <artyom.mirgorodsky@gmail.com>
-# $FreeBSD: head/ftp/linux-c6-curl/Makefile 441768 2017-05-26 10:26:39Z tijl $
 
 PORTNAME=	ksh
 PORTVERSION=	20120801

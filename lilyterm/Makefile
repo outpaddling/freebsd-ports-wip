@@ -1,4 +1,3 @@
-# $FreeBSD: head/x11/lilyterm/Makefile 456586 2017-12-18 03:55:29Z jwb $
 
 PORTNAME=		lilyterm
 DISTVERSIONPREFIX=	v

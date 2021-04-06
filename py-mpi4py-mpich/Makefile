@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mpi4py-mpich2
 

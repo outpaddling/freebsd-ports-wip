@@ -1,5 +1,4 @@
 # Created by: siasia
-# $FreeBSD$
 
 PORTNAME=	v8
 DISTVERSION=	3.15.10

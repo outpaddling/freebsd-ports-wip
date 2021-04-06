@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	format-cols
 DISTVERSION=	g20200929

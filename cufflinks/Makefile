@@ -1,4 +1,3 @@
-# $FreeBSD$
 # Do not upgrade until crash bugs are worked out in 2.2.1 or later
 
 PORTNAME=	cufflinks

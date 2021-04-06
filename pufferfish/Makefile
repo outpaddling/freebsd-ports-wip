@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		pufferfish
 DISTVERSIONPREFIX=	salmon-v

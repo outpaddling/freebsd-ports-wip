@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	graph-tool
 DISTVERSION=	2.27

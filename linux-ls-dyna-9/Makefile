@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ls-dyna9
 DISTVERSION=	9.2.0

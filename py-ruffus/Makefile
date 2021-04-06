@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ruffus
 PORTVERSION=	2.6.3

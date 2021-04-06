@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qiime
 PORTVERSION=	1.8.0
@@ -35,7 +34,6 @@ PYDISTUTILS_PKGNAME=	qiime
 
 #####################
 # Base installation
-#
 # http://qiime.org/install/install.html
 # Canopy Express
 #    Python 2.7.3, numpy 1.5.1 - 1.7.1, MatPlotLib 1.1.0 - 1.3.1

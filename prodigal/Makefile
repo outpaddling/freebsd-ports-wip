@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		Prodigal
 DISTVERSIONPREFIX=	v

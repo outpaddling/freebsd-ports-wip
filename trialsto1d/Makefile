@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	trialsto1d
 PORTVERSION=	1.0

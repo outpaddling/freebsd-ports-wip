@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/stacks/Makefile 487272 2018-12-12 01:35:33Z gerald $
 
 PORTNAME=	stacks
 DISTVERSION=	1.48

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	htsjdk
 PORTVERSION=	1.133

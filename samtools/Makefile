@@ -1,5 +1,4 @@
 # Created by: Reed A. Cartwright <cartwright@asu.edu>
-# $FreeBSD: head/biology/samtools/Makefile 476246 2018-08-02 19:28:36Z fernape $
 
 PORTNAME=	samtools
 DISTVERSION=	1.12

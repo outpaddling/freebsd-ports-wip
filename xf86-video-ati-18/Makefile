@@ -1,4 +1,3 @@
-# $FreeBSD: head/x11-drivers/xf86-video-ati/Makefile 485243 2018-11-18 18:36:28Z linimon $
 
 PORTNAME=	xf86-video-ati
 PORTVERSION=	18.1.0

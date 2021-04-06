@@ -1,4 +1,3 @@
-# $FreeBSD: head/lang/pocl/Makefile 561641 2021-01-15 13:52:18Z dbaio $
 
 PORTNAME=		pocl
 PORTVERSION=		1.6

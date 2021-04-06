@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	caffe
 PORTVERSION=	2016.10.20

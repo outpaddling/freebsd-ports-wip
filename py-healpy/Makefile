@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	healpy
 PORTVERSION=	1.7.4

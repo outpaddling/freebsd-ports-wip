@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	ncview
 PORTVERSION=	2.1.2

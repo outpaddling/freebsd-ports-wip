@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mutect
 PORTVERSION=	1.1.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pynast
 PORTVERSION=	1.2.2

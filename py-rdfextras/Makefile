@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rdfextras
 PORTVERSION=	0.4

@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	parmgridgen
 PORTVERSION=	1.0

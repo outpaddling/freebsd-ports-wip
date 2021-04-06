@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		megahit
 DISTVERSIONPREFIX=	v

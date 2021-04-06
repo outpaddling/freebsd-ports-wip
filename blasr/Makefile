@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	blasr
 DISTVERSION=	g20180411

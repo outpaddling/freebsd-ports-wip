@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	runas
 DISTVERSION=	0.1.0-5

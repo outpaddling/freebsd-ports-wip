@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	permute
 DISTVERSION=	0.9-4

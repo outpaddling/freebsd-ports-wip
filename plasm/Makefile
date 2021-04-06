@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	plasm
 PORTVERSION=	0.1

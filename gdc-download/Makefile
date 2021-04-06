@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gdc-download
 PORTVERSION=	0.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mothur
 PORTVERSION=	1.36.1

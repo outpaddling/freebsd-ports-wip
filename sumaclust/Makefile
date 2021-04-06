@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sumaclust
 PORTVERSION=	1.0.20

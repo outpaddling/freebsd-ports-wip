@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 # Note: Make sure there are no older versions of HTCondor installed during
 #       build.  The build system may pick up incompatible headers and libs.

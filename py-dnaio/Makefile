@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/py-dnaio/Makefile 496770 2019-03-24 19:40:26Z jwb $
 
 PORTNAME=	dnaio
 DISTVERSION=	0.5.0	# py-cutadapt 3.3 requires 0.5.x

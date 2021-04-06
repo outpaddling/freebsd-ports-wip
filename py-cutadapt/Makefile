@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/py-cutadapt/Makefile 500187 2019-04-27 01:26:17Z jwb $
 
 PORTNAME=	cutadapt
 DISTVERSION=	3.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cDNA_primer
 PORTVERSION=	2015.08.17

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=       chip-pipeline1
 PORTVERSION=    0.1

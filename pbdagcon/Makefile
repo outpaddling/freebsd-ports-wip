@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pbdagcon
 DISTVERSION=	g20180411

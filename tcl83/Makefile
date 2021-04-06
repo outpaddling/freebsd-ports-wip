@@ -1,6 +1,3 @@
-#
-# $FreeBSD: ports/lang/tcl83/Makefile,v 1.80 2009/08/22 00:24:35 amdmi3 Exp $
-#
 
 PORTNAME=	tcl
 PORTVERSION=	8.3.5

@@ -1,4 +1,3 @@
-# $FreeBSD: head/math/matlab-installer/Makefile 368845 2014-09-22 10:40:00Z xmj $
 
 PORTNAME=	atomistix-installer
 PORTVERSION=	0.1

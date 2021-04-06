@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	time
 PORTVERSION=	1.7

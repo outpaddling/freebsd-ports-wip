@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bedops
 PORTVERSION=	2.4.20

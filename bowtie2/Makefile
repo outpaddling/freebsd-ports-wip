@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/bowtie2/Makefile 554390 2020-11-07 13:47:41Z jwb $
 
 PORTNAME=		bowtie2
 DISTVERSIONPREFIX=	v

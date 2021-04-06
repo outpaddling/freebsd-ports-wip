@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 # Test new versions with Trinity before upgrading
 

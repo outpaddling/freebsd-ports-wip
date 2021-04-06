@@ -1,6 +1,3 @@
-#
-# $FreeBSD: ports/devel/cross-gcc/Makefile,v 1.18 2011/04/03 01:03:00 stas Exp $
-#
 
 PORTNAME?=	gcc
 PORTVERSION=	4.5.2
@@ -24,10 +21,8 @@ LIB_DEPENDS=	gmp.10:math/gmp \
 		mpfr.4:math/mpfr \
 		mpc.2:math/mpc
 
-#
 # Temporary hack to deal with dependencies during package builds for
 # slave ports.
-#
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS=	${OURTARGET}-as:devel/${OURTARGET}-binutils
 RUN_DEPENDS=	${OURTARGET}-as:devel/${OURTARGET}-binutils
@@ -49,17 +44,13 @@ BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
 CONFIGURE_SCRIPT=	../${WRKSRC:C,^${WRKDIR}/?,,}/configure
 
-#
 # Newlib version to use
-#
 NEWLIB_VERSION=	1.19.0
 NEWLIB_EXTRACT_SUFX=.tar.gz
 
 OURTARGET=	${TGTARCH}-${TGTABI}
 
-#
 # override user-defined settings in make.conf
-#
 WITHOUT_CPU_CFLAGS=	yes
 MAKE_ENV=	NO_CPU_CFLAGS=true
 
@@ -128,9 +119,7 @@ PATCHFILES+=	gcc-core-4.5.2-rtems4.11-20110220.diff \
 CONFIGURE_ARGS+=	${WITH_OPTARGS}
 .endif
 
-#
 # Macro to fix up info referencies
-#
 FIXREFS=	${SH} -c '${REINPLACE_CMD} -E \
 		-e "s,(^|[[:space:]/])$$0\.(texi|info),\1${OURTARGET}-$$0.\2,g"\
 		-e "s,(@file)\{$$0\},\1\{${OURTARGET}-$$0\},g" \
@@ -197,54 +186,40 @@ post-extract:
 	@${MKDIR} ${CONFIGURE_WRKSRC}/
 
 post-patch:
-#
 # Fix INFO references
-#
 .for FILE in cpp cppinternals gcc gccint
 	@${FIXREFS} ${FILE} ${WRKSRC}/gcc/doc/*.texi ${WRKSRC}/gcc/Makefile.in
 	@${MV} ${WRKSRC}/gcc/doc/${FILE}.texi \
 		${WRKSRC}/gcc/doc/${OURTARGET}-${FILE}.texi
 .endfor
 
-#
 # Do not install manpages
-#
 	@${REINPLACE_CMD} -E -e '/^install:/,/^$$/s,install-man,,' \
 		${WRKSRC}/gcc/Makefile.in
 
-#
 # Do not install unneeded infofiles
-#
 	@${REINPLACE_CMD} -E \
 		-e '/\$$\(DESTDIR\)\$$\(infodir\)\/gccinstall.info/d' \
 		${WRKSRC}/gcc/Makefile.in
 
-#
 # Do not install libiberty
-#
 	@${REINPLACE_CMD} -E -e 's,^(install:).*,\1,' \
 		${WRKSRC}/libiberty/Makefile.in
 
 post-install:
-#
 # Install manpages
-#
 .for FILE in ${MANPAGES}
 	${INSTALL_MAN} ${WRKSRC}/gcc/doc/${FILE} \
 		${MAN1PREFIX}/man/man1/${OURTARGET}-${FILE}
 .endfor
 
-#
 # Generate symlinks for binutils binaries to let gcc found them
-#
 .for F in ${LN_BINARIES}   
 	@${LN} -sf ../../../../bin/${PKGNAMEPREFIX}$F \
 		${PREFIX}/libexec/gcc/${OURTARGET}/${PORTVERSION}/$F
 .endfor
 
-#
 # Build pkg-plist
-#
 .for DIR in ${GCC_AUTODIRS:S,^,${PREFIX}/,}
 	@${FIND} ${DIR} ! -type d ! -regex .*/ldscripts/[^/]* |\
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}

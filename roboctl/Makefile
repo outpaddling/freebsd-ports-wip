@@ -1,4 +1,3 @@
-# $FreeBSD: head/devel/roboctl/Makefile 327726 2013-09-20 17:17:44Z bapt $
 
 PORTNAME=	RoboCTL
 PORTVERSION=	0.3.9

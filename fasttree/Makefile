@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/fasttree/Makefile 507372 2019-07-26 20:46:53Z gerald $
 
 PORTNAME=	FastTree
 DISTVERSION=	2.1.10

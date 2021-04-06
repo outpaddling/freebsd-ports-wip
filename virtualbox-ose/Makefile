@@ -1,5 +1,4 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD: madpilot-test/emulators/virtualbox-ose/Makefile 11344 2021-03-04 11:59:28Z mad $
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.18

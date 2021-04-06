@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/seqtk/Makefile 466379 2018-04-03 20:57:05Z jwb $
 
 PORTNAME=		seqtk
 DISTVERSIONPREFIX=	v

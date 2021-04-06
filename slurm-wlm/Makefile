@@ -1,4 +1,3 @@
-# $FreeBSD: head/sysutils/slurm-wlm/Makefile 523858 2020-01-23 01:52:06Z jwb $
 
 PORTNAME=	slurm
 DISTVERSION=	20.02.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	docviewer
 PORTVERSION=	0.2.0

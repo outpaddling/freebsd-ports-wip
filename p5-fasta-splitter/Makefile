@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	splitter
 PORTVERSION=	0.2.4

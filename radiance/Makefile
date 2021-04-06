@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	radiance
 PORTVERSION=	4.1

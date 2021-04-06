@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	readseq
 DISTVERSION=	2.1.30-1

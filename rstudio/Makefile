@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rstudio
 #PORTVERSION=	0.98.490

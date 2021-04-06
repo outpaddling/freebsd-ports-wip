@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openmvs
 PORTVERSION=	0.7

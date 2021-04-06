@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sickle
 PORTVERSION=	1.33

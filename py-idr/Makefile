@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	idr
 DISTVERSION=	2.0.3

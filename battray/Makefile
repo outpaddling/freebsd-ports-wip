@@ -1,5 +1,4 @@
 # Created by: Martin Tournoij <martin@arp242.net>
-# $FreeBSD: head/sysutils/battray/Makefile 517057 2019-11-08 13:11:05Z tobik $
 
 PORTNAME=	battray
 DISTVERSIONPREFIX=	version-

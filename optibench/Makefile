@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	OptiBench
 DISTVERSION=	0.2.0-1

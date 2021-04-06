@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		gephi
 DISTVERSION=		0.9.2

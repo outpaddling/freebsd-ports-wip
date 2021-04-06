@@ -1,5 +1,4 @@
 # Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-# $FreeBSD: head/textproc/linux-c7-aspell/Makefile 503741 2019-06-08 15:59:46Z tijl $
 
 PORTNAME=	java-1.8.0-openjdk
 PORTVERSION=	1.8.0.242.b08

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vegan
 DISTVERSION=	2.4-2

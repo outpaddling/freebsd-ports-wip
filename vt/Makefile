@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/vt/Makefile 537984 2020-06-05 03:49:53Z linimon $
 
 PORTNAME=	vt
 DISTVERSION=	0.57721

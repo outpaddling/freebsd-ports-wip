@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mvapich2
 PORTVERSION=	2.1

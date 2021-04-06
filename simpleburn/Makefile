@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	simpleburn
 PORTVERSION=	1.8.4

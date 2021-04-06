@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vaultaire
 PORTVERSION=	1.1

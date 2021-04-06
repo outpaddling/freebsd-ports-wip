@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ectools
 PORTVERSION=	0.1

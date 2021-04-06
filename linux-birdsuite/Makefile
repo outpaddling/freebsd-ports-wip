@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	linux-birdsuite
 PORTVERSION=	1.5.5

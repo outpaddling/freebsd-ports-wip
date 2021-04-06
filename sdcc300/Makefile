@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sdcc
 PORTVERSION=	3.0.0

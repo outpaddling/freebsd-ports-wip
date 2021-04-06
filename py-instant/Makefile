@@ -1,5 +1,4 @@
 # Remove per Li-Wen's permission: Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
-# $FreeBSD: head/devel/py-instant/Makefile 460452 2018-01-31 01:07:07Z jwb $
 
 PORTNAME=	instant
 # Caution: Must use version compatible with other FEniCS project ports

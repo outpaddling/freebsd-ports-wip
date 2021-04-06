@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nco
 PORTVERSION=	4.4.8

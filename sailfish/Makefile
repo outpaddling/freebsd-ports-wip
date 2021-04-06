@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sailfish
 DISTVERSIONPREFIX=	v

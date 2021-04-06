@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	twintk
 DISTVERSION=	0.9.4-4

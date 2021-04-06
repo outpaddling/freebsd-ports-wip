@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyBigWig
 DISTVERSION=	0.3.18

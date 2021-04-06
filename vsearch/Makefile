@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/vsearch/Makefile 501148 2019-05-09 22:12:26Z jwb $
 
 PORTNAME=		vsearch
 DISTVERSIONPREFIX=	v

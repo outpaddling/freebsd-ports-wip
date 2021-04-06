@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	king
 DISTVERSION=	2.2.2

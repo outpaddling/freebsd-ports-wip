@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ape
 DISTVERSION=	5.4-1

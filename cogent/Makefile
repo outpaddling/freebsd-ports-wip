@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cogent
 PORTVERSION=	2016.10.04

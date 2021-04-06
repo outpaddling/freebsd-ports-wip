@@ -1,4 +1,3 @@
-# $FreeBSD$
 # This version is known to crash frequently
 
 PORTNAME=	cufflinks

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stm32flash
 PORTVERSION=	0.5

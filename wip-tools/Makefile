@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wip-tools
 PORTVERSION=	0.4.1

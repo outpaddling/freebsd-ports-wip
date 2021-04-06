@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # This is a stopgap measure.  Bedops is open source and portable and will
 # not require much work to build natively, but we had a researcher under
 # heavy time pressure, so I used the linux binaries to get him started.

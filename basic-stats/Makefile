@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	basic-stats
 DISTVERSION=	g20200325

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		pbcopper
 # DISTVERSION=	0.4.1 # Test with biology/unanimity before upgrading!

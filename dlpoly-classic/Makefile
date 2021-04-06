@@ -1,4 +1,3 @@
-# $FreeBSD: head/science/dlpoly-classic/Makefile 531521 2020-04-12 14:31:17Z jwb $
 
 PORTNAME=	dlpoly
 PORTVERSION=	1.10

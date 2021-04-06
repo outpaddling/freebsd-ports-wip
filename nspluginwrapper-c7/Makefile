@@ -1,5 +1,4 @@
 # Created by: Dave Grochowski
-# $FreeBSD: head/www/nspluginwrapper/Makefile 434241 2017-02-16 19:05:49Z jkim $
 
 PORTNAME=	nspluginwrapper
 PORTVERSION=	1.4.4

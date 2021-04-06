@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hgapi
 PORTVERSION=	1.7.2

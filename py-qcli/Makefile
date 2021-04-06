@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Do not uprade this port beyond 1.x before testing with biology/py-qiime
 
 PORTNAME=	qcli

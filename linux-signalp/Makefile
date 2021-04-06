@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	signalp
 PORTVERSION=	4.1

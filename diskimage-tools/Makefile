@@ -1,4 +1,3 @@
-# $FreeBSD: head/wip sysutils/diskimage-tools/Makefile 460452 2018-01-31 01:07:07Z jwb $
 
 PORTNAME=	diskimage-tools
 DISTVERSION=	0.2

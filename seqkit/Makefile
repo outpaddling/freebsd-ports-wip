@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	seqkit
 PORTVERSION=	0.6.0

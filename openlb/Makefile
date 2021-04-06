@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	openlb
 PORTVERSION=	0.7r0

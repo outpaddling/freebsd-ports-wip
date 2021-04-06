@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/cd-hit/Makefile 507372 2019-07-26 20:46:53Z gerald $
 
 PORTNAME=		cd-hit
 DISTVERSIONPREFIX=	V

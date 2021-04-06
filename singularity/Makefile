@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	singularity
 PORTVERSION=	2.5.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ginkgocadx
 PORTVERSION=	3.8.7

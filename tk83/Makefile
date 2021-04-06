@@ -1,6 +1,3 @@
-#
-# $FreeBSD: ports/x11-toolkits/tk83/Makefile,v 1.81 2011/09/03 16:13:25 dinoex Exp $
-#
 
 PORTNAME=	tk
 PORTVERSION=	8.3.5

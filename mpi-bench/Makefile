@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mpi-bench
 PORTVERSION=	0.1.1

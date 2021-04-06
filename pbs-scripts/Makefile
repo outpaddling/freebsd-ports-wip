@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	pbs-scripts
 PORTVERSION=	0.1

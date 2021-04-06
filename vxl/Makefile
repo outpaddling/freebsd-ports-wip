@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	vxl
 PORTVERSION=	1.14.0

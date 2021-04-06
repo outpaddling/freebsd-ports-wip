@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tablet
 DISTVERSION=	1.17.08.17

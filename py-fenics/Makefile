@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fenics
 PORTVERSION=	2017.2.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ngs
 PORTVERSION=	1.3.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	detonate
 PORTVERSION=	1.8.1

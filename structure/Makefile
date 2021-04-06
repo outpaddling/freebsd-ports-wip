@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 # http://pritchardlab.stanford.edu/structure_software/release_versions/v2.3.4/structure_kernel_source.tar.gz
 PORTNAME=	structure

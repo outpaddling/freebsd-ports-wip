@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # TODO:
 # Patch setup.py to avoid downloading files during build phase
 #     Remaining: sortmerna, suma_package, swarm
@@ -77,7 +75,6 @@ LICENSE=	GPLv2
 #                        'qiime-default-reference >= 0.1.2, < 0.2.0'],
 #      extras_require={'all': ['ipython[notebook] >= 3.1.0, < 4.0.0',
 #                              'sphinx >= 0.3']}
-#
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.9.0:math/py-numpy \
 		${PKGNAMEPREFIX}scipy>=0.14.0:science/py-scipy \

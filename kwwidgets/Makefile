@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	kwwidgets
 PORTVERSION=	2012.05.06

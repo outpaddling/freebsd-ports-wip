@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pysam
 PORTVERSION=	0.8.3

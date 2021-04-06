@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	mriadmin
 PORTVERSION=	0.1

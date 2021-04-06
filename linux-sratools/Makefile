@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sratools
 PORTVERSION=	2.10.9

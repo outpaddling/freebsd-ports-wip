@@ -1,4 +1,3 @@
-# $FreeBSD: head/wip devel/hwloc/Makefile 451721 2017-10-10 21:31:30Z linimon $
 
 PORTNAME=	hwloc
 PORTVERSION=	1.11.7

@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	remountnfs
 PORTVERSION=	0.1

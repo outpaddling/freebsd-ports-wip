@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xssp
 PORTVERSION=	3.0.1

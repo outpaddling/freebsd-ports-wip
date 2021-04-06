@@ -1,9 +1,7 @@
-# $FreeBSD: head/science/afni/Makefile 427397 2016-11-29 21:15:41Z jrm $
 
 ############################################################################
 # http://www.neuro.mcw.edu/Ports has the latest source distribution from
 #  which this port is built.  It will be updated as time permits.
-#
 # afni.nimh.nih.gov is the ultimate source for AFNI, and will always
 # contain the latest source release.  If this port is not up to date,
 # you can download the latest sources and build manually.

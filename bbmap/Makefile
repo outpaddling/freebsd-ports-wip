@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	BBMap
 DISTVERSION=	38.84

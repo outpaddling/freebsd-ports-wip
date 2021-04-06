@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	snptest
 PORTVERSION=	2.5.2

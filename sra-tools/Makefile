@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sra-tools
 DISTVERSION=	2.8.2-3

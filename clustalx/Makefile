@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	clustalx
 DISTVERSION=	2.1

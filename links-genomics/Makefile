@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	LINKS
 PKGNAMESUFFIX=	-genomics

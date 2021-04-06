@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	scythe
 PORTVERSION=	2016.02.10

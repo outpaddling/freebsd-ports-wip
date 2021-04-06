@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sumatra
 PORTVERSION=	0.7.4

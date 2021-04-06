@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cpat
 PORTVERSION=	1.2.2

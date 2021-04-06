@@ -1,4 +1,3 @@
-# $FreeBSD: head/textproc/py-rdflib/Makefile 374183 2014-12-07 10:01:36Z mva $
 
 PORTNAME=	rdflib
 PORTVERSION=	3.4.0

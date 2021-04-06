@@ -1,5 +1,4 @@
 # Created by: Reed A. Cartwright <cartwright@asu.edu>
-# $FreeBSD: head/biology/htslib/Makefile 476245 2018-08-02 19:27:13Z fernape $
 
 PORTNAME=	htslib
 DISTVERSION=	1.12

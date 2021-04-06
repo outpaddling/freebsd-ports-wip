@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 # Note: Maybe should be installed as part of google-cloud-sdk
 PORTNAME=	gsutil

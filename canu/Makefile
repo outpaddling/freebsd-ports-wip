@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/canu/Makefile 509290 2019-08-19 15:35:27Z jbeich $
 
 PORTNAME=		canu
 DISTVERSION=		2.1

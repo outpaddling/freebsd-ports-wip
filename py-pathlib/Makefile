@@ -1,4 +1,3 @@
-# $FreeBSD: head/devel/py-pathlib/Makefile 534966 2020-05-11 23:51:58Z dbaio $
 
 PORTNAME=	pathlib
 PORTVERSION=	1.0.1

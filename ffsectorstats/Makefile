@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	ffsectorstats
 PORTVERSION=	1.0

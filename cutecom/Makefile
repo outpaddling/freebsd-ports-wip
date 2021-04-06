@@ -1,5 +1,4 @@
 # Created by: Markus Brueffer <markus@FreeBSD.org>
-# $FreeBSD: head/comms/cutecom/Makefile 490472 2019-01-16 11:13:44Z tijl $
 
 PORTNAME=		cutecom
 DISTVERSIONPREFIX=	v

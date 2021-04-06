@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hapmix
 PORTVERSION=	1.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	spark
 PORTVERSION=	1.1.0

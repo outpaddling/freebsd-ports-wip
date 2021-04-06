@@ -1,4 +1,3 @@
-# $FreeBSD: head/science/py-tensorflow/Makefile 508257 2019-08-06 15:28:01Z yuri $
 
 PORTNAME=	tensorflow
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Koop Mast<kwm@FreeBSD.org>
-# $FreeBSD: head/sysutils/polkit/Makefile 440593 2017-05-10 21:37:57Z kwm $
 
 PORTNAME=	polkit
 PORTVERSION=	0.113

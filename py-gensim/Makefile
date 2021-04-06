@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gensim
 PORTVERSION=	2.2.0

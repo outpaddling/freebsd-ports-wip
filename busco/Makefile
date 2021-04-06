@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	busco
 PORTVERSION=	1.22

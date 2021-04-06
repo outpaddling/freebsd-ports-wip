@@ -1,5 +1,4 @@
 # Created by: Samuel Tardieu <sam@rfc1149.net>
-# $FreeBSD: head/devel/gputils/Makefile 405129 2016-01-03 11:23:38Z tijl $
 
 PORTNAME=	gputils
 DISTVERSION=	1.4.2-1

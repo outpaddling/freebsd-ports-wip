@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	deeptoolsintervals
 DISTVERSION=	0.1.9

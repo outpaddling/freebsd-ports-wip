@@ -1,4 +1,3 @@
-# $FreeBSD: head/www/py-pyjwt/Makefile 472884 2018-06-20 17:05:41Z mat $
 
 PORTNAME=	pyjwt
 PORTVERSION=	1.6.4

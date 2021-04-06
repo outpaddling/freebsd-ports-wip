@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	fvcom
 PORTVERSION=	3.1.6

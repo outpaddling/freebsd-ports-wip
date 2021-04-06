@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		cymem
 DISTVERSIONPREFIX=	v

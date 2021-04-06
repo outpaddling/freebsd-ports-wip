@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cpac
 PORTVERSION=	0.3.9.1
@@ -24,7 +23,6 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nibabel>=0:wip/py-nibabel
 # a build depend for ANTS, which will not be necessary if ANTS is installed as
 # a binary package.  Read the build instructions at the link above before
 # adding one of these as a CPAC depend!
-#
 #    cmake
 #    make
 #    build
@@ -40,8 +38,6 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nibabel>=0:wip/py-nibabel
 #    gsl
 #    zlib and its developer libraries
 #    Graphviz (optional; required for workflow graphs)
-#
-#
 #    SciPy and NumPy
 #    Nipype (version 0.10 for versions of C-PAC after 0.3.7, version 0.9.2 for C-PAC versions 0.3.4b, 0.3.5, and 0.3.6)
 #    Nibabel
@@ -56,10 +52,8 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nibabel>=0:wip/py-nibabel
 #    iPython (optional)
 #    PyGraphviz (optional; required for workflow graphs)
 #    Patsy
-#
 #    AFNI
 #    FSL
-#
 # Optional, but recommended
 #    C3D
 #    ANTS

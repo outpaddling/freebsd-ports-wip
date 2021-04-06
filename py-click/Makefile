@@ -1,5 +1,4 @@
 # Created by: Bartek Rutkowski <ports@robakdesign.com>
-# $FreeBSD: head/devel/py-click/Makefile 496503 2019-03-21 19:41:43Z sunpoet $
 
 PORTNAME=	click
 PORTVERSION=	7.1.1

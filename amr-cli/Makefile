@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	amr-cli
 PORTVERSION=	0.0.0p20180402

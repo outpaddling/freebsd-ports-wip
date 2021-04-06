@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		salmon
 DISTVERSIONPREFIX=	v

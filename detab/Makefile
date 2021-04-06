@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	detab
 PORTVERSION=	0.1.0

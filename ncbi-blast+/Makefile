@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/ncbi-blast+/Makefile 507372 2019-07-26 20:46:53Z gerald $
 
 PORTNAME=	ncbi-blast+
 DISTVERSION=	2.11.0

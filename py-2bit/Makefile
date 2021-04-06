@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	py2bit
 DISTVERSION=	0.3.0

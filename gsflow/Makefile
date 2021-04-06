@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	gsflow
 PORTVERSION=	1.1.1

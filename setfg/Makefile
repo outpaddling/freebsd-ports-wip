@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	setfg
 PORTVERSION=	1.0.1

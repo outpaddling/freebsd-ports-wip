@@ -1,4 +1,3 @@
-# $FreeBSD: head/biology/fastqc/Makefile 455236 2017-11-30 22:54:29Z jwb $
 
 PORTNAME=	fastqc
 DISTVERSION=	0.11.9

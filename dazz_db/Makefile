@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 # Use compatible versions of dazz_db, daligner, pbdagcon, pypeflow, and falcon!
 

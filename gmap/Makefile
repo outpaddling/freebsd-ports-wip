@@ -1,5 +1,4 @@
 # Created by: Bob Zimmermann <rpz@cse.wustl.edu>
-# $FreeBSD: head/biology/gmap/Makefile 504785 2019-06-21 11:15:08Z linimon $
 
 PORTNAME=	gmap
 PORTVERSION=	2020.09.12

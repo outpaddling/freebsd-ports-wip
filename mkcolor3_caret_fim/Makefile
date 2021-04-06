@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 
 PORTNAME=	mkcolor3_caret_fim
 PORTVERSION=	1.0

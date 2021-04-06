@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ceas
 PORTVERSION=	1.0.2

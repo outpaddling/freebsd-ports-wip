@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	usearch
 PORTVERSION=	5.2.236

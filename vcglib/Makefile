@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vcglib
 PORTVERSION=	1.0.0

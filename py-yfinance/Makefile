@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yfinance
 DISTVERSION=	0.1.54

@@ -1,5 +1,4 @@
 # Created by: Reed A. Cartwright <cartwright@asu.edu>
-# $FreeBSD: head/biology/bcftools/Makefile 515671 2019-10-25 23:41:34Z tcberner $
 
 PORTNAME=	bcftools
 PORTVERSION=	1.12

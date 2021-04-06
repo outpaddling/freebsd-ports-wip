@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Do not upgrade this port before testing the new version with biology/py-qiime
 
 PORTNAME=	swarm

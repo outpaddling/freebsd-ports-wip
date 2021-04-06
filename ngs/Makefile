@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # TODO
 # Patch build system to install examples-python.  See plist vs pkg-plist.
 

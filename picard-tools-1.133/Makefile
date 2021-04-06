@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	picard
 PORTVERSION=	1.133

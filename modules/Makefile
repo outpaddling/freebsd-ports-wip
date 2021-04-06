@@ -1,4 +1,3 @@
-# $FreeBSD: head/sysutils/modules/Makefile 420510 2016-08-20 13:23:00Z pawel $
 
 PORTNAME=		modules
 DISTVERSIONPREFIX=	v

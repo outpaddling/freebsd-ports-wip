@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		epacts
 DISTVERSIONPREFIX=	v

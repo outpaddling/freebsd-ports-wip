@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ti99sim
 DISTVERSION=	0.16.0
