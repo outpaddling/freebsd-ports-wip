@@ -1,4 +1,3 @@
-
 PORTNAME=	usearch
 PORTVERSION=	6.1.544
 CATEGORIES=	wip biology

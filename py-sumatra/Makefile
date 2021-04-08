@@ -1,4 +1,3 @@
-
 PORTNAME=	sumatra
 PORTVERSION=	0.7.4
 CATEGORIES=	wip science python

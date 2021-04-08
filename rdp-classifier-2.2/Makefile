@@ -1,4 +1,3 @@
-
 PORTNAME=	classifier
 PORTVERSION=	2.2
 CATEGORIES=	wip biology java

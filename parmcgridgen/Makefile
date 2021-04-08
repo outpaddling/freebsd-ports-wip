@@ -1,4 +1,3 @@
-
 PORTNAME=	parmgridgen
 PORTVERSION=	1.0
 CATEGORIES=	wip science math

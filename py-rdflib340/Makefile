@@ -1,4 +1,3 @@
-
 PORTNAME=	rdflib
 PORTVERSION=	3.4.0
 CATEGORIES=	wip textproc python

@@ -1,4 +1,3 @@
-
 PORTNAME=	stop-words
 PORTVERSION=	2015.02.21
 CATEGORIES=	wip

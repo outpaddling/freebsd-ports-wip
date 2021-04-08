@@ -1,4 +1,3 @@
-
 PORTNAME=	GConf2
 PORTVERSION=	2.28.0
 CATEGORIES=	wip devel linux

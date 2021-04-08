@@ -1,4 +1,3 @@
-
 PORTNAME=	htsjdk
 PORTVERSION=	2.6.1
 CATEGORIES=	wip biology

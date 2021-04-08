@@ -1,4 +1,3 @@
-
 PORTNAME=	openvex
 PORTVERSION=	0.5.4
 CATEGORIES=	wip devel

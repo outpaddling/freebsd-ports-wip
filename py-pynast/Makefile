@@ -1,4 +1,3 @@
-
 PORTNAME=	pynast
 PORTVERSION=	1.2.2
 CATEGORIES=	wip biology

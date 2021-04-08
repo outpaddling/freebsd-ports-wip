@@ -1,4 +1,3 @@
-
 # http://vault.centos.org/centos/6.9/os/x86_64/Packages/
 
 PORTNAME=	${LINUX_NAME}-base

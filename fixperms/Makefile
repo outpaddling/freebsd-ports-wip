@@ -1,4 +1,3 @@
-
 PORTNAME=	fixperms
 PORTVERSION=	0.9
 CATEGORIES=	wip sysutils

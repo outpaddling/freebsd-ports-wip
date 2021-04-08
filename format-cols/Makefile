@@ -1,4 +1,3 @@
-
 PORTNAME=	format-cols
 DISTVERSION=	g20200929
 CATEGORIES=	wip textproc

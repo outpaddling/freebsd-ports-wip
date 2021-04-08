@@ -1,4 +1,3 @@
-
 PORTNAME=	ginkgocadx
 PORTVERSION=	3.8.7
 CATEGORIES=	wip

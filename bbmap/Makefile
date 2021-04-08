@@ -1,4 +1,3 @@
-
 PORTNAME=	BBMap
 DISTVERSION=	38.84
 CATEGORIES=	wip biology

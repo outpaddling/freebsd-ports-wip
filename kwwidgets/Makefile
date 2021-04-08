@@ -1,4 +1,3 @@
-
 PORTNAME=	kwwidgets
 PORTVERSION=	2012.05.06
 CATEGORIES=	wip science

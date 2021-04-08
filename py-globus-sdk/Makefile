@@ -1,4 +1,3 @@
-
 PORTNAME=	globus-sdk-python
 PORTVERSION=	1.9.0
 CATEGORIES=	wip ftp python

@@ -1,4 +1,3 @@
-
 PORTNAME=	simpleburn
 PORTVERSION=	1.8.4
 CATEGORIES=	wip sysutils

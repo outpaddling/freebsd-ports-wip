@@ -1,4 +1,3 @@
-
 PORTNAME=	scikit-bio
 PORTVERSION=	0.5.5
 CATEGORIES=	wip biology python

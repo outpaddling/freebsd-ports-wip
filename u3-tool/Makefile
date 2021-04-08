@@ -1,4 +1,3 @@
-
 PORTNAME=	u3-tool
 PORTVERSION=	0.3
 CATEGORIES=	wip

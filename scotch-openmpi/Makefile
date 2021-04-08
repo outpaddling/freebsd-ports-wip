@@ -1,4 +1,3 @@
-
 MAINTAINER=	jwb@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../scotch

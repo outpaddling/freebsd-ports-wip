@@ -1,4 +1,3 @@
-
 PORTNAME=	external-ip
 PORTVERSION=	0.1
 CATEGORIES=	wip

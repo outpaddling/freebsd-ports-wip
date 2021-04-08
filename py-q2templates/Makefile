@@ -1,4 +1,3 @@
-
 PORTNAME=	q2templates
 DISTVERSION=	2020.11.1
 CATEGORIES=	wip python

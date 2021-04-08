@@ -1,4 +1,3 @@
-
 PORTNAME=	libccmio
 PORTVERSION=	2.6.1
 CATEGORIES=	wip science math

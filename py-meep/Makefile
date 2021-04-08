@@ -1,4 +1,3 @@
-
 PORTNAME=	meep
 PKGNAMEPREFIX=	python-
 PORTVERSION=	1.4.2

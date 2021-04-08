@@ -1,4 +1,3 @@
-
 PORTNAME=	ls-dyna10
 DISTVERSION=	10.0.0
 CATEGORIES=	wip science linux

@@ -1,4 +1,3 @@
-
 PORTNAME=	openlb
 PORTVERSION=	0.7r0
 CATEGORIES=	wip science math

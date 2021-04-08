@@ -1,4 +1,3 @@
-
 PORTNAME=		trinity
 DISTVERSIONPREFIX=	Trinity-v
 DISTVERSION=		2.8.3

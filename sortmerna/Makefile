@@ -1,4 +1,3 @@
-
 # Only 2.0 is compatible with qiime 1.9.1
 # https://github.com/biocore/sortmerna#third-party-libraries
 PORTNAME=	sortmerna

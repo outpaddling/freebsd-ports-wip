@@ -1,4 +1,3 @@
-
 PORTNAME=	q2-vsearch
 PORTVERSION=	2020.11.1
 CATEGORIES=	wip biology python

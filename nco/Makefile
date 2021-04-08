@@ -1,4 +1,3 @@
-
 PORTNAME=	nco
 PORTVERSION=	4.4.8
 CATEGORIES=	wip science

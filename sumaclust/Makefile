@@ -1,4 +1,3 @@
-
 PORTNAME=	sumaclust
 PORTVERSION=	1.0.20
 CATEGORIES=	wip biology

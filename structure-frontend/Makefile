@@ -1,4 +1,3 @@
-
 PORTNAME=	structure-frontend
 PORTVERSION=
 #PORTREVISION=	0

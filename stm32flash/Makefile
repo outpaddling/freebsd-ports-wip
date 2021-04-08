@@ -1,4 +1,3 @@
-
 PORTNAME=	stm32flash
 PORTVERSION=	0.5
 CATEGORIES=	wip devel

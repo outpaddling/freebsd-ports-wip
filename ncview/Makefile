@@ -1,4 +1,3 @@
-
 PORTNAME=	ncview
 PORTVERSION=	2.1.2
 CATEGORIES=	wip science graphics

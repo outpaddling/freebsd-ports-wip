@@ -1,4 +1,3 @@
-
 PORTNAME=	globus_toolkit
 DISTVERSION=	6.0.1535473965
 CATEGORIES=	wip net java

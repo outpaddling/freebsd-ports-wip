@@ -1,4 +1,3 @@
-
 PORTNAME=	cosmos
 PORTVERSION=	2.0.10
 CATEGORIES=	wip biology

@@ -1,4 +1,3 @@
-
 PORTNAME=	1dregression
 PORTVERSION=	1.0
 CATEGORIES=	wip science

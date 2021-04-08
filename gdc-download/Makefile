@@ -1,4 +1,3 @@
-
 PORTNAME=	gdc-download
 PORTVERSION=	0.1
 CATEGORIES=	wip ftp

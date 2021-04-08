@@ -1,4 +1,3 @@
-
 PORTNAME=	readseq
 DISTVERSION=	2.1.30-1
 CATEGORIES=	wip biology java

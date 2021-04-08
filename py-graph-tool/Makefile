@@ -1,4 +1,3 @@
-
 PORTNAME=	graph-tool
 DISTVERSION=	2.27
 CATEGORIES=	wip graphics python

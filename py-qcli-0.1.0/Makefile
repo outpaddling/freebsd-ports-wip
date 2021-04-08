@@ -1,4 +1,3 @@
-
 PORTNAME=	qcli
 PORTVERSION=	0.1.0
 CATEGORIES=	wip biology

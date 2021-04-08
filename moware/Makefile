@@ -1,4 +1,3 @@
-
 PORTNAME=	moware
 PORTVERSION=	1.0
 CATEGORIES=	wip devel

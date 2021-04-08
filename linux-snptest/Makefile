@@ -1,4 +1,3 @@
-
 PORTNAME=	snptest
 PORTVERSION=	2.5.2
 CATEGORIES=	wip biology

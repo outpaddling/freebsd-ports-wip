@@ -1,4 +1,3 @@
-
 PORTNAME=	collectl
 PORTVERSION=	4.0.2
 CATEGORIES=	wip sysutils

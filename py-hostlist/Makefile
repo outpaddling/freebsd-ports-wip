@@ -1,4 +1,3 @@
-
 PORTNAME=	hostlist
 PORTVERSION=	1.14
 CATEGORIES=	wip sysutils

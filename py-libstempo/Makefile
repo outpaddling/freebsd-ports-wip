@@ -1,4 +1,3 @@
-
 PORTNAME=	libstempo
 PORTVERSION=	2.2.5
 CATEGORIES=	wip python

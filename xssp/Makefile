@@ -1,4 +1,3 @@
-
 PORTNAME=	xssp
 PORTVERSION=	3.0.1
 CATEGORIES=	wip biology

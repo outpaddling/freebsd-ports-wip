@@ -1,4 +1,3 @@
-
 PORTNAME=	mpi-bench
 PORTVERSION=	0.1.1
 CATEGORIES=	wip net

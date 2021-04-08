@@ -1,4 +1,3 @@
-
 PORTNAME=	xf86-video-ati
 PORTVERSION=	18.1.0
 PORTEPOCH=	1

@@ -1,4 +1,3 @@
-
 PORTNAME=	cpat
 PORTVERSION=	1.2
 CATEGORIES=	wip biology

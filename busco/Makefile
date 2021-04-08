@@ -1,4 +1,3 @@
-
 PORTNAME=	busco
 PORTVERSION=	1.22
 CATEGORIES=	wip biology

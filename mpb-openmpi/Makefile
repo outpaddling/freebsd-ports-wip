@@ -1,4 +1,3 @@
-
 WITH_OPENMPI=	yes
 
 MAINTAINER=	jwb@FreeBSD.org

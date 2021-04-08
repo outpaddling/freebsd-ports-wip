@@ -1,4 +1,3 @@
-
 PORTNAME=	splitter
 PORTVERSION=	0.2.4
 CATEGORIES=	wip biology

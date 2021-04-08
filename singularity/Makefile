@@ -1,4 +1,3 @@
-
 PORTNAME=	singularity
 PORTVERSION=	2.5.1
 CATEGORIES=	wip

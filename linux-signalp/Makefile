@@ -1,4 +1,3 @@
-
 PORTNAME=	signalp
 PORTVERSION=	4.1
 CATEGORIES=	wip biology

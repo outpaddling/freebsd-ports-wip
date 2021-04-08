@@ -1,4 +1,3 @@
-
 PORTNAME=	gdc-client
 PORTVERSION=	1.2.0
 CATEGORIES=	wip ftp python

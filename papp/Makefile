@@ -1,4 +1,3 @@
-
 PORTNAME=	papp
 PORTVERSION=	0.3.2
 CATEGORIES=	wip devel

@@ -1,4 +1,3 @@
-
 PORTNAME=	bx
 PORTVERSION=	0.3.0
 CATEGORIES=	wip devel python

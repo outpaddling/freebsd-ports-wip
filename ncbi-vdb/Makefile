@@ -1,4 +1,3 @@
-
 PORTNAME=	ncbi-vdb
 DISTVERSION=	2.8.2-2
 CATEGORIES=	wip biology

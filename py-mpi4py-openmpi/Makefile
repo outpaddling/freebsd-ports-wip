@@ -1,4 +1,3 @@
-
 PORTNAME=	mpi4py
 PORTVERSION=	2.0.0
 CATEGORIES=	wip net parallel python

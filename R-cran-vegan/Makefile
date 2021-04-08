@@ -1,4 +1,3 @@
-
 PORTNAME=	vegan
 DISTVERSION=	2.4-2
 CATEGORIES=	wip biology

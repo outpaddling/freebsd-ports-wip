@@ -1,4 +1,3 @@
-
 PORTNAME=	ascecho
 PORTVERSION=	1.0
 CATEGORIES=	wip sysutils

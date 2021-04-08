@@ -1,4 +1,3 @@
-
 PORTNAME=	docviewer
 PORTVERSION=	0.2.0
 CATEGORIES=	wip textproc

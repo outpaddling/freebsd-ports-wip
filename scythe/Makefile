@@ -1,4 +1,3 @@
-
 PORTNAME=	scythe
 PORTVERSION=	2016.02.10
 CATEGORIES=	wip biology

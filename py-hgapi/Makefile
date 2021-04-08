@@ -1,4 +1,3 @@
-
 PORTNAME=	hgapi
 PORTVERSION=	1.7.2
 CATEGORIES=	wip devel python

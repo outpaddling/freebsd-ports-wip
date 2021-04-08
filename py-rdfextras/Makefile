@@ -1,4 +1,3 @@
-
 PORTNAME=	rdfextras
 PORTVERSION=	0.4
 CATEGORIES=	wip python

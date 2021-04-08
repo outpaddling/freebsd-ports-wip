@@ -1,4 +1,3 @@
-
 PORTNAME=	tempo2
 PORTVERSION=	2013.9.1
 CATEGORIES=	wip astro

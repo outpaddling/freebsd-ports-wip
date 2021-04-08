@@ -1,4 +1,3 @@
-
 PORTNAME=	lattice
 DISTVERSION=	0.20-34
 CATEGORIES=	wip graphics

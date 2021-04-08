@@ -1,4 +1,3 @@
-
 PORTNAME=	seqprep
 PORTVERSION=	1.1
 CATEGORIES=	wip biology

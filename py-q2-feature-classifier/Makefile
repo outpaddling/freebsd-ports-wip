@@ -1,4 +1,3 @@
-
 PORTNAME=	q2-feature-classifier
 DISTVERSION=	2020.11.1
 CATEGORIES=	wip biology python

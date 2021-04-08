@@ -1,4 +1,3 @@
-
 PORTNAME=	ffnhfilter
 PORTVERSION=	1.0
 CATEGORIES=	wip science

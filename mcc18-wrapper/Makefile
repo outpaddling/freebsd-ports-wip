@@ -1,4 +1,3 @@
-
 PORTNAME=	mcc18-wrapper
 PORTVERSION=	0.2
 CATEGORIES=	wip lang

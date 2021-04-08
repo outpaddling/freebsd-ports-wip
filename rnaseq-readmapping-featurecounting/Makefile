@@ -1,4 +1,3 @@
-
 PORTNAME=	rna-pipeline1
 PORTVERSION=	0.1
 CATEGORIES=	wip biology

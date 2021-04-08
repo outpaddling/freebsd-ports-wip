@@ -1,4 +1,3 @@
-
 PORTNAME=	dosu
 PORTVERSION=	0.1
 CATEGORIES=	wip sysutils

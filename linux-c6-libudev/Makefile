@@ -1,4 +1,3 @@
-
 PORTNAME=	libudev
 PORTVERSION=	10.1
 CATEGORIES=	wip sysutils linux

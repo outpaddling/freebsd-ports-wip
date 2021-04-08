@@ -1,4 +1,3 @@
-
 PORTNAME=	logic
 PORTVERSION=	1.1.30
 CATEGORIES=	wip sysutils

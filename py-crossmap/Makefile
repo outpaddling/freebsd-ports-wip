@@ -1,4 +1,3 @@
-
 PORTNAME=	crossmap
 DISTVERSION=	0.5.2
 CATEGORIES=	wip python

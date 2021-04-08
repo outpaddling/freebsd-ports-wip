@@ -1,4 +1,3 @@
-
 PORTNAME=	ea-utils
 PORTVERSION=	1.1.2
 CATEGORIES=	wip biology

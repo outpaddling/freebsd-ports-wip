@@ -1,4 +1,3 @@
-
 PORTNAME=		pufferfish
 DISTVERSIONPREFIX=	salmon-v
 DISTVERSION=		1.1.0

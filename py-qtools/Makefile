@@ -1,4 +1,3 @@
-
 PORTNAME=	qtools
 PORTVERSION=	899e34a4876ba232f920105a437efe365efe5c5e
 CATEGORIES=	wip graphics python

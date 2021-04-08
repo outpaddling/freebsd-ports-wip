@@ -1,4 +1,3 @@
-
 PORTNAME=		gephi
 DISTVERSION=		0.9.2
 CATEGORIES=		wip graphics

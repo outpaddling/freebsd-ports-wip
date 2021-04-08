@@ -1,4 +1,3 @@
-
 PORTNAME=	oligotyping
 DISTVERSION=	2.1
 CATEGORIES=	wip biology

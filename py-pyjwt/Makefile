@@ -1,4 +1,3 @@
-
 PORTNAME=	pyjwt
 PORTVERSION=	1.6.4
 CATEGORIES=	wip www python

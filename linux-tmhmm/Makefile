@@ -1,4 +1,3 @@
-
 PORTNAME=	tmhmm
 PORTVERSION=	2.0
 CATEGORIES=	wip biology

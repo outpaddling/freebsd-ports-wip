@@ -1,4 +1,3 @@
-
 PORTNAME=	flair
 PORTVERSION=	0.3.25
 CATEGORIES=	wip math science

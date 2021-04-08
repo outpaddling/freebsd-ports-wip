@@ -1,4 +1,3 @@
-
 PORTNAME=	pyqi
 PORTVERSION=	0.3.2
 CATEGORIES=	wip biology

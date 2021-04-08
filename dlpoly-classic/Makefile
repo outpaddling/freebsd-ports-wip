@@ -1,4 +1,3 @@
-
 PORTNAME=	dlpoly
 PORTVERSION=	1.10
 CATEGORIES=	wip science java

@@ -1,4 +1,3 @@
-
 PORTNAME=	hwloc
 PORTVERSION=	1.11.7
 CATEGORIES=	wip devel

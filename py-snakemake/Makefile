@@ -1,4 +1,3 @@
-
 PORTNAME=	snakemake
 PORTVERSION=	5.2.0
 CATEGORIES=	wip python

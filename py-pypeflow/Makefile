@@ -1,4 +1,3 @@
-
 PORTNAME=	pypeflow
 # Must use the same version of dazz_db, daligner, pypeflow, and falcon!
 PORTVERSION=	2016.07.21

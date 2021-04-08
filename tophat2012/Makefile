@@ -1,4 +1,3 @@
-
 PORTNAME=	tophat
 PORTVERSION=	2.0.12
 CATEGORIES=	wip biology science

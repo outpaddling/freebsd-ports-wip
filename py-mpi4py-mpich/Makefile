@@ -1,4 +1,3 @@
-
 PORTNAME=	mpi4py-mpich2
 
 LIB_DEPENDS=	libmpich.so:net/mpich2

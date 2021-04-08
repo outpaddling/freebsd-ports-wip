@@ -1,4 +1,3 @@
-
 PORTNAME=	caffe
 PORTVERSION=	2016.10.20
 CATEGORIES=	wip science

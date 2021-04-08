@@ -1,4 +1,3 @@
-
 PORTNAME=	blasr_libcpp
 DISTVERSION=	g20180329
 CATEGORIES=	wip biology

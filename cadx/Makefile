@@ -1,4 +1,3 @@
-
 PORTNAME=	ginkgocadx
 PORTVERSION=	3.3.0
 #PORTREVISION=	0

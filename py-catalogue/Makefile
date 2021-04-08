@@ -1,4 +1,3 @@
-
 PORTNAME=	catalogue
 # Do not use latest release.  See acceptable versions in py-spacy setup.cfg.
 DISTVERSION=	1.0.0

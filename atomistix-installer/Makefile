@@ -1,4 +1,3 @@
-
 PORTNAME=	atomistix-installer
 PORTVERSION=	0.1
 CATEGORIES=	wip science

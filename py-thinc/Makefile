@@ -1,4 +1,3 @@
-
 PORTNAME=		thinc
 DISTVERSION=		7.4.1
 CATEGORIES=		wip science python

@@ -1,4 +1,3 @@
-
 PORTNAME=	igv
 DISTVERSION=	2.9.4
 CATEGORIES=	wip biology java

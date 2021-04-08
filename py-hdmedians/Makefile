@@ -1,4 +1,3 @@
-
 PORTNAME=	hdmedians
 DISTVERSION=	0.13
 CATEGORIES=	wip math python

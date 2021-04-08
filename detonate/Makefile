@@ -1,4 +1,3 @@
-
 PORTNAME=	detonate
 PORTVERSION=	1.8.1
 CATEGORIES=	wip biology

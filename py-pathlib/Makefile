@@ -1,4 +1,3 @@
-
 PORTNAME=	pathlib
 PORTVERSION=	1.0.1
 CATEGORIES=	wip devel python

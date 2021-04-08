@@ -1,4 +1,3 @@
-
 PORTNAME=	constants
 PORTVERSION=	0.6.0
 CATEGORIES=	wip devel python

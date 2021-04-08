@@ -1,4 +1,3 @@
-
 PORTNAME=	idr
 DISTVERSION=	2.0.3
 CATEGORIES=	wip math

@@ -1,4 +1,3 @@
-
 PORTNAME=	openkim
 PORTVERSION=	1.7.1
 CATEGORIES=	wip science

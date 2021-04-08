@@ -1,4 +1,3 @@
-
 PORTNAME=	time
 PORTVERSION=	1.7
 CATEGORIES=	wip sysutils

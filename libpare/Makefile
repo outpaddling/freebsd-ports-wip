@@ -1,4 +1,3 @@
-
 PORTNAME=	libpare
 DISTVERSION=	1.1.1
 CATEGORIES=	wip devel

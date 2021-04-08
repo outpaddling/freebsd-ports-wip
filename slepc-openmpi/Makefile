@@ -1,4 +1,3 @@
-
 PORTNAME=	slepc
 PORTVERSION=	3.5.2
 PKGNAMESUFFIX=	-openmpi

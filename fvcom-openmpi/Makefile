@@ -1,4 +1,3 @@
-
 PKGNAMESUFFIX=	-openmpi
 
 # Would be nice to get this from Mk

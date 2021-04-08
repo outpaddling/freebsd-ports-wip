@@ -1,4 +1,3 @@
-
 PORTNAME=	binutils
 PORTVERSION=	2.21
 CATEGORIES=	wip devel

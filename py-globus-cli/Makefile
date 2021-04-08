@@ -1,4 +1,3 @@
-
 PORTNAME=	globus-cli
 PORTVERSION=	1.12.0
 CATEGORIES=	wip python

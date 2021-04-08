@@ -1,4 +1,3 @@
-
 PORTNAME=	spark
 PORTVERSION=	1.1.0
 CATEGORIES=	wip sysutils

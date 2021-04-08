@@ -1,4 +1,3 @@
-
 MASTERDIR=		${.CURDIR}/../mumps
 
 WITH_OPENMPI=		yes

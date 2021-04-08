@@ -1,4 +1,3 @@
-
 PORTNAME=	haploview
 PORTVERSION=	4.1
 CATEGORIES=	wip biology java

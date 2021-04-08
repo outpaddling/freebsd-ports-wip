@@ -1,4 +1,3 @@
-
 PORTNAME=	king
 DISTVERSION=	2.2.2
 CATEGORIES=	wip biology

@@ -1,4 +1,3 @@
-
 PORTNAME=	pysam
 PORTVERSION=	0.8.3
 CATEGORIES=	wip biology

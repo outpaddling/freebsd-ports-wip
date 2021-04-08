@@ -1,4 +1,3 @@
-
 PORTNAME=	cDNA_primer
 PORTVERSION=	2015.08.17
 CATEGORIES=	wip python

@@ -1,4 +1,3 @@
-
 PORTNAME=	drmaa
 PORTVERSION=	0.7.6
 CATEGORIES=	wip sysutils python

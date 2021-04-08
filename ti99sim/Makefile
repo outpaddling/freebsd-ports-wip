@@ -1,4 +1,3 @@
-
 PORTNAME=	ti99sim
 DISTVERSION=	0.16.0
 CATEGORIES=	wip emulators

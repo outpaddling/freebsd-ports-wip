@@ -1,4 +1,3 @@
-
 PORTNAME=	radiance
 PORTVERSION=	4.1
 CATEGORIES=	wip science

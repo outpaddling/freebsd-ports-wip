@@ -1,4 +1,3 @@
-
 PORTNAME=	wasabi
 DISTVERSION=	0.7.0
 CATEGORIES=	wip python

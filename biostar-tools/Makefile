@@ -1,4 +1,3 @@
-
 PORTNAME=	biostar-tools
 DISTVERSION=	0.1
 CATEGORIES=	wip biology

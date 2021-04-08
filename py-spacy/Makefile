@@ -1,4 +1,3 @@
-
 PORTNAME=	spacy
 DISTVERSION=	2.3.2
 CATEGORIES=	wip textproc python

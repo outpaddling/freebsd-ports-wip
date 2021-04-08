@@ -1,4 +1,3 @@
-
 PORTNAME=	freesurfer
 DISTVERSIONPREFIX=	release_
 DISTVERSION=	6_0_0

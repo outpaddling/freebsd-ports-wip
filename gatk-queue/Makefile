@@ -1,4 +1,3 @@
-
 PORTNAME=	GenomeAnalysisTKQueue
 PORTVERSION=	3.1
 CATEGORIES=	wip biology science

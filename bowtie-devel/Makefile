@@ -1,4 +1,3 @@
-
 # Test new versions with Trinity before upgrading
 
 PORTNAME=		bowtie

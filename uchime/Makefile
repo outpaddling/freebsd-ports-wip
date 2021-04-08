@@ -1,4 +1,3 @@
-
 PORTNAME=	uchime
 PORTVERSION=	4.2.40
 CATEGORIES=	wip biology

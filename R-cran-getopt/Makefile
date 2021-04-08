@@ -1,4 +1,3 @@
-
 PORTNAME=	getopt
 DISTVERSION=	1.20.3
 CATEGORIES=	wip devel

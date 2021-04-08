@@ -1,4 +1,3 @@
-
 PORTNAME=	pbs-scripts
 PORTVERSION=	0.1
 CATEGORIES=	wip sysutils

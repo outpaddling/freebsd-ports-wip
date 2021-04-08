@@ -1,4 +1,3 @@
-
 PORTNAME=	TrimGalore
 DISTVERSION=	0.6.5
 CATEGORIES=	wip biology perl5 python

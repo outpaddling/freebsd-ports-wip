@@ -1,4 +1,3 @@
-
 PORTNAME=	virusseq
 PORTVERSION=	2016.06.10
 CATEGORIES=	wip biology

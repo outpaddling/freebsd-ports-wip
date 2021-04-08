@@ -1,4 +1,3 @@
-
 PORTNAME=	miva
 PORTVERSION=	2.0
 CATEGORIES=	wip science biology

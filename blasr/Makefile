@@ -1,4 +1,3 @@
-
 PORTNAME=	blasr
 DISTVERSION=	g20180411
 #DISTNAME=smrtanalysis

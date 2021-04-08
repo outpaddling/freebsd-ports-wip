@@ -1,4 +1,3 @@
-
 PORTNAME=	pyBigWig
 DISTVERSION=	0.3.18
 CATEGORIES=	wip python

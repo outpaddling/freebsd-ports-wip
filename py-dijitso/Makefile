@@ -1,4 +1,3 @@
-
 PORTNAME=	dijitso
 # Caution: Must use version compatible with other FEniCS project ports
 DISTVERSION=	2017.2.0
