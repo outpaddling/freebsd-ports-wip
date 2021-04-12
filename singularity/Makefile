@@ -2,7 +2,7 @@ PORTNAME=	singularity
 PORTVERSION=	2.5.1
 CATEGORIES=	wip
 
-MAINTAINER=	bacon@manatee.acadix.biz
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Container
 
 LICENSE=	BSD3CLAUSE

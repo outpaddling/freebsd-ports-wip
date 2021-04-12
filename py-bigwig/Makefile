@@ -4,7 +4,7 @@ CATEGORIES=	wip python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bacon@orca.acadix.biz
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Python access to bigWig files using libBigWig
 
 LICENSE=	MIT
@@ -14,5 +14,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		localbase python
 USE_PYTHON=	autoplist distutils
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pyBigWig.so
 
 .include <bsd.port.mk>

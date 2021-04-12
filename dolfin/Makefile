@@ -3,7 +3,7 @@ DISTVERSION=	2017.2.0
 CATEGORIES=	wip
 MASTER_SITES=	https://bitbucket.org/fenics-project/dolfin/downloads/
 
-MAINTAINER=	bacon@manatee.acadix.biz
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Computational backend of FEniCS
 
 LICENSE=	LGPL3

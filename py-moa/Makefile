@@ -4,7 +4,7 @@ CATEGORIES=	wip biology python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bacon@manatee.acadix.biz
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Lightweight workflows in bioinformatics
 
 LICENSE=	GPLv3

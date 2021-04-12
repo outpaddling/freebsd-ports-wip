@@ -3,7 +3,7 @@ DISTVERSION=	5.4-1
 CATEGORIES=	wip biology
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	bacon@imacbsd.acadix.biz
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Functions for phylogenetic trees
 
 LICENSE=	GPLv2

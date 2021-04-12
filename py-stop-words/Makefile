@@ -3,7 +3,7 @@ PORTVERSION=	2015.2.23.1
 CATEGORIES=	wip python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bacon@imacbsd.acadix.biz
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Get list of common stop words in various languages in Python
 
 LICENSE=	BSD3CLAUSE

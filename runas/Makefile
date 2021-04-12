@@ -3,7 +3,7 @@ DISTVERSION=	0.1.0-8
 DISTVERSIONSUFFIX=	-g25392d4
 CATEGORIES=	wip sysutils
 
-MAINTAINER=	bacon@coral.acadix.biz
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Wrapper around su for running a command as another user
 
 LICENSE=	BSD2CLAUSE

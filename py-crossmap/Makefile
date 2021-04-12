@@ -5,7 +5,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	CrossMap-${DISTVERSION}
 
-MAINTAINER=	bacon@moray.acadix.biz
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Lift over genomics coordinates between assemblies
 
 LICENSE=	GPLv2

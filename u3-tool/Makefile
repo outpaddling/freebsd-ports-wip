@@ -3,7 +3,7 @@ PORTVERSION=	0.3
 CATEGORIES=	wip
 MASTER_SITES=	SF
 
-MAINTAINER=	bacon@mako.acadix.biz
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Manage u3 partition on USB drive
 
 LICENSE=	GPLv2

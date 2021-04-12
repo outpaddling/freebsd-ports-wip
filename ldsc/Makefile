@@ -4,7 +4,7 @@ DISTVERSION=		1.0.0-92
 DISTVERSIONSUFFIX=	-gcf1707e
 CATEGORIES=		wip biology
 
-MAINTAINER=	bacon@outpaddling.cs.uwm.edu
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Genomics LD Score Regression (LDSC)
 
 LICENSE=	GPLv3

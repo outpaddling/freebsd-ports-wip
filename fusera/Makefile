@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
 CATEGORIES=	wip biology
 
-MAINTAINER=	bacon@toshiba.acadix.biz
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	FUSE interface to the NCBI Sequence Read Archive (SRA)
 
 LICENSE=	APACHE20

@@ -3,8 +3,7 @@ DISTVERSION=	2017.2.0
 CATEGORIES=	wip
 MASTER_SITES=	https://bitbucket.org/fenics-project/mshr/downloads/
 
-MAINTAINER=	bacon@manatee.acadix.biz
-COMMENT=	Mesh generation component of FEniCS
+MAINTAINER=	jwb@FreeBSD.org
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

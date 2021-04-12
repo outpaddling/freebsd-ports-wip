@@ -3,7 +3,7 @@ PORTVERSION=	1.3.4d
 DISTVERSIONPREFIX=v
 CATEGORIES=	wip biology
 
-MAINTAINER=	bacon@sciprog.ceas.uwm.edu
+MAINTAINER=	jwb@FreeBSD.org.edu
 COMMENT=	Transcript assembly and quantification for RNA-Seq
 
 LICENSE=	ART20

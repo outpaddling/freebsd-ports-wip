@@ -2,7 +2,7 @@ PORTNAME=	stop-words
 PORTVERSION=	2015.02.21
 CATEGORIES=	wip
 
-MAINTAINER=	bacon@imacbsd.acadix.biz
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	List of common stop words in various languages
 
 LICENSE=	CC-BY-4.0

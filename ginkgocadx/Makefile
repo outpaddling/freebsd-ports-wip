@@ -2,7 +2,7 @@ PORTNAME=	ginkgocadx
 PORTVERSION=	3.8.7
 CATEGORIES=	wip
 
-MAINTAINER=	bacon@manatee.acadix.biz
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	DICOM viewer and dicomizer convert bitmaps to DICOM files
 
 LICENSE=	LGPL3

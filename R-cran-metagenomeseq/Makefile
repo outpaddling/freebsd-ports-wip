@@ -5,7 +5,7 @@ MASTER_SITES=	https://bioconductor.org/packages/release/bioc/src/contrib/
 # DISTmetagenomeSeq_1.16.0.tar.gz
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	bacon@imacbsd.acadix.biz
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Determine features differentially abundant between groups of samples
 
 LICENSE=	ART20

@@ -4,7 +4,7 @@ CATEGORIES=	wip python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bacon@orca.acadix.biz
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Python interface for deepTools interval trees
 
 LICENSE=	MIT
