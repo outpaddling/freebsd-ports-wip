@@ -71,12 +71,16 @@ for file in Makefile pkg-descr; do
 done
 port-check
 
-printf "Add port? y/[n] "
-read add
-if [ 0$add = 0y ]; then
-    cd ..
-    git add $port
-    printf "Add $port to $category/Makefile.\n"
-    pause
-    $EDITOR Makefile
+# If user chose to overwrite, that means the port already existed and should
+# be in category/Makefile already
+if [ 0$overwrite != 0y ]; then
+    printf "Add port? y/[n] "
+    read add
+    if [ 0$add = 0y ]; then
+	cd ..
+	git add $port
+	printf "Add $port to $category/Makefile.\n"
+	pause
+	$EDITOR Makefile
+    fi
 fi
