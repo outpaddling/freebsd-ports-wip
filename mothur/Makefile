@@ -1,36 +1,30 @@
 PORTNAME=	mothur
-PORTVERSION=	1.40.5
-DISTVERSIONPREFIX=v
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.45.2
 CATEGORIES=	wip biology
 
-MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Bioinformatics tool for the microbial ecology community
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Software for bioinformatics of the microbial ecology community
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
-RUN_DEPENDS=	uchime>=0:wip/uchime
+BUILD_DEPENDS=	bash:shells/bash
 
-USES=		gmake ncurses readline
-
+USES=		compiler:c++11-lang gmake localbase readline
+# SHEBANG_FILES=	source/uchime_src/mk
 USE_GITHUB=	yes
+ALL_TARGET=	${PORTNAME}
 
-#MAKEFILE=	makefile
-ALL_TARGET=	mothur
-LDFLAGS+=	-L${LOCALBASE}/lib
+BINARY_ALIAS=	g++=${CXX}
 
-PLIST_FILES=	bin/mothur
+EXES=		${PORTNAME} uchime
 
-post-extract:
-	@${REINPLACE_CMD} -e "s|thread[*]|std::thread*|g" \
-		`find ${WRKSRC} -name '*.cpp'`
-	${REINPLACE_CMD} -e 's|new thread(|new std::thread(|g' \
-                `find ${WRKSRC} -name '*.cpp'`
+PLIST_FILES=	${EXES:S/^/bin\//}
 
-# Builds after:
-#make clean
-#make extract
-#root@freebsd11:/usr/ports/wip/mothur-1.40.5 # sed -i '' -e "s|thread[*]|std::thread*|g" `find work -name '*.cpp'`
-#root@freebsd11:/usr/ports/wip/mothur-1.40.5 # sed -i '' -e "s| thread(| std::thread(|g" `find work -name '*.cpp'`
-#make
+do-install: # https://github.com/mothur/mothur/issues/615
+.for e in ${EXES}
+	${INSTALL_PROGRAM} ${WRKSRC}/${e} ${STAGEDIR}${PREFIX}/bin
+.endfor
+
 .include <bsd.port.mk>
