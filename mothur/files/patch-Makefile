@@ -1,6 +1,16 @@
 --- Makefile.orig	2021-04-09 18:28:13 UTC
 +++ Makefile
-@@ -109,7 +109,7 @@ endif
+@@ -53,6 +53,9 @@ endif
+ CXXFLAGS += -std=c++11 -pthread -DVERSION=${VERSION} -DRELEASE_DATE=${RELEASE_DATE}
+ LDFLAGS += -std=c++11 -pthread
+ 
++# uchime requires gmake
++MAKE ?= gmake
++
+ ifeq  ($(strip $(MOTHUR_FILES)),"\"Enter_your_default_path_here\"")
+ else
+     CXXFLAGS += -DMOTHUR_FILES=${MOTHUR_FILES}
+@@ -109,7 +112,7 @@ endif
      subdirs :=  $(sort $(dir $(filter-out  $(skipUchime), $(wildcard source/*/))))
      subDirIncludes = $(patsubst %, -I %, $(subdirs))
      subDirLinking =  $(patsubst %, -L%, $(subdirs))
@@ -9,7 +19,7 @@
      LDFLAGS += $(subDirLinking)
  
  
-@@ -118,14 +118,14 @@ endif
+@@ -118,14 +121,14 @@ endif
  #
      OBJECTS=$(patsubst %.cpp,%.o,$(wildcard $(addsuffix *.cpp,$(subdirs))))
      OBJECTS+=$(patsubst %.c,%.o,$(wildcard $(addsuffix *.c,$(subdirs))))
@@ -23,7 +33,7 @@
  
  uchime :
 -	cd source/uchime_src && export CXX=$(CXX) && make clean && make && mv uchime ../../ && cd ..
-+	cd source/uchime_src && export CXX=$(CXX) && gmake clean && gmake && mv uchime ../../ && cd ..
++	cd source/uchime_src && export CXX=$(CXX) && ${MAKE} clean && ${MAKE} && mv uchime ../../ && cd ..
  
  install : mothur
  
