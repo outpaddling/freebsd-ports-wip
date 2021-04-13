@@ -6,8 +6,6 @@ MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Meta-port for Biostar Handbook tools
 
 # TBD:
-# snpeff
-# readseq
 # ucsc-bedgraphtobigwig
 
 # For a current list see http://data.biostarhandbook.com/install/conda.txt.
@@ -15,6 +13,8 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		nano>0:editors/nano \
 		parallel>0:sysutils/parallel \
 		edirect>0:wip/edirect \
+		readseq>0:wip/readseq \
+		snpeff>0:wip/snpeff \
 		picard-tools>0:biology/picard-tools \
 		bbmap>0:wip/bbmap \
 		minimap2>0:biology/minimap2 \
