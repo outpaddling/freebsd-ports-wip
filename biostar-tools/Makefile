@@ -1,22 +1,25 @@
 PORTNAME=	biostar-tools
-DISTVERSION=	0.1
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Meta-port for Biostar Handbook tools
 
-# Deps from http://data.biostarhandbook.com/install/conda.txt:
+# TBD:
+# perl-net-ssleay (dep of edirect)
 # bbmap
 # snpeff
+# picard
 # readseq
 # ucsc-bedgraphtobigwig
-# Other tools mentioned:
+
+# For a current list see http://data.biostarhandbook.com/install/conda.txt.
 RUN_DEPENDS=	wget>0:ftp/wget \
 		nano>0:editors/nano \
 		parallel>0:sysutils/parallel \
 		edirect>0:wip/edirect \
 		minimap2>0:biology/minimap2 \
 		bwa>=0:biology/bwa \
+		bowtie2>=0:biology/bowtie2 \
 		samtools>0:biology/samtools \
 		emboss>0:biology/emboss \
 		bedtools>0:biology/bedtools \
@@ -39,9 +42,9 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		p5-Net-SSLeay>0:security/p5-Net-SSLeay \
 		bioawk>0:biology/bioawk \
 		vt>0:biology/vt \
-		${PYTHON_PKGNAMEPREFIX}crossmap>0:wip/py-crossmap@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}crossmap>0:biology/py-crossmap@${PY_FLAVOR}
 
-# Broken		seqkit>0:wip/seqkit \
+# Broken	seqkit>0:wip/seqkit \
 
 USES=		metaport python
 

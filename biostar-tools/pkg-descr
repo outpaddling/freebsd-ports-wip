@@ -1,5 +1,10 @@
 Biostar-Tools is a metaport for installing all the tools necessary to work
 through the Biostar Handbook.  The handbook instructs the user to install these
-tools via bioconda.
+tools mostly via bioconda, which has little quality control and requires the
+user to activate the bioconda environment each time they want to use the tools.
+This meta-package installs the tools with one simple command and to the
+default PATH so they just work without any special environment.
+
+For a current list see http://data.biostarhandbook.com/install/conda.txt.
 
 WWW: https://www.biostarhandbook.com
