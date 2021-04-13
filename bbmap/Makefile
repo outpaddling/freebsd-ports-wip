@@ -10,7 +10,9 @@ COMMENT=	BBMap short read aligner, and other bioinformatic tools
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-RUN_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash \
+		pigz:archivers/pigz \
+		pbzip2:archivers/pbzip2
 
 USES=		shebangfix
 USE_JAVA=	yes
