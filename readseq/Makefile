@@ -7,7 +7,7 @@ MASTER_SITES=	https://sourceforge.net/projects/readseq/files/latest/
 DISTFILES=	${PORTNAME}.jar
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Read & reformat biosequences, Java command-line version
+COMMENT=	Read and reformat biosequences, Java command-line version
 
 LICENSE=	PD
 
