@@ -1,14 +1,12 @@
 PORTNAME=	biostar-tools
+PORTVERSION=	1
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Meta-port for Biostar Handbook tools
 
 # TBD:
-# perl-net-ssleay (dep of edirect)
-# bbmap
 # snpeff
-# picard
 # readseq
 # ucsc-bedgraphtobigwig
 
@@ -17,6 +15,8 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		nano>0:editors/nano \
 		parallel>0:sysutils/parallel \
 		edirect>0:wip/edirect \
+		picard-tools>0:biology/picard-tools \
+		bbmap>0:wip/bbmap \
 		minimap2>0:biology/minimap2 \
 		bwa>=0:biology/bwa \
 		bowtie2>=0:biology/bowtie2 \

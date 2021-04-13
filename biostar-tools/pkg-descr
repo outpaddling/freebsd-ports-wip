@@ -1,10 +1,12 @@
 Biostar-Tools is a metaport for installing all the tools necessary to work
 through the Biostar Handbook.  The handbook instructs the user to install these
-tools mostly via bioconda, which has little quality control and requires the
-user to activate the bioconda environment each time they want to use the tools.
-This meta-package installs the tools with one simple command and to the
-default PATH so they just work without any special environment.
+tools mostly via bioconda, which then requires the user to activate the
+bioconda environment each time they want to use the tools.  This meta-package
+installs all of the tools except emboss to the default PATH so they just work
+without any special environment.  Emboss commands are installed to
+/usr/local/emboss/bin due to conflicts with other packages.
 
-For a current list see http://data.biostarhandbook.com/install/conda.txt.
+For a current list of tools required by the Biostar Handbook see
+http://data.biostarhandbook.com/install/conda.txt.
 
 WWW: https://www.biostarhandbook.com
