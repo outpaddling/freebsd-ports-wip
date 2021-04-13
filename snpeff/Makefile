@@ -9,10 +9,34 @@ DISTNAME=	snpEff_latest_core
 MAINTAINER=	bacon@moray.acadix.biz
 COMMENT=	Genetic variant annotation and effect prediction toolbox
 
-LICENSE=	LGPL3
-#LICENSE_FILE=	
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		python:3.6+ zip
+RUN_DEPENDS=	bash:shells/bash
+
+USES=		python:3.6+ shebangfix zip
 USE_JAVA=	yes
+
+JAVA_VERSION=	12+
+SHEBANG_FILES=	scripts/* scripts/gsa/*
+
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/snpEff
+
+LIBEXEC_DIR=	${PREFIX}/libexec/snpeff
+
+do-install:
+	${MKDIR} ${STAGEDIR}${JAVAJARDIR}/snpeff
+	${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/snpEff ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/snpSift ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/*.jar ${STAGEDIR}${JAVAJARDIR}/snpeff
+	${INSTALL_DATA} ${WRKSRC}/*.config ${STAGEDIR}${JAVAJARDIR}/snpeff
+	cd ${WRKSRC}/scripts && ${COPYTREE_BIN} . ${STAGEDIR}${LIBEXEC_DIR}
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g' \
+			 -e 's|%%PREFIX%%|${PREFIX}|g' \
+			 ${WRKSRC}/scripts/snpEff ${WRKSRC}/scripts/snpSift
 
 .include <bsd.port.mk>
