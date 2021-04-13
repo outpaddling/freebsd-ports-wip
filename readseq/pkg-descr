@@ -1,3 +1,5 @@
-Read & reformat biosequences, Java command-line version
+Sequence reading library developed by the Ribosomal Database Project.  Can
+handle genbank, embl, fasta, fastq, sff and sto files.  Can read from files or
+streams, and can handle indexing files.
 
-WWW: http://iubio.bio.indiana.edu/soft/molbio/readseq/java/
+WWW: https://sourceforge.net/projects/readseq
