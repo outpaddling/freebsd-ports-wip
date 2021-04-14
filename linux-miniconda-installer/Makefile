@@ -2,8 +2,8 @@
 
 PORTNAME=	miniconda-installer
 PKGNAMEPREFIX=	linux-
-DISTVERSION=	0.0.1-2
-DISTVERSIONSUFFIX=	-gce8a12b
+DISTVERSION=	0.0.1-3
+DISTVERSIONSUFFIX=	-g36f5f62
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	bacon@moray.acadix.biz
