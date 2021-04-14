@@ -2,7 +2,8 @@
 
 PORTNAME=	miniconda-installer
 PKGNAMEPREFIX=	linux-
-DISTVERSION=	0.0.1
+DISTVERSION=	0.0.1-1
+DISTVERSIONSUFFIX=	-g6258a42
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	bacon@moray.acadix.biz
@@ -18,10 +19,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 
 NO_BUILD=	yes
-PLIST_FILES=	bin/miniconda-installer
+PLIST_FILES=	bin/miniconda-installer bin/conda-shell
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/miniconda-installer \
-		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/miniconda-installer ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/conda-shell ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
