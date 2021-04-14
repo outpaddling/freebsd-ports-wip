@@ -29,6 +29,7 @@ SHEBANG_FILES=	kent/src/checkUmask.sh \
 		kent/src/utils/webSync
 
 WRKSRC=		${WRKDIR}/userApps
+CFLAGS+=	-fcommon
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 
 pre-configure:
