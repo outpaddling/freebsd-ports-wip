@@ -5,14 +5,13 @@ CATEGORIES=	wip biology
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Meta-port for Biostar Handbook tools
 
-# TBD:
-# ucsc-bedgraphtobigwig
-
+# bedgraphtobigwig is part of ucsc-kentutils
 # For a current list see http://data.biostarhandbook.com/install/conda.txt.
 RUN_DEPENDS=	wget>0:ftp/wget \
 		nano>0:editors/nano \
 		parallel>0:sysutils/parallel \
 		edirect>0:wip/edirect \
+		ucsc-kentutils>0:wip/ucsc-kentutils \
 		readseq>0:wip/readseq \
 		snpeff>0:wip/snpeff \
 		picard-tools>0:biology/picard-tools \
