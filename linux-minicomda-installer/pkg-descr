@@ -1,0 +1,4 @@
+Miniconda-installer is a tool to aid FreeBSD users in installing and using
+Linux Conda packages.
+
+WWW: https://github.com/outpaddling/miniconda-installer
