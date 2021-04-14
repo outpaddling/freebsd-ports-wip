@@ -11,7 +11,7 @@ COMMENT=	Aid for installing and using miniconda
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		linux
+USES=		linux python:3.8
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 
