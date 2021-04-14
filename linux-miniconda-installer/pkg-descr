@@ -1,4 +1,8 @@
 Miniconda-installer is a tool to aid FreeBSD users in installing and using
-Linux Conda packages.
+Linux Conda packages.  The miniconda-installer wrapper script ensures that
+the Linux compatibility environment is fully configured then automatically
+downloads and runs the Linux miniconda installer.  The conda-shell wrapper
+script performs some checks and launches a Linux bash shell, which is
+necessary for conda to function properly.
 
 WWW: https://github.com/outpaddling/miniconda-installer
