@@ -32,6 +32,8 @@ WRKSRC=		${WRKDIR}/userApps
 CFLAGS+=	-fcommon
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 
+SUB_FILES=	ucsc-shell
+
 pre-configure:
 	${MV} ${WRKSRC}/kent/src/inc/uuid.h ${WRKSRC}/kent/src/inc/my_uuid.h
 
@@ -46,5 +48,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/kentUtils/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* \
 		${STAGEDIR}${PREFIX}/kentUtils/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/ucsc-shell \
+		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

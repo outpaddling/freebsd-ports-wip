@@ -1,3 +1,4 @@
+bin/ucsc-shell
 kentUtils/bin/addCols
 kentUtils/bin/ameme
 kentUtils/bin/autoDtd
