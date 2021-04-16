@@ -103,7 +103,7 @@ step
 cat << EOM
 
 Check categories
-    Add java, perl5, python, etc. for ports that use them
+    Add java, linux, perl5, python, etc. for ports that use them
 
 EOM
 
