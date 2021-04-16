@@ -22,4 +22,7 @@ export PATH=${ucsc_bin}:$PATH
 # FIXME: Update shell prompts to include (ucsc-kent)?
 
 # Invoke the user's chosen shell
-exec $SHELL
+if echo $SHELL | egrep -q '/t?csh'; then
+    args='-f'
+fi
+exec $SHELL $args
