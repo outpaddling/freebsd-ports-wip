@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=	ucsc-kentutils
+PORTNAME=	ucsc-userapps
 DISTVERSION=	412
 CATEGORIES=	wip biology perl5 python
 MASTER_SITES=	http://hgdownload.cse.ucsc.edu/admin/exe/userApps.archive/
