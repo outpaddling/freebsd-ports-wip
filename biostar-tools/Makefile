@@ -10,6 +10,7 @@ COMMENT=	Meta-port for Biostar Handbook tools
 RUN_DEPENDS=	wget>0:ftp/wget \
 		nano>0:editors/nano \
 		parallel>0:sysutils/parallel \
+		seqkit>0:biology/seqkit \
 		edirect>0:wip/edirect \
 		ucsc-kentutils>0:wip/ucsc-kentutils \
 		readseq>0:wip/readseq \
@@ -42,8 +43,6 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		bioawk>0:biology/bioawk \
 		vt>0:biology/vt \
 		${PYTHON_PKGNAMEPREFIX}crossmap>0:biology/py-crossmap@${PY_FLAVOR}
-
-# Broken	seqkit>0:wip/seqkit \
 
 USES=		metaport python
 
