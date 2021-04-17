@@ -1,10 +1,13 @@
+# $FreeBSD$
+
 PORTNAME=	readseq
 DISTVERSION=	2.1.19
 CATEGORIES=	wip biology java
 # The site used by bioconda for 2.1.30 is down as of 2021-04-13
 # MASTER_SITES=	http://iubio.bio.indiana.edu/soft/molbio/readseq/java/
 MASTER_SITES=	https://sourceforge.net/projects/readseq/files/latest/
-DISTFILES=	${PORTNAME}.jar
+DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	.jar
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Read and reformat biosequences, Java command-line version
