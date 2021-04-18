@@ -1,6 +1,6 @@
 PORTNAME=	bbmap
 DISTVERSION=	38.90
-CATEGORIES=	wip biology
+CATEGORIES=	wip biology java
 MASTER_SITES=	SF/bbmap/
 DISTNAME=	BBMap_${PORTVERSION}
 
@@ -21,18 +21,20 @@ SHEBANG_FILES=	${WRKSRC}/*.sh
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 LIBEXEC_DIR=    ${PREFIX}/libexec/bbmap
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|"$$DIR""current/"|${JAVAJARDIR}/bbmap|g' \
 		${WRKSRC}/*.sh
-	${REINPLACE_CMD} -e 's|"$$DIR""/calcmem.sh"|${LIBEXEC_DIR}/bbmap/calcmem.sh|g' \
+	${REINPLACE_CMD} \
+		-e 's|"$$DIR""/calcmem.sh"|${LIBEXEC_DIR}/bbmap/calcmem.sh|g' \
 		${WRKSRC}/*.sh
 
 do-install:
-	${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}
-	${MKDIR} ${STAGEDIR}${JAVAJARDIR}/bbmap
+	@${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}/bbmap
 	${INSTALL_SCRIPT} ${WRKSRC}/*.sh ${STAGEDIR}${LIBEXEC_DIR}
 	cd ${WRKSRC}/current && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${JAVAJARDIR}/bbmap
