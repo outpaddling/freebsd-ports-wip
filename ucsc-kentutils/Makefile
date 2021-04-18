@@ -9,11 +9,15 @@ DISTNAME=	userApps.v${PORTVERSION}.src
 MAINTAINER=	bacon@moray.acadix.biz
 COMMENT=	Convert a bedGraph file to bigWig format
 
+# FIXME: This is not yet correct
 LICENSE=	UCSC
-LICENSE_NAME=   UCSC Genome Browser License
-LICENSE_TEXT=   License required for commercial download and installation of \
+LICENSE_NAME=	UCSC Genome Browser License
+LICENSE_TEXT=	License required for commercial download and installation of \
 		most binaries and source code.
-LICENSE_PERMS=  dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
+LICENSE_PERMS=	no-dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
+
+ONLY_FOR_ARCHS=		amd64
+ONLY_FOR_ARCHS_REASON=	_mm_popcnt_u64
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libiconv.so:converters/libiconv \
@@ -53,9 +57,9 @@ do-build:
 
 do-install:
 	${MKDIR} ${WRKSRC}/scripts ${WRKSRC}/binaries
-	${CP} $$(file work/userApps/bin/* | fgrep ELF | cut -d : -f 1) \
+	${CP} $$(file ${WRKSRC}/bin/* | fgrep ELF | cut -d : -f 1) \
 		${WRKSRC}/binaries
-	${CP} $$(file work/userApps/bin/* | fgrep -v ELF | cut -d : -f 1) \
+	${CP} $$(file ${WRKSRC}/bin/* | fgrep -v ELF | cut -d : -f 1) \
 		${WRKSRC}/scripts
 	${MKDIR} ${STAGEDIR}${PREFIX}/kentUtils/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/binaries/* \
