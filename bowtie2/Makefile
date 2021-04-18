@@ -1,8 +1,10 @@
+# $FreeBSD$
+
 PORTNAME=		bowtie2
 DISTVERSIONPREFIX=	v
 DISTVERSION=		2.4.2
-PORTREVISION=		4
-CATEGORIES=		biology perl5 python
+PORTREVISION=		5
+CATEGORIES=		wip biology perl5 python
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Ultrafast, memory-efficient short read aligner
@@ -34,8 +36,7 @@ SUB_FILES=	bowtie2-test
 .if ${ARCH} != amd64
 post-extract:
 	(cd ${WRKSRC_simde}; \
-                ${COPYTREE_SHARE} . ${WRKSRC}/third_party/simde/)
-
+		${COPYTREE_SHARE} . ${WRKSRC}/third_party/simde/)
 
 MAKE_ENV=	POPCNT_CAPABILITY=0
 .endif
