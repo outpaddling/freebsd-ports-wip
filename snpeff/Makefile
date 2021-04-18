@@ -19,6 +19,7 @@ JAVA_VERSION=	12+
 SHEBANG_FILES=	scripts/* scripts/gsa/*
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/snpEff
 
 LIBEXEC_DIR=	${PREFIX}/libexec/snpeff
