@@ -54,6 +54,11 @@ if grep -w wip $PORTSDIR/wip/$port/Makefile | grep -v '^CATEGORIES'; then
     exit 1
 fi
 
+if fgrep '$FreeBSD' $PORTSDIR/wip/$port/Makefile | grep -v '^CATEGORIES'; then
+    printf "$port contains \$FreeBSD\$ tag.  Please fix and try again.\n"
+    exit 1
+fi
+
 if [ -e $PORTSDIR/$category/$port ]; then
     printf "$PORTSDIR/$category/$port already exists.  Overwrite? y/[n] \n"
     read overwrite
