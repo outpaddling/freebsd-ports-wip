@@ -1,12 +1,10 @@
-# $FreeBSD$
-
 PORTNAME=	snpeff
 DISTVERSION=	5.0
-CATEGORIES=	wip biology
+CATEGORIES=	wip biology java python
 MASTER_SITES=	https://snpeff.blob.core.windows.net/versions/
 DISTNAME=	snpEff_latest_core
 
-MAINTAINER=	bacon@moray.acadix.biz
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Genetic variant annotation and effect prediction toolbox
 
 LICENSE=	MIT

@@ -6,7 +6,7 @@ CATEGORIES=	wip biology perl5 python
 MASTER_SITES=	http://hgdownload.cse.ucsc.edu/admin/exe/userApps.archive/
 DISTNAME=	userApps.v${PORTVERSION}.src
 
-MAINTAINER=	bacon@moray.acadix.biz
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Convert a bedGraph file to bigWig format
 
 # FIXME: This is not yet correct
