@@ -17,7 +17,8 @@ LICENSE_PERMS=  dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libiconv.so:converters/libiconv \
-		libmysqlclient.so:databases/mysql57-client
+		libmysqlclient.so:databases/mysql57-client \
+		libpng.so:graphics/png
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake localbase:ldflags shebangfix perl5 python:3.6+ ssl tar:tgz
