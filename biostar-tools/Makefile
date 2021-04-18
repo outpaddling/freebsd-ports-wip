@@ -13,7 +13,7 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		seqkit>0:biology/seqkit \
 		edirect>0:wip/edirect \
 		ucsc-kentutils>0:wip/ucsc-kentutils \
-		readseq>0:wip/readseq \
+		readseq>0:biology/readseq \
 		snpeff>0:wip/snpeff \
 		picard-tools>0:biology/picard-tools \
 		bbmap>0:wip/bbmap \
