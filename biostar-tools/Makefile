@@ -16,7 +16,7 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		readseq>0:biology/readseq \
 		snpeff>0:wip/snpeff \
 		picard-tools>0:biology/picard-tools \
-		bbmap>0:wip/bbmap \
+		bbmap>0:biology/bbmap \
 		minimap2>0:biology/minimap2 \
 		bwa>=0:biology/bwa \
 		bowtie2>=0:biology/bowtie2 \
