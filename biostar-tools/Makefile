@@ -14,7 +14,7 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		edirect>0:wip/edirect \
 		ucsc-kentutils>0:wip/ucsc-kentutils \
 		readseq>0:biology/readseq \
-		snpeff>0:wip/snpeff \
+		snpeff>0:biology/snpeff \
 		picard-tools>0:biology/picard-tools \
 		bbmap>0:biology/bbmap \
 		minimap2>0:biology/minimap2 \
