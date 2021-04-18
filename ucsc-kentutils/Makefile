@@ -9,8 +9,11 @@ DISTNAME=	userApps.v${PORTVERSION}.src
 MAINTAINER=	bacon@moray.acadix.biz
 COMMENT=	Convert a bedGraph file to bigWig format
 
-# A lie.  Create custom license.
-LICENSE=	BSD3CLAUSE
+LICENSE=	UCSC
+LICENSE_NAME=   UCSC Genome Browser License
+LICENSE_TEXT=   License required for commercial download and installation of \
+		most binaries and source code.
+LICENSE_PERMS=  dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libiconv.so:converters/libiconv \
@@ -30,12 +33,22 @@ SHEBANG_FILES=	kent/src/checkUmask.sh \
 
 WRKSRC=		${WRKDIR}/userApps
 CFLAGS+=	-fcommon
-LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+MAKEFILE=	[Mm]akefile
+MAKE_ENV+=	LOCALBASE=${LOCALBASE} BINDIR=${WRKSRC}/bin
 
 SUB_FILES=	ucsc-shell
 
 pre-configure:
 	${MV} ${WRKSRC}/kent/src/inc/uuid.h ${WRKSRC}/kent/src/inc/my_uuid.h
+
+# Build only non-commercial tools
+do-build:
+	${MKDIR} ${WRKSRC}/bin
+	(cd ${WRKSRC}/kent/src/lib && ${DO_MAKE_BUILD})
+	(cd ${WRKSRC}/kent/src/htslib && ${DO_MAKE_BUILD})
+	(cd ${WRKSRC}/kent/src/jkOwnLib && ${DO_MAKE_BUILD})
+	(cd ${WRKSRC}/kent/src/hg/lib && ${DO_MAKE_BUILD})
+	(cd ${WRKSRC}/kent/src/utils && ${DO_MAKE_BUILD})
 
 do-install:
 	${MKDIR} ${WRKSRC}/scripts ${WRKSRC}/binaries
