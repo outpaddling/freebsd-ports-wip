@@ -1,8 +1,11 @@
+# $FreeBSD$
+
 PORTNAME=	snpeff
 DISTVERSION=	5.0
 CATEGORIES=	wip biology java python
 MASTER_SITES=	https://snpeff.blob.core.windows.net/versions/
 DISTNAME=	snpEff_latest_core
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Genetic variant annotation and effect prediction toolbox
@@ -24,6 +27,11 @@ WRKSRC=		${WRKDIR}/snpEff
 
 LIBEXEC_DIR=	${PREFIX}/libexec/snpeff
 
+pre-configure:
+	${REINPLACE_CMD} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g' \
+			 -e 's|%%JAVA_HOME%%|${JAVA_HOME}|g' \
+			 ${WRKSRC}/scripts/snpEff ${WRKSRC}/scripts/snpSift
+
 do-install:
 	${MKDIR} ${STAGEDIR}${JAVAJARDIR}/snpeff
 	${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}
@@ -32,10 +40,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.jar ${STAGEDIR}${JAVAJARDIR}/snpeff
 	${INSTALL_DATA} ${WRKSRC}/*.config ${STAGEDIR}${JAVAJARDIR}/snpeff
 	cd ${WRKSRC}/scripts && ${COPYTREE_BIN} . ${STAGEDIR}${LIBEXEC_DIR}
-
-pre-configure:
-	${REINPLACE_CMD} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g' \
-			 -e 's|%%PREFIX%%|${PREFIX}|g' \
-			 ${WRKSRC}/scripts/snpEff ${WRKSRC}/scripts/snpSift
 
 .include <bsd.port.mk>
