@@ -1,23 +1,23 @@
-PORTNAME=	edirect
-PORTVERSION=	14.8.20210329
+PORTNAME=	ncbi-entrez-direct
+DISTVERSION=	14.9.20210414
 CATEGORIES=	wip biology
 MASTER_SITES=	ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/${PORTVERSION}/
+DISTNAME=	edirect
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Access to the NCBI's suite of interconnected databases
 
-# Actually unspecified
-LICENSE=	MPL20
+LICENSE=	PD	# Unspecified
 
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
 		p5-XML-Simple>=0:textproc/p5-XML-Simple
 
-USES=		go shebangfix
+USES=		go:modules shebangfix
 SHEBANG_FILES=	setup.sh nquire edirect.pl word-at-a-time
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 PSCRIPTS=	esearch efetch epost einfo efilter elink esummary nquire
 SCRIPTS=	esearch efetch epost einfo efilter elink esummary xtract \

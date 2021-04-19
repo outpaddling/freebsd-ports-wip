@@ -11,7 +11,7 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		nano>0:editors/nano \
 		parallel>0:sysutils/parallel \
 		seqkit>0:biology/seqkit \
-		edirect>0:wip/edirect \
+		ncbi-entrez-direct>0:wip/ncbi-entrez-direct \
 		ucsc-kentutils>0:wip/ucsc-kentutils \
 		readseq>0:biology/readseq \
 		snpeff>0:biology/snpeff \
