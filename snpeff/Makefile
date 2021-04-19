@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PORTNAME=	snpeff
 DISTVERSION=	5.0
 CATEGORIES=	wip biology java python
