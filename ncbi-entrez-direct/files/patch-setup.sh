@@ -1,4 +1,4 @@
---- setup.sh.orig	2021-04-04 14:59:17 UTC
+--- setup.sh.orig	2021-04-19 16:58:39 UTC
 +++ setup.sh
 @@ -12,13 +12,6 @@ esac
  
@@ -14,7 +14,7 @@
  cd "$DIR"
  
  if ! "${PERL}" -Iaux/lib/perl5 -MMozilla::CA -e '1;' 2>/dev/null
-@@ -26,30 +19,10 @@ then
+@@ -26,27 +19,6 @@ then
    gzip -cd Mozilla-CA.tar.gz | tar xvf -
  fi
  
@@ -42,11 +42,11 @@
  osname=`uname -s`
  cputype=`uname -m`
  case "$osname-$cputype" in
-+  FreeBSD-amd64 )          platform=FreeBSD ;;
-   Linux-x86_64 )           platform=Linux ;;
-   Darwin-x86_64 )          platform=Darwin ;;
+@@ -55,92 +27,10 @@ case "$osname-$cputype" in
    Darwin-*arm* )           platform=Darwin ;;
-@@ -58,89 +31,6 @@ case "$osname-$cputype" in
+   CYGWIN_NT-* | MINGW*-* ) platform=CYGWIN_NT ;;
+   Linux-*arm* )            platform=ARM ;;
++  FreeBSD-* )              platform=FreeBSD ;;
    * )                      platform=UNSUPPORTED ;;
  esac
  
