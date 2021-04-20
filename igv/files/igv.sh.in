@@ -1,6 +1,0 @@
-#!/bin/sh
-%%JAVA_HOME%%/bin/java -showversion --module-path="%%JAVAJARDIR%%/igv" -Xmx4g \
-    @"%%JAVAJARDIR%%/igv/igv.args" \
-    -Dapple.laf.useScreenMenuBar=true \
-    -Djava.net.preferIPv4Stack=true \
-    --module=org.igv/org.broad.igv.ui.Main "$@"

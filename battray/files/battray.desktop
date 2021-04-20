@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=Battray battery monitor
-Comment=Start the battray battery monitor
-Exec=battray
-Terminal=false
-Type=Application
-X-GNOME-Autostart-Phase=Initialization
-X-KDE-autostart-phase=1
