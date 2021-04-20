@@ -74,6 +74,13 @@ EOM
 step
 cat << EOM
 
+If DISTNAME is not versioned, set DIST_SUBDIR.
+
+EOM
+
+step
+cat << EOM
+
 Replace PORTVERSION with DISTVERSION wherever possible
     * Only when changing version, otherwise breaks svn annotate / git blame
     DISTVERSION must match upstream version
@@ -227,6 +234,13 @@ Use USES or USE_* variables wherever possible
     USE_TEX instead of tex-* depends
     pathfix for pkgconfig lib/libdata
     USE_XORG= instead of LIB_DEPENDS where possible
+
+EOM
+
+step
+cat << EOM
+
+Use JAVA_HOME if possible over JAVAJARDIR, etc.
 
 EOM
 
