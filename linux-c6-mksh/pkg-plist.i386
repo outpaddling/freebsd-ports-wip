@@ -1,4 +1,0 @@
-%%ETCDIR%%rc
-etc/skel/.mkshrc
-usr/bin/mksh
-usr/share/man/man1/mksh.1.gz

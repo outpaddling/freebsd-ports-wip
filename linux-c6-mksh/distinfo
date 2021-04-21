@@ -1,7 +1,0 @@
-TIMESTAMP = 1534860421
-SHA256 (centos/mksh-39-10.el6.i686.rpm) = 93ca03d9b48538be3acfa0ba01259853c599f20e5665ab2ad12555d8638f54c1
-SIZE (centos/mksh-39-10.el6.i686.rpm) = 168356
-SHA256 (centos/mksh-39-10.el6.x86_64.rpm) = fcbf128a838a4640c89c6e56edaa2629f6d60d5faf7b6d4319daa112ef8da502
-SIZE (centos/mksh-39-10.el6.x86_64.rpm) = 177728
-SHA256 (centos/mksh-39-10.el6.src.rpm) = ceabab140fdb4de314202b0105b52adf505ed9c3ddf6a2cd51fa4f5818968d78
-SIZE (centos/mksh-39-10.el6.src.rpm) = 295499
