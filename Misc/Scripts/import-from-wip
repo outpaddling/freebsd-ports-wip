@@ -67,6 +67,10 @@ if [ -e $PORTSDIR/$category/$port ]; then
     fi
 fi
 
+# Make sure we're adding to a fully updated tree
+cd $PORTSDIR
+git pull
+
 rsync -av --delete $PORTSDIR/wip/$port $PORTSDIR/$category
 
 sed -i '' '/^CATEGORIES/s|wip ||' $PORTSDIR/$category/$port/Makefile
