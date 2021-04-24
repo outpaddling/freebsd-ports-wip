@@ -1,11 +1,9 @@
-# Created by: Jason Bacon
-
-PORTNAME=		ncbi-entrez-direct
-DISTVERSION=		14.9.20210423
-CATEGORIES=		wip biology perl5
-MASTER_SITES=		ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/${PORTVERSION}/
-DISTFILES=		edirect.tar.gz
-DIST_SUBDIR=		edirect-${PORTVERSION}
+PORTNAME=	ncbi-entrez-direct
+DISTVERSION=	14.9.20210423
+CATEGORIES=	wip biology perl5
+MASTER_SITES=	ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/${PORTVERSION}/
+DISTFILES=	edirect.tar.gz
+DIST_SUBDIR=	edirect-${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Access to the NCBI's suite of interconnected databases
