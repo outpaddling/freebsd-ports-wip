@@ -2,7 +2,7 @@
 
 PORTNAME=		ncbi-entrez-direct
 DISTVERSION=		14.9.20210423
-CATEGORIES=		wip biology
+CATEGORIES=		wip biology perl5
 MASTER_SITES=		ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/${PORTVERSION}/
 DISTFILES=		edirect.tar.gz
 DIST_SUBDIR=		edirect-${PORTVERSION}
@@ -20,12 +20,12 @@ RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 USES=		go:modules perl5 shebangfix
 USE_GITHUB=	nodefault
 
-# For dependency versions, run:
+# Dependency versions:
 #	make clean extract
 # 	cd ${WRKSRC}/cmd
 #	rm -r vendor
 #	../../../files/go-build
-# Run go mod vendor in cmd directory to generate files/modules.txt
+# files/modules.txt: cd ${WRKSRC}/cmd && go mod vendor
 GHSD=		vendor/github.com
 GLSD=		vendor/golang.org
 GH_TUPLE=	fatih:color:v1.10.0:a/${GHSD}/fatih/color \
