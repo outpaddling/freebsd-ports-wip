@@ -20,13 +20,14 @@ RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 USES=		go:modules perl5 shebangfix
 USE_GITHUB=	nodefault
 
-GHSD=		vendor/github.com
-GLSD=		vendor/golang.org
 # For dependency versions, run:
 #	make clean extract
 # 	cd ${WRKSRC}/cmd
 #	rm -r vendor
 #	../../../files/go-build
+# Run go mod vendor in cmd directory to generate files/modules.txt
+GHSD=		vendor/github.com
+GLSD=		vendor/golang.org
 GH_TUPLE=	fatih:color:v1.10.0:a/${GHSD}/fatih/color \
 		surgebase:porter2:56e4718818e8:b/${GHSD}/surgebase/porter2 \
 		gedex:inflector:16278e9db813:c/${GHSD}/gedex/inflector \
