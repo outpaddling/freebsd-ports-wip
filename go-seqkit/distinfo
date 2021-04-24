@@ -1,9 +1,0 @@
-TIMESTAMP = 1613049282
-SHA256 (shenwei356-seqkit-v0.15.0_GH0.tar.gz) = 9de64c690aa781cee91f1dd64c721350195c425a58de848c8ff14ba104df96dc
-SIZE (shenwei356-seqkit-v0.15.0_GH0.tar.gz) = 30035156
-SHA256 (mattn-go-colorable-v0.1.8_GH0.tar.gz) = 1027954f9abbe06b6e117e3047af70204dd0eb4f8c27fcd459fb2574b279755f
-SIZE (mattn-go-colorable-v0.1.8_GH0.tar.gz) = 9571
-SHA256 (mattn-go-isatty-v0.0.12_GH0.tar.gz) = addbdc341d7685ed4cc8d2d8a8fd2bd9b784bde00d0ea99fb251039fc10c611c
-SIZE (mattn-go-isatty-v0.0.12_GH0.tar.gz) = 4548
-SHA256 (shenwei356-go-logging-c6b9702_GH0.tar.gz) = 68ca51c09ab8d8605cfb4fb5cfe45032b2e466470d51db6e55b9a7a6ed132a53
-SIZE (shenwei356-go-logging-c6b9702_GH0.tar.gz) = 36393

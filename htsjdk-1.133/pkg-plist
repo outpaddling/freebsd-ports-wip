@@ -1,7 +1,0 @@
-%%JAVAJARDIR%%/htsjdk/apache-ant-1.8.2-bzip2.jar
-%%JAVAJARDIR%%/htsjdk/commons-compress-1.4.1.jar
-%%JAVAJARDIR%%/htsjdk/commons-jexl-2.1.1.jar
-%%JAVAJARDIR%%/htsjdk/commons-logging-1.1.1.jar
-%%JAVAJARDIR%%/htsjdk/htsjdk-1.133.jar
-%%JAVAJARDIR%%/htsjdk/snappy-java-1.0.3-rc3.jar
-%%JAVAJARDIR%%/htsjdk/xz-1.5.jar

@@ -1,7 +1,0 @@
-COSMOS is a Python library for workflow management that allows formal
-description of pipelines and partitioning of jobs. In addition, it includes a
-user-interface for tracking the progress of jobs, abstraction of the queuing
-system and fine-grained control over the workflow. Workflows can be created on
-traditional computing clusters as well as cloud-based services.
-
-WWW: http://cosmos.hms.harvard.edu/

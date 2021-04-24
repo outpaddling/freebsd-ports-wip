@@ -1,3 +1,0 @@
-bin/dosu
-%%EXAMPLESDIR%%/dosu.conf
-@dirrm %%EXAMPLESDIR%%

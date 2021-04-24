@@ -1,5 +1,0 @@
-TIMESTAMP = 1474377295
-SHA256 (rpm/x86_64/centos/6.8/openmpi-1.10-1.10.2-2.el6.i686.rpm) = 829b2643cf173ef8530a7a8c05e4ec496580ea8f2ca643a0492d048811f67335
-SIZE (rpm/x86_64/centos/6.8/openmpi-1.10-1.10.2-2.el6.i686.rpm) = 2993432
-SHA256 (rpm/x86_64/centos/6.8/openmpi-1.10-1.10.2-2.el6.x86_64.rpm) = 0517deb339d1699fa554e35a9e8f922525194e7158a747928b9c4657b7ee2d0e
-SIZE (rpm/x86_64/centos/6.8/openmpi-1.10-1.10.2-2.el6.x86_64.rpm) = 3058532

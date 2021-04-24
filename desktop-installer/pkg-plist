@@ -1,5 +1,5 @@
 man/man1/desktop-installer.1.gz
-sbin/battery_shutdown.sh
+sbin/battery-shutdown.sh
 sbin/desktop-installer
 %%DATADIR%%/20-swcursor.conf
 %%DATADIR%%/90-vboxguest.fdi
@@ -15,7 +15,7 @@ sbin/desktop-installer
 %%DATADIR%%/LXDE/xinitrc
 %%DATADIR%%/LXQT/xinitrc
 %%DATADIR%%/MATE/xinitrc
-%%DATADIR%%/Scripts/battery_shutdown.sh
+%%DATADIR%%/Scripts/battery-shutdown.sh
 %%DATADIR%%/Scripts/desktop-admin
 %%DATADIR%%/WMAKER/xinitrc
 %%DATADIR%%/XDM/GiveConsole

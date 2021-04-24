@@ -1,8 +1,0 @@
-%%ETCDIR%%rc
-etc/skel/.kshrc
-usr/bin/ksh93
-%%PORTDOCS%%%%DOCSDIR%%/COMPATIBILITY
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE
-usr/share/man/man1/ksh93.1.gz
