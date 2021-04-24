@@ -1,0 +1,22 @@
+--- Makefile.install.orig	2016-10-07 21:59:36 UTC
++++ Makefile.install
+@@ -37,7 +37,7 @@ LIBRARIES_TO_INSTALL = \
+     ngs-c++.$(VERSION_LIBX) \
+     ngs-adapt-c++.$(VERSION_LIBX) \
+ 
+-LIB_TARGET = $(INST_LIBDIR)$(BITS)
++LIB_TARGET = $(INST_LIBDIR)
+ 
+ LIBRARIES_WITH_PREFIX = \
+ 	$(addprefix $(LIB_TARGET)/$(LPFX),$(LIBRARIES_TO_INSTALL))
+@@ -53,8 +53,8 @@ copyincludes:
+ 
+ copyexamples:
+ 	@ echo "Installing examples to $(INST_SHAREDIR)"
+-	@ mkdir -p $(INST_SHAREDIR)/examples
+-	@ $(MAKE) -C $(TOP)/examples install INST_TARGET=$(INST_SHAREDIR)/examples
++	@ mkdir -p $(INST_SHAREDIR)/examples/ngs
++	@ $(MAKE) -C $(TOP)/examples install INST_TARGET=$(INST_SHAREDIR)/examples/ngs
+ 
+ #fake root for debugging
+ #uncomment this line and change the test for root ( see under install: ) to succeed:
