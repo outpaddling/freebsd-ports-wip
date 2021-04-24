@@ -1,4 +1,4 @@
-# $FreeBSD$
+# Created by: Jason Bacon
 
 PORTNAME=		ncbi-entrez-direct
 DISTVERSION=		14.9.20210414
@@ -19,8 +19,7 @@ RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 
 USES=		go:modules perl5 shebangfix
 USE_GITHUB=	nodefault
-#GHSD=		pkg/mod/github.com
-#GLSD=		pkg/mod/golang.org
+
 GHSD=		vendor/github.com
 GLSD=		vendor/golang.org
 GH_TUPLE=	fatih:color:v1.10.0:a/${GHSD}/fatih/color@v1.10.0 \
@@ -33,18 +32,6 @@ GH_TUPLE=	fatih:color:v1.10.0:a/${GHSD}/fatih/color@v1.10.0 \
 		fiam:gounidecode:i/${GHSD}/fiam/gounidecode@v0.0.0-20150629112515-8deddbd03fec \
 		golang:text:v0.3.5:j/${GLSD}/x/text@v0.3.5 \
 		golang:sys:d5e6a3e2c0ae:k/${GLSD}/x/sys@v0.0.0-20200223170610-d5e6a3e2c0ae
-
-# Build output when USE_GITHUB is disabled
-# go: downloading github.com/fatih/color v1.10.0
-# go: downloading github.com/surgebase/porter2 v0.0.0-20150829210152-56e4718818e8
-# go: downloading github.com/gedex/inflector v0.0.0-20170307190818-16278e9db813
-# go: downloading github.com/klauspost/cpuid v1.3.1
-# go: downloading github.com/pbnjay/memory v0.0.0-20201129165224-b12e5d931931
-# go: downloading golang.org/x/text v0.3.5
-# go: downloading github.com/mattn/go-colorable v0.1.8
-# go: downloading github.com/mattn/go-isatty v0.0.12
-# go: downloading golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae
-# go: downloading github.com/fiam/gounidecode v0.0.0-20150629112515-8deddbd03fec
 
 SHEBANG_FILES=	setup.sh nquire edirect.pl word-at-a-time accn-at-a-time \
 		amino-acid-composition between-two-genes exclude-uid-lists \
@@ -71,17 +58,17 @@ post-extract:
 	${MV} ${WRKDIR}/edirect/* ${WRKSRC}
 	${RMDIR} ${WRKDIR}/edirect
 	${MV} ${WRKSRC}/vendor ${WRKSRC}/cmd
-	(cd ${WRKSRC}/cmd && go mod vendor)
 
 pre-configure:
-	(cd ${WRKSRC} && ${REINPLACE_CMD} \
+	cd ${WRKSRC} && ${REINPLACE_CMD} \
 		-e 's|$$PATH:$$pth|$$PATH:${LIBEXEC_DIR}|g' \
 		-e 's|"$$pth"|${LIBEXEC_DIR}|g' \
-		${PSCRIPTS})
+		${PSCRIPTS}
 
 do-build:
-	(cd ${WRKSRC}/cmd && ${SETENV} GOPATH=${WRKSRC} ${FILESDIR}/go-build)
-	(cd ${WRKSRC} && ./setup.sh)
+	cd ${WRKSRC}/cmd && ${GO_CMD} mod vendor
+	cd ${WRKSRC}/cmd && ${FILESDIR}/go-build
+	cd ${WRKSRC} && ./setup.sh
 
 do-install:
 	${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}
