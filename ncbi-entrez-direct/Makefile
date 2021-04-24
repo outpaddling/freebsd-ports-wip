@@ -48,11 +48,9 @@ SCRIPTS=	accn-at-a-time amino-acid-composition archive-pubmed \
 		nquire phrase-search pm-collect pm-index pm-invert pm-merge \
 		pm-prepare pm-promote pm-refresh pm-stash rchive \
 		reorder-columns run-ncbi-converter skip-if-file-exists \
-		sort-uniq-count sort-uniq-count-rank stream-pubmed \
+		ecommon.sh sort-uniq-count sort-uniq-count-rank stream-pubmed \
 		theme-aliases transmute word-at-a-time xml2tbl xtract xy-plot \
 		hlp-xtract.txt transmute xml2json xtract
-
-LIBEXEC_DIR=	${PREFIX}/libexec/edirect
 
 post-extract:
 	${MV} ${WRKDIR}/edirect/* ${WRKSRC}
@@ -61,8 +59,8 @@ post-extract:
 
 pre-configure:
 	cd ${WRKSRC} && ${REINPLACE_CMD} \
-		-e 's|$$PATH:$$pth|$$PATH:${LIBEXEC_DIR}|g' \
-		-e 's|"$$pth"|${LIBEXEC_DIR}|g' \
+		-e 's|$$PATH:$$pth|$$PATH:${PREFIX}/bin|g' \
+		-e 's|"$$pth"|${PREFIX}/bin|g' \
 		${PSCRIPTS}
 
 do-build:
@@ -71,11 +69,10 @@ do-build:
 	cd ${WRKSRC}/cmd && ${FILESDIR}/go-build
 
 do-install:
-	${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/*.pl ${STAGEDIR}${LIBEXEC_DIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/ecommon.sh ${STAGEDIR}${LIBEXEC_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/cmd/*.FreeBSD ${STAGEDIR}${LIBEXEC_DIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/edirect.pl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/cmd/*.FreeBSD ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${FILESDIR}/edirect-test.sh ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

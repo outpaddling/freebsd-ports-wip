@@ -5,7 +5,9 @@ bin/between-two-genes
 bin/download-ncbi-data
 bin/download-pubmed
 bin/download-sequence
+bin/ecommon.sh
 bin/edirect-test.sh
+bin/edirect.pl
 bin/efetch
 bin/efilter
 bin/einfo
@@ -35,6 +37,7 @@ bin/pm-promote
 bin/pm-refresh
 bin/pm-stash
 bin/rchive
+bin/rchive.FreeBSD
 bin/reorder-columns
 bin/run-ncbi-converter
 bin/skip-if-file-exists
@@ -43,14 +46,10 @@ bin/sort-uniq-count-rank
 bin/stream-pubmed
 bin/theme-aliases
 bin/transmute
+bin/transmute.FreeBSD
 bin/word-at-a-time
 bin/xml2json
 bin/xml2tbl
 bin/xtract
+bin/xtract.FreeBSD
 bin/xy-plot
-libexec/edirect/ecommon.sh
-libexec/edirect/edirect.pl
-libexec/edirect/rchive.FreeBSD
-libexec/edirect/setup-deps.pl
-libexec/edirect/transmute.FreeBSD
-libexec/edirect/xtract.FreeBSD
