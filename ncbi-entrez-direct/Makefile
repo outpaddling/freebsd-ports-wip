@@ -69,7 +69,6 @@ do-build:
 	cd ${WRKSRC}/cmd && ${FILESDIR}/go-build
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/edirect.pl ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/cmd/*.FreeBSD ${STAGEDIR}${PREFIX}/bin
