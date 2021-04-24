@@ -33,7 +33,7 @@ GH_TUPLE=	fatih:color:v1.10.0:a/${GHSD}/fatih/color \
 		golang:text:v0.3.5:i/${GLSD}/x/text \
 		golang:sys:d5e6a3e2c0ae:j/${GLSD}/x/sys
 
-SHEBANG_FILES=	setup.sh nquire edirect.pl word-at-a-time accn-at-a-time \
+SHEBANG_FILES=	nquire edirect.pl word-at-a-time accn-at-a-time \
 		amino-acid-composition between-two-genes exclude-uid-lists \
 		filter-stop-words intersect-uid-lists phrase-search \
 		skip-if-file-exists theme-aliases
@@ -50,7 +50,7 @@ SCRIPTS=	accn-at-a-time amino-acid-composition archive-pubmed \
 		reorder-columns run-ncbi-converter skip-if-file-exists \
 		sort-uniq-count sort-uniq-count-rank stream-pubmed \
 		theme-aliases transmute word-at-a-time xml2tbl xtract xy-plot \
-		ecommon.sh hlp-xtract.txt transmute xml2json xtract
+		hlp-xtract.txt transmute xml2json xtract
 
 LIBEXEC_DIR=	${PREFIX}/libexec/edirect
 
@@ -66,15 +66,15 @@ pre-configure:
 		${PSCRIPTS}
 
 do-build:
-	${CP} ${FILESDIR}/modules.txt ${FILESDIR}/modules.txt ${WRKSRC}/cmd/vendor
+	${CP} ${FILESDIR}/modules.txt ${WRKSRC}/cmd/vendor
 	${CP} -R ${WRKSRC}/eutils ${WRKSRC}/cmd/vendor
 	cd ${WRKSRC}/cmd && ${FILESDIR}/go-build
-	cd ${WRKSRC} && ./setup.sh
 
 do-install:
 	${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/*.pl ${STAGEDIR}${LIBEXEC_DIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/ecommon.sh ${STAGEDIR}${LIBEXEC_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/cmd/*.FreeBSD ${STAGEDIR}${LIBEXEC_DIR}
 	${INSTALL_SCRIPT} ${FILESDIR}/edirect-test.sh ${STAGEDIR}${PREFIX}/bin
 

@@ -5,7 +5,6 @@ bin/between-two-genes
 bin/download-ncbi-data
 bin/download-pubmed
 bin/download-sequence
-bin/ecommon.sh
 bin/edirect-test.sh
 bin/efetch
 bin/efilter
@@ -49,6 +48,7 @@ bin/xml2json
 bin/xml2tbl
 bin/xtract
 bin/xy-plot
+libexec/edirect/ecommon.sh
 libexec/edirect/edirect.pl
 libexec/edirect/rchive.FreeBSD
 libexec/edirect/setup-deps.pl
