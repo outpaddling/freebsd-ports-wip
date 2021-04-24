@@ -10,7 +10,7 @@ DIST_SUBDIR=		edirect-${PORTVERSION}
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Access to the NCBI's suite of interconnected databases
 
-LICENSE=	PD	# Unspecified
+LICENSE=	PD
 
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
