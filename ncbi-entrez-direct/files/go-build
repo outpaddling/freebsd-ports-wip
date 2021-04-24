@@ -6,6 +6,7 @@ platform=`uname -s`
 # GOARCH=x86-64
 # export GOOS GOARCH
 
+export HOME=$(pwd)
 go build -o xtract."$platform" xtract.go
 go build -o transmute."$platform" transmute.go
 go build -o rchive."$platform" rchive.go

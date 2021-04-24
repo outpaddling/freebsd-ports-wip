@@ -22,16 +22,16 @@ USE_GITHUB=	nodefault
 
 GHSD=		vendor/github.com
 GLSD=		vendor/golang.org
-GH_TUPLE=	fatih:color:v1.10.0:a/${GHSD}/fatih/color@v1.10.0 \
-		surgebase:porter2:56e4718818e8:b/${GHSD}/surgebase/porter2@v0.0.0-20150829210152-56e4718818e8 \
-		gedex:inflector:16278e9db813:c/${GHSD}/gedex/inflector@v0.0.0-20170307190818-16278e9db813 \
-		klauspost:cpuid:v1.3.1:d/${GHSD}/klauspost/cpuid@v1.3.1 \
-		pbnjay:memory:b12e5d931931:e/${GHSD}/pbnjay/memory@v0.0.0-20201129165224-b12e5d931931 \
-		mattn:go-colorable:v0.1.8:f/${GHSD}/mattn/go-colorable@v0.1.8 \
-		mattn:go-isatty:v0.0.12:g/${GHSD}/mattn/go-isatty@v0.0.12 \
-		fiam:gounidecode:i/${GHSD}/fiam/gounidecode@v0.0.0-20150629112515-8deddbd03fec \
-		golang:text:v0.3.5:j/${GLSD}/x/text@v0.3.5 \
-		golang:sys:d5e6a3e2c0ae:k/${GLSD}/x/sys@v0.0.0-20200223170610-d5e6a3e2c0ae
+GH_TUPLE=	fatih:color:v1.10.0:a/${GHSD}/fatih/color \
+		surgebase:porter2:56e4718818e8:b/${GHSD}/surgebase/porter2 \
+		gedex:inflector:16278e9db813:c/${GHSD}/gedex/inflector \
+		klauspost:cpuid:v1.3.1:d/${GHSD}/klauspost/cpuid \
+		pbnjay:memory:b12e5d931931:e/${GHSD}/pbnjay/memory \
+		mattn:go-colorable:v0.1.8:f/${GHSD}/mattn/go-colorable \
+		mattn:go-isatty:v0.0.12:g/${GHSD}/mattn/go-isatty \
+		fiam:gounidecode:8deddbd03fec:h/${GHSD}/fiam/gounidecode \
+		golang:text:v0.3.5:i/${GLSD}/x/text \
+		golang:sys:d5e6a3e2c0ae:j/${GLSD}/x/sys
 
 SHEBANG_FILES=	setup.sh nquire edirect.pl word-at-a-time accn-at-a-time \
 		amino-acid-composition between-two-genes exclude-uid-lists \
@@ -66,7 +66,8 @@ pre-configure:
 		${PSCRIPTS}
 
 do-build:
-	cd ${WRKSRC}/cmd && ${GO_CMD} mod vendor
+	${CP} ${FILESDIR}/modules.txt ${FILESDIR}/modules.txt ${WRKSRC}/cmd/vendor
+	${CP} -R ${WRKSRC}/eutils ${WRKSRC}/cmd/vendor
 	cd ${WRKSRC}/cmd && ${FILESDIR}/go-build
 	cd ${WRKSRC} && ./setup.sh
 
