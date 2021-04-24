@@ -19,8 +19,10 @@ RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 
 USES=		go:modules perl5 shebangfix
 USE_GITHUB=	nodefault
-GHSD=		pkg/mod/github.com
-GLSD=		pkg/mod/golang.org
+#GHSD=		pkg/mod/github.com
+#GLSD=		pkg/mod/golang.org
+GHSD=		vendor/github.com
+GLSD=		vendor/golang.org
 GH_TUPLE=	fatih:color:v1.10.0:a/${GHSD}/fatih/color@v1.10.0 \
 		surgebase:porter2:56e4718818e8:b/${GHSD}/surgebase/porter2@v0.0.0-20150829210152-56e4718818e8 \
 		gedex:inflector:16278e9db813:c/${GHSD}/gedex/inflector@v0.0.0-20170307190818-16278e9db813 \
@@ -68,6 +70,8 @@ LIBEXEC_DIR=	${PREFIX}/libexec/edirect
 post-extract:
 	${MV} ${WRKDIR}/edirect/* ${WRKSRC}
 	${RMDIR} ${WRKDIR}/edirect
+	${MV} ${WRKSRC}/vendor ${WRKSRC}/cmd
+	(cd ${WRKSRC}/cmd && go mod vendor)
 
 pre-configure:
 	(cd ${WRKSRC} && ${REINPLACE_CMD} \
