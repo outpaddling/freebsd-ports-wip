@@ -1,7 +1,7 @@
 # Created by: Jason Bacon
 
 PORTNAME=		ncbi-entrez-direct
-DISTVERSION=		14.9.20210414
+DISTVERSION=		14.9.20210423
 CATEGORIES=		wip biology
 MASTER_SITES=		ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/${PORTVERSION}/
 DISTFILES=		edirect.tar.gz
@@ -22,6 +22,11 @@ USE_GITHUB=	nodefault
 
 GHSD=		vendor/github.com
 GLSD=		vendor/golang.org
+# For dependency versions, run:
+#	make clean extract
+# 	cd ${WRKSRC}/cmd
+#	rm -r vendor
+#	../../../files/go-build
 GH_TUPLE=	fatih:color:v1.10.0:a/${GHSD}/fatih/color \
 		surgebase:porter2:56e4718818e8:b/${GHSD}/surgebase/porter2 \
 		gedex:inflector:16278e9db813:c/${GHSD}/gedex/inflector \
