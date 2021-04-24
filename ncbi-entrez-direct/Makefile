@@ -53,20 +53,20 @@ SCRIPTS=	accn-at-a-time amino-acid-composition archive-pubmed \
 		hlp-xtract.txt transmute xml2json xtract
 
 post-extract:
-	${MV} ${WRKDIR}/edirect/* ${WRKSRC}
-	${RMDIR} ${WRKDIR}/edirect
-	${MV} ${WRKSRC}/vendor ${WRKSRC}/cmd
+	@${MV} ${WRKDIR}/edirect/* ${WRKSRC}
+	@${RMDIR} ${WRKDIR}/edirect
+	@${MV} ${WRKSRC}/vendor ${WRKSRC}/cmd
 
 pre-configure:
-	cd ${WRKSRC} && ${REINPLACE_CMD} \
+	@cd ${WRKSRC} && ${REINPLACE_CMD} \
 		-e 's|$$PATH:$$pth|$$PATH:${PREFIX}/bin|g' \
 		-e 's|"$$pth"|${PREFIX}/bin|g' \
 		${PSCRIPTS}
 
 do-build:
-	${CP} ${FILESDIR}/modules.txt ${WRKSRC}/cmd/vendor
-	${CP} -R ${WRKSRC}/eutils ${WRKSRC}/cmd/vendor
-	cd ${WRKSRC}/cmd && ${FILESDIR}/go-build
+	@${CP} ${FILESDIR}/modules.txt ${WRKSRC}/cmd/vendor
+	@${CP} -R ${WRKSRC}/eutils ${WRKSRC}/cmd/vendor
+	@cd ${WRKSRC}/cmd && ${FILESDIR}/go-build
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${PREFIX}/bin

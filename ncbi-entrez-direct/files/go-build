@@ -1,11 +1,6 @@
 #!/bin/sh -ex
 
 platform=`uname -s`
-# GOOS=`uname -s`
-# GOARCH=`uname -m`
-# GOARCH=x86-64
-# export GOOS GOARCH
-
 export HOME=$(pwd)
 go build -o xtract."$platform" xtract.go
 go build -o transmute."$platform" transmute.go
