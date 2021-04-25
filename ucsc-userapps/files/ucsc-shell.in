@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-ucsc_bin=%%PREFIX%%/kentUtils/bin
+ucsc_bin=%%PREFIX%%/userapps/bin
 cat << EOM
 
 Adding $ucsc_bin to \$PATH.

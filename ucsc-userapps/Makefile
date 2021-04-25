@@ -1,20 +1,24 @@
-# $FreeBSD$
+# Created by: J. Bacon <jwb@FreeBSD.org>
 
-PORTNAME=	ucsc-kentutils
-DISTVERSION=	412
+PORTNAME=	ucsc-userapps
+DISTVERSION=	413
 CATEGORIES=	wip biology perl5 python
 MASTER_SITES=	http://hgdownload.cse.ucsc.edu/admin/exe/userApps.archive/
 DISTNAME=	userApps.v${PORTVERSION}.src
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Convert a bedGraph file to bigWig format
+COMMENT=	Command line tools from the UCSC Genome Browser project
 
-# FIXME: This is not yet correct
-LICENSE=	UCSC
+LICENSE=	UCSC-GB
 LICENSE_NAME=	UCSC Genome Browser License
-LICENSE_TEXT=	License required for commercial download and installation of \
-		most binaries and source code.
-LICENSE_PERMS=	no-dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
+LICENSE_TEXT=	To the best of our knowledge, all of the tools installed by\
+		this port are freely available.  However, a license is\
+		required for commercial download and installation of some\
+		binaries and source code in the UCSC Genome Browser\
+		distribution.\n\nContact UCSC directly if you are using these\
+		tools for commercial purposes.\n\nSee\
+		https://genome.ucsc.edu/license/ for full terms.
+LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	_mm_popcnt_u64
@@ -26,6 +30,8 @@ LIB_DEPENDS=	libiconv.so:converters/libiconv \
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake localbase:ldflags shebangfix perl5 python:3.6+ ssl tar:tgz
+
+RESTRICTED=	Redistribution is limited, see license
 
 SHEBANG_FILES=	kent/src/checkUmask.sh \
 		kent/src/utils/bigHeat \
@@ -39,33 +45,31 @@ SHEBANG_FILES=	kent/src/checkUmask.sh \
 WRKSRC=		${WRKDIR}/userApps
 CFLAGS+=	-fcommon
 MAKEFILE=	[Mm]akefile
-MAKE_ENV+=	LOCALBASE=${LOCALBASE} BINDIR=${WRKSRC}/bin
+MAKE_ENV=	BINDIR=${WRKSRC}/bin
 
 SUB_FILES=	ucsc-shell
 
-pre-configure:
-	${MV} ${WRKSRC}/kent/src/inc/uuid.h ${WRKSRC}/kent/src/inc/my_uuid.h
-
 # Build only non-commercial tools
 do-build:
-	${MKDIR} ${WRKSRC}/bin
-	(cd ${WRKSRC}/kent/src/lib && ${DO_MAKE_BUILD})
-	(cd ${WRKSRC}/kent/src/htslib && ${DO_MAKE_BUILD})
-	(cd ${WRKSRC}/kent/src/jkOwnLib && ${DO_MAKE_BUILD})
-	(cd ${WRKSRC}/kent/src/hg/lib && ${DO_MAKE_BUILD})
-	(cd ${WRKSRC}/kent/src/utils && ${DO_MAKE_BUILD})
+	@${MV} ${WRKSRC}/kent/src/inc/uuid.h ${WRKSRC}/kent/src/inc/my_uuid.h
+	@${MKDIR} ${WRKSRC}/bin
+	@(cd ${WRKSRC}/kent/src/lib && ${DO_MAKE_BUILD})
+	@(cd ${WRKSRC}/kent/src/htslib && ${DO_MAKE_BUILD})
+	@(cd ${WRKSRC}/kent/src/jkOwnLib && ${DO_MAKE_BUILD})
+	@(cd ${WRKSRC}/kent/src/hg/lib && ${DO_MAKE_BUILD})
+	@(cd ${WRKSRC}/kent/src/utils && ${DO_MAKE_BUILD})
 
 do-install:
-	${MKDIR} ${WRKSRC}/scripts ${WRKSRC}/binaries
-	${CP} $$(file ${WRKSRC}/bin/* | fgrep ELF | cut -d : -f 1) \
+	@${MKDIR} ${WRKSRC}/scripts ${WRKSRC}/binaries
+	@${CP} $$(file ${WRKSRC}/bin/* | fgrep ELF | cut -d : -f 1) \
 		${WRKSRC}/binaries
-	${CP} $$(file ${WRKSRC}/bin/* | fgrep -v ELF | cut -d : -f 1) \
+	@${CP} $$(file ${WRKSRC}/bin/* | fgrep -v ELF | cut -d : -f 1) \
 		${WRKSRC}/scripts
-	${MKDIR} ${STAGEDIR}${PREFIX}/kentUtils/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/userapps/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/binaries/* \
-		${STAGEDIR}${PREFIX}/kentUtils/bin
+		${STAGEDIR}${PREFIX}/userapps/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* \
-		${STAGEDIR}${PREFIX}/kentUtils/bin
+		${STAGEDIR}${PREFIX}/userapps/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/ucsc-shell \
 		${STAGEDIR}${PREFIX}/bin
 

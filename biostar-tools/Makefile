@@ -1,18 +1,18 @@
+# Created by: J. Bacon <jwb@FreeBSD.org>
+
 PORTNAME=	biostar-tools
-PORTVERSION=	1
-CATEGORIES=	wip biology
+PORTVERSION=	0.1.0
+CATEGORIES=	wip biology python
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Meta-port for Biostar Handbook tools
 
-# bedgraphtobigwig is part of ucsc-kentutils
 # For a current list see http://data.biostarhandbook.com/install/conda.txt.
 RUN_DEPENDS=	wget>0:ftp/wget \
 		nano>0:editors/nano \
 		parallel>0:sysutils/parallel \
 		seqkit>0:biology/seqkit \
 		ncbi-entrez-direct>0:biology/ncbi-entrez-direct \
-		ucsc-kentutils>0:wip/ucsc-kentutils \
 		readseq>0:biology/readseq \
 		snpeff>0:biology/snpeff \
 		picard-tools>0:biology/picard-tools \
