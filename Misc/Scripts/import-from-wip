@@ -71,6 +71,8 @@ fi
 cd $PORTSDIR
 git pull
 
+cd $PORTSDIR/wip/$port
+make clean
 rsync -av --delete $PORTSDIR/wip/$port $PORTSDIR/$category
 
 sed -i '' '/^CATEGORIES/s|wip ||' $PORTSDIR/$category/$port/Makefile
