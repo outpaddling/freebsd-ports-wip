@@ -1,5 +1,6 @@
 PORTNAME=	ncbi-entrez-direct
 DISTVERSION=	14.9.20210423
+PORTREVISION=	1
 CATEGORIES=	wip biology perl5
 MASTER_SITES=	ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/${PORTVERSION}/
 DISTFILES=	edirect.tar.gz
@@ -13,7 +14,8 @@ LICENSE=	PD
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
-		p5-XML-Simple>=0:textproc/p5-XML-Simple
+		p5-XML-Simple>=0:textproc/p5-XML-Simple \
+		curl:ftp/curl
 
 USES=		go:modules perl5 shebangfix
 USE_GITHUB=	nodefault
@@ -40,7 +42,7 @@ GH_TUPLE=	fatih:color:v1.10.0:a/${GHSD}/fatih/color \
 SHEBANG_FILES=	nquire edirect.pl word-at-a-time accn-at-a-time \
 		amino-acid-composition between-two-genes exclude-uid-lists \
 		filter-stop-words intersect-uid-lists phrase-search \
-		skip-if-file-exists theme-aliases
+		skip-if-file-exists theme-aliases test-edirect
 
 PSCRIPTS=	efetch efilter einfo elink epost esearch esummary nquire
 SCRIPTS=	accn-at-a-time amino-acid-composition archive-pubmed \
@@ -54,7 +56,7 @@ SCRIPTS=	accn-at-a-time amino-acid-composition archive-pubmed \
 		reorder-columns run-ncbi-converter skip-if-file-exists \
 		ecommon.sh sort-uniq-count sort-uniq-count-rank stream-pubmed \
 		theme-aliases transmute word-at-a-time xml2tbl xtract xy-plot \
-		hlp-xtract.txt transmute xml2json xtract
+		hlp-xtract.txt transmute xml2json xtract test-edirect
 
 post-extract:
 	@${MV} ${WRKDIR}/edirect/* ${WRKSRC}
@@ -76,6 +78,5 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/edirect.pl ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/cmd/*.FreeBSD ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${FILESDIR}/edirect-test.sh ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

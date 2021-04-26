@@ -6,7 +6,6 @@ bin/download-ncbi-data
 bin/download-pubmed
 bin/download-sequence
 bin/ecommon.sh
-bin/edirect-test.sh
 bin/edirect.pl
 bin/efetch
 bin/efilter
@@ -44,6 +43,7 @@ bin/skip-if-file-exists
 bin/sort-uniq-count
 bin/sort-uniq-count-rank
 bin/stream-pubmed
+bin/test-edirect
 bin/theme-aliases
 bin/transmute
 bin/transmute.FreeBSD
