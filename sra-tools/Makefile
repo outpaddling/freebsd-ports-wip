@@ -43,6 +43,7 @@ CONFIGURE_ARGS=	--with-ngs-sdk-prefix=${LOCALBASE} \
 MAKE_ARGS=	CCNAME=${CC} CXXNAME=${CXX} PKGCFLAGS="${CFLAGS}" \
 		INST_ETCDIR=${STAGEDIR}${PREFIX}/etc
 
+# Just for debugging: Remove if possible.
 MAKE_JOBS_UNSAFE=	yes
 
 ONLY_FOR_ARCHS=	amd64 i386
