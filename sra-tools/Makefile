@@ -17,7 +17,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${NONEXISTENT}:biology/ncbi-vdb:build
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libhdf5.so:science/hdf5 \
-		libmbedtls.so:security/mbedtls
+		libmbedtls.so:security/mbedtls \
+		libepoll-shim.so:devel/libepoll-shim
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ncbi
@@ -42,13 +43,15 @@ CONFIGURE_ARGS=	--with-ngs-sdk-prefix=${LOCALBASE} \
 MAKE_ARGS=	CCNAME=${CC} CXXNAME=${CXX} PKGCFLAGS="${CFLAGS}" \
 		INST_ETCDIR=${STAGEDIR}${PREFIX}/etc
 
+MAKE_JOBS_UNSAFE=	yes
+
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	NCBI-VDB requires SSE2 instructions
 BROKEN_i386=	buggy output
 
 CFLAGS+=	-I${WRKSRC}/interfaces/os/sun
 CXXFLAGS+=	-I${WRKSRC}/interfaces/os/sun
-LDFLAGS+=	-lz -lexecinfo
+LDFLAGS+=	-lz
 
 BINARY_ALIAS=	gcc=${CC} g++=${CXX}
 
@@ -72,7 +75,7 @@ pre-configure:
 	@${CP} ${NCBI_VDB_WRKSRC}/build/ld.bsd.*.sh ${WRKSRC}/build/
 	${MKDIR} ${WRKSRC}/interfaces/override
 	@${CP} ${NCBI_VDB_WRKSRC}/interfaces/os/sun/atomic32.h ${WRKSRC}/interfaces/override
-	@${CP} ${NCBI_VDB_WRKSRC}/interfaces/os/sun/byteswap.h ${WRKSRC}/interfaces/override
+	@${CP} ${FILESDIR}/byteswap.h ${WRKSRC}/interfaces/override
 	@for f in ${NCBI_VDB_WRKSRC}/build/ld.linux.*.sh; do ${CP} -p $${f} $${f%linux*}bsd$${f#*linux}; done
 	@${CP} -p ${NCBI_VDB_WRKSRC}/build/ld.linux.gcc.sh ${WRKSRC}/build/ld.bsd.clang.sh
 	#@${MKDIR} ${WRKSRC}/interfaces/os/bsd
