@@ -1,8 +1,8 @@
-# $FreeBSD$
+# Created by: J. Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	peak-classifier
-DISTVERSION=	0.0.1-1
-DISTVERSIONSUFFIX=	-g42d3ded
+DISTVERSION=	0.0.1-4
+DISTVERSIONSUFFIX=	-g59a3c60
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,6 +12,8 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	biolibc>=0.1.1.14:wip/biolibc
+RUN_DEPENDS=	bedtools>0:biology/bedtools \
+		gsort:sysutils/coreutils	# parallel, much faster
 
 USES=		localbase
 
