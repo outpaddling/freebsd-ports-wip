@@ -12,9 +12,8 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	biolibc>=0.1.1.14:wip/biolibc
-RUN_DEPENDS=	bedtools>0:biology/bedtools \
+RUN_DEPENDS=	bedtools:biology/bedtools \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
-		bedtools:biology/bedtools \
 		gsort:sysutils/coreutils	# parallel, much faster
 
 USES=		localbase python:3.7 shebangfix
