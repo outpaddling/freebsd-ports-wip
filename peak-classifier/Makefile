@@ -1,8 +1,8 @@
 # Created by: J. Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	peak-classifier
-DISTVERSION=	0.0.1-27
-DISTVERSIONSUFFIX=	-g16cd294
+DISTVERSION=	0.0.1-29
+DISTVERSIONSUFFIX=	-g15857d8
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
