@@ -1,8 +1,8 @@
 # Created by: J. Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	peak-classifier
-DISTVERSION=	0.0.1-26
-DISTVERSIONSUFFIX=	-g6379d54
+DISTVERSION=	0.0.1-27
+DISTVERSIONSUFFIX=	-g16cd294
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,7 +11,8 @@ COMMENT=	Classify ChIP/ATAC-Seq peaks based on features provided in a GFF
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	biolibc>=0.1.1.14:wip/biolibc
+BUILD_DEPENDS=	biolibc>=0.1.1.14:wip/biolibc \
+		libxtendc>=0.0.0.1:wip/libxtendc
 RUN_DEPENDS=	bedtools:biology/bedtools \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		gsort:sysutils/coreutils	# parallel, much faster
