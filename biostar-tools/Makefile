@@ -9,6 +9,7 @@ COMMENT=	Meta-port for Biostar Handbook tools
 
 # For a current list see http://data.biostarhandbook.com/install/conda.txt.
 RUN_DEPENDS=	wget>0:ftp/wget \
+		curl>0:ftp/curl \
 		nano>0:editors/nano \
 		parallel>0:sysutils/parallel \
 		seqkit>0:biology/seqkit \
