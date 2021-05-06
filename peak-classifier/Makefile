@@ -14,10 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	biolibc>=0.1.1.14:wip/biolibc \
 		libxtendc>=0.0.0.1:wip/libxtendc
 RUN_DEPENDS=	bedtools:biology/bedtools \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
-		gsort:sysutils/coreutils	# parallel, much faster
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		localbase python:3.7 shebangfix
+USES=		localbase python:3.7+ shebangfix
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	auerlab
