@@ -24,7 +24,7 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		emboss>0:biology/emboss \
 		bedtools>0:biology/bedtools \
 		bamtools>0:biology/bamtools \
-		sra-tools>0:wip/sra-tools \
+		sra-tools>0:wip/sra-tools280 \
 		${PYTHON_PKGNAMEPREFIX}cutadapt>0:biology/py-cutadapt@${PY_FLAVOR} \
 		seqtk>0:biology/seqtk \
 		datamash>0:textproc/datamash \
