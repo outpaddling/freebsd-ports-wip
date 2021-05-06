@@ -7,6 +7,8 @@ CATEGORIES=	wip biology python
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Meta-port for Biostar Handbook tools
 
+LICENSE=	BSD2CLAUSE
+
 # For a current list see http://data.biostarhandbook.com/install/conda.txt.
 RUN_DEPENDS=	wget>0:ftp/wget \
 		curl>0:ftp/curl \
@@ -46,5 +48,12 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		${PYTHON_PKGNAMEPREFIX}crossmap>0:biology/py-crossmap@${PY_FLAVOR}
 
 USES=		metaport python
+
+SUB_FILES=	biostar-shell
+PLIST_FILES=	bin/biostar-shell
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/biostar-shell ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
