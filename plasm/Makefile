@@ -6,6 +6,9 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Portable Assembler
 
+LICENSE=	BSD2CLAUSE
+#LICENSE_FILE=	${WRKSRC}/LICENSE
+
 RUN_DEPENDS=	papp:wip/papp
 
 USES=		tar:xz
