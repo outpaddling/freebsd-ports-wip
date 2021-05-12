@@ -10,7 +10,7 @@ COMMENT=	Misc functions
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	libxtend>0:wip/libxtend
+LIB_DEPENDS=	libxtend.so:wip/libxtend
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
