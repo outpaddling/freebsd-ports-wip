@@ -46,7 +46,9 @@ MAKE_ENV=	BINDIR=${WRKSRC}/bin
 
 SUB_FILES=	ucsc-shell
 
-# Build only non-commercial tools
+# Build mostly non-commercial tools.  There is some leakage of proprietary
+# code from the libraries per conversation with UCSC.  Work to resolve this
+# is ongoing.
 do-build:
 	@${MV} ${WRKSRC}/kent/src/inc/uuid.h ${WRKSRC}/kent/src/inc/my_uuid.h
 	@${MKDIR} ${WRKSRC}/bin
