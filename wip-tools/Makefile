@@ -1,8 +1,8 @@
+# Created by: Jason Bacon <jwb@FreeBSD.org>
+
 PORTNAME=	wip-tools
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	wip ports-mgmt
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://outpaddling.mooo.com/~bacon/Acadix/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Update ports tree with work-in-progress ports
@@ -10,6 +10,10 @@ COMMENT=	Update ports tree with work-in-progress ports
 LICENSE=	BSD3CLAUSE
 
 USES=		tar:xz
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	outpaddling
+GH_PROJECT=	freebsd-wip-tools
 
 NO_BUILD=	yes
 
