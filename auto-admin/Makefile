@@ -1,8 +1,7 @@
 # Created by: Jason Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	auto-admin
-DISTVERSION=	0.7.2-13
-DISTVERSIONSUFFIX=	-ge12d0f2
+DISTVERSION=	0.7.3
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
