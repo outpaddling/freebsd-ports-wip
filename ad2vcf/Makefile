@@ -1,5 +1,8 @@
+# Created by: Jason Bacon <jwb@FreeBSD.org>
+
 PORTNAME=	ad2vcf
-DISTVERSION=	0.1.2
+DISTVERSION=	0.1.2-5
+DISTVERSIONSUFFIX=	-g398df54
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -9,6 +12,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	biolibc>=0.1.1:biology/biolibc
+LIB_DEPENDS=	libxtend.so:wip/libxtend
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
