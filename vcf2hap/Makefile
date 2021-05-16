@@ -1,5 +1,8 @@
+# Created by: Jason Bacon <jwb@FreeBSD.org>
+
 PORTNAME=	vcf2hap
-DISTVERSION=	0.1.2
+DISTVERSION=	0.1.2-3
+DISTVERSIONSUFFIX=	-g079d353
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
