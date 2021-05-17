@@ -1,3 +1,5 @@
+# Created by: Jason Bacon <jwb@FreeBSD.org>
+
 PORTNAME=		bowtie2
 DISTVERSIONPREFIX=	v
 DISTVERSION=		2.4.3
@@ -22,7 +24,7 @@ USE_GITHUB=	yes
 SHEBANG_FILES=	bowtie2 bowtie2-build bowtie2-inspect \
 		scripts/bowtie2-hbb.sh scripts/*.pl
 GH_ACCOUNT=	BenLangmead
-GH_TUPLE=	nemequ:simde:422ed9c:simde
+GH_TUPLE=	simd-everywhere:simde-no-tests:f6a0b3b:simde
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
