@@ -11,10 +11,8 @@ COMMENT=	Ultrafast, memory-efficient short read aligner
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# Requires a 64-bit processor and depends on hard-coded SSE instructions
-# Experimental support for AARCH64 as of 2.3.5
-ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
-LIB_DEPENDS=	libtbb.so:devel/onetbb
+# Requires a 64-bit processor and depends on hard-coded asm instructions
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake localbase:ldflags perl5 python shebangfix
