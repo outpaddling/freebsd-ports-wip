@@ -4,6 +4,7 @@ sbin/port-diff
 sbin/port-gen-install-target
 sbin/port-grep
 sbin/port-list
+sbin/port-mfh
 sbin/port-mkpatch
 sbin/port-patch-vi
 sbin/port-poudriere-setup
