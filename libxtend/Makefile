@@ -16,10 +16,9 @@ USE_LDCONFIG=	yes
 
 GH_ACCOUNT=	outpaddling
 
+INSTALL_TARGET=	install-strip
+
 pre-build:
 	cd ${WRKSRC} && ${MAKE} depend
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxtend.so.1.0
 
 .include <bsd.port.mk>
