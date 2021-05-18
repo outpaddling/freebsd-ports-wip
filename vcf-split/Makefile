@@ -11,8 +11,7 @@ COMMENT=	Split a multi-sample VCF into single-sample VCFs
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	biolibc>=0.1.1:wip/biolibc
-LIB_DEPENDS=	libxtend.so:wip/libxtend
+LIB_DEPENDS=	libxtend.so:wip/libxtend libbiolibc.so:wip/biolibc
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
