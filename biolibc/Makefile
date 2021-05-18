@@ -1,8 +1,8 @@
 # Created by: J. Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	biolibc
-DISTVERSION=	0.1.1-33
-DISTVERSIONSUFFIX=	-gd6a6cf4
+DISTVERSION=	0.1.1-35
+DISTVERSIONSUFFIX=	-g7a80a98
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,7 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libxtend.so:wip/libxtend
 
 USE_GITHUB=	yes
+USE_LDCONFIG=	yes
+
 GH_ACCOUNT=	auerlab
+
+INSTALL_TARGET=	install-strip
 
 pre-build:
 	(cd ${WRKSRC} && ${MAKE} LOCALBASE=${LOCALBASE} depend)

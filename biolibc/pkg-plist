@@ -10,4 +10,4 @@ lib/libbiolibc.a
 lib/libbiolibc.so
 lib/libbiolibc.so.1
 lib/libbiolibc.so.1.0
-man/man3/biolibc.1.gz
+man/man3/biolibc.3.gz
