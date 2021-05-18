@@ -11,8 +11,7 @@ COMMENT=	Add allelic depth info from a SAM stream to a VCF file
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	biolibc>=0.1.1:biology/biolibc
-LIB_DEPENDS=	libxtend.so:wip/libxtend
+LIB_DEPENDS=	libxtend.so:wip/libxtend libbiolibc.so:wip/biolibc
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
