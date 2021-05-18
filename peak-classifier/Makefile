@@ -11,8 +11,7 @@ COMMENT=	Classify ChIP/ATAC-Seq peaks based on features provided in a GFF
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	biolibc>=0.1.1.14:wip/biolibc
-LIB_DEPENDS=	libxtend.so:wip/libxtend
+LIB_DEPENDS=	libxtend.so:wip/libxtend libbiolibc.so:wip/biolibc
 RUN_DEPENDS=	bedtools:biology/bedtools \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 
