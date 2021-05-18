@@ -11,7 +11,7 @@ COMMENT=	Generate .hap file from VCF for haplohseq
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	biolibc>=0.1.1:biology/biolibc
+LIB_DEPENDS=	libbiolibc.so:wip/biolibc
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
