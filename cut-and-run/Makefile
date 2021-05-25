@@ -1,5 +1,6 @@
 PORTNAME=	cut-and-run
-DISTVERSION=	0.0.1
+DISTVERSION=	0.0.1-1
+DISTVERSIONSUFFIX=	-g85c313a
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 
-PLIST_FILES=	bin/cut-and-run
+PLIST_FILES=	bin/cut-and-run man/man1/cut-and-run.1.gz
 
 pre-build:
 	cd ${WRKSRC} && make depend
