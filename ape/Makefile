@@ -1,8 +1,8 @@
 # Created by: Jason Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	APE
-DISTVERSION=	3.5.3-34
-DISTVERSIONSUFFIX=	-g8ff2a5f
+DISTVERSION=	3.5.3-35
+DISTVERSIONSUFFIX=	-g8ab53c1
 CATEGORIES=	wip editors
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -30,6 +30,6 @@ MAKE_ARGS+=	PREFIX=${PREFIX} \
 		STAGEDIR=${STAGEDIR}
 
 pre-build:
-	(cd ${WRKSRC} && ${MAKE} depend)
+	(cd ${WRKSRC} && ${MAKE} depend LOCALBASE=${LOCALBASE})
 
 .include <bsd.port.mk>
