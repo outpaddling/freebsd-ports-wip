@@ -1,8 +1,8 @@
 # Created by: Jason Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	desktop-installer
-DISTVERSION=	0.7.2-8
-DISTVERSIONSUFFIX=	-gb324653
+DISTVERSION=	0.7.2-9
+DISTVERSIONSUFFIX=	-gcc0aa12
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
