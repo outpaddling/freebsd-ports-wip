@@ -1,5 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
-
 PORTNAME=	desktop-installer
 DISTVERSION=	0.7.3
 CATEGORIES=	wip sysutils

@@ -1,5 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
-
 PORTNAME=	auto-admin
 DISTVERSION=	0.7.4
 CATEGORIES=	wip sysutils
