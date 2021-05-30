@@ -1,8 +1,8 @@
 # Created by: Jason Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	vcf2hap
-DISTVERSION=	0.1.2-3
-DISTVERSIONSUFFIX=	-g079d353
+DISTVERSION=	0.1.2-4
+DISTVERSIONSUFFIX=	-ge95a0fe
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	Generate .hap file from VCF for haplohseq
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libbiolibc.so:wip/biolibc
+LIB_DEPENDS=	libbiolibc.so:wip/biolibc libxtend.so:wip/libxtend
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
