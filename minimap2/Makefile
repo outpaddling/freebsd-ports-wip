@@ -21,6 +21,4 @@ MAKE_ARGS+=	CFLAGS+=-Wextra
 ALL_TARGET=	extra
 INSTALL_TARGET=	install-strip
 
-PLIST_FILES=	bin/minimap2 bin/minimap2-lite bin/sdust man/man1/minimap2.1.gz
-
 .include <bsd.port.mk>
