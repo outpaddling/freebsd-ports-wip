@@ -5,9 +5,6 @@
 #       Check out a copy of FreeBSD ports wip and modify the ports
 #       configuration to accomodate the wip category.
 #
-#   Arguments:
-#       svn|git
-#
 #   History:
 #   Date        Name        Modification
 #   2017-02-11  Jason Bacon Begin
@@ -15,7 +12,7 @@
 
 usage()
 {
-    printf "Usage: $0 git|svn\n"
+    printf "Usage: $0\n"
     exit 1
 }
 
@@ -24,7 +21,7 @@ usage()
 #   Main
 ##########################################################################
 
-if [ $# != 1 ]; then
+if [ $# != 0 ]; then
     usage
 fi
 
@@ -32,53 +29,36 @@ if [ -z $PORTSDIR ]; then
     PORTSDIR=/usr/ports
 fi
 
-rcs=$1
-
-if [ $rcs = svn ]; then
-    if which svn; then
-	svn=`which svn`
-    else
-	svn=/usr/bin/svnlite
-    fi
-    $svn co \
-	https://github.com/outpaddling/freebsd-ports-wip/trunk \
-	$PORTSDIR/wip
-elif [ $rcs = git ]; then
-    if which git; then
-	git=`which git`
-    else
-	git=/usr/local/bin/git
-    fi
-    if [ ! -e $git ]; then
-	pkg install -y git
-    fi
-    $git clone \
-	https://github.com/outpaddling/freebsd-ports-wip \
-	$PORTSDIR/wip
-    cd $PORTSDIR/wip
-    
-    printf "\nEditing .gitconfig.\n\n"
-    
-    printf "Full name? "
-    read name
-    
-    printf "Email? "
-    read email
-    
-    printf "Editor? [vi] "
-    read editor
-    if [ 0$editor = 0 ]; then
-	editor=vi
-    fi
-    git config user.name "$name"
-    git config user.email "$email"
-    git config core.editor "$editor"
-    git config pull.rebase false
-
+if which git; then
+    git=`which git`
 else
-    printf "Invalid RCS: $rcs\n"
-    exit 1
+    git=/usr/local/bin/git
 fi
+if [ ! -e $git ]; then
+    pkg install -y git
+fi
+$git clone \
+    https://github.com/outpaddling/freebsd-ports-wip \
+    $PORTSDIR/wip
+cd $PORTSDIR/wip
+
+printf "\nEditing .gitconfig.\n\n"
+
+printf "Full name? "
+read name
+
+printf "Email? "
+read email
+
+printf "Editor? [vi] "
+read editor
+if [ 0$editor = 0 ]; then
+    editor=vi
+fi
+git config user.name "$name"
+git config user.email "$email"
+git config core.editor "$editor"
+git config pull.rebase false
 
 if ! fgrep 'USE_LOCAL_MK=yes' /etc/make.conf > /dev/null; then
     cat << EOM >> /etc/make.conf
