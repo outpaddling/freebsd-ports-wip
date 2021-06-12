@@ -18,10 +18,29 @@ usage()
 
 
 ##########################################################################
+#   Function description:
+#       Pause until user presses return
+##########################################################################
+
+pause()
+{
+    local junk
+    
+    printf "Press return to continue..."
+    read junk
+}
+
+
+##########################################################################
 #   Main
 ##########################################################################
 
-if [ $# != 0 ]; then
+if [ $# = 1 ]; then
+    if [ $1 = svn ]; then
+	printf "Subversion is no longer supported.  Using git...\n"
+	pause
+    fi
+elif [ $# != 0 ]; then
     usage
 fi
 
@@ -29,7 +48,7 @@ if [ -z $PORTSDIR ]; then
     PORTSDIR=/usr/ports
 fi
 
-if which git; then
+if which git > /dev/null 2>&1; then
     git=`which git`
 else
     git=/usr/local/bin/git
