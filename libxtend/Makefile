@@ -1,8 +1,8 @@
 # Created by: J. Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	libxtend
-DISTVERSION=	0.1.2-25
-DISTVERSIONSUFFIX=	-ge629d47
+DISTVERSION=	0.1.2-27
+DISTVERSIONSUFFIX=	-g887c1ce
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org

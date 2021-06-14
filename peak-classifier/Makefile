@@ -1,8 +1,5 @@
-# Created by: J. Bacon <jwb@FreeBSD.org>
-
 PORTNAME=	peak-classifier
-DISTVERSION=	0.1.0-5
-DISTVERSIONSUFFIX=	-g7f059e4
+DISTVERSION=	0.1.1
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -20,12 +17,6 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	auerlab
 SHEBANG_FILES=	feature-view.py
-
-PLIST_FILES=	bin/peak-classifier \
-		bin/filter-overlaps \
-		bin/feature-view \
-		man/man1/peak-classifier.1.gz \
-		man/man1/filter-overlaps.1.gz
 
 pre-build:
 	cd ${WRKSRC} && make depend LOCALBASE=${LOCALBASE}
