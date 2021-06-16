@@ -1,6 +1,6 @@
 PORTNAME=	desktop-installer
-DISTVERSION=	0.7.3-21
-DISTVERSIONSUFFIX=	-g5506829
+DISTVERSION=	0.7.3-22
+DISTVERSIONSUFFIX=	-gbd817fb
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -9,7 +9,7 @@ COMMENT=	Quickly configure a FreeBSD desktop system
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	auto-admin>=0.7.4:sysutils/auto-admin
+RUN_DEPENDS=	auto-admin>=0.7.4.12:sysutils/auto-admin
 
 USES=		tar:xz
 USE_GITHUB=	yes
