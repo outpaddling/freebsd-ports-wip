@@ -4,7 +4,7 @@ DISTVERSIONSUFFIX=	-g0175cb2
 CATEGORIES=	wip benchmarks
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Maximum sustained throughput benchmark
+COMMENT=	Maximum sustainable throughput benchmark
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
