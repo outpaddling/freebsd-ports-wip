@@ -1,7 +1,5 @@
-# Created by: J. Bacon <jwb@FreeBSD.org>
-
 PORTNAME=	biostar-tools
-PORTVERSION=	0.1.0
+PORTVERSION=	0.9.0
 CATEGORIES=	wip biology python
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,12 +8,13 @@ COMMENT=	Meta-port for Biostar Handbook tools
 LICENSE=	BSD2CLAUSE
 
 # For a current list see http://data.biostarhandbook.com/install/conda.txt.
+# Also included are some programs not listed above, but mentioned in the text.
 RUN_DEPENDS=	wget>0:ftp/wget \
 		curl>0:ftp/curl \
 		nano>0:editors/nano \
 		parallel>0:sysutils/parallel \
 		seqkit>0:biology/seqkit \
-		csvtk>0:wip/csvtk \
+		csvtk>0:science/csvtk \
 		ncbi-entrez-direct>0:biology/ncbi-entrez-direct \
 		readseq>0:biology/readseq \
 		snpeff>0:biology/snpeff \
@@ -28,7 +27,6 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		emboss>0:biology/emboss \
 		bedtools>0:biology/bedtools \
 		bamtools>0:biology/bamtools \
-		linux-sra-tools>0:wip/linux-sra-tools \
 		${PYTHON_PKGNAMEPREFIX}cutadapt>0:biology/py-cutadapt@${PY_FLAVOR} \
 		seqtk>0:biology/seqtk \
 		datamash>0:textproc/datamash \
