@@ -10,6 +10,7 @@ COMMENT=	Meta-port for Biostar Handbook tools
 LICENSE=	BSD2CLAUSE
 
 # For a current list see http://data.biostarhandbook.com/install/conda.txt.
+# csvtk
 RUN_DEPENDS=	wget>0:ftp/wget \
 		curl>0:ftp/curl \
 		nano>0:editors/nano \
