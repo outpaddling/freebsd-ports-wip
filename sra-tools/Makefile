@@ -50,7 +50,6 @@ BROKEN_i386=	buggy output
 
 CFLAGS+=	-I${WRKSRC}/interfaces/os/sun
 CXXFLAGS+=	-I${WRKSRC}/interfaces/os/sun
-LDFLAGS+=	-lz
 
 BINARY_ALIAS=	gcc=${CC} g++=${CXX}
 

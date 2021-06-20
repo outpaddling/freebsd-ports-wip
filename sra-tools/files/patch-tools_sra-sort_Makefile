@@ -1,0 +1,8 @@
+--- tools/sra-sort/Makefile.orig	2021-03-15 18:25:25 UTC
++++ tools/sra-sort/Makefile
+@@ -138,4 +138,4 @@ DBB_LIB = \
+ 	-lncbi-vdb \
+ 
+ $(BINDIR)/dump-blob-boundaries: $(DBB_OBJ)
+-	$(LD) --exe -o $@ $^ $(DBB_LIB)
++	$(LD) --exe -o $@ $^ -Wl,-Bstatic $(DBB_LIB)

@@ -11,15 +11,15 @@ usage()
 #   Main
 ##########################################################################
 
-#if [ $# != 1 ]; then
-#    usage
-#fi
-#symbol=$1
+if [ $# != 1 ]; then
+    usage
+fi
+symbol=$1
 
 # fgrep -rl vdb_mbedtls_entropy_func work
 
 for file in $(find work/ -name '*.a'); do
-    objdump -t $file | fgrep vdb_mbedtls_ > temp
+    objdump -t $file | fgrep $symbol > temp
     if [ $? = 0 ]; then
 	echo $file
 	cat temp

@@ -1,5 +1,14 @@
---- setup/install.perl.orig	2021-03-31 20:29:55 UTC
+--- setup/install.perl.orig	2021-03-15 18:25:25 UTC
 +++ setup/install.perl
+@@ -1079,7 +1079,7 @@ EndText
+                 } elsif (PACKAGE_NAME() eq 'NCBI-VDB') {
+                     print "\n"
+                        . "Use \$NCBI_VDB_LIBDIR in your link commands, e.g.:\n";
+-                    print "      ld -L\$NCBI_VDB_LIBDIR -lncbi-vdb ...\n";
++                    print "      ld -L\$NCBI_VDB_LIBDIR -Wl,-Bstatic -lncbi-vdb ...\n";
+                 }
+             }
+         }
 @@ -1283,8 +1283,8 @@ sub prepare {
              '   $_{INST_JARDIR  } = "$_{PREFIX}/jar"; ' .
              '   $_{INST_SHAREDIR} = "$_{PREFIX}/share"; ' .
