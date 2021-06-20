@@ -1,17 +1,17 @@
---- libs/ncbi-vdb/Makefile.orig	2021-06-19 21:43:01 UTC
+--- libs/ncbi-vdb/Makefile.orig	2021-06-20 15:15:25 UTC
 +++ libs/ncbi-vdb/Makefile
-@@ -121,6 +121,10 @@ LDFLAGS += -L$(XML2_LIBDIR)
- endif
- endif
+@@ -138,9 +138,7 @@ VDB_LIB_CMN =    \
+ 	klib         \
+ 	kproc        \
+ 	$(LIBKQ)     \
+-	kfc          \
+-	bz2          \
+-	z            \
++	kfc
  
-+ifneq (,$(MBEDTLS_LIBDIR))
-+LDFLAGS += -L$(MBEDTLS_LIBDIR)
-+endif
-+
- VDB_LIB_CMN =    \
- 	align-access \
- 	ncbi-bam     \
-@@ -198,4 +202,4 @@ fuzz:
+ VDB_LIB_RD =              \
+ 	align-reader          \
+@@ -198,4 +196,4 @@ fuzz:
  	$(TOP)/build/ld.sh linux x86_64 gcc --build dbg --ldflags "-g  -m64" --objx o --shlx so --libx a --srcdir $(SRCDIR) --bindir $(BINDIR) --slib -o $(FLIBDIR)/libncbi-vdb.$(LIBX) -L$(FLIBDIR) $(VDB_LIB) $(VDB_NGS_LIB)
  
  cleanfuzz:

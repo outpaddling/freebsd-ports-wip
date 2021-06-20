@@ -232,17 +232,7 @@
              print "checking whether $tool accepts $n... ";
          } else {
              return;
-@@ -1663,6 +1681,9 @@ sub check_compiler {
-         } elsif ($n eq 'magic') {
-             $library = '-lmagic';
-             $log = '#include <magic.h> \n int main() { magic_open     (0); }\n'
-+        } elsif ($n eq 'mbedtls') {
-+            $library = '-lmbedtls';
-+            $log = '#include <mbedtls/version.h> \n int main() { mbedtls_version_get_string(0); }\n'
-         } elsif ($n eq 'xml2') {
-             $library  = '-lxml2';
-             $library .=       ' -liconv' if ($OS eq 'mac');
-@@ -1706,7 +1727,7 @@ sub check_compiler {
+@@ -1706,7 +1724,7 @@ sub check_compiler {
                  }
              }
              my $gcc = "| $tool -xc $flags " . ($I ? "-I$I " : ' ')

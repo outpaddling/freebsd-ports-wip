@@ -1,0 +1,12 @@
+--- libs/ext/Makefile.orig	2021-06-20 15:08:17 UTC
++++ libs/ext/Makefile
+@@ -32,9 +32,6 @@ include $(TOP)/build/Makefile.shell
+ # default
+ #
+ SUBDIRS = \
+-	zlib \
+-	bzip2 \
+-    magic \
+ 	mbedtls
+ 
+ include $(TOP)/build/Makefile.targets

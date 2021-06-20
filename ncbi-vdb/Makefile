@@ -16,8 +16,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		libepoll-shim>0:devel/libepoll-shim
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
-		libhdf5.so:science/hdf5 \
-		libmbedtls.so:security/mbedtls
+		libhdf5.so:science/hdf5
 
 USES=		compiler:c11 gmake localbase:ldflags perl5 shebangfix
 USE_PERL5=	build
@@ -32,7 +31,6 @@ SHEBANG_GLOB=	*.sh *.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xml2-prefix=${LOCALBASE} \
 		--with-hdf5-prefix=${LOCALBASE} \
-		--with-mbedtls-prefix=${LOCALBASE} \
 		CC="${CC}" CXX="${CXX}" TOOLS="${CHOSEN_COMPILER_TYPE}"
 MAKE_ENV+=	CPATH="${LOCALBASE}/include/libepoll-shim"
 MAKE_ARGS+=	CCNAME=${CC} CXXNAME=${CXX} PKGCFLAGS="${CFLAGS}"
@@ -55,6 +53,7 @@ pre-patch:
 post-patch:
 	@${GREP} -q '@@PREFIX@@' ${WRKSRC}/libs/kfg/config.c || (echo "@@PREFIX@@ in file/patch-libs_kfg_config.c is overwritten probably due to using 'make makepatch'"; exit 1)
 	@${REINPLACE_CMD} -e 's#@@PREFIX@@#"${PREFIX}"#' ${WRKSRC}/libs/kfg/config.c
+	${LN} -s ${WRKSRC}/interfaces/cc/gcc/x86_64 ${WRKSRC}/interfaces/cc/gcc/amd64
 
 post-configure:
 	@${ECHO} ${CHOSEN_COMPILER_TYPE} > ${WRKSRC}/build/COMP
