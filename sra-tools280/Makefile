@@ -13,7 +13,7 @@ LICENSE_DISTFILES_LGPL21+ =
 # which is derived from a part of LGPL-licensed GNU C Library or Judy library.
 
 BUILD_DEPENDS=	bash:shells/bash \
-		${NONEXISTENT}:wip/ncbi-vdb:build \
+		${NONEXISTENT}:wip/ncbi-vdb282:build \
 		${LOCALBASE}/lib/libngs-c++.a:wip/ngs-sdk
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libhdf5.so:science/hdf5 \

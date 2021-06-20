@@ -1,4 +1,4 @@
---- test/klib/printf-test.c.orig	2019-08-20 18:27:10 UTC
+--- test/klib/printf-test.c.orig	2017-07-14 21:55:36 UTC
 +++ test/klib/printf-test.c
 @@ -503,7 +503,7 @@ rc_t run ( const char *progname )
          if ( rc == 0 )

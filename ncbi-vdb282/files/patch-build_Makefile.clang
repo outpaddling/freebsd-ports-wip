@@ -1,7 +1,11 @@
---- build/Makefile.clang.orig	2021-03-15 18:16:43 UTC
+--- build/Makefile.clang.orig	2017-07-14 21:55:36 UTC
 +++ build/Makefile.clang
-@@ -24,23 +24,23 @@
+@@ -22,25 +22,27 @@
+ #
+ # ===========================================================================
  
++CCNAME  ?= clang
++CXXNAME ?= clang++
  
  # compilers
 -CC = @ $(TOP)/build/cc.sh $(OS) 'clang -c' \
@@ -9,10 +13,11 @@
  	 $(CHECKSUM) --objx $(OBJX) --cflags "$(CFLAGS)" -MD
 -CP = @ $(TOP)/build/cc.sh $(OS) 'clang++ -c' \
 +CP = @ $(TOP)/build/cc.sh $(OS) '$(CXXNAME) -c' \
- 	 $(CHECKSUM) --objx $(OBJX) -stdlib=libc++ --cflags "$(CPFLAGS)" -MD
+ 	 $(CHECKSUM) --objx $(OBJX) --cflags "$(CPFLAGS)" -MD
  
  # C preprocessor
- PP = gcc -E $(CFLAGS)
+-PP = gcc -E $(CFLAGS)
++PP = $(CCNAME) -E $(CFLAGS)
  
  # linkers
 -LD = @ $(TOP)/build/ld.sh $(OS) $(ARCH) clang \

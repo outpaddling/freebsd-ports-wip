@@ -1,11 +1,11 @@
 To omit building bundled libraries.
 
---- libs/Makefile.orig	2021-03-15 18:16:43 UTC
+--- libs/Makefile.orig	2017-07-14 21:55:36 UTC
 +++ libs/Makefile
 @@ -35,7 +35,6 @@ include $(TOP)/build/Makefile.config
  # default
  #
- MAIN_SUBDIRS = \
+ SUBDIRS =    \
 -	ext      \
  	kfc      \
  	klib     \

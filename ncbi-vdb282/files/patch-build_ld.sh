@@ -1,4 +1,4 @@
---- build/ld.sh.orig	2021-04-12 06:10:01 UTC
+--- build/ld.sh.orig	2017-10-27 07:23:08 UTC
 +++ build/ld.sh
 @@ -68,6 +68,8 @@ HAVE_M=0
  NEED_M=1
@@ -9,7 +9,7 @@
  HAVE_KFC=0
  HAVE_KAPP=0
  HAVE_NCBI_VDB=0
-@@ -297,11 +299,12 @@ do
+@@ -297,18 +299,19 @@ do
      -[lds]ncbi-vdb)
          HAVE_NCBI_VDB=1
          KPROC=4
@@ -24,7 +24,16 @@
          LIBS="$LIBS $1"
          ;;
      -[lds]ncbi-ngs-c++)
-@@ -310,11 +313,12 @@ do
+         HAVE_NCBI_VDB=1
+         KPROC=4
+-        HAVE_GZIP=1
+-        HAVE_BZIP=1
++        NEED_GZIP=1
++        NEED_BZIP=1
+         HAVE_KFC=1
+         NEED_M=1
+         NEED_XML=1
+@@ -317,11 +320,12 @@ do
      -[lds]ncbi-wvdb)
          HAVE_NCBI_WVDB=1
          KPROC=4
@@ -39,7 +48,7 @@
          LIBS="$LIBS $1"
          ;;
  
-@@ -505,6 +509,7 @@ fi
+@@ -512,6 +516,7 @@ fi
  # supply missing libraries
  [ $HAVE_GZIP -eq 0 ] && [ $NEED_GZIP -ne 0 ] && LIBS="$LIBS -lz"
  [ $HAVE_BZIP -eq 0 ] && [ $NEED_BZIP -ne 0 ] && LIBS="$LIBS -lbz2"
