@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PORTNAME=	sra-tools
 DISTVERSION=	2.11.0
 CATEGORIES=	wip biology
@@ -14,7 +12,7 @@ LICENSE_DISTFILES_LGPL21+ =
 
 BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/lib/libngs-c++.a:biology/ngs-sdk \
-		${NONEXISTENT}:biology/ncbi-vdb:build
+		${NONEXISTENT}:wip/ncbi-vdb:build
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libhdf5.so:science/hdf5 \
 		libmbedtls.so:security/mbedtls \
@@ -29,8 +27,8 @@ SHEBANG_GLOB=	*.sh *.pl
 
 GNU_CONFIGURE=	yes
 
-NCBI_VDB_WRKSRC=	$$(make -C ${PORTSDIR}/biology/ncbi-vdb -V WRKSRC)
-NCBI_VDB_FILESDIR=	$$(make -C ${PORTSDIR}/biology/ncbi-vdb -V FILESDIR)
+NCBI_VDB_WRKSRC=	$$(make -C ${PORTSDIR}/wip/ncbi-vdb -V WRKSRC)
+NCBI_VDB_FILESDIR=	$$(make -C ${PORTSDIR}/wip/ncbi-vdb -V FILESDIR)
 
 CONFIGURE_ARGS=	--with-ngs-sdk-prefix=${LOCALBASE} \
 		--with-ncbi-vdb-sources=${NCBI_VDB_WRKSRC} \

@@ -1,5 +1,5 @@
-TIMESTAMP = 1505048188
-SHA256 (ncbi-ncbi-vdb-2.8.2-2_GH0.tar.gz) = 7866f7abf00e35faaa58eb3cdc14785e6d42bde515de4bb3388757eb0c8f3c95
-SIZE (ncbi-ncbi-vdb-2.8.2-2_GH0.tar.gz) = 19348893
-SHA256 (ncbi-ngs-1.3.0_GH0.tar.gz) = 803c650a6de5bb38231d9ced7587f3ab788b415cac04b0ef4152546b18713ef2
-SIZE (ncbi-ngs-1.3.0_GH0.tar.gz) = 1089187
+TIMESTAMP = 1618218620
+SHA256 (ncbi-ncbi-vdb-2.11.0_GH0.tar.gz) = 9a65e3885b9ae1ebecbec871f04ce3162ac3764fb556ecdc8c1e61993e2164aa
+SIZE (ncbi-ncbi-vdb-2.11.0_GH0.tar.gz) = 22277539
+SHA256 (ncbi-ngs-2.11.0_GH0.tar.gz) = 5fde50784760c00b403c2cc42ead15a4e9477697ee439f0a16edb4de3f52dfcc
+SIZE (ncbi-ngs-2.11.0_GH0.tar.gz) = 1100365

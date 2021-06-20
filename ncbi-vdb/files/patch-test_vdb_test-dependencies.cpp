@@ -1,6 +1,6 @@
---- test/vdb/test-dependencies.cpp.orig	2017-07-14 21:55:36 UTC
+--- test/vdb/test-dependencies.cpp.orig	2019-08-20 18:27:10 UTC
 +++ test/vdb/test-dependencies.cpp
-@@ -115,7 +115,7 @@ public:
+@@ -115,7 +115,7 @@ class EmptyFixture : public DepFixture { (public)
  
  class RefseqFixture : public DepFixture {
  

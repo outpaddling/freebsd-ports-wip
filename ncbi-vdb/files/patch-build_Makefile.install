@@ -1,8 +1,8 @@
---- build/Makefile.install.orig	2017-07-14 21:55:36 UTC
+--- build/Makefile.install.orig	2021-03-15 18:16:43 UTC
 +++ build/Makefile.install
-@@ -58,7 +58,7 @@ LIBRARIES_TO_INSTALL = \
-     ncbi-wvdb.$(VERSION_SHLX) \
-     ncbi-ngs-c++.$(VERSION_LIBX) \
+@@ -69,7 +69,7 @@ ifeq (1,$(HAVE_HDF5))
+ endif
+ 
  
 -LIB_TARGET = $(INST_LIBDIR)$(BITS)
 +LIB_TARGET = $(INST_LIBDIR)

@@ -1,5 +1,5 @@
-PORTNAME=	sratools
-PORTVERSION=	2.10.9
+PORTNAME=	sra-tools
+PORTVERSION=	2.11.0
 CATEGORIES=	wip biology
 MASTER_SITES=	http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/${PORTVERSION}/
 PKGNAMEPREFIX=	linux-
@@ -23,8 +23,10 @@ do-install:
 	(cd ${WRKSRC} && ${COPYTREE_BIN} \
 		"example README-vdb-config schema CHANGES README-blastn README.md" \
 		${STAGEDIR}${PREFIX}/sratoolkit-${PORTVERSION})
-	for f in `ls ${STAGEDIR}${PREFIX}/sratoolkit-${PORTVERSION}/bin/*.2.10.9`; do \
-		${RLN} $${f} ${STAGEDIR}${PREFIX}/bin/`basename $${f%%.${PORTVERSION}}`; \
+	cd ${STAGEDIR}${PREFIX}/sratoolkit-${PORTVERSION}/bin && for f in `ls *.${PORTVERSION}`; do \
+		${PRINTF} "#!/compat/linux/bin/bash\n\n${PREFIX}/sratoolkit-${PORTVERSION}/bin/$${f} "'"$$@"'"\n" \
+		> ${STAGEDIR}${PREFIX}/bin/`basename $${f%%.${PORTVERSION}}`; \
+		${CHMOD} a+rx ${STAGEDIR}${PREFIX}/bin/`basename $${f%%.${PORTVERSION}}`; \
 	done
 
 .include <bsd.port.mk>

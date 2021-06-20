@@ -1,0 +1,35 @@
+#!/bin/sh
+
+usage()
+{
+    printf "Usage: $0 symbol\n"
+    exit 1
+}
+
+
+##########################################################################
+#   Main
+##########################################################################
+
+#if [ $# != 1 ]; then
+#    usage
+#fi
+#symbol=$1
+
+# fgrep -rl vdb_mbedtls_entropy_func work
+
+for file in $(find work/ -name '*.a'); do
+    objdump -t $file | fgrep vdb_mbedtls_
+    if [ $? = 0 ]; then
+	echo $file
+	cat temp
+    fi
+done
+exit
+
+for file in /usr/local/lib/lib*ncbi*.a; do
+    echo $file
+    nm $file | fgrep vdb_mbedtls_entropy_func
+done
+
+

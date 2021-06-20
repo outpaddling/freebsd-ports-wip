@@ -49,11 +49,6 @@ category=$2
 
 port=`echo $port | sed -e 's|/$||'`
 
-if grep -w wip $PORTSDIR/wip/$port/Makefile | grep -v '^CATEGORIES'; then
-    printf "$port contains references to wip.  Please fix and try again.\n"
-    exit 1
-fi
-
 if fgrep '$FreeBSD' $PORTSDIR/wip/$port/Makefile | grep -v '^CATEGORIES'; then
     printf "$port contains \$FreeBSD\$ tag.  Please fix and try again.\n"
     exit 1
@@ -76,7 +71,15 @@ make clean
 rsync -av --delete $PORTSDIR/wip/$port $PORTSDIR/$category
 
 sed -i '' '/^CATEGORIES/s|wip ||' $PORTSDIR/$category/$port/Makefile
+
 cd $PORTSDIR/$category/$port
+
+if grep -w wip Makefile | grep -v '^CATEGORIES'; then
+    printf "$port contains references to wip.  Please fix and try again.\n"
+    pause
+fi
+
+make makesum    # GO ports change distname with category
 for file in Makefile pkg-descr; do
     $EDITOR $file
 done

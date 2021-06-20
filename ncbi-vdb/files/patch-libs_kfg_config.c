@@ -1,6 +1,6 @@
---- libs/kfg/config.c.orig	2017-07-14 21:55:36 UTC
+--- libs/kfg/config.c.orig	2021-03-15 18:16:43 UTC
 +++ libs/kfg/config.c
-@@ -2558,7 +2558,7 @@ bool load_from_std_location ( KConfig *s
+@@ -2577,7 +2577,7 @@ bool load_from_std_location ( KConfig *self, const KDi
      const char * std_locs [] =
      {
  #if ! WINDOWS
@@ -9,7 +9,7 @@
  #else
          "/c/ncbi",
  #endif
-@@ -2816,6 +2816,8 @@ void add_predefined_nodes ( KConfig * se
+@@ -2850,6 +2850,8 @@ void add_predefined_nodes ( KConfig * self, const char
      #define OS "win"
  #elif SUN
      #define OS "sun"

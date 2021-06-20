@@ -1,4 +1,4 @@
---- setup/os-arch.prl.orig	2017-07-14 21:55:36 UTC
+--- setup/os-arch.prl.orig	2021-03-15 18:16:43 UTC
 +++ setup/os-arch.prl
 @@ -11,6 +11,8 @@ sub OsArch {
          chomp $UNAME;
@@ -9,12 +9,12 @@
          } elsif ($UNAME =~ /Linux/) {
              $HOST_OS = 'linux';
          } elsif ($UNAME =~ /SunOS/) {
-@@ -49,6 +51,8 @@ sub OsArch {
+@@ -48,6 +50,8 @@ sub OsArch {
+                     $HOST_ARCH = 'i386';
                  }
              } elsif ($MARCH =~ /x86_64/) {
-                 $HOST_ARCH = 'x86_64';
-+            } elsif ($MARCH =~ /amd64/) {
 +                $HOST_ARCH = 'x86_64';
++            } elsif ($MARCH =~ /amd64/) {
+                 $HOST_ARCH = 'x86_64';
              } elsif ($MARCH =~ /i86pc/) {
                  $HOST_ARCH = 'x86_64';
-                 @ARCHITECTURES = qw(x86_64 i386);

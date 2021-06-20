@@ -1,6 +1,6 @@
---- setup/konfigure.perl.orig	2017-07-14 21:55:36 UTC
+--- setup/konfigure.perl.orig	2021-03-15 18:16:43 UTC
 +++ setup/konfigure.perl
-@@ -186,7 +186,7 @@ if ($OPT{'help'}) {
+@@ -192,7 +192,7 @@ if ($OPT{'help'}) {
  foreach (@ARGV) {
      @_ = split('=');
      next if ($#_ != 1);
@@ -9,7 +9,7 @@
  }
  
  println "Configuring $PACKAGE_NAME package";
-@@ -198,7 +198,7 @@ print "checking system type... " unless 
+@@ -204,7 +204,7 @@ print "checking system type... " unless ($AUTORUN);
  my ($OS, $ARCH, $OSTYPE, $MARCH, @ARCHITECTURES) = OsArch();
  println $OSTYPE unless ($AUTORUN);
  
@@ -18,16 +18,16 @@
      println "configure: error: unsupported system '$OSTYPE'";
      exit 1;
  }
-@@ -213,7 +213,7 @@ if ($OS eq 'linux') {
+@@ -225,7 +225,7 @@ if ($OS eq 'linux') {
  
  print "checking machine architecture... " unless ($AUTORUN);
  println $MARCH unless ($AUTORUN);
--unless ($MARCH =~ /x86_64/i || $MARCH =~ /i?86/i) {
-+unless ($MARCH =~ /x86_64/i || $MARCH =~ /amd64/i || $MARCH =~ /i?86/i) {
-     println "configure: error: unsupported architecture '$OSTYPE'";
+-unless ($MARCH =~ /x86_64/i || $MARCH =~ /i?86/i || $MARCH =~ /aarch64/) {
++unless ($MARCH =~ /x86_64/i || $MARCH =~ /amd64/i || $MARCH =~ /i?86/i || $MARCH =~ /aarch64/) {
+     println "configure: error: unsupported architecture '$OSTYPE':'$MARCH'";
      exit 1;
  }
-@@ -298,7 +298,7 @@ print "checking for supported architectu
+@@ -310,7 +310,7 @@ print "checking for supported architecture... " unless
  
  my $BITS;
  
@@ -36,10 +36,10 @@
      $BITS = 64;
  } elsif ($MARCH eq 'fat86') {
      $BITS = '32_64';
-@@ -331,6 +331,18 @@ if ($OSTYPE =~ /linux/i) {
-     $EXEX = '';
+@@ -337,6 +337,19 @@ if ($OSTYPE =~ /linux/i) {
      $OSINC = 'unix';
-     $TOOLS = 'clang' unless ($TOOLS);
+     $TOOLS = 'gcc' unless ($TOOLS);
+     $PYTHON = 'python';
 +} elsif ($OSTYPE =~ /freebsd/i) {
 +    $LPFX = 'lib';
 +    $OBJX = 'o';
@@ -52,10 +52,11 @@
 +        $TOOLS = 'clang';
 +        $TOOLS = $OPT{TOOLS} if ($OPT{TOOLS});
 +    }
- } elsif ($OSTYPE eq 'win') {
-     $TOOLS = 'vc++';
- } else {
-@@ -346,17 +358,19 @@ my ($ARCH_FL, $DBG, $OPT, $PIC, $INC, $M
++    $PYTHON = $ENV{FREEBSD_PYTHON_CMD};
+ } elsif ($OSTYPE =~ /darwin/i) {
+     $LPFX = 'lib';
+     $OBJX = 'o';
+@@ -362,17 +375,19 @@ my ($ARCH_FL, $DBG, $OPT, $PIC, $INC, $MD, $LDFLAGS) =
  
  print "checking for supported tool chain... " unless ($AUTORUN);
  
@@ -77,12 +78,12 @@
      $LP   = $CPP;
  
      $DBG = '-g -DDEBUG';
-@@ -366,21 +380,24 @@ if ($TOOLS =~ /gcc$/) {
+@@ -382,21 +397,24 @@ if ($TOOLS =~ /gcc$/) {
      $MD  = '-MD';
  } elsif ($TOOLS eq 'clang') {
      $CPP  = 'clang++' unless ($CPP);
 -    $CC   = 'clang -c';
--    my $versionMin = '-mmacosx-version-min=10.6';
+-    my $versionMin = '-mmacosx-version-min=10.10';
 +    $CC   = 'clang' unless ($CC);
 +    $LD   = $CC;
 +    $CC   = "$CC -c";
@@ -106,7 +107,7 @@
          $LP     = "$CPP $versionMin -Wl,-arch_multiple $ARCH_FL -Wl,-all_load";
      }
      $ARX  = 'ar x';
-@@ -762,13 +779,13 @@ OS_ARCH = \$(shell perl \$(TOP)/setup/os
+@@ -826,13 +844,13 @@ OS_ARCH = \$(shell perl \$(TOP)/setup/os-arch.perl)
  # install paths
  EndText
  
@@ -127,7 +128,7 @@
  
      my ($E_VERSION_SHLX, $VERSION_SHLX,
          $E_MAJVERS_SHLX , $MAJMIN_SHLX, $MAJVERS_SHLX);
-@@ -832,7 +849,7 @@ MAJMIN_EXEX  = \$(EXEX).\$(MAJMIN)
+@@ -896,7 +914,7 @@ MAJMIN_EXEX  = \$(EXEX).\$(MAJMIN)
  MAJVERS_EXEX = \$(EXEX).\$(MAJVERS)
  
  # system architecture and wordsize
@@ -136,7 +137,7 @@
  EndText
  
      L($F, "# ARCH = $ARCH ( $MARCH )") if ($ARCH ne $MARCH);
-@@ -867,7 +884,7 @@ EndText
+@@ -932,7 +950,7 @@ EndText
      }
      L($F, "PIC     = $PIC") if ($PIC);
      if ($PKG{LNG} eq 'C') {
@@ -145,7 +146,7 @@
     L($F, 'SONAME  = -install_name ' .
                 '$(INST_LIBDIR)$(BITS)/$(subst $(VERSION),$(MAJVERS),$(@F)) \\');
     L($F, '    -compatibility_version $(MAJMIN) -current_version $(VERSION) \\');
-@@ -978,7 +995,7 @@ EndText
+@@ -1043,7 +1061,7 @@ EndText
      L($F, '# directory rules');
      if ($PKG{LNG} eq 'C') {
          L($F, '$(BINDIR) $(LIBDIR) $(ILIBDIR) '
@@ -154,7 +155,7 @@
          T($F, 'mkdir -p $@');
      } elsif ($PKG{LNG} eq 'JAVA') {
          # test if we have jni header path
-@@ -1008,12 +1025,12 @@ EndText
+@@ -1073,12 +1091,12 @@ EndText
      L($F, 'export CONFIGURE_FOUND_XML2');
      L($F);
  
@@ -170,7 +171,7 @@
          T($F, '  then                                                 \\');
          T($F, '      rm -f $(patsubst %$(VERSION),%$(MAJVERS),$@) '
                       . '$(patsubst %$(VERSION_LIBX),%$(LIBX),$@) '
-@@ -1022,7 +1039,7 @@ EndText
+@@ -1087,7 +1105,7 @@ EndText
          T($F, '      ln -s $(patsubst %$(VERSION),%$(MAJVERS),$(@F)) '
                        . '$(patsubst %$(VERSION_LIBX),%$(LIBX),$@); \\');
          T($F, '      ln -s $(patsubst %$(VERSION_LIBX),%$(LIBX),$(@F)) ' .
@@ -179,7 +180,7 @@
                                                                . ' \\');
          T($F, '      echo success;                                    \\');
          T($F, '  else                                                 \\');
-@@ -1032,15 +1049,15 @@ EndText
+@@ -1097,15 +1115,15 @@ EndText
          L($F);
  
          L($F,
@@ -198,7 +199,7 @@
            T($F, '      ln -s $(@F) $(patsubst %$(VERSION),%$(MAJVERS),$@); \\');
          } elsif ($OS eq 'mac') {
            T($F, '      ln -sf $(@F) '
-@@ -1059,7 +1076,7 @@ EndText
+@@ -1124,7 +1142,7 @@ EndText
  
          L($F, '$(INST_BINDIR)/%$(VERSION_EXEX): $(BINDIR)/%$(VERSION_EXEX)');
          T($F, '@ echo -n "installing \'$(@F)\'... "');
@@ -207,7 +208,7 @@
          T($F, '  then                                                 \\');
          T($F, '      rm -f $(patsubst %$(VERSION),%$(MAJVERS),$@) '
                        . '$(patsubst %$(VERSION_EXEX),%$(EXEX),$@);     \\');
-@@ -1341,7 +1358,7 @@ sub find_in_dir {
+@@ -1406,7 +1424,7 @@ sub find_in_dir {
                  ++$found;
              }
              if (! $found) {
@@ -216,7 +217,7 @@
                  my $f = File::Spec->catdir($libdir, $lib);
                  print "\tchecking $f\n\t" if ($OPT{'debug'});
                  if (-e $f) {
-@@ -1483,12 +1500,12 @@ sub find_lib {
+@@ -1628,12 +1646,12 @@ sub find_lib {
  
  sub check_compiler {
      my ($t, $n, $I, @l) = @_;
@@ -231,7 +232,7 @@
              print "checking whether $tool accepts $n... ";
          } else {
              return;
-@@ -1518,6 +1535,9 @@ sub check_compiler {
+@@ -1663,6 +1681,9 @@ sub check_compiler {
          } elsif ($n eq 'magic') {
              $library = '-lmagic';
              $log = '#include <magic.h> \n int main() { magic_open     (0); }\n'
@@ -241,9 +242,9 @@
          } elsif ($n eq 'xml2') {
              $library  = '-lxml2';
              $library .=       ' -liconv' if ($OS eq 'mac');
-@@ -1554,7 +1574,7 @@ sub check_compiler {
-             my $l = $l [ $i ];
-             next if ( $l && ! -d $l );
+@@ -1706,7 +1727,7 @@ sub check_compiler {
+                 }
+             }
              my $gcc = "| $tool -xc $flags " . ($I ? "-I$I " : ' ')
 -                                      . ($l ? "-L$l " : ' ') . "- $library";
 +                                      . ($l ? "-L$l " : ' ') . "-o a.out - $library";
