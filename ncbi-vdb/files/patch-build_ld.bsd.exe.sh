@@ -1,4 +1,4 @@
---- build/ld.bsd.exe.sh.orig	2021-06-20 16:49:54 UTC
+--- build/ld.bsd.exe.sh.orig	2021-06-20 22:48:01 UTC
 +++ build/ld.bsd.exe.sh
 @@ -51,8 +51,8 @@ case "$LD" in
  g*)
@@ -20,13 +20,18 @@
              ;;
  
          -l*)
-@@ -293,6 +293,9 @@ if [ "$HAVE_XML2" == "1" ]
+@@ -289,10 +289,14 @@ then
+ fi
+ 
+ # add in xml
++# Doesn't work since ld.sh uses HAVE_XML=32, passed here as part of MODE
+ if [ "$HAVE_XML2" == "1" ]
  then
      CMD="$CMD -lxml2"
  fi
 +
 +# For sra-tools tools/*
-+CMD="$CMD -lepoll-shim -lbz2 -lz"
++CMD="$CMD -lepoll-shim -lxml2 -lbz2 -lz"
  
  # add in math library
  if [ $HAVE_M -ne 0 ]
