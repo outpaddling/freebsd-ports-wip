@@ -38,10 +38,10 @@ CFLAGS+=	-I${WRKSRC}/lib
 
 MAKE_JOBS_UNSAFE=	yes
 
-# These don't seem necessary
-# post-extract:
-# 	@${LN} -sf ${WRKSRC_ngs} ${WRKDIR}/ngs
-# 	@${LN} -sf ${WRKSRC} ${WRKDIR}/${PORTNAME}
+# Needed for sra-tools configure
+post-extract:
+	@${LN} -sf ${WRKSRC_ngs} ${WRKDIR}/ngs
+	@${LN} -sf ${WRKSRC} ${WRKDIR}/${PORTNAME}
 
 pre-patch:
 	@${CP} ${FILESDIR}/Makefile.bsd ${WRKSRC}/build/
