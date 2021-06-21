@@ -10,6 +10,9 @@ LICENSE_COMB=	multi
 LICENSE_FILE_PD=	${WRKSRC}/LICENSE
 LICENSE_DISTFILES_LGPL21+ =
 
+ONLY_FOR_ARCHS=		amd64
+ONLY_FOR_ARCHS_REASON=	NCBI-VDB requires SSE2 instructions
+
 BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/lib/libngs-c++.a:biology/ngs-sdk \
 		${NONEXISTENT}:wip/ncbi-vdb:build
@@ -18,35 +21,28 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libmbedtls.so:security/mbedtls \
 		libepoll-shim.so:devel/libepoll-shim
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	ncbi
-
 USES=		gmake perl5 shebangfix
 USE_PERL5=	build
+USE_GITHUB=	yes
+
 SHEBANG_GLOB=	*.sh *.pl
+GH_ACCOUNT=	ncbi
 
 GNU_CONFIGURE=	yes
-
-NCBI_VDB_WRKSRC=	$$(make -C ${PORTSDIR}/wip/ncbi-vdb -V WRKSRC)
-NCBI_VDB_FILESDIR=	$$(make -C ${PORTSDIR}/wip/ncbi-vdb -V FILESDIR)
-
 CONFIGURE_ARGS=	--with-ngs-sdk-prefix=${LOCALBASE} \
 		--with-ncbi-vdb-sources=${NCBI_VDB_WRKSRC} \
 		--with-xml2-prefix=${LOCALBASE} \
 		--with-hdf5-prefix=${LOCALBASE} \
 		CC="${CC}" CXX="${CXX}" TOOLS="${CHOSEN_COMPILER_TYPE}" \
 		--with-ncbi-vdb-build=${NCBI_VDB_WRKSRC}/amd64-portbld-freebsd12.2
-#		-d
-#		--with-mbedtls-prefix=${LOCALBASE}
 MAKE_ARGS=	CCNAME=${CC} CXXNAME=${CXX} PKGCFLAGS="${CFLAGS}" \
 		INST_ETCDIR=${STAGEDIR}${PREFIX}/etc
 
-# Just for debugging: Remove if possible.
-MAKE_JOBS_UNSAFE=	yes
+NCBI_VDB_WRKSRC=	$$(make -C ${PORTSDIR}/wip/ncbi-vdb -V WRKSRC)
+NCBI_VDB_FILESDIR=	$$(make -C ${PORTSDIR}/wip/ncbi-vdb -V FILESDIR)
 
-ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	NCBI-VDB requires SSE2 instructions
-BROKEN_i386=	buggy output
+# Just for debugging: Remove if possible.
+# MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-I${WRKSRC}/interfaces/os/sun
 CXXFLAGS+=	-I${WRKSRC}/interfaces/os/sun
@@ -87,5 +83,11 @@ xpost-configure:
 	@${ECHO} ${CHOSEN_COMPILER_TYPE} > ${WRKSRC}/build/COMP
 
 post-build-TEST-on:	do-test
+
+# Temporary hack until upstream install target can be utilized
+do-install:
+	cd ${WRKSRC}/amd64-portbld-freebsd*/sra-tools/bsd/clang/*/rel/bin \
+		&& ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/bin
+	${MV} ${STAGEDIR}${PREFIX}/bin/ncbi ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
