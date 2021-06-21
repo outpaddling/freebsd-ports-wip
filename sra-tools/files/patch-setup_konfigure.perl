@@ -53,7 +53,16 @@
      }
      my ($i, $l) = find_lib($_, $I, @L);
      if (defined $i || $l) {
-@@ -934,7 +944,7 @@ EndText
+@@ -711,6 +721,8 @@ foreach my $href (@REQ) {
+             }
+         }
+     }
++    println "need_ift = $need_itf  found_itf = $found_itf";
++    println "need_lib = $need_lib  found_lib = $found_lib";
+     if (($need_itf && ! $found_itf) || ($need_lib && ! $found_lib) ||
+         ($need_jar && ! $found_jar) || ($ilib && ! $found_ilib) ||
+         ($need_bin && ! $found_bin))
+@@ -934,7 +946,7 @@ EndText
      if ($PKG{LNG} eq 'C') {
          if ($TOOLS =~ /clang/i) {
     L($F, 'SONAME  = -install_name ' .
@@ -62,7 +71,7 @@
     L($F, '    -compatibility_version $(MAJMIN) -current_version $(VERSION) \\');
     L($F, '    -flat_namespace -undefined suppress');
          } else {
-@@ -1043,7 +1053,7 @@ EndText
+@@ -1043,7 +1055,7 @@ EndText
      L($F, '# directory rules');
      if ($PKG{LNG} eq 'C') {
          L($F, '$(BINDIR) $(LIBDIR) $(ILIBDIR) '
@@ -71,7 +80,7 @@
          T($F, 'mkdir -p $@');
      } elsif ($PKG{LNG} eq 'JAVA') {
          # test if we have jni header path
-@@ -1076,7 +1086,7 @@ EndText
+@@ -1076,7 +1088,7 @@ EndText
      if ($OS eq 'linux' || $OS eq 'mac') {
          L($F, '# installation rules');
          L($F,
@@ -80,7 +89,7 @@
          T($F, '@ echo -n "installing \'$(@F)\'... "');
          T($F, '@ if cp $^ $@ && chmod 644 $@;                         \\');
          T($F, '  then                                                 \\');
-@@ -1087,7 +1097,7 @@ EndText
+@@ -1087,7 +1099,7 @@ EndText
          T($F, '      ln -s $(patsubst %$(VERSION),%$(MAJVERS),$(@F)) '
                        . '$(patsubst %$(VERSION_LIBX),%$(LIBX),$@); \\');
          T($F, '      ln -s $(patsubst %$(VERSION_LIBX),%$(LIBX),$(@F)) ' .
@@ -89,7 +98,7 @@
                                                                . ' \\');
          T($F, '      echo success;                                    \\');
          T($F, '  else                                                 \\');
-@@ -1097,7 +1107,7 @@ EndText
+@@ -1097,7 +1109,7 @@ EndText
          L($F);
  
          L($F,
@@ -98,7 +107,7 @@
          T($F, '@ echo -n "installing \'$(@F)\'... "');
          T($F, '@ if cp $^ $@ && chmod 755 $@;                         \\');
          T($F, '  then                                                 \\');
-@@ -1168,9 +1178,9 @@ EndText
+@@ -1168,9 +1180,9 @@ EndText
  	    print $F "    \$_{INCDIR       } = '" . expand("$Bin/.."      ) . "';\n";
  	    if ($PKG{LNG} ne 'PYTHON') {
  	        print $F "  \$_{BINDIR$BITS} = '" . expand($E_BINDIR      ) . "';\n";
@@ -110,7 +119,7 @@
  	    }
  	    print $F "    \$_{OTHER_PREFIX } = '$PKG{UPATH}';\n";
  	    print $F "    \$_{PREFIX       } = '$OPT{'prefix'}';\n";
-@@ -1406,7 +1416,7 @@ sub find_in_dir {
+@@ -1406,7 +1418,7 @@ sub find_in_dir {
                  ++$found;
              }
              if (! $found) {
