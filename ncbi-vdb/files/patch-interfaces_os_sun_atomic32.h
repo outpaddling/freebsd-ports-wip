@@ -1,6 +1,6 @@
 --- interfaces/os/sun/atomic32.h.orig	2021-03-15 18:16:43 UTC
 +++ interfaces/os/sun/atomic32.h
-@@ -1,3 +1,61 @@
+@@ -1,3 +1,66 @@
 +#ifndef _h_atomic32_
 +#define _h_atomic32_
 +
@@ -15,6 +15,11 @@
 + * /usr/src/sys/cddl/compat/opensolaris/sys/atomic.h
 + * BSD license
 + */
++
++#if defined(__i386__) || defined(__amd64__) || defined(__arm__)
++/* No spurious failures from fcmpset. */
++#define STRONG_FCMPSET
++#endif
 +
 +static inline uint32_t
 +atomic_cas_32(volatile uint32_t *target, uint32_t cmp, uint32_t newval)
@@ -62,7 +67,7 @@
  /*===========================================================================
  *
  *                            PUBLIC DOMAIN NOTICE
-@@ -23,15 +81,6 @@
+@@ -23,15 +86,6 @@
  * ===========================================================================
  *
  */
