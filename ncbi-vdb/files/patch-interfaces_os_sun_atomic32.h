@@ -1,13 +1,21 @@
 --- interfaces/os/sun/atomic32.h.orig	2021-03-15 18:16:43 UTC
 +++ interfaces/os/sun/atomic32.h
-@@ -27,11 +27,58 @@
- #ifndef _h_atomic32_
- #define _h_atomic32_
- 
--#include <sys/atomic.h>
+@@ -1,3 +1,61 @@
++#ifndef _h_atomic32_
++#define _h_atomic32_
++
 +#include <sys/types.h>
 +#include <machine/atomic.h>
- 
++
++#ifdef __cplusplus
++extern "C" {
++#endif
++
++/*
++ * /usr/src/sys/cddl/compat/opensolaris/sys/atomic.h
++ * BSD license
++ */
++
 +static inline uint32_t
 +atomic_cas_32(volatile uint32_t *target, uint32_t cmp, uint32_t newval)
 +{
@@ -24,23 +32,16 @@
 +    return (cmp);
 +}
 +
- #ifdef __cplusplus
- extern "C" {
- #endif
-+
-+// Copyright (c) 2007 Pawel Jakub Dawidek <pjd@FreeBSD.org>
 +static inline void  atomic_inc_32(volatile uint32_t *target)
 +{
 +    atomic_add_32(target, 1);
 +}
 +
-+// Copyright (c) 2007 Pawel Jakub Dawidek <pjd@FreeBSD.org>
 +static __inline uint32_t atomic_add_32_nv(volatile uint32_t *target, int32_t delta)
 +{
 +    return (atomic_fetchadd_32(target, delta) + delta);
 +}
 +
-+// Copyright (c) 2007 Pawel Jakub Dawidek <pjd@FreeBSD.org>
 +static __inline uint32_t atomic_inc_32_nv(volatile uint32_t *target)
 +{
 +    return (atomic_add_32_nv(target, 1));
@@ -57,6 +58,23 @@
 +{
 +    return (atomic_fetchadd_32(target, -1) - 1);
 +}
++
+ /*===========================================================================
+ *
+ *                            PUBLIC DOMAIN NOTICE
+@@ -23,15 +81,6 @@
+ * ===========================================================================
+ *
+ */
+-
+-#ifndef _h_atomic32_
+-#define _h_atomic32_
+-
+-#include <sys/atomic.h>
+-
+-#ifdef __cplusplus
+-extern "C" {
+-#endif
  
  #ifndef __inline__
  #define __inline__ inline
