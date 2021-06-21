@@ -85,8 +85,10 @@ post-build-TEST-on:	do-test
 
 # Temporary hack until upstream install target can be utilized
 do-install:
-	cd ${WRKSRC}/amd64-portbld-freebsd*/sra-tools/bsd/clang/*/rel/bin \
-		&& ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/bin
-	${MV} ${STAGEDIR}${PREFIX}/bin/ncbi ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/amd64-portbld-freebsd*/sra-tools/bsd/clang/*/rel/bin && \
+	    for f in `ls *.${PORTVERSION}`; do \
+		${INSTALL_PROGRAM} $${f} \
+		${STAGEDIR}${PREFIX}/bin/`basename $${f%%.${PORTVERSION}}`; \
+	done
 
 .include <bsd.port.mk>
