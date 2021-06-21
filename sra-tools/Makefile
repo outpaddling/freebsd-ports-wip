@@ -40,50 +40,48 @@ MAKE_ARGS=	CCNAME=${CC} CXXNAME=${CXX} PKGCFLAGS="${CFLAGS}" \
 NCBI_VDB_WRKSRC=	$$(make -C ${PORTSDIR}/wip/ncbi-vdb -V WRKSRC)
 NCBI_VDB_FILESDIR=	$$(make -C ${PORTSDIR}/wip/ncbi-vdb -V FILESDIR)
 
-# Just for debugging: Remove if possible.
-# MAKE_JOBS_UNSAFE=	yes
-
 CFLAGS+=	-I${WRKSRC}/interfaces/os/sun
 CXXFLAGS+=	-I${WRKSRC}/interfaces/os/sun
 
 BINARY_ALIAS=	gcc=${CC} g++=${CXX}
 
 # for port developers, building with these options may fail
-OPTIONS_DEFINE=	DEBUG OPTIMIZED_CFLAGS TEST
-DEBUG_PREVENTS=	OPTIMIZED_CFLAGS
+OPTIONS_DEFINE=		DEBUG OPTIMIZED_CFLAGS TEST
+DEBUG_PREVENTS=		OPTIMIZED_CFLAGS
 DEBUG_CONFIGURE_WITH=	debug
 OPTIMIZED_CFLAGS_MAKE_ARGS_OFF=	OPT=""
 TEST_TEST_TARGET=	test
-TEST_USES=	python
+TEST_USES=		python
 
+# Disabled
 xpre-patch:
 	@${CP} ${FILESDIR}/Makefile.bsd ${WRKSRC}/build/
 	@for f in ${WRKSRC}/build/ld.linux.*.sh; do ${CP} -p $${f} $${f%linux*}bsd$${f#*linux}; done
 	@${CP} -p ${WRKSRC}/build/ld.linux.gcc.sh ${WRKSRC}/build/ld.bsd.clang.sh
 
 pre-configure:
-	${CP} ${NCBI_VDB_WRKSRC}/setup/os-arch.prl ${WRKSRC}/setup/os-arch.prl
+	@${CP} ${NCBI_VDB_WRKSRC}/setup/os-arch.prl ${WRKSRC}/setup/os-arch.prl
 	# same as in biology/ncbi-vdb
 	@${CP} ${NCBI_VDB_FILESDIR}/Makefile.bsd ${WRKSRC}/build/
 	@${CP} ${NCBI_VDB_WRKSRC}/build/ld.bsd.*.sh ${WRKSRC}/build/
-	${MKDIR} ${WRKSRC}/interfaces/override
+	@${MKDIR} ${WRKSRC}/interfaces/override
 	@${CP} ${NCBI_VDB_WRKSRC}/interfaces/os/sun/atomic32.h ${WRKSRC}/interfaces/override
 	@${CP} ${FILESDIR}/byteswap.h ${WRKSRC}/interfaces/override
 	@for f in ${NCBI_VDB_WRKSRC}/build/ld.linux.*.sh; do ${CP} -p $${f} $${f%linux*}bsd$${f#*linux}; done
 	@${CP} -p ${NCBI_VDB_WRKSRC}/build/ld.linux.gcc.sh ${WRKSRC}/build/ld.bsd.clang.sh
 	#@${MKDIR} ${WRKSRC}/interfaces/os/bsd
 	#@${CP} -p ${WRKSRC}/interfaces/os/mac/endian.h ${WRKSRC}/interfaces/os/bsd/
-	${LN} -s ${NCBI_VDB_WRKSRC}/interfaces ${WRKSRC}/interfaces
+	#${LN} -s ${NCBI_VDB_WRKSRC}/interfaces ${WRKSRC}/interfaces
 
 post-patch-TEST-on:
-	${REINPLACE_CMD} -e 's#python#${PYTHON_CMD}#' ${WRKSRC}/test/kget/Makefile
+	${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' ${WRKSRC}/test/kget/Makefile
 
+# Disabled
 xpost-configure:
 	@${ECHO} ${CHOSEN_COMPILER_TYPE} > ${WRKSRC}/build/COMP
 
 post-build-TEST-on:	do-test
 
-# Temporary hack until upstream install target can be utilized
 do-install:
 	cd ${WRKSRC}/amd64-portbld-freebsd*/sra-tools/bsd/clang/*/rel/bin && \
 	    for f in `ls *.${PORTVERSION}`; do \
