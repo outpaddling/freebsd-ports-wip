@@ -18,7 +18,6 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${NONEXISTENT}:wip/ncbi-vdb:build
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libhdf5.so:science/hdf5 \
-		libmbedtls.so:security/mbedtls \
 		libepoll-shim.so:devel/libepoll-shim
 
 USES=		gmake perl5 shebangfix
