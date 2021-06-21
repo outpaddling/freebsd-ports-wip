@@ -1,6 +1,6 @@
 PORTNAME=	ncbi-vdb
 DISTVERSION=	2.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	wip biology
 
 MAINTAINER=	mzaki@niid.go.jp
@@ -14,7 +14,6 @@ ONLY_FOR_ARCHS_REASON=	libs/search/nucstrstr.c requires SSE2 instructions
 
 BUILD_DEPENDS=	bash:shells/bash \
 		libepoll-shim>0:devel/libepoll-shim
-
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libhdf5.so:science/hdf5
 
