@@ -45,8 +45,7 @@ post-extract:
 
 pre-patch:
 	@${CP} ${FILESDIR}/Makefile.bsd ${WRKSRC}/build/
-	@for f in ${WRKSRC}/build/ld.linux.*.sh; do ${CP} -p $${f} $${f%linux*}bsd$${f#*linux}; done
-	@${CP} -p ${WRKSRC}/build/ld.linux.gcc.sh ${WRKSRC}/build/ld.bsd.clang.sh
+	@${CP} ${FILESDIR}/ld.bsd.*.sh ${WRKSRC}/build/
 	@${MKDIR} ${WRKSRC}/interfaces/os/bsd
 	@${CP} -p ${WRKSRC}/interfaces/os/mac/endian.h ${WRKSRC}/interfaces/os/bsd/
 
