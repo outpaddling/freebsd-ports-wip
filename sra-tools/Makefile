@@ -11,7 +11,7 @@ LICENSE_FILE_PD=	${WRKSRC}/LICENSE
 LICENSE_DISTFILES_LGPL21+ =
 
 ONLY_FOR_ARCHS=		amd64
-ONLY_FOR_ARCHS_REASON=	NCBI-VDB requires SSE2 instructions
+ONLY_FOR_ARCHS_REASON=	NCBI-VDB requires SSE2 instructions, no 32-bit support
 
 BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/lib/libngs-c++.a:biology/ngs-sdk
@@ -38,11 +38,6 @@ CONFIGURE_ARGS=	--with-ngs-sdk-prefix=${LOCALBASE} \
 MAKE_ARGS=	CCNAME=${CC} CXXNAME=${CXX} PKGCFLAGS="${CFLAGS}" \
 		INST_ETCDIR=${STAGEDIR}${PREFIX}/etc
 
-# Separate ncbi-vdb port
-# NCBI_VDB_WRKSRC=	$$(make -C ${PORTSDIR}/wip/ncbi-vdb -V WRKSRC)
-# NCBI_VDB_FILESDIR=	$$(make -C ${PORTSDIR}/wip/ncbi-vdb -V FILESDIR)
-
-# GH_TUPLE
 NCBI_VDB_WRKSRC=	${WRKSRC}/ncbi-vdb
 NCBI_VDB_FILESDIR=	${FILESDIR}
 FREEBSD_RELEASE=	uname -r | cut -d - -f 1
@@ -64,16 +59,12 @@ TEST_USES=		python
 VDB_CONFIGURE_ARGS=	\
 		--with-xml2-prefix=${LOCALBASE} \
 		--with-hdf5-prefix=${LOCALBASE} \
-		CC="${CC}" CXX="${CXX}" TOOLS="${CHOSEN_COMPILER_TYPE}" \
 		--prefix=${PREFIX} \
-		--build=amd64-portbld-freebsd$$(${FREEBSD_RELEASE})
+		--build=amd64-portbld-freebsd$$(${FREEBSD_RELEASE}) \
+		CC="${CC}" CXX="${CXX}" TOOLS="${CHOSEN_COMPILER_TYPE}"
 VDB_MAKE_ARGS+=	-j 1 CCNAME=${CC} CXXNAME=${CXX} PKGCFLAGS="${CFLAGS}"
 MAKE_ENV+=	CPATH="${LOCALBASE}/include/libepoll-shim"
 CFLAGS+=	-I${WRKSRC}/lib
-# End ncbi-vdb
-
-# The 'install' target installs broken-looking static libs with symlinks.
-# This is intentional, see comments https://github.com/ncbi/ncbi-vdb/issues/36#issuecomment-817990790 This may change in future versions.
 
 pre-patch:
 	@${CP} ${FILESDIR}/Makefile.bsd ${NCBI_VDB_WRKSRC}/build/
@@ -85,10 +76,10 @@ pre-patch:
 post-patch:
 	@${GREP} -q '@@PREFIX@@' ${WRKSRC}/ncbi-vdb/libs/kfg/config.c || (echo "@@PREFIX@@ in file/patch-libs_kfg_config.c is overwritten probably due to using 'make makepatch'"; exit 1)
 	@${REINPLACE_CMD} -e 's#@@PREFIX@@#"${PREFIX}"#' ${WRKSRC}/ncbi-vdb/libs/kfg/config.c
-	${LN} -s ${WRKSRC}/ncbi-vdb/interfaces/cc/gcc/x86_64 ${WRKSRC}/ncbi-vdb/interfaces/cc/gcc/amd64
+	@${LN} -s ${WRKSRC}/ncbi-vdb/interfaces/cc/gcc/x86_64 ${WRKSRC}/ncbi-vdb/interfaces/cc/gcc/amd64
 
 post-patch-TEST-on:
-	${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' ${WRKSRC}/test/kget/Makefile
+	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' ${WRKSRC}/test/kget/Makefile
 
 pre-configure:
 	@${CP} ${NCBI_VDB_WRKSRC}/setup/os-arch.prl ${WRKSRC}/setup/os-arch.prl
@@ -98,9 +89,9 @@ pre-configure:
 	@${MKDIR} ${WRKSRC}/interfaces/override
 	@${CP} ${NCBI_VDB_WRKSRC}/interfaces/os/sun/atomic32.h ${WRKSRC}/interfaces/override
 	@${CP} ${FILESDIR}/byteswap.h ${WRKSRC}/interfaces/override
-	cd ${WRKSRC}/ncbi-vdb && ./configure ${VDB_CONFIGURE_ARGS}
-	${ECHO} ${CHOSEN_COMPILER_TYPE} > ${WRKSRC}/ncbi-vdb/build/COMP
-	cd ${WRKSRC}/ncbi-vdb && ${DO_MAKE_BUILD} ${VDB_MAKE_ARGS}
+	@cd ${WRKSRC}/ncbi-vdb && ./configure ${VDB_CONFIGURE_ARGS}
+	@${ECHO} ${CHOSEN_COMPILER_TYPE} > ${WRKSRC}/ncbi-vdb/build/COMP
+	@cd ${WRKSRC}/ncbi-vdb && ${DO_MAKE_BUILD} ${VDB_MAKE_ARGS}
 
 post-build-TEST-on:	do-test
 
