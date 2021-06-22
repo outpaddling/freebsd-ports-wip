@@ -1,3 +1,5 @@
+# Created by: Motomichi Matsuzaki <mzaki@e-mail.ne.jp>
+
 PORTNAME=	sra-tools
 DISTVERSION=	2.11.0
 CATEGORIES=	wip biology
