@@ -1,5 +1,5 @@
---- setup/konfigure.perl.orig	2021-03-15 18:16:43 UTC
-+++ setup/konfigure.perl
+--- ncbi-vdb/setup/konfigure.perl.orig	2021-03-15 18:16:43 UTC
++++ ncbi-vdb/setup/konfigure.perl
 @@ -192,7 +192,7 @@ if ($OPT{'help'}) {
  foreach (@ARGV) {
      @_ = split('=');

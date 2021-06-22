@@ -1,11 +1,12 @@
 --- tools/driver-tool/Makefile.orig	2021-03-15 18:25:25 UTC
 +++ tools/driver-tool/Makefile
-@@ -97,7 +97,12 @@ SRATOOLS_OBJ = \
+@@ -97,7 +97,13 @@ SRATOOLS_OBJ = \
  SRATOOLS_LIB = \
  	-sncbi-vdb \
  	-sjson \
 -	-lm
 +	-lepoll-shim \
++	-lncbi-vdb \
 +	-lmbedtls \
 +	-lm \
 +	-lexecinfo \

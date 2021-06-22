@@ -1,5 +1,5 @@
---- libs/ncbi-vdb/Makefile.orig	2021-06-20 15:15:25 UTC
-+++ libs/ncbi-vdb/Makefile
+--- ncbi-vdb/libs/ncbi-vdb/Makefile.orig	2021-06-20 15:15:25 UTC
++++ ncbi-vdb/libs/ncbi-vdb/Makefile
 @@ -138,9 +138,7 @@ VDB_LIB_CMN =    \
  	klib         \
  	kproc        \

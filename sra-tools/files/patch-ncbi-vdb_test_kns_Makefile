@@ -1,5 +1,5 @@
---- test/kns/Makefile.orig	2021-03-15 18:16:43 UTC
-+++ test/kns/Makefile
+--- ncbi-vdb/test/kns/Makefile.orig	2021-03-15 18:16:43 UTC
++++ ncbi-vdb/test/kns/Makefile
 @@ -25,7 +25,7 @@
  
  default: runtests
