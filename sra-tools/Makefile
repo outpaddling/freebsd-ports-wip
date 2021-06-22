@@ -33,13 +33,13 @@ CONFIGURE_ARGS=	--with-ngs-sdk-prefix=${LOCALBASE} \
 		--with-xml2-prefix=${LOCALBASE} \
 		--with-hdf5-prefix=${LOCALBASE} \
 		CC="${CC}" CXX="${CXX}" TOOLS="${CHOSEN_COMPILER_TYPE}" \
-		--with-ncbi-vdb-build=${NCBI_VDB_WRKSRC}/amd64-portbld-freebsd${FREEBSD_RELEASE}
+		--with-ncbi-vdb-build=${NCBI_VDB_WRKSRC}/amd64-portbld-freebsd$$(${FREEBSD_RELEASE})
 MAKE_ARGS=	CCNAME=${CC} CXXNAME=${CXX} PKGCFLAGS="${CFLAGS}" \
 		INST_ETCDIR=${STAGEDIR}${PREFIX}/etc
 
 NCBI_VDB_WRKSRC=	$$(make -C ${PORTSDIR}/wip/ncbi-vdb -V WRKSRC)
 NCBI_VDB_FILESDIR=	$$(make -C ${PORTSDIR}/wip/ncbi-vdb -V FILESDIR)
-FREEBSD_RELEASE!=	uname -r | cut -d - -f 1
+FREEBSD_RELEASE=	uname -r | cut -d - -f 1
 
 CFLAGS+=	-I${WRKSRC}/interfaces/os/sun
 CXXFLAGS+=	-I${WRKSRC}/interfaces/os/sun
