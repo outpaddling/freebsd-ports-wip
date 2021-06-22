@@ -2,11 +2,11 @@ PORTNAME=	sra-tools
 DISTVERSION=	2.11.0
 CATEGORIES=	wip biology
 
-MAINTAINER=	mzaki@niid.go.jp
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	NCBI's toolkit for handling data in INSDC Sequence Read Archives
 
-LICENSE=	PD LGPL21+
-LICENSE_COMB=	multi
+LICENSE=		PD LGPL21+
+LICENSE_COMB=		multi
 LICENSE_FILE_PD=	${WRKSRC}/LICENSE
 LICENSE_DISTFILES_LGPL21+ =
 
@@ -27,8 +27,6 @@ SHEBANG_GLOB=	*.sh *.pl
 GH_ACCOUNT=	ncbi
 GH_TUPLE+=	ncbi:ngs:${DISTVERSION}:ngs/ngs # ported as biology/ngs-sdk
 GH_TUPLE+=	ncbi:ncbi-vdb:${DISTVERSION}:vdb/ncbi-vdb
-
-MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ngs-sdk-prefix=${LOCALBASE} \
@@ -63,13 +61,13 @@ TEST_TEST_TARGET=	test
 TEST_USES=		python
 
 # ncbi-vdb build extras
-VDB_CONFIGURE_ARGS= \
+VDB_CONFIGURE_ARGS=	\
 		--with-xml2-prefix=${LOCALBASE} \
 		--with-hdf5-prefix=${LOCALBASE} \
 		CC="${CC}" CXX="${CXX}" TOOLS="${CHOSEN_COMPILER_TYPE}" \
-		--prefix=/usr/local \
-		--build=amd64-portbld-freebsd12.2
-VDB_MAKE_ARGS+=	CCNAME=${CC} CXXNAME=${CXX} PKGCFLAGS="${CFLAGS}"
+		--prefix=${PREFIX} \
+		--build=amd64-portbld-freebsd$$(${FREEBSD_RELEASE})
+VDB_MAKE_ARGS+=	-j 1 CCNAME=${CC} CXXNAME=${CXX} PKGCFLAGS="${CFLAGS}"
 MAKE_ENV+=	CPATH="${LOCALBASE}/include/libepoll-shim"
 CFLAGS+=	-I${WRKSRC}/lib
 # End ncbi-vdb
