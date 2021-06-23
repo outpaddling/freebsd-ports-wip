@@ -101,6 +101,8 @@ lib/slurm/job_container_cncu.a
 lib/slurm/job_container_cncu.so
 lib/slurm/job_container_none.a
 lib/slurm/job_container_none.so
+lib/slurm/job_container_tmpfs.a
+lib/slurm/job_container_tmpfs.so
 lib/slurm/job_submit_all_partitions.a
 lib/slurm/job_submit_all_partitions.so
 lib/slurm/job_submit_cray_aries.a
@@ -376,6 +378,7 @@ man/man5/burst_buffer.conf.5.gz
 man/man5/cgroup.conf.5.gz
 man/man5/ext_sensors.conf.5.gz
 man/man5/gres.conf.5.gz
+man/man5/job_container.conf.5.gz
 man/man5/knl.conf.5.gz
 man/man5/nonstop.conf.5.gz
 man/man5/slurm.conf.5.gz
@@ -453,6 +456,7 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%/html/ibm_pe_fig2.png
 %%PORTDOCS%%%%DOCSDIR%%/html/intel_knl.html
 %%PORTDOCS%%%%DOCSDIR%%/html/job_array.html
+%%PORTDOCS%%%%DOCSDIR%%/html/job_container.conf.html
 %%PORTDOCS%%%%DOCSDIR%%/html/job_container_plugins.html
 %%PORTDOCS%%%%DOCSDIR%%/html/job_exit_code.html
 %%PORTDOCS%%%%DOCSDIR%%/html/job_launch.html
@@ -532,6 +536,7 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%/html/schedmd.png
 %%PORTDOCS%%%%DOCSDIR%%/html/schedplugins.html
 %%PORTDOCS%%%%DOCSDIR%%/html/scontrol.html
+%%PORTDOCS%%%%DOCSDIR%%/html/scrontab.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sdiag.html
 %%PORTDOCS%%%%DOCSDIR%%/html/select_design.html
 %%PORTDOCS%%%%DOCSDIR%%/html/selectplugins.html
