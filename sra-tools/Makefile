@@ -12,7 +12,7 @@ LICENSE_COMB=		multi
 LICENSE_FILE_PD=	${WRKSRC}/LICENSE
 LICENSE_DISTFILES_LGPL21+ =
 
-ONLY_FOR_ARCHS=		amd64
+ONLY_FOR_ARCHS=		amd64 aarch64
 ONLY_FOR_ARCHS_REASON=	NCBI-VDB requires SSE2 instructions, no 32-bit support
 
 BUILD_DEPENDS=	bash:shells/bash \

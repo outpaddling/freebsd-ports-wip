@@ -1,14 +1,12 @@
-NGS is NCBI's 'front-end' API for accessing reads, alignments and pileups
-produced from Next Generation Sequencing. The 'back-end' engine are provided
-by biology/ncbi-vdb port.
+NGS is a new, domain-specific API for accessing reads, alignments and pileups
+produced from Next Generation Sequencing. The API itself is independent from any
+particular back-end implementation, and supports use of multiple back-ends
+simultaneously. It also provides a library for building new back-end "engines".
+The engine for accessing SRA data is contained within the sister repository
+ncbi-vdb.
 
-Although the GitHub repository contains C++, Java and Python libraries,
-this port only install the following libraries to simplify dependencies.
+The API is currently expressed in C++, Java and Python languages. The design
+makes it possible to maintain a high degree of similarity between the code in
+one language and code in another - especially between C++ and Java.
 
-libngs-c++.a       C++ front-end API
-libngs-adapt-c++.a C++ adapter for C-based protocol to back-end engine
-libngs-sdk.so      Java and Python language bindings of the front-end API
-
-See ${WRKSRC}/CONTENTS for the detail.
-
-WWW: https://github.com/ncbi/ngs/wiki
+WWW: https://github.com/ncbi/ngs

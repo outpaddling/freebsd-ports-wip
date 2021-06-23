@@ -14,7 +14,7 @@ LICENSE_DISTFILES_LGPL21+ =
 
 BUILD_DEPENDS=	bash:shells/bash \
 		${NONEXISTENT}:wip/ncbi-vdb282:build \
-		${LOCALBASE}/lib/libngs-c++.a:wip/ngs-sdk
+		${LOCALBASE}/lib/libngs-c++.a:wip/ngs-sdk130
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libhdf5.so:science/hdf5 \
 		libmbedtls.so:security/mbedtls
