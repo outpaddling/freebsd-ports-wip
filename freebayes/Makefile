@@ -1,6 +1,7 @@
 PORTNAME=		freebayes
-DISTVERSIONPREFIX=	v
 DISTVERSION=		1.3.5
+DISTVERSIONSUFFIX=	-src
+MASTER_SITES=		https://github.com/freebayes/freebayes/releases/download/v${DISTVERSION}/
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -8,9 +9,11 @@ COMMENT=	Bayesian haplotype-based polymorphism discovery and genotyping
 
 LICENSE=	MIT
 
-USES=		meson tar:xz
-USE_GITHUB=	yes
-GH_TUPLE=       ekg:intervaltree:b90527f:intervaltree/intervaltree \
-                vcflib:vcflib:d4073c3:vcflib/vcflib
+USES=		localbase:ldflags meson
+
+WRKSRC=		${WRKDIR}/freebayes
+
+# Works with external htslib, vcflib, tabixpp and seqlib now.
+# Update those ports first.
 
 .include <bsd.port.mk>

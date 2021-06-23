@@ -1,40 +1,44 @@
 PORTNAME=	ngs
-PORTVERSION=	1.3.0
-CATEGORIES=	wip biology
+DISTVERSION=	2.11.0
+PORTREVISION=	2
+CATEGORIES=	biology
 PKGNAMESUFFIX=	-sdk
 
-MAINTAINER=	mzaki@niid.go.jp
-COMMENT=	NCBI's front-end API for NGS data manipulation
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Tools and libraries for using data in the INSDC Sequence Read Archives
 
 LICENSE=	PD
-LICENSE_FILE=	${WRKSRC}/../LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+# BROKEN_aarch64=		fails to configure: unsupported architecture 'FreeBSD'
+BROKEN_riscv64=		fails to configure: unsupported architecture 'FreeBSD'
+NOT_FOR_ARCHS=		powerpc64
+NOT_FOR_ARCHS_REASON=	os-arch.prl needs to be taught about powerpc64
+
+USES=		compiler:c++11-lang gmake perl5
+USE_PERL5=	build
+USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ncbi
 
-USES=		compiler gmake perl5
-USE_PERL5=	build
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	CC="${CC}" CXX="${CXX}" TOOLS="${CHOSEN_COMPILER_TYPE}"
-USE_LDCONFIG=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix="${STAGEDIR}${PREFIX}" --build-prefix="${WRKSRC}/build"
 
-WRKSRC_SUBDIR=	ngs-sdk
-ALL_TARGET=	subtargs
+ALL_TARGET=	ngs-sdk
 
-# for port developpers, building with these options may fail
-OPTIONS_DEFINE=	EXAMPLES GCC DEBUG OPTIMIZED_CFLAGS TEST
-DEBUG_PREVENTS=	OPTIMIZED_CFLAGS
-DEBUG_CONFIGURE_WITH=	debug
-GCC_USE=	gcc=yes
-OPTIMIZED_CFLAGS_MAKE_ARGS_OFF=	OPT=""
-TEST_TEST_TARGET=	test
+post-extract:
+	@cd ${WRKSRC}/ngs-sdk/ngs/unix && ${LN} -s x86_64 amd64
 
-post-build-TEST-on:	do-test
-
-do-install:
-	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} -f Makefile.install ${MAKE_ARGS} copylibs copyincludes)
-
-post-install-EXAMPLES-on:
-	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} -f Makefile.install ${MAKE_ARGS} copyexamples)
+do-install: # install target from the project breaks: https://github.com/ncbi/ngs/issues/34
+	# install headers
+	cd ${WRKSRC}/ngs-sdk && ${COPYTREE_SHARE} ngs ${STAGEDIR}${PREFIX}/include
+	${RM} -r ${STAGEDIR}${PREFIX}/include/ngs/win
+	# install libraries
+	cd ${WRKSRC}/build/ngs-sdk/FreeBSD/clang/${ARCH}/rel/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib
+		# The above command installs broken-looking static libs with symlinks.
+		# This is intentional, see comments https://github.com/ncbi/ncbi-vdb/issues/36#issuecomment-817990790 This may change in future versions.
+	# strip
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libngs-sdk.so.2.11.0
 
 .include <bsd.port.mk>
