@@ -8,7 +8,7 @@ COMMENT=	Ultra fast and sensitive sequence search and clustering suite
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		cmake shebangfix
+USES=		cmake perl5 shebangfix
 
 SHEBANG_GLOB=	*.sh
 
@@ -22,8 +22,6 @@ post-patch:
 		${WRKSRC}/src/commons/Application.cpp
 
 post-stage:
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	${MV} ${STAGEDIR}${PREFIX}/util/bash-completion.sh \
-		${STAGEDIR}${DATADIR}
+	${MV} ${STAGEDIR}${PREFIX}/util ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
