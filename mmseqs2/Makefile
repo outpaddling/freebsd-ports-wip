@@ -23,10 +23,12 @@ GH_ACCOUNT=	soedinglab
 CMAKE_ARGS+=	-DUSE_SYSTEM_ZSTD:BOOL=ON
 LDFLAGS+=	-lpthread
 
+PLIST_FILES=	bin/mmseqs ${DATADIR}/bash-completion.sh
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-CFLAGS+=	-msse2	# Minimum for decent performance
+CFLAGS+=	-march=native	# Minimum for decent performance
 .endif
 
 post-patch:
@@ -35,6 +37,5 @@ post-patch:
 
 post-stage:
 	${MV} ${STAGEDIR}${PREFIX}/util ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.post.mk>
