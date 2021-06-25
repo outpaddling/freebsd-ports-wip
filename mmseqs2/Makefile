@@ -8,14 +8,27 @@ COMMENT=	Ultra fast and sensitive sequence search and clustering suite
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN_i386=	https://github.com/soedinglab/MMseqs2/issues/418
+
+LIB_DEPENDS=	libzstd.so:archivers/zstd
+
 USES=		cmake perl5 shebangfix
+USE_PERL5=	build
 
 SHEBANG_GLOB=	*.sh
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	soedinglab
 
+CMAKE_ARGS+=	USE_SYSTEM_ZSTD:BOOL=ON
+
 PLIST_FILES=	bin/mmseqs ${DATADIR}/bash-completion.sh
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CFLAGS+=	-DHAVE_SSE2=1	# Minimum for decent performance
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|MMSEQS_HOME/util|${DATADIR}|g' \
@@ -24,4 +37,4 @@ post-patch:
 post-stage:
 	${MV} ${STAGEDIR}${PREFIX}/util ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
