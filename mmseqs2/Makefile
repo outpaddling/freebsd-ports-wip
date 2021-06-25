@@ -21,6 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	soedinglab
 
 CMAKE_ARGS+=	-DUSE_SYSTEM_ZSTD:BOOL=ON
+LDFLAGS+=	-lpthread
 
 PLIST_FILES=	bin/mmseqs ${DATADIR}/bash-completion.sh
 
