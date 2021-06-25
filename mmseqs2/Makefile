@@ -13,11 +13,10 @@ BROKEN_i386=	https://github.com/soedinglab/MMseqs2/issues/418
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cmake perl5 shebangfix
+USE_GITHUB=	yes
 USE_PERL5=	build
 
 SHEBANG_GLOB=	*.sh
-
-USE_GITHUB=	yes
 GH_ACCOUNT=	soedinglab
 
 CMAKE_ARGS+=	-DUSE_SYSTEM_ZSTD:BOOL=ON
