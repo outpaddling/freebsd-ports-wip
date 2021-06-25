@@ -28,7 +28,7 @@ PLIST_FILES=	bin/mmseqs ${DATADIR}/bash-completion.sh
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-CMAKE_ARGS+=	-DHAVE_SSE2:BOOL=ON	# Minimum for decent performance
+CFLAGS+=	-msse2	# Minimum for decent performance
 .endif
 
 post-patch:
