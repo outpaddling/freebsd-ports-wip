@@ -23,8 +23,6 @@ GH_ACCOUNT=	soedinglab
 CMAKE_ARGS+=	-DUSE_SYSTEM_ZSTD:BOOL=ON
 LDFLAGS+=	-lpthread
 
-PLIST_FILES=	bin/mmseqs ${DATADIR}/bash-completion.sh
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
