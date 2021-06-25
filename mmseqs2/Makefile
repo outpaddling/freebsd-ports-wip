@@ -37,5 +37,6 @@ post-patch:
 
 post-stage:
 	${MV} ${STAGEDIR}${PREFIX}/util ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.post.mk>
