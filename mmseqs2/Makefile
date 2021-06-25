@@ -13,7 +13,6 @@ BROKEN_i386=	https://github.com/soedinglab/MMseqs2/issues/418
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cmake perl5 shebangfix
-USE_GCC=	yes
 USE_GITHUB=	yes
 USE_PERL5=	build
 
@@ -28,6 +27,8 @@ PLIST_FILES=	bin/mmseqs ${DATADIR}/bash-completion.sh
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
+# Hangs when built with clang and SSE only.  Works fine with -march=native.
+USE_GCC=	yes
 CFLAGS+=	-msse2	# Minimum for decent performance
 .endif
 
