@@ -20,14 +20,14 @@ SHEBANG_GLOB=	*.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	soedinglab
 
-CMAKE_ARGS+=	USE_SYSTEM_ZSTD:BOOL=ON
+CMAKE_ARGS+=	-DUSE_SYSTEM_ZSTD:BOOL=ON
 
 PLIST_FILES=	bin/mmseqs ${DATADIR}/bash-completion.sh
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-CFLAGS+=	-DHAVE_SSE2=1	# Minimum for decent performance
+CMAKE_ARGS+=	-DHAVE_SSE2:BOOL=ON	# Minimum for decent performance
 .endif
 
 post-patch:
