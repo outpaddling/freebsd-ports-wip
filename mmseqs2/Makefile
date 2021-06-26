@@ -26,8 +26,10 @@ PLIST_FILES=	bin/mmseqs ${DATADIR}/bash-completion.sh
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
 # Hangs when built with clang and SSE only.  Works fine with -march=native.
+# Upstream is investigating.
+# To build fully optimized with clang: env CFLAGS='-O2 -march=native' make
+.if ${ARCH} == "amd64" && empty(CFLAGS:M*march=native*)
 USE_GCC=	yes
 CFLAGS+=	-msse2	# Minimum for decent performance
 .endif
