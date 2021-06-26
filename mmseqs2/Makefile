@@ -1,5 +1,6 @@
 PORTNAME=	MMseqs2
 DISTVERSION=	13-45111
+PORTREVISION=	1
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -26,12 +27,14 @@ PLIST_FILES=	bin/mmseqs ${DATADIR}/bash-completion.sh
 
 .include <bsd.port.pre.mk>
 
-# Hangs when built with clang and SSE only.  Works fine with -march=native.
-# Upstream is investigating.  To build fully optimized, non-portable binary
-# with clang: env CFLAGS='-O2 -march=native' make
+# Hangs when built with clang and SSE or x86-64 only.  Works fine with
+# -march=native.  Upstream is investigating.  To build fully optimized,
+# non-portable binary with clang: env CFLAGS='-O2 -march=native' make
 .if ${ARCH} == "amd64" && empty(CFLAGS:M*march=native*)
 USE_GCC=	yes
-CFLAGS+=	-march=x86-64	# Need at least SSE2 for decent performance
+# Need at least SSE2 for decent performance.  x86-64 groups SSE2 with other
+# common features in low-end AMD64 CPUs.
+CFLAGS+=	-march=x86-64
 .endif
 
 post-patch:
