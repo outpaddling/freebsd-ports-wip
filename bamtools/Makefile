@@ -1,6 +1,6 @@
 PORTNAME=	bamtools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.1
+DISTVERSION=	2.5.2
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,11 +10,11 @@ LICENSE=	MIT
 
 LIB_DEPENDS+=	libjsoncpp.so:devel/jsoncpp
 
-USES=		cmake:outsource
+USES=		cmake
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	pezmaster31
 
-CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ON+=	BUILD_SHARED_LIBS
 
 .include <bsd.port.mk>
