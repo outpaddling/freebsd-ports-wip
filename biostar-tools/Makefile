@@ -47,7 +47,8 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		bioawk>0:biology/bioawk \
 		vt>0:biology/vt \
 		${PYTHON_PKGNAMEPREFIX}crossmap>0:biology/py-crossmap@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}goatools>0:biology/py-goatools@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}goatools>0:biology/py-goatools@${PY_FLAVOR} \
+		erminej>0:wip/erminej
 
 USES=		metaport python
 
