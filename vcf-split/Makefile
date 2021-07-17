@@ -1,8 +1,8 @@
 # Created by: Jason Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	vcf-split
-DISTVERSION=	0.1.2-6
-DISTVERSIONSUFFIX=	-g4740d4a
+DISTVERSION=	0.1.2-10
+DISTVERSIONSUFFIX=	-g57a8144
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
