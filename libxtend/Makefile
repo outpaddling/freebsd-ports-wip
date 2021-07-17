@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
+CONFLICTS_INSTALL=	biolibc-0.1.3.[0-3]*
+
 GH_ACCOUNT=	outpaddling
 
 INSTALL_TARGET=	install-strip
