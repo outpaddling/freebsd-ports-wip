@@ -11,7 +11,7 @@ COMMENT=	Low-level high-performance bioinformatics library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libxtend.so:wip/libxtend
+LIB_DEPENDS=	libxtend.so.2:wip/libxtend
 
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
