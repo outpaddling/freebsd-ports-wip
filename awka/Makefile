@@ -1,7 +1,8 @@
 # Created by: ijliao
 
 PORTNAME=	awka
-PORTVERSION=	0.7.5.26
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.7.6
 CATEGORIES=	wip lang
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -15,8 +16,7 @@ USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 
-GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	e27b5be
+GH_ACCOUNT=	noyesno
 
 CFLAGS+=	-Wno-pointer-sign
 
