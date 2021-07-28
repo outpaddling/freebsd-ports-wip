@@ -9,7 +9,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake qt:5
-USE_QT=		buildtools_build core dbus gui network qmake_build widgets
+USE_QT=		buildtools_build core dbus gui network widgets
 USE_LDCONFIG=	yes
 USE_GITLAB=	yes
 
