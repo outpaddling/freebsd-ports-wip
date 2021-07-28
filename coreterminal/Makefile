@@ -10,9 +10,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libqtermwidget5.so:x11-toolkits/qtermwidget \
 		libcprime-core.so:wip/libcprime
+RUN_DEPENDS=	coregarage:wip/coregarage
 
 USES=		cmake localbase:ldflags qt:5
-USE_QT=		buildtools_build core gui serialport widgets
+USE_QT=		buildtools_build core gui qmake_build serialport widgets
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	CuboCore
