@@ -22,4 +22,9 @@ PLIST_FILES=	bin/coregarage \
 		share/applications/org.cubocore.CoreGarage.desktop \
 		share/icons/hicolor/scalable/apps/org.cubocore.CoreGarage.svg
 
+pre-configure:
+	@${REINPLACE_CMD} \
+		-e 's|/usr/bin/coregarage|${PREFIX}/bin/coregarage|g' \
+		${WRKSRC}/org.cubocore.CoreGarage.desktop
+
 .include <bsd.port.mk>

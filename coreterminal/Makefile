@@ -23,4 +23,9 @@ PLIST_FILES=	bin/coreterminal \
 		share/applications/org.cubocore.CoreTerminal.desktop \
 		share/icons/hicolor/scalable/apps/org.cubocore.CoreTerminal.svg
 
+pre-configure:
+	@${REINPLACE_CMD} \
+		-e 's|/usr/bin/coreterminal|${PREFIX}/bin/coreterminal|g' \
+		${WRKSRC}/org.cubocore.CoreTerminal.desktop
+
 .include <bsd.port.mk>
