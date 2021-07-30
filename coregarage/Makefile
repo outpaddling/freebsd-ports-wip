@@ -24,7 +24,13 @@ PLIST_FILES=	bin/coregarage \
 
 pre-configure:
 	@${REINPLACE_CMD} \
-		-e 's|/usr/bin/coregarage|${PREFIX}/bin/coregarage|g' \
-		${WRKSRC}/org.cubocore.CoreGarage.desktop
+		-e 's|/usr/bin|${PREFIX}/bin|g' \
+		-e 's|/usr/lib|${PREFIX}/lib|g' \
+		-e 's|/usr/share|${PREFIX}/share|g' \
+		${WRKSRC}/coregarage.cpp \
+		${WRKSRC}/coregarage.h \
+		${WRKSRC}/coregarage.pro \
+		${WRKSRC}/org.cubocore.CoreGarage.desktop \
+		${WRKSRC}/settings.cpp
 
 .include <bsd.port.mk>
