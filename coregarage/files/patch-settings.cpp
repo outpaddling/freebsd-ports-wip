@@ -20,13 +20,15 @@
      // Save screenshot directory
      if (!cSetting->value("CoreShot/SaveLocation").toString().count()) {
          QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::PicturesLocation) + "/Screen Shots");
-@@ -104,7 +110,8 @@ void settings::setDefaultSettings()
+@@ -104,8 +110,9 @@ void settings::setDefaultSettings()
      cSetting->setValue("CoreKeyboard/Font", genFont.family());
  
      cSetting->setValue("CoreTerminal/Font", monoFont);
 -    cSetting->setValue("CoreTerminal/Shell", "/usr/bin/bash");
+-    cSetting->setValue("CoreTerminal/Opacity", 70);
 +    pwent = getpwuid(getuid());
 +    cSetting->setValue("CoreTerminal/Shell", pwent->pw_shell);
-     cSetting->setValue("CoreTerminal/Opacity", 70);
++    cSetting->setValue("CoreTerminal/Opacity", 100);
      cSetting->setValue("CoreTerminal/HistorySize", 500);
      cSetting->setValue("CoreTerminal/KeyTab", "linux");
+     cSetting->setValue("CoreTerminal/CursorShape", 0);
