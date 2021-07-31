@@ -1,5 +1,5 @@
 PORTNAME=	coregarage
-DISTVERSION=	4.2.0
+DISTVERSION=	4.3.0
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -16,7 +16,7 @@ USE_QT=		buildtools_build core gui qmake_build widgets
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	CuboCore
-GL_COMMIT=	dc9a23f3b3e309427585eb69f80279c24b781e5d
+GL_COMMIT=	c01c82634a8bf2702db99d5c4445ca3bbab793e5
 
 PLIST_FILES=	bin/coregarage \
 		share/applications/org.cubocore.CoreGarage.desktop \
@@ -29,7 +29,6 @@ pre-configure:
 		-e 's|/usr/share|${PREFIX}/share|g' \
 		${WRKSRC}/coregarage.cpp \
 		${WRKSRC}/coregarage.h \
-		${WRKSRC}/coregarage.pro \
 		${WRKSRC}/org.cubocore.CoreGarage.desktop \
 		${WRKSRC}/settings.cpp
 

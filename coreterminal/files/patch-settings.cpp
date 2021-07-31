@@ -1,11 +1,15 @@
---- settings.cpp.orig	2021-07-30 14:17:49 UTC
+--- settings.cpp.orig	2021-07-31 15:02:29 UTC
 +++ settings.cpp
-@@ -92,7 +92,7 @@ void settings::setDefaultSettings()
+@@ -90,10 +90,10 @@ void settings::setDefaultSettings()
+     QFont monoFont = QFontDatabase::systemFont(QFontDatabase::FixedFont);
+ 
+     if ( not monoFont.family().count() )
+-        monoFont = QFont("monospace", 9);
++        monoFont = QFont("monospace", 12);
+ 
+     if (monoFont.styleHint() != QFont::Monospace) {
+-        monoFont = QFont("monospace", 9);
++        monoFont = QFont("monospace", 12);
      }
      cSetting->setValue("CoreTerminal/Font", monoFont);
-     cSetting->setValue("CoreTerminal/Shell", QDir(PREFIX_PATH).filePath("bin/bash"));
--	cSetting->setValue("CoreTerminal/Opacity", 70);
-+	cSetting->setValue("CoreTerminal/Opacity", 100);
- 	cSetting->setValue("CoreTerminal/HistorySize", 500);
-     cSetting->setValue("CoreTerminal/KeyTab", "linux");
-     cSetting->setValue("CoreTerminal/CursorShape", 0);
+ 

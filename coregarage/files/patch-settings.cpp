@@ -1,34 +1,28 @@
---- settings.cpp.orig	2021-04-11 08:34:27 UTC
+--- settings.cpp.orig	2021-07-31 03:36:18 UTC
 +++ settings.cpp
-@@ -34,6 +34,10 @@
- #include <cprime/themefunc.h>
- #include <cprime/filefunc.h>
+@@ -75,13 +75,13 @@ void settings::setDefaultSettings()
+     QFont genFont = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
+     QFont monoFont = QFontDatabase::systemFont(QFontDatabase::FixedFont);
+     if ( not genFont.family().count() )
+-        genFont = QFont("Cantarell", 9);
++        genFont = QFont("Cantarell", 12);
  
-+#include <sys/types.h>	// getpwuid()
-+#include <pwd.h>	// getpwuid()
-+#include <unistd.h>	// getuid()
-+
- #include "settings.h"
+     if ( not monoFont.family().count() )
+-        monoFont = QFont("monospace", 9);
++        monoFont = QFont("monospace", 12);
  
- settings::settings()
-@@ -60,6 +64,8 @@ settings::~settings()
+     if (monoFont.styleHint() != QFont::Monospace) {
+-        monoFont = QFont("monospace", 9);
++        monoFont = QFont("monospace", 12);
+     }
  
- void settings::setDefaultSettings()
- {
-+    struct passwd *pwent;
-+
-     // Save screenshot directory
-     if (!cSetting->value("CoreShot/SaveLocation").toString().count()) {
-         QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::PicturesLocation) + "/Screen Shots");
-@@ -104,8 +110,9 @@ void settings::setDefaultSettings()
-     cSetting->setValue("CoreKeyboard/Font", genFont.family());
+ 	// CoreAction
+@@ -113,7 +113,7 @@ void settings::setDefaultSettings()
+ 	pwent = getpwuid(getuid());
+ 	cSetting->setValue("CoreTerminal/Shell", pwent->pw_shell);
  
-     cSetting->setValue("CoreTerminal/Font", monoFont);
--    cSetting->setValue("CoreTerminal/Shell", "/usr/bin/bash");
 -    cSetting->setValue("CoreTerminal/Opacity", 70);
-+    pwent = getpwuid(getuid());
-+    cSetting->setValue("CoreTerminal/Shell", pwent->pw_shell);
-+    cSetting->setValue("CoreTerminal/Opacity", 100);
++    cSetting->setValue("CoreTerminal/Opacity", 99);
      cSetting->setValue("CoreTerminal/HistorySize", 500);
      cSetting->setValue("CoreTerminal/KeyTab", "linux");
      cSetting->setValue("CoreTerminal/CursorShape", 0);

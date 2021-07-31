@@ -1,5 +1,5 @@
 PORTNAME=	coreterminal
-DISTVERSION=	4.2.0
+DISTVERSION=	4.3.0
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -17,7 +17,7 @@ USE_QT=		buildtools_build core gui qmake_build serialport widgets
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	CuboCore
-GL_COMMIT=	5cd6341562344701c34b0390eb4b9c5fa37bbe0f
+GL_COMMIT=	86de8a97100175b5d03c82f87004fed2b428a82b
 
 PLIST_FILES=	bin/coreterminal \
 		share/applications/org.cubocore.CoreTerminal.desktop \
