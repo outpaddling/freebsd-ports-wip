@@ -5,11 +5,11 @@
  
      if ( not monoFont.family().count() )
 -        monoFont = QFont("monospace", 9);
-+        monoFont = QFont("monospace", 14);
++        monoFont = QFont("monospace", 12);
  
      if (monoFont.styleHint() != QFont::Monospace) {
 -        monoFont = QFont("monospace", 9);
-+        monoFont = QFont("monospace", 14);
++        monoFont = QFont("monospace", 12);
      }
      cSetting->setValue("CoreTerminal/Font", monoFont);
  
