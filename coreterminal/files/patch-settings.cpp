@@ -13,3 +13,12 @@
      }
      cSetting->setValue("CoreTerminal/Font", monoFont);
  
+@@ -101,7 +101,7 @@ void settings::setDefaultSettings()
+ 	pwent = getpwuid(getuid());
+ 	cSetting->setValue("CoreTerminal/Shell", pwent->pw_shell);
+ 
+-	cSetting->setValue("CoreTerminal/Opacity", 70);
++	cSetting->setValue("CoreTerminal/Opacity", 99);
+ 	cSetting->setValue("CoreTerminal/HistorySize", 500);
+     cSetting->setValue("CoreTerminal/KeyTab", "linux");
+     cSetting->setValue("CoreTerminal/CursorShape", 0);
