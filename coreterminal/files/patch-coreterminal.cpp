@@ -41,10 +41,10 @@
 +		<< '\n';
 +    int width = fm.averageCharWidth() * 80 + 2
 +		+ qApp->style()->pixelMetric(QStyle::PM_ScrollBarExtent);
-+    // +7 for Fusion, +4 for QtCurve, +3 for Windows
++    // +8 for Fusion, +4 for QtCurve, +3 for Windows
 +    int height = fm.height() * 30
 +		+ TabWidget->tabBar()->height()
-+		+ 7;
++		+ 8;
 +    resize(width, height);
  
      if (uiMode != 0) {
