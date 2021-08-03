@@ -17,7 +17,7 @@
  
  #include <cprime/appopenfunc.h>
  #include <cprime/variables.h>
-@@ -267,7 +270,36 @@ void CoreTerminal::setWindowProperties()
+@@ -267,7 +270,38 @@ void CoreTerminal::setWindowProperties()
          setStyleSheet( "#base { background-color: palette(Window); }" );
      }
  
@@ -39,8 +39,10 @@
 +		<< "\ntabBar()->height() = " << TabWidget->tabBar()->height()
 +		<< "\ntabBar()->tabRect().height() = " << TabWidget->tabBar()->tabRect(0).height()
 +		<< '\n';
-+    int width = fm.averageCharWidth() * 80 + 2
-+		+ qApp->style()->pixelMetric(QStyle::PM_ScrollBarExtent);
++
++    int width = fm.averageCharWidth() * 80
++		+ qApp->style()->pixelMetric(QStyle::PM_ScrollBarExtent)
++		+ 2;
 +    /*
 +     * Perfect size =
 +     * tabBar->height() +7 for Fusion, +4 for QtCurve, +3 for Windows
