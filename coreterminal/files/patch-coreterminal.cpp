@@ -17,7 +17,7 @@
  
  #include <cprime/appopenfunc.h>
  #include <cprime/variables.h>
-@@ -267,7 +270,43 @@ void CoreTerminal::setWindowProperties()
+@@ -267,7 +270,40 @@ void CoreTerminal::setWindowProperties()
          setStyleSheet( "#base { background-color: palette(Window); }" );
      }
  
@@ -48,12 +48,9 @@
 +    /*
 +     * Perfect size =
 +     * tabBar->height() +7 for Fusion, +4 for QtCurve, +3 for Windows
-+     * tabBar->tabRect(0).height() gets very close:
-+     * 36 for Fusion, 33 for QtCurve, 32 for Windows
-+     * Needs to be verified for other themes
-+     * Perfect for font sizes up to 14.  16 & 18 Window height is way short
-+     * Font bug?  Tab bar is same height for both fonts, so must be the
-+     * font height.
++     * tabBar->tabRect(0).height() seems to align:
++     * 36 for Fusion, 33 for QtCurve, 32 for Windows using 12pt font
++     * Also verified with several other styles and font sizes
 +     */
 +    int height = fm.height() * 30
 +		+ TabWidget->tabBar()->tabRect(0).height()
