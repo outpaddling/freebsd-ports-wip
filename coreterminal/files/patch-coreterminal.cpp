@@ -17,7 +17,7 @@
  
  #include <cprime/appopenfunc.h>
  #include <cprime/variables.h>
-@@ -267,7 +270,41 @@ void CoreTerminal::setWindowProperties()
+@@ -267,7 +270,43 @@ void CoreTerminal::setWindowProperties()
          setStyleSheet( "#base { background-color: palette(Window); }" );
      }
  
