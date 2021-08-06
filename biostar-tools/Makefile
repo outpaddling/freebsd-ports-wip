@@ -9,7 +9,7 @@ LICENSE=	BSD2CLAUSE
 
 # For a current list see http://data.biostarhandbook.com/install/conda.txt.
 # Also included are some programs not listed above, but mentioned in the text.
-# sra-tools is almost complete and will be added pending testing
+# TODO: Add py-poretools if it's ever updated for python3
 RUN_DEPENDS=	wget>0:ftp/wget \
 		curl>0:ftp/curl \
 		nano>0:editors/nano \
