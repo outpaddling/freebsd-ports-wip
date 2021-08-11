@@ -49,7 +49,9 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		${PYTHON_PKGNAMEPREFIX}crossmap>0:biology/py-crossmap@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}goatools>0:biology/py-goatools@${PY_FLAVOR} \
 		erminej>0:biology/erminej \
-		${PYTHON_PKGNAMEPREFIX}ont-fast5-api>0:wip/py-ont-fast5-api@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}ont-fast5-api>0:wip/py-ont-fast5-api@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}csvkit>0:textproc/py-csvkit@${PY_FLAVOR} \
+		miller>0:textproc/miller
 
 USES=		metaport python
 
