@@ -9,6 +9,7 @@ COMMENT=	Variable byte integer encoding to compress nanopore signal data
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENCE.txt
 
+BUILD_DEPENDS=	streamvbyte>=0.4.1:wip/streamvbyte
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libzstd.so:archivers/zstd
 

@@ -23,7 +23,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	nanoporetech
 GH_PROJECT=	ont_fast5_api
 
-#TEST_WRKSRC=	${WRKSRC}/py_ont_
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 post-patch:
 	${RM} ${WRKSRC}/ont_fast5_api/vbz_plugin/*
