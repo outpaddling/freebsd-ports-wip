@@ -1,4 +1,4 @@
-StreamVByte is a new integer compression technique that applies SIMD
+StreamVByte is an integer compression technique that applies SIMD
 instructions (vectorization) to Google's varint approach. The net result
 is faster than other byte-oriented compression techniques.
 
