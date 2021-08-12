@@ -9,7 +9,7 @@ LICENSE=	BSD2CLAUSE
 
 # For a current list see http://data.biostarhandbook.com/install/conda.txt.
 # Also included are some programs not listed above, but mentioned in the text.
-# TODO: Add hdfview
+# TODO: Add hdfview, py-ont-fast5-api
 RUN_DEPENDS=	wget>0:ftp/wget \
 		curl>0:ftp/curl \
 		nano>0:editors/nano \
@@ -49,7 +49,6 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		${PYTHON_PKGNAMEPREFIX}crossmap>0:biology/py-crossmap@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}goatools>0:biology/py-goatools@${PY_FLAVOR} \
 		erminej>0:biology/erminej \
-		${PYTHON_PKGNAMEPREFIX}ont-fast5-api>0:wip/py-ont-fast5-api@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}csvkit>0:textproc/py-csvkit@${PY_FLAVOR} \
 		miller>0:textproc/miller
 
