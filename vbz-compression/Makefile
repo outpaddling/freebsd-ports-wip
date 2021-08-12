@@ -2,7 +2,6 @@ PORTNAME=	vbz-compression
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.1
 CATEGORIES=	wip
-MASTER_SITES=	
 
 MAINTAINER=	bacon@barracuda.uits.uwm.edu
 COMMENT=	Variable byte integer encoding to compress nanopore signal data
@@ -15,10 +14,17 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 
 USES=		cmake
 USE_GITHUB=	yes
+USE_LDCONFIG=	${PREFIX}/hdf5/lib/plugin
 
 GH_ACCOUNT=	nanoporetech
 GH_PROJECT=	vbz_compression
 
-CMAKE_ARGS=	-DENABLE_CONAN=OFF -DENABLE_PERF_TESTING=OFF -DENABLE_PYTHON=OFF
+CMAKE_ARGS=	-DENABLE_CONAN=OFF \
+		-DENABLE_PERF_TESTING=OFF \
+		-DENABLE_PYTHON=OFF \
+		-DSTREAMVBYTE_INSTALL_DIR=${LOCALBASE} \
+		-DSTREAMVBYTE_STATIC_LIB=${LOCALBASE}/lib/libstreamvbyte_static.a
+
+PLIST_FILES=	hdf5/lib/plugin/libvbz_hdf_plugin.so
 
 .include <bsd.port.mk>
