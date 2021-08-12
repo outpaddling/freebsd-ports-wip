@@ -18,4 +18,13 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		python
 USE_PYTHON=	autoplist distutils
 
+pre-configure:
+	@${REINPLACE_CMD} -e 's|progressbar33|progressbar|g' \
+		${WRKSRC}/PKG-INFO \
+		${WRKSRC}/README.rst \
+		${WRKSRC}/setup.py \
+		${WRKSRC}/ont_fast5_api.egg-info/PKG-INFO \
+		${WRKSRC}/ont_fast5_api.egg-info/requires.txt \
+		${WRKSRC}/ont_fast5_api/conversion_tools/conversion_utils.py
+
 .include <bsd.port.mk>
