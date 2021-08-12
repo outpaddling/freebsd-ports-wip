@@ -18,7 +18,7 @@ USE_LDCONFIG=	yes
 
 GH_ACCOUNT=	lemire
 
-CFLAGS+=	-fPIC
+CFLAGS+=	-fPIC	# For vbz-compression using static lib
 
 PLIST_FILES=	include/streamvbyte.h \
 		include/streamvbyte_zigzag.h \
