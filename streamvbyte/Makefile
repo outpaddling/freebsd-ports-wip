@@ -11,6 +11,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake
 USE_GITHUB=	yes
+USE_LDCONFIG=	yes
+
 GH_ACCOUNT=	lemire
+
+CFLAGS+=	-fPIC
+
+PLIST_FILES=	include/streamvbyte.h \
+		include/streamvbyte_zigzag.h \
+		include/streamvbytedelta.h \
+		lib/libstreamvbyte.so \
+		lib/libstreamvbyte_static.a
 
 .include <bsd.port.mk>
