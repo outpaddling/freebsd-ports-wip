@@ -1,7 +1,7 @@
 PORTNAME=	vbz-compression
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.1
-CATEGORIES=	wip
+CATEGORIES=	wip archivers
 
 MAINTAINER=	bacon@barracuda.uits.uwm.edu
 COMMENT=	Variable byte integer encoding to compress nanopore signal data
