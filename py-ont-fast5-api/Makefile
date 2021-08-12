@@ -5,15 +5,16 @@ CATEGORIES=	wip python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Simple interface to HDF5 files of the Oxford Nanopore .fast5 file format
+COMMENT=	Interface to HDF5 files of the Oxford Nanopore .fast5 format
 
 LICENSE=	MPL20
-#LICENSE_FILE=	
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+LIB_DEPENDS=	libvbz_hdf_plugin.so:wip/vbz-compression
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}h5py>=2.2.0:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}progressbar>0:misc/py-progressbar
+		${PYTHON_PKGNAMEPREFIX}progressbar>0:misc/py-progressbar@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
