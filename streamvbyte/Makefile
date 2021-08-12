@@ -9,6 +9,9 @@ COMMENT=	Integer compression with SIMD based on Google's varint
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc=		Test fails on big-endian systems
+BROKEN_powerpc64=	Test fails on big-endian systems
+
 USES=		cmake
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
