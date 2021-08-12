@@ -15,6 +15,8 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}h5py>=2.2.0:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}progressbar>0:misc/py-progressbar@${PY_FLAVOR}
+# Why??
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
@@ -24,7 +26,6 @@ GH_ACCOUNT=	nanoporetech
 GH_PROJECT=	ont_fast5_api
 
 NO_ARCH=	yes
-NO_BUILD=	yes
 
 post-patch:
 	${RM} ${WRKSRC}/ont_fast5_api/vbz_plugin/*
@@ -36,6 +37,6 @@ pre-configure:
 		${WRKSRC}/ont_fast5_api/conversion_tools/conversion_utils.py
 
 do-test:
-	@(cd ${TEST_WRKSRC} && ${SETENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test)
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
