@@ -1,10 +1,10 @@
 PORTNAME=	streamvbyte
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.1
-CATEGORIES=	wip devel
+CATEGORIES=	wip archivers
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Integer compression with SIMD on Google's Group Varint approach
+COMMENT=	Integer compression with SIMD based on Google's varint
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

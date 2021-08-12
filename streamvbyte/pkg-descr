@@ -1,5 +1,5 @@
 StreamVByte is a new integer compression technique that applies SIMD
-instructions (vectorization) to Google's Group Varint approach. The net result
+instructions (vectorization) to Google's varint approach. The net result
 is faster than other byte-oriented compression techniques.
 
 The approach is patent-free, the code is available under the Apache License.
