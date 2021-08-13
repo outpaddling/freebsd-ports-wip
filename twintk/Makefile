@@ -1,8 +1,8 @@
 # Created by: Jason Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	twintk
-DISTVERSION=	0.9.4-13
-DISTVERSIONSUFFIX=	-g313fb26
+DISTVERSION=	0.9.4-15
+DISTVERSIONSUFFIX=	-g02024cf
 CATEGORIES=	wip devel
 
 MAINTAINER=	jwb@FreeBSD.org
