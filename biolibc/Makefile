@@ -1,8 +1,8 @@
 # Created by: J. Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	biolibc
-DISTVERSION=	0.1.3-74
-DISTVERSIONSUFFIX=	-gf69cd51
+DISTVERSION=	0.1.3-75
+DISTVERSIONSUFFIX=	-g82f331e
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
