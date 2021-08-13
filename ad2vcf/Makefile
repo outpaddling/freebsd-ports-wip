@@ -1,8 +1,8 @@
 # Created by: Jason Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	ad2vcf
-DISTVERSION=	0.1.3-26
-DISTVERSIONSUFFIX=	-g67ef5b6
+DISTVERSION=	0.1.3-30
+DISTVERSIONSUFFIX=	-gf949826
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
