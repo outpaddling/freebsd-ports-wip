@@ -3,13 +3,13 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.1
 CATEGORIES=	wip archivers
 
-MAINTAINER=	bacon@barracuda.uits.uwm.edu
-COMMENT=	Variable byte integer encoding to compress nanopore signal data
+MAINTAINER=	jwb@FreeBSD.org
+COMMENT=	Variable byte integer encoding to compress Oxford Nanopore signal data
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENCE.txt
 
-BUILD_DEPENDS=	streamvbyte>=0.4.1:wip/streamvbyte
+BUILD_DEPENDS=	streamvbyte>=0.4.1:archivers/streamvbyte
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libzstd.so:archivers/zstd
 

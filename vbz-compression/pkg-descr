@@ -1,5 +1,5 @@
-VBZ Compression uses variable byte integer encoding to compress nanopore signal
-data.
+VBZ Compression uses variable byte integer encoding to compress Oxford
+Nanopore signal data.
 
 The performance of VBZ is achieved by taking advantage of the properties of the
 raw signal and therefore is most effective when applied to the signal dataset.
