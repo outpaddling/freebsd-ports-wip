@@ -1,21 +1,20 @@
 PORTNAME=	ont-fast5-api
 DISTVERSIONPREFIX=	release_
 DISTVERSION=	4.0.0
-CATEGORIES=	wip python
+CATEGORIES=	wip biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Interface to HDF5 files of the Oxford Nanopore .fast5 format
+COMMENT=	Interface to HDF5 files in Oxford Nanopore .fast5 format
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-LIB_DEPENDS=	libvbz_hdf_plugin.so:wip/vbz-compression
+LIB_DEPENDS=	libvbz_hdf_plugin.so:archivers/vbz-compression
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}h5py>=2.2.0:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}progressbar>0:misc/py-progressbar@${PY_FLAVOR}
-# Why??
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR}
 
 USES=		python
@@ -26,6 +25,7 @@ GH_ACCOUNT=	nanoporetech
 GH_PROJECT=	ont_fast5_api
 
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 post-patch:
 	${RM} ${WRKSRC}/ont_fast5_api/vbz_plugin/*
