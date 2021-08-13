@@ -21,11 +21,6 @@ GH_ACCOUNT=	lemire
 
 CFLAGS+=	-fPIC	# For vbz-compression using static lib
 
-# so version taken from basic Makefile
-post-stage:
-	${RLN}	${STAGEDIR}${PREFIX}/lib/libstreamvbyte.so \
-		${STAGEDIR}${PREFIX}/lib/libstreamvbyte.so.0.0.1
-
 do-test:
 	cd ${WRKDIR}/.build && ./unit
 
