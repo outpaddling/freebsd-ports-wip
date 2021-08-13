@@ -16,6 +16,8 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		parallel>0:sysutils/parallel \
 		seqkit>0:biology/seqkit \
 		csvtk>0:science/csvtk \
+		${PYTHON_PKGNAMEPREFIX}csvkit>0:textproc/py-csvkit@${PY_FLAVOR} \
+		miller>0:textproc/miller \
 		ncbi-entrez-direct>0:biology/ncbi-entrez-direct \
 		readseq>0:biology/readseq \
 		snpeff>0:biology/snpeff \
@@ -49,8 +51,6 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		${PYTHON_PKGNAMEPREFIX}crossmap>0:biology/py-crossmap@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}goatools>0:biology/py-goatools@${PY_FLAVOR} \
 		erminej>0:biology/erminej \
-		${PYTHON_PKGNAMEPREFIX}csvkit>0:textproc/py-csvkit@${PY_FLAVOR} \
-		miller>0:textproc/miller \
 		${PYTHON_PKGNAMEPREFIX}ont-fast5-api>0:wip/py-ont-fast5-api@${PY_FLAVOR} \
 
 USES=		metaport python
