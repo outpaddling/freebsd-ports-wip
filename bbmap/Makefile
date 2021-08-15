@@ -1,5 +1,5 @@
 PORTNAME=	bbmap
-DISTVERSION=	38.90
+DISTVERSION=	38.91
 CATEGORIES=	wip biology java
 MASTER_SITES=	SF/bbmap/
 DISTNAME=	BBMap_${PORTVERSION}
@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-LIBEXEC_DIR=    ${PREFIX}/libexec/bbmap
+LIBEXEC_DIR=	${PREFIX}/libexec/bbmap
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|"$$DIR""current/"|${JAVAJARDIR}/bbmap|g' \
