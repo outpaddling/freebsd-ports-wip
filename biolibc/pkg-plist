@@ -1,4 +1,3 @@
-bin/fastq2tsv
 include/biolibc/bed.h
 include/biolibc/biolibc.h
 include/biolibc/biostring.h
