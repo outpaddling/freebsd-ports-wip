@@ -361,6 +361,7 @@ man/man3/bl_bed_skip_header.3.gz
 man/man3/bl_bed_write.3.gz
 man/man3/bl_chrom_name_cmp.3.gz
 man/man3/bl_fasta_free.3.gz
+man/man3/bl_fasta_init.3.gz
 man/man3/bl_fasta_read.3.gz
 man/man3/bl_fasta_set_desc.3.gz
 man/man3/bl_fasta_set_desc_ae.3.gz
@@ -374,6 +375,7 @@ man/man3/bl_fasta_set_seq_cpy.3.gz
 man/man3/bl_fasta_set_seq_len.3.gz
 man/man3/bl_fasta_write.3.gz
 man/man3/bl_fastq_free.3.gz
+man/man3/bl_fastq_init.3.gz
 man/man3/bl_fastq_read.3.gz
 man/man3/bl_fastq_set_desc.3.gz
 man/man3/bl_fastq_set_desc_ae.3.gz
