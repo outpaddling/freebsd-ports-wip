@@ -1,4 +1,4 @@
---- coreterminal.cpp.orig	2021-07-31 03:36:34 UTC
+--- coreterminal.cpp.orig	2021-08-18 11:17:12 UTC
 +++ coreterminal.cpp
 @@ -27,6 +27,7 @@
      *
@@ -17,9 +17,17 @@
  
  #include <cprime/appopenfunc.h>
  #include <cprime/variables.h>
-@@ -267,7 +270,40 @@ void CoreTerminal::setWindowProperties()
-         setStyleSheet( "#base { background-color: palette(Window); }" );
-     }
+@@ -75,6 +78,7 @@ CoreTerminal::~CoreTerminal()
+ void CoreTerminal::loadSettings()
+ {
+ 	uiMode = smi->getValue("CoreApps", "UIMode");
++	terminalFont = smi->getValue("CoreTerminal", "Font");
+ }
+ 
+ void CoreTerminal::createGUI()
+@@ -239,7 +243,40 @@ void CoreTerminal::setWindowProperties()
+ //        setStyleSheet( "#base { background-color: palette(Window); }" );
+ //    }
  
 -    resize( 800, 500 );
 +    QFontMetrics fm( terminalFont );
