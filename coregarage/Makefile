@@ -16,7 +16,7 @@ USE_QT=		buildtools_build core gui qmake_build widgets
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	CuboCore
-GL_COMMIT=	c01c82634a8bf2702db99d5c4445ca3bbab793e5
+GL_COMMIT=	684e579b4a03914b77ceccd6efcfc490c53ad730
 
 PLIST_FILES=	bin/coregarage \
 		share/applications/org.cubocore.CoreGarage.desktop \
