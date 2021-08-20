@@ -9,7 +9,8 @@ COMMENT=	Optimise DNA sequencing primer-set combinations
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKDIR}/${GH_PROJECT}-${PORTVERSION}/LICENSE
 
-USES=		compiler:openmp
+# Not neeed on x86, aarch64, or ppc64-13.x
+# USES=		compiler:openmp
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	ssb22
