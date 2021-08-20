@@ -5,6 +5,7 @@ bin/bbnorm.sh
 bin/bloomfilter.sh
 bin/dedupe.sh
 bin/reformat.sh
+bin/tadpole.sh
 libexec/bbmap/a_sample_mt.sh
 libexec/bbmap/addadapters.sh
 libexec/bbmap/addssu.sh

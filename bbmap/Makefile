@@ -32,6 +32,7 @@ pre-configure:
 		-e 's|"$$DIR""/calcmem.sh"|${LIBEXEC_DIR}/bbmap/calcmem.sh|g' \
 		${WRKSRC}/*.sh
 
+# FIXME: Find out which scripts are meant to be part of the CLI
 do-install:
 	@${MKDIR} ${STAGEDIR}${LIBEXEC_DIR}
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}/bbmap
@@ -39,7 +40,7 @@ do-install:
 	cd ${WRKSRC}/current && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${JAVAJARDIR}/bbmap
 .for f in bbduk.sh bbnorm.sh dedupe.sh bbmap.sh bloomfilter.sh reformat.sh \
-	bbmerge.sh
+	bbmerge.sh tadpole.sh
 	${RLN} ${STAGEDIR}${LIBEXEC_DIR}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 
