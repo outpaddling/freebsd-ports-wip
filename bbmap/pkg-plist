@@ -1,5 +1,6 @@
 bin/bbduk.sh
 bin/bbmap.sh
+bin/bbmerge.sh
 bin/bbnorm.sh
 bin/bloomfilter.sh
 bin/dedupe.sh

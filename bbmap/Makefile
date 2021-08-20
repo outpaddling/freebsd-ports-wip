@@ -38,7 +38,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/*.sh ${STAGEDIR}${LIBEXEC_DIR}
 	cd ${WRKSRC}/current && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${JAVAJARDIR}/bbmap
-.for f in bbduk.sh bbnorm.sh dedupe.sh bbmap.sh bloomfilter.sh reformat.sh
+.for f in bbduk.sh bbnorm.sh dedupe.sh bbmap.sh bloomfilter.sh reformat.sh \
+	bbmerge.sh
 	${RLN} ${STAGEDIR}${LIBEXEC_DIR}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 
