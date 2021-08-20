@@ -64,3 +64,5 @@ man/man3/xt_fclose.3.gz
 man/man3/xt_fopen.3.gz
 man/man3/xt_malloc.3.gz
 man/man3/xt_realloc.3.gz
+man/man3/xt_tic.3.gz
+man/man3/xt_toc.3.gz
