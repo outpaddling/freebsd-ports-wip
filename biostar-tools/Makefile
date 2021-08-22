@@ -54,6 +54,7 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		${PYTHON_PKGNAMEPREFIX}ont-fast5-api>0:biology/py-ont-fast5-api@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}multiqc>0:biology/py-multiqc@${PY_FLAVOR} \
 		flash>0:wip/flash \
+		bfc:wip/bfc \
 		Jellyfish>0:biology/jellyfish
 
 USES=		metaport python
