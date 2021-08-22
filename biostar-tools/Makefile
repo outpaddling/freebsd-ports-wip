@@ -52,7 +52,8 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		${PYTHON_PKGNAMEPREFIX}goatools>0:biology/py-goatools@${PY_FLAVOR} \
 		erminej>0:biology/erminej \
 		${PYTHON_PKGNAMEPREFIX}ont-fast5-api>0:biology/py-ont-fast5-api@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}multiqc>0:biology/py-multiqc@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}multiqc>0:biology/py-multiqc@${PY_FLAVOR} \
+		Jellyfish>0:biology/jellyfish
 
 USES=		metaport python
 
