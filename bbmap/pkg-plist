@@ -1186,10 +1186,6 @@ libexec/bbmap/webcheck.sh
 %%JAVAJARDIR%%/bbmap/jgi/Seal$ProcessThread.class
 %%JAVAJARDIR%%/bbmap/jgi/Seal.class
 %%JAVAJARDIR%%/bbmap/jgi/Seal.java
-%%JAVAJARDIR%%/bbmap/jgi/SealB$LoadThread.class
-%%JAVAJARDIR%%/bbmap/jgi/SealB$ProcessThread.class
-%%JAVAJARDIR%%/bbmap/jgi/SealB.class
-%%JAVAJARDIR%%/bbmap/jgi/SealB.java
 %%JAVAJARDIR%%/bbmap/jgi/SealRefInfo.class
 %%JAVAJARDIR%%/bbmap/jgi/SealRefInfo.java
 %%JAVAJARDIR%%/bbmap/jgi/Shred.class
