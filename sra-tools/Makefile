@@ -78,13 +78,13 @@ pre-patch:
 
 post-patch:
 	@${GREP} -q '@@PREFIX@@' ${WRKSRC}/ncbi-vdb/libs/kfg/config.c || (echo "@@PREFIX@@ in file/patch-libs_kfg_config.c is overwritten probably due to using 'make makepatch'"; exit 1)
-	@${REINPLACE_CMD} -e 's#@@PREFIX@@#"${PREFIX}"#' ${WRKSRC}/ncbi-vdb/libs/kfg/config.c
-	@${LN} -s ${WRKSRC}/ncbi-vdb/interfaces/cc/gcc/x86_64 ${WRKSRC}/ncbi-vdb/interfaces/cc/gcc/amd64
+	${LN} -s ${WRKSRC}/ncbi-vdb/interfaces/cc/gcc/x86_64 ${WRKSRC}/ncbi-vdb/interfaces/cc/gcc/amd64
 
 post-patch-TEST-on:
 	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' ${WRKSRC}/test/kget/Makefile
 
 pre-configure:
+	${REINPLACE_CMD} -e 's#@@PREFIX@@#"${PREFIX}"#' ${WRKSRC}/ncbi-vdb/libs/kfg/config.c
 	@${CP} ${NCBI_VDB_WRKSRC}/setup/os-arch.prl ${WRKSRC}/setup/os-arch.prl
 	# same as in biology/ncbi-vdb
 	@${CP} ${NCBI_VDB_FILESDIR}/Makefile.bsd ${WRKSRC}/build/

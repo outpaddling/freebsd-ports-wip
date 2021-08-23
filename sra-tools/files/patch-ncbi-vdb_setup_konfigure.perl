@@ -1,23 +1,14 @@
---- ncbi-vdb/setup/konfigure.perl.orig	2021-03-15 18:16:43 UTC
+--- ncbi-vdb/setup/konfigure.perl.orig	2021-08-17 18:53:09 UTC
 +++ ncbi-vdb/setup/konfigure.perl
 @@ -192,7 +192,7 @@ if ($OPT{'help'}) {
  foreach (@ARGV) {
      @_ = split('=');
      next if ($#_ != 1);
 -    $OPT{$_[0]} = $_[1] if ($_[0] eq 'CXX' || $_[0] eq 'LDFLAGS');
-+    $OPT{$_[0]} = $_[1] if ($_[0] eq 'CC' || $_[0] eq 'CXX' || $_[0] eq 'LDFLAGS' || $_[0] eq 'TOOLS');
++    $OPT{$_[0]} = $_[1] if ($_[0] eq 'CC' || $_[0] eq 'CXX' || $_[0] eq 'LDFLAGS');
  }
  
  println "Configuring $PACKAGE_NAME package";
-@@ -204,7 +204,7 @@ print "checking system type... " unless ($AUTORUN);
- my ($OS, $ARCH, $OSTYPE, $MARCH, @ARCHITECTURES) = OsArch();
- println $OSTYPE unless ($AUTORUN);
- 
--unless ($OSTYPE =~ /linux/i || $OSTYPE =~ /darwin/i || $OSTYPE eq 'win') {
-+unless ($OSTYPE =~ /linux/i || $OSTYPE =~ /freebsd/i || $OSTYPE =~ /darwin/i || $OSTYPE eq 'win') {
-     println "configure: error: unsupported system '$OSTYPE'";
-     exit 1;
- }
 @@ -225,7 +225,7 @@ if ($OS eq 'linux') {
  
  print "checking machine architecture... " unless ($AUTORUN);
@@ -107,7 +98,7 @@
          $LP     = "$CPP $versionMin -Wl,-arch_multiple $ARCH_FL -Wl,-all_load";
      }
      $ARX  = 'ar x';
-@@ -826,13 +844,13 @@ OS_ARCH = \$(shell perl \$(TOP)/setup/os-arch.perl)
+@@ -838,14 +856,13 @@ OS_ARCH = \$(shell perl \$(TOP)/setup/os-arch.perl)
  # install paths
  EndText
  
@@ -118,6 +109,7 @@
 -    L($F, "INST_SHAREDIR = $OPT{'sharedir'}"  ) if ($OPT{'sharedir'});
 -    L($F, "INST_JARDIR = $OPT{'javadir'}"     ) if ($OPT{'javadir'});
 -    L($F, "INST_PYTHONDIR = $OPT{'pythondir'}") if ($OPT{'pythondir'});
+-
 +    L($F, "INST_BINDIR = \$(DESTDIR)$OPT{'bindir'}"      ) if ($OPT{'bindir'});
 +    L($F, "INST_LIBDIR = \$(DESTDIR)$OPT{'libdir'}"      ) if ($OPT{'libdir'});
 +    L($F, "INST_INCDIR = \$(DESTDIR)$OPT{'includedir'}"  ) if ($OPT{'includedir'});
@@ -125,10 +117,10 @@
 +    L($F, "INST_SHAREDIR = \$(DESTDIR)$OPT{'sharedir'}"  ) if ($OPT{'sharedir'});
 +    L($F, "INST_JARDIR = \$(DESTDIR)$OPT{'javadir'}"     ) if ($OPT{'javadir'});
 +    L($F, "INST_PYTHONDIR = \$(DESTDIR)$OPT{'pythondir'}") if ($OPT{'pythondir'});
- 
      my ($E_VERSION_SHLX, $VERSION_SHLX,
          $E_MAJVERS_SHLX , $MAJMIN_SHLX, $MAJVERS_SHLX);
-@@ -896,7 +914,7 @@ MAJMIN_EXEX  = \$(EXEX).\$(MAJMIN)
+     if ($OSTYPE =~ /darwin/i) {
+@@ -908,7 +925,7 @@ MAJMIN_EXEX  = \$(EXEX).\$(MAJMIN)
  MAJVERS_EXEX = \$(EXEX).\$(MAJVERS)
  
  # system architecture and wordsize
@@ -137,7 +129,7 @@
  EndText
  
      L($F, "# ARCH = $ARCH ( $MARCH )") if ($ARCH ne $MARCH);
-@@ -932,7 +950,7 @@ EndText
+@@ -944,7 +961,7 @@ EndText
      }
      L($F, "PIC     = $PIC") if ($PIC);
      if ($PKG{LNG} eq 'C') {
@@ -146,7 +138,7 @@
     L($F, 'SONAME  = -install_name ' .
                 '$(INST_LIBDIR)$(BITS)/$(subst $(VERSION),$(MAJVERS),$(@F)) \\');
     L($F, '    -compatibility_version $(MAJMIN) -current_version $(VERSION) \\');
-@@ -1043,7 +1061,7 @@ EndText
+@@ -1055,7 +1072,7 @@ EndText
      L($F, '# directory rules');
      if ($PKG{LNG} eq 'C') {
          L($F, '$(BINDIR) $(LIBDIR) $(ILIBDIR) '
@@ -155,7 +147,7 @@
          T($F, 'mkdir -p $@');
      } elsif ($PKG{LNG} eq 'JAVA') {
          # test if we have jni header path
-@@ -1073,12 +1091,12 @@ EndText
+@@ -1085,12 +1102,12 @@ EndText
      L($F, 'export CONFIGURE_FOUND_XML2');
      L($F);
  
@@ -167,11 +159,11 @@
 +        '$(INST_LIBDIR)/%.$(VERSION_LIBX): $(LIBDIR)/%.$(VERSION_LIBX)');
          T($F, '@ echo -n "installing \'$(@F)\'... "');
 -        T($F, '@ if cp $^ $@ && chmod 644 $@;                         \\');
-+        T($F, '@ if $(BSD_INSTALL_DATA) $^ $@;                        \\');
++        T($F, '@ if ${BSD_INSTALL_DATA} $^ $@ && chmod 644 $@;                         \\');
          T($F, '  then                                                 \\');
          T($F, '      rm -f $(patsubst %$(VERSION),%$(MAJVERS),$@) '
                       . '$(patsubst %$(VERSION_LIBX),%$(LIBX),$@) '
-@@ -1087,7 +1105,7 @@ EndText
+@@ -1099,7 +1116,7 @@ EndText
          T($F, '      ln -s $(patsubst %$(VERSION),%$(MAJVERS),$(@F)) '
                        . '$(patsubst %$(VERSION_LIBX),%$(LIBX),$@); \\');
          T($F, '      ln -s $(patsubst %$(VERSION_LIBX),%$(LIBX),$(@F)) ' .
@@ -180,7 +172,7 @@
                                                                . ' \\');
          T($F, '      echo success;                                    \\');
          T($F, '  else                                                 \\');
-@@ -1097,15 +1115,15 @@ EndText
+@@ -1109,15 +1126,15 @@ EndText
          L($F);
  
          L($F,
@@ -188,7 +180,7 @@
 +        '$(INST_LIBDIR)/%.$(VERSION_SHLX): $(LIBDIR)/%.$(VERSION_SHLX)');
          T($F, '@ echo -n "installing \'$(@F)\'... "');
 -        T($F, '@ if cp $^ $@ && chmod 755 $@;                         \\');
-+        T($F, '@ if $(BSD_INSTALL_LIB) $^ $@;                         \\');
++        T($F, '@ if ${BSD_INSTALL_LIB} $^ $@ && chmod 755 $@;                         \\');
          T($F, '  then                                                 \\');
          if ($OS ne 'mac') {
            T($F, '      rm -f $(patsubst %$(VERSION),%$(MAJVERS),$@) '
@@ -199,16 +191,16 @@
            T($F, '      ln -s $(@F) $(patsubst %$(VERSION),%$(MAJVERS),$@); \\');
          } elsif ($OS eq 'mac') {
            T($F, '      ln -sf $(@F) '
-@@ -1124,7 +1142,7 @@ EndText
+@@ -1136,7 +1153,7 @@ EndText
  
          L($F, '$(INST_BINDIR)/%$(VERSION_EXEX): $(BINDIR)/%$(VERSION_EXEX)');
          T($F, '@ echo -n "installing \'$(@F)\'... "');
 -        T($F, '@ if cp $^ $@ && chmod 755 $@;                         \\');
-+        T($F, '@ if $(BSD_INSTALL_PROGRAM) $^ $@;                     \\');
++        T($F, '@ if ${BSD_INSTALL_PROGRAM} $^ $@ && chmod 755 $@;                         \\');
          T($F, '  then                                                 \\');
          T($F, '      rm -f $(patsubst %$(VERSION),%$(MAJVERS),$@) '
                        . '$(patsubst %$(VERSION_EXEX),%$(EXEX),$@);     \\');
-@@ -1406,7 +1424,7 @@ sub find_in_dir {
+@@ -1418,7 +1435,7 @@ sub find_in_dir {
                  ++$found;
              }
              if (! $found) {
@@ -217,7 +209,7 @@
                  my $f = File::Spec->catdir($libdir, $lib);
                  print "\tchecking $f\n\t" if ($OPT{'debug'});
                  if (-e $f) {
-@@ -1628,12 +1646,12 @@ sub find_lib {
+@@ -1640,12 +1657,12 @@ sub find_lib {
  
  sub check_compiler {
      my ($t, $n, $I, @l) = @_;
@@ -232,7 +224,7 @@
              print "checking whether $tool accepts $n... ";
          } else {
              return;
-@@ -1706,7 +1724,7 @@ sub check_compiler {
+@@ -1718,7 +1735,7 @@ sub check_compiler {
                  }
              }
              my $gcc = "| $tool -xc $flags " . ($I ? "-I$I " : ' ')
