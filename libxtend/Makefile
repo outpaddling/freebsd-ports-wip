@@ -1,8 +1,7 @@
 # Created by: J. Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	libxtend
-DISTVERSION=	0.1.2-53
-DISTVERSIONSUFFIX=	-g5dc8f58
+DISTVERSION=	0.1.3
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -13,8 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-
-CONFLICTS_INSTALL=	biolibc-0.1.3.[0-3]*
 
 GH_ACCOUNT=	outpaddling
 
