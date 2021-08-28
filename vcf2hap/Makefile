@@ -1,5 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
-
 PORTNAME=	vcf2hap
 DISTVERSION=	0.1.3-12
 DISTVERSIONSUFFIX=	-g3626f5a

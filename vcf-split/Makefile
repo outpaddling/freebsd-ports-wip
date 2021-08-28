@@ -1,5 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
-
 PORTNAME=	vcf-split
 DISTVERSION=	0.1.2-14
 DISTVERSIONSUFFIX=	-gbc2eba0
@@ -11,7 +9,7 @@ COMMENT=	Split a multi-sample VCF into single-sample VCFs
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libxtend.so:wip/libxtend libbiolibc.so:wip/biolibc
+LIB_DEPENDS=	libbiolibc.so:wip/biolibc libxtend.so:wip/libxtend
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab

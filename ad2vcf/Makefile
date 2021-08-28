@@ -1,5 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
-
 PORTNAME=	ad2vcf
 DISTVERSION=	0.1.3-31
 DISTVERSIONSUFFIX=	-g2073297
@@ -11,7 +9,7 @@ COMMENT=	Add allelic depth info from a SAM stream to a VCF file
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libxtend.so:wip/libxtend libbiolibc.so:wip/biolibc
+LIB_DEPENDS=	libbiolibc.so:wip/biolibc libxtend.so:wip/libxtend
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
