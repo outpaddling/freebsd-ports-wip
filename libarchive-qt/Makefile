@@ -1,5 +1,5 @@
 PORTNAME=	libarchive-qt
-DISTVERSION=	2.0.4
+DISTVERSION=	2.0.6
 CATEGORIES=	wip devel
 
 MAINTAINER=	jwb@FreeBSD.org
