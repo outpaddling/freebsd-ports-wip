@@ -1,7 +1,7 @@
 PORTNAME=	coregarage
 DISTVERSION=	4.3.0
 PORTREVISION=	1
-CATEGORIES=	wip sysutils
+CATEGORIES=	wip deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Settings manager for C Suite
