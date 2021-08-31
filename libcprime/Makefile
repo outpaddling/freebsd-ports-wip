@@ -1,6 +1,6 @@
 PORTNAME=	libcprime
 DISTVERSION=	4.2.2
-CATEGORIES=	wip devel
+CATEGORIES=	wip deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Library for bookmarking, saving recent activites, managing settings
