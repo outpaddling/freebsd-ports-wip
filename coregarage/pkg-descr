@@ -1,3 +1,5 @@
-A settings manager for C Suite.
+Coregarage is a settings manager for C Suite, part of the CuboCore
+suite of simple, lighweight Qt applications.  Coregarage is a
+centralized tool that manages settings for a variety of CuboCore apps.
 
 WWW: https://gitlab.com/cubocore/coregarage
