@@ -1,6 +1,6 @@
 PORTNAME=	coreterminal
 DISTVERSION=	4.3.0
-CATEGORIES=	wip sysutils
+CATEGORIES=	wip x11
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Terminal emulator from the CoreApps family
