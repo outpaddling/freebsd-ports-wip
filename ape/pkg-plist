@@ -102,6 +102,10 @@ man/man1/apekeys.1.gz
 %%DATADIR%%/Languages/Makefile/Macros/menu.txt
 %%DATADIR%%/Languages/Makefile/language_opts
 %%DATADIR%%/Languages/Makefile/syntax_highlighting
+%%DATADIR%%/Languages/Markdown/Macros/macros
+%%DATADIR%%/Languages/Markdown/Macros/menu.txt
+%%DATADIR%%/Languages/Markdown/language_opts
+%%DATADIR%%/Languages/Markdown/syntax_highlighting
 %%DATADIR%%/Languages/NQC/Macros/macros
 %%DATADIR%%/Languages/NQC/Macros/menu.txt
 %%DATADIR%%/Languages/NQC/language_opts
