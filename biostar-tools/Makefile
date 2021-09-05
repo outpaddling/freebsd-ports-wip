@@ -1,5 +1,5 @@
 PORTNAME=	biostar-tools
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	wip biology python
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -55,7 +55,8 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		${PYTHON_PKGNAMEPREFIX}multiqc>0:biology/py-multiqc@${PY_FLAVOR} \
 		flash>0:biology/flash \
 		bfc:biology/bfc \
-		Jellyfish>0:biology/jellyfish
+		Jellyfish>0:biology/jellyfish \
+		mafft>0:biology/mafft
 
 USES=		metaport python
 
