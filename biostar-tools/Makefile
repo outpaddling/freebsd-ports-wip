@@ -56,7 +56,8 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		flash>0:biology/flash \
 		bfc:biology/bfc \
 		Jellyfish>0:biology/jellyfish \
-		mafft>0:biology/mafft
+		mafft>0:biology/mafft \
+		clustal-omega>0:biology/clustal-omega
 
 USES=		metaport python
 
