@@ -1,0 +1,8 @@
+pywgsim is a modified version of the wgsim short read simulator.
+
+    https://github.com/lh3/wgsim
+
+The code for wgsim has been modified to allow visualizing the simulated
+mutations as a GFF file.
+
+WWW: https://pypi.python.org/pypi/pywgsim
