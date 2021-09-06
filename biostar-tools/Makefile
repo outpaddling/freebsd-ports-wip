@@ -58,7 +58,7 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		Jellyfish>0:biology/jellyfish \
 		mafft>0:biology/mafft \
 		clustal-omega>0:biology/clustal-omega \
-		${PYTHON_PKGNAMEPREFIX}pywgsim>0:wip/py-pywgsim@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pywgsim>0:biology/py-pywgsim@${PY_FLAVOR}
 
 USES=		metaport python
 
