@@ -59,7 +59,7 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		mafft>0:biology/mafft \
 		clustal-omega>0:biology/clustal-omega \
 		${PYTHON_PKGNAMEPREFIX}pywgsim>0:biology/py-pywgsim@${PY_FLAVOR} \
-		sam2pairwise:wip/sam2pairwise
+		sam2pairwise:biology/sam2pairwise
 
 USES=		metaport python
 
