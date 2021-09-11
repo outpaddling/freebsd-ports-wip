@@ -21,13 +21,18 @@ USES=		cmake shebangfix
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	COMBINE-lab
+GH_TUPLE+=      COMBINE-lab:pufferfish:v1.1.0:pf/external/pufferfish
 SHEBANG_FILES=	scripts/*
 
+# https://salmon.readthedocs.io/en/latest/building.html
 #LIBS+=		-L${LOCALBASE}/lib -lthr
 PLIST_FILES=	bin/salmon lib/libsalmon_core.a
 #CONFIGURE_ENV=	DISTDIR=${DISTDIR} DIST_SUBDIR=${DIST_SUBDIR}
 #CMAKE_ARGS+=	-DDISTDIR:PATH=${DISTDIR} -DDIST_SUBDIR:PATH=${DIST_SUBDIR}
 # FreeBSD's base malloc is jemalloc
-CMAKE_ARGS+=	-DHAVE_FAST_MALLOC:BOOL=on
+CMAKE_ARGS+=	-DHAVE_FAST_MALLOC:BOOL=on \
+		-DBOOST_ROOT:PATH=${LOCALBASE} \
+		-DTBB_INSTALL_DIR:PATH=${LOCALBASE} \
+		-DFETCHED_PUFFERFISH:BOOL=on
 
 .include <bsd.port.mk>

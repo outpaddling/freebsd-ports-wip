@@ -1,0 +1,14 @@
+--- external/pufferfish/CMakeLists.txt.orig	2021-09-11 20:52:39 UTC
++++ external/pufferfish/CMakeLists.txt
+@@ -181,11 +181,6 @@ endif()
+ set(SHASUM ${CMAKE_CURRENT_SOURCE_DIR}/scripts/check_shasum.sh)
+ 
+ 
+-find_package(Jemalloc)
+-if(JEMALLOC_FOUND)
+-  include_directories(SYSTEM ${JEMALLOC_INCLUDE_DIRS})
+-endif()
+-
+ if(DO_QUIET_MAKE)
+   set(QUIET_MAKE "--silent")
+ else()

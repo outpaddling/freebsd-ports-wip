@@ -1,0 +1,63 @@
+--- CMakeLists.txt.orig	2021-09-11 18:41:05 UTC
++++ CMakeLists.txt
+@@ -828,58 +828,14 @@ if (ASAN_BUILD)
+   set(FAST_MALLOC_LIB "")
+   set(HAVE_FAST_MALLOC TRUE)
+ else()
+-  set(FAST_MALLOC_LIB "")
+-  set(HAVE_FAST_MALLOC FALSE)
+-
+-  # See if we have Jemalloc
+-  find_package(Jemalloc)
+-  if(Jemalloc_FOUND)
+-    ##
+-    # Don't be so stringent about the version yet
+-    ##
+-    #if (NOT (${JEMALLOC_VERSION} VERSION_LESS 5.2.1))
+-      message("Found Jemalloc library --- using this memory allocator")
+-      set(FAST_MALLOC_LIB ${JEMALLOC_LIBRARIES})
+-      set(HAVE_FAST_MALLOC TRUE)
+-    #else()
+-    #  message("Fond Jemalloc version ${JEMALLOC_VERSION}, but require >= 5.2.1. Downloading newer version")
+-    #endif()
+-  endif()
++  set(FAST_MALLOC_LIB "/usr/lib/libc.so")
++  set(HAVE_FAST_MALLOC TRUE)
+ endif()
+ 
+ if(CONDA_BUILD)
+   set(JEMALLOC_FLAGS "CC=${CMAKE_C_COMPILER} CFLAGS=\\\"-fPIC ${SCHAR_FLAG}\\\" CPPFLAGS=\\\"-fPIC ${SCHAR_FLAG}\\\"")
+ else()
+   set(JEMALLOC_FLAGS "CC=${CMAKE_C_COMPILER} CFLAGS=${SCHAR_FLAG} CPPFLAGS=${SCHAR_FLAG}")
+-endif()
+-
+-if(NOT HAVE_FAST_MALLOC)
+-  message("Build system will fetch and use JEMalloc")
+-  message("==================================================================")
+-  externalproject_add(libjemalloc
+-      DOWNLOAD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external
+-      DOWNLOAD_COMMAND curl -k -L https://github.com/jemalloc/jemalloc/archive/5.2.1.tar.gz -o jemalloc-5.2.1.tar.gz &&
+-        ${SHASUM} ed51b0b37098af4ca6ed31c22324635263f8ad6471889e0592a9c0dba9136aea jemalloc-5.2.1.tar.gz &&
+-        tar -xzf jemalloc-5.2.1.tar.gz
+-
+-      SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/jemalloc-5.2.1
+-      BUILD_IN_SOURCE TRUE
+-      INSTALL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/install
+-      CONFIGURE_COMMAND sh -c "${JEMALLOC_FLAGS} ./autogen.sh --disable-debug ${MALLOC_STATIC_BUILD_FLAG} --prefix=<INSTALL_DIR>"
+-      #CONFIGURE_COMMAND sh -c "${JEMALLOC_FLAGS} ./autogen.sh ${MALLOC_STATIC_BUILD_FLAG} --prefix=<INSTALL_DIR>"
+-      INSTALL_COMMAND cp -r lib <INSTALL_DIR>/ && cp -r include <INSTALL_DIR>/
+-      )
+-
+-  set(FAST_MALLOC_LIB ${CMAKE_CURRENT_SOURCE_DIR}/external/install/lib/libjemalloc.a)
+-  set(HAVE_FAST_MALLOC TRUE)
+-  set(FETCHED_JEMALLOC TRUE)
+-  if(FETCHED_LIBBZ2)
+-    add_dependencies(libjemalloc libbz2)
+-  endif()
+-
+-  if(FETCHED_LIBLZMA)
+-    add_dependencies(libjemalloc liblzma)
+-  endif()
+ endif()
+ 
+ ###

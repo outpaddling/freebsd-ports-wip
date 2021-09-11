@@ -1,3 +1,5 @@
-TIMESTAMP = 1631384004
+TIMESTAMP = 1631392763
 SHA256 (COMBINE-lab-salmon-v1.5.2_GH0.tar.gz) = 5a0b8db4a9bebaf5d7d03d8804e7f0c7dce3f340d1c998cea7565bb167d3481c
 SIZE (COMBINE-lab-salmon-v1.5.2_GH0.tar.gz) = 7119775
+SHA256 (COMBINE-lab-pufferfish-v1.1.0_GH0.tar.gz) = 34faef0c193edd4e0bee35cb153b8c52cd5e55b20923f05f78bd6aad9bab6b23
+SIZE (COMBINE-lab-pufferfish-v1.1.0_GH0.tar.gz) = 3100174
