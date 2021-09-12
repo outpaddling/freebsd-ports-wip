@@ -1,6 +1,17 @@
---- CMakeLists.txt.orig	2021-09-11 18:41:05 UTC
+--- CMakeLists.txt.orig	2021-07-23 03:20:52 UTC
 +++ CMakeLists.txt
-@@ -828,58 +828,14 @@ if (ASAN_BUILD)
+@@ -364,7 +364,9 @@ if(NOT Iconv_IS_BUILT_IN)
+   set(ICONV_LIB Iconv::Iconv)
+ endif()
+ 
+-find_package(LibLZMA)
++# find_package(LibLZMA)
++set(LIBLZMA_FOUND TRUE)
++set(LIBLZMA_LIBRARIES /usr/lib/liblzma.a)
+ if(NOT LIBLZMA_FOUND)
+   message("Will attempt to fetch and build liblzma")
+   message("=======================================")
+@@ -828,58 +830,14 @@ if (ASAN_BUILD)
    set(FAST_MALLOC_LIB "")
    set(HAVE_FAST_MALLOC TRUE)
  else()
