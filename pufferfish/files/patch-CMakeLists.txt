@@ -1,6 +1,6 @@
 --- CMakeLists.txt.orig	2021-07-23 01:36:34 UTC
 +++ CMakeLists.txt
-@@ -181,10 +181,10 @@ endif()
+@@ -181,11 +181,15 @@ endif()
  set(SHASUM ${CMAKE_CURRENT_SOURCE_DIR}/scripts/check_shasum.sh)
  
  
@@ -13,9 +13,14 @@
 +  #include_directories(SYSTEM ${JEMALLOC_INCLUDE_DIRS})
 +#endif()
  
++# Need these even if not building TBB here
++find_package(BZip2)
++find_package(LibLZMA)
++
  if(DO_QUIET_MAKE)
    set(QUIET_MAKE "--silent")
-@@ -194,7 +194,8 @@ endif()
+ else()
+@@ -194,7 +198,8 @@ endif()
  
  if (NOT BUILD_PUFF_FOR_SALMON)
  ## Try and find TBB first
