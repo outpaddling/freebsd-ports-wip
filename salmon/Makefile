@@ -22,6 +22,7 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	COMBINE-lab
 GH_TUPLE+=      COMBINE-lab:pufferfish:v1.1.0:pf/external/pufferfish
+GH_TUPLE+=      COMBINE-lab:libgff:v2.0.0:gff/external/libgff-2.0.0
 SHEBANG_FILES=	scripts/*
 
 # https://salmon.readthedocs.io/en/latest/building.html
@@ -30,9 +31,13 @@ PLIST_FILES=	bin/salmon lib/libsalmon_core.a
 #CONFIGURE_ENV=	DISTDIR=${DISTDIR} DIST_SUBDIR=${DIST_SUBDIR}
 #CMAKE_ARGS+=	-DDISTDIR:PATH=${DISTDIR} -DDIST_SUBDIR:PATH=${DIST_SUBDIR}
 # FreeBSD's base malloc is jemalloc
+# -DTBB_INSTALL_DIR:PATH=${LOCALBASE} does not work
 CMAKE_ARGS+=	-DHAVE_FAST_MALLOC:BOOL=on \
 		-DBOOST_ROOT:PATH=${LOCALBASE} \
-		-DTBB_INSTALL_DIR:PATH=${LOCALBASE} \
-		-DFETCHED_PUFFERFISH:BOOL=on
+		-DFETCHED_PUFFERFISH:BOOL=on \
+		-DFETCHED_LIBGFF:BOOL=on \
+		-DTBB_tbb_LIBRARY:PATH=${LOCALBASE}/lib/libtbb.so \
+		-DTBB_tbbmalloc_LIBRARY:PATH=${LOCALBASE}/lib/libtbbmalloc.so \
+		-DTBB_tbbmalloc_proxy_LIBRARY:PATH=${LOCALBASE}/lib/libtbbmalloc_proxy.so
 
 .include <bsd.port.mk>
