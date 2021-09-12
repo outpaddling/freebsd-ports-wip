@@ -12,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # Check cereal version
 BUILD_DEPENDS=	bash:shells/bash \
 		autoconf:devel/autoconf \
-		cereal>=1.3.0:devel/cereal
+		cereal>=1.3.0:devel/cereal \
+		libgff==2.0.0:wip/libgff
 LIB_DEPENDS=	libtbb.so:devel/onetbb \
 		libboost_system.so:devel/boost-libs
 
@@ -22,7 +23,7 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	COMBINE-lab
 GH_TUPLE+=      COMBINE-lab:pufferfish:v1.1.0:pf/external/pufferfish
-GH_TUPLE+=      COMBINE-lab:libgff:v2.0.0:gff/external/libgff-2.0.0
+# GH_TUPLE+=      COMBINE-lab:libgff:v2.0.0:gff/external/libgff-2.0.0
 SHEBANG_FILES=	scripts/*
 
 # https://salmon.readthedocs.io/en/latest/building.html

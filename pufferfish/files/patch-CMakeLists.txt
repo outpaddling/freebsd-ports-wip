@@ -1,6 +1,21 @@
---- CMakeLists.txt.orig	2020-04-09 00:08:05 UTC
+--- CMakeLists.txt.orig	2021-07-23 01:36:34 UTC
 +++ CMakeLists.txt
-@@ -78,7 +78,7 @@ endif()
+@@ -181,10 +181,10 @@ endif()
+ set(SHASUM ${CMAKE_CURRENT_SOURCE_DIR}/scripts/check_shasum.sh)
+ 
+ 
+-find_package(Jemalloc)
+-if(JEMALLOC_FOUND)
+-  include_directories(SYSTEM ${JEMALLOC_INCLUDE_DIRS})
+-endif()
++#find_package(Jemalloc)
++#if(JEMALLOC_FOUND)
++  #include_directories(SYSTEM ${JEMALLOC_INCLUDE_DIRS})
++#endif()
+ 
+ if(DO_QUIET_MAKE)
+   set(QUIET_MAKE "--silent")
+@@ -194,7 +194,7 @@ endif()
  
  if (NOT BUILD_PUFF_FOR_SALMON)
  ## Try and find TBB first
