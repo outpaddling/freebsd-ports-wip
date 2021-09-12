@@ -9,16 +9,17 @@ COMMENT=	An efficient index for the colored, compacted, de Bruijn graph
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libtbb.so:devel/onetbb
+# devel/tbb is obsolete, but salmon is not compatible with onetbb 2021.3
+LIB_DEPENDS=	libtbb.so:devel/tbb
 
 # pkgconfig used by cmake find jemalloc
-USES=		cmake:noninja gmake pkgconfig
+USES=		cmake:noninja gmake localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	COMBINE-lab
 
-CMAKE_ARGS+=	-DJEMALLOC_LIBRARY:STRING="/lib/libc.so" \
-                -DTBB_tbb_LIBRARY:PATH=${LOCALBASE}/lib/libtbb.so \
-                -DTBB_tbbmalloc_LIBRARY:PATH=${LOCALBASE}/lib/libtbbmalloc.so \
-                -DTBB_tbbmalloc_proxy_LIBRARY:PATH=${LOCALBASE}/lib/libtbbmalloc
+# no libtbbmalloc_proxy.so in devel/tbb
+CMAKE_ARGS+=	-DTBB_tbb_LIBRARY:PATH=${LOCALBASE}/lib/libtbb.so \
+                -DTBB_tbbmalloc_LIBRARY:PATH=${LOCALBASE}/lib/libtbbmalloc.so
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

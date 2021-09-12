@@ -15,11 +15,12 @@
  
  if(DO_QUIET_MAKE)
    set(QUIET_MAKE "--silent")
-@@ -194,7 +194,7 @@ endif()
+@@ -194,7 +194,8 @@ endif()
  
  if (NOT BUILD_PUFF_FOR_SALMON)
  ## Try and find TBB first
 -find_package(TBB 2018.0 COMPONENTS tbb tbbmalloc tbbmalloc_proxy)
++# No libtbbmaloc_proxy.so in devel/tbb
 +find_package(TBB 2018.0 COMPONENTS tbb tbbmalloc)
  
  ##
