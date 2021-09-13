@@ -57,6 +57,7 @@ do-build:
 	@(cd ${WRKSRC}/kent/src/jkOwnLib && ${DO_MAKE_BUILD})
 	@(cd ${WRKSRC}/kent/src/hg/lib && ${DO_MAKE_BUILD})
 	@(cd ${WRKSRC}/kent/src/utils && ${DO_MAKE_BUILD})
+	${CC} -DUCSC_PREFIX="\"${PREFIX}/userapps\"" ${FILESDIR}/kent.c -o ${WRKDIR}/kent
 
 do-install:
 	@${MKDIR} ${WRKSRC}/scripts ${WRKSRC}/binaries
@@ -71,5 +72,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/userapps/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/ucsc-shell \
 		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/kent ${STAGEDIR}${LOCALBASE}/bin
 
 .include <bsd.port.mk>
