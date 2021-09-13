@@ -1,5 +1,0 @@
-SeqLib is a C++ library for querying BAM/SAM/CRAM files, performing BWA-MEM
-operations in memory, and performing sequence assembly. Core operations in
-SeqLib are peformed by HTSlib, BWA-MEM (Apache2 branch) and FermiKit.
-
-WWW: https://github.com/walaj/SeqLib

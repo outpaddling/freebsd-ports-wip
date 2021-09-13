@@ -1,4 +1,4 @@
-PORTNAME=		SeqLib
+PORTNAME=		combine-seqlib
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.1.2
 CATEGORIES=		wip biology
@@ -11,10 +11,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libjsoncpp.so:devel/jsoncpp
 
-USES=		gmake tar:xz
-#USE_GCC=	yes
+USES=		tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	COMBINE-lab
+GH_PROJECT=	SeqLib
+GH_TUPLE=	samtools:htslib:be22a2a:hts/htslib
 
 GNU_CONFIGURE=	yes
 

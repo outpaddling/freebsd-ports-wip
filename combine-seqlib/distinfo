@@ -1,0 +1,5 @@
+TIMESTAMP = 1631534887
+SHA256 (COMBINE-lab-SeqLib-v1.1.2_GH0.tar.gz) = d4679171b6c537f208a54cf4f4343f8068b35f401fa2170efffc74d7bd297892
+SIZE (COMBINE-lab-SeqLib-v1.1.2_GH0.tar.gz) = 314293
+SHA256 (samtools-htslib-be22a2a_GH0.tar.gz) = e4c14dca9de185ab334479aa4197efc84dbf192f7632bcb221ab72fa452f69a0
+SIZE (samtools-htslib-be22a2a_GH0.tar.gz) = 1262507
