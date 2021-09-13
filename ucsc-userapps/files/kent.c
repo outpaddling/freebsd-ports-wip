@@ -47,6 +47,12 @@ int     main(int argc,char *argv[])
 
 {
     char    cmd[PATH_MAX + 1];
+
+    if ( argc < 2 )
+    {
+        fprintf(stderr, "Usage: %s UCSC-userapps-command\n", argv[0]);
+        return EX_USAGE;
+    }
     
     snprintf(cmd, PATH_MAX, "%s/bin/%s", UCSC_PREFIX, argv[1]);
     execv(cmd, argv + 1);
