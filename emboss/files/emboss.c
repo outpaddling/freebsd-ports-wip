@@ -48,6 +48,12 @@ int     main(int argc,char *argv[])
 {
     char    cmd[PATH_MAX + 1];
     
+    if ( argc < 2 )
+    {
+        fprintf(stderr, "Usage: %s emboss-command [args]\n", argv[0]);
+        return EX_USAGE;
+    }
+
     snprintf(cmd, PATH_MAX, "%s/bin/%s", EMBOSS_PREFIX, argv[1]);
     execv(cmd, argv + 1);
 }

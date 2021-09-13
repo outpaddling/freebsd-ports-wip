@@ -50,7 +50,7 @@ int     main(int argc,char *argv[])
 
     if ( argc < 2 )
     {
-        fprintf(stderr, "Usage: %s UCSC-userapps-command\n", argv[0]);
+        fprintf(stderr, "Usage: %s UCSC-userapps-command [args]\n", argv[0]);
         return EX_USAGE;
     }
     
