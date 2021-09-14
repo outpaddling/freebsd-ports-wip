@@ -44,6 +44,7 @@ sbin/auto-enable-service
 sbin/auto-fastest-mirror
 sbin/auto-fetch-install-media
 sbin/auto-file-secure
+sbin/auto-filesys-manager
 sbin/auto-firewall-setup
 sbin/auto-fix-date
 sbin/auto-freebsd-wip-checkout
