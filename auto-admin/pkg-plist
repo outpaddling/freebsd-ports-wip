@@ -118,6 +118,7 @@ sbin/auto-restore-pw
 sbin/auto-restore-user
 sbin/auto-root-check
 sbin/auto-secure-directory
+sbin/auto-security-manager
 sbin/auto-service-enabled
 sbin/auto-set-conf-var
 sbin/auto-set-hostname
@@ -130,6 +131,7 @@ sbin/auto-sound-driver-setup
 sbin/auto-ssh-authorize
 sbin/auto-ssh-reverse-authorize
 sbin/auto-su+j-toggle
+sbin/auto-sys-manager
 sbin/auto-transfer-pw
 sbin/auto-unlock-local-pw
 sbin/auto-unlock-user
