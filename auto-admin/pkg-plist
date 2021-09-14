@@ -32,7 +32,6 @@ sbin/auto-denyhosts-setup
 sbin/auto-detect-laptops
 sbin/auto-disable-file-transfers
 sbin/auto-disable-host-key-prompt
-sbin/auto-disable-hyperthreading
 sbin/auto-disable-service
 sbin/auto-disable-tcp-timestamps
 sbin/auto-enable-autologout
@@ -57,6 +56,7 @@ sbin/auto-gpu-setup
 sbin/auto-group-check
 sbin/auto-harden
 sbin/auto-hex-to-octet
+sbin/auto-hyperthreading-toggle
 sbin/auto-idrac-config
 sbin/auto-idrac-passwd
 sbin/auto-insert-line
