@@ -1,5 +1,6 @@
 PORTNAME=	basic-stats
-DISTVERSION=	0.1.0
+DISTVERSION=	0.1.0-2
+DISTVERSIONSUFFIX=	-g6719511
 CATEGORIES=	wip math
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
 
-PLIST_FILES=	bin/basic-stats
+PLIST_FILES=	bin/basic-stats man/man1/basic-stats.1.gz
 
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/basic-stats
