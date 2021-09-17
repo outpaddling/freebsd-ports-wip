@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=		2.3.0
 PORTREVISION=		2
 CATEGORIES=		wip biology
-MASTER_SITES=		https://github.com/gmarcais/${PORTNAME}/releases/download/v2.3.0/
+MASTER_SITES=		https://github.com/gmarcais/${PORTNAME}/releases/download/v2.3.0/	# Custom distfile reduces dependencie
 DISTNAME=		${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,16 +14,12 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE-BSD-3-Clause
 LICENSE_FILE_GPLv3=		${WRKSRC}/LICENSE-GPL-3.0
 
-BUILD_DEPENDS=	yaggo:devel/yaggo
 LIB_DEPENDS=	libhts.so:biology/htslib
 
-# autoreconf, gettext needed for Github dist
-USES=		compiler:c++11-lib gmake libtool pathfix pkgconfig
+USES=		compiler:c++11-lib libtool
 USE_LDCONFIG=	yes
-# USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
-# GH_ACCOUNT=	gmarcais
 
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	VER=${PORTVERSION}
