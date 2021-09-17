@@ -1,5 +1,5 @@
 PORTNAME=	slurm
-DISTVERSION=	20.11.7
+DISTVERSION=	20.11.8
 CATEGORIES=	wip sysutils python
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
