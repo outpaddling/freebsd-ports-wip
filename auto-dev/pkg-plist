@@ -1,0 +1,6 @@
+bin/auto-c2man
+bin/auto-gen-get-set
+bin/auto-script2man
+man/man1/auto-c2man.1.gz
+man/man1/auto-gen-get-set.1.gz
+man/man1/auto-script2man.1.gz
