@@ -41,7 +41,4 @@ CONFIGURE_ARGS+=--without-sse
 CXXFLAGS+=	-faligned-new
 .endif
 
-do-test:
-	@cd ${WRKSRC} && ${SH} ./test-driver --test-name big
-
 .include <bsd.port.post.mk>
