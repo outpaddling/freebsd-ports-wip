@@ -38,3 +38,12 @@
  }
  
  /*
+@@ -2966,7 +2974,7 @@ static bool _is_port_ok(int s, uint16_t port, bool loc
+ 		return false;
+ 	}
+ 
+-	if (bind(s, (struct sockaddr *) &addr, sizeof(addr)) < 0) {
++	if (bind(s, (struct sockaddr *) &addr, addr.ss_len) < 0) {
+ 		log_flag(NET, "%s: bind() failed on port:%d fd:%d: %m",
+ 			 __func__, port, s);
+ 		return false;
