@@ -21,20 +21,20 @@
  				fatal("%s: Can't get hostname or addr: %m",
  				      __func__);
  		} else {
-+			fprintf(stderr, "Using NULL host for slurm_set_addr().\n");
++			// fprintf(stderr, "Using NULL host for slurm_set_addr().\n");
  			slurm_set_addr(&s_addr, port, NULL);
  		}
  	}
  
-+	fprintf(stderr, "Back from slurm_set_addr\n");
-+	for (int c = 0; c < 14; ++c)
-+	    fprintf(stderr, "%u ",
-+		(unsigned char)s_addr.__ss_pad1[c]);
-+	putc('\n', stderr);
++	// fprintf(stderr, "Back from slurm_set_addr\n");
++	// for (int c = 0; c < 14; ++c)
++	//     fprintf(stderr, "%u ",
++	// 	(unsigned char)s_addr.__ss_pad1[c]);
++	// putc('\n', stderr);
  	memcpy(sin, &s_addr, sizeof(*sin));
  	slurm_set_port(sin, port);
  	log_flag(NET, "%s: update address to %pA", __func__, sin);
-+	fprintf(stderr, "slurm_setup_addr(): ss_len = %u\n", sin->ss_len);
++	// fprintf(stderr, "slurm_setup_addr(): ss_len = %u\n", sin->ss_len);
  }
  
  /*
