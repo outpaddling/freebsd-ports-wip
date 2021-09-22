@@ -23,10 +23,6 @@ USES=		compiler:c11 gmake gnome libtool lua pkgconfig python:build \
 USE_LDCONFIG=	yes
 USE_PERL5=	configure
 USE_RC_SUBR=	slurmctld slurmd
-# USE_GITHUB=	yes
-
-# GH_ACCOUNT=	SchedMD
-# GH_TAGNAME=	9fc68c85
 
 USERS=		slurm
 GROUPS=		${USERS}

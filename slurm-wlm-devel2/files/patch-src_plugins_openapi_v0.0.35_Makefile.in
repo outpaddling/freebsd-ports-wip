@@ -1,11 +1,11 @@
---- src/plugins/openapi/v0.0.35/Makefile.in.orig	2021-09-21 13:59:42 UTC
+--- src/plugins/openapi/v0.0.35/Makefile.in.orig	2021-09-16 21:21:22 UTC
 +++ src/plugins/openapi/v0.0.35/Makefile.in
 @@ -846,7 +846,7 @@ uninstall-am: uninstall-pkglibLTLIBRARIES
  
  
  %.bino: %.json
 -	$(AM_V_GEN)pushd $(abs_srcdir); $(LD) -r -o "$(abs_builddir)/$*.bino" -z noexecstack --format=binary "$(notdir $<)"; popd
-+	$(AM_V_GEN)cd $(abs_srcdir); $(LD) -r -o "$(abs_builddir)/$*.bino" -z noexecstack --format=binary "$(notdir $<)"; cd -
++	($(AM_V_GEN)cd $(abs_srcdir); $(LD) -r -o "$(abs_builddir)/$*.bino" -z noexecstack --format=binary "$(notdir $<)";)
  	$(AM_V_at)@OBJCOPY@ --rename-section .data=.rodata,alloc,load,readonly,data,contents "$*.bino"
  
  openapi_ref.lo: $(BIN_REF)
