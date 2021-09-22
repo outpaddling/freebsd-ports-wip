@@ -1,6 +1,14 @@
 --- src/common/slurm_protocol_api.c.orig	2021-07-01 22:28:38 UTC
 +++ src/common/slurm_protocol_api.c
-@@ -2866,6 +2866,7 @@ extern void slurm_setup_addr(slurm_addr_t *sin, uint16
+@@ -858,6 +858,7 @@ extern int slurm_open_controller_conn(slurm_addr_t *ad
+ 	}
+ 	addr = NULL;
+ 	_slurm_api_free_comm_config(proto_conf);
++	fprintf(stderr, "slurm_open_controller_conn()...\n");
+ 	slurm_seterrno_ret(SLURMCTLD_COMMUNICATIONS_CONNECTION_ERROR);
+ 
+ end_it:
+@@ -2866,6 +2867,7 @@ extern void slurm_setup_addr(slurm_addr_t *sin, uint16
  {
  	static slurm_addr_t s_addr = { 0 };
  
@@ -8,16 +16,16 @@
  	memset(sin, 0, sizeof(*sin));
  
  	if (slurm_addr_is_unspec(&s_addr)) {
-@@ -2880,7 +2881,7 @@ extern void slurm_setup_addr(slurm_addr_t *sin, uint16
+@@ -2880,7 +2882,7 @@ extern void slurm_setup_addr(slurm_addr_t *sin, uint16
  		else
  			var = "NoInAddrAny";
  
 -		if (xstrcasestr(slurm_conf.comm_params, var)) {
-+		if ( xstrcasestr(slurm_conf.comm_params, var)) {
++		if ( 1 ) { // xstrcasestr(slurm_conf.comm_params, var)) {
  			char host[MAXHOSTNAMELEN];
  
  			if (!gethostname(host, MAXHOSTNAMELEN)) {
-@@ -2889,13 +2890,20 @@ extern void slurm_setup_addr(slurm_addr_t *sin, uint16
+@@ -2889,13 +2891,20 @@ extern void slurm_setup_addr(slurm_addr_t *sin, uint16
  				fatal("%s: Can't get hostname or addr: %m",
  				      __func__);
  		} else {
@@ -38,7 +46,7 @@
  }
  
  /*
-@@ -2966,7 +2974,7 @@ static bool _is_port_ok(int s, uint16_t port, bool loc
+@@ -2966,7 +2975,7 @@ static bool _is_port_ok(int s, uint16_t port, bool loc
  		return false;
  	}
  
