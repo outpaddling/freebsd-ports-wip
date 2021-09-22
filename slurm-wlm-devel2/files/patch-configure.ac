@@ -1,0 +1,15 @@
+--- configure.ac.orig	2021-09-22 13:07:16 UTC
++++ configure.ac
+@@ -553,12 +553,6 @@ AC_CONFIG_FILES([Makefile
+ 		 src/plugins/node_features/helpers/Makefile
+ 		 src/plugins/node_features/knl_cray/Makefile
+ 		 src/plugins/node_features/knl_generic/Makefile
+-		 src/plugins/openapi/Makefile
+-		 src/plugins/openapi/v0.0.35/Makefile
+-		 src/plugins/openapi/v0.0.36/Makefile
+-		 src/plugins/openapi/v0.0.37/Makefile
+-		 src/plugins/openapi/dbv0.0.36/Makefile
+-		 src/plugins/openapi/dbv0.0.37/Makefile
+ 		 src/plugins/power/Makefile
+ 		 src/plugins/power/common/Makefile
+ 		 src/plugins/power/cray_aries/Makefile

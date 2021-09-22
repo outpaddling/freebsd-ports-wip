@@ -1,0 +1,10 @@
+--- src/plugins/Makefile.in.orig	2021-09-22 13:17:11 UTC
++++ src/plugins/Makefile.in
+@@ -476,7 +476,6 @@ SUBDIRS = \
+ 	mcs			\
+ 	mpi			\
+ 	node_features		\
+-	openapi			\
+ 	power			\
+ 	preempt			\
+ 	prep			\
