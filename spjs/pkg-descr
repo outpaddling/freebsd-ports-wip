@@ -1,0 +1,8 @@
+SPJS (Simple, Portable Job Scheduler) is a batch system, i.e. a job
+scheduler and resource manager for HPC (High Performance Computing)
+clusters.
+
+Unlike other batch systems, SPJS is designed to be easy to deploy and
+manage, and portable to any POSIX platform.
+
+WWW: https://github.com/outpaddling/SPJS/

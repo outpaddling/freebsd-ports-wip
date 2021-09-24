@@ -1,0 +1,16 @@
+PORTNAME=	spjs
+DISTVERSION=	0.0.0-6
+CATEGORIES=	wip sysutils
+
+MAINTAINER=	jwb@FreeBSD.org
+COMMENT=	Simple, Portable Job Scheduler
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	outpaddling
+GH_PROJECT=	SPJS
+GH_TAGNAME=	11f5f574bb6988c4471d87aa25fe4bc2241735a2
+
+.include <bsd.port.mk>
