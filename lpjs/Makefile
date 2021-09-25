@@ -1,9 +1,9 @@
-PORTNAME=	spjs
-DISTVERSION=	0.0.0-12
+PORTNAME=	lpjs
+DISTVERSION=	0.0.0-16
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Simple, Portable Job Scheduler
+COMMENT=	Lightweight, Portable Job Scheduler
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -12,8 +12,8 @@ LIB_DEPENDS=	libxtend.so:wip/libxtend
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
-GH_PROJECT=	SPJS
-GH_TAGNAME=	ed72d9b39cbca07035e1af1a6816a17879fc8c55
+GH_PROJECT=	LPJS
+GH_TAGNAME=	1baf17095b5a13b7c6cbeeca50f415bcf1785735
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE} depend LOCALBASE=${LOCALBASE}
