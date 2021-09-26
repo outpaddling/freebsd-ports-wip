@@ -1,3 +1,4 @@
 bin/lpjs-dispatch
 bin/lpjs-node-specs
+bin/lpjs-node-status
 @sample %%ETCDIR%%/config.sample
