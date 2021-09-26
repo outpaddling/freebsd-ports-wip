@@ -1,5 +1,6 @@
 PORTNAME=	desktop-installer
-DISTVERSION=	0.7.5
+DISTVERSION=	0.7.5-1
+DISTVERSIONSUFFIX=	-ge03946d
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
