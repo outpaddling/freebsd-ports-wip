@@ -1,5 +1,5 @@
 PORTNAME=	lpjs
-DISTVERSION=	0.0.0-30
+DISTVERSION=	0.0.0-31
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -13,7 +13,7 @@ LIB_DEPENDS=	libxtend.so:wip/libxtend
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 GH_PROJECT=	LPJS
-GH_TAGNAME=	e2ef95d0f4eb2421b31ad94501787b747dedc0be
+GH_TAGNAME=	451bd453e61f776ebd6e569a001d2acd1b86258d
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE} depend LOCALBASE=${LOCALBASE}
