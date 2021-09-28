@@ -1,39 +1,34 @@
-
 This is a collection of work-in-progress FreeBSD ports.
 
 To install ports from this collection:
 
-1)  Download and run the freebsd-wip-checkout script from the repository
-    above.
-    
-    fetch https://github.com//outpaddling/freebsd-ports-wip/raw/master/freebsd-wip-checkout
+1)  pkg install auto-admin
 
-    * Before running any script downloaded from the Internet, carefully
-      inspect it for signs of tampering.  This is especially critical before
-      running a script as root.
+2)  auto-freebsd-wip-checkout
 
-    more freebsd-wip-checkout
-    sh ./freebsd-wip-checkout
-
-2)  Now you can install any port using
-
-	cd /usr/ports/wip/portname
-	make install
-
-    You can reinstall a single port using
+3)  Now you can install any port using
 
 	wip-reinstall-port portname
+    
+    or
+    
+	cd /usr/ports/wip/portname
+	make install
 
     If you are a ports developer and have a poudriere installation, you can
     test the port by running
 
 	wip-poudriere-test category/portname jail [jail ...] | all | pattern
 
-3)  Add the following to /etc/make.conf to enable QA checks:
+4)  Add the following to /etc/make.conf to enable QA checks:
 
 	DEVELOPER=yes
 
-4)  Run wip-update frequently to retreive the latest commits.
+5)  Run wip-update frequently to retreive the latest commits.
+
+6)  To automatically update wip ports via auto-update-system:
+
+    auto-mark-install-from-source wip/portname wip
 
 ---
 
