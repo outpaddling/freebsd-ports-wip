@@ -1,5 +1,5 @@
 PORTNAME=	lpjs
-DISTVERSION=	0.0.0-46
+DISTVERSION=	0.0.0-49
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,9 +12,11 @@ LIB_DEPENDS=	libxtend.so:wip/libxtend \
 		libmunge.so:security/munge
 
 USE_GITHUB=	yes
+USE_RC_SUBR=	lpjs_dispatchd lpjs_compd
+
 GH_ACCOUNT=	outpaddling
 GH_PROJECT=	LPJS
-GH_TAGNAME=	4f801b51bf7f9c5fbb8c5cc216b4bbc1a113fb43
+GH_TAGNAME=	3a0c3eb51a44923dacc2d7c9340b01626c95a080
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE} depend LOCALBASE=${LOCALBASE}

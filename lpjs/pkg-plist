@@ -1,7 +1,8 @@
 bin/lpjs-chaperone
-bin/lpjs-dispatch
 bin/lpjs-jobs
 bin/lpjs-node-specs
 bin/lpjs-nodes
 bin/lpjs-submit
 @sample %%ETCDIR%%/config.sample
+sbin/lpjs_compd
+sbin/lpjs_dispatchd

@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# PROVIDE: lpjs_compd
+# REQUIRE: DAEMON munge
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# lpjs_compd_enable (bool):   Set to NO by default.
+#               Set it to YES to enable lpjs_compd.
+#
+
+. /etc/rc.subr
+
+name="lpjs-compd"
+rcvar=lpjs_compd_enable
+
+pidfile=/var/run/$name.pid
+
+load_rc_config $name
+
+: ${lpjs_compd_enable="NO"}
+
+start_cmd=lpjs_compd_start
+stop_cmd=lpjs_compd_stop
+
+lpjs_compd_start() {
+    checkyesno lpjs_compd_enable && echo "Starting $name." && \
+	%%PREFIX%%/sbin/$name $lpjs_compd_flags
+}
+
+lpjs_compd_stop() {
+    if [ -e $pidfile ]; then
+	checkyesno lpjs_compd_enable && echo "Stopping $name." && \
+	    kill `cat $pidfile`
+    else
+	killall $name
+    fi
+}
+
+run_rc_command "$1"
