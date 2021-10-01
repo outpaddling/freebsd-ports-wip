@@ -14,7 +14,7 @@
 
 . /etc/rc.subr
 
-name="lpjs-compd"
+name="lpjs_compd"
 rcvar=lpjs_compd_enable
 
 pidfile=/var/run/$name.pid

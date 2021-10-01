@@ -14,7 +14,7 @@
 
 . /etc/rc.subr
 
-name="lpjs-dispatchd"
+name="lpjs_dispatchd"
 rcvar=lpjs_dispatchd_enable
 
 pidfile=/var/run/$name.pid
