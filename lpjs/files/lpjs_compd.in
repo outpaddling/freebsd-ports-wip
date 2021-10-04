@@ -36,7 +36,7 @@ lpjs_compd_stop() {
 	checkyesno lpjs_compd_enable && echo "Stopping $name." && \
 	    kill `cat $pidfile`
     else
-	killall $name
+	echo "Stopping $name." && pkill $name
     fi
 }
 
