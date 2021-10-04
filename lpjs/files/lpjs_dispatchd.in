@@ -28,7 +28,7 @@ stop_cmd=lpjs_dispatchd_stop
 
 lpjs_dispatchd_start() {
     checkyesno lpjs_dispatchd_enable && echo "Starting $name." && \
-	%%PREFIX%%/sbin/$name $lpjs_dispatchd_flags
+	%%PREFIX%%/sbin/$name --daemonize $lpjs_dispatchd_flags
 }
 
 lpjs_dispatchd_stop() {

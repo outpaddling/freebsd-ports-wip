@@ -28,7 +28,7 @@ stop_cmd=lpjs_compd_stop
 
 lpjs_compd_start() {
     checkyesno lpjs_compd_enable && echo "Starting $name." && \
-	%%PREFIX%%/sbin/$name $lpjs_compd_flags
+	%%PREFIX%%/sbin/$name --daemonize $lpjs_compd_flags
 }
 
 lpjs_compd_stop() {
