@@ -1,9 +1,10 @@
+include/xtend/common.h
 include/xtend/ctype.h
 include/xtend/dsv.h
 include/xtend/file.h
-include/xtend/limits.h
 include/xtend/math.h
 include/xtend/mem.h
+include/xtend/net.h
 include/xtend/proc.h
 include/xtend/string.h
 include/xtend/time.h
@@ -56,9 +57,11 @@ man/man3/get_home_dir.3.gz
 man/man3/lcm.3.gz
 man/man3/ltostrn.3.gz
 man/man3/parse_cmd.3.gz
+man/man3/resolve_hostname.3.gz
 man/man3/rmkdir.3.gz
 man/man3/spawnlp.3.gz
 man/man3/spawnvp.3.gz
+man/man3/str_argv_cat.3.gz
 man/man3/strblank.3.gz
 man/man3/strisint.3.gz
 man/man3/strisreal.3.gz
