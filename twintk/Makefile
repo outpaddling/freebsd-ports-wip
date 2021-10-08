@@ -12,8 +12,15 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libxtend.so:wip/libxtend
 
-USES=		gmake	# DragonFly
+.include <bsd.port.pre.mk>
+
+# DragonFly and NetBSD make don't handle source subdirectories
+# See if this can be fixed upstream
+.if ${OPSYS} == DragonFly
+USES=		gmake
+.endif
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
