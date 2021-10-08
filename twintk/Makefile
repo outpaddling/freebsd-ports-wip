@@ -12,6 +12,7 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libxtend.so:wip/libxtend
 
+USES=		gmake	# DragonFly
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 
