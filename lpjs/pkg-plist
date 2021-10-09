@@ -4,6 +4,8 @@ bin/lpjs-menu
 bin/lpjs-nodes
 bin/lpjs-submit
 @sample %%ETCDIR%%/config.sample
+lib/liblpjs.a
+man/man1/lpjs-nodes.1.gz
 sbin/lpjs-banner
 sbin/lpjs-chaperone
 sbin/lpjs-config
