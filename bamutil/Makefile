@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	statgen
 GH_PROJECT=	bamUtil
 
-# Build needs access to libStatGen Makefiles
+# Build needs access to libStatGen Makefiles, so can't install separately
 GH_TUPLE=	statgen:libStatGen:v${DISTVERSION}:statgen/libStatGen
 
 MAKE_ENV=	LIB_PATH_GENERAL=${WRKSRC}/libStatGen
