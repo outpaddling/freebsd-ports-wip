@@ -9,7 +9,7 @@ LICENSE=	BSD2CLAUSE
 
 # For a current list see http://data.biostarhandbook.com/install/conda.txt.
 # Also included are some programs not listed above, but mentioned in the text.
-# TODO: Add hdfview
+# TODO: Add hdfview, bamutils
 RUN_DEPENDS=	wget>0:ftp/wget \
 		curl>0:ftp/curl \
 		nano>0:editors/nano \
