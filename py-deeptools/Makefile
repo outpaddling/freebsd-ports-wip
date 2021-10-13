@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pysam>=0.14.0:biology/py-pysam@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}py2bit>=0.3.0:biology/py-py2bit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpydoc>=0.5:textproc/py-numpydoc@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyBigWig>=0.3.18:wip/py-pybigwig@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyBigWig>=0.3.18:biology/py-pybigwig@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}plotly>=4.9:graphics/py-plotly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}deeptoolsintervals>=0.1.8:wip/py-deeptoolsintervals@${PY_FLAVOR}
 
