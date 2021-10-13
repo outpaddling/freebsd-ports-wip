@@ -16,6 +16,6 @@ USES=		localbase python
 USE_PYTHON=	autoplist distutils
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pyBigWig.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pyBigWig.cpython-38.so
 
 .include <bsd.port.mk>
