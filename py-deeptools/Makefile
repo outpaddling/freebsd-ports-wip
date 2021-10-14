@@ -21,6 +21,6 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}deeptoolsintervals>=0.1.8:biology/py-deeptoolsintervals@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
