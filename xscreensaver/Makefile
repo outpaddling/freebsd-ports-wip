@@ -14,7 +14,8 @@ RUN_DEPENDS=	p5-libwww>0:www/p5-libwww \
 		giftopnm:graphics/netpbm
 LIB_DEPENDS=	libgle.so:graphics/gle \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz
 
 CONFLICTS=	xscreensaver-gnome-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
