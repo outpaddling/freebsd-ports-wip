@@ -10,7 +10,6 @@ COMMENT=	Tools for port development
 
 LICENSE=	BSD3CLAUSE
 
-# Don't require porttools until the sudo dep is removed
 RUN_DEPENDS=	portlint:ports-mgmt/portlint
 
 USE_GITHUB=	yes
