@@ -1,8 +1,8 @@
 # Created by: Jason Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	port-dev
-DISTVERSION=	0.3.0-21
-DISTVERSIONSUFFIX=	-g94fc723
+DISTVERSION=	0.3.0-22
+DISTVERSIONSUFFIX=	-g574ede3
 CATEGORIES=	wip ports-mgmt
 
 MAINTAINER=	jwb@FreeBSD.org
