@@ -17,8 +17,6 @@ LIB_DEPENDS=	libgle.so:graphics/gle \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 
-CONFLICTS=	xscreensaver-gnome-[0-9]* xscreensaver-gnome-hacks-[0-9]*
-
 USES=		autoreconf cpe gettext gl gmake gnome jpeg localbase:ldflags perl5 \
 		pkgconfig xorg
 USE_GL=		gl glu
@@ -27,6 +25,8 @@ USE_PERL5=	run
 USE_XORG=	ice sm x11 xext xi xinerama xmu xrandr xrender xpm xt xxf86vm
 USE_CSTD=	gnu99
 CPE_VENDOR=	xscreensaver_project
+
+CONFLICTS=	xscreensaver-gnome-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	PERL="${PERL}"
