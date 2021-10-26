@@ -6,7 +6,10 @@ libexec/biolibc-tools/fastx2tsv
 libexec/biolibc-tools/find-orfs
 libexec/biolibc-tools/uniq-seqs.awk
 libexec/biolibc-tools/vcf-search
+man/man1/blt-fasta2seq.1.gz
 man/man1/blt-fastq-derep.sh.1.gz
 man/man1/blt-fastx-derep.1.gz
 man/man1/blt-fastx2tsv.1.gz
+man/man1/blt-find-orfs.1.gz
+man/man1/blt-vcf-search.1.gz
 man/man1/blt.1.gz
