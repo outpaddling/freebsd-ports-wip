@@ -1,7 +1,7 @@
 # Created by: Motomichi Matsuzaki <mzaki@e-mail.ne.jp>
 
 PORTNAME=	sra-tools
-DISTVERSION=	2.11.1
+DISTVERSION=	2.11.2
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,11 +12,13 @@ LICENSE_COMB=		multi
 LICENSE_FILE_PD=	${WRKSRC}/LICENSE
 LICENSE_DISTFILES_LGPL21+ =
 
-ONLY_FOR_ARCHS=		amd64 aarch64
+ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	NCBI-VDB requires SSE2 instructions, no 32-bit support
 
+# cmake currently used only for VDB submodule
 BUILD_DEPENDS=	bash:shells/bash \
-		${LOCALBASE}/lib/libngs-c++.a:biology/ngs-sdk
+		${LOCALBASE}/lib/libngs-c++.a:biology/ngs-sdk \
+		cmake:devel/cmake
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libhdf5.so:science/hdf5 \
 		libepoll-shim.so:devel/libepoll-shim \
