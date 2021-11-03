@@ -8,7 +8,7 @@ COMMENT=	Bayesian haplotype-based polymorphism discovery and genotyping
 
 LICENSE=	MIT
 
-BROKEN_aarch64=		fails to compile: invalid conversion between vector type and integer type
+# These should be rechecked: Same error resolved on aarch64 in 1.3.5 update.
 BROKEN_armv6=		fails to compile: invalid conversion between vector type and integer type
 BROKEN_armv7=		fails to compile: invalid conversion between vector type and integer type
 BROKEN_riscv64=		fails to compile: invalid conversion between vector type and integer type
