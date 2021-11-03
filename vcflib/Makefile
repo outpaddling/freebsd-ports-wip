@@ -27,7 +27,4 @@ GH_TUPLE=	ekg:smithwaterman:2610e25:smithwaterman/smithwaterman \
 		edawson:libVCFH:615a06b:libVCFH/libVCFH \
 		simd-everywhere:simde-no-tests:2931676:simd/src/simde
 
-# Clang and GCC disable sse2 by default on i386, but it's required for vcflib
-CFLAGS_i386=	-msse2
-
 .include <bsd.port.mk>
