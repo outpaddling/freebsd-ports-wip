@@ -63,7 +63,8 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		kallisto>0:biology/kallisto \
 		bamutil>0:biology/bamutil \
 		${PYTHON_PKGNAMEPREFIX}deepTools>0:biology/py-deeptools@${PY_FLAVOR} \
-		igv>0:biology/igv
+		igv>0:biology/igv \
+		gffread>0:wip/gffread
 
 USES=		metaport python
 
