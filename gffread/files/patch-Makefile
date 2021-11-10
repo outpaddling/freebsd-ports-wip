@@ -14,6 +14,24 @@
  
  LDFLAGS := $(if $(LDFLAGS),$(LDFLAGS),-g)
  
+@@ -15,7 +15,7 @@ BASEFLAGS  := -Wall -Wextra -std=c++11 ${SEARCHDIRS} -
+ 
+ GCCV8 := $(shell expr `${CXX} -dumpversion | cut -f1 -d.` \>= 8)
+ ifeq "$(GCCV8)" "1"
+- BASEFLAGS += -Wno-class-memaccess
++ # BASEFLAGS += -Wno-class-memaccess
+ endif
+ 
+ CXXFLAGS := $(if $(CXXFLAGS),$(BASEFLAGS) $(CXXFLAGS),$(BASEFLAGS))
+@@ -33,7 +33,7 @@ else #debug builds
+     LDFLAGS += -pg
+   else
+     #CXXFLAGS += -g -O0 -DNDEBUG
+-    CXXFLAGS += -g -O0 -DDEBUG -D_DEBUG -DGDEBUG
++    #CXXFLAGS += -g -O0 -DDEBUG -D_DEBUG -DGDEBUG
+   endif
+   ifneq (,$(filter %memcheck %memdebug, $(MAKECMDGOALS)))
+      #use sanitizer in gcc 4.9+
 @@ -79,11 +79,8 @@ OBJS := ${GCLDIR}/GBase.o ${GCLDIR}/GArgs.o ${GCLDIR}/
   
  .PHONY : all
