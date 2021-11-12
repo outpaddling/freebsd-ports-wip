@@ -122,6 +122,7 @@ sbin/auto-root-check
 sbin/auto-secure-directory
 sbin/auto-security-manager
 sbin/auto-service-enabled
+sbin/auto-services-manager
 sbin/auto-set-conf-var
 sbin/auto-set-hostname
 sbin/auto-set-lid-switch-mode
