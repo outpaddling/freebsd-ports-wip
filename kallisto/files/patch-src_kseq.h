@@ -1,9 +1,10 @@
---- src/kseq.h.orig	2021-11-24 14:46:33 UTC
+--- src/kseq.h.orig	2019-11-04 16:28:52 UTC
 +++ src/kseq.h
-@@ -32,6 +32,8 @@
+@@ -32,6 +32,9 @@
  #include <string.h>
  #include <stdlib.h>
  
++// Prevent redefinition of kstring_t below
 +#include <htslib/kstring.h>
 +
  #define KS_SEP_SPACE 0 // isspace(): \t, \n, \v, \f, \r
