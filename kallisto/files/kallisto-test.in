@@ -32,9 +32,16 @@ fi
 
 cp -iR %%EXAMPLESDIR%% "$dir"
 cd "$dir"
-kallisto index -i transcripts.idx transcripts.fasta.gz
-kallisto quant -i transcripts.idx -o output -b 100 reads_1.fastq.gz reads_2.fastq.gz
+kallisto index --index=transcripts.idx transcripts.fasta.gz
+kallisto quant --index=transcripts.idx --genomebam --chromosomes=chrom.txt \
+    --gtf=transcripts.gtf.gz --output-dir=output \
+    --boostrap-samples=100 reads_1.fastq.gz reads_2.fastq.gz
+
 ls -l output
+
+# Test genomebam
+samtools view output/pseudoalignments.bam | more
+
 more output/abundance.tsv
 
 cat << EOM
