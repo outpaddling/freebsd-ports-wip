@@ -19,6 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	alexdobin
 
 WRKSRC_SUBDIR=	source
+MAKE_FLAGS=	HTSLIB=''
 
 PLIST_FILES=	bin/STAR
 
