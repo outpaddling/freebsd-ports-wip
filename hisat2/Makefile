@@ -24,6 +24,6 @@ SHEBANG_FILES=	hisat2 hisat2-build hisat2-inspect \
 GH_ACCOUNT=	DaehwanKimLab
 
 CFLAGS+=	-Wno-deprecated-declarations -Wno-char-subscripts -fsigned-char
-# amd64 only? CFLAGS+=	-DPOPCNT_CAPABILITY
+CFLAGS_amd64+=	-DPOPCNT_CAPABILITY
 
 .include <bsd.port.mk>
