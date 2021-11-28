@@ -23,6 +23,7 @@ SHEBANG_FILES=	hisat2 hisat2-build hisat2-inspect \
 		scripts/*.pl docs_jhu/*.pl
 GH_ACCOUNT=	DaehwanKimLab
 
-CFLAGS+=	-Wno-deprecated-declarations -Wno-char-subscripts
+CFLAGS+=	-Wno-deprecated-declarations -Wno-char-subscripts -fsigned-char
+# amd64 only? CFLAGS+=	-DPOPCNT_CAPABILITY
 
 .include <bsd.port.mk>

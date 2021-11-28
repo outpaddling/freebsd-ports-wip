@@ -1,10 +1,10 @@
---- aligner_sw.h.orig	2021-11-27 23:23:42 UTC
+--- aligner_sw.h.orig	2020-07-24 20:07:54 UTC
 +++ aligner_sw.h
 @@ -66,11 +66,13 @@
  
  #define INLINE_CUPS
  
-+#define	SIMDE_ENABLE_NATIVE
++#define	SIMDE_ENABLE_NATIVE_ALIASES
 +
 +#include <simde/x86/sse2.h>
  #include <stdint.h>
