@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libhts.so:wip/htslib
 BUILD_DEPENDS=	bash:shells/bash
-RUN_DEPENDS=	bcftools-1.13:biology/bcftools
+RUN_DEPENDS=	bcftools==${PORTVERSION}:biology/bcftools
 
 USES=		autoreconf gmake localbase perl5 python:env shebangfix
 USE_GITHUB=	yes
