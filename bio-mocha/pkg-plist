@@ -1,0 +1,5 @@
+libexec/bcftools/extendFMT.so
+libexec/bcftools/mocha.so
+libexec/bcftools/mochatools.so
+libexec/bcftools/score.so
+libexec/bcftools/trio-phase.so

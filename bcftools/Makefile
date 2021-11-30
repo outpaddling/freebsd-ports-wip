@@ -3,8 +3,6 @@
 PORTNAME=	bcftools
 PORTVERSION=	1.13
 CATEGORIES=	wip biology
-MASTER_SITES=	https://software.broadinstitute.org/software/mocha/
-DISTFILES+=	bio-mocha_1.13-20211015.tar.gz
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for manipulating next-generation sequencing data
@@ -20,7 +18,6 @@ USES=		autoreconf gmake localbase perl5 python:env shebangfix
 
 USE_GITHUB=	yes
 USE_PERL5=	test
-USE_GCC=	yes
 
 GH_ACCOUNT=	samtools
 GNU_CONFIGURE=	yes
@@ -41,11 +38,6 @@ LICENSE_COMB=	multi
 .endif
 
 TEST_TARGET=	test
-
-post-extract:
-	@${MV} ${WRKDIR}/*.c ${WRKDIR}/*.h ${WRKSRC}/plugins
-	@${MKDIR} ${WRKSRC}/MoCha
-	@${MV} ${WRKDIR}/*.R ${WRKSRC}/MoCha
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|@PORTVERSION@|${PORTVERSION}|g' \
