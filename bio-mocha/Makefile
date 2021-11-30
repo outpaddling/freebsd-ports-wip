@@ -10,7 +10,7 @@ COMMENT=	Mosaic chromosomal alterations detection and analysis
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libhts.so:wip/htslib libgsl.so:math/gsl
+LIB_DEPENDS=	libhts.so:wip/htslib
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bcftools-1.13:biology/bcftools
 
