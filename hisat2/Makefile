@@ -1,6 +1,7 @@
 PORTNAME=		hisat2
 DISTVERSIONPREFIX=	v
 DISTVERSION=		2.2.1
+PORTREVISION=		2
 CATEGORIES=		wip biology perl5 python
 
 MAINTAINER=	jwb@FreeBSD.org
