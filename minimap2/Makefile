@@ -19,4 +19,6 @@ GH_ACCOUNT=	lh3
 ALL_TARGET=	extra
 INSTALL_TARGET=	install-strip
 
+MAKEFILE=	Makefile.simde
+
 .include <bsd.port.mk>
