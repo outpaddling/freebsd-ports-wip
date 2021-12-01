@@ -1,6 +1,7 @@
 PORTNAME=	bwa
 PORTVERSION=	0.7.17
 DISTVERSIONPREFIX=v
+PORTREVISION=	1
 CATEGORIES=	wip biology
 
 PATCH_SITES=	https://github.com/lh3/bwa/commit/
