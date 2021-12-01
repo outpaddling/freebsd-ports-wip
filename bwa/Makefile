@@ -1,6 +1,7 @@
 PORTNAME=	bwa
 PORTVERSION=	0.7.17
 DISTVERSIONPREFIX=v
+PORTREVISION=	1
 CATEGORIES=	wip biology
 
 PATCH_SITES=	https://github.com/lh3/bwa/commit/
@@ -11,9 +12,10 @@ COMMENT=	Burrows-Wheeler sequence aligner
 
 LICENSE=	GPLv3
 
-# From 0.7.9a: Recheck for 0.7.17.
 BROKEN_mips=		fails to compile: cc1: unrecognized command line option "-msse2"
 BROKEN_mips64=		fails to compile: cc1: unrecognized command line option "-msse2"
+
+BUILD_DEPENDS=	simde>0:devel/simde
 
 USES=		gmake localbase perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	qualfa2fq.pl xa2multi.pl
