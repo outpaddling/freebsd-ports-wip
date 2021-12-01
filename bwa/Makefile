@@ -11,7 +11,6 @@ COMMENT=	Burrows-Wheeler sequence aligner
 
 LICENSE=	GPLv3
 
-# From 0.7.9a: Recheck for 0.7.17.
 BROKEN_mips=		fails to compile: cc1: unrecognized command line option "-msse2"
 BROKEN_mips64=		fails to compile: cc1: unrecognized command line option "-msse2"
 
