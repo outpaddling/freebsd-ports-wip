@@ -14,6 +14,8 @@ LICENSE=	GPLv3
 BROKEN_mips=		fails to compile: cc1: unrecognized command line option "-msse2"
 BROKEN_mips64=		fails to compile: cc1: unrecognized command line option "-msse2"
 
+BUILD_DEPENDS=	simde>0:devel/simde
+
 USES=		gmake localbase perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	qualfa2fq.pl xa2multi.pl
 USE_PERL5=	run
