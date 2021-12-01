@@ -34,7 +34,6 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		seqtk>0:biology/seqtk \
 		datamash>0:textproc/datamash \
 		bcftools>0:biology/bcftools \
-		sra-tools>0:biology/sra-tools \
 		subread>0:biology/subread \
 		hisat2>0:biology/hisat2 \
 		trimmomatic>0:biology/trimmomatic \
@@ -65,6 +64,7 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		${PYTHON_PKGNAMEPREFIX}deepTools>0:biology/py-deeptools@${PY_FLAVOR} \
 		igv>0:biology/igv \
 		gffread>0:biology/gffread
+RUN_DEPENDS_amd64=	sra-tools>0:biology/sra-tools
 
 USES=		metaport python
 
