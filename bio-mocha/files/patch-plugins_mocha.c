@@ -58,7 +58,50 @@
      free(path);
      return -(float)fx + (float)n_flips * flip_log_prb * (float)M_LOG10E;
  }
-@@ -986,6 +1026,44 @@ static double ad_phase_lod(const int16_t *ad0_arr, con
+@@ -801,10 +841,40 @@ static double ad_log_lkl(const int16_t *ad0_arr, const
+     return (double)ret * M_LOG10E;
+ }
+ 
++typedef struct
++{
++    const int16_t *ad0_arr;
++    const int16_t *ad1_arr;
++    int n;
++    const int *imap;
++    float ad_rho;
++}   f5_data_t;
++
++double f5(double x, void *data)
++{
++    f5_data_t *d = data;
++
++    return -ad_log_lkl(d->ad0_arr, d->ad1_arr, d->n, d->imap, d->ad_rho, x);
++}
++
++static inline f5_data_t *f5_pack(const int16_t *ad0_arr,
++    const int16_t *ad1_arr, int n, const int *imap, float ad_rho)
++{
++    static f5_data_t d;
++
++    d.ad0_arr = ad0_arr;
++    d.ad1_arr = ad1_arr;
++    d.n = n;
++    d.imap = imap;
++    d.ad_rho = ad_rho;
++
++    return &d;
++}
++
+ static float get_ad_bdev(const int16_t *ad0_arr, const int16_t *ad1_arr, int n, const int *imap, float ad_rho) {
+     double bdev = 0.0;
+-    double f(double x, void *data) { return -ad_log_lkl(ad0_arr, ad1_arr, n, imap, ad_rho, x); }
+-    kmin_brent(f, 0.1, 0.2, NULL, KMIN_EPS, &bdev);
++    f5_data_t *f5_data = f5_pack(ad0_arr, ad1_arr, n, imap, ad_rho);
++    kmin_brent(f5, 0.1, 0.2, f5_data, KMIN_EPS, &bdev);
+     return (float)bdev < 1e-4 ? (float)NAN : (float)bdev;
+ }
+ 
+@@ -986,6 +1056,44 @@ static double ad_phase_lod(const int16_t *ad0_arr, con
      return (double)ret * M_LOG10E;
  }
  
@@ -86,7 +129,7 @@
 +    const int8_t *gt_phase, int n, const int *imap, int8_t *path,
 +    float err_log_prb, float ad_rho)
 +{
-+    f4_data_t d;
++    static f4_data_t d;
 +
 +    d.ad0 = ad0;
 +    d.ad1 = ad1;
@@ -103,7 +146,7 @@
  // TODO find a better title for this function
  static float compare_wgs_models(const int16_t *ad0, const int16_t *ad1, const int8_t *gt_phase, int n, const int *imap,
                                  float xy_log_prb, float err_log_prb, float flip_log_prb, float tel_log_prb,
-@@ -998,8 +1076,8 @@ static float compare_wgs_models(const int16_t *ad0, co
+@@ -998,8 +1106,8 @@ static float compare_wgs_models(const int16_t *ad0, co
      int n_flips = 0;
      for (int i = 1; i < n; i++)
          if (path[i - 1] && path[i] && path[i - 1] != path[i]) n_flips++;
@@ -114,7 +157,7 @@
      free(path);
      return -(float)fx + (float)n_flips * flip_log_prb * (float)M_LOG10E;
  }
-@@ -1485,6 +1563,51 @@ static float get_path_segs(const int8_t *path, const f
+@@ -1485,6 +1593,51 @@ static float get_path_segs(const int8_t *path, const f
      return 0;
  }
  
@@ -166,7 +209,7 @@
  // process one contig for one sample
  static void sample_run(sample_t *self, mocha_table_t *mocha_table, const model_t *model) {
      // do nothing if chromosome Y or MT are being tested
-@@ -1735,16 +1858,10 @@ static void sample_run(sample_t *self, mocha_table_t *
+@@ -1735,16 +1888,10 @@ static void sample_run(sample_t *self, mocha_table_t *
              mocha.ldev = get_median(lrr + a, b + 1 - a, NULL);
              get_mocha_stats(pos, lrr, baf, gt_phase, n, a, b, cen_beg, cen_end, length, self->stats.baf_conc, &mocha);
  
@@ -186,7 +229,7 @@
              if (model->flags & WGS_DATA)
                  mocha.lod_lrr_baf =
                      lrr_ad_lod(lrr + a, ad0 + a, ad1 + a, mocha.n_sites, NULL, model->err_log_prb, model->lrr_bias,
-@@ -1923,6 +2040,32 @@ static float get_lrr_cutoff(const float *v, int n) {
+@@ -1923,6 +2070,32 @@ static float get_lrr_cutoff(const float *v, int n) {
      return cutoff;
  }
  
@@ -219,7 +262,7 @@
  // this function computes several contig stats and then clears the contig data from the sample
  static void sample_stats(sample_t *self, const model_t *model) {
      int n = self->n;
-@@ -1995,9 +2138,8 @@ static void sample_stats(sample_t *self, const model_t
+@@ -1995,9 +2168,8 @@ static void sample_stats(sample_t *self, const model_t
          hts_expand(stats_t, self->n_stats, self->m_stats, self->stats_arr);
  
          if (model->flags & WGS_DATA) {
