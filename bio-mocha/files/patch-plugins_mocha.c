@@ -58,7 +58,54 @@
      free(path);
      return -(float)fx + (float)n_flips * flip_log_prb * (float)M_LOG10E;
  }
-@@ -801,10 +841,40 @@ static double ad_log_lkl(const int16_t *ad0_arr, const
+@@ -750,6 +790,34 @@ static float get_sample_mean(const float *v, int n, co
+     return mean /= (float)j;
+ }
+ 
++typedef struct
++{
++    const float *baf_arr;
++    int n;
++    const int *imap;
++    float baf_sd;
++}   f7_data_t;
++
++double f7(double x, void *data)
++{
++    f7_data_t *d = data;
++
++    return -baf_log_lkl(d->baf_arr, d->n, d->imap, d->baf_sd, x);
++}
++
++static inline f7_data_t *f7_pack(const float *baf_arr, int n, const int *imap,
++    float baf_sd)
++{
++    f7_data_t *d = malloc(sizeof(f7_data_t));
++
++    d->baf_arr = baf_arr;
++    d->n = n;
++    d->imap = imap;
++    d->baf_sd = baf_sd;
++
++    return d;
++}
++
+ static float get_baf_bdev(const float *baf_arr, int n, const int *imap, float baf_sd) {
+     double bdev = 0.0;
+     int j = 0;
+@@ -763,8 +831,9 @@ static float get_baf_bdev(const float *baf_arr, int n,
+     bdev /= j;
+     // simple method to compute bdev should work well for germline duplications
+     if ((float)bdev > 2.0f * baf_sd) return (float)bdev;
+-    double f(double x, void *data) { return -baf_log_lkl(baf_arr, n, imap, baf_sd, x); }
+-    kmin_brent(f, 0.1, 0.2, NULL, KMIN_EPS, &bdev);
++    f7_data_t *f7_data = f7_pack(baf_arr, n, imap, baf_sd);
++    kmin_brent(f7, 0.1, 0.2, f7_data, KMIN_EPS, &bdev);
++    free(f7_data);
+     return (float)bdev < 1e-4 ? (float)NAN : (float)bdev;
+ }
+ 
+@@ -801,10 +870,41 @@ static double ad_log_lkl(const int16_t *ad0_arr, const
      return (double)ret * M_LOG10E;
  }
  
@@ -81,15 +128,15 @@
 +static inline f5_data_t *f5_pack(const int16_t *ad0_arr,
 +    const int16_t *ad1_arr, int n, const int *imap, float ad_rho)
 +{
-+    static f5_data_t d;
++    f5_data_t *d = malloc(sizeof(f5_data_t));
 +
-+    d.ad0_arr = ad0_arr;
-+    d.ad1_arr = ad1_arr;
-+    d.n = n;
-+    d.imap = imap;
-+    d.ad_rho = ad_rho;
++    d->ad0_arr = ad0_arr;
++    d->ad1_arr = ad1_arr;
++    d->n = n;
++    d->imap = imap;
++    d->ad_rho = ad_rho;
 +
-+    return &d;
++    return d;
 +}
 +
  static float get_ad_bdev(const int16_t *ad0_arr, const int16_t *ad1_arr, int n, const int *imap, float ad_rho) {
@@ -98,10 +145,11 @@
 -    kmin_brent(f, 0.1, 0.2, NULL, KMIN_EPS, &bdev);
 +    f5_data_t *f5_data = f5_pack(ad0_arr, ad1_arr, n, imap, ad_rho);
 +    kmin_brent(f5, 0.1, 0.2, f5_data, KMIN_EPS, &bdev);
++    free(f5_data);
      return (float)bdev < 1e-4 ? (float)NAN : (float)bdev;
  }
  
-@@ -986,6 +1056,44 @@ static double ad_phase_lod(const int16_t *ad0_arr, con
+@@ -986,6 +1086,44 @@ static double ad_phase_lod(const int16_t *ad0_arr, con
      return (double)ret * M_LOG10E;
  }
  
@@ -146,7 +194,7 @@
  // TODO find a better title for this function
  static float compare_wgs_models(const int16_t *ad0, const int16_t *ad1, const int8_t *gt_phase, int n, const int *imap,
                                  float xy_log_prb, float err_log_prb, float flip_log_prb, float tel_log_prb,
-@@ -998,8 +1106,8 @@ static float compare_wgs_models(const int16_t *ad0, co
+@@ -998,8 +1136,8 @@ static float compare_wgs_models(const int16_t *ad0, co
      int n_flips = 0;
      for (int i = 1; i < n; i++)
          if (path[i - 1] && path[i] && path[i - 1] != path[i]) n_flips++;
@@ -157,7 +205,7 @@
      free(path);
      return -(float)fx + (float)n_flips * flip_log_prb * (float)M_LOG10E;
  }
-@@ -1485,6 +1593,91 @@ static float get_path_segs(const int8_t *path, const f
+@@ -1485,6 +1623,129 @@ static float get_path_segs(const int8_t *path, const f
      return 0;
  }
  
@@ -246,10 +294,48 @@
 +    return &d;
 +}
 +
++typedef struct
++{
++    float *baf;
++    int8_t *gt_phase;
++    mocha_t *mocha;
++    int *imap_arr;
++    int *beg;
++    int i;
++    int8_t *path;
++    sample_t *self;
++}   f8_data_t;
++
++double f8(double x, void *data)
++{
++    f8_data_t *d = data;
++
++    return -baf_phase_lod(d->baf, d->gt_phase, d->mocha->n_hets,
++	d->imap_arr + d->beg[d->i], d->path + d->beg[d->i], NAN,
++	d->self->stats.dispersion, x);
++}
++
++static inline f8_data_t *f8_pack(float *baf, int8_t *gt_phase, mocha_t *mocha,
++    int *imap_arr, int *beg, int i, int8_t *path, sample_t *self)
++{
++    f8_data_t *d = malloc(sizeof(f8_data_t));
++
++    d->baf = baf;
++    d->gt_phase = gt_phase;
++    d->mocha = mocha;
++    d->imap_arr = imap_arr;
++    d->beg = beg;
++    d->i = i;
++    d->path = path;
++    d->self = self;
++
++    return d;
++}
++
  // process one contig for one sample
  static void sample_run(sample_t *self, mocha_table_t *mocha_table, const model_t *model) {
      // do nothing if chromosome Y or MT are being tested
-@@ -1735,16 +1928,10 @@ static void sample_run(sample_t *self, mocha_table_t *
+@@ -1735,16 +1996,10 @@ static void sample_run(sample_t *self, mocha_table_t *
              mocha.ldev = get_median(lrr + a, b + 1 - a, NULL);
              get_mocha_stats(pos, lrr, baf, gt_phase, n, a, b, cen_beg, cen_end, length, self->stats.baf_conc, &mocha);
  
@@ -269,7 +355,7 @@
              if (model->flags & WGS_DATA)
                  mocha.lod_lrr_baf =
                      lrr_ad_lod(lrr + a, ad0 + a, ad1 + a, mocha.n_sites, NULL, model->err_log_prb, model->lrr_bias,
-@@ -1796,12 +1983,10 @@ static void sample_run(sample_t *self, mocha_table_t *
+@@ -1796,23 +2051,20 @@ static void sample_run(sample_t *self, mocha_table_t *
                      if (path[j] != path[j + 1]) mocha.n_flips++;
  
                  if (model->flags & WGS_DATA) {
@@ -285,7 +371,22 @@
                      mocha.bdev = fabsf((float)bdev);
                      mocha.lod_baf_phase =
                          ad_phase_lod(ad0, ad1, gt_phase, mocha.n_hets, imap_arr + beg[i], path + beg[i],
-@@ -1923,6 +2108,32 @@ static float get_lrr_cutoff(const float *v, int n) {
+                                      model->err_log_prb, self->stats.dispersion, mocha.bdev);
+                 } else {
+-                    double f(double x, void *data) {
+-                        return -baf_phase_lod(baf, gt_phase, mocha.n_hets, imap_arr + beg[i], path + beg[i], NAN,
+-                                              self->stats.dispersion, x);
+-                    }
+                     double bdev;
+-                    kmin_brent(f, 0.1, 0.2, NULL, KMIN_EPS, &bdev);
++		    f8_data_t *f8_data = f8_pack(baf, gt_phase, &mocha,
++			imap_arr, beg, i, path, self);
++                    kmin_brent(f8, 0.1, 0.2, f8_data, KMIN_EPS, &bdev);
++		    free(f8_data);
+                     mocha.bdev = fabsf((float)bdev);
+                     mocha.lod_baf_phase = baf_phase_lod(baf, gt_phase, mocha.n_hets, imap_arr + beg[i], path + beg[i],
+                                                         model->err_log_prb, self->stats.dispersion, mocha.bdev);
+@@ -1923,6 +2175,60 @@ static float get_lrr_cutoff(const float *v, int n) {
      return cutoff;
  }
  
@@ -315,10 +416,51 @@
 +    return &d;
 +}
 +
++typedef struct
++{
++    int16_t *ad0;
++    int16_t *ad1;
++    int n_imap;
++    int *imap_arr;
++}   f9_data_t;
++
++double f9(double x, void *data)
++{
++    f9_data_t *d = data;
++
++    return -lod_lkl_beta_binomial(d->ad0, d->ad1, d->n_imap, d->imap_arr, x);
++}
++
++static inline f9_data_t *f9_pack(int16_t *ad0, int16_t *ad1, int n_imap,
++    int *imap_arr)
++{
++    f9_data_t *d = malloc(sizeof(f9_data_t));
++
++    d->ad0 = ad0;
++    d->ad1 = ad1;
++    d->n_imap = n_imap;
++    d->imap_arr = imap_arr;
++
++    return d;
++}
++
  // this function computes several contig stats and then clears the contig data from the sample
  static void sample_stats(sample_t *self, const model_t *model) {
      int n = self->n;
-@@ -1995,9 +2206,8 @@ static void sample_stats(sample_t *self, const model_t
+@@ -1968,9 +2274,10 @@ static void sample_stats(sample_t *self, const model_t
+         self->x_nonpar_lrr_median = get_median(lrr, n_imap, imap_arr);
+ 
+         if (model->flags & WGS_DATA) {
+-            double f(double x, void *data) { return -lod_lkl_beta_binomial(ad0, ad1, n_imap, imap_arr, x); }
++            f9_data_t *f9_data = f9_pack(ad0, ad1, n_imap, imap_arr);
+             double x;
+-            kmin_brent(f, 0.1, 0.2, NULL, KMIN_EPS, &x); // dispersions above 0.5 are not allowed
++            kmin_brent(f9, 0.1, 0.2, f9_data, KMIN_EPS, &x); // dispersions above 0.5 are not allowed
++	    free(f9_data);
+             self->x_nonpar_dispersion = (float)x;
+         } else {
+             self->x_nonpar_dispersion = get_sample_sd(baf, n_imap, imap_arr);
+@@ -1995,9 +2302,8 @@ static void sample_stats(sample_t *self, const model_t
          hts_expand(stats_t, self->n_stats, self->m_stats, self->stats_arr);
  
          if (model->flags & WGS_DATA) {
