@@ -157,7 +157,7 @@
      free(path);
      return -(float)fx + (float)n_flips * flip_log_prb * (float)M_LOG10E;
  }
-@@ -1485,6 +1593,51 @@ static float get_path_segs(const int8_t *path, const f
+@@ -1485,6 +1593,91 @@ static float get_path_segs(const int8_t *path, const f
      return 0;
  }
  
@@ -206,10 +206,50 @@
 +    return &d;
 +}
 +
++typedef struct
++{
++    int16_t *ad0;
++    int16_t *ad1;
++    int8_t *gt_phase;
++    mocha_t mocha;
++    int *imap_arr;
++    int *beg;
++    int i;
++    int8_t *path;
++    sample_t *self;
++}   f6_data_t;
++
++double f6(double x, void *data)
++{
++    f6_data_t *d = data;
++
++    return -ad_phase_lod(d->ad0, d->ad1, d->gt_phase, d->mocha.n_hets,
++        d->imap_arr + d->beg[d->i], d->path + d->beg[d->i], NAN, d->self->stats.dispersion, x);
++}
++
++static inline f6_data_t *f6_pack(int16_t *ad0, int16_t *ad1, int8_t *gt_phase,
++    mocha_t mocha, int *imap_arr, int *beg, int i, int8_t *path, sample_t *self)
++
++{
++    static f6_data_t d;
++
++    d.ad0 = ad0;
++    d.ad1 = ad1;
++    d.gt_phase = gt_phase;
++    d.mocha = mocha;
++    d.imap_arr = imap_arr;
++    d.beg = beg;
++    d.i = i;
++    d.path = path;
++    d.self = self;
++
++    return &d;
++}
++
  // process one contig for one sample
  static void sample_run(sample_t *self, mocha_table_t *mocha_table, const model_t *model) {
      // do nothing if chromosome Y or MT are being tested
-@@ -1735,16 +1888,10 @@ static void sample_run(sample_t *self, mocha_table_t *
+@@ -1735,16 +1928,10 @@ static void sample_run(sample_t *self, mocha_table_t *
              mocha.ldev = get_median(lrr + a, b + 1 - a, NULL);
              get_mocha_stats(pos, lrr, baf, gt_phase, n, a, b, cen_beg, cen_end, length, self->stats.baf_conc, &mocha);
  
@@ -229,7 +269,23 @@
              if (model->flags & WGS_DATA)
                  mocha.lod_lrr_baf =
                      lrr_ad_lod(lrr + a, ad0 + a, ad1 + a, mocha.n_sites, NULL, model->err_log_prb, model->lrr_bias,
-@@ -1923,6 +2070,32 @@ static float get_lrr_cutoff(const float *v, int n) {
+@@ -1796,12 +1983,10 @@ static void sample_run(sample_t *self, mocha_table_t *
+                     if (path[j] != path[j + 1]) mocha.n_flips++;
+ 
+                 if (model->flags & WGS_DATA) {
+-                    double f(double x, void *data) {
+-                        return -ad_phase_lod(ad0, ad1, gt_phase, mocha.n_hets, imap_arr + beg[i], path + beg[i], NAN,
+-                                             self->stats.dispersion, x);
+-                    }
+                     double bdev;
+-                    kmin_brent(f, 0.1, 0.2, NULL, KMIN_EPS, &bdev);
++		    f6_data_t *f6_data = f6_pack(ad0, ad1, gt_phase, mocha,
++                        imap_arr, beg, i, path, self);
++                    kmin_brent(f6, 0.1, 0.2, f6_data, KMIN_EPS, &bdev);
+                     mocha.bdev = fabsf((float)bdev);
+                     mocha.lod_baf_phase =
+                         ad_phase_lod(ad0, ad1, gt_phase, mocha.n_hets, imap_arr + beg[i], path + beg[i],
+@@ -1923,6 +2108,32 @@ static float get_lrr_cutoff(const float *v, int n) {
      return cutoff;
  }
  
@@ -262,7 +318,7 @@
  // this function computes several contig stats and then clears the contig data from the sample
  static void sample_stats(sample_t *self, const model_t *model) {
      int n = self->n;
-@@ -1995,9 +2168,8 @@ static void sample_stats(sample_t *self, const model_t
+@@ -1995,9 +2206,8 @@ static void sample_stats(sample_t *self, const model_t
          hts_expand(stats_t, self->n_stats, self->m_stats, self->stats_arr);
  
          if (model->flags & WGS_DATA) {

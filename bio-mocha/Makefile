@@ -17,12 +17,19 @@ RUN_DEPENDS=	bcftools==${PORTVERSION}:biology/bcftools
 USES=		autoreconf gmake localbase perl5 python:env shebangfix
 USE_GITHUB=	yes
 USE_PERL5=	test
-USE_GCC=	yes
+USE_GCC=	yes	# Until all nested functions are removed
 
 GH_ACCOUNT=	samtools
 GH_PROJECT=	bcftools
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	misc/* test/test.pl
+
+PLIST_FILES=	\
+	libexec/bcftools/extendFMT.so \
+	libexec/bcftools/mocha.so \
+	libexec/bcftools/mochatools.so \
+	libexec/bcftools/score.so \
+	libexec/bcftools/trio-phase.so
 
 TEST_TARGET=	test
 
