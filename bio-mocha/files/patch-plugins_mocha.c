@@ -15,7 +15,7 @@
 +    float baf_sd;
 +}   f1_data_t;
 +
-+static inline double f1(double x, void *data)
++double f1(double x, void *data)
 +{
 +    f1_data_t	*d = data;
 +
@@ -74,7 +74,7 @@
 +    float ad_rho;
 +}   f4_data_t;
 +
-+static inline double f4(double x, void *data)
++double f4(double x, void *data)
 +{
 +    f4_data_t *d = data;
 +
@@ -130,7 +130,7 @@
 +    float *baf;
 +}   f3_data_t;
 +    
-+static inline double f3(double x, void *data)
++double f3(double x, void *data)
 +{
 +    f3_data_t *d = data;
 +
@@ -197,7 +197,7 @@
 +    int n;
 +}   f2_data_t;
 +
-+static inline double f2(double x, void *data)
++double f2(double x, void *data)
 +{
 +    f2_data_t *d = data;
 +
