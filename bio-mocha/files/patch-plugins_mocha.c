@@ -1,4 +1,4 @@
---- plugins/mocha.c.orig	2021-12-02 00:08:26 UTC
+--- plugins/mocha.c.orig	2021-10-15 02:37:57 UTC
 +++ plugins/mocha.c
 @@ -705,6 +705,44 @@ static double baf_phase_lod(const float *baf_arr, cons
      return (double)ret * M_LOG10E;
@@ -58,3 +58,47 @@
      free(path);
      return -(float)fx + (float)n_flips * flip_log_prb * (float)M_LOG10E;
  }
+@@ -1923,6 +1963,32 @@ static float get_lrr_cutoff(const float *v, int n) {
+     return cutoff;
+ }
+ 
++typedef struct
++{
++    int16_t *ad0;
++    int16_t *ad1;
++    int n;
++}   f2_data_t;
++
++double f2(double x, void *data)
++{
++    f2_data_t *d = data;
++
++    return -lod_lkl_beta_binomial(d->ad0, d->ad1, d->n, NULL, x);
++}
++
++f2_data_t *f2_pack(int16_t *ad0, int16_t *ad1, int n)
++
++{
++    static f2_data_t d;
++
++    d.ad0 = ad0;
++    d.ad1 = ad1;
++    d.n = n;
++
++    return &d;
++}
++
+ // this function computes several contig stats and then clears the contig data from the sample
+ static void sample_stats(sample_t *self, const model_t *model) {
+     int n = self->n;
+@@ -1995,9 +2061,8 @@ static void sample_stats(sample_t *self, const model_t
+         hts_expand(stats_t, self->n_stats, self->m_stats, self->stats_arr);
+ 
+         if (model->flags & WGS_DATA) {
+-            double f(double x, void *data) { return -lod_lkl_beta_binomial(ad0, ad1, n, NULL, x); }
+             double x;
+-            kmin_brent(f, 0.1, 0.2, NULL, KMIN_EPS, &x); // dispersions above 0.5 are not allowed
++            kmin_brent(f2, 0.1, 0.2, f2_pack(ad0, ad1, n), KMIN_EPS, &x); // dispersions above 0.5 are not allowed
+             self->stats_arr[self->n_stats - 1].dispersion = (float)x;
+         } else {
+             self->stats_arr[self->n_stats - 1].dispersion = get_sample_sd(baf, n, NULL);
