@@ -8,7 +8,6 @@ MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Mosaic chromosomal alterations detection and analysis
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libhts.so:biology/htslib
 BUILD_DEPENDS=	bash:shells/bash
@@ -23,14 +22,12 @@ GH_PROJECT=	bcftools
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	misc/* test/test.pl
 
-PLIST_FILES=	\
+PLIST_FILES=\
 	libexec/bcftools/extendFMT.so \
 	libexec/bcftools/mocha.so \
 	libexec/bcftools/mochatools.so \
 	libexec/bcftools/score.so \
 	libexec/bcftools/trio-phase.so
-
-TEST_TARGET=	test
 
 post-extract:
 	@${MV} ${WRKDIR}/*.c ${WRKDIR}/*.h ${WRKSRC}/plugins
