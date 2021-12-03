@@ -22,13 +22,6 @@ GH_PROJECT=	bcftools
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	misc/* test/test.pl
 
-PLIST_FILES=\
-	libexec/bcftools/extendFMT.so \
-	libexec/bcftools/mocha.so \
-	libexec/bcftools/mochatools.so \
-	libexec/bcftools/score.so \
-	libexec/bcftools/trio-phase.so
-
 post-extract:
 	@${MV} ${WRKDIR}/*.c ${WRKDIR}/*.h ${WRKSRC}/plugins
 	@${MKDIR} ${WRKSRC}/MoCha
@@ -50,5 +43,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/libexec/bcftools
 	${INSTALL_PROGRAM} ${WRKSRC}/plugins/trio-phase.so \
 		${STAGEDIR}${PREFIX}/libexec/bcftools
+	(cd ${WRKSRC}/MoCha && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
