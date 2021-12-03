@@ -1,5 +1,5 @@
-MoChA is a free software tool released under the MIT license for mosaic
-chromosomal alterations detection and analysis from DNA microarray or
+MoChA is a bcftools plugin released under the MIT license for mosaic
+chromosomal alteration detection and analysis from DNA microarray or
 whole genome sequence data. It can be used both with Illumina and
 Affymetrix data. It can also be used for detection of germline copy
 number variants. Data can be prepared in usable file formats using the

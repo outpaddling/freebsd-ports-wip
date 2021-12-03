@@ -5,7 +5,7 @@ MASTER_SITES=	https://software.broadinstitute.org/software/mocha/
 DISTFILES+=	${PORTNAME}_${DISTVERSION}-20211015.tar.gz
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Mosaic chromosomal alterations detection and analysis
+COMMENT=	bcftools plugin for mosaic chromosomal alteration analysis
 
 LICENSE=	MIT
 
