@@ -21,7 +21,7 @@
  
 -find_package(LibLZMA)
 +set(LIBLZMA_FOUND TRUE)
-+set(LIBLZMA_LIBRARIES /usr/lib/liblzma.a)
++set(LIBLZMA_LIBRARIES /usr/lib/liblzma.a /usr/lib/libmd.a)
  if(NOT LIBLZMA_FOUND)
    message("Will attempt to fetch and build liblzma")
    message("=======================================")

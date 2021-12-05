@@ -11,8 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # Check cereal version
 # staden-io_lib used by Salmon is a fork
-# Incompatible with onetbb 2021
-# pufferfish uses deprecated mutex.h
+# Incompatible with onetbb 2021, so GH_TUPLE onetbb version in CMakeLists.txt
 BUILD_DEPENDS=	bash:shells/bash \
 		autoconf:devel/autoconf \
 		cereal>=1.3.0:devel/cereal \
@@ -21,33 +20,29 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 USES=		cmake:noninja gmake shebangfix
 USE_GITHUB=	yes
+USE_LDCONFIG=	yes	# Temporary hack until static tbb libs
 
 GH_ACCOUNT=	COMBINE-lab
 GH_TUPLE+=	COMBINE-lab:pufferfish:salmon-v1.6.0:pf/external/pufferfish
 GH_TUPLE+=	COMBINE-lab:staden-io_lib:v1.14.8.1:sio/external/staden-io_lib
-# GH_TUPLE+=      COMBINE-lab:libgff:v2.0.0:gff/external/libgff-2.0.0
 SHEBANG_FILES=	scripts/*
 
 MAKE_JOBS_UNSAFE=	yes
 
-# https://salmon.readthedocs.io/en/latest/building.html
-#LIBS+=		-L${LOCALBASE}/lib -lthr
-PLIST_FILES=	bin/salmon lib/libsalmon_core.a
-#CONFIGURE_ENV=	DISTDIR=${DISTDIR} DIST_SUBDIR=${DIST_SUBDIR}
-#CMAKE_ARGS+=	-DDISTDIR:PATH=${DISTDIR} -DDIST_SUBDIR:PATH=${DIST_SUBDIR}
-# FreeBSD's base malloc is jemalloc
-# -DTBB_INSTALL_DIR:PATH=${LOCALBASE} does not work
+PLIST_FILES=	bin/salmon \
+		lib/libtbb.so \
+		lib/libtbbmalloc.so
 CMAKE_ARGS+=	-DHAVE_FAST_MALLOC:BOOL=on \
 		-DBOOST_ROOT:PATH=${LOCALBASE} \
 		-DFETCHED_PUFFERFISH:BOOL=on \
 		-DFETCHED_LIBGFF:BOOL=on \
 		-DFETCH_STADEN:BOOL=true
 
-#		-DTBB_tbb_LIBRARY:PATH=${LOCALBASE}/lib/libtbb.so \
-#		-DTBB_tbbmalloc_LIBRARY:PATH=${LOCALBASE}/lib/libtbbmalloc.so \
-#		-DTBB_tbbmalloc_proxy_LIBRARY:PATH=${LOCALBASE}/lib/libtbbmalloc.so
+LDFLAGS+=	-lpthread
 
-#CFLAGS+=	-I${LOCALBASE}/include/oneapi
-LDFLAGS+=	-lcrypto -lpthread
+do-install:
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/src/salmon ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/external/install/lib/*.so \
+		${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>
