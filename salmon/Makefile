@@ -15,7 +15,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 		cereal>=1.3.0:devel/cereal \
 		libgff==2.0.0:wip/libgff
 LIB_DEPENDS=	libtbb.so:devel/onetbb \
-		libboost_system.so:devel/boost-libs
+		libboost_system.so:devel/boost-libs \
+		libstadenio.so:wip/staden-io
 
 USES=		cmake shebangfix
 USE_GITHUB=	yes
