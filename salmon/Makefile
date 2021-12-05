@@ -9,18 +9,19 @@ COMMENT=	Transcript-level quantification of RNA-seq from lightweight alignments
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# Check cereal version
 # staden-io_lib used by Salmon is a fork
-# Incompatible with onetbb 2021, so GH_TUPLE onetbb version in CMakeLists.txt
+# Incompatible with onetbb 2021, so using older devel/tbb for now.
+# Appears that TBB will only build shared libs, so GH_TUPLE will only add
+# another conflict.  Maybe hack TBB Makefile to change names to libsalmontbb*?
 BUILD_DEPENDS=	bash:shells/bash \
-		autoconf:devel/autoconf \
 		cereal>=1.3.0:devel/cereal \
 		libgff==2.0.0:wip/libgff
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libtbb.so:devel/tbb
 
 USES=		cmake:noninja gmake shebangfix
 USE_GITHUB=	yes
-USE_LDCONFIG=	yes	# Temporary hack until static tbb libs
+# USE_LDCONFIG=	yes	# If installing our own libtbb
 
 GH_ACCOUNT=	COMBINE-lab
 GH_TUPLE+=	COMBINE-lab:pufferfish:salmon-v1.6.0:pf/external/pufferfish
@@ -29,9 +30,7 @@ SHEBANG_FILES=	scripts/*
 
 MAKE_JOBS_UNSAFE=	yes
 
-PLIST_FILES=	bin/salmon \
-		lib/libtbb.so \
-		lib/libtbbmalloc.so
+PLIST_FILES=	bin/salmon
 CMAKE_ARGS+=	-DHAVE_FAST_MALLOC:BOOL=on \
 		-DBOOST_ROOT:PATH=${LOCALBASE} \
 		-DFETCHED_PUFFERFISH:BOOL=on \
@@ -42,7 +41,5 @@ LDFLAGS+=	-lpthread
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/src/salmon ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/external/install/lib/*.so \
-		${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -25,6 +25,15 @@
  if(NOT LIBLZMA_FOUND)
    message("Will attempt to fetch and build liblzma")
    message("=======================================")
+@@ -610,7 +609,7 @@ if (NOT CEREAL_FOUND)
+ endif()
+ 
+ ## Try and find TBB first
+-find_package(TBB 2019.0 COMPONENTS tbb tbbmalloc tbbmalloc_proxy)
++find_package(TBB 2019.0 COMPONENTS tbb tbbmalloc)
+ 
+ ## NOTE: we actually require at least 2019 U4 or greater
+ ## since we are using tbb::global_control.  However, they 
 @@ -666,7 +665,7 @@ externalproject_add(libtbb
    INSTALL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/install
    PATCH_COMMAND "${TBB_PATCH_STEP}"
