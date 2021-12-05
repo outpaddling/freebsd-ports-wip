@@ -21,14 +21,11 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 
 USES=		cmake:noninja gmake shebangfix
 USE_GITHUB=	yes
-# USE_LDCONFIG=	yes	# If installing our own libtbb
 
 GH_ACCOUNT=	COMBINE-lab
 GH_TUPLE+=	COMBINE-lab:pufferfish:salmon-v1.6.0:pf/external/pufferfish
 GH_TUPLE+=	COMBINE-lab:staden-io_lib:v1.14.8.1:sio/external/staden-io_lib
 SHEBANG_FILES=	scripts/*
-
-MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/salmon
 CMAKE_ARGS+=	-DHAVE_FAST_MALLOC:BOOL=on \
