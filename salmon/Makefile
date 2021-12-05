@@ -48,6 +48,6 @@ CMAKE_ARGS+=	-DHAVE_FAST_MALLOC:BOOL=on \
 #		-DTBB_tbbmalloc_proxy_LIBRARY:PATH=${LOCALBASE}/lib/libtbbmalloc.so
 
 #CFLAGS+=	-I${LOCALBASE}/include/oneapi
-LDFLAGS+=	-lpthread
+LDFLAGS+=	-lcrypto -lpthread
 
 .include <bsd.port.mk>
