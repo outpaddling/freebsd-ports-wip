@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # another conflict.  Maybe hack TBB Makefile to change names to libsalmontbb*?
 BUILD_DEPENDS=	bash:shells/bash \
 		cereal>=1.3.0:devel/cereal \
-		libgff==2.0.0:wip/libgff
+		libgff==2.0.0:biology/libgff
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libtbb.so:devel/tbb
 
