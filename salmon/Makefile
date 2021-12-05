@@ -1,6 +1,6 @@
 PORTNAME=		salmon
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.5.2
+DISTVERSION=		1.6.0
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -17,12 +17,11 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libtbb.so:devel/onetbb \
 		libboost_system.so:devel/boost-libs
 
-# USES=		cmake:noninja compiler:gcc-c++11-lib gmake shebangfix
 USES=		cmake shebangfix
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	COMBINE-lab
-GH_TUPLE+=      COMBINE-lab:pufferfish:v1.1.0:pf/external/pufferfish
+GH_TUPLE+=      COMBINE-lab:pufferfish:salmon-v1.6.0:pf/external/pufferfish
 # GH_TUPLE+=      COMBINE-lab:libgff:v2.0.0:gff/external/libgff-2.0.0
 SHEBANG_FILES=	scripts/*
 
