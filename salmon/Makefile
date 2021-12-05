@@ -10,22 +10,25 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # Check cereal version
+# staden-io_lib used by Salmon is a fork
+# Incompatible with onetbb 2021
+# pufferfish uses deprecated mutex.h
 BUILD_DEPENDS=	bash:shells/bash \
 		autoconf:devel/autoconf \
 		cereal>=1.3.0:devel/cereal \
 		libgff==2.0.0:wip/libgff
-LIB_DEPENDS=	libtbb.so:devel/onetbb \
-		libboost_system.so:devel/boost-libs \
-		libstadenio.so:wip/staden-io
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=		cmake shebangfix
+USES=		cmake:noninja gmake shebangfix
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	COMBINE-lab
-GH_TUPLE+=      COMBINE-lab:pufferfish:salmon-v1.6.0:pf/external/pufferfish
-GH_TUPLE+=      COMBINE-lab:staden-io:v1.14.8.1:pf/external/staden-io_lib
+GH_TUPLE+=	COMBINE-lab:pufferfish:salmon-v1.6.0:pf/external/pufferfish
+GH_TUPLE+=	COMBINE-lab:staden-io_lib:v1.14.8.1:sio/external/staden-io_lib
 # GH_TUPLE+=      COMBINE-lab:libgff:v2.0.0:gff/external/libgff-2.0.0
 SHEBANG_FILES=	scripts/*
+
+MAKE_JOBS_UNSAFE=	yes
 
 # https://salmon.readthedocs.io/en/latest/building.html
 #LIBS+=		-L${LOCALBASE}/lib -lthr
@@ -38,8 +41,13 @@ CMAKE_ARGS+=	-DHAVE_FAST_MALLOC:BOOL=on \
 		-DBOOST_ROOT:PATH=${LOCALBASE} \
 		-DFETCHED_PUFFERFISH:BOOL=on \
 		-DFETCHED_LIBGFF:BOOL=on \
-		-DTBB_tbb_LIBRARY:PATH=${LOCALBASE}/lib/libtbb.so \
-		-DTBB_tbbmalloc_LIBRARY:PATH=${LOCALBASE}/lib/libtbbmalloc.so \
-		-DTBB_tbbmalloc_proxy_LIBRARY:PATH=${LOCALBASE}/lib/libtbbmalloc_proxy.so
+		-DFETCH_STADEN:BOOL=true
+
+#		-DTBB_tbb_LIBRARY:PATH=${LOCALBASE}/lib/libtbb.so \
+#		-DTBB_tbbmalloc_LIBRARY:PATH=${LOCALBASE}/lib/libtbbmalloc.so \
+#		-DTBB_tbbmalloc_proxy_LIBRARY:PATH=${LOCALBASE}/lib/libtbbmalloc.so
+
+#CFLAGS+=	-I${LOCALBASE}/include/oneapi
+LDFLAGS+=	-lpthread
 
 .include <bsd.port.mk>
