@@ -1,6 +1,31 @@
---- CMakeLists.txt.orig	2021-12-05 14:08:49 UTC
+--- CMakeLists.txt.orig	2021-11-23 02:42:29 UTC
 +++ CMakeLists.txt
-@@ -828,23 +828,8 @@ if (ASAN_BUILD)
+@@ -310,14 +310,12 @@ endif()
+ #  Grab pufferfish source --- DURING CONFIGURE TIME!
+ #
+ ####
+-if(NOT FETCHED_PUFFERFISH)
+   exec_program(${CMAKE_CURRENT_SOURCE_DIR}/scripts/fetchPufferfish.sh RETURN_VALUE FETCH_PF_SCRIPT_RET)
+   message(STATUS "fetch PUFFERFISH exit code ${FETCH_PF_SCRIPT_RET}")
+   if(NOT (FETCH_PF_SCRIPT_RET EQUAL 0))
+     message(FATAL_ERROR "Could not fetch pufferfish source [fetchPufferfish.sh returned exit code ${FETCH_PF_SCRIPT_RET}].")
+   endif()
+   set(FETCHED_PUFFERFISH TRUE CACHE BOOL "Has pufferfish been fetched?" FORCE)
+-endif()
+ 
+ ##
+ # Super-secret override
+@@ -364,7 +362,8 @@ if(NOT Iconv_IS_BUILT_IN)
+   set(ICONV_LIB Iconv::Iconv)
+ endif()
+ 
+-find_package(LibLZMA)
++set(LIBLZMA_FOUND TRUE)
++set(LIBLZMA_LIBRARIES /usr/lib/liblzma.a)
+ if(NOT LIBLZMA_FOUND)
+   message("Will attempt to fetch and build liblzma")
+   message("=======================================")
+@@ -828,23 +827,8 @@ if (ASAN_BUILD)
    set(FAST_MALLOC_LIB "")
    set(HAVE_FAST_MALLOC TRUE)
  else()

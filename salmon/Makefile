@@ -22,6 +22,7 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	COMBINE-lab
 GH_TUPLE+=      COMBINE-lab:pufferfish:salmon-v1.6.0:pf/external/pufferfish
+GH_TUPLE+=      COMBINE-lab:staden-io:v1.14.8.1:pf/external/staden-io_lib
 # GH_TUPLE+=      COMBINE-lab:libgff:v2.0.0:gff/external/libgff-2.0.0
 SHEBANG_FILES=	scripts/*
 
