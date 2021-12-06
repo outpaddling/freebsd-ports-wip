@@ -9,10 +9,8 @@ COMMENT=	Transcript-level quantification of RNA-seq from lightweight alignments
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# staden-io_lib used by Salmon is a fork
+# staden-io_lib used by Salmon is a fork of the traditional dist
 # Incompatible with onetbb 2021, so using older devel/tbb for now.
-# Appears that TBB will only build shared libs, so GH_TUPLE will only add
-# another conflict.  Maybe hack TBB Makefile to change names to libsalmontbb*?
 BUILD_DEPENDS=	bash:shells/bash \
 		cereal>=1.3.0:devel/cereal \
 		libgff==2.0.0:biology/libgff
