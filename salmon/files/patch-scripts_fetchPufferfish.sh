@@ -1,17 +1,18 @@
---- scripts/fetchPufferfish.sh.orig	2021-12-05 14:25:23 UTC
+--- scripts/fetchPufferfish.sh.orig	2021-12-06 01:22:50 UTC
 +++ scripts/fetchPufferfish.sh
-@@ -10,10 +10,6 @@ CURR_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && p
+@@ -10,9 +10,8 @@ CURR_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && p
  EXTERNAL_DIR=${CURR_DIR}/../external
  INSTALL_DIR=${CURR_DIR}/../external/install
  
 -if [ -d ${EXTERNAL_DIR}/pufferfish ] ; then
 -    rm -fr ${EXTERNAL_DIR}/pufferfish
 -fi
--
++# Pufferfish is downloaded using GH_TUPLE, so remove code here that
++# downloads and unpacks
+ 
  if [ -d ${INSTALL_DIR}/include/pufferfish ] ; then
      rm -fr ${INSTALL_DIR}/include/pufferfish
- fi
-@@ -25,35 +21,6 @@ fi
+@@ -25,35 +24,6 @@ fi
  SVER=salmon-v1.6.0
  #SVER=develop
  #SVER=sketch-mode

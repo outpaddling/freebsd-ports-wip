@@ -1,10 +1,12 @@
 --- CMakeLists.txt.orig	2021-11-23 02:42:29 UTC
 +++ CMakeLists.txt
-@@ -310,14 +310,12 @@ endif()
+@@ -310,14 +310,15 @@ endif()
  #  Grab pufferfish source --- DURING CONFIGURE TIME!
  #
  ####
 -if(NOT FETCHED_PUFFERFISH)
++# Fetched using GH_TUPLE
++# if(NOT FETCHED_PUFFERFISH)
    exec_program(${CMAKE_CURRENT_SOURCE_DIR}/scripts/fetchPufferfish.sh RETURN_VALUE FETCH_PF_SCRIPT_RET)
    message(STATUS "fetch PUFFERFISH exit code ${FETCH_PF_SCRIPT_RET}")
    if(NOT (FETCH_PF_SCRIPT_RET EQUAL 0))
@@ -12,29 +14,33 @@
    endif()
    set(FETCHED_PUFFERFISH TRUE CACHE BOOL "Has pufferfish been fetched?" FORCE)
 -endif()
++# endif()
  
  ##
  # Super-secret override
-@@ -364,7 +362,8 @@ if(NOT Iconv_IS_BUILT_IN)
+@@ -364,7 +365,10 @@ if(NOT Iconv_IS_BUILT_IN)
    set(ICONV_LIB Iconv::Iconv)
  endif()
  
 -find_package(LibLZMA)
++# lzma is part of FreeBSD base
++# find_package(LibLZMA)
 +set(LIBLZMA_FOUND TRUE)
 +set(LIBLZMA_LIBRARIES /usr/lib/liblzma.a /usr/lib/libmd.a)
  if(NOT LIBLZMA_FOUND)
    message("Will attempt to fetch and build liblzma")
    message("=======================================")
-@@ -610,7 +609,7 @@ if (NOT CEREAL_FOUND)
+@@ -610,7 +614,8 @@ if (NOT CEREAL_FOUND)
  endif()
  
  ## Try and find TBB first
 -find_package(TBB 2019.0 COMPONENTS tbb tbbmalloc tbbmalloc_proxy)
++# tbbmalloc_proxy is rolled into tbbmalloc
 +find_package(TBB 2019.0 COMPONENTS tbb tbbmalloc)
  
  ## NOTE: we actually require at least 2019 U4 or greater
  ## since we are using tbb::global_control.  However, they 
-@@ -666,7 +665,7 @@ externalproject_add(libtbb
+@@ -666,7 +671,7 @@ externalproject_add(libtbb
    INSTALL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/install
    PATCH_COMMAND "${TBB_PATCH_STEP}"
    CONFIGURE_COMMAND ""
@@ -43,9 +49,11 @@
    INSTALL_COMMAND sh -c "mkdir -p ${TBB_INSTALL_DIR}/include && mkdir -p ${TBB_INSTALL_DIR}/lib && cp ${TBB_SOURCE_DIR}/build/LIBS_release/*.${SHARED_LIB_EXTENSION}* ${TBB_INSTALL_DIR}/lib && cp -r ${TBB_SOURCE_DIR}/include/* ${TBB_INSTALL_DIR}/include"
    BUILD_IN_SOURCE 1
  )
-@@ -800,21 +799,14 @@ if (NOT LIBSTADENIO_FOUND)
+@@ -799,22 +804,16 @@ endif()
+ if (NOT LIBSTADENIO_FOUND)
    message("Build system will compile Staden IOLib")
    message("==================================================================")
++  # libstadenio is downloaded using GH_TUPLE
    externalproject_add(libstadenio
 -    DOWNLOAD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external
 -    DOWNLOAD_COMMAND curl -k -L https://github.com/COMBINE-lab/staden-io_lib/archive/v1.14.8.1.tar.gz -o staden-io_lib-v1.14.8.tar.gz &&
@@ -67,7 +75,7 @@
    )
    if(NOT LIBLZMA_FOUND)
    	ExternalProject_Add_StepDependencies(libstadenio build liblzma)
-@@ -828,23 +820,8 @@ if (ASAN_BUILD)
+@@ -828,23 +827,9 @@ if (ASAN_BUILD)
    set(FAST_MALLOC_LIB "")
    set(HAVE_FAST_MALLOC TRUE)
  else()
@@ -88,6 +96,7 @@
 -    #  message("Fond Jemalloc version ${JEMALLOC_VERSION}, but require >= 5.2.1. Downloading newer version")
 -    #endif()
 -  endif()
++  # jemalloc is default on FreeBSD
 +  set(FAST_MALLOC_LIB "/usr/lib/libc.so")
 +  set(HAVE_FAST_MALLOC TRUE)
  endif()
