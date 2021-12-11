@@ -12,6 +12,12 @@ lib/libxtend.a
 lib/libxtend.so
 lib/libxtend.so.2
 lib/libxtend.so.2.0
+man/man3/DSV_LINE_ARRAY_SIZE.3.gz
+man/man3/DSV_LINE_DELIMS.3.gz
+man/man3/DSV_LINE_DELIMS_AE.3.gz
+man/man3/DSV_LINE_FIELDS.3.gz
+man/man3/DSV_LINE_FIELDS_AE.3.gz
+man/man3/DSV_LINE_NUM_FIELDS.3.gz
 man/man3/csv_read_field.3.gz
 man/man3/csv_read_field_malloc.3.gz
 man/man3/csv_skip_field.3.gz
