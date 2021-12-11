@@ -1,6 +1,6 @@
 PORTNAME=	lumina-pdf
 DISTVERSION=	1.6.1
-CATEGORIES=	deskutils
+CATEGORIES=	wip deskutils
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	PDF viewer from the Lumina Desktop

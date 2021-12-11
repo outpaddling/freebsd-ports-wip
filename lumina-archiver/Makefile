@@ -3,7 +3,7 @@
 PORTNAME=	lumina-archiver
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.1
-CATEGORIES=	deskutils
+CATEGORIES=	wip deskutils
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Archive manager from the Lumina Desktop

@@ -1,6 +1,6 @@
 PORTNAME=	lumina-calculator
 DISTVERSION=	1.6.1
-CATEGORIES=	deskutils
+CATEGORIES=	wip deskutils
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Scientific calculator from the Lumina Desktop

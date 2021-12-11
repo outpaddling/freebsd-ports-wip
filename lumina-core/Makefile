@@ -3,7 +3,7 @@
 PORTNAME=	lumina-core
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.1
-CATEGORIES=	x11
+CATEGORIES=	wip x11
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Lumina Desktop Environment
