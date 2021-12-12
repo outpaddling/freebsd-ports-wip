@@ -14,6 +14,7 @@ LIB_DEPENDS=	libbiolibc.so:wip/biolibc libxtend.so:wip/libxtend
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
 
+MAKE_ENV+=	PORTVERSION=${PORTVERSION}
 PLIST_FILES=	bin/vcf-split man/man1/vcf-split.1.gz
 
 pre-build:
