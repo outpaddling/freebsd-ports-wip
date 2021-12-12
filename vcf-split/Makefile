@@ -1,6 +1,6 @@
 PORTNAME=	vcf-split
-DISTVERSION=	0.1.3-2
-DISTVERSIONSUFFIX=	-gff5f4de
+DISTVERSION=	0.1.3-3
+DISTVERSIONSUFFIX=	-g19713a4
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libbiolibc.so:wip/biolibc libxtend.so:wip/libxtend
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
 
-MAKE_ENV+=	PORTVERSION=${PORTVERSION}
+MAKE_ENV=	VERSION=${PORTVERSION}
 PLIST_FILES=	bin/vcf-split man/man1/vcf-split.1.gz
 
 pre-build:
