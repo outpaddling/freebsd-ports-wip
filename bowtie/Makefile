@@ -1,40 +1,37 @@
-# Test new versions with Trinity before upgrading
-
 PORTNAME=		bowtie
-PORTVERSION=		1.2.3
 DISTVERSIONPREFIX=	v
-CATEGORIES=	wip 	biology
+DISTVERSION=		1.3.1
+CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Ultrafast, memory-efficient short read aligner
 
 LICENSE=	ART10
 
-# May also work on other 64-bit platforms, but untested
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
-LIB_DEPENDS+=	libtbb.so:devel/tbb
-
-# FIXME: bowtie-align 1.2.1 intermittently dumps core when compiled with clang
-USES=		gmake perl5 python:run shebangfix
-# USE_GCC=	yes
+USES=		compiler:gcc-c++11-lib gmake perl5 python:run shebangfix
 USE_PERL5=	run
 USE_GITHUB=	yes
 
-SHEBANG_FILES=	bowtie bowtie-build bowtie-inspect scripts/*.pl scripts/*.sh
+SHEBANG_FILES=	scripts/*.pl bowtie bowtie-build scripts/bowtie-hbb.sh \
+		bowtie-inspect
 GH_ACCOUNT=	BenLangmead
 
-MAKE_ENV+=	RELEASE_BIN=1
-# MAKE_JOBS_UNSAFE=	yes
-SUB_FILES=	bowtie-test
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc64*}
+MAKE_ENV=	POPCNT_CAPABILITY=0
+.endif
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}/scripts
+	${MKDIR} ${STAGEDIR}${DATADIR}/scripts
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/bowtie \
 		${WRKSRC}/bowtie-build \
 		${WRKSRC}/bowtie-inspect \
-		${WRKDIR}/bowtie-test \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/scripts/*.sh \
@@ -43,6 +40,9 @@ post-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		'genomes indexes reads' \
 		${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \
+		\* \
+		${STAGEDIR}${DOCSDIR}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*-[sl]
 
 .include <bsd.port.mk>
