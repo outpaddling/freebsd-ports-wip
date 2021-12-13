@@ -1,6 +1,6 @@
 PORTNAME=	vcf2hap
-DISTVERSION=	0.1.3-16
-DISTVERSIONSUFFIX=	-gdfaef55
+DISTVERSION=	0.1.3-17
+DISTVERSIONSUFFIX=	-ga91b9b6
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,6 +14,7 @@ LIB_DEPENDS=	libbiolibc.so:wip/biolibc libxtend.so:wip/libxtend
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
 
+MAKE_ENV=	VERSION=${PORTVERSION}
 PLIST_FILES=	bin/vcf2hap man/man1/vcf2hap.1.gz
 
 pre-build:
