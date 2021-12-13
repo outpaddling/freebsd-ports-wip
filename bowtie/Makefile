@@ -10,7 +10,8 @@ LICENSE=	ART10
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
-USES=		compiler:gcc-c++11-lib gmake perl5 python:run shebangfix
+#USES=		compiler:gcc-c++11-lib gmake perl5 python:run shebangfix
+USES=		gmake perl5 python:run shebangfix
 USE_PERL5=	run
 USE_GITHUB=	yes
 
@@ -22,7 +23,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc64*}
+.if ${ARCH:Mpowerpc64*} || ${ARCH:Maarch64}
 MAKE_ENV=	POPCNT_CAPABILITY=0
 .endif
 
