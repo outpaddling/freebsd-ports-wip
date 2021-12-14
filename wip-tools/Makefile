@@ -1,8 +1,8 @@
 # Created by: Jason Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	wip-tools
-DISTVERSION=	0.4.2-13
-DISTVERSIONSUFFIX=	-ga64fad0
+DISTVERSION=	0.4.2-14
+DISTVERSIONSUFFIX=	-g001cab4
 CATEGORIES=	wip ports-mgmt
 
 MAINTAINER=	jwb@FreeBSD.org
