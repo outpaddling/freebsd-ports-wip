@@ -10,8 +10,9 @@ LICENSE=	ART10
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
-#USES=		compiler:gcc-c++11-lib gmake perl5 python:run shebangfix
-USES=		gmake perl5 python:run shebangfix
+# c++11-lib is just for GCC 4.2-based systems
+# Remove it when support officially ends
+USES=		compiler:c++11-lib gmake perl5 python:run shebangfix
 USE_PERL5=	run
 USE_GITHUB=	yes
 
