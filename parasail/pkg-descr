@@ -1,0 +1,7 @@
+Parasail is a SIMD C (C99) library containing implementations of the
+Smith-Waterman (local), Needleman-Wunsch (global), and various
+semi-global pairwise sequence alignment algorithms. Here, semi-global
+means insertions before the start or after the end of either the query
+or target sequence are optionally not penalized.
+
+WWW: https://github.com/jeffdaily/parasail
