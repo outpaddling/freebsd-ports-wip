@@ -1,9 +1,7 @@
 PORTNAME=		canu
-DISTVERSION=		2.1
-PORTREVISION=		1
+DISTVERSION=		2.2
 CATEGORIES=		wip biology java perl5
-# Github auto-generated tarballs lack submodules
-MASTER_SITES=		https://github.com/marbl/canu/releases/download/v2.1/
+MASTER_SITES=		https://github.com/marbl/canu/releases/download/v${DISTVERSION}/ # Github auto-generated tarballs lack submodules
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Single molecule sequence assembler
@@ -18,7 +16,7 @@ NOT_FOR_ARCHS_REASON=	__int128 is not supported on this target
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
-USES=		compiler:c++11-lang gmake localbase perl5
+USES=		compiler:c++11-lang gmake localbase perl5 tar:xz
 USE_JAVA=	yes
 
 JAVA_RUN=	yes
