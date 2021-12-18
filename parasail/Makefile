@@ -1,17 +1,17 @@
-PORTNAME=       parasail
+PORTNAME=	parasail
 DISTVERSIONPREFIX=	v
-DISTVERSION=    2.4.3
-CATEGORIES=     wip biology
+DISTVERSION=	2.4.3
+CATEGORIES=	wip biology
 
-MAINTAINER=     jwb@FreeBSD.org
-COMMENT=        SIMD C library for DNA alignments
+MAINTAINER=	jwb@FreeBSD.org
+COMMENT=	SIMD C library for DNA alignments
 
-# Batelle BSD
-LICENSE=        BSD2CLAUSE
-LICENSE_FILE=   ${WRKSRC}/LICENSE.md
+LICENSE=	BSD2CLAUSE # Batelle BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		autoreconf
+USES=		autoreconf libtool
 USE_GITHUB=	yes
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 
