@@ -29,9 +29,11 @@ MAKE_ENV=	DESTDIR=${WRKSRC} CANU_BUILD_ENV=ports
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "aarch64"
 post-extract:
-	${CP} ${FILESDIR}/cpuid_arm.c ${WRKSRC}/src/utility/src/parasail/cpuid.c
+.if ${ARCH} == "aarch64"
+	${CP} ${FILESDIR}/cpuid_arm.c ${WRKSRC}/utility/src/parasail/cpuid.c
+.elif ${ARCH} == "powerpc64" || ${ARCH} == "powerpc64le"
+	${CP} ${FILESDIR}/cpuid_ppc.c ${WRKSRC}/utility/src/parasail/cpuid.c
 .endif
 
 pre-configure:
