@@ -13,7 +13,4 @@ GH_ACCOUNT=	lh3
 
 PLIST_FILES=	bin/seqtk
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/seqtk ${STAGEDIR}${PREFIX}/bin
-
 .include <bsd.port.mk>
