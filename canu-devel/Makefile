@@ -27,6 +27,13 @@ WRKSRC_SUBDIR=	src
 # using a separate install target.
 MAKE_ENV=	DESTDIR=${WRKSRC} CANU_BUILD_ENV=ports
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "aarch64"
+post-extract:
+	${CP} ${FILESDIR}/cpuid_arm.c ${WRKSRC}/src/utility/src/parasail/cpuid.c
+.endif
+
 pre-configure:
 	@${REINPLACE_CMD} \
 		-e 's|-O4||g' \
@@ -52,4 +59,4 @@ do-install:
 	(cd ${WRKSRC}/build && \
 		${COPYTREE_SHARE} "lib share" ${STAGEDIR}${PREFIX})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
