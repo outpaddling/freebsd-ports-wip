@@ -1,8 +1,7 @@
 PORTNAME=		canu
-DISTVERSION=		2.1
-PORTREVISION=		2
+DISTVERSION=		2.2
 CATEGORIES=		wip biology java perl5
-MASTER_SITES=		https://github.com/marbl/canu/releases/download/v2.1/ # Github auto-generated tarballs lack submodules
+MASTER_SITES=		https://github.com/marbl/canu/releases/download/v${DISTVERSION}/ # Github auto-generated tarballs lack submodules
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Single molecule sequence assembler
@@ -10,14 +9,13 @@ COMMENT=	Single molecule sequence assembler
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/README.license.GPL
 
-NOT_FOR_ARCHS=		armv6 armv7 i386 powerpc
+NOT_FOR_ARCHS=		armv6 armv7 i386
 NOT_FOR_ARCHS_REASON=	Requires 64-bit processor
 
-BUILD_DEPENDS=	simde>0:devel/simde
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
-USES=		compiler:c++11-lang gmake localbase perl5
+USES=		compiler:c++11-lang gmake localbase perl5 tar:xz
 USE_JAVA=	yes
 
 JAVA_RUN=	yes
@@ -27,6 +25,15 @@ WRKSRC_SUBDIR=	src
 # Upstream Makefile compiles directly into ${DESTDIR}${PREFIX} rather than
 # using a separate install target.
 MAKE_ENV=	DESTDIR=${WRKSRC} CANU_BUILD_ENV=ports
+
+.include <bsd.port.pre.mk>
+
+post-extract:
+.if ${ARCH} == "aarch64"
+	${CP} ${FILESDIR}/cpuid_arm.c ${WRKSRC}/utility/src/parasail/cpuid.c
+.elif ${ARCH} == "powerpc64" || ${ARCH} == "powerpc64le"
+	${CP} ${FILESDIR}/cpuid_ppc.c ${WRKSRC}/utility/src/parasail/cpuid.c
+.endif
 
 pre-configure:
 	@${REINPLACE_CMD} \
@@ -53,4 +60,4 @@ do-install:
 	(cd ${WRKSRC}/build && \
 		${COPYTREE_SHARE} "lib share" ${STAGEDIR}${PREFIX})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
