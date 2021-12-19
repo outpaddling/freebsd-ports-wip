@@ -1,7 +1,8 @@
 PORTNAME=		canu
 DISTVERSION=		2.2
 CATEGORIES=		wip biology java perl5
-MASTER_SITES=		https://github.com/marbl/canu/releases/download/v${DISTVERSION}/ # Github auto-generated tarballs lack submodules
+# Github auto-generated tarballs lack submodules
+MASTER_SITES=		https://github.com/marbl/canu/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Single molecule sequence assembler
@@ -28,6 +29,8 @@ MAKE_ENV=	DESTDIR=${WRKSRC} CANU_BUILD_ENV=ports
 
 .include <bsd.port.pre.mk>
 
+# Parasail should be unbundled, but that would be a project because it's
+# currently woven into the canu code
 post-extract:
 .if ${ARCH} == "aarch64"
 	${CP} ${FILESDIR}/cpuid_arm.c ${WRKSRC}/utility/src/parasail/cpuid.c
