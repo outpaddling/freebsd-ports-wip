@@ -1,9 +1,11 @@
+man/man1/auto-add-swap.1.gz
 man/man1/auto-admin.1.gz
 sbin/auto-ad-adduser
 sbin/auto-add-fdesc-mount
 sbin/auto-add-group
 sbin/auto-add-hosts-entry
 sbin/auto-add-proc-mount
+sbin/auto-add-swap
 sbin/auto-add-to-group
 sbin/auto-adduser
 sbin/auto-admin
