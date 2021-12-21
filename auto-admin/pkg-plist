@@ -1,5 +1,6 @@
 man/man1/auto-add-swap.1.gz
 man/man1/auto-admin.1.gz
+man/man1/auto-update-system.1.gz
 sbin/auto-ad-adduser
 sbin/auto-add-fdesc-mount
 sbin/auto-add-group
