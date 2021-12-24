@@ -44,6 +44,8 @@ man/man1/apekeys.1.gz
 %%DATADIR%%/Languages/Csh/Macros/menu.txt
 %%DATADIR%%/Languages/Csh/language_opts
 %%DATADIR%%/Languages/Csh/syntax_highlighting
+%%DATADIR%%/Languages/D/language_opts
+%%DATADIR%%/Languages/D/syntax_highlighting
 %%DATADIR%%/Languages/DocBook/Macros/macros
 %%DATADIR%%/Languages/DocBook/Macros/menu.txt
 %%DATADIR%%/Languages/DocBook/language_opts
