@@ -152,6 +152,8 @@ man/man1/apekeys.1.gz
 %%DATADIR%%/Languages/R/Macros/menu.txt
 %%DATADIR%%/Languages/R/language_opts
 %%DATADIR%%/Languages/R/syntax_highlighting
+%%DATADIR%%/Languages/Rust/Macros/macros
+%%DATADIR%%/Languages/Rust/Macros/menu.txt
 %%DATADIR%%/Languages/Rust/language_opts
 %%DATADIR%%/Languages/Rust/syntax_highlighting
 %%DATADIR%%/Languages/SAL/Macros/macros
