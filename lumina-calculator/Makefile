@@ -1,5 +1,5 @@
 PORTNAME=	lumina-calculator
-DISTVERSION=	1.6.1
+DISTVERSION=	1.6.2
 CATEGORIES=	wip deskutils
 
 MAINTAINER=	lbartoletti@FreeBSD.org
