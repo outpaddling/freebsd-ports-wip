@@ -76,6 +76,10 @@ man/man1/apekeys.1.gz
 %%DATADIR%%/Languages/Java/Macros/menu.txt
 %%DATADIR%%/Languages/Java/language_opts
 %%DATADIR%%/Languages/Java/syntax_highlighting
+%%DATADIR%%/Languages/Julia/Macros/macros
+%%DATADIR%%/Languages/Julia/Macros/menu.txt
+%%DATADIR%%/Languages/Julia/language_opts
+%%DATADIR%%/Languages/Julia/syntax_highlighting
 %%DATADIR%%/Languages/Ksh/Macros/macros
 %%DATADIR%%/Languages/Ksh/Macros/menu.txt
 %%DATADIR%%/Languages/Ksh/language_opts
