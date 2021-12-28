@@ -14,8 +14,8 @@ share/applications/lumina-textedit.desktop
 %%NLS%%share/lumina-desktop/i18n/l-te_da.qm
 %%NLS%%share/lumina-desktop/i18n/l-te_de.qm
 %%NLS%%share/lumina-desktop/i18n/l-te_el.qm
-%%NLS%%share/lumina-desktop/i18n/l-te_en_GB.qm
 %%NLS%%share/lumina-desktop/i18n/l-te_en_AU.qm
+%%NLS%%share/lumina-desktop/i18n/l-te_en_GB.qm
 %%NLS%%share/lumina-desktop/i18n/l-te_en_ZA.qm
 %%NLS%%share/lumina-desktop/i18n/l-te_es.qm
 %%NLS%%share/lumina-desktop/i18n/l-te_et.qm
@@ -65,6 +65,7 @@ share/applications/lumina-textedit.desktop
 %%NLS%%share/lumina-desktop/i18n/l-te_zh_HK.qm
 %%NLS%%share/lumina-desktop/i18n/l-te_zh_TW.qm
 %%NLS%%share/lumina-desktop/i18n/l-te_zu.qm
+share/lumina-desktop/syntax_rules/README.md
 share/lumina-desktop/syntax_rules/cpp.syntax
 share/lumina-desktop/syntax_rules/go.syntax
 share/lumina-desktop/syntax_rules/html.syntax
@@ -74,7 +75,6 @@ share/lumina-desktop/syntax_rules/json.syntax
 share/lumina-desktop/syntax_rules/md.syntax
 share/lumina-desktop/syntax_rules/php.syntax
 share/lumina-desktop/syntax_rules/python.syntax
-share/lumina-desktop/syntax_rules/README.md
 share/lumina-desktop/syntax_rules/rst.syntax
 share/lumina-desktop/syntax_rules/sh.syntax
 share/lumina-desktop/syntax_rules/txt.syntax

@@ -13,8 +13,8 @@ share/applications/lumina-archiver.desktop
 %%NLS%%share/lumina-desktop/i18n/l-archiver_da.qm
 %%NLS%%share/lumina-desktop/i18n/l-archiver_de.qm
 %%NLS%%share/lumina-desktop/i18n/l-archiver_el.qm
-%%NLS%%share/lumina-desktop/i18n/l-archiver_en_GB.qm
 %%NLS%%share/lumina-desktop/i18n/l-archiver_en_AU.qm
+%%NLS%%share/lumina-desktop/i18n/l-archiver_en_GB.qm
 %%NLS%%share/lumina-desktop/i18n/l-archiver_en_ZA.qm
 %%NLS%%share/lumina-desktop/i18n/l-archiver_es.qm
 %%NLS%%share/lumina-desktop/i18n/l-archiver_et.qm

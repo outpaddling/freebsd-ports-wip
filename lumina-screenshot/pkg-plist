@@ -13,8 +13,8 @@ share/applications/lumina-screenshot.desktop
 %%NLS%%share/lumina-desktop/i18n/l-screenshot_da.qm
 %%NLS%%share/lumina-desktop/i18n/l-screenshot_de.qm
 %%NLS%%share/lumina-desktop/i18n/l-screenshot_el.qm
-%%NLS%%share/lumina-desktop/i18n/l-screenshot_en_GB.qm
 %%NLS%%share/lumina-desktop/i18n/l-screenshot_en_AU.qm
+%%NLS%%share/lumina-desktop/i18n/l-screenshot_en_GB.qm
 %%NLS%%share/lumina-desktop/i18n/l-screenshot_en_ZA.qm
 %%NLS%%share/lumina-desktop/i18n/l-screenshot_es.qm
 %%NLS%%share/lumina-desktop/i18n/l-screenshot_et.qm

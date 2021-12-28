@@ -2,7 +2,7 @@
 
 PORTNAME=	lumina-core
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.1
+DISTVERSION=	1.6.2
 CATEGORIES=	wip x11
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -53,8 +53,8 @@ CONFIGURE_ENV+=	DESTDIR=${STAGEDIR}
 
 CONFLICTS_INSTALL=	lumina-1.2.*
 
-post-configure:
-	${REINPLACE_CMD} -e "s|${PREFIX}/sbin/lumina-checkpass|${STAGEDIR}&|" \
-               ${WRKDIR}/lumina-${DISTVERSION}/src-qt5/core/lumina-checkpass/Makefile
+#post-configure:
+#	${REINPLACE_CMD} -e "s|${PREFIX}/sbin/lumina-checkpass|${STAGEDIR}&|" \
+#               ${WRKDIR}/lumina-${DISTVERSION}/src-qt5/core/lumina-checkpass/Makefile
 
 .include <bsd.port.mk>

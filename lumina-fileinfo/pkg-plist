@@ -13,8 +13,8 @@ share/applications/lumina-fileinfo.desktop
 %%NLS%%share/lumina-desktop/i18n/l-fileinfo_da.qm
 %%NLS%%share/lumina-desktop/i18n/l-fileinfo_de.qm
 %%NLS%%share/lumina-desktop/i18n/l-fileinfo_el.qm
-%%NLS%%share/lumina-desktop/i18n/l-fileinfo_en_GB.qm
 %%NLS%%share/lumina-desktop/i18n/l-fileinfo_en_AU.qm
+%%NLS%%share/lumina-desktop/i18n/l-fileinfo_en_GB.qm
 %%NLS%%share/lumina-desktop/i18n/l-fileinfo_en_ZA.qm
 %%NLS%%share/lumina-desktop/i18n/l-fileinfo_es.qm
 %%NLS%%share/lumina-desktop/i18n/l-fileinfo_et.qm
