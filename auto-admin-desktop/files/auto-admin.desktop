@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Encoding=UTF-8
+Name=Auto-admin
+Comment=Auto-admin menu
+Exec=urxvt -fg white -bg black --font 10x20 --geometry 80x32 -e auto-admin
+Categories=System
+MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
+StartupNotify=true
