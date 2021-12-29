@@ -1,6 +1,6 @@
-Auto-admin is a set of tools for automating common systems management tasks
-from the command line.  It is meant as a library of scripts to be used by
-more specific automated systems management scripts.  It is also intended to
-serve as a compatibility layer to ease management of multiple POSIX platforms.
+Auto-admin-desktop is a desktop interface to the auto-admin tools.  Currently
+it simply installs a .desktop file that runs the auto-admin menu under a
+terminal, so that auto-admin will have a presence in desktop application menus.
+Eventually this will be replaced by a proper graphical application.
 
 WWW: http://acadix.biz/auto-admin.php

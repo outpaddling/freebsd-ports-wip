@@ -9,7 +9,8 @@ COMMENT=	Quickly configure a FreeBSD desktop system
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	auto-admin>=0.7.8:wip/auto-admin
+RUN_DEPENDS=	auto-admin>=0.7.8:wip/auto-admin \
+		auto-admin-desktop>0:wip/auto-admin-desktop
 
 USES=		tar:xz
 USE_GITHUB=	yes
