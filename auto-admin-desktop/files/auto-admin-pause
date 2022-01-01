@@ -1,0 +1,4 @@
+#!/bin/sh
+
+auto-admin
+read -p 'Press return to close this window...' junk
