@@ -1,6 +1,6 @@
---- multiqc/multiqc.py.orig	2019-11-25 15:53:22 UTC
+--- multiqc/multiqc.py.orig	2021-07-05 07:13:52 UTC
 +++ multiqc/multiqc.py
-@@ -11,16 +11,25 @@ from __future__ import print_function
+@@ -11,17 +11,26 @@ from __future__ import print_function
  
  import base64
  import click
@@ -22,9 +22,10 @@
  import jinja2
 -import os
  import re
+ import rich
  import shutil
  import subprocess
 -import sys
  import tempfile
+ import time
  import traceback
- 
