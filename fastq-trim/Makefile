@@ -1,5 +1,5 @@
 PORTNAME=	fastq-trim
-DISTVERSION=	0.0.0-20
+DISTVERSION=	0.0.0-23
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -13,7 +13,7 @@ LIB_DEPENDS=	libbiolibc.so:wip/biolibc libxtend.so:wip/libxtend
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	a673b9f3c68ee907a7ff5847ae09e8fcbb679794
+GH_TAGNAME=	f0d487a0285bcc6bc7394249aa94654b158bfc5e
 
 PLIST_FILES=	bin/fastq-trim bin/fastq-vis \
 		man/man1/fastq-trim.1.gz man/man1/fastq-vis.1.gz
