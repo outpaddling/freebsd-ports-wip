@@ -1,5 +1,5 @@
 PORTNAME=	fastq-trim
-DISTVERSION=	0.0.0-24
+DISTVERSION=	0.0.0-26
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
