@@ -1,6 +1,6 @@
 PORTNAME=	fastq-trim
-DISTVERSION=	0.1.0-14
-DISTVERSIONSUFFIX=	-g9d072ff
+DISTVERSION=	0.1.0-17
+DISTVERSIONSUFFIX=	-ga6f68de
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,9 +14,6 @@ LIB_DEPENDS=	libbiolibc.so:wip/biolibc libxtend.so:wip/libxtend
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
-
-PLIST_FILES=	bin/fastq-trim bin/fastq-vis \
-		man/man1/fastq-trim.1.gz man/man1/fastq-vis.1.gz
 
 pre-build:
 	(cd ${WRKSRC} && ${MAKE} LOCALBASE=${LOCALBASE} depend)
