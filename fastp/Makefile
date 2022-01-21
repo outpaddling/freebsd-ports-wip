@@ -12,8 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libdeflate.so:archivers/libdeflate \
 		libisal.so:devel/isa-l
 
-USES=		compiler:c++11-lang gmake localbase:ldflags
+USES=		gmake localbase:ldflags
 USE_GITHUB=	yes
+USE_GCC=	yes
 
 GH_ACCOUNT=	OpenGene
 
