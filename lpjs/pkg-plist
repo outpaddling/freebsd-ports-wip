@@ -12,3 +12,7 @@ sbin/lpjs-chaperone
 sbin/lpjs-config
 sbin/lpjs_compd
 sbin/lpjs_dispatchd
+%%DATADIR%%/Systemd/lpjs_compd.service
+%%DATADIR%%/Systemd/lpjs_compd.sysconfig
+%%DATADIR%%/Systemd/lpjs_dispatchd.service
+%%DATADIR%%/Systemd/lpjs_dispatchd.sysconfig
