@@ -9,4 +9,4 @@ Matplotlib and Biopython, and the figures can be saved in different
 formats (PNG, JPEG, SVG, PDF), e.g. for report generation or LIMS
 interfaces.
 
-WWW: https://pypi.python.org/project/py-dna-features-viewer/
+WWW: https://pypi.python.org/project/dna-features-viewer/
