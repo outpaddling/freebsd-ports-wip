@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=3:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}biopython>0:biology/py-biopython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}bcbio-gff>0:wip/py-bcbio-gff@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}bcbio-gff>0:biology/py-bcbio-gff@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
