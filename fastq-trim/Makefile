@@ -15,6 +15,8 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
 
+MAKE_ENV=	VERSION=${PORTVERSION}
+
 pre-build:
 	(cd ${WRKSRC} && ${MAKE} LOCALBASE=${LOCALBASE} depend)
 
