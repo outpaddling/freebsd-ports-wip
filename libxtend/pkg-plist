@@ -1,5 +1,8 @@
 include/xtend/common.h
 include/xtend/ctype.h
+include/xtend/dsv-accessors.h
+include/xtend/dsv-mutators.h
+include/xtend/dsv-rvs.h
 include/xtend/dsv.h
 include/xtend/file.h
 include/xtend/math.h
