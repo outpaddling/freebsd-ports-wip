@@ -74,6 +74,7 @@ man/man3/strlower.3.gz
 man/man3/strlupper.3.gz
 man/man3/strptrcmp.3.gz
 man/man3/strshellcpy.3.gz
+man/man3/strsplit.3.gz
 man/man3/strsqueeze.3.gz
 man/man3/strtr.3.gz
 man/man3/strtrim.3.gz
