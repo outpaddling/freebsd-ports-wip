@@ -55,8 +55,9 @@ To install via the binary package, simply run:
 
     pkg install $pkg_name
 
-This will very quickly install a prebuilt binary using only highly-portable
-optimizations, much like apt, yum, etc.
+This will very quickly install a prebuilt package and all run-time
+dependencies using only highly-portable optimizations, much like apt, yum,
+etc.
 
 FreeBSD ports can just as easily be built and installed from source,
 although it will take longer (for the computer, not for you):

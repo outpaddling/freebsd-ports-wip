@@ -1,6 +1,0 @@
-#!/bin/sh -e
-
-pkg delete -fy py27-numpy py27-scipy py27-matplotlib pycogent py27-gdata \
-    py27-natsort py27-h5py py27-pyqi py27-ipython ncbi-toolkit ghc py27-pandas \
-    py27-biom-format py27-sphinx FastTree cd-hit cdbfasta automake blat
-

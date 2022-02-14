@@ -1,9 +1,0 @@
-#!/bin/sh -e
-
-cat << EOM
-
-This script has been moved to wip-tools.  Install wip/wip-tools and run
-wip-import.
-
-EOM
-
