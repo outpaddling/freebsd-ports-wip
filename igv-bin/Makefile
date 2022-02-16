@@ -1,5 +1,5 @@
 PORTNAME=	igv
-DISTVERSION=	2.11.9
+DISTVERSION=	2.12.2
 CATEGORIES=	wip biology java
 MASTER_SITES=	https://data.broadinstitute.org/igv/projects/downloads/${DISTVERSION:R}/
 DISTNAME=	IGV_${PORTVERSION}
