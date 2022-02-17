@@ -34,7 +34,7 @@
  double OSInterface::OS_batterySecondsLeft(){ //Returns: estimated number of seconds remaining
 -  return getCmdOutput("apm -t").join("").toDouble();
 +  int min, sec;
-+  if ( sysctlbyname("hw.acpi.battery.min", &min, &len, NULL, 0) == 0 )
++  if ( sysctlbyname("hw.acpi.battery.time", &min, &len, NULL, 0) == 0 )
 +    sec = min * 60;
 +  else
 +    sec = -1
