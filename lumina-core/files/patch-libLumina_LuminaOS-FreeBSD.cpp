@@ -8,8 +8,11 @@
  
  #include <QDebug>
  //can't read xbrightness settings - assume invalid until set
-@@ -291,29 +292,46 @@ void LOS::systemSuspend(){
+@@ -289,31 +290,52 @@ void LOS::systemSuspend(){
+ }
+ 
  //Battery Availability
++// apm command is not available on powerpc or arm
  bool LOS::hasBattery(){
    static int hasbat = -1;
 +  int        life;
@@ -27,6 +30,7 @@
  }
  
  //Battery Charge Level
++// apm command is not available on powerpc or arm
  int LOS::batteryCharge(){ //Returns: percent charge (0-100), anything outside that range is counted as an error
 -  int charge = LUtils::getCmdOutput("apm -l").join("").toInt();
 -  if(charge > 100){ charge = -1; } //invalid charge
@@ -40,6 +44,7 @@
  }
  
  //Battery Charging State
++// apm command is not available on powerpc or arm
  bool LOS::batteryIsCharging(){
 -  return (LUtils::getCmdOutput("apm -a").join("").simplified() == "1");
 +  int	 state;
@@ -52,6 +57,7 @@
  }
  
  //Battery Time Remaining
++// apm command is not available on powerpc or arm
  int LOS::batterySecondsLeft(){ //Returns: estimated number of seconds remaining
 -  return LUtils::getCmdOutput("apm -t").join("").toInt();
 +  int	 min;
