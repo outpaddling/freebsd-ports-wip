@@ -8,7 +8,7 @@
  
  #include <QDebug>
  //can't read xbrightness settings - assume invalid until set
-@@ -289,31 +290,52 @@ void LOS::systemSuspend(){
+@@ -289,31 +290,53 @@ void LOS::systemSuspend(){
  }
  
  //Battery Availability
@@ -62,10 +62,11 @@
 -  return LUtils::getCmdOutput("apm -t").join("").toInt();
 +  int	 min;
 +  size_t len = sizeof(min);
-+  if ( sysctlbyname("hw.acpi.battery.time", &min, &len, NULL, 0) == 0 )
-+    return min * 60;
-+  else
++  if ( LOS::batteryIsCharging() ||
++       (sysctlbyname("hw.acpi.battery.time", &min, &len, NULL, 0) != 0) )
 +    return -1;
++  else
++    return min * 60;
  }
  
  //File Checksums
