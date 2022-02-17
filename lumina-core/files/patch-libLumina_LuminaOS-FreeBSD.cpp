@@ -57,7 +57,7 @@
 +  int	 min;
 +  size_t len = sizeof(min);
 +  if ( sysctlbyname("hw.acpi.battery.min", &min, &len, NULL, 0) == 0 )
-+    return min;
++    return min * 60;
 +  else
 +    return -1;
  }
