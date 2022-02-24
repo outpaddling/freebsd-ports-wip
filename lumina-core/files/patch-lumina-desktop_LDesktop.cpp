@@ -9,14 +9,16 @@
    if(DEBUG){ qDebug() << "Desktop #"<<Screen()<<" -> "<< QGuiApplication::screens().at(Screen())->availableGeometry() << LSession::handle()->screenGeom(Screen()); }
    deskMenu = new QMenu(0);
      connect(deskMenu, SIGNAL(triggered(QAction*)), this, SLOT(SystemApplication(QAction*)) );
-@@ -223,6 +223,10 @@ void LDesktop::InitDesktop(){
+@@ -223,6 +223,12 @@ void LDesktop::InitDesktop(){
    bgtimer = new QTimer(this);
      bgtimer->setSingleShot(true);
      connect(bgtimer, SIGNAL(timeout()), this, SLOT(UpdateBackground()) );
-+    // in case the screen resolution changes
++    // This doesn't work.  Can we connect multiple handlers to the same signal?
++    // 'Cuz resized() is handled by LPanel
++    // In case the screen resolution changes
 +    // Maybe use bgDesktop like above?
-+    screen = LSession::desktop();
-+    connect(screen, SIGNAL(resized(int)), this, SLOT(UpdateBackground()) );
++    // QDesktopWidget *screen = LSession::desktop();
++    // connect(screen, SIGNAL(resized(int)), this, SLOT(UpdateBackground()) );
  
      connect(QApplication::instance(), SIGNAL(DesktopConfigChanged()), this, SLOT(SettingsChanged()) );
      connect(QApplication::instance(), SIGNAL(DesktopFilesChanged()), this, SLOT(UpdateDesktop()) );
