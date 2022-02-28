@@ -1,5 +1,6 @@
 PORTNAME=	bio-mocha
 DISTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	wip biology
 MASTER_SITES=	https://software.broadinstitute.org/software/mocha/
 DISTFILES+=	${PORTNAME}_${DISTVERSION}-20220112.tar.gz
