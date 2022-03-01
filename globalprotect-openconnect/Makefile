@@ -17,8 +17,6 @@ USE_QT=		buildtools core dbus declarative gui location network printsupport qmak
 
 GH_ACCOUNT=	yuezk
 GH_PROJECT=	GlobalProtect-openconnect
-# FIXME: cmake downloads bundled dependencies.  Disable that and either
-# use GH_TUPLE or install separately.
 GH_TUPLE+=	itay-grudev:SingleApplication:v3.3.0:sa/3rdparty/SingleApplication
 GH_TUPLE+=	SergiusTheBest:plog:1.1.5:plog/3rdparty/plog
 
