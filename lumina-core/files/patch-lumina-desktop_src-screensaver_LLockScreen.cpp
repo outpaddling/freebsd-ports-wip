@@ -1,4 +1,4 @@
---- lumina-desktop/src-screensaver/LLockScreen.cpp.orig	2022-03-03 00:00:21 UTC
+--- lumina-desktop/src-screensaver/LLockScreen.cpp.orig	2021-12-26 02:33:45 UTC
 +++ lumina-desktop/src-screensaver/LLockScreen.cpp
 @@ -80,6 +80,7 @@ void LLockScreen::TryUnlock(){
    QString pass = ui->line_password->text();
@@ -8,3 +8,12 @@
    QTemporaryFile *TF = new QTemporaryFile(".XXXXXXXXXX");
    TF->setAutoRemove(true);
    bool ok = false;
+@@ -90,7 +91,7 @@ void LLockScreen::TryUnlock(){
+     if(DEBUG){ qDebug() << "Trying to unlock session:" << getlogin(); }
+     LUtils::runCommand(ok, "lumina-checkpass",QStringList() << "-f" << TF->fileName() );
+     if(DEBUG){ qDebug() << " - Success:" << ok; }
+-    ok = true; //bypass for the moment
++    // ok = true; //bypass for the moment
+   }
+   delete TF; //ensure the temporary file is removed **right now** for security purposes
+   if(ok){
