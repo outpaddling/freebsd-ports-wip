@@ -75,6 +75,12 @@ to /etc/make.conf will cause ports built from source to use all native
 optimizations known to the compiler for the local CPU, resulting in faster
 but less portable binaries.
 
+It also allows building and installing compiled programs with debug flags
+enabled so that gdb and lldb can locate issues in the source code:
+
+    cd /usr/ports/category/port
+    env WITH_DEBUG=yes make install
+
 To report issues with a FreeBSD port, please submit a PR at:
 
     https://www.freebsd.org/support/bugreports.html
