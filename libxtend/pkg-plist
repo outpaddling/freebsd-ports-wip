@@ -102,6 +102,7 @@ man/man3/xt_ffopen.3.gz
 man/man3/xt_fgetline.3.gz
 man/man3/xt_file_mod_cmp.3.gz
 man/man3/xt_fopen.3.gz
+man/man3/xt_free_strings.3.gz
 man/man3/xt_get_home_dir.3.gz
 man/man3/xt_inhale_strings.3.gz
 man/man3/xt_malloc.3.gz
