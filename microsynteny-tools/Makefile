@@ -1,6 +1,6 @@
 PORTNAME=	microsynteny-tools
-DISTVERSION=	0.1.0-85
-DISTVERSIONSUFFIX=	-g0c4d946
+DISTVERSION=	0.1.0-133
+DISTVERSIONSUFFIX=	-g2d9e28c
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -15,6 +15,6 @@ USES=		python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
 
-SHEBANG_FILES=	*.py
+SHEBANG_FILES=	Scripts/*.py
 
 .include <bsd.port.mk>
