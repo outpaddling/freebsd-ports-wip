@@ -23,3 +23,8 @@ man/man1/ms-extract.1.gz
 man/man1/ms-intersect.1.gz
 man/man1/ms-plot.1.gz
 man/man1/ms-stack.1.gz
+%%DATADIR%%/Genes/all-de-ortho.txt
+%%DATADIR%%/Genes/all-non-de-ortho.txt
+%%DATADIR%%/Genes/de-tf-ortho.txt
+%%DATADIR%%/Genes/de-tf-refined-ortho.txt
+%%DATADIR%%/Genes/non-de-tf-ortho.txt
