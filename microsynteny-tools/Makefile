@@ -10,6 +10,9 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libbiolibc.so:wip/biolibc libxtend.so:wip/libxtend
+RUN_DEPENDS=	ncbi-blast+:biology/ncbi-blast+ \
+		curl>0:ftp/curl \
+		${PYTHON_PKGNAMEPREFIX}dna-features-viewer>0:biology/py-dna-features-viewer@${PY_FLAVOR}
 
 USES=		python shebangfix
 USE_GITHUB=	yes
