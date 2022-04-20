@@ -1,6 +1,6 @@
 PORTNAME=	microsynteny-tools
-DISTVERSION=	0.1.0-146
-DISTVERSIONSUFFIX=	-gec793eb
+DISTVERSION=	0.1.0-147
+DISTVERSIONSUFFIX=	-gce4e178
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,7 +10,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libbiolibc.so:wip/biolibc libxtend.so:wip/libxtend
-RUN_DEPENDS=	ncbi-blast+:biology/ncbi-blast+ \
+RUN_DEPENDS=	ncbi-blast+>0:biology/ncbi-blast+ \
 		curl>0:ftp/curl \
 		${PYTHON_PKGNAMEPREFIX}dna-features-viewer>0:biology/py-dna-features-viewer@${PY_FLAVOR}
 
