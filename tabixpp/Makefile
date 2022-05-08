@@ -1,5 +1,6 @@
 PORTNAME=	tabixpp
 DISTVERSIONPREFIX=	v
+# Test with vcflib and freebayes before committing
 DISTVERSION=	1.1.1
 CATEGORIES=	wip biology
 
