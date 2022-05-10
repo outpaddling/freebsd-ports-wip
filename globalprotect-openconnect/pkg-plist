@@ -1,6 +1,5 @@
 bin/gpclient
 bin/gpservice
-@sample %%ETCDIR%%/gp.conf.sample
 lib/systemd/system/gpservice.service
 share/applications/com.yuezk.qt.gpclient.desktop
 share/dbus-1/system-services/com.yuezk.qt.GPService.service
