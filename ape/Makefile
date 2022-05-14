@@ -1,8 +1,8 @@
 # Created by: Jason Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	APE
-DISTVERSION=	3.5.3-105
-DISTVERSIONSUFFIX=	-g5b7c9ea
+DISTVERSION=	3.5.3-106
+DISTVERSIONSUFFIX=	-ga064b1f
 CATEGORIES=	wip editors
 
 MAINTAINER=	jwb@FreeBSD.org
