@@ -1,114 +1,29 @@
 # http://www.openfoam.org/download/git.php
 
 PORTNAME=	openfoam
-PORTVERSION=	3.0.0
+PORTVERSION=	2112
 CATEGORIES=	wip science
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	../foam
-DISTNAME=	OpenFOAM-${PORTVERSION}
+MASTER_SITES=	https://dl.openfoam.com/source/v2112/
+DISTNAME=	OpenFOAM-v${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Open source computational fluid dynamics
 
 LICENSE=	GPLv3
 
-# Does not build with flex 2.6.0
-BUILD_DEPENDS=	flex<=2.5.39_2:wip/flex \
-		${LOCALBASE}/mpi/openmpi/bin/mpiCC:net/openmpi \
-		${LOCALBASE}/mpi/openmpi/lib/libscotch.a:wip/scotch-openmpi
+BUILD_DEPENDS=	flex>0:textproc/flex \
+		cgal>0:math/cgal
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
-		libCGAL.so:math/cgal \
 		libmpfr.so:math/mpfr \
-		libgmp.so:math/gmp
-RUN_DEPENDS=	gnuplot:math/gnuplot \
-		${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
+		libgmp.so:math/gmp \
+		libscotch.so:cad/scotch
+RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		bison gmake ncurses readline shebangfix tar:tgz
-# Requires gcc 4.5 or clang 3.6 according to docs
-USE_GCC=	yes
 QT4_USE=	opengl webkit
 USE_GL=		glut
-SHEBANG_FILES=	wmake/wmakeSchedulerUptime \
-		wmake/wmakeScheduler \
-		bin/tools/pre-receive-hook \
-		bin/tools/pre-commit-hook \
-		bin/tools/doxyFilter \
-		bin/foamExec \
-		bin/tools/replaceAllShellSun \
-		doc/tools/find-trailingspace
-
-# This should probably be made to work on at least i386 as well
-# with a few additional changes.
-ONLY_FOR_ARCHS=	amd64
-
-# Ubuntu deps not accounted for:
-# Need cmake only for Paraview
-# libxt-dev qt4-dev-tools libqt4-dev freeglut3-dev
-
-INSTALL_DIR=	${PREFIX}/${DISTNAME}
-PLATFORM=	platforms/FreeBSDGccDPInt32Opt
-USE_LDCONFIG=	${INSTALL_DIR}/${PLATFORM}/lib \
-		${INSTALL_DIR}/${PLATFORM}/lib/dummy
-
-#		-e 's|WM_COMPILER[ =]Gcc|&48|'
-post-patch:
-	@${REINPLACE_CMD} -e 's|"make"|"gmake"|g' \
-		${WRKSRC}/wmake/wmake
-	@${REINPLACE_CMD} -e 's|sed -i|sed -i.bak|g' \
-		${WRKSRC}/bin/tools/foamConfigurePaths \
-		${WRKSRC}/bin/tools/pre-commit-hook \
-		${WRKSRC}/wmake/MakefileFiles \
-		${WRKSRC}/tutorials/lagrangian/reactingParcelFilmFoam/hotBoxes/Allrun.pre
-	@${REINPLACE_CMD} \
-		-e 's|foamInstall.*=.*$$HOME/$$WM_PROJECT|foamInstall=${WRKDIR}|' \
-		-e 's|$$WM_PROJECT_INST_DIR/ThirdParty-$$WM_PROJECT_VERSION|$$WM_PROJECT_DIR/ThirdParty|g' \
-		${WRKSRC}/etc/bashrc \
-		${WRKSRC}/etc/cshrc
-	@${CP} -r ${FILESDIR}/FreeBSDGcc ${WRKSRC}/wmake/rules
-	@${REINPLACE_CMD} \
-		-e 's|-lscotch|-L${LOCALBASE}/mpi/openmpi/lib -lscotch|'g \
-		${WRKSRC}/applications/utilities/parallelProcessing/decomposePar/Make/options \
-		${WRKSRC}/applications/utilities/mesh/generation/foamyMesh/foamyHexMeshSurfaceSimplify/Make/options \
-		${WRKSRC}/applications/utilities/mesh/generation/foamyMesh/foamyHexMeshBackgroundMesh/Make/options \
-		${WRKSRC}/applications/utilities/mesh/manipulation/renumberMesh/Make/options \
-		${WRKSRC}/src/parallel/decompose/scotchDecomp/Make/options \
-		${WRKSRC}/src/parallel/decompose/ptscotchDecomp/Make/options
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|g' \
-		${WRKSRC}/doc/Doxygen/Doxyfile
-	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|g' \
-		${WRKSRC}/bin/mpirunDebug
-	@${REINPLACE_CMD} -e 's|$$WM_THIRD_PARTY_DIR/platforms/$$WM_ARCH$$WM_COMPILER/.*|${LOCALBASE}|g' ${WRKSRC}/etc/config/CGAL.*sh
-	@${REINPLACE_CMD} -e 's|$$WM_THIRD_PARTY_DIR/platforms/$$WM_ARCH$$WM_COMPILER_ARCH/.*|${LOCALBASE}|g' ${WRKSRC}/etc/config/settings.*sh
 
 do-build:
 	(cd ${WRKSRC} && . etc/bashrc && ./Allwmake)
-
-# Loosely based on content of the official Debian package.
-# No world perms on peregrine, where installed via pkg add.  The the
-# chmod not sufficient?
-do-install:
-	@${MKDIR} \
-		${STAGEDIR}${INSTALL_DIR}/${PLATFORM} \
-		${STAGEDIR}${INSTALL_DIR}/ThirdParty
-	${CP} -R \
-		${WRKSRC}/applications \
-		${WRKSRC}/bin \
-		${WRKSRC}/etc \
-		${STAGEDIR}${INSTALL_DIR}
-	${CP} -R \
-		${WRKSRC}/${PLATFORM}/bin \
-		${WRKSRC}/${PLATFORM}/lib \
-		${STAGEDIR}${INSTALL_DIR}/${PLATFORM}
-	${CHMOD} -R a+rX ${STAGEDIR}${INSTALL_DIR}
-
-# Same bashrc and cshrc used to set up the build path are sourced by users.
-# OpenFOAM developers confirmed that installation is relocatable and only
-# these files should need to be altered.
-post-stage:
-	@${REINPLACE_CMD} \
-		-e 's|${WRKDIR}|${PREFIX}|g' \
-		${STAGEDIR}${INSTALL_DIR}/etc/bashrc \
-		${STAGEDIR}${INSTALL_DIR}/etc/cshrc
-	@${RM} ${STAGEDIR}${INSTALL_DIR}/bin/*.bak
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- Allwmake.orig	2015-11-03 10:30:23 UTC
++++ Allwmake
+@@ -20,7 +20,7 @@ wmakeCheckPwd "$WM_PROJECT_DIR" || {
+ }
+ 
+ # Compile wmake support applications
+-(cd wmake/src && make)
++(cd wmake/src && gmake)
+ 
+ # Compile ThirdParty libraries and applications
+ if [ -d "$WM_THIRD_PARTY_DIR" ]
