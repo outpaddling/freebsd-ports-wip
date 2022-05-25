@@ -17,7 +17,7 @@ BUILD_DEPENDS=	libpare>=1.1.1:wip/libpare \
 		twintk>=0.9.4.2:wip/twintk
 LIB_DEPENDS=	libxtend.so:wip/libxtend
 RUN_DEPENDS=	twintk>=0.9.4.2:wip/twintk \
-		webbrowser:www/webbrowser \
+		webbrowser:wip/webbrowser \
 		docviewer:wip/docviewer
 
 USE_GITHUB=	yes
