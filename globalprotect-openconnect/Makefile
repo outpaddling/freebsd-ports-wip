@@ -30,5 +30,6 @@ pre-configure:
 
 post-stage:
 	${MV} ${STAGEDIR}${ETCDIR}/gp.conf ${STAGEDIR}${ETCDIR}/gp.conf.sample
+	${RM} ${STAGEDIR}${PREFIX}/lib/systemd/system/gpservice.service
 
 .include <bsd.port.mk>

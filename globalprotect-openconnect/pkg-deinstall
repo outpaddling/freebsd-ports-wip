@@ -2,7 +2,7 @@
 
 # gpclient will hang in some cases if the running gpservice is outdated
 if [ x"$2" = x"DEINSTALL" ]; then
-    pkill /usr/local/bin/gpservice /usr/local/bin/gpclient
+    pkill gpservice gpclient
 fi
 
 exit 0
