@@ -12,3 +12,4 @@ for dir in *; do
 done
 
 find . -name '.*.bak' -exec rm '{}' \;
+git status
