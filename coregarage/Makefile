@@ -8,7 +8,7 @@ COMMENT=	Settings manager for C Suite
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libarchiveqt5.so:wip/libarchive-qt \
+LIB_DEPENDS=	libarchiveqt5.so:archivers/libarchive-qt \
 		libcprime-core.so:wip/libcprime
 
 USES=		cmake localbase:ldflags qt:5
@@ -16,7 +16,7 @@ USE_QT=		buildtools_build core gui qmake_build widgets
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	CuboCore
-GL_COMMIT=	684e579b4a03914b77ceccd6efcfc490c53ad730
+GL_COMMIT=	917d31fcd1a6f63d759897fa4d5481de2d6f6bdc
 
 PLIST_FILES=	bin/coregarage \
 		share/applications/org.cubocore.CoreGarage.desktop \
