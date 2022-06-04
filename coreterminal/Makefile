@@ -17,7 +17,7 @@ USE_QT=		buildtools_build core gui qmake_build serialport widgets
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	CuboCore
-GL_COMMIT=	c61e5f8e0941dee2ab8920f2470fe93d21d717a2
+GL_COMMIT=	e33db8825eacdbf3df2861a08ae1ba52907bc656
 
 PLIST_FILES=	bin/coreterminal \
 		share/applications/org.cubocore.CoreTerminal.desktop \
