@@ -1,6 +1,5 @@
 PORTNAME=	basic-stats
-DISTVERSION=	0.1.1-1
-DISTVERSIONSUFFIX=	-g365cb38
+DISTVERSION=	0.1.2
 CATEGORIES=	wip math
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,10 +13,9 @@ LIB_DEPENDS=	libxtend.so:wip/libxtend
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
 
+INSTALL_TARGET=	install-strip
+
 pre-build:
 	cd ${WRKSRC} && ${MAKE} LOCALBASE=${LOCALBASE} depend
-
-post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/basic-stats
 
 .include <bsd.port.mk>
