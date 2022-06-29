@@ -2,21 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	GoldenCheetah
-PORTVERSION=	3.2
+PORTVERSION=	3.5
 DISTVERSIONPREFIX=	V
-PORTREVISION=	7
-CATEGORIES=	games
+CATEGORIES=	wip games
 
-MAINTAINER=	trebbu@googlemail.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Training software for cyclists
 
 LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	multi
-
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
-BROKEN=		fails to build
 
 LIB_DEPENDS=	libical.so:devel/libical \
 		libqwtplot3d-qt4.so:math/qwtplot3d-qt4 \
@@ -33,10 +27,12 @@ DESKTOP_ENTRIES=	"${PORTNAME}" \
 			"Education;Sports;" \
 			false
 
-USES=		bison gmake qmake qt:4
+USES=		bison gmake qmake qt:5
 USE_GL=		gl glu
-USE_QT=		corelib gui linguist moc_build network opengl \
-		qmake rcc script sql svg uic webkit xml
+USE_QT=		core gui linguist network opengl \
+		qmake script sql svg webkit xml
+#USE_QT=		corelib gui linguist moc_build network opengl \
+#		qmake rcc script sql svg uic webkit xml
 INFO=		GC3-FAQ GC3-Release GC31-Release
 
 OPTIONS_DEFINE=	DOCS
