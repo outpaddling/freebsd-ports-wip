@@ -15,6 +15,6 @@ USE_LDCONFIG=	yes
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	CuboCore
-GL_COMMIT=	0a34a9cd10e9cbb081a5cbf104bb6837e3a02b27
+GL_COMMIT=	48979c0baf06dfbdce1c297a14fa182bc98922e6
 
 .include <bsd.port.mk>
