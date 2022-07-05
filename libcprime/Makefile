@@ -10,13 +10,13 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # This fixes the undefined WidgetsInterface error
-USE_GCC=	yes
+# USE_GCC=	yes
 USES=		cmake qt:5
 USE_QT=		buildtools_build core dbus gui network qmake_build widgets
 USE_LDCONFIG=	yes
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	CuboCore
-GL_COMMIT=	0a34a9cd10e9cbb081a5cbf104bb6837e3a02b27
+GL_COMMIT=	dc9533013e577582193506a154c967bdc63207d3
 
 .include <bsd.port.mk>
