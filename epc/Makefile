@@ -1,8 +1,8 @@
 # Created by: Jason Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	EPC
-DISTVERSION=	0.1.0-3
-DISTVERSIONSUFFIX=	-gcc174c1
+DISTVERSION=	0.1.0-4
+DISTVERSIONSUFFIX=	-g88b0dc3
 CATEGORIES=	wip emulators
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -20,9 +20,6 @@ RUN_DEPENDS=	plasm:wip/plasm
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
-
-MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX} \
-		MANPREFIX=${STAGEDIR}${PREFIX}
 
 pre-build:
 	${MAKE} depend
