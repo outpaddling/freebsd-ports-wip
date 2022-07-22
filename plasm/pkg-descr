@@ -1,3 +1,5 @@
-[description of the port]
+PLASM is a portable assembler engine designed to assemble any source
+language to machine language given a module describing the syntax and
+instruction format.
 
-WWW:	http://port.home.page/
+WWW: https://github.com/outpaddling/plasm

@@ -1,0 +1,5 @@
+bin/plasm
+bin/plasm.bin
+include/plasm/epc-bits.h
+include/plasm/riscv-bits.h
+man/man1/plasm.1.gz

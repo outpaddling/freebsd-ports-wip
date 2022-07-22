@@ -1,7 +1,6 @@
 PORTNAME=	plasm
-PORTVERSION=	0.1
+DISTVERSION=	0.0.0-30
 CATEGORIES=	wip devel
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Portable Assembler
@@ -11,21 +10,12 @@ LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	papp:wip/papp
 
-USES=		tar:xz
-.include <bsd.port.pre.mk>
-.if ${ARCH} == "powerpc"
-USE_GCC=	yes
-.endif
+USE_GITHUB=	yes
 
-MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX} \
-		MANPREFIX=${STAGEDIR}${PREFIX}
-
-PLIST_FILES=	bin/plasm \
-		bin/plasm.bin \
-		include/plasm-epc-bits.h \
-		man/man1/plasm.1.gz
+GH_ACCOUNT=	outpaddling
+GH_TAGNAME=	cbbe98c8
 
 pre-build:
-	make depend
+	(cd ${WRKSRC} && ${MAKE} depend)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
