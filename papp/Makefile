@@ -1,7 +1,6 @@
 PORTNAME=	papp
 DISTVERSION=	0.0.0-9
 CATEGORIES=	wip devel
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Assembly Preprocessor
