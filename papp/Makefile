@@ -1,5 +1,5 @@
 PORTNAME=	papp
-PORTVERSION=	0.3.2
+DISTVERSION=	0.0.0-8
 CATEGORIES=	wip devel
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
@@ -8,7 +8,10 @@ COMMENT=	Assembly Preprocessor
 
 LICENSE=	BSD3CLAUSE
 
-USES=		tar:xz
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	outpaddling
+GH_TAGNAME=	2db859cc
 
 MAKE_ARGS+=	PREFIX=${PREFIX} \
 		MANPREFIX=${PREFIX} \
