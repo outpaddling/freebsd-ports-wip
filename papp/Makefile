@@ -1,5 +1,5 @@
 PORTNAME=	papp
-DISTVERSION=	0.0.0-8
+DISTVERSION=	0.0.0-9
 CATEGORIES=	wip devel
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
@@ -11,10 +11,6 @@ LICENSE=	BSD3CLAUSE
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	2db859cc
-
-MAKE_ARGS+=	PREFIX=${PREFIX} \
-		MANPREFIX=${PREFIX} \
-		STAGEDIR=${STAGEDIR}
+GH_TAGNAME=	6e8aae18
 
 .include <bsd.port.mk>
