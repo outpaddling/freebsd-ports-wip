@@ -1,4 +1,2 @@
 
-Replace USE_GCC with compiler:* wherever possible
-
-Prevent condor and other ports from using devel/libc++?
+Deprecate dependencies of vcflib, ?? that now use GH_TUPLE
