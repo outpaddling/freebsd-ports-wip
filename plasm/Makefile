@@ -1,5 +1,5 @@
 PORTNAME=	plasm
-DISTVERSION=	0.0.0-34
+DISTVERSION=	0.0.0-35
 CATEGORIES=	wip devel
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -13,7 +13,7 @@ RUN_DEPENDS=	papp:wip/papp
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	574c2cf4
+GH_TAGNAME=	4765a01f
 
 pre-build:
 	(cd ${WRKSRC} && ${MAKE} depend)
