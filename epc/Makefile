@@ -1,8 +1,8 @@
 # Created by: Jason Bacon <jwb@FreeBSD.org>
 
 PORTNAME=	EPC
-DISTVERSION=	0.1.0-4
-DISTVERSIONSUFFIX=	-g88b0dc3
+DISTVERSION=	0.1.0-5
+DISTVERSIONSUFFIX=	-g59c9364
 CATEGORIES=	wip emulators
 
 MAINTAINER=	jwb@FreeBSD.org
