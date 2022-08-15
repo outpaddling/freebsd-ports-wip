@@ -13,7 +13,7 @@ RUN_DEPENDS=	papp:wip/papp
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	4765a01f
+GH_TAGNAME=	cc07d1b0
 
 pre-build:
 	(cd ${WRKSRC} && ${MAKE} depend)
