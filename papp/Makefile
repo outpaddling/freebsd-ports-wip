@@ -1,5 +1,5 @@
 PORTNAME=	papp
-DISTVERSION=	0.0.0-9
+DISTVERSION=	0.0.0-10
 CATEGORIES=	wip devel
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,6 +10,6 @@ LICENSE=	BSD3CLAUSE
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	6e8aae18
+GH_TAGNAME=	dbb48527
 
 .include <bsd.port.mk>
