@@ -1,0 +1,8 @@
+bin/fasda
+libexec/fasda/abundance
+libexec/fasda/fold-change
+libexec/fasda/normalize
+man/man1/diffanal-abundance.1.gz
+man/man1/diffanal-fold-change.1.gz
+man/man1/diffanal-normalize.1.gz
+man/man1/diffanal.1.gz
