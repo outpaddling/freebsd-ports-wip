@@ -1,0 +1,10 @@
+bin/dbk-genhtml
+bin/dbk-genkey
+bin/dbk-genmake
+bin/dbk-genpdf
+bin/dbk-insert-date
+bin/dbk-strip
+bin/dbk-wrap-all-code
+bin/dbk-wrap-code
+bin/dbk-wrap-genmake
+man/man1/dbk-strip.1.gz
