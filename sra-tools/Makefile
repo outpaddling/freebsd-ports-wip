@@ -1,7 +1,7 @@
 # Created by: Motomichi Matsuzaki <mzaki@e-mail.ne.jp>
 
 PORTNAME=	sra-tools
-DISTVERSION=	2.11.2
+DISTVERSION=	2.11.3
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -17,7 +17,6 @@ ONLY_FOR_ARCHS_REASON=	NCBI-VDB requires SSE2 instructions, no 32-bit support
 
 # cmake currently used only for VDB submodule
 BUILD_DEPENDS=	bash:shells/bash \
-		${LOCALBASE}/lib/libngs-c++.a:biology/ngs-sdk \
 		cmake:devel/cmake
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libhdf5.so:science/hdf5 \
@@ -30,8 +29,8 @@ USE_GITHUB=	yes
 
 SHEBANG_GLOB=	*.sh *.pl
 GH_ACCOUNT=	ncbi
-GH_TUPLE+=	ncbi:ngs:${DISTVERSION}:ngs/ngs # ported as biology/ngs-sdk
-GH_TUPLE+=	ncbi:ncbi-vdb:${DISTVERSION}:vdb/ncbi-vdb
+GH_TUPLE+=	ncbi:ngs:2.11.2:ngs/ngs # ported as biology/ngs-sdk
+GH_TUPLE+=	ncbi:ncbi-vdb:2.11.2:vdb/ncbi-vdb
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ngs-sdk-prefix=${LOCALBASE} \
