@@ -1,5 +1,3 @@
-# Created by: Motomichi Matsuzaki <mzaki@e-mail.ne.jp>
-
 PORTNAME=	sra-tools
 DISTVERSION=	2.11.3
 CATEGORIES=	wip biology
@@ -16,7 +14,9 @@ ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	NCBI-VDB requires SSE2 instructions, no 32-bit support
 
 # cmake currently used only for VDB submodule
+# Look into removing biology/ngs-sdk dep
 BUILD_DEPENDS=	bash:shells/bash \
+		${LOCALBASE}/lib/libngs-c++.a:biology/ngs-sdk \
 		cmake:devel/cmake
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libhdf5.so:science/hdf5 \
