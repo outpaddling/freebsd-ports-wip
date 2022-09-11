@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Python healpix maps tools
+WWW=		https://pypi.python.org/pypi/healpy
 
 LICENSE=	GPLv2
 

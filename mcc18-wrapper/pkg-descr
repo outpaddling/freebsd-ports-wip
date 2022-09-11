@@ -1,5 +1,3 @@
 MCC18 is a Windows-based commercial compiler from Microship, Inc. for their
 PIC line of microcontrollers.  This port provides wrappers to make the
 MCC compiler tools look like native Unix commands.
-
-WWW:	http://www.microchip.com

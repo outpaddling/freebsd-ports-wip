@@ -6,6 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	Small Device C Compiler
+WWW=		https://sdcc.sourceforge.net/
 
 LICENSE=	GPLv3
 

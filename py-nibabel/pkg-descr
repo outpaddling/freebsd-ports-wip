@@ -1,4 +1,2 @@
 This package provides read +/- write access to some common medical and
 neuroimaging file formats.
-
-WWW: http://nipy.org/nibabel/

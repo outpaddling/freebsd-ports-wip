@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Estimating the copula mixture model and plotting correspondence curves
+WWW=		https://cran.r-project.org/web/packages/idr/index.html
 
 LICENSE=	GPLv2
 

@@ -1,4 +1,2 @@
 This QIIME 2 plugin wraps the Deblur software for performing sequence quality
 control.
-
-WWW: https://github.com/qiime2/q2-deblur

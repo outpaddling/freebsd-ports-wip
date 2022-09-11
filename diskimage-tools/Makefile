@@ -4,6 +4,7 @@ CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Convenience tools for manipulating disk images
+WWW=		https://acadix.biz/diskimage-tools.php
 
 LICENSE=	BSD2CLAUSE
 

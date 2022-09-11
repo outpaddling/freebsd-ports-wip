@@ -7,6 +7,7 @@ DISTNAME=	${DISTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Linear discriminant analysis effect size
+WWW=		https://bitbucket.org/nsegata/lefse/src/default/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt

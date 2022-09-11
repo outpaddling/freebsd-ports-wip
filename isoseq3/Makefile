@@ -5,6 +5,7 @@ CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Scalable De Novo Isoform Discovery from Single-Molecule PacBio Reads
+WWW=		https://github.com/PacificBiosciences/IsoSeq3
 
 LICENSE=	GPLv3
 # LICENSE_FILE=	

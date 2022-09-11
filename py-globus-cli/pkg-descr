@@ -1,4 +1,2 @@
 Globus-cli is a command-line interface to the Globus file transfer service.  It
 supercedes the Globus Toolkit for many CLI functions.
-
-WWW: https://github.com/globus/globus-cli

@@ -5,6 +5,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Determine IP address of client as seen by server
+WWW=		https://www.acadix.biz
 
 LICENSE=	BSD2CLAUSE
 

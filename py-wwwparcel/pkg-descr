@@ -1,5 +1,3 @@
 Parcel is a suite of classes and helper functions designed to be used in
 conjunction with Fabric for building and deploying Python web applications
 using native packages.
-
-WWW: https://pypi.python.org/pypi/parcel

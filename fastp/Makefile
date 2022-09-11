@@ -6,6 +6,7 @@ CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Ultra-fast all-in-one FASTQ preprocessor
+WWW=		https://github.com/OpenGene/fastp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

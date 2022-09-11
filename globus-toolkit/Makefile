@@ -5,6 +5,7 @@ MASTER_SITES=	https://downloads.globus.org/toolkit/gt6/stable/installers/src/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Open source software toolkit used for building grids
+WWW=		https://example.com
 
 LICENSE=	APACHE20
 

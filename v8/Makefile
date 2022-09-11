@@ -8,6 +8,7 @@ MASTER_SITES=	LOCAL/vanilla
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Google\'s open source JavaScript engine
+WWW=		https://code.google.com/p/v8/
 
 LICENSE=	BSD3CLAUSE
 

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Genomic Data Commons download tool
+WWW=		https://gdc.cancer.gov/access-data/gdc-data-transfer-tool
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

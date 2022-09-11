@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	reports statistics on cpu, disk, infiniband, lustre, memory, etc
+WWW=		https://sourceforge.net/projects/collectl/
 
 LICENSE=	ART10
 

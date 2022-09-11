@@ -6,6 +6,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Generic format for storing large nucleotide sequence alignments
+WWW=		https://example.com
 
 # LICENSE actually varies
 LICENSE=	BSD2CLAUSE

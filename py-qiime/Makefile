@@ -17,6 +17,7 @@ EXTRACT_ONLY=	${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Quantitative Insights Into Microbial Ecology
+WWW=		https://port.home.page/
 
 LICENSE=	GPLv2
 

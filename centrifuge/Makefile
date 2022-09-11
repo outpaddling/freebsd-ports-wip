@@ -6,6 +6,7 @@ CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Novel microbial classification engine
+WWW=		https://www.ccb.jhu.edu/software/centrifuge/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Framework for wrapping and controlling command-line applications
+WWW=		https://pypi.python.org/pypi/burrito
 
 # Not sure about clauses
 LICENSE=	BSD2CLAUSE

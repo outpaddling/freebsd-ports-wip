@@ -5,6 +5,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Count DNA sequence reads in BAM files
+WWW=		https://github.com/genome/bam-readcount
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

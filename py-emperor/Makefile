@@ -9,6 +9,7 @@ PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Analysis, visualization and understanding of microbial ecology
+WWW=		https://github.com/biocore/biom-format
 
 LICENSE=	BSD3CLAUSE
 

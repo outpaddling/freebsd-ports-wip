@@ -4,6 +4,7 @@ CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	System resource viewer for C Suite
+WWW=		https://gitlab.com/cubocore/corestats
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

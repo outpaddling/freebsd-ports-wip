@@ -4,6 +4,7 @@ CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Simple paint app from CuboCore
+WWW=		https://gitlab.com/cubocore/corepaint
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python library for RDF manipulation
+WWW=		https://pypi.python.org/pypi/rdflib/
 
 LICENSE=	BSD3CLAUSE
 

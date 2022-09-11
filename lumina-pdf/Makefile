@@ -4,6 +4,7 @@ CATEGORIES=	wip deskutils
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	PDF viewer from the Lumina Desktop
+WWW=		https://lumina-desktop.org
 
 LICENSE=	BSD3CLAUSE
 

@@ -4,6 +4,7 @@ CATEGORIES=	wip
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Simple program that can be used to perform rarefaction analysis
+WWW=		https://github.com/cdeanj/rarefactionanalyzer
 
 # Actually unspecified, just pretending for poudriere
 LICENSE=	PD

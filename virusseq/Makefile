@@ -6,6 +6,7 @@ DISTNAME=	VirusSeq-${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Detecting known viruses and their integration sites
+WWW=		https://example.com
 
 #LICENSE=	unspecified
 

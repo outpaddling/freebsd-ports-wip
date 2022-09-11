@@ -5,6 +5,7 @@ CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tool for processing sequences in FASTA/FASTQ format
+WWW=		https://github.com/lh3/seqtk
 
 LICENSE=	GPLv2
 

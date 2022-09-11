@@ -8,6 +8,7 @@ DISTNAME=	ParMGridGen-${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=
+WWW=		https://port.home.page/
 
 FETCH_ARGS+=	-F
 

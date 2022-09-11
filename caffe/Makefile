@@ -4,6 +4,7 @@ CATEGORIES=	wip science
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Fast open framework for deep learning
+WWW=		https://caffe.berkeleyvision.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

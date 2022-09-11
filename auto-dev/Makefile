@@ -4,6 +4,7 @@ CATEGORIES=	wip devel
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for automating code development and documentation
+WWW=		https://github.com/outpaddling/auto-dev/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

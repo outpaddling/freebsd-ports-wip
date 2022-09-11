@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.757.27
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=
+WWW=		https://port.home.page/
 
 WRKSRC=		${WRKDIR}/srcpkg/${DISTNAME}/src/
 USE_CMAKE=	yes

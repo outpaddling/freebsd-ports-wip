@@ -4,5 +4,3 @@ approximate seeds and allows for fast and sensitive analyses of nucleotide
 sequences. The main application of SortMeRNA is filtering ribosomal RNA from
 metatranscriptomic data. Additional applications include OTU-picking and
 taxonomy assignation available through QIIME v1.9+.
-
-WWW: http://bioinfo.lifl.fr/RNA/sortmerna/

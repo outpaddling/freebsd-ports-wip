@@ -1,4 +1,2 @@
 Pufferfish is a time and memory-efficient data structure for indexing a
 compacted, colored de Bruijn graph (ccdBG).
-
-WWW: https://github.com/COMBINE-lab/pufferfish

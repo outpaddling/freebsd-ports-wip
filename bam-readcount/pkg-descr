@@ -1,5 +1,3 @@
 The purpose of this program is to generate metrics at single nucleotide
 positions.  There are number of metrics generated which can be useful for
 filtering out false positive calls.
-
-WWW: https://github.com/genome/bam-readcount

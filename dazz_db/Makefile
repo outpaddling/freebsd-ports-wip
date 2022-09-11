@@ -8,6 +8,7 @@ CATEGORIES=		wip biology databases
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Dresden assembler for long read DNA projects
+WWW=		https://github.com/thegenemyers/DAZZ_DB
 
 LICENSE=	BSD3CLAUSE
 

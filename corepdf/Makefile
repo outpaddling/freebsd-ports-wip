@@ -4,6 +4,7 @@ CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	PDF viewer from the CoreApps family
+WWW=		https://gitlab.com/cubocore/corepdf
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

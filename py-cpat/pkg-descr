@@ -1,9 +1,6 @@
 CPAT overcomes limitations of alignment searches by using logistic regression
 model based on 4 pure sequence-based, linguistic features
-
     ORF size
     ORF coverage
     Fickett TESTCODE
     Hexamer usage bias
-
-WWW: http://rna-cpat.sourceforge.net/

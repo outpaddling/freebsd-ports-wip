@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Python API to Mercurial using the command-line interface
+WWW=		https://pypi.python.org/pypi/hgapi/
 
 LICENSE=	BSD2CLAUSE
 #LICENSE_FILE=	

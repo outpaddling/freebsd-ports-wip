@@ -23,6 +23,7 @@ PKGNAMESUFFIX!=	echo ${PKGNAMESUFFIX}'-spherical'
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Unstructured Grid Finite Volume Coastal Ocean Model
+WWW=		https://fvcom.smast.umassd.edu/FVCOM/index.html
 
 # Check netcdf lib for Fortran support!
 LIB_DEPENDS=	netcdf:science/netcdf \

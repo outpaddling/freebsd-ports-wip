@@ -5,6 +5,7 @@ MASTER_SITES=	ftp://ftp.ifremer.fr/ifremer/fortran90/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Fortran 90 preprocessor and utilities
+WWW=		https://example.com
 
 USES=		fortran gmake
 

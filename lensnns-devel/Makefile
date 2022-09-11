@@ -8,6 +8,7 @@ DISTNAME=	lens
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Light Efficient Neural Network Simulator
+WWW=		https://tedlab.mit.edu/~dr/Lens/
 
 RUN_DEPENDS=	webbrowser:../../www/webbrowser
 

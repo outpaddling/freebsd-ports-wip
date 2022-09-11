@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	The Biological Observation Matrix (BIOM) Format Project
+WWW=		https://github.com/biocore/biom-format
 
 LICENSE=	BSD3CLAUSE
 

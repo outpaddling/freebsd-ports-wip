@@ -4,6 +4,7 @@ CATEGORIES=	wip textproc
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Replace tabs a th spaces in a text file
+WWW=		https://port.home.page/
 
 LICENSE=	BSD2CLAUSE
 

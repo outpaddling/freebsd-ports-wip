@@ -8,6 +8,7 @@ MASTER_SITES=	http://www.freedesktop.org/software/polkit/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Framework for controlling access to system-wide components
+WWW=		https://www.freedesktop.org/wiki/Software/polkit
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

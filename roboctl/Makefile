@@ -4,6 +4,7 @@ CATEGORIES=	wip devel
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	API and tools for communicating with Lego and Vex robots
+WWW=		https://personalpages.tds.net/~jwbacon/Ports
 
 LICENSE=	GPLv3
 

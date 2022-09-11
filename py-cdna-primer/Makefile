@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Analyzing transcriptome data generated using the PacBio(R)
+WWW=		https://github.com/PacificBiosciences/cDNA_primer
 
 LICENSE=	BSD3CLAUSE
 

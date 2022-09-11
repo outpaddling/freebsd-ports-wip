@@ -4,5 +4,3 @@ can also be used for post- analyses of sets of phylogenetic trees, analyses of
 alignments and, evolutionary placement of short reads. It has originally been
 derived from fastDNAml which in turn was derived from Joe Felsentein's dnaml
 which is part of the PHYLIP package.
-
-WWW: https://cme.h-its.org/exelixis/web/software/raxml/

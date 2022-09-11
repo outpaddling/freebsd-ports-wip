@@ -1,5 +1,3 @@
 amr-cli is a command-line interface rough equivalent to the AmrPlusPlus
 pipeline, which identifies and characterizes resistance renes within sequence
 data.
-
-WWW: https://github.com/outpaddling/amr-cli

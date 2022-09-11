@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Ordination methods, diversity analysis etc for ecologists
+WWW=		https://cran.r-project.org/web/packages/vegan/
 
 LICENSE=	GPLv2
 #LICENSE_FILE=	

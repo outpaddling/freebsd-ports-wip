@@ -5,6 +5,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	API and toolkit for handling BAM files
+WWW=		https://github.com/pezmaster31/bamtools
 
 LICENSE=	MIT
 

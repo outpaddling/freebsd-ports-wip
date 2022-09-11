@@ -1,4 +1,2 @@
 Simple but high performance Cython hash table mapping pre-randomized keys to
 void* values.
-
-WWW: https://github.com/explosion/preshed

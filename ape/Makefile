@@ -7,6 +7,7 @@ CATEGORIES=	wip editors
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Another Programmer's Editor
+WWW=		https://acadix.biz/ape.php
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

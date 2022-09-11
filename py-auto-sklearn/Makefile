@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Automated machine learning
+WWW=		https://pypi.python.org/pypi/auto-sklearn
 
 LICENSE=	BSD3CLAUSE
 # No license file on pypi, maybe use Github?

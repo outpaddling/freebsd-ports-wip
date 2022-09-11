@@ -10,6 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Combining a UDT network proxy with resumable performant HTTP downloads
+WWW=		https://pypi.python.org/pypi/parcel
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

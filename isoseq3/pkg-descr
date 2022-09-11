@@ -4,5 +4,3 @@ power the IsoSeq3 GUI-based analysis application. A composable workflow of
 existing tools and algorithms, combined with a new clustering technique, allows
 to process the ever-increasing yield of PacBio machines with similar
 performance to IsoSeq1 and IsoSeq2.
-
-WWW: https://github.com/PacificBiosciences/IsoSeq3

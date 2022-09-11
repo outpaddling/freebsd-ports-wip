@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	interactive parallel visualization and graphical analysis tool
+WWW=		https://port.home.page/
 
 # Unclear about this
 LICENSE=	BSD3CLAUSE

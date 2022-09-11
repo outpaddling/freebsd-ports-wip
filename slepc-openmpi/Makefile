@@ -7,6 +7,7 @@ MASTER_SITES=	http://www.grycap.upv.es/slepc/download/distrib/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	large scale sparse eigenvalue problems on parallel computers
+WWW=		https://port.home.page/
 
 HAS_CONFIGURE=	yes
 USES=		python fortran

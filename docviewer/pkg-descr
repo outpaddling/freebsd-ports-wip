@@ -4,5 +4,3 @@ with PDF attachments.  By configuring the applications to use docviewer instead
 of a specific document viewer, you can avoid having to reconfigure multiple
 applications when switching viewers.  Your viewer selection is configured in
 one place.
-
-WWW: https://github.com/outpaddling/docviewer

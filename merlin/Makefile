@@ -5,6 +5,7 @@ MASTER_SITES=	http://csg.sph.umich.edu/abecasis/Merlin/download/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Sparse trees to represent gene flow in pedigrees
+WWW=		https://csg.sph.umich.edu/abecasis/Merlin/index.html
 
 LICENSE=	BSD3CLAUSE
 

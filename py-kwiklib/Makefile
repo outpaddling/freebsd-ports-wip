@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Shared features between the projects (files, statistics, utils)
+WWW=		https://github.com/klusta-team/kwiklib
 
 LICENSE=	BSD3CLAUSE
 

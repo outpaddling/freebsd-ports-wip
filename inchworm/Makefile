@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=
+WWW=		https://port.home.page/
 
 GNU_CONFIGURE=	yes
 

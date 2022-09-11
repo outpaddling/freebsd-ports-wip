@@ -7,6 +7,7 @@ DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Configurable Pipeline for the Analysis of Connectomes
+WWW=		https://github.com/FCP-INDI/C-PAC
 
 LICENSE=	BSD3CLAUSE
 

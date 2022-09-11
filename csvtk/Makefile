@@ -5,6 +5,7 @@ CATEGORIES=	wip science
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Cross-platform and ultrafast toolkit for CSV/TSV processing
+WWW=		https://bioinf.shenwei.me/csvtk/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

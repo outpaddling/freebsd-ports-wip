@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jrm@ftfl.ca
 COMMENT=	Phylogenetic Investigation of Communities by Reconstruction of Unobserved STates
+WWW=		https://picrust.github.io/picrust/
 
 LICENSE=	GPLv3+
 

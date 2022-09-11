@@ -3,5 +3,3 @@ metagenomic dataets. This program takes in as input a SAM formatted alignment
 file, a FASTA formatted reference database, and a CSV formatted annotation
 database. The alignment file is treated as the sample resistome. This is done by
 counting each alignment for each target gene found in the alignment file.
-
-WWW: https://github.com/cdeanj/resistomeanalyzer

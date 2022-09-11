@@ -6,6 +6,7 @@ CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Genomics LD Score Regression (LDSC)
+WWW=		https://github.com/bulik/ldsc
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

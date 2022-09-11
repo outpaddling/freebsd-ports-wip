@@ -7,6 +7,7 @@ DISTFILES=	${SINGLE_PRECISION}.gz ${DOUBLE_PRECISION}.gz
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	General-purpose finite element program for simulating complex problems
+WWW=		https://www.lstc.com/
 
 LICENSE=	LS_DYNA
 LICENSE_NAME=	LS-DYNA License

@@ -3,5 +3,3 @@ that just works and does not require any knowledge beyond basic Unix
 command-line skills. The code is written entirely in C to maximize
 efficiency and portability, and to provide a simple command-line user
 interface.
-
-WWW: https://github.com/auerlab/fasda

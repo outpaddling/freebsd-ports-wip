@@ -5,6 +5,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Easy installation of Linux Atomistix(r) on FreeBSD
+WWW=		https://acadix.biz/matlab-installer.php
 
 LICENSE=	BSD3CLAUSE
 

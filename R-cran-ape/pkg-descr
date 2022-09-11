@@ -12,5 +12,3 @@ BIONJ, ME, MVR, SDM, and triangle methods, and several methods handling
 incomplete distance matrices (NJ*, BIONJ*, MVR*, and the corresponding
 triangle method). Some functions call external applications (PhyML, Clustal,
 T-Coffee, Muscle) whose results are returned into R.
-
-WWW: https://cran.r-project.org/web/packages/ape/

@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Python module for instant inlining of C and C++ code in Python
+WWW=		https://fenicsproject.org/
 
 LICENSE=	LGPL3
 

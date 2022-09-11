@@ -6,6 +6,7 @@ DISTNAME=	dff6b4528a905500810d7a9048e617f8b80b0f77
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Sort fasta files and eliminate duplicate lines
+WWW=		https://gist.github.com/meren/abd5c6f014da9aa554a4
 
 LICENSE=	NONE
 

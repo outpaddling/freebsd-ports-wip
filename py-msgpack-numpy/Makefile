@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Numpy data serialization using msgpack
+WWW=		https://pypi.python.org/pypi/msgpack-numpy
 
 LICENSE=	BSD3CLAUSE
 # LICENSE_FILE=	

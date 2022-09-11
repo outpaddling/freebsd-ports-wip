@@ -5,6 +5,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	High-performance genomic feature operations
+WWW=		https://github.com/bedops/bedops
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

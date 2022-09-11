@@ -5,5 +5,3 @@ or separate tasks.  Each stage or task in a computational pipeline is
 represented by a python function Each python function can be called in
 parallel to run multiple jobs.  Ruffus was originally designed for use in
 bioinformatics to analyse multiple genome data sets.
-
-WWW: https://pypi.python.org/pypi/ruffus

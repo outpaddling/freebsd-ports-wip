@@ -7,6 +7,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	RNA-Seq by Expectation-Maximization
+WWW=		https://deweylab.biostat.wisc.edu/rsem/README.html
 
 LICENSE=	GPLv3
 

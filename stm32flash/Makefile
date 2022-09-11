@@ -5,6 +5,7 @@ MASTER_SITES=	SF/stm32flash/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Open source flash program for STM32 ARM processors using ST bootloader
+WWW=		https://sourceforge.net/projects/stm32flash/
 
 USES=		gmake
 

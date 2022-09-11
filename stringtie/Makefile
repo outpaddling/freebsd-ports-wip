@@ -5,6 +5,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org.edu
 COMMENT=	Transcript assembly and quantification for RNA-Seq
+WWW=		https://www.ccb.jhu.edu/software/stringtie/
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE

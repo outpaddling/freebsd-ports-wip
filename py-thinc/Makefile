@@ -6,6 +6,7 @@ PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SpaCy's Machine Learning library for NLP in Python
+WWW=		https://github.com/explosion/thinc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

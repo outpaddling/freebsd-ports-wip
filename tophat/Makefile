@@ -5,6 +5,7 @@ CATEGORIES=	wip biology science
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Fast splice junction mapper for RNA-Seq reads
+WWW=		https://ccb.jhu.edu/software/tophat/index.shtml
 
 LICENSE=	BSL
 

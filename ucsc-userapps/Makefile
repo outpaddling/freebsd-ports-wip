@@ -9,6 +9,7 @@ DISTNAME=	userApps.v${PORTVERSION}.src
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Command line tools from the UCSC Genome Browser project
+WWW=		https://hgdownload.cse.ucsc.edu/admin/exe/
 
 LICENSE=	UCSC-GB
 LICENSE_NAME=	UCSC Genome Browser License

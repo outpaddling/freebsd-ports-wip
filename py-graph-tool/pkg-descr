@@ -5,5 +5,3 @@ implemented in C++, making extensive use of template metaprogramming, based
 heavily on the Boost Graph Library. This confers it a level of performance that
 is comparable (both in memory usage and computation time) to that of a pure
 C/C++ library.
-
-WWW: https://graph-tool.skewed.de/

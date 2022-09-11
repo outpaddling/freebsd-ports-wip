@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Determine features differentially abundant between groups of samples
+WWW=		https://bioconductor.org/packages/release/bioc/html/metagenomeSeq.html
 
 LICENSE=	ART20
 #LICENSE_FILE=	

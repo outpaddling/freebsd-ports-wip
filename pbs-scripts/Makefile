@@ -5,6 +5,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Supplemental scripts for PBS scheduler
+WWW=		https://port.home.page/
 
 NO_BUILD=	yes
 

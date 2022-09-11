@@ -4,5 +4,3 @@ system, and 32K Memory expansion unit. This is a port of a Win32 based emulator
 that I wrote a while back and am in the process of porting to Linux using SDL
 (Simple DirectMedia Layer). The code is now machine independant and should run
 on any platform supported by SDL.
-
-WWW: https://www.mrousseau.org/programs/ti99sim/

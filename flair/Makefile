@@ -5,6 +5,7 @@ MASTER_SITES=	https://pantherfile.uwm.edu/weinert/www/flair.html/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	FLAPW method for bulk and thin films
+WWW=		https://pantherfile.uwm.edu/weinert/www/flair.html
 
 # LICENSE=      Custom free software with restrictions
 

@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Gaussian finite mixture models fitted via EM algorithm
+WWW=		https://cran.r-project.org/web/packages/mclust/
 
 LICENSE=	GPLv2
 #LICENSE_FILE=

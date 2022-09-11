@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Burrito application controllers for bioinformatics
+WWW=		https://pypi.python.org/pypi/burrito-fillings
 
 # Not sure of clauses
 LICENSE=	BSD2CLAUSE

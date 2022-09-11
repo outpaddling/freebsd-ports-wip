@@ -9,6 +9,7 @@ DISTNAME=	condor_src-${PORTVERSION}-all-all
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	High-throughput computing on distributively owned resources
+WWW=		https://research.cs.wisc.edu/condor/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE-2.0.txt

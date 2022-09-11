@@ -5,6 +5,7 @@ MASTER_SITES=	http://simpleburn.tuxfamily.org/IMG/gz/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Simple CD burning utility with minimal dependencies
+WWW=		https://example.com
 
 # Cecill
 LICENSE=	GPLv3

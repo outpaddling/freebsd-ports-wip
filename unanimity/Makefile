@@ -5,6 +5,7 @@ CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Pacific Biosciences consensus library and applications
+WWW=		https://github.com/PacificBiosciences/unanimity
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

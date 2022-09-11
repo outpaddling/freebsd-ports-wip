@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=
+WWW=		https://pypi.python.org/pypi/consensuscore
 
 USES=		python:3.6+
 USE_PYTHON=	distutils

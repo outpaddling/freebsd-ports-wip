@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=
+WWW=		https://port.home.page/
 
 USES=		tar:xz gmake
 

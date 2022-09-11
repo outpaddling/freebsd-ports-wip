@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	p5-
  
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Pfam protein database scanner
+WWW=		https://port.home.page/
 
 USES=		perl5 tar:xz
 USE_PERL5=	run

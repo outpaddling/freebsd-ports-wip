@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_kernel_source
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Multi-locus genotype data to investigate population structure
+WWW=		https://pritchardlab.stanford.edu/structure.html
 
 # LICENSE=	unspecified
 

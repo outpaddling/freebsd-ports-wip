@@ -4,6 +4,7 @@ CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Portable tools for automating systems management
+WWW=		https://acadix.biz/auto-admin.php
 
 LICENSE=	BSD2CLAUSE
 

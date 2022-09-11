@@ -5,6 +5,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Download tool for GDC (Genomic Data Commons) data
+WWW=		https://example.com
 
 LICENSE=	BSD2CLAUSE
 #LICENSE_FILE=	

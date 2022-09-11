@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	14
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Utilities for Microchip PIC microcontrollers
+WWW=		https://gputils.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

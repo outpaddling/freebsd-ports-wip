@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Fast functional annotation of novel DNA or protein sequences
+WWW=		https://github.com/jhcepas/eggnog-mapper
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

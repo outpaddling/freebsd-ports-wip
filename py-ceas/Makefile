@@ -7,6 +7,7 @@ DISTNAME=	CEAS-Package-${PORTVERSION}
 
 MAINTAINER=	dsiercks@uwm.edu
 COMMENT=	Cis-regulatory Element Annotation System
+WWW=		https://pypi.python.org/pypi/ceas
 
 LICENSE=	ClArtistic
 

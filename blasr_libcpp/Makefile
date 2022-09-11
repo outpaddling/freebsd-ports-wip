@@ -4,6 +4,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Library for analyzing PacBio sequences
+WWW=		https://github.com/PacificBiosciences/blasr_libcpp
 
 LICENSE=	BSD3CLAUSE
 

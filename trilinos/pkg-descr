@@ -2,5 +2,3 @@ The Trilinos Project is an effort to develop and implement robust algorithms
 and enabling technologies using modern object-oriented software design, while
 still leveraging the value of established libraries such as PETSc,
 Metis/ParMetis, SuperLU, Aztec, the BLAS and LAPACK.
-
-WWW:	http://trilinos.sandia.gov/

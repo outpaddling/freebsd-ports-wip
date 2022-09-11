@@ -7,6 +7,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Manage SLURM host lists
+WWW=		https://port.home.page/
 
 LICENSE=	GPLv2
 

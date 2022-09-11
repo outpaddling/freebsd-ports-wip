@@ -4,6 +4,7 @@ CATEGORIES=	wip textproc
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Format columns according to user parameters
+WWW=		https://github.com/outpaddling/format-cols
 
 LICENSE=	BSD2CLAUSE
 

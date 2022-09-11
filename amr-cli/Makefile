@@ -4,6 +4,7 @@ CATEGORIES=	wip
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Identify and characterize resistance genes within sequence data
+WWW=		https://github.com/outpaddling/amr-cli
 
 LICENSE=	BSD2CLAUSE
 

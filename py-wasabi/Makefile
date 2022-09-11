@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight console printing and formatting toolkit
+WWW=		https://pypi.python.org/pypi/wasabi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

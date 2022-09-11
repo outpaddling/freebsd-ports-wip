@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}-806
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Command-line tools for processing fastq sequence data
+WWW=		https://code.google.com/p/ea-utils/
 
 LICENSE=	MIT
 

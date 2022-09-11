@@ -5,6 +5,7 @@ MASTER_SITES=	https://bitbucket.org/fenics-project/dolfin/downloads/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Computational backend of FEniCS
+WWW=		https://fenicsproject.org/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

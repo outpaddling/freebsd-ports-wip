@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Lightweight workflows in bioinformatics
+WWW=		https://github.com/mfiers/Moa
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

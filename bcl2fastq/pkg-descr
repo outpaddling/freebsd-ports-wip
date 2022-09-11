@@ -3,5 +3,3 @@ primary sequencing output, but many downstream analysis applications use
 per-read FASTQ files as input. bcl2fastq combines these per-cycle BCL files
 from a run and translates them into FASTQ files. bcl2fastq can begin bcl
 conversion as soon as the first read has been completely sequenced.
-
-WWW: https://support.illumina.com/sequencing/sequencing_software/bcl2fastq-conversion-software.html

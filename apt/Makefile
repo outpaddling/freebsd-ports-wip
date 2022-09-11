@@ -6,6 +6,7 @@ DISTNAME=	APT-${PORTVERSION}_Source_Code
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	command line programs for working with Affymetrix GeneChip® arrays
+WWW=		https://www.affymetrix.com/estore/partners_programs/programs/developer/tools/powertools.affx#1_1
 
 USES=		gmake shebangfix zip
 SHEBANG_FILES=	*.sh sdk/build/*.sh

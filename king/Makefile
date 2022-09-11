@@ -6,6 +6,7 @@ DISTNAME=	KING${DISTVERSION}code
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Kinship-based INference for Gwas
+WWW=		https://people.virginia.edu/~wc9c/KING/
 
 # Fake to avoid download delays
 LICENSE=	BSD2CLAUSE

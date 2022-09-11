@@ -6,6 +6,7 @@ MASTER_SITES=	http://www.clustal.org/download/current/ \
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Multiple alignment of nucleic acid and protein sequences with GUI
+WWW=		https://www.clustal.org/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -14,6 +14,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Nanoscale electronic-structure calculations and materials modeling
+WWW=		https://www.quantum-espresso.org/
 
 LICENSE=	GPLv2
 

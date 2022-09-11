@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Simple way to deal with environment constants
+WWW=		https://pypi.python.org/pypi/constants
 
 # Not sure about clauses
 LICENSE=	BSD2CLAUSE

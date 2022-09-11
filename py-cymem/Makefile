@@ -6,6 +6,7 @@ PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Cython memory pool for RAII-style memory management
+WWW=		https://github.com/explosion/cymem
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

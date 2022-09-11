@@ -5,6 +5,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Population genetics and stratification correction method
+WWW=		https://genetics.med.harvard.edu/reich/Reich_Lab/Software.html
 
 #LICENSE=	
 

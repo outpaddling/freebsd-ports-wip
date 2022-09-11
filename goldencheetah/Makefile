@@ -8,6 +8,7 @@ CATEGORIES=	wip games
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Training software for cyclists
+WWW=		https://goldencheetah.org/
 
 LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	multi

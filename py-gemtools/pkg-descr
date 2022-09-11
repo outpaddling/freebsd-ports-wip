@@ -1,14 +1,9 @@
 GEM-Tools is a C API and a Python module to support and simplify usage of the
 GEM Mapper.
-
 The C API currently supports fast and exhaustive support for parsing GEM .map
 files and other mapping formats.
-
 The Python gem module allows to integrate the GEM Mapper in python scripts and
 simplifies development of mapping pipelines.
-
 In addition to the library functionality, GEM-Tools also provides a command
 line tool gemtools, that you can use to start the RNASeq pipeline and various
 other tools, like the indexer and the statistics module.
-
-WWW: https://github.com/gemtools/gemtools

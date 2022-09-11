@@ -5,6 +5,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for exploring microsyntenic differences among species
+WWW=		https://github.com/auerlab/microsynteny-tools
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

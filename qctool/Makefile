@@ -6,6 +6,7 @@ DISTNAME=	qctool-3d76073841
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Manipulation and quality control of gwas datasets
+WWW=		https://www.well.ox.ac.uk/~gav/qctool_v2/
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt

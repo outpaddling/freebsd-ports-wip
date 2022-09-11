@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	C API and a Python module to support usage of the GEM Mapper
+WWW=		https://github.com/gemtools/gemtools
 
 # Check
 LICENSE=	GPLv2

@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	dsiercks@uwm.edu
 COMMENT=	Motif-based sequence analysis tools
+WWW=		https://example.com
 
 # FIXME: Uses multiply defined inline functions, which is not legal
 # in C99 rules used by clang

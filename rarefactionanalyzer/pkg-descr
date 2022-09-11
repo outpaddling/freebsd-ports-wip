@@ -7,5 +7,3 @@ research and is typically recommended for any kind of metagenomics where counts
 are of interest. Input to this tool includes a FASTA formatted reference
 database, a SAM formatted alignment file, and a CSV formatted annoation
 database.
-
-WWW: https://github.com/cdeanj/rarefactionanalyzer

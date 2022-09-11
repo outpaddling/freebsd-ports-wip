@@ -5,6 +5,7 @@ CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Split a text file into segments and process in parallel
+WWW=		https://github.com/outpaddling/cut-and-run
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,5 +5,3 @@ Sumaclust clusters sequences using the same clustering algorithm as UCLUST and
 CD-HIT. This algorithm is mainly useful to detect the 'erroneous' sequences
 created during amplification and sequencing protocols, deriving from 'true'
 sequences.
-
-WWW: https://git.metabarcoding.org/obitools/sumaclust/wikis/home

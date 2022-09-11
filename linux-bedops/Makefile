@@ -11,6 +11,7 @@ DISTNAME=	bedops_linux_x86_64-v${PORTVERSION}.v2
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	High-performance genomic feature operations
+WWW=		https://github.com/bedops/bedops
 
 LICENSE=	GPLv2
 

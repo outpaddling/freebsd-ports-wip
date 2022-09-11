@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Management of large, hierarchical parameter sets for modelling and simulation
+WWW=		https://pypi.python.org/pypi/parameters
 
 LICENSE=	GPLv2
 #LICENSE_FILE=	

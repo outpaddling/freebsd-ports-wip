@@ -5,6 +5,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Set foreground and background colors on ASCII terminals
+WWW=		https://acadix.biz
 
 LICENSE=	BSD2CLAUSE
 

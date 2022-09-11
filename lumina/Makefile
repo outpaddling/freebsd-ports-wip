@@ -7,6 +7,7 @@ CATEGORIES=	wip x11
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Lumina Desktop Environment (meta-port)
+WWW=		https://lumina-desktop.org/
 
 LICENSE=	BSD3CLAUSE
 

@@ -8,6 +8,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Algorithm for large-scale multiple sequence alignments
+WWW=		https://github.com/refresh-bio/FAMSA
 
 # Check this
 LICENSE=	PD

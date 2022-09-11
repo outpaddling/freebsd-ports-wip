@@ -2,5 +2,3 @@ EPACTS (Efficient and Parallelizable Association Container Toolbox) is a
 versatile software pipeline to perform various statistical tests for
 identifying genome-wide association from sequence data through a user-friendly
 interface, both to scientific analysts and to method developers.
-
-WWW: https://genome.sph.umich.edu/wiki/EPACTS

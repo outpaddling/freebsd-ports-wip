@@ -7,6 +7,7 @@ DISTNAME=	v2.0.1
 MAINTAINER=	jwb@FreeBSD.org
 
 COMMENT=	Trinotate is a comprehensive annotation suite designed for automatic functional annotation of transcriptomes, particularly de novo assembled transcriptomes, from model or non-model organisms.
+WWW=		https://trinotate.github.io/
 
 LICENSE=	BSD3CLAUSE
 

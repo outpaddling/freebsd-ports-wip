@@ -5,6 +5,7 @@ CATEGORIES=	wip www
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Wrapper for running the "best" available WEB browser
+WWW=		https://personalpages.tds.net/~jwbacon/Ports
 
 LICENSE=	BSD2CLAUSE
 

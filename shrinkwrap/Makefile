@@ -5,6 +5,7 @@ CATEGORIES=	wip archivers
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	std::streambuf wrapper for compression formats.
+WWW=		https://github.com/jonathonl/shrinkwrap
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

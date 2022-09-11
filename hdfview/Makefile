@@ -5,6 +5,7 @@ MASTER_SITES=	https://support.hdfgroup.org/ftp/HDF5/releases/HDF-JAVA/hdfview-3.
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tool written in Java for browsing and editing HDF (HDF5 and HDF4) files
+WWW=		https://portal.hdfgroup.org/display/HDFVIEW/HDFView#HDFView-install
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

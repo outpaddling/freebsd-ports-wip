@@ -5,6 +5,7 @@ MASTER_SITES=	http://www.alberta-fem.de/Downloads/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Adaptive multiLevel finite element toolbox
+WWW=		https://www.alberta-fem.de/
 
 LIB_DEPENDS=	blas:math/blas
 

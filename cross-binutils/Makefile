@@ -10,6 +10,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	GNU binutils port for cross-target development
+WWW=		https://sources.redhat.com/binutils/
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

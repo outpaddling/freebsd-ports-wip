@@ -9,6 +9,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Object-oriented math libraries
+WWW=		https://trilinos.sandia.gov/
 
 # Add if building shared libs
 USE_LDCONFIG=	${PREFIX}/${PORTNAME}/lib

@@ -7,6 +7,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Divides FASTA file into a smaller approx. equal sized set of files
+WWW=		https://port.home.page/
 
 LICENSE=	ZLIB
 

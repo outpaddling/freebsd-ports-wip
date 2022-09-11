@@ -5,6 +5,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	dsiercks@uwm.edu
 COMMENT=	Windowed adaptive trimming tool for FASTQ files using quality
+WWW=		https://github.com/najoshi/sickle
 
 LICENSE=	GPLv2
 

@@ -6,6 +6,7 @@ CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Core C++ library for Pacific Biosciences tools
+WWW=		https://github.com/PacificBiosciences/pbcopper
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

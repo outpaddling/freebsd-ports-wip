@@ -5,6 +5,7 @@ CATEGORIES=	wip science
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Weather forecasting model
+WWW=		https://www2.mmm.ucar.edu/wrf
 
 LICENSE=	PD
 

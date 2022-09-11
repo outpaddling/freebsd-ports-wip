@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	High dimensional medians (medoid, geometric median, etc.)
+WWW=		https://pypi.python.org/pypi/hdmedians
 
 LICENSE=	APACHE20
 

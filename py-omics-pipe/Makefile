@@ -8,6 +8,7 @@ DISTNAME=	omics_pipe-${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Multi-omics data analysis pipelines
+WWW=		https://pypi.python.org/pypi/omics-pipe
 
 LICENSE=	MIT
 

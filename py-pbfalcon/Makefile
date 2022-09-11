@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Experimental PacBio diploid assembler
+WWW=		https://github.com/PacificBiosciences/FALCON
 
 LICENSE=	BSD3CLAUSE
 

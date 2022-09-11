@@ -6,6 +6,7 @@ CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Whole genome association analysis toolset
+WWW=		https://pngu.mgh.harvard.edu/~purcell/plink/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

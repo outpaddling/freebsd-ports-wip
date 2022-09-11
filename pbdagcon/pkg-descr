@@ -1,4 +1,2 @@
 A sequence consensus algorithm implementation based on using directed acyclic
 graphs to encode multiple sequence alignment.
-
-WWW: https://github.com/PacificBiosciences/pbdagcon

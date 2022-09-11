@@ -5,6 +5,7 @@ CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Ultra-fast single-node large and complex metagenomics assembly
+WWW=		https://github.com/voutcn/megahit
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

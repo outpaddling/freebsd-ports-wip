@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Get list of common stop words in various languages in Python
+WWW=		https://pypi.python.org/pypi/stop-words
 
 LICENSE=	BSD3CLAUSE
 #LICENSE_FILE=

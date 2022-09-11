@@ -5,6 +5,7 @@ CATEGORIES=	wip textproc
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	XML beautifier
+WWW=		https://acadix.biz/xml-format.php
 
 LICENSE=	BSD2CLAUSE
 

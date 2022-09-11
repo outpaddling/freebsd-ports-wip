@@ -2,5 +2,3 @@ Short-read technologies for microbial community profiling are increasingly
 popular, yet previous techniques for assigning taxonomy to paired-end reads
 perform poorly. RTAX provides rapid taxonomic assignments of paired-end reads
 using a consensus algorithm.
-
-WWW: https://github.com/davidsoergel/rtax/

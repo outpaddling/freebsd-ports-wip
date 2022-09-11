@@ -7,6 +7,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	PacBio(R) long read aligner
+WWW=		https://github.com/PacificBiosciences/blasr
 
 LICENSE=	BSD3CLAUSE
 

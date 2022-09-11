@@ -4,6 +4,7 @@ CATEGORIES=	wip devel
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Assembly Preprocessor
+WWW=		https://github.com/outpaddling/papp
 
 LICENSE=	BSD3CLAUSE
 

@@ -8,6 +8,7 @@ MASTER_SITES=	http://eddylab.org/infernal/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Search DNA databases for RNA structure and sequence similarities
+WWW=		https://port.home.page/
 
 LICENSE=	BSD3CLAUSE
 

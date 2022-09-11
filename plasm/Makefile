@@ -4,6 +4,7 @@ CATEGORIES=	wip devel
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Portable Assembler
+WWW=		https://github.com/outpaddling/plasm
 
 LICENSE=	BSD2CLAUSE
 #LICENSE_FILE=	${WRKSRC}/LICENSE

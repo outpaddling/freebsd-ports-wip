@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Industrial-strength Natural Language Processing (NLP)
+WWW=		https://github.com/explosion/spaCy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

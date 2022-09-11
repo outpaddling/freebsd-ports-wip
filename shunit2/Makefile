@@ -4,6 +4,7 @@ CATEGORIES=	wip devel
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	xUnit based unit test framework for Bourne based shell scripts
+WWW=		https://github.com/kward/shunit2
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

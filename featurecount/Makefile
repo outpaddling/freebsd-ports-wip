@@ -4,6 +4,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	RNA sequencing pipeline metaport for
+WWW=		https://NA
 
 LICENSE=	BSD3CLAUSE
 

@@ -5,6 +5,7 @@ CATEGORIES=		wip biology java
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Trinity assembles transcript sequences from Illumina RNA-Seq data
+WWW=		https://trinityrnaseq.github.io/
 
 LICENSE=	BSD3CLAUSE
 

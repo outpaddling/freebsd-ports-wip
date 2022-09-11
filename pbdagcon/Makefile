@@ -4,6 +4,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Consensus algorithm implementation based on directed acyclic graphs
+WWW=		https://github.com/PacificBiosciences/pbdagcon
 
 LICENSE=	BSD3CLAUSE
 

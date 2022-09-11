@@ -5,6 +5,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Identify regions of allelic imbalance
+WWW=		https://sites.google.com/site/integrativecancergenomics/software/haplohseq
 
 LICENSE=	MIT
 

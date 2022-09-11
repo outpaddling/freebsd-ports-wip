@@ -6,6 +6,7 @@ DISTNAME=	bcl2fastq2-v2-20-0-tar
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Illumina Base Call (BCL) format to fastq converter
+WWW=		https://support.illumina.com/sequencing/sequencing_software/bcl2fastq-conversion-software.html
 
 # Fake: Create proper license specs
 LICENSE=	MIT

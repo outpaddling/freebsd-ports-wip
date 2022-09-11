@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_2013-7-15
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Text-based molecule builder for LAMMPS
+WWW=		https://port.home.page/
 
 RUN_DEPENDS=	bash:shells/bash
 

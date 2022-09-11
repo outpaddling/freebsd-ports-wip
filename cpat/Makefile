@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Overcomes alignment search limitations using logistic regression model
+WWW=		https://rna-cpat.sourceforge.net/
 
 LICENSE=	GPLv2
 #LICENSE_FILE=

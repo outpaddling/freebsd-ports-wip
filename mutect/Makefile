@@ -4,6 +4,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Accurate and sensitive cancer mutation detection
+WWW=		https://example.com
 
 # Fake to silence warnings.  Configure Broad Institute License
 LICENSE=	BSD2CLAUSE

@@ -5,6 +5,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Removable media eject
+WWW=		https://www.neuro.mcw.edu/~bacon
 
 MAN1=		ddclone.1
 MANCOMPRESSED=	yes

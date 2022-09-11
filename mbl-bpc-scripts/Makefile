@@ -4,6 +4,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Gast Illumina processing
+WWW=		https://github.com/MBL-Woods-Hole/BPC-scripts/
 
 LICENSE=	MIT
 

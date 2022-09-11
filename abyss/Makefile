@@ -4,6 +4,7 @@ CATEGORIES=	wip
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Assemble large genomes using short reads
+WWW=		https://www.bcgsc.ca/platform/bioinfo/software/abyss
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

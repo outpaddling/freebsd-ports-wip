@@ -4,6 +4,7 @@ CATEGORIES=	wip
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tool for analyzing the resistome of large metagenomic datasets
+WWW=		https://github.com/cdeanj/resistomeanalyzer
 
 # Actually unspecified, just pretending for poudriere
 LICENSE=	PD

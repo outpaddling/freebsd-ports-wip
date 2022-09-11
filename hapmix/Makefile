@@ -6,6 +6,7 @@ DISTNAME=	hapmix1.2.tar_.gz
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Infer chromosomal segments of ancestry in admixed populations
+WWW=		https://genetics.med.harvard.edu/reich/Reich_Lab/Software.html
 
 #LICENSE=
 

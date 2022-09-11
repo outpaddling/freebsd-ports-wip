@@ -7,6 +7,7 @@ DISTNAME=	Sumatra-${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	A tool for automated tracking of computation-based scientific projects
+WWW=		https://pypi.python.org/pypi/Sumatra
 
 LICENSE=	BSD2CLAUSE
 #LICENSE_FILE=	

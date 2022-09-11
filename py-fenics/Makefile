@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Computing platform for solving partial differential equations
+WWW=		https://fenicsproject.org/
 
 LICENSE=	LGPL3
 

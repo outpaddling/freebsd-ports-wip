@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Open Source lattice Boltzmann code
+WWW=		https://port.home.page/
 
 USE_GMAKE=	yes
 

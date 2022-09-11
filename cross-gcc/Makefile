@@ -15,6 +15,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	GNU gcc for cross-target development
+WWW=		https://gcc.gnu.org/
 
 LIB_DEPENDS=	gmp.10:math/gmp \
 		mpfr.4:math/mpfr \

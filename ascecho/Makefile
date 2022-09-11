@@ -5,6 +5,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	File viewer that shows invisible characters
+WWW=		https://port.home.page/
 
 PLIST_FILES=	bin/ascecho
 

@@ -7,6 +7,7 @@ CATEGORIES=	wip biology java
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	NCBI NGS language bindings
+WWW=		https://github.com/ncbi/ngs
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

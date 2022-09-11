@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=
+WWW=		https://pypi.python.org/pypi/pbtools/
 
 USES=		python:3.6+
 USE_PYTHON=	distutils

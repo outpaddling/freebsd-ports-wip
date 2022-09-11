@@ -7,6 +7,7 @@ DISTNAME=		${PORTNAME}_${DISTVERSION}beta
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Genome-wide Complex Trait Analysis
+WWW=		https://cnsgenomics.com/software/gcta/
 
 # Different from source (GPLv3)
 LICENSE=	MIT

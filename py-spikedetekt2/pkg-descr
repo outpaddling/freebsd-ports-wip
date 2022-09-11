@@ -1,15 +1,9 @@
 The KlustaSuite is an open source spike sorting software suite designed for
 extracellular recordings obtained with large multielelectrode arrays (with
 hundreds of channels).
-
 The KlustaSuite contains three programs:
-
 SpikeDetekt for detecting and extracting spikes from raw recordings
 (written in Python).
-
 KlustaKwik for automatically clustering the detected spikes (written in C++).
-
 KlustaViewa for manually processing the results of the automatic step
 (written in Python).
-
-WWW: https://github.com/klusta-team/spikedetekt2

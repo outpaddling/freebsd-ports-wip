@@ -4,6 +4,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Reconstruct coding genome and group consensus isoforms from same locus
+WWW=		https://github.com/Magdoll/Cogent
 
 # No license specified
 LICENSE=	PD

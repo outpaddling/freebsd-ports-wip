@@ -6,6 +6,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Fast and general-purpose cluster computing system
+WWW=		https://port.home.page/
 
 BUILD_DEPENDS+=	scala:lang/scala \
 		${LOCALBASE}/share/java/maven31/bin/mvn:devel/maven31

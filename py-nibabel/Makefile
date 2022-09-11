@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Provides read write access to common medical and neuroimaging formats
+WWW=		https://nipy.org/nibabel/
 
 LICENSE=	MIT
 

@@ -7,6 +7,7 @@ CATEGORIES=		wip comms
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Graphical serial terminal for embedded programming
+WWW=		https://github.com/neundorf/CuteCom
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ DISTNAME=	BUSCO_v${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Assess genome assembly and annotation completeness
+WWW=		https://busco.ezlab.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

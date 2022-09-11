@@ -6,6 +6,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	High-performance bioinformatics tools based on biolibc
+WWW=		https://github.com/auerlab/biolibc-tools
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -16,6 +16,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=
+WWW=		https://port.home.page/
 
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>

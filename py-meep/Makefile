@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Allows scripting of Meep-simulations with Python
+WWW=		https://port.home.page/
 
 # LICENSE=	gplv2, gplv3
 

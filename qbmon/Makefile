@@ -4,6 +4,7 @@ CATEGORIES=	wip
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Simple, QT-based, desktop-independent battery monitor
+WWW=		https://github.com/outpaddling/qbmon
 
 LICENSE=	BSD2CLAUSE
 

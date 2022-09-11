@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Detecting and extracting spikes from raw recordings
+WWW=		https://github.com/klusta-team/spikedetekt2
 
 # Assuming based on other klusta packages
 LICENSE=	BSD3CLAUSE

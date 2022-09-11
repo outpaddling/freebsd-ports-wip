@@ -6,6 +6,7 @@ DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Knowledgebase of Interatomic Models
+WWW=		https://openkim.org/
 
 LICENSE=	CDDL
 

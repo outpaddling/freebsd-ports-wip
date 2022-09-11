@@ -8,6 +8,7 @@ MASTER_SITES=	http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Transcript assembly, differential expression and regulation for RNA-Seq
+WWW=		https://port.home.page/
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,12 +1,6 @@
 HDFView is a visual tool written in Java for browsing and editing HDF (HDF5 and
 HDF4) files. Using HDFView, you can:
-
     View a file hierarchy in a tree structure
-
     Create new files, add or delete groups and datasets
-
     View and modify the content of a dataset
-
     Add, delete and modify attributes
-
-WWW: https://portal.hdfgroup.org/display/HDFVIEW/HDFView#HDFView-install

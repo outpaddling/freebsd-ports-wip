@@ -4,6 +4,7 @@ CATEGORIES=	wip
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Generate include dependencies for Fortran code
+WWW=		https://example.com
 
 LICENSE=	GPLv3
 

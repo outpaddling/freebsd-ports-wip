@@ -5,6 +5,7 @@ DISTNAME=	Queue-${PORTVERSION}-1
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Analyse next-generation resequencing data
+WWW=		https://port.home.page/
 
 #LICENSE=	restricted
 

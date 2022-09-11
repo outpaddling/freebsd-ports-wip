@@ -7,6 +7,7 @@ DISTNAME=	BEAST.v${PORTVERSION}.Linux
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Bayesian phylogenetic analysis of molecular sequences
+WWW=		https://example.com
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

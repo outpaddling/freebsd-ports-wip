@@ -5,6 +5,7 @@ MASTER_SITES=	http://csg.sph.umich.edu/abecasis/PedStats/download/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Quick validation and summary of pedigree and data files
+WWW=		https://csg.sph.umich.edu/abecasis/PedStats/index.html
 
 # LICENSE=	unspecified
 

@@ -7,6 +7,7 @@ CATEGORIES=	wip devel
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Misc functions
+WWW=		https://github.com/outpaddling/twintk
 
 LICENSE=	BSD2CLAUSE
 

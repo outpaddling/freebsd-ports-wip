@@ -12,6 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	FMRIB Software Library
+WWW=		https://www.fmrib.ox.ac.uk/fsl/
 
 LIB_DEPENDS=	png.5:graphics/png \
 		gd.4:graphics/gd \

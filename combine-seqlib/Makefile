@@ -5,6 +5,7 @@ CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	C++ htslib/bwa-mem/fermi interface for interrogating sequence data
+WWW=		https://github.com/COMBINE-lab/SeqLib
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

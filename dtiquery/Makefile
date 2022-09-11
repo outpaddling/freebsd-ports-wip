@@ -6,6 +6,7 @@ MASTER_SITES=	http://graphics.stanford.edu/projects/dti/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Stanford DTI Visualization tool
+WWW=		https://graphics.stanford.edu/projects/dti/
 
 BUILD_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:devel/tnt \
 		${LOCALBASE}/include/tnt/jama_cholesky.h:math/jama \

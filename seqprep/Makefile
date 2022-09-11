@@ -6,6 +6,7 @@ DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Strip adaptors and/or merge paired reads with overlap into single reads
+WWW=		https://github.com/jstjohn/SeqPrep
 
 WRKSRC=		${WRKDIR}/SeqPrep-${PORTVERSION}
 

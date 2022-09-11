@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Reduce the complexity of creating workflows
+WWW=		https://pypi.python.org/pypi/snakemake
 
 LICENSE=	MIT
 

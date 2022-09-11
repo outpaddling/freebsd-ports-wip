@@ -4,6 +4,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	dsiercks@uwm.edu
 COMMENT=	3'-end adapter contaminant trimmer
+WWW=		https://github.com/vsbuffalo/scythe
 
 LICENSE=	GPLv2
 

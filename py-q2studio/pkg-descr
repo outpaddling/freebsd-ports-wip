@@ -1,6 +1,3 @@
 A graphical user interface for QIIME 2.
-
 Qiime2 users can choose between the q2studio graphical interface or the q2cli
 command-line interface.
-
-WWW: https://github.com/qiime2/q2studio

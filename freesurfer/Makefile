@@ -5,6 +5,7 @@ CATEGORIES=	wip science
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Automatically segment white matter lesions on human brain MRI images
+WWW=		https://surfer.nmr.mgh.harvard.edu/
 
 # Fake to silence warnings until custom license is defined
 LICENSE=	BSD2CLAUSE

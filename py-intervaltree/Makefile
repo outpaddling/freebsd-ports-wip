@@ -4,6 +4,7 @@ CATEGORIES=	wip python
 
 MAINTAINER=	dsiercks@uwm.edu
 COMMENT=	Mutable, self-balancing interval tree for Python
+WWW=		https://github.com/chaimleib/intervaltree
 
 LICENSE=	APACHE20
 

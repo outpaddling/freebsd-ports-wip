@@ -5,6 +5,7 @@ CATEGORIES=	wip
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	C++ library for tools from The Center for Statistical Genetics
+WWW=		https://github.com/statgen
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/general/LICENSE.txt

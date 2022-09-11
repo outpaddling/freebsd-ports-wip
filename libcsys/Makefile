@@ -4,6 +4,7 @@ CATEGORIES=	wip devel
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Manage drive and get system resource information
+WWW=		https://gitlab.com/cubocore/libcsys
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

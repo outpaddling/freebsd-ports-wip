@@ -5,6 +5,7 @@ PKGNAMESUFFIX=	-sdk
 
 MAINTAINER=	mzaki@niid.go.jp
 COMMENT=	NCBI's front-end API for NGS data manipulation
+WWW=		https://github.com/ncbi/ngs/wiki
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/../LICENSE

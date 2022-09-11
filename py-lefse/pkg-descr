@@ -3,5 +3,3 @@ LEfSe (Linear discriminant analysis Effect Size) determines the features
 likely to explain differences between classes by coupling standard tests for
 statistical significance with additional tests encoding biological consistency
 and effect relevance.
-
-WWW: https://bitbucket.org/nsegata/lefse/src/default/

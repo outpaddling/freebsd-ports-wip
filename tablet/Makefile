@@ -4,6 +4,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Graphical viewer for next generation sequence assemblies and alignments
+WWW=		https://ics.hutton.ac.uk/tablet/
 
 LICENSE=	BSD2CLAUSE
 # LICENSE_FILE=	${WRKSRC}/LICENSE	Added after last release

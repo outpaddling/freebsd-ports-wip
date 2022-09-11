@@ -6,6 +6,7 @@ MASTER_SITES=	https://www.micans.org/mcl/src/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Fast and scalable unsupervised cluster algorithm for graphs
+WWW=		https://www.micans.org/mcl/index.html?sec_software
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

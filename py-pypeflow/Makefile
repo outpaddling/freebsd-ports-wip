@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jacobsonnenberg0@gmail.com
 COMMENT=	Lightweight and reusable make/flow data process library
+WWW=		https://github.com/PacificBiosciences/pypeFLOW
 
 LICENSE=	MIT
 

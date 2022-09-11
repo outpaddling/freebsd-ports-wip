@@ -12,6 +12,7 @@ USE_ZIP=	yes
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Convert medical image files to nifti
+WWW=		https://port.home.page/
 
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>

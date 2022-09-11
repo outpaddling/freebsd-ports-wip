@@ -9,6 +9,7 @@ DISTFILES=	MIVA20BC83Linux_042005a.tar.gz \
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Analysis of FMRI Animal Data
+WWW=		https://port.home.page/
 
 USE_LINUX=	yes
 NO_BUILD=	yes

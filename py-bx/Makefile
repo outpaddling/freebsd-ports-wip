@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Simple in-memory storage for Python
+WWW=		https://pypi.python.org/pypi/bx
 
 LICENSE=	MIT
 #LICENSE_FILE=	

@@ -9,6 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for Illumina paired-end data (for CASAVA 1.7+ pipeline)
+WWW=		https://pypi.python.org/pypi/illumina-utils
 
 LICENSE=	GPLv2
 

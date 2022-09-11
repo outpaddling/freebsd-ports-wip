@@ -2,5 +2,3 @@ Auto-admin-desktop is a desktop interface to the auto-admin tools.  Currently
 it simply installs a .desktop file that runs the auto-admin menu under a
 terminal, so that auto-admin will have a presence in desktop application menus.
 Eventually this will be replaced by a proper graphical application.
-
-WWW: http://acadix.biz/auto-admin.php

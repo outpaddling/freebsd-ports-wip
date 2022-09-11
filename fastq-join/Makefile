@@ -5,6 +5,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Squared distance for anchored alignment joiner of ea-utils
+WWW=		https://github.com/brwnj/fastq-join
 
 LICENSE=	MIT
 

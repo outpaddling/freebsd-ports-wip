@@ -5,6 +5,7 @@ MASTER_SITES=	http://static.davidsoergel.com/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Taxonomic classification of short paired-end reads from ribosomal RNA
+WWW=		https://github.com/davidsoergel/rtax/
 
 LICENSE=	BSD3CLAUSE
 

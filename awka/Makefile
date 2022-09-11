@@ -7,6 +7,7 @@ CATEGORIES=	wip lang
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Converts the AWK script to C, then compiles it
+WWW=		https://awka.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL.txt

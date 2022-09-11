@@ -8,6 +8,7 @@ DISTNAME=	rdp_classifier_${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	RDP Classifier is a naive Bayesian classfiier
+WWW=		https://rdp.cme.msu.edu/
 
 LICENSE=	GPLv2
 

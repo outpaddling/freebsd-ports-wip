@@ -6,5 +6,3 @@ lightweight, approach allows Sailfish to dispense with many of the complexities
 of read mapping while remaining robust to sequencing errors. By replacing read
 mapping with intelligent k-mer indexing and counting, Sailfish is able to
 quantify isoform abundance orders of magnitude faster than existing tools.
-
-WWW: http://www.cs.cmu.edu/~ckingsf/software/sailfish/index.html

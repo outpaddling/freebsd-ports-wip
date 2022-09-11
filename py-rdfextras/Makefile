@@ -8,6 +8,7 @@ DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=
+WWW=		https://pypi.python.org/pypi/rdf-extras
 
 USES=		python:3.6+
 USE_PYTHON=	distutils

@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Minimum entrop decomposition
+WWW=		https://port.home.page/
 
 LICENSE=	GPLv3
 

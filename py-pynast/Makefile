@@ -8,6 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Nearest Alignment Space Termination tool
+WWW=		https://github.com/biocore/biom-format
 
 # Unknown
 LICENSE=	PD

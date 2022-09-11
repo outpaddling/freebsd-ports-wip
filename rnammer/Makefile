@@ -8,6 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Predicts 5s/8s, 16s/18s, and 23s/28s ribosomal RNA
+WWW=		https://www.cbs.dtu.dk/services/RNAmmer/
 
 #LICENSE=
 

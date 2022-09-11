@@ -5,5 +5,3 @@ transcripts representing multiple splice variants for each gene locus. Its
 input can include not only the alignments of raw reads used by other transcript
 assemblers, but also alignments longer sequences that have been assembled from
 those reads.
-
-WWW: http://www.ccb.jhu.edu/software/stringtie/

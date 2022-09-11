@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	GUI for spike sorting manual stage in Python
+WWW=		https://github.com/klusta-team/klustaviewa
 
 LICENSE=	BSD3CLAUSE
 

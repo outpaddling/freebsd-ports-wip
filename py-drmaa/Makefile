@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	i@levsha.me
 COMMENT=	Interact with DRMAA-compliant distributed resource management systems
+WWW=		https://code.google.com/p/drmaa-python/
 
 LICENSE=	BSD3CLAUSE
 

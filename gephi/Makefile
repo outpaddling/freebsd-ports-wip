@@ -4,6 +4,7 @@ CATEGORIES=		wip graphics
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	visualization and exploration software for graphs and networks
+WWW=		https://gephi.org/
 
 # Also CDDL 1.0
 LICENSE=	GPLv3

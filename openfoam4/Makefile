@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Open source computational fluid dynamics
+WWW=		https://www.openfoam.org/
 
 LICENSE=	GPLv3
 

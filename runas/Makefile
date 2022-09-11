@@ -5,6 +5,7 @@ CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Wrapper around su for running a command as another user
+WWW=		https://github.com/outpaddling/runas
 
 LICENSE=	BSD2CLAUSE
 

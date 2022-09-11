@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Modern high-performance serialization utilities for Python
+WWW=		https://github.com/explosion/srsly
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

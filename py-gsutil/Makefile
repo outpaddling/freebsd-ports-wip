@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Command line access to Google Cloud Storage
+WWW=		https://pypi.python.org/pypi/gsutil
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

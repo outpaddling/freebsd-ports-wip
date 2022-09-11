@@ -5,6 +5,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Simple alignment-based haplotype variant caller
+WWW=		https://github.com/cdeanj/snpfinder
 
 # Actually unspecified, just pretending for poudriere
 LICENSE=	PD

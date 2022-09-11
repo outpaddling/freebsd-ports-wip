@@ -6,6 +6,7 @@ DISTNAME=	birdsuite_executables_${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Report SNP genotypes, CNPs, and novel, rare, or de novo CNVs
+WWW=		https://example.com
 
 # Just a guess
 LICENSE=	GPLv2

@@ -5,6 +5,7 @@ CATEGORIES=	wip graphics
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Template library for manipulation of triangle meshes
+WWW=		https://vcg.isti.cnr.it/vcglib/
 
 # Unspecified.  Assuming public domain.
 LICENSE=	PD

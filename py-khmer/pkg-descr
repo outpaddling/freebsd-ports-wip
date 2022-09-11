@@ -2,5 +2,3 @@ The khmer software is a set of command-line tools for working with DNA
 shotgun sequencing data from genomes, transcriptomes, metagenomes, and
 single cells. khmer can make de novo assemblies faster, and sometimes
 better. khmer can also identify (and fix) problems with shotgun data.
-
-WWW: https://github.com/dib-lab/khmer/

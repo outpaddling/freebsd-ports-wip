@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Python wrapper for tempo2
+WWW=		https://pypi.python.org/pypi/libstempo
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

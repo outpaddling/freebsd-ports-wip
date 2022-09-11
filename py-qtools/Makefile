@@ -5,6 +5,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Some Python tools for Qt
+WWW=		https://github.com/rossant/qtools
 
 LICENSE=	BSD3CLAUSE
 

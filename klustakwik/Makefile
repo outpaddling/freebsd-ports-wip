@@ -4,6 +4,7 @@ CATEGORIES=	wip math science
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Unsupervised classification of multidimensional continuous data
+WWW=		https://github.com/klusta-team/klustakwik
 
 # LICENSE=	GPLv1
 

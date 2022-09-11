@@ -1,5 +1,3 @@
 SNPFinder is a simple alignment-based haplotype variant caller that can be used
 with metagenomic sequence data. Input to SnipFinder is a SAM formatted alignment
 file and a FASTA formatted reference database.
-
-WWW: https://github.com/cdeanj/snpfinder

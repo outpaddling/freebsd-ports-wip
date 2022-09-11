@@ -6,6 +6,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Long Interval Nucleotide K-mer Scaffolder
+WWW=		https://github.com/bcgsc/LINKS
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

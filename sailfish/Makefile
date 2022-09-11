@@ -5,6 +5,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Rapid Mapping-based Isoform Quantification from RNA-Seq Reads
+WWW=		https://www.cs.cmu.edu/~ckingsf/software/sailfish/index.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	-openmpi
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	MPI for Python - Python bindings for MPI
+WWW=		https://bitbucket.org/mpi4py/mpi4py/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst

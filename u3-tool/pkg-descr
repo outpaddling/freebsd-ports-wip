@@ -1,16 +1,12 @@
 Tool for controlling USB flash devices that conform to the U3 specifications.
 This program can control the following features:
-
     o Replacing of CD image
     o Changing of virtual CD allocated size and completely removing it
     o Enabling and disabling
     o Security Unlocking and changing password of secured U3 device
     o Obtainig various device information
-
 WARNING: This Software is still alpha. Since the commands for controlling U3
 devices aren't publicly available, we don't excatly know what we are doing.
 Although the application has been tested on a Sandisk Cruzer micro and a
 Verbatim Store 'N Go, it is not said that it won't stop other devices from
 working. The author is not responsible for any damage to your device.
-
-WWW: http://u3-tool.sourceforge.net/

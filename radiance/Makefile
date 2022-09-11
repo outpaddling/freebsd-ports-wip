@@ -6,6 +6,7 @@ DISTNAME=	rad4R1all
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Highly accurate ray-tracing software system
+WWW=		https://radsite.lbl.gov/radiance/
 
 USE_TCL=	yes
 

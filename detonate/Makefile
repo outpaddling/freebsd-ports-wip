@@ -4,6 +4,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	DE novo TranscriptOme rNa-seq Assembly with or without the Truth Evaluation
+WWW=		https://deweylab.biostat.wisc.edu/detonate/
 
 # FIXME: Not sure
 LICENSE=	PD

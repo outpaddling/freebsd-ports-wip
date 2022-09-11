@@ -5,6 +5,7 @@ CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Bayesian haplotype-based polymorphism discovery and genotyping
+WWW=		https://github.com/ekg/freebayes
 
 LICENSE=	MIT
 

@@ -15,6 +15,7 @@ MASTER_SITES=	http://angorafdtd.org/angora/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=
+WWW=		https://port.home.page/
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

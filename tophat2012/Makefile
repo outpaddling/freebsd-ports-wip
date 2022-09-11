@@ -6,6 +6,7 @@ MASTER_SITES=	http://ccb.jhu.edu/software/tophat/downloads/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Spliced read mapper for RNA-Seq
+WWW=		https://ccb.jhu.edu/software/tophat/index.shtml
 
 LICENSE=	BSL
 

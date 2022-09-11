@@ -2,5 +2,3 @@ Gaussian finite mixture models fitted via EM algorithm for model-based
 clustering, classification, and density estimation, including Bayesian
 regularization, dimension reduction for visualisation, and resampling-based
 inference.
-
-WWW: https://cran.r-project.org/web/packages/mclust/

@@ -8,6 +8,7 @@ DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for error correction and working with long read data
+WWW=		https://github.com/jgurtowski/ectools
 
 LICENSE=	BSD3CLAUSE
 

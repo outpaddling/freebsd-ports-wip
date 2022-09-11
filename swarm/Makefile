@@ -6,6 +6,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Robust and fast clustering method for amplicon-based studies
+WWW=		https://github.com/torognes/swarm
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

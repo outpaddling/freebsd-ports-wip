@@ -10,6 +10,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Extreme high-throughput sequence analysis
+WWW=		https://drive5.com/usearch/
 
 # Fix this later
 LICENSE=	PD

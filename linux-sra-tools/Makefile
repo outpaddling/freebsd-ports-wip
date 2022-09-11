@@ -7,6 +7,7 @@ DISTNAME=	sratoolkit.${PORTVERSION}-centos_linux64
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools and libraries for using data in the INSDC Sequence Read Archives
+WWW=		https://github.com/ncbi/sra-tools
 
 LICENSE=	PD
 

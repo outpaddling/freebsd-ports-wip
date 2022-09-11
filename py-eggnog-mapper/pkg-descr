@@ -5,5 +5,3 @@ even metagenomic gene catalogs. The use of orthology predictions for functional
 annotation is considered more precise than traditional homology searches, as it
 avoids transferring annotations from paralogs (duplicate genes with a higher
 chance of being involved in functional divergence).
-
-WWW: https://github.com/jhcepas/eggnog-mapper

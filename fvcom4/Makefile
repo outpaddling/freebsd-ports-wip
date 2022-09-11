@@ -5,6 +5,7 @@ MASTER_SITES=	http://fvcom.smast.umassd.edu/FVCOM/index.html/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Unstructured Grid Finite Volume Coastal Ocean Model
+WWW=		https://fvcom.smast.umassd.edu/FVCOM/index.html
 
 # Phony just to avoid ports delays for now
 LICENSE=	BSD2CLAUSE

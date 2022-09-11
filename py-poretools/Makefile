@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Toolkit for working with nanopore sequencing data from Oxford Nanopore
+WWW=		https://pypi.python.org/pypi/poretools
 
 LICENSE=	MIT
 

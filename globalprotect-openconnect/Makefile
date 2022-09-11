@@ -5,6 +5,7 @@ CATEGORIES=	wip security
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	OpenConnect GUI for GlobalProtect protocol
+WWW=		https://github.com/yuezk/GlobalProtect-openconnect
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graphical toolkit for TCL
+WWW=		https://www.tcl.tk/
 
 USE_TCL=	83
 USE_TCL_BUILD=	83

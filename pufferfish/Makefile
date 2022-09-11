@@ -5,6 +5,7 @@ CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	An efficient index for the colored, compacted, de Bruijn graph
+WWW=		https://github.com/COMBINE-lab/pufferfish
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

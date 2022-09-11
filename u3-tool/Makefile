@@ -5,6 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Manage u3 partition on USB drive
+WWW=		https://u3-tool.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -5,6 +5,7 @@ CATEGORIES=	wip devel
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Misc functions
+WWW=		https://github.com/outpaddling/libpare
 
 LICENSE=	BSD2CLAUSE
 

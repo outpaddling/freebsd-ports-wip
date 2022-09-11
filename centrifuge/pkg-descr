@@ -3,5 +3,3 @@ accurate and sensitive labeling of reads and quantification of species on
 desktop computers. The system uses a novel indexing scheme based on the
 Burrows-Wheeler transform (BWT) and the Ferragina-Manzini (FM) index, optimized
 specifically for the metagenomic classification problem.
-
-WWW: http://www.ccb.jhu.edu/software/centrifuge/

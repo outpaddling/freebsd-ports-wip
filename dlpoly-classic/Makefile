@@ -6,6 +6,7 @@ DISTNAME=	dl_class_${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Molecular dynamics simulation package
+WWW=		https://ccpforge.cse.rl.ac.uk/gf/project/dl_poly_classic/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE.pdf

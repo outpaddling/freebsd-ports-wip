@@ -5,6 +5,7 @@ CATEGORIES=		wip sysutils tcl
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic modification of a user environment
+WWW=		https://modules.sourceforge.net/
 
 LICENSE=	GPLv2
 

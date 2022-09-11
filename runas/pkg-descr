@@ -3,5 +3,3 @@ user.  The runas command is a simple wrapper around su to make its use more
 appealing.  It differs from sudo in that it requires the password of the
 target user rather than the calling user, and it requires no suid or
 configuration.
-
-WWW: https://github.com/outpaddling/runas

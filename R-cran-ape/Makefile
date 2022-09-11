@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Functions for phylogenetic trees
+WWW=		https://cran.r-project.org/web/packages/ape/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

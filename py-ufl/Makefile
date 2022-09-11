@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Unified Form Language for finite element discretizations
+WWW=		https://fenicsproject.org/
 
 LICENSE=	LGPL3
 

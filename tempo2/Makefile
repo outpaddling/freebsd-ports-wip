@@ -6,6 +6,7 @@ MASTER_SITES=	SF/../project/tempo2/Tempo2%20Release%20Versions/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Pulsar software for forming timing residuals.
+WWW=		https://sourceforge.net/projects/tempo2/
 
 LICENSE=	GPLv2
 

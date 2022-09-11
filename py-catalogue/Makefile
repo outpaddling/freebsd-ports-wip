@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Super lightweight function registries for your library
+WWW=		https://pypi.python.org/pypi/catalogue
 
 LICENSE=	MIT
 

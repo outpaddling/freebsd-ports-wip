@@ -8,6 +8,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Common interface to tasks relating to haplotype analyses
+WWW=		https://www.broadinstitute.org/scientific-community/science/programs/medical-and-population-genetics/haploview/haploview
 
 #LICENSE=	https://www.broadinstitute.org/haploview/contact-and-support
 

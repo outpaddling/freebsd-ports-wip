@@ -6,6 +6,7 @@ PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	wrapping general commands in multiple types of interfaces
+WWW=		https://github.com/biocore/biom-format
 
 LICENSE=	GPLv2	# From qiime install site.  Double check this.
 

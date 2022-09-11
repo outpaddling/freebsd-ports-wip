@@ -7,6 +7,7 @@ DISTFILES=	${PORTNAME}.tgz.v${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for managing GRIB weather data files
+WWW=		https://www.cpc.noaa.gov/products/wesley/wgrib2/
 
 LICENSE=	GPLv2
 

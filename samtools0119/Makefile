@@ -7,6 +7,7 @@ PKGNAMESUFFIX=	01
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Generic format for storing large nucleotide sequence alignments
+WWW=		https://samtools.sourceforge.net/
 
 LICENSE=	MIT
 

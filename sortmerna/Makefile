@@ -7,6 +7,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Filtering, mapping and OTU-picking NGS reads
+WWW=		https://bioinfo.lifl.fr/RNA/sortmerna/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.LESSER.txt

@@ -5,5 +5,3 @@ generation process involves third-party software for tasks such as sequence
 alignment and RNA structure prediction. The file format of datasets and a
 script for running the program can be found in the file readme.txt inside the
 packages.
-
-WWW: http://archive.gersteinlab.org/proj/incrna/

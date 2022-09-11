@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}c.Linux
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Predicts the presence and location of signal peptide cleavage sites
+WWW=		https://www.cbs.dtu.dk/services/SignalP/
 
 # LICENSE=
 

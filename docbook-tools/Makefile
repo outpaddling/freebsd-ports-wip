@@ -4,6 +4,7 @@ CATEGORIES=	wip textproc
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Scripts and programs for processing DocBook XML
+WWW=		https://github.com/outpaddling/docbook-tools
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

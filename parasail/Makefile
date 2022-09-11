@@ -5,6 +5,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	SIMD C library for DNA alignments
+WWW=		https://github.com/jeffdaily/parasail
 
 LICENSE=	BSD2CLAUSE # Batelle BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

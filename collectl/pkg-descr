@@ -2,5 +2,3 @@ Collectl is a light-weight performance monitoring tool capable of reporting
 interactively as well as logging to disk. It reports statistics on cpu, disk,
 infiniband, lustre, memory, network, nfs, process, quadrics, slabs and more in
 easy to read format.
-
-WWW: http://sourceforge.net/projects/collectl/

@@ -4,6 +4,7 @@ CATEGORIES=	wip
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Assembler for noisy long read genomic data
+WWW=		https://github.com/schloi/MARVEL
 
 # Check this
 LICENSE=	CC-BY-ND-4.0

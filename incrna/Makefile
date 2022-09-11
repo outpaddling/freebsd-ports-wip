@@ -6,6 +6,7 @@ DISTNAME=	incrna_without_data
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Machine learning based on computed features of genomic regions
+WWW=		https://archive.gersteinlab.org/proj/incrna/
 
 # Guess
 LICENSE=	PD

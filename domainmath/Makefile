@@ -7,6 +7,7 @@ EXTRACT_SUFX=	.7z
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Java 1.7 GUI for Octave
+WWW=		https://port.home.page/
 
 EXTRACT_DEPENDS+=	p7zip:archivers/p7zip
 

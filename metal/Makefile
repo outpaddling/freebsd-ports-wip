@@ -6,6 +6,7 @@ DISTNAME=	generic-metal-2011-03-25
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Meta-analysis of genomewide association scans
+WWW=		https://genome.sph.umich.edu/wiki/METAL_Program
 
 # For twister, and double check
 LICENSE=	BSD3CLAUSE

@@ -5,6 +5,7 @@ CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Phylogenetic Analysis and Post-Analysis of Large Phylogenies
+WWW=		https://cme.h-its.org/exelixis/web/software/raxml/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt

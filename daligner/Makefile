@@ -10,6 +10,7 @@ CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Find all significant local alignments between reads
+WWW=		https://github.com/thegenemyers/DALIGNER
 
 LICENSE=	BSD3CLAUSE
 

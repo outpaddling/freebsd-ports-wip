@@ -1,5 +1,3 @@
 Python package containing default reference data files for use with QIIME.
 The current default reference data is compiled from the Greengenes 16S rRNA
 database version 13_8.
-
-WWW: https://pypi.python.org/pypi/qiime-default-reference

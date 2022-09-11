@@ -10,6 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Python modules for building PacBio bioinformatics applications
+WWW=		https://github.com/PacificBiosciences/pbcore
 
 LICENSE=	BSD3CLAUSE
 

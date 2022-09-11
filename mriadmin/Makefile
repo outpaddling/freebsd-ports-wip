@@ -7,6 +7,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	MRI system admin tool
+WWW=		https://port.home.page/
 
 MAN1=		mriadmin.1
 

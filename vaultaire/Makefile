@@ -5,6 +5,7 @@ CATEGORIES=	wip graphics
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	QT frontend to scanimage and related tools
+WWW=		https://github.com/vimofthevine/Vaultaire
 
 LICENSE=	APACHE20
 

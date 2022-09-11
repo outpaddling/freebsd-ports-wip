@@ -10,6 +10,7 @@ EXTRACT_ONLY=	CPAT-${PORTVERSION}.tar.gz
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Overcomes alignment search limitations using logistic regression model
+WWW=		https://rna-cpat.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/doc/COPYING

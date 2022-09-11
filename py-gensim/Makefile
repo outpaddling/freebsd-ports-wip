@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Python library for topic modeling, document indexing, etc
+WWW=		https://pypi.python.org/pypi/gensim
 
 LICENSE=	LGPL21
 # LICENSE_FILE=

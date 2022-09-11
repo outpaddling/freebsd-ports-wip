@@ -3,5 +3,3 @@ Unit (OTU), species, etc.) that are differentially abundant between two or
 more groups of multiple samples. metagenomeSeq is designed to address the
 effects of both normalization and under-sampling of microbial communities on
 disease association detection and the testing of feature correlations.
-
-WWW: https://bioconductor.org/packages/release/bioc/html/metagenomeSeq.html

@@ -1,5 +1,3 @@
 Fast software for high-dimensional cluster analysis using the masked EM
 algorithm for Gaussians mixtures. (Can also be used in "classical" mode for
 standard hard EM algorithm)
-
-WWW: https://github.com/klusta-team/klustakwik

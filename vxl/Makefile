@@ -10,6 +10,7 @@ USE_CMAKE=	yes
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=
+WWW=		https://port.home.page/
 
 CFLAGS+=	-fPIC
 

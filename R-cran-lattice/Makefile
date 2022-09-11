@@ -5,6 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Data visualization system with an emphasis on multivariate data
+WWW=		https://cran.r-project.org/web/packages/lattice/
 
 # grid, grDevices, graphics, stats, utils
 # or 3

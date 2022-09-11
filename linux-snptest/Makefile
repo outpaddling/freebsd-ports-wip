@@ -7,6 +7,7 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}_CentOS6.5_x86_64_static
 
 MAINTAINER=	weinertw@uwm.edu
 COMMENT=	Analyze single SNP associations in genome-wide studies
+WWW=		https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest.html
 
 LICENSE=	UNKNOWN
 LICENSE_NAME=	Oxford Non-free

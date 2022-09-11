@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Classes and helper functions for Python web applications
+WWW=		https://pypi.python.org/pypi/parcel
 
 # Guessing
 LICENSE=	GPLv2

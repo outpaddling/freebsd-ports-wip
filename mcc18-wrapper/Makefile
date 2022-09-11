@@ -5,6 +5,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Wrappers for Windows based Microchip MCC18 and Wine
+WWW=		https://www.microchip.com
 
 DEPENDS_RUN=	wine:emulators/wine
 

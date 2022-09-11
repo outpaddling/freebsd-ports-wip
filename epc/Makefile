@@ -7,6 +7,7 @@ CATEGORIES=	wip emulators
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Educational Perrsonal Computer
+WWW=		https://github.com/outpaddling/EPC
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

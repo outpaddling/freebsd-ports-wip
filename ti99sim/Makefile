@@ -6,6 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	SDL-based TI-99/4a simulator
+WWW=		https://www.mrousseau.org/programs/ti99sim/
 
 LICENSE=	GPLv3
 

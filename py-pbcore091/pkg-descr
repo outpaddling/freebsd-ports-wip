@@ -1,4 +1,2 @@
 The pbcore package provides Python APIs for interacting with PacBio data files
 and writing bioinformatics applications.
-
-WWW: https://github.com/PacificBiosciences/pbcore

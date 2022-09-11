@@ -5,6 +5,7 @@ CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Transcript-level quantification of RNA-seq from lightweight alignments
+WWW=		https://github.com/COMBINE-lab/salmon
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

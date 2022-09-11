@@ -6,6 +6,7 @@ MASTER_SITE_SUBDIR=	microbiomeutil
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Utilities for processing and analyzing 16S rRNA genes
+WWW=		https://sourceforge.net/projects/microbiomeutil/
 
 LICENSE=	BSD4CLAUSE
 

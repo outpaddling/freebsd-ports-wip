@@ -4,6 +4,7 @@ CATEGORIES=	wip net
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Simple, user-friendly MPI benchmark
+WWW=		https://github.com/outpaddling/mpi-bench
 
 LICENSE=	BSD2CLAUSE
 

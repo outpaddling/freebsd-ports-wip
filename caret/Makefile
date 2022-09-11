@@ -10,6 +10,7 @@ DISTFILES=	caret_source.v${PORTVERSION}.zip \
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Computerized Anatomical Reconstruction and Editing Toolkit
+WWW=		https://brainmap.wustl.edu/
 
 LIB_DEPENDS=	minc.1:science/minc \
 		netcdf.[1-4]:science/netcdf \

@@ -6,6 +6,7 @@ DISTNAME=	IGV_${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Visualization tool for genomic datasets
+WWW=		https://software.broadinstitute.org/software/igv/
 
 LICENSE=	MIT
 

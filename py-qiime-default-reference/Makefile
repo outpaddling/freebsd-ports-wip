@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Default reference data files for use with QIIME
+WWW=		https://pypi.python.org/pypi/qiime-default-reference
 
 LICENSE=	PD
 #LICENSE=	CC BY-SA 3.0

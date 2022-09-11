@@ -5,6 +5,7 @@ MASTER_SITES=	ftp://cirrus.ucsd.edu/pub/ncview/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=
+WWW=		https://port.home.page/
 
 GNU_CONFIGURE=	yes
 

@@ -7,6 +7,7 @@ DISTNAME=	smrtanalysis-${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for manipulating HDF5 files produced by Pacific Biosciences
+WWW=		https://github.com/PacificBiosciences/pbh5tools
 
 LICENSE=	BSD3CLAUSE
 

@@ -5,6 +5,7 @@ MASTER_SITES=	http://mvapich.cse.ohio-state.edu/download/mvapich/mv2/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Ohio State University Network-Based Computing Laboratory MPI
+WWW=		https://mvapich.cse.ohio-state.edu/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

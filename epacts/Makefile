@@ -6,6 +6,7 @@ CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Efficient and Parallelizable Association Container Toolbox
+WWW=		https://genome.sph.umich.edu/wiki/EPACTS
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

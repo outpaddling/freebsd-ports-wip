@@ -9,6 +9,7 @@ DISTNAME=	HTSeq-${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Framework to analyze data from high-throughput sequencing assays
+WWW=		https://pypi.python.org/pypi/HTSeq
 
 LICENSE=	GPLv3
 

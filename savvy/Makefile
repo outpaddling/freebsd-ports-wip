@@ -5,6 +5,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Interface to various variant calling formats
+WWW=		https://github.com/statgen/savvy
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

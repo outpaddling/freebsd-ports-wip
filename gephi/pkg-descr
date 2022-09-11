@@ -1,15 +1,10 @@
 Gephi is an award-winning open-source platform for visualizing and manipulating
 large graphs.
-
 - Fast Powered by a built-in OpenGL engine, Gephi is able to push the envelope
 with very large networks. Visualize networks up to a million elements. All
 actions (e.g. layout, filter, drag) run in real-time.
-
 - Simple Easy to install and get started. An UI that is centered around the
 visualization. Like Photoshop for graphs.
-
 - Modular Extend Gephi with plug-ins. The architecture is built on top of
 Netbeans Platform and can be extended or reused easily through well-written
 APIs.
-
-WWW: https://gephi.org/

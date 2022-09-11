@@ -6,6 +6,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/
 
 MAINTAINER=	dsiercks@uwm.edu
 COMMENT=	Manipulates and analyzes netCDF data
+WWW=		https://nco.sourceforge.net/
 
 LICENSE=	GPLv3
 

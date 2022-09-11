@@ -5,6 +5,7 @@ CATEGORIES=		wip www
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Make it easy to create SOAP servers
+WWW=		https://github.com/mhekkel/libzeep
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt

@@ -2,5 +2,3 @@ mshr is the mesh generation component of FEniCS. It generates simplicial DOLFIN
 meshes in 2D and 3D from geometries described by Constructive Solid Geometry
 (CSG) or from surface files, utilizing CGAL and Tetgen as mesh generation
 backends.
-
-WWW: https://fenicsproject.org/

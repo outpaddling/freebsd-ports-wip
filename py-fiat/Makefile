@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	FInite element Automatic Tabulator
+WWW=		https://fenicsproject.org/
 
 LICENSE=	LGPL3
 

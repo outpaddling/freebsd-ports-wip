@@ -6,6 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Fast BLAS-like operations from Python and Cython, without the tears
+WWW=		https://github.com/explosion/cython-blis
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

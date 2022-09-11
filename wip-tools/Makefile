@@ -7,6 +7,7 @@ CATEGORIES=	wip ports-mgmt
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Update ports tree with work-in-progress ports
+WWW=		https://github.com/outpaddling/freebsd-ports-wip
 
 LICENSE=	BSD3CLAUSE
 

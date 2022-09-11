@@ -5,5 +5,3 @@ optimized for shared and distributed memory Unix, Linux, and Windows based,
 platforms, and it is fully QA'd by LSTC. The code's origins lie in highly
 nonlinear, transient dynamic finite element analysis using explicit time
 integration.
-
-WWW: http://www.lstc.com/

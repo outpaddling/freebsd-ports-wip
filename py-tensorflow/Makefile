@@ -8,6 +8,7 @@ EXTRACT_ONLY=	tensorflow-tensorflow-v1.14.0_GH0.tar.gz
 
 MAINTAINER=	amzo1337@gmail.com
 COMMENT=	Computation using data flow graphs for scalable machine learning
+WWW=		https://www.tensorflow.org
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

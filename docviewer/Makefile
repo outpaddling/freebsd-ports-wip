@@ -4,6 +4,7 @@ CATEGORIES=	wip textproc
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Run the best available PDF viewer
+WWW=		https://github.com/outpaddling/docviewer
 
 LICENSE=	BSD2CLAUSE
 

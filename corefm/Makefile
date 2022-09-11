@@ -4,6 +4,7 @@ CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	File manager tool from Cubo Core
+WWW=		https://gitlab.com/cubocore/corefm
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

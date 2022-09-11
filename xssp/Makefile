@@ -4,6 +4,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Software for creating DSSP and HSSP files
+WWW=		https://github.com/cmbi/xssp
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
