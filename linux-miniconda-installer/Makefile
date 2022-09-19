@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
 
-RUN_DEPENDS=	auto-admin>=0.7.2:sysutils/auto-admin
+RUN_DEPENDS=	auto-admin>=0.7.13:sysutils/auto-admin
 
 USES=		linux python:3.9+
 USE_GITHUB=	yes

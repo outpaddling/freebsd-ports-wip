@@ -10,7 +10,7 @@ WWW=		https://acadix.biz/desktop-installer.php
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	auto-admin>=0.7.12:sysutils/auto-admin
+RUN_DEPENDS=	auto-admin>=0.7.13:sysutils/auto-admin
 
 USES=		tar:xz
 USE_GITHUB=	yes

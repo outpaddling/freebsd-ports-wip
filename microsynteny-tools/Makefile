@@ -14,7 +14,7 @@ LIB_DEPENDS=	libbiolibc.so:wip/biolibc libxtend.so:wip/libxtend
 RUN_DEPENDS=	ncbi-blast+>0:biology/ncbi-blast+ \
 		curl>0:ftp/curl \
 		${PYTHON_PKGNAMEPREFIX}dna-features-viewer>0:biology/py-dna-features-viewer@${PY_FLAVOR} \
-		auto-admin>0:wip/auto-admin \
+		auto-admin>=0.7.13:wip/auto-admin \
 		biolibc-tools>0:wip/biolibc-tools
 
 USES=		python shebangfix
