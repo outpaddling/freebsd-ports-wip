@@ -1,7 +1,7 @@
 PORTNAME=	parafly
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0	# Test new versions with Trinity before upgrading
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	1	# SourceForge version was 2013.01.21
 CATEGORIES=	wip sysutils
 
