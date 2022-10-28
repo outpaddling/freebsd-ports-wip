@@ -1,6 +1,6 @@
 PORTNAME=	rna-seq
-DISTVERSION=	0.0.1
-CATEGORIES=	wip biology
+DISTVERSION=	0.1.0
+CATEGORIES=	wip biology python
 MASTER_SITES=	# empty
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -18,9 +18,9 @@ RUN_DEPENDS=	fastqc>0:biology/fastqc \
 		bwa>0:biology/bwa \
 		bowtie2>0:biology/bowtie2 \
 		hisat2>0:biology/hisat2 \
+		igv>0:biology/igv \
 		samtools>0:biology/samtools \
-		fasda>0:wip/fasda \
-		R>0:math/R
+		fasda>0:wip/fasda
 
 USES=		metaport python
 
