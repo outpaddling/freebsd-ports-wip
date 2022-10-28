@@ -1,6 +1,6 @@
 PORTNAME=	desktop-installer
-DISTVERSION=	0.7.8-4
-DISTVERSIONSUFFIX=	-gd984782
+DISTVERSION=	0.7.8-5
+DISTVERSIONSUFFIX=	-g72174ac
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	auto-admin>=0.7.13:sysutils/auto-admin
 
-USES=		tar:xz
+USES=		desktop-file-utils tar:xz
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
