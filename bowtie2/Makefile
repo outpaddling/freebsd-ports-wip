@@ -1,8 +1,6 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
-
 PORTNAME=		bowtie2
 DISTVERSIONPREFIX=	v
-DISTVERSION=		2.4.5
+DISTVERSION=		2.5.0
 CATEGORIES=		wip biology perl5 python
 
 MAINTAINER=	jwb@FreeBSD.org
