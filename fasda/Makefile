@@ -10,6 +10,7 @@ WWW=		https://github.com/auerlab/fasda
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# Requires libxtend 0.1.6-22
 LIB_DEPENDS=	libxtend.so:wip/libxtend libbiolibc.so:wip/biolibc
 
 USES=		localbase
