@@ -1,6 +1,6 @@
 PORTNAME=	fasda
-DISTVERSION=	0.1.0-132
-DISTVERSIONSUFFIX=	-g9cfb510
+DISTVERSION=	0.1.0-133
+DISTVERSIONSUFFIX=	-gde95348
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -16,6 +16,9 @@ USES=		localbase
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	auerlab
+
+MAKE_ENV=	VERSION=${PORTVERSION}
+INSTALL_TARGET=	install-strip
 
 pre-build:
 	cd ${WRKSRC} && make depend LOCALBASE=${LOCALBASE}
