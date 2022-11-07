@@ -17,6 +17,9 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	auerlab
 
+MAKE_ENV=	VERSION=${PORTVERSION}
+INSTALL_TARGET=	install-strip
+
 pre-build:
 	cd ${WRKSRC} && make depend LOCALBASE=${LOCALBASE}
 
