@@ -1,0 +1,63 @@
+--- Makefile.orig	2021-04-15 21:30:36 UTC
++++ Makefile
+@@ -1,34 +1,45 @@
+ # Final executable
+-TARGET=dodri
++TARGET	=dodri
+ 
+ # subdirs
+-SRCDIR = src
+-INCDIR = inc
+-OBJDIR = obj
+-BINDIR = bin
++SRCDIR	= src
++INCDIR	= inc
++OBJDIR	= obj
++BINDIR	= bin
+ 
+ # compiler rules
+-CC = g++ #-std=c++11
+-DEBUG = -g
+-OPT = -O3 -Wall
+-IMGMGK= -fno-strict-aliasing -pthread  `GraphicsMagick++-config --cppflags --ldflags --libs`
++CC	?= g++
++DEBUG	= -g
++IMGMGK	= -fno-strict-aliasing -pthread \
++	`GraphicsMagick++-config --cppflags --ldflags --libs`
+ 
+-CFLAGS=  -I$(INCDIR) $(OPT) $(IMGMGK) 
++CFLAGS	?= -O3 -Wall
++CFLAGS	+= -I$(INCDIR) $(IMGMGK) #-std=c++11
+ 
+-SOURCES := $(wildcard $(SRCDIR)/*.cpp) $(wildcard $(SRCDIR)/io/*.cpp)
+-INCLUDES := $(wildcard $(INCDIR)/*.h)
+-OBJECTS := $(SOURCES:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o) 
++SOURCES		:= $(wildcard $(SRCDIR)/*.cpp) $(wildcard $(SRCDIR)/io/*.cpp)
++INCLUDES	:= $(wildcard $(INCDIR)/*.h)
++OBJECTS		:= $(SOURCES:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o) 
+ 
++MKDIR	?= mkdir
++INSTALL	?= install
++
+ $(BINDIR)/$(TARGET): $(OBJECTS) $(INCLUDES)
+ 	$(CC) $(OBJECTS) $(CFLAGS) -o $@
+ 
+-all: $(BINDIR)/$(TARGET) 
++all: clean $(BINDIR)/$(TARGET) 
++
+ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(INCLUDES) 
+ 	$(CC) $(CFLAGS) -c $< -o $@
+ 
+ .PHONY: 
+ clean:
+ 	rm -f $(OBJECTS) $(BINDIR)/$(TARGET)
+-debug:	CFLAGS = -I$(INCDIR) $(IMGMGK) $(DEBUG) 
+ 
++debug: CFLAGS = -I$(INCDIR) $(IMGMGK) $(DEBUG) 
++
+ debug: all 
++
++install: all
++	pwd
++	$(MKDIR) -p $(DESTDIR)$(PREFIX)/bin
++	$(INSTALL) -c $(BINDIR)/$(TARGET) $(DESTDIR)$(PREFIX)/bin
