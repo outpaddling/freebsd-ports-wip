@@ -18,7 +18,7 @@ GH_ACCOUNT=	hwm2746
 
 PLIST_FILES=	bin/dodri
 
-pre-build:
+post-extract:
 	${RM} ${WRKSRC}/bin/* ${WRKSRC}/obj/*.o ${WRKSRC}/obj/io/*.o
 
 .include <bsd.port.mk>

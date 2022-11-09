@@ -27,7 +27,7 @@
  
 -CFLAGS=  -I$(INCDIR) $(OPT) $(IMGMGK) 
 +CXXFLAGS	?= -O3 -Wall
-+CXXFLAGS	+= -I$(INCDIR) $(IMGMGK) -std=c++11
++CXXFLAGS	+= -I$(INCDIR) $(IMGMGK) # -std=c++11
  
 -SOURCES := $(wildcard $(SRCDIR)/*.cpp) $(wildcard $(SRCDIR)/io/*.cpp)
 -INCLUDES := $(wildcard $(INCDIR)/*.h)
