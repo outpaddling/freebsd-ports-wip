@@ -1,6 +1,6 @@
 --- Makefile.orig	2021-04-15 21:30:36 UTC
 +++ Makefile
-@@ -1,34 +1,45 @@
+@@ -1,34 +1,46 @@
  # Final executable
 -TARGET=dodri
 +TARGET	= dodri
@@ -22,12 +22,13 @@
 -IMGMGK= -fno-strict-aliasing -pthread  `GraphicsMagick++-config --cppflags --ldflags --libs`
 +CXX	?= g++
 +DEBUG	= -g
-+IMGMGK	= -fno-strict-aliasing -pthread \
-+	`GraphicsMagick++-config --cppflags --ldflags --libs`
++GM_CPP	!= GraphicsMagick++-config --cppflags
++GM_LD	!= GraphicsMagick++-config --ldflags --libs
  
 -CFLAGS=  -I$(INCDIR) $(OPT) $(IMGMGK) 
-+CXXFLAGS	?= -O3 -Wall
-+CXXFLAGS	+= -I$(INCDIR) $(IMGMGK) # -std=c++11
++CXXFLAGS	?= -O3 -Wall -fno-strict-aliasing -pthread
++CXXFLAGS	+= -I$(INCDIR) $(GM_CPP)
++LDFLAGS		+= $(GM_LD)
  
 -SOURCES := $(wildcard $(SRCDIR)/*.cpp) $(wildcard $(SRCDIR)/io/*.cpp)
 -INCLUDES := $(wildcard $(INCDIR)/*.h)
@@ -45,7 +46,7 @@
 +all: $(BINDIR)$(TARGET) 
 +
 +$(BINDIR)$(TARGET): $(OBJECTS) $(INCLUDES)
-+	$(CXX) $(OBJECTS) $(CXXFLAGS) -o $@
++	$(CXX) $(OBJECTS) $(LDFLAGS) -o $@
 +
  $(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(INCLUDES) 
 -	$(CC) $(CFLAGS) -c $< -o $@

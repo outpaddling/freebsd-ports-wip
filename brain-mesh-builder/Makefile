@@ -10,6 +10,8 @@ WWW=		https://github.com/hwm2746/brain-mesh-builder/releases
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libGraphicsMagick++.so:graphics/GraphicsMagick
+
 USES=		gmake
 USE_GCC=	yes
 USE_GITHUB=	yes
