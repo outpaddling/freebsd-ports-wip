@@ -11,10 +11,14 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake
+USE_GCC=	yes
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	hwm2746
 
 PLIST_FILES=	bin/dodri
+
+pre-build:
+	${RM} ${WRKSRC}/bin/* ${WRKSRC}/obj/*.o ${WRKSRC}/obj/io/*.o
 
 .include <bsd.port.mk>

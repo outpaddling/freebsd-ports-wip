@@ -3,7 +3,7 @@
 @@ -1,34 +1,45 @@
  # Final executable
 -TARGET=dodri
-+TARGET	=dodri
++TARGET	= dodri
  
  # subdirs
 -SRCDIR = src
@@ -20,14 +20,14 @@
 -DEBUG = -g
 -OPT = -O3 -Wall
 -IMGMGK= -fno-strict-aliasing -pthread  `GraphicsMagick++-config --cppflags --ldflags --libs`
-+CC	?= g++
++CXX	?= g++
 +DEBUG	= -g
 +IMGMGK	= -fno-strict-aliasing -pthread \
 +	`GraphicsMagick++-config --cppflags --ldflags --libs`
  
 -CFLAGS=  -I$(INCDIR) $(OPT) $(IMGMGK) 
-+CFLAGS	?= -O3 -Wall
-+CFLAGS	+= -I$(INCDIR) $(IMGMGK) #-std=c++11
++CXXFLAGS	?= -O3 -Wall
++CXXFLAGS	+= -I$(INCDIR) $(IMGMGK) -std=c++11
  
 -SOURCES := $(wildcard $(SRCDIR)/*.cpp) $(wildcard $(SRCDIR)/io/*.cpp)
 -INCLUDES := $(wildcard $(INCDIR)/*.h)
@@ -36,28 +36,32 @@
 +INCLUDES	:= $(wildcard $(INCDIR)/*.h)
 +OBJECTS		:= $(SOURCES:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o) 
  
+-$(BINDIR)/$(TARGET): $(OBJECTS) $(INCLUDES)
+-	$(CC) $(OBJECTS) $(CFLAGS) -o $@
 +MKDIR	?= mkdir
 +INSTALL	?= install
-+
- $(BINDIR)/$(TARGET): $(OBJECTS) $(INCLUDES)
- 	$(CC) $(OBJECTS) $(CFLAGS) -o $@
  
 -all: $(BINDIR)/$(TARGET) 
-+all: clean $(BINDIR)/$(TARGET) 
++all: $(BINDIR)$(TARGET) 
++
++$(BINDIR)$(TARGET): $(OBJECTS) $(INCLUDES)
++	$(CXX) $(OBJECTS) $(CXXFLAGS) -o $@
 +
  $(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(INCLUDES) 
- 	$(CC) $(CFLAGS) -c $< -o $@
+-	$(CC) $(CFLAGS) -c $< -o $@
++	$(CXX) $(CXXFLAGS) -c $< -o $@
  
  .PHONY: 
  clean:
- 	rm -f $(OBJECTS) $(BINDIR)/$(TARGET)
+-	rm -f $(OBJECTS) $(BINDIR)/$(TARGET)
 -debug:	CFLAGS = -I$(INCDIR) $(IMGMGK) $(DEBUG) 
++	rm -f $(OBJECTS) $(BINDIR)$(TARGET)
  
-+debug: CFLAGS = -I$(INCDIR) $(IMGMGK) $(DEBUG) 
++debug: CXXFLAGS = -I$(INCDIR) $(IMGMGK) $(DEBUG) 
 +
  debug: all 
 +
 +install: all
 +	pwd
 +	$(MKDIR) -p $(DESTDIR)$(PREFIX)/bin
-+	$(INSTALL) -c $(BINDIR)/$(TARGET) $(DESTDIR)$(PREFIX)/bin
++	$(INSTALL) -c $(BINDIR)$(TARGET) $(DESTDIR)$(PREFIX)/bin
