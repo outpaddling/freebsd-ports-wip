@@ -42,10 +42,9 @@
 +MKDIR	?= mkdir
 +INSTALL	?= install
  
--all: $(BINDIR)/$(TARGET) 
-+all: $(BINDIR)$(TARGET) 
+ all: $(BINDIR)/$(TARGET) 
 +
-+$(BINDIR)$(TARGET): $(OBJECTS) $(INCLUDES)
++$(BINDIR)/$(TARGET): $(OBJECTS) $(INCLUDES)
 +	$(CXX) $(OBJECTS) $(LDFLAGS) -o $@
 +
  $(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(INCLUDES) 
@@ -65,4 +64,4 @@
 +install: all
 +	pwd
 +	$(MKDIR) -p $(DESTDIR)$(PREFIX)/bin
-+	$(INSTALL) -c $(BINDIR)$(TARGET) $(DESTDIR)$(PREFIX)/bin
++	$(INSTALL) -c $(BINDIR)/$(TARGET) $(DESTDIR)$(PREFIX)/bin
