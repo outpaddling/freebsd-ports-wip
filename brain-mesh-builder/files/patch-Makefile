@@ -27,7 +27,7 @@
  
 -CFLAGS=  -I$(INCDIR) $(OPT) $(IMGMGK) 
 +CXXFLAGS	?= -O3 -Wall -fno-strict-aliasing -pthread
-+CXXFLAGS	+= -I$(INCDIR) $(GM_CPP)
++CXXFLAGS	+= -I$(INCDIR) $(GM_CPP) # -D_GLIBCXX_USE_CXX11_ABI=0
 +LDFLAGS		+= $(GM_LD)
  
 -SOURCES := $(wildcard $(SRCDIR)/*.cpp) $(wildcard $(SRCDIR)/io/*.cpp)

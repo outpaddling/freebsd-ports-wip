@@ -13,10 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libGraphicsMagick++.so:graphics/GraphicsMagick
 
 USES=		gmake
-USE_GCC=	yes
+# USE_GCC=	yes
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	hwm2746
+
+# CXXFLAGS+=	-std=c++11
 
 PLIST_FILES=	bin/dodri
 
