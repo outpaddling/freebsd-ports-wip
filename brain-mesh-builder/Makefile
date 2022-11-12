@@ -1,6 +1,5 @@
 PORTNAME=	brain-mesh-builder
-DISTVERSIONPREFIX=	v.
-DISTVERSION=	1.0
+DISTVERSION=	1.1
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -33,8 +32,5 @@ GH_ACCOUNT=	hwm2746
 CXXFLAGS+=	-Wall
 
 PLIST_FILES=	bin/dodri
-
-post-extract:
-	${RM} ${WRKSRC}/bin/* ${WRKSRC}/obj/*.o ${WRKSRC}/obj/io/*.o
 
 .include <bsd.port.mk>
