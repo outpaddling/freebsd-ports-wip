@@ -1,4 +1,4 @@
---- src/fnet3d.cpp.orig	2022-11-12 15:00:07 UTC
+--- src/fnet3d.cpp.orig	2022-11-12 14:21:36 UTC
 +++ src/fnet3d.cpp
 @@ -42,7 +42,7 @@ fnet3d::fnet3d(bead3d *bd3d, int *id_vec, string tag0)
  
@@ -58,7 +58,18 @@
    j=-1;
    for (i=0;i<nStack;i++) {
      if (fnet_stack[i].tag==sdum) {j=i; break;}
-@@ -1079,7 +1079,7 @@ void fnet3d::measureWidth3D(int N, double arr[], int n
+@@ -955,6 +955,10 @@ void fnet3d::measureWidth3D(int N, double arr[], int n
+   for (j=0;j<2;j++) pos[j]=new double[totBead];
+   bd_mass=new double[totBead]; 
+ 
++  // Hack just to make weight[] non-zero in getavgw()
++  for (i=0; i<totBead; ++i)
++    bd_mass[i]=1;
++
+   ib=0; 
+   for (istk=id_vec[0];istk<=id_vec[1];istk++) {
+     if (!fnet_stack[istk].nBead) continue; // skip if no beads    
+@@ -1079,7 +1083,7 @@ void fnet3d::measureWidth3D(int N, double arr[], int n
    }
    
    for (i=0;i<nStack;i++) delete[] plpts[i];
@@ -67,7 +78,7 @@
  }
  
  /************************************************************************/
-@@ -1152,7 +1152,7 @@ void fnet3d::readData(string fname,string bd3d_tag0)
+@@ -1152,7 +1156,7 @@ void fnet3d::readData(string fname,string bd3d_tag0)
    stringstream ss;
    string bd3d_tag,bd_tag,line,ntag,ofname;
    ifstream fin;
@@ -76,7 +87,7 @@
    bool b3d_tag, nstk, flag;
    vector<bead3d>::iterator it_bead3d; 
    flag = b3d_tag = nstk = false;
-@@ -1313,7 +1313,7 @@ void fnet3d::removeUnZbondedBeads(int *id_vec)
+@@ -1313,7 +1317,7 @@ void fnet3d::removeUnZbondedBeads(int *id_vec)
    vector<int> markbead; 
    multimap<int,int>::iterator it,zt;
    pair<multimap<int,int>::iterator,multimap<int,int>::iterator> it_range,zt_range;
@@ -85,7 +96,7 @@
    
    int delBead,updateBead; 
    multimap<int,int> renumber;
-@@ -1432,7 +1432,7 @@ void fnet3d::smoothenZ(int segLength,int delZ, double 
+@@ -1432,7 +1436,7 @@ void fnet3d::smoothenZ(int segLength,int delZ, double 
    vector<int> znghb,iSeq,jSeq,zSeq; // flanking beads z-bonded from jstk--istk
    vector<int> checked; // bead ends already checked
    vector<pair<int,int>> jbz; // store zbonded beads [stk,bead index]
