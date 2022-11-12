@@ -30,6 +30,8 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	hwm2746
 
+CXXFLAGS+=	-Wall
+
 PLIST_FILES=	bin/dodri
 
 post-extract:
