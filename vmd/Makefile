@@ -16,6 +16,8 @@ WWW=		http://www.ks.uiuc.edu/Research/vmd/
 LICENSE=	VMD BSD3CLAUSE STRIDE
 LICENSE_COMB=	multi
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 BUILD_DEPENDS=	makedepend:devel/makedepend \
 		${PYNUMPY}
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
@@ -29,8 +31,6 @@ SHEBANG_FILES=	${WRKDIR}/plugins/topotools/*.tcl \
 USE_PERL5=	build
 USE_GL=		gl glu
 USE_XORG=	x11
-
-ONLY_FOR_ARCHS=	amd64 i386
 
 LICENSE_FILE_VMD=	${WRKSRC}/LICENSE
 LICENSE_PERMS_VMD=	no-auto-accept
@@ -83,7 +83,7 @@ IGNORE=	license restrictions require manual fetching of the distribution\
 	source.  Please visit http://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD\
 	with a browser.  You will be required to register, log in, and accept\
 	the University of Illinois agreement before you can download the\
-	${VMD_DIST} source file.  Place this file in ${DISTDIR} and try again.
+	${VMD_DIST} source.  Place this distfile in ${DISTDIR} and try again.
 .endif
 
 .if ${ARCH} == "amd64"
