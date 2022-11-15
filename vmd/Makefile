@@ -1,5 +1,6 @@
 PORTNAME=	vmd
-DISTVERSION=	1.9.4a57
+DISTVERSION=	1.9.4
+DISTVERSIONSUFFIX=	a57
 CATEGORIES=	wip science graphics python tcl tk
 MASTER_SITES=	http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.99b6/:tachyon \
 		http://www.photonlimited.com/~johns/tachyon/files/0.99b6/:tachyon \
@@ -71,7 +72,7 @@ MAKE_ENV=	EXPATINC=-I${LOCALBASE}/include \
 		TCLLDFLAGS=-ltcl${TCL_VER:S/.//} \
 		TKLDFLAGS="-ltk${TK_VER:S/.//} -lX11"
 
-VMD_DIST=	${PORTNAME}-${DISTVERSION}.src.tar.gz
+VMD_DIST=	${PORTNAME}-${DISTVERSION}${DISTVERSIONSUFFIX}.src.tar.gz
 TACHYON_DIST=	tachyon-0.99b6.tar.gz
 STRIDE_DIST=	stride.tar.gz
 STRIDE_DOC=	stride.doc
