@@ -110,8 +110,8 @@ post-patch:
 		-e "s/\"gcc\"/\"${CC}\"/;s/\"g++\"/\"${CXX}\"/" \
 		${WRKSRC}/configure
 	${REINPLACE_CMD} -e "s/.SILENT:/#.SILENT:/" ${WRKDIR}/plugins/Makefile
-	${REINPLACE_CMD} "s/.SILENT:/#.SILENT:/" ${WRKDIR}/plugins/*/Makefile
-	${REINPLACE_CMD} "s%log2f(\([^ ,]*\))%logf(\1)/(float)M_LN2%g" \
+	${REINPLACE_CMD} -e "s/.SILENT:/#.SILENT:/" `fgrep -l .SILENT ${WRKDIR}/plugins/*/Makefile`
+	${REINPLACE_CMD} -e "s%log2f(\([^ ,]*\))%logf(\1)/(float)M_LN2%g" \
 		${WRKSRC}/src/Orbital.C
 	${REINPLACE_CMD} -E "s/(SHLD[[:space:]]*=[[:space:]]*)gcc/\1${CC}/" \
 		${WRKDIR}/plugins/Make-arch
