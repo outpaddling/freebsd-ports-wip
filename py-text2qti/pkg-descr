@@ -1,0 +1,7 @@
+text2qti converts Markdown-based plain text files into quizzes in QTI
+format (version 1.2), which can be imported by Canvas and other
+educational software. It supports multiple-choice, true/false,
+multiple-answers, numerical, short-answer (fill-in-the-blank), essay,
+and file-upload questions. It includes basic support for LaTeX math
+within Markdown, and allows a limited subset of siunitx notation for
+units and for numbers in scientific notation.
