@@ -10,7 +10,7 @@ WWW=		https://pypi.python.org/project/text2qti/
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}BespON>0:wip/py-bespon@${PY_FLAVOR} \
+RUN_DEPENDS=	${PKGNAMEPREFIX}bespon>0:wip/py-bespon@${PY_FLAVOR} \
 		${PKGNAMEPREFIX}markdown>0:textproc/py-markdown@${PY_FLAVOR}
 
 USES=		python
