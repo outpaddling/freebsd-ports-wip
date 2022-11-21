@@ -10,16 +10,13 @@ WWW=		https://github.com/voutcn/megahit
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 powerpc64
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le riscv64
 ONLY_FOR_ARCHS_REASON=	"Uses specific 64-bit CPU features"
 
 USES=		cmake python shebangfix
 SHEBANG_FILES=	src/megahit
 USE_GITHUB=	yes
 GH_ACCOUNT=	voutcn
-
-#MAKE_ENV=	CPU_ARCH_SUFFIX=${ARCH}
-#INSTALL_TARGET=	install-strip
 
 CFLAGS+=	-pthread
 
