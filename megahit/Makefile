@@ -1,6 +1,6 @@
 PORTNAME=		megahit
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.1.3
+DISTVERSION=		1.2.9
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,18 +10,17 @@ WWW=		https://github.com/voutcn/megahit
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:openmp gmake python shebangfix
-SHEBANG_FILES=	megahit
+ONLY_FOR_ARCHS=	amd64 powerpc64
+ONLY_FOR_ARCHS_REASON=	"Uses specific 64-bit CPU features"
+
+USES=		cmake python shebangfix
+SHEBANG_FILES=	src/megahit
 USE_GITHUB=	yes
 GH_ACCOUNT=	voutcn
 
-ONLY_FOR_ARCHS=	amd64 powerpc64
-ONLY_FOR_ARCHS_REASON=	"Uses specific 64-bit CPU features"
-MAKE_ENV=	CPU_ARCH_SUFFIX=${ARCH}
-INSTALL_TARGET=	install-strip
-PLIST_FILES=	bin/megahit \
-		bin/megahit_asm_core \
-		bin/megahit_sdbg_build \
-		bin/megahit_toolkit
+#MAKE_ENV=	CPU_ARCH_SUFFIX=${ARCH}
+#INSTALL_TARGET=	install-strip
+
+CFLAGS+=	-pthread
 
 .include <bsd.port.mk>
