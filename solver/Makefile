@@ -15,7 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	modexsoft
 
 do-build:
-	${CC} ${WRKSRC}/main.c -I${LOCALBASE}/include -L${LOCALBASE}/lib -lSDL2 -lSDL2_image -lSDL2_mixer -o ${WRKSRC}/solver
+	${CC} ${WRKSRC}/main.c -I${LOCALBASE}/include -L${LOCALBASE}/lib \
+		-lSDL2 -lSDL2_image -lSDL2_mixer -o ${WRKSRC}/solver
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 
