@@ -1,10 +1,8 @@
-# Created by: Bert Burgemeister <trebbu@googlemail.com>
-# $FreeBSD$
-
-PORTNAME=	GoldenCheetah
-PORTVERSION=	3.5
-DISTVERSIONPREFIX=	V
-CATEGORIES=	wip games
+PORTNAME=		goldencheetah
+DISTVERSIONPREFIX=	v
+DISTVERSION=		3.6
+DISTVERSIONSUFFIX=	-RC3
+CATEGORIES=		wip games
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Training software for cyclists
@@ -14,12 +12,14 @@ LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libical.so:devel/libical \
-		libqwtplot3d-qt4.so:math/qwtplot3d-qt4 \
-		libkqoauth.so:security/kqoauth
-		#vlc-qt4 is deprecated and has been removed
-		#libvlc.so:multimedia/vlc-qt4
+		libqwtplot3d-qt5.so:math/qwtplot3d
 
+USES=		bison gmake qmake qt:5
+USE_GL=		gl glu
+USE_QT=		charts core gui linguist network opengl \
+		qmake rcc script sql svg uic webkit xml
 USE_GITHUB=	yes
+GH_PROJECT=	GoldenCheetah
 
 DESKTOP_ENTRIES=	"${PORTNAME}" \
 			"${COMMENT}" \
@@ -28,12 +28,6 @@ DESKTOP_ENTRIES=	"${PORTNAME}" \
 			"Education;Sports;" \
 			false
 
-USES=		bison gmake qmake qt:5
-USE_GL=		gl glu
-USE_QT=		core gui linguist network opengl \
-		qmake script sql svg webkit xml
-#USE_QT=		corelib gui linguist moc_build network opengl \
-#		qmake rcc script sql svg uic webkit xml
 INFO=		GC3-FAQ GC3-Release GC31-Release
 
 OPTIONS_DEFINE=	DOCS
