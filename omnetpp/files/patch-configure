@@ -1,0 +1,29 @@
+--- configure.orig	2022-12-02 23:13:37 UTC
++++ configure
+@@ -4288,7 +4288,7 @@ fi
+ 
+ # make must be GNU make
+ # Extract the first word of "make ", so it can be a program name with args.
+-set dummy make ; ac_word=$2
++set dummy gmake ; ac_word=$2
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+ $as_echo_n "checking for $ac_word... " >&6; }
+ if ${ac_cv_prog_MAKE+:} false; then :
+@@ -4304,7 +4304,7 @@ do
+   test -z "$as_dir" && as_dir=.
+     for ac_exec_ext in '' $ac_executable_extensions; do
+   if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-    ac_cv_prog_MAKE="make"
++    ac_cv_prog_MAKE="gmake"
+     $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+     break 2
+   fi
+@@ -4326,7 +4326,7 @@ fi
+ 
+ 
+ if test "$MAKE" = "not found"; then
+-   OPP_PROBLEM_PACKAGES="$OPP_PROBLEM_PACKAGES make"
++   OPP_PROBLEM_PACKAGES="$OPP_PROBLEM_PACKAGES gmake"
+    as_fn_error and also for model development. "make program not found -- it is required to build OMNeT++/OMNEST" "$LINENO" 5
+ else
+    if "$MAKE" --version 2>/dev/null | grep -i GNU >/dev/null; then :; else
