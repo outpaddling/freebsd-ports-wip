@@ -1,0 +1,5 @@
+Veins is an open source framework for running vehicular network
+simulations. It is based on two well-established simulators: OMNeT++,
+an event-based network simulator, and SUMO, a road traffic simulator.
+It extends these to offer a comprehensive suite of models for IVC
+simulation.
