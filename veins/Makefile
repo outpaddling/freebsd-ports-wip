@@ -10,6 +10,8 @@ WWW=		http://veins.car2x.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	omnetpp>=0:wip/omnetpp
+
 USES=		gmake python
 # HAS_CONFIGURE=	yes
 

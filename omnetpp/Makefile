@@ -13,6 +13,7 @@ WWW=		https://omnetpp.org/
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bison>0:devel/bison \
+		openscengraph>=0:wip/openscengraph \
 		${PYTHON_PKGNAMEPREFIX}posix_ipc>=0:devel/py-posix_ipc@${PY_FLAVOR}
 
 USES=		gmake python tar:tgz
