@@ -7,8 +7,7 @@ MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Open source high performance 3D graphics toolkit
 WWW=		http://www.openscenegraph.com
 
-# Fake: OpenSceneGraph license
-LICENSE=	GPLv3
+LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
@@ -28,7 +27,6 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libtiff.so:graphics/tiff \
 		libpoppler-glib.so:graphics/poppler-glib \
 		libvncclient.so:net/libvncserver
-
 
 USES=		cmake:noninja gettext-runtime gl gnome gstreamer jpeg \
 		localbase:ldflags sdl xorg
