@@ -1,7 +1,7 @@
 PORTNAME=	openscenegraph
 DISTVERSIONPREFIX=	OpenSceneGraph-
 DISTVERSION=	3.6.5
-CATEGORIES=	wip cad
+CATEGORIES=	wip graphics
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Open source high performance 3D graphics toolkit
