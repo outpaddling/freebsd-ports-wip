@@ -25,13 +25,17 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libgif.so:graphics/giflib \
 		libjasper.so:graphics/jasper \
 		libpng16.so:graphics/png \
-		libtiff.so:graphics/tiff
+		libtiff.so:graphics/tiff \
+		libpoppler-glib.so:graphics/poppler-glib \
+		libvncclient.so:net/libvncserver
+
 
 USES=		cmake:noninja gettext-runtime gl gnome gstreamer jpeg \
-		localbase:ldflags xorg
+		localbase:ldflags sdl xorg
 USE_GL=		gl
 USE_GNOME=	cairo gdkpixbuf2 glib20 librsvg2
 USE_LDCONFIG=	yes
+USE_SDL=	sdl
 USE_XORG=	x11 xinerama xrandr
 
 USE_GITHUB=	yes

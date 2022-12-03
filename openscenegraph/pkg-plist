@@ -729,6 +729,7 @@ lib/osgPlugins-3.6.5/osgdb_osgterrain.so
 lib/osgPlugins-3.6.5/osgdb_osgtgz.so
 lib/osgPlugins-3.6.5/osgdb_osgviewer.so
 lib/osgPlugins-3.6.5/osgdb_p3d.so
+lib/osgPlugins-3.6.5/osgdb_pdf.so
 lib/osgPlugins-3.6.5/osgdb_pic.so
 lib/osgPlugins-3.6.5/osgdb_ply.so
 lib/osgPlugins-3.6.5/osgdb_png.so
@@ -739,6 +740,7 @@ lib/osgPlugins-3.6.5/osgdb_revisions.so
 lib/osgPlugins-3.6.5/osgdb_rgb.so
 lib/osgPlugins-3.6.5/osgdb_rot.so
 lib/osgPlugins-3.6.5/osgdb_scale.so
+lib/osgPlugins-3.6.5/osgdb_sdl.so
 lib/osgPlugins-3.6.5/osgdb_serializers_osg.so
 lib/osgPlugins-3.6.5/osgdb_serializers_osganimation.so
 lib/osgPlugins-3.6.5/osgdb_serializers_osgfx.so
@@ -764,6 +766,7 @@ lib/osgPlugins-3.6.5/osgdb_trans.so
 lib/osgPlugins-3.6.5/osgdb_trk.so
 lib/osgPlugins-3.6.5/osgdb_txf.so
 lib/osgPlugins-3.6.5/osgdb_txp.so
+lib/osgPlugins-3.6.5/osgdb_vnc.so
 lib/osgPlugins-3.6.5/osgdb_vtf.so
 lib/osgPlugins-3.6.5/osgdb_x.so
 lib/osgPlugins-3.6.5/osgdb_zip.so
