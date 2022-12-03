@@ -13,12 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libcurl.so:ftp/curl \
 		libavformat.so:multimedia/ffmpeg \
-		libavdevice.so:multimedia/ffmpeg \
-		libavcodec.so:multimedia/ffmpeg \
-		libavutil.so:multimedia/ffmpeg \
-		libswscale.so:multimedia/ffmpeg \
-		libswresample.so:multimedia/ffmpeg \
-		libavresample.so:multimedia/ffmpeg \
 		libfreetype.so:print/freetype2 \
 		libgdal.so:graphics/gdal \
 		libgif.so:graphics/giflib \
