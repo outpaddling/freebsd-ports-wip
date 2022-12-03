@@ -16,7 +16,7 @@ BUILD_DEPENDS=	bison>0:devel/bison \
 		openscenegraph>=0:wip/openscenegraph \
 		${PYTHON_PKGNAMEPREFIX}posix_ipc>=0:devel/py-posix_ipc@${PY_FLAVOR}
 
-USES=		gmake python qmake localbase qt:5 tar:tgz
+USES=		gmake python qmake localbase:ldflags qt:5 tar:tgz
 # USE_QT=		core declarative gui network buildtools:build qmake:build
 USE_QT=		core buildtools:build qmake:build
 
