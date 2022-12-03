@@ -3,7 +3,7 @@ DISTVERSION=	6.0.1
 # DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSIONSUFFIX=	-linux-x86_64
 CATEGORIES=	wip cad
-MASTER_SITES=	https://github.com/omnetpp/omnetpp/releases/download/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	https://github.com/omnetpp/omnetpp/releases/download/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Extensible, modular, component-based C++ simulation library
@@ -13,10 +13,12 @@ WWW=		https://omnetpp.org/
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bison>0:devel/bison \
-		openscengraph>=0:wip/openscengraph \
+		openscenegraph>=0:wip/openscenegraph \
 		${PYTHON_PKGNAMEPREFIX}posix_ipc>=0:devel/py-posix_ipc@${PY_FLAVOR}
 
-USES=		gmake python tar:tgz
+USES=		gmake python qmake localbase qt:5 tar:tgz
+# USE_QT=		core declarative gui network buildtools:build qmake:build
+USE_QT=		core buildtools:build qmake:build
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
