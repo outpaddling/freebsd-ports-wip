@@ -19,7 +19,7 @@ RUN_DEPENDS=	parallel>0:sysutils/parallel \
 		hisat2>0:biology/hisat2 \
 		samtools>0:biology/samtools \
 		igv>0:biology/igv \
-		fasda>0:wip/fasda
+		fasda>0:biology/fasda
 
 USES=		metaport python
 
