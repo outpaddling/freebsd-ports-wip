@@ -9,7 +9,7 @@ WWW=		https://example.com/rna-seq
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	parallel>0:sysutils/parallel \
+RUN_DEPENDS=	sra-tools>0:biology/sra-tools \
 		fastq-trim>0:biology/fastq-trim \
 		fastqc>0:biology/fastqc \
 		${PYTHON_PKGNAMEPREFIX}multiqc>0:biology/py-multiqc@${PY_FLAVOR} \
