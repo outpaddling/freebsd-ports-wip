@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	audit-libs
 PORTVERSION=	2.8.5
 DISTVERSIONSUFFIX=	-4.el7

@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	java-1.8.0-openjdk
 PORTVERSION=	1.8.0.242.b08
 DISTVERSIONSUFFIX=	-1.el7

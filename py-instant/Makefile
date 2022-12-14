@@ -1,5 +1,3 @@
-# Remove per Li-Wen's permission: Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
-
 PORTNAME=	instant
 # Caution: Must use version compatible with other FEniCS project ports
 DISTVERSION=	2017.2.0

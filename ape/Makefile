@@ -1,5 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
-
 PORTNAME=	APE
 DISTVERSION=	3.5.3-127
 DISTVERSIONSUFFIX=	-g53b2d90

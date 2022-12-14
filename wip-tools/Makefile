@@ -1,5 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
-
 PORTNAME=	wip-tools
 DISTVERSION=	0.4.2-16
 DISTVERSIONSUFFIX=	-g8cb864f

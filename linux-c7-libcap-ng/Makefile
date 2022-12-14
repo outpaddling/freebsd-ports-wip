@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	libcap-ng
 PORTVERSION=	0.7.5
 DISTVERSIONSUFFIX=	-4.el7

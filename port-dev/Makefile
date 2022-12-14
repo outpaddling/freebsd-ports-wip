@@ -1,5 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
-
 PORTNAME=	port-dev
 DISTVERSION=	0.3.0-35
 DISTVERSIONSUFFIX=	-g5154910

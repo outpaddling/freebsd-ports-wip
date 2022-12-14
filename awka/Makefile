@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	awka
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.6

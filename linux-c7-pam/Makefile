@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	pam
 PORTVERSION=	1.1.8
 DISTVERSIONSUFFIX=	-23.el7

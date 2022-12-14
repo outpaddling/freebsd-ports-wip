@@ -1,5 +1,3 @@
-# Created by: siasia
-
 PORTNAME=	v8
 DISTVERSION=	3.15.10
 PORTEPOCH=	1

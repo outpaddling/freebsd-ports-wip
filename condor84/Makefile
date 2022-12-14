@@ -1,5 +1,3 @@
-# Created by: Andy Pavlo
-
 # Note: Make sure there are no other versions of HTCondor installed during
 #       build.  The build system may pick up incompatible headers and libs.
 

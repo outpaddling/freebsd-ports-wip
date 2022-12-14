@@ -1,5 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
-
 PORTNAME=	twintk
 DISTVERSION=	0.9.4-23
 DISTVERSIONSUFFIX=	-g530f001

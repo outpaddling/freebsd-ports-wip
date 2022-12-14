@@ -1,5 +1,3 @@
-# Created by: Koop Mast<kwm@FreeBSD.org>
-
 PORTNAME=	polkit
 PORTVERSION=	0.113
 PORTREVISION=	5

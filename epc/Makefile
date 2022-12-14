@@ -1,5 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
-
 PORTNAME=	EPC
 DISTVERSION=	0.1.0-8
 DISTVERSIONSUFFIX=	-g1417e76
