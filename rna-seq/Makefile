@@ -5,7 +5,7 @@ MASTER_SITES=	# empty
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Metaport for RNA-Seq analysis
-WWW=		https://example.com/rna-seq
+WWW=		https://github.com/auerlab/
 
 LICENSE=	BSD2CLAUSE
 
