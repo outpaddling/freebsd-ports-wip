@@ -1,0 +1,67 @@
+--- configure.orig	2022-12-22 15:21:43 UTC
++++ configure
+@@ -10,9 +10,9 @@
+ # ./configure
+ # ./configure --shared                # Build shared Kaldi libraries.
+ # ./configure --mathlib=OPENBLAS      # Build and use OpenBLAS.
+-#        # Before doing this, cd to ../tools and type "make -j openblas".
++#        # Before doing this, cd to ../tools and type "${MAKE} -j openblas".
+ # ./configure --openblas-root=/usr    # Use system OpenBLAS.
+-#        # Note: this is not working correctly on all platforms, do "make test"
++#        # Note: this is not working correctly on all platforms, do "${MAKE} test"
+ #        # and look out for segmentation faults.
+ # ./configure --atlas-root=../tools/ATLAS/build
+ # ./configure --use-cuda=no   # disable CUDA detection (will build cpu-only
+@@ -235,7 +235,7 @@ function check_for_slow_expf {
+   if [[ "$TARGET_ARCH" == "`uname -m`" ]] ; then
+     ( cd probe
+       rm -f exp-test
+-      make -f Makefile.slow_expf 1>/dev/null
++      ${MAKE} -f Makefile.slow_expf 1>/dev/null
+       if ! ./exp-test; then
+         echo "\
+ *** WARNING: expf() seems to be slower than exp() on your machine. This is
+@@ -930,11 +930,6 @@ if [ ! -f $FSTROOT/include/fst/fst.h  ]; then
+   failure "Could not find file $FSTROOT/include/fst/fst.h:
+   you may not have installed OpenFst. See ../tools/INSTALL"
+ fi
+-OPENFST_VER=${OPENFST_VER:-$(grep 'PACKAGE_VERSION' $FSTROOT/Makefile | sed -e 's:.*= ::')}
+-OPENFST_VER_NUM=$(echo $OPENFST_VER | sed 's/\./ /g' | xargs printf "%d%02d%02d")
+-if [ $OPENFST_VER_NUM -lt 10600 ]; then
+-  failure "OpenFst-$OPENFST_VER is not supported. You need OpenFst >= 1.6.0.)"
+-fi
+ echo "OPENFSTINC = $FSTROOT/include" >> kaldi.mk
+ if $static_fst ; then
+   OPENFSTLIBS="$FSTROOT/lib/libfst.a"
+@@ -962,7 +957,7 @@ if $use_cuda; then
+    if [[ ! -f $CUBROOT/cub/cub.cuh ]]; then
+      failure "Could not find file $CUBROOT/cub/cub.cuh:
+   you may not have installed cub.  Go to ../tools/ and type
+-  'make cub' to download and unpack it. We'll detect it then."
++  '${MAKE} cub' to download and unpack it. We'll detect it then."
+    else
+      echo "CUBROOT = $CUBROOT" >> kaldi.mk
+    fi
+@@ -1067,7 +1062,7 @@ elif [ "`uname`" == "Darwin" ]; then
+   if [ $OSX_VER_NUM == 1011 ]; then
+     echo "**BAD WARNING**: You are using OS X El Capitan.  Some versions of this OS"
+     echo "**BAD WARNING**: have a bug in the BLAS implementation that affects Kaldi."
+-    echo "**BAD WARNING**: After compiling, cd to matrix/ and type 'make test'.  The"
++    echo "**BAD WARNING**: After compiling, cd to matrix/ and type '${MAKE} test'.  The"
+     echo "**BAD WARNING**: test will fail if the problem exists in your version. "
+     echo "**BAD WARNING**: Eventually this issue will be fixed by system updates from"
+     echo "**BAD WARNING**: Apple.  Unexplained crashes with reports of NaNs will"
+@@ -1340,11 +1335,11 @@ if [ -n "$ENV_LDLIBS" ]; then echo "LDLIBS += $ENV_LDL
+ check_for_slow_expf;
+ echo "Kaldi has been successfully configured. To compile:
+ 
+-  make -j clean depend; make -j <NCPU>
++  ${MAKE} -j clean depend; ${MAKE} -j <NCPU>
+ 
+ where <NCPU> is the number of parallel builds you can afford to do. If unsure,
+ use the smaller of the number of CPUs or the amount of RAM in GB divided by 2,
+-to stay within safe limits. 'make -j' without the numeric value may not limit
++to stay within safe limits. '${MAKE} -j' without the numeric value may not limit
+ the number of parallel jobs at all, and overwhelm even a powerful workstation,
+ since Kaldi build is highly parallelized."
+ exit 0
