@@ -1,5 +1,5 @@
 PORTNAME=	bcftools
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
