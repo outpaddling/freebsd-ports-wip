@@ -10,9 +10,9 @@ WWW=		https://software.broadinstitute.org/software/mocha/
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libhts.so:biology/htslib
+LIB_DEPENDS=	libhts.so:wip/htslib
 BUILD_DEPENDS=	bash:shells/bash
-RUN_DEPENDS=	bcftools>=${PORTVERSION}:biology/bcftools
+RUN_DEPENDS=	bcftools>=${PORTVERSION}:wip/bcftools
 
 USES=		autoreconf gmake localbase perl5 python:env shebangfix
 USE_GITHUB=	yes
