@@ -12,7 +12,7 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		qmake qt:5
-USE_QT=		qmake_build core gui widgets xml
+USE_QT=		qmake:build core gui widgets xml
 USE_GL=		gl
 
 PLIST_FILES=	bin/clustalx \

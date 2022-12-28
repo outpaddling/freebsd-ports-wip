@@ -15,7 +15,7 @@ RUN_DEPENDS=	gstreamer1-qt5>=0:multimedia/gstreamer1-qt \
 
 USES=		compiler:c++11-lang desktop-file-utils gl qmake qt:5
 USE_GL=		gl
-USE_QT=		buildtools_build core concurrent gui \
+USE_QT=		buildtools:build core concurrent gui \
 		multimedia network svg widgets x11extras
 USE_GITHUB=	yes
 GH_ACCOUNT=	lumina-desktop

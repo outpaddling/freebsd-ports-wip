@@ -11,7 +11,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../../LICENSE
 
 USES=		compiler:c++11-lang desktop-file-utils gl qmake qt:5
-USE_QT=		buildtools_build concurrent core gui \
+USE_QT=		buildtools:build concurrent core gui \
 		multimedia network svg widgets x11extras
 USE_GL=		gl
 USE_GITHUB=	yes

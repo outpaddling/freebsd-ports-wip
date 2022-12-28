@@ -13,7 +13,7 @@ LIB_DEPENDS=	libudisks2.so:sysutils/libudisks
 
 USES=		cmake qt:5
 # network is not listed as a dep on dev site
-USE_QT=		buildtools_build core dbus gui network qmake_build widgets
+USE_QT=		buildtools:build core dbus gui network qmake:build widgets
 USE_LDCONFIG=	yes
 USE_GITLAB=	yes
 

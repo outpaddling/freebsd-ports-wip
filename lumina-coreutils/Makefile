@@ -14,7 +14,7 @@ RUN_DEPENDS=	xrandr:x11/xrandr
 
 USES=		compiler:c++11-lang qmake qt:5
 USE_GL+=	gl
-USE_QT=		buildtools_build concurrent core gui \
+USE_QT=		buildtools:build concurrent core gui \
 		imageformats multimedia network \
 		svg widgets x11extras
 USE_GITHUB=	yes

@@ -14,7 +14,7 @@ LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5 \
 RUN_DEPENDS=	coregarage:wip/coregarage
 
 USES=		cmake localbase:ldflags qt:5
-USE_QT=		buildtools_build core gui qmake_build serialport widgets
+USE_QT=		buildtools:build core gui qmake:build serialport widgets
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	CuboCore
