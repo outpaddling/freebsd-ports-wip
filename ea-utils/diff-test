@@ -1,4 +1,0 @@
-#!/bin/sh -e
-
-diff work/ea-utils.1.1.2-806/t/$1 work/ea-utils.1.1.2-806/t/$2
-
