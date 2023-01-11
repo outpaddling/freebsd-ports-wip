@@ -4,7 +4,7 @@ DISTVERSION=	1.6.2
 PORTREVISION=	4
 CATEGORIES=	wip x11
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lumina Desktop Environment
 WWW=		https://lumina-desktop.org/
 
@@ -43,9 +43,10 @@ TRUEOS_DESC=		Use the TrueOS system interface settings.
 
 TRUEOS_QMAKE_ON=	DEFAULT_SETTINGS=TrueOS
 
-MULTIMEDIA_RUN_DEPENDS=	gstreamer1-plugins-core>=0:multimedia/gstreamer1-plugins-core
+MULTIMEDIA_USES=	gstreamer
+MULTIMEDIA_USE=		GSTREAMER=core
 
-NLS_USE=	QT=linguist_build
+NLS_USE=	QT=linguist:build
 NLS_QMAKE_ON=	CONFIG+=WITH_I18N
 
 WRKSRC_SUBDIR=	src-qt5/core
