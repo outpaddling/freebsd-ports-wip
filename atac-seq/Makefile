@@ -20,7 +20,8 @@ RUN_DEPENDS=	sra-tools>0:biology/sra-tools \
 		igv>0:biology/igv \
 		${PYTHON_PKGNAMEPREFIX}macs2>0:biology/py-macs2@${PY_FLAVOR} \
 		fasda>0:biology/fasda \
-		peak-classifier>0:biology/peak-classifier
+		peak-classifier>0:biology/peak-classifier \
+		webbrowser>0:www/webbrowser
 
 USES=		metaport python
 
