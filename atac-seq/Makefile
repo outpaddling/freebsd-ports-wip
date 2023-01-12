@@ -15,7 +15,7 @@ RUN_DEPENDS=	sra-tools>0:biology/sra-tools \
 		${PYTHON_PKGNAMEPREFIX}multiqc>0:biology/py-multiqc@${PY_FLAVOR} \
 		biolibc-tools>0:biology/biolibc-tools \
 		bwa>0:biology/bwa \
-		bowtie2>0:biology/bowtie \
+		bowtie2>0:biology/bowtie2 \
 		samtools>0:biology/samtools \
 		igv>0:biology/igv \
 		${PYTHON_PKGNAMEPREFIX}macs2>0:biology/py-macs2@${PY_FLAVOR} \
