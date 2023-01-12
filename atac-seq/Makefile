@@ -1,5 +1,5 @@
 PORTNAME=	atac-seq
-DISTVERSION=	0.1.0
+DISTVERSION=	0.1.1
 CATEGORIES=	wip biology python
 MASTER_SITES=	# empty
 
