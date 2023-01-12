@@ -19,7 +19,8 @@ RUN_DEPENDS=	sra-tools>0:biology/sra-tools \
 		hisat2>0:biology/hisat2 \
 		samtools>0:biology/samtools \
 		igv>0:biology/igv \
-		fasda>0:biology/fasda
+		fasda>0:biology/fasda \
+		webbrowser>0:www/webbrowser
 
 USES=		metaport python
 
