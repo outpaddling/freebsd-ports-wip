@@ -55,6 +55,9 @@ CONFIGURE_ENV+=	DESTDIR=${STAGEDIR}
 
 CONFLICTS_INSTALL=	lumina-1.2.*
 
+post-extract:
+	${RM} ${WRKSRC}/src-qt5/core/lumina-desktop-unified/extrafiles/screensavers/qml_scripts/Warp*
+
 post-install:
 	${FIND} ${STAGEDIR}${PREFIX}/share -name "ecp.*" -delete
 .include <bsd.port.mk>
