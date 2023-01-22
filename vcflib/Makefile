@@ -32,8 +32,7 @@ GH_TUPLE=	ekg:fastahack:bb33265:fastahack/contrib/fastahack \
 SHEBANG_FILES=	scripts/*
 
 # Clang and GCC disable sse2 by default on i386, but it's required for vcflib
-CFLAGS_i386+=	-msse2
-# CXXFLAGS+=	-std=gnu++11
+CFLAGS_i386=	-msse2
 
 CONFLICTS_INSTALL=	filevercmp libdisorder # include/disorder.h include/filevercmp.h include/pdflib.hpp
 
