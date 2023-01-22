@@ -11,7 +11,8 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	zig>0:lang/zig \
 		pybind11>=0:devel/pybind11
-LIB_DEPENDS=	libhts.so:biology/htslib
+LIB_DEPENDS=	libhts.so:biology/htslib \
+		libcurl.so:ftp/curl
 
 USES=		cmake:noninja gmake localbase:ldflags pkgconfig python shebangfix
 USE_GITHUB=	yes
@@ -35,5 +36,8 @@ CFLAGS_i386+=	-msse2
 # CXXFLAGS+=	-std=gnu++11
 
 CONFLICTS_INSTALL=	filevercmp libdisorder # include/disorder.h include/filevercmp.h include/pdflib.hpp
+
+post-stage:
+	${MV} ${STAGEDIR}/usr/lib/libzig.a ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>
