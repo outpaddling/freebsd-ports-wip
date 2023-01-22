@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2023-01-22 00:46:15 UTC
+--- CMakeLists.txt.orig	2023-01-22 15:17:38 UTC
 +++ CMakeLists.txt
-@@ -48,7 +48,7 @@ find_package(Threads)
- set_package_properties(Threads PROPERTIES TYPE REQUIRED)
+@@ -1,7 +1,7 @@
+ cmake_minimum_required(VERSION 3.16)
+ project(vcflib)
  
- pkg_check_modules(HTSLIB htslib)   # Optionally builds from contrib/
--pkg_check_modules(TABIXPP tabixpp) # Optionally builds from contrib/
-+pkg_check_modules(TABIXPP tabix) # Optionally builds from contrib/
+-set(CMAKE_CXX_STANDARD 17)
++set(CMAKE_CXX_STANDARD 14)
  
- # ---- Build switches
- set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+ include(ExternalProject)
+ include(FeatureSummary)
