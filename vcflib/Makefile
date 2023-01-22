@@ -1,6 +1,6 @@
 PORTNAME=		vcflib
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.0.3
+DISTVERSION=		1.0.5
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -9,6 +9,7 @@ WWW=		https://github.com/vcflib/vcflib
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	zig>0:lang/zig
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libtabix.so:biology/tabixpp
 
@@ -29,5 +30,7 @@ SHEBANG_FILES=	scripts/*
 
 # Clang and GCC disable sse2 by default on i386, but it's required for vcflib
 CFLAGS_i386=	-msse2
+
+CONFLICTS_INSTALL=	filevercmp libdisorder # include/disorder.h include/filevercmp.h include/pdflib.hpp
 
 .include <bsd.port.mk>
