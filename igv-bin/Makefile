@@ -1,5 +1,5 @@
 PORTNAME=	igv
-DISTVERSION=	2.12.2
+DISTVERSION=	2.16.0
 CATEGORIES=	wip biology java
 MASTER_SITES=	https://data.broadinstitute.org/igv/projects/downloads/${DISTVERSION:R}/
 DISTNAME=	IGV_${PORTVERSION}
@@ -10,7 +10,7 @@ WWW=		https://software.broadinstitute.org/software/igv/
 
 LICENSE=	MIT
 
-USES=		zip
+USES=		desktop-file-utils zip
 USE_JAVA=	11
 
 NO_ARCH=	yes
