@@ -32,7 +32,6 @@ SHEBANG_FILES=	scripts/*
 
 # Clang and GCC disable sse2 by default on i386, but it's required for vcflib
 CFLAGS_i386=	-msse2
-MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS_INSTALL=	filevercmp libdisorder # include/disorder.h include/filevercmp.h include/pdflib.hpp
 
