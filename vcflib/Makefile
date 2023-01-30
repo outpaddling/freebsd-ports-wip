@@ -13,12 +13,11 @@ BUILD_DEPENDS=	zig>0:lang/zig \
 		pybind11>=0:devel/pybind11
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libcurl.so:ftp/curl \
-		libwfa2.so:wip/wfa2-lib
+		libwfa2.so:biology/wfa2-lib
 
 USES=		cmake:noninja gmake localbase:ldflags pkgconfig python shebangfix
 USE_GITHUB=	yes
 
-# FIXME: Installs WFA2 libs and headers, which may cause conflicts
 GH_ACCOUNT=	ekg
 GH_TUPLE=	ekg:fastahack:bb33265:fastahack/contrib/fastahack \
 		ekg:filevercmp:df20dcc:filevercmp/contrib/filevercmp \
