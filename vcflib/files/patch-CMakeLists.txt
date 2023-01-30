@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2023-01-29 23:29:51 UTC
+--- CMakeLists.txt.orig	2023-01-29 04:57:02 UTC
 +++ CMakeLists.txt
 @@ -9,7 +9,7 @@
  cmake_minimum_required(VERSION 3.16)
@@ -9,3 +9,12 @@
  
  include(ExternalProject)
  include(FeatureSummary)
+@@ -38,7 +38,7 @@ option(PROFILING "Enable profiling" OFF)
+ option(GPROF "Enable gprof profiling" OFF)
+ option(ASAN "Use address sanitiser" OFF)
+ option(ZIG "Set to OFF to disable the zig code" ON)
+-option(WFA_GITMODULE "Force local git submodule for WFA2LIB" ON) # disable in distros, you may need to add path to WFA_INCLUDE_DIRS
++option(WFA_GITMODULE "Force local git submodule for WFA2LIB" OFF) # disable in distros, you may need to add path to WFA_INCLUDE_DIRS
+ 
+ include(CheckIPOSupported) # adds lto
+ check_ipo_supported(RESULT ipo_supported OUTPUT output)

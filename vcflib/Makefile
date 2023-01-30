@@ -12,11 +12,13 @@ LICENSE=	MIT
 BUILD_DEPENDS=	zig>0:lang/zig \
 		pybind11>=0:devel/pybind11
 LIB_DEPENDS=	libhts.so:biology/htslib \
-		libcurl.so:ftp/curl
+		libcurl.so:ftp/curl \
+		libwfa2.so:wip/wfa2-lib
 
 USES=		cmake:noninja gmake localbase:ldflags pkgconfig python shebangfix
 USE_GITHUB=	yes
 
+# FIXME: Installs WFA2 libs and headers, which may cause conflicts
 GH_ACCOUNT=	ekg
 GH_TUPLE=	ekg:fastahack:bb33265:fastahack/contrib/fastahack \
 		ekg:filevercmp:df20dcc:filevercmp/contrib/filevercmp \
@@ -26,9 +28,10 @@ GH_TUPLE=	ekg:fastahack:bb33265:fastahack/contrib/fastahack \
 		ekg:multichoose:e1f94ae:multichoose/contrib/multichoose \
 		ekg:smithwaterman:2610e25:smithwaterman/contrib/smithwaterman \
 		simd-everywhere:simde-no-tests:9af03cd:simd/src/simde \
-		vcflib:tabixpp:v1.1.2:tabixpp/contrib/tabixpp \
-		smarco:WFA2-lib:v2.3.2:wfa2/contrib/WFA2-lib
+		vcflib:tabixpp:v1.1.2:tabixpp/contrib/tabixpp
 SHEBANG_FILES=	scripts/*
+
+CMAKE_ARGS+=	-DWFA_GITMODULE=OFF -DWFALIB=${LOCALBASE}/lib/libwfa2.so
 
 # Clang and GCC disable sse2 by default on i386, but it's required for vcflib
 CFLAGS_i386=	-msse2

@@ -1,4 +1,4 @@
-TIMESTAMP = 1675048367
+TIMESTAMP = 1675089755
 SHA256 (ekg-vcflib-v1.0.6_GH0.tar.gz) = 3598d1a9f6c936c58be6a567f249c1df879a49b57dc5a967b83a7856a16ceeb6
 SIZE (ekg-vcflib-v1.0.6_GH0.tar.gz) = 23545077
 SHA256 (ekg-fastahack-bb33265_GH0.tar.gz) = f671609e1a8d7cacb00065bf307c90c46116af8e5cea939b06edcdbcc6d4bc2a
@@ -19,5 +19,3 @@ SHA256 (simd-everywhere-simde-no-tests-9af03cd_GH0.tar.gz) = 99dcb7d6a2e1dc3f514
 SIZE (simd-everywhere-simde-no-tests-9af03cd_GH0.tar.gz) = 572867
 SHA256 (vcflib-tabixpp-v1.1.2_GH0.tar.gz) = c850299c3c495221818a85c9205c60185c8ed9468d5ec2ed034470bb852229dc
 SIZE (vcflib-tabixpp-v1.1.2_GH0.tar.gz) = 6962
-SHA256 (smarco-WFA2-lib-v2.3.2_GH0.tar.gz) = 310e3886506ab57d04205cdf5fed3ef31969ce39e9c6d341fd5c8a0d4aa0830b
-SIZE (smarco-WFA2-lib-v2.3.2_GH0.tar.gz) = 4150874
