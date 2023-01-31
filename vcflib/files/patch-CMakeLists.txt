@@ -9,3 +9,12 @@
  
  include(ExternalProject)
  include(FeatureSummary)
+@@ -69,7 +69,7 @@ if(NOT CMAKE_BUILD_TYPE)
+ endif()
+ 
+ if (${CMAKE_BUILD_TYPE} MATCHES Release)
+-  set(EXTRA_FLAGS "-march=native -D_FILE_OFFSET_BITS=64")
++  set(EXTRA_FLAGS "-D_FILE_OFFSET_BITS=64")
+   # set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG") # reset CXX_FLAGS to replace -O3 with -Ofast
+ endif()
+ 
