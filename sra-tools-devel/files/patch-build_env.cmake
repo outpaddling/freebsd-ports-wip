@@ -1,0 +1,23 @@
+--- build/env.cmake.orig	2023-01-31 19:37:24 UTC
++++ build/env.cmake
+@@ -64,6 +64,11 @@ if ( ${CMAKE_HOST_SYSTEM_NAME} STREQUAL  "Darwin" )
+     set(LIBPFX "lib")
+     set(SHLX "dylib")
+     set(STLX "a")
++elseif ( ${CMAKE_HOST_SYSTEM_NAME} STREQUAL  "FreeBSD" )
++    set(OS "freebsd")
++    set(LIBPFX "lib")
++    set(SHLX "so")
++    set(STLX "a")
+ elseif ( ${CMAKE_HOST_SYSTEM_NAME} STREQUAL  "Linux" )
+     set(OS "linux")
+     set(LIBPFX "lib")
+@@ -85,6 +90,8 @@ elseif ( ${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "arm6
+ elseif ( ${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "aarch64")
+     set(ARCH "arm64")
+ elseif ( ${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "x86_64")
++    set(ARCH "x86_64")
++elseif ( ${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "amd64")
+     set(ARCH "x86_64")
+ elseif ( ${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "AMD64")
+     set(ARCH "x86_64")
