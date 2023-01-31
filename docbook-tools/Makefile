@@ -1,5 +1,5 @@
 PORTNAME=	docbook-tools
-DISTVERSION=	0.0.0.16
+DISTVERSION=	0.0.0.17
 CATEGORIES=	wip textproc
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,6 +11,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	e62cdc9617647ba4969ff93dccacab8fbc6f0cf1
+GH_TAGNAME=	84d96dbd240e0720b5cf6e487d95812d53fc97af
 
 .include <bsd.port.mk>
