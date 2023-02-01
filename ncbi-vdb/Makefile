@@ -27,12 +27,15 @@ GH_ACCOUNT=	ncbi
 SHEBANG_GLOB=	*.sh *.pl
 
 # Temporary for patching
-MAKE_JOBS_UNSAFE=	yes
+# MAKE_JOBS_UNSAFE=	yes
 
 post-extract:
 	${MKDIR} ${WRKSRC}/interfaces/os/freebsd
 	${CP} ${WRKSRC}/interfaces/os/linux/os-native.h \
 		${WRKSRC}/interfaces/os/freebsd
+	${MKDIR} ${WRKSRC}/libs/kfs/freebsd
+	${CP} ${WRKSRC}/libs/kfs/unix/sysfile-priv.h \
+		${WRKSRC}/libs/kfs/freebsd
 	${CP} ${FILESDIR}/endian.h ${WRKSRC}/interfaces/os/freebsd
 	${CP} ${FILESDIR}/byteswap.h ${WRKSRC}/interfaces/os/freebsd
 
