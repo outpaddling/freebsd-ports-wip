@@ -17,17 +17,13 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libhdf5.so:science/hdf5
 
-USES=		cmake:noninja compiler:c11 perl5 shebangfix
-USE_PERL5=	build
+USES=		cmake shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ncbi
 
 SHEBANG_GLOB=	*.sh *.pl
-
-# Temporary for patching
-# MAKE_JOBS_UNSAFE=	yes
 
 post-extract:
 	${MKDIR} ${WRKSRC}/interfaces/os/freebsd
@@ -38,5 +34,9 @@ post-extract:
 		${WRKSRC}/libs/kfs/freebsd
 	${CP} ${FILESDIR}/endian.h ${WRKSRC}/interfaces/os/freebsd
 	${CP} ${FILESDIR}/byteswap.h ${WRKSRC}/interfaces/os/freebsd
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib64/libncbi-vdb.so.3.0.2
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib64/libncbi-wvdb.so.3.0.2
 
 .include <bsd.port.mk>
