@@ -11,6 +11,7 @@ LICENSE_COMB=		multi
 LICENSE_FILE_PD=	${WRKSRC}/LICENSE
 LICENSE_DISTFILES_LGPL21+ =
 
+# Use SIMDE?
 ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	NCBI-VDB requires SSE2 instructions, no 32-bit support
 
@@ -27,7 +28,7 @@ USE_GITHUB=	yes
 
 SHEBANG_GLOB=	*.sh *.pl
 GH_ACCOUNT=	ncbi
-GH_TUPLE+=	ncbi:ncbi-vdb:3.0.2:vdb/../ncbi-vdb
+GH_TUPLE+=	ncbi:ncbi-vdb:3.0.2:vdb/ncbi-vdb
 
 FREEBSD_RELEASE=	uname -r | cut -d - -f 1
 
@@ -38,5 +39,9 @@ DEBUG_CONFIGURE_WITH=	debug
 OPTIMIZED_CFLAGS_MAKE_ARGS_OFF=	OPT=""
 TEST_TEST_TARGET=	test
 TEST_USES=		python
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/ncbi-vdb/interfaces/os/freebsd
+	@${CP} ${FILESDIR}/*.h ${WRKSRC}/ncbi-vdb/interfaces/os/freebsd
 
 .include <bsd.port.mk>
