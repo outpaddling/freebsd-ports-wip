@@ -22,7 +22,7 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libepoll-shim.so:devel/libepoll-shim \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c11 perl5 shebangfix
+USES=		cmake:noninja compiler:c11 perl5 shebangfix
 USE_PERL5=	build
 USE_GITHUB=	yes
 
@@ -40,8 +40,13 @@ OPTIMIZED_CFLAGS_MAKE_ARGS_OFF=	OPT=""
 TEST_TEST_TARGET=	test
 TEST_USES=		python
 
+CMAKE_ARGS+=	-DVDB_LIBDIR:STRING=${WRKSRC}/ncbi-vdb/build/lib
+
 post-extract:
 	@${MKDIR} ${WRKSRC}/ncbi-vdb/interfaces/os/freebsd
 	@${CP} ${FILESDIR}/*.h ${WRKSRC}/ncbi-vdb/interfaces/os/freebsd
+
+pre-configure:
+	cd ${WRKSRC}/ncbi-vdb/build && cmake .. && make
 
 .include <bsd.port.mk>

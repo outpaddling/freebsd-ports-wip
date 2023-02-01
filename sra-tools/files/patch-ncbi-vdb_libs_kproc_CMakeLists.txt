@@ -1,4 +1,4 @@
---- ncbi-vdb/libs/kproc/CMakeLists.txt.orig	2023-02-01 20:33:23 UTC
+--- ncbi-vdb/libs/kproc/CMakeLists.txt.orig	2022-12-12 20:10:20 UTC
 +++ ncbi-vdb/libs/kproc/CMakeLists.txt
 @@ -23,6 +23,7 @@
  # ===========================================================================
@@ -14,7 +14,7 @@
      include_directories( win )
 +elseif( "freebsd" STREQUAL ${OS} )
 +    set ( OS_SPECIFIC_SRC ${FREEBSD_SRC} )
-+    include_directories( freebsd )
++    include_directories( bsd )
 +    include_directories( unix )
  elseif( "linux" STREQUAL ${OS} )
      set ( OS_SPECIFIC_SRC ${LINUX_SRC} )
