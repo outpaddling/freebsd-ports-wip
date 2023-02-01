@@ -29,15 +29,7 @@
  elseif( "linux" STREQUAL ${OS} )
      add_compile_definitions( LINUX UNIX )
      set( LMCHECK -lmcheck )
-@@ -212,6 +220,7 @@ add_compile_definitions (PKGNAME=${OS}${BITS})
- 
- include_directories(interfaces)
- include_directories(interfaces/os)
-+include_directories(interfaces/os/freebsd)
- include_directories(interfaces/ext)
- 
- if ( "GNU" STREQUAL "${CMAKE_C_COMPILER_ID}")
-@@ -228,6 +237,9 @@ endif()
+@@ -228,6 +236,9 @@ endif()
  
  if ( "mac" STREQUAL ${OS} )
      include_directories(interfaces/os/mac)

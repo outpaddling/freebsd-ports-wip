@@ -9,6 +9,7 @@ WWW=		https://github.com/ncbi/ncbi-vdb/wiki
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# Can we use SIMDE?
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	libs/search/nucstrstr.c requires SSE2 instructions
 
@@ -26,17 +27,11 @@ GH_ACCOUNT=	ncbi
 SHEBANG_GLOB=	*.sh *.pl
 
 post-extract:
-	${MKDIR} ${WRKSRC}/interfaces/os/freebsd
-	${CP} ${WRKSRC}/interfaces/os/linux/os-native.h \
-		${WRKSRC}/interfaces/os/freebsd
-	${MKDIR} ${WRKSRC}/libs/kfs/freebsd
-	${CP} ${WRKSRC}/libs/kfs/unix/sysfile-priv.h \
-		${WRKSRC}/libs/kfs/freebsd
-	${CP} ${FILESDIR}/endian.h ${WRKSRC}/interfaces/os/freebsd
-	${CP} ${FILESDIR}/byteswap.h ${WRKSRC}/interfaces/os/freebsd
+	@${MKDIR} ${WRKSRC}/interfaces/os/freebsd
+	@${CP} ${FILESDIR}/*.h ${WRKSRC}/interfaces/os/freebsd
 
 post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib64/libncbi-vdb.so.3.0.2
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib64/libncbi-wvdb.so.3.0.2
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib64/libncbi-vdb.so.3.0.2
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib64/libncbi-wvdb.so.3.0.2
 
 .include <bsd.port.mk>
