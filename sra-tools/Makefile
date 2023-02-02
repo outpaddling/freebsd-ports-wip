@@ -15,14 +15,13 @@ LICENSE_DISTFILES_LGPL21+ =
 ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	NCBI-VDB requires SSE2 instructions, no 32-bit support
 
-BUILD_DEPENDS=	bash:shells/bash \
-		cmake:devel/cmake
+BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libhdf5.so:science/hdf5 \
 		libepoll-shim.so:devel/libepoll-shim \
 		libzstd.so:archivers/zstd
 
-USES=		cmake:noninja compiler:c11 perl5 shebangfix
+USES=		cmake:noninja perl5 shebangfix
 USE_PERL5=	build
 USE_GITHUB=	yes
 
@@ -42,9 +41,12 @@ TEST_USES=		python
 
 CMAKE_ARGS+=	-DVDB_LIBDIR:STRING=${WRKSRC}/ncbi-vdb/build/lib
 
+# MAKE_JOBS_UNSAFE=	yes
+
 post-extract:
 	@${MKDIR} ${WRKSRC}/ncbi-vdb/interfaces/os/freebsd
 	@${CP} ${FILESDIR}/*.h ${WRKSRC}/ncbi-vdb/interfaces/os/freebsd
+	cd ${WRKDIR} && ln -s ${WRKSRC}/ncbi-vdb .
 
 pre-configure:
 	cd ${WRKSRC}/ncbi-vdb/build && cmake .. && make

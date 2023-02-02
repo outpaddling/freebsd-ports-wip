@@ -1,4 +1,4 @@
---- build/env.cmake.orig	2023-01-31 19:37:24 UTC
+--- build/env.cmake.orig	2023-01-03 20:32:28 UTC
 +++ build/env.cmake
 @@ -64,6 +64,11 @@ if ( ${CMAKE_HOST_SYSTEM_NAME} STREQUAL  "Darwin" )
      set(LIBPFX "lib")
@@ -12,12 +12,33 @@
  elseif ( ${CMAKE_HOST_SYSTEM_NAME} STREQUAL  "Linux" )
      set(OS "linux")
      set(LIBPFX "lib")
-@@ -85,6 +90,8 @@ elseif ( ${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "arm6
- elseif ( ${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "aarch64")
+@@ -86,6 +91,8 @@ elseif ( ${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "aarc
      set(ARCH "arm64")
  elseif ( ${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "x86_64")
-+    set(ARCH "x86_64")
-+elseif ( ${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "amd64")
      set(ARCH "x86_64")
++elseif ( ${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "amd64")
++    set(ARCH "x86_64")
  elseif ( ${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "AMD64")
      set(ARCH "x86_64")
+ else()
+@@ -97,6 +104,10 @@ if ( "mac" STREQUAL ${OS} )
+     add_compile_definitions( MAC BSD UNIX )
+     set( LMCHECK "" )
+     set( EXE "" )
++elseif( "freebsd" STREQUAL ${OS} )
++    add_compile_definitions( FREEBSD UNIX )
++    set( LMCHECK -lmcheck )
++    set( EXE "" )
+ elseif( "linux" STREQUAL ${OS} )
+     add_compile_definitions( LINUX UNIX )
+     set( LMCHECK -lmcheck )
+@@ -366,6 +377,9 @@ endif()
+ 
+ if ( "mac" STREQUAL ${OS} )
+     include_directories(${VDB_INTERFACES_DIR}/os/mac)
++    include_directories(${VDB_INTERFACES_DIR}/os/unix)
++elseif( "freebsd" STREQUAL ${OS} )
++    include_directories(${VDB_INTERFACES_DIR}/os/freebsd)
+     include_directories(${VDB_INTERFACES_DIR}/os/unix)
+ elseif( "linux" STREQUAL ${OS} )
+     include_directories(${VDB_INTERFACES_DIR}/os/linux)
