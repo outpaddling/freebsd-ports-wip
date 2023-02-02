@@ -1,4 +1,4 @@
-NCBI-VDB is a virtualized back-end engine library for Sequencing Read Archives.
-The 'front-end' API are provided by biology/ngs-sdk port.
-Although the GitHub repository also contains Java and Python codes,
+NCBI-VDB is a virtualized back-end engine library for Sequencing Read
+Archives.  The 'front-end' API are provided by biology/ngs-sdk port.
+Although the GitHub repository also contains Java and Python code,
 this port currently builds only C- and C++-based libraries.
