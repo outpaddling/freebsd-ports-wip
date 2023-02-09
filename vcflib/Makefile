@@ -1,7 +1,6 @@
 PORTNAME=		vcflib
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.0.6
-PORTREVISION=		1
+DISTVERSION=		1.0.7
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,8 +9,7 @@ WWW=		https://github.com/vcflib/vcflib
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	zig>0:lang/zig \
-		pybind11>=0:devel/pybind11
+BUILD_DEPENDS=	pybind11>=0:devel/pybind11
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libcurl.so:ftp/curl \
 		libwfa2.so:biology/wfa2-lib
@@ -31,7 +29,10 @@ GH_TUPLE=	ekg:fastahack:bb33265:fastahack/contrib/fastahack \
 		vcflib:tabixpp:v1.1.2:tabixpp/contrib/tabixpp
 SHEBANG_FILES=	scripts/*
 
-CMAKE_ARGS+=	-DWFA_GITMODULE=OFF -DWFALIB=${LOCALBASE}/lib/libwfa2.so
+# FIXME: Add Zig option + lang/zig dep
+
+CMAKE_ARGS+=	-DWFA_GITMODULE=OFF -DWFALIB=${LOCALBASE}/lib/libwfa2.so \
+		-DZIG=OFF
 
 # Clang and GCC disable sse2 by default on i386, but it's required for vcflib
 CFLAGS_i386=	-msse2
@@ -39,6 +40,7 @@ CFLAGS_i386=	-msse2
 CONFLICTS_INSTALL=	filevercmp libdisorder # include/disorder.h include/filevercmp.h include/pdflib.hpp
 
 post-stage:
-	${MV} ${STAGEDIR}/usr/lib/libzig.a ${STAGEDIR}${PREFIX}/lib
+	${MV} ${STAGEDIR}${PREFIX}/bin/libvcflib.a ${STAGEDIR}${PREFIX}/lib
+#	${MV} ${STAGEDIR}/usr/lib/libzig.a ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>
