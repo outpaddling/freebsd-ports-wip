@@ -30,17 +30,28 @@ GH_TUPLE=	ekg:fastahack:bb33265:fastahack/contrib/fastahack \
 SHEBANG_FILES=	scripts/*
 
 # FIXME: Add Zig option + lang/zig dep
+OPTIONS_DEFINE=		ZIG
+OPTIONS_DEFAULT=
+OPTIONS_SUB=		yes
 
-CMAKE_ARGS+=	-DWFA_GITMODULE=OFF -DWFALIB=${LOCALBASE}/lib/libwfa2.so \
-		-DZIG=OFF
+ZIG_DESC=		Include Zig language support
+
+BUILD_DEPENDS_ZIG=	lang/zig
+
+CMAKE_ARGS+=	-DWFA_GITMODULE=OFF -DWFALIB=${LOCALBASE}/lib/libwfa2.so
+ZIG_CMAKE_OFF=	-DZIG=OFF
 
 # Clang and GCC disable sse2 by default on i386, but it's required for vcflib
 CFLAGS_i386=	-msse2
 
 CONFLICTS_INSTALL=	filevercmp libdisorder # include/disorder.h include/filevercmp.h include/pdflib.hpp
 
+.include <bsd.port.options.mk>
+
 post-stage:
 	${MV} ${STAGEDIR}${PREFIX}/bin/libvcflib.a ${STAGEDIR}${PREFIX}/lib
-#	${MV} ${STAGEDIR}/usr/lib/libzig.a ${STAGEDIR}${PREFIX}/lib
+.if ${PORT_OPTIONS:MZIG}
+	${MV} ${STAGEDIR}/usr/lib/libzig.a ${STAGEDIR}${PREFIX}/lib
+.endif
 
 .include <bsd.port.mk>
