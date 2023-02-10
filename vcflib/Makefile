@@ -9,7 +9,7 @@ WWW=		https://github.com/vcflib/vcflib
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	pybind11>=0:devel/pybind11
+BUILD_DEPENDS=	pybind11>0:devel/pybind11
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libcurl.so:ftp/curl \
 		libwfa2.so:biology/wfa2-lib
@@ -35,7 +35,7 @@ OPTIONS_SUB=		yes
 
 ZIG_DESC=		Include Zig language support
 
-BUILD_DEPENDS_ZIG=	lang/zig
+ZIG_BUILD_DEPENDS=	zig>0:lang/zig
 
 CMAKE_ARGS+=	-DWFA_GITMODULE=OFF -DWFALIB=${LOCALBASE}/lib/libwfa2.so
 ZIG_CMAKE_OFF=	-DZIG=OFF
