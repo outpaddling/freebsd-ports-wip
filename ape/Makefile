@@ -29,6 +29,8 @@ MAKE_ARGS+=	PREFIX=${PREFIX} \
 		STAGEDIR=${STAGEDIR} \
 		VERSION=${PORTVERSION}
 
+WITH_DEBUG=	yes
+
 pre-build:
 	(cd ${WRKSRC} && ${MAKE} depend LOCALBASE=${LOCALBASE})
 
