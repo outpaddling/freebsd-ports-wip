@@ -147,6 +147,10 @@ man/man1/apekeys.1.gz
 %%DATADIR%%/Languages/Python/Macros/menu.txt
 %%DATADIR%%/Languages/Python/language_opts
 %%DATADIR%%/Languages/Python/syntax_highlighting
+%%DATADIR%%/Languages/QTI-text/Macros/macros
+%%DATADIR%%/Languages/QTI-text/Macros/menu.txt
+%%DATADIR%%/Languages/QTI-text/language_opts
+%%DATADIR%%/Languages/QTI-text/syntax_highlighting
 %%DATADIR%%/Languages/R/Macros/macros
 %%DATADIR%%/Languages/R/Macros/menu.txt
 %%DATADIR%%/Languages/R/language_opts
