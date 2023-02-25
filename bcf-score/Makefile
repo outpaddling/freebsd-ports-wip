@@ -20,7 +20,7 @@ USE_PERL5=	test
 
 GH_ACCOUNT=	samtools
 GH_PROJECT=	bcftools
-GH_TAGNAME=	1.16
+GH_TAGNAME=	1.17
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	misc/* test/test.pl
 
