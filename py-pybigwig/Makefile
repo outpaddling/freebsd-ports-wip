@@ -1,13 +1,12 @@
 PORTNAME=	pyBigWig
-DISTVERSION=	0.3.18
-PORTREVISION=	1
+DISTVERSION=	0.3.20
 CATEGORIES=	wip biology python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Python access to bigWig files using libBigWig
-WWW=		https://github.com/deeptools/pyBigWig
+WWW=		https://pypi.org/project/pyBigWig/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -18,6 +17,6 @@ USES=		localbase python
 USE_PYTHON=	autoplist distutils
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pyBigWig.cpython-38.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pyBigWig*.so
 
 .include <bsd.port.mk>
