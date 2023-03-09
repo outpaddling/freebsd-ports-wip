@@ -1,6 +1,6 @@
 PORTNAME=	ncbi-entrez-direct
 DISTVERSION=	14.9.20210423
-PORTREVISION=	1
+PORTREVISION=	12
 CATEGORIES=	wip biology perl5
 MASTER_SITES=	ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/${PORTVERSION}/
 DISTFILES=	edirect.tar.gz
@@ -21,6 +21,8 @@ RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 USES=		go:modules perl5 shebangfix
 USE_GITHUB=	nodefault
 
+CONFLICTS_INSTALL=	ebook-tools p5-XML-Compile # bin/einfo bin/xml2json
+
 # Dependency versions:
 #	make clean extract
 # 	cd ${WRKSRC}/cmd
@@ -38,12 +40,12 @@ GH_TUPLE=	fatih:color:v1.10.0:a/${GHSD}/fatih/color \
 		mattn:go-isatty:v0.0.12:g/${GHSD}/mattn/go-isatty \
 		fiam:gounidecode:8deddbd03fec:h/${GHSD}/fiam/gounidecode \
 		golang:text:v0.3.5:i/${GLSD}/x/text \
-		golang:sys:d5e6a3e2c0ae:j/${GLSD}/x/sys
+		golang:sys:v0.5.0:j/${GLSD}/x/sys
 
 SHEBANG_FILES=	nquire edirect.pl word-at-a-time accn-at-a-time \
 		amino-acid-composition between-two-genes exclude-uid-lists \
 		filter-stop-words intersect-uid-lists phrase-search \
-		skip-if-file-exists theme-aliases test-edirect hgvs2spdi 
+		skip-if-file-exists theme-aliases test-edirect hgvs2spdi
 
 PSCRIPTS=	efetch efilter einfo elink epost esearch esummary nquire
 SCRIPTS=	accn-at-a-time amino-acid-composition archive-pubmed \
@@ -74,7 +76,7 @@ pre-configure:
 do-build:
 	@${CP} ${FILESDIR}/modules.txt ${WRKSRC}/cmd/vendor
 	@${CP} -R ${WRKSRC}/eutils ${WRKSRC}/cmd/vendor
-	@cd ${WRKSRC}/cmd && ${FILESDIR}/build-cmd
+	@cd ${WRKSRC}/cmd && ${SETENV} ${MAKE_ENV} ${FILESDIR}/build-cmd
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${PREFIX}/bin
