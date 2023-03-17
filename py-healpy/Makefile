@@ -2,7 +2,7 @@ PORTNAME=	healpy
 PORTVERSION=	1.7.4
 CATEGORIES=	wip python
 # https://pypi.python.org/packages/source/h/healpy/healpy-1.7.4.tar.gz
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
