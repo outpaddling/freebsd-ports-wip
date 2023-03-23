@@ -1,5 +1,6 @@
 DNA Features Viewer is a Python library to visualize DNA features, e.g.
 from GenBank or Gff files.
+
 DNA Features Viewer can plot sequence maps linearly or circularly, with
 or without nucleotide sequence and amino-acid sequences. The plotter
 automatically produces clear plots even for sequences with many
