@@ -1,0 +1,7 @@
+TIMESTAMP = 1682378626
+SHA256 (p4lang-p4c-v1.2.3.8_GH0.tar.gz) = 952b06e529b7da238d71da0ed0410d59964b295417f616ace8f800f863477e2b
+SIZE (p4lang-p4c-v1.2.3.8_GH0.tar.gz) = 18604515
+SHA256 (google-googletest-aa148eb_GH0.tar.gz) = 37a3b5678457c56dffcc1681ef07ce5f80e5c2939f8a526250df1d8fa26c668b
+SIZE (google-googletest-aa148eb_GH0.tar.gz) = 1283411
+SHA256 (p4lang-p4runtime-7a322f3_GH0.tar.gz) = 4e3a841e2b30ea2784363995da9aaa752e1e8adc12a7665abff24d5780364a6a
+SIZE (p4lang-p4runtime-7a322f3_GH0.tar.gz) = 432616
