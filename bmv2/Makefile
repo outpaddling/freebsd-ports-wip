@@ -16,8 +16,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libnanomsg.so:net/nanomsg \
 		libthrift.so:devel/thrift-cpp \
 		libboost_system.so:devel/boost-libs \
-		libpcap.so:net/libpcap \
 		libgmp.so:math/gmp
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}thrift>=0:devel/py-thrift@${PY_FLAVOR}
 
 USES=		autoreconf libtool localbase:ldflags python shebangfix
 USE_GITHUB=	yes
