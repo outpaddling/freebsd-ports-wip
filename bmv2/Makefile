@@ -11,12 +11,23 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libnanomsg.so:net/nanomsg \
-		libthrift.so:devel/thrift-cpp
+		libthrift.so:devel/thrift-cpp \
+		libboost_system.so:devel/boost-libs \
+		libpcap.so:net/libpcap \
+		libgmp.so:math/gmp
 
-USES=		autoreconf libtool localbase:ldflags shebangfix
+USES=		autoreconf libtool localbase:ldflags python shebangfix
 USE_GITHUB=	yes
+USE_LDCONFIG=	yes
 
-SHEBANG_GLOB=	*.sh
+SHEBANG_GLOB=	*.py *.sh
+SHEBANG_FILES+=	mininet/stress_test_ipv4.py.in \
+		targets/psa_switch/psa_switch_CLI.in \
+		targets/simple_switch/simple_switch_CLI.in \
+		targets/simple_switch/tests/CLI_tests/run_one_test.py.in \
+		tools/bm_CLI.in \
+		tools/bm_nanomsg_events.in \
+		tools/bm_p4dbg.in
 GH_ACCOUNT=	p4lang
 GH_PROJECT=	behavioral-model
 
@@ -24,5 +35,6 @@ GNU_CONFIGURE=	yes
 # Temporary hack to make progress on build.  Should not be disabled.
 CONFIGURE_ARGS=	--without-thrift
 LDFLAGS+=	-L${LOCABBASE}/lib
+INSTALL_TARGET	=install-strip
 
 .include <bsd.port.mk>
