@@ -10,7 +10,9 @@ WWW=		https://example.com/bmv2
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	bash:shells/bash
+# FIXME: devel/thrift conflicts with devel/thrift-cpp
+BUILD_DEPENDS=	bash:shells/bash \
+		thrift:wip/thrift
 LIB_DEPENDS=	libnanomsg.so:net/nanomsg \
 		libthrift.so:devel/thrift-cpp \
 		libboost_system.so:devel/boost-libs \
@@ -33,9 +35,6 @@ GH_ACCOUNT=	p4lang
 GH_PROJECT=	behavioral-model
 
 GNU_CONFIGURE=	yes
-# Temporary hack to make progress on build.  Should not be disabled.
-CONFIGURE_ARGS=	--without-thrift
-LDFLAGS+=	-L${LOCABBASE}/lib
-INSTALL_TARGET	=install-strip
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
