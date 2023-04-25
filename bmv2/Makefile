@@ -1,6 +1,7 @@
 PORTNAME=	bmv2
 DISTVERSION=	1.15.0
 CATEGORIES=	wip net
+PKGNAMEPREFIX=	p4lang-
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Reference P4 software switch

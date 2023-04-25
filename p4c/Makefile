@@ -2,6 +2,7 @@ PORTNAME=	p4c
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.3.8
 CATEGORIES=	wip lang
+PKGNAMEPREFIX=	p4lang-
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	P4 network language reference compiler
