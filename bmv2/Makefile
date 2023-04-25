@@ -11,12 +11,14 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # FIXME: devel/thrift conflicts with devel/thrift-cpp
+# FIXME: lipcap dep is listed in case it's installed.  Force using base pcap?
 BUILD_DEPENDS=	bash:shells/bash \
 		thrift:wip/thrift
 LIB_DEPENDS=	libnanomsg.so:net/nanomsg \
 		libthrift.so:devel/thrift-cpp \
 		libboost_system.so:devel/boost-libs \
-		libgmp.so:math/gmp
+		libgmp.so:math/gmp \
+		libpcap.so:net/libpcap
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}thrift>=0:devel/py-thrift@${PY_FLAVOR}
 
 USES=		autoreconf libtool localbase:ldflags python shebangfix
