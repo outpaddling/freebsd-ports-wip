@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgc.so:devel/boehm-gc \
 		libprotobuf.so:devel/protobuf \
 		libboost_iostreams.so:devel/boost-libs
 
-USES=		bison cmake shebangfix
+USES=		bison cmake python shebangfix
 USE_GITHUB=	yes
 
 SHEBANG_GLOB=	*.py
