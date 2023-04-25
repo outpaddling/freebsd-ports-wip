@@ -12,10 +12,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	flex:textproc/flex
 LIB_DEPENDS=	libgc.so:devel/boehm-gc \
-		libprotobuf.so:devel/protobuf
+		libprotobuf.so:devel/protobuf \
+		libboost_iostreams.so:devel/boost-libs
 
-USES=		bison cmake
+USES=		bison cmake shebangfix
 USE_GITHUB=	yes
+
+SHEBANG_GLOB=	*.py
+SHEBANG_FILES+=	tools/driver/p4c.in \
+		tools/hooks/pre-commit \
+		backends/ebpf/build_libbpf
 GH_ACCOUNT=	p4lang
 GH_TUPLE=	google:googletest:aa148eb:gtest/test/frameworks/gtest \
 		p4lang:p4runtime:7a322f3:p4runtime/control-plane/p4runtime
