@@ -29,6 +29,7 @@ GH_TUPLE=	google:googletest:aa148eb:gtest/test/frameworks/gtest \
 
 WITH_DEBUG=	yes
 # irgenerator seg faults during build with boehm_gc enabled
+# https://github.com/p4lang/p4c/issues/3989#issuecomment-1522252860
 CMAKE_ARGS+=	-DENABLE_GC:BOOL=FALSE
 LDFLAGS+=	-lexecinfo
 
