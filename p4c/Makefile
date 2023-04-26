@@ -1,6 +1,7 @@
 PORTNAME=	p4c
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.3.8
+DISTVERSION=	1.2.3.8-18
+DISTVERSIONSUFFIX=	-gd3fd173dc
 CATEGORIES=	wip lang
 PKGNAMEPREFIX=	p4lang-
 
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libgc.so:devel/boehm-gc \
 		libprotobuf.so:devel/protobuf \
 		libboost_iostreams.so:devel/boost-libs
 
-USES=		bison cmake python shebangfix
+USES=		bison cmake:noninja python shebangfix
 USE_GITHUB=	yes
 
 SHEBANG_GLOB=	*.py
@@ -29,6 +30,7 @@ GH_TUPLE=	google:googletest:aa148eb:gtest/test/frameworks/gtest \
 
 WITH_DEBUG=	yes
 # irgenerator seg faults during build with boehm_gc enabled
+# This should not be disabled, as p4c relies on gc for mem management
 # https://github.com/p4lang/p4c/issues/3989#issuecomment-1522252860
 CMAKE_ARGS+=	-DENABLE_GC:BOOL=FALSE
 LDFLAGS+=	-lexecinfo
