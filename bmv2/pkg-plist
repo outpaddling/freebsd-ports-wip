@@ -13,6 +13,7 @@ include/bm/Standard.h
 include/bm/bm_apps/learn.h
 include/bm/bm_apps/notifications.h
 include/bm/bm_apps/packet_pipe.h
+include/bm/bm_grpc/pem.h
 include/bm/bm_runtime/bm_runtime.h
 include/bm/bm_sim/P4Objects.h
 include/bm/bm_sim/_assert.h
