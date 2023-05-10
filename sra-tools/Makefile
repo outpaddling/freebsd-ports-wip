@@ -1,5 +1,5 @@
 PORTNAME=	sra-tools
-DISTVERSION=	3.0.3
+DISTVERSION=	3.0.5
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
