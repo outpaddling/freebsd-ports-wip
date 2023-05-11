@@ -1,5 +1,5 @@
 PORTNAME=	multiqc
-DISTVERSION=	1.13
+DISTVERSION=	1.14
 CATEGORIES=	wip biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,8 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}lzstring>0:archivers/py-lzstring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}spectra>=0.0.10:graphics/py-spectra@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colormath>0:math/py-colormath@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}kiwisolver>0:math/py-kiwisolver@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}kiwisolver>0:math/py-kiwisolver@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fonttools>=4.22.0:print/py-fonttools@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils

@@ -1,11 +1,10 @@
---- multiqc/multiqc.py.orig	2022-09-08 21:36:30 UTC
+--- multiqc/multiqc.py.orig	2023-05-11 13:19:10 UTC
 +++ multiqc/multiqc.py
-@@ -18,10 +18,16 @@ import jinja2
- import os
- import re
+@@ -24,7 +24,13 @@ from urllib.request import urlopen
+ 
+ import jinja2
  import rich
 -import rich_click as click
-+import sys
 +if 'LC_ALL' in os.environ and 'LANG' in os.environ:
 +    import rich_click as click
 +else:
@@ -13,9 +12,6 @@
 +    print('in your environment in order for the click module to function.')
 +    print('E.g. export LC_ALL=en_US.UTF-8 or setenv LC_ALL en_US.UTF-8')
 +    sys.exit()
- import shutil
- import subprocess
--import sys
- import tempfile
- import time
- import traceback
+ from rich.syntax import Syntax
+ 
+ from .plots import table
