@@ -17,7 +17,7 @@ USES=		gmake localbase:ldflags
 USE_GITHUB=	yes
 # FIXME: Neglected to document what gcc is needed.
 # Investigate and remove if possible.
-USE_GCC=	yes
+# USE_GCC=	yes
 
 GH_ACCOUNT=	OpenGene
 
