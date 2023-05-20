@@ -38,6 +38,8 @@ post-extract:
 	${CP} ${FILESDIR}/cpuid_arm.c ${WRKSRC}/utility/src/parasail/cpuid.c
 .elif ${ARCH} == "powerpc64" || ${ARCH} == "powerpc64le"
 	${CP} ${FILESDIR}/cpuid_ppc.c ${WRKSRC}/utility/src/parasail/cpuid.c
+.elif ${ARCH} != "amd64"
+	${CP} ${FILESDIR}/cpuid_any.c ${WRKSRC}/utility/src/parasail/cpuid.c
 .endif
 
 pre-configure:
