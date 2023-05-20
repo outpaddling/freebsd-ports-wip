@@ -1,5 +1,6 @@
 PORTNAME=		canu
 DISTVERSION=		2.2
+PORTREVISION=	2
 CATEGORIES=		wip biology java perl5
 # Github auto-generated tarballs lack submodules
 MASTER_SITES=		https://github.com/marbl/canu/releases/download/v${DISTVERSION}/
@@ -21,7 +22,7 @@ USES=		compiler:c++11-lang gmake localbase perl5 tar:xz
 USE_JAVA=	yes
 
 JAVA_RUN=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 
 WRKSRC_SUBDIR=	src
 # Upstream Makefile compiles directly into ${DESTDIR}${PREFIX} rather than
