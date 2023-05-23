@@ -15,7 +15,7 @@ BROKEN_powerpc64=	test fails on big-endian systems
 
 USES=		cmake
 USE_GITHUB=	yes
-USE_LDCONFIG=	yes
+# USE_LDCONFIG=	yes
 
 GH_ACCOUNT=	lemire
 
