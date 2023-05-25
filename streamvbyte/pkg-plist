@@ -1,4 +1,0 @@
-include/streamvbyte.h
-include/streamvbyte_zigzag.h
-include/streamvbytedelta.h
-lib/libstreamvbyte.a
