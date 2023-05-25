@@ -1,7 +1,8 @@
 PORTNAME=	globalprotect-openconnect
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.9
-CATEGORIES=	wip security
+PORTREVISION=	1
+CATEGORIES=	wip security net-vpn
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	OpenConnect GUI for GlobalProtect protocol
