@@ -28,7 +28,8 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libsqlite3.so:databases/sqlite3 \
 		libuv.so:devel/libuv \
 		libnghttp2.so:www/libnghttp2 \
-		libgrpc.so:devel/grpc
+		libgrpc.so:devel/grpc \
+		libzstd.so:archivers/zstd
 RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-JSON>=0:converters/p5-JSON
 
