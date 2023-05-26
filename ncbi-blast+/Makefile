@@ -1,5 +1,5 @@
 PORTNAME=	ncbi-blast+
-DISTVERSION=	2.12.0
+DISTVERSION=	2.14.0
 CATEGORIES=	wip biology perl5 python
 MASTER_SITES=	https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ \
 		https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/
@@ -48,7 +48,13 @@ GNU_CONFIGURE=	yes
 # a postinstall mv.
 CONFIGURE_ARGS=	AR="ar cr" --without-boost --libdir=${PREFIX}/lib/ncbi-tools++
 
+CONFLICTS_INSTALL=	ncbi-cxx-toolkit
+
 WRKSRC_SUBDIR=	c++
+
+.if !exists(/usr/include/omp.h)
+CONFIGURE_ARGS+=	--without-openmp
+.endif
 
 .include <bsd.port.pre.mk>
 
