@@ -17,8 +17,8 @@ bin/ms-plot
 bin/ms-plot.py
 bin/ms-stack
 bin/ms-stack.py
-libexec/blast-filter.awk
-libexec/conserved-stats.awk
+libexec/microsynteny-tools/blast-filter.awk
+libexec/microsynteny-tools/conserved-stats.awk
 man/man1/ms-extract.1.gz
 man/man1/ms-intersect.1.gz
 man/man1/ms-plot.1.gz
