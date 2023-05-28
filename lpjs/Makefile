@@ -1,5 +1,5 @@
 PORTNAME=	lpjs
-DISTVERSION=	0.0.0-137
+DISTVERSION=	0.0.0-138
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -17,7 +17,7 @@ USE_RC_SUBR=	lpjs_dispatchd lpjs_compd
 
 GH_ACCOUNT=	outpaddling
 GH_PROJECT=	LPJS
-GH_TAGNAME=	ab76922ed1550efc2201f96dae5f4a4e56b64ab1
+GH_TAGNAME=	f5409a9832c7b01592e8381627671a24f003754d
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE} depend LOCALBASE=${LOCALBASE}
