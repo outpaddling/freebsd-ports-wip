@@ -1,0 +1,3 @@
+bin/npmount
+@sample %%ETCDIR%%.conf.sample
+man/man1/npmount.1.gz
