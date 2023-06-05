@@ -11,8 +11,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	npmount>0:wip/npmount automount>0:sysutils/automount
 
-USES=		gl qmake qt:5
-USE_QT=		buildtools:build core gui qmake:build widgets
+USES=		gl qmake qt:6
+USE_QT=		base tools:build
 USE_GL=		gl
 USE_GITHUB=	yes
 
