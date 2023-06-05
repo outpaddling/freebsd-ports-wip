@@ -15,4 +15,6 @@ LIB_DEPENDS=	libxtend.so:wip/libxtend
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 
+WITH_DEBUG=	yes
+
 .include <bsd.port.mk>

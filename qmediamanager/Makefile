@@ -19,6 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 GH_TAGNAME=	c10d444abd7983e0bf05a4abc516f0131a851be1
 
+WITH_DEBUG=	yes
+
 PLIST_FILES=	bin/qmediamanager man/man1/qmediamanager.1.gz
 
 do-install:
