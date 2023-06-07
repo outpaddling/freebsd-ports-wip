@@ -1,5 +1,5 @@
 PORTNAME=	qmediamanager
-DISTVERSION=	0.0.0.12
+DISTVERSION=	0.0.0.13
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	npmount>0:wip/npmount \
 		automount>0:sysutils/automount \
-		auto-admin>=0.7.15.22:wip/auto-admin \
+		auto-admin>=0.7.15.23:wip/auto-admin \
 		rxvt-unicode>0:x11/rxvt-unicode
 
 USES=		gl qmake qt:6
@@ -20,7 +20,7 @@ USE_GL=		gl
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	c664ed8c30900d85a8484a764b063de63dfae76f
+GH_TAGNAME=	78bf44a7da5efcb73647bae8a25857e1489f74d5
 
 WITH_DEBUG=	yes
 
