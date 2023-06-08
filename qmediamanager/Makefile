@@ -1,5 +1,5 @@
 PORTNAME=	qmediamanager
-DISTVERSION=	0.0.0.15
+DISTVERSION=	0.0.0.16
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -9,6 +9,8 @@ WWW=		https://github.com/outpaddling/qmediamanager
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	libxtend>=0.1.7.21:wip/libxtend
+LIB_DEPENDS=	libxtend.so:wip/libxtend
 RUN_DEPENDS=	npmount>0:wip/npmount \
 		automount>0:sysutils/automount \
 		auto-admin>=0.7.15.23:wip/auto-admin \
@@ -20,7 +22,7 @@ USE_GL=		gl
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	22e450f39056259d28e2e8be60e92959ff7a818b
+GH_TAGNAME=	def8d5bf2875b527f8cd8c44744661196b25fc7c
 
 WITH_DEBUG=	yes
 
