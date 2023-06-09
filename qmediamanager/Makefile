@@ -1,5 +1,5 @@
 PORTNAME=	qmediamanager
-DISTVERSION=	0.0.0.21
+DISTVERSION=	0.0.0.23
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -22,7 +22,7 @@ USE_GL=		gl
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	a537575e0c416abbe77c74e6b3f8cf9748e61f7a
+GH_TAGNAME=	8237b391890a1e6d6685ff993fd86dd4abc9bf98
 
 WITH_DEBUG=	yes
 
