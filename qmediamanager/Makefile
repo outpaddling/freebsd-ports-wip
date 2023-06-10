@@ -9,7 +9,7 @@ WWW=		https://github.com/outpaddling/qmediamanager
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	libxtend>=0.1.7.21:wip/libxtend
+BUILD_DEPENDS=	libxtend>=0.1.8:wip/libxtend
 LIB_DEPENDS=	libxtend.so:wip/libxtend
 RUN_DEPENDS=	npmount>0:wip/npmount \
 		automount>0:sysutils/automount \
