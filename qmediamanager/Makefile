@@ -1,6 +1,6 @@
 PORTNAME=	qmediamanager
 DISTVERSION=	0.1.0
-CATEGORIES=	wip sysutils
+CATEGORIES=	wip deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	GUI tool for managing removable media
