@@ -13,7 +13,7 @@ BUILD_DEPENDS=	libxtend>=0.1.8:wip/libxtend
 LIB_DEPENDS=	libxtend.so:wip/libxtend
 RUN_DEPENDS=	npmount>0:wip/npmount \
 		automount>0:sysutils/automount \
-		auto-admin>=0.7.15.23:wip/auto-admin \
+		auto-admin>=0.7.16:wip/auto-admin \
 		rxvt-unicode>0:x11/rxvt-unicode
 
 USES=		gl qmake qt:6
