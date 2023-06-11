@@ -17,7 +17,6 @@ sbin/desktop-installer
 %%DATADIR%%/OTHER/xinitrc
 %%DATADIR%%/SDDM/sddm.conf
 %%DATADIR%%/Scripts/battery-shutdown.sh
-%%DATADIR%%/Scripts/desktop-admin
 %%DATADIR%%/WMAKER/xinitrc
 %%DATADIR%%/XDM/GiveConsole
 %%DATADIR%%/XDM/Xsetup_0
