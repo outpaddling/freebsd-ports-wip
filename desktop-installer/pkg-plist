@@ -19,7 +19,6 @@ sbin/desktop-installer
 %%DATADIR%%/WMAKER/xinitrc
 %%DATADIR%%/XDM/GiveConsole
 %%DATADIR%%/XDM/Xsetup_0
-%%DATADIR%%/XDM/Xstartup
 %%DATADIR%%/XDM/beastie.xpm
 %%DATADIR%%/XDM/bsd_background.jpg
 %%DATADIR%%/XDM/xdmshutdown
