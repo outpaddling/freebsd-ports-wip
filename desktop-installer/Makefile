@@ -1,6 +1,6 @@
 PORTNAME=	desktop-installer
-DISTVERSION=	0.8.0-11
-DISTVERSIONSUFFIX=	-g8ae80b2
+DISTVERSION=	0.8.0-13
+DISTVERSIONSUFFIX=	-g9012e97
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -27,7 +27,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/Data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
-	@${MKDIR} ${STAGEDIR}${DATADIR}/Scripts
-	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${STAGEDIR}${DATADIR}/Scripts
+	cd ${WRKSRC}/FreeBSD && ${COPYTREE_SHARE} XDM ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
