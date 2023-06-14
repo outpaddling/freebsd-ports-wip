@@ -1,5 +1,6 @@
 PORTNAME=	qmediamanager
-DISTVERSION=	0.1.0
+DISTVERSION=	0.1.0-1
+DISTVERSIONSUFFIX=	-g43beed2
 CATEGORIES=	wip deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
