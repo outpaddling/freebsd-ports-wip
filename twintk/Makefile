@@ -22,4 +22,6 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 
+WITH_DEBUG=	yes
+
 .include <bsd.port.post.mk>
