@@ -1,5 +1,6 @@
 PORTNAME=	rna-seq
 DISTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	wip biology python
 MASTER_SITES=	# empty
 
