@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	libxtend>=0.1.8:wip/libxtend
 LIB_DEPENDS=	libxtend.so:wip/libxtend
 RUN_DEPENDS=	npmount>0:wip/npmount \
-		automount>0:sysutils/automount \
+		devd-mount>0:wip/devd-mount \
 		auto-admin>=0.7.17.7:wip/auto-admin \
 		rxvt-unicode>0:x11/rxvt-unicode
 
