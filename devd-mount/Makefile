@@ -17,7 +17,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	sbin/devd-mount \
 		etc/devd/devd-mount.conf \
-		etc/devd-mount.conf.sample \
+		"@sample etc/devd-mount.conf.sample" \
 		man/man8/devd-mount.8.gz
 
 do-install:
