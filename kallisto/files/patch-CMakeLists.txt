@@ -1,25 +1,63 @@
---- CMakeLists.txt.orig	2019-11-04 16:28:52 UTC
+--- CMakeLists.txt.orig	2023-06-27 10:45:00 UTC
 +++ CMakeLists.txt
-@@ -34,22 +34,6 @@ ELSE(LINK MATCHES shared)
+@@ -44,60 +44,15 @@ else()
+     set(CMAKE_CXX_EXTENSIONS OFF)
+ endif()
+ 
+-#add_compile_options(-Wall -Wno-unused-function)
+-add_compile_options(-Wno-subobject-linkage) # Suppress bifrost warning
+-set(PROJECT_BIFROST_CMAKE_CXX_FLAGS "-Wno-subobject-linkage -Wno-return-type") # Suppress bifrost warning
+-
+ if(LINK MATCHES static)
+     message("static build")
+ ELSE(LINK MATCHES shared)
      message("shared build")
  ENDIF(LINK MATCHES static)
  
 -
--include(ExternalProject)
+ include(ExternalProject)
+-if (USE_BAM)
 -ExternalProject_Add(htslib
 -    PREFIX ${PROJECT_SOURCE_DIR}/ext/htslib
 -    SOURCE_DIR ${PROJECT_SOURCE_DIR}/ext/htslib
 -    BUILD_IN_SOURCE 1
--    CONFIGURE_COMMAND autoheader && autoconf && ${PROJECT_SOURCE_DIR}/ext/htslib/configure 
+-    CONFIGURE_COMMAND autoreconf -i && autoheader &&  autoconf && ${PROJECT_SOURCE_DIR}/ext/htslib/configure
 -        --prefix=${PREFIX} --disable-bz2 --disable-lzma --disable-libcurl
 -    BUILD_COMMAND make lib-static
 -    INSTALL_COMMAND ""
 -)
+-endif(USE_BAM)
+ 
+-ExternalProject_Add(bifrost
+-    PREFIX ${PROJECT_SOURCE_DIR}/ext/bifrost
+-    SOURCE_DIR ${PROJECT_SOURCE_DIR}/ext/bifrost
+-    BUILD_IN_SOURCE 1
+-    CONFIGURE_COMMAND mkdir -p build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_CXX_FLAGS=${PROJECT_BIFROST_CMAKE_CXX_FLAGS}
+-    BUILD_COMMAND cd build && make
+-    INSTALL_COMMAND ""
+-)
 -
+-if (ZLIBNG)
+-    message("zlib-ng enabled.")
+-    ExternalProject_Add(zlib-ng
+-    PREFIX ${PROJECT_SOURCE_DIR}/ext/zlib-ng
+-    SOURCE_DIR ${PROJECT_SOURCE_DIR}/ext/zlib-ng
+-    BUILD_IN_SOURCE 1
+-    CONFIGURE_COMMAND mkdir -p zlib-ng && cd zlib-ng && cmake .. -DZLIB_COMPAT=ON -DZLIB_ENABLE_TESTS=OFF -DCMAKE_INSTALL_PREFIX=${PREFIX}
+-    BUILD_COMMAND cd zlib-ng && make
+-    INSTALL_COMMAND ""
+-    )
+-endif(ZLIBNG)
+-
+-if (USE_BAM)
 -include_directories(${htslib_PREFIX}/src/htslib)
+-endif(USE_BAM)
+-include_directories(${EXT_PROJECTS_DIR}/bifrost/build/src)
+-
+-ExternalProject_Get_Property(bifrost install_dir)
+ include_directories(${install_dir}/src)
 -
 -
--
+ 
  # add_compile_options(-Wdeprecated-register)
  
- add_subdirectory(src)
