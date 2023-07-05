@@ -1,0 +1,5 @@
+#!/bin/sh
+
+if [ "${2}" = "POST-INSTALL" ] ; then
+	/usr/sbin/service devd restart
+fi
