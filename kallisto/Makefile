@@ -1,5 +1,6 @@
 PORTNAME=		kallisto
 DISTVERSIONPREFIX=	v
+PORTEPOCH=		1
 DISTVERSION=		0.50.0
 CATEGORIES=		wip biology
 
@@ -13,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 BUILD_DEPENDS=	autoconf>=0:devel/autoconf
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libsz.so:science/libaec \
-		libhts.so:biology/htslib \
-		libbifrost.so:wip/bifrost
+		libhts.so:biology/htslib
 
 USES=		cmake:noninja compiler:c++11-lang gmake localbase:ldflags
 USE_GITHUB=	yes
