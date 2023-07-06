@@ -1,9 +1,9 @@
 PORTNAME=	devd-mount
-DISTVERSION=	0.0.0.12
+DISTVERSION=	0.1.0
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	devd-based automounter
+COMMENT=	Automount tool utilizing devd notifications
 WWW=		https://github.com/outpaddling/devd-mount
 
 LICENSE=	BSD2CLAUSE
@@ -11,7 +11,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	9c0a0bbb9afc7ad6720ef640c0d795aebb8120c0
 
 NO_BUILD=	yes
 
