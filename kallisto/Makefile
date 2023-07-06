@@ -20,6 +20,8 @@ USES=		cmake:noninja compiler:c++11-lang gmake localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	pachterlab
 
+# MAKE_JOBS_UNSAFE=	yes
+
 SUB_FILES=	kallisto-test
 
 PORTEXAMPLES=		*
@@ -30,8 +32,6 @@ EXAMPLES_PLIST_FILES=	bin/kallisto-test
 # required for Sleuth (requires kallisto bootstrap estimates) and other
 # downstream tools.  Remove this after Sleuth et al catch up.
 CMAKE_ARGS+=		-DUSE_HDF5:BOOL=ON
-MAKE_JOBS_UNSAFE=	yes
-CXXFLAGS+=		-I${LOCALBASE}/include/bifrost
 LDFLAGS+=		-lhts -lz
 
 OPTIONS_DEFINE=	EXAMPLES
