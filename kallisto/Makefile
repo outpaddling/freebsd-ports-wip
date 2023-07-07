@@ -31,6 +31,7 @@ EXAMPLES_PLIST_FILES=	bin/kallisto-test
 # downstream tools.  Remove this after Sleuth et al catch up.
 CMAKE_ARGS+=		-DUSE_HDF5:BOOL=ON
 LDFLAGS+=		-lhts -lz
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
 
