@@ -30,8 +30,8 @@ EXAMPLES_PLIST_FILES=	bin/kallisto-test
 # required for Sleuth (requires kallisto bootstrap estimates) and other
 # downstream tools.  Remove this after Sleuth et al catch up.
 CMAKE_ARGS+=		-DUSE_HDF5:BOOL=ON
-LDFLAGS+=		-lhts -lz
 MAKE_JOBS_UNSAFE=	yes
+LDFLAGS+=		-lhts -lz
 
 OPTIONS_DEFINE=	EXAMPLES
 
