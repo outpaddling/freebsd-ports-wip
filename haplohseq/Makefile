@@ -1,6 +1,6 @@
 PORTNAME=	haplohseq
-DISTVERSION=	0.1.2-2
-DISTVERSIONSUFFIX=	-ge489294
+DISTVERSION=	0.1.2
+PORTREVISION=	9
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 RUN_DEPENDS=	R-cran-optparse>0:devel/R-cran-optparse
 
-USES=		compiler:c++11-lang gmake localbase:ldflags python:3.6+
+USES=		compiler:c++14-lang gmake localbase:ldflags python
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
@@ -20,6 +20,7 @@ GH_ACCOUNT=	outpaddling
 OPTIONS_DEFINE=	EXAMPLES
 
 MAKEFILE=	makefile
+CXXFLAGS+=	-std=c++14
 LDFLAGS+=	-lpthread
 MAKE_ENV=	STRIP=${STRIP}
 
@@ -27,7 +28,8 @@ SUB_FILES=	haplohseq-example
 
 pre-configure:
 	@${REINPLACE_CMD} \
-		-e 's|python|${PYTHON_CMD}|' \
+		-e 's|/bin/bash|/bin/sh|' \
+		-e 's|python|mkdir example_output; ${PYTHON_CMD}|' \
 		-e 's|\.\./haplohseq|haplohseq|' \
 		${WRKSRC}/example/example_run.sh
 
@@ -36,6 +38,6 @@ post-install-EXAMPLES-on:
 	(cd ${WRKSRC} && ${RM} example/*.orig scripts/*.orig && ${COPYTREE_SHARE} "example ldmap scripts" ${STAGEDIR}${EXAMPLESDIR})
 
 do-test:
-	@(cd ${WRKSRC}/build/test && ${WRKSRC}/src/test/run-tests)
+	@(cd ${WRKSRC}/build/test && ${FILESDIR}/run-tests)
 
 .include <bsd.port.mk>
