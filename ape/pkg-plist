@@ -23,6 +23,10 @@ man/man1/apekeys.1.gz
 %%DATADIR%%/Languages/C++/Macros/menu.txt
 %%DATADIR%%/Languages/C++/language_opts
 %%DATADIR%%/Languages/C++/syntax_highlighting
+%%DATADIR%%/Languages/C++_header/Macros/macros
+%%DATADIR%%/Languages/C++_header/Macros/menu.txt
+%%DATADIR%%/Languages/C++_header/language_opts
+%%DATADIR%%/Languages/C++_header/syntax_highlighting
 %%DATADIR%%/Languages/C/Macros/macros
 %%DATADIR%%/Languages/C/Macros/menu.txt
 %%DATADIR%%/Languages/C/language_opts
