@@ -1,19 +1,24 @@
---- Makefile.orig	2023-07-10 09:13:11 UTC
+--- Makefile.orig	2023-07-10 14:40:33 UTC
 +++ Makefile
-@@ -18,7 +18,10 @@ endif    
-     MARCH = 
- endif    
- 
+@@ -1,6 +1,8 @@
+ GCLDIR := ./gclib
+ SEARCHDIRS := -I${GCLDIR}
 -CC      := g++
 +# Use the correct compiler (CXX, not CC) and respect the environment
 +# by using ?=
-+CXX	?= g++
-+
- BASEFLAGS  = -Wall ${SEARCHDIRS} $(MARCH) -DENABLE_COMPRESSION=0 -D_FILE_OFFSET_BITS=64 \
++CXX    ?= g++
+ 
+ BASEFLAGS  = -Wall ${SEARCHDIRS} $(MARCH) -DENABLE_COMPRESSION=1 -D_FILE_OFFSET_BITS=64 \
  -D_LARGEFILE_SOURCE -fno-exceptions -fno-rtti -fno-strict-aliasing \
- -D_REENTRANT 
-@@ -32,31 +35,32 @@ endif
-   LDFLAGS = -g
+@@ -9,39 +11,39 @@ BASEFLAGS  = -Wall ${SEARCHDIRS} $(MARCH) -DENABLE_COM
+ 
+ ifeq ($(findstring debug,$(MAKECMDGOALS)),)
+   DBGFLAGS = -O2 -g -DNDEBUG
+-  LDFLAGS =
+ else
+   DBGFLAGS = -g -DDEBUG -D_DEBUG
+-  LDFLAGS = -g
++  LDFLAGS += -g
  endif
  
 +CXXFLAGS += -std=c++14
@@ -48,9 +53,11 @@
  # C/C++ linker
  
 -LINKER    := g++
++LINKER    := ${CXX}
+ #LDFLAGS = 
+ #uncomment this when ENABLE_COMPRESSION
 -LDFLAGS    = -lz
-+LINKER	:= ${CXX}
-+LDFLAGS	= -lz
- #if ENABLE_COMPRESSION is not needed,
- # LDFLAGS = 
++LDFLAGS    += -lz
  
+ .PHONY : all
+ all:    cdbfasta cdbyank 
