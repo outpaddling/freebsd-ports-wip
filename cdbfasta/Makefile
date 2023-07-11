@@ -1,5 +1,5 @@
 PORTNAME=	cdbfasta
-PORTVERSION=	2018.10.05
+PORTVERSION=	2023.07.10
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	ART20
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	gpertea
-GH_TAGNAME=	014498c
+GH_TAGNAME=	da8f5ba
 
 PLIST_FILES=	bin/cdbfasta bin/cdbyank
 
