@@ -19,8 +19,8 @@ share/applications/lumina-xconfig.desktop
 %%NLS%%share/lumina-desktop/i18n/lumina-config_da.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-config_de.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-config_el.qm
-%%NLS%%share/lumina-desktop/i18n/lumina-config_en_AU.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-config_en_GB.qm
+%%NLS%%share/lumina-desktop/i18n/lumina-config_en_AU.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-config_en_ZA.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-config_es.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-config_et.qm
@@ -86,8 +86,8 @@ share/applications/lumina-xconfig.desktop
 %%NLS%%share/lumina-desktop/i18n/lumina-search_da.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-search_de.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-search_el.qm
-%%NLS%%share/lumina-desktop/i18n/lumina-search_en_AU.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-search_en_GB.qm
+%%NLS%%share/lumina-desktop/i18n/lumina-search_en_AU.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-search_en_ZA.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-search_es.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-search_et.qm
@@ -153,8 +153,8 @@ share/applications/lumina-xconfig.desktop
 %%NLS%%share/lumina-desktop/i18n/lumina-xconfig_da.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-xconfig_de.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-xconfig_el.qm
-%%NLS%%share/lumina-desktop/i18n/lumina-xconfig_en_AU.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-xconfig_en_GB.qm
+%%NLS%%share/lumina-desktop/i18n/lumina-xconfig_en_AU.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-xconfig_en_ZA.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-xconfig_es.qm
 %%NLS%%share/lumina-desktop/i18n/lumina-xconfig_et.qm
