@@ -9,14 +9,23 @@
        //Play some audio warning chime when
        bool playaudio = sessionsettings->value("PlayBatteryLowAudio",true).toBool();
        if( playaudio ){
-@@ -47,7 +47,9 @@ void LBattery::updateBattery(bool force){
+@@ -47,8 +47,17 @@ void LBattery::updateBattery(bool force){
      iconOld = batt_icon; //save for later
    }
  
 -  if(charge<=5 && !charging){ label->setStyleSheet("QLabel{ background: red;}"); }
-+  // FIXME: Add popup warning when battery reaches 20% and 10%
+-  else if(charge>98 && charging){ label->setStyleSheet("QLabel{ background: green;}"); }
++  /*
++   *  Use 40% - 80% rule for icon notifications.  Lithium batteries last
++   *  longer if kept between 40% and 80% charge as much as possible.
++   *  Turn icon yellow when charge drops to 40% and green when charge
++   *  rises to 80%.  This will help the user maintain their battery
++   *  in an optimal way.
++   */
 +  if(charge<=20 && !charging){ label->setStyleSheet("QLabel{ background: red;}"); }
-+  else if(charge<=50 && !charging){ label->setStyleSheet("QLabel{ background: orange;}"); }
-   else if(charge>98 && charging){ label->setStyleSheet("QLabel{ background: green;}"); }
++  else if(charge<=30 && !charging){ label->setStyleSheet("QLabel{ background: orange;}"); }
++  else if(charge<=40 && !charging){ label->setStyleSheet("QLabel{ background: yellow;}"); }
++  else if(charge>80 && charging){ label->setStyleSheet("QLabel{ background: green;}"); }
    else{ label->setStyleSheet("QLabel{ background: transparent;}"); }
  
+   //Now update the display
