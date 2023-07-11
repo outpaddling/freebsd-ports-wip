@@ -4,7 +4,7 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Fast indexing and retrieval of FASTA records from flat file databases
-WWW=		https://sourceforge.net/projects/cdbfasta/
+WWW=		https://github.com/gpertea/cdbfasta
 
 LICENSE=	ART20
 
