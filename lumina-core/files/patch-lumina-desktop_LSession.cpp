@@ -1,6 +1,6 @@
 --- lumina-desktop/LSession.cpp.orig	2021-12-26 02:33:45 UTC
 +++ lumina-desktop/LSession.cpp
-@@ -97,46 +97,94 @@ LSession::~LSession(){
+@@ -97,46 +97,96 @@ LSession::~LSession(){
  //Static function so everything can get the same icon name
  QString LSession::batteryIconName(int charge, bool charging){
    int icon = -1;
@@ -23,6 +23,8 @@
 +
 +  if(charging){ icon += 11; }
 +
++  // Some icons may not be available for some themes, so build a list
++  // of alternatives
    QStringList iconList;
      switch (icon) {
 +
