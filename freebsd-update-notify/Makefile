@@ -9,6 +9,8 @@ WWW=		https://github.com/outpaddling/freebsd-update-notify
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+RUN_DEPENDS=	zenity:x11/zenity
+
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
@@ -21,7 +23,7 @@ PLIST_FILES=	libexec/freebsd-update-notify \
 		etc/cron.d/freebsd-update-notify
 
 do-install:
-	${MKDIR} -p ${STAGEDIR}${PREFIX}/etc/cron.d
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/cron.d
 	${INSTALL_SCRIPT} ${WRKSRC}/freebsd-update-notify \
 		${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_DATA} ${WRKSRC}/freebsd-update-notify.cron \
