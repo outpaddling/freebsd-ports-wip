@@ -25,8 +25,6 @@ GH_TAGNAME=	1.17
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	misc/* test/test.pl
 
-CFLAGS+=	-std=c99
-
 post-extract:
 	@${CP} ${WRKDIR}/*.c ${WRKDIR}/*.h ${WRKSRC}/plugins
 	@${MKDIR} ${WRKSRC}/bcf-score
