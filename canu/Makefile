@@ -28,6 +28,7 @@ WRKSRC_SUBDIR=	src
 # Upstream Makefile compiles directly into ${DESTDIR}${PREFIX} rather than
 # using a separate install target.
 MAKE_ENV=	DESTDIR=${WRKSRC} CANU_BUILD_ENV=ports
+CXXFLAGS+=	-std=c++14
 
 .include <bsd.port.pre.mk>
 
