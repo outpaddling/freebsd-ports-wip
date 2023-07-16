@@ -54,3 +54,4 @@ int parasail_can_use_neon()
 {
     return 0;
 }
+
