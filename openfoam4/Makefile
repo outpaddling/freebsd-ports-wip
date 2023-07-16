@@ -41,6 +41,7 @@ SHEBANG_FILES=	${WRKSRC}/wmake/wmakeSchedulerUptime \
 # This should probably be made to work on at least i386 as well
 # with a few additional changes.
 ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	Requires a 64-bit processor
 
 WRKSRC=		${WRKDIR}/OpenFOAM-4.x-version-${PORTVERSION}
 

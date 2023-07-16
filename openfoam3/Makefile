@@ -41,6 +41,7 @@ SHEBANG_FILES=	wmake/wmakeSchedulerUptime \
 # This should probably be made to work on at least i386 as well
 # with a few additional changes.
 ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	Requires a 64-bit processor, specific CPU features
 
 # Ubuntu deps not accounted for:
 # Need cmake only for Paraview

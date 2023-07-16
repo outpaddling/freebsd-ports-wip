@@ -14,6 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT_License.txt
 
 ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	Requires a 64-bit processor, specific CPU features
 
 USES=		linux zip
 

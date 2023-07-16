@@ -10,6 +10,7 @@ WWW=		https://bowtie-bio.sourceforge.net/index.shtml
 LICENSE=	ART10
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	Requires a 64-bit processor
 
 # c++11-lib is just for GCC 4.2-based systems
 # Remove it when support officially ends

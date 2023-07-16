@@ -9,6 +9,7 @@ WWW=		https://trinityrnaseq.github.io/
 
 # Depends on bowtie and jellyfish2
 ONLY_FOR_ARCH=	amd64
+ONLY_FOR_ARCHS_REASON=	Requires a 64-bit processor
 
 LICENSE=	BSD3CLAUSE
 

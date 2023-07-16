@@ -18,6 +18,7 @@ LICENSE=	VMD BSD3CLAUSE STRIDE
 LICENSE_COMB=	multi
 
 ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	Specific CPU features
 
 BUILD_DEPENDS=	makedepend:devel/makedepend \
 		${PYNUMPY}

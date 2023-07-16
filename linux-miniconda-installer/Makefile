@@ -12,6 +12,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	Requires a 64-bit processor, specific CPU features
 
 RUN_DEPENDS=	auto-admin>=0.7.13:sysutils/auto-admin
 
