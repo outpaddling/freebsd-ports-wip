@@ -10,8 +10,9 @@ WWW=		https://github.com/BenLangmead/bowtie2
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# Requires a 64-bit processor and depends on hard-coded asm instructions
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	Requires a 64-bit processor
+
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake localbase:ldflags perl5 python shebangfix

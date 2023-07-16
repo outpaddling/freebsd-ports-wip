@@ -12,8 +12,8 @@ WWW=		https://pachterlab.github.io/kallisto/about.html
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-# Requires a 64-bit processor
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le riscv64
+ONLY_FOR_ARCHS_REASON=	Requires a 64-bit processor
 
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libsz.so:science/libaec \
