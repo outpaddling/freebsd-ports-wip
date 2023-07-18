@@ -20,7 +20,8 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 PLIST_FILES=	libexec/freebsd-update-notify \
-		etc/cron.d/freebsd-update-notify
+		etc/cron.d/freebsd-update-notify \
+		etc/cron.d/freebsd-update-cron
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/cron.d
@@ -28,5 +29,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_DATA} ${WRKSRC}/freebsd-update-notify.cron \
 		${STAGEDIR}${PREFIX}/etc/cron.d/freebsd-update-notify
+	${INSTALL_DATA} ${WRKSRC}/freebsd-update-cron.cron \
+		${STAGEDIR}${PREFIX}/etc/cron.d/freebsd-update-cron
 
 .include <bsd.port.mk>
