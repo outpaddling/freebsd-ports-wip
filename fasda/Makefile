@@ -11,6 +11,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libxtend.so:wip/libxtend libbiolibc.so:wip/biolibc
+RUN_DEPENDS=	stringtie>0:biology/stringtie
 
 USES=		localbase
 USE_GITHUB=	yes
