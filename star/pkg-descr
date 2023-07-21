@@ -1,5 +1,6 @@
 STAR (Spliced Transcripts Alignment to a Reference) aims to achieve accurate
 alignment of high-throughput RNA-seq data.
+
 STAR is based on a previously undescribed RNA-seq alignment algorithm that uses
 sequential maximum mappable seed search in uncompressed suffix arrays followed
 by seed clustering and stitching procedure. STAR outperforms other aligners by
