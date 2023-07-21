@@ -12,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash \
 		cereal>=1.3.0:devel/cereal \
-		libgff==2.0.0:biology/libgff
+		libgff==2.0.0:biology/libgff \
+		libtool:devel/libtool
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libtbb.so:devel/onetbb
 
