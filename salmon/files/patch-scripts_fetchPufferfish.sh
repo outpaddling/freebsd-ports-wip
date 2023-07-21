@@ -1,23 +1,28 @@
---- scripts/fetchPufferfish.sh.orig	2021-12-06 01:22:50 UTC
+--- scripts/fetchPufferfish.sh.orig	2023-07-21 13:59:29 UTC
 +++ scripts/fetchPufferfish.sh
-@@ -10,9 +10,8 @@ CURR_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && p
+@@ -11,52 +11,12 @@ CURR_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && p
  EXTERNAL_DIR=${CURR_DIR}/../external
  INSTALL_DIR=${CURR_DIR}/../external/install
  
 -if [ -d ${EXTERNAL_DIR}/pufferfish ] ; then
 -    rm -fr ${EXTERNAL_DIR}/pufferfish
 -fi
-+# Pufferfish is downloaded using GH_TUPLE, so remove code here that
-+# downloads and unpacks
++# Pufferfish is downloaded using GH_TUPLE in the FreeBSD port, so remove
++# code here that downloads and unpacks
  
- if [ -d ${INSTALL_DIR}/include/pufferfish ] ; then
-     rm -fr ${INSTALL_DIR}/include/pufferfish
-@@ -25,35 +24,6 @@ fi
- SVER=salmon-v1.6.0
+-if [ -d ${INSTALL_DIR}/include/pufferfish ] ; then
+-    rm -fr ${INSTALL_DIR}/include/pufferfish
+-fi
+-
+-if [ -d ${INSTALL_DIR}/src/pufferfish ] ; then
+-    rm -fr ${INSTALL_DIR}/src/pufferfish
+-fi
+-
+ SVER=salmon-v1.10.2
  #SVER=develop
  #SVER=sketch-mode
 -
--EXPECTED_SHA256=f71b3c08f254200fcdc2eb8fe3dcca8a8e9489e79ef5952a4958d8b9979831dc
+-EXPECTED_SHA256=f225b74833f71dcf767a565345224357fb091f90ce79717abc836814d9ccd101
 -
 -mkdir -p ${EXTERNAL_DIR}
 -curl -k -L https://github.com/COMBINE-lab/pufferfish/archive/${SVER}.zip -o ${EXTERNAL_DIR}/pufferfish.zip
@@ -31,10 +36,12 @@
 -	unset hashcheck
 -fi
 -
+-
 -if [ -z "${hashcheck-}" ]; then
 -    echo "Couldn't find shasum command; can't verify contents of downloaded pufferfish";
 -else
--    if [[ $SVER != develop ]]; then
+-
+-    if [[ $SVER != develop && $SVER != onetbb ]]; then
 -        echo "${EXPECTED_SHA256}  ${EXTERNAL_DIR}/pufferfish.zip" | ${hashcheck} -c - || { echo "pufferfish.zip did not match expected SHA1! Exiting."; exit 1; }
 -    else
 -        echo "not testing sha since pulling from develop"

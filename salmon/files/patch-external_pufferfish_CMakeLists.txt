@@ -1,15 +1,15 @@
---- external/pufferfish/CMakeLists.txt.orig	2021-11-22 21:10:29 UTC
+--- external/pufferfish/CMakeLists.txt.orig	2023-06-26 19:34:50 UTC
 +++ external/pufferfish/CMakeLists.txt
-@@ -130,7 +130,7 @@ set(WARN_ALL_THINGS "-fdiagnostics-color=always;-Wall;
- #set(WARN_ALL_THINGS "-fdiagnostics-color=always -Wall -Wcast-align -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wdisabled-optimization -Wdouble-promotion -Wduplicated-branches -Wduplicated-cond -Wextra -Wformat=2 -Winit-self -Wlogical-op -Wmissing-declarations -Wmissing-include-dirs -Wno-sign-conversion -Wnoexcept -Wnull-dereference -Wold-style-cast -Woverloaded-virtual -Wpedantic -Wredundant-decls -Wrestrict -Wshadow -Wstrict-aliasing=1 -Wstrict-null-sentinel -Wstrict-overflow=5 -Wswitch-default -Wundef -Wno-unknown-pragmas -Wuseless-cast") 
+@@ -135,7 +135,7 @@ set(WARN_ALL_THINGS "-fdiagnostics-color=always;-Wall;
  
- set(OPT_FLAGS "-D__STDC_FORMAT_MACROS;-DSTX_NO_STD_STRING_VIEW;-O3;-fPIC;-DNDEBUG;-funroll-loops;-ftree-vectorize;-fno-strict-aliasing")
--set(DEBUG_FLAGS "-D__STDC_FORMAT_MACROS;-DSTX_NO_STD_STRING_VIEW;-pg;-g;-gstabs")
-+set(DEBUG_FLAGS "-D__STDC_FORMAT_MACROS;-DSTX_NO_STD_STRING_VIEW;-g")
+ 
+ set(OPT_FLAGS "-DHAVE_SIMDE;-D__STDC_FORMAT_MACROS;-DSTX_NO_STD_STRING_VIEW;-O3;-fPIC;-DNDEBUG;-funroll-loops;-ftree-vectorize;-fno-strict-aliasing")
+-set(DEBUG_FLAGS "-DHAVE_SIMDE;-D__STDC_FORMAT_MACROS;-DSTX_NO_STD_STRING_VIEW;-pg;-g;-gstabs")
++set(DEBUG_FLAGS "-DHAVE_SIMDE;-D__STDC_FORMAT_MACROS;-DSTX_NO_STD_STRING_VIEW;-g")
  
  ##
  # OSX is strange (some might say, stupid in this regard).  Deal with it's quirkines here.
-@@ -180,11 +180,6 @@ endif()
+@@ -188,11 +188,6 @@ endif()
  ##
  set(SHASUM ${CMAKE_CURRENT_SOURCE_DIR}/scripts/check_shasum.sh)
  

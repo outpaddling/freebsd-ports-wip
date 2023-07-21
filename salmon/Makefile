@@ -1,6 +1,6 @@
 PORTNAME=		salmon
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.6.0
+DISTVERSION=		1.10.2
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -22,8 +22,8 @@ USES=		cmake:noninja gmake shebangfix
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	COMBINE-lab
-GH_TUPLE+=	COMBINE-lab:pufferfish:salmon-v1.6.0:pf/external/pufferfish
-GH_TUPLE+=	COMBINE-lab:staden-io_lib:v1.14.8.1:sio/external/staden-io_lib
+GH_TUPLE+=	COMBINE-lab:pufferfish:salmon-v1.10.2:pf/external/pufferfish
+GH_TUPLE+=	jkbonfield:io_lib:io_lib-1-14-15:sio/external/staden-io_lib
 SHEBANG_FILES=	scripts/*
 
 PLIST_FILES=	bin/salmon
