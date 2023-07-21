@@ -1,4 +1,4 @@
---- Makefile.orig	2021-05-05 12:01:50 UTC
+--- Makefile.orig	2023-07-21 11:41:21 UTC
 +++ Makefile
 @@ -18,7 +18,7 @@ LDFLAGS_Mac :=-pthread -lz htslib/libhts.a
  LDFLAGS_Mac_static :=-pthread -lz -static-libgcc htslib/libhts.a
@@ -9,10 +9,10 @@
  ifdef SOURCE_DATE_EPOCH
      BUILD_DATE ?= $(shell date -u -d "@$(SOURCE_DATE_EPOCH)" "$(DATE_FMT)" 2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "$(DATE_FMT)" 2>/dev/null || date -u "$(DATE_FMT)")
  else
-@@ -36,7 +36,7 @@ CXXFLAGS_SIMD ?= -mavx2
+@@ -46,7 +46,7 @@ CXXFLAGS_SIMD ?= -mavx2
  
  # Unconditionally set essential flags and optimization options
- CXXFLAGS_common := -std=c++11 -fopenmp $(COMPTIMEPLACE)
+ CXXFLAGS_common := -std=c++11 -fopenmp $(COMPTIMEPLACE) $(GIT_BRANCH_COMMIT_DIFF)
 -CXXFLAGS_main := -O3 $(CXXFLAGS_common)
 +CXXFLAGS_main := $(CXXFLAGS_common)
  CXXFLAGS_gdb := -O0 -g3 $(CXXFLAGS_common)
