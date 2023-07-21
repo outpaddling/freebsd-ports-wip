@@ -10,12 +10,16 @@ WWW=		https://github.com/COMBINE-lab/salmon
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# libtool and auto* are run manually in submodules, so don't put them in USES
 BUILD_DEPENDS=	bash:shells/bash \
 		cereal>=1.3.0:devel/cereal \
 		libgff==2.0.0:biology/libgff \
-		libtool:devel/libtool
+		libtool:devel/libtool \
+		autoreconf:devel/autoconf \
+		aclocal:devel/automake
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-		libtbb.so:devel/onetbb
+		libtbb.so:devel/onetbb \
+		libcurl.so:ftp/curl
 
 USES=		cmake:noninja gmake localbase shebangfix
 USE_GITHUB=	yes
