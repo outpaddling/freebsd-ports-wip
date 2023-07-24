@@ -1,7 +1,7 @@
 PORTNAME=		kallisto
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.50.0
-PORTREVISION=		1
+PORTREVISION=		2
 PORTEPOCH=		1
 CATEGORIES=		wip biology
 
@@ -32,7 +32,9 @@ EXAMPLES_PLIST_FILES=	bin/kallisto-test
 # hdf5 is being phased out and is no longer built in by default, but is still
 # required for Sleuth (requires kallisto bootstrap estimates) and other
 # downstream tools.  Remove this after Sleuth et al catch up.
-CMAKE_ARGS+=		-DUSE_HDF5:BOOL=ON
+CMAKE_ARGS+=		-DUSE_HDF5:BOOL=ON -DUSE_BAM:BOOL=ON
+# WIP: Remove before committing
+CMAKE_ARGS+=		-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
 MAKE_JOBS_UNSAFE=	yes
 LDFLAGS+=		-lhts -lz
 
