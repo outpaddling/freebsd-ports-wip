@@ -1,5 +1,5 @@
 PORTNAME=	atac-seq
-DISTVERSION=	0.1.2
+DISTVERSION=	0.1.3
 CATEGORIES=	wip biology python
 MASTER_SITES=	# empty
 
@@ -20,7 +20,8 @@ RUN_DEPENDS=	sra-tools>0:biology/sra-tools \
 		${PYTHON_PKGNAMEPREFIX}macs2>0:biology/py-macs2@${PY_FLAVOR} \
 		fasda>0:biology/fasda \
 		peak-classifier>0:biology/peak-classifier \
-		webbrowser>0:www/webbrowser
+		webbrowser>0:www/webbrowser \
+		curl>0:ftp/curl
 
 USES=		metaport python
 
