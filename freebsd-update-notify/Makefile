@@ -1,5 +1,5 @@
 PORTNAME=	freebsd-update-notify
-DISTVERSION=	0.0.0.14
+DISTVERSION=	0.0.0.15
 CATEGORIES=	wip deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,15 +14,14 @@ RUN_DEPENDS=	zenity:x11/zenity auto-admin:sysutils/auto-admin
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	26430dbc0933590d0ee5646c62be52ec7766ebfa
+GH_TAGNAME=	5e50b875fc3df471bf74772c00aa691b7f4852ac
 
 NO_BUILD=	yes
 NO_ARCH=	yes
 
 PLIST_FILES=	libexec/freebsd-update-notify \
 		libexec/freebsd-update-cron \
-		etc/cron.d/freebsd-update-notify \
-		etc/cron.d/freebsd-update-cron
+		etc/cron.d/freebsd-update-notify
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/cron.d
@@ -30,9 +29,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_SCRIPT} ${WRKSRC}/freebsd-update-cron \
 		${STAGEDIR}${PREFIX}/libexec
-	${INSTALL_DATA} ${WRKSRC}/freebsd-update-notify.cron \
+	${INSTALL_DATA} ${WRKSRC}/freebsd-update-notify.crontab \
 		${STAGEDIR}${PREFIX}/etc/cron.d/freebsd-update-notify
-	${INSTALL_DATA} ${WRKSRC}/freebsd-update-cron.cron \
-		${STAGEDIR}${PREFIX}/etc/cron.d/freebsd-update-cron
 
 .include <bsd.port.mk>

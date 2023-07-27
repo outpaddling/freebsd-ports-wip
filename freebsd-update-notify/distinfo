@@ -1,3 +1,3 @@
-TIMESTAMP = 1690462251
-SHA256 (outpaddling-freebsd-update-notify-0.0.0.14-26430dbc0933590d0ee5646c62be52ec7766ebfa_GH0.tar.gz) = 51c5fc037ac9b770deb0eb8266ff86c26be256e4c5346dfd707cb234448700f7
-SIZE (outpaddling-freebsd-update-notify-0.0.0.14-26430dbc0933590d0ee5646c62be52ec7766ebfa_GH0.tar.gz) = 2668
+TIMESTAMP = 1690462447
+SHA256 (outpaddling-freebsd-update-notify-0.0.0.15-5e50b875fc3df471bf74772c00aa691b7f4852ac_GH0.tar.gz) = 2e2f6e3d065fcefc875aa59d6b0d3beedf402dd51a74a92dd149745010057524
+SIZE (outpaddling-freebsd-update-notify-0.0.0.15-5e50b875fc3df471bf74772c00aa691b7f4852ac_GH0.tar.gz) = 2603
