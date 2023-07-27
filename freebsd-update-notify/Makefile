@@ -1,5 +1,5 @@
 PORTNAME=	freebsd-update-notify
-DISTVERSION=	0.0.0.12
+DISTVERSION=	0.0.0.13
 CATEGORIES=	wip deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,7 +14,7 @@ RUN_DEPENDS=	zenity:x11/zenity
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	d4f953d45eb37eee31280b6e1a3b1ef551b37acc
+GH_TAGNAME=	9ae4662162e45f594cb2b8ac740f8b448af2fd2b
 
 NO_BUILD=	yes
 NO_ARCH=	yes
