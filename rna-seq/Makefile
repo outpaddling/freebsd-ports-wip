@@ -18,9 +18,6 @@ RUN_DEPENDS=	sra-tools>0:biology/sra-tools \
 		kallisto>0:biology/kallisto \
 		hisat2>0:biology/hisat2 \
 		samtools>0:biology/samtools \
-		picard-tools>0:biology/picard-tools \
-		bedtools>0:biology/bedtools \
-		${PYTHON_PKGNAMEPREFIX}HTSeq>0:wip/py-htseq@${PY_FLAVOR} \
 		fasda>0:biology/fasda \
 		webbrowser>0:www/webbrowser \
 		curl>0:ftp/curl
