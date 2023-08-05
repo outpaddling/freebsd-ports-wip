@@ -1,6 +1,6 @@
 PORTNAME=	freebsd-update-notify
-DISTVERSION=	0.1.0-5
-DISTVERSIONSUFFIX=	-g0860ddf
+DISTVERSION=	0.1.0-6
+DISTVERSIONSUFFIX=	-g23970dd
 CATEGORIES=	wip deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -19,23 +19,26 @@ GH_ACCOUNT=	outpaddling
 NO_BUILD=	yes
 NO_ARCH=	yes
 
+CONF_DIR=	${PREFIX}/etc/freebsd-update-notify
+
 PLIST_FILES=	libexec/freebsd-update-notify \
 		libexec/freebsd-update-cron \
 		man/man8/freebsd-update-notify.8.gz \
-		"@sample etc/freebsd-update-notify.conf.sample" \
-		"@sample etc/freebsd-update-notify.crontab.sample etc/cron.d/freebsd-update-notify" \
+		"@sample etc/freebsd-update-notify/freebsd-update-notify.conf.sample" \
+		"@sample etc/freebsd-update-notify/freebsd-update-notify.crontab.sample etc/cron.d/freebsd-update-notify" \
 		"@dir etc/cron.d"
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/cron.d
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/freebsd-update-notify
 	${INSTALL_SCRIPT} ${WRKSRC}/freebsd-update-notify \
 		${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_SCRIPT} ${WRKSRC}/freebsd-update-cron \
 		${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_DATA} ${WRKSRC}/freebsd-update-notify.conf \
-		${STAGEDIR}${PREFIX}/etc/freebsd-update-notify.conf.sample
+		${STAGEDIR}${CONF_DIR}/freebsd-update-notify.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/freebsd-update-notify.crontab \
-		${STAGEDIR}${PREFIX}/etc/freebsd-update-notify.crontab.sample
+		${STAGEDIR}${CONF_DIR}/freebsd-update-notify.crontab.sample
 	${INSTALL_MAN} ${WRKSRC}/freebsd-update-notify.8 \
 		${STAGEDIR}${MANPREFIX}/man/man8
 
