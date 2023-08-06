@@ -1,4 +1,4 @@
-Cykhash is a cython wrapper for khash-sets/maps, efficient
+Cykhash is a cython equivalent to khash-sets/maps, efficient
 implementation of isin and unique
 
 Benefits:

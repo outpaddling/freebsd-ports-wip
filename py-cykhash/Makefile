@@ -5,7 +5,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Cython wrapper for khash-sets/maps
+COMMENT=	Cython equivalent to khash-sets/maps
 WWW=		https://pypi.python.org/project/cykhash/
 
 LICENSE=	MIT
