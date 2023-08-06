@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}cykhash>0:math/py-cykhash@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}cykhash>0:wip/py-cykhash@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent cython distutils
