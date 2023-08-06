@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist cython distutils
 
 post-stage:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cykhash/*.so
