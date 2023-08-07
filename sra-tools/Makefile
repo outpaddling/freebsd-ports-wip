@@ -27,7 +27,7 @@ USE_GITHUB=	yes
 
 SHEBANG_GLOB=	*.sh *.pl
 GH_ACCOUNT=	ncbi
-GH_TUPLE+=	ncbi:ncbi-vdb:3.0.2:vdb/ncbi-vdb
+GH_TUPLE+=	ncbi:ncbi-vdb:${DISTVERSION}:vdb/ncbi-vdb
 
 FREEBSD_RELEASE=	uname -r | cut -d - -f 1
 

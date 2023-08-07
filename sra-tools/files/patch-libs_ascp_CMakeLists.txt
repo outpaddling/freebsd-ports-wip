@@ -1,0 +1,26 @@
+--- libs/ascp/CMakeLists.txt.orig	2023-08-07 19:43:17 UTC
++++ libs/ascp/CMakeLists.txt
+@@ -23,12 +23,16 @@
+ # ===========================================================================
+ 
+ set ( UNIX_SRC unix/connect.c )
++# FIXME: Add ascp-path.c
++set ( FREEBSD_SRC ${UNIX_SRC} )
+ set ( LINUX_SRC ${UNIX_SRC} linux/ascp-path.c )
+ set ( MAC_SRC ${UNIX_SRC} mac/ascp-path.c )
+ set ( WIN_SRC win/connect.c win/ascp-path.c )
+ 
+ if ( "windows" STREQUAL ${OS} )
+     set ( OS_SPECIFIC_SRC ${WIN_SRC} )
++elseif( "freebsd" STREQUAL ${OS} )
++    set ( OS_SPECIFIC_SRC ${FREEBSD_SRC} )
+ elseif( "linux" STREQUAL ${OS} )
+     set ( OS_SPECIFIC_SRC ${LINUX_SRC} )
+ elseif( "mac" STREQUAL ${OS} )
+@@ -49,4 +53,4 @@ GenerateStaticLibs(ascp
+ )
+ 
+ add_compile_definitions( __mod__="libs/ascp" )
+-include_directories( BEFORE ${CMAKE_CURRENT_SOURCE_DIR} )
+\ No newline at end of file
++include_directories( BEFORE ${CMAKE_CURRENT_SOURCE_DIR} )
