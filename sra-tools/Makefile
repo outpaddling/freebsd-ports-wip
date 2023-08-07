@@ -41,7 +41,7 @@ TEST_USES=		python
 
 CMAKE_ARGS+=	-DVDB_LIBDIR:STRING=${WRKSRC}/ncbi-vdb/build/lib
 
-MAKE_JOBS_UNSAFE=	yes
+# MAKE_JOBS_UNSAFE=	yes
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/ncbi-vdb/interfaces/os/freebsd
