@@ -31,7 +31,20 @@
  elseif ( ${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "AMD64")
      set(ARCH "x86_64")
  else()
-@@ -380,6 +392,9 @@ endif()
+@@ -98,7 +110,11 @@ else()
+ endif ()
+ 
+ # create variables based entirely upon OS
+-if ( "mac" STREQUAL ${OS} )
++if ( "bsd" STREQUAL ${OS} )
++    add_compile_definitions( BSD UNIX )
++    set( LMCHECK "" )
++    set( EXE "" )
++elseif ( "mac" STREQUAL ${OS} )
+     add_compile_definitions( MAC BSD UNIX )
+     set( LMCHECK "" )
+     set( EXE "" )
+@@ -380,6 +396,9 @@ endif()
  
  if ( "mac" STREQUAL ${OS} )
      include_directories(${VDB_INTERFACES_DIR}/os/mac)

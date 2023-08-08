@@ -26,12 +26,13 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	${PREFIX}/lib64
 USE_JAVA=	yes
 # Guessing, test on herring
-JAVA_VERSION=	17+
+# JAVA_VERSION=	17+
 
 SHEBANG_GLOB=	*.sh
 GH_ACCOUNT=	ncbi
 GH_TUPLE+=	ncbi:ncbi-vdb:${DISTVERSION}:vdb/ncbi-vdb
 
+WITH_DEBUG=	yes
 CMAKE_ARGS+=	-DVDB_LIBDIR:STRING=${WRKSRC}/ncbi-vdb/build/lib
 
 post-extract:
