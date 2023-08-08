@@ -25,8 +25,8 @@ USES=		cmake shebangfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	${PREFIX}/lib64
 USE_JAVA=	yes
-# Guessing, test on herring
-# JAVA_VERSION=	17+
+# Builds with earlier versions, but ngs-doc plist differs
+JAVA_VERSION=	17+
 
 SHEBANG_GLOB=	*.sh
 GH_ACCOUNT=	ncbi
