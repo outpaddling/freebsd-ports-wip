@@ -4,7 +4,7 @@
  }
  #endif
  
-+#ifdef FREEBSD
++#ifdef BSD
 +int main(int argc, char *argv[], char *envp[])
 +{
 +    auto const invocation = CommandLine(argc, argv, envp, nullptr);

@@ -35,14 +35,17 @@ GH_TUPLE+=	ncbi:ncbi-vdb:${DISTVERSION}:vdb/ncbi-vdb
 CMAKE_ARGS+=	-DVDB_LIBDIR:STRING=${WRKSRC}/ncbi-vdb/build/lib
 
 post-extract:
-	@${MKDIR} ${WRKSRC}/ncbi-vdb/interfaces/os/freebsd
-	@${CP} ${FILESDIR}/*.h ${WRKSRC}/ncbi-vdb/interfaces/os/freebsd
+	@${MKDIR} ${WRKSRC}/ncbi-vdb/interfaces/os/bsd
+	@${CP} ${FILESDIR}/*.h ${WRKSRC}/ncbi-vdb/interfaces/os/bsd
 	cd ${WRKDIR} && ${LN} -s ${WRKSRC}/ncbi-vdb .
 
 pre-configure:
 	cd ${WRKSRC}/ncbi-vdb/build && cmake .. && make
+	# This follows a patch!
+	${REINPLACE_CMD} -e 's|/usr/local/etc/ncbi|${PREFIX}/etc/ncbi|g' \
+		${WRKSRC}/ncbi-vdb/libs/kfg/config.c
 
-post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*.${DISTVERSION}
+#post-stage:
+#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*.${DISTVERSION}
 
 .include <bsd.port.mk>

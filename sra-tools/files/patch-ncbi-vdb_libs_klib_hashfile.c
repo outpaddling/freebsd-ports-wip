@@ -1,11 +1,11 @@
---- ncbi-vdb/libs/klib/hashfile.c.orig	2023-08-07 19:57:12 UTC
+--- ncbi-vdb/libs/klib/hashfile.c.orig	2023-07-10 16:13:36 UTC
 +++ ncbi-vdb/libs/klib/hashfile.c
 @@ -35,7 +35,7 @@
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
 -#if LINUX
-+#if LINUX || FREEBSD
++#if BSD || LINUX
  #include <sys/mman.h>
  #endif
  
@@ -14,7 +14,7 @@
                  return NULL;
              }
 -#if LINUX
-+#if LINUX || FREEBSD
++#if BSD || LINUX
              /* Not sure this helps */
              madvise( (void *)self->alloc_base, req, MADV_RANDOM );
  #endif
