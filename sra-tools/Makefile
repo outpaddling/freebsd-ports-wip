@@ -4,16 +4,16 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	NCBI's toolkit for handling data in INSDC Sequence Read Archives
-WWW=		https://github.com/ncbi/sra-tools/wiki
+WWW=		https://github.com/ncbi/sra-tools
 
 LICENSE=		PD LGPL21+
 LICENSE_COMB=		multi
 LICENSE_FILE_PD=	${WRKSRC}/LICENSE
 LICENSE_DISTFILES_LGPL21+ =
 
-# Use SIMDE?
+# Use SIMDE for others?
 ONLY_FOR_ARCHS=		aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	NCBI-VDB requires SSE2 instructions, no 32-bit support
+ONLY_FOR_ARCHS_REASON=	Requires a 64-bit processor
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
@@ -21,34 +21,28 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libepoll-shim.so:devel/libepoll-shim \
 		libzstd.so:archivers/zstd
 
-USES=		cmake:noninja perl5 shebangfix
-USE_PERL5=	build
+USES=		cmake shebangfix
 USE_GITHUB=	yes
+USE_LDCONFIG=	${PREFIX}/lib64
+USE_JAVA=	yes
+# Guessing, test on herring
+JAVA_VERSION=	17+
 
-SHEBANG_GLOB=	*.sh *.pl
+SHEBANG_GLOB=	*.sh
 GH_ACCOUNT=	ncbi
 GH_TUPLE+=	ncbi:ncbi-vdb:${DISTVERSION}:vdb/ncbi-vdb
 
-FREEBSD_RELEASE=	uname -r | cut -d - -f 1
-
-# for port developers, building with these options may fail
-OPTIONS_DEFINE=		DEBUG OPTIMIZED_CFLAGS TEST
-DEBUG_PREVENTS=		OPTIMIZED_CFLAGS
-DEBUG_CONFIGURE_WITH=	debug
-OPTIMIZED_CFLAGS_MAKE_ARGS_OFF=	OPT=""
-TEST_TEST_TARGET=	test
-TEST_USES=		python
-
 CMAKE_ARGS+=	-DVDB_LIBDIR:STRING=${WRKSRC}/ncbi-vdb/build/lib
-
-# MAKE_JOBS_UNSAFE=	yes
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/ncbi-vdb/interfaces/os/freebsd
 	@${CP} ${FILESDIR}/*.h ${WRKSRC}/ncbi-vdb/interfaces/os/freebsd
-	cd ${WRKDIR} && ln -s ${WRKSRC}/ncbi-vdb .
+	cd ${WRKDIR} && ${LN} -s ${WRKSRC}/ncbi-vdb .
 
 pre-configure:
 	cd ${WRKSRC}/ncbi-vdb/build && cmake .. && make
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*.${DISTVERSION}
 
 .include <bsd.port.mk>
