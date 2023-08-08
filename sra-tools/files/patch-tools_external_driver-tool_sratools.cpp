@@ -1,10 +1,10 @@
 --- tools/external/driver-tool/sratools.cpp.orig	2023-07-10 16:23:35 UTC
 +++ tools/external/driver-tool/sratools.cpp
-@@ -585,6 +585,14 @@ int main(int argc, char *argv[], char *envp[], char *a
- }
- #endif
+@@ -577,6 +577,14 @@ static int main(CommandLine const &argv)
  
-+#ifdef BSD
+ } // namespace sratools
+ 
++#if BSD
 +int main(int argc, char *argv[], char *envp[])
 +{
 +    auto const invocation = CommandLine(argc, argv, envp, nullptr);
@@ -12,6 +12,6 @@
 +}
 +#endif
 +
- #if LINUX
- int main(int argc, char *argv[], char *envp[])
+ #if MAC
+ int main(int argc, char *argv[], char *envp[], char *apple[])
  {
