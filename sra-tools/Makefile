@@ -1,6 +1,6 @@
 PORTNAME=	sra-tools
 DISTVERSION=	3.0.6
-CATEGORIES=	wip biology
+CATEGORIES=	wip biology java
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	NCBI's toolkit for handling data in INSDC Sequence Read Archives
