@@ -28,6 +28,8 @@ USE_JAVA=	yes
 # Builds with earlier versions, but ngs-doc plist differs
 JAVA_VERSION=	17+
 
+OPTIONS_DEFINE=	EXAMPLES
+
 SHEBANG_GLOB=	*.sh
 GH_ACCOUNT=	ncbi
 GH_TUPLE+=	ncbi:ncbi-vdb:${DISTVERSION}:vdb/ncbi-vdb
@@ -46,7 +48,16 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/local/etc/ncbi|${PREFIX}/etc/ncbi|g' \
 		${WRKSRC}/ncbi-vdb/libs/kfg/config.c
 
-#post-stage:
+post-stage:
 #	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*.${DISTVERSION}
+	${MV} ${STAGEDIR}${PREFIX}/share/examples ${STAGEDIR}${PREFIX}/share/examples-sratools
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${MV} ${STAGEDIR}${PREFIX}/share/examples-sratools/* ${STAGEDIR}${EXAMPLESDIR}
+	${RMDIR} ${STAGEDIR}${PREFIX}/share/examples-sratools
+	${MV} ${STAGEDIR}${PREFIX}/share/examples-java ${STAGEDIR}${EXAMPLESDIR}/java
+	${MV} ${STAGEDIR}${PREFIX}/share/examples-python ${STAGEDIR}${EXAMPLESDIR}/python
+
+post-stage-EXAMPLES-off:
+	${RM} -r ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
