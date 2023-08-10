@@ -5,7 +5,7 @@
  
      rc = KSysDirMakePath_v1 ( self, rcOpening, true, full, sizeof full, path, args );
 +    // FIXME: Remove this debug statement
-+    fprintf(stderr, "path = %s  full = %s\n", path, full);
++    // fprintf(stderr, "path = %s  full = %s\n", path, full);
      if ( rc == 0 )
      {
          int t;
