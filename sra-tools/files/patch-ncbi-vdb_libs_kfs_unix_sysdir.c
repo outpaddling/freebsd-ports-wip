@@ -1,4 +1,4 @@
---- ncbi-vdb/libs/kfs/unix/sysdir.c.orig	2023-08-09 17:16:49 UTC
+--- ncbi-vdb/libs/kfs/unix/sysdir.c.orig	2023-07-10 16:13:36 UTC
 +++ ncbi-vdb/libs/kfs/unix/sysdir.c
 @@ -2291,6 +2291,8 @@ rc_t KSysDirOpenDirRead_v1 ( const KSysDir_v1 * self,
      rc_t rc;
