@@ -11,9 +11,9 @@ LICENSE_COMB=		multi
 LICENSE_FILE_PD=	${WRKSRC}/LICENSE
 LICENSE_DISTFILES_LGPL21+ =
 
-# Use SIMDE for others?
+# Untested on other platforms, aarch64 support was recently added upstream
 ONLY_FOR_ARCHS=		aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	Requires a 64-bit processor
+ONLY_FOR_ARCHS_REASON=	Upstream explicitly supports specific platforms
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
@@ -21,10 +21,11 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libepoll-shim.so:devel/libepoll-shim \
 		libzstd.so:archivers/zstd
 
-USES=		cmake shebangfix
+USES=		bison cmake shebangfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	${PREFIX}/lib64
 USE_JAVA=	yes
+
 # Builds with earlier versions, but ngs-doc plist differs if jdk17 is present
 JAVA_VERSION=	17+
 
@@ -40,10 +41,11 @@ CMAKE_ARGS+=	-DVDB_LIBDIR:STRING=${WRKSRC}/ncbi-vdb/build/lib
 post-extract:
 	@${MKDIR} ${WRKSRC}/ncbi-vdb/interfaces/os/bsd
 	@${CP} ${FILESDIR}/*.h ${WRKSRC}/ncbi-vdb/interfaces/os/bsd
-	cd ${WRKDIR} && ${LN} -s ${WRKSRC}/ncbi-vdb .
+	# cd ${WRKDIR} && ${LN} -s ${WRKSRC}/ncbi-vdb .
 
 pre-configure:
-	# This follows a patch!
+	# This follows a static patch.  Run "make clean patch" before
+	# updating the patch.
 	${REINPLACE_CMD} -e 's|/usr/local/etc/ncbi|${PREFIX}/etc/ncbi|g' \
 		${WRKSRC}/ncbi-vdb/libs/kfg/config.c
 	${REINPLACE_CMD} -e 's|/usr/local/bin|${PREFIX}/bin|g' \
@@ -51,7 +53,7 @@ pre-configure:
 	cd ${WRKSRC}/ncbi-vdb/build && cmake .. && make
 
 post-stage:
-#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*.${DISTVERSION}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*.${DISTVERSION}
 	${MV} ${STAGEDIR}${PREFIX}/share/examples ${STAGEDIR}${PREFIX}/share/examples-sratools
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${MV} ${STAGEDIR}${PREFIX}/share/examples-sratools/* ${STAGEDIR}${EXAMPLESDIR}
