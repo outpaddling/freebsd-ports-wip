@@ -43,10 +43,12 @@ post-extract:
 	cd ${WRKDIR} && ${LN} -s ${WRKSRC}/ncbi-vdb .
 
 pre-configure:
-	cd ${WRKSRC}/ncbi-vdb/build && cmake .. && make
 	# This follows a patch!
 	${REINPLACE_CMD} -e 's|/usr/local/etc/ncbi|${PREFIX}/etc/ncbi|g' \
 		${WRKSRC}/ncbi-vdb/libs/kfg/config.c
+	${REINPLACE_CMD} -e 's|/usr/local/bin|${PREFIX}/bin|g' \
+		${WRKSRC}/tools/external/driver-tool/file-path.posix.cpp
+	cd ${WRKSRC}/ncbi-vdb/build && cmake .. && make
 
 post-stage:
 #	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*.${DISTVERSION}
