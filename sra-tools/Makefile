@@ -41,13 +41,14 @@ CMAKE_ARGS+=	-DVDB_LIBDIR:STRING=${WRKSRC}/ncbi-vdb/build/lib
 post-extract:
 	@${MKDIR} ${WRKSRC}/ncbi-vdb/interfaces/os/bsd
 	@${CP} ${FILESDIR}/*.h ${WRKSRC}/ncbi-vdb/interfaces/os/bsd
-	# cd ${WRKDIR} && ${LN} -s ${WRKSRC}/ncbi-vdb .
+	@${MKDIR} ${WRKSRC}/libs/ascp/bsd
+	@${CP} ${FILESDIR}/ascp-path.c ${WRKSRC}/libs/ascp/bsd
 
 pre-configure:
 	# The config.c and file-path.posix.cpp reinplaces follow
 	# static patches.  Run "make clean patch" before updating
-	# those patches.
-	@${REINPLACE_CMD} -e 's|/usr/local/etc/ncbi|${PREFIX}/etc/ncbi|g' \
+	# those patches so this reinplace does not get added to them.
+	@${REINPLACE_CMD} -e 's|"/etc/ncbi"|"${PREFIX}/etc/ncbi"|g' \
 		${WRKSRC}/ncbi-vdb/libs/kfg/config.c
 	@${REINPLACE_CMD} -e 's|/usr/local/bin|${PREFIX}/bin|g' \
 		${WRKSRC}/tools/external/driver-tool/file-path.posix.cpp
