@@ -1,6 +1,5 @@
 PORTNAME=	biolibc
-DISTVERSION=	0.2.4-7
-DISTVERSIONSUFFIX=	-gcb93a85
+DISTVERSION=	0.2.5
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,7 +9,7 @@ WWW=		https://github.com/auerlab/biolibc
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libxtend.so:wip/libxtend
+LIB_DEPENDS=	libxtend.so:devel/libxtend
 
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
