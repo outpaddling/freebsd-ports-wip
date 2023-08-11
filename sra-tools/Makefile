@@ -44,12 +44,15 @@ post-extract:
 	# cd ${WRKDIR} && ${LN} -s ${WRKSRC}/ncbi-vdb .
 
 pre-configure:
-	# This follows a static patch.  Run "make clean patch" before
-	# updating the patch.
-	${REINPLACE_CMD} -e 's|/usr/local/etc/ncbi|${PREFIX}/etc/ncbi|g' \
+	# The config.c and file-path.posix.cpp reinplaces follow
+	# static patches.  Run "make clean patch" before updating
+	# those patches.
+	@${REINPLACE_CMD} -e 's|/usr/local/etc/ncbi|${PREFIX}/etc/ncbi|g' \
 		${WRKSRC}/ncbi-vdb/libs/kfg/config.c
-	${REINPLACE_CMD} -e 's|/usr/local/bin|${PREFIX}/bin|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local/bin|${PREFIX}/bin|g' \
 		${WRKSRC}/tools/external/driver-tool/file-path.posix.cpp
+	${REINPLACE_CMD} -e 's|/../ncbi-vdb|/ncbi-vdb|g' \
+		${WRKSRC}/CMakeLists.txt
 	cd ${WRKSRC}/ncbi-vdb/build && cmake .. && make
 
 post-stage:
