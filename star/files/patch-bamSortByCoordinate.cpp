@@ -1,11 +1,11 @@
---- bamSortByCoordinate.cpp.orig	2022-11-01 14:50:35 UTC
+--- bamSortByCoordinate.cpp.orig	2021-11-26 16:17:37 UTC
 +++ bamSortByCoordinate.cpp
-@@ -69,7 +69,7 @@ void bamSortByCoordinate (Parameters &P, ReadAlignChun
+@@ -64,7 +64,7 @@ void bamSortByCoordinate (Parameters &P, ReadAlignChun
                              boolWait=false;
                              totalMem+=newMem;
                          };
 -                        sleep(0.1);
-+                        usleep(100000);
++                        usleep(10000);
                      };
                      BAMbinSortByCoordinate(ibin,binN,binS,P.runThreadN,P.outBAMsortTmpDir, P, genome, solo);
                      #pragma omp critical
