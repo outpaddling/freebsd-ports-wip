@@ -56,6 +56,7 @@ man/man3/float_cmp.3.gz
 man/man3/gcd.3.gz
 man/man3/int_cmp.3.gz
 man/man3/lcm.3.gz
+man/man3/libxtend.3.gz
 man/man3/long_cmp.3.gz
 man/man3/long_long_cmp.3.gz
 man/man3/ltostrn.3.gz
