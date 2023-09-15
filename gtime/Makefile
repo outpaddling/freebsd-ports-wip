@@ -22,9 +22,16 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 CPE_VENDOR=	gnu
 
+DATADIR=	${PREFIX}/share/${PKGBASE}
+DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
+INFO=		time
+PORTDOCS=	AUTHORS ChangeLog NEWS README
+
+OPTIONS_DEFINE=	DOCS
+OPTIONS_SUB=	yes
+
 PLIST_FILES=	bin/gtime \
 		man/man1/gtime.1.gz \
-		share/info/time.info
 
 post-build:
 	${MKDIR} ${WRKDIR}/man1
@@ -32,6 +39,10 @@ post-build:
 
 post-install:
 	${INSTALL_MAN} ${WRKDIR}/man1/${PKGBASE}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 pre-test:
 .for f in help-version.sh time-exit-codes.sh time-max-rss.sh time-posix-quiet.sh
