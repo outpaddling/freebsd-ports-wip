@@ -10,7 +10,7 @@ WWW=		https://github.com/auerlab/biolibc
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libxtend.so:devel/libxtend
+LIB_DEPENDS=	libxtend.so:wip/libxtend
 
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
