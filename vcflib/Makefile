@@ -9,10 +9,13 @@ WWW=		https://github.com/vcflib/vcflib
 
 LICENSE=	MIT
 
+NOT_FOR_ARCHS=	armv6 armv7
+NOT_FOR_ARCHS_REASON=	requires OpenMP which is not supported
+
 BUILD_DEPENDS=	pybind11>0:devel/pybind11
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libcurl.so:ftp/curl \
-		libwfa2.so:biology/wfa2-lib
+		libwfa2.so:wip/wfa2-lib
 
 USES=		cmake:noninja gmake localbase:ldflags pkgconfig python shebangfix
 USE_GITHUB=	yes
@@ -29,6 +32,7 @@ GH_TUPLE=	ekg:fastahack:bb33265:fastahack/contrib/fastahack \
 		vcflib:tabixpp:v1.1.2:tabixpp/contrib/tabixpp
 SHEBANG_FILES=	scripts/*
 
+# FIXME: Add Zig option + lang/zig dep
 OPTIONS_DEFINE=		ZIG
 OPTIONS_DEFAULT=
 OPTIONS_SUB=		yes
