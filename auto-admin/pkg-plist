@@ -122,6 +122,7 @@ sbin/auto-password-status
 sbin/auto-ports-branch
 sbin/auto-ports-checkout
 sbin/auto-ports-setup
+sbin/auto-ports-wip-checkout
 sbin/auto-power-manager
 sbin/auto-print-make-variable
 sbin/auto-print-timezone
@@ -168,3 +169,5 @@ sbin/auto-wifi-failover
 sbin/auto-write-cache-toggle
 sbin/auto-xdm-toggle
 %%DATADIR%%/ipfw-rules.sh
+%%DATADIR%%/local_early
+%%DATADIR%%/rc.local_early
