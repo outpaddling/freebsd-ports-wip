@@ -30,10 +30,10 @@ bin/auto-ssh-reverse-authorize
 bin/auto-update-pkgsrc
 bin/auto-using-pkgsrc
 bin/auto-wacom-map-display
-man/man1/auto-add-swap.1.gz
-man/man1/auto-admin.1.gz
-man/man1/auto-image2dev.1.gz
-man/man1/auto-update-system.1.gz
+man/man8/auto-add-swap.8.gz
+man/man8/auto-admin.8.gz
+man/man8/auto-image2dev.8.gz
+man/man8/auto-update-system.8.gz
 sbin/auto-add-fdesc-mount
 sbin/auto-add-group
 sbin/auto-add-hosts-entry
