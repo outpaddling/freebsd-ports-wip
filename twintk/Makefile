@@ -4,7 +4,7 @@ DISTVERSIONSUFFIX=	-gda7813f
 CATEGORIES=	wip devel
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Misc functions
+COMMENT=	Terminal Windows Took Kit
 WWW=		https://github.com/outpaddling/twintk
 
 LICENSE=	BSD2CLAUSE
