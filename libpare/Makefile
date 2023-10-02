@@ -4,7 +4,7 @@ DISTVERSIONSUFFIX=	-gab3da2e
 CATEGORIES=	wip devel
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Misc functions
+COMMENT=	Pointer Array Regular Expressions
 WWW=		https://github.com/outpaddling/libpare
 
 LICENSE=	BSD2CLAUSE
