@@ -13,25 +13,24 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	help2man:misc/help2man
 
-USES=		cpe makeinfo gmake
+USES=		cpe gmake makeinfo
+CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV+=	MAKEINFO="${MAKEINFO} --no-split"
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-CPE_VENDOR=	gnu
 
 DATADIR=	${PREFIX}/share/${PKGBASE}
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 INFO=		time
+PLIST_FILES=	bin/gtime \
+		man/man1/gtime.1.gz
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
-
-PLIST_FILES=	bin/gtime \
-		man/man1/gtime.1.gz \
 
 post-build:
 	${MKDIR} ${WRKDIR}/man1
