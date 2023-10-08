@@ -19,6 +19,7 @@ bin/auto-pkgsrc-branch
 bin/auto-pkgsrc-checkout
 bin/auto-pkgsrc-delete-all
 bin/auto-pkgsrc-dir
+bin/auto-pkgsrc-non-removable
 bin/auto-pkgsrc-prefix
 bin/auto-pkgsrc-remote-x11
 bin/auto-pkgsrc-setup
@@ -33,6 +34,7 @@ bin/auto-wacom-map-display
 man/man8/auto-add-swap.8.gz
 man/man8/auto-admin.8.gz
 man/man8/auto-image2dev.8.gz
+man/man8/auto-pkgsrc-non-removable.8.gz
 man/man8/auto-update-system.8.gz
 sbin/auto-add-fdesc-mount
 sbin/auto-add-group
