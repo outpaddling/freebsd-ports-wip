@@ -10,9 +10,9 @@ WWW=		https://cnsgenomics.com/software/gcta/index.html
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	spectra>0:math/spectra
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-		libgsl.so:math/gsl \
+BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
+		spectra>0:math/spectra
+LIB_DEPENDS=	libgsl.so:math/gsl \
 		libopenblas.so:math/openblas \
 		libsqlite3.so:databases/sqlite3 \
 		libzstd.so:archivers/zstd
@@ -24,7 +24,7 @@ GH_ACCOUNT=	jianyangqt
 GH_TUPLE=	zhilizheng:plink-ng:3744540:plink/submods/plink-ng
 
 CONFIGURE_ENV+=	EIGEN3_INCLUDE_DIR=${LOCALBASE}/include/eigen3 \
-		BOOST_LIB=${LOCALBASE}/include \
+		BOOST_INCLUDE_DIR=${LOCALBASE}/include/boost \
 		OPENBLAS=${LOCALBASE} \
 		SPECTRA_INCLUDE_DIR=${LOCALBASE}/include/Spectra
 
