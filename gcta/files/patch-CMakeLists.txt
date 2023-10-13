@@ -36,7 +36,7 @@
  
  
  SET(BOOST_LIB "$ENV{BOOST_LIB}")
-@@ -63,13 +63,29 @@ message(STATUS "ARCHITECTURE:${CMAKE_LIBRARY_ARCHITECT
+@@ -63,13 +63,28 @@ message(STATUS "ARCHITECTURE:${CMAKE_LIBRARY_ARCHITECT
  
  
  message(STATUS "ARCHITECTURE:${CMAKE_LIBRARY_ARCHITECTURE}")
@@ -55,7 +55,6 @@
 +    set(CMAKE_CXX_FLAGS_RELEASE  "${CMAKE_CXX_FLAGS_RELEASE} -DNDEBUG")
 +    set(CMAKE_CXX_FLAGS_DEBUG  "${CMAKE_CXX_FLAGS_DEBUG} -O0 -g")
 +    add_compile_options(-fopenmp)
-+    set(CMAKE_EXE_LINKER_FLAGS "-fopenmp")
 +
 +elseif(CMAKE_LIBRARY_ARCHITECTURE STREQUAL "aarch64")
 +    SET(OPENBLAS "$ENV{OPENBLAS}")
@@ -67,7 +66,7 @@
      find_library(lib_openblas NAMES openblas PATHS "${OPENBLAS}" "${OPENBLAS}/lib")
      set(BLAS_LIB ${lib_openblas})
  
-@@ -169,6 +185,8 @@ if(APPLE)
+@@ -169,6 +184,8 @@ if(APPLE)
  if(APPLE)
      link_directories(${MKLROOT}/lib)
      link_directories(/usr/local/lib)
@@ -76,13 +75,13 @@
  else(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
      #linux
      link_directories(${MKLROOT}/../../../lib/intel64)
-@@ -179,6 +197,9 @@ if(APPLE)
+@@ -179,6 +196,9 @@ if(APPLE)
  if(APPLE)
      # iomp5
      target_link_libraries(gcta64 ${libs_list} Pgenlib mainV1 z ${BLAS_LIB} sqlite3 zstd_s omp pthread m dl )
 +elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
 +    # FIXME: Clean this up
-+    target_link_libraries(gcta64 mainV1 ${libs_list} Pgenlib z sqlite3 zstd -Wl,--start-group ${BLAS_LIB} -Wl,--end-group -Wl,--whole-archive -lpthread -Wl,--no-whole-archive m dl)
++    target_link_libraries(gcta64 mainV1 ${libs_list} Pgenlib gsl z sqlite3 zstd -Wl,--start-group ${BLAS_LIB} -Wl,--end-group -Wl,--whole-archive -lpthread -Wl,--no-whole-archive m dl)
  else()
      if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
          # error keeps only

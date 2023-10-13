@@ -30,7 +30,13 @@ CONFIGURE_ENV+=	EIGEN3_INCLUDE_DIR=${LOCALBASE}/include/eigen3 \
 
 # Temporary for clean build output
 # MAKE_JOBS_UNSAFE=	yes
+LDFLAGS+=	-fopenmp
 
-PLIST_FILES=	bin/gcta
+PLIST_FILES=	bin/gcta64 bin/gcta
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/gcta64 ${STAGEDIR}${PREFIX}/bin
+	${RLN} ${STAGEDIR}${PREFIX}/bin/gcta64 ${STAGEDIR}${PREFIX}/bin/gcta
 
 .include <bsd.port.mk>
