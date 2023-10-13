@@ -20,23 +20,67 @@
  else()
      MESSAGE("Your system: ${CMAKE_SYSTEM_NAME}")
      MESSAGE(FATAL_ERROR "Only Linux and Mac are currently supported.")
-@@ -63,7 +63,7 @@ INCLUDE_DIRECTORIES("submods/plink-ng/2.0/simde")
+@@ -43,11 +43,11 @@ IF(NOT EIGEN3_INCLUDE_DIR)
+ ENDIF()
+ INCLUDE_DIRECTORIES("${EIGEN3_INCLUDE_DIR}")
+ 
+-SET(SPECTRA_LIB "$ENV{SPECTRA_LIB}")
+-IF(NOT SPECTRA_LIB)
+-    MESSAGE(FATAL_ERROR "Specify environment variable SPECTRA_LIB to the location of Spectra package")
++SET(SPECTRA_INCLUDE_DIR "$ENV{SPECTRA_INCLUDE_DIR}")
++IF(NOT SPECTRA_INCLUDE_DIR)
++    MESSAGE(FATAL_ERROR "Specify environment variable SPECTRA_INCLUDE_DIR to the location of Spectra package")
+ ENDIF()
+-INCLUDE_DIRECTORIES("${SPECTRA_LIB}")
++INCLUDE_DIRECTORIES("${SPECTRA_INCLUDE_DIR}")
+ 
+ 
+ SET(BOOST_LIB "$ENV{BOOST_LIB}")
+@@ -63,13 +63,28 @@ INCLUDE_DIRECTORIES("submods/plink-ng/2.0/simde")
  
  
  message(STATUS "ARCHITECTURE:${CMAKE_LIBRARY_ARCHITECTURE}")
 -if(CMAKE_LIBRARY_ARCHITECTURE STREQUAL "aarch64")
-+if(CMAKE_LIBRARY_ARCHITECTURE STREQUAL "aarch64" OR "${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
++if("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
      SET(OPENBLAS "$ENV{OPENBLAS}")
      IF(NOT OPENBLAS)
          MESSAGE(FATAL_ERROR "Specify environment variable OPENBLAS to the location of OPENBLAS package")
-@@ -74,8 +74,8 @@ if(CMAKE_LIBRARY_ARCHITECTURE STREQUAL "aarch64")
+     ENDIF()
+     INCLUDE_DIRECTORIES("${OPENBLAS}/include")
+ 
++    find_library(lib_openblas NAMES openblas PATHS "${OPENBLAS}" "${LOCALBASE}/lib")
++    set(BLAS_LIB ${lib_openblas})
++
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
++    set(CMAKE_CXX_FLAGS_RELEASE  "${CMAKE_CXX_FLAGS_RELEASE} -DNDEBUG")
++    set(CMAKE_CXX_FLAGS_DEBUG  "${CMAKE_CXX_FLAGS_DEBUG} -O0 -g")
++    add_compile_options(-fopenmp)
++
++elseif(CMAKE_LIBRARY_ARCHITECTURE STREQUAL "aarch64")
++    SET(OPENBLAS "$ENV{OPENBLAS}")
++    IF(NOT OPENBLAS)
++        MESSAGE(FATAL_ERROR "Specify environment variable OPENBLAS to the location of OPENBLAS package")
++    ENDIF()
++    INCLUDE_DIRECTORIES("${OPENBLAS}/include")
++
+     find_library(lib_openblas NAMES openblas PATHS "${OPENBLAS}" "${OPENBLAS}/lib")
      set(BLAS_LIB ${lib_openblas})
  
-     if("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
--        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -pthread")
--        set(CMAKE_CXX_FLAGS_RELEASE  "${CMAKE_CXX_FLAGS_RELEASE} -O3 -DNDEBUG")
-+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
-+        set(CMAKE_CXX_FLAGS_RELEASE  "${CMAKE_CXX_FLAGS_RELEASE} -DNDEBUG")
-         set(CMAKE_CXX_FLAGS_DEBUG  "${CMAKE_CXX_FLAGS_DEBUG} -O0 -g")
-         add_compile_options(-fopenmp)
-         set(CMAKE_EXE_LINKER_FLAGS "-Wl,-no_implicit_dylibs")
+@@ -169,6 +184,8 @@ add_subdirectory(submods)
+ if(APPLE)
+     link_directories(${MKLROOT}/lib)
+     link_directories(/usr/local/lib)
++elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
++    link_directories(${LOCALBASE}/lib)
+ else(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+     #linux
+     link_directories(${MKLROOT}/../../../lib/intel64)
+@@ -179,6 +196,8 @@ add_executable(gcta64 ${MAIN_SOURCE})
+ if(APPLE)
+     # iomp5
+     target_link_libraries(gcta64 ${libs_list} Pgenlib mainV1 z ${BLAS_LIB} sqlite3 zstd_s omp pthread m dl )
++elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
++    # No special link options
+ else()
+     if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+         # error keeps only
