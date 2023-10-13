@@ -1,18 +1,15 @@
 PORTNAME=	gcta
-DISTVERSION=	1.26.0
-PORTREVISION=	4
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.94.1
 CATEGORIES=	wip biology
-MASTER_SITES=	https://cnsgenomics.com/software/gcta/pre_gcta/:main \
-		https://gitlab.com/libeigen/eigen/-/archive/${EIGEN_VERSION}/:eigen
-DISTFILES=	${PORTNAME}_${DISTVERSION}_src${EXTRACT_SUFX}:main \
-		eigen-${EIGEN_VERSION}.tar.gz:eigen
+MASTER_SITES=	https://gitlab.com/libeigen/eigen/-/archive/${EIGEN_VERSION}/:eigen
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Genome-wide Complex Trait Analysis
 WWW=		https://cnsgenomics.com/software/gcta/index.html
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/GNU_General_Public_License_v3.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	spectra>0:math/spectra
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
@@ -21,20 +18,21 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libsqlite3.so:databases/sqlite3 \
 		libzstd.so:archivers/zstd
 
-USES=		compiler:c++11-lang dos2unix gmake localbase:ldflags zip
+USES=		cmake eigen:3
+USE_GITHUB=	yes
 
-CXXFLAGS+=	-I${WRKDIR}/eigen-${EIGEN_VERSION} -fopenmp
-LDFLAGS+=	-lopenblas
+GH_ACCOUNT=	jianyangqt
+GH_TUPLE=	zhilizheng:plink-ng:3744540:plink/submods/plink-ng
 
-INSTALL_TARGET=	install-strip
+CONFIGURE_ENV+=	EIGEN3_INCLUDE_DIR=${LOCALBASE}/include/eigen3 \
+		BOOST_LIB=${LOCALBASE}/include \
+		OPENBLAS=${LOCALBASE}/include \
+		SPECTRA_INCLUDE_DIR=${LOCALBASE}/include/Spectra \
+		SPECTRA_LIB=${LOCALBASE}/lib
+
+# Temporary for clean build output
+MAKE_JOBS_UNSAFE=	yes
+
 PLIST_FILES=	bin/gcta
-
-# Hard requirement listed at https://github.com/jianyangqt/gcta
-EIGEN_VERSION=  3.3.7
-
-do-extract:
-	@${UNZIP_NATIVE_CMD} -d ${WRKSRC} ${DISTDIR}/${PORTNAME}_${DISTVERSION}_src${EXTRACT_SUFX}
-	@cd ${WRKDIR} && \
-		${TAR} xzf ${DISTDIR}/eigen-${EIGEN_VERSION}.tar.gz
 
 .include <bsd.port.mk>

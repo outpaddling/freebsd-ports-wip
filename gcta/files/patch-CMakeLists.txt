@@ -1,0 +1,42 @@
+--- CMakeLists.txt.orig	2022-08-03 06:01:52 UTC
++++ CMakeLists.txt
+@@ -3,7 +3,7 @@ SET(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+ SET(PROJECT_NAME_STR GCTA2)
+ PROJECT(${PROJECT_NAME_STR} C CXX)
+ SET(CMAKE_INCLUDE_CURRENT_DIR ON)
+-SET(CMAKE_CXX_STANDARD 11)
++SET(CMAKE_CXX_STANDARD 14)
+ SET(CMAKE_C_STANDARD 11)
+ 
+ # get system architecture
+@@ -16,8 +16,8 @@ if(WIN32)
+     MESSAGE(FATAL_ERROR "Use the Visual Studio project file which located in gcta_win64 directory")
+ endif()
+ 
+-if("${CMAKE_SYSTEM_NAME}" MATCHES "Linux" OR "${CMAKE_SYSTEM_NAME}" MATCHES "Darwin")
+-    MESSAGE("Linux and Mac are supported.")
++if("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD" OR "${CMAKE_SYSTEM_NAME}" MATCHES "Linux" OR "${CMAKE_SYSTEM_NAME}" MATCHES "Darwin")
++    MESSAGE("FreeBSD, Linux and Mac are supported.")
+ else()
+     MESSAGE("Your system: ${CMAKE_SYSTEM_NAME}")
+     MESSAGE(FATAL_ERROR "Only Linux and Mac are currently supported.")
+@@ -63,7 +63,7 @@ INCLUDE_DIRECTORIES("submods/plink-ng/2.0/simde")
+ 
+ 
+ message(STATUS "ARCHITECTURE:${CMAKE_LIBRARY_ARCHITECTURE}")
+-if(CMAKE_LIBRARY_ARCHITECTURE STREQUAL "aarch64")
++if(CMAKE_LIBRARY_ARCHITECTURE STREQUAL "aarch64" OR "${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
+     SET(OPENBLAS "$ENV{OPENBLAS}")
+     IF(NOT OPENBLAS)
+         MESSAGE(FATAL_ERROR "Specify environment variable OPENBLAS to the location of OPENBLAS package")
+@@ -74,8 +74,8 @@ if(CMAKE_LIBRARY_ARCHITECTURE STREQUAL "aarch64")
+     set(BLAS_LIB ${lib_openblas})
+ 
+     if("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
+-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -pthread")
+-        set(CMAKE_CXX_FLAGS_RELEASE  "${CMAKE_CXX_FLAGS_RELEASE} -O3 -DNDEBUG")
++        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
++        set(CMAKE_CXX_FLAGS_RELEASE  "${CMAKE_CXX_FLAGS_RELEASE} -DNDEBUG")
+         set(CMAKE_CXX_FLAGS_DEBUG  "${CMAKE_CXX_FLAGS_DEBUG} -O0 -g")
+         add_compile_options(-fopenmp)
+         set(CMAKE_EXE_LINKER_FLAGS "-Wl,-no_implicit_dylibs")
