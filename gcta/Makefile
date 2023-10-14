@@ -28,8 +28,6 @@ CONFIGURE_ENV+=	EIGEN3_INCLUDE_DIR=${LOCALBASE}/include/eigen3 \
 		OPENBLAS=${LOCALBASE} \
 		SPECTRA_INCLUDE_DIR=${LOCALBASE}/include/Spectra
 
-# Temporary for clean build output
-# MAKE_JOBS_UNSAFE=	yes
 LDFLAGS+=	-fopenmp
 
 PLIST_FILES=	bin/gcta64 bin/gcta
