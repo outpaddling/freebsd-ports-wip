@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}rich-click>0:devel/py-rich-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rich-click>0<1.7.0:devel/py-rich-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>0.14.0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coloredlogs>0:devel/py-coloredlogs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.1.1:math/py-matplotlib@${PY_FLAVOR} \
