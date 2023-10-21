@@ -9,7 +9,7 @@ WWW=		https://acadix.biz/cluster-admin.php
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	auto-admin>=0.7.13:wip/auto-admin
+RUN_DEPENDS=	auto-admin>=0.8.0:wip/auto-admin
 
 USE_GITHUB=	yes
 

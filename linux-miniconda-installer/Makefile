@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	Requires a 64-bit processor, specific CPU features
 
-RUN_DEPENDS=	auto-admin>=0.8.0:sysutils/auto-admin
+RUN_DEPENDS=	auto-admin>=0.8.0:wip/auto-admin
 
 USES=		linux python
 USE_GITHUB=	yes
