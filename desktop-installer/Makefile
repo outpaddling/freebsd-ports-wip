@@ -1,6 +1,5 @@
 PORTNAME=	desktop-installer
-DISTVERSION=	0.8.2-15
-DISTVERSIONSUFFIX=	-gdf6e9f2
+DISTVERSION=	0.8.3
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
