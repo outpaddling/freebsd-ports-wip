@@ -16,4 +16,5 @@ sbin/port-reinstall
 sbin/port-remake
 sbin/port-restage
 sbin/port-shar
+sbin/port-show-dependents
 sbin/port-which
