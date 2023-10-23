@@ -1,6 +1,7 @@
 PORTNAME=	freebsd-update-notify
 DISTVERSION=	0.1.1-2
 DISTVERSIONSUFFIX=	-g90a650c
+PORTREVISION=	1
 CATEGORIES=	wip deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
