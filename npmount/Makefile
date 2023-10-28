@@ -10,7 +10,7 @@ WWW=		https://github.com/outpaddling/npmount
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	libxtend>=0.1.8:wip/libxtend
+BUILD_DEPENDS=	libxtend>=0.2.0:wip/libxtend
 LIB_DEPENDS=	libxtend.so:wip/libxtend
 
 USE_GITHUB=	yes
