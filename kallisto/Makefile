@@ -24,8 +24,6 @@ GH_ACCOUNT=	pachterlab
 
 SUB_FILES=	kallisto-test
 
-MAKE_JOBS_UNSAFE=	yes
-
 PORTEXAMPLES=		*
 PLIST_FILES=		bin/kallisto
 EXAMPLES_PLIST_FILES=	bin/kallisto-test
