@@ -1,7 +1,6 @@
 PORTNAME=		kallisto
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.50.0
-PORTREVISION=		2
+DISTVERSION=		0.50.1
 PORTEPOCH=		1
 CATEGORIES=		wip biology
 
@@ -24,6 +23,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pachterlab
 
 SUB_FILES=	kallisto-test
+
+MAKE_JOBS_UNSAFE=	yes
 
 PORTEXAMPLES=		*
 PLIST_FILES=		bin/kallisto
