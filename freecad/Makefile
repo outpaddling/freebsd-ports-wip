@@ -1,6 +1,6 @@
 PORTNAME=	FreeCAD
-DISTVERSION=	0.21.1-1333
-DISTVERSIONSUFFIX=	-g2338189
+DISTVERSION=	0.21.1
+PORTREVISION=	2
 CATEGORIES=	wip cad
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	doxygen:devel/doxygen \
 		pyside_tool.py:devel/pyside2-tools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR} \
-		${PYTHON_INCLUDEDIR}/CXX/Config.hxx:devel/py-cxx \
+		${PYTHON_INCLUDEDIR}/CXX/Config.hxx:devel/py-cxx@${PY_FLAVOR} \
 		swig:devel/swig
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \
