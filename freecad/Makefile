@@ -115,7 +115,7 @@ CMAKE_ARGS+=	-DBUILD_WEB:BOOL=OFF
 PLIST_SUB=	WEBENGINE="@comment "
 .endif
 
-post-patch:
+pre-configure:
 	@${REINPLACE_CMD} -e '/self\.rev/s/Unknown/${DISTVERSION:C/.*-//}/' \
 		${WRKSRC}/src/Tools/SubWCRev.py
 # Install XDG icons and files to the standard path

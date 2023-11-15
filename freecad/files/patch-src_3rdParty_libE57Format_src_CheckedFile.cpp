@@ -1,4 +1,4 @@
---- src/3rdParty/libE57Format/src/CheckedFile.cpp.orig	2023-11-14 12:23:41 UTC
+--- src/3rdParty/libE57Format/src/CheckedFile.cpp.orig	2023-11-15 03:07:59 UTC
 +++ src/3rdParty/libE57Format/src/CheckedFile.cpp
 @@ -25,6 +25,11 @@
   * DEALINGS IN THE SOFTWARE.
