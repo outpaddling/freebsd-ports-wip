@@ -17,13 +17,10 @@ BUILD_DEPENDS=	doxygen:devel/doxygen \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_INCLUDEDIR}/CXX/Config.hxx:devel/py-cxx@${PY_FLAVOR} \
 		swig:devel/swig
-LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+LIB_DEPENDS=	\
 		libfreetype.so:print/freetype2 \
-		${PY_BOOST} \
-		libpyside2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/pyside2@${PY_FLAVOR} \
 		libCoin.so:graphics/Coin \
 		libfmt.so:devel/libfmt \
-		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libvtksys-${VTK_VER}.so:math/vtk${VTK_VER:R} \
 		libTKernel.so:cad/opencascade \
@@ -31,7 +28,20 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libboost_thread.so:devel/boost-libs \
 		libmed.so:french/med \
 		libshiboken2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/shiboken2@${PY_FLAVOR} \
-		libhdf5.so:science/hdf5
+		libhdf5.so:science/hdf5 \
+		libmpi.so:net/mpich \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreeimage.so:graphics/freeimage \
+		libdraco.so:archivers/draco
+
+# Still to investigate:
+# Warning: you might not need LIB_DEPENDS on libtiff.so
+# Warning: you might not need LIB_DEPENDS on libxerces-c.so
+# Warning: you might not need LIB_DEPENDS on libshiboken2.cpython-39.so
+# Warning: you might not need LIB_DEPENDS on libjpeg.so
+# Warning: you might not need LIB_DEPENDS on libQt5Location.so
+# Warning: Possible REINPLACE_CMD issues:
+# - - REINPLACE_CMD ran, but did not modify file contents: src/Gui/CMakeLists.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}
