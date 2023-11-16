@@ -21,7 +21,6 @@ LIB_DEPENDS=	\
 		libfreetype.so:print/freetype2 \
 		libCoin.so:graphics/Coin \
 		libfmt.so:devel/libfmt \
-		libtiff.so:graphics/tiff \
 		libvtksys-${VTK_VER}.so:math/vtk${VTK_VER:R} \
 		libTKernel.so:cad/opencascade \
 		libxerces-c.so:textproc/xerces-c3 \
@@ -32,21 +31,14 @@ LIB_DEPENDS=	\
 		libmpi.so:net/mpich \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreeimage.so:graphics/freeimage \
+		libpyside2.cpython-39.so:devel/pyside2 \
+		libavutil.so.56:multimedia/ffmpeg4 \
 		libdraco.so:archivers/draco
-
-# Still to investigate:
-# Warning: you might not need LIB_DEPENDS on libtiff.so
-# Warning: you might not need LIB_DEPENDS on libxerces-c.so
-# Warning: you might not need LIB_DEPENDS on libshiboken2.cpython-39.so
-# Warning: you might not need LIB_DEPENDS on libjpeg.so
-# Warning: you might not need LIB_DEPENDS on libQt5Location.so
-# Warning: Possible REINPLACE_CMD issues:
-# - - REINPLACE_CMD ran, but did not modify file contents: src/Gui/CMakeLists.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		dos2unix compiler:c++17-lang cmake cpe gl eigen:3 fortran jpeg \
+USES=		dos2unix compiler:c++17-lang cmake cpe gl eigen:3 fortran \
 		localbase:ldflags mpi:openmpi pkgconfig python localbase qt:5 xorg \
 		desktop-file-utils shared-mime-info shebangfix
 USE_GITHUB=	yes
