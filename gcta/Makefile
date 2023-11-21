@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		spectra>0:math/spectra
 LIB_DEPENDS=	libgsl.so:math/gsl \
-		libopenblas.so:math/openblas \
+		libopenblas.so:wip/openblas \
 		libsqlite3.so:databases/sqlite3 \
 		libzstd.so:archivers/zstd
 
