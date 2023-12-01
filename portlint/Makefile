@@ -1,11 +1,13 @@
 PORTNAME=	portlint
 PORTVERSION=	2.21.0
-CATEGORIES=	ports-mgmt
+PORTREVISION=	1
+CATEGORIES=	wip ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Verifier for FreeBSD port directory
+WWW=		# none, src embedded in port
 
 LICENSE=	ITOJUN
 LICENSE_NAME=	Itojun License
