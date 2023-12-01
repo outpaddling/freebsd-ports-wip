@@ -1,0 +1,10 @@
+ 			}
+ 		}
+ 		$rawwhole .= $_;
++		if (/\\$/) {
++			# Concat continued lines.
++			chomp $rawwhole;
++			chop $rawwhole;
++		}
+ 	}
+ 	close(IN);
