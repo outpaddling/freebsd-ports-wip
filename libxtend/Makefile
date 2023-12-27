@@ -16,7 +16,4 @@ GH_ACCOUNT=	outpaddling
 
 INSTALL_TARGET=	install-strip
 
-pre-build:
-	cd ${WRKSRC} && ${MAKE} depend
-
 .include <bsd.port.mk>
