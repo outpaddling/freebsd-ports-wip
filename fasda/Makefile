@@ -20,7 +20,4 @@ GH_ACCOUNT=	auerlab
 MAKE_ENV=	VERSION=${PORTVERSION}
 INSTALL_TARGET=	install-strip
 
-pre-build:
-	cd ${WRKSRC} && make depend LOCALBASE=${LOCALBASE}
-
 .include <bsd.port.mk>

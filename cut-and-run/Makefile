@@ -15,7 +15,4 @@ GH_ACCOUNT=	outpaddling
 
 PLIST_FILES=	bin/cut-and-run man/man1/cut-and-run.1.gz
 
-pre-build:
-	cd ${WRKSRC} && make depend
-
 .include <bsd.port.mk>

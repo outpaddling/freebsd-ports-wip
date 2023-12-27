@@ -20,7 +20,4 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
 SHEBANG_FILES=	feature-view.py
 
-pre-build:
-	cd ${WRKSRC} && make depend LOCALBASE=${LOCALBASE}
-
 .include <bsd.port.mk>

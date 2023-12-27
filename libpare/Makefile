@@ -16,7 +16,4 @@ PLIST_FILES=	lib/libpare.a \
 		include/pare.h \
 		man/man3/pare.3.gz
 
-pre-build:
-	(cd ${WRKSRC} && make depend LOCALBASE=${LOCALBASE})
-
 .include <bsd.port.mk>
