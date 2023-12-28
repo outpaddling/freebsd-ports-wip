@@ -24,4 +24,8 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 
+do-test:
+	(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} setup.py develop)
+	(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} pytest-${PYTHON_VER} --capture=no)
+
 .include <bsd.port.mk>
