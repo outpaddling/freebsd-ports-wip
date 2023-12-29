@@ -1,10 +1,12 @@
 PORTNAME=	slurm
 DISTVERSION=	20.02.7
+PORTREVISION=	3
+PORTEPOCH=	1
 CATEGORIES=	wip sysutils python
-MASTER_SITES=	https://download.schedmd.com/slurm/
+MASTER_SITES=	https://ftp.icm.edu.pl/packages/slurm/
 PKGNAMESUFFIX=	-wlm
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Linux Utility for Resource Management
 WWW=		https://slurm.schedmd.com/
 
@@ -19,10 +21,11 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libmunge.so:security/munge \
 		liblz4.so:archivers/liblz4
 
-USES=		compiler:c11 gmake gnome libtool localbase lua pkgconfig \
-		python:build readline shebangfix ssl tar:bz2
+USES=		compiler:c11 cpe gmake gnome libtool localbase lua perl5 \
+		pkgconfig python:build readline shebangfix ssl tar:bz2
+USE_PERL5=	build
+CPE_VENDOR=	schedmd
 USE_LDCONFIG=	yes
-USE_PERL5=	configure
 USE_RC_SUBR=	slurmctld slurmd
 
 USERS=		slurm
@@ -59,7 +62,7 @@ GUI_CONFIGURE_ENABLE=	glibtest gtktest x11
 #GTK2_CONFIGURE_OFF=	--disable-gtktest
 
 HDF5_LIB_DEPENDS=	libhdf5_cpp.so:science/hdf5 \
-			libsz.so:science/szip
+			libsz.so:science/libaec
 HDF5_CONFIGURE_WITH=	hdf5
 HDF5_CONFIGURE_ENV=	H5CC=${LOCALBASE}/bin/h5cc
 
@@ -78,7 +81,8 @@ RRD_CONFIGURE_WITH=	rrdtool
 # --docdir is non-functional
 # CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 # FreeBSD Infiniband support is still experimental
-CONFIGURE_ARGS=	--without-ofed
+# slurmrestd does not build on FreeBSD
+CONFIGURE_ARGS=	--without-ofed --disable-slurmrestd
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
 
 CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include -fcommon
