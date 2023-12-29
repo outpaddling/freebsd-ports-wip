@@ -24,8 +24,14 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 
+post-stage:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/hmmlearn/_hmmc.cpython-39.so
+
+# 2023-12-29: Tests currently fail due to known upstream issues
 do-test:
-	(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} setup.py develop)
+	# setup.py builds directly to prefix by default, so we need to build
+	# again within the project for pytest to work
+	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} setup.py develop)
 	(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} pytest-${PYTHON_VER} --capture=no)
 
 .include <bsd.port.mk>
