@@ -1,17 +1,11 @@
---- src/plugins/job_container/tmpfs/job_container_tmpfs.c.orig	2021-05-12 20:23:16 UTC
+--- src/plugins/job_container/tmpfs/job_container_tmpfs.c.orig	2023-11-21 22:33:29 UTC
 +++ src/plugins/job_container/tmpfs/job_container_tmpfs.c
-@@ -38,6 +38,8 @@
-  *  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA.
- \*****************************************************************************/
+@@ -612,7 +612,7 @@ static int _create_ns(uint32_t job_id, stepd_step_rec_
+ 			goto exit1;
+ 		}
  
-+#ifndef __FreeBSD__
-+
- #define _GNU_SOURCE
- #define _XOPEN_SOURCE 500 /* For ftw.h */
- #include <errno.h>
-@@ -824,3 +826,5 @@ extern int container_p_delete(uint32_t job_id)
- {
- 	return _delete_ns(job_id);
- }
-+
-+#endif // #ifndef __FreeBSD__
+-		xstrfmtcat(proc_path, "/proc/%u/ns/mnt", cpid);
++		xstrfmtcat(proc_path, "/compat/linux/proc/%u/ns/mnt", cpid);
+ 
+ 		/*
+ 		 * Bind mount /proc/pid/ns/mnt to hold namespace active
