@@ -1,8 +1,4 @@
-$NetBSD$
-
-# Use SIMDE sse2.h
-
---- MACS3/fermi-lite/ksw.c.orig	2023-12-21 22:20:16.716124047 +0000
+--- MACS3/fermi-lite/ksw.c.orig	2023-11-15 16:09:23 UTC
 +++ MACS3/fermi-lite/ksw.c
 @@ -28,7 +28,7 @@
  

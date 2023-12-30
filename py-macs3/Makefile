@@ -32,9 +32,7 @@ GH_PROJECT=	MACS
 SHEBANG_FILES=	test/cmdlinetest* test/prockreport test/*.py test/pyprofile*
 
 post-stage:
-	${STRIP_CMD} \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/MACS3/*.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/MACS3/*/*.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/MACS3/*/*.so
 
 do-test: install
 	@cd ${WRKSRC}/test && ./cmdlinetest tag
