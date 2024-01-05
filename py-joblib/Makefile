@@ -12,7 +12,6 @@ WWW=		https://joblib.readthedocs.io/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sysctl>0:devel/py-sysctl@${PY_FLAVOR}
 TEST_DEPENDS=	${PYNUMPY}
 #TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}threadpoolctl>0:devel/py-threadpoolctl@${PY_FLAVOR}
 
