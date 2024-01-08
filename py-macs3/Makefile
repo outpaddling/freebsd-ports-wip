@@ -34,7 +34,8 @@ SHEBANG_FILES=	test/cmdlinetest* test/prockreport test/*.py test/pyprofile*
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/MACS3/*/*.so
 
-do-test: install
+do-test: deinstall install
+	@${RM} -rf ${WRKSRC}/temp
 	@cd ${WRKSRC}/test && ./cmdlinetest tag
 
 .include <bsd.port.mk>
