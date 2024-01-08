@@ -22,8 +22,9 @@ RUN_DEPENDS=	${PYNUMPY} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		bash:shells/bash
 
-USES=		localbase python shebangfix
+USES=		localbase perl5 python shebangfix
 USE_GITHUB=	yes
+USE_PERL5=	test
 USE_PYTHON=	autoplist concurrent cython pep517
 
 GH_ACCOUNT=	macs3-project
