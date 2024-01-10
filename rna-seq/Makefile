@@ -1,4 +1,6 @@
 PORTNAME=	rna-seq
+# Update minor version when adding or removing dependencies
+# Update revision for all other changes
 DISTVERSION=	0.1.4
 CATEGORIES=	wip biology python
 MASTER_SITES=	# empty
