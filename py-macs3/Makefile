@@ -31,13 +31,10 @@ GH_ACCOUNT=	macs3-project
 GH_PROJECT=	MACS
 SHEBANG_FILES=	test/cmdlinetest* test/prockreport test/*.py test/pyprofile*
 
-pre-fetch:
-	echo ${OSVERSION}
-
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000
-# BROKEN=		Does not run on FreeBSD 13.2 or earlier due to handling of dynamically loaded libc by py-threadpoolctl
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1302509
+BROKEN=		Does not run on FreeBSD 13.2 or earlier due to handling of dynamically loaded libc by py-threadpoolctl
 .endif
 
 post-stage:
