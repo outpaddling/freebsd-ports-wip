@@ -43,13 +43,13 @@ else
 
 FYI:
 
-$pkg_name has been committed to the FreeBSD ports collection.
+$port_name has been committed to the FreeBSD ports collection.
 It might be helpful to users if you could post a message like
 the following on your website:
 
 Thanks!
 
-$pkg_name can be installed on FreeBSD via the FreeBSD ports system.
+$port_name can be installed on FreeBSD via the FreeBSD ports system.
 
 To install via the binary package, simply run:
 
