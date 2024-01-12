@@ -37,7 +37,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/portlint.pl \
 	    ${STAGEDIR}${PREFIX}/bin/portlint
 	${INSTALL_MAN} ${WRKSRC}/portlint.1 \
-	    ${STAGEDIR}${MAN1PREFIX}/man/man1
+	    ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

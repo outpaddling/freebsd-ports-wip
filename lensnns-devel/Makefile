@@ -32,7 +32,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Bin/FreeBSD/lens-2.63 ${PREFIX}/bin
 	${LN} -s ${PREFIX}/bin/alens-2.63 ${PREFIX}/bin/alensnns
 	${LN} -s ${PREFIX}/bin/lens-2.63 ${PREFIX}/bin/lensnns
-	${INSTALL_MAN} ${WRKDIR}/lensnns.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/lensnns.1 ${PREFIX}/share/man/man1
 	@${MKDIR} ${PREFIX}/share/${PORTNAME}/Src/Images
 	@${MKDIR} ${PREFIX}/share/${PORTNAME}/Examples
 	@${MKDIR} ${PREFIX}/share/${PORTNAME}/Commands

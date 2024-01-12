@@ -210,7 +210,7 @@ post-install:
 # Install manpages
 .for FILE in ${MANPAGES}
 	${INSTALL_MAN} ${WRKSRC}/gcc/doc/${FILE} \
-		${MAN1PREFIX}/man/man1/${OURTARGET}-${FILE}
+		${PREFIX}/share/man/man1/${OURTARGET}-${FILE}
 .endfor
 
 # Generate symlinks for binutils binaries to let gcc found them

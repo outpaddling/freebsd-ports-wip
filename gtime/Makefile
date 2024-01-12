@@ -37,7 +37,7 @@ post-build:
 	help2man -Nn "run programs and summarize system resource usage" ${WRKSRC}/time -o ${WRKDIR}/man1/${PKGBASE}.1
 
 post-install:
-	${INSTALL_MAN} ${WRKDIR}/man1/${PKGBASE}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKDIR}/man1/${PKGBASE}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

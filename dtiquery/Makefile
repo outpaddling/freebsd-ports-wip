@@ -49,9 +49,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/DTIQuery/dtiquery ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/precompute/dtiprecompute_cmd ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/precompute/dtiprecompute_gui ${PREFIX}/bin
-	${INSTALL_MAN} ${FILESDIR}/dtiquery.1 ${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${FILESDIR}/dtiquery.1 ${MAN1PREFIX}/man/man1/dtiprecompute_cmd.1
-	${INSTALL_MAN} ${FILESDIR}/dtiquery.1 ${MAN1PREFIX}/man/man1/dtiprecompute_gui.1
+	${INSTALL_MAN} ${FILESDIR}/dtiquery.1 ${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${FILESDIR}/dtiquery.1 ${PREFIX}/share/man/man1/dtiprecompute_cmd.1
+	${INSTALL_MAN} ${FILESDIR}/dtiquery.1 ${PREFIX}/share/man/man1/dtiprecompute_gui.1
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

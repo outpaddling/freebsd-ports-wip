@@ -94,7 +94,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/etc/mri
 	${INSTALL_SCRIPT} ${WRKDIR}/caret.cshrc ${PREFIX}/etc/mri
 	${INSTALL_SCRIPT} ${WRKDIR}/caret.profile ${PREFIX}/etc/mri
-	${INSTALL_MAN} ${WRKDIR}/caret.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/caret.1 ${PREFIX}/share/man/man1
 
 post-install:
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}

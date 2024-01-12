@@ -32,9 +32,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mplib ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/mplink ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/mcc18_check ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mcc18.1 ${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/mcc18.1 ${MAN1PREFIX}/man/man1/mpasm.1
-	${INSTALL_MAN} ${WRKSRC}/mcc18.1 ${MAN1PREFIX}/man/man1/mplib.1
-	${INSTALL_MAN} ${WRKSRC}/mcc18.1 ${MAN1PREFIX}/man/man1/mplink.1
+	${INSTALL_MAN} ${WRKSRC}/mcc18.1 ${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/mcc18.1 ${PREFIX}/share/man/man1/mpasm.1
+	${INSTALL_MAN} ${WRKSRC}/mcc18.1 ${PREFIX}/share/man/man1/mplib.1
+	${INSTALL_MAN} ${WRKSRC}/mcc18.1 ${PREFIX}/share/man/man1/mplink.1
 
 .include <bsd.port.post.mk>

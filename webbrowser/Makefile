@@ -16,7 +16,7 @@ NO_BUILD=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/webbrowser ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/webbrowser.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/webbrowser.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 PLIST_FILES=	bin/webbrowser man/man1/webbrowser.1.gz
 
