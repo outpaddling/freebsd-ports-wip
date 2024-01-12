@@ -1,4 +1,3 @@
-man/man1/wip-update.1.gz
 sbin/wip-audit
 sbin/wip-edit
 sbin/wip-import
@@ -6,3 +5,4 @@ sbin/wip-new-port
 sbin/wip-poudriere-test
 sbin/wip-reinstall-port
 sbin/wip-update
+share/man/man1/wip-update.1.gz
