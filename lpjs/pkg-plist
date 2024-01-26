@@ -13,6 +13,9 @@ sbin/lpjs-banner
 sbin/lpjs-chaperone
 sbin/lpjs_compd
 sbin/lpjs_dispatchd
+%%DATADIR%%/Launchd/README
+%%DATADIR%%/Launchd/org.pkgsrc.lpjs_compd.plist
+%%DATADIR%%/Launchd/org.pkgsrc.lpjs_dispatchd.plist
 %%DATADIR%%/Systemd/lpjs_compd.service
 %%DATADIR%%/Systemd/lpjs_compd.sysconfig
 %%DATADIR%%/Systemd/lpjs_dispatchd.service
