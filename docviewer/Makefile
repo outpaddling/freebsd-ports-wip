@@ -19,6 +19,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/docviewer ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/docviewer.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
-PLIST_FILES=	bin/docviewer man/man1/docviewer.1.gz
+PLIST_FILES=	bin/docviewer share/man/man1/docviewer.1.gz
 
 .include <bsd.port.mk>
