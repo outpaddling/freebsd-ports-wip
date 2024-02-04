@@ -18,6 +18,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/webbrowser ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/webbrowser.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
-PLIST_FILES=	bin/webbrowser man/man1/webbrowser.1.gz
+PLIST_FILES=	bin/webbrowser share/man/man1/webbrowser.1.gz
 
 .include <bsd.port.mk>
