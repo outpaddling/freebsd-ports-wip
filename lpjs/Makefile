@@ -20,6 +20,9 @@ GH_ACCOUNT=	outpaddling
 GH_PROJECT=	LPJS
 GH_TAGNAME=	b24fc4bfd5128712ab6e53ced28e5162cf249834
 
+# Force debug symbols on until release
+WITH_DEBUG=	yes
+
 pre-build:
 	cd ${WRKSRC} && ${MAKE} depend LOCALBASE=${LOCALBASE}
 
