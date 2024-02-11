@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Python library to facilitate programmatic analysis of sequence data
-WWW=		https://pypi.python.org/project/htseq/
+WWW=		https://github.com/htseq/htseq
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Data structures, algorithms and educational resources for bioinformatics
-WWW=		https://pypi.python.org/pypi/scikit-bio
+WWW=		https://github.com/scikit-bio/scikit-bio
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy
 

@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Aggregate bioinformatics analysis reports across samples and tools
-WWW=		https://pypi.python.org/pypi/multiqc
+WWW=		https://github.com/MultiQC/MultiQC
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

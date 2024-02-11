@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Format click help output nicely with rich
-WWW=		https://pypi.python.org/project/rich-click/
+WWW=		https://github.com/ewels/rich-click
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
