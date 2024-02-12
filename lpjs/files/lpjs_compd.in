@@ -10,12 +10,16 @@
 #
 # lpjs_compd_enable (bool):   Set to NO by default.
 #               Set it to YES to enable lpjs_compd.
-#
+# lpjs_compd_pidfile (str): Set to "/var/run/lpjs_compd.pid" by default.
+#                       Custom PID file path and name.
+# lpjs_compd_flags (str):   Set to "" by default.
+#                       Extra flags passed to start command.
 
 . /etc/rc.subr
-
 name="lpjs_compd"
 rcvar=lpjs_compd_enable
+start_cmd=lpjs_compd_start
+stop_cmd=lpjs_compd_stop
 
 pidfile=/var/run/$name.pid
 
@@ -23,20 +27,32 @@ load_rc_config $name
 
 : ${lpjs_compd_enable="NO"}
 
-start_cmd=lpjs_compd_start
-stop_cmd=lpjs_compd_stop
+lpjs_compd_user=root
+command=%%PREFIX%%/sbin/$name
+command_args="--daemonize"
 
 lpjs_compd_start() {
-    checkyesno lpjs_compd_enable && echo "Starting $name." && \
-	%%PREFIX%%/sbin/$name --daemonize $lpjs_compd_flags
+    checkyesno $rcvar && echo "Starting $name." && \
+	$command $command_args $lpjs_compd_flags
 }
 
 lpjs_compd_stop() {
-    if [ -e $pidfile ]; then
-	checkyesno lpjs_compd_enable && echo "Stopping $name." && \
-	    kill `cat $pidfile`
-    else
-	echo "Stopping $name." && pkill $name
+    if checkyesno $rcvar; then
+	echo "Stopping $name."
+	pids="$(pgrep -d ' ' $name)"
+	if [ -n "$pids" ]; then
+	    echo "Waiting for PIDs: $pids"
+	    for signal in TERM INT QUIT KILL
+	    do
+		kill -s $signal $pids
+		sleep 1
+		pids=$(pgrep -d ' ' $name)
+		if [ -z "$pids" ]; then
+		    break
+		fi
+	    done
+	fi
+	rm -f $pidfile
     fi
 }
 

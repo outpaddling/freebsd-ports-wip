@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: lpjs_dispatchd
-# REQUIRE: DAEMON munge
+# REQUIRE: LOGIN munge
 # BEFORE: LOGIN
 # KEYWORD: shutdown
 #
@@ -10,12 +10,16 @@
 #
 # lpjs_dispatchd_enable (bool):   Set to NO by default.
 #               Set it to YES to enable lpjs_dispatchd.
-#
+# lpjs_dispatchd_pidfile (str): Set to "/var/run/lpjs_dispatchd.pid" by default.
+#                       Custom PID file path and name.
+# lpjs_dispatchd_flags (str):   Set to "" by default.
+#                       Extra flags passed to start command.
 
 . /etc/rc.subr
-
 name="lpjs_dispatchd"
 rcvar=lpjs_dispatchd_enable
+start_cmd=lpjs_dispatchd_start
+stop_cmd=lpjs_dispatchd_stop
 
 pidfile=/var/run/$name.pid
 
@@ -23,20 +27,33 @@ load_rc_config $name
 
 : ${lpjs_dispatchd_enable="NO"}
 
-start_cmd=lpjs_dispatchd_start
-stop_cmd=lpjs_dispatchd_stop
+# FIXME: Add support for non-root users
+lpjs_dispatchd_user=root
+command=%%PREFIX%%/sbin/$name
+command_args="--daemonize"
 
 lpjs_dispatchd_start() {
-    checkyesno lpjs_dispatchd_enable && echo "Starting $name." && \
-	%%PREFIX%%/sbin/$name --daemonize $lpjs_dispatchd_flags
+    checkyesno $rcvar && echo "Starting $name." && \
+	$command $command_args $lpjs_dispatchd_flags
 }
 
 lpjs_dispatchd_stop() {
-    if [ -e $pidfile ]; then
-	checkyesno lpjs_dispatchd_enable && echo "Stopping $name." && \
-	    kill `cat $pidfile`
-    else
-	echo "Stopping $name." && pkill $name
+    if checkyesno $rcvar; then
+	echo "Stopping $name."
+	pids="$(pgrep -d ' ' $name)"
+	if [ -n "$pids" ]; then
+	    echo "Waiting for PIDs: $pids"
+	    for signal in TERM INT QUIT KILL
+	    do
+		kill -s $signal $pids
+		sleep 1
+		pids=$(pgrep -d ' ' $name)
+		if [ -z "$pids" ]; then
+		    break
+		fi
+	    done
+	fi
+	rm -f $pidfile
     fi
 }
 
