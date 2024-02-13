@@ -31,21 +31,23 @@ command_args="--key-file=${munged_keyfile}"
 
 munged_stop()
 {
-    echo "Stopping $name."
-    pids="$(pgrep -d ' ' $name)"
-    if [ -n "$pids" ]; then
-        echo "Waiting for PIDs: $pids"
-        for signal in TERM INT QUIT KILL
-        do
-            kill -s $signal $pids
-            sleep 1
-            pids=$(pgrep -d ' ' $name)
-            if [ -z "$pids" ]; then
-                break
-            fi
-        done
+    if checkyesno $rcvar; then
+	echo "Stopping $name."
+	pids="$(pgrep -d ' ' $name)"
+	if [ -n "$pids" ]; then
+	    echo "Waiting for PIDs: $pids"
+	    for signal in TERM INT QUIT KILL
+	    do
+		kill -s $signal $pids
+		sleep 1
+		pids=$(pgrep -d ' ' $name)
+		if [ -z "$pids" ]; then
+		    break
+		fi
+	    done
+	fi
+	rm -f $pidfile
     fi
-    rm -f $pidfile
 }
 
 run_rc_command "$1"
