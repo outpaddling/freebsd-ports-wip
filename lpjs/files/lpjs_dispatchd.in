@@ -1,8 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: lpjs_dispatchd
-# REQUIRE: LOGIN munge
-# BEFORE: LOGIN
+# REQUIRE: LOGIN munged
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf

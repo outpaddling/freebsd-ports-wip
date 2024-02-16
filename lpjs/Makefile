@@ -10,7 +10,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libxtend.so:wip/libxtend \
-		libmunge.so:security/munge
+		libmunge.so:wip/munge
 RUN_DEPENDS=	auto-admin>0:wip/auto-admin
 
 USE_GITHUB=	yes
