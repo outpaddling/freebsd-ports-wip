@@ -1,5 +1,5 @@
 PORTNAME=	lpjs
-DISTVERSION=	0.0.0-334
+DISTVERSION=	0.0.0-336
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -9,6 +9,7 @@ WWW=		https://github.com/outpaddling/LPJS/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	libxtend>=0.2.0.9:wip/libxtend
 LIB_DEPENDS=	libxtend.so:wip/libxtend \
 		libmunge.so:wip/munge
 RUN_DEPENDS=	auto-admin>0:wip/auto-admin
@@ -18,7 +19,7 @@ USE_RC_SUBR=	lpjs_dispatchd lpjs_compd
 
 GH_ACCOUNT=	outpaddling
 GH_PROJECT=	LPJS
-GH_TAGNAME=	48bf6fb0064729e27ac23b5fe4fe3902b63c3ccc
+GH_TAGNAME=	ee14c65dbc94426ed962d83543a1fd60884b000a
 
 # Force debug symbols on until release
 WITH_DEBUG=	yes
