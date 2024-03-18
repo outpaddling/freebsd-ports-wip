@@ -1,5 +1,6 @@
 PORTNAME=	biolibc
 DISTVERSION=	0.2.6
+PORTREVISION=	2
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
