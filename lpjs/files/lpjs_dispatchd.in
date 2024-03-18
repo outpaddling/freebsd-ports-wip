@@ -2,6 +2,7 @@
 
 # PROVIDE: lpjs_dispatchd
 # REQUIRE: DAEMON munged
+# BEFORE: LOGIN
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
@@ -27,9 +28,8 @@ load_rc_config $name
 : ${lpjs_dispatchd_enable="NO"}
 
 # FIXME: Add support for non-root users
-lpjs_dispatchd_user=root
 command=%%PREFIX%%/sbin/$name
-command_args="--daemonize"
+command_args="--daemonize --user lpjs --group lpjs"
 
 lpjs_dispatchd_start() {
     checkyesno $rcvar && echo "Starting $name." && \
