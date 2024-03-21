@@ -41,9 +41,6 @@ WITH_DEBUG=	yes
 CMAKE_ARGS+=	-DVDB_LIBDIR:STRING=${WRKSRC}/ncbi-vdb/build/lib
 
 pre-configure:
-	# The config.c and file-path.posix.cpp reinplaces follow
-	# static patches.  Run "make clean patch" before updating
-	# those patches so this reinplace does not get added to them.
 	@${REINPLACE_CMD} -e 's|"/etc/ncbi"|"${PREFIX}/etc/ncbi"|g' \
 		${WRKSRC}/ncbi-vdb/libs/kfg/config.c
 	@${REINPLACE_CMD} -e 's|/usr/local/bin|${PREFIX}/bin|g' \
