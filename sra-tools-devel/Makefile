@@ -1,6 +1,6 @@
 PORTNAME=	sra-tools
 DISTVERSION=	3.0.10-133
-DISTVERSIONSUFFIX=      -g2a26be56
+DISTVERSIONSUFFIX=	-g2a26be56
 CATEGORIES=	wip biology java
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -34,8 +34,8 @@ OPTIONS_DEFINE=	EXAMPLES
 
 SHEBANG_GLOB=	*.sh
 GH_ACCOUNT=	ncbi
-# FIXME: Switch to ncbi engineering branch
-GH_TUPLE+=	outpaddling:ncbi-vdb:802ae6e:vdb/ncbi-vdb
+# 3.0.10-86-gff143ec1
+GH_TUPLE+=	ncbi:ncbi-vdb:ff143ec1:vdb/ncbi-vdb
 
 WITH_DEBUG=	yes
 CMAKE_ARGS+=	-DVDB_LIBDIR:STRING=${WRKSRC}/ncbi-vdb/build/lib
