@@ -1,5 +1,6 @@
 PORTNAME=	sra-tools
-DISTVERSION=	3.0.6
+DISTVERSION=	3.0.10-133
+DISTVERSIONSUFFIX=      -g2a26be56
 CATEGORIES=	wip biology java
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -32,8 +33,8 @@ JAVA_VERSION=	17+
 OPTIONS_DEFINE=	EXAMPLES
 
 SHEBANG_GLOB=	*.sh
-GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	de3d50d111874171766fd017c8cbcf92a9009263
+GH_ACCOUNT=	ncbi
+# FIXME: Switch to ncbi engineering branch
 GH_TUPLE+=	outpaddling:ncbi-vdb:802ae6e:vdb/ncbi-vdb
 
 WITH_DEBUG=	yes
