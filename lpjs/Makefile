@@ -1,5 +1,5 @@
 PORTNAME=	lpjs
-DISTVERSION=	0.0.0-380
+DISTVERSION=	0.0.0-382
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -22,7 +22,7 @@ GROUPS=		${USERS}
 
 GH_ACCOUNT=	outpaddling
 GH_PROJECT=	LPJS
-GH_TAGNAME=	f1e6c3345ec0b83b111eba0d4670cbb38c552df4
+GH_TAGNAME=	7478997e370d0c3fea2f9d141f1bf674ab3aa727
 
 # Force debug symbols on until release
 WITH_DEBUG=	yes
