@@ -14,6 +14,8 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
 
+MAKE_ENV=	MANDIR=${PREFIX}/share/man
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 
