@@ -137,6 +137,8 @@ share/man/man3/xt_strblank.3.gz
 share/man/man3/xt_strisint.3.gz
 share/man/man3/xt_strisreal.3.gz
 share/man/man3/xt_strlbasecpy.3.gz
+share/man/man3/xt_strlcat.3.gz
+share/man/man3/xt_strlcpy.3.gz
 share/man/man3/xt_strllower.3.gz
 share/man/man3/xt_strlower.3.gz
 share/man/man3/xt_strlupper.3.gz
