@@ -1,0 +1,53 @@
+--- system.mk/Makefile.linux.orig	2022-07-13 08:18:29 UTC
++++ system.mk/Makefile.linux
+@@ -1,10 +1,3 @@
+-PARTY3                = third-party
+-BZIP2VERSION          = bzip2-1.0.6
+-WHICHBZIP2           := ${PARTY3}/${BZIP2VERSION}
+-JANSSONVERSION        = jansson-2.6
+-WHICHJANSSON         := ${PARTY3}/${JANSSONVERSION}
+-ZLIBVERSION           = zlib-1.2.7
+-WHICHZLIB            := ${PARTY3}/${ZLIBVERSION}
+ APPDIR                = applications/bed
+ WDIR                  = ${shell pwd}
+ ifndef CC
+@@ -17,7 +10,7 @@ BINDIR_MODULE         = modules
+ BINDIR                = bin
+ BINDIR_MODULE         = modules
+ 
+-default: support
++default:
+ 	$(MAKE) build -f $(SELF)
+ 
+ SUBDIRS = ${APPDIR}/bedextract/src ${APPDIR}/bedmap/src ${APPDIR}/bedops/src ${APPDIR}/closestfeats/src ${APPDIR}/conversion/src ${APPDIR}/sort-bed/src ${APPDIR}/starch/src 
+@@ -41,10 +34,6 @@ clean: clean_debug clean_gprof clean_postfix $(SUBDIRS
+ clean: clean_debug clean_gprof clean_postfix $(SUBDIRS)
+ 	rm -rf ${WHICHBZIP2}
+ 	rm -f ${PARTY3}/bzip2
+-	rm -rf ${WHICHJANSSON}
+-	rm -f ${PARTY3}/jansson
+-	rm -rf ${WHICHZLIB}
+-	rm -f ${PARTY3}/zlib
+ 	rm -rf ${BINDIR}
+ 
+ clean_debug:
+@@ -60,18 +49,4 @@ clean_postfix:
+ #
+ # third-party libraries
+ #
+-LIBS = $(addprefix $(PARTY3)/, jansson/lib/libjansson.a bzip2/libbz2.a zlib/libz.a)
+-
+-support: $(LIBS)
+-
+-${PARTY3}/jansson/lib/libjansson.a: $(WHICHJANSSON).tar.bz2
+-	bzcat $^ | tar -x -C ${PARTY3}
+-	cd ${PARTY3}/${JANSSONVERSION} && ./configure --prefix=${WDIR}/${PARTY3}/${JANSSONVERSION} && $(MAKE) && $(MAKE) install && cd ${WDIR} && rm -f jansson && ln -sf ${JANSSONVERSION} ${PARTY3}/jansson
+-
+-$(PARTY3)/bzip2/libbz2.a: $(WHICHBZIP2).tar.bz2
+-	bzcat $^ | tar -x -C ${PARTY3}
+-	cd ${PARTY3}/${BZIP2VERSION} && $(MAKE) libbz2.a && cd ${WDIR} && rm -f bzip2 && ln -sf ${BZIP2VERSION} ${PARTY3}/bzip2
+-
+-${PARTY3}/zlib/libz.a: $(WHICHZLIB).tar.bz2
+-	bzcat $^ | tar -x -C ${PARTY3}
+-	cd ${PARTY3}/${ZLIBVERSION} && ./configure --static && $(MAKE) && cd ${WDIR} && rm -f zlib && ln -sf ${ZLIBVERSION} ${PARTY3}/zlib
++LIBS = -ljansson -lbz2 -lz

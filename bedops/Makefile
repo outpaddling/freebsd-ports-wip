@@ -1,5 +1,5 @@
 PORTNAME=	bedops
-PORTVERSION=	2.4.20
+PORTVERSION=	2.4.41
 DISTVERSIONPREFIX=v
 CATEGORIES=	wip biology
 
@@ -26,7 +26,18 @@ CXXFLAGS+=	-I${LOCALBASE}/include
 # Unsure
 MAKE_JOBS_UNSAFE=	yes
 
-post-patch:
-	${CP} ${FILESDIR}/Makefile.simple ${WRKSRC}/system.mk
+# FIXME: Find a way to support ENODATA
+pre-configure:
+	${REINPLACE_CMD} \
+		-e '/^LOCAL/d' \
+		-e 's|-I$${LOCALJANSSONINCDIR} -I$${LOCALBZIP2INCDIR} -I$${LOCALZLIBINCDIR}|-I${LOCALBASE}/include|g' \
+		-e 's|-L$${LOCALJANSSONLIBDIR} -L$${LOCALBZIP2LIBDIR} -L$${LOCALZLIBDIR}|-L${LOCALBASE}/lib|g' \
+		-e 's|$${LOCALJANSSONLIB} $${LOCALBZIP2LIB} $${LOCALZLIBLIB}|-ljansson -lbz2 -lz|g' \
+		${WRKSRC}/applications/bed/*/src/Makefile
+	${REINPLACE_CMD} -e 's|deflateInit2cpp|deflateInit2|g' \
+		${WRKSRC}/applications/bed/starch/src/starchcat.c \
+		${WRKSRC}/interfaces/src/data/starch/starchFileHelpers.c
+	${REINPLACE_CMD} -e 's|ENODATA|EIO|g' \
+		${WRKSRC}/applications/bed/conversion/src/convert2bed.c
 
 .include <bsd.port.mk>
