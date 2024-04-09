@@ -27,7 +27,6 @@ GH_TAGNAME=	c6ee1e19e8688ec2042ca37378705272bb02a1eb
 # Force debug symbols on until release
 WITH_DEBUG=	yes
 
-pre-build:
-	cd ${WRKSRC} && ${MAKE} depend LOCALBASE=${LOCALBASE}
+MAKE_ENV=	MANDIR=${PREFIX}/share/man
 
 .include <bsd.port.mk>
