@@ -13,4 +13,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 GH_TAGNAME=	88f4b7db8e6663bc175840285b88b957294004f3
 
+MAKE_ARGS+=	MANPREFIX=${PREFIX}/share
+
 .include <bsd.port.mk>

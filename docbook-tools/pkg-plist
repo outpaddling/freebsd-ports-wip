@@ -7,4 +7,4 @@ bin/dbk-strip
 bin/dbk-wrap-all-code
 bin/dbk-wrap-code
 bin/dbk-wrap-genmake
-man/man1/dbk-strip.1.gz
+share/man/man1/dbk-strip.1.gz
