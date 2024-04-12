@@ -4,9 +4,6 @@ bin/ascii
 bin/runjava
 bin/search_headers
 bin/search_libs
-man/man1/ape.1.gz
-man/man1/apeascii.1.gz
-man/man1/apekeys.1.gz
 %%DATADIR%%/Languages/AWK/Macros/macros
 %%DATADIR%%/Languages/AWK/Macros/menu.txt
 %%DATADIR%%/Languages/AWK/language_opts
@@ -194,3 +191,6 @@ man/man1/apekeys.1.gz
 %%DATADIR%%/Languages/syntax_highlighting
 %%DATADIR%%/custom_menu
 %%DATADIR%%/options.rc
+share/man/man1/ape.1.gz
+share/man/man1/apeascii.1.gz
+share/man/man1/apekeys.1.gz
