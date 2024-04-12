@@ -1,7 +1,7 @@
 PORTNAME=	MST-Bench
 DISTVERSION=	0.2.2
 PORTREVISION=	1
-CATEGORIES=	benchmarks
+CATEGORIES=	wip benchmarks
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Maximum sustainable throughput benchmark
