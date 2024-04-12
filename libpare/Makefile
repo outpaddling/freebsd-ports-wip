@@ -12,8 +12,10 @@ LICENSE=	BSD2CLAUSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 
+MAKE_ENV=	MANPREFIX=${PREFIX}/share
+
 PLIST_FILES=	lib/libpare.a \
 		include/pare.h \
-		man/man3/pare.3.gz
+		share/man/man3/pare.3.gz
 
 .include <bsd.port.mk>
