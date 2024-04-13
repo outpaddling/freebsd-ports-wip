@@ -23,4 +23,6 @@ GH_ACCOUNT=	auerlab
 
 SHEBANG_FILES=	Scripts/*.py
 
+MAKE_ARGS+=	MANPREFIX=${PREFIX}/share
+
 .include <bsd.port.mk>
