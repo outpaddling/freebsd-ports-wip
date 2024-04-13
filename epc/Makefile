@@ -20,6 +20,8 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
 
+MAKE_ARGS+=	MANPREFIX=${PREFIX}/share
+
 pre-build:
 	${MAKE} depend
 
