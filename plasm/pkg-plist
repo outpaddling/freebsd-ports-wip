@@ -2,4 +2,4 @@ bin/plasm
 bin/plasm.bin
 include/plasm/ecisc-bits.h
 include/plasm/riscv-bits.h
-man/man1/plasm.1.gz
+share/man/man1/plasm.1.gz
