@@ -1,7 +1,8 @@
 # $FreeBSD: head/devel/libgamepad/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	libgamepad
-PORTVERSION=	0.1.2
+DISTVERSION=	0.1.2-1
+DISTVERSIONSUFFIX=	-g615195b
 CATEGORIES=	wip devel games
 
 MAINTAINER=	jwb@FreeBSD.org
