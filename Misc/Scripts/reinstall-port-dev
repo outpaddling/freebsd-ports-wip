@@ -1,5 +1,0 @@
-#!/bin/sh
-
-pkg delete -y port-dev
-pkg install -y portlint
-wip-reinstall-port -u -r port-dev
