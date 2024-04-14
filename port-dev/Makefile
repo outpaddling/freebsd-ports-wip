@@ -5,7 +5,7 @@ CATEGORIES=	wip ports-mgmt
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for port development
-WWW=		https://www.acadix.biz
+WWW=		https://github.com/outpaddling/port-dev
 
 LICENSE=	BSD3CLAUSE
 

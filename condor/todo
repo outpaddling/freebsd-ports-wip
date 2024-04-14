@@ -1,5 +1,0 @@
-
-This version is misbehaving when running master.  Some compute hosts are
-never claimed and matching seems to be slow and unreliable.
-
-Compute hosts seem to run fine with 8.6.13 and 8.4.12 on the master.

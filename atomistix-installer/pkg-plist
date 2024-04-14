@@ -1,4 +1,0 @@
-bin/atomistix-installer
-bin/atomistix-patch
-libexec/atomistix-patch.sed
-man/man1/atomistix-installer.1.gz

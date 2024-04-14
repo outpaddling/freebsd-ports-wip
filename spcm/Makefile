@@ -5,7 +5,7 @@ CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for building and managing HPC clusters
-WWW=		https://acadix.biz/cluster-admin.php
+WWW=		https://github.com/outpaddling/SPCM
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

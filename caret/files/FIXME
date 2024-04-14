@@ -1,4 +1,0 @@
-The gif, jpeg, and tiff plugins are disabled due to a problem with the
-qt 4.4.1 port.  Q_IMPORT_PLUGIN works fine with the 4.3.1 port, but
-produces a link error with 4.4.1 that I have not been able to track down.
-(undefined reference to qt_plugin_instance_{gif|jpeg|tiff}).

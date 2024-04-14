@@ -5,7 +5,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Open source firmware for Vex robotics controllers
-WWW=		https://personalpages.tds.net/~jwbacon/vex.html
+WWW=		https://github.com/outpaddling/openvex
 
 LICENSE=	GPLv3
 
