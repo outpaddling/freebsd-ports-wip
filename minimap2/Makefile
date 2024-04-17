@@ -21,5 +21,6 @@ ALL_TARGET=	extra
 INSTALL_TARGET=	install-strip
 
 MAKEFILE=	Makefile.simde
+MAKE_ARGS=	MAN1DIR=${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
