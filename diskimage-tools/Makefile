@@ -14,9 +14,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 
 NO_BUILD=	yes
+MANPREFIX=	${PREFIX}/share
 
 do-install:
-	@${MKDIR} ${PREFIX}/sbin
+	@${MKDIR} ${PREFIX}/sbin ${MANPREFIX}/man/man1
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/Man/*.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
