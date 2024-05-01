@@ -1,6 +1,6 @@
-TIMESTAMP = 1644155282
-SHA256 (ekg-freebayes-v1.3.6_GH0.tar.gz) = d668c0b433cc0f11498ace10e48d72a7f0f40ca23b391b72e975ffafd1c13044
-SIZE (ekg-freebayes-v1.3.6_GH0.tar.gz) = 2898209
+TIMESTAMP = 1714566295
+SHA256 (ekg-freebayes-v1.3.8_GH0.tar.gz) = d1c24b1d1b35277e7403cd67063557998218a105c916b01a745e7704715fce67
+SIZE (ekg-freebayes-v1.3.8_GH0.tar.gz) = 2902438
 SHA256 (ekg-intervaltree-17ddd57_GH0.tar.gz) = c2274e2382f893241847f75940ad15bac9d1e122da4416b0d2fc61ebba527ee1
 SIZE (ekg-intervaltree-17ddd57_GH0.tar.gz) = 72488
 SHA256 (ekg-vcflib-d4073c3_GH0.tar.gz) = 27ed96714eeaa871b8036bcb308db5256b8266cadd2689fbd1dbf3771611b879
