@@ -1,6 +1,6 @@
 PORTNAME=		dDocent
 DISTVERSIONPREFIX=	v
-DISTVERSION=		2.9.7
+DISTVERSION=		2.9.8
 CATEGORIES=		wip biology java perl5 python
 
 MAINTAINER=	jwb@FreeBSD.org
