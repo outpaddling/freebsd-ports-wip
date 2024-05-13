@@ -1,4 +1,4 @@
---- src/Gui/CMakeLists.txt.orig	2023-11-15 03:07:57 UTC
+--- src/Gui/CMakeLists.txt.orig	2024-03-20 18:17:17 UTC
 +++ src/Gui/CMakeLists.txt
 @@ -73,7 +73,7 @@ else(MSVC)
          FreeCADApp

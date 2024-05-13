@@ -1,6 +1,6 @@
 PORTNAME=	FreeCAD
-DISTVERSION=	0.21.1
-PORTREVISION=	2
+DISTVERSION=	0.21.2
+PORTREVISION=	5
 CATEGORIES=	wip cad
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -15,33 +15,37 @@ BUILD_DEPENDS=	doxygen:devel/doxygen \
 		pyside_tool.py:devel/pyside2-tools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR} \
-		${PYTHON_INCLUDEDIR}/CXX/Config.hxx:devel/py-cxx@${PY_FLAVOR} \
+		${PYTHON_INCLUDEDIR}/CXX/Config.hxx:devel/py-cxx \
 		swig:devel/swig
-LIB_DEPENDS=	\
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libyaml-cpp.so:devel/yaml-cpp \
 		libfreetype.so:print/freetype2 \
+		libtbb.so:devel/onetbb \
+		${PY_BOOST} \
+		libpyside2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/pyside2@${PY_FLAVOR} \
 		libCoin.so:graphics/Coin \
 		libfmt.so:devel/libfmt \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
 		libvtksys-${VTK_VER}.so:math/vtk${VTK_VER:R} \
 		libTKernel.so:cad/opencascade \
 		libxerces-c.so:textproc/xerces-c3 \
 		libboost_thread.so:devel/boost-libs \
-		libmed.so:french/med \
-		libshiboken2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/shiboken2@${PY_FLAVOR} \
-		libhdf5.so:science/hdf5 \
-		libmpi.so:net/mpich \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreeimage.so:graphics/freeimage \
-		libpyside2.cpython-39.so:devel/pyside2 \
-		libavutil.so.56:multimedia/ffmpeg4 \
-		libdraco.so:archivers/draco
+		libavutil.so:multimedia/ffmpeg4 \
+		libmed.so:french/med \
+		libshiboken2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/shiboken2@${PY_FLAVOR} \
+		libhdf5.so:science/hdf5
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		dos2unix compiler:c++17-lang cmake cpe gl eigen:3 fortran \
+USES=		dos2unix compiler:c++17-lang cmake cpe gl eigen:3 fortran gmake jpeg \
 		localbase:ldflags mpi:openmpi pkgconfig python localbase qt:5 xorg \
 		desktop-file-utils shared-mime-info shebangfix
 USE_GITHUB=	yes
+GH_TAGNAME=	869cb1f83b5f92ee134dafde46c9c5e0dceb8889 # 2014-05-13
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
 USE_QT=		buildtools concurrent core declarative designer gui \

@@ -1,4 +1,4 @@
---- cMake/FreeCAD_Helpers/SetupSalomeSMESH.cmake.orig	2023-08-31 02:32:05 UTC
+--- cMake/FreeCAD_Helpers/SetupSalomeSMESH.cmake.orig	2024-05-13 22:26:23 UTC
 +++ cMake/FreeCAD_Helpers/SetupSalomeSMESH.cmake
 @@ -26,7 +26,7 @@ macro(SetupSalomeSMESH)
  
