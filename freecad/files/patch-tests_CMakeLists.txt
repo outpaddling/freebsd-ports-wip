@@ -1,0 +1,11 @@
+--- tests/CMakeLists.txt.orig	2024-05-13 23:21:35 UTC
++++ tests/CMakeLists.txt
+@@ -106,7 +106,7 @@ endforeach()
+     add_executable(${exe})
+ endforeach()
+ 
+-add_subdirectory(lib)
++# add_subdirectory(lib)
+ add_subdirectory(src)
+ 
+ target_include_directories(Tests_run PUBLIC
