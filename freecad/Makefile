@@ -17,7 +17,8 @@ BUILD_DEPENDS=	doxygen:devel/doxygen \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_INCLUDEDIR}/CXX/Config.hxx:devel/py-cxx \
 		swig:devel/swig \
-		microsoft-gsl>0:devel/microsoft-gsl
+		microsoft-gsl>0:devel/microsoft-gsl \
+		googletest>0:devel/googletest
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libyaml-cpp.so:devel/yaml-cpp \
 		libfreetype.so:print/freetype2 \
