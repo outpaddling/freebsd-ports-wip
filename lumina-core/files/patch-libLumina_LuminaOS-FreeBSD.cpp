@@ -1,17 +1,15 @@
 --- libLumina/LuminaOS-FreeBSD.cpp.orig	2021-12-26 02:33:45 UTC
 +++ libLumina/LuminaOS-FreeBSD.cpp
-@@ -9,6 +9,10 @@
+@@ -9,6 +9,8 @@
  #include <unistd.h>
  #include <sys/types.h>
  #include <sys/sysctl.h>
 +#include <sys/param.h>	// __FreeBSD_version
 +#include <dev/acpica/acpiio.h>
-+#include <iostream>
-+#include <fstream>
  
  #include <QDebug>
  //can't read xbrightness settings - assume invalid until set
-@@ -171,10 +175,30 @@ int LOS::audioVolume(){ //Returns: audio volume as a p
+@@ -171,10 +173,30 @@ int LOS::audioVolume(){ //Returns: audio volume as a p
       audiovolume = out;
    }else{
      //probe the system for the current volume (other utils could be changing it)
@@ -42,7 +40,7 @@
          if(L>R){ out = L; }
          else{ out = R; }
  	if(out != audiovolume){
-@@ -195,10 +219,27 @@ void LOS::setAudioVolume(int percent){
+@@ -195,10 +217,27 @@ void LOS::setAudioVolume(int percent){
    if(remoteSession){
      LUtils::runCmd(QString("pactl set-sink-volume @DEFAULT_SINK@ ")+QString::number(percent)+"%");
    }else{
@@ -74,7 +72,7 @@
        int diff = L-R;
        if((percent == L) && (L==R)){ return; } //already set to that volume
        if(diff<0){ R=percent; L=percent+diff; } //R Greater
-@@ -207,7 +248,7 @@ void LOS::setAudioVolume(int percent){
+@@ -207,7 +246,7 @@ void LOS::setAudioVolume(int percent){
        if(L<0){L=0;}else if(L>100){L=100;}
        if(R<0){R=0;}else if(R>100){R=100;}
        //Run Command
@@ -83,7 +81,7 @@
      }
    }
    audiovolume = percent; //save for checking later
-@@ -220,15 +261,32 @@ void LOS::changeAudioVolume(int percentdiff){
+@@ -220,15 +259,32 @@ void LOS::changeAudioVolume(int percentdiff){
    if(remoteSession){
      LUtils::runCmd(QString("pactl set-sink-volume @DEFAULT_SINK@ ")+((percentdiff>0)?"+" : "") + QString::number(percentdiff)+"%");
    }else{
@@ -121,7 +119,7 @@
      }
    }
  }
-@@ -289,31 +347,53 @@ void LOS::systemSuspend(){
+@@ -289,31 +345,53 @@ void LOS::systemSuspend(){
  }
  
  //Battery Availability
