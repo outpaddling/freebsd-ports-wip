@@ -9,7 +9,7 @@
  
  #include <QDebug>
  //can't read xbrightness settings - assume invalid until set
-@@ -171,10 +173,30 @@ int LOS::audioVolume(){ //Returns: audio volume as a p
+@@ -171,10 +173,29 @@ int LOS::audioVolume(){ //Returns: audio volume as a p
       audiovolume = out;
    }else{
      //probe the system for the current volume (other utils could be changing it)
@@ -21,7 +21,6 @@
 +    //	vol.volume=0.75:0.75
 +    //      vol.mute=0
 +    // Might be better to use the mixer API instead
-+    // Debug
 +#if __FreeBSD_version < 1400000
        QString info = LUtils::getCmdOutput("mixer -S vol").join(":").simplified(); //ignores any other lines
        if(!info.isEmpty()){
@@ -40,7 +39,7 @@
          if(L>R){ out = L; }
          else{ out = R; }
  	if(out != audiovolume){
-@@ -195,10 +217,27 @@ void LOS::setAudioVolume(int percent){
+@@ -195,10 +216,27 @@ void LOS::setAudioVolume(int percent){
    if(remoteSession){
      LUtils::runCmd(QString("pactl set-sink-volume @DEFAULT_SINK@ ")+QString::number(percent)+"%");
    }else{
@@ -72,16 +71,19 @@
        int diff = L-R;
        if((percent == L) && (L==R)){ return; } //already set to that volume
        if(diff<0){ R=percent; L=percent+diff; } //R Greater
-@@ -207,7 +246,7 @@ void LOS::setAudioVolume(int percent){
+@@ -207,7 +245,11 @@ void LOS::setAudioVolume(int percent){
        if(L<0){L=0;}else if(L>100){L=100;}
        if(R<0){R=0;}else if(R>100){R=100;}
        //Run Command
--      LUtils::runCmd("mixer vol "+QString::number(L)+":"+QString::number(R));
++#if __FreeBSD_version < 1400000
+       LUtils::runCmd("mixer vol "+QString::number(L)+":"+QString::number(R));
++#else
 +      LUtils::runCmd("mixer vol="+QString::number(L/100.0)+":"+QString::number(R/100.0));
++#endif
      }
    }
    audiovolume = percent; //save for checking later
-@@ -220,15 +259,32 @@ void LOS::changeAudioVolume(int percentdiff){
+@@ -220,15 +262,36 @@ void LOS::changeAudioVolume(int percentdiff){
    if(remoteSession){
      LUtils::runCmd(QString("pactl set-sink-volume @DEFAULT_SINK@ ")+((percentdiff>0)?"+" : "") + QString::number(percentdiff)+"%");
    }else{
@@ -114,12 +116,15 @@
        if(L<0){L=0;}else if(L>100){L=100;}
        if(R<0){R=0;}else if(R>100){R=100;}
        //Run Command
--      LUtils::runCmd("mixer vol "+QString::number(L)+":"+QString::number(R));
++#if __FreeBSD_version < 1400000
+       LUtils::runCmd("mixer vol "+QString::number(L)+":"+QString::number(R));
++#else
 +      LUtils::runCmd("mixer vol="+QString::number(L/100.0)+":"+QString::number(R/100.0));
++#endif
      }
    }
  }
-@@ -289,31 +345,53 @@ void LOS::systemSuspend(){
+@@ -289,31 +352,53 @@ void LOS::systemSuspend(){
  }
  
  //Battery Availability
