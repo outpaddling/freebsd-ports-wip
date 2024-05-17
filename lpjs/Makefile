@@ -1,6 +1,6 @@
 PORTNAME=	lpjs
-DISTVERSION=	0.0.3-22
-DISTVERSIONSUFFIX=	-g69fdb9b
+DISTVERSION=	0.0.3-29
+DISTVERSIONSUFFIX=	-gf9dd3fb
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,10 +11,8 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	libxtend>=0.2.0.9:wip/libxtend
-LIB_DEPENDS=	libxtend.so:wip/libxtend \
-		libmunge.so:wip/munge
-RUN_DEPENDS=	auto-admin>0:wip/auto-admin \
-		runas>0:sysutils/runas
+LIB_DEPENDS=	libxtend.so:wip/libxtend libmunge.so:wip/munge
+RUN_DEPENDS=	auto-admin>0:wip/auto-admin runas>0:sysutils/runas
 
 USE_GITHUB=	yes
 USE_RC_SUBR=	lpjs_dispatchd lpjs_compd
@@ -29,5 +27,7 @@ GH_PROJECT=	LPJS
 WITH_DEBUG=	yes
 
 MAKE_ENV=	MANDIR=${PREFIX}/share/man
+
+PLIST_SUB=	USER=${USERS} GROUP=${GROUPS}
 
 .include <bsd.port.mk>

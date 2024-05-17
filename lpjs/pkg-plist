@@ -1,5 +1,9 @@
 bin/lpjs
+@owner %%USER%%
+@group %%GROUP%%
 %%ETCDIR%%/config.sample
+@owner
+@group
 lib/liblpjs.a
 libexec/lpjs/ad-hoc
 libexec/lpjs/admin
@@ -33,3 +37,6 @@ sbin/lpjs_dispatchd
 %%DATADIR%%/Systemd/lpjs_dispatchd.service
 %%DATADIR%%/Systemd/lpjs_dispatchd.sysconfig
 share/man/man1/lpjs-nodes.1.gz
+@dir(%%USER%%,%%GROUP%%,755) etc/lpjs
+@dir(%%USER%%,%%GROUP%%,755) var/log/lpjs
+@dir(%%USER%%,%%GROUP%%,755) var/spool/lpjs
