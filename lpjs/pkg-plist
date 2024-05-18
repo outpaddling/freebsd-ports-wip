@@ -1,5 +1,5 @@
 bin/lpjs
-@sample(%%USER%%,%%GROUP%%,0644) %%ETCDIR%%/config.sample
+@sample(%%USER%%,%%GROUP%%,644) %%ETCDIR%%/config.sample
 lib/liblpjs.a
 libexec/lpjs/ad-hoc
 libexec/lpjs/admin
@@ -19,7 +19,6 @@ libexec/lpjs/munge-enable
 libexec/lpjs/nodes
 libexec/lpjs/reset-queue
 libexec/lpjs/restart
-libexec/lpjs/sim
 libexec/lpjs/start
 libexec/lpjs/stop
 libexec/lpjs/submit
@@ -33,6 +32,5 @@ sbin/lpjs_dispatchd
 %%DATADIR%%/Systemd/lpjs_dispatchd.service
 %%DATADIR%%/Systemd/lpjs_dispatchd.sysconfig
 share/man/man1/lpjs-nodes.1.gz
-@dir(%%USER%%,%%GROUP%%,755) etc/lpjs
 @dir(%%USER%%,%%GROUP%%,755) var/log/lpjs
 @dir(%%USER%%,%%GROUP%%,755) var/spool/lpjs
