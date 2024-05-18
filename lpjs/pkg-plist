@@ -1,9 +1,5 @@
 bin/lpjs
-@owner %%USER%%
-@group %%GROUP%%
-%%ETCDIR%%/config.sample
-@owner
-@group
+@sample(%%USER%%,%%GROUP%%,644) %%ETCDIR%%/config.sample
 lib/liblpjs.a
 libexec/lpjs/ad-hoc
 libexec/lpjs/admin
