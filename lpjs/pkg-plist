@@ -31,6 +31,21 @@ sbin/lpjs_dispatchd
 %%DATADIR%%/Systemd/lpjs_compd.sysconfig
 %%DATADIR%%/Systemd/lpjs_dispatchd.service
 %%DATADIR%%/Systemd/lpjs_dispatchd.sysconfig
+share/man/man1/lpjs-ad-hoc.1.gz
+share/man/man1/lpjs-create-script.1.gz
+share/man/man1/lpjs-menu.1.gz
 share/man/man1/lpjs-nodes.1.gz
+share/man/man8/lpjs-admin.8.gz
+share/man/man8/lpjs-clear-queue.8.gz
+share/man/man8/lpjs-compd-disable.8.gz
+share/man/man8/lpjs-compd-enable.8.gz
+share/man/man8/lpjs-dispatchd-disable.8.gz
+share/man/man8/lpjs-dispatchd-enable.8.gz
+share/man/man8/lpjs-log.8.gz
+share/man/man8/lpjs-munge-enable.8.gz
+share/man/man8/lpjs-reset-queue.8.gz
+share/man/man8/lpjs-restart.8.gz
+share/man/man8/lpjs-start.8.gz
+share/man/man8/lpjs-stop.8.gz
 @dir(%%USER%%,%%GROUP%%,755) var/log/lpjs
 @dir(%%USER%%,%%GROUP%%,755) var/spool/lpjs
