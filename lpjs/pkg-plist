@@ -1,5 +1,5 @@
 bin/lpjs
-@sample(%%USER%%,%%GROUP%%,644) %%ETCDIR%%/config.sample
+@sample(lpjs,lpjs,644) %%ETCDIR%%/config.sample
 lib/liblpjs.a
 libexec/lpjs/ad-hoc
 libexec/lpjs/admin
@@ -32,9 +32,12 @@ sbin/lpjs_dispatchd
 %%DATADIR%%/Systemd/lpjs_dispatchd.service
 %%DATADIR%%/Systemd/lpjs_dispatchd.sysconfig
 share/man/man1/lpjs-ad-hoc.1.gz
+share/man/man1/lpjs-cancel.1.gz
 share/man/man1/lpjs-create-script.1.gz
+share/man/man1/lpjs-jobs.1.gz
 share/man/man1/lpjs-menu.1.gz
 share/man/man1/lpjs-nodes.1.gz
+share/man/man1/lpjs-submit.1.gz
 share/man/man8/lpjs-admin.8.gz
 share/man/man8/lpjs-clear-queue.8.gz
 share/man/man8/lpjs-compd-disable.8.gz
@@ -47,5 +50,7 @@ share/man/man8/lpjs-reset-queue.8.gz
 share/man/man8/lpjs-restart.8.gz
 share/man/man8/lpjs-start.8.gz
 share/man/man8/lpjs-stop.8.gz
-@dir(%%USER%%,%%GROUP%%,755) var/log/lpjs
-@dir(%%USER%%,%%GROUP%%,755) var/spool/lpjs
+share/man/man8/lpjs_compd.8.gz
+share/man/man8/lpjs_dispatchd.8.gz
+@dir(lpjs,lpjs,755) var/log/lpjs
+@dir(lpjs,lpjs,755) var/spool/lpjs
