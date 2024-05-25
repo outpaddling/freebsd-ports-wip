@@ -1,6 +1,6 @@
 PORTNAME=	spcm
-DISTVERSION=	0.5.9-7
-DISTVERSIONSUFFIX=	-ga9096d5
+DISTVERSION=	0.5.9-12
+DISTVERSIONSUFFIX=	-gd88225e
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -20,6 +20,6 @@ GH_PROJECT=	SPCM
 MAKE_ENV+=	DATADIR=${DATADIR}
 
 post-stage:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cluster-passwd
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/spcm-passwd
 
 .include <bsd.port.mk>
