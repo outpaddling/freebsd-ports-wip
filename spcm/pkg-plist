@@ -1,4 +1,3 @@
-bin/job-top
 bin/lpjs-find-strays
 bin/psnode
 bin/spcm-all-nodes
@@ -7,6 +6,7 @@ bin/spcm-down-nodes
 bin/spcm-file-servers
 bin/spcm-head-check
 bin/spcm-io-nodes
+bin/spcm-job-top
 bin/spcm-node-iostat
 bin/spcm-node-netstat
 bin/spcm-node-ps
@@ -17,7 +17,6 @@ bin/spcm-pfs-nodes
 bin/spcm-pw-check
 bin/spcm-raid-nodes
 bin/spcm-vis-nodes
-bin/topjob
 bin/topnode
 libexec/add-gecos.awk
 sbin/compute-node-set-arc-max
