@@ -1,5 +1,4 @@
 bin/lpjs-find-strays
-bin/psnode
 bin/spcm-all-nodes
 bin/spcm-compute-nodes
 bin/spcm-down-nodes
@@ -17,9 +16,7 @@ bin/spcm-pfs-nodes
 bin/spcm-pw-check
 bin/spcm-raid-nodes
 bin/spcm-vis-nodes
-bin/topnode
 libexec/add-gecos.awk
-sbin/compute-node-set-arc-max
 sbin/lpjs-cron-updates
 sbin/lpjs-resume-all-updated-nodes
 sbin/lpjs-resume-nodes
@@ -80,6 +77,7 @@ sbin/spcm-remove-user
 sbin/spcm-restore-user
 sbin/spcm-run
 sbin/spcm-services-manager
+sbin/spcm-set-arc-max
 sbin/spcm-set-compute-memory-limits
 sbin/spcm-set-default-nfs-mounts
 sbin/spcm-setup
