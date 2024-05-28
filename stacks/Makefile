@@ -17,7 +17,6 @@ SHEBANG_FILES=	scripts/*.pl scripts/*.py \
 		scripts/stacks-integrate-alignments scripts/stacks-gdb
 GNU_CONFIGURE=	yes
 
-CXXFLAGS+=	-Wno-error
 LDFLAGS+=	-lpthread
 
 .include <bsd.port.pre.mk>
