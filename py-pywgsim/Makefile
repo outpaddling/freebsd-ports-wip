@@ -12,7 +12,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plac>=0:devel/py-plac@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.10
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
