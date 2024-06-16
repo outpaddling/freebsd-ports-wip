@@ -1,11 +1,11 @@
---- tests/CMakeLists.txt.orig	2024-05-13 23:21:35 UTC
+--- tests/CMakeLists.txt.orig	2024-06-16 12:23:18 UTC
 +++ tests/CMakeLists.txt
-@@ -106,7 +106,7 @@ endforeach()
-     add_executable(${exe})
+@@ -121,7 +121,7 @@ if ( EXISTS "${CMAKE_SOURCE_DIR}/tests/lib/googletest"
  endforeach()
  
--add_subdirectory(lib)
-+# add_subdirectory(lib)
+ if ( EXISTS "${CMAKE_SOURCE_DIR}/tests/lib/googletest" )
+-    add_subdirectory(lib)
++    # add_subdirectory(lib)
+ endif()
  add_subdirectory(src)
  
- target_include_directories(Tests_run PUBLIC

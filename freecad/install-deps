@@ -1,0 +1,5 @@
+#!/bin/sh -e
+
+pyver=311
+pkg install -Ay doxygen py$pyver-pybind11 py$pyver-pyside2-tools py$pyver-cxx \
+		swig microsoft-gsl googletest eigen
