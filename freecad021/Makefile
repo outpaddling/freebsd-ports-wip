@@ -1,7 +1,7 @@
 PORTNAME=	FreeCAD
 DISTVERSION=	0.21.2
 PORTREVISION=	1
-CATEGORIES=	cad
+CATEGORIES=	wip cad
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	General purpose 3D CAD modeller
