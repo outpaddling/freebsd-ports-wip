@@ -1,6 +1,6 @@
 PORTNAME=	FreeCAD
 DISTVERSION=	0.21.2
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	wip cad
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -47,7 +47,7 @@ USES=		dos2unix compiler:c++17-lang cmake cpe gl eigen:3 fortran gmake jpeg \
 		localbase:ldflags mpi:openmpi pkgconfig python localbase qt:5 xorg \
 		desktop-file-utils shared-mime-info shebangfix
 USE_GITHUB=	yes
-GH_TAGNAME=	2ad397e18e754aeb61b547507a35a039ca9bf2ab # 2024-06-16
+GH_TAGNAME=	41d67f8e108a77ec0b98a9ca47d85575eb43476c # 2024-07-21
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
 USE_QT=		buildtools concurrent core declarative designer gui \
