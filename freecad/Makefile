@@ -47,7 +47,7 @@ USES=		dos2unix compiler:c++17-lang cmake cpe gl eigen:3 fortran gmake jpeg \
 		localbase:ldflags mpi:openmpi pkgconfig python localbase qt:5 xorg \
 		desktop-file-utils shared-mime-info shebangfix
 USE_GITHUB=	yes
-GH_TAGNAME=	41d67f8e108a77ec0b98a9ca47d85575eb43476c # 2024-07-21
+GH_TAGNAME=	c5408de52591f4a1dfebe14a2a3b589af58d1f3d # 2024-07-31
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
 USE_QT=		buildtools concurrent core declarative designer gui \
