@@ -1,10 +1,11 @@
---- tests/src/Mod/PartDesign/CMakeLists.txt.orig	2024-08-22 12:52:03 UTC
+--- tests/src/Mod/PartDesign/CMakeLists.txt.orig	2024-08-22 13:59:20 UTC
 +++ tests/src/Mod/PartDesign/CMakeLists.txt
-@@ -7,7 +7,7 @@ target_link_libraries(PartDesign_tests_run
+@@ -7,7 +7,8 @@ target_link_libraries(PartDesign_tests_run
  )
  
  target_link_libraries(PartDesign_tests_run
 -        gtest_main
++	gtest_main
 +        gtest
          ${Google_Tests_LIBS}
          PartDesign
