@@ -2624,8 +2624,6 @@ FreeCAD/share/Mod/TechDraw/Templates/locale/zh-CN/landscape/A4_Landscape_CN_NO_C
 FreeCAD/share/Mod/TechDraw/Templates/locale/zh-CN/portrait/A3_Portrait_CN_CLIP.svg
 FreeCAD/share/Mod/TechDraw/Templates/locale/zh-CN/portrait/A4_Portrait_CN_CLIP.svg
 FreeCAD/share/Mod/Test/Resources/icons/TestWorkbench.svg
-%%PORTDOCS%%FreeCAD/%%DOCSDIR%%/LICENSE.html
-%%PORTDOCS%%FreeCAD/%%DOCSDIR%%/ThirdPartyLibraries.html
 FreeCAD/share/examples/AssemblyExample.FCStd
 FreeCAD/share/examples/BIMExample.FCStd
 FreeCAD/share/examples/EngineBlock.FCStd
