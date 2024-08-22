@@ -1,6 +1,6 @@
---- tests/CMakeLists.txt.orig	2024-06-16 12:23:18 UTC
+--- tests/CMakeLists.txt.orig	2024-08-22 12:48:45 UTC
 +++ tests/CMakeLists.txt
-@@ -121,7 +121,7 @@ if ( EXISTS "${CMAKE_SOURCE_DIR}/tests/lib/googletest"
+@@ -124,7 +124,7 @@ if ( EXISTS "${CMAKE_SOURCE_DIR}/tests/lib/googletest"
  endforeach()
  
  if ( EXISTS "${CMAKE_SOURCE_DIR}/tests/lib/googletest" )
@@ -9,3 +9,13 @@
  endif()
  add_subdirectory(src)
  
+@@ -134,7 +134,9 @@ target_link_libraries(Tests_run
+ )
+ target_link_libraries(Tests_run
+     gtest_main
++    gtest
+     gmock_main
++    gmock
+     ${Google_Tests_LIBS}
+     FreeCADApp
+ )

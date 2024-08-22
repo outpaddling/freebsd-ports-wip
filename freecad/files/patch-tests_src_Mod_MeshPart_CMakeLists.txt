@@ -1,0 +1,10 @@
+--- tests/src/Mod/MeshPart/CMakeLists.txt.orig	2024-08-22 12:51:35 UTC
++++ tests/src/Mod/MeshPart/CMakeLists.txt
+@@ -10,6 +10,7 @@ target_link_libraries(MeshPart_tests_run
+ 
+ target_link_libraries(MeshPart_tests_run
+     gtest_main
++    gtest
+     ${Google_Tests_LIBS}
+     MeshPart
+ )

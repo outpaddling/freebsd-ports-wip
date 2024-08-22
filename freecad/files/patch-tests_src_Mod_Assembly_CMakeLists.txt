@@ -1,0 +1,10 @@
+--- tests/src/Mod/Assembly/CMakeLists.txt.orig	2024-08-22 12:50:40 UTC
++++ tests/src/Mod/Assembly/CMakeLists.txt
+@@ -8,6 +8,7 @@ target_link_libraries(Assembly_tests_run
+ 
+ target_link_libraries(Assembly_tests_run
+     gtest_main
++    gtest
+     ${Google_Tests_LIBS}
+     Assembly
+ )

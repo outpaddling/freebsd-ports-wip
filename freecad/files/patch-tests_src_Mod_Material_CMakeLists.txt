@@ -1,0 +1,10 @@
+--- tests/src/Mod/Material/CMakeLists.txt.orig	2024-08-22 12:51:04 UTC
++++ tests/src/Mod/Material/CMakeLists.txt
+@@ -8,6 +8,7 @@ target_link_libraries(Material_tests_run
+ 
+ target_link_libraries(Material_tests_run
+     gtest_main
++    gtest
+     ${Google_Tests_LIBS}
+     Materials
+ )
