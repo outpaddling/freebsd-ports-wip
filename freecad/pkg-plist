@@ -1669,7 +1669,6 @@ FreeCAD/lib/libDriver.so
 FreeCAD/lib/libDriverDAT.so
 FreeCAD/lib/libDriverSTL.so
 FreeCAD/lib/libDriverUNV.so
-FreeCAD/lib/libE57Format.a
 FreeCAD/lib/libFreeCADApp.so
 FreeCAD/lib/libFreeCADBase.so
 FreeCAD/lib/libFreeCADGui.so

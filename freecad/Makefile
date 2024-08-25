@@ -92,6 +92,8 @@ CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DPYSIDE2UICBINARY="${UIC}" \
 		-DBUILD_ENABLE_CXX_STD=C++17
 
+# Remove before commit
+WITH_DEBUG=		yes
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
 # Install XDG icons and files to the standard path
 CMAKE_ARGS+=	-DXDG_DATADIR="${PREFIX}/share"
