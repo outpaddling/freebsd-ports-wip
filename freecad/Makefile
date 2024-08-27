@@ -44,14 +44,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		dos2unix compiler:c++17-lang cmake cpe gl eigen:3 fortran gmake jpeg \
-		localbase:ldflags mpi:openmpi pkgconfig python localbase qt:5 xorg \
+		localbase:ldflags mpi:openmpi pkgconfig python localbase qt:6 xorg \
 		desktop-file-utils shared-mime-info shebangfix
 USE_GITHUB=	yes
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
-USE_QT=		buildtools concurrent core declarative designer gui \
-		linguisttools location network opengl printsupport \
-		qmake:build svg webchannel widgets xml xmlpatterns
+USE_QT=		base declarative location svg tools:build webchannel
+# Qt5
+# buildtools concurrent core designer gui linguisttools network opengl printsupport qmake:build widgets xml xmlpatterns
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	freecad_project
@@ -64,7 +64,8 @@ SHEBANG_FILES=	src/Tools/freecad-thumbnailer
 # our HDF5/CMake integration is messy, so workarounds are required below
 CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DOPENMPI_INCLUDE_DIRS="${LOCALBASE}/mpi/openmpi/include" \
-		-DBUILD_QT5="ON" \
+		-DBUILD_QT5="OFF" \
+		-DFREECAD_QT_VERSION="6" \
 		-DPYTHON_LIBRARY="${PYTHONBASE}/lib/libpython${PYTHON_VER}${PYTHON_ABIVER}.so" \
 		-DPYTHON_INCLUDE_DIR="${PYTHON_INCLUDEDIR}" \
 		-DPYTHON_PACKAGES_PATH="${PYTHON_SITELIBDIR}" \
