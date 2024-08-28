@@ -3,4 +3,4 @@
 pyver=311
 pkg install -Ay doxygen py$pyver-pybind11 py$pyver-pyside2-tools py$pyver-cxx \
 		swig microsoft-gsl googletest eigen
-pkg install -Ay qt6-declarative qt6-location qt6-webengine
+pkg install -Ay qt6-declarative qt6-location qt6-webengine qt6-svg
