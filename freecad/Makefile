@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	doxygen:devel/doxygen \
 		pybind11-config:devel/py-pybind11@${PY_FLAVOR} \
-		pyside_tool.py:devel/pyside2-tools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyside6-tools>0:devel/pyside6-tools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_INCLUDEDIR}/CXX/Config.hxx:devel/py-cxx \
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \
 		libtbb.so:devel/onetbb \
 		${PY_BOOST} \
-		libpyside2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/pyside2@${PY_FLAVOR} \
+		libpyside6.abi3.so:devel/pyside6@${PY_FLAVOR} \
 		libCoin.so:graphics/Coin \
 		libfmt.so:devel/libfmt \
 		libpng.so:graphics/png \
