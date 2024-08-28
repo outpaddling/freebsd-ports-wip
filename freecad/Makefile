@@ -25,6 +25,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libtbb.so:devel/onetbb \
 		${PY_BOOST} \
 		libpyside6.abi3.so:devel/pyside6@${PY_FLAVOR} \
+		libshiboken6.abi3.so:devel/shiboken6 \
 		libCoin.so:graphics/Coin \
 		libfmt.so:devel/libfmt \
 		libpng.so:graphics/png \
@@ -121,6 +122,9 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's/CMAKE_INSTALL_DATAROOTDIR/XDG_DATADIR/g' \
 		${WRKSRC}/src/XDGData/CMakeLists.txt \
 		${WRKSRC}/src/Gui/CMakeLists.txt
+
+post-stage:
+	${RM} -rf ${STAGEDIR}/usr/ports
 
 post-install:
 	${LN} -s ../${PORTNAME}/bin/FreeCAD ${STAGEDIR}${LOCALBASE}/bin/FreeCAD

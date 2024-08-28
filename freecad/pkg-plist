@@ -1669,6 +1669,7 @@ FreeCAD/lib/libDriver.so
 FreeCAD/lib/libDriverDAT.so
 FreeCAD/lib/libDriverSTL.so
 FreeCAD/lib/libDriverUNV.so
+FreeCAD/lib/libE57Format-d.a
 FreeCAD/lib/libFreeCADApp.so
 FreeCAD/lib/libFreeCADBase.so
 FreeCAD/lib/libFreeCADGui.so
@@ -2085,6 +2086,7 @@ FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Shiny Plastic.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Silver.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Steel.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Stone.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Appearance/Wood.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Fluid/Air.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Fluid/Argon.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Fluid/Carbon Dioxide.FCMat
@@ -2094,10 +2096,15 @@ FreeCAD/share/Mod/Material/Resources/Materials/Fluid/Water.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Machining/AluminumCastAlloy.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Machining/AluminumWroughtAlloy.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Machining/AusteniticStainlessSteel.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Machining/BalsaWood.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Machining/GrayCastIron.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Machining/HardWood.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Machining/LowAlloySteel.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Machining/MDF.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Machining/MalleableCastIron.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Machining/MildSteel.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Machining/ParticleBoard.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Machining/SoftWood.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Machining/ToolSteel.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Patterns/PAT/Diagonal4.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Patterns/PAT/Diagonal5.FCMat
