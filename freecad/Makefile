@@ -1,6 +1,6 @@
 PORTNAME=	FreeCAD
-DISTVERSION=	0.21.2-4845
-DISTVERSIONSUFFIX=	-gbaec1037d8
+DISTVERSION=	0.21.2-4887
+DISTVERSIONSUFFIX=	-g73cb5bafe0
 CATEGORIES=	wip cad
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -49,7 +49,7 @@ USES=		dos2unix compiler:c++17-lang cmake cpe gl eigen:3 fortran gmake jpeg \
 USE_GITHUB=	yes
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
-USE_QT=		base declarative location svg tools:build webchannel
+USE_QT=		base declarative location svg tools webchannel
 # Qt5
 # buildtools concurrent core designer gui linguisttools network opengl printsupport qmake:build widgets xml xmlpatterns
 USE_LDCONFIG=	yes
