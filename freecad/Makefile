@@ -1,6 +1,6 @@
 PORTNAME=	FreeCAD
-DISTVERSION=	0.21.2-4845
-DISTVERSIONSUFFIX=	-gbaec1037d8
+DISTVERSION=	0.21.2-4887
+DISTVERSIONSUFFIX=	-g73cb5bafe0
 CATEGORIES=	wip cad
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	doxygen:devel/doxygen \
 		pybind11-config:devel/py-pybind11@${PY_FLAVOR} \
-		pyside_tool.py:devel/pyside2-tools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyside6-tools>0:devel/pyside6-tools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_INCLUDEDIR}/CXX/Config.hxx:devel/py-cxx \
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \
 		libtbb.so:devel/onetbb \
 		${PY_BOOST} \
-		libpyside2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/pyside2@${PY_FLAVOR} \
+		libpyside6.abi3.so:devel/pyside6@${PY_FLAVOR} \
 		libCoin.so:graphics/Coin \
 		libfmt.so:devel/libfmt \
 		libpng.so:graphics/png \
@@ -49,7 +49,7 @@ USES=		dos2unix compiler:c++17-lang cmake cpe gl eigen:3 fortran gmake jpeg \
 USE_GITHUB=	yes
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
-USE_QT=		base declarative location svg tools:build webchannel
+USE_QT=		base declarative location svg tools webchannel
 # Qt5
 # buildtools concurrent core designer gui linguisttools network opengl printsupport qmake:build widgets xml xmlpatterns
 USE_LDCONFIG=	yes
