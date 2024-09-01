@@ -99,6 +99,8 @@ WITH_DEBUG=		yes
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
 # Install XDG icons and files to the standard path
 CMAKE_ARGS+=	-DXDG_DATADIR="${PREFIX}/share"
+# Debug issue #files/16116
+# CFLAGS+=	-Wno-enum-constexpr-conversion
 
 OPTIONS_DEFINE=	COLLADA
 
