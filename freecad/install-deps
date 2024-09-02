@@ -3,4 +3,13 @@
 pyver=311
 pkg install -Ay doxygen py$pyver-pybind11 py$pyver-pyside6-tools py$pyver-cxx \
 		swig microsoft-gsl googletest eigen
-pkg install -Ay qt6-declarative qt6-location qt6-webengine qt6-svg
+pkg install -Ay qt6-declarative qt6-location qt6-webengine qt6-svg cmake \
+		ninja yaml-cpp onetbb py$pyver-boost-libs coin vtk9 \
+		opencascade xerces-c3 fr-med py$pyver-shiboken2 \
+		py$pyver-pivy py$pyver-matplotlib
+
+printf "Run make depends to check? y/[n] "
+read md
+if [ 0$md = 0y ]; then
+    make depends
+fi
