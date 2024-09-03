@@ -1,6 +1,15 @@
---- src/Gui/QuantitySpinBox.cpp.orig	2024-09-02 19:59:40 UTC
+--- src/Gui/QuantitySpinBox.cpp.orig	2024-09-01 17:20:00 UTC
 +++ src/Gui/QuantitySpinBox.cpp
-@@ -441,7 +441,14 @@ void QuantitySpinBox::updateEdit(const QString& text)
+@@ -35,6 +35,8 @@
+ # include <QToolTip>
+ #endif
+ 
++// Debug with cerr
++#include <iostream>
+ #include <sstream>
+ 
+ #include <App/Application.h>
+@@ -441,7 +443,14 @@ void QuantitySpinBox::updateEdit(const QString& text)
  
      edit->setText(text);
  
@@ -16,11 +25,11 @@
      if (selsize > 0) {
          edit->setSelection(0, cursor);
      }
-@@ -494,6 +501,8 @@ void QuantitySpinBox::setValue(double value)
+@@ -494,6 +503,8 @@ void QuantitySpinBox::setValue(double value)
  
  void QuantitySpinBox::setValue(double value)
  {
-+    std::cerr << value << '\n';
++    std::cerr << "setValue(): value = " << value << '\n';
 +
      Q_D(QuantitySpinBox);
  
