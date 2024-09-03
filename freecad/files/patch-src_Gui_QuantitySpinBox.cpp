@@ -1,4 +1,4 @@
---- src/Gui/QuantitySpinBox.cpp.orig	2024-09-01 17:20:00 UTC
+--- src/Gui/QuantitySpinBox.cpp.orig	2024-09-02 19:59:40 UTC
 +++ src/Gui/QuantitySpinBox.cpp
 @@ -441,7 +441,14 @@ void QuantitySpinBox::updateEdit(const QString& text)
  
@@ -16,3 +16,12 @@
      if (selsize > 0) {
          edit->setSelection(0, cursor);
      }
+@@ -494,6 +501,8 @@ void QuantitySpinBox::setValue(double value)
+ 
+ void QuantitySpinBox::setValue(double value)
+ {
++    std::cerr << value << '\n';
++
+     Q_D(QuantitySpinBox);
+ 
+     Base::QuantityFormat currentformat = d->quantity.getFormat();
