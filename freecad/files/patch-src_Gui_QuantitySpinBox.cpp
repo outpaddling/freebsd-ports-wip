@@ -1,24 +1,42 @@
---- src/Gui/QuantitySpinBox.cpp.orig	2024-09-03 10:34:24 UTC
+--- src/Gui/QuantitySpinBox.cpp.orig	2024-09-01 17:20:00 UTC
 +++ src/Gui/QuantitySpinBox.cpp
-@@ -35,6 +35,8 @@
+@@ -35,6 +35,9 @@
  # include <QToolTip>
  #endif
  
-+// Debug with cerr
++// Debug with cout
 +#include <iostream>
++
  #include <sstream>
  
  #include <App/Application.h>
-@@ -431,6 +433,8 @@ void QuantitySpinBox::updateEdit(const QString& text)
+@@ -385,6 +388,8 @@ void Gui::QuantitySpinBox::setNumberExpression(App::Nu
+ 
+ void Gui::QuantitySpinBox::setNumberExpression(App::NumberExpression* expr)
+ {
++    // Debug
++    std::cout << "setNumberExpression() calling updateEdit()...\n";
+     updateEdit(getUserString(expr->getQuantity()));
+     handlePendingEmit();
+ }
+@@ -425,12 +430,16 @@ void QuantitySpinBox::updateText(const Quantity &quant
+     double dFactor;
+     QString txt = getUserString(quant, dFactor, d->unitStr);
+     d->unitValue = quant.getValue()/dFactor;
++    // Debug
++    std::cout << "updateText() calling updateEdit()...\n";
+     updateEdit(txt);
+     handlePendingEmit();
+ }
  
  void QuantitySpinBox::updateEdit(const QString& text)
  {
-+    Base::Console().Message("text argument=%s\n", text.toStdString().c_str());
++    Base::Console().Message("updateEdit(): text argument=%s\n", text.toStdString().c_str());
 +
      Q_D(QuantitySpinBox);
  
      QLineEdit* edit = lineEdit();
-@@ -441,7 +445,14 @@ void QuantitySpinBox::updateEdit(const QString& text)
+@@ -441,7 +450,14 @@ void QuantitySpinBox::updateEdit(const QString& text)
  
      edit->setText(text);
  
@@ -34,21 +52,31 @@
      if (selsize > 0) {
          edit->setSelection(0, cursor);
      }
-@@ -494,6 +505,8 @@ void QuantitySpinBox::setValue(double value)
+@@ -459,6 +475,8 @@ void QuantitySpinBox::validateInput()
+     const App::ObjectIdentifier & path = getPath();
+     d->validateAndInterpret(text, state, path);
+     if (state != QValidator::Acceptable) {
++	// Debug
++	std::cout << "validateInput() calling updateEdit()...\n";
+         updateEdit(d->validStr);
+     }
+ 
+@@ -494,6 +512,9 @@ void QuantitySpinBox::setValue(double value)
  
  void QuantitySpinBox::setValue(double value)
  {
-+    std::cerr << "setValue(): value = " << value << '\n';
++    // Debug
++    std::cout << "setValue(): value = " << value << '\n';
 +
      Q_D(QuantitySpinBox);
  
      Base::QuantityFormat currentformat = d->quantity.getFormat();
-@@ -931,6 +944,8 @@ QString QuantitySpinBox::textFromValue(const Base::Qua
+@@ -931,6 +952,8 @@ QString QuantitySpinBox::textFromValue(const Base::Qua
      double factor;
      QString unitStr;
      QString str = getUserString(value, factor, unitStr);
 +    // Debug
-+    std::cerr << "textFromValue(): str = " << str << '\n';
++    std::cout << "textFromValue(): str = " << str.toStdString() << '\n';
      if (qAbs(value.getValue()) >= 1000.0) {
          str.remove(locale().groupSeparator());
      }
