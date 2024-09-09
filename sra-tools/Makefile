@@ -33,6 +33,9 @@ OPTIONS_DEFINE=	EXAMPLES
 
 SHEBANG_GLOB=	*.sh
 GH_ACCOUNT=	ncbi
+# FIXME: At the time this was added, sra-tools build required access to the
+# ncbi-vdb source tree.  Use a separate dependent port if that is no
+# longer the case.
 GH_TUPLE+=	ncbi:ncbi-vdb:${DISTVERSION}:vdb/ncbi-vdb
 
 WITH_DEBUG=	yes
