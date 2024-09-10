@@ -1,4 +1,4 @@
---- src/Gui/QuantitySpinBox.cpp.orig	2024-09-01 17:20:00 UTC
+--- src/Gui/QuantitySpinBox.cpp.orig	2024-09-09 12:25:19 UTC
 +++ src/Gui/QuantitySpinBox.cpp
 @@ -35,6 +35,9 @@
  # include <QToolTip>
@@ -36,7 +36,7 @@
      Q_D(QuantitySpinBox);
  
      QLineEdit* edit = lineEdit();
-@@ -441,7 +450,14 @@ void QuantitySpinBox::updateEdit(const QString& text)
+@@ -441,7 +450,15 @@ void QuantitySpinBox::updateEdit(const QString& text)
  
      edit->setText(text);
  
@@ -49,10 +49,11 @@
 +
 +    int size = edit->displayText().size() - d->unitStr.size();
 +    cursor = qBound(0, cursor, size < 0 ? 0 : size);
++    // cursor = qBound(0, cursor, size);
      if (selsize > 0) {
          edit->setSelection(0, cursor);
      }
-@@ -459,6 +475,8 @@ void QuantitySpinBox::validateInput()
+@@ -459,6 +476,8 @@ void QuantitySpinBox::validateInput()
      const App::ObjectIdentifier & path = getPath();
      d->validateAndInterpret(text, state, path);
      if (state != QValidator::Acceptable) {
@@ -61,7 +62,7 @@
          updateEdit(d->validStr);
      }
  
-@@ -494,6 +512,9 @@ void QuantitySpinBox::setValue(double value)
+@@ -494,6 +513,9 @@ void QuantitySpinBox::setValue(double value)
  
  void QuantitySpinBox::setValue(double value)
  {
@@ -71,7 +72,7 @@
      Q_D(QuantitySpinBox);
  
      Base::QuantityFormat currentformat = d->quantity.getFormat();
-@@ -931,6 +952,8 @@ QString QuantitySpinBox::textFromValue(const Base::Qua
+@@ -931,6 +953,8 @@ QString QuantitySpinBox::textFromValue(const Base::Qua
      double factor;
      QString unitStr;
      QString str = getUserString(value, factor, unitStr);
