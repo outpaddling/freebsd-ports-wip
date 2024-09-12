@@ -8,6 +8,7 @@ sbin/port-list
 sbin/port-mfh
 sbin/port-mkpatch
 sbin/port-patch-vi
+sbin/port-poudriere-pkg
 sbin/port-poudriere-setup
 sbin/port-poudriere-test
 sbin/port-poudriere-update

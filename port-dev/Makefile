@@ -1,6 +1,6 @@
 PORTNAME=	port-dev
-DISTVERSION=	0.3.0-46
-DISTVERSIONSUFFIX=	-gb532042
+DISTVERSION=	0.3.0-47
+DISTVERSIONSUFFIX=	-gbe2de52
 CATEGORIES=	wip ports-mgmt
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -19,5 +19,7 @@ NO_BUILD=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/port-poudriere-test \
+		${STAGEDIR}${PREFIX}/sbin/port-poudriere-pkg
 
 .include <bsd.port.mk>
