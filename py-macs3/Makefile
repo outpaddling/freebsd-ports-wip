@@ -18,10 +18,10 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 		${PYNUMPY} \
 		simde>0:devel/simde \
 		${PYTHON_PKGNAMEPREFIX}cykhash>0:devel/py-cykhash@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hmmlearn>0:wip/py-hmmlearn@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}hmmlearn>=0.3.2:wip/py-hmmlearn@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}cykhash>0:devel/py-cykhash@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hmmlearn>0:math/py-hmmlearn@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}hmmlearn>=0.3.2:math/py-hmmlearn@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		bash:shells/bash
 
