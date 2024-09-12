@@ -1,6 +1,6 @@
 PORTNAME=	wip-tools
-DISTVERSION=	0.4.2-23
-DISTVERSIONSUFFIX=	-g43a7e04
+DISTVERSION=	0.4.2-24
+DISTVERSIONSUFFIX=	-g856ff14
 CATEGORIES=	wip ports-mgmt
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -19,6 +19,8 @@ NO_BUILD=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/wip-poudriere-test \
+		${STAGEDIR}${PREFIX}/sbin/wip-poudriere-pkg
 	${INSTALL_MAN} ${WRKSRC}/Doc/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -2,6 +2,7 @@ sbin/wip-audit
 sbin/wip-edit
 sbin/wip-import
 sbin/wip-new-port
+sbin/wip-poudriere-pkg
 sbin/wip-poudriere-test
 sbin/wip-reinstall-port
 sbin/wip-update
