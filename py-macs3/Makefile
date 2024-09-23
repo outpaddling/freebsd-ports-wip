@@ -14,10 +14,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON_i386=Requires _Float16
 
+COMMON_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}scipy>1.11.1:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cykhash>=2.0,<3.0:devel/py-cykhash@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-learn>=1.3:science/py-scikit-learn@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hmmlearn>=0.3.2:math/py-hmmlearn@${PY_FLAVOR}
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 		simde>0:devel/simde \
-		${COMMON_DEPS}
-RUN_DEPENDS=	${COMMON_DEPS}
+		${COMMON_DEPENDS}
+RUN_DEPENDS=	${COMMON_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		bash:shells/bash
 
@@ -29,12 +34,6 @@ USE_PYTHON=	autoplist concurrent cython pep517
 GH_ACCOUNT=	macs3-project
 GH_PROJECT=	MACS
 SHEBANG_FILES=	test/cmdlinetest* test/prockreport test/*.py test/pyprofile*
-
-COMMON_DEPS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}scipy>1.11.1:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cykhash>=2.0,<3.0:devel/py-cykhash@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scikit-learn>=1.3:science/py-scikit-learn@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hmmlearn>=0.3.2:math/py-hmmlearn@${PY_FLAVOR}
 
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/MACS3/*/*.so
