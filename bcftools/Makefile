@@ -1,5 +1,5 @@
 PORTNAME=	bcftools
-PORTVERSION=	1.17
+PORTVERSION=	1.21
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://www.htslib.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libhts.so:wip/htslib
+LIB_DEPENDS=	libhts.so:biology/htslib
 TEST_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
 
@@ -20,6 +20,7 @@ USE_PERL5=	test
 
 GH_ACCOUNT=	samtools
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 SHEBANG_FILES=	misc/* test/test.pl
 
 OPTIONS_DEFINE=		GPL
