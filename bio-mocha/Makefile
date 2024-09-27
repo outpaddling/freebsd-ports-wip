@@ -1,8 +1,8 @@
 PORTNAME=	bio-mocha
-DISTVERSION=	1.16
+DISTVERSION=	1.20
 CATEGORIES=	wip biology
 MASTER_SITES=	https://software.broadinstitute.org/software/mocha/
-DISTFILES+=	${PORTNAME}_${DISTVERSION}-20221221.tar.gz
+DISTFILES+=	${PORTNAME}_${DISTVERSION}-20240505.tar.gz
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Bcftools plugin for mosaic chromosomal alteration analysis
@@ -20,7 +20,7 @@ USE_PERL5=	test
 
 GH_ACCOUNT=	samtools
 GH_PROJECT=	bcftools
-GH_TAGNAME=	1.16
+GH_TAGNAME=	1.21
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	misc/* test/test.pl
 
@@ -41,8 +41,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/plugins/mocha.so \
 		${STAGEDIR}${PREFIX}/libexec/bcftools
 	${INSTALL_PROGRAM} ${WRKSRC}/plugins/mochatools.so \
-		${STAGEDIR}${PREFIX}/libexec/bcftools
-	${INSTALL_PROGRAM} ${WRKSRC}/plugins/trio-phase.so \
 		${STAGEDIR}${PREFIX}/libexec/bcftools
 	(cd ${WRKSRC}/MoCha && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 
