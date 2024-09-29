@@ -16,7 +16,6 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		autoreconf gmake localbase perl5 python:env shebangfix
 
 USE_GITHUB=	yes
-USE_PERL5=	test
 
 GH_ACCOUNT=	samtools
 GNU_CONFIGURE=	yes
