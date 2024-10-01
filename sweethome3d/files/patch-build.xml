@@ -1,0 +1,26 @@
+--- build.xml.orig	2024-10-01 11:31:15 UTC
++++ build.xml
+@@ -530,7 +530,6 @@ -->
+       <zipfileset src="build/Help.jar"/>
+       <fileset dir="lib">
+         <include name="*.jar"/>
+-        <include name="macosx/*.jar"/>
+         <include name="java3d-1.6/*.jar"/>
+         <include name="java3d-1.6/i586/gluegen-rt.jar"/>
+         <exclude name="java3d-1.6/jogl-all.jar"/>
+@@ -540,15 +539,6 @@ -->
+         <include name="java3d-1.6/i586/jogl-java3d.jar"/>
+       </fileset>
+       <fileset dir="lib">
+-        <include name="windows/**/*.dll"/>
+-        <include name="java3d-1.6/windows/**/*.dll"/>
+-        <include name="yafaray/windows/**/*.dll"/>
+-        <include name="linux/**/*.so"/>
+-        <include name="java3d-1.6/linux/**/*.so"/>
+-        <include name="yafaray/linux/**/*.so"/>
+-        <include name="macosx/*.jnilib"/>
+-        <include name="java3d-1.6/macosx/*.dylib"/>
+-        <include name="yafaray/macosx/**/*.dylib"/>
+       </fileset>
+       <fileset dir="libtest">
+         <include name="jnlp.jar"/>
