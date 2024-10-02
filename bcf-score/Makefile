@@ -11,9 +11,8 @@ WWW=		https://software.broadinstitute.org/software/score/
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libhts.so:wip/htslib
-BUILD_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libcholmod.so:math/suitesparse-cholmod
+BUILD_DEPENDS=	bash:shells/bash htslib>=1.21:wip/htslib
+LIB_DEPENDS=	libhts.so:wip/htslib libcholmod.so:math/suitesparse-cholmod
 RUN_DEPENDS=	bcftools>=${PORTVERSION}:wip/bcftools
 
 USES=		autoreconf gmake localbase perl5 python:env shebangfix

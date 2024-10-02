@@ -10,8 +10,8 @@ WWW=		https://software.broadinstitute.org/software/mocha/
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	bash:shells/bash htslib>=1.21:wip/htslib
 LIB_DEPENDS=	libhts.so:wip/htslib
-BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bcftools>=${PORTVERSION}:wip/bcftools
 
 USES=		autoreconf gmake localbase perl5 python:env shebangfix
