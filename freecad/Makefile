@@ -40,7 +40,8 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libavutil.so:multimedia/ffmpeg4 \
 		libmed.so:french/med \
 		libshiboken2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/shiboken2@${PY_FLAVOR} \
-		libhdf5.so:science/hdf5
+		libhdf5.so:science/hdf5 \
+		libmpi.so:net/mpich
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}

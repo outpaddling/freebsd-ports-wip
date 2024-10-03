@@ -850,6 +850,7 @@ FreeCAD/Mod/Fem/Resources/ui/MeshBoundaryLayer.ui
 FreeCAD/Mod/Fem/Resources/ui/MeshGmsh.ui
 FreeCAD/Mod/Fem/Resources/ui/MeshGroup.ui
 FreeCAD/Mod/Fem/Resources/ui/MeshGroupXDMFExport.ui
+FreeCAD/Mod/Fem/Resources/ui/MeshNetgen.ui
 FreeCAD/Mod/Fem/Resources/ui/MeshRegion.ui
 FreeCAD/Mod/Fem/Resources/ui/ResultHints.ui
 FreeCAD/Mod/Fem/Resources/ui/ResultShow.ui
@@ -979,6 +980,7 @@ FreeCAD/Mod/Fem/femmesh/femmesh2mesh.py
 FreeCAD/Mod/Fem/femmesh/gmshtools.py
 FreeCAD/Mod/Fem/femmesh/meshsetsgetter.py
 FreeCAD/Mod/Fem/femmesh/meshtools.py
+FreeCAD/Mod/Fem/femmesh/netgentools.py
 FreeCAD/Mod/Fem/femobjects/__init__.py
 FreeCAD/Mod/Fem/femobjects/base_femelement.py
 FreeCAD/Mod/Fem/femobjects/base_femmeshelement.py
@@ -1005,6 +1007,7 @@ FreeCAD/Mod/Fem/femobjects/material_reinforced.py
 FreeCAD/Mod/Fem/femobjects/mesh_boundarylayer.py
 FreeCAD/Mod/Fem/femobjects/mesh_gmsh.py
 FreeCAD/Mod/Fem/femobjects/mesh_group.py
+FreeCAD/Mod/Fem/femobjects/mesh_netgen.py
 FreeCAD/Mod/Fem/femobjects/mesh_region.py
 FreeCAD/Mod/Fem/femobjects/mesh_result.py
 FreeCAD/Mod/Fem/femobjects/result_mechanical.py
@@ -1095,6 +1098,8 @@ FreeCAD/Mod/Fem/femsolver/z88/solver.py
 FreeCAD/Mod/Fem/femsolver/z88/tasks.py
 FreeCAD/Mod/Fem/femsolver/z88/writer.py
 FreeCAD/Mod/Fem/femtaskpanels/__init__.py
+FreeCAD/Mod/Fem/femtaskpanels/base_femmeshtaskpanel.py
+FreeCAD/Mod/Fem/femtaskpanels/base_femtaskpanel.py
 FreeCAD/Mod/Fem/femtaskpanels/task_constraint_bodyheatsource.py
 FreeCAD/Mod/Fem/femtaskpanels/task_constraint_centrif.py
 FreeCAD/Mod/Fem/femtaskpanels/task_constraint_currentdensity.py
@@ -1114,6 +1119,7 @@ FreeCAD/Mod/Fem/femtaskpanels/task_material_reinforced.py
 FreeCAD/Mod/Fem/femtaskpanels/task_mesh_boundarylayer.py
 FreeCAD/Mod/Fem/femtaskpanels/task_mesh_gmsh.py
 FreeCAD/Mod/Fem/femtaskpanels/task_mesh_group.py
+FreeCAD/Mod/Fem/femtaskpanels/task_mesh_netgen.py
 FreeCAD/Mod/Fem/femtaskpanels/task_mesh_region.py
 FreeCAD/Mod/Fem/femtaskpanels/task_result_mechanical.py
 FreeCAD/Mod/Fem/femtaskpanels/task_solver_ccxtools.py
@@ -1279,6 +1285,7 @@ FreeCAD/Mod/Fem/femviewprovider/view_material_reinforced.py
 FreeCAD/Mod/Fem/femviewprovider/view_mesh_boundarylayer.py
 FreeCAD/Mod/Fem/femviewprovider/view_mesh_gmsh.py
 FreeCAD/Mod/Fem/femviewprovider/view_mesh_group.py
+FreeCAD/Mod/Fem/femviewprovider/view_mesh_netgen.py
 FreeCAD/Mod/Fem/femviewprovider/view_mesh_region.py
 FreeCAD/Mod/Fem/femviewprovider/view_mesh_result.py
 FreeCAD/Mod/Fem/femviewprovider/view_result_mechanical.py
@@ -1333,8 +1340,10 @@ FreeCAD/Mod/Inspection/InitGui.py
 FreeCAD/Mod/Material/Init.py
 FreeCAD/Mod/Material/InitGui.py
 FreeCAD/Mod/Material/MaterialEditor.py
+FreeCAD/Mod/Material/Resources/ui/materials-editor.ui
 FreeCAD/Mod/Material/Templatematerial.yml
 FreeCAD/Mod/Material/TestMaterialsApp.py
+FreeCAD/Mod/Material/TestMaterialsGui.py
 FreeCAD/Mod/Material/importFCMat.py
 FreeCAD/Mod/Material/materialtests/Materials/TestAcrylicLegacy.FCMat
 FreeCAD/Mod/Material/materialtests/Materials/TestAluminumAppearance.FCMat
@@ -1342,6 +1351,7 @@ FreeCAD/Mod/Material/materialtests/Materials/TestAluminumMixed.FCMat
 FreeCAD/Mod/Material/materialtests/Materials/TestAluminumPhysical.FCMat
 FreeCAD/Mod/Material/materialtests/Materials/TestBrassAppearance.FCMat
 FreeCAD/Mod/Material/materialtests/TestMaterialCreation.py
+FreeCAD/Mod/Material/materialtests/TestMaterialDocument.py
 FreeCAD/Mod/Material/materialtests/TestMaterialFilter.py
 FreeCAD/Mod/Material/materialtests/TestMaterials.py
 FreeCAD/Mod/Material/materialtests/TestModels.py
@@ -1540,6 +1550,7 @@ FreeCAD/Mod/Spreadsheet/Init.py
 FreeCAD/Mod/Spreadsheet/InitGui.py
 FreeCAD/Mod/Spreadsheet/TestSpreadsheet.py
 FreeCAD/Mod/Spreadsheet/importXLSX.py
+FreeCAD/Mod/Spreadsheet/test_importXLSX.py
 FreeCAD/Mod/Start/Init.py
 FreeCAD/Mod/Start/InitGui.py
 FreeCAD/Mod/Start/StartMigrator.py
@@ -2644,6 +2655,7 @@ bin/freecad-thumbnailer
 %%PYTHON_SITELIBDIR%%/freecad/UiTools.py
 %%PYTHON_SITELIBDIR%%/freecad/__init__.py
 %%PYTHON_SITELIBDIR%%/freecad/freecad_doc.py
+%%PYTHON_SITELIBDIR%%/freecad/module_io.py
 %%PYTHON_SITELIBDIR%%/freecad/part.py
 %%PYTHON_SITELIBDIR%%/freecad/partdesign.py
 %%PYTHON_SITELIBDIR%%/freecad/project_utility.py
