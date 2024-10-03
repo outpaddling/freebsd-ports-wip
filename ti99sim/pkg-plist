@@ -1,0 +1,16 @@
+bin/catalog
+bin/convert-ctg
+bin/decode
+bin/disk
+bin/dumpcpu
+bin/dumpgrom
+bin/dumpspch
+bin/list
+bin/mkcart
+bin/mkspch
+bin/say
+bin/ti99sim-console
+bin/ti99sim-sdl
+@dir %%DATADIR%%/cartridges
+@dir %%DATADIR%%/console
+@dir %%DATADIR%%/disks

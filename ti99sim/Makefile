@@ -10,12 +10,10 @@ WWW=		https://www.mrousseau.org/programs/ti99sim/
 
 LICENSE=	GPLv3
 
-USES=		gmake sdl tar:xz
+USES=		gmake sdl ssl tar:xz
 USE_SDL=	sdl2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-MAKE_JOBS_UNSAFE=	yes
 
 MAKE_ENV=	DATA_DIR=${STAGEDIR}/${DATADIR} \
 		SYS_BIN=${STAGEDIR}${PREFIX}/bin \
