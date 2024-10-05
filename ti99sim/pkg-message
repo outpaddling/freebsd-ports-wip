@@ -6,4 +6,4 @@ the v9t9 and classic99 distributions.  The required ROM images is
 typically named 994aROM.Bin.  It must be converted to .ctg format
 using convert-ctg for use with ti99-sim.  The expected filename is
 TI-994A.ctg.  The expected location is the current working directory
-(.), ~/.ti99sim/roms, or PREFIX/share/ti99sim/roms.
+(.), ~/.ti99sim/console, or PREFIX/share/ti99sim/console.
