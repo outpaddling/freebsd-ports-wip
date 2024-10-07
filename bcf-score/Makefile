@@ -11,9 +11,11 @@ WWW=		https://software.broadinstitute.org/software/score/
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	bash:shells/bash htslib>=1.21:wip/htslib
+# FIXME: Verify bash depend is really needed
+BUILD_DEPENDS=	htslib>=1.21:wip/htslib
 LIB_DEPENDS=	libhts.so:wip/htslib libcholmod.so:math/suitesparse-cholmod
-RUN_DEPENDS=	bcftools>=${PORTVERSION}:wip/bcftools
+TEST_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash bcftools>=${PORTVERSION}:wip/bcftools
 
 USES=		autoreconf gmake localbase perl5 python:env shebangfix
 USE_GITHUB=	yes
