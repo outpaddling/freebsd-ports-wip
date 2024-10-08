@@ -19,4 +19,7 @@ MAKE_ARGS=	DATA_DIR=${STAGEDIR}${DATADIR} \
 		BIN_DIR=${STAGEDIR}${DATADIR}/bin \
 		SYS_BIN=${STAGEDIR}${PREFIX}/bin
 
+post-stage:
+	${INSTALL_SCRIPT} ${FILESDIR}/ti99sim-setup ${STAGEDIR}${PREFIX}/bin
+
 .include <bsd.port.mk>

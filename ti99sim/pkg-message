@@ -1,9 +1,2 @@
-TI-99 console ROMs are copyrighted and not included with this
-software.  In order to run the emulator, you must find a way to obtain
-them on your own.  See https://mrousseau.org/programs/ti99sim/ for
-instructions.  ROM images in .bin format are known to be included in
-the v9t9 and classic99 distributions.  The required ROM images is
-typically named 994aROM.Bin.  It must be converted to .ctg format
-using convert-ctg for use with ti99-sim.  The expected filename is
-TI-994A.ctg.  The expected location is the current working directory
-(.), ~/.ti99sim/console, or PREFIX/share/ti99sim/console.
+Each user should run ti99sim-setup to create the necessary
+directories and files.
