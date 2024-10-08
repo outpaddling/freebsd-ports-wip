@@ -1,6 +1,6 @@
 --- rules.mak.orig	2020-05-25 20:52:22 UTC
 +++ rules.mak
-@@ -12,23 +12,20 @@ endif
+@@ -12,23 +12,21 @@ endif
  CXX      := g++
  endif
  
@@ -18,6 +18,7 @@
  LFLAGS   += -rdynamic
  
 -XLIBS    += -lstdc++fs
++# This is redundant, defined in rules.mk
 +# XLIBS    += -lstdc++fs
  
  WARNINGS := -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
@@ -27,14 +28,13 @@
  WARNINGS += -Wcast-qual
  
  INCLUDES := -I../../include
-@@ -39,10 +36,6 @@ DEBUG    := 1
+@@ -74,6 +72,9 @@ OS       := OS_LINUX
  
- ifeq ($(CFG),Debug)
- DEBUG    := 1
--endif
--
--ifdef ARCH
--CFLAGS   += -march=$(ARCH)
+ ifeq ($(OSTYPE),Linux)
+ OS       := OS_LINUX
++ifneq (,$(findstring /,$(shell whereis ccache)))
++CXX      := ccache $(CXX)
++endif
  endif
  
- ifdef LTO
+ ifeq ($(OSTYPE),FreeBSD)
