@@ -2,6 +2,7 @@ PORTNAME=	bio-mocha
 DISTVERSION=	1.20
 CATEGORIES=	wip biology
 MASTER_SITES=	https://software.broadinstitute.org/software/mocha/
+# Get this right, or ports will download bcftools in it's place via tuple
 DISTFILES+=	${PORTNAME}_${DISTVERSION}-20240505.tar.gz
 
 MAINTAINER=	jwb@FreeBSD.org

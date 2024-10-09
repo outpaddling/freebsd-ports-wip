@@ -11,7 +11,6 @@ WWW=		https://software.broadinstitute.org/software/score/
 
 LICENSE=	MIT
 
-# FIXME: Verify bash depend is really needed
 BUILD_DEPENDS=	htslib>=1.21:wip/htslib
 LIB_DEPENDS=	libhts.so:wip/htslib libcholmod.so:math/suitesparse-cholmod
 TEST_DEPENDS=	bash:shells/bash
