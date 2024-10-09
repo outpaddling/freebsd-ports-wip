@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 
 MAKE_ARGS=	DATA_DIR=${STAGEDIR}${DATADIR} \
-		BIN_DIR=${STAGEDIR}${DATADIR}/bin \
+		BIN_DIR=${STAGEDIR}${PREFIX}/bin \
 		SYS_BIN=${STAGEDIR}${PREFIX}/bin
 
 post-stage:
