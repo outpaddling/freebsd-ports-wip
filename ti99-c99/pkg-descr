@@ -1,0 +1,3 @@
+Port of Clint Pulley's C99 compiler (Small-C adapted to the TI-99),
+adapted for cross-compiling on DOS or Unix.  Not to be confused with
+the C99 ISO standard, this is a subset of C from the 1980s.
