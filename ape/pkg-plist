@@ -28,6 +28,10 @@ bin/search_libs
 %%DATADIR%%/Languages/C/Macros/menu.txt
 %%DATADIR%%/Languages/C/language_opts
 %%DATADIR%%/Languages/C/syntax_highlighting
+%%DATADIR%%/Languages/C99/Macros/macros
+%%DATADIR%%/Languages/C99/Macros/menu.txt
+%%DATADIR%%/Languages/C99/language_opts
+%%DATADIR%%/Languages/C99/syntax_highlighting
 %%DATADIR%%/Languages/CSS/Macros/macros
 %%DATADIR%%/Languages/CSS/Macros/menu.txt
 %%DATADIR%%/Languages/CSS/language_opts
