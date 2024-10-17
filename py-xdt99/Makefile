@@ -10,9 +10,16 @@ WWW=		https://github.com/endlos99/xdt99
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python
-USE_PYTHON=	autoplist distutils
+USES=		python shebangfix
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	endlos99
+SHEBANG_FILES=	${WRKSRC}/*.py
+
+NO_BUILD=	yes
+NO_ARCH=	yes
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/[a-z]*.py ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
