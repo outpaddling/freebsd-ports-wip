@@ -4,9 +4,9 @@
        if (bitmap)
          {
  #ifdef __x86_64__
-+          // Not sure how to enable ssse3 without enabling other
-+          // non-portable features.
-+          // This code is only used rarely, so disable ssse3 for now.
++	  // Not sure how to enable ssse3 without enabling other
++	  // non-portable features.
++	  // This code is only used rarely, so disable ssse3 for now.
 +	  // It won't affect performance much on the whole.
 +	  // https://github.com/torognes/vsearch/pull/497
            if (ssse3_present)
