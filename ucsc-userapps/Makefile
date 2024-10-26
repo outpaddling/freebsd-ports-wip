@@ -1,6 +1,5 @@
 PORTNAME=	ucsc-userapps
-DISTVERSION=	414
-PORTREVISION=	1
+DISTVERSION=	472
 CATEGORIES=	wip biology perl5 python
 MASTER_SITES=	http://hgdownload.cse.ucsc.edu/admin/exe/userApps.archive/
 DISTNAME=	userApps.v${PORTVERSION}.src
@@ -22,7 +21,7 @@ ONLY_FOR_ARCHS_REASON=	_mm_popcnt_u64
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libiconv.so:converters/libiconv \
-		libmysqlclient.so:databases/mysql57-client \
+		libmysqlclient.so:databases/mysql80-client \
 		libpng.so:graphics/png
 RUN_DEPENDS=	bash:shells/bash
 
@@ -50,7 +49,7 @@ SUB_FILES=	ucsc-shell
 # code from the libraries per conversation with UCSC.  Work to resolve this
 # is ongoing.
 do-build:
-	@${MV} ${WRKSRC}/kent/src/inc/uuid.h ${WRKSRC}/kent/src/inc/my_uuid.h
+	${MV} ${WRKSRC}/kent/src/inc/uuid.h ${WRKSRC}/kent/src/inc/my_uuid.h
 	@${MKDIR} ${WRKSRC}/bin
 	@(cd ${WRKSRC}/kent/src/lib && ${DO_MAKE_BUILD})
 	@(cd ${WRKSRC}/kent/src/htslib && ${DO_MAKE_BUILD})
