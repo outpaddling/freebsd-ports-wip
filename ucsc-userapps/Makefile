@@ -22,7 +22,10 @@ ONLY_FOR_ARCHS_REASON=	_mm_popcnt_u64
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libiconv.so:converters/libiconv \
 		libmysqlclient.so:databases/mysql80-client \
-		libpng.so:graphics/png
+		libpng.so:graphics/png \
+		libunwind.so:devel/libunwind \
+		libfreetype.so:print/freetype2
+
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake localbase:ldflags shebangfix perl5 python:3.6+ ssl tar:tgz
@@ -36,7 +39,8 @@ SHEBANG_FILES=	kent/src/checkUmask.sh \
 		kent/src/utils/tdbSort \
 		kent/src/utils/trackDbIndexBb/trackDbIndexBb \
 		kent/src/utils/ucscApiClient \
-		kent/src/utils/webSync
+		kent/src/utils/webSync \
+		kent/src/utils/bigGuessDb/bigGuessDb
 
 WRKSRC=		${WRKDIR}/userApps
 CFLAGS+=	-fcommon
@@ -49,7 +53,7 @@ SUB_FILES=	ucsc-shell
 # code from the libraries per conversation with UCSC.  Work to resolve this
 # is ongoing.
 do-build:
-	${MV} ${WRKSRC}/kent/src/inc/uuid.h ${WRKSRC}/kent/src/inc/my_uuid.h
+	@(test -f ${WRKSRC}/kent/src/inc/my_uuid.h || ${MV} ${WRKSRC}/kent/src/inc/uuid.h ${WRKSRC}/kent/src/inc/my_uuid.h)
 	@${MKDIR} ${WRKSRC}/bin
 	@(cd ${WRKSRC}/kent/src/lib && ${DO_MAKE_BUILD})
 	@(cd ${WRKSRC}/kent/src/htslib && ${DO_MAKE_BUILD})
