@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libarchiveqt5.so:archivers/libarchive-qt \
 		libcprime-core.so:wip/libcprime
 
-USES=		cmake localbase:ldflags qt:5
+USES=		cmake desktop-file-utils localbase:ldflags qt:5
 USE_QT=		buildtools:build core gui network qmake:build widgets
 USE_GITLAB=	yes
 
