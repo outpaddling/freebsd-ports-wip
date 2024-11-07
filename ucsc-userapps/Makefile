@@ -20,15 +20,13 @@ ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	_mm_popcnt_u64
 
 BUILD_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libiconv.so:converters/libiconv \
-		libmysqlclient.so:databases/mysql80-client \
-		libpng.so:graphics/png \
+LIB_DEPENDS=	libmysqlclient.so:databases/mysql80-client \
 		libunwind.so:devel/libunwind \
-		libfreetype.so:print/freetype2
-
+		libfreetype.so:print/freetype2 \
+		libpng.so:graphics/png
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake localbase:ldflags shebangfix perl5 python:3.6+ ssl tar:tgz
+USES=		gmake iconv localbase:ldflags shebangfix perl5 python:3.6+ ssl tar:tgz
 
 RESTRICTED=	Redistribution is limited, see license
 
