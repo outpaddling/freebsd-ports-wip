@@ -2,7 +2,7 @@ PORTNAME=	ucsc-userapps
 DISTVERSION=	472
 CATEGORIES=	wip biology perl5 python
 MASTER_SITES=	http://hgdownload.cse.ucsc.edu/admin/exe/userApps.archive/
-DISTNAME=	userApps.v${PORTVERSION}.src
+DISTNAME=	userApps.v${DISTVERSION}.src
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Command line tools from the UCSC Genome Browser project
