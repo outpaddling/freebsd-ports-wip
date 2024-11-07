@@ -16,6 +16,7 @@ ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	uses _mm_popcnt_u64() function
 
 BUILD_DEPENDS=	bash:shells/bash
+# FIXME: Switch from mysql to mariadb
 LIB_DEPENDS=	libmysqlclient.so:databases/mysql80-client \
 		libunwind.so:devel/libunwind \
 		libfreetype.so:print/freetype2 \
