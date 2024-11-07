@@ -1,5 +1,5 @@
 PORTNAME=	ti99-c99
-DISTVERSION=	0.0.0-13
+DISTVERSION=	0.0.0-19
 CATEGORIES=	wip devel
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,8 +12,8 @@ LICENSE_FILE=	${WRKSRC}/readme.txt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	2463da5b4e35c870a877b2ba6f915d67c49459f5
+GH_TAGNAME=	f34fc2248420305b4e1234a4dbc6d8235692bb28
 
-PLIST_FILES=	bin/c99
+PLIST_FILES=	bin/c99 bin/ti99cc
 
 .include <bsd.port.mk>
