@@ -75,7 +75,7 @@ USES=		metaport python
 RUN_DEPENDS+=	sra-tools>0:biology/sra-tools
 .endif
 
-SUB_FILES=	biostar-shell
+SUB_FILES=	biostar-shell pkg-message
 PLIST_FILES=	bin/biostar-shell
 
 do-install:
