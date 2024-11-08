@@ -1,6 +1,7 @@
 PORTNAME=	biostar-tools
 PORTVERSION=	2.0
 CATEGORIES=	wip biology python
+MASTER_SITES=	# empty
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Meta-port for Biostar Handbook tools
