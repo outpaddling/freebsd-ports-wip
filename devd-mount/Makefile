@@ -16,8 +16,6 @@ GH_ACCOUNT=	outpaddling
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	automount
-
 PLIST_FILES=	sbin/devd-mount \
 		etc/devd/devd-mount.conf \
 		"@sample etc/devd-mount.conf.sample" \
