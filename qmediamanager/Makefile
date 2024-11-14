@@ -24,12 +24,10 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
 
-WITH_DEBUG=	yes
-
-PLIST_FILES=	bin/qmediamanager man/man1/qmediamanager.1.gz
+PLIST_FILES=	bin/qmediamanager share/man/man1/qmediamanager.1.gz
 
 do-install:
 	${INSTALL} -c ${WRKSRC}/qmediamanager ${STAGEDIR}${PREFIX}/bin
-	${INSTALL} -c ${WRKSRC}/Man/qmediamanager.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL} -c ${WRKSRC}/Man/qmediamanager.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
