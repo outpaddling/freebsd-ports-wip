@@ -64,7 +64,6 @@ sbin/auto-change-uid
 sbin/auto-clean-disk
 sbin/auto-clean-ports
 sbin/auto-clean-tmp
-sbin/auto-cuda-install
 sbin/auto-cups-setup
 sbin/auto-denyhosts-remove-ip
 sbin/auto-denyhosts-setup
