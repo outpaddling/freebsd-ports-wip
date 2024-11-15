@@ -11,7 +11,7 @@ WWW=		https://github.com/MultiQC/MultiQC
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# Use either py-kaleido or py-orca + py-psutil
+# Use either py-kaleido (not in ports yet) or py-orca + py-psutil
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}humanize>0:devel/py-humanize@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-metadata>0:devel/py-importlib-metadata@${PY_FLAVOR} \
