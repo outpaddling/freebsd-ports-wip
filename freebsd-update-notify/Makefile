@@ -10,7 +10,9 @@ WWW=		https://github.com/outpaddling/freebsd-update-notify
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	zenity:x11/zenity auto-admin>=0.8.0:wip/auto-admin
+RUN_DEPENDS=	zenity:x11/zenity \
+		auto-admin>=0.8.0:wip/auto-admin \
+		rxvt-unicode>0:x11/rxvt-unicode
 
 USE_GITHUB=	yes
 
