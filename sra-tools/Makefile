@@ -11,11 +11,10 @@ LICENSE_COMB=		multi
 LICENSE_FILE_PD=	${WRKSRC}/LICENSE
 LICENSE_DISTFILES_LGPL21+ =
 
-# Untested on other platforms, aarch64 support was recently added upstream
 ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	Upstream explicitly supports specific platforms
 
-# hdf5 is dynamically loaded by some tools
+# hdf5 is dynamically loaded by some tools, but nothing links to it
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	hdf5>0:science/hdf5
 
@@ -33,7 +32,7 @@ SHEBANG_GLOB=	*.sh
 GH_ACCOUNT=	ncbi
 # FIXME: At the time this was added, sra-tools build required access to the
 # ncbi-vdb source tree.  Use a separate dependent port if that is no
-# longer the case.
+# longer the case.  CMakeLists.txt still looks for ../ncbi-vdb in 3.1.1.
 GH_TUPLE+=	ncbi:ncbi-vdb:${DISTVERSION}:vdb/ncbi-vdb
 
 CMAKE_ARGS+=	-DVDB_LIBDIR:STRING=${WRKSRC}/ncbi-vdb/build/lib
@@ -49,6 +48,9 @@ pre-configure:
 		${WRKSRC}/CMakeLists.txt
 	cd ${WRKSRC}/ncbi-vdb/build && cmake .. && make
 
+# FIXME: Unsure where the jquery version comes from and it differs on
+# amd64 (jquery-3.7.1.min.js) and aarch64 (jquery-3.6.1.min.js).
+# Just hack the version out for now.  Not sure we even need javadoc installed.
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*.${DISTVERSION}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib64/*.${DISTVERSION}
@@ -61,8 +63,6 @@ post-stage:
 	${MV} ${STAGEDIR}${JAVASHAREDIR}doc/ngs-doc/script-dir/jquery-[0-9]*.min.js \
 		${STAGEDIR}${JAVASHAREDIR}doc/ngs-doc/script-dir/jquery.min.js
 
-# FIXME: Unsure where the jquery-version-min.js version comes from and it
-# differs on amd64 and aarch64.  Hack it out for now.
 post-stage-EXAMPLES-off:
 	${RM} -r ${STAGEDIR}${EXAMPLESDIR}
 
