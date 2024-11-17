@@ -58,7 +58,11 @@ post-stage:
 	${RMDIR} ${STAGEDIR}${PREFIX}/share/examples-sratools
 	${MV} ${STAGEDIR}${PREFIX}/share/examples-java ${STAGEDIR}${EXAMPLESDIR}/java
 	${MV} ${STAGEDIR}${PREFIX}/share/examples-python ${STAGEDIR}${EXAMPLESDIR}/python
+	${MV} ${STAGEDIR}${JAVASHAREDIR}doc/ngs-doc/script-dir/jquery-[0-9]*.min.js \
+		${STAGEDIR}${JAVASHAREDIR}doc/ngs-doc/script-dir/jquery.min.js
 
+# FIXME: Unsure where the jquery-version-min.js version comes from and it
+# differs on amd64 and aarch64.  Hack it out for now.
 post-stage-EXAMPLES-off:
 	${RM} -r ${STAGEDIR}${EXAMPLESDIR}
 
