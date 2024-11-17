@@ -15,11 +15,9 @@ LICENSE_DISTFILES_LGPL21+ =
 ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	Upstream explicitly supports specific platforms
 
+# hdf5 is dynamically loaded by some tools
 BUILD_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
-		libhdf5.so:science/hdf5 \
-		libepoll-shim.so:devel/libepoll-shim \
-		libzstd.so:archivers/zstd
+RUN_DEPENDS=	hdf5>0:science/hdf5
 
 USES=		bison cmake shebangfix
 USE_GITHUB=	yes
@@ -41,19 +39,19 @@ GH_TUPLE+=	ncbi:ncbi-vdb:${DISTVERSION}:vdb/ncbi-vdb
 CMAKE_ARGS+=	-DVDB_LIBDIR:STRING=${WRKSRC}/ncbi-vdb/build/lib
 
 pre-configure:
-	# The config.c and file-path.posix.cpp reinplaces follow
-	# static patches.  Run "make clean patch" before updating
-	# those patches so this reinplace does not get added to them.
+	# Reinplaces may follow static patches.  Run "make clean patch"
+	# before updating those patches so reinplaces do not get added to them.
 	@${REINPLACE_CMD} -e 's|"/etc/ncbi"|"${PREFIX}/etc/ncbi"|g' \
 		${WRKSRC}/ncbi-vdb/libs/kfg/config.c
 	@${REINPLACE_CMD} -e 's|/usr/local/bin|${PREFIX}/bin|g' \
 		${WRKSRC}/tools/external/driver-tool/file-path.posix.cpp
-	${REINPLACE_CMD} -e 's|/../ncbi-vdb|/ncbi-vdb|g' \
+	@${REINPLACE_CMD} -e 's|/../ncbi-vdb|/ncbi-vdb|g' \
 		${WRKSRC}/CMakeLists.txt
 	cd ${WRKSRC}/ncbi-vdb/build && cmake .. && make
 
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*.${DISTVERSION}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib64/*.${DISTVERSION}
 	${MV} ${STAGEDIR}${PREFIX}/share/examples ${STAGEDIR}${PREFIX}/share/examples-sratools
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${MV} ${STAGEDIR}${PREFIX}/share/examples-sratools/* ${STAGEDIR}${EXAMPLESDIR}
