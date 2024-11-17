@@ -1,5 +1,5 @@
 PORTNAME=	sra-tools
-DISTVERSION=	3.0.6
+DISTVERSION=	3.1.1
 CATEGORIES=	wip biology java
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -39,12 +39,6 @@ GH_ACCOUNT=	ncbi
 GH_TUPLE+=	ncbi:ncbi-vdb:${DISTVERSION}:vdb/ncbi-vdb
 
 CMAKE_ARGS+=	-DVDB_LIBDIR:STRING=${WRKSRC}/ncbi-vdb/build/lib
-
-post-extract:
-	@${MKDIR} ${WRKSRC}/ncbi-vdb/interfaces/os/bsd
-	@${CP} ${FILESDIR}/*.h ${WRKSRC}/ncbi-vdb/interfaces/os/bsd
-	@${MKDIR} ${WRKSRC}/libs/ascp/bsd
-	@${CP} ${FILESDIR}/ascp-path.c ${WRKSRC}/libs/ascp/bsd
 
 pre-configure:
 	# The config.c and file-path.posix.cpp reinplaces follow
