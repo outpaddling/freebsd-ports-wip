@@ -1,6 +1,6 @@
 PORTNAME=	freebsd-update-notify
-DISTVERSION=	0.1.1-9
-DISTVERSIONSUFFIX=	-ge46e1ab
+DISTVERSION=	0.1.1-10
+DISTVERSIONSUFFIX=	-g1d9a700
 CATEGORIES=	wip deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -29,6 +29,10 @@ PLIST_FILES=	libexec/freebsd-update-notify \
 		"@sample etc/freebsd-update-notify/freebsd-update-notify.conf.sample" \
 		"@sample etc/freebsd-update-notify/freebsd-update-notify.crontab.sample etc/cron.d/freebsd-update-notify" \
 		"@dir etc/cron.d"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
+		${WRKSRC}/freebsd-update-notify
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/cron.d
