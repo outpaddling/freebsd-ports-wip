@@ -1,6 +1,6 @@
 PORTNAME=	freebsd-update-notify
-DISTVERSION=	0.1.1-10
-DISTVERSIONSUFFIX=	-g1d9a700
+DISTVERSION=	0.1.1-11
+DISTVERSIONSUFFIX=	-g2d7b872
 CATEGORIES=	wip deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,7 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	zenity:x11/zenity \
 		auto-admin>=0.8.0:wip/auto-admin \
-		rxvt-unicode>0:x11/rxvt-unicode
+		rxvt-unicode>0:x11/rxvt-unicode \
+		xwininfo>0:x11/xwininfo \
+		xhost>0:x11/xhost
 
 USE_GITHUB=	yes
 
