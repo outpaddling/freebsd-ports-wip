@@ -1,5 +1,6 @@
 PORTNAME=	devd-mount
 DISTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
