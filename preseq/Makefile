@@ -1,7 +1,7 @@
 PORTNAME=		preseq
 DISTVERSION=		3.2.0
-# Github-generated distfiles are incomplete
 CATEGORIES=		wip biology
+# Github-generated distfiles are incomplete
 MASTER_SITES=		https://github.com/smithlabcode/preseq/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	jwb@FreeBSD.org
