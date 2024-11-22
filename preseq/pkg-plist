@@ -1,4 +1,5 @@
 bin/preseq
+bin/to-mr
 include/GenomicRegion.hpp
 include/MappedRead.hpp
 include/OptionParser.hpp
