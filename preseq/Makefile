@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libhts.so:biology/htslib
 
-USES=		localbase
+USES=		gmake localbase
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-hts
