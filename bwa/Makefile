@@ -1,17 +1,15 @@
 PORTNAME=	bwa
-PORTVERSION=	0.7.17
 DISTVERSIONPREFIX=v
-PORTREVISION=	1
+DISTVERSION=	0.7.18
 CATEGORIES=	wip biology
-
-PATCH_SITES=	https://github.com/lh3/bwa/commit/
-PATCHFILES=	2a1ae7b6f34a96ea25be007ac9d91e57e9d32284.patch:-p1
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Burrows-Wheeler sequence aligner
-WWW=		https://sourceforge.net/projects/bio-bwa/
+WWW=		https://sourceforge.net/projects/bio-bwa/ \
+		https://github.com/lh3/bwa/
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_mips=		fails to compile: cc1: unrecognized command line option "-msse2"
 BROKEN_mips64=		fails to compile: cc1: unrecognized command line option "-msse2"
@@ -19,23 +17,13 @@ BROKEN_mips64=		fails to compile: cc1: unrecognized command line option "-msse2"
 BUILD_DEPENDS=	simde>0:devel/simde
 
 USES=		gmake localbase perl5 shebangfix tar:bzip2
-SHEBANG_FILES=	qualfa2fq.pl xa2multi.pl
-USE_PERL5=	run
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	lh3
+USE_PERL5=	run
 
-PLIST_FILES=	bin/bwa bin/qualfa2fq.pl bin/xa2multi.pl man/man1/bwa.1.gz
+SHEBANG_FILES=	qualfa2fq.pl xa2multi.pl
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == amd64 || ${ARCH} == i386
-# Avoid #error in emmintrin.h
-CFLAGS+=	-msse2
-.elif ${ARCH} == powerpc64le
-CFLAGS+=	-DNO_WARN_X86_INTRINSICS
-USES+=	compiler:gcc-c++11-lib
-.endif
+PLIST_FILES=	bin/bwa bin/qualfa2fq.pl bin/xa2multi.pl share/man/man1/bwa.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bwa ${STAGEDIR}${PREFIX}/bin
