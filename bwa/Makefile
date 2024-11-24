@@ -1,5 +1,5 @@
 PORTNAME=	bwa
-DISTVERSIONPREFIX=v
+DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.18
 CATEGORIES=	wip biology
 
@@ -11,8 +11,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 # Recheck these after 0.7.18 update
-BROKEN_mips=		fails to compile: cc1: unrecognized command line option "-msse2"
-BROKEN_mips64=		fails to compile: cc1: unrecognized command line option "-msse2"
+BROKEN_mips=	fails to compile: cc1: unrecognized command line option "-msse2"
+BROKEN_mips64=	fails to compile: cc1: unrecognized command line option "-msse2"
 
 BUILD_DEPENDS=	simde>0:devel/simde
 
