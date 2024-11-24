@@ -5,12 +5,12 @@ CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Burrows-Wheeler sequence aligner
-WWW=		https://sourceforge.net/projects/bio-bwa/ \
-		https://github.com/lh3/bwa/
+WWW=		https://github.com/lh3/bwa/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+# Recheck these after 0.7.18 update
 BROKEN_mips=		fails to compile: cc1: unrecognized command line option "-msse2"
 BROKEN_mips64=		fails to compile: cc1: unrecognized command line option "-msse2"
 
