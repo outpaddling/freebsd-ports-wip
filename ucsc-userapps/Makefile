@@ -1,5 +1,5 @@
 PORTNAME=	ucsc-userapps
-DISTVERSION=	473
+DISTVERSION=	474
 CATEGORIES=	wip biology perl5 python
 MASTER_SITES=	https://hgdownload.cse.ucsc.edu/admin/exe/userApps.archive/
 DISTNAME=	userApps.v${DISTVERSION}.src
