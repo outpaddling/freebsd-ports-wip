@@ -57,6 +57,7 @@ sbin/auto-automount-setup
 sbin/auto-binary-pkgsrc-setup
 sbin/auto-change-group-gid
 sbin/auto-change-group-ownership
+sbin/auto-change-login-class
 sbin/auto-change-nfsd-count
 sbin/auto-change-ownership
 sbin/auto-change-primary-group
@@ -171,6 +172,7 @@ sbin/auto-xdm-toggle
 %%DATADIR%%/rc.local_early
 share/man/man8/auto-add-swap.8.gz
 share/man/man8/auto-admin.8.gz
+share/man/man8/auto-change-login-class.8.gz
 share/man/man8/auto-image2dev.8.gz
 share/man/man8/auto-pkgsrc-non-removable.8.gz
 share/man/man8/auto-update-system.8.gz
