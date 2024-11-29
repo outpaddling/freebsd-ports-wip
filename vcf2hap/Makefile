@@ -1,6 +1,6 @@
 PORTNAME=	vcf2hap
-DISTVERSION=	0.1.6-7
-DISTVERSIONSUFFIX=	-gfda1765
+DISTVERSION=	0.1.6-14
+DISTVERSIONSUFFIX=	-g8f39985
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -15,11 +15,8 @@ LIB_DEPENDS=	libbiolibc.so:wip/biolibc libxtend.so:wip/libxtend
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
 
-MAKE_ENV=	VERSION=${PORTVERSION}
-PLIST_FILES=	bin/vcf2hap man/man1/vcf2hap.1.gz
-
-pre-build:
-	(cd ${WRKSRC} && ${MAKE} LOCALBASE=${LOCALBASE} depend)
+MAKE_ARGS=	MANDIR=${PREFIX}/share/man VERSION=${PORTVERSION}
+PLIST_FILES=	bin/vcf2hap share/man/man1/vcf2hap.1.gz
 
 do-test:
 	(cd ${WRKSRC}/Test && ./run-test.sh)
