@@ -1,6 +1,6 @@
 PORTNAME=	ad2vcf
-DISTVERSION=	0.1.6-19
-DISTVERSIONSUFFIX=	-gf42ae91
+DISTVERSION=	0.1.6-20
+DISTVERSIONSUFFIX=	-g51c419e
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -18,9 +18,6 @@ GH_ACCOUNT=	auerlab
 MAKE_ARGS=	MANPREFIX=${PREFIX}/share
 MAKE_ENV+=	VERSION=${PORTVERSION}
 PLIST_FILES=	bin/ad2vcf share/man/man1/ad2vcf.1.gz
-
-pre-build:
-	(cd ${WRKSRC} && ${MAKE} LOCALBASE=${LOCALBASE} depend)
 
 do-test:
 	(cd ${WRKSRC}/Test && ./run-test.sh)
