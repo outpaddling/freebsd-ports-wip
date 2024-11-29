@@ -1,7 +1,6 @@
 PORTNAME=	peak-classifier
-DISTVERSION=	0.1.4-13
-DISTVERSIONSUFFIX=	-gfb89af3
-PORTREVISION=	1
+DISTVERSION=	0.1.4-20
+DISTVERSIONSUFFIX=	-gacb3f2a
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -21,9 +20,6 @@ GH_ACCOUNT=	auerlab
 
 SHEBANG_FILES=	feature-view.py
 
-MAKE_ARGS=	MANPREFIX=${PREFIX}/share
-
-pre-build:
-	cd ${WRKSRC} && make depend LOCALBASE=${LOCALBASE}
+MAKE_ARGS=	MANPREFIX=${PREFIX}/share VERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
