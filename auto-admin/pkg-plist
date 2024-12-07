@@ -176,3 +176,4 @@ share/man/man8/auto-change-login-class.8.gz
 share/man/man8/auto-image2dev.8.gz
 share/man/man8/auto-pkgsrc-non-removable.8.gz
 share/man/man8/auto-update-system.8.gz
+share/man/man8/auto-user-admin.8.gz
