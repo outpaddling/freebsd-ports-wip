@@ -1,5 +1,6 @@
 PORTNAME=	spectra
 DISTVERSION=	0.0.11
+PORTREVISION=	1
 CATEGORIES=	wip graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,9 +12,10 @@ WWW=		https://pypi.python.org/pypi/spectra
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colormath>3.0.0:math/py-colormath@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
