@@ -160,7 +160,7 @@ share/man/man3/xt_short_cmp.3.gz
 share/man/man3/xt_shuffle.3.gz
 share/man/man3/xt_spawnlp.3.gz
 share/man/man3/xt_spawnvp.3.gz
-share/man/man3/xt_str2u64.3.gz
+share/man/man3/xt_str2u64_hash.3.gz
 share/man/man3/xt_str_argv_cat.3.gz
 share/man/man3/xt_strblank.3.gz
 share/man/man3/xt_strisint.3.gz
