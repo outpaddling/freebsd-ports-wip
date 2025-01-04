@@ -26,6 +26,6 @@ GH_PROJECT=	LPJS
 # Force debug symbols on until release
 WITH_DEBUG=	yes
 
-MAKE_ENV=	MANDIR=${PREFIX}/share/man
+MAKE_ARGS=	MANDIR=${PREFIX}/share/man VERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
