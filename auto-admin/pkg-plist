@@ -20,6 +20,7 @@ bin/auto-os-release
 bin/auto-os-variant
 bin/auto-ostype
 bin/auto-package-installed
+bin/auto-physmem
 bin/auto-pkg-branch
 bin/auto-pkg-latest
 bin/auto-pkgsrc-branch
@@ -174,6 +175,7 @@ share/man/man8/auto-add-swap.8.gz
 share/man/man8/auto-admin.8.gz
 share/man/man8/auto-change-login-class.8.gz
 share/man/man8/auto-image2dev.8.gz
+share/man/man8/auto-physmem.8.gz
 share/man/man8/auto-pkgsrc-non-removable.8.gz
 share/man/man8/auto-update-system.8.gz
 share/man/man8/auto-user-admin.8.gz
