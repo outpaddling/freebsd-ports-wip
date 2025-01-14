@@ -38,7 +38,7 @@ RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-JSON>=0:converters/p5-JSON
 
 USES=		compiler:c++14-lang gmake localbase:ldflags perl5 python shebangfix
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/ncbi-tools++
 
 SHEBANG_FILES=	src/app/blast/cleanup-blastdb-volumes.py \
 		src/app/blast/get_species_taxids.sh \
