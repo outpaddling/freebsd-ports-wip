@@ -1,6 +1,6 @@
 PORTNAME=	auto-admin
-DISTVERSION=	0.8.0-83
-DISTVERSIONSUFFIX=	-g21104dc
+DISTVERSION=	0.8.0-86
+DISTVERSIONSUFFIX=	-g8ba8a10
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
 
-MAKE_ENV=	MANDIR=${PREFIX}/share/man
+# MAKE_ENV=	MANDIR=${PREFIX}/share/man
 
 NO_BUILD=	yes
 NO_ARCH=	yes
