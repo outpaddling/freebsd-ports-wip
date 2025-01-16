@@ -2,32 +2,3 @@ Stacks is a software pipeline for building loci from short-read sequences, such
 as those generated on the Illumina platform. Stacks was developed to work with
 restriction enzyme-based data, such as RAD-seq, for the purpose of building
 genetic maps and conducting population genomics and phylogeography.
-
-Stacks is designed to work with any restriction-enzyme based data, such as GBS,
-CRoPS, and both single and double digest RAD. Stacks is designed as a modular
-pipeline to efficiently curate and assemble large numbers of short-read
-sequences from multiple samples. Stacks identifies loci in a set of individuals,
-either de novo or aligned to a reference genome (including gapped alignments),
-and then genotypes each locus. Stacks incorporates a maximum likelihood
-statistical model to identify sequence polymorphisms and distinguish them from
-sequencing errors. Stacks employs a Catalog to record all loci identified in a
-population and matches individuals to that Catalog to determine which haplotype
-alleles are present at every locus in each individual.
-
-Stacks is implemented in C++ with wrapper programs written in Perl. The core
-algorithms are multithreaded via OpenMP libraries and the software can handle
-data from hundreds of individuals, comprising millions of genotypes.
-
-A de novo analysis in Stacks proceeds in six major stages. First, reads are
-demultiplexed and cleaned by the process_radtags program. The next three stages
-comprise the main Stacks pipeline: building loci (ustacks), creating the catalog
-of loci (cstacks), and matching against the catalog (sstacks). In the fifth
-stage, the gstacks program is executed to assemble and merge paired-end contigs,
-call variant sites in the population and genotypes in each sample. In the final
-stage, the populations program is executed, which can filter data, calculate
-population genetics statistics, and export a variety of data formats.
-
-A reference-based analysis in Stacks proceeds in three major stages. The
-process_radtags program is executed as in a de novo analysis, then the gstacks
-program is executed, which will read in aligned reads to assemble loci (and
-genotype them as in a de novo analysis), followed by the populations program.
