@@ -1,5 +1,5 @@
 PORTNAME=	stacks
-DISTVERSION=	2.68
+DISTVERSION=	2.69
 CATEGORIES=	wip biology perl5 python
 MASTER_SITES=	https://catchenlab.life.illinois.edu/stacks/source/
 
