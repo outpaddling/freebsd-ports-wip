@@ -1,6 +1,6 @@
---- HelperFunctions.c.orig	2021-03-27 07:38:08 UTC
+--- HelperFunctions.c.orig	2020-06-04 23:58:40 UTC
 +++ HelperFunctions.c
-@@ -846,7 +846,7 @@ int strcmp_number(char * s1, char * s2)
+@@ -845,7 +845,7 @@ int strcmp_number(char * s1, char * s2)
  
  int mac_str(char * str_buff)
  {
@@ -9,14 +9,12 @@
  	return 1;
  #else
  #ifdef MACOS
-@@ -2704,10 +2704,6 @@ void main(){
- 
+@@ -2703,7 +2703,7 @@ void main(){
  
  int get_free_total_mem(size_t * total, size_t * free_mem){
--
--#ifdef FREEBSD
--    return -1;
--#endif
  
- #ifdef __MINGW32__
- 	MEMORYSTATUSEX statex;
+-#ifdef FREEBSD
++#ifdef __FreeBSD__
+     return -1;
+ #endif
+ 
