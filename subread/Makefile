@@ -15,11 +15,11 @@ LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
 
 USES=		gmake localbase:ldflags
 
+WRKSRC_SUBDIR=	src
+
 MAKEFILE=	${FILESDIR}/Makefile.pkg
 INSTALL_TARGET=	install-strip
 
 CFLAGS+=	-fcommon
-
-WRKSRC_SUBDIR=	src
 
 .include <bsd.port.mk>
