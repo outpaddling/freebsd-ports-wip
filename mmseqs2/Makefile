@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc powerpcspe
 
-LIB_DEPENDS=	libzstd.so:archivers/zstd
+BUILD_DEPENDS=	zstd>0:archivers/zstd
 
 USES=		cmake perl5 shebangfix
 USE_GITHUB=	yes
