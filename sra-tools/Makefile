@@ -1,5 +1,5 @@
 PORTNAME=	sra-tools
-DISTVERSION=	3.1.1
+DISTVERSION=	3.2.0
 CATEGORIES=	wip biology java
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -18,10 +18,9 @@ ONLY_FOR_ARCHS_REASON=	Upstream explicitly supports specific platforms
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	hdf5>0:science/hdf5
 
-USES=		bison cmake shebangfix
+USES=		bison cmake java shebangfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	${PREFIX}/lib64
-USE_JAVA=	yes
 
 # Builds with earlier versions, but ngs-doc plist differs if jdk17 is present
 JAVA_VERSION=	17+
