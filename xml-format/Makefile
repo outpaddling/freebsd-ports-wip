@@ -3,11 +3,12 @@ DISTVERSION=	0.2.0-3
 DISTVERSIONSUFFIX=	-g4448d89
 CATEGORIES=	wip textproc
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML beautifier
 WWW=		https://github.com/outpaddling/xml-format
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 
