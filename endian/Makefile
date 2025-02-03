@@ -5,6 +5,7 @@ CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Report endianness of a system
+WWW=		https://github.com/outpaddling/endian/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
