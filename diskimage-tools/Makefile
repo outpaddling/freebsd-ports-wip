@@ -8,11 +8,13 @@ COMMENT=	Convenience tools for manipulating disk images
 WWW=		https://github.com/outpaddling/diskimage-tools
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 MANPREFIX=	${PREFIX}/share
 
 do-install:
