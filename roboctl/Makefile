@@ -5,15 +5,14 @@ CATEGORIES=	wip devel
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	API and tools for communicating with Lego and Vex robots
-WWW=		https://github.com/outpaddling/RoboCTL
+WWW=		https://github.com/outpaddling/RoboCTL/
 
-LICENSE=	GPLv3
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgamepad.a:devel/libgamepad
 
-USES=		tar:xz
 USE_GITHUB=	yes
-
 GH_ACCOUNT=	outpaddling
 GH_PROJECT=	RoboCTL
 
@@ -39,6 +38,6 @@ post-install:
 	(cd ${WRKSRC}/Commands/NXTRemote && ${SETENV} ${MAKE_ENV} ${MAKE})
 	${INSTALL_PROGRAM} ${WRKSRC}/Commands/NXTRemote/nxtremote ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/lego_bluetooth_config ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/Commands/NXTRemote/nxtremote.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/Commands/NXTRemote/nxtremote.1 ${STAGEDIR}${MANDIRS}/man1
 
 .include <bsd.port.mk>
