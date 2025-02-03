@@ -10,7 +10,6 @@ WWW=		https://github.com/outpaddling/diskimage-tools
 LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
-
 GH_ACCOUNT=	outpaddling
 
 NO_BUILD=	yes

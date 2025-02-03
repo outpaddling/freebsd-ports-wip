@@ -10,6 +10,9 @@ WWW=		https://acadix.biz/matlab-installer.php
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Unmaintained, outdated and fails to build with ICU 76.1
+EXPIRATION_DATE=2025-04-03
+
 RUN_DEPENDS=	auto-ask:sysutils/auto-admin \
 		linux-c7-java-1.8.0-openjdk>0:wip/linux-c7-java-1.8.0-openjdk \
 		linux-c7-pam>0:wip/linux-c7-pam \
