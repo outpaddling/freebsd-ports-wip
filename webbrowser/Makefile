@@ -4,12 +4,11 @@ CATEGORIES=	wip www
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Wrapper for running the "best" available WEB browser
-WWW=		https://personalpages.tds.net/~jwbacon/Ports
+WWW=		https://github.com/outpaddling/webbrowser/
 
 LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
-
 GH_ACCOUNT=	outpaddling
 
 NO_BUILD=	yes
