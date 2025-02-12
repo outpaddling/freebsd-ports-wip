@@ -1,5 +1,6 @@
 PORTNAME=	auto-admin
 DISTVERSION=	0.8.1
+DISTVERSIONSUFFIX=	-g14ff408
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
