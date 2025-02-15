@@ -1,5 +1,5 @@
 PORTNAME=	vbz-compression
-DISTVERSION=	1.0.12
+DISTVERSION=	1.0.13
 CATEGORIES=	wip archivers
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://github.com/nanoporetech/vbz_compression
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENCE.txt
 
-BUILD_DEPENDS=	streamvbyte>=0.4.1:wip/streamvbyte
+BUILD_DEPENDS=	streamvbyte>=0.4.1:archivers/streamvbyte
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libzstd.so:archivers/zstd
 
