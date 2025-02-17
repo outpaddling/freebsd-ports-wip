@@ -1,7 +1,7 @@
 PORTNAME=	tabixpp
 DISTVERSIONPREFIX=	v
 # Test with vcflib and freebayes before committing
-DISTVERSION=	1.1.1
+DISTVERSION=	1.1.2
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
