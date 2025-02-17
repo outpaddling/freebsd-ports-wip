@@ -1,0 +1,26 @@
+--- meson.build.orig	2025-02-16 14:02:36 UTC
++++ meson.build
+@@ -25,7 +25,9 @@ thread_dep = dependency('threads', static: static_buil
+ # fastahack_dep = cc.find_library('libfastahack')
+ lzma_dep = dependency('liblzma', static: static_build)
+ thread_dep = dependency('threads', static: static_build)
+-wfa2lib_dep = cc.find_library('libwfa2') # need to link for vcflib code
++wfa2_inc = include_directories('/usr/local/include/wfa2lib')
++wfa2_lib = library('libwfa2.so')
++wfa2lib_dep = declare_dependency(link_with: wfa2_lib, include_directories: wfa2_inc)
+ zlib_dep = dependency('zlib', static: static_build)
+ htslib_dep = dependency('htslib', static: static_build, required: false)
+ vcflib_dep = cc.find_library('libvcflib', required: false)
+@@ -43,8 +45,10 @@ if get_option('prefer_system_deps') # defaults to true
+ 
+ 
+ if get_option('prefer_system_deps') # defaults to true, otherwise use git modules and local sources
+-  fastahack_dep = cc.find_library('libfastahack', required: true) # also link in for vcflib
+-  smithwaterman_dep = cc.find_library('libsmithwaterman')
++  fastahack_lib = static_library('libfastahack')
++  fastahack_inc = include_directories('/usr/local/include/fastahack')
++  fastahack_dep = declare_dependency(link_with: fastahack_lib, include_directories: fastahack_inc)
++  smithwaterman_dep = dependency('libsw')
+   if fs.is_dir('/usr/include/fastahack')
+     message('Using /usr/include/fastahack dir')
+     fastahack_inc = include_directories('/usr/include/fastahack')
