@@ -10,7 +10,8 @@ WWW=		https://github.com/ekg/freebayes
 LICENSE=	MIT
 
 BUILD_DEPENDS=	fastahack>0:biology/fastahack \
-		multichoose>0:math/multichoose
+		multichoose>0:math/multichoose \
+		simde>0:devel/simde
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libwfa2.so:wip/wfa2-lib \
 		libsw.so:biology/smithwaterman \
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libhts.so:biology/htslib \
 # Submodules use older versions than the ports, so we cannot safely unbundle
 # No shared libs are built by the submodules so there will be no conflicts
 # Yes, there are actually 2 versions of intervaltree required
-USES=		cmake:indirect compiler:c++14-lang localbase meson perl5 pkgconfig
+USES=		compiler:c++14-lang localbase meson perl5 pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ekg
 USE_PERL5=	build

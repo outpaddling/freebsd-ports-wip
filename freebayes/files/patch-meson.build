@@ -11,16 +11,24 @@
  zlib_dep = dependency('zlib', static: static_build)
  htslib_dep = dependency('htslib', static: static_build, required: false)
  vcflib_dep = cc.find_library('libvcflib', required: false)
-@@ -43,8 +45,10 @@ if get_option('prefer_system_deps') # defaults to true
+@@ -43,14 +45,12 @@ if get_option('prefer_system_deps') # defaults to true
  
  
  if get_option('prefer_system_deps') # defaults to true, otherwise use git modules and local sources
 -  fastahack_dep = cc.find_library('libfastahack', required: true) # also link in for vcflib
 -  smithwaterman_dep = cc.find_library('libsmithwaterman')
-+  fastahack_lib = static_library('libfastahack')
+-  if fs.is_dir('/usr/include/fastahack')
+-    message('Using /usr/include/fastahack dir')
+-    fastahack_inc = include_directories('/usr/include/fastahack')
+-  else
+-    fastahack_inc = files()
+-  endif
++  fastahack_lib = library('libfastahack')
 +  fastahack_inc = include_directories('/usr/local/include/fastahack')
 +  fastahack_dep = declare_dependency(link_with: fastahack_lib, include_directories: fastahack_inc)
-+  smithwaterman_dep = dependency('libsw')
-   if fs.is_dir('/usr/include/fastahack')
-     message('Using /usr/include/fastahack dir')
-     fastahack_inc = include_directories('/usr/include/fastahack')
++  sw_lib = library('libsw')
++  sw_inc = include_directories('/usr/local/include/smithwaterman')
++  smithwaterman_dep = declare_dependency(link_with: sw_lib, include_directories: sw_inc)
+ 
+ else
+   # uses the minimal local git submodules or checkout trees in ./contrib/
