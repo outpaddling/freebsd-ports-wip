@@ -11,10 +11,13 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	fastahack>0:biology/fastahack \
 		multichoose>0:math/multichoose \
-		simde>0:devel/simde
+		simde>0:devel/simde \
+		vcflib>0:biology/vcflib \
+		intervaltree>=0.1:wip/intervaltree
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libwfa2.so:wip/wfa2-lib \
 		libsw.so:biology/smithwaterman \
+		libtabix.so:biology/tabixpp
 
 # Submodules use older versions than the ports, so we cannot safely unbundle
 # No shared libs are built by the submodules so there will be no conflicts
