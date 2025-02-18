@@ -1,7 +1,7 @@
 PORTNAME=	intervaltree
 DISTVERSION=	0.1-2
 DISTVERSIONSUFFIX=	-gaa59377
-CATEGORIES=	wip math
+CATEGORIES=	wip devel
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Minimal C++ interval tree implementation
