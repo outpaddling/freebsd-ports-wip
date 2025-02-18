@@ -9,15 +9,15 @@ WWW=		https://github.com/ekg/freebayes
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	fastahack>0:biology/fastahack \
-		multichoose>0:math/multichoose \
-		simde>0:devel/simde \
-		vcflib>0:biology/vcflib \
-		intervaltree>=0.1:wip/intervaltree \
-		smithwaterman:biology/smithwaterman \
-		wfa2-lib>0:wip/wfa2-lib \
-		tabixpp>0:biology/tabixpp
-LIB_DEPENDS=	libhts.so:biology/htslib \
+BUILD_DEPENDS=	fastahack>=1.0.0:biology/fastahack \
+		multichoose>=1.0.3.3:wip/multichoose \
+		simde>=0.8.2:devel/simde \
+		vcflib>=1.0.12:biology/vcflib \
+		intervaltree>=0.1.2:wip/intervaltree \
+		smithwaterman>=g20160702:biology/smithwaterman \
+		wfa2-lib>=2.3.5:wip/wfa2-lib \
+		tabixpp>=1.1.2:wip/tabixpp
+LIB_DEPENDS=	libhts.so:biology/htslib
 
 USES=		compiler:c++14-lang localbase meson perl5 pkgconfig
 USE_GITHUB=	yes
