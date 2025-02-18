@@ -27,4 +27,10 @@ USE_PERL5=	build
 LDFLAGS+=	-lexecinfo
 PLIST_FILES=	bin/bamleftalign bin/freebayes
 
+# meson.build is also statically patched, so do this after post-patch.
+# Run make clean patch before updating static patch, to avoid adding
+# up reinplace changes to the static patch.
+pre-configure:
+	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" ${WRKSRC}/meson.build
+
 .include <bsd.port.mk>

@@ -24,7 +24,7 @@
  seqlib_dep = dependency('libseqlib', static: static_build, required: false)
  tabixpp_dep = cc.find_library('tabixpp', required: false, static: static_build)
  
-@@ -43,14 +45,13 @@ if get_option('prefer_system_deps') # defaults to true
+@@ -43,14 +45,12 @@ if get_option('prefer_system_deps') # defaults to true
  
  
  if get_option('prefer_system_deps') # defaults to true, otherwise use git modules and local sources
@@ -36,17 +36,16 @@
 -  else
 -    fastahack_inc = files()
 -  endif
-+  fastahack_lib = library('fastahack')
 +  fastahack_inc = include_directories('/usr/local/include/fastahack')
-+  fastahack_dep = declare_dependency(link_with: fastahack_lib, include_directories: fastahack_inc)
-+  multichoose_inc = include_directories('/usr/local/include/multichoose')
-+  multichoose_dep = declare_dependency(include_directories: multichoose_inc)
++  fastahack_dep = declare_dependency(include_directories: fastahack_inc)
 +  sw_inc = include_directories('/usr/local/include/smithwaterman')
 +  smithwaterman_dep = declare_dependency(include_directories: sw_inc)
++  multichoose_inc = include_directories('/usr/local/include/multichoose')
++  multichoose_dep = declare_dependency(include_directories: multichoose_inc)
  
  else
    # uses the minimal local git submodules or checkout trees in ./contrib/
-@@ -153,14 +154,14 @@ freebayes_lib = static_library(
+@@ -153,14 +153,14 @@ freebayes_lib = static_library(
      include_directories : [incdir, vcflib_inc, fastahack_inc],
      cpp_args : extra_cpp_args,
      dependencies : [zlib_dep, lzma_dep, thread_dep, htslib_dep, tabixpp_dep,
@@ -64,7 +63,7 @@
  endif
  
  executable('freebayes',
-@@ -177,6 +178,7 @@ executable('freebayes',
+@@ -177,6 +177,7 @@ executable('freebayes',
                            seqlib_dep,
                            fastahack_dep, # for vcflib
                            smithwaterman_dep, # for vcflib
@@ -72,7 +71,7 @@
                            wfa2lib_dep],
             link_with : freebayes_lib,
             install: true
-@@ -195,6 +197,7 @@ executable('bamleftalign',
+@@ -195,6 +196,7 @@ executable('bamleftalign',
                            seqlib_dep,
                            fastahack_dep, # for vcflib
                            smithwaterman_dep, # for vcflib
