@@ -10,7 +10,7 @@ WWW=		https://github.com/ekg/freebayes
 LICENSE=	MIT
 
 BUILD_DEPENDS=	fastahack>=1.0.0:biology/fastahack \
-		multichoose>=1.0.3.3:wip/multichoose \
+		multichoose>=1.0.3.7:wip/multichoose \
 		simde>=0.8.2:devel/simde \
 		vcflib>=1.0.12:biology/vcflib \
 		intervaltree>=0.1.2:wip/intervaltree \
