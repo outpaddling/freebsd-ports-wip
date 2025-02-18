@@ -1,6 +1,7 @@
 PORTNAME=		multichoose
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.0.3.3	# Derived from abandoned ekg/multichoose
+DISTVERSION=		1.0.3-7
+DISTVERSIONSUFFIX=	-ge1f94ae
 CATEGORIES=		wip math
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,8 +13,7 @@ LICENSE=	MIT
 USES=		python shebangfix
 SHEBANG_FILES=	*.py
 USE_GITHUB=	yes
-GH_ACCOUNT=	vcflib
-GH_TAGNAME=	255192e
+GH_ACCOUNT=	ekg
 
 MAKEFILE=	${FILESDIR}/Makefile
 INSTALL_TARGET=	install-strip
