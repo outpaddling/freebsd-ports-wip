@@ -32,5 +32,6 @@ PLIST_FILES=	bin/bamleftalign bin/freebayes
 # up reinplace changes to the static patch.
 pre-configure:
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" ${WRKSRC}/meson.build
+	@${REINPLACE_CMD} -e "s|1.3.8|${PORTVERSION}|g" ${WRKSRC}/src/version_git.h
 
 .include <bsd.port.mk>
