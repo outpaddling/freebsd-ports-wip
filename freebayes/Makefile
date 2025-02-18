@@ -15,7 +15,7 @@ BUILD_DEPENDS=	fastahack>=1.0.0:biology/fastahack \
 		vcflib>=1.0.12:biology/vcflib \
 		intervaltree>=0.1.2:wip/intervaltree \
 		smithwaterman>=g20160702:biology/smithwaterman \
-		wfa2-lib>=2.3.5:wip/wfa2-lib \
+		wfa2-lib>=2.3.5:biology/wfa2-lib \
 		tabixpp>=1.1.2:wip/tabixpp
 LIB_DEPENDS=	libhts.so:biology/htslib
 
