@@ -25,6 +25,6 @@ SHEBANG_FILES=	hisat2 hisat2-build hisat2-inspect \
 		scripts/*.pl docs_jhu/*.pl
 GH_ACCOUNT=	DaehwanKimLab
 
-CFLAGS+=	-Wno-deprecated-declarations -Wno-char-subscripts -fsigned-char
+CFLAGS+=	-Wno-unused-but-set-variable -Wno-deprecated-declarations -Wno-char-subscripts -fsigned-char
 
 .include <bsd.port.mk>
