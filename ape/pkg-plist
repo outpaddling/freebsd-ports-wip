@@ -72,6 +72,8 @@ bin/search_libs
 %%DATADIR%%/Languages/GO/syntax_highlighting
 %%DATADIR%%/Languages/GRADES/language_opts
 %%DATADIR%%/Languages/GRADES/syntax_highlighting
+%%DATADIR%%/Languages/Gnuplot/language_opts
+%%DATADIR%%/Languages/Gnuplot/syntax_highlighting
 %%DATADIR%%/Languages/HTML/Macros/macros
 %%DATADIR%%/Languages/HTML/Macros/menu.txt
 %%DATADIR%%/Languages/HTML/language_opts
