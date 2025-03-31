@@ -1,24 +1,23 @@
 PORTNAME=	stringtie
-PORTVERSION=	1.3.4d
-DISTVERSIONPREFIX=v
+DISTVERSION=	3.0.0
 CATEGORIES=	wip biology
+MASTER_SITES=	http://ccb.jhu.edu/software/stringtie/dl/
 
-MAINTAINER=	jwb@FreeBSD.org.edu
-COMMENT=	Transcript assembly and quantification for RNA-Seq
-WWW=		https://www.ccb.jhu.edu/software/stringtie/
+MAINTAINER=	mzaki@e-mail.ne.jp
+COMMENT=	Transcript assembly and quantification for RNA-seq
+WWW=		http://www.ccb.jhu.edu/software/stringtie/
 
-LICENSE=	ART20
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
+TEST_DEPENDS=	bash:shells/bash \
+		curl:ftp/curl
 
-USE_GITHUB=	yes
-USE_GCC=	yes
-GH_ACCOUNT=	gpertea
-
-MAKE_JOBS_UNSAFE=	yes
-# FIXME: Other targets clobber CXXFLAGS
+USES=		compiler:c++11-lang gmake
 ALL_TARGET=	release
+TEST_TARGET=	test
+MAKE_ENV=	MAKE=${GMAKE}
+
 PLIST_FILES=	bin/stringtie
 
 do-install:

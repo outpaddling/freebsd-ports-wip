@@ -1,70 +1,15 @@
---- Makefile.orig	2018-02-25 17:01:08 UTC
+--- Makefile.orig	2025-03-31 21:17:25 UTC
 +++ Makefile
-@@ -6,23 +6,23 @@ GDIR      :=./gclib
- 
- INCDIRS   := -I. -I${GDIR} -I${BAM}
- 
--CC        := g++
-+CXX       ?= g++
- 
- BASEFLAGS := -Wall -Wextra ${INCDIRS} -fsigned-char -D_FILE_OFFSET_BITS=64 \
- -D_LARGEFILE_SOURCE -fno-strict-aliasing -fno-exceptions -fno-rtti
- 
--LINKER    := g++
--
- LDFLAGS   := -g -L${BAM} $(LDFLAGS)
- 
- LIBS      := -lbam -lz
- 
-+MAKE      ?= make
-+
- ifneq (,$(findstring nothreads,$(MAKECMDGOALS)))
-  NOTHREADS=1
+@@ -25,7 +25,7 @@ endif
+   BASEFLAGS += -Wno-class-memaccess
  endif
  
- #detect MinGW (Windows environment)
--ifneq (,$(findstring mingw,$(shell ${CC} -dumpmachine)))
-+ifneq (,$(findstring mingw,$(shell ${CXX} -dumpmachine)))
-  WINDOWS=1
- endif
+-LINKER  := $(if $(LINKER),$(LINKER),g++)
++LINKER  := $(if $(LINKER),$(LINKER),${CXX})
  
-@@ -63,7 +63,7 @@ endif
- ifneq (,$(filter %release %static, $(MAKECMDGOALS)))
-   # -- release build
-   RELEASE_BUILD=1
--  CFLAGS := -DNDEBUG -g $(BASEFLAGS) $(CFLAGS) -O3
-+  CXXFLAGS := -DNDEBUG -g $(BASEFLAGS) $(CXXFLAGS) -O3
- else
-   ifneq (,$(filter %memcheck %memdebug, $(MAKECMDGOALS)))
-      #use sanitizer in gcc 4.9+
-@@ -72,20 +72,20 @@ else
-      ifeq "$(GCCVER49)" "0"
-        $(error gcc version 4.9 or greater is required for this build target)
-      endif
--     CFLAGS := -fno-omit-frame-pointer -fsanitize=undefined -fsanitize=address $(BASEFLAGS)
-+     CXXFLAGS := -fno-omit-frame-pointer -fsanitize=undefined -fsanitize=address $(BASEFLAGS)
-      GCCVER5 := $(shell expr `g++ -dumpversion | cut -f1 -d.` \>= 5)
-      ifeq "$(GCCVER5)" "1"
--       CFLAGS += -fsanitize=bounds -fsanitize=float-divide-by-zero -fsanitize=vptr
--       CFLAGS += -fsanitize=float-cast-overflow -fsanitize=object-size
--       #CFLAGS += -fcheck-pointer-bounds -mmpx
-+       CXXFLAGS += -fsanitize=bounds -fsanitize=float-divide-by-zero -fsanitize=vptr
-+       CXXFLAGS += -fsanitize=float-cast-overflow -fsanitize=object-size
-+       #CXXFLAGS += -fcheck-pointer-bounds -mmpx
-      endif
--     CFLAGS := -g -DDEBUG -D_DEBUG -DGDEBUG -fno-common -fstack-protector $(CFLAGS)
-+     CXXFLAGS := -g -DDEBUG -D_DEBUG -DGDEBUG -fno-common -fstack-protector $(CXXFLAGS)
-      LIBS := -lasan -lubsan -ldl $(LIBS)
-   else
-     ifeq (,$(findstring clean,$(MAKECMDGOALS)))
-      #just plain debug build
-      DEBUG_BUILD=1
--     CFLAGS := -g -DDEBUG -D_DEBUG -DGDEBUG $(BASEFLAGS)
-+     CXXFLAGS := -g -DDEBUG -D_DEBUG -DGDEBUG $(BASEFLAGS)
-     endif
-   endif
- endif
-@@ -103,7 +103,7 @@ endif
+ LDFLAGS := $(if $(LDFLAGS),$(LDFLAGS),-g)
+ 
+@@ -136,7 +136,7 @@ ifdef DEBUG_BUILD
  ifdef DEBUG_BUILD
    #$(warning Building DEBUG version of stringtie.. )
    DBG_WARN=@echo
@@ -72,42 +17,21 @@
 +  DBG_WARN+='WARNING: built DEBUG version [much slower], use "${MAKE} clean release" for a faster, optimized version of the program.'
  endif
  
- 
-@@ -112,7 +112,7 @@ OBJS := ${GDIR}/GBase.o ${GDIR}/GArgs.o 
- 
- 
- ifneq (,$(filter %memtrace %memusage %memuse, $(MAKECMDGOALS)))
--    CFLAGS += -DGMEMTRACE
-+    CXXFLAGS += -DGMEMTRACE
-     OBJS += ${GDIR}/proc_mem.o
- endif
- 
-@@ -122,7 +122,7 @@ endif
- 
- 
- %.o : %.cpp
--	${CC} ${CFLAGS} -c $< -o $@
-+	${CXX} ${CXXFLAGS} -c $< -o $@
- 
- OBJS += rlink.o tablemaker.o tmerge.o
- 
-@@ -137,9 +137,9 @@ rlink.o : rlink.h tablemaker.h $(GDIR)/G
- tmerge.o : rlink.h tmerge.h
+ OBJS := ${GDIR}/GBase.o ${GDIR}/GArgs.o ${GDIR}/GStr.o ${GDIR}/GSam.o \
+@@ -169,7 +169,7 @@ tablemaker.o : tablemaker.h rlink.h
  tablemaker.o : tablemaker.h rlink.h
- ${BAM}/libbam.a: 
--	cd ${BAM} && make lib
-+	cd ${BAM} && ${MAKE} lib
- stringtie: ${BAM}/libbam.a $(OBJS) stringtie.o
--	${LINKER} ${LDFLAGS} -o $@ ${filter-out %.a %.so, $^} ${LIBS}
-+	${CXX} ${LDFLAGS} -o $@ ${filter-out %.a %.so, $^} ${LIBS}
- 	@echo
- 	${DBG_WARN}
  
-@@ -151,6 +151,6 @@ clean:
- 	${RM} stringtie${EXE} stringtie.o*  $(OBJS)
- 	${RM} core.*
- allclean cleanAll cleanall:
--	cd ${BAM} && make clean
-+	cd ${BAM} && ${MAKE} clean
- 	${RM} stringtie${EXE} stringtie.o* $(OBJS)
- 	${RM} core.*
+ ##${BAM}/libbam.a: 
+-##	cd ${BAM} && make lib
++##	cd ${BAM} && ${MAKE} lib
+ 
+ ${HTSLIB}/libhts.a:
+ 	cd ${HTSLIB} && ./build_lib.sh
+@@ -193,6 +193,6 @@ clean-htslib:
+ clean-htslib:
+ 	cd ${HTSLIB} && ./build_lib.sh clean
+ ##allclean cleanAll cleanall:
+-##	cd ${BAM} && make clean
++##	cd ${BAM} && ${MAKE} clean
+ ##	${RM} stringtie${EXE} stringtie.o* $(OBJS)
+ ##	${RM} core.*
