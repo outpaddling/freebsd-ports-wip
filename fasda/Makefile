@@ -11,9 +11,11 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libxtend.so:wip/libxtend libbiolibc.so:wip/biolibc
-RUN_DEPENDS=	stringtie>0:biology/stringtie
+RUN_DEPENDS=	stringtie>0:biology/stringtie \
+		${PYTHON_PKGNAMEPREFIX}seaborn>=0:math/py-seaborn@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fastcluster>=0:math/py-fastcluster@${PY_FLAVOR}
 
-USES=		localbase
+USES=		localbase python:run
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	auerlab
