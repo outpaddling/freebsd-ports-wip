@@ -1,6 +1,6 @@
 PORTNAME=	fasda
-DISTVERSION=	0.1.5-50
-DISTVERSIONSUFFIX=	-gc1bfc1d
+DISTVERSION=	0.1.5-55
+DISTVERSIONSUFFIX=	-gd19598c
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -15,8 +15,10 @@ RUN_DEPENDS=	stringtie>0:biology/stringtie \
 		${PYTHON_PKGNAMEPREFIX}seaborn>=0:math/py-seaborn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fastcluster>=0:math/py-fastcluster@${PY_FLAVOR}
 
-USES=		localbase python:run
+USES=		localbase python:run shebangfix
 USE_GITHUB=	yes
+
+SHEBANG_FILES=	Scripts/heatmap.py
 
 GH_ACCOUNT=	auerlab
 
