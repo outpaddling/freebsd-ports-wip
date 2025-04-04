@@ -1,6 +1,6 @@
 PORTNAME=	fasda
-DISTVERSION=	0.1.5-58
-DISTVERSIONSUFFIX=	-g0744c03
+DISTVERSION=	0.1.5-62
+DISTVERSIONSUFFIX=	-g5689a59
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,14 +11,10 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libxtend.so:wip/libxtend libbiolibc.so:wip/biolibc
-RUN_DEPENDS=	stringtie>0:biology/stringtie \
-		${PYTHON_PKGNAMEPREFIX}seaborn>=0:math/py-seaborn@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}fastcluster>=0:math/py-fastcluster@${PY_FLAVOR}
+RUN_DEPENDS=	stringtie>0:biology/stringtie
 
-USES=		localbase python:run shebangfix
+USES=		localbase
 USE_GITHUB=	yes
-
-SHEBANG_FILES=	Scripts/heatmap.py
 
 GH_ACCOUNT=	auerlab
 
