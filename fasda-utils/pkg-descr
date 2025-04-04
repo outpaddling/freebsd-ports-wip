@@ -4,6 +4,6 @@ command-line skills. The code is written entirely in C to maximize
 efficiency and portability, and to provide a simple command-line user
 interface.
 
-FASDA-utils is a collection of optional companion programs and scripts.
-They are separated from the main FASDA distribution in order to keep
-FASDA packages minimal.
+FASDA-utils is a collection of optional companion programs and
+scripts.  They are separated from the main FASDA distribution in order
+to keep FASDA packages minimal.
