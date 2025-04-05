@@ -22,4 +22,8 @@ GH_TAGNAME=	eb807e741241e15db049409e5d401d21d91eb8f2
 
 MAKE_ARGS=	MANPREFIX=${PREFIX}/share VERSION=${PORTVERSION}
 
+PLIST_FILES=	libexec/fasda/heatmap \
+		libexec/fasda/heatmap.py \
+		share/man/man1/fasda-heatmap.1.gz
+
 .include <bsd.port.mk>
