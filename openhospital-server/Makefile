@@ -14,6 +14,6 @@ WWW=		https://example.com/oh-server
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# TODO: Add mariadb/mysql dep
+USES+=		mysql:server
 
 .include <bsd.port.mk>
