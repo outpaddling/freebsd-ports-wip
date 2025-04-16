@@ -16,4 +16,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		java zip
 
+NO_BUILD=	yes
+NO_ARCH=	yes
+
+# To-do: Patch files for FreeBSD and install whatever is necessary to
+# make the client run.   Probably should be a script in ${PREFIX}/bin
+# to launch the Java app.
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/oh/bin/*.jar ${STAGEDIR}${JAVAJARDIR}
+
 .include <bsd.port.mk>
