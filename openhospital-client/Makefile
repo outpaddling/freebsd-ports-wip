@@ -14,7 +14,9 @@ WWW=		https://example.com/openhospital-client
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		java zip
+USES=		java shebangfix zip
+
+SHEBANG_FILES=	oh.sh
 
 NO_BUILD=	yes
 NO_ARCH=	yes
