@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2019-09-27 12:43:55 UTC
++++ CMakeLists.txt
+@@ -55,7 +55,7 @@ endif()
+ endif()
+ 
+ # fontforge starts using pkg-config 'correctly' since 2.0.0
+-pkg_check_modules(FONTFORGE REQUIRED libfontforge>=2.0.0)
++# pkg_check_modules(FONTFORGE REQUIRED libfontforge>=2.0.0)
+ include_directories(${FONTFORGE_INCLUDE_DIRS})
+ link_directories(${FONTFORGE_LIBRARY_DIRS})
+ set(PDF2HTMLEX_LIBS ${PDF2HTMLEX_LIBS} ${FONTFORGE_LIBRARIES})
+@@ -82,7 +82,7 @@ else()
+ if(CYGWIN)
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++0x")
+ else()
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x -pthread")
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20 -pthread")
+ endif()
+ 
+ # check the C++11 features we need
