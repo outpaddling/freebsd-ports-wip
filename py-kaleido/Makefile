@@ -1,8 +1,9 @@
-PORTNAME=	kaleido
-DISTVERSION=	0.4.2
-CATEGORIES=	wip graphics python
-MASTER_SITES=	PYPI
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PORTNAME=		kaleido
+DISTVERSION=		1.0.0
+DISTVERSIONSUFFIX=	rc11
+CATEGORIES=		wip graphics python
+MASTER_SITES=		PYPI
+PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Cross-platform library for generating static images for Plotly
