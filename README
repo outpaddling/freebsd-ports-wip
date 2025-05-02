@@ -5,7 +5,7 @@ To install ports from this collection:
 
 1)  pkg install auto-admin
 
-2)  auto-freebsd-wip-checkout
+2)  auto-ports-wip-checkout
 
 3)  Now you can install any port using
 
