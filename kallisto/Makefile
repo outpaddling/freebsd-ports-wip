@@ -37,6 +37,7 @@ CMAKE_ARGS+=		-DUSE_HDF5:BOOL=ON -DUSE_BAM:BOOL=ON
 # WIP: Remove before committing
 CMAKE_ARGS+=		-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
 MAKE_JOBS_UNSAFE=	yes
+CXXFLAGS+=		-Wno-unqualified-std-cast-call
 LDFLAGS+=		-lhts -lz
 
 OPTIONS_DEFINE=	EXAMPLES
