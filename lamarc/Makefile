@@ -18,6 +18,8 @@ GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S,${DISTVERSIONSUFFIX},,}
 
+CXXFLAGS+=	-Wno-unused-parameter -Wno-mismatched-tags
+
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*
 
