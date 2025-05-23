@@ -2,7 +2,6 @@ sbin/port-check
 sbin/port-commit
 sbin/port-create
 sbin/port-diff
-sbin/port-gen-install-target
 sbin/port-grep
 sbin/port-list
 sbin/port-mfh
@@ -24,5 +23,6 @@ share/man/man1/port-create.1.gz
 share/man/man1/port-diff.1.gz
 share/man/man1/port-mkpatch.1.gz
 share/man/man1/port-patch-edit.1.gz
+share/man/man1/port-reinstall.1.gz
 share/man/man1/port-remake.1.gz
 share/man/man1/port-restage.1.gz
