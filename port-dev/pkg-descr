@@ -1,1 +1,8 @@
-Tools for FreeBSD ports development and testing.
+Bourne shell scripts for:
+
+1. Creating, updating, and testing FreeBSD ports, as well as
+   generating new patches.
+2. Grepping files in the ports tree
+3. Listing existing ports by glob pattern
+4. Committing and merging from head to quarterly
+5. Configuring and running poudriere for port testing

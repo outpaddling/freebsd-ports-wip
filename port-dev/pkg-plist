@@ -7,7 +7,7 @@ sbin/port-grep
 sbin/port-list
 sbin/port-mfh
 sbin/port-mkpatch
-sbin/port-patch-vi
+sbin/port-patch-edit
 sbin/port-poudriere-pkg
 sbin/port-poudriere-setup
 sbin/port-poudriere-test
@@ -19,3 +19,7 @@ sbin/port-restage
 sbin/port-shar
 sbin/port-show-dependents
 sbin/port-which
+share/man/man1/port-check.1.gz
+share/man/man1/port-create.1.gz
+share/man/man1/port-patch-edit.1.gz
+share/man/man1/port-remake.1.gz
