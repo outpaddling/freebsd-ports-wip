@@ -21,5 +21,8 @@ sbin/port-show-dependents
 sbin/port-which
 share/man/man1/port-check.1.gz
 share/man/man1/port-create.1.gz
+share/man/man1/port-diff.1.gz
+share/man/man1/port-mkpatch.1.gz
 share/man/man1/port-patch-edit.1.gz
 share/man/man1/port-remake.1.gz
+share/man/man1/port-restage.1.gz
