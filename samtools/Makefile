@@ -1,5 +1,5 @@
 PORTNAME=	samtools
-DISTVERSION=	1.21
+DISTVERSION=	1.22
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
