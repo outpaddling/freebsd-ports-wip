@@ -1,5 +1,5 @@
 PORTNAME=	bcftools
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://www.htslib.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	htslib>=1.21:wip/htslib
+BUILD_DEPENDS=	htslib>=1.22:wip/htslib
 LIB_DEPENDS=	libhts.so:wip/htslib
 TEST_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
