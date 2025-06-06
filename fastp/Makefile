@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=		0.25.0
 CATEGORIES=		wip biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	hayzam@alchemilla.io
 COMMENT=	Ultra-fast all-in-one FASTQ preprocessor
 WWW=		https://github.com/OpenGene/fastp
 
