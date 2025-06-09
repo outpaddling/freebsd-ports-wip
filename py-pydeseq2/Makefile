@@ -11,6 +11,12 @@ WWW=		https://github.com/owkin/PyDESeq2
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anndata>=0.8.0:devel/py-anndata@${PY_FLAVOR} \
+		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}pandas>=1.23.0:math/py-pandas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-learn>=1.1.1:science/py-scikit-learn@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>1.11.0:science/py-scipy@${PY_FLAVOR}
+
 USES=		python
 USE_PYTHON=	autoplist distutils
 
