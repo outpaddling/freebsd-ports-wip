@@ -1,4 +1,9 @@
 PORTNAME=		kaleido
+# The kaleido situation is currently a mess.  One of it's goals it to
+# reduce dependencies vs using orca + psutil, but kaleido depends on
+# the chrome browser.  Additionally, rc115 conflicts with its own
+# dependency, py-choreographer 1.0.8.  I plan to let the dust settle
+# before committing this to ports.
 DISTVERSION=		1.0.0
 DISTVERSIONSUFFIX=	rc11
 CATEGORIES=		wip graphics python
