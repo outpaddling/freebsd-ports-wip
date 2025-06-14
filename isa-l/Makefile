@@ -11,8 +11,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # FIXME: aarch64 uses portable base functions for now.
-# Upstream has optimized support for aarch64, but it's challenging to build.
-ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le powerpc64 powerpc
+# Upstream has optimized support for aarch64, but the code is not portable.
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc powerpc64 powerpc64le
 
 BUILD_DEPENDS=	nasm:devel/nasm
 
