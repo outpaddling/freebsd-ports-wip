@@ -1,6 +1,5 @@
 PORTNAME=	pywgsim
-DISTVERSION=	0.5.2
-PORTREVISION=	1
+DISTVERSION=	0.6.0
 CATEGORIES=	wip biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +12,10 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plac>=0:devel/py-plac@${PY_FLAVOR}
 
-USES=		python:3.10
+USES=		python
 USE_PYTHON=	autoplist distutils
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pywgsim/*.so
 
 .include <bsd.port.mk>
