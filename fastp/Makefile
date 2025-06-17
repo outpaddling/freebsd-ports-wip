@@ -1,6 +1,6 @@
 PORTNAME=		fastp
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.26.0
+DISTVERSION=		1.0.0
 CATEGORIES=		wip biology
 
 MAINTAINER=	hayzam@alchemilla.io
