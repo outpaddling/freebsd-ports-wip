@@ -11,7 +11,7 @@ WWW=		https://software.broadinstitute.org/software/score/
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	htslib>=1.21:wip/htslib
+BUILD_DEPENDS=	htslib>=1.22:wip/htslib
 LIB_DEPENDS=	libhts.so:wip/htslib libcholmod.so:math/suitesparse-cholmod
 TEST_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash bcftools>=${PORTVERSION}:wip/bcftools
@@ -22,7 +22,7 @@ USE_PERL5=	test
 
 GH_ACCOUNT=	samtools
 GH_PROJECT=	bcftools
-GH_TAGNAME=	1.21
+GH_TAGNAME=	1.22
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	misc/* test/test.pl
 
