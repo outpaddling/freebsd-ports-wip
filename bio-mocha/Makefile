@@ -11,7 +11,7 @@ WWW=		https://software.broadinstitute.org/software/mocha/
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	bash:shells/bash htslib>=1.21:wip/htslib
+BUILD_DEPENDS=	bash:shells/bash htslib>=1.22:wip/htslib
 LIB_DEPENDS=	libhts.so:wip/htslib
 RUN_DEPENDS=	bcftools>=${PORTVERSION}:wip/bcftools
 
@@ -21,7 +21,7 @@ USE_PERL5=	test
 
 GH_ACCOUNT=	samtools
 GH_PROJECT=	bcftools
-GH_TAGNAME=	1.21
+GH_TAGNAME=	1.22
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	misc/* test/test.pl
 
