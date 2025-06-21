@@ -1,6 +1,6 @@
 PORTNAME=	bcf-score
 DISTVERSION=	1.20
-PORTREVISON=	2
+PORTREVISION=	2
 CATEGORIES=	wip biology
 MASTER_SITES=	https://software.broadinstitute.org/software/score/
 # Get this right, or ports will download bcftools in it's place via tuple
