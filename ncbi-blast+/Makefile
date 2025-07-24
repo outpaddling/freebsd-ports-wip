@@ -16,22 +16,11 @@ ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le riscv64
 ONLY_FOR_ARCHS_REASON=	Requires 64-bit processor
 
 LIB_DEPENDS=	libdw.so:devel/elfutils \
-		libgcrypt.so:security/libgcrypt \
-		libgmp.so:math/gmp \
-		libgnutls.so:security/gnutls \
-		libgpg-error.so:security/libgpg-error \
-		libgrpc.so:devel/grpc \
-		libhogweed.so:security/nettle \
-		libidn2.so:dns/libidn2 \
 		liblmdb.so:databases/lmdb \
 		liblzo2.so:archivers/lzo2 \
-		libnettle.so:security/nettle \
 		libnghttp2.so:www/libnghttp2 \
-		libp11-kit.so:security/p11-kit \
-		libpcre.so:devel/pcre \
+		libpcre2-8.so:devel/pcre2 \
 		libsqlite3.so:databases/sqlite3 \
-		libtasn1.so:security/libtasn1 \
-		libtspi.so:security/trousers \
 		libuv.so:devel/libuv \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
