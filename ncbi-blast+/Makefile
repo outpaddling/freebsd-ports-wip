@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/scripts/projects/blast/LICENSE
 ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le riscv64
 ONLY_FOR_ARCHS_REASON=	Requires 64-bit processor
 
+BUILD_DEPENDS=	grpc>0:devel/grpc
 LIB_DEPENDS=	libdw.so:devel/elfutils \
 		liblmdb.so:databases/lmdb \
 		liblzo2.so:archivers/lzo2 \
