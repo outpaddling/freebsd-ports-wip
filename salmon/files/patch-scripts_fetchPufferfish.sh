@@ -1,4 +1,4 @@
---- scripts/fetchPufferfish.sh.orig	2025-07-26 12:04:17 UTC
+--- scripts/fetchPufferfish.sh.orig	2025-07-26 17:38:39 UTC
 +++ scripts/fetchPufferfish.sh
 @@ -11,53 +11,6 @@ INSTALL_DIR=${CURR_DIR}/../external/install
  EXTERNAL_DIR=${CURR_DIR}/../external
@@ -54,3 +54,11 @@
  mkdir -p ${INSTALL_DIR}/include/pufferfish
  
  cp ${EXTERNAL_DIR}/pufferfish/include/ProgOpts.hpp ${INSTALL_DIR}/include/pufferfish
+@@ -90,7 +43,6 @@ cp ${EXTERNAL_DIR}/pufferfish/include/BinWriter.hpp ${
+ cp ${EXTERNAL_DIR}/pufferfish/include/BulkChunk.hpp ${INSTALL_DIR}/include/pufferfish
+ cp ${EXTERNAL_DIR}/pufferfish/include/BinWriter.hpp ${INSTALL_DIR}/include/pufferfish
+ 
+-cp -r ${EXTERNAL_DIR}/pufferfish/include/libdivide ${INSTALL_DIR}/include/pufferfish
+ cp -r ${EXTERNAL_DIR}/pufferfish/include/ksw2pp ${INSTALL_DIR}/include/pufferfish
+ # this is now automatically tracked and inherited via twopaco (on which libpuffer depends)
+ # cp -r ${EXTERNAL_DIR}/pufferfish/include/compact_vector ${INSTALL_DIR}/include/pufferfish

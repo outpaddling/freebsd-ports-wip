@@ -20,7 +20,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		libtool:devel/libtool \
 		autoreconf:devel/autoconf \
 		aclocal:devel/automake \
-		eigen>0:math/eigen \
+		eigen>0:math/eigen3 \
 		libdivide>0:math/libdivide
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libtbb.so:devel/onetbb \
