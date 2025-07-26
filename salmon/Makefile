@@ -46,7 +46,8 @@ CXXFLAGS+=	-I${LOCALBASE}/include/eigen3
 LDFLAGS+=	-lpthread
 
 pre-configure:
-	${RM} -rf ${WRKSRC}/include/eigen3
+	${RM} -rf ${WRKSRC}/include/eigen3 \
+		${WRKSRC}/external/pufferfish/include/libdivide
 	(cd ${WRKSRC}/external/staden-io_lib && ./bootstrap)
 
 do-install:
