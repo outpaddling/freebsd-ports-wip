@@ -21,10 +21,9 @@ BUILD_DEPENDS=	bash:shells/bash \
 		autoreconf:devel/autoconf \
 		aclocal:devel/automake \
 		eigen>0:math/eigen3 \
-		libdivide>0:math/libdivide
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-		libtbb.so:devel/onetbb \
-		libcurl.so:ftp/curl
+		libdivide>0:math/libdivide \
+		curl>0:ftp/curl
+LIB_DEPENDS=	libtbb.so:devel/onetbb
 
 USES=		cmake:noninja gmake localbase shebangfix
 USE_GITHUB=	yes
