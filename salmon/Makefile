@@ -29,10 +29,13 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 USES=		cmake:noninja gmake localbase shebangfix
 USE_GITHUB=	yes
 
+# Can't unbundle io_lib unless we also unbundle htscodecs from io_lib,
+# which is a nightmare: explicitly integrated into configure files.
 GH_ACCOUNT=	COMBINE-lab
-GH_TUPLE+=	COMBINE-lab:pufferfish:salmon-v1.10.2:pf/external/pufferfish
-GH_TUPLE+=	jkbonfield:io_lib:io_lib-1-14-15:sio/external/staden-io_lib
-GH_TUPLE+=	samtools:htscodecs:5aecc6e:htscodec/external/staden-io_lib/htscodecs
+GH_TUPLE+=	COMBINE-lab:pufferfish:salmon-v${DISTVERSION}:pf/external/pufferfish
+GH_TUPLE+=	jkbonfield:io_lib:io_lib-1-15-1:sio/external/staden-io_lib
+# Update commit hash from io_lib release branch
+GH_TUPLE+=	samtools:htscodecs:de42211:htscodec/external/staden-io_lib/htscodecs
 SHEBANG_FILES=	scripts/*
 
 PLIST_FILES=	bin/salmon
