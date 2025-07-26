@@ -30,7 +30,8 @@ USES=		cmake:noninja gmake localbase shebangfix
 USE_GITHUB=	yes
 
 # Can't unbundle io_lib unless we also unbundle htscodecs from io_lib,
-# which is a nightmare: explicitly integrated into configure files.
+# which is a nightmare: explicitly integrated into configure files and
+# installs htscodecs files, conflicting with separate htscodecs port.
 GH_ACCOUNT=	COMBINE-lab
 GH_TUPLE+=	COMBINE-lab:pufferfish:salmon-v${DISTVERSION}:pf/external/pufferfish
 GH_TUPLE+=	jkbonfield:io_lib:io_lib-1-15-1:sio/external/staden-io_lib
