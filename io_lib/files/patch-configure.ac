@@ -1,0 +1,14 @@
+--- configure.ac.orig	2025-07-26 21:09:00 UTC
++++ configure.ac
+@@ -15,8 +15,9 @@ AM_MAINTAINER_MODE
+ # For simplicity, we use --disable-shared and --with-pic here so we can
+ # compile these directly into libstaden-read itself.
+ 
+-dnl AC_CONFIG_SUBDIRS([htscodecs])
+-AX_SUBDIRS_CONFIGURE([htscodecs],[[--disable-shared],[--with-pic]])
++# Unbundled to use FreeBSD port
++# dnl AC_CONFIG_SUBDIRS([htscodecs])
++# AX_SUBDIRS_CONFIGURE([htscodecs],[[--disable-shared],[--with-pic]])
+ 
+ 
+ # For my own benefit, here's a summary of how versioning should work.

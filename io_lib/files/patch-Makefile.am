@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2025-07-26 21:10:20 UTC
++++ Makefile.am
+@@ -32,7 +32,7 @@ ACLOCAL_AMFLAGS = -I m4
+ AUTOMAKE_OPTIONS = foreign no-dependencies
+ ACLOCAL_AMFLAGS = -I m4
+ 
+-SUBDIRS = htscodecs io_lib progs tests
++SUBDIRS = io_lib progs tests
+ 
+ man_MANS = \
+ 	man/man1/srf_index_hash.1 \
