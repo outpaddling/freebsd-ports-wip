@@ -19,7 +19,9 @@ BUILD_DEPENDS=	bash:shells/bash \
 		libgff==2.0.0:biology/libgff \
 		libtool:devel/libtool \
 		autoreconf:devel/autoconf \
-		aclocal:devel/automake
+		aclocal:devel/automake \
+		eigen>0:math/eigen \
+		libdivide>0:math/libdivide
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libtbb.so:devel/onetbb \
 		libcurl.so:ftp/curl
@@ -40,9 +42,11 @@ CMAKE_ARGS+=	-DHAVE_FAST_MALLOC:BOOL=on \
 		-DFETCHED_LIBGFF:BOOL=on \
 		-DFETCH_STADEN:BOOL=true
 WITH_DEBUG=	yes
+CXXFLAGS+=	-I${LOCALBASE}/include/eigen3
 LDFLAGS+=	-lpthread
 
 pre-configure:
+	${RM} -rf ${WRKSRC}/include/eigen3
 	(cd ${WRKSRC}/external/staden-io_lib && ./bootstrap)
 
 do-install:
