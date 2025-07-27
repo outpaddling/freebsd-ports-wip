@@ -1,6 +1,5 @@
 PORTNAME=	STAR
-DISTVERSION=	2.7.11a
-PORTREVISION=	1
+DISTVERSION=	2.7.11b
 CATEGORIES=	wip biology
 PKGNAMEPREFIX=	rna-
 
@@ -22,7 +21,7 @@ LIB_DEPENDS=	libhts.so:biology/htslib
 
 USES=		compiler:c++11-lang gmake localbase:ldflags
 # FIXME: When built with clang, number of input reads = 0
-USE_GCC=	yes
+# USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	alexdobin
 
