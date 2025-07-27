@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-07-23 01:36:34 UTC
+--- CMakeLists.txt.orig	2025-07-27 21:00:04 UTC
 +++ CMakeLists.txt
-@@ -181,11 +181,15 @@ endif()
+@@ -189,10 +189,10 @@ set(SHASUM ${CMAKE_CURRENT_SOURCE_DIR}/scripts/check_s
  set(SHASUM ${CMAKE_CURRENT_SOURCE_DIR}/scripts/check_shasum.sh)
  
  
@@ -8,25 +8,23 @@
 -if(JEMALLOC_FOUND)
 -  include_directories(SYSTEM ${JEMALLOC_INCLUDE_DIRS})
 -endif()
-+#find_package(Jemalloc)
-+#if(JEMALLOC_FOUND)
-+  #include_directories(SYSTEM ${JEMALLOC_INCLUDE_DIRS})
-+#endif()
++# find_package(Jemalloc)
++# if(JEMALLOC_FOUND)
++  # include_directories(SYSTEM ${JEMALLOC_INCLUDE_DIRS})
++# endif()
  
-+# Need these even if not building TBB here
-+find_package(BZip2)
-+find_package(LibLZMA)
-+
  if(DO_QUIET_MAKE)
    set(QUIET_MAKE "--silent")
- else()
-@@ -194,7 +198,8 @@ endif()
+@@ -383,9 +383,11 @@ if(TBB_RECONFIGURE)
  
- if (NOT BUILD_PUFF_FOR_SALMON)
- ## Try and find TBB first
--find_package(TBB 2018.0 COMPONENTS tbb tbbmalloc tbbmalloc_proxy)
-+# No libtbbmaloc_proxy.so in devel/tbb
-+find_package(TBB 2018.0 COMPONENTS tbb tbbmalloc)
- 
- ##
- #
+     message("TBB_INSTALL_DIR = ${TBB_INSTALL_DIR}")
+   
++    # FreeBSD port rolls tbbmalloc_proxy into tbbmalloc
+     find_package(TBB 2021.4 
+       HINTS ${TBB_ROOT_SEARCH}
+-      COMPONENTS tbb tbbmalloc tbbmalloc_proxy
++      # COMPONENTS tbb tbbmalloc tbbmalloc_proxy
++      COMPONENTS tbb tbbmalloc
+     )
+     
+     set(TBB_LIBRARIES 

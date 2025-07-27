@@ -1,6 +1,6 @@
 PORTNAME=		pufferfish
 DISTVERSIONPREFIX=	salmon-v
-DISTVERSION=		1.5.2
+DISTVERSION=		1.10.3
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
