@@ -21,7 +21,7 @@ LIB_DEPENDS=	libhts.so:biology/htslib
 
 USES=		compiler:c++11-lang gmake localbase:ldflags
 # FIXME: When built with clang, number of input reads = 0
-# USE_GCC=	yes
+USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	alexdobin
 
