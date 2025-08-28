@@ -1,0 +1,189 @@
+diff --git a/devel/opentelemetry-cpp/Makefile b/devel/opentelemetry-cpp/Makefile
+index 46c7bbe2cbc5..a140a5a3d941 100644
+--- a/devel/opentelemetry-cpp/Makefile
++++ b/devel/opentelemetry-cpp/Makefile
+@@ -1,5 +1,5 @@
+ PORTNAME=	opentelemetry-cpp
+-PORTVERSION=	1.22.0
++PORTVERSION=	1.21.0
+ DISTVERSIONPREFIX=	v
+ CATEGORIES=	devel
+ 
+diff --git a/devel/opentelemetry-cpp/distinfo b/devel/opentelemetry-cpp/distinfo
+index 99ae995ff675..f65a17f31f35 100644
+--- a/devel/opentelemetry-cpp/distinfo
++++ b/devel/opentelemetry-cpp/distinfo
+@@ -1,3 +1,3 @@
+-TIMESTAMP = 1752293599
+-SHA256 (open-telemetry-opentelemetry-cpp-v1.22.0_GH0.tar.gz) = 3428f433f4b435ed1fad64cbdbe75b7288c06f6297786a7036d65d5b9a1d215b
+-SIZE (open-telemetry-opentelemetry-cpp-v1.22.0_GH0.tar.gz) = 1125051
++TIMESTAMP = 1748615217
++SHA256 (open-telemetry-opentelemetry-cpp-v1.21.0_GH0.tar.gz) = 98e5546f577a11b52a57faed1f4cc60d8c1daa44760eba393f43eab5a8ec46a2
++SIZE (open-telemetry-opentelemetry-cpp-v1.21.0_GH0.tar.gz) = 1166527
+diff --git a/devel/opentelemetry-cpp/files/patch-CMakeLists.txt b/devel/opentelemetry-cpp/files/patch-CMakeLists.txt
+new file mode 100644
+index 000000000000..c5b2572e7921
+--- /dev/null
++++ b/devel/opentelemetry-cpp/files/patch-CMakeLists.txt
+@@ -0,0 +1,11 @@
++--- CMakeLists.txt.orig	2025-05-29 09:30:28 UTC
+++++ CMakeLists.txt
++@@ -91,6 +91,8 @@ else()
++     set(ARCH ppc64le)
++   elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(powerpc|ppc)64")
++     set(ARCH ppc64)
+++  elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(powerpc|ppc)")
+++    set(ARCH ppc)
++   elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(mips.*|MIPS.*)")
++     set(ARCH mips)
++   elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(riscv.*|RISCV.*)")
+diff --git a/devel/opentelemetry-cpp/pkg-plist b/devel/opentelemetry-cpp/pkg-plist
+index 00d7a41df503..be821d77d55f 100644
+--- a/devel/opentelemetry-cpp/pkg-plist
++++ b/devel/opentelemetry-cpp/pkg-plist
+@@ -114,100 +114,6 @@ include/opentelemetry/sdk/common/env_variables.h
+ include/opentelemetry/sdk/common/exporter_utils.h
+ include/opentelemetry/sdk/common/global_log_handler.h
+ include/opentelemetry/sdk/common/thread_instrumentation.h
+-include/opentelemetry/sdk/configuration/aggregation_configuration.h
+-include/opentelemetry/sdk/configuration/aggregation_configuration_visitor.h
+-include/opentelemetry/sdk/configuration/always_off_sampler_configuration.h
+-include/opentelemetry/sdk/configuration/always_on_sampler_configuration.h
+-include/opentelemetry/sdk/configuration/attribute_limits_configuration.h
+-include/opentelemetry/sdk/configuration/attribute_value_configuration.h
+-include/opentelemetry/sdk/configuration/attribute_value_configuration_visitor.h
+-include/opentelemetry/sdk/configuration/attributes_configuration.h
+-include/opentelemetry/sdk/configuration/base2_exponential_bucket_histogram_aggregation_configuration.h
+-include/opentelemetry/sdk/configuration/batch_log_record_processor_configuration.h
+-include/opentelemetry/sdk/configuration/batch_span_processor_configuration.h
+-include/opentelemetry/sdk/configuration/boolean_array_attribute_value_configuration.h
+-include/opentelemetry/sdk/configuration/boolean_attribute_value_configuration.h
+-include/opentelemetry/sdk/configuration/configuration.h
+-include/opentelemetry/sdk/configuration/configuration_parser.h
+-include/opentelemetry/sdk/configuration/console_log_record_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/console_push_metric_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/console_span_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/default_aggregation_configuration.h
+-include/opentelemetry/sdk/configuration/default_histogram_aggregation.h
+-include/opentelemetry/sdk/configuration/document.h
+-include/opentelemetry/sdk/configuration/document_node.h
+-include/opentelemetry/sdk/configuration/double_array_attribute_value_configuration.h
+-include/opentelemetry/sdk/configuration/double_attribute_value_configuration.h
+-include/opentelemetry/sdk/configuration/drop_aggregation_configuration.h
+-include/opentelemetry/sdk/configuration/explicit_bucket_histogram_aggregation_configuration.h
+-include/opentelemetry/sdk/configuration/extension_log_record_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/extension_log_record_processor_configuration.h
+-include/opentelemetry/sdk/configuration/extension_pull_metric_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/extension_push_metric_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/extension_sampler_configuration.h
+-include/opentelemetry/sdk/configuration/extension_span_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/extension_span_processor_configuration.h
+-include/opentelemetry/sdk/configuration/headers_configuration.h
+-include/opentelemetry/sdk/configuration/include_exclude_configuration.h
+-include/opentelemetry/sdk/configuration/instrument_type.h
+-include/opentelemetry/sdk/configuration/integer_array_attribute_value_configuration.h
+-include/opentelemetry/sdk/configuration/integer_attribute_value_configuration.h
+-include/opentelemetry/sdk/configuration/invalid_schema_exception.h
+-include/opentelemetry/sdk/configuration/jaeger_remote_sampler_configuration.h
+-include/opentelemetry/sdk/configuration/last_value_aggregation_configuration.h
+-include/opentelemetry/sdk/configuration/log_record_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/log_record_exporter_configuration_visitor.h
+-include/opentelemetry/sdk/configuration/log_record_limits_configuration.h
+-include/opentelemetry/sdk/configuration/log_record_processor_configuration.h
+-include/opentelemetry/sdk/configuration/log_record_processor_configuration_visitor.h
+-include/opentelemetry/sdk/configuration/logger_provider_configuration.h
+-include/opentelemetry/sdk/configuration/meter_provider_configuration.h
+-include/opentelemetry/sdk/configuration/metric_producer_configuration.h
+-include/opentelemetry/sdk/configuration/metric_reader_configuration.h
+-include/opentelemetry/sdk/configuration/metric_reader_configuration_visitor.h
+-include/opentelemetry/sdk/configuration/otlp_file_log_record_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/otlp_file_push_metric_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/otlp_file_span_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/otlp_grpc_log_record_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/otlp_grpc_push_metric_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/otlp_grpc_span_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/otlp_http_encoding.h
+-include/opentelemetry/sdk/configuration/otlp_http_log_record_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/otlp_http_push_metric_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/otlp_http_span_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/parent_based_sampler_configuration.h
+-include/opentelemetry/sdk/configuration/periodic_metric_reader_configuration.h
+-include/opentelemetry/sdk/configuration/prometheus_pull_metric_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/propagator_configuration.h
+-include/opentelemetry/sdk/configuration/pull_metric_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/pull_metric_exporter_configuration_visitor.h
+-include/opentelemetry/sdk/configuration/pull_metric_reader_configuration.h
+-include/opentelemetry/sdk/configuration/push_metric_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/push_metric_exporter_configuration_visitor.h
+-include/opentelemetry/sdk/configuration/resource_configuration.h
+-include/opentelemetry/sdk/configuration/ryml_document.h
+-include/opentelemetry/sdk/configuration/ryml_document_node.h
+-include/opentelemetry/sdk/configuration/sampler_configuration.h
+-include/opentelemetry/sdk/configuration/sampler_configuration_visitor.h
+-include/opentelemetry/sdk/configuration/simple_log_record_processor_configuration.h
+-include/opentelemetry/sdk/configuration/simple_span_processor_configuration.h
+-include/opentelemetry/sdk/configuration/span_exporter_configuration.h
+-include/opentelemetry/sdk/configuration/span_exporter_configuration_visitor.h
+-include/opentelemetry/sdk/configuration/span_limits_configuration.h
+-include/opentelemetry/sdk/configuration/span_processor_configuration.h
+-include/opentelemetry/sdk/configuration/span_processor_configuration_visitor.h
+-include/opentelemetry/sdk/configuration/string_array_attribute_value_configuration.h
+-include/opentelemetry/sdk/configuration/string_array_configuration.h
+-include/opentelemetry/sdk/configuration/string_attribute_value_configuration.h
+-include/opentelemetry/sdk/configuration/sum_aggregation_configuration.h
+-include/opentelemetry/sdk/configuration/temporality_preference.h
+-include/opentelemetry/sdk/configuration/trace_id_ratio_based_sampler_configuration.h
+-include/opentelemetry/sdk/configuration/tracer_provider_configuration.h
+-include/opentelemetry/sdk/configuration/view_configuration.h
+-include/opentelemetry/sdk/configuration/view_selector_configuration.h
+-include/opentelemetry/sdk/configuration/view_stream_configuration.h
+-include/opentelemetry/sdk/configuration/yaml_configuration_parser.h
+-include/opentelemetry/sdk/configuration/zipkin_span_exporter_configuration.h
+ include/opentelemetry/sdk/instrumentationlibrary/instrumentation_library.h
+ include/opentelemetry/sdk/instrumentationscope/instrumentation_scope.h
+ include/opentelemetry/sdk/instrumentationscope/scope_configurator.h
+@@ -299,6 +205,7 @@ include/opentelemetry/sdk/metrics/view/view_registry.h
+ include/opentelemetry/sdk/metrics/view/view_registry_factory.h
+ include/opentelemetry/sdk/resource/resource.h
+ include/opentelemetry/sdk/resource/resource_detector.h
++include/opentelemetry/sdk/resource/semantic_conventions.h
+ include/opentelemetry/sdk/trace/batch_span_processor.h
+ include/opentelemetry/sdk/trace/batch_span_processor_factory.h
+ include/opentelemetry/sdk/trace/batch_span_processor_options.h
+@@ -365,10 +272,10 @@ include/opentelemetry/semconv/incubating/cloudfoundry_attributes.h
+ include/opentelemetry/semconv/incubating/code_attributes.h
+ include/opentelemetry/semconv/incubating/container_attributes.h
+ include/opentelemetry/semconv/incubating/container_metrics.h
+-include/opentelemetry/semconv/incubating/cpu_attributes.h
+-include/opentelemetry/semconv/incubating/cpu_metrics.h
+ include/opentelemetry/semconv/incubating/cpython_attributes.h
+ include/opentelemetry/semconv/incubating/cpython_metrics.h
++include/opentelemetry/semconv/incubating/cpu_attributes.h
++include/opentelemetry/semconv/incubating/cpu_metrics.h
+ include/opentelemetry/semconv/incubating/db_attributes.h
+ include/opentelemetry/semconv/incubating/db_metrics.h
+ include/opentelemetry/semconv/incubating/deployment_attributes.h
+@@ -401,7 +308,6 @@ include/opentelemetry/semconv/incubating/k8s_attributes.h
+ include/opentelemetry/semconv/incubating/k8s_metrics.h
+ include/opentelemetry/semconv/incubating/linux_attributes.h
+ include/opentelemetry/semconv/incubating/log_attributes.h
+-include/opentelemetry/semconv/incubating/mainframe_attributes.h
+ include/opentelemetry/semconv/incubating/message_attributes.h
+ include/opentelemetry/semconv/incubating/messaging_attributes.h
+ include/opentelemetry/semconv/incubating/messaging_metrics.h
+@@ -437,7 +343,6 @@ include/opentelemetry/semconv/incubating/user_attributes.h
+ include/opentelemetry/semconv/incubating/vcs_attributes.h
+ include/opentelemetry/semconv/incubating/vcs_metrics.h
+ include/opentelemetry/semconv/incubating/webengine_attributes.h
+-include/opentelemetry/semconv/incubating/zos_attributes.h
+ include/opentelemetry/semconv/k8s_metrics.h
+ include/opentelemetry/semconv/messaging_metrics.h
+ include/opentelemetry/semconv/network_attributes.h
+@@ -470,6 +375,7 @@ include/opentelemetry/trace/propagation/http_trace_context.h
+ include/opentelemetry/trace/propagation/jaeger.h
+ include/opentelemetry/trace/provider.h
+ include/opentelemetry/trace/scope.h
++include/opentelemetry/trace/semantic_conventions.h
+ include/opentelemetry/trace/span.h
+ include/opentelemetry/trace/span_context.h
+ include/opentelemetry/trace/span_context_kv_iterable.h
