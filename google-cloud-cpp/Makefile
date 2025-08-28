@@ -16,7 +16,9 @@ NOT_FOR_ARCHS=	i386 powerpc
 
 BUILD_DEPENDS=	grpc>=1.19.1:devel/grpc \
 		nlohmann-json>0:devel/nlohmann-json \
-		protobuf>=3.7.1:devel/protobuf
+		protobuf>=3.7.1:devel/protobuf \
+		abseil<=20250127.1 \
+		opentelemetry-cpp<=1.21.0:wip/opentelemetry-cpp
 LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 		libcares.so:dns/c-ares \
 		libcrc32c.so:devel/crc32c \
