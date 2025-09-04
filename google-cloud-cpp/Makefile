@@ -39,7 +39,7 @@ GH_TUPLE=	googleapis:googleapis:${GOOGLEAPI_GH_TAG}:googleapis
 USE_LDCONFIG=	yes
 
 # -DGOOGLE_CLOUD_CPP_ENABLE="storage,opentelemetry" causes the same
-# error we see in 2.40.x.
+# error we see in 2.40.x on earlier releases and 3.0.0-rc1.
 # https://github.com/googleapis/google-cloud-cpp/issues/15445
 CMAKE_ARGS=	-DGOOGLE_CLOUD_CPP_CXX_STANDARD=17 \
 		-DGOOGLE_CLOUD_CPP_DEPENDENCY_PROVIDER=package
