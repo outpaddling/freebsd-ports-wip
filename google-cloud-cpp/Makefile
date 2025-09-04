@@ -2,7 +2,8 @@ PORTNAME=	google-cloud-cpp
 DISTVERSIONPREFIX=	v
 # Newest release that will build
 # 2.41: https://github.com/googleapis/google-cloud-cpp/issues/15445
-DISTVERSION=	2.39.0
+DISTVERSION=	3.0.0
+DISTVERSIONSUFFIX=	-rc1
 CATEGORIES=	wip devel
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -37,6 +38,9 @@ GH_ACCOUNT=	googleapis
 GH_TUPLE=	googleapis:googleapis:${GOOGLEAPI_GH_TAG}:googleapis
 USE_LDCONFIG=	yes
 
+# -DGOOGLE_CLOUD_CPP_ENABLE="storage,opentelemetry" causes the same
+# error we see in 2.40.x.
+# https://github.com/googleapis/google-cloud-cpp/issues/15445
 CMAKE_ARGS=	-DGOOGLE_CLOUD_CPP_CXX_STANDARD=17 \
 		-DGOOGLE_CLOUD_CPP_DEPENDENCY_PROVIDER=package
 CMAKE_ON=	BUILD_SHARED_LIBS \
