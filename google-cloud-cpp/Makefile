@@ -2,7 +2,7 @@ PORTNAME=	google-cloud-cpp
 DISTVERSIONPREFIX=	v
 # Newest release that will build
 # 2.41: https://github.com/googleapis/google-cloud-cpp/issues/15445
-DISTVERSION=	2.38.0
+DISTVERSION=	2.39.0
 CATEGORIES=	wip devel
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -45,6 +45,8 @@ CMAKE_OFF=	BUILD_TESTING \
 		GOOGLE_CLOUD_CPP_WITH_MOCKS
 
 GOOGLEAPI_GH_TAG=	e3838fbf057c3b69efc1e0b8e1a5a288ee91a00d
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 post-extract:
 	${MKDIR} ${BUILD_WRKSRC}/external/googleapis/src/
