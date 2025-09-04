@@ -1,7 +1,8 @@
 PORTNAME=	google-cloud-cpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.41.0-9
-DISTVERSIONSUFFIX=	-gc06d686e32
+# Newest release that will build
+# 2.41: https://github.com/googleapis/google-cloud-cpp/issues/15445
+DISTVERSION=	2.38.0
 CATEGORIES=	wip devel
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
