@@ -11,7 +11,6 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # Note: mongo-cxx-driver > 4.0.0 requires mongo-c-driver 2.x
-# FIXME: is libmongoc-1.0.so enough?
 BUILD_DEPENDS=	mongo-c-driver>=1.29.0<2.0.0:devel/mongo-c-driver
 LIB_DEPENDS=	libmongoc-1.0.so:devel/mongo-c-driver \
 		libbson-1.0.so:devel/libbson \
@@ -26,13 +25,8 @@ CMAKE_ARGS=	-DENABLE_ZLIB=SYSTEM \
 		-DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_CXX_STANDARD=17 \
 		-DBUILD_VERSION=${DISTVERSION}
-CMAKE_ON=	ENABLE_MONGOC \
-		ENABLE_ZSTD \
-		USE_SYSTEM_LIBBSON
 CMAKE_OFF=	BUILD_TESTING \
-		ENABLE_EXAMPLES \
 		ENABLE_TESTS \
 		ENABLE_UNINSTALL \
-		USE_BUNDLED_UTF8PROC
 
 .include <bsd.port.mk>
