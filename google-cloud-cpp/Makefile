@@ -25,14 +25,15 @@ LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 		libcurl.so:ftp/curl \
 		libgrpc.so:devel/grpc \
 		libprotobuf.so:devel/protobuf \
-		libre2.so:devel/re2
+		libre2.so:devel/re2 \
+		libopentelemetry_metrics.so:wip/opentelemetry-cpp
 
 USES=		cmake compiler:c++17-lang pathfix pkgconfig ssl
 PATHFIX_CMAKELISTSTXT=	AddPkgConfig.cmake CMakeLists.txt CompileProtos.cmake
 USE_CXXSTD=	c++17
 USE_GITHUB=	yes
 GH_ACCOUNT=	googleapis
-# GH_TUPLE=	googleapis:googleapis:${GOOGLEAPI_GH_TAG}:googleapis
+GH_TUPLE=	googleapis:googleapis:${GOOGLEAPI_GH_TAG}:googleapis
 USE_LDCONFIG=	yes
 
 # -DGOOGLE_CLOUD_CPP_ENABLE="storage,opentelemetry" causes the same
@@ -47,14 +48,14 @@ CMAKE_OFF=	BUILD_TESTING \
 		GOOGLE_CLOUD_CPP_ENABLE_CXX_EXCEPTIONS \
 		GOOGLE_CLOUD_CPP_WITH_MOCKS
 
-# GOOGLEAPI_GH_TAG=	e3838fbf057c3b69efc1e0b8e1a5a288ee91a00d
-# GOOGLEAPI_GH_TAG=	222764e0853283787ba2203de6b3f57bf05b6bc5
+# _GOOGLE_CLOUD_CPP_GOOGLEAPIS_COMMIT_SHA in cmake/GoogleapisConfig.cmake
+GOOGLEAPI_GH_TAG=	f6801ce4e1df0541abb8d1e996cb36363c41fb8d
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 post-extract:
-	# ${MKDIR} ${BUILD_WRKSRC}/external/googleapis/src/
-	# ${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILE_googleapis} \
-		# ${BUILD_WRKSRC}/external/googleapis/src/${GOOGLEAPI_GH_TAG}.tar.gz
+	${MKDIR} ${BUILD_WRKSRC}/external/googleapis/src/
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILE_googleapis} \
+		${BUILD_WRKSRC}/external/googleapis/src/${GOOGLEAPI_GH_TAG}.tar.gz
 
 .include <bsd.port.mk>
