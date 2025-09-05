@@ -1,5 +1,6 @@
 PORTNAME=	mongo-cxx-driver
 DISTVERSIONPREFIX=	r
+# Note: mongo-cxx-driver > 4.0.0 requires mongo-c-driver 2.x
 DISTVERSION=	4.0.0
 CATEGORIES=	wip devel databases
 
@@ -10,7 +11,6 @@ WWW=		https://github.com/mongodb/mongo-cxx-driver/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# Note: mongo-cxx-driver > 4.0.0 requires mongo-c-driver 2.x
 BUILD_DEPENDS=	mongo-c-driver>=1.29.0<2.0.0:devel/mongo-c-driver
 LIB_DEPENDS=	libmongoc-1.0.so:devel/mongo-c-driver \
 		libbson-1.0.so:devel/libbson \
@@ -27,6 +27,6 @@ CMAKE_ARGS=	-DENABLE_ZLIB=SYSTEM \
 		-DBUILD_VERSION=${DISTVERSION}
 CMAKE_OFF=	BUILD_TESTING \
 		ENABLE_TESTS \
-		ENABLE_UNINSTALL \
+		ENABLE_UNINSTALL
 
 .include <bsd.port.mk>
