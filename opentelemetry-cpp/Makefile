@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-cpp
-PORTVERSION=	1.21.0
+PORTVERSION=	1.20.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	wip devel
 
@@ -10,20 +10,19 @@ WWW=		https://github.com/open-telemetry/opentelemetry-cpp
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libgtest.so:devel/googletest \
+		libcurl.so:ftp/curl
+
+USES=		cmake compiler:c++14-lang cpe
 USE_GITHUB=	yes
 GH_ACCOUNT=	open-telemetry
 GH_PROJECT=	${PORTNAME}
-
-USES=		cmake compiler:c++14-lang cpe
 
 CPE_VENDOR=	cncf
 
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS=ON \
 		-DCMAKE_POSITION_INDEPENDENT_CODE=ON
 CMAKE_OFF=	BUILD_TESTING BUILD_EXAMPLES
-
-LIB_DEPENDS=	libgtest.so:devel/googletest \
-		libcurl.so:ftp/curl
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
