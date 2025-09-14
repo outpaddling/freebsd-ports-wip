@@ -15,7 +15,7 @@ RUN_DEPENDS=	coregarage:wip/coregarage
 
 USES=		cmake desktop-file-utils gl localbase:ldflags qt:6
 USE_GL=		gl
-USE_QT=		base:run serialport tools:build
+USE_QT=		base serialport tools:build
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	CuboCore
