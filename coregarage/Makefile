@@ -9,11 +9,10 @@ WWW=		https://gitlab.com/cubocore/coregarage
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libarchiveqt6.so:archivers/libarchive-qt \
-		libcprime-core.so:wip/libcprime
+LIB_DEPENDS=	libcprime-core.so:wip/libcprime
 
 USES=		cmake desktop-file-utils localbase:ldflags qt:6
-USE_QT=		base:run tools:build
+USE_QT=		base tools:build
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	CuboCore
