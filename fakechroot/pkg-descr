@@ -1,0 +1,4 @@
+Fakechroot runs a command chroot(8)-like environment, but without root
+privileges. This is useful for allowing users to create own chrooted
+environment with possibility to install another packages without need
+for root privileges.
