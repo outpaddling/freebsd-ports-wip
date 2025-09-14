@@ -9,8 +9,9 @@ WWW=		https://gitlab.com/cubocore/libcprime
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake qt:6
-USE_QT=		base:run tools:build
+USES=		cmake gl qt:6
+USE_GL=		gl
+USE_QT=		base tools:build
 USE_LDCONFIG=	yes
 USE_GITLAB=	yes
 
