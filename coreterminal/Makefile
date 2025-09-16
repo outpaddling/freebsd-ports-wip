@@ -10,7 +10,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libqtermwidget6.so:x11-toolkits/qtermwidget \
-		libcprime-widgets.so:deskutils/libcprime
+		libcprime-widgets.so:wip/libcprime
 RUN_DEPENDS=	coregarage:wip/coregarage
 
 USES=		cmake desktop-file-utils gl localbase:ldflags qt:6
