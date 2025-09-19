@@ -11,10 +11,10 @@ WWW=		https://github.com/tplgy/cppcodec
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	catch>0:devel/catch
-
 USES=		cmake localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	tplgy
+
+CMAKE_OFF+=	CPPCODEC_BUILD_TESTING
 
 .include <bsd.port.mk>
