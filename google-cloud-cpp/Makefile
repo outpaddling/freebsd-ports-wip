@@ -1,6 +1,6 @@
 PORTNAME=	google-cloud-cpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.41.0
+DISTVERSION=	2.42.0
 CATEGORIES=	wip devel
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	grpc>=1.19.1:devel/grpc \
 		nlohmann-json>0:devel/nlohmann-json \
 		protobuf>=3.7.1:devel/protobuf \
 		abseil<=20250127.1:devel/abseil \
-		opentelemetry-cpp<=1.21.0:wip/opentelemetry-cpp
+		opentelemetry-cpp<=1.20.0:wip/opentelemetry-cpp
 LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 		libcares.so:dns/c-ares \
 		libcrc32c.so:devel/crc32c \
