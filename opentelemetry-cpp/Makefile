@@ -1,6 +1,7 @@
 PORTNAME=	opentelemetry-cpp
 PORTVERSION=	1.20.0
 DISTVERSIONPREFIX=	v
+PORTEPOCH=	1
 CATEGORIES=	wip devel
 
 MAINTAINER=	osa@FreeBSD.org
