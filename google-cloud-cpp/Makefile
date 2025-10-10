@@ -18,7 +18,7 @@ BUILD_DEPENDS=	grpc>=1.19.1:devel/grpc \
 		nlohmann-json>0:devel/nlohmann-json \
 		protobuf>=3.7.1:devel/protobuf \
 		abseil<=20250127.1:devel/abseil \
-		opentelemetry-cpp<=1.20.0:wip/opentelemetry-cpp
+		opentelemetry-cpp<=1.20.0,1:wip/opentelemetry-cpp
 LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 		libcares.so:dns/c-ares \
 		libcrc32c.so:devel/crc32c \
