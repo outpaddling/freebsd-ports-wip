@@ -1,0 +1,2 @@
+Collect IPMI info from remote hosts that may not accept incoming
+connections.  Use munge to authenticate and encrypt traffic.

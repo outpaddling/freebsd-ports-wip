@@ -1,0 +1,59 @@
+#!/bin/sh
+
+# PROVIDE: ipmi_gather
+# REQUIRE: DAEMON munged
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# ipmi_gather_enable (bool):   Set to NO by default.
+#               Set it to YES to enable ipmi_gather.
+# ipmi_gather_pidfile (str): Set to "/var/run/ipmi_gather.pid" by default.
+#                       Custom PID file path and name.
+# ipmi_gather_flags (str):   Set to "" by default.
+#                       Extra flags passed to start command.
+
+. /etc/rc.subr
+name="ipmi_gather"
+rcvar=ipmi_gather_enable
+start_cmd=ipmi_gather_start
+stop_cmd=ipmi_gather_stop
+
+pidfile=/var/run/$name.pid
+
+load_rc_config $name
+
+: ${ipmi_gather_enable="NO"}
+
+# FIXME: Add support for non-root users
+command=/usr/sbin/daemon
+command_args="-c %%PREFIX%%/var/log/ipmi-gather -f -u ftp %%PREFIX%%/bin/ipmi-gather"
+
+ipmi_gather_start() {
+    checkyesno $rcvar && echo "Starting $name." && \
+	$command $command_args $ipmi_gather_flags
+}
+
+ipmi_gather_stop() {
+    if checkyesno $rcvar; then
+	echo "Stopping $name."
+	pids="$(pgrep -d ' ' $name)"
+	if [ -n "$pids" ]; then
+	    echo "Waiting for PIDs: $pids"
+	    for signal in TERM INT QUIT KILL
+	    do
+		kill -s $signal $pids
+		sleep 1
+		pids=$(pgrep -d ' ' $name)
+		if [ -z "$pids" ]; then
+		    break
+		fi
+	    done
+	fi
+	rm -f $pidfile
+    fi
+}
+
+run_rc_command "$1"
