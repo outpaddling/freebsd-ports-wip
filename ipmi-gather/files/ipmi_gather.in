@@ -29,9 +29,10 @@ load_rc_config $name
 
 # FIXME: Add support for non-root users
 command=/usr/sbin/daemon
-command_args="-c %%PREFIX%%/var/log/ipmi-gather -f -u ftp %%PREFIX%%/bin/ipmi-gather"
+command_args="-f -u ftp %%PREFIX%%/bin/ipmi-gather"
 
 ipmi_gather_start() {
+    cd /usr/local/var/log/ipmi-gather
     checkyesno $rcvar && echo "Starting $name." && \
 	$command $command_args $ipmi_gather_flags
 }
