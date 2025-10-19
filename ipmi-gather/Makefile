@@ -1,5 +1,5 @@
 PORTNAME=	ipmi-gather
-DISTVERSION=	0.0.0-8
+DISTVERSION=	0.0.0-9
 CATEGORIES=	wip net
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -18,7 +18,7 @@ USERS=		ftp
 GROUPS=		${USERS}
 
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	5b22954f2db00a11e45269a393934662f36bf802
+GH_TAGNAME=	83e993162f798d144bcace5b3c29369da1f3ba45
 
 PLIST_FILES=	bin/ipmi-gather bin/ipmi-send \
 		"@dir(ftp,ftp,755) var/log/ipmi-gather"
