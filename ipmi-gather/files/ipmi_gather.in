@@ -17,6 +17,7 @@
 
 . /etc/rc.subr
 name="ipmi_gather"
+bin_name="ipmi-gather"
 rcvar=ipmi_gather_enable
 start_cmd=ipmi_gather_start
 stop_cmd=ipmi_gather_stop
@@ -29,10 +30,10 @@ load_rc_config $name
 
 # FIXME: Add support for non-root users
 command=/usr/sbin/daemon
-command_args="-f -u ftp %%PREFIX%%/bin/ipmi-gather"
+command_args="-f -u ftp %%PREFIX%%/bin/$bin_name"
 
 ipmi_gather_start() {
-    cd /usr/local/var/log/ipmi-gather
+    cd /usr/local/var/log/$bin_name
     checkyesno $rcvar && echo "Starting $name." && \
 	$command $command_args $ipmi_gather_flags
 }
@@ -40,14 +41,14 @@ ipmi_gather_start() {
 ipmi_gather_stop() {
     if checkyesno $rcvar; then
 	echo "Stopping $name."
-	pids="$(pgrep -d ' ' $name)"
+	pids="$(pgrep -d ' ' $bin_name)"
 	if [ -n "$pids" ]; then
 	    echo "Waiting for PIDs: $pids"
 	    for signal in TERM INT QUIT KILL
 	    do
 		kill -s $signal $pids
 		sleep 1
-		pids=$(pgrep -d ' ' $name)
+		pids=$(pgrep -d ' ' $bin_name)
 		if [ -z "$pids" ]; then
 		    break
 		fi
