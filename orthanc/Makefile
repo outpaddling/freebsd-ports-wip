@@ -12,23 +12,17 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	protoc:devel/protobuf
-
 LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libcivetweb.so:www/civetweb \
 		libcurl.so:ftp/curl \
 		libdcmtkcharls.so:graphics/dcmtk \
-		libgtest.so:devel/googletest \
-		libicuuc.so:devel/icu \
 		libjsoncpp.so:devel/jsoncpp \
 		libpng16.so:graphics/png \
 		libprotobuf.so:devel/protobuf \
 		libpugixml.so:textproc/pugixml \
-		libtiff.so:graphics/tiff \
 		libuuid.so:misc/libuuid
 
 USES=		cmake gnome iconv jpeg lua python:build sqlite ssl
-USE_GNOME=	libxml2
-USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	orthanc
 
