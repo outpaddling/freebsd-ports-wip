@@ -29,7 +29,7 @@ start_precmd=orthanc_prestart
 pidfile=/var/run/orthanc.pid
 procname=%%PREFIX%%/sbin/Orthanc
 command=/usr/sbin/daemon
-command_args=" -f -p ${pidfile} -u orthanc ${procname} ${orthanc_flags}"
+command_args=" --output-file /var/log/orthanc --sighup --child-pidfile ${pidfile} --user orthanc ${procname} ${orthanc_flags}"
 
 orthanc_prestart()
 {
