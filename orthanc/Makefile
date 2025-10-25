@@ -11,7 +11,8 @@ WWW=		https://www.orthanc-server.com/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	protoc:devel/protobuf
+BUILD_DEPENDS=	protoc:devel/protobuf \
+		googletest>0:devel/googletest
 LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libcivetweb.so:www/civetweb \
 		libcurl.so:ftp/curl \
