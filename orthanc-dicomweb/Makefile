@@ -5,15 +5,14 @@ MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc-dicomweb/ \
 		https://orthanc.uclouvain.be/downloads/third-party-downloads/ \
 		https://orthanc.uclouvain.be/downloads/third-party-downloads/dicom-web/ \
 		https://orthanc.uclouvain.be/downloads/sources/orthanc/
-DISTNAME=	OrthancDicomWeb-${PORTVERSION}
+DISTFILES=	OrthancDicomWeb-${PORTVERSION}.tar.gz
 EXTRADISTFILES=	Orthanc-${ORTHANC_VER}.tar.gz \
 		e2fsprogs-1.44.5.tar.gz \
 		bootstrap-5.3.3.zip \
 		vuejs-2.6.10.tar.gz \
 		axios-0.19.0.tar.gz \
 		Font-Awesome-4.7.0.tar.gz \
-		babel-polyfill-6.26.0.min.js.gz \
-		bootstrap-vue-2.0.0-rc.24-dist.tar.gz
+		babel-polyfill-6.26.0.min.js.gz
 DISTFILES+=	${EXTRADISTFILES}
 DIST_SUBDIR=	orthanc
 EXTRACT_ONLY=	OrthancDicomWeb-${PORTVERSION}.tar.gz
@@ -32,7 +31,8 @@ LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 RUN_DEPENDS=	Orthanc:science/orthanc
 
 USES=		cmake localbase python:build
-USE_LDCONFIG=	share/orthanc/plugins
+# FIXME: Should plugins be moved to lib?
+USE_LDCONFIG=	${DATADIR}/plugins
 
 ORTHANC_VER=	1.12.9
 CMAKE_ARGS=	-DORTHANC_FRAMEWORK_ROOT=${WRKSRC}/ThirdPartyDownloads/Orthanc-${ORTHANC_VER}/OrthancFramework/Sources \
