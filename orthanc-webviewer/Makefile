@@ -1,17 +1,17 @@
 PORTNAME=	orthanc-webviewer
 DISTVERSION=	2.10
 CATEGORIES=	wip science
-MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc-webviewer/:main \
-		https://orthanc.uclouvain.be/downloads/sources/orthanc/:framework \
-		http://orthanc.osimis.io/ThirdPartyDownloads/WebViewer/:thirdpartywebviewer \
-		http://orthanc.osimis.io/ThirdPartyDownloads/:thirdparty
-DISTFILES=	OrthancWebViewer-${PORTVERSION}.tar.gz:main \
-		jsPanel-2.3.3-fixed.zip:thirdpartywebviewer \
-		cornerstone-0.11.0.zip:thirdpartywebviewer \
-		jquery-ui-1.11.3.zip:thirdpartywebviewer \
-		pako-0.2.5.zip:thirdpartywebviewer \
-		js-url-1.8.6.zip:thirdpartywebviewer \
-		Orthanc-${ORTHANC_FRAMEWORK_VERSION}.tar.gz:framework \
+MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc-webviewer/:webviewer \
+		https://orthanc.uclouvain.be/downloads/sources/orthanc/:orthanc \
+		https://orthanc.uclouvain.be/downloads/third-party-downloads/web-viewer/:thirdpartyweb \
+		https://orthanc.uclouvain.be/downloads/third-party-downloads/:thirdparty
+DISTFILES=	OrthancWebViewer-${PORTVERSION}.tar.gz:webviewer \
+		jsPanel-2.3.3-fixed.zip:thirdpartyweb \
+		cornerstone-0.11.0.zip:thirdpartyweb \
+		jquery-ui-1.11.3.zip:thirdpartyweb \
+		pako-0.2.5.zip:thirdpartyweb \
+		js-url-1.8.6.zip:thirdpartyweb \
+		Orthanc-${ORTHANC_FRAMEWORK_VERSION}.tar.gz:orthanc \
 		e2fsprogs-1.44.5.tar.gz:thirdparty
 DIST_SUBDIR=	orthanc
 EXTRACT_ONLY=	OrthancWebViewer-${PORTVERSION}.tar.gz
