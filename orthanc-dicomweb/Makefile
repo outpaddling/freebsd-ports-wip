@@ -18,7 +18,7 @@ DIST_SUBDIR=	orthanc
 EXTRACT_ONLY=	OrthancDicomWeb-${PORTVERSION}.tar.gz
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Orthanc plugin to bring support of the DICOMweb standard into Orthanc
+COMMENT=	Orthanc DICOMWeb plugin
 WWW=		https://www.orthanc-server.com/static.php?page=dicomweb
 
 LICENSE=	AGPLv3
