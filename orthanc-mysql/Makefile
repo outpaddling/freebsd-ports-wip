@@ -20,13 +20,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCDatabasePlugin.h:science/orthanc
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
-		libgdcmCommon.so:devel/gdcm \
-		libjsoncpp.so:devel/jsoncpp \
-		libpugixml.so:textproc/pugixml
+		libjsoncpp.so:devel/jsoncpp
 RUN_DEPENDS=	Orthanc:science/orthanc
 
 USES=		cmake localbase mysql:client python:build ssl
-USE_CXXSTD=	c++14 # googletest 1.13
 USE_LDCONFIG=	${DATADIR}/plugins
 
 WRKSRC=		${WRKDIR}/OrthancMySQL-${PORTVERSION}
