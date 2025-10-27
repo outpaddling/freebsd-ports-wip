@@ -1,16 +1,16 @@
 PORTNAME=	orthanc-mysql
 DISTVERSION=	5.2
 CATEGORIES=	wip science
-MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc-mysql/:main \
-		https://orthanc.uclouvain.be/downloads/sources/orthanc/:framework \
+MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc-mysql/:mysql \
+		https://orthanc.uclouvain.be/downloads/sources/orthanc/:orthanc \
 		https://orthanc.uclouvain.be/downloads/third-party-downloads/:thirdparty
-DISTFILES=	OrthancMySQL-${PORTVERSION}.tar.gz:main \
-		Orthanc-${ORTHANC_VER}.tar.gz:framework \
+DISTFILES=	OrthancMySQL-${PORTVERSION}.tar.gz:mysql \
+		Orthanc-${ORTHANC_VER}.tar.gz:orthanc \
 		e2fsprogs-1.44.5.tar.gz:thirdparty
 DIST_SUBDIR=	orthanc
 EXTRACT_ONLY=	OrthancMySQL-${PORTVERSION}.tar.gz
 
-MAINTAINER=	maintainer.freebsd@xpoundit.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Orthanc plugin to use MySQL/MariaDB for indexing or storage
 WWW=		https://www.orthanc-server.com/static.php?page=mysql
 
