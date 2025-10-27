@@ -23,7 +23,8 @@ WWW=		https://www.orthanc-server.com/static.php?page=web-viewer
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCPlugin.h:science/orthanc
+BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCPlugin.h:science/orthanc \
+		googletest>0:devel/googletest
 LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libjsoncpp.so:devel/jsoncpp \
 		libsqlite3.so:databases/sqlite3
