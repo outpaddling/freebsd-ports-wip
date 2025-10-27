@@ -17,7 +17,8 @@ WWW=		https://www.orthanc-server.com/static.php?page=postgresql
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCDatabasePlugin.h:science/orthanc
+BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCDatabasePlugin.h:science/orthanc \
+		googletest>0:devel/googletest
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libgdcmCommon.so:devel/gdcm \
 		libjsoncpp.so:devel/jsoncpp \
