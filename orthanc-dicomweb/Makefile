@@ -1,23 +1,23 @@
 PORTNAME=	orthanc-dicomweb
 DISTVERSION=	1.21
 CATEGORIES=	wip science
-MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc-dicomweb/ \
-		https://orthanc.uclouvain.be/downloads/third-party-downloads/ \
-		https://orthanc.uclouvain.be/downloads/third-party-downloads/dicom-web/ \
-		https://orthanc.uclouvain.be/downloads/sources/orthanc/
-DISTFILES=	OrthancDicomWeb-${PORTVERSION}.tar.gz
-EXTRADISTFILES=	Orthanc-${ORTHANC_VER}.tar.gz \
-		e2fsprogs-1.44.5.tar.gz \
-		bootstrap-5.3.3.zip \
-		vuejs-2.6.10.tar.gz \
-		axios-0.19.0.tar.gz \
-		Font-Awesome-4.7.0.tar.gz \
-		babel-polyfill-6.26.0.min.js.gz
+MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc-dicomweb/:dicomweb \
+		https://orthanc.uclouvain.be/downloads/third-party-downloads/:thirdparty \
+		https://orthanc.uclouvain.be/downloads/third-party-downloads/dicom-web/:thirdpartyweb \
+		https://orthanc.uclouvain.be/downloads/sources/orthanc/:orthanc
+DISTFILES=	OrthancDicomWeb-${PORTVERSION}.tar.gz:dicomweb
+EXTRADISTFILES=	Orthanc-${ORTHANC_VER}.tar.gz:orthanc \
+		e2fsprogs-1.44.5.tar.gz:thirdparty \
+		bootstrap-5.3.3.zip:thirdparty \
+		babel-polyfill-6.26.0.min.js.gz:thirdpartyweb \
+		vuejs-2.6.10.tar.gz:thirdpartyweb \
+		axios-0.19.0.tar.gz:thirdpartyweb \
+		Font-Awesome-4.7.0.tar.gz:thirdpartyweb
 DISTFILES+=	${EXTRADISTFILES}
 DIST_SUBDIR=	orthanc
 EXTRACT_ONLY=	OrthancDicomWeb-${PORTVERSION}.tar.gz
 
-MAINTAINER=	maintainer.freebsd@xpoundit.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Orthanc plugin to bring support of the DICOMweb standard into Orthanc
 WWW=		https://www.orthanc-server.com/static.php?page=dicomweb
 
