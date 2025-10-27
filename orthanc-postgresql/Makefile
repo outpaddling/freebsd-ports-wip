@@ -1,16 +1,16 @@
 PORTNAME=	orthanc-postgresql
 DISTVERSION=	9.0
 CATEGORIES=	wip science
-MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc-postgresql/:main \
-		https://orthanc.uclouvain.be/downloads/sources/orthanc/:framework \
+MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc-postgresql/:pgsql \
+		https://orthanc.uclouvain.be/downloads/sources/orthanc/:orthanc \
 		https://orthanc.uclouvain.be/downloads/third-party-downloads/:thirdparty
-DISTFILES=	OrthancPostgreSQL-${PORTVERSION}.tar.gz:main \
-		Orthanc-${ORTHANC_VER}.tar.gz:framework \
+DISTFILES=	OrthancPostgreSQL-${PORTVERSION}.tar.gz:pgsql \
+		Orthanc-${ORTHANC_VER}.tar.gz:orthanc \
 		e2fsprogs-1.44.5.tar.gz:thirdparty
 DIST_SUBDIR=	orthanc
 EXTRACT_ONLY=	OrthancPostgreSQL-${PORTVERSION}.tar.gz
 
-MAINTAINER=	maintainer.freebsd@xpoundit.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Orthanc plugin to use PostgreSQL for indexing or storage
 WWW=		https://www.orthanc-server.com/static.php?page=postgresql
 
