@@ -27,6 +27,7 @@ USE_GNOME=	gconf2 libgnomecanvas gtk20 intltool
 
 GH_ACCOUNT=	ferdymercury
 
+MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 # Requires gnome-vfs2.  Not in ports??
 CONFIGURE_ARGS=	--enable-gnome-vfs=no
@@ -36,7 +37,7 @@ pre-configure:
 	(cd ${WRKSRC} && intltoolize)
 	(cd ${WRKSRC} && libtoolize)
 	(cd ${WRKSRC} && gtkdocize)
-	(cd ${WRKSRC} && touch gnome-doc-utils.make)
+	(cd ${WRKSRC} && ${TOUCH} gnome-doc-utils.make)
 	(cd ${WRKSRC} && autoreconf2.69 --install)
 
 .include <bsd.port.mk>
