@@ -1,0 +1,4 @@
+3DimViewer is a lightweight 3D viewer of medical DICOM datasets that is
+distributed as open source software (see ''LICENSE.txt''). The viewer
+is multiplatform software written in C++ that runs on Windows and *nix
+systems.
