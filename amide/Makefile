@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	medcon:graphics/xmedcon \
 		autoconf2.69:devel/autoconf2.69 \
-		gtkdocize:textproc/gtk-doc
+		gtkdocize:textproc/gtk-doc \
+		volpack>0:graphics/volpack
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		libmdc.so:graphics/xmedcon \
 		libpng16.so:graphics/png \
@@ -21,16 +22,17 @@ LIB_DEPENDS=	libgsl.so:math/gsl \
 		libtiff.so:graphics/tiff \
 		libdcmimage.so:graphics/dcmtk \
 		libopenjp2.so:graphics/openjpeg
-USES=		desktop-file-utils gettext gmake gnome libtool
+USES=		desktop-file-utils gettext gmake gnome libtool localbase
 USE_GITHUB=	yes
 USE_GNOME=	gconf2 libgnomecanvas gtk20 intltool
 
 GH_ACCOUNT=	ferdymercury
 
 MAKE_JOBS_UNSAFE=	yes
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=		yes
 # Requires gnome-vfs2.  Not in ports??
-CONFIGURE_ARGS=	--enable-gnome-vfs=no
+CONFIGURE_ARGS=		--enable-gnome-vfs=no
+WITH_DEBUG=		yes	# Until abort on startup is fixed
 
 pre-configure:
 	# (cd ${WRKSRC} && ${LOCALBASE}/bin/autoreconf2.69)
