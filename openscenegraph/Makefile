@@ -1,6 +1,8 @@
 PORTNAME=	openscenegraph
 DISTVERSIONPREFIX=	OpenSceneGraph-
 DISTVERSION=	3.6.5
+# DISTVERSION=	3.6.5-108
+# DISTVERSIONSUFFIX=	-g925270d90
 CATEGORIES=	wip graphics
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libcurl.so:ftp/curl \
-		libavformat.so:multimedia/ffmpeg \
+		libavformat.so:multimedia/ffmpeg4 \
 		libfreetype.so:print/freetype2 \
 		libgdal.so:graphics/gdal \
 		libgif.so:graphics/giflib \
@@ -25,12 +27,16 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		cmake:noninja gettext-runtime gl gnome gstreamer jpeg \
 		localbase:ldflags sdl xorg
 USE_GL=		gl
-USE_GNOME=	cairo gdkpixbuf2 glib20 librsvg2
+USE_GNOME=	cairo gdkpixbuf glib20 librsvg2
 USE_LDCONFIG=	yes
 USE_SDL=	sdl
 USE_XORG=	x11 xinerama xrandr
+USE_CXXSTD=	c++14
 
 USE_GITHUB=	yes
 GH_PROJECT=	OpenSceneGraph
+
+CFLAGS+=	-I${LOCALBASE}/ffmpeg4/include
+LDFLAGS+=	-L${LOCALBASE}/ffmpeg4/lib
 
 .include <bsd.port.mk>

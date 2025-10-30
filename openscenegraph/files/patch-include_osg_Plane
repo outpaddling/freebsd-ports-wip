@@ -1,0 +1,38 @@
+--- include/osg/Plane.orig	2025-10-30 13:03:51 UTC
++++ include/osg/Plane
+@@ -241,7 +241,7 @@ class OSG_EXPORT Plane
+ 
+             int noAbove = 0;
+             int noBelow = 0;
+-            int noOn = 0;
++            // int noOn = 0;
+             for(std::vector<Vec3f>::const_iterator itr=vertices.begin();
+                 itr != vertices.end();
+                 ++itr)
+@@ -249,7 +249,7 @@ class OSG_EXPORT Plane
+                 float d = distance(*itr);
+                 if (d>0.0f) ++noAbove;
+                 else if (d<0.0f) ++noBelow;
+-                else ++noOn;
++                // else ++noOn;
+             }
+ 
+             if (noAbove>0)
+@@ -270,7 +270,7 @@ class OSG_EXPORT Plane
+ 
+             int noAbove = 0;
+             int noBelow = 0;
+-            int noOn = 0;
++            // int noOn = 0;
+             for(std::vector<Vec3d>::const_iterator itr=vertices.begin();
+                 itr != vertices.end();
+                 ++itr)
+@@ -278,7 +278,7 @@ class OSG_EXPORT Plane
+                 double d = distance(*itr);
+                 if (d>0.0) ++noAbove;
+                 else if (d<0.0) ++noBelow;
+-                else ++noOn;
++                // else ++noOn;
+             }
+ 
+             if (noAbove>0)
