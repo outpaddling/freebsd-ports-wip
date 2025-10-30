@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # mdstk, wxwidgets
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		lib/libosg.so:wip/openscenegraph
+		libosg.so:graphics/osg
 
 USES=		cmake:noninja dos2unix gl
 
