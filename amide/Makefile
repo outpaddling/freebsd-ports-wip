@@ -12,7 +12,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	medcon:graphics/xmedcon \
-		autoconf2.69:devel/autoconf2.69 \
 		gtkdocize:textproc/gtk-doc \
 		volpack>0:graphics/volpack
 LIB_DEPENDS=	libgsl.so:math/gsl \
@@ -22,10 +21,11 @@ LIB_DEPENDS=	libgsl.so:math/gsl \
 		libtiff.so:graphics/tiff \
 		libdcmimage.so:graphics/dcmtk \
 		libopenjp2.so:graphics/openjpeg
-USES=		desktop-file-utils gettext gmake gnome libtool localbase
+
+USES=		autoreconf:2.69 desktop-file-utils gmake gnome libtool localbase
+NLS_USES=	gettext
 USE_GITHUB=	yes
 USE_GNOME=	gconf2 libgnomecanvas gtk20 intltool
-
 GH_ACCOUNT=	ferdymercury
 
 MAKE_JOBS_UNSAFE=	yes
@@ -34,12 +34,14 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-gnome-vfs=no
 WITH_DEBUG=		yes	# Until abort on startup is fixed
 
+OPTIONS_DEFINE=		NLS
+OPTIONS_DEFAULT=	NLS
+OPTIONS_SUB=		yes
+
 pre-configure:
-	# (cd ${WRKSRC} && ${LOCALBASE}/bin/autoreconf2.69)
 	(cd ${WRKSRC} && intltoolize)
 	(cd ${WRKSRC} && libtoolize)
 	(cd ${WRKSRC} && gtkdocize)
 	(cd ${WRKSRC} && ${TOUCH} gnome-doc-utils.make)
-	(cd ${WRKSRC} && autoreconf2.69 --install)
 
 .include <bsd.port.mk>
