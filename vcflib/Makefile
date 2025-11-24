@@ -1,6 +1,6 @@
 PORTNAME=		vcflib
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.0.13
+DISTVERSION=		1.0.14
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -55,9 +55,8 @@ CONFLICTS_INSTALL=	filevercmp libdisorder # include/disorder.h include/filevercm
 .include <bsd.port.options.mk>
 
 post-stage:
-	${MV} ${STAGEDIR}${PREFIX}/bin/libvcflib.a ${STAGEDIR}${PREFIX}/lib
 .if ${PORT_OPTIONS:MZIG}
-	${MV} ${STAGEDIR}/usr/lib/libzig.a ${STAGEDIR}${PREFIX}/lib
+	${RM} ${STAGEDIR}/usr/lib/libzig.a
 .endif
 
 .include <bsd.port.mk>
