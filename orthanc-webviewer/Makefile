@@ -23,12 +23,12 @@ WWW=		https://www.orthanc-server.com/static.php?page=web-viewer
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCPlugin.h:science/orthanc \
+BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCPlugin.h:wip/orthanc \
 		googletest>0:devel/googletest
 LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libjsoncpp.so:devel/jsoncpp \
 		libsqlite3.so:databases/sqlite3
-RUN_DEPENDS=	Orthanc:science/orthanc
+RUN_DEPENDS=	Orthanc:wip/orthanc
 
 USES=		cmake localbase python:build
 USE_LDCONFIG=	${DATADIR}/plugins
@@ -44,7 +44,11 @@ WRKSRC=		${WRKDIR}/OrthancWebViewer-${PORTVERSION}
 
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
-# Build fails with 1.12.8 and 1.12.9
+# FIXME: Build fails with 1.12.8 and later
+# .include "${.CURDIR}/../../wip/orthanc/version.mk"
+# Plugin/Cache/CacheManager.cpp:471:26: error: no member named 'Read' in 'Orthanc::FilesystemStorage'
+# 471 |         pimpl_->storage_.Read(uuid, Orthanc::FileContentType_Unknown));
+#     |         ~~~~~~~~~~~~~~~~ ^
 ORTHANC_VER=	1.12.7
 
 post-extract:

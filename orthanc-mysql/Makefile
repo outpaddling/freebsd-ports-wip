@@ -17,13 +17,13 @@ WWW=		https://www.orthanc-server.com/static.php?page=mysql
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCDatabasePlugin.h:science/orthanc \
+BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCDatabasePlugin.h:wip/orthanc \
 		googletest>0:devel/googletest
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libjsoncpp.so:devel/jsoncpp \
 		libprotobuf.so:devel/protobuf
-RUN_DEPENDS=	Orthanc:science/orthanc
+RUN_DEPENDS=	Orthanc:wip/orthanc
 
 USES=		cmake localbase mysql:client python:build ssl
 USE_LDCONFIG=	${DATADIR}/plugins
@@ -40,7 +40,7 @@ CXXFLAGS+=	-I${LOCALBASE}/include -DNDEBUG
 
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
-ORTHANC_VER=	1.12.9
+.include "${.CURDIR}/../../wip/orthanc/version.mk"
 
 post-extract:
 		${MKDIR} ${WRKSRC}/MySQL/ThirdPartyDownloads
