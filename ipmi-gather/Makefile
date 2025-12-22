@@ -18,7 +18,7 @@ USERS=		ftp
 GROUPS=		${USERS}
 
 GH_ACCOUNT=	outpaddling
-GH_TAGNAME=	a45274c15772cb609ab44790859712d14c421c9d
+GH_TAGNAME=	63ad1a5ed4f2214fe3a44f5dbec7b021619e9e55
 
 # Until the kinks are worked out
 WITH_DEBUG=	yes
