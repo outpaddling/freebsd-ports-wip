@@ -23,7 +23,7 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	${PREFIX}/lib64
 
 # Builds with earlier versions, but ngs-doc plist differs if jdk17 is present
-JAVA_VERSION=	17+
+JAVA_VERSION=	17
 
 OPTIONS_DEFINE=	EXAMPLES
 
