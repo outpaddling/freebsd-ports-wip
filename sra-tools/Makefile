@@ -1,6 +1,6 @@
 PORTNAME=	sra-tools
 DISTVERSION=	3.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	wip biology java
 
 MAINTAINER=	jwb@FreeBSD.org
