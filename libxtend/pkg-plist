@@ -157,6 +157,7 @@ share/man/man3/xt_n_choose_k.3.gz
 share/man/man3/xt_parse_cmd.3.gz
 share/man/man3/xt_read_line_malloc.3.gz
 share/man/man3/xt_realloc.3.gz
+share/man/man3/xt_redirect.3.gz
 share/man/man3/xt_resolve_hostname.3.gz
 share/man/man3/xt_rmkdir.3.gz
 share/man/man3/xt_romantoi.3.gz
