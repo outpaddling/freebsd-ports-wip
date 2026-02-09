@@ -22,6 +22,7 @@ RUN_DEPENDS=	sra-tools>0:biology/sra-tools \
 		samtools>0:biology/samtools \
 		${PYTHON_PKGNAMEPREFIX}macs2>0:biology/py-macs2@${PY_FLAVOR} \
 		fasda>0:biology/fasda \
+		fasda-utils>0:wip/fasda-utils \
 		peak-classifier>0:biology/peak-classifier \
 		webbrowser>0:www/webbrowser \
 		curl>0:ftp/curl
