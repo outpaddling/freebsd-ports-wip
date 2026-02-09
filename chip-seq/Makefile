@@ -2,7 +2,7 @@ PORTNAME=	chip-seq
 # Update major version only if the metaport is overhauled
 # Update minor version when adding or removing dependencies
 # Update revision for all other changes
-DISTVERSION=	0.1.2
+DISTVERSION=	0.3.0
 CATEGORIES=	wip biology python
 MASTER_SITES=	# empty
 
@@ -24,8 +24,15 @@ RUN_DEPENDS=	sra-tools>0:biology/sra-tools \
 		fasda>0:biology/fasda \
 		fasda-utils>0:wip/fasda-utils \
 		peak-classifier>0:biology/peak-classifier \
-		webbrowser>0:www/webbrowser
+		webbrowser>0:www/webbrowser \
+		curl>0:ftp/curl
 
 USES=		metaport python
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} != FreeBSD || ${OSVERSION} >= 1302509
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MACS3>0:biology/py-macs3@${PY_FLAVOR}
+.endif
 
 .include <bsd.port.mk>
