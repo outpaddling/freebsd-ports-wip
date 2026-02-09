@@ -1,4 +1,7 @@
 PORTNAME=	auto-admin-desktop
+# Update major version only if the metaport is overhauled
+# Update minor version when adding or removing dependencies
+# Update revision for all other changes
 DISTVERSION=	0.1.1
 CATEGORIES=	wip sysutils
 

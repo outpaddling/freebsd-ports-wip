@@ -1,4 +1,7 @@
 PORTNAME=	biostar-tools
+# Update major version only if the metaport is overhauled
+# Update minor version when adding or removing dependencies
+# Update revision for all other changes
 PORTVERSION=	2.1
 CATEGORIES=	wip biology python
 MASTER_SITES=	# empty

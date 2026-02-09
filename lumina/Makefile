@@ -1,4 +1,7 @@
 PORTNAME=	lumina
+# Update major version only if the metaport is overhauled
+# Update minor version when adding or removing dependencies
+# Update revision for all other changes
 PORTVERSION=	1.6.2
 PORTEPOCH=	3
 CATEGORIES=	wip x11

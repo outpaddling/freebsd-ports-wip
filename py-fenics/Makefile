@@ -1,4 +1,7 @@
 PORTNAME=	fenics
+# Update major version only if the metaport is overhauled
+# Update minor version when adding or removing dependencies
+# Update revision for all other changes
 PORTVERSION=	2017.2.0
 CATEGORIES=	wip math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

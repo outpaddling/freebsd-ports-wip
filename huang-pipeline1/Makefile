@@ -1,4 +1,7 @@
 PORTNAME=	huang-pipeline1
+# Update major version only if the metaport is overhauled
+# Update minor version when adding or removing dependencies
+# Update revision for all other changes
 PORTVERSION=	0.1
 CATEGORIES=	wip biology
 

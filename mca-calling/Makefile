@@ -1,4 +1,7 @@
 PORTNAME=	mca-calling
+# Update major version only if the metaport is overhauled
+# Update minor version when adding or removing dependencies
+# Update revision for all other changes
 DISTVERSION=	0.1.0
 CATEGORIES=	wip biology
 MASTER_SITES=	# empty
