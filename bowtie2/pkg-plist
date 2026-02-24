@@ -1,6 +1,8 @@
 bin/bowtie2
 bin/bowtie2-align-l
+bin/bowtie2-align-l-v256
 bin/bowtie2-align-s
+bin/bowtie2-align-s-v256
 bin/bowtie2-build
 bin/bowtie2-build-l
 bin/bowtie2-build-s

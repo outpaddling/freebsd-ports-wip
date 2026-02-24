@@ -1,6 +1,6 @@
 PORTNAME=		bowtie2
 DISTVERSIONPREFIX=	v
-DISTVERSION=		2.5.4
+DISTVERSION=		2.5.5
 CATEGORIES=		wip biology perl5 python
 
 MAINTAINER=	jwb@FreeBSD.org
