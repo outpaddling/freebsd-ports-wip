@@ -46,7 +46,7 @@
      INSTALL_COMMAND ""
  )
  
-@@ -109,7 +96,7 @@ if (ZLIBNG)
+@@ -109,13 +96,13 @@ if (ZLIBNG)
      SOURCE_DIR ${PROJECT_SOURCE_DIR}/ext/zlib-ng
      BUILD_IN_SOURCE 1
      CONFIGURE_COMMAND mkdir -p zlib-ng && cd zlib-ng && cmake .. -DZLIB_COMPAT=ON -DZLIB_ENABLE_TESTS=OFF -DCMAKE_INSTALL_PREFIX=${PREFIX}
@@ -55,3 +55,10 @@
      INSTALL_COMMAND ""
      )
  endif(ZLIBNG)
+ 
+ if (USE_BAM)
+-    include_directories(${htslib_PREFIX}/src/htslib)
++    include_directories(${LOCALBASE}/htslib)
+ endif(USE_BAM)
+ 
+ include_directories(${EXT_PROJECTS_DIR}/bifrost/build/src)
