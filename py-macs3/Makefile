@@ -20,8 +20,9 @@ COMMON_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=1.3:science/py-scikit-learn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hmmlearn>=0.3.2:math/py-hmmlearn@${PY_FLAVOR}
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		simde>0:devel/simde \
-		${PYTHON_PKGNAMEPREFIX}cython3>0:lang/cython3 \
+		${PYTHON_PKGNAMEPREFIX}cython>0:lang/cython \
 		${COMMON_DEPENDS}
 RUN_DEPENDS=	${COMMON_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
