@@ -1,0 +1,2 @@
+Isocline is a pure C library that can be used as an alternative to the
+GNU readline library, with an MIT license for greater freedom of use.
