@@ -38,6 +38,14 @@ post-extract:
 MAKE_ENV=	POPCNT_CAPABILITY=0
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+PLIST_SUB+=	X86_64_ONLY=""
+.else
+PLIST_SUB+=	X86_64_ONLY="@comment "
+.endif
+
 pre-configure:
 	@${REINPLACE_CMD} \
 		-e 's|^RELEASE_FLAGS|# RELEASE_FLAGS|' \
@@ -62,4 +70,4 @@ post-install-DOCS-on:
 post-install-EXAMPLES-on:
 	(cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
