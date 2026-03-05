@@ -58,6 +58,9 @@ post-install:
 		${WRKSRC}/bowtie2*-s \
 		${WRKSRC}/bowtie2*-l \
 		${STAGEDIR}${PREFIX}/bin
+.if ${ARCH} == amd64
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*256
+.endif
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/scripts/*.sh \
 		${WRKSRC}/scripts/*.pl \
