@@ -1,8 +1,6 @@
 PORTNAME=	dcmtk
 DISTVERSIONPREFIX=	${PORTNAME:tu}-
-DISTVERSION=	3.6.9
-PORTREVISION=	2
-PORTEPOCH=	1
+DISTVERSION=	3.7.0
 CATEGORIES=	wip graphics devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +15,7 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		compiler:c++11-lang cmake cpe gnome jpeg pathfix ssl
+USES=		cmake compiler:c++11-lang cpe gnome jpeg pathfix ssl
 CPE_VENDOR=	offis
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
@@ -27,17 +25,17 @@ USE_LDCONFIG=	yes
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	DCMTK_WITH_DOXYGEN
 
-OPTIONS_DEFINE=	DOCS
-
-PORTDOCS=	*
+TEST_TARGET=	test test-exhaustive
 
 ETCDIR=		${PREFIX}/etc/${PORTNAME}-${PORTVERSION}
 DATADIR=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
-
-TEST_TARGET=	test test-exhaustive
-
 PORTSCOUT=	limit:^.*[0-9].*$$ # prevent tags like latest
+
+PLIST_SUB=	SOVERSION=${DISTVERSION}
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
@@ -48,6 +46,10 @@ CC=		${LOCALBASE}/bin/clang${LLVM_VER}
 CXX=		${LOCALBASE}/bin/clang++${LLVM_VER}
 .endif
 
-# tests as of 3.6.9: 100% tests passed, 0 tests failed out of 366
+# tests as of 3.7.0: 100% tests passed, 0 tests failed out of 381
+
+# Orthanc needs access to dicom.dic and doesn't care about the dcmtk version
+post-stage:
+	${RLN} ${STAGEDIR}${DATADIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}
 
 .include <bsd.port.post.mk>
