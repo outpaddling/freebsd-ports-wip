@@ -16,7 +16,7 @@ NOT_FOR_ARCHS_REASON=	Requires 64-bit processor
 # libtool and auto* are run manually in submodules, so don't put them in USES
 BUILD_DEPENDS=	bash:shells/bash \
 		cereal>=1.3.0:devel/cereal \
-		libgff==2.0.0:biology/libgff \
+		libgff>=2.0.0:biology/libgff \
 		libtool:devel/libtool \
 		autoreconf:devel/autoconf \
 		aclocal:devel/automake \
