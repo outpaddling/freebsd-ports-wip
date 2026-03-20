@@ -1,0 +1,14 @@
+Allow non-root users to obtain the system serial number, which on some
+platforms can only be obtain via dmidecode. As dmidecode accesses
+kernel memory for some information, it can only be run by root. This
+unfortunately means that none of the information it provides can be
+obtained without root privileges.
+
+System-serial-number uses SUID to run
+
+	dmidecode -s system-serial-number.
+
+It does not allow the user to obtain other information via dmidecode.
+
+System-serial-number must be installed by the root user, but may then
+be used by anyone.
