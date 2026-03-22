@@ -1,7 +1,7 @@
 PORTNAME=		fastp
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.2.0
-CATEGORIES=		biology
+CATEGORIES=		wip biology
 
 MAINTAINER=	hayzam@alchemilla.io
 COMMENT=	Ultra-fast all-in-one FASTQ preprocessor
