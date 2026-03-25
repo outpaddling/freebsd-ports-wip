@@ -1,5 +1,5 @@
-TIMESTAMP = 1765984755
-SHA256 (ncbi-sra-tools-3.3.0_GH0.tar.gz) = 3bfa26c5499a94d3b2a98eb65113bbb902f51dadef767c7c7247fc0175885a9a
-SIZE (ncbi-sra-tools-3.3.0_GH0.tar.gz) = 66485758
-SHA256 (ncbi-ncbi-vdb-3.3.0_GH0.tar.gz) = 36b3467affd53bea794e3eeb5598619d820bc726dc68751a189181ac7973047d
-SIZE (ncbi-ncbi-vdb-3.3.0_GH0.tar.gz) = 19055705
+TIMESTAMP = 1774443987
+SHA256 (ncbi-sra-tools-3.4.0_GH0.tar.gz) = 6f60984a212d35b239244c23b9686e2a1131c76b92f0c41e8b56d3f5b6fff2d0
+SIZE (ncbi-sra-tools-3.4.0_GH0.tar.gz) = 66793729
+SHA256 (ncbi-ncbi-vdb-3.4.0_GH0.tar.gz) = ff7f49994620d2453043ccfcff1eb7d376bb6ab5402eaae127497a94b4a210b2
+SIZE (ncbi-ncbi-vdb-3.4.0_GH0.tar.gz) = 19106867
