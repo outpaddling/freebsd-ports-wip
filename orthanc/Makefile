@@ -1,5 +1,6 @@
 PORTNAME=	orthanc
 DISTVERSION=	${ORTHANC_VER}	# version.mk
+PORTREVISION=	3
 CATEGORIES=	wip science
 MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc/
 DISTNAME=	Orthanc-${PORTVERSION}
