@@ -1,6 +1,6 @@
 PORTNAME=		vsearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=		2.30.5
+DISTVERSION=		2.30.6
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -25,5 +25,7 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
+
+do-test:
 
 .include <bsd.port.mk>
