@@ -26,6 +26,4 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
-do-test:
-
 .include <bsd.port.mk>
