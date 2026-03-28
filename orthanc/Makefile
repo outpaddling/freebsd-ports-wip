@@ -13,7 +13,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	protoc:devel/protobuf \
-		googletest>0:devel/googletest
+		googletest>0:devel/googletest \
+		dcmtk>=3.7.0_1:graphics/dcmtk
 LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libcivetweb.so:www/civetweb \
 		libcurl.so:ftp/curl \
