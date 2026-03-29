@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libdeflate.so:archivers/libdeflate
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf cpe gmake localbase:ldflags pathfix perl5 shebangfix tar:bzip2
+USES=		autoreconf cpe gmake localbase:ldflags perl5 shebangfix tar:bzip2
 USE_PERL5=	test
 USE_LDCONFIG=	yes
 
@@ -28,7 +28,7 @@ PATHFIX_MAKEFILEIN=	Makefile
 SHEBANG_FILES=		test/*.pl
 
 OPTIONS_DEFINE=		CURL PLUGINS
-OPTIONS_DEFAULT=	CURL
+OPTIONS_DEFAULT=	CURL PLUGINS
 
 CURL_DESC=		Use libcurl for network file access (HTTPS and S3 support).
 CURL_USES=		ssl
