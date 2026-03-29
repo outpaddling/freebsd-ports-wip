@@ -29,9 +29,9 @@ PERL_DESC=		Enable external PERL scripts for advanced filtering
 OPTIONS_DEFAULT=	GPL PERL
 
 GPL_LIB_DEPENDS=	libgsl.so:math/gsl
-GPL_CONFIGURE_ON=	--enable-libgsl
+GPL_CONFIGURE_ENABLE=	libgsl
 PERL_USES=		perl5
-PERL_CONFIGURE_ON=	--enable-perl-filters
+PERL_CONFIGURE_ENABLE=	perl-filters
 
 .include <bsd.port.options.mk>
 
