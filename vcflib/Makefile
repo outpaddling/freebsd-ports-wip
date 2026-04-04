@@ -16,7 +16,6 @@ BUILD_DEPENDS=	simde>0:devel/simde \
 		pybind11>0:devel/pybind11 \
 		${PYTHON_PKGNAMEPREFIX}pypandoc>=1.4:textproc/py-pypandoc@${PY_FLAVOR}
 LIB_DEPENDS=	libhts.so:biology/htslib \
-		libcurl.so:ftp/curl \
 		libwfa2.so:biology/wfa2-lib
 
 USES=		cmake:noninja gmake localbase:ldflags pkgconfig python shebangfix
