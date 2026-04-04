@@ -12,7 +12,8 @@ LICENSE=	MIT
 NOT_FOR_ARCHS=	armv6 armv7
 NOT_FOR_ARCHS_REASON=	requires OpenMP which is not supported
 
-BUILD_DEPENDS=	pybind11>0:devel/pybind11 \
+BUILD_DEPENDS=	simde>0:devel/simde \
+		pybind11>0:devel/pybind11 \
 		${PYTHON_PKGNAMEPREFIX}pypandoc>=1.4:textproc/py-pypandoc@${PY_FLAVOR}
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libcurl.so:ftp/curl \
@@ -27,10 +28,9 @@ GH_TUPLE=	ekg:fastahack:bb33265:fastahack/contrib/fastahack \
 		ekg:fsom:56695e1:fsom/contrib/fsom \
 		ekg:intervaltree:aa59377:intervaltree/contrib/intervaltree \
 		edawson:libVCFH:44b6580:libVCFH/contrib/libVCFH \
-		ekg:multichoose:e1f94ae:multichoose/contrib/multichoose \
+		ekg:multichoose:255192e:multichoose/contrib/multichoose \
 		ekg:smithwaterman:2610e25:smithwaterman/contrib/smithwaterman \
-		simd-everywhere:simde-no-tests:9af03cd:simd/src/simde \
-		vcflib:tabixpp:ae5cdf8:tabixpp/contrib/tabixpp
+		vcflib:tabixpp:0f55194:tabixpp/contrib/tabixpp
 SHEBANG_FILES=	scripts/*
 
 # FIXME: Add Zig option + lang/zig dep
