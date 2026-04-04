@@ -160,6 +160,7 @@ include/vcflib/vcf-c-api.h
 include/vcflib/vcf-wfa.h
 lib/libvcflib.so
 lib/pyvcflib%%PYTHON_TAG%%.so
+libdata/pkgconfig/vcflib.pc
 share/man/man1/abba-baba.1.gz
 share/man/man1/bFst.1.gz
 share/man/man1/dumpContigsFromHeader.1.gz
