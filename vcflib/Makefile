@@ -40,6 +40,10 @@ ZIG_DESC=		Include Zig language support
 
 ZIG_BUILD_DEPENDS=	zig>0:lang/zig
 
+# FIXME:
+# ld: error: undefined symbol: __zig_probe_stack
+# >>> referenced by Dwarf.zig:2183 (/usr/local/lib/zig/std/debug/Dwarf.zig:2183)
+# >>>               .zig-cache/o/2643a3b6947cf9c92e588b33a16c4d39/libzig_zcu.o:(debug.Dwarf.ElfModule.load) in archive /usr/ports/wip/vcflib/work/vcflib-1.0.15/src/zig/zig-out/lib/libzig.a
 CMAKE_ARGS+=	-DWFA_GITMODULE=OFF -DWFALIB=${LOCALBASE}/lib/libwfa2.so.0 \
 		-DTABIXPP_LOCAL=${WRKSRC}/contrib/tabixpp
 ZIG_CMAKE_OFF=	-DZIG=OFF
