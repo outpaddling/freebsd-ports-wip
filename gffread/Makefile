@@ -18,6 +18,8 @@ GH_TUPLE=	gpertea:gclib:v${DISTVERSION}:gpertea/gclib
 
 INSTALL_TARGET=	install-strip
 
+CONFLICTS_INSTALL=	cufflinks
+
 PLIST_FILES=	bin/gffread
 
 .include <bsd.port.mk>
