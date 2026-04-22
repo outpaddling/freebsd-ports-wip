@@ -6,6 +6,7 @@ MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc-dicomweb/:d
 		https://orthanc.uclouvain.be/downloads/third-party-downloads/dicom-web/:thirdpartyweb \
 		https://orthanc.uclouvain.be/downloads/sources/orthanc/:orthanc
 DISTFILES=	OrthancDicomWeb-${PORTVERSION}.tar.gz:dicomweb
+# Grep -r the source dist to find the correct versions
 EXTRADISTFILES=	Orthanc-${ORTHANC_VER}.tar.gz:orthanc \
 		e2fsprogs-1.44.5.tar.gz:thirdparty \
 		bootstrap-5.3.3.zip:thirdparty \
