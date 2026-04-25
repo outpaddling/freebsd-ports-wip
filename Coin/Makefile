@@ -1,7 +1,7 @@
 PORTNAME=	Coin
 PORTVERSION=	4.0.7
 DISTVERSIONPREFIX=	v
-CATEGORIES=	graphics
+CATEGORIES=	wip graphics
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	C++ 3D graphics library based on the Open Inventor API
