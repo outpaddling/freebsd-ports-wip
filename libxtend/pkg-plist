@@ -189,6 +189,7 @@ share/man/man3/xt_strupper.3.gz
 share/man/man3/xt_strviscpy.3.gz
 share/man/man3/xt_tic.3.gz
 share/man/man3/xt_toc.3.gz
+share/man/man3/xt_touch.3.gz
 share/man/man3/xt_tsv_read_field.3.gz
 share/man/man3/xt_tsv_read_field_malloc.3.gz
 share/man/man3/xt_tsv_skip_field.3.gz
