@@ -14,4 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES=		python
 USE_PYTHON=	autoplist distutils
 
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/py2bit.cpython-311.so
+
 .include <bsd.port.mk>
