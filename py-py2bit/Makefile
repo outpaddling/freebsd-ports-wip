@@ -12,6 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		python
+# Can't switch to pep517 yet: Requires setuptools>=74.1
 USE_PYTHON=	autoplist distutils
 
 post-stage:
