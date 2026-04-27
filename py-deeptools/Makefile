@@ -27,4 +27,6 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
