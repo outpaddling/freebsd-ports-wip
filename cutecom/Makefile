@@ -1,6 +1,7 @@
-PORTNAME=	cutecom
-DISTVERSION=	1.00.0
-CATEGORIES=	wip comms
+PORTNAME=		cutecom
+DISTVERSION=		0.60.0
+DISTVERSIONSUFFIX=	-RC1
+CATEGORIES=		comms
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Graphical serial terminal for embedded programming
