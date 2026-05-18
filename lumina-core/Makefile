@@ -12,6 +12,9 @@ WWW=		https://lumina-desktop.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
+FLAVORS=	xorg xlibre
+FLAVOR?=	${FLAVORS:[1]}
+
 RUN_DEPENDS=	fluxbox>=0:x11-wm/fluxbox \
 		fluxbox-tenr-styles-pack>=0:x11-themes/fluxbox-tenr-styles-pack \
 		xbrightness>=0:x11/xbrightness \
@@ -34,6 +37,16 @@ USE_QT=		buildtools:build concurrent core dbus declarative gui \
 USE_GITHUB=	yes
 GH_ACCOUNT=	lumina-desktop
 GH_PROJECT=	lumina
+
+.if ${FLAVOR} == xlibre
+PKGNAMEPREFIX=	xlibre-
+USES+=		xlibre
+USE_XLIBRE+=	xlibre-server
+CONFLICTS_BUILD+=	xorg-server
+.else
+USE_XORG+=	xorg-server
+CONFLICTS_BUILD+=	xlibre-server
+.endif
 
 QMAKE_ARGS=	L_MANDIR=${PREFIX}/share/man
 
