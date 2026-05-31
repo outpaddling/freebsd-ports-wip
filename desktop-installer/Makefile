@@ -9,7 +9,7 @@ WWW=		https://github.com/outpaddling/desktop-installer
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	auto-admin>=0.8.4.11:wip/auto-admin
+RUN_DEPENDS=	auto-admin>=0.8.5:wip/auto-admin
 
 USES=		desktop-file-utils
 USE_GITHUB=	yes
