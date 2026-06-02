@@ -53,6 +53,7 @@ sbin/spcm-lowest-uid
 sbin/spcm-lpjs-enable
 sbin/spcm-lpjs-restart
 sbin/spcm-munge-enable
+sbin/spcm-node-binary-updates
 sbin/spcm-node-iftop
 sbin/spcm-node-manager
 sbin/spcm-node-power-on

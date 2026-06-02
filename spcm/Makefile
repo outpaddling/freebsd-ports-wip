@@ -1,6 +1,6 @@
 PORTNAME=	spcm
-DISTVERSION=	0.5.9-34
-DISTVERSIONSUFFIX=	-ge1df77e
+DISTVERSION=	0.5.9-37
+DISTVERSIONSUFFIX=	-gaba662e
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/outpaddling/SPCM
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	auto-admin>=0.8.0:wip/auto-admin
+RUN_DEPENDS=	auto-admin>=0.8.5:wip/auto-admin
 
 USE_GITHUB=	yes
 
