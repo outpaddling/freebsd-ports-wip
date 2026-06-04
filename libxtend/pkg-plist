@@ -160,13 +160,16 @@ share/man/man3/xt_parse_cmd.3.gz
 share/man/man3/xt_read_line_malloc.3.gz
 share/man/man3/xt_realloc.3.gz
 share/man/man3/xt_redirect.3.gz
+share/man/man3/xt_redirect7.3.gz
 share/man/man3/xt_resolve_hostname.3.gz
 share/man/man3/xt_rmkdir.3.gz
 share/man/man3/xt_romantoi.3.gz
 share/man/man3/xt_short_cmp.3.gz
 share/man/man3/xt_shuffle.3.gz
 share/man/man3/xt_spawnlp.3.gz
+share/man/man3/xt_spawnlp10.3.gz
 share/man/man3/xt_spawnvp.3.gz
+share/man/man3/xt_spawnvp10.3.gz
 share/man/man3/xt_str2file.3.gz
 share/man/man3/xt_str2u64_hash.3.gz
 share/man/man3/xt_str_argv_cat.3.gz
