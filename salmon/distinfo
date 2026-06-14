@@ -1,6 +1,6 @@
-TIMESTAMP = 1753565795
-SHA256 (COMBINE-lab-salmon-v1.10.3_GH0.tar.gz) = a053fba63598efc4ade3684aa2c8e8e2294186927d4fcdf1041c36edc2aa0871
-SIZE (COMBINE-lab-salmon-v1.10.3_GH0.tar.gz) = 7193092
+TIMESTAMP = 1781444365
+SHA256 (COMBINE-lab-salmon-v1.12.0_GH0.tar.gz) = acef41e166ee60697f7199f9fd28c63f835f188638629795d2509e9a56bfced4
+SIZE (COMBINE-lab-salmon-v1.12.0_GH0.tar.gz) = 7638363
 SHA256 (COMBINE-lab-pufferfish-salmon-v1.10.3_GH0.tar.gz) = 5d345ba30f22ff4448f4bf2920d2246a11cc38b203e12828c07b2612e41d2951
 SIZE (COMBINE-lab-pufferfish-salmon-v1.10.3_GH0.tar.gz) = 3368105
 SHA256 (jkbonfield-io_lib-io_lib-1-15-1_GH0.tar.gz) = 5fef32bb10991b388b4a92292e58d6ef8e7eda812ab2d6a10daaca9a757e6302

@@ -1,7 +1,6 @@
 PORTNAME=		salmon
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.10.3
-PORTREVISION=		2
+DISTVERSION=		1.12.0
 CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -33,7 +32,7 @@ USE_GITHUB=	yes
 # which is a nightmare: explicitly integrated into configure files and
 # installs htscodecs files, conflicting with separate htscodecs port.
 GH_ACCOUNT=	COMBINE-lab
-GH_TUPLE+=	COMBINE-lab:pufferfish:salmon-v${DISTVERSION}:pf/external/pufferfish
+GH_TUPLE+=	COMBINE-lab:pufferfish:salmon-v1.10.3:pf/external/pufferfish
 GH_TUPLE+=	jkbonfield:io_lib:io_lib-1-15-1:sio/external/staden-io_lib
 # Update commit hash from io_lib release branch
 GH_TUPLE+=	samtools:htscodecs:de42211:htscodec/external/staden-io_lib/htscodecs
