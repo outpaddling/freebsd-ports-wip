@@ -1,6 +1,7 @@
 PORTNAME=		macs2
 DISTVERSIONPREFIX=	v
 DISTVERSION=		2.2.9.1
+PORTREVISION=		4
 CATEGORIES=		wip biology python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +12,8 @@ WWW=		https://github.com/taoliu/MACS
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-distutils-extra>0:devel/py-python-distutils-extra@${PY_FLAVOR} \
+		${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}cykhash>0:wip/py-cykhash@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
@@ -19,7 +21,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 
 USES=		python shebangfix
 USE_GITHUB=	yes
-USE_PYTHON=	autoplist concurrent cython distutils
+USE_PYTHON=	autoplist concurrent cython0 pep517
 
 GH_ACCOUNT=	taoliu
 GH_PROJECT=	MACS
