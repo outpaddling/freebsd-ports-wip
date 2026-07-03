@@ -20,7 +20,7 @@ RUN_DEPENDS=	sra-tools>0:biology/sra-tools \
 		bwa>0:biology/bwa \
 		bowtie2>0:biology/bowtie2 \
 		samtools>0:biology/samtools \
-		${PYTHON_PKGNAMEPREFIX}macs2>0:biology/py-macs2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}MACS3>0:biology/py-macs3@${PY_FLAVOR} \
 		fasda>0:biology/fasda \
 		fasda-utils>0:wip/fasda-utils \
 		peak-classifier>0:biology/peak-classifier \
@@ -28,11 +28,5 @@ RUN_DEPENDS=	sra-tools>0:biology/sra-tools \
 		curl>0:ftp/curl
 
 USES=		metaport python
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} != FreeBSD || ${OSVERSION} >= 1302509
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MACS3>0:biology/py-macs3@${PY_FLAVOR}
-.endif
 
 .include <bsd.port.mk>
