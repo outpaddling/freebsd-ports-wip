@@ -13,8 +13,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # xlrd should be == 1.2.0
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
-		${PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
+RUN_DEPENDS=	${PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xlsxwriter>0:textproc/py-xlsxwriter@${PY_FLAVOR} \
@@ -27,6 +26,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR
 		wget>0:ftp/wget
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist pep517
+USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
