@@ -2,7 +2,7 @@ PORTNAME=	chip-seq
 # Update major version only if the metaport is overhauled
 # Update minor version when adding or removing dependencies
 # Update revision for all other changes
-DISTVERSION=	0.3.0
+DISTVERSION=	0.3.1
 CATEGORIES=	wip biology python
 MASTER_SITES=	# empty
 
