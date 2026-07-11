@@ -13,7 +13,7 @@ BUILD_DEPENDS=	htslib>=1.24:wip/htslib
 LIB_DEPENDS=	libhts.so:wip/htslib
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf gmake localbase ncurses perl5 python:env shebangfix
+USES=		autoreconf cpe gmake localbase ncurses perl5 python:env shebangfix
 
 USE_GITHUB=	yes
 
