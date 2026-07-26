@@ -14,6 +14,7 @@ BUILD_DEPENDS=	libbson>=2.3.3:wip/libbson
 LIB_DEPENDS=	libbson2.so:wip/libbson \
 		libutf8proc.so:textproc/utf8proc \
 		libzstd.so:archivers/zstd
+RUN_DEPENDS=	libbson>=2.3.3:wip/libbson
 
 USES=		cmake cpe pathfix pkgconfig python:env
 CPE_VENDOR=	mongodb
