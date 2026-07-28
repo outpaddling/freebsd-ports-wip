@@ -10,6 +10,7 @@ WWW=		https://github.com/mongodb/mongo-c-driver
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+# libbson requirement more specific than LIB_DEPENDS can express
 BUILD_DEPENDS=	libbson>=2.3.3:wip/libbson
 LIB_DEPENDS=	libbson2.so:wip/libbson \
 		libutf8proc.so:textproc/utf8proc \

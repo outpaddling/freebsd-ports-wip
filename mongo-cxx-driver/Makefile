@@ -10,6 +10,7 @@ WWW=		https://github.com/mongodb/mongo-cxx-driver/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# mongo-c-driver requirement more specific than LIB_DEPENDS can express
 BUILD_DEPENDS=	mongo-c-driver>=2.3.3:devel/mongo-c-driver
 LIB_DEPENDS=	libmongoc2.so:wip/mongo-c-driver \
 		libbson2.so:wip/libbson \
