@@ -1,13 +1,13 @@
 
 PORTNAME=	mtr085
-PORTVERSION=	263
+PORTVERSION=	283
 CATEGORIES=	freebsd-ports-wip net
 MASTER_SITES=	https://github.com/${GITHUB_USER}/${PORTNAME}/tarball/${GITVERSION}/ \
 		${MASTER_SITE_LOCAL}
 DISTNAME=	${PORTNAME}-${GITVERSION}
 
 MAINTAINER=	e@mail
-COMMENT=	MTR v0.85 fork with whois info, IDN, unicode
+COMMENT=	MTR-0.85 fork with whois info, IDN, NLS, unicode, etc.
 WWW=	https://github.com/${GITHUB_USER}/${PORTNAME}
 
 LICENSE=	GPLv2
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 CONFLICTS_INSTALL?=	mtr mtr-nox11
 
 GITHUB_USER=	yvs2014
-GITVERSION=	826cbcb
+GITVERSION=	c97d1f2
 WRKSRC=		${WRKDIR}/${GITHUB_USER}-${PORTNAME}-${GITVERSION}
 FETCH_ARGS=	-Fpr
 
