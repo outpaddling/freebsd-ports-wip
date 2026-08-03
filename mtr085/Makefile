@@ -1,32 +1,28 @@
 
 PORTNAME=	mtr085
-PORTVERSION=	283
-CATEGORIES=	freebsd-ports-wip net
-MASTER_SITES=	https://github.com/${GITHUB_USER}/${PORTNAME}/tarball/${GITVERSION}/ \
-		${MASTER_SITE_LOCAL}
-DISTNAME=	${PORTNAME}-${GITVERSION}
+DISTVERSION=	283
+CATEGORIES=	wip net
 
 MAINTAINER=	e@mail
-COMMENT=	MTR-0.85 fork with whois info, IDN, NLS, unicode, etc.
-WWW=	https://github.com/${GITHUB_USER}/${PORTNAME}
-
+COMMENT=	MTR-0.85 fork with whois info, IDN, NLS, et cetera
+WWW=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}
 LICENSE=	GPLv2
 
 CONFLICTS_INSTALL?=	mtr mtr-nox11
 
-GITHUB_USER=	yvs2014
-GITVERSION=	c97d1f2
-WRKSRC=		${WRKDIR}/${GITHUB_USER}-${PORTNAME}-${GITVERSION}
-FETCH_ARGS=	-Fpr
+USES+=	meson
+USES+=	pkgconfig
+
+USE_GITHUB=	yes
+GH_PROJECT=	mtr085
+GH_ACCOUNT=	yvs2014
+GH_TAGNAME=	c97d1f23
 
 OPTIONS_DEFINE=	SETUID IPINFO IDN NLS UNICODE IPV6
 OPTIONS_DEFAULT=	IPINFO IDN UNICODE IPV6
 IPINFO_DESC=	Extended information like ASN, etc.
 SETUID_DESC=	Install with setuid root
 NLS_DESC=	NLS locale LC_MESSAGES
-
-USES+=	meson
-USES+=	pkgconfig
 
 .include <bsd.port.options.mk>
 
