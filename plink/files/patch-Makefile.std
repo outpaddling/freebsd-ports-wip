@@ -1,0 +1,12 @@
+--- Makefile.std.orig	2026-08-17 12:37:40 UTC
++++ Makefile.std
+@@ -97,6 +97,9 @@ clean:
+ # to be cleaned up before we can switch to cc.  E.g. plink_rserve.c
+ # includes a C++ header and exposed functions will need to be declared with
+ # extern "C".
++SFMT.o: SFMT.c
++	$(CC) -c $(CPPFLAGS) $(CFLAGS) SFMT.c
++
+ %.o: %.c
+ 	$(CXX) -c $(CPPFLAGS) $(CFLAGS) $< -o $@
+ 
