@@ -1,6 +1,5 @@
 PORTNAME=		canu
-DISTVERSION=		2.2
-PORTREVISION=		3
+DISTVERSION=		2.3
 CATEGORIES=		wip biology java perl5
 # Github auto-generated tarballs lack submodules
 MASTER_SITES=		https://github.com/marbl/canu/releases/download/v${DISTVERSION}/
@@ -18,17 +17,16 @@ NOT_FOR_ARCHS_REASON=	Requires 64-bit processor
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
-USES=		compiler:c++11-lang gmake localbase perl5 tar:xz
-USE_JAVA=	yes
+USES=		compiler:c++11-lang gmake java:run localbase perl5 tar:xz
 
-JAVA_RUN=	yes
 JAVA_VERSION=	8+
 
 WRKSRC_SUBDIR=	src
 # Upstream Makefile compiles directly into ${DESTDIR}${PREFIX} rather than
 # using a separate install target.
 MAKE_ENV=	DESTDIR=${WRKSRC} CANU_BUILD_ENV=ports
-CXXFLAGS+=	-std=c++14
+# Silence warnings about C++20 extensions
+CXXFLAGS+=	-std=c++20
 
 .include <bsd.port.pre.mk>
 
