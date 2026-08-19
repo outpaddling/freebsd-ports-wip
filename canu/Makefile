@@ -27,6 +27,7 @@ WRKSRC_SUBDIR=	src
 MAKE_ENV=	DESTDIR=${WRKSRC} CANU_BUILD_ENV=ports
 # Silence warnings about C++20 extensions
 CXXFLAGS+=	-std=c++20
+LDFLAGS+=	-lexecinfo
 
 .include <bsd.port.pre.mk>
 
@@ -50,11 +51,6 @@ pre-configure:
 	@${REINPLACE_CMD} \
 		-e 's|RealBin/../lib/site_perl|RealBin/../${SITE_PERL_REL}/canu|g' \
 		${WRKSRC}/pipelines/canu.pl
-
-# Upstream does not want to use lib/perl5/site_perl
-post-build:
-	@${MKDIR} ${WRKSRC}/build/lib/perl5
-	${MV} ${WRKSRC}/build/lib/site_perl ${WRKSRC}/build/lib/perl5
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}
