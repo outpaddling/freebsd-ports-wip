@@ -5,7 +5,7 @@ CATEGORIES=		wip biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Toolset for genome set arithmetic such as intersect, union
-WWW=		https://bedtools.readthedocs.org/
+WWW=		https://github.com/arq5x/bedtools2
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
