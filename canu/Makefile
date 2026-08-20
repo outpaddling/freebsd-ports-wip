@@ -14,10 +14,11 @@ LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/README.license.GPL
 NOT_FOR_ARCHS=		armv6 armv7 i386 powerpc powerpcspe
 NOT_FOR_ARCHS_REASON=	Requires 64-bit processor
 
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/config/platform/bsd.hpp:devel/boost-libs
 LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
-USES=		compiler:c++11-lang gmake java:run localbase perl5 ssl tar:xz
+USES=		compiler:c++11-lang gmake java:run localbase perl5 pkgconfig ssl tar:xz
 
 JAVA_VERSION=	8+
 
