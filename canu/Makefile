@@ -14,11 +14,10 @@ LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/README.license.GPL
 NOT_FOR_ARCHS=		armv6 armv7 i386 powerpc powerpcspe
 NOT_FOR_ARCHS_REASON=	Requires 64-bit processor
 
-LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
-		libcurl.so:ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
-USES=		compiler:c++11-lang gmake java:run localbase perl5 tar:xz
+USES=		compiler:c++11-lang gmake java:run localbase perl5 ssl tar:xz
 
 JAVA_VERSION=	8+
 
@@ -50,7 +49,7 @@ pre-configure:
 		-e 's|-fexpensive-optimizations||g' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} \
-		-e 's|RealBin/../lib/site_perl|RealBin/../${SITE_PERL_REL}/canu|g' \
+		-e 's|RealBin/../lib/perl5/site_perl|RealBin/../${SITE_PERL_REL}/canu|g' \
 		${WRKSRC}/pipelines/canu.pl
 
 do-install:
