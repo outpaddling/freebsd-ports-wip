@@ -1,7 +1,0 @@
-
-Need to join lines 9 & 10 in /usr/wip/science/openfoam/work/OpenFOAM-3.0.0/platforms/FreeBSDGccDPInt32Opt/src/renumber/SloanRenumber/options
-
-Patches to options:
-
-The comment line removed below causes a line break after EXE_INC =, which
-is a syntax error.
