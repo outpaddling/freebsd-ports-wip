@@ -34,12 +34,12 @@ ZOLTAN_LIB_DEPENDS=	libzoltan.so:science/trilinos
 
 MAKE_ENV=	SCOTCH_ARCH_PATH=${LOCALBASE} ZOLTAN_ARCH_PATH=${LOCALBASE}
 
-post-patch:
+post-extract:
 	${LN} -sf ${WRKSRC} ${WRKDIR}/OpenFOAM-14
-
 	${CP} ${FILESDIR}/prefs.sh ${WRKSRC}/etc
 	${CP} -R ${FILESDIR}/FreeBSDClang ${WRKSRC}/wmake/rules
-
+	
+post-patch:
 	${REINPLACE_CMD} \
 		's|^make="make"$$|make="$$MAKE"|' \
 		${WRKSRC}/wmake/wmake
