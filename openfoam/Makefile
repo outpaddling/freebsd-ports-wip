@@ -20,7 +20,7 @@ USES=		compiler:c++14-lang gmake shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenFOAM
 GH_PROJECT=	OpenFOAM-14
-GH_TAGNAME=	d7a67142d6f8fc57ba1ed6be52e1016f446d0356
+GH_TAGNAME=	20260724
 
 SHEBANG_REGEX=	./(bin|wmake|tutorials)/.*
 
