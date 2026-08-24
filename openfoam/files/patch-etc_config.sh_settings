@@ -1,6 +1,6 @@
---- etc/config.sh/settings.orig	2026-08-24 14:46:54 UTC
+--- etc/config.sh/settings.orig	2026-08-06 18:47:53 UTC
 +++ etc/config.sh/settings
-@@ -35,6 +35,19 @@ case "$WM_ARCH" in
+@@ -35,6 +35,21 @@ case "$WM_ARCH" in
  
  # Define compilation flags for the system type
  case "$WM_ARCH" in
@@ -14,9 +14,20 @@
 +        export WM_CXX='clang++'
 +        export WM_CFLAGS='-fPIC'
 +        export WM_CXXFLAGS='-fPIC -std=c++14'
-+        export WM_LDFLAGS=''
++        export WM_LDFLAGS=
 +        ;;
++    esac
++    ;;
 +
  Linux)
      WM_ARCH=linux
  
+@@ -47,7 +62,7 @@ Linux)
+         export WM_CFLAGS='-fPIC'
+         export WM_CXXFLAGS='-fPIC -std=c++0x'
+         export WM_LDFLAGS=
+-    ;;
++        ;;
+ 
+     x86_64)
+         case "$WM_ARCH_OPTION" in
