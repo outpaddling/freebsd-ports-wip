@@ -25,7 +25,6 @@ GH_TAGNAME=	d7a67142d6f8fc57ba1ed6be52e1016f446d0356
 SHEBANG_REGEX=	./(bin|wmake|tutorials)/.*
 
 NO_CONFIGURE=	yes
-PATCH_STRIP=	-p1
 
 OPTIONS_DEFINE=	ZOLTAN
 ZOLTAN_DESC=	Enable Zoltan decomposition support
@@ -35,32 +34,32 @@ ZOLTAN_LIB_DEPENDS=	libzoltan.so:science/trilinos
 MAKE_ENV=	SCOTCH_ARCH_PATH=${LOCALBASE} ZOLTAN_ARCH_PATH=${LOCALBASE}
 
 post-extract:
-	${LN} -sf ${WRKSRC} ${WRKDIR}/OpenFOAM-14
-	${CP} ${FILESDIR}/prefs.sh ${WRKSRC}/etc
-	${CP} -R ${FILESDIR}/FreeBSDClang ${WRKSRC}/wmake/rules
+	@${LN} -sf ${WRKSRC} ${WRKDIR}/OpenFOAM-14
+	@${CP} ${FILESDIR}/prefs.sh ${WRKSRC}/etc
+	@${CP} -R ${FILESDIR}/FreeBSDClang ${WRKSRC}/wmake/rules
 	
 post-patch:
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		's|^make="make"$$|make="$$MAKE"|' \
 		${WRKSRC}/wmake/wmake
 
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		's|        make -j |        $$MAKE -j |' \
 		${WRKSRC}/wmake/wmakeCollect
 
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		's|cd wmake/src && make|cd wmake/src \&\& $$MAKE|' \
 		${WRKSRC}/Allwmake
 
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		's|\[ "$$d" != Optional \] && \[ "$$d" != Make \]|[ "$$d" != Optional ] \&\& [ "$$d" != Make ] \&\& [ "$$d" != PVReaders ]|' \
 		${WRKSRC}/wmake/wmake
 
 post-patch-ZOLTAN-on:
-	${ECHO_CMD} 'export ZOLTAN_TYPE=system' >> ${WRKSRC}/etc/prefs.sh
+	@${ECHO_CMD} 'export ZOLTAN_TYPE=system' >> ${WRKSRC}/etc/prefs.sh
 
 post-patch-ZOLTAN-off:
-	${ECHO_CMD} 'export ZOLTAN_TYPE=none' >> ${WRKSRC}/etc/prefs.sh
+	@${ECHO_CMD} 'export ZOLTAN_TYPE=none' >> ${WRKSRC}/etc/prefs.sh
 
 do-build:
 	${LS} -ld ${WRKDIR}/OpenFOAM-14
