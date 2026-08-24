@@ -1,0 +1,9 @@
+PROJECT_LIBS = -l$(WM_PROJECT) \
+               -lOSspecific \
+               -L$(FOAM_LIBBIN)/$(FOAM_MPI) -lPstream \
+               -lexecinfo
+
+include $(GENERAL_RULES)/standard
+
+include $(DEFAULT_RULES)/c
+include $(DEFAULT_RULES)/c++

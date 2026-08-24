@@ -32,17 +32,13 @@ ZOLTAN_DESC=	Enable Zoltan decomposition support
 
 ZOLTAN_LIB_DEPENDS=	libzoltan.so:science/trilinos
 
-post-patch:
-	${RM} -rf ${WRKDIR}/OpenFOAM-14
-	${LN} -s ${WRKSRC} ${WRKDIR}/OpenFOAM-14
+MAKE_ENV=	SCOTCH_ARCH_PATH=${LOCALBASE} ZOLTAN_ARCH_PATH=${LOCALBASE}
 
-	${ECHO_CMD} 'export WM_COMPILER=Clang' > ${WRKSRC}/etc/prefs.sh
-	${ECHO_CMD} 'export WM_MPLIB=SYSTEMMPI' >> ${WRKSRC}/etc/prefs.sh
-	${ECHO_CMD} 'export MPI_ROOT=${LOCALBASE}' >> ${WRKSRC}/etc/prefs.sh
-	${ECHO_CMD} 'export MPI_ARCH_FLAGS="-DMPICH_SKIP_MPICXX"' >> ${WRKSRC}/etc/prefs.sh
-	${ECHO_CMD} 'export MPI_ARCH_INC="-isystem ${LOCALBASE}/include"' >> ${WRKSRC}/etc/prefs.sh
-	${ECHO_CMD} 'export MPI_ARCH_LIBS="-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib -lmpi"' >> ${WRKSRC}/etc/prefs.sh
-	${ECHO_CMD} 'export SCOTCH_TYPE=system' >> ${WRKSRC}/etc/prefs.sh
+post-patch:
+	${LN} -sf ${WRKSRC} ${WRKDIR}/OpenFOAM-14
+
+	${CP} ${FILESDIR}/prefs.sh ${WRKSRC}/etc
+	${CP} -R ${FILESDIR}/FreeBSDClang ${WRKSRC}/wmake/rules
 
 	${REINPLACE_CMD} \
 		's|^make="make"$$|make="$$MAKE"|' \
