@@ -1,0 +1,11 @@
+--- applications/utilities/postProcessing/dataConversion/foamToVTK/Make/options.orig	2026-07-22 14:33:01 UTC
++++ applications/utilities/postProcessing/dataConversion/foamToVTK/Make/options
+@@ -8,6 +8,8 @@ EXE_LIBS = \
+     -I$(LIB_SRC)/fileFormats/lnInclude
+ 
+ EXE_LIBS = \
++    -lfiniteVolume \
++    -lmeshTools \
+     -lfoamToVTK \
+     -lpolyTopoChange \
+     -llagrangian \

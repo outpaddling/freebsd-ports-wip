@@ -1,0 +1,10 @@
+--- applications/utilities/thermophysical/chemkinToFoam/Make/options.orig	2026-07-22 14:33:01 UTC
++++ applications/utilities/thermophysical/chemkinToFoam/Make/options
+@@ -4,4 +4,6 @@ EXE_LIBS = \
+     -I$(LIB_SRC)/thermophysicalModels/multicomponentThermo/lnInclude
+ 
+ EXE_LIBS = \
+-    -lchemistryModel
++    -lchemistryModel \
++    -lreactionModels \
++    -lspecie
