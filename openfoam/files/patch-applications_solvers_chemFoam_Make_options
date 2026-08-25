@@ -1,0 +1,10 @@
+--- applications/solvers/chemFoam/Make/options.orig	2026-08-25 14:11:14 UTC
++++ applications/solvers/chemFoam/Make/options
+@@ -9,6 +9,7 @@ EXE_LIBS = \
+     -I$(LIB_SRC)/meshTools/lnInclude
+ 
+ EXE_LIBS = \
++    -lmulticomponentThermophysicalModels -lfluidThermophysicalModels \
+     -lchemistryModel \
+     -lfiniteVolume \
+     -lmeshTools
