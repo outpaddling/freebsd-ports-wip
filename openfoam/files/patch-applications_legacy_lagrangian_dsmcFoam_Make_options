@@ -1,0 +1,16 @@
+--- applications/legacy/lagrangian/dsmcFoam/Make/options.orig	2026-07-22 14:33:01 UTC
++++ applications/legacy/lagrangian/dsmcFoam/Make/options
+@@ -8,5 +8,13 @@ EXE_LIBS = \
+ EXE_LIBS = \
+     -lmeshTools \
+     -lfiniteVolume \
++    -lLagrangian \
++    -lfieldFunctionObjects \
++    -llagrangianParcel \
++    -lmolecularDynamics \
++    -lsampling \
++    -lsnappyHexMesh \
++    -lsolidParticle \
++    -ltracking \
+     -llagrangian \
+     -lDSMC

@@ -1,0 +1,12 @@
+--- applications/legacy/compressible/rhoPorousSimpleFoam/Make/options.orig	2026-07-22 14:33:01 UTC
++++ applications/legacy/compressible/rhoPorousSimpleFoam/Make/options
+@@ -19,6 +19,9 @@ EXE_LIBS = \
+     -lmomentumTransportModels \
+     -lcompressibleMomentumTransportModels \
+     -lcoupledThermophysicalTransportModels \
++    -lthermophysicalTransportModel \
++    -lfluidThermophysicalTransportModel \
++    -lfluidThermoThermophysicalTransportModels \
+     -lfiniteVolume \
+     -lsampling \
+     -lmeshTools \

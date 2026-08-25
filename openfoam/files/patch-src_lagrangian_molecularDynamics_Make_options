@@ -1,0 +1,9 @@
+--- src/lagrangian/molecularDynamics/Make/options.orig	2026-07-22 14:33:01 UTC
++++ src/lagrangian/molecularDynamics/Make/options
+@@ -6,5 +6,6 @@ LIB_LIBS = \
+ 
+ LIB_LIBS = \
+     -lfiniteVolume \
++    -ltracking \
+     -lmeshTools \
+     -llagrangian

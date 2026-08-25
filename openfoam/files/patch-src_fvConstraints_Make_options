@@ -1,0 +1,10 @@
+--- src/fvConstraints/Make/options.orig	2026-07-22 14:33:01 UTC
++++ src/fvConstraints/Make/options
+@@ -12,6 +12,7 @@ LIB_LIBS = \
+     -I$(LIB_SRC)/ThermophysicalTransportModels/fluid/lnInclude
+ 
+ LIB_LIBS = \
++    -lphysicalProperties \
+     -lfiniteVolume \
+     -lsampling \
+     -lmeshTools \
