@@ -1,0 +1,16 @@
+diff --git a/src/OSspecific/POSIX/fileStat.C b/src/OSspecific/POSIX/fileStat.C
+index ffb26041ca..9769af1459 100644
+--- a/src/OSspecific/POSIX/fileStat.C
++++ b/src/OSspecific/POSIX/fileStat.C
+@@ -29,7 +29,11 @@ License
+ 
+ #include <signal.h>
+ #include <unistd.h>
++#ifdef freebsd64
++#include <sys/types.h>
++#else
+ #include <sys/sysmacros.h>
++#endif
+ 
+ // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
+ 

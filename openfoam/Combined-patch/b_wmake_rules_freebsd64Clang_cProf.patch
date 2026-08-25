@@ -1,0 +1,8 @@
+diff --git a/wmake/rules/freebsd64Clang/cProf b/wmake/rules/freebsd64Clang/cProf
+new file mode 100644
+index 0000000000..ca3ac9bf5f
+--- /dev/null
++++ b/wmake/rules/freebsd64Clang/cProf
+@@ -0,0 +1,2 @@
++cDBUG       = -pg
++cOPT        = -O2

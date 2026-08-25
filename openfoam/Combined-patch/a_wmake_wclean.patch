@@ -1,0 +1,10 @@
+diff --git a/wmake/wclean b/wmake/wclean
+index 8a3150de7f..c81f2ce213 100755
+--- a/wmake/wclean
++++ b/wmake/wclean
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ #------------------------------------------------------------------------------
+ # =========                 |
+ # \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox

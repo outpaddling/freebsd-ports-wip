@@ -1,0 +1,12 @@
+diff --git a/applications/utilities/miscellaneous/patchSummary/Make/options b/applications/utilities/miscellaneous/patchSummary/Make/options
+index 0a0dc01ec5..9b6dbbf586 100644
+--- a/applications/utilities/miscellaneous/patchSummary/Make/options
++++ b/applications/utilities/miscellaneous/patchSummary/Make/options
+@@ -5,5 +5,7 @@ EXE_INC = \
+ 
+ EXE_LIBS = \
+     -lgenericFvFields \
++    -lgenericFields \
++    -lgenericLagrangianFields \
+     -lfiniteVolume \
+     -lmeshTools

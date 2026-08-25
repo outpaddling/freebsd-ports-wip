@@ -1,0 +1,12 @@
+diff --git a/applications/utilities/thermophysical/chemkinToFoam/Make/options b/applications/utilities/thermophysical/chemkinToFoam/Make/options
+index 8178fac902..e8c68fa47e 100644
+--- a/applications/utilities/thermophysical/chemkinToFoam/Make/options
++++ b/applications/utilities/thermophysical/chemkinToFoam/Make/options
+@@ -4,4 +4,6 @@ EXE_INC = \
+     -I$(LIB_SRC)/thermophysicalModels/multicomponentThermo/lnInclude
+ 
+ EXE_LIBS = \
+-    -lchemistryModel
++    -lchemistryModel \
++    -lreactionModels \
++    -lspecie

@@ -1,13 +1,14 @@
---- etc/config.sh/zoltan.orig	2026-08-24 14:57:17 UTC
+--- etc/config.sh/zoltan.orig	2026-07-22 14:33:01 UTC
 +++ etc/config.sh/zoltan
-@@ -43,7 +43,9 @@ system)
+@@ -43,7 +43,10 @@ system)
      ;;
  system)
      export ZOLTAN_VERSION=system
 -    export ZOLTAN_ARCH_PATH=/usr
 +    # Allow user to control ZOLTAN_ARCH_PATH in env, default to /usr
-+    : ${ZOLTAN_ARCH_PATH:=/usr}
-+    export ZOLTAN_ARCH_PATH
++    if [ -z "$ZOLTAN_ARCH_PATH" ]; then
++        export ZOLTAN_ARCH_PATH=/usr
++    fi
      ;;
  OpenFOAM | ThirdParty)
      # Look for the source directory

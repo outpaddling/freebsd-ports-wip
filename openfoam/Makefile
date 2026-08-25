@@ -24,14 +24,15 @@ GH_TAGNAME=	20260724
 
 SHEBANG_REGEX=	./(bin|wmake|tutorials)/.*
 
-NO_CONFIGURE=	yes
-
 OPTIONS_DEFINE=	ZOLTAN
 ZOLTAN_DESC=	Enable Zoltan decomposition support
-
 ZOLTAN_LIB_DEPENDS=	libzoltan.so:science/trilinos
 
-MAKE_ENV=	SCOTCH_ARCH_PATH=${LOCALBASE} ZOLTAN_ARCH_PATH=${LOCALBASE}
+MAKE_ENV=	SCOTCH_TYPE=system \
+		SCOTCH_ARCH_PATH=${LOCALBASE} \
+		ZOLTAN_TYPE=system \
+		ZOLTAN_ARCH_PATH=${LOCALBASE} \
+		PTSCOTCH_LIB_DIR=${LOCALBASE/lib}
 
 post-extract:
 	@${LN} -sf ${WRKSRC} ${WRKDIR}/OpenFOAM-14

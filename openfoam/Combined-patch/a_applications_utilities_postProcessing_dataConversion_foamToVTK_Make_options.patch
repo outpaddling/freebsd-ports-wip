@@ -1,0 +1,13 @@
+diff --git a/applications/utilities/postProcessing/dataConversion/foamToVTK/Make/options b/applications/utilities/postProcessing/dataConversion/foamToVTK/Make/options
+index 59a7b532ed..64c78144c8 100644
+--- a/applications/utilities/postProcessing/dataConversion/foamToVTK/Make/options
++++ b/applications/utilities/postProcessing/dataConversion/foamToVTK/Make/options
+@@ -8,6 +8,8 @@ EXE_INC = \
+     -I$(LIB_SRC)/fileFormats/lnInclude
+ 
+ EXE_LIBS = \
++    -lfiniteVolume \
++    -lmeshTools \
+     -lfoamToVTK \
+     -lpolyTopoChange \
+     -llagrangian \

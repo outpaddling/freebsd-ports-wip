@@ -1,0 +1,34 @@
+diff --git a/wmake/rules/freebsd64Clang/c++ b/wmake/rules/freebsd64Clang/c++
+new file mode 100644
+index 0000000000..fe86bc343a
+--- /dev/null
++++ b/wmake/rules/freebsd64Clang/c++
+@@ -0,0 +1,28 @@
++SUFFIXES += .C
++
++c++WARN     = -Wall -Wextra -Wold-style-cast -Wnon-virtual-dtor \
++              -Wno-unused-parameter -Wno-invalid-offsetof \
++              -Wno-undefined-var-template -Wno-unqualified-std-cast-call
++
++# Suppress some warnings for flex++
++c++LESSWARN = -Wno-old-style-cast -Wno-unused-local-typedefs \
++              -Wno-tautological-undefined-compare -Wno-shift-negative-value
++
++CC          = clang++ -std=c++14 -m64
++
++include $(DEFAULT_RULES)/c++$(WM_COMPILE_OPTION)
++
++ptFLAGS     = -DNoRepository -ftemplate-depth-256
++
++c++FLAGS    = $(GFLAGS) $(c++WARN) $(c++OPT) $(c++DBUG) $(ptFLAGS) \
++              $(LIB_HEADER_DIRS) -fPIC $(if $(WM_COLOUR),-fdiagnostics-color,)
++
++Ctoo        = $(WM_SCHEDULER) $(CC) $(c++FLAGS) -c $< -o $@
++cxxtoo      = $(Ctoo)
++cctoo       = $(Ctoo)
++cpptoo      = $(Ctoo)
++
++LINK_LIBS   = $(c++DBUG)
++
++LINKLIBSO   = $(CC) $(c++FLAGS) -shared
++LINKEXE     = $(CC) $(c++FLAGS)

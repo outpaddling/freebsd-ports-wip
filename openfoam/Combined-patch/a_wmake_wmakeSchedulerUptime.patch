@@ -1,0 +1,10 @@
+diff --git a/wmake/wmakeSchedulerUptime b/wmake/wmakeSchedulerUptime
+index a024b97333..eae2194bfd 100755
+--- a/wmake/wmakeSchedulerUptime
++++ b/wmake/wmakeSchedulerUptime
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ #------------------------------------------------------------------------------
+ # =========                 |
+ # \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox

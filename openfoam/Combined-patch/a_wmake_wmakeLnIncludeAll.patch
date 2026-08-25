@@ -1,0 +1,10 @@
+diff --git a/wmake/wmakeLnIncludeAll b/wmake/wmakeLnIncludeAll
+index 6a119d259e..dfc7f451b6 100755
+--- a/wmake/wmakeLnIncludeAll
++++ b/wmake/wmakeLnIncludeAll
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ #------------------------------------------------------------------------------
+ # =========                 |
+ # \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox

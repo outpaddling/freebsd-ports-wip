@@ -1,0 +1,20 @@
+diff --git a/etc/config.sh/zoltan b/etc/config.sh/zoltan
+index 6103cb5762..ce1a3fcd54 100644
+--- a/etc/config.sh/zoltan
++++ b/etc/config.sh/zoltan
+@@ -43,7 +43,14 @@ none)
+     ;;
+ system)
+     export ZOLTAN_VERSION=system
+-    export ZOLTAN_ARCH_PATH=/usr
++    case `uname -s` in
++    FreeBSD)
++        export ZOLTAN_ARCH_PATH=/usr/local
++        ;;
++    *)
++        export ZOLTAN_ARCH_PATH=/usr
++        ;;
++    esac
+     ;;
+ OpenFOAM | ThirdParty)
+     # Look for the source directory

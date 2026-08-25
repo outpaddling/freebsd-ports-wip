@@ -1,0 +1,12 @@
+diff --git a/applications/solvers/chemFoam/Make/options b/applications/solvers/chemFoam/Make/options
+index 0d449d26a7..77840ca514 100644
+--- a/applications/solvers/chemFoam/Make/options
++++ b/applications/solvers/chemFoam/Make/options
+@@ -9,6 +9,7 @@ EXE_INC = \
+     -I$(LIB_SRC)/meshTools/lnInclude
+ 
+ EXE_LIBS = \
++    -lmulticomponentThermophysicalModels -lfluidThermophysicalModels \
+     -lchemistryModel \
+     -lfiniteVolume \
+     -lmeshTools

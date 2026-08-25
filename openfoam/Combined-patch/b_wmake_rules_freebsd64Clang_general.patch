@@ -1,0 +1,15 @@
+diff --git a/wmake/rules/freebsd64Clang/general b/wmake/rules/freebsd64Clang/general
+new file mode 100644
+index 0000000000..f2291969cb
+--- /dev/null
++++ b/wmake/rules/freebsd64Clang/general
+@@ -0,0 +1,9 @@
++PROJECT_LIBS = -l$(WM_PROJECT) \
++               -lOSspecific \
++               -L$(FOAM_LIBBIN)/$(FOAM_MPI) -lPstream \
++               -lexecinfo
++
++include $(GENERAL_RULES)/standard
++
++include $(DEFAULT_RULES)/c
++include $(DEFAULT_RULES)/c++

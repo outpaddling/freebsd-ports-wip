@@ -1,0 +1,10 @@
+diff --git a/src/parallel/decompose/zoltan/Make/options b/src/parallel/decompose/zoltan/Make/options
+index 4a2e97dc72..99f892d7b3 100644
+--- a/src/parallel/decompose/zoltan/Make/options
++++ b/src/parallel/decompose/zoltan/Make/options
+@@ -11,4 +11,4 @@ LIB_LIBS = \
+     -L$(ZOLTAN_ARCH_PATH)/lib \
+     $(if $(ZOLTAN_LIB_DIR),-L$(ZOLTAN_LIB_DIR)) \
+     -L$(FOAM_EXT_LIBBIN)/$(FOAM_MPI) \
+-    -lzoltan
++    -L/usr/local/lib -lzoltan

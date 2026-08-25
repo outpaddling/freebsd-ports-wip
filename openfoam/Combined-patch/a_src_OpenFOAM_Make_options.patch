@@ -1,0 +1,12 @@
+diff --git a/src/OpenFOAM/Make/options b/src/OpenFOAM/Make/options
+index 84591cccba..062a035dc1 100644
+--- a/src/OpenFOAM/Make/options
++++ b/src/OpenFOAM/Make/options
+@@ -2,6 +2,6 @@ EXE_INC = \
+     -I$(OBJECTS_DIR)
+ 
+ LIB_LIBS = \
+-    $(FOAM_LIBBIN)/libOSspecific.o \
++    $(FOAM_LIBBIN)/libOSspecific.so \
+     -L$(FOAM_LIBBIN)/dummy -lPstream \
+     -lz

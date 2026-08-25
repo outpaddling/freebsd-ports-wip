@@ -1,0 +1,99 @@
+--- src/parallel/decompose/scotch/scotch.C.orig	2026-08-06 18:47:53 UTC
++++ src/parallel/decompose/scotch/scotch.C
+@@ -312,6 +312,26 @@ Foam::label Foam::decompositionMethods::scotch::decomp
+     }
+ 
+ 
++    // Scotch on FreeBSD may use 64-bit SCOTCH_Num while OpenFOAM
++    // is built with 32-bit label. Convert explicitly at the API boundary.
++    List<SCOTCH_Num> scotchXadj(xadj.size());
++    forAll(xadj, i)
++    {
++        scotchXadj[i] = static_cast<SCOTCH_Num>(xadj[i]);
++    }
++
++    List<SCOTCH_Num> scotchAdjncy(adjncy.size());
++    forAll(adjncy, i)
++    {
++        scotchAdjncy[i] = static_cast<SCOTCH_Num>(adjncy[i]);
++    }
++
++    List<SCOTCH_Num> scotchVelotab(velotab.size());
++    forAll(velotab, i)
++    {
++        scotchVelotab[i] = static_cast<SCOTCH_Num>(velotab[i]);
++    }
++
+     SCOTCH_Graph grafdat;
+     check(SCOTCH_graphInit(&grafdat), "SCOTCH_graphInit");
+     check
+@@ -321,12 +341,14 @@ Foam::label Foam::decompositionMethods::scotch::decomp
+             &grafdat,
+             0,                      // baseval, c-style numbering
+             xadj.size()-1,          // vertnbr, nCells
+-            xadj.begin(),           // verttab, start index per cell into adjncy
+-            &xadj[1],               // vendtab, end index  ,,
+-            velotab.begin(),        // velotab, vertex weights
++            scotchXadj.begin(),     // verttab
++            &scotchXadj[1],         // vendtab
++            scotchVelotab.empty()
++              ? nullptr
++              : scotchVelotab.begin(), // velotab
+             nullptr,                // vlbltab
+             adjncy.size(),          // edgenbr, number of arcs
+-            adjncy.begin(),         // edgetab
++            scotchAdjncy.begin(),   // edgetab
+             nullptr                 // edlotab, edge weights
+         ),
+         "SCOTCH_graphBuild"
+@@ -353,9 +375,21 @@ Foam::label Foam::decompositionMethods::scotch::decomp
+             Info<< "scotch : Using processor weights " << processorWeights
+                 << endl;
+         }
++        List<SCOTCH_Num> scotchProcessorWeights(processorWeights.size());
++        forAll(processorWeights, i)
++        {
++            scotchProcessorWeights[i] =
++                static_cast<SCOTCH_Num>(processorWeights[i]);
++        }
++
+         check
+         (
+-            SCOTCH_archCmpltw(&archdat, nProcessors_, processorWeights.begin()),
++            SCOTCH_archCmpltw
++            (
++                &archdat,
++                static_cast<SCOTCH_Num>(nProcessors_),
++                scotchProcessorWeights.begin()
++            ),
+             "SCOTCH_archCmpltw"
+         );
+     }
+@@ -380,6 +414,10 @@ Foam::label Foam::decompositionMethods::scotch::decomp
+ 
+     decomp.setSize(xadj.size()-1);
+     decomp = 0;
++
++    List<SCOTCH_Num> scotchDecomp(decomp.size());
++    scotchDecomp = 0;
++
+     check
+     (
+         SCOTCH_graphMap
+@@ -387,10 +425,15 @@ Foam::label Foam::decompositionMethods::scotch::decomp
+             &grafdat,
+             &archdat,
+             &stradat,           // const SCOTCH_Strat *
+-            decomp.begin() // parttab
++            scotchDecomp.begin()
+         ),
+         "SCOTCH_graphMap"
+     );
++
++    forAll(decomp, i)
++    {
++        decomp[i] = static_cast<label>(scotchDecomp[i]);
++    }
+ 
+     #ifdef FE_NOMASK_ENV
+     feenableexcept(oldExcepts);

@@ -1,0 +1,8 @@
+diff --git a/wmake/rules/freebsd64Clang/cDebug b/wmake/rules/freebsd64Clang/cDebug
+new file mode 100644
+index 0000000000..7b7adf10de
+--- /dev/null
++++ b/wmake/rules/freebsd64Clang/cDebug
+@@ -0,0 +1,2 @@
++cDBUG       = -g -DFULLDEBUG
++cOPT        = -O0

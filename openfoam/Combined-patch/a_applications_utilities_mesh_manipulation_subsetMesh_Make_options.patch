@@ -1,0 +1,17 @@
+diff --git a/applications/utilities/mesh/manipulation/subsetMesh/Make/options b/applications/utilities/mesh/manipulation/subsetMesh/Make/options
+index c41a6c5f3c..f4c5acaccc 100644
+--- a/applications/utilities/mesh/manipulation/subsetMesh/Make/options
++++ b/applications/utilities/mesh/manipulation/subsetMesh/Make/options
+@@ -4,5 +4,12 @@ EXE_INC = \
+     -I$(LIB_SRC)/meshTools/lnInclude
+ 
+ EXE_LIBS = \
++    -lfvMeshTopoChangers \
++    -lmeshCheck \
++    -lmeshTools \
++    -lparallel \
++    -lsampling \
++    -lsnappyHexMesh \
++    -lfiniteVolume \
+     -lpolyTopoChange \
+     -lgenericFvFields

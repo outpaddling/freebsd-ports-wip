@@ -1,13 +1,14 @@
---- etc/config.sh/scotch.orig	2026-08-24 17:15:39 UTC
+--- etc/config.sh/scotch.orig	2026-07-22 14:33:01 UTC
 +++ etc/config.sh/scotch
-@@ -43,7 +43,9 @@ system)
+@@ -43,7 +43,10 @@ system)
      ;;
  system)
      export SCOTCH_VERSION=system
 -    export SCOTCH_ARCH_PATH=/usr
 +    # Allow user to control SCOTCH_ARCH_PATH in env, default to /usr
-+    : ${SCOTCH_ARCH_PATH:=/usr}
-+    export SCOTCH_ARCH_PATH
++    if [ -z "$SCOTCH_ARCH_PATH" ]; then
++        export SCOTCH_ARCH_PATH=/usr
++    fi
      ;;
  OpenFOAM | ThirdParty)
      # Look for the source directory

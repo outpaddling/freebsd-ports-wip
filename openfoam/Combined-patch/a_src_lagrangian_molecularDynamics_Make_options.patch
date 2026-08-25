@@ -1,0 +1,11 @@
+diff --git a/src/lagrangian/molecularDynamics/Make/options b/src/lagrangian/molecularDynamics/Make/options
+index d99fd36e5f..dfa8ac82c5 100644
+--- a/src/lagrangian/molecularDynamics/Make/options
++++ b/src/lagrangian/molecularDynamics/Make/options
+@@ -6,5 +6,6 @@ EXE_INC = \
+ 
+ LIB_LIBS = \
+     -lfiniteVolume \
++    -ltracking \
+     -lmeshTools \
+     -llagrangian

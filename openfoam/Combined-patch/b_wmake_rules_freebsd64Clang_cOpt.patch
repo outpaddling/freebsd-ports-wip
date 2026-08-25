@@ -1,0 +1,8 @@
+diff --git a/wmake/rules/freebsd64Clang/cOpt b/wmake/rules/freebsd64Clang/cOpt
+new file mode 100644
+index 0000000000..17318709f1
+--- /dev/null
++++ b/wmake/rules/freebsd64Clang/cOpt
+@@ -0,0 +1,2 @@
++cDBUG       =
++cOPT        = -O3

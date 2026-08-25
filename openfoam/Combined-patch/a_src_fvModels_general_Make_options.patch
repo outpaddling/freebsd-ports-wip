@@ -1,0 +1,14 @@
+diff --git a/src/fvModels/general/Make/options b/src/fvModels/general/Make/options
+index 5d2521c940..3c2cfe6fb1 100644
+--- a/src/fvModels/general/Make/options
++++ b/src/fvModels/general/Make/options
+@@ -13,6 +13,9 @@ EXE_INC = \
+     -I$(LIB_SRC)/ThermophysicalTransportModels/fluid/lnInclude
+ 
+ LIB_LIBS = \
++    -lphysicalProperties \
++    -lsolidThermo \
++    -lmulticomponentThermophysicalModels \
+     -lfiniteVolume \
+     -lsampling \
+     -lmeshTools \

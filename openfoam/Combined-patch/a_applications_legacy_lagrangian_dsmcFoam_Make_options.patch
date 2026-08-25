@@ -1,0 +1,18 @@
+diff --git a/applications/legacy/lagrangian/dsmcFoam/Make/options b/applications/legacy/lagrangian/dsmcFoam/Make/options
+index 47c4bad341..cf5d72dcc0 100644
+--- a/applications/legacy/lagrangian/dsmcFoam/Make/options
++++ b/applications/legacy/lagrangian/dsmcFoam/Make/options
+@@ -8,5 +8,13 @@ EXE_INC = \
+ EXE_LIBS = \
+     -lmeshTools \
+     -lfiniteVolume \
++    -lLagrangian \
++    -lfieldFunctionObjects \
++    -llagrangianParcel \
++    -lmolecularDynamics \
++    -lsampling \
++    -lsnappyHexMesh \
++    -lsolidParticle \
++    -ltracking \
+     -llagrangian \
+     -lDSMC

@@ -1,0 +1,10 @@
+diff --git a/wmake/wmakeCollect b/wmake/wmakeCollect
+index 68ad0b5efe..3717b60e97 100755
+--- a/wmake/wmakeCollect
++++ b/wmake/wmakeCollect
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ #------------------------------------------------------------------------------
+ # =========                 |
+ # \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox

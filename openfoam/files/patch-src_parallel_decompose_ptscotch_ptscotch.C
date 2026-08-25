@@ -1,0 +1,108 @@
+--- src/parallel/decompose/ptscotch/ptscotch.C.orig	2026-07-22 14:33:01 UTC
++++ src/parallel/decompose/ptscotch/ptscotch.C
+@@ -231,6 +231,28 @@ Foam::label Foam::decompositionMethods::ptscotch::deco
+         Pout<< "SCOTCH_dgraphInit" << endl;
+     }
+ 
++    // System Scotch may use 64-bit SCOTCH_Num while
++    // OpenFOAM label is 32-bit. Convert at the API boundary.
++    List<SCOTCH_Num> scotchXadj(xadjSize);
++    for (label i = 0; i < xadjSize; ++i)
++    {
++        scotchXadj[i] = static_cast<SCOTCH_Num>(xadj[i]);
++    }
++
++    List<SCOTCH_Num> scotchAdjncy(max(label(1), adjncySize));
++    scotchAdjncy = 0;
++    for (label i = 0; i < adjncySize; ++i)
++    {
++        scotchAdjncy[i] = static_cast<SCOTCH_Num>(adjncy[i]);
++    }
++
++    List<SCOTCH_Num> scotchVelotab(velotab.size());
++    forAll(velotab, i)
++    {
++        scotchVelotab[i] = static_cast<SCOTCH_Num>(velotab[i]);
++    }
++
++
+     SCOTCH_Dgraph grafdat;
+     check
+     (
+@@ -258,17 +280,17 @@ Foam::label Foam::decompositionMethods::ptscotch::deco
+             0,                      // baseval, c-style numbering
+             xadjSize-1,             // vertlocnbr, nCells
+             xadjSize-1,             // vertlocmax
+-            const_cast<SCOTCH_Num*>(xadj),
++            scotchXadj.begin(),
+                                     // vertloctab, start index per cell into
+                                     // adjncy
+-            const_cast<SCOTCH_Num*>(xadj+1),// vendloctab, end index  ,,
++            scotchXadj.begin()+1,// vendloctab, end index  ,,
+ 
+-            const_cast<SCOTCH_Num*>(velotab.begin()),// veloloctab, vtx weights
++            (scotchVelotab.empty() ? nullptr : scotchVelotab.begin()),// veloloctab, vtx weights
+             nullptr,                   // vlblloctab
+ 
+             adjncySize,             // edgelocnbr, number of arcs
+             adjncySize,             // edgelocsiz
+-            const_cast<SCOTCH_Num*>(adjncy),         // edgeloctab
++            scotchAdjncy.begin(),         // edgeloctab
+             nullptr,                   // edgegsttab
+             nullptr                    // edlotab, edge weights
+         ),
+@@ -308,9 +330,21 @@ Foam::label Foam::decompositionMethods::ptscotch::deco
+                 << processorWeights
+                 << endl;
+         }
++        List<SCOTCH_Num> scotchProcessorWeights(processorWeights.size());
++        forAll(processorWeights, i)
++        {
++            scotchProcessorWeights[i] =
++                static_cast<SCOTCH_Num>(processorWeights[i]);
++        }
++
+         check
+         (
+-            SCOTCH_archCmpltw(&archdat, nProcessors_, processorWeights.begin()),
++            SCOTCH_archCmpltw
++            (
++                &archdat,
++                static_cast<SCOTCH_Num>(nProcessors_),
++                scotchProcessorWeights.begin()
++            ),
+             "SCOTCH_archCmpltw"
+         );
+     }
+@@ -341,6 +375,10 @@ Foam::label Foam::decompositionMethods::ptscotch::deco
+ 
+     // Note: always provide allocated storage even if local size 0
+     decomp.setSize(max(1, xadjSize-1));
++
++    List<SCOTCH_Num> scotchDecomp(decomp.size());
++    scotchDecomp = 0;
++
+     decomp = 0;
+ 
+     if (debug)
+@@ -354,13 +392,19 @@ Foam::label Foam::decompositionMethods::ptscotch::deco
+             &grafdat,
+             &archdat,
+             &stradat,           // const SCOTCH_Strat *
+-            decomp.begin() // parttab
++            scotchDecomp.begin() // parttab
+         ),
+         "SCOTCH_graphMap"
+     );
+ 
+     #ifdef  FE_NOMASK_ENV
+     feenableexcept(oldExcepts);
++
++    forAll(decomp, i)
++    {
++        decomp[i] = static_cast<label>(scotchDecomp[i]);
++    }
++
+     #endif
+ 
+     if (debug)

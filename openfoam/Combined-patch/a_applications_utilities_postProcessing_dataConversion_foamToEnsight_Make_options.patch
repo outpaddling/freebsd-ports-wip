@@ -1,0 +1,13 @@
+diff --git a/applications/utilities/postProcessing/dataConversion/foamToEnsight/Make/options b/applications/utilities/postProcessing/dataConversion/foamToEnsight/Make/options
+index ba639400c4..6013063425 100644
+--- a/applications/utilities/postProcessing/dataConversion/foamToEnsight/Make/options
++++ b/applications/utilities/postProcessing/dataConversion/foamToEnsight/Make/options
+@@ -7,6 +7,8 @@ EXE_INC = \
+     -I$(LIB_SRC)/lagrangian/basic/lnInclude
+ 
+ EXE_LIBS = \
++    -lfiniteVolume \
++    -lmeshTools \
+     -lpolyTopoChange \
+     -lsampling \
+     -lgenericFvFields \

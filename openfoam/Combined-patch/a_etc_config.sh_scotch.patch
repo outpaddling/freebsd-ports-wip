@@ -1,0 +1,20 @@
+diff --git a/etc/config.sh/scotch b/etc/config.sh/scotch
+index 7693417ed4..ee9cc43ae2 100644
+--- a/etc/config.sh/scotch
++++ b/etc/config.sh/scotch
+@@ -43,7 +43,14 @@ none)
+     ;;
+ system)
+     export SCOTCH_VERSION=system
+-    export SCOTCH_ARCH_PATH=/usr
++    case `uname -s` in
++    FreeBSD)
++        export SCOTCH_ARCH_PATH=/usr/local
++        ;;
++    *)
++        export SCOTCH_ARCH_PATH=/usr
++        ;;
++    esac
+     ;;
+ OpenFOAM | ThirdParty)
+     # Look for the source directory

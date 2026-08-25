@@ -1,0 +1,15 @@
+diff --git a/applications/legacy/combustion/PDRFoam/Make/options b/applications/legacy/combustion/PDRFoam/Make/options
+index acd3f84c41..539cb79226 100644
+--- a/applications/legacy/combustion/PDRFoam/Make/options
++++ b/applications/legacy/combustion/PDRFoam/Make/options
+@@ -48,6 +48,10 @@ EXE_LIBS = \
+     -lmomentumTransportModels \
+     -lcompressibleMomentumTransportModels \
+     -lcoupledThermophysicalTransportModels \
++    -lphysicalProperties \
++    -lthermophysicalTransportModel \
++    -lfluidThermophysicalTransportModel \
++    -lfluidThermoThermophysicalTransportModels \
+     -lfiniteVolume \
+     -lfvModels \
+     -lfvConstraints

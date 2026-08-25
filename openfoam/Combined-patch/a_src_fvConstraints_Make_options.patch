@@ -1,0 +1,12 @@
+diff --git a/src/fvConstraints/Make/options b/src/fvConstraints/Make/options
+index 7f29dea317..4f94a57e3f 100644
+--- a/src/fvConstraints/Make/options
++++ b/src/fvConstraints/Make/options
+@@ -12,6 +12,7 @@ EXE_INC = \
+     -I$(LIB_SRC)/ThermophysicalTransportModels/fluid/lnInclude
+ 
+ LIB_LIBS = \
++    -lphysicalProperties \
+     -lfiniteVolume \
+     -lsampling \
+     -lmeshTools \

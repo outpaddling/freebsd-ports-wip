@@ -1,0 +1,14 @@
+diff --git a/applications/legacy/compressible/rhoPorousSimpleFoam/Make/options b/applications/legacy/compressible/rhoPorousSimpleFoam/Make/options
+index bf973fdcd7..63b38bf252 100644
+--- a/applications/legacy/compressible/rhoPorousSimpleFoam/Make/options
++++ b/applications/legacy/compressible/rhoPorousSimpleFoam/Make/options
+@@ -19,6 +19,9 @@ EXE_LIBS = \
+     -lmomentumTransportModels \
+     -lcompressibleMomentumTransportModels \
+     -lcoupledThermophysicalTransportModels \
++    -lthermophysicalTransportModel \
++    -lfluidThermophysicalTransportModel \
++    -lfluidThermoThermophysicalTransportModels \
+     -lfiniteVolume \
+     -lsampling \
+     -lmeshTools \
