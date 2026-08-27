@@ -1,5 +1,5 @@
 PORTNAME=	pydeseq2
-DISTVERSION=	0.5.2
+DISTVERSION=	0.5.4
 CATEGORIES=	wip biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +21,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anndata>=0.8.0:devel/py-anndata@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}scipy>1.11.0:science/py-scipy@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 
 .include <bsd.port.mk>
