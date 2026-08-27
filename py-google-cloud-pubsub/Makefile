@@ -4,7 +4,7 @@ CATEGORIES=	wip net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to Google pubsub
 WWW=		https://github.com/googleapis/python-pubsub
 
