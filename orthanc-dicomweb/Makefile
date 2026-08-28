@@ -25,12 +25,12 @@ WWW=		https://www.orthanc-server.com/static.php?page=dicomweb
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	orthanc>=${ORTHANC_VER}:wip/orthanc \
+BUILD_DEPENDS=	orthanc>=${ORTHANC_VER}:science/orthanc \
 		googletest>0:devel/googletest
 LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libjsoncpp.so:devel/jsoncpp \
 		libpugixml.so:textproc/pugixml
-RUN_DEPENDS=	orthanc>=${ORTHANC_VER}:wip/orthanc
+RUN_DEPENDS=	orthanc>=${ORTHANC_VER}:science/orthanc
 
 USES=		cmake localbase python:build
 # FIXME: Should plugins be moved to lib?
@@ -47,7 +47,7 @@ WRKSRC=		${WRKDIR}/OrthancDicomWeb-${PORTVERSION}
 
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
-.include "${.CURDIR}/../../wip/orthanc/version.mk"
+.include "${.CURDIR}/../../science/orthanc/version.mk"
 
 post-extract:
 	${MKDIR} ${WRKSRC}/ThirdPartyDownloads
