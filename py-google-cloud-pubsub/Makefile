@@ -26,4 +26,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>=1.59.3<2:devel/py-grpcio@${PY_FLAVOR
 USES=		python
 USE_PYTHON=	autoplist pep517
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
