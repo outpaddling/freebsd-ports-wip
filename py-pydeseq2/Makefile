@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anndata>=0.8.0:devel/py-anndata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}formulaic>=1.0.2:math/py-formulaic@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}formulaic_contrasts>=0.2.0:wip/py-formulaic-contrasts@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}formulaic_contrasts>=0.2.0:math/py-formulaic-contrasts@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.6.2:math/py-matplotlib@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=1.4.0:math/py-pandas@${PY_FLAVOR} \
