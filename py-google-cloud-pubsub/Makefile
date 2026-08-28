@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to Google pubsub
-WWW=		https://github.com/googleapis/python-pubsub
+WWW=		https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-pubsub
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
