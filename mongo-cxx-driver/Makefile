@@ -11,11 +11,11 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # mongo-c-driver requirement more specific than LIB_DEPENDS can express
-BUILD_DEPENDS=	mongo-c-driver>=2.3.3:wip/mongo-c-driver
+BUILD_DEPENDS=	mongo-c-driver>=2.3.3:devel/mongo-c-driver
 LIB_DEPENDS=	libmongoc2.so:wip/mongo-c-driver \
 		libbson2.so:wip/libbson \
 		libutf8proc.so:textproc/utf8proc
-RUN_DEPENDS=	mongo-c-driver>=2.3.3:wip/mongo-c-driver
+RUN_DEPENDS=	mongo-c-driver>=2.3.3:devel/mongo-c-driver
 
 USES=		cmake compiler:c++17-lang pkgconfig ssl
 USE_GITHUB=	yes
