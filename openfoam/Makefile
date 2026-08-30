@@ -98,14 +98,14 @@ do-install:
 		${STAGEDIR}${PREFIX}/OpenFOAM-14/
 
 	${MKDIR} \
-		${STAGEDIR}${PREFIX}/OpenFOAM-14/platforms/freebsd64ClangDPInt32Opt
+		${STAGEDIR}${PREFIX}/OpenFOAM-14/platforms/FreeBSDClangDPInt32Opt
 
 	${CP} -R \
-		${WRKSRC}/platforms/freebsd64ClangDPInt32Opt/bin \
-		${STAGEDIR}${PREFIX}/OpenFOAM-14/platforms/freebsd64ClangDPInt32Opt/
+		${WRKSRC}/platforms/FreeBSDClangDPInt32Opt/bin \
+		${STAGEDIR}${PREFIX}/OpenFOAM-14/platforms/FreeBSDClangDPInt32Opt/
 
 	${CP} -R \
-		${WRKSRC}/platforms/freebsd64ClangDPInt32Opt/lib \
-		${STAGEDIR}${PREFIX}/OpenFOAM-14/platforms/freebsd64ClangDPInt32Opt/
+		${WRKSRC}/platforms/FreeBSDClangDPInt32Opt/lib \
+		${STAGEDIR}${PREFIX}/OpenFOAM-14/platforms/FreeBSDClangDPInt32Opt/
 
 .include <bsd.port.mk>
