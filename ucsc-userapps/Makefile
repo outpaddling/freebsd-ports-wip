@@ -1,5 +1,5 @@
 PORTNAME=	ucsc-userapps
-DISTVERSION=	474
+DISTVERSION=	500
 CATEGORIES=	wip biology perl5 python
 MASTER_SITES=	https://hgdownload.cse.ucsc.edu/admin/exe/userApps.archive/
 DISTNAME=	userApps.v${DISTVERSION}.src
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libmysqlclient.so:databases/mysql80-client \
 		libpng.so:graphics/png
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake iconv localbase:ldflags shebangfix perl5 python:3.6+ ssl tar:tgz
+USES=		gmake iconv localbase:ldflags shebangfix perl5 python ssl tar:tgz
 
 SHEBANG_FILES=	kent/src/checkUmask.sh \
 		kent/src/utils/bigHeat \
@@ -47,7 +47,7 @@ do-build:
 	@(test -f ${WRKSRC}/kent/src/inc/my_uuid.h || ${MV} ${WRKSRC}/kent/src/inc/uuid.h ${WRKSRC}/kent/src/inc/my_uuid.h)
 	@${MKDIR} ${WRKSRC}/bin
 	@(cd ${WRKSRC}/kent/src/lib && ${DO_MAKE_BUILD})
-	@(cd ${WRKSRC}/kent/src/htslib && ${DO_MAKE_BUILD})
+	@(cd ${WRKSRC}/kent/src/submodules/htslib && ${DO_MAKE_BUILD})
 	@(cd ${WRKSRC}/kent/src/jkOwnLib && ${DO_MAKE_BUILD})
 	@(cd ${WRKSRC}/kent/src/hg/lib && ${DO_MAKE_BUILD})
 	@(cd ${WRKSRC}/kent/src/utils && ${DO_MAKE_BUILD})
