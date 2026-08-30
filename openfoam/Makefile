@@ -11,7 +11,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash \
 		flex:textproc/flex
-
 LIB_DEPENDS=	libmpi.so:net/mpich \
 		libscotch.so:cad/scotch
 
@@ -37,7 +36,7 @@ post-extract:
 	@${LN} -sf ${WRKSRC} ${WRKDIR}/OpenFOAM-14
 	@${CP} ${FILESDIR}/prefs.sh ${WRKSRC}/etc
 	@${CP} -R ${FILESDIR}/FreeBSDClang ${WRKSRC}/wmake/rules
-	
+
 post-patch:
 	@${REINPLACE_CMD} \
 		's|^make="make"$$|make="$$MAKE"|' \
