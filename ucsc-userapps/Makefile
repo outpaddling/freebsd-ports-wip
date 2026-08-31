@@ -1,5 +1,5 @@
 PORTNAME=	ucsc-userapps
-DISTVERSION=	500
+DISTVERSION=	502
 CATEGORIES=	wip biology perl5 python
 MASTER_SITES=	https://hgdownload.cse.ucsc.edu/admin/exe/userApps.archive/
 DISTNAME=	userApps.v${DISTVERSION}.src
@@ -14,13 +14,13 @@ WWW=		https://hgdownload.cse.ucsc.edu/admin/exe/
 LICENSE=	MIT
 
 BUILD_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libmysqlclient.so:databases/mysql97-client \
-		libfreetype.so:print/freetype2 \
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libunwind.so:devel/libunwind \
 		libcurl.so:ftp/curl \
 		libpng16.so:graphics/png
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake iconv localbase:ldflags shebangfix perl5 python ssl tar:tgz
+USES=		gmake iconv localbase:ldflags mysql:client shebangfix perl5 python ssl tar:tgz
 
 SHEBANG_FILES=	kent/src/checkUmask.sh \
 		kent/src/utils/bigHeat \
