@@ -32,6 +32,7 @@ GH_TUPLE=	ekg:fastahack:bb33265:fastahack/contrib/fastahack \
 		vcflib:tabixpp:0f55194:tabixpp/contrib/tabixpp
 SHEBANG_FILES=	scripts/*
 
+# FIXME: Does not build with zig enabled
 OPTIONS_DEFINE=		ZIG
 OPTIONS_DEFAULT=
 OPTIONS_SUB=		yes
