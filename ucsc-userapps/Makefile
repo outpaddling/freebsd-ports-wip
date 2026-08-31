@@ -14,9 +14,7 @@ WWW=		https://hgdownload.cse.ucsc.edu/admin/exe/
 LICENSE=	MIT
 
 BUILD_DEPENDS=	bash:shells/bash
-# FIXME: Switch from mysql to mariadb
-LIB_DEPENDS=	libmysqlclient.so:databases/mysql80-client \
-		libunwind.so:devel/libunwind \
+LIB_DEPENDS=	libmysqlclient.so:databases/mysql97-client \
 		libfreetype.so:print/freetype2 \
 		libcurl.so:ftp/curl \
 		libpng16.so:graphics/png
