@@ -18,7 +18,8 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libmysqlclient.so:databases/mysql80-client \
 		libunwind.so:devel/libunwind \
 		libfreetype.so:print/freetype2 \
-		libpng.so:graphics/png
+		libcurl.so:ftp/curl \
+		libpng16.so:graphics/png
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake iconv localbase:ldflags shebangfix perl5 python ssl tar:tgz
@@ -31,7 +32,9 @@ SHEBANG_FILES=	kent/src/checkUmask.sh \
 		kent/src/utils/trackDbIndexBb/trackDbIndexBb \
 		kent/src/utils/ucscApiClient \
 		kent/src/utils/webSync \
-		kent/src/utils/bigGuessDb/bigGuessDb
+		kent/src/utils/bigGuessDb/bigGuessDb \
+		kent/src/utils/expMatrixToBarchartBed \
+		kent/src/utils/hubtools
 
 WRKSRC=		${WRKDIR}/userApps
 CFLAGS+=	-fcommon
