@@ -1,13 +1,13 @@
---- CMakeLists.txt.orig	2024-11-26 05:22:36 UTC
+--- CMakeLists.txt.orig	2025-07-27 08:11:34 UTC
 +++ CMakeLists.txt
-@@ -57,30 +57,19 @@ if (HAVE_AVX2)
+@@ -65,30 +65,19 @@ if (HAVE_AVX2)
  # SIMD instruction sets support
  set(MMSEQS_ARCH "")
  if (HAVE_AVX2)
 -    if (CMAKE_COMPILER_IS_CLANG)
--        set(MMSEQS_ARCH "${MMSEQS_ARCH} -mavx2 -mcx16")
+-        set(MMSEQS_ARCH "${MMSEQS_ARCH} -mavx2 -mfma -mcx16")
 -    else ()
--        set(MMSEQS_ARCH "${MMSEQS_ARCH} -mavx2 -mcx16 -Wa,-q")
+-        set(MMSEQS_ARCH "${MMSEQS_ARCH} -mavx2 -mfma -mcx16 -Wa,-q")
 -    endif ()
      set(X64 1 CACHE INTERNAL "")
  elseif (HAVE_SSE4_1)
@@ -31,7 +31,7 @@
      set(ZARCH 1 CACHE INTERNAL "")
  endif ()
  
-@@ -110,18 +99,6 @@ if (NATIVE_ARCH AND (MMSEQS_ARCH STREQUAL ""))
+@@ -122,18 +111,6 @@ if (NATIVE_ARCH)
              endif ()
              message(WARNING "At least SSE4.1 is needed for best performance")
          endif ()
@@ -49,4 +49,4 @@
 -        set(MMSEQS_ARCH "-march=native")
      endif ()
  endif ()
- set(MMSEQS_ARCH ${MMSEQS_ARCH} CACHE INTERNAL "")
+ 
