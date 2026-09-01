@@ -1,5 +1,5 @@
 PORTNAME=	gmap
-PORTVERSION=	2020.09.12
+PORTVERSION=	2025.07.31
 CATEGORIES=	wip biology
 MASTER_SITES=	http://research-pub.gene.com/gmap/src/
 DISTNAME=	${PORTNAME}-gsnap-${PORTVERSION:C|\.|-|g}
@@ -18,6 +18,8 @@ ONLY_FOR_ARCHS_REASON=	Upstream supports only x86 and possibly POWER8
 
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
+
+CONFLICTS_INSTALL=	scotch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C|\.|-|g}
 CFLAGS+=	-fcommon
