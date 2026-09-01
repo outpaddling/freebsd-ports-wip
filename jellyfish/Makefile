@@ -18,6 +18,7 @@ USES=		compiler:c++11-lib libtool
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME:tl}-${PORTVERSION}
 
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	VER=${PORTVERSION}
