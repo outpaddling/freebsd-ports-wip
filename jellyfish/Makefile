@@ -1,10 +1,7 @@
 PORTNAME=		Jellyfish
-DISTVERSIONPREFIX=	v
-DISTVERSION=		2.3.0
-PORTREVISION=		2
+DISTVERSION=		2.3.1
 CATEGORIES=		wip biology
-MASTER_SITES=		https://github.com/gmarcais/${PORTNAME}/releases/download/v2.3.0/	# Custom distfile reduces dependencie
-DISTNAME=		${PORTNAME:tl}-${DISTVERSION}
+MASTER_SITES=		https://github.com/gmarcais/${PORTNAME}/releases/download/v${DISTVERSION}/	# Custom distfile reduces dependencies
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Fast, memory-efficient counting of k-mers in DNA
