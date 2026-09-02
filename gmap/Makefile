@@ -13,6 +13,9 @@ LICENSE_NAME=	GMAP License
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+# FIXME: Should work on other platforms, but fails on aarch64 trying
+# to use asm(bsr)
+# CONFIGURE_ARGS+=	--with-simd-level=?
 ONLY_FOR_ARCHS=		amd64 i386 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Upstream supports only x86 and possibly POWER8
 
