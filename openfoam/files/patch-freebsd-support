@@ -1,0 +1,759 @@
+diff --git a/applications/legacy/combustion/PDRFoam/Make/options b/applications/legacy/combustion/PDRFoam/Make/options
+index acd3f84c41..539cb79226 100644
+--- a/applications/legacy/combustion/PDRFoam/Make/options
++++ b/applications/legacy/combustion/PDRFoam/Make/options
+@@ -48,6 +48,10 @@ EXE_LIBS = \
+     -lmomentumTransportModels \
+     -lcompressibleMomentumTransportModels \
+     -lcoupledThermophysicalTransportModels \
++    -lphysicalProperties \
++    -lthermophysicalTransportModel \
++    -lfluidThermophysicalTransportModel \
++    -lfluidThermoThermophysicalTransportModels \
+     -lfiniteVolume \
+     -lfvModels \
+     -lfvConstraints
+diff --git a/applications/legacy/compressible/rhoPorousSimpleFoam/Make/options b/applications/legacy/compressible/rhoPorousSimpleFoam/Make/options
+index bf973fdcd7..63b38bf252 100644
+--- a/applications/legacy/compressible/rhoPorousSimpleFoam/Make/options
++++ b/applications/legacy/compressible/rhoPorousSimpleFoam/Make/options
+@@ -19,6 +19,9 @@ EXE_LIBS = \
+     -lmomentumTransportModels \
+     -lcompressibleMomentumTransportModels \
+     -lcoupledThermophysicalTransportModels \
++    -lthermophysicalTransportModel \
++    -lfluidThermophysicalTransportModel \
++    -lfluidThermoThermophysicalTransportModels \
+     -lfiniteVolume \
+     -lsampling \
+     -lmeshTools \
+diff --git a/applications/legacy/lagrangian/dsmcFoam/Make/options b/applications/legacy/lagrangian/dsmcFoam/Make/options
+index 47c4bad341..cf5d72dcc0 100644
+--- a/applications/legacy/lagrangian/dsmcFoam/Make/options
++++ b/applications/legacy/lagrangian/dsmcFoam/Make/options
+@@ -8,5 +8,13 @@ EXE_INC = \
+ EXE_LIBS = \
+     -lmeshTools \
+     -lfiniteVolume \
++    -lLagrangian \
++    -lfieldFunctionObjects \
++    -llagrangianParcel \
++    -lmolecularDynamics \
++    -lsampling \
++    -lsnappyHexMesh \
++    -lsolidParticle \
++    -ltracking \
+     -llagrangian \
+     -lDSMC
+diff --git a/applications/solvers/chemFoam/Make/options b/applications/solvers/chemFoam/Make/options
+index 0d449d26a7..77840ca514 100644
+--- a/applications/solvers/chemFoam/Make/options
++++ b/applications/solvers/chemFoam/Make/options
+@@ -9,6 +9,7 @@ EXE_INC = \
+     -I$(LIB_SRC)/meshTools/lnInclude
+ 
+ EXE_LIBS = \
++    -lmulticomponentThermophysicalModels -lfluidThermophysicalModels \
+     -lchemistryModel \
+     -lfiniteVolume \
+     -lmeshTools
+diff --git a/applications/utilities/mesh/manipulation/subsetMesh/Make/options b/applications/utilities/mesh/manipulation/subsetMesh/Make/options
+index c41a6c5f3c..f4c5acaccc 100644
+--- a/applications/utilities/mesh/manipulation/subsetMesh/Make/options
++++ b/applications/utilities/mesh/manipulation/subsetMesh/Make/options
+@@ -4,5 +4,12 @@ EXE_INC = \
+     -I$(LIB_SRC)/meshTools/lnInclude
+ 
+ EXE_LIBS = \
++    -lfvMeshTopoChangers \
++    -lmeshCheck \
++    -lmeshTools \
++    -lparallel \
++    -lsampling \
++    -lsnappyHexMesh \
++    -lfiniteVolume \
+     -lpolyTopoChange \
+     -lgenericFvFields
+diff --git a/applications/utilities/miscellaneous/patchSummary/Make/options b/applications/utilities/miscellaneous/patchSummary/Make/options
+index 0a0dc01ec5..9b6dbbf586 100644
+--- a/applications/utilities/miscellaneous/patchSummary/Make/options
++++ b/applications/utilities/miscellaneous/patchSummary/Make/options
+@@ -5,5 +5,7 @@ EXE_INC = \
+ 
+ EXE_LIBS = \
+     -lgenericFvFields \
++    -lgenericFields \
++    -lgenericLagrangianFields \
+     -lfiniteVolume \
+     -lmeshTools
+diff --git a/applications/utilities/postProcessing/dataConversion/foamToEnsight/Make/options b/applications/utilities/postProcessing/dataConversion/foamToEnsight/Make/options
+index ba639400c4..6013063425 100644
+--- a/applications/utilities/postProcessing/dataConversion/foamToEnsight/Make/options
++++ b/applications/utilities/postProcessing/dataConversion/foamToEnsight/Make/options
+@@ -7,6 +7,8 @@ EXE_INC = \
+     -I$(LIB_SRC)/lagrangian/basic/lnInclude
+ 
+ EXE_LIBS = \
++    -lfiniteVolume \
++    -lmeshTools \
+     -lpolyTopoChange \
+     -lsampling \
+     -lgenericFvFields \
+diff --git a/applications/utilities/postProcessing/dataConversion/foamToVTK/Make/options b/applications/utilities/postProcessing/dataConversion/foamToVTK/Make/options
+index 59a7b532ed..64c78144c8 100644
+--- a/applications/utilities/postProcessing/dataConversion/foamToVTK/Make/options
++++ b/applications/utilities/postProcessing/dataConversion/foamToVTK/Make/options
+@@ -8,6 +8,8 @@ EXE_INC = \
+     -I$(LIB_SRC)/fileFormats/lnInclude
+ 
+ EXE_LIBS = \
++    -lfiniteVolume \
++    -lmeshTools \
+     -lfoamToVTK \
+     -lpolyTopoChange \
+     -llagrangian \
+diff --git a/applications/utilities/thermophysical/chemkinToFoam/Make/options b/applications/utilities/thermophysical/chemkinToFoam/Make/options
+index 8178fac902..e8c68fa47e 100644
+--- a/applications/utilities/thermophysical/chemkinToFoam/Make/options
++++ b/applications/utilities/thermophysical/chemkinToFoam/Make/options
+@@ -4,4 +4,6 @@ EXE_INC = \
+     -I$(LIB_SRC)/thermophysicalModels/multicomponentThermo/lnInclude
+ 
+ EXE_LIBS = \
+-    -lchemistryModel
++    -lchemistryModel \
++    -lreactionModels \
++    -lspecie
+diff --git a/etc/config.sh/scotch b/etc/config.sh/scotch
+index 7693417ed4..ee9cc43ae2 100644
+--- a/etc/config.sh/scotch
++++ b/etc/config.sh/scotch
+@@ -43,7 +43,14 @@ none)
+     ;;
+ system)
+     export SCOTCH_VERSION=system
+-    export SCOTCH_ARCH_PATH=/usr
++    case `uname -s` in
++    FreeBSD)
++        export SCOTCH_ARCH_PATH=/usr/local
++        ;;
++    *)
++        export SCOTCH_ARCH_PATH=/usr
++        ;;
++    esac
+     ;;
+ OpenFOAM | ThirdParty)
+     # Look for the source directory
+diff --git a/etc/config.sh/settings b/etc/config.sh/settings
+index 0a69a70190..ff8efd536e 100644
+--- a/etc/config.sh/settings
++++ b/etc/config.sh/settings
+@@ -124,6 +124,25 @@ Linux)
+     esac
+     ;;
+ 
++FreeBSD)
++    case `uname -m` in
++    amd64|x86_64)
++        WM_ARCH=freebsd64
++        export WM_ARCH_OPTION=64
++        export WM_COMPILER_LIB_ARCH=64
++        export WM_CC='clang'
++        export WM_CXX='clang++'
++        export WM_CFLAGS='-m64 -fPIC'
++        export WM_CXXFLAGS='-m64 -fPIC -std=c++14'
++        export WM_LDFLAGS='-m64'
++        ;;
++
++    *)
++        echo "Unknown processor type `uname -m` for FreeBSD" 1>&2
++        ;;
++    esac
++    ;;
++
+ SunOS)
+     WM_ARCH=SunOS64
+     WM_MPLIB=FJMPI
+diff --git a/etc/config.sh/zoltan b/etc/config.sh/zoltan
+index 6103cb5762..ce1a3fcd54 100644
+--- a/etc/config.sh/zoltan
++++ b/etc/config.sh/zoltan
+@@ -43,7 +43,14 @@ none)
+     ;;
+ system)
+     export ZOLTAN_VERSION=system
+-    export ZOLTAN_ARCH_PATH=/usr
++    case `uname -s` in
++    FreeBSD)
++        export ZOLTAN_ARCH_PATH=/usr/local
++        ;;
++    *)
++        export ZOLTAN_ARCH_PATH=/usr
++        ;;
++    esac
+     ;;
+ OpenFOAM | ThirdParty)
+     # Look for the source directory
+diff --git a/src/OSspecific/POSIX/fileStat.C b/src/OSspecific/POSIX/fileStat.C
+index ffb26041ca..9769af1459 100644
+--- a/src/OSspecific/POSIX/fileStat.C
++++ b/src/OSspecific/POSIX/fileStat.C
+@@ -29,7 +29,11 @@ License
+ 
+ #include <signal.h>
+ #include <unistd.h>
++#ifdef freebsd64
++#include <sys/types.h>
++#else
+ #include <sys/sysmacros.h>
++#endif
+ 
+ // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
+ 
+diff --git a/src/OpenFOAM/Make/options b/src/OpenFOAM/Make/options
+index 84591cccba..062a035dc1 100644
+--- a/src/OpenFOAM/Make/options
++++ b/src/OpenFOAM/Make/options
+@@ -2,6 +2,6 @@ EXE_INC = \
+     -I$(OBJECTS_DIR)
+ 
+ LIB_LIBS = \
+-    $(FOAM_LIBBIN)/libOSspecific.o \
++    -L$(FOAM_LIBBIN) -lOSspecific \
+     -L$(FOAM_LIBBIN)/dummy -lPstream \
+     -lz
+diff --git a/src/OpenFOAM/global/fileOperations/masterUncollatedFileOperation/masterUncollatedFileOperation.C b/src/OpenFOAM/global/fileOperations/masterUncollatedFileOperation/masterUncollatedFileOperation.C
+index c278b4706e..b2d2dc0a9f 100644
+--- a/src/OpenFOAM/global/fileOperations/masterUncollatedFileOperation/masterUncollatedFileOperation.C
++++ b/src/OpenFOAM/global/fileOperations/masterUncollatedFileOperation/masterUncollatedFileOperation.C
+@@ -848,7 +848,7 @@ bool Foam::fileOperations::masterUncollatedFileOperation::mkDir
+     mode_t mode
+ ) const
+ {
+-    return masterOp<mode_t, mkDirOp>
++    return masterOp<uint32_t, mkDirOp>
+     (
+         dir,
+         mkDirOp(mode),
+@@ -864,7 +864,7 @@ bool Foam::fileOperations::masterUncollatedFileOperation::chMod
+     mode_t mode
+ ) const
+ {
+-    return masterOp<mode_t, chModOp>
++    return masterOp<uint32_t, chModOp>
+     (
+         fName,
+         chModOp(mode),
+@@ -881,12 +881,15 @@ mode_t Foam::fileOperations::masterUncollatedFileOperation::mode
+     const bool followLink
+ ) const
+ {
+-    return masterOp<mode_t, modeOp>
++    return static_cast<mode_t>
+     (
+-        fName,
+-        modeOp(checkVariants, followLink),
+-        Pstream::msgType(),
+-        comm_
++        masterOp<uint32_t, modeOp>
++        (
++            fName,
++            modeOp(checkVariants, followLink),
++            Pstream::msgType(),
++            comm_
++        )
+     );
+ }
+ 
+diff --git a/src/OpenFOAM/primitives/Scalar/longDoubleScalar/longDoubleScalar.H b/src/OpenFOAM/primitives/Scalar/longDoubleScalar/longDoubleScalar.H
+index b886589722..787fd706c4 100644
+--- a/src/OpenFOAM/primitives/Scalar/longDoubleScalar/longDoubleScalar.H
++++ b/src/OpenFOAM/primitives/Scalar/longDoubleScalar/longDoubleScalar.H
+@@ -151,12 +151,26 @@ inline Scalar atan2(const Scalar y, const Scalar x)
+ 
+ inline Scalar jn(const int n, const Scalar s)
+ {
++#ifdef freebsd64
++    return static_cast<Scalar>
++    (
++        ::jn(n, static_cast<double>(s))
++    );
++#else
+     return ::jnl(n, s);
++#endif
+ }
+ 
+ inline Scalar yn(const int n, const Scalar s)
+ {
++#ifdef freebsd64
++    return static_cast<Scalar>
++    (
++        ::yn(n, static_cast<double>(s))
++    );
++#else
+     return ::ynl(n, s);
++#endif
+ }
+ 
+ #undef Scalar
+diff --git a/src/OpenFOAM/primitives/hashes/Hasher/Hasher.C b/src/OpenFOAM/primitives/hashes/Hasher/Hasher.C
+index a17bfcf2bf..64ef2df7dd 100644
+--- a/src/OpenFOAM/primitives/hashes/Hasher/Hasher.C
++++ b/src/OpenFOAM/primitives/hashes/Hasher/Hasher.C
+@@ -457,7 +457,7 @@ static unsigned jenkins_hashbig
+             case 4 : a += k[3]; [[fallthrough]];
+             case 3 : a += static_cast<uint32_t>(k[2]) << 8; [[fallthrough]];
+             case 2 : a += static_cast<uint32_t>(k[1]) << 16; [[fallthrough]];
+-            case 1 : a += static_cast<uint32_t>(k[0]) << 24; [[fallthrough]];
++            case 1 : a += static_cast<uint32_t>(k[0]) << 24;
+                 break;
+             case 0 : return c;
+         }
+diff --git a/src/fvConstraints/Make/options b/src/fvConstraints/Make/options
+index 7f29dea317..4f94a57e3f 100644
+--- a/src/fvConstraints/Make/options
++++ b/src/fvConstraints/Make/options
+@@ -12,6 +12,7 @@ EXE_INC = \
+     -I$(LIB_SRC)/ThermophysicalTransportModels/fluid/lnInclude
+ 
+ LIB_LIBS = \
++    -lphysicalProperties \
+     -lfiniteVolume \
+     -lsampling \
+     -lmeshTools \
+diff --git a/src/fvModels/general/Make/options b/src/fvModels/general/Make/options
+index 5d2521c940..3c2cfe6fb1 100644
+--- a/src/fvModels/general/Make/options
++++ b/src/fvModels/general/Make/options
+@@ -13,6 +13,9 @@ EXE_INC = \
+     -I$(LIB_SRC)/ThermophysicalTransportModels/fluid/lnInclude
+ 
+ LIB_LIBS = \
++    -lphysicalProperties \
++    -lsolidThermo \
++    -lmulticomponentThermophysicalModels \
+     -lfiniteVolume \
+     -lsampling \
+     -lmeshTools \
+diff --git a/src/lagrangian/molecularDynamics/Make/options b/src/lagrangian/molecularDynamics/Make/options
+index d99fd36e5f..dfa8ac82c5 100644
+--- a/src/lagrangian/molecularDynamics/Make/options
++++ b/src/lagrangian/molecularDynamics/Make/options
+@@ -6,5 +6,6 @@ EXE_INC = \
+ 
+ LIB_LIBS = \
+     -lfiniteVolume \
++    -ltracking \
+     -lmeshTools \
+     -llagrangian
+diff --git a/src/parallel/decompose/ptscotch/ptscotch.C b/src/parallel/decompose/ptscotch/ptscotch.C
+index 7f6738c9d3..71353da9b0 100644
+--- a/src/parallel/decompose/ptscotch/ptscotch.C
++++ b/src/parallel/decompose/ptscotch/ptscotch.C
+@@ -231,6 +231,28 @@ Foam::label Foam::decompositionMethods::ptscotch::decompose
+         Pout<< "SCOTCH_dgraphInit" << endl;
+     }
+ 
++    // System Scotch may use 64-bit SCOTCH_Num while
++    // OpenFOAM label is 32-bit. Convert at the API boundary.
++    List<SCOTCH_Num> scotchXadj(xadjSize);
++    for (label i = 0; i < xadjSize; ++i)
++    {
++        scotchXadj[i] = static_cast<SCOTCH_Num>(xadj[i]);
++    }
++
++    List<SCOTCH_Num> scotchAdjncy(max(label(1), adjncySize));
++    scotchAdjncy = 0;
++    for (label i = 0; i < adjncySize; ++i)
++    {
++        scotchAdjncy[i] = static_cast<SCOTCH_Num>(adjncy[i]);
++    }
++
++    List<SCOTCH_Num> scotchVelotab(velotab.size());
++    forAll(velotab, i)
++    {
++        scotchVelotab[i] = static_cast<SCOTCH_Num>(velotab[i]);
++    }
++
++
+     SCOTCH_Dgraph grafdat;
+     check
+     (
+@@ -258,17 +280,17 @@ Foam::label Foam::decompositionMethods::ptscotch::decompose
+             0,                      // baseval, c-style numbering
+             xadjSize-1,             // vertlocnbr, nCells
+             xadjSize-1,             // vertlocmax
+-            const_cast<SCOTCH_Num*>(xadj),
++            scotchXadj.begin(),
+                                     // vertloctab, start index per cell into
+                                     // adjncy
+-            const_cast<SCOTCH_Num*>(xadj+1),// vendloctab, end index  ,,
++            scotchXadj.begin()+1,// vendloctab, end index  ,,
+ 
+-            const_cast<SCOTCH_Num*>(velotab.begin()),// veloloctab, vtx weights
++            (scotchVelotab.empty() ? nullptr : scotchVelotab.begin()),// veloloctab, vtx weights
+             nullptr,                   // vlblloctab
+ 
+             adjncySize,             // edgelocnbr, number of arcs
+             adjncySize,             // edgelocsiz
+-            const_cast<SCOTCH_Num*>(adjncy),         // edgeloctab
++            scotchAdjncy.begin(),         // edgeloctab
+             nullptr,                   // edgegsttab
+             nullptr                    // edlotab, edge weights
+         ),
+@@ -308,9 +330,21 @@ Foam::label Foam::decompositionMethods::ptscotch::decompose
+                 << processorWeights
+                 << endl;
+         }
++        List<SCOTCH_Num> scotchProcessorWeights(processorWeights.size());
++        forAll(processorWeights, i)
++        {
++            scotchProcessorWeights[i] =
++                static_cast<SCOTCH_Num>(processorWeights[i]);
++        }
++
+         check
+         (
+-            SCOTCH_archCmpltw(&archdat, nProcessors_, processorWeights.begin()),
++            SCOTCH_archCmpltw
++            (
++                &archdat,
++                static_cast<SCOTCH_Num>(nProcessors_),
++                scotchProcessorWeights.begin()
++            ),
+             "SCOTCH_archCmpltw"
+         );
+     }
+@@ -341,6 +375,10 @@ Foam::label Foam::decompositionMethods::ptscotch::decompose
+ 
+     // Note: always provide allocated storage even if local size 0
+     decomp.setSize(max(1, xadjSize-1));
++
++    List<SCOTCH_Num> scotchDecomp(decomp.size());
++    scotchDecomp = 0;
++
+     decomp = 0;
+ 
+     if (debug)
+@@ -354,13 +392,19 @@ Foam::label Foam::decompositionMethods::ptscotch::decompose
+             &grafdat,
+             &archdat,
+             &stradat,           // const SCOTCH_Strat *
+-            decomp.begin() // parttab
++            scotchDecomp.begin() // parttab
+         ),
+         "SCOTCH_graphMap"
+     );
+ 
+     #ifdef  FE_NOMASK_ENV
+     feenableexcept(oldExcepts);
++
++    forAll(decomp, i)
++    {
++        decomp[i] = static_cast<label>(scotchDecomp[i]);
++    }
++
+     #endif
+ 
+     if (debug)
+diff --git a/src/parallel/decompose/scotch/scotch.C b/src/parallel/decompose/scotch/scotch.C
+index 51d3ac1781..ded82249f1 100644
+--- a/src/parallel/decompose/scotch/scotch.C
++++ b/src/parallel/decompose/scotch/scotch.C
+@@ -312,6 +312,26 @@ Foam::label Foam::decompositionMethods::scotch::decomposeOneProc
+     }
+ 
+ 
++    // Scotch on FreeBSD may use 64-bit SCOTCH_Num while OpenFOAM
++    // is built with 32-bit label. Convert explicitly at the API boundary.
++    List<SCOTCH_Num> scotchXadj(xadj.size());
++    forAll(xadj, i)
++    {
++        scotchXadj[i] = static_cast<SCOTCH_Num>(xadj[i]);
++    }
++
++    List<SCOTCH_Num> scotchAdjncy(adjncy.size());
++    forAll(adjncy, i)
++    {
++        scotchAdjncy[i] = static_cast<SCOTCH_Num>(adjncy[i]);
++    }
++
++    List<SCOTCH_Num> scotchVelotab(velotab.size());
++    forAll(velotab, i)
++    {
++        scotchVelotab[i] = static_cast<SCOTCH_Num>(velotab[i]);
++    }
++
+     SCOTCH_Graph grafdat;
+     check(SCOTCH_graphInit(&grafdat), "SCOTCH_graphInit");
+     check
+@@ -321,12 +341,14 @@ Foam::label Foam::decompositionMethods::scotch::decomposeOneProc
+             &grafdat,
+             0,                      // baseval, c-style numbering
+             xadj.size()-1,          // vertnbr, nCells
+-            xadj.begin(),           // verttab, start index per cell into adjncy
+-            &xadj[1],               // vendtab, end index  ,,
+-            velotab.begin(),        // velotab, vertex weights
++            scotchXadj.begin(),     // verttab
++            &scotchXadj[1],         // vendtab
++            scotchVelotab.empty()
++              ? nullptr
++              : scotchVelotab.begin(), // velotab
+             nullptr,                // vlbltab
+             adjncy.size(),          // edgenbr, number of arcs
+-            adjncy.begin(),         // edgetab
++            scotchAdjncy.begin(),   // edgetab
+             nullptr                 // edlotab, edge weights
+         ),
+         "SCOTCH_graphBuild"
+@@ -353,9 +375,21 @@ Foam::label Foam::decompositionMethods::scotch::decomposeOneProc
+             Info<< "scotch : Using processor weights " << processorWeights
+                 << endl;
+         }
++        List<SCOTCH_Num> scotchProcessorWeights(processorWeights.size());
++        forAll(processorWeights, i)
++        {
++            scotchProcessorWeights[i] =
++                static_cast<SCOTCH_Num>(processorWeights[i]);
++        }
++
+         check
+         (
+-            SCOTCH_archCmpltw(&archdat, nProcessors_, processorWeights.begin()),
++            SCOTCH_archCmpltw
++            (
++                &archdat,
++                static_cast<SCOTCH_Num>(nProcessors_),
++                scotchProcessorWeights.begin()
++            ),
+             "SCOTCH_archCmpltw"
+         );
+     }
+@@ -380,6 +414,10 @@ Foam::label Foam::decompositionMethods::scotch::decomposeOneProc
+ 
+     decomp.setSize(xadj.size()-1);
+     decomp = 0;
++
++    List<SCOTCH_Num> scotchDecomp(decomp.size());
++    scotchDecomp = 0;
++
+     check
+     (
+         SCOTCH_graphMap
+@@ -387,11 +425,16 @@ Foam::label Foam::decompositionMethods::scotch::decomposeOneProc
+             &grafdat,
+             &archdat,
+             &stradat,           // const SCOTCH_Strat *
+-            decomp.begin() // parttab
++            scotchDecomp.begin()
+         ),
+         "SCOTCH_graphMap"
+     );
+ 
++    forAll(decomp, i)
++    {
++        decomp[i] = static_cast<label>(scotchDecomp[i]);
++    }
++
+     #ifdef FE_NOMASK_ENV
+     feenableexcept(oldExcepts);
+     #endif
+diff --git a/src/parallel/decompose/zoltan/Make/options b/src/parallel/decompose/zoltan/Make/options
+index 4a2e97dc72..99f892d7b3 100644
+--- a/src/parallel/decompose/zoltan/Make/options
++++ b/src/parallel/decompose/zoltan/Make/options
+@@ -11,4 +11,4 @@ LIB_LIBS = \
+     -L$(ZOLTAN_ARCH_PATH)/lib \
+     $(if $(ZOLTAN_LIB_DIR),-L$(ZOLTAN_LIB_DIR)) \
+     -L$(FOAM_EXT_LIBBIN)/$(FOAM_MPI) \
+-    -lzoltan
++    -L/usr/local/lib -lzoltan
+diff --git a/wmake/rules/freebsd64Clang/c b/wmake/rules/freebsd64Clang/c
+new file mode 100644
+index 0000000000..cee1ecfb9d
+--- /dev/null
++++ b/wmake/rules/freebsd64Clang/c
+@@ -0,0 +1,16 @@
++SUFFIXES += .c
++
++cWARN        = -Wall
++
++cc           = clang -m64
++
++include $(DEFAULT_RULES)/c$(WM_COMPILE_OPTION)
++
++cFLAGS       = $(GFLAGS) $(cWARN) $(cOPT) $(cDBUG) $(LIB_HEADER_DIRS) -fPIC
++
++ctoo         = $(WM_SCHEDULER) $(cc) $(cFLAGS) -c $< -o $@
++
++LINK_LIBS    = $(cDBUG)
++
++LINKLIBSO    = $(cc) -shared -Wl,-soname,$(notdir $@)
++LINKEXE      = $(cc)
+diff --git a/wmake/rules/freebsd64Clang/c++ b/wmake/rules/freebsd64Clang/c++
+new file mode 100644
+index 0000000000..fe86bc343a
+--- /dev/null
++++ b/wmake/rules/freebsd64Clang/c++
+@@ -0,0 +1,28 @@
++SUFFIXES += .C
++
++c++WARN     = -Wall -Wextra -Wold-style-cast -Wnon-virtual-dtor \
++              -Wno-unused-parameter -Wno-invalid-offsetof \
++              -Wno-undefined-var-template -Wno-unqualified-std-cast-call
++
++# Suppress some warnings for flex++
++c++LESSWARN = -Wno-old-style-cast -Wno-unused-local-typedefs \
++              -Wno-tautological-undefined-compare -Wno-shift-negative-value
++
++CC          = clang++ -std=c++14 -m64
++
++include $(DEFAULT_RULES)/c++$(WM_COMPILE_OPTION)
++
++ptFLAGS     = -DNoRepository -ftemplate-depth-256
++
++c++FLAGS    = $(GFLAGS) $(c++WARN) $(c++OPT) $(c++DBUG) $(ptFLAGS) \
++              $(LIB_HEADER_DIRS) -fPIC $(if $(WM_COLOUR),-fdiagnostics-color,)
++
++Ctoo        = $(WM_SCHEDULER) $(CC) $(c++FLAGS) -c $< -o $@
++cxxtoo      = $(Ctoo)
++cctoo       = $(Ctoo)
++cpptoo      = $(Ctoo)
++
++LINK_LIBS   = $(c++DBUG)
++
++LINKLIBSO   = $(CC) $(c++FLAGS) -shared -Wl,-soname,$(notdir $@)
++LINKEXE     = $(CC) $(c++FLAGS)
+diff --git a/wmake/rules/freebsd64Clang/c++Debug b/wmake/rules/freebsd64Clang/c++Debug
+new file mode 100644
+index 0000000000..1c63335a3f
+--- /dev/null
++++ b/wmake/rules/freebsd64Clang/c++Debug
+@@ -0,0 +1,2 @@
++c++DBUG    = -g -DFULLDEBUG
++c++OPT      = -O0
+diff --git a/wmake/rules/freebsd64Clang/c++Opt b/wmake/rules/freebsd64Clang/c++Opt
+new file mode 100644
+index 0000000000..2aedabd628
+--- /dev/null
++++ b/wmake/rules/freebsd64Clang/c++Opt
+@@ -0,0 +1,2 @@
++c++DBUG     =
++c++OPT      = -O3
+diff --git a/wmake/rules/freebsd64Clang/c++Prof b/wmake/rules/freebsd64Clang/c++Prof
+new file mode 100644
+index 0000000000..3bda4dad55
+--- /dev/null
++++ b/wmake/rules/freebsd64Clang/c++Prof
+@@ -0,0 +1,2 @@
++c++DBUG    = -pg
++c++OPT     = -O2
+diff --git a/wmake/rules/freebsd64Clang/cDebug b/wmake/rules/freebsd64Clang/cDebug
+new file mode 100644
+index 0000000000..7b7adf10de
+--- /dev/null
++++ b/wmake/rules/freebsd64Clang/cDebug
+@@ -0,0 +1,2 @@
++cDBUG       = -g -DFULLDEBUG
++cOPT        = -O0
+diff --git a/wmake/rules/freebsd64Clang/cOpt b/wmake/rules/freebsd64Clang/cOpt
+new file mode 100644
+index 0000000000..17318709f1
+--- /dev/null
++++ b/wmake/rules/freebsd64Clang/cOpt
+@@ -0,0 +1,2 @@
++cDBUG       =
++cOPT        = -O3
+diff --git a/wmake/rules/freebsd64Clang/cProf b/wmake/rules/freebsd64Clang/cProf
+new file mode 100644
+index 0000000000..ca3ac9bf5f
+--- /dev/null
++++ b/wmake/rules/freebsd64Clang/cProf
+@@ -0,0 +1,2 @@
++cDBUG       = -pg
++cOPT        = -O2
+diff --git a/wmake/rules/freebsd64Clang/general b/wmake/rules/freebsd64Clang/general
+new file mode 100644
+index 0000000000..f2291969cb
+--- /dev/null
++++ b/wmake/rules/freebsd64Clang/general
+@@ -0,0 +1,9 @@
++PROJECT_LIBS = -l$(WM_PROJECT) \
++               -lOSspecific \
++               -L$(FOAM_LIBBIN)/$(FOAM_MPI) -lPstream \
++               -lexecinfo
++
++include $(GENERAL_RULES)/standard
++
++include $(DEFAULT_RULES)/c
++include $(DEFAULT_RULES)/c++
+diff --git a/wmake/wclean b/wmake/wclean
+index 8a3150de7f..c81f2ce213 100755
+--- a/wmake/wclean
++++ b/wmake/wclean
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ #------------------------------------------------------------------------------
+ # =========                 |
+ # \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+diff --git a/wmake/wmake b/wmake/wmake
+index adaa4d6857..aa3256c08c 100755
+--- a/wmake/wmake
++++ b/wmake/wmake
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ #------------------------------------------------------------------------------
+ # =========                 |
+ # \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+diff --git a/wmake/wmakeCollect b/wmake/wmakeCollect
+index 68ad0b5efe..3717b60e97 100755
+--- a/wmake/wmakeCollect
++++ b/wmake/wmakeCollect
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ #------------------------------------------------------------------------------
+ # =========                 |
+ # \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+diff --git a/wmake/wmakeLnInclude b/wmake/wmakeLnInclude
+index 84bc63c04d..c56d6a27e8 100755
+--- a/wmake/wmakeLnInclude
++++ b/wmake/wmakeLnInclude
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ #------------------------------------------------------------------------------
+ # =========                 |
+ # \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+diff --git a/wmake/wmakeLnIncludeAll b/wmake/wmakeLnIncludeAll
+index 6a119d259e..dfc7f451b6 100755
+--- a/wmake/wmakeLnIncludeAll
++++ b/wmake/wmakeLnIncludeAll
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ #------------------------------------------------------------------------------
+ # =========                 |
+ # \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+diff --git a/wmake/wmakeScheduler b/wmake/wmakeScheduler
+index 4a38fd6fe6..299837440e 100755
+--- a/wmake/wmakeScheduler
++++ b/wmake/wmakeScheduler
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ #------------------------------------------------------------------------------
+ # =========                 |
+ # \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+diff --git a/wmake/wmakeSchedulerUptime b/wmake/wmakeSchedulerUptime
+index a024b97333..eae2194bfd 100755
+--- a/wmake/wmakeSchedulerUptime
++++ b/wmake/wmakeSchedulerUptime
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ #------------------------------------------------------------------------------
+ # =========                 |
+ # \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
