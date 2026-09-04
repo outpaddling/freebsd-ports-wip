@@ -1,4 +1,4 @@
---- src/Makefile.orig	2026-09-01 12:06:56 UTC
+--- src/Makefile.orig	2025-06-21 19:47:39 UTC
 +++ src/Makefile
 @@ -1,33 +1,38 @@
  ### modify these paths to local Boost and NLopt install directories
@@ -43,7 +43,7 @@
 -CFLAGS += -DUSE_SSE -DMEASURE_DGEMM -DVERBOSE
 -CFLAGS += -Wall
 +# CXXFLAGS += -msse2 -mavx
-+CXXFLAGS += -std=c++11
++CXXFLAGS += -std=c++14
 +# CXXFLAGS += -DUSE_SSE -DMEASURE_DGEMM -DVERBOSE
 +# CXXFLAGS += -Wall
  
@@ -63,14 +63,14 @@
  	CPATHS += -I${MKLROOT}/include
  	ifeq (${linking},static)
  		LPATHS += -L${INTELROOT}/lib/intel64 '-Wl,-rpath,$$ORIGIN/lib' # for libiomp5.so (now packaged with binary)
-@@ -72,34 +77,34 @@ endif
+@@ -72,34 +77,33 @@ endif
  endif
  
  # add flags for static linking; build LAPACK/MKL component of link line
 -ifeq (${CC},g++)
 -	CFLAGS += -fopenmp
 -	LFLAGS += -fopenmp
-+ifeq (${CXX},g++)
++ifeq (${CXX},c++)
 +	CXXFLAGS += -fopenmp
 +	LDFLAGS += -fopenmp
  	LLAPACK = -llapack -lgfortran
@@ -88,7 +88,6 @@
 -	CFLAGS += -qopenmp
 -	LFLAGS += -qopenmp
 -	CFLAGS += -Wunused-variable -Wpointer-arith -Wuninitialized -Wreturn-type -Wcheck -Wshadow
-+	CXXFLAGS += -DUSE_MKL #-DUSE_MKL_MALLOC
 +	CXXFLAGS += -fopenmp
 +	LDFLAGS += -fopenmp
 +	CXXFLAGS += -Wunused-variable -Wpointer-arith -Wuninitialized -Wreturn-type -Wcheck -Wshadow
@@ -112,16 +111,16 @@
  		LPATHS += -L${ZLIB_STATIC_DIR}
  		LLAPACK = -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core
  	else
-@@ -112,7 +117,7 @@ endif
+@@ -112,7 +116,7 @@ endif
  endif
  
  # build link line (minus flags)
 -LLIBS = -lboost_program_options -lboost_iostreams -lzstd -lz -lnlopt
-+LLIBS = lnopt -lboost_program_options -lboost_iostreams -lzstd -lz
++LLIBS = -lnlopt -lboost_program_options -lboost_iostreams -lzstd -lz
  ifeq (${linking},static-except-glibc)
  	L = -L${LIBSTDCXX_STATIC_DIR} ${LPATHS} -Wl,--wrap=memcpy -Wl,-Bstatic ${LLIBS} ${LLAPACK} -Wl,-Bdynamic ${LIOMP5} -lpthread -lm ${LDL}
  else ifeq (${linking},static-except-glibc-intel)
-@@ -124,16 +129,19 @@ T = bolt
+@@ -124,16 +128,19 @@ T = bolt
  
  
  T = bolt

@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 LIB_DEPENDS=	libnlopt.so:math/nlopt \
 		libopenblas.so:math/openblas \
-		libboost_program_options.so:devel/boost-libs
+		libboost_program_options.so:devel/boost-libs \
+		libzstd.so:archivers/zstd
 
 USES=		gmake
 
