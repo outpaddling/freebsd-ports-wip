@@ -14,9 +14,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	NIFTI-Imaging
 GH_PROJECT=	nifti_clib
 
-# AFNI currently has nifti embedded in the distfile and installs the
-# nifti bins by itself.
-CONFLICTS=	afni dbh
+# FIXME: Remove nifticlib conflict from afni
+CONFLICTS=	dbh	# dbh.h
 
 CFLAGS+=	-fPIC
 MAKE_JOBS_UNSAFE=	yes
