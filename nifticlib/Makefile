@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.1
 CATEGORIES=	wip science graphics
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Neuroimaging Informatics Technology Initiative data format
 WWW=		https://nifti.nimh.nih.gov/
 
@@ -22,7 +22,6 @@ CFLAGS+=	-fPIC
 MAKE_JOBS_UNSAFE=	yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/lib/*.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_MAN} ${FILESDIR}/nifticlib.1 ${STAGEDIR}${PREFIX}/share/man/man1
