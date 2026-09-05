@@ -1,6 +1,5 @@
 PORTNAME=	ncbi-entrez-direct
-DISTVERSION=	14.9.20210423
-PORTREVISION=	12
+DISTVERSION=	24.0.20250523
 CATEGORIES=	wip biology perl5
 MASTER_SITES=	ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/${PORTVERSION}/
 DISTFILES=	edirect.tar.gz
@@ -31,16 +30,36 @@ CONFLICTS_INSTALL=	ebook-tools p5-XML-Compile # bin/einfo bin/xml2json
 # files/modules.txt: cd ${WRKSRC}/cmd && go mod vendor
 GHSD=		vendor/github.com
 GLSD=		vendor/golang.org
-GH_TUPLE=	fatih:color:v1.10.0:a/${GHSD}/fatih/color \
-		surgebase:porter2:56e4718818e8:b/${GHSD}/surgebase/porter2 \
-		gedex:inflector:16278e9db813:c/${GHSD}/gedex/inflector \
+
+# go: downloading github.com/fatih/color v1.18.0
+# go: downloading github.com/gedex/inflector v0.0.0-20170307190818-16278e9db813
+# go: downloading github.com/goccy/go-yaml v1.17.1
+# go: downloading github.com/klauspost/cpuid v1.3.1
+# go: downloading github.com/klauspost/pgzip v1.2.6
+# go: downloading github.com/komkom/toml v0.1.2
+# go: downloading github.com/pbnjay/memory v0.0.0-20210728143218-7b4eea64cf58
+# go: downloading github.com/surgebase/porter2 v0.0.0-20150829210152-56e4718818e8
+# go: downloading golang.org/x/text v0.24.0
+# go: downloading github.com/mattn/go-colorable v0.1.13
+# go: downloading github.com/mattn/go-isatty v0.0.20
+# go: downloading github.com/klauspost/compress v1.18.0
+# go: downloading github.com/pkg/errors v0.9.1
+# go: downloading golang.org/x/sys v0.25.0
+
+GH_TUPLE=	fatih:color:v1.18.0:a/${GHSD}/fatih/color \
+		gedex:inflector:16278e9db813:b/${GHSD}/gedex/inflector \
+		goccy:go-yaml:v1.17.1:c/${GHSD}/goccy/go-yaml \
 		klauspost:cpuid:v1.3.1:d/${GHSD}/klauspost/cpuid \
-		pbnjay:memory:b12e5d931931:e/${GHSD}/pbnjay/memory \
-		mattn:go-colorable:v0.1.8:f/${GHSD}/mattn/go-colorable \
-		mattn:go-isatty:v0.0.12:g/${GHSD}/mattn/go-isatty \
-		fiam:gounidecode:8deddbd03fec:h/${GHSD}/fiam/gounidecode \
-		golang:text:v0.3.5:i/${GLSD}/x/text \
-		golang:sys:v0.5.0:j/${GLSD}/x/sys
+		klauspost:pgzip:v1.2.6:e/${GHSD}/klauspost/pgzip \
+		komkom:toml:v0.1.2:f/$(GHSD)/komkom/toml \
+		pbnjay:memory:b12e5d931931:g/${GHSD}/pbnjay/memory \
+		surgebase:porter2:56e4718818e8:h/${GHSD}/surgebase/porter2 \
+		golang:text:v0.24.0:i/${GLSD}/x/text \
+		mattn:go-colorable:v0.1.13:j/${GHSD}/mattn/go-colorable \
+		mattn:go-isatty:v0.0.20:k/${GHSD}/mattn/go-isatty \
+		klauspost:compress:v1.18.0:l/${GHSD}/klauspost/compress \
+		pkg:errors:v0.9.1:m/${GHSD}/pkg/errors \
+		golang:sys:v0.25.0:n/${GLSD}/x/sys
 
 SHEBANG_FILES=	nquire edirect.pl word-at-a-time accn-at-a-time \
 		amino-acid-composition between-two-genes exclude-uid-lists \
