@@ -1,6 +1,5 @@
 PORTNAME=	spectra
-DISTVERSION=	0.0.11
-PORTREVISION=	1
+DISTVERSION=	0.1.0
 CATEGORIES=	wip graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colormath>3.0.0:math/py-colormath@${PY_FLAVO
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 
