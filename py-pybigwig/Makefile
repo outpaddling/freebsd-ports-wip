@@ -1,5 +1,5 @@
 PORTNAME=	pyBigWig
-DISTVERSION=	0.3.22
+DISTVERSION=	0.3.25
 CATEGORIES=	wip biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		localbase python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pyBigWig*.so
