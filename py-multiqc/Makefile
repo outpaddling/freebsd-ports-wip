@@ -15,16 +15,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 #    "polars>=1.33.1; sys_platform == 'emscripten'",
 #    "polars[rtcompat]>=1.34.0; sys_platform != 'emscripten'",
 #    "pyarrow",            # for parquet support
-
-# For flat plot export:
-# Use either py-kaleido (not in ports yet) or py-orca + py-psutil
-# ${PYTHON_PKGNAMEPREFIX}kaleido>=0.2.1:wip/py-kaleido@${PY_FLAVOR} \
 # Keep deps in sync with pyproject.toml.  Changes with every minor release.
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}humanize>0:devel/py-humanize@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-metadata>0:devel/py-importlib-metadata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0.0:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}kaleido>=0.2.1:wip/py-kaleido@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>0:textproc/py-markdown@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
