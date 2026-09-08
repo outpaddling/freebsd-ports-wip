@@ -21,7 +21,4 @@ USE_PYTHON=	autoplist pep517 pytest
 
 NO_ARCH=	yes
 
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m nose -v test
-
 .include <bsd.port.mk>
