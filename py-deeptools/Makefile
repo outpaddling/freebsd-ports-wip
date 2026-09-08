@@ -28,12 +28,11 @@ USE_PYTHON=	autoplist concurrent pep517
 # ./work-py312/deeptools-4.0.0/dist/deeptools-4.0.0-cp312-cp312-freebsd_15_0_release_p13_amd64.whl
 # ./work-py312/deeptools-4.0.0/target/wheels/deeptools-4.0.0-cp312-cp312-freebsd_15_0_release_p13_amd64.whl
 
-# Maybe:
-# PEP517_INSTALL_CMD=${PYTHON_CMD} -m installer --destdir ${STAGEDIR} --prefix ${PREFIX} ${BUILD_WRKSRC}/dist/deeptools-${DISTVERSION}*.whl
+# Doesn't work:
+# PEP517_INSTALL_CMD=${PYTHON_CMD} -m installer --destdir ${STAGEDIR} --prefix ${PREFIX} ${BUILD_WRKSRC}/dist/deeptools*.whl
 
-#post-build:
-#	${MV} \
-#		${WRKSRC}/dist/deeptools-4.0.0-cp312-cp312-freebsd_15_0_release_p13_amd64.whl \
-#		${WRKSRC}/dist/deepTools-4.0.0-cp312-cp312-freebsd_15_0_release_p13_amd64.whl 
+# Doesn't work:
+# pre-install:
+# 	${CP} ${WRKSRC}/dist/deeptools-4.0.0-cp312-cp312-freebsd_15_0_release_p13_amd64.whl ${WRKSRC}/dist/deepTools-4.0.0-cp312-cp312-freebsd_15_0_release_p13_amd64.whl
 
 .include <bsd.port.mk>
