@@ -1,6 +1,6 @@
 PORTNAME=	transdecoder
 DISTVERSIONPREFIX=	TransDecoder-v
-DISTVERSION=	5.7.1
+DISTVERSION=	6.0.0
 CATEGORIES=	wip biology perl5
 PKGNAMEPREFIX=	p5-
 
@@ -27,8 +27,8 @@ NO_ARCH=	yes
 
 PERL_MOD_DIR=	${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
 PERL_UTIL_DIR=	${PREFIX}/libexec/${PORTNAME}
-SCRIPTS=	${WRKSRC}/TransDecoder.LongOrfs \
-		${WRKSRC}/TransDecoder.Predict
+SCRIPTS=	${WRKSRC}/util/TransDecoder.LongOrfs \
+		${WRKSRC}/util/TransDecoder.Predict
 
 post-patch:
 	@${REINPLACE_CMD} \
