@@ -32,6 +32,7 @@ SCRIPTS=	${WRKSRC}/util/TransDecoder.LongOrfs \
 
 post-patch:
 	@${REINPLACE_CMD} \
+		-e 's|$$ROOT_DIR/PerlLib|${PERL_MOD_DIR}|g' \
 		-e 's|$$FindBin::RealBin/PerlLib|${PERL_MOD_DIR}|g' \
 		-e 's|$$FindBin::Bin/../PerlLib|${PERL_MOD_DIR}|g' \
 		-e 's|$$FindBin::RealBin/util|${PERL_UTIL_DIR}|g' \
