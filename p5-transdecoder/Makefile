@@ -27,7 +27,8 @@ NO_ARCH=	yes
 
 PERL_MOD_DIR=	${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
 PERL_UTIL_DIR=	${PREFIX}/libexec/${PORTNAME}
-SCRIPTS=	${WRKSRC}/util/TransDecoder.LongOrfs \
+SCRIPTS=	${WRKSRC}/TransDecoder \
+		${WRKSRC}/util/TransDecoder.LongOrfs \
 		${WRKSRC}/util/TransDecoder.Predict
 
 post-patch:
