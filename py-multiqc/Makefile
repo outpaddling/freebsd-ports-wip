@@ -39,10 +39,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>0:www/py-python-dotenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}natsort>0:devel/py-natsort@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.7.0:textproc/py-tiktoken@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema@${PY_FLAVOR}
-		# For parquet support
-		# ${PYTHON_PKGNAMEPREFIX}polars>0:misc/py-polars@${PY_FLAVOR} \
-		# ${PYTHON_PKGNAMEPREFIX}pyarrow>0:databases/py-pyarrow@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}polars>=1.33.1:misc/py-polars@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}polars-runtime>=1.34.0:misc/py-polars-runtime@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyarrow>0:databases/py-pyarrow@${PY_FLAVOR}
 
 USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent pep517
