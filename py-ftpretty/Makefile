@@ -14,4 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES=		python
 USE_PYTHON=	autoplist pep517
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+
 .include <bsd.port.mk>
