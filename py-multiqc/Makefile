@@ -11,11 +11,6 @@ WWW=		https://github.com/MultiQC/MultiQC
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# Pyodide currently publishes Polars 1.33.1; `rtcompat` is available from 1.34.0 for native installs.
-#    "polars>=1.33.1; sys_platform == 'emscripten'",
-#    "polars[rtcompat]>=1.34.0; sys_platform != 'emscripten'",
-#    "pyarrow",            # for parquet support
-# Keep deps in sync with pyproject.toml.  Changes with every minor release.
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}humanize>0:devel/py-humanize@${PY_FLAVOR} \
@@ -41,7 +36,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.7.0:textproc/py-tiktoken@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}polars>=1.33.1:misc/py-polars@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}polars-runtime>=1.34.0:misc/py-polars-runtime@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyarrow>0:databases/py-pyarrow@${PY_FLAVOR}
 
 USES=		python shebangfix
