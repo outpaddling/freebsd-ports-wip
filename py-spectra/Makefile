@@ -13,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-# FIXME: colormath is no longer maintained.  Switch to fork colormath2.
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colormath>=3.0.0:math/py-colormath@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colormath2>=3.0.0:wip/py-colormath2@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517 pytest
