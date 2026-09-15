@@ -6,7 +6,7 @@ PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Cross-platform library for generating static images for Plotly
-WWW=		https://pypi.python.org/project/kaleido/
+WWW=		https://github.com/plotly/kaleido
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
