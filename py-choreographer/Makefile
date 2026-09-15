@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Remote control of browsers from Python
-WWW=		https://pypi.python.org/project/choreographer/
+WWW=		https://github.com/plotly/choreographer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
