@@ -4,9 +4,9 @@ CATEGORIES=	wip math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	skreuzer@FreeBSD.org
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Module that spares the user from directly dealing with color math
-WWW=		https://pypi.org/project/colormath/
+WWW=		https://pypi.org/project/colormath2/
 
 LICENSE=	BSD2CLAUSE
 
