@@ -1,4 +1,7 @@
 PORTNAME=	multiqc
+# Pinned: MultiQC has a massive, ever-changing dependency list and some
+# specific version requirements.  Don't expect an update to every new
+# minor release.
 DISTVERSION=	1.35
 CATEGORIES=	wip biology python
 MASTER_SITES=	PYPI
