@@ -280,6 +280,8 @@ include/mongocxx/v1/server_api-fwd.hpp
 include/mongocxx/v1/server_api.hpp
 include/mongocxx/v1/server_error-fwd.hpp
 include/mongocxx/v1/server_error.hpp
+include/mongocxx/v1/string_options-fwd.hpp
+include/mongocxx/v1/string_options.hpp
 include/mongocxx/v1/text_options-fwd.hpp
 include/mongocxx/v1/text_options.hpp
 include/mongocxx/v1/tls-fwd.hpp
@@ -501,6 +503,8 @@ include/mongocxx/v_noabi/mongocxx/search_index_model-fwd.hpp
 include/mongocxx/v_noabi/mongocxx/search_index_model.hpp
 include/mongocxx/v_noabi/mongocxx/search_index_view-fwd.hpp
 include/mongocxx/v_noabi/mongocxx/search_index_view.hpp
+include/mongocxx/v_noabi/mongocxx/string_options-fwd.hpp
+include/mongocxx/v_noabi/mongocxx/string_options.hpp
 include/mongocxx/v_noabi/mongocxx/uri-fwd.hpp
 include/mongocxx/v_noabi/mongocxx/uri.hpp
 include/mongocxx/v_noabi/mongocxx/validation_criteria-fwd.hpp
