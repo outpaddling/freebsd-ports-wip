@@ -1,6 +1,6 @@
 PORTNAME=	mongo-c-driver
 # Note: devel/mongo-cxx-driver requires specific versions of this port
-DISTVERSION=	2.3.3
+DISTVERSION=	2.5.3
 CATEGORIES=	wip devel
 
 MAINTAINER=	ports@bsdserwis.com
@@ -11,11 +11,11 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 # libbson requirement more specific than LIB_DEPENDS can express
-BUILD_DEPENDS=	libbson>=2.3.3:wip/libbson
+BUILD_DEPENDS=	libbson>=2.5.3:wip/libbson
 LIB_DEPENDS=	libbson2.so:wip/libbson \
 		libutf8proc.so:textproc/utf8proc \
 		libzstd.so:archivers/zstd
-RUN_DEPENDS=	libbson>=2.3.3:wip/libbson
+RUN_DEPENDS=	libbson>=2.5.3:wip/libbson
 
 USES=		cmake cpe pathfix pkgconfig python:env
 CPE_VENDOR=	mongodb
