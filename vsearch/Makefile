@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Explicitly enumerated by upstream developers
 
-BUILD_DEPENDS=	hs-pandoc>0:textproc/hs-pandoc
+BUILD_DEPENDS=	hs-pandoc>0:textproc/hs-pandoc \
+		bash>0:shells/bash
 
 USES=		autoreconf ghostscript:build gmake localbase
 USE_GITHUB=	yes
