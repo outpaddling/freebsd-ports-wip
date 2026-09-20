@@ -13,12 +13,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Explicitly enumerated by upstream developers
 
+BUILD_DEPENDS=	hs-pandoc>0:textproc/hs-pandoc
+
 USES=		autoreconf ghostscript:build gmake localbase
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	torognes
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/vsearch share/bash-completion/completions/vsearch share/fish/vendor_completions.d/vsearch.fish share/zsh/site-functions/_vsearch
+post-stage:
+	${INSTALL_MAN} ${WRKSRC}/man/manpages/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
