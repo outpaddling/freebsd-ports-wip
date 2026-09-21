@@ -1,6 +1,7 @@
 PORTNAME=	samtools
 DISTVERSION=	1.24
 CATEGORIES=	wip biology
+MASTER_SITES=	https://github.com/samtools/samtools/releases/download/1.24/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for manipulating next-generation sequencing data
@@ -13,7 +14,7 @@ BUILD_DEPENDS=	htslib>=1.24:wip/htslib
 LIB_DEPENDS=	libhts.so:wip/htslib
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf cpe gmake localbase ncurses perl5 python:env shebangfix
+USES=		autoreconf cpe gmake localbase ncurses perl5 python:env shebangfix tar:bzip2
 
 USE_GITHUB=	yes
 
