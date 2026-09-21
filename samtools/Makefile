@@ -16,8 +16,6 @@ TEST_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf cpe gmake localbase ncurses perl5 python:env shebangfix tar:bzip2
 
-USE_GITHUB=	yes
-
 USE_PERL5=	test
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
