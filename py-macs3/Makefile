@@ -1,6 +1,6 @@
 PORTNAME=		MACS3
 DISTVERSIONPREFIX=	v
-DISTVERSION=		3.0.4
+DISTVERSION=		3.0.5
 CATEGORIES=		wip biology python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
@@ -31,7 +31,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 USES=		localbase perl5 python shebangfix
 USE_GITHUB=	yes
 USE_PERL5=	test
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 GH_ACCOUNT=	macs3-project
 GH_PROJECT=	MACS
