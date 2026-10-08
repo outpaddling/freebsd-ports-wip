@@ -2,6 +2,9 @@ PORTNAME=	vcf2hap
 DISTVERSION=	0.1.6-14
 DISTVERSIONSUFFIX=	-g8f39985
 CATEGORIES=	wip biology
+# For releases:
+# MASTER_SITES=	https://github.com/auerlab/vcf2hap/releases/download/$DISTVERSION
+# USES=		tar:xz
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Generate .hap file from VCF for haplohseq
