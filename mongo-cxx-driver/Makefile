@@ -1,6 +1,6 @@
 PORTNAME=	mongo-cxx-driver
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.6.0
+DISTVERSION=	4.6.1
 CATEGORIES=	wip devel databases
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # mongo-c-driver requirement more specific than LIB_DEPENDS can express
-BUILD_DEPENDS=	mongo-c-driver>=2.5.3:devel/mongo-c-driver
+BUILD_DEPENDS=	mongo-c-driver>=2.5.6:devel/mongo-c-driver
 LIB_DEPENDS=	libmongoc2.so:wip/mongo-c-driver \
 		libbson2.so:wip/libbson \
 		libutf8proc.so:textproc/utf8proc
