@@ -197,6 +197,11 @@ share/man/man8/auto-image2dev.8.gz
 share/man/man8/auto-install-linux_base.8.gz
 share/man/man8/auto-ldap-client-setup.8.gz
 share/man/man8/auto-ldap-lookup.8.gz
+share/man/man8/auto-lock-local-pw.8.gz
+share/man/man8/auto-lock-user.8.gz
+share/man/man8/auto-ly-enable.8.gz
+share/man/man8/auto-mark-install-from-source.8.gz
+share/man/man8/auto-mark-package-critical.8.gz
 share/man/man8/auto-physmem.8.gz
 share/man/man8/auto-pkgsrc-non-removable.8.gz
 share/man/man8/auto-update-system.8.gz
