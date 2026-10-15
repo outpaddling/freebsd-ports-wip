@@ -202,6 +202,8 @@ share/man/man8/auto-lock-user.8.gz
 share/man/man8/auto-ly-enable.8.gz
 share/man/man8/auto-mark-install-from-source.8.gz
 share/man/man8/auto-mark-package-critical.8.gz
+share/man/man8/auto-mount-any.8.gz
+share/man/man8/auto-network-config.8.gz
 share/man/man8/auto-physmem.8.gz
 share/man/man8/auto-pkgsrc-non-removable.8.gz
 share/man/man8/auto-update-system.8.gz
