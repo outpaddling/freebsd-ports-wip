@@ -207,6 +207,9 @@ share/man/man8/auto-network-config.8.gz
 share/man/man8/auto-network-manager.8.gz
 share/man/man8/auto-network-restart.8.gz
 share/man/man8/auto-nfs-add-share.8.gz
+share/man/man8/auto-nfs-client-setup.8.gz
+share/man/man8/auto-nfs-restart.8.gz
+share/man/man8/auto-nfs-server-setup.8.gz
 share/man/man8/auto-physmem.8.gz
 share/man/man8/auto-pkgsrc-non-removable.8.gz
 share/man/man8/auto-update-system.8.gz
