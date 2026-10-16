@@ -1,6 +1,6 @@
 PORTNAME=	desktop-installer
-DISTVERSION=	1.2.0-14
-DISTVERSIONSUFFIX=	-gfc5cdd0
+DISTVERSION=	1.2.0-15
+DISTVERSIONSUFFIX=	-g56b1d29
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -21,7 +21,6 @@ NO_ARCH=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/FreeBSD/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/FreeBSD/${PORTNAME}-xlibre ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/battery-shutdown.sh ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/FreeBSD/${PORTNAME}.man \
 		${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
