@@ -9,6 +9,8 @@ WWW=		https://github.com/outpaddling/freebsd-ports-wip
 
 LICENSE=	BSD3CLAUSE
 
+RUN_DEPENDS=	auto-admin>0:wip/auto-admin
+
 USES=		tar:xz
 USE_GITHUB=	yes
 
