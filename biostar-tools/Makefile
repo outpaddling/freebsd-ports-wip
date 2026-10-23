@@ -1,12 +1,9 @@
 PORTNAME=	biostar-tools
-# Update major version only if the metaport is overhauled
-# Update minor version when adding or removing dependencies
-# Update revision for all other changes
 PORTVERSION=	2.1
 CATEGORIES=	wip biology python
 MASTER_SITES=	# empty
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta-port for Biostar Handbook tools
 WWW=		https://www.biostarhandbook.com
 
@@ -51,7 +48,7 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		p5-Net-SSLeay>0:security/p5-Net-SSLeay \
 		bioawk>0:biology/bioawk \
 		vt>0:biology/vt \
-		${PYTHON_PKGNAMEPREFIX}crossmap>0:biology/py-crossmap@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}CrossMap>0:biology/py-crossmap@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}goatools>0:biology/py-goatools@${PY_FLAVOR} \
 		erminej>0:biology/erminej \
 		${PYTHON_PKGNAMEPREFIX}ont-fast5-api>0:biology/py-ont-fast5-api@${PY_FLAVOR} \
