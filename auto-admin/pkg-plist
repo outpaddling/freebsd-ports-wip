@@ -137,10 +137,8 @@ sbin/auto-nfs-client-setup
 sbin/auto-nfs-restart
 sbin/auto-nfs-server-setup
 sbin/auto-passwd-user-expiration
-sbin/auto-password-status
 sbin/auto-pkg-latest
 sbin/auto-ports-checkout
-sbin/auto-ports-setup
 sbin/auto-ports-wip-checkout
 sbin/auto-power-manager
 sbin/auto-pxe-installer-setup
@@ -212,7 +210,12 @@ share/man/man8/auto-nfs-restart.8.gz
 share/man/man8/auto-nfs-server-setup.8.gz
 share/man/man8/auto-passwd-user-expiration.8.gz
 share/man/man8/auto-physmem.8.gz
+share/man/man8/auto-pkg-latest.8.gz
 share/man/man8/auto-pkgsrc-non-removable.8.gz
+share/man/man8/auto-ports-checkout.8.gz
+share/man/man8/auto-ports-wip-checkout.8.gz
+share/man/man8/auto-power-manager.8.gz
+share/man/man8/auto-pxe-installer-setup.8.gz
 share/man/man8/auto-update-system.8.gz
 share/man/man8/auto-user-admin.8.gz
 share/man/man8/auto-using-pkgbase.8.gz
