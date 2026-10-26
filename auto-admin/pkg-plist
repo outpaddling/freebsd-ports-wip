@@ -216,6 +216,7 @@ share/man/man8/auto-ports-checkout.8.gz
 share/man/man8/auto-ports-wip-checkout.8.gz
 share/man/man8/auto-power-manager.8.gz
 share/man/man8/auto-pxe-installer-setup.8.gz
+share/man/man8/auto-pxe-node-discover.8.gz
 share/man/man8/auto-update-system.8.gz
 share/man/man8/auto-user-admin.8.gz
 share/man/man8/auto-using-pkgbase.8.gz
