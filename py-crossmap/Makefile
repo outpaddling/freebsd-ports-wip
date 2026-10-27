@@ -1,10 +1,8 @@
-PORTNAME=	CrossMap
+PORTNAME=	crossmap
 DISTVERSION=	0.7.4
-PORTREVISION=	1
 CATEGORIES=	wip biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lift over genomics coordinates between assemblies
@@ -20,6 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bx-python>0:biology/py-bx-python@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}pysam>0:biology/py-pysam@${PY_FLAVOR}
 
 USES=		python
+# FIXME: Does not build with pep517 + setuptools,wheel in BUILD_DEPENDS
 USE_PYTHON=	autoplist concurrent cython pep517
 
 NO_ARCH=	yes
