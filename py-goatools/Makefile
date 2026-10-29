@@ -5,7 +5,7 @@ CATEGORIES=	wip biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	patrick@crandol.com
 COMMENT=	Tools for processing and visualizing Gene Ontology terms
 WWW=		https://github.com/tanghaibao/goatools/
 
