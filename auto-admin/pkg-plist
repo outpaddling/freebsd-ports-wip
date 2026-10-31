@@ -221,6 +221,15 @@ share/man/man8/auto-remove-from-group.8.gz
 share/man/man8/auto-remove-user.8.gz
 share/man/man8/auto-restart-services.8.gz
 share/man/man8/auto-restore-ownership.8.gz
+share/man/man8/auto-restore-pw.8.gz
+share/man/man8/auto-restore-user.8.gz
+share/man/man8/auto-root-check.8.gz
+share/man/man8/auto-secure-directory.8.gz
+share/man/man8/auto-security-manager.8.gz
+share/man/man8/auto-select-sound-device.8.gz
+share/man/man8/auto-service-enabled.8.gz
+share/man/man8/auto-services-manager.8.gz
+share/man/man8/auto-set-conf-var.8.gz
 share/man/man8/auto-update-system.8.gz
 share/man/man8/auto-user-admin.8.gz
 share/man/man8/auto-using-pkgbase.8.gz
