@@ -230,6 +230,7 @@ share/man/man8/auto-select-sound-device.8.gz
 share/man/man8/auto-service-enabled.8.gz
 share/man/man8/auto-services-manager.8.gz
 share/man/man8/auto-set-conf-var.8.gz
+share/man/man8/auto-set-hostname.8.gz
 share/man/man8/auto-update-system.8.gz
 share/man/man8/auto-user-admin.8.gz
 share/man/man8/auto-using-pkgbase.8.gz
