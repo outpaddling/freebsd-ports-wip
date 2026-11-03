@@ -238,6 +238,11 @@ share/man/man8/auto-set-umask.8.gz
 share/man/man8/auto-sound-driver-setup.8.gz
 share/man/man8/auto-su+j-toggle.8.gz
 share/man/man8/auto-sync-pxe-root-pw.8.gz
+share/man/man8/auto-sys-manager.8.gz
+share/man/man8/auto-transfer-pw.8.gz
+share/man/man8/auto-unlock-local-pw.8.gz
+share/man/man8/auto-unlock-user.8.gz
+share/man/man8/auto-unsupported-os.8.gz
 share/man/man8/auto-update-system.8.gz
 share/man/man8/auto-user-admin.8.gz
 share/man/man8/auto-using-pkgbase.8.gz
