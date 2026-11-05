@@ -243,6 +243,9 @@ share/man/man8/auto-transfer-pw.8.gz
 share/man/man8/auto-unlock-local-pw.8.gz
 share/man/man8/auto-unlock-user.8.gz
 share/man/man8/auto-unsupported-os.8.gz
+share/man/man8/auto-unsupported-release.8.gz
+share/man/man8/auto-update-devfs-conf.8.gz
+share/man/man8/auto-update-devfs-rules.8.gz
 share/man/man8/auto-update-system.8.gz
 share/man/man8/auto-user-admin.8.gz
 share/man/man8/auto-using-pkgbase.8.gz
