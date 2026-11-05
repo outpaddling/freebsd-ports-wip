@@ -172,10 +172,9 @@ sbin/auto-unsupported-os
 sbin/auto-unsupported-release
 sbin/auto-update-devfs-conf
 sbin/auto-update-devfs-rules
-sbin/auto-update-infiniband-modules
 sbin/auto-update-system
 sbin/auto-upgrade-base
-sbin/auto-user-admin
+sbin/auto-user-manager
 sbin/auto-useradd
 sbin/auto-wacom-setup
 sbin/auto-web-self-sign
@@ -247,5 +246,8 @@ share/man/man8/auto-unsupported-release.8.gz
 share/man/man8/auto-update-devfs-conf.8.gz
 share/man/man8/auto-update-devfs-rules.8.gz
 share/man/man8/auto-update-system.8.gz
+share/man/man8/auto-upgrade-base.8.gz
 share/man/man8/auto-user-admin.8.gz
+share/man/man8/auto-user-manager.8.gz
+share/man/man8/auto-useradd.8.gz
 share/man/man8/auto-using-pkgbase.8.gz
