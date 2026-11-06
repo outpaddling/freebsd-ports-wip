@@ -251,3 +251,10 @@ share/man/man8/auto-user-admin.8.gz
 share/man/man8/auto-user-manager.8.gz
 share/man/man8/auto-useradd.8.gz
 share/man/man8/auto-using-pkgbase.8.gz
+share/man/man8/auto-wacom-setup.8.gz
+share/man/man8/auto-web-self-sign.8.gz
+share/man/man8/auto-web-setup.8.gz
+share/man/man8/auto-webcam-setup.8.gz
+share/man/man8/auto-wifi-failover.8.gz
+share/man/man8/auto-write-cache-toggle.8.gz
+share/man/man8/auto-xdm-toggle.8.gz
