@@ -186,6 +186,9 @@ sbin/auto-xdm-toggle
 %%DATADIR%%/ipfw-rules.sh
 %%DATADIR%%/local_early
 %%DATADIR%%/rc.local_early
+share/man/man8/auto-add-fdesc-mount.8.gz
+share/man/man8/auto-add-group.8.gz
+share/man/man8/auto-add-hosts-entry.8.gz
 share/man/man8/auto-add-swap.8.gz
 share/man/man8/auto-admin.8.gz
 share/man/man8/auto-change-login-class.8.gz
