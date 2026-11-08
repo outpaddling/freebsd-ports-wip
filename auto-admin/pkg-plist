@@ -189,8 +189,13 @@ sbin/auto-xdm-toggle
 share/man/man8/auto-add-fdesc-mount.8.gz
 share/man/man8/auto-add-group.8.gz
 share/man/man8/auto-add-hosts-entry.8.gz
+share/man/man8/auto-add-proc-mount.8.gz
 share/man/man8/auto-add-swap.8.gz
+share/man/man8/auto-add-to-group.8.gz
+share/man/man8/auto-adduser.8.gz
+share/man/man8/auto-admin-banner.8.gz
 share/man/man8/auto-admin.8.gz
+share/man/man8/auto-amend-fstab.8.gz
 share/man/man8/auto-change-login-class.8.gz
 share/man/man8/auto-chromium+widevine-install.8.gz
 share/man/man8/auto-image2dev.8.gz
