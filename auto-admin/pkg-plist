@@ -68,8 +68,6 @@ sbin/auto-admin
 sbin/auto-admin-banner
 sbin/auto-amend-fstab
 sbin/auto-autofs-nfs-setup
-sbin/auto-automount-setup
-sbin/auto-binary-pkgsrc-setup
 sbin/auto-change-group-gid
 sbin/auto-change-group-ownership
 sbin/auto-change-login-class
@@ -85,6 +83,7 @@ sbin/auto-cups-setup
 sbin/auto-denyhosts-remove-ip
 sbin/auto-denyhosts-setup
 sbin/auto-detect-laptops
+sbin/auto-devd-mount-setup
 sbin/auto-disable-file-transfers
 sbin/auto-disable-host-key-prompt
 sbin/auto-disable-service
@@ -196,6 +195,7 @@ share/man/man8/auto-adduser.8.gz
 share/man/man8/auto-admin-banner.8.gz
 share/man/man8/auto-admin.8.gz
 share/man/man8/auto-amend-fstab.8.gz
+share/man/man8/auto-autofs-nfs-setup.8.gz
 share/man/man8/auto-change-login-class.8.gz
 share/man/man8/auto-chromium+widevine-install.8.gz
 share/man/man8/auto-image2dev.8.gz
