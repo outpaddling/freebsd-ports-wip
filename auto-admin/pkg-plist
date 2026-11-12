@@ -80,8 +80,6 @@ sbin/auto-clean-disk
 sbin/auto-clean-ports
 sbin/auto-clean-tmp
 sbin/auto-cups-setup
-sbin/auto-denyhosts-remove-ip
-sbin/auto-denyhosts-setup
 sbin/auto-detect-laptops
 sbin/auto-devd-mount-setup
 sbin/auto-disable-file-transfers
@@ -207,6 +205,7 @@ share/man/man8/auto-chromium+widevine-install.8.gz
 share/man/man8/auto-clean-disk.8.gz
 share/man/man8/auto-clean-ports.8.gz
 share/man/man8/auto-clean-tmp.8.gz
+share/man/man8/auto-cups-setup.8.gz
 share/man/man8/auto-image2dev.8.gz
 share/man/man8/auto-install-linux_base.8.gz
 share/man/man8/auto-ldap-client-setup.8.gz
