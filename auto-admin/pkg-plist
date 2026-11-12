@@ -200,7 +200,13 @@ share/man/man8/auto-change-group-gid.8.gz
 share/man/man8/auto-change-group-ownership.8.gz
 share/man/man8/auto-change-login-class.8.gz
 share/man/man8/auto-change-nfsd-count.8.gz
+share/man/man8/auto-change-ownership.8.gz
+share/man/man8/auto-change-primary-group.8.gz
+share/man/man8/auto-change-uid.8.gz
 share/man/man8/auto-chromium+widevine-install.8.gz
+share/man/man8/auto-clean-disk.8.gz
+share/man/man8/auto-clean-ports.8.gz
+share/man/man8/auto-clean-tmp.8.gz
 share/man/man8/auto-image2dev.8.gz
 share/man/man8/auto-install-linux_base.8.gz
 share/man/man8/auto-ldap-client-setup.8.gz
