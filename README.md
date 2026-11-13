@@ -10,6 +10,19 @@ pkg install auto-admin
 auto-ports-wip-checkout
 ```
 
+## Installing a port
+
+```
+wip-reinstall-port portname
+```
+    
+or
+
+```
+cd /usr/ports/wip/portname
+make install
+```
+
 ## Maintaining the WIP collection
 
 Run `wip-update` frequently to retreive the latest commits and
@@ -31,19 +44,6 @@ auto-mark-install-from-source wip/portname wip newer
 ```
 
 This way, you won't need to manually run `wip-reinstall-port` on every machine.
-
-## Installing a port
-
-```
-wip-reinstall-port portname
-```
-    
-or
-
-```
-cd /usr/ports/wip/portname
-make install
-```
 
 ## Ports development
 
