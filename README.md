@@ -25,7 +25,7 @@ make install
 
 ## Maintaining the WIP collection
 
-Run `wip-update` frequently to retreive the latest commits and
+Run `wip-update` frequently to retrieve the latest commits and
 keep wip-tools up-to-date.
 
 The `auto-update-system` script, part of `auto-admin`, will automatically
@@ -49,7 +49,27 @@ This way, you won't need to manually run `wip-reinstall-port` on every machine.
 
 ### Poudriere
 
-Setting up poudriere is easy using the port-dev port:
+Poudriere is a tool used by FreeBSD ports developers to build-test ports
+before committing them to the FreeBSD ports tree.  It performs the build
+inside a pristine FreeBSD jail (a sophisticated container system,
+much like Docker) with no
+ports/packages preinstalled.  This ensures that the port has all dependencies
+properly listed and a faulty port won't build successfully because you
+just happen to have some of the dependencies installed.  E.g., if you
+build-test biology/samtools outside of poudriere, it will succeed as
+long as you have biology/htslib installed, whether or not htslib is
+listed as a dependency in biology/samtools.  The build will then fail
+on other systems where htslib is not installed.  A build could also
+succeed or fail depending on the version of a dependency.  Building in
+a pristine environment exposes these problems before they impact
+FreeBSD end-users.
+
+All new and upgraded ports, and all ports that depend on them, MUST be
+poudriere-tested against the latest changes before being committed.
+E.g., if you upgrade biology/htslib, you MUST poudriere-test the new
+biology/htslib AND all other ports that list biology/htslib as a dependency.
+
+Setting up poudriere is easy using the `port-dev` port:
 
 ```
 wip-reinstall-port port-dev
@@ -57,10 +77,10 @@ port-poudriere-setup
 ```
 
 Note: You may want to read the poudriere docs first to better understand the
-config file.
+configuration file, which you will edit while running `port-poudriere-setup`.
 
 Once you have a poudriere installation, you can
-test a port by running
+test a WIP port by running
 
 ```
 wip-poudriere-test portname jail [jail ...] | all | pattern
@@ -69,11 +89,14 @@ wip-poudriere-test portname jail [jail ...] | all | pattern
 Examples:
 
 ```
-# Testing on all jails is the default
+# Testing in all jails is the default
 wip-poudriere-test htslib
 
-# To test on just one jail (maybe after a failure)
+# To test in just one jail (maybe after a failure)
 wip-poudriere-test htslib 15-2-amd64
+
+# To test in all amd64 jails, but not aarch64
+wip-poudriere-test htslib amd64
 ```
 
 ### Quality assurance
@@ -106,14 +129,13 @@ cd /usr/ports/category/port && make deinstall clean install
 -   Contact the owner of the repository and ask to be added as a Github
     collaborator, so you can commit changes made to your local clone.
 
-    Collaborators need to follow one simple rule:
+    Collaborators need to follow two simple rules:
 
-	Do not modify someone else's files without their consent.
+    -   Do not modify someone else's files without their consent.
+    -   All ports must have a valid MAINTAINER email.
 
     Ports in this collection are works-in-progress and may be in any stage
     of development from completely non-functional to ready-to-commit.
-
-    All ports must have a valid MAINTAINER email.
 
     Ports here may not have undergone security review and are provided as-is.
     However, ports found to cause security issues by merely being installed
