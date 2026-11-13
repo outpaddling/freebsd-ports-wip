@@ -65,9 +65,10 @@ a pristine environment exposes these problems before they impact
 FreeBSD end-users.
 
 All new and upgraded ports, and all ports that depend on them, MUST be
-poudriere-tested against the latest changes before being committed.
+poudriere-tested against the latest changes before the port is committed.
 E.g., if you upgrade biology/htslib, you MUST poudriere-test the new
-biology/htslib AND all other ports that list biology/htslib as a dependency.
+biology/htslib AND all other ports that list biology/htslib as a dependency
+before committing the new biology/htslib.
 
 Setting up poudriere is easy using the `port-dev` port:
 
