@@ -15,6 +15,10 @@ auto-ports-wip-checkout
 Run `wip-update` frequently to retreive the latest commits and
 keep wip-tools up-to-date.
 
+The `auto-update-system` script, part of `auto-admin`, will automatically
+run `wip-update` if $PORTSDIR/wip is present.  However, it will not reinstall
+any WIP ports other than wip-tools.
+
 You may want to always be running the latest WIP version of a port on
 all of your FreeBSD installations, either
 because it doesn't exist anywhere else, or because you want to thoroughly
