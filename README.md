@@ -12,13 +12,21 @@ auto-ports-wip-checkout
 
 ## Maintaining the WIP collection
 
-1.   Run `wip-update` frequently to retreive the latest commits.
+Run `wip-update` frequently to retreive the latest commits and
+keep wip-tools up-to-date.
 
-1.   To automatically update wip ports via auto-update-system:
+You may want to always be running the latest WIP version of a port on
+all of your FreeBSD installations, either
+because it doesn't exist anywhere else, or because you want to thoroughly
+run-test it.
+
+To automatically update a WIP port when running `auto-update-system`:
 
 ```
-auto-mark-install-from-source wip/portname wip
+auto-mark-install-from-source wip/portname wip newer
 ```
+
+This way, you won't need to manually run `wip-reinstall-port` on every machine.
 
 ## Installing a port
 
