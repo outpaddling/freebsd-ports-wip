@@ -82,7 +82,6 @@ sbin/auto-clean-tmp
 sbin/auto-cups-setup
 sbin/auto-detect-laptops
 sbin/auto-devd-mount-setup
-sbin/auto-disable-file-transfers
 sbin/auto-disable-host-key-prompt
 sbin/auto-disable-service
 sbin/auto-disable-tcp-timestamps
@@ -208,6 +207,9 @@ share/man/man8/auto-clean-tmp.8.gz
 share/man/man8/auto-cups-setup.8.gz
 share/man/man8/auto-detect-laptops.8.gz
 share/man/man8/auto-devd-mount-setup.8.gz
+share/man/man8/auto-disable-host-key-prompt.8.gz
+share/man/man8/auto-disable-service.8.gz
+share/man/man8/auto-disable-tcp-timestamps.8.gz
 share/man/man8/auto-image2dev.8.gz
 share/man/man8/auto-install-linux_base.8.gz
 share/man/man8/auto-ldap-client-setup.8.gz
