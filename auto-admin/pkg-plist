@@ -86,10 +86,7 @@ sbin/auto-disable-host-key-prompt
 sbin/auto-disable-service
 sbin/auto-disable-tcp-timestamps
 sbin/auto-enable-autologout
-sbin/auto-enable-compat32
-sbin/auto-enable-hal-mount
 sbin/auto-enable-passwdqc
-sbin/auto-enable-procfs
 sbin/auto-enable-service
 sbin/auto-file-secure
 sbin/auto-filesys-manager
@@ -210,6 +207,8 @@ share/man/man8/auto-devd-mount-setup.8.gz
 share/man/man8/auto-disable-host-key-prompt.8.gz
 share/man/man8/auto-disable-service.8.gz
 share/man/man8/auto-disable-tcp-timestamps.8.gz
+share/man/man8/auto-enable-autologout.8.gz
+share/man/man8/auto-enable-passwdqc.8.gz
 share/man/man8/auto-image2dev.8.gz
 share/man/man8/auto-install-linux_base.8.gz
 share/man/man8/auto-ldap-client-setup.8.gz
