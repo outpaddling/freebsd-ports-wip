@@ -4,7 +4,7 @@ DISTVERSIONSUFFIX=	-gf77f428
 CATEGORIES=	wip sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Quickly configure a FreeBSD desktop system
+COMMENT=	Quickly configure a DragonFly or FreeBSD desktop system
 WWW=		https://github.com/outpaddling/desktop-installer
 
 LICENSE=	BSD2CLAUSE
@@ -20,12 +20,12 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/FreeBSD/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/`uname`/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/battery-shutdown.sh ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/FreeBSD/${PORTNAME}.man \
+	${INSTALL_MAN} ${WRKSRC}/`uname`/${PORTNAME}.man \
 		${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/Common && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC}/FreeBSD && ${COPYTREE_SHARE} XDM ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/`uname` && ${COPYTREE_SHARE} XDM ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
