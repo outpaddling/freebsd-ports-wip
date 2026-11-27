@@ -1,8 +1,7 @@
 PORTNAME=	lumina-core
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.2-106
-DISTVERSIONSUFFIX=	-gf10fadce
-PORTREVISION=	10
+DISTVERSION=	1.6.2-240
+DISTVERSIONSUFFIX=	-g5ab9d8d8
 CATEGORIES=	wip x11
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,9 +10,6 @@ WWW=		https://lumina-desktop.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../LICENSE
-
-FLAVORS=	xorg xlibre
-FLAVOR?=	${FLAVORS:[1]}
 
 RUN_DEPENDS=	fluxbox>=0:x11-wm/fluxbox \
 		fluxbox-tenr-styles-pack>=0:x11-themes/fluxbox-tenr-styles-pack \
@@ -28,25 +24,16 @@ LIB_DEPENDS+=	libxcb-ewmh.so:x11/xcb-util-wm \
 		libxcb-util.so:x11/xcb-util \
 		libXcursor.so:x11/libXcursor
 
-USES=		compiler:c++11-lang desktop-file-utils gl qmake qt:5 xorg
+USES=		compiler:c++11-lang desktop-file-utils gl qmake qt:6 xorg
 USE_GL=		gl
 USE_XORG=	x11 xdamage xcb
 USE_LDCONFIG=	yes
-USE_QT=		buildtools:build concurrent core dbus declarative gui \
-		imageformats multimedia network svg widgets x11extras
+USE_QT=		base tools:build 
+# concurrent core dbus declarative gui \
+# imageformats multimedia network svg widgets x11extras
 USE_GITHUB=	yes
 GH_ACCOUNT=	lumina-desktop
 GH_PROJECT=	lumina
-
-.if ${FLAVOR} == xlibre
-PKGNAMEPREFIX=	xlibre-
-USES+=		xlibre
-USE_XLIBRE+=	xlibre-server
-CONFLICTS_BUILD+=	xorg-server
-.else
-USE_XORG+=	xorg-server
-CONFLICTS_BUILD+=	xlibre-server
-.endif
 
 QMAKE_ARGS=	L_MANDIR=${PREFIX}/share/man
 
@@ -62,10 +49,10 @@ TRUEOS_QMAKE_ON=	DEFAULT_SETTINGS=TrueOS
 MULTIMEDIA_USES=	gstreamer
 MULTIMEDIA_USE=		GSTREAMER=core
 
-NLS_USE=	QT=linguist:build
+# NLS_USE=	QT=linguist:build
 NLS_QMAKE_ON=	CONFIG+=WITH_I18N
 
-WRKSRC_SUBDIR=	src-qt5/core
+WRKSRC_SUBDIR=	src-qt6/core
 
 CONFIGURE_ENV+=	DESTDIR=${STAGEDIR}
 
