@@ -28,14 +28,14 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gl qmake qt:6 xorg
 USE_GL=		gl
 USE_XORG=	x11 xdamage xcb
 USE_LDCONFIG=	yes
-USE_QT=		5compat base declarative location multimedia tools:build 
+USE_QT=		5compat base declarative location multimedia tools:build translations
 # concurrent core dbus declarative gui \
 # imageformats multimedia network svg widgets x11extras
 USE_GITHUB=	yes
 GH_ACCOUNT=	lumina-desktop
 GH_PROJECT=	lumina
 
-QMAKE_ARGS=	L_MANDIR=${PREFIX}/share/man
+# QMAKE_ARGS=	L_MANDIR=${PREFIX}/share/man
 
 OPTIONS_DEFINE=		MULTIMEDIA TRUEOS NLS
 OPTIONS_DEFAULT=	MULTIMEDIA
