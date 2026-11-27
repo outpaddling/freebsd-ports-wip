@@ -24,11 +24,11 @@ LIB_DEPENDS+=	libxcb-ewmh.so:x11/xcb-util-wm \
 		libxcb-util.so:x11/xcb-util \
 		libXcursor.so:x11/libXcursor
 
-USES=		compiler:c++11-lang desktop-file-utils gl qmake qt:6 xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils gl qmake qt:6 xorg
 USE_GL=		gl
 USE_XORG=	x11 xdamage xcb
 USE_LDCONFIG=	yes
-USE_QT=		base tools:build 
+USE_QT=		5compat base declarative location multimedia tools:build 
 # concurrent core dbus declarative gui \
 # imageformats multimedia network svg widgets x11extras
 USE_GITHUB=	yes
