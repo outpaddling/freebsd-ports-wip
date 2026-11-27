@@ -11,6 +11,7 @@ WWW=		https://lumina-desktop.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
+BUILD_DEPENDS=	kf6-extra-cmake-modules>=6.32.0:devel/kf6-extra-cmake-modules
 RUN_DEPENDS=	fluxbox>=0:x11-wm/fluxbox \
 		fluxbox-tenr-styles-pack>=0:x11-themes/fluxbox-tenr-styles-pack \
 		xbrightness>=0:x11/xbrightness \
@@ -24,7 +25,7 @@ LIB_DEPENDS+=	libxcb-ewmh.so:x11/xcb-util-wm \
 		libxcb-util.so:x11/xcb-util \
 		libXcursor.so:x11/libXcursor
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gl qmake qt:6 xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils gl qt:6 xorg
 USE_GL=		gl
 USE_XORG=	x11 xdamage xcb
 USE_LDCONFIG=	yes
@@ -35,8 +36,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lumina-desktop
 GH_PROJECT=	lumina
 
-# QMAKE_ARGS=	L_MANDIR=${PREFIX}/share/man
-
 OPTIONS_DEFINE=		MULTIMEDIA TRUEOS NLS
 OPTIONS_DEFAULT=	MULTIMEDIA
 OPTIONS_SUB=		yes
@@ -44,13 +43,13 @@ OPTIONS_SUB=		yes
 MULTIMEDIA_DESC=	Install multimedia support backend (gstreamer)
 TRUEOS_DESC=		Use the TrueOS system interface settings.
 
-TRUEOS_QMAKE_ON=	DEFAULT_SETTINGS=TrueOS
+# TRUEOS_QMAKE_ON=	DEFAULT_SETTINGS=TrueOS
 
 MULTIMEDIA_USES=	gstreamer
 MULTIMEDIA_USE=		GSTREAMER=core
 
 # NLS_USE=	QT=linguist:build
-NLS_QMAKE_ON=	CONFIG+=WITH_I18N
+# NLS_QMAKE_ON=	CONFIG+=WITH_I18N
 
 WRKSRC_SUBDIR=	src-qt6/core
 
