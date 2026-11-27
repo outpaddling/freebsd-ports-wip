@@ -217,6 +217,9 @@ share/man/man8/auto-fusefs-install.8.gz
 share/man/man8/auto-gpu-setup.8.gz
 share/man/man8/auto-group-check.8.gz
 share/man/man8/auto-harden.8.gz
+share/man/man8/auto-hardware-specs.8.gz
+share/man/man8/auto-hyperthreading-toggle.8.gz
+share/man/man8/auto-idrac-config.8.gz
 share/man/man8/auto-image2dev.8.gz
 share/man/man8/auto-install-linux_base.8.gz
 share/man/man8/auto-ldap-client-setup.8.gz
