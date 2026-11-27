@@ -1,5 +1,5 @@
---- lumina-desktop/src-screensaver/LScreenSaver.cpp.orig	2026-04-15 11:46:29 UTC
-+++ lumina-desktop/src-screensaver/LScreenSaver.cpp
+--- core/lumina-desktop/src-screensaver/LScreenSaver.cpp.orig	2026-04-15 11:46:29 UTC
++++ core/lumina-desktop/src-screensaver/LScreenSaver.cpp
 @@ -27,7 +27,7 @@ LScreenSaver::LScreenSaver() : QWidget(0,Qt::BypassWin
  	LOCKER->hide();
    SSRunning = SSLocked = updating = false;

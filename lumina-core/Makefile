@@ -9,7 +9,7 @@ COMMENT=	Lumina Desktop Environment
 WWW=		https://lumina-desktop.org/
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/../../LICENSE
+LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 BUILD_DEPENDS=	kf6-extra-cmake-modules>=6.32.0:devel/kf6-extra-cmake-modules
 RUN_DEPENDS=	fluxbox>=0:x11-wm/fluxbox \
@@ -48,10 +48,11 @@ TRUEOS_DESC=		Use the TrueOS system interface settings.
 MULTIMEDIA_USES=	gstreamer
 MULTIMEDIA_USE=		GSTREAMER=core
 
+# FIXME: makeplist should insert %%NLS%%
 # NLS_USE=	QT=linguist:build
 # NLS_QMAKE_ON=	CONFIG+=WITH_I18N
 
-WRKSRC_SUBDIR=	src-qt6/core
+WRKSRC_SUBDIR=	src-qt6
 
 CONFIGURE_ENV+=	DESTDIR=${STAGEDIR}
 
