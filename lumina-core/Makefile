@@ -23,12 +23,15 @@ LIB_DEPENDS+=	libxcb-ewmh.so:x11/xcb-util-wm \
 		libxcb-icccm.so:x11/xcb-util-wm \
 		libxcb-image.so:x11/xcb-util-image \
 		libxcb-util.so:x11/xcb-util \
-		libXcursor.so:x11/libXcursor
+		libXcursor.so:x11/libXcursor \
+		libxkbcommon.so:x11/libxkbcommon
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext gl qt:6 xorg
 USE_GL=		gl
-USE_XORG=	x11 xdamage xcb
-USE_QT=		3d base declarative imageformats location multimedia svg tools:build translations
+USE_XORG=	x11 xcb xdamage xext xfixes xi xrender
+# 3d and location caused stage-qa warnings (might not need)
+# USE_QT=		3d 5compat base declarative imageformats location multimedia svg tools:build translations
+USE_QT=		5compat base declarative imageformats multimedia svg tools:build translations
 # Old Qt5.  Verify above before removing.
 # concurrent core dbus declarative gui \
 # imageformats multimedia network svg widgets x11extras
