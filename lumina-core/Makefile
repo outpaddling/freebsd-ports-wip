@@ -1,7 +1,7 @@
 PORTNAME=	lumina-core
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.2-240
-DISTVERSIONSUFFIX=	-g5ab9d8d8
+DISTVERSION=	1.6.2-244
+DISTVERSIONSUFFIX=	-g864fad6b
 CATEGORIES=	wip x11
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -25,36 +25,30 @@ LIB_DEPENDS+=	libxcb-ewmh.so:x11/xcb-util-wm \
 		libxcb-util.so:x11/xcb-util \
 		libXcursor.so:x11/libXcursor
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gl qt:6 xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext gl qt:6 xorg
 USE_GL=		gl
 USE_XORG=	x11 xdamage xcb
-# USE_LDCONFIG=	yes
-USE_QT=		3d base declarative location multimedia tools:build translations
+USE_QT=		3d base declarative imageformats location multimedia svg tools:build translations
+# Old Qt5.  Verify above before removing.
 # concurrent core dbus declarative gui \
 # imageformats multimedia network svg widgets x11extras
 USE_GITHUB=	yes
 GH_ACCOUNT=	lumina-desktop
 GH_PROJECT=	lumina
 
-OPTIONS_DEFINE=		MULTIMEDIA TRUEOS NLS
+OPTIONS_DEFINE=		MULTIMEDIA
 OPTIONS_DEFAULT=	MULTIMEDIA
 OPTIONS_SUB=		yes
 
 MULTIMEDIA_DESC=	Install multimedia support backend (gstreamer)
-TRUEOS_DESC=		Use the TrueOS system interface settings.
-
-# TRUEOS_QMAKE_ON=	DEFAULT_SETTINGS=TrueOS
-
 MULTIMEDIA_USES=	gstreamer
 MULTIMEDIA_USE=		GSTREAMER=core
 
-# FIXME: makeplist should insert %%NLS%%
-# NLS_USE=	QT=linguist:build
-# NLS_QMAKE_ON=	CONFIG+=WITH_I18N
-
+# FIXME: Can we build from src-qt6/core, like the Qt5 port?
 WRKSRC_SUBDIR=	src-qt6
 
 CONFIGURE_ENV+=	DESTDIR=${STAGEDIR}
+WITH_DEBUG=	yes
 
 CONFLICTS_INSTALL=	lumina-1.2.*
 
