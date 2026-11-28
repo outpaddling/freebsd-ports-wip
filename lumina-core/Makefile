@@ -11,7 +11,7 @@ WWW=		https://lumina-desktop.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-BUILD_DEPENDS=	kf6-extra-cmake-modules>=6.32.0:devel/kf6-extra-cmake-modules
+BUILD_DEPENDS=	kf6-extra-cmake-modules>=6.31.0:devel/kf6-extra-cmake-modules
 RUN_DEPENDS=	fluxbox>=0:x11-wm/fluxbox \
 		fluxbox-tenr-styles-pack>=0:x11-themes/fluxbox-tenr-styles-pack \
 		xbrightness>=0:x11/xbrightness \
@@ -28,8 +28,8 @@ LIB_DEPENDS+=	libxcb-ewmh.so:x11/xcb-util-wm \
 USES=		cmake compiler:c++11-lang desktop-file-utils gl qt:6 xorg
 USE_GL=		gl
 USE_XORG=	x11 xdamage xcb
-USE_LDCONFIG=	yes
-USE_QT=		5compat base declarative location multimedia tools:build translations
+# USE_LDCONFIG=	yes
+USE_QT=		3d base declarative location multimedia tools:build translations
 # concurrent core dbus declarative gui \
 # imageformats multimedia network svg widgets x11extras
 USE_GITHUB=	yes
